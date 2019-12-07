@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,7 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
     const FIELD_SUBJECT = 'subject';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -239,20 +239,27 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
                 $this->setAuthor(new FHIRReference($data[self::FIELD_AUTHOR]));
             }
         }
-        if (isset($data[self::FIELD_AUTHORED])) {
-            $ext = (isset($data[self::FIELD_AUTHORED_EXT]) && is_array($data[self::FIELD_AUTHORED_EXT]))
-                ? $data[self::FIELD_AUTHORED_EXT]
-                : null;
-            if ($data[self::FIELD_AUTHORED] instanceof FHIRDateTime) {
-                $this->setAuthored($data[self::FIELD_AUTHORED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AUTHORED])) {
-                    $this->setAuthored(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_AUTHORED]] + $ext));
-                } else if (is_array($data[self::FIELD_AUTHORED])) {
-                    $this->setAuthored(new FHIRDateTime(array_merge($ext, $data[self::FIELD_AUTHORED])));
-                }
+        if (isset($data[self::FIELD_AUTHORED]) || isset($data[self::FIELD_AUTHORED_EXT])) {
+            if (isset($data[self::FIELD_AUTHORED])) {
+                $value = $data[self::FIELD_AUTHORED];
             } else {
-                $this->setAuthored(new FHIRDateTime($data[self::FIELD_AUTHORED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_AUTHORED_EXT]) && is_array($data[self::FIELD_AUTHORED_EXT])) {
+                $ext = $data[self::FIELD_AUTHORED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setAuthored($value);
+                } else if (is_array($value)) {
+                    $this->setAuthored(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setAuthored(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAuthored(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_ENCOUNTER])) {
@@ -290,20 +297,27 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
                 $this->setSource(new FHIRReference($data[self::FIELD_SOURCE]));
             }
         }
-        if (isset($data[self::FIELD_STATUS])) {
-            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT]))
-                ? $data[self::FIELD_STATUS_EXT]
-                : null;
-            if ($data[self::FIELD_STATUS] instanceof FHIRQuestionnaireResponseStatus) {
-                $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRQuestionnaireResponseStatus([FHIRQuestionnaireResponseStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
-                } else if (is_array($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRQuestionnaireResponseStatus(array_merge($ext, $data[self::FIELD_STATUS])));
-                }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            if (isset($data[self::FIELD_STATUS])) {
+                $value = $data[self::FIELD_STATUS];
             } else {
-                $this->setStatus(new FHIRQuestionnaireResponseStatus($data[self::FIELD_STATUS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
+                $ext = $data[self::FIELD_STATUS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRQuestionnaireResponseStatus) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIRQuestionnaireResponseStatus(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIRQuestionnaireResponseStatus([FHIRQuestionnaireResponseStatus::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setStatus(new FHIRQuestionnaireResponseStatus($ext));
             }
         }
         if (isset($data[self::FIELD_SUBJECT])) {
@@ -648,8 +662,8 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -782,8 +796,10 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
         }
         if (null !== ($v = $this->getAuthored())) {
             $a[self::FIELD_AUTHORED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_AUTHORED_EXT] = $enc;
             }
         }
@@ -804,13 +820,18 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRQuestionnaireResponseStatus::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRQuestionnaireResponseStatus::FIELD_VALUE]);
                 $a[self::FIELD_STATUS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

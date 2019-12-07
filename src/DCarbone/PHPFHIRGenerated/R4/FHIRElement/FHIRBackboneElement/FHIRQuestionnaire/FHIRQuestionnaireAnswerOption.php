@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuest
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,7 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
     const FIELD_VALUE_TIME_EXT = '_valueTime';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Value of "true" or "false"
@@ -206,20 +206,27 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_INITIAL_SELECTED])) {
-            $ext = (isset($data[self::FIELD_INITIAL_SELECTED_EXT]) && is_array($data[self::FIELD_INITIAL_SELECTED_EXT]))
-                ? $data[self::FIELD_INITIAL_SELECTED_EXT]
-                : null;
-            if ($data[self::FIELD_INITIAL_SELECTED] instanceof FHIRBoolean) {
-                $this->setInitialSelected($data[self::FIELD_INITIAL_SELECTED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_INITIAL_SELECTED])) {
-                    $this->setInitialSelected(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_INITIAL_SELECTED]] + $ext));
-                } else if (is_array($data[self::FIELD_INITIAL_SELECTED])) {
-                    $this->setInitialSelected(new FHIRBoolean(array_merge($ext, $data[self::FIELD_INITIAL_SELECTED])));
-                }
+        if (isset($data[self::FIELD_INITIAL_SELECTED]) || isset($data[self::FIELD_INITIAL_SELECTED_EXT])) {
+            if (isset($data[self::FIELD_INITIAL_SELECTED])) {
+                $value = $data[self::FIELD_INITIAL_SELECTED];
             } else {
-                $this->setInitialSelected(new FHIRBoolean($data[self::FIELD_INITIAL_SELECTED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_INITIAL_SELECTED_EXT]) && is_array($data[self::FIELD_INITIAL_SELECTED_EXT])) {
+                $ext = $data[self::FIELD_INITIAL_SELECTED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setInitialSelected($value);
+                } else if (is_array($value)) {
+                    $this->setInitialSelected(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setInitialSelected(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setInitialSelected(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_VALUE_CODING])) {
@@ -229,36 +236,50 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
                 $this->setValueCoding(new FHIRCoding($data[self::FIELD_VALUE_CODING]));
             }
         }
-        if (isset($data[self::FIELD_VALUE_DATE])) {
-            $ext = (isset($data[self::FIELD_VALUE_DATE_EXT]) && is_array($data[self::FIELD_VALUE_DATE_EXT]))
-                ? $data[self::FIELD_VALUE_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_VALUE_DATE] instanceof FHIRDate) {
-                $this->setValueDate($data[self::FIELD_VALUE_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_VALUE_DATE])) {
-                    $this->setValueDate(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_VALUE_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_VALUE_DATE])) {
-                    $this->setValueDate(new FHIRDate(array_merge($ext, $data[self::FIELD_VALUE_DATE])));
-                }
+        if (isset($data[self::FIELD_VALUE_DATE]) || isset($data[self::FIELD_VALUE_DATE_EXT])) {
+            if (isset($data[self::FIELD_VALUE_DATE])) {
+                $value = $data[self::FIELD_VALUE_DATE];
             } else {
-                $this->setValueDate(new FHIRDate($data[self::FIELD_VALUE_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_VALUE_DATE_EXT]) && is_array($data[self::FIELD_VALUE_DATE_EXT])) {
+                $ext = $data[self::FIELD_VALUE_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDate) {
+                    $this->setValueDate($value);
+                } else if (is_array($value)) {
+                    $this->setValueDate(new FHIRDate(array_merge($ext, $value)));
+                } else {
+                    $this->setValueDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setValueDate(new FHIRDate($ext));
             }
         }
-        if (isset($data[self::FIELD_VALUE_INTEGER])) {
-            $ext = (isset($data[self::FIELD_VALUE_INTEGER_EXT]) && is_array($data[self::FIELD_VALUE_INTEGER_EXT]))
-                ? $data[self::FIELD_VALUE_INTEGER_EXT]
-                : null;
-            if ($data[self::FIELD_VALUE_INTEGER] instanceof FHIRInteger) {
-                $this->setValueInteger($data[self::FIELD_VALUE_INTEGER]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_VALUE_INTEGER])) {
-                    $this->setValueInteger(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_VALUE_INTEGER]] + $ext));
-                } else if (is_array($data[self::FIELD_VALUE_INTEGER])) {
-                    $this->setValueInteger(new FHIRInteger(array_merge($ext, $data[self::FIELD_VALUE_INTEGER])));
-                }
+        if (isset($data[self::FIELD_VALUE_INTEGER]) || isset($data[self::FIELD_VALUE_INTEGER_EXT])) {
+            if (isset($data[self::FIELD_VALUE_INTEGER])) {
+                $value = $data[self::FIELD_VALUE_INTEGER];
             } else {
-                $this->setValueInteger(new FHIRInteger($data[self::FIELD_VALUE_INTEGER]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_VALUE_INTEGER_EXT]) && is_array($data[self::FIELD_VALUE_INTEGER_EXT])) {
+                $ext = $data[self::FIELD_VALUE_INTEGER_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setValueInteger($value);
+                } else if (is_array($value)) {
+                    $this->setValueInteger(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setValueInteger(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setValueInteger(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_VALUE_REFERENCE])) {
@@ -268,36 +289,50 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
                 $this->setValueReference(new FHIRReference($data[self::FIELD_VALUE_REFERENCE]));
             }
         }
-        if (isset($data[self::FIELD_VALUE_STRING])) {
-            $ext = (isset($data[self::FIELD_VALUE_STRING_EXT]) && is_array($data[self::FIELD_VALUE_STRING_EXT]))
-                ? $data[self::FIELD_VALUE_STRING_EXT]
-                : null;
-            if ($data[self::FIELD_VALUE_STRING] instanceof FHIRString) {
-                $this->setValueString($data[self::FIELD_VALUE_STRING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_VALUE_STRING])) {
-                    $this->setValueString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_VALUE_STRING]] + $ext));
-                } else if (is_array($data[self::FIELD_VALUE_STRING])) {
-                    $this->setValueString(new FHIRString(array_merge($ext, $data[self::FIELD_VALUE_STRING])));
-                }
+        if (isset($data[self::FIELD_VALUE_STRING]) || isset($data[self::FIELD_VALUE_STRING_EXT])) {
+            if (isset($data[self::FIELD_VALUE_STRING])) {
+                $value = $data[self::FIELD_VALUE_STRING];
             } else {
-                $this->setValueString(new FHIRString($data[self::FIELD_VALUE_STRING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_VALUE_STRING_EXT]) && is_array($data[self::FIELD_VALUE_STRING_EXT])) {
+                $ext = $data[self::FIELD_VALUE_STRING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setValueString($value);
+                } else if (is_array($value)) {
+                    $this->setValueString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setValueString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setValueString(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_VALUE_TIME])) {
-            $ext = (isset($data[self::FIELD_VALUE_TIME_EXT]) && is_array($data[self::FIELD_VALUE_TIME_EXT]))
-                ? $data[self::FIELD_VALUE_TIME_EXT]
-                : null;
-            if ($data[self::FIELD_VALUE_TIME] instanceof FHIRTime) {
-                $this->setValueTime($data[self::FIELD_VALUE_TIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_VALUE_TIME])) {
-                    $this->setValueTime(new FHIRTime([FHIRTime::FIELD_VALUE => $data[self::FIELD_VALUE_TIME]] + $ext));
-                } else if (is_array($data[self::FIELD_VALUE_TIME])) {
-                    $this->setValueTime(new FHIRTime(array_merge($ext, $data[self::FIELD_VALUE_TIME])));
-                }
+        if (isset($data[self::FIELD_VALUE_TIME]) || isset($data[self::FIELD_VALUE_TIME_EXT])) {
+            if (isset($data[self::FIELD_VALUE_TIME])) {
+                $value = $data[self::FIELD_VALUE_TIME];
             } else {
-                $this->setValueTime(new FHIRTime($data[self::FIELD_VALUE_TIME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_VALUE_TIME_EXT]) && is_array($data[self::FIELD_VALUE_TIME_EXT])) {
+                $ext = $data[self::FIELD_VALUE_TIME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRTime) {
+                    $this->setValueTime($value);
+                } else if (is_array($value)) {
+                    $this->setValueTime(new FHIRTime(array_merge($ext, $value)));
+                } else {
+                    $this->setValueTime(new FHIRTime([FHIRTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setValueTime(new FHIRTime($ext));
             }
         }
     }
@@ -740,8 +775,10 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getInitialSelected())) {
             $a[self::FIELD_INITIAL_SELECTED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_INITIAL_SELECTED_EXT] = $enc;
             }
         }
@@ -750,15 +787,19 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getValueDate())) {
             $a[self::FIELD_VALUE_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDate::FIELD_VALUE]);
                 $a[self::FIELD_VALUE_DATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getValueInteger())) {
             $a[self::FIELD_VALUE_INTEGER] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_VALUE_INTEGER_EXT] = $enc;
             }
         }
@@ -767,17 +808,24 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getValueString())) {
             $a[self::FIELD_VALUE_STRING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_VALUE_STRING_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getValueTime())) {
             $a[self::FIELD_VALUE_TIME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRTime::FIELD_VALUE]);
                 $a[self::FIELD_VALUE_TIME_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

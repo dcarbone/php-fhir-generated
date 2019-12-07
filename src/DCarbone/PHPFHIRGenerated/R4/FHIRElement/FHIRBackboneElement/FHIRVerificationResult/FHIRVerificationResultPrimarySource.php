@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,7 +90,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
     const FIELD_WHO = 'who';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -264,20 +264,27 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 $this->addType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
         }
-        if (isset($data[self::FIELD_VALIDATION_DATE])) {
-            $ext = (isset($data[self::FIELD_VALIDATION_DATE_EXT]) && is_array($data[self::FIELD_VALIDATION_DATE_EXT]))
-                ? $data[self::FIELD_VALIDATION_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_VALIDATION_DATE] instanceof FHIRDateTime) {
-                $this->setValidationDate($data[self::FIELD_VALIDATION_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_VALIDATION_DATE])) {
-                    $this->setValidationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_VALIDATION_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_VALIDATION_DATE])) {
-                    $this->setValidationDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_VALIDATION_DATE])));
-                }
+        if (isset($data[self::FIELD_VALIDATION_DATE]) || isset($data[self::FIELD_VALIDATION_DATE_EXT])) {
+            if (isset($data[self::FIELD_VALIDATION_DATE])) {
+                $value = $data[self::FIELD_VALIDATION_DATE];
             } else {
-                $this->setValidationDate(new FHIRDateTime($data[self::FIELD_VALIDATION_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_VALIDATION_DATE_EXT]) && is_array($data[self::FIELD_VALIDATION_DATE_EXT])) {
+                $ext = $data[self::FIELD_VALIDATION_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setValidationDate($value);
+                } else if (is_array($value)) {
+                    $this->setValidationDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setValidationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setValidationDate(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_VALIDATION_STATUS])) {
@@ -789,18 +796,38 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
             $a[self::FIELD_CAN_PUSH_UPDATES] = $v;
         }
         if ([] !== ($vs = $this->getCommunicationMethod())) {
-            $a[self::FIELD_COMMUNICATION_METHOD] = $vs;
+            $a[self::FIELD_COMMUNICATION_METHOD] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_COMMUNICATION_METHOD][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPushTypeAvailable())) {
-            $a[self::FIELD_PUSH_TYPE_AVAILABLE] = $vs;
+            $a[self::FIELD_PUSH_TYPE_AVAILABLE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PUSH_TYPE_AVAILABLE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getType())) {
-            $a[self::FIELD_TYPE] = $vs;
+            $a[self::FIELD_TYPE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_TYPE][] = $v;
+            }
         }
         if (null !== ($v = $this->getValidationDate())) {
             $a[self::FIELD_VALIDATION_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_VALIDATION_DATE_EXT] = $enc;
             }
         }
@@ -809,6 +836,9 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getWho())) {
             $a[self::FIELD_WHO] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

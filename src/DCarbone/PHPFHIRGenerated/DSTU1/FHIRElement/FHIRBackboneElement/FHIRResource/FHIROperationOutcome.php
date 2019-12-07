@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIROperationOutcome extends FHIRResource implements PHPFHIRContainedTypeI
     const FIELD_ISSUE = 'issue';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A collection of error, warning or information messages that result from a system
@@ -222,8 +222,8 @@ class FHIROperationOutcome extends FHIRResource implements PHPFHIRContainedTypeI
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -303,7 +303,16 @@ class FHIROperationOutcome extends FHIRResource implements PHPFHIRContainedTypeI
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getIssue())) {
-            $a[self::FIELD_ISSUE] = $vs;
+            $a[self::FIELD_ISSUE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ISSUE][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

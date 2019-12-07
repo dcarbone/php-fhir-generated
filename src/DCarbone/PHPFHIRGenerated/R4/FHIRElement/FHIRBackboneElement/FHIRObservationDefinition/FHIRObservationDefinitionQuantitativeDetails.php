@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     const FIELD_UNIT = 'unit';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A rational number with implicit precision
@@ -163,20 +163,27 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CONVERSION_FACTOR])) {
-            $ext = (isset($data[self::FIELD_CONVERSION_FACTOR_EXT]) && is_array($data[self::FIELD_CONVERSION_FACTOR_EXT]))
-                ? $data[self::FIELD_CONVERSION_FACTOR_EXT]
-                : null;
-            if ($data[self::FIELD_CONVERSION_FACTOR] instanceof FHIRDecimal) {
-                $this->setConversionFactor($data[self::FIELD_CONVERSION_FACTOR]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_CONVERSION_FACTOR])) {
-                    $this->setConversionFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_CONVERSION_FACTOR]] + $ext));
-                } else if (is_array($data[self::FIELD_CONVERSION_FACTOR])) {
-                    $this->setConversionFactor(new FHIRDecimal(array_merge($ext, $data[self::FIELD_CONVERSION_FACTOR])));
-                }
+        if (isset($data[self::FIELD_CONVERSION_FACTOR]) || isset($data[self::FIELD_CONVERSION_FACTOR_EXT])) {
+            if (isset($data[self::FIELD_CONVERSION_FACTOR])) {
+                $value = $data[self::FIELD_CONVERSION_FACTOR];
             } else {
-                $this->setConversionFactor(new FHIRDecimal($data[self::FIELD_CONVERSION_FACTOR]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_CONVERSION_FACTOR_EXT]) && is_array($data[self::FIELD_CONVERSION_FACTOR_EXT])) {
+                $ext = $data[self::FIELD_CONVERSION_FACTOR_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setConversionFactor($value);
+                } else if (is_array($value)) {
+                    $this->setConversionFactor(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setConversionFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setConversionFactor(new FHIRDecimal($ext));
             }
         }
         if (isset($data[self::FIELD_CUSTOMARY_UNIT])) {
@@ -186,20 +193,27 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
                 $this->setCustomaryUnit(new FHIRCodeableConcept($data[self::FIELD_CUSTOMARY_UNIT]));
             }
         }
-        if (isset($data[self::FIELD_DECIMAL_PRECISION])) {
-            $ext = (isset($data[self::FIELD_DECIMAL_PRECISION_EXT]) && is_array($data[self::FIELD_DECIMAL_PRECISION_EXT]))
-                ? $data[self::FIELD_DECIMAL_PRECISION_EXT]
-                : null;
-            if ($data[self::FIELD_DECIMAL_PRECISION] instanceof FHIRInteger) {
-                $this->setDecimalPrecision($data[self::FIELD_DECIMAL_PRECISION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DECIMAL_PRECISION])) {
-                    $this->setDecimalPrecision(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_DECIMAL_PRECISION]] + $ext));
-                } else if (is_array($data[self::FIELD_DECIMAL_PRECISION])) {
-                    $this->setDecimalPrecision(new FHIRInteger(array_merge($ext, $data[self::FIELD_DECIMAL_PRECISION])));
-                }
+        if (isset($data[self::FIELD_DECIMAL_PRECISION]) || isset($data[self::FIELD_DECIMAL_PRECISION_EXT])) {
+            if (isset($data[self::FIELD_DECIMAL_PRECISION])) {
+                $value = $data[self::FIELD_DECIMAL_PRECISION];
             } else {
-                $this->setDecimalPrecision(new FHIRInteger($data[self::FIELD_DECIMAL_PRECISION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DECIMAL_PRECISION_EXT]) && is_array($data[self::FIELD_DECIMAL_PRECISION_EXT])) {
+                $ext = $data[self::FIELD_DECIMAL_PRECISION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setDecimalPrecision($value);
+                } else if (is_array($value)) {
+                    $this->setDecimalPrecision(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setDecimalPrecision(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDecimalPrecision(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_UNIT])) {
@@ -495,8 +509,10 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getConversionFactor())) {
             $a[self::FIELD_CONVERSION_FACTOR] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDecimal::FIELD_VALUE]);
                 $a[self::FIELD_CONVERSION_FACTOR_EXT] = $enc;
             }
         }
@@ -505,13 +521,18 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDecimalPrecision())) {
             $a[self::FIELD_DECIMAL_PRECISION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_DECIMAL_PRECISION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getUnit())) {
             $a[self::FIELD_UNIT] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

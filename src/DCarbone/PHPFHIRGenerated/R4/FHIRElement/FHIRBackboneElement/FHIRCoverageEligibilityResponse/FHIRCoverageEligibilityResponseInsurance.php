@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
     const FIELD_ITEM = 'item';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A time period defined by a start and end date and optionally time.
@@ -171,20 +171,27 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
                 $this->setCoverage(new FHIRReference($data[self::FIELD_COVERAGE]));
             }
         }
-        if (isset($data[self::FIELD_INFORCE])) {
-            $ext = (isset($data[self::FIELD_INFORCE_EXT]) && is_array($data[self::FIELD_INFORCE_EXT]))
-                ? $data[self::FIELD_INFORCE_EXT]
-                : null;
-            if ($data[self::FIELD_INFORCE] instanceof FHIRBoolean) {
-                $this->setInforce($data[self::FIELD_INFORCE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_INFORCE])) {
-                    $this->setInforce(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_INFORCE]] + $ext));
-                } else if (is_array($data[self::FIELD_INFORCE])) {
-                    $this->setInforce(new FHIRBoolean(array_merge($ext, $data[self::FIELD_INFORCE])));
-                }
+        if (isset($data[self::FIELD_INFORCE]) || isset($data[self::FIELD_INFORCE_EXT])) {
+            if (isset($data[self::FIELD_INFORCE])) {
+                $value = $data[self::FIELD_INFORCE];
             } else {
-                $this->setInforce(new FHIRBoolean($data[self::FIELD_INFORCE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_INFORCE_EXT]) && is_array($data[self::FIELD_INFORCE_EXT])) {
+                $ext = $data[self::FIELD_INFORCE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setInforce($value);
+                } else if (is_array($value)) {
+                    $this->setInforce(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setInforce(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setInforce(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_ITEM])) {
@@ -504,13 +511,24 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getInforce())) {
             $a[self::FIELD_INFORCE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_INFORCE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getItem())) {
-            $a[self::FIELD_ITEM] = $vs;
+            $a[self::FIELD_ITEM] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ITEM][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

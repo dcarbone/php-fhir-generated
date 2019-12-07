@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRPatientCommunication extends FHIRBackboneElement
     const FIELD_PREFERRED_EXT = '_preferred';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -141,20 +141,27 @@ class FHIRPatientCommunication extends FHIRBackboneElement
                 $this->setLanguage(new FHIRCodeableConcept($data[self::FIELD_LANGUAGE]));
             }
         }
-        if (isset($data[self::FIELD_PREFERRED])) {
-            $ext = (isset($data[self::FIELD_PREFERRED_EXT]) && is_array($data[self::FIELD_PREFERRED_EXT]))
-                ? $data[self::FIELD_PREFERRED_EXT]
-                : null;
-            if ($data[self::FIELD_PREFERRED] instanceof FHIRBoolean) {
-                $this->setPreferred($data[self::FIELD_PREFERRED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PREFERRED])) {
-                    $this->setPreferred(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_PREFERRED]] + $ext));
-                } else if (is_array($data[self::FIELD_PREFERRED])) {
-                    $this->setPreferred(new FHIRBoolean(array_merge($ext, $data[self::FIELD_PREFERRED])));
-                }
+        if (isset($data[self::FIELD_PREFERRED]) || isset($data[self::FIELD_PREFERRED_EXT])) {
+            if (isset($data[self::FIELD_PREFERRED])) {
+                $value = $data[self::FIELD_PREFERRED];
             } else {
-                $this->setPreferred(new FHIRBoolean($data[self::FIELD_PREFERRED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PREFERRED_EXT]) && is_array($data[self::FIELD_PREFERRED_EXT])) {
+                $ext = $data[self::FIELD_PREFERRED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setPreferred($value);
+                } else if (is_array($value)) {
+                    $this->setPreferred(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setPreferred(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPreferred(new FHIRBoolean($ext));
             }
         }
     }
@@ -260,8 +267,8 @@ class FHIRPatientCommunication extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -352,10 +359,15 @@ class FHIRPatientCommunication extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getPreferred())) {
             $a[self::FIELD_PREFERRED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_PREFERRED_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

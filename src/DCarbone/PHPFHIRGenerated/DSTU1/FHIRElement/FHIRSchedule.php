@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ class FHIRSchedule extends FHIRElement
     const FIELD_REPEAT = 'repeat';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A time period defined by a start and end date and optionally time.
@@ -266,8 +266,8 @@ class FHIRSchedule extends FHIRElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -353,10 +353,19 @@ class FHIRSchedule extends FHIRElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getEvent())) {
-            $a[self::FIELD_EVENT] = $vs;
+            $a[self::FIELD_EVENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_EVENT][] = $v;
+            }
         }
         if (null !== ($v = $this->getRepeat())) {
             $a[self::FIELD_REPEAT] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

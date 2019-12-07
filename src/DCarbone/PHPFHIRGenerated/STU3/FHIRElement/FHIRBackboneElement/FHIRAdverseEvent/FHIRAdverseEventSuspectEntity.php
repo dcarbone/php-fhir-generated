@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAdv
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     const FIELD_INSTANCE = 'instance';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * TODO
@@ -199,20 +199,27 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CAUSALITY])) {
-            $ext = (isset($data[self::FIELD_CAUSALITY_EXT]) && is_array($data[self::FIELD_CAUSALITY_EXT]))
-                ? $data[self::FIELD_CAUSALITY_EXT]
-                : null;
-            if ($data[self::FIELD_CAUSALITY] instanceof FHIRAdverseEventCausality) {
-                $this->setCausality($data[self::FIELD_CAUSALITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_CAUSALITY])) {
-                    $this->setCausality(new FHIRAdverseEventCausality([FHIRAdverseEventCausality::FIELD_VALUE => $data[self::FIELD_CAUSALITY]] + $ext));
-                } else if (is_array($data[self::FIELD_CAUSALITY])) {
-                    $this->setCausality(new FHIRAdverseEventCausality(array_merge($ext, $data[self::FIELD_CAUSALITY])));
-                }
+        if (isset($data[self::FIELD_CAUSALITY]) || isset($data[self::FIELD_CAUSALITY_EXT])) {
+            if (isset($data[self::FIELD_CAUSALITY])) {
+                $value = $data[self::FIELD_CAUSALITY];
             } else {
-                $this->setCausality(new FHIRAdverseEventCausality($data[self::FIELD_CAUSALITY]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_CAUSALITY_EXT]) && is_array($data[self::FIELD_CAUSALITY_EXT])) {
+                $ext = $data[self::FIELD_CAUSALITY_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRAdverseEventCausality) {
+                    $this->setCausality($value);
+                } else if (is_array($value)) {
+                    $this->setCausality(new FHIRAdverseEventCausality(array_merge($ext, $value)));
+                } else {
+                    $this->setCausality(new FHIRAdverseEventCausality([FHIRAdverseEventCausality::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setCausality(new FHIRAdverseEventCausality($ext));
             }
         }
         if (isset($data[self::FIELD_CAUSALITY_ASSESSMENT])) {
@@ -236,20 +243,27 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 $this->setCausalityMethod(new FHIRCodeableConcept($data[self::FIELD_CAUSALITY_METHOD]));
             }
         }
-        if (isset($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
-            $ext = (isset($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT]) && is_array($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT]))
-                ? $data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT]
-                : null;
-            if ($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] instanceof FHIRString) {
-                $this->setCausalityProductRelatedness($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
-                    $this->setCausalityProductRelatedness(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS]] + $ext));
-                } else if (is_array($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
-                    $this->setCausalityProductRelatedness(new FHIRString(array_merge($ext, $data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])));
-                }
+        if (isset($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS]) || isset($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT])) {
+            if (isset($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
+                $value = $data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS];
             } else {
-                $this->setCausalityProductRelatedness(new FHIRString($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT]) && is_array($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT])) {
+                $ext = $data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setCausalityProductRelatedness($value);
+                } else if (is_array($value)) {
+                    $this->setCausalityProductRelatedness(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setCausalityProductRelatedness(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setCausalityProductRelatedness(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_CAUSALITY_RESULT])) {
@@ -519,8 +533,8 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -638,8 +652,10 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCausality())) {
             $a[self::FIELD_CAUSALITY] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRAdverseEventCausality::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRAdverseEventCausality::FIELD_VALUE]);
                 $a[self::FIELD_CAUSALITY_EXT] = $enc;
             }
         }
@@ -654,8 +670,10 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getCausalityProductRelatedness())) {
             $a[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT] = $enc;
             }
         }
@@ -664,6 +682,9 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getInstance())) {
             $a[self::FIELD_INSTANCE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

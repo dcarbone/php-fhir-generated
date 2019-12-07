@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
     const FIELD_ORGANIZATION = 'organization';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A signature along with supporting context. The signature may be a digital
@@ -154,20 +154,27 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
                 $this->setAttestationSignature(new FHIRSignature($data[self::FIELD_ATTESTATION_SIGNATURE]));
             }
         }
-        if (isset($data[self::FIELD_IDENTITY_CERTIFICATE])) {
-            $ext = (isset($data[self::FIELD_IDENTITY_CERTIFICATE_EXT]) && is_array($data[self::FIELD_IDENTITY_CERTIFICATE_EXT]))
-                ? $data[self::FIELD_IDENTITY_CERTIFICATE_EXT]
-                : null;
-            if ($data[self::FIELD_IDENTITY_CERTIFICATE] instanceof FHIRString) {
-                $this->setIdentityCertificate($data[self::FIELD_IDENTITY_CERTIFICATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_IDENTITY_CERTIFICATE])) {
-                    $this->setIdentityCertificate(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_IDENTITY_CERTIFICATE]] + $ext));
-                } else if (is_array($data[self::FIELD_IDENTITY_CERTIFICATE])) {
-                    $this->setIdentityCertificate(new FHIRString(array_merge($ext, $data[self::FIELD_IDENTITY_CERTIFICATE])));
-                }
+        if (isset($data[self::FIELD_IDENTITY_CERTIFICATE]) || isset($data[self::FIELD_IDENTITY_CERTIFICATE_EXT])) {
+            if (isset($data[self::FIELD_IDENTITY_CERTIFICATE])) {
+                $value = $data[self::FIELD_IDENTITY_CERTIFICATE];
             } else {
-                $this->setIdentityCertificate(new FHIRString($data[self::FIELD_IDENTITY_CERTIFICATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_IDENTITY_CERTIFICATE_EXT]) && is_array($data[self::FIELD_IDENTITY_CERTIFICATE_EXT])) {
+                $ext = $data[self::FIELD_IDENTITY_CERTIFICATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setIdentityCertificate($value);
+                } else if (is_array($value)) {
+                    $this->setIdentityCertificate(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setIdentityCertificate(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setIdentityCertificate(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_ORGANIZATION])) {
@@ -408,13 +415,18 @@ class FHIRVerificationResultValidator extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getIdentityCertificate())) {
             $a[self::FIELD_IDENTITY_CERTIFICATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_IDENTITY_CERTIFICATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getOrganization())) {
             $a[self::FIELD_ORGANIZATION] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

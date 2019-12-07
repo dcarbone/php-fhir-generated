@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -82,7 +82,7 @@ class FHIRProcessRequestItem extends FHIRBackboneElement
     const FIELD_SEQUENCE_LINK_ID_EXT = '_sequenceLinkId';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A whole number
@@ -117,20 +117,27 @@ class FHIRProcessRequestItem extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_SEQUENCE_LINK_ID])) {
-            $ext = (isset($data[self::FIELD_SEQUENCE_LINK_ID_EXT]) && is_array($data[self::FIELD_SEQUENCE_LINK_ID_EXT]))
-                ? $data[self::FIELD_SEQUENCE_LINK_ID_EXT]
-                : null;
-            if ($data[self::FIELD_SEQUENCE_LINK_ID] instanceof FHIRInteger) {
-                $this->setSequenceLinkId($data[self::FIELD_SEQUENCE_LINK_ID]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SEQUENCE_LINK_ID])) {
-                    $this->setSequenceLinkId(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_SEQUENCE_LINK_ID]] + $ext));
-                } else if (is_array($data[self::FIELD_SEQUENCE_LINK_ID])) {
-                    $this->setSequenceLinkId(new FHIRInteger(array_merge($ext, $data[self::FIELD_SEQUENCE_LINK_ID])));
-                }
+        if (isset($data[self::FIELD_SEQUENCE_LINK_ID]) || isset($data[self::FIELD_SEQUENCE_LINK_ID_EXT])) {
+            if (isset($data[self::FIELD_SEQUENCE_LINK_ID])) {
+                $value = $data[self::FIELD_SEQUENCE_LINK_ID];
             } else {
-                $this->setSequenceLinkId(new FHIRInteger($data[self::FIELD_SEQUENCE_LINK_ID]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SEQUENCE_LINK_ID_EXT]) && is_array($data[self::FIELD_SEQUENCE_LINK_ID_EXT])) {
+                $ext = $data[self::FIELD_SEQUENCE_LINK_ID_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setSequenceLinkId($value);
+                } else if (is_array($value)) {
+                    $this->setSequenceLinkId(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setSequenceLinkId(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setSequenceLinkId(new FHIRInteger($ext));
             }
         }
     }
@@ -198,8 +205,8 @@ class FHIRProcessRequestItem extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -281,10 +288,15 @@ class FHIRProcessRequestItem extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getSequenceLinkId())) {
             $a[self::FIELD_SEQUENCE_LINK_ID] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_SEQUENCE_LINK_ID_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

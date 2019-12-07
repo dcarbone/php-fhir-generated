@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     const FIELD_ACTION_RESULTING = 'actionResulting';
     const FIELD_DETAIL = 'detail';
     const FIELD_GOAL = 'goal';
-    const FIELD_GOAL_EXT = '_goal';
     const FIELD_NOTES = 'notes';
     const FIELD_NOTES_EXT = '_notes';
     const FIELD_PROHIBITED = 'prohibited';
@@ -91,7 +90,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     const FIELD_STATUS_EXT = '_status';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -226,36 +225,50 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
                 $this->addGoal($data[self::FIELD_GOAL]);
             }
         }
-        if (isset($data[self::FIELD_NOTES])) {
-            $ext = (isset($data[self::FIELD_NOTES_EXT]) && is_array($data[self::FIELD_NOTES_EXT]))
-                ? $data[self::FIELD_NOTES_EXT]
-                : null;
-            if ($data[self::FIELD_NOTES] instanceof FHIRString) {
-                $this->setNotes($data[self::FIELD_NOTES]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_NOTES])) {
-                    $this->setNotes(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NOTES]] + $ext));
-                } else if (is_array($data[self::FIELD_NOTES])) {
-                    $this->setNotes(new FHIRString(array_merge($ext, $data[self::FIELD_NOTES])));
-                }
+        if (isset($data[self::FIELD_NOTES]) || isset($data[self::FIELD_NOTES_EXT])) {
+            if (isset($data[self::FIELD_NOTES])) {
+                $value = $data[self::FIELD_NOTES];
             } else {
-                $this->setNotes(new FHIRString($data[self::FIELD_NOTES]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_NOTES_EXT]) && is_array($data[self::FIELD_NOTES_EXT])) {
+                $ext = $data[self::FIELD_NOTES_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setNotes($value);
+                } else if (is_array($value)) {
+                    $this->setNotes(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setNotes(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setNotes(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_PROHIBITED])) {
-            $ext = (isset($data[self::FIELD_PROHIBITED_EXT]) && is_array($data[self::FIELD_PROHIBITED_EXT]))
-                ? $data[self::FIELD_PROHIBITED_EXT]
-                : null;
-            if ($data[self::FIELD_PROHIBITED] instanceof FHIRBoolean) {
-                $this->setProhibited($data[self::FIELD_PROHIBITED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PROHIBITED])) {
-                    $this->setProhibited(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_PROHIBITED]] + $ext));
-                } else if (is_array($data[self::FIELD_PROHIBITED])) {
-                    $this->setProhibited(new FHIRBoolean(array_merge($ext, $data[self::FIELD_PROHIBITED])));
-                }
+        if (isset($data[self::FIELD_PROHIBITED]) || isset($data[self::FIELD_PROHIBITED_EXT])) {
+            if (isset($data[self::FIELD_PROHIBITED])) {
+                $value = $data[self::FIELD_PROHIBITED];
             } else {
-                $this->setProhibited(new FHIRBoolean($data[self::FIELD_PROHIBITED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PROHIBITED_EXT]) && is_array($data[self::FIELD_PROHIBITED_EXT])) {
+                $ext = $data[self::FIELD_PROHIBITED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setProhibited($value);
+                } else if (is_array($value)) {
+                    $this->setProhibited(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setProhibited(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setProhibited(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_SIMPLE])) {
@@ -265,20 +278,27 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
                 $this->setSimple(new FHIRCarePlanSimple($data[self::FIELD_SIMPLE]));
             }
         }
-        if (isset($data[self::FIELD_STATUS])) {
-            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT]))
-                ? $data[self::FIELD_STATUS_EXT]
-                : null;
-            if ($data[self::FIELD_STATUS] instanceof FHIRCarePlanActivityStatus) {
-                $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRCarePlanActivityStatus([FHIRCarePlanActivityStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
-                } else if (is_array($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRCarePlanActivityStatus(array_merge($ext, $data[self::FIELD_STATUS])));
-                }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            if (isset($data[self::FIELD_STATUS])) {
+                $value = $data[self::FIELD_STATUS];
             } else {
-                $this->setStatus(new FHIRCarePlanActivityStatus($data[self::FIELD_STATUS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
+                $ext = $data[self::FIELD_STATUS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRCarePlanActivityStatus) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIRCarePlanActivityStatus(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIRCarePlanActivityStatus([FHIRCarePlanActivityStatus::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setStatus(new FHIRCarePlanActivityStatus($ext));
             }
         }
     }
@@ -578,8 +598,8 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -718,37 +738,41 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getActionResulting())) {
-            $a[self::FIELD_ACTION_RESULTING] = $vs;
+            $a[self::FIELD_ACTION_RESULTING] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ACTION_RESULTING][] = $v;
+            }
         }
         if (null !== ($v = $this->getDetail())) {
             $a[self::FIELD_DETAIL] = $v;
         }
         if ([] !== ($vs = $this->getGoal())) {
             $a[self::FIELD_GOAL] = [];
-            foreach ($vs as $v) {
+            foreach($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_GOAL][] = $v->getValue();
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_GOAL_EXT][] = $enc;
-                } else {
-                    $a[self::FIELD_GOAL_EXT][] = null;
-                }
+                $a[self::FIELD_GOAL][] = $v;
             }
         }
         if (null !== ($v = $this->getNotes())) {
             $a[self::FIELD_NOTES] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_NOTES_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getProhibited())) {
             $a[self::FIELD_PROHIBITED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_PROHIBITED_EXT] = $enc;
             }
         }
@@ -757,10 +781,15 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCarePlanActivityStatus::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRCarePlanActivityStatus::FIELD_VALUE]);
                 $a[self::FIELD_STATUS_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

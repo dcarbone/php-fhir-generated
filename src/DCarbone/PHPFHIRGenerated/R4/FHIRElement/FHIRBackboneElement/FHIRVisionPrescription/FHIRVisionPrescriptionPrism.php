@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisio
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
     const FIELD_BASE_EXT = '_base';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A rational number with implicit precision
@@ -131,36 +131,50 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_AMOUNT])) {
-            $ext = (isset($data[self::FIELD_AMOUNT_EXT]) && is_array($data[self::FIELD_AMOUNT_EXT]))
-                ? $data[self::FIELD_AMOUNT_EXT]
-                : null;
-            if ($data[self::FIELD_AMOUNT] instanceof FHIRDecimal) {
-                $this->setAmount($data[self::FIELD_AMOUNT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AMOUNT])) {
-                    $this->setAmount(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_AMOUNT]] + $ext));
-                } else if (is_array($data[self::FIELD_AMOUNT])) {
-                    $this->setAmount(new FHIRDecimal(array_merge($ext, $data[self::FIELD_AMOUNT])));
-                }
+        if (isset($data[self::FIELD_AMOUNT]) || isset($data[self::FIELD_AMOUNT_EXT])) {
+            if (isset($data[self::FIELD_AMOUNT])) {
+                $value = $data[self::FIELD_AMOUNT];
             } else {
-                $this->setAmount(new FHIRDecimal($data[self::FIELD_AMOUNT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_AMOUNT_EXT]) && is_array($data[self::FIELD_AMOUNT_EXT])) {
+                $ext = $data[self::FIELD_AMOUNT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setAmount($value);
+                } else if (is_array($value)) {
+                    $this->setAmount(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setAmount(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAmount(new FHIRDecimal($ext));
             }
         }
-        if (isset($data[self::FIELD_BASE])) {
-            $ext = (isset($data[self::FIELD_BASE_EXT]) && is_array($data[self::FIELD_BASE_EXT]))
-                ? $data[self::FIELD_BASE_EXT]
-                : null;
-            if ($data[self::FIELD_BASE] instanceof FHIRVisionBase) {
-                $this->setBase($data[self::FIELD_BASE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_BASE])) {
-                    $this->setBase(new FHIRVisionBase([FHIRVisionBase::FIELD_VALUE => $data[self::FIELD_BASE]] + $ext));
-                } else if (is_array($data[self::FIELD_BASE])) {
-                    $this->setBase(new FHIRVisionBase(array_merge($ext, $data[self::FIELD_BASE])));
-                }
+        if (isset($data[self::FIELD_BASE]) || isset($data[self::FIELD_BASE_EXT])) {
+            if (isset($data[self::FIELD_BASE])) {
+                $value = $data[self::FIELD_BASE];
             } else {
-                $this->setBase(new FHIRVisionBase($data[self::FIELD_BASE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_BASE_EXT]) && is_array($data[self::FIELD_BASE_EXT])) {
+                $ext = $data[self::FIELD_BASE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRVisionBase) {
+                    $this->setBase($value);
+                } else if (is_array($value)) {
+                    $this->setBase(new FHIRVisionBase(array_merge($ext, $value)));
+                } else {
+                    $this->setBase(new FHIRVisionBase([FHIRVisionBase::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setBase(new FHIRVisionBase($ext));
             }
         }
     }
@@ -347,17 +361,24 @@ class FHIRVisionPrescriptionPrism extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAmount())) {
             $a[self::FIELD_AMOUNT] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDecimal::FIELD_VALUE]);
                 $a[self::FIELD_AMOUNT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getBase())) {
             $a[self::FIELD_BASE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRVisionBase::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRVisionBase::FIELD_VALUE]);
                 $a[self::FIELD_BASE_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

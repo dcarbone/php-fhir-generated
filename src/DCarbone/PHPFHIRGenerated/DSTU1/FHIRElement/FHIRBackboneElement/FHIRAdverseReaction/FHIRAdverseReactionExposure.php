@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRAd
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
     const FIELD_TYPE_EXT = '_type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * How likely is it that the given exposure caused a reaction
@@ -155,36 +155,50 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CAUSALITY_EXPECTATION])) {
-            $ext = (isset($data[self::FIELD_CAUSALITY_EXPECTATION_EXT]) && is_array($data[self::FIELD_CAUSALITY_EXPECTATION_EXT]))
-                ? $data[self::FIELD_CAUSALITY_EXPECTATION_EXT]
-                : null;
-            if ($data[self::FIELD_CAUSALITY_EXPECTATION] instanceof FHIRCausalityExpectation) {
-                $this->setCausalityExpectation($data[self::FIELD_CAUSALITY_EXPECTATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_CAUSALITY_EXPECTATION])) {
-                    $this->setCausalityExpectation(new FHIRCausalityExpectation([FHIRCausalityExpectation::FIELD_VALUE => $data[self::FIELD_CAUSALITY_EXPECTATION]] + $ext));
-                } else if (is_array($data[self::FIELD_CAUSALITY_EXPECTATION])) {
-                    $this->setCausalityExpectation(new FHIRCausalityExpectation(array_merge($ext, $data[self::FIELD_CAUSALITY_EXPECTATION])));
-                }
+        if (isset($data[self::FIELD_CAUSALITY_EXPECTATION]) || isset($data[self::FIELD_CAUSALITY_EXPECTATION_EXT])) {
+            if (isset($data[self::FIELD_CAUSALITY_EXPECTATION])) {
+                $value = $data[self::FIELD_CAUSALITY_EXPECTATION];
             } else {
-                $this->setCausalityExpectation(new FHIRCausalityExpectation($data[self::FIELD_CAUSALITY_EXPECTATION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_CAUSALITY_EXPECTATION_EXT]) && is_array($data[self::FIELD_CAUSALITY_EXPECTATION_EXT])) {
+                $ext = $data[self::FIELD_CAUSALITY_EXPECTATION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRCausalityExpectation) {
+                    $this->setCausalityExpectation($value);
+                } else if (is_array($value)) {
+                    $this->setCausalityExpectation(new FHIRCausalityExpectation(array_merge($ext, $value)));
+                } else {
+                    $this->setCausalityExpectation(new FHIRCausalityExpectation([FHIRCausalityExpectation::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setCausalityExpectation(new FHIRCausalityExpectation($ext));
             }
         }
-        if (isset($data[self::FIELD_DATE])) {
-            $ext = (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT]))
-                ? $data[self::FIELD_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_DATE] instanceof FHIRDateTime) {
-                $this->setDate($data[self::FIELD_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DATE])) {
-                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_DATE])) {
-                    $this->setDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_DATE])));
-                }
+        if (isset($data[self::FIELD_DATE]) || isset($data[self::FIELD_DATE_EXT])) {
+            if (isset($data[self::FIELD_DATE])) {
+                $value = $data[self::FIELD_DATE];
             } else {
-                $this->setDate(new FHIRDateTime($data[self::FIELD_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT])) {
+                $ext = $data[self::FIELD_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setDate($value);
+                } else if (is_array($value)) {
+                    $this->setDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDate(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_SUBSTANCE])) {
@@ -194,20 +208,27 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
                 $this->setSubstance(new FHIRResourceReference($data[self::FIELD_SUBSTANCE]));
             }
         }
-        if (isset($data[self::FIELD_TYPE])) {
-            $ext = (isset($data[self::FIELD_TYPE_EXT]) && is_array($data[self::FIELD_TYPE_EXT]))
-                ? $data[self::FIELD_TYPE_EXT]
-                : null;
-            if ($data[self::FIELD_TYPE] instanceof FHIRExposureType) {
-                $this->setType($data[self::FIELD_TYPE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_TYPE])) {
-                    $this->setType(new FHIRExposureType([FHIRExposureType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
-                } else if (is_array($data[self::FIELD_TYPE])) {
-                    $this->setType(new FHIRExposureType(array_merge($ext, $data[self::FIELD_TYPE])));
-                }
+        if (isset($data[self::FIELD_TYPE]) || isset($data[self::FIELD_TYPE_EXT])) {
+            if (isset($data[self::FIELD_TYPE])) {
+                $value = $data[self::FIELD_TYPE];
             } else {
-                $this->setType(new FHIRExposureType($data[self::FIELD_TYPE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_TYPE_EXT]) && is_array($data[self::FIELD_TYPE_EXT])) {
+                $ext = $data[self::FIELD_TYPE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRExposureType) {
+                    $this->setType($value);
+                } else if (is_array($value)) {
+                    $this->setType(new FHIRExposureType(array_merge($ext, $value)));
+                } else {
+                    $this->setType(new FHIRExposureType([FHIRExposureType::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setType(new FHIRExposureType($ext));
             }
         }
     }
@@ -369,8 +390,8 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -470,15 +491,19 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCausalityExpectation())) {
             $a[self::FIELD_CAUSALITY_EXPECTATION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCausalityExpectation::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRCausalityExpectation::FIELD_VALUE]);
                 $a[self::FIELD_CAUSALITY_EXPECTATION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_DATE_EXT] = $enc;
             }
         }
@@ -487,10 +512,15 @@ class FHIRAdverseReactionExposure extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRExposureType::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRExposureType::FIELD_VALUE]);
                 $a[self::FIELD_TYPE_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

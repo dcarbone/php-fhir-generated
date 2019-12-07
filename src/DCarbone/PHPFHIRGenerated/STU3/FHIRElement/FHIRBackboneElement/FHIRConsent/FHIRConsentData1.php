@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRConsentData1 extends FHIRBackboneElement
     const FIELD_REFERENCE = 'reference';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * How a resource reference is interpreted when testing consent restrictions
@@ -131,20 +131,27 @@ class FHIRConsentData1 extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_MEANING])) {
-            $ext = (isset($data[self::FIELD_MEANING_EXT]) && is_array($data[self::FIELD_MEANING_EXT]))
-                ? $data[self::FIELD_MEANING_EXT]
-                : null;
-            if ($data[self::FIELD_MEANING] instanceof FHIRConsentDataMeaning) {
-                $this->setMeaning($data[self::FIELD_MEANING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_MEANING])) {
-                    $this->setMeaning(new FHIRConsentDataMeaning([FHIRConsentDataMeaning::FIELD_VALUE => $data[self::FIELD_MEANING]] + $ext));
-                } else if (is_array($data[self::FIELD_MEANING])) {
-                    $this->setMeaning(new FHIRConsentDataMeaning(array_merge($ext, $data[self::FIELD_MEANING])));
-                }
+        if (isset($data[self::FIELD_MEANING]) || isset($data[self::FIELD_MEANING_EXT])) {
+            if (isset($data[self::FIELD_MEANING])) {
+                $value = $data[self::FIELD_MEANING];
             } else {
-                $this->setMeaning(new FHIRConsentDataMeaning($data[self::FIELD_MEANING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_MEANING_EXT]) && is_array($data[self::FIELD_MEANING_EXT])) {
+                $ext = $data[self::FIELD_MEANING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRConsentDataMeaning) {
+                    $this->setMeaning($value);
+                } else if (is_array($value)) {
+                    $this->setMeaning(new FHIRConsentDataMeaning(array_merge($ext, $value)));
+                } else {
+                    $this->setMeaning(new FHIRConsentDataMeaning([FHIRConsentDataMeaning::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setMeaning(new FHIRConsentDataMeaning($ext));
             }
         }
         if (isset($data[self::FIELD_REFERENCE])) {
@@ -241,8 +248,8 @@ class FHIRConsentData1 extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -322,13 +329,18 @@ class FHIRConsentData1 extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getMeaning())) {
             $a[self::FIELD_MEANING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRConsentDataMeaning::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRConsentDataMeaning::FIELD_VALUE]);
                 $a[self::FIELD_MEANING_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getReference())) {
             $a[self::FIELD_REFERENCE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

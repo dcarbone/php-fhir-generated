@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRAnnotation extends FHIRElement
     const FIELD_TIME_EXT = '_time';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -172,52 +172,73 @@ class FHIRAnnotation extends FHIRElement
                 $this->setAuthorReference(new FHIRReference($data[self::FIELD_AUTHOR_REFERENCE]));
             }
         }
-        if (isset($data[self::FIELD_AUTHOR_STRING])) {
-            $ext = (isset($data[self::FIELD_AUTHOR_STRING_EXT]) && is_array($data[self::FIELD_AUTHOR_STRING_EXT]))
-                ? $data[self::FIELD_AUTHOR_STRING_EXT]
-                : null;
-            if ($data[self::FIELD_AUTHOR_STRING] instanceof FHIRString) {
-                $this->setAuthorString($data[self::FIELD_AUTHOR_STRING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AUTHOR_STRING])) {
-                    $this->setAuthorString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_AUTHOR_STRING]] + $ext));
-                } else if (is_array($data[self::FIELD_AUTHOR_STRING])) {
-                    $this->setAuthorString(new FHIRString(array_merge($ext, $data[self::FIELD_AUTHOR_STRING])));
-                }
+        if (isset($data[self::FIELD_AUTHOR_STRING]) || isset($data[self::FIELD_AUTHOR_STRING_EXT])) {
+            if (isset($data[self::FIELD_AUTHOR_STRING])) {
+                $value = $data[self::FIELD_AUTHOR_STRING];
             } else {
-                $this->setAuthorString(new FHIRString($data[self::FIELD_AUTHOR_STRING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_AUTHOR_STRING_EXT]) && is_array($data[self::FIELD_AUTHOR_STRING_EXT])) {
+                $ext = $data[self::FIELD_AUTHOR_STRING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setAuthorString($value);
+                } else if (is_array($value)) {
+                    $this->setAuthorString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setAuthorString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAuthorString(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_TEXT])) {
-            $ext = (isset($data[self::FIELD_TEXT_EXT]) && is_array($data[self::FIELD_TEXT_EXT]))
-                ? $data[self::FIELD_TEXT_EXT]
-                : null;
-            if ($data[self::FIELD_TEXT] instanceof FHIRMarkdown) {
-                $this->setText($data[self::FIELD_TEXT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_TEXT])) {
-                    $this->setText(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_TEXT]] + $ext));
-                } else if (is_array($data[self::FIELD_TEXT])) {
-                    $this->setText(new FHIRMarkdown(array_merge($ext, $data[self::FIELD_TEXT])));
-                }
+        if (isset($data[self::FIELD_TEXT]) || isset($data[self::FIELD_TEXT_EXT])) {
+            if (isset($data[self::FIELD_TEXT])) {
+                $value = $data[self::FIELD_TEXT];
             } else {
-                $this->setText(new FHIRMarkdown($data[self::FIELD_TEXT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_TEXT_EXT]) && is_array($data[self::FIELD_TEXT_EXT])) {
+                $ext = $data[self::FIELD_TEXT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRMarkdown) {
+                    $this->setText($value);
+                } else if (is_array($value)) {
+                    $this->setText(new FHIRMarkdown(array_merge($ext, $value)));
+                } else {
+                    $this->setText(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setText(new FHIRMarkdown($ext));
             }
         }
-        if (isset($data[self::FIELD_TIME])) {
-            $ext = (isset($data[self::FIELD_TIME_EXT]) && is_array($data[self::FIELD_TIME_EXT]))
-                ? $data[self::FIELD_TIME_EXT]
-                : null;
-            if ($data[self::FIELD_TIME] instanceof FHIRDateTime) {
-                $this->setTime($data[self::FIELD_TIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_TIME])) {
-                    $this->setTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_TIME]] + $ext));
-                } else if (is_array($data[self::FIELD_TIME])) {
-                    $this->setTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_TIME])));
-                }
+        if (isset($data[self::FIELD_TIME]) || isset($data[self::FIELD_TIME_EXT])) {
+            if (isset($data[self::FIELD_TIME])) {
+                $value = $data[self::FIELD_TIME];
             } else {
-                $this->setTime(new FHIRDateTime($data[self::FIELD_TIME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_TIME_EXT]) && is_array($data[self::FIELD_TIME_EXT])) {
+                $ext = $data[self::FIELD_TIME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setTime($value);
+                } else if (is_array($value)) {
+                    $this->setTime(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setTime(new FHIRDateTime($ext));
             }
         }
     }
@@ -529,24 +550,33 @@ class FHIRAnnotation extends FHIRElement
         }
         if (null !== ($v = $this->getAuthorString())) {
             $a[self::FIELD_AUTHOR_STRING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_AUTHOR_STRING_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getText())) {
             $a[self::FIELD_TEXT] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMarkdown::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRMarkdown::FIELD_VALUE]);
                 $a[self::FIELD_TEXT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getTime())) {
             $a[self::FIELD_TIME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_TIME_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

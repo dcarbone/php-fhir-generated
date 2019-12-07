@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,7 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
     const FIELD_VALIDITY_PERIOD = 'validityPeriod';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A length of time.
@@ -229,20 +229,27 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
                 $this->setInitialFill(new FHIRMedicationRequestInitialFill($data[self::FIELD_INITIAL_FILL]));
             }
         }
-        if (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])) {
-            $ext = (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT]) && is_array($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT]))
-                ? $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT]
-                : null;
-            if ($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] instanceof FHIRUnsignedInt) {
-                $this->setNumberOfRepeatsAllowed($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])) {
-                    $this->setNumberOfRepeatsAllowed(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]] + $ext));
-                } else if (is_array($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])) {
-                    $this->setNumberOfRepeatsAllowed(new FHIRUnsignedInt(array_merge($ext, $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])));
-                }
+        if (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]) || isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT])) {
+            if (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])) {
+                $value = $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED];
             } else {
-                $this->setNumberOfRepeatsAllowed(new FHIRUnsignedInt($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT]) && is_array($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT])) {
+                $ext = $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUnsignedInt) {
+                    $this->setNumberOfRepeatsAllowed($value);
+                } else if (is_array($value)) {
+                    $this->setNumberOfRepeatsAllowed(new FHIRUnsignedInt(array_merge($ext, $value)));
+                } else {
+                    $this->setNumberOfRepeatsAllowed(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setNumberOfRepeatsAllowed(new FHIRUnsignedInt($ext));
             }
         }
         if (isset($data[self::FIELD_PERFORMER])) {
@@ -663,8 +670,10 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getNumberOfRepeatsAllowed())) {
             $a[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUnsignedInt::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUnsignedInt::FIELD_VALUE]);
                 $a[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT] = $enc;
             }
         }
@@ -676,6 +685,9 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getValidityPeriod())) {
             $a[self::FIELD_VALIDITY_PERIOD] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

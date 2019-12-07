@@ -5,7 +5,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTests\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRSubscriptionTest extends TestCase
      */
     protected function fetchResource($format)
     {
-        $url = sprintf('http://hapi.fhir.org/baseDstu3/Subscription/?_count=1&_format=%s&_pretty=true', $format);
+        $url = sprintf('http://hapi.fhir.org/baseDstu3/Subscription/?_count=1&_format=%s', $format);
         $ch = curl_init($url);
         curl_setopt_array($ch, [
             CURLOPT_RETURNTRANSFER => true,
@@ -190,23 +190,21 @@ class FHIRSubscriptionTest extends TestCase
             ));
             return;
         }
-        $this->assertCount(1, $bundle->getEntry());
-        $entry = $bundle->getEntry()[0]->getResource();
-        $json2 = json_encode($entry, JSON_PRETTY_PRINT);
-        $decoded2 = $this->decodeJSON($json2, true);
+
+        $reEncoded = json_encode($bundle);
         try {
-            $type = new FHIRSubscription($decoded2);
+            $this->assertEquals($decoded, $this->decodeJSON($reEncoded, true));
         } catch (\Exception $e) {
             throw new AssertionFailedError(
                 sprintf(
-                    'Error building type "Subscription" from JSON: %s; JSON: %s',
+                    "json_encode output of \"FHIRSubscription\" does not match input: %s\nSource:\n%s\nRe-encoded:\n%s\n",
                     $e->getMessage(),
-                    $json2
+                    $json,
+                    $reEncoded
                 ),
                 $e->getCode(),
                 $e
             );
         }
-        $this->assertEquals(json_encode($entry, JSON_PRETTY_PRINT), json_encode($type, JSON_PRETTY_PRINT));
     }
 }

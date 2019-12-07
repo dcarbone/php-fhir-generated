@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,7 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
     const FIELD_WHEN_GIVEN = 'whenGiven';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -300,20 +300,27 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
                 $this->addReasonNotGiven(new FHIRCodeableConcept($data[self::FIELD_REASON_NOT_GIVEN]));
             }
         }
-        if (isset($data[self::FIELD_WAS_NOT_GIVEN])) {
-            $ext = (isset($data[self::FIELD_WAS_NOT_GIVEN_EXT]) && is_array($data[self::FIELD_WAS_NOT_GIVEN_EXT]))
-                ? $data[self::FIELD_WAS_NOT_GIVEN_EXT]
-                : null;
-            if ($data[self::FIELD_WAS_NOT_GIVEN] instanceof FHIRBoolean) {
-                $this->setWasNotGiven($data[self::FIELD_WAS_NOT_GIVEN]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_WAS_NOT_GIVEN])) {
-                    $this->setWasNotGiven(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_WAS_NOT_GIVEN]] + $ext));
-                } else if (is_array($data[self::FIELD_WAS_NOT_GIVEN])) {
-                    $this->setWasNotGiven(new FHIRBoolean(array_merge($ext, $data[self::FIELD_WAS_NOT_GIVEN])));
-                }
+        if (isset($data[self::FIELD_WAS_NOT_GIVEN]) || isset($data[self::FIELD_WAS_NOT_GIVEN_EXT])) {
+            if (isset($data[self::FIELD_WAS_NOT_GIVEN])) {
+                $value = $data[self::FIELD_WAS_NOT_GIVEN];
             } else {
-                $this->setWasNotGiven(new FHIRBoolean($data[self::FIELD_WAS_NOT_GIVEN]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_WAS_NOT_GIVEN_EXT]) && is_array($data[self::FIELD_WAS_NOT_GIVEN_EXT])) {
+                $ext = $data[self::FIELD_WAS_NOT_GIVEN_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setWasNotGiven($value);
+                } else if (is_array($value)) {
+                    $this->setWasNotGiven(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setWasNotGiven(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setWasNotGiven(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_WHEN_GIVEN])) {
@@ -738,8 +745,8 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -890,13 +897,31 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getDevice())) {
-            $a[self::FIELD_DEVICE] = $vs;
+            $a[self::FIELD_DEVICE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_DEVICE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getDosage())) {
-            $a[self::FIELD_DOSAGE] = $vs;
+            $a[self::FIELD_DOSAGE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_DOSAGE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if (null !== ($v = $this->getMedication())) {
             $a[self::FIELD_MEDICATION] = $v;
@@ -905,17 +930,28 @@ class FHIRMedicationStatement extends FHIRResource implements PHPFHIRContainedTy
             $a[self::FIELD_PATIENT] = $v;
         }
         if ([] !== ($vs = $this->getReasonNotGiven())) {
-            $a[self::FIELD_REASON_NOT_GIVEN] = $vs;
+            $a[self::FIELD_REASON_NOT_GIVEN] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_REASON_NOT_GIVEN][] = $v;
+            }
         }
         if (null !== ($v = $this->getWasNotGiven())) {
             $a[self::FIELD_WAS_NOT_GIVEN] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_WAS_NOT_GIVEN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getWhenGiven())) {
             $a[self::FIELD_WHEN_GIVEN] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

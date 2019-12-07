@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,7 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -261,36 +261,50 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
                 $this->setLanguageCode(new FHIRCodeableConcept($data[self::FIELD_LANGUAGE_CODE]));
             }
         }
-        if (isset($data[self::FIELD_LAST_SYSTEM_CHANGE])) {
-            $ext = (isset($data[self::FIELD_LAST_SYSTEM_CHANGE_EXT]) && is_array($data[self::FIELD_LAST_SYSTEM_CHANGE_EXT]))
-                ? $data[self::FIELD_LAST_SYSTEM_CHANGE_EXT]
-                : null;
-            if ($data[self::FIELD_LAST_SYSTEM_CHANGE] instanceof FHIRInstant) {
-                $this->setLastSystemChange($data[self::FIELD_LAST_SYSTEM_CHANGE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_LAST_SYSTEM_CHANGE])) {
-                    $this->setLastSystemChange(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_LAST_SYSTEM_CHANGE]] + $ext));
-                } else if (is_array($data[self::FIELD_LAST_SYSTEM_CHANGE])) {
-                    $this->setLastSystemChange(new FHIRInstant(array_merge($ext, $data[self::FIELD_LAST_SYSTEM_CHANGE])));
-                }
+        if (isset($data[self::FIELD_LAST_SYSTEM_CHANGE]) || isset($data[self::FIELD_LAST_SYSTEM_CHANGE_EXT])) {
+            if (isset($data[self::FIELD_LAST_SYSTEM_CHANGE])) {
+                $value = $data[self::FIELD_LAST_SYSTEM_CHANGE];
             } else {
-                $this->setLastSystemChange(new FHIRInstant($data[self::FIELD_LAST_SYSTEM_CHANGE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_LAST_SYSTEM_CHANGE_EXT]) && is_array($data[self::FIELD_LAST_SYSTEM_CHANGE_EXT])) {
+                $ext = $data[self::FIELD_LAST_SYSTEM_CHANGE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInstant) {
+                    $this->setLastSystemChange($value);
+                } else if (is_array($value)) {
+                    $this->setLastSystemChange(new FHIRInstant(array_merge($ext, $value)));
+                } else {
+                    $this->setLastSystemChange(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setLastSystemChange(new FHIRInstant($ext));
             }
         }
-        if (isset($data[self::FIELD_MEASUREMENT_PRINCIPLE])) {
-            $ext = (isset($data[self::FIELD_MEASUREMENT_PRINCIPLE_EXT]) && is_array($data[self::FIELD_MEASUREMENT_PRINCIPLE_EXT]))
-                ? $data[self::FIELD_MEASUREMENT_PRINCIPLE_EXT]
-                : null;
-            if ($data[self::FIELD_MEASUREMENT_PRINCIPLE] instanceof FHIRMeasmnt_Principle) {
-                $this->setMeasurementPrinciple($data[self::FIELD_MEASUREMENT_PRINCIPLE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_MEASUREMENT_PRINCIPLE])) {
-                    $this->setMeasurementPrinciple(new FHIRMeasmnt_Principle([FHIRMeasmnt_Principle::FIELD_VALUE => $data[self::FIELD_MEASUREMENT_PRINCIPLE]] + $ext));
-                } else if (is_array($data[self::FIELD_MEASUREMENT_PRINCIPLE])) {
-                    $this->setMeasurementPrinciple(new FHIRMeasmnt_Principle(array_merge($ext, $data[self::FIELD_MEASUREMENT_PRINCIPLE])));
-                }
+        if (isset($data[self::FIELD_MEASUREMENT_PRINCIPLE]) || isset($data[self::FIELD_MEASUREMENT_PRINCIPLE_EXT])) {
+            if (isset($data[self::FIELD_MEASUREMENT_PRINCIPLE])) {
+                $value = $data[self::FIELD_MEASUREMENT_PRINCIPLE];
             } else {
-                $this->setMeasurementPrinciple(new FHIRMeasmnt_Principle($data[self::FIELD_MEASUREMENT_PRINCIPLE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_MEASUREMENT_PRINCIPLE_EXT]) && is_array($data[self::FIELD_MEASUREMENT_PRINCIPLE_EXT])) {
+                $ext = $data[self::FIELD_MEASUREMENT_PRINCIPLE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRMeasmnt_Principle) {
+                    $this->setMeasurementPrinciple($value);
+                } else if (is_array($value)) {
+                    $this->setMeasurementPrinciple(new FHIRMeasmnt_Principle(array_merge($ext, $value)));
+                } else {
+                    $this->setMeasurementPrinciple(new FHIRMeasmnt_Principle([FHIRMeasmnt_Principle::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setMeasurementPrinciple(new FHIRMeasmnt_Principle($ext));
             }
         }
         if (isset($data[self::FIELD_OPERATIONAL_STATUS])) {
@@ -782,8 +796,8 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -939,20 +953,30 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
         }
         if (null !== ($v = $this->getLastSystemChange())) {
             $a[self::FIELD_LAST_SYSTEM_CHANGE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInstant::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInstant::FIELD_VALUE]);
                 $a[self::FIELD_LAST_SYSTEM_CHANGE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getMeasurementPrinciple())) {
             $a[self::FIELD_MEASUREMENT_PRINCIPLE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMeasmnt_Principle::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRMeasmnt_Principle::FIELD_VALUE]);
                 $a[self::FIELD_MEASUREMENT_PRINCIPLE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getOperationalStatus())) {
-            $a[self::FIELD_OPERATIONAL_STATUS] = $vs;
+            $a[self::FIELD_OPERATIONAL_STATUS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_OPERATIONAL_STATUS][] = $v;
+            }
         }
         if (null !== ($v = $this->getParameterGroup())) {
             $a[self::FIELD_PARAMETER_GROUP] = $v;
@@ -961,13 +985,22 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
             $a[self::FIELD_PARENT] = $v;
         }
         if ([] !== ($vs = $this->getProductionSpecification())) {
-            $a[self::FIELD_PRODUCTION_SPECIFICATION] = $vs;
+            $a[self::FIELD_PRODUCTION_SPECIFICATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PRODUCTION_SPECIFICATION][] = $v;
+            }
         }
         if (null !== ($v = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

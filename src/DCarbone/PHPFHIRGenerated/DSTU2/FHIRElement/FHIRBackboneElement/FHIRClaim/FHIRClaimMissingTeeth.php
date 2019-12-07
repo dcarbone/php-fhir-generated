@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
     const FIELD_TOOTH = 'tooth';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
@@ -144,20 +144,27 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_EXTRACTION_DATE])) {
-            $ext = (isset($data[self::FIELD_EXTRACTION_DATE_EXT]) && is_array($data[self::FIELD_EXTRACTION_DATE_EXT]))
-                ? $data[self::FIELD_EXTRACTION_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_EXTRACTION_DATE] instanceof FHIRDate) {
-                $this->setExtractionDate($data[self::FIELD_EXTRACTION_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_EXTRACTION_DATE])) {
-                    $this->setExtractionDate(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_EXTRACTION_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_EXTRACTION_DATE])) {
-                    $this->setExtractionDate(new FHIRDate(array_merge($ext, $data[self::FIELD_EXTRACTION_DATE])));
-                }
+        if (isset($data[self::FIELD_EXTRACTION_DATE]) || isset($data[self::FIELD_EXTRACTION_DATE_EXT])) {
+            if (isset($data[self::FIELD_EXTRACTION_DATE])) {
+                $value = $data[self::FIELD_EXTRACTION_DATE];
             } else {
-                $this->setExtractionDate(new FHIRDate($data[self::FIELD_EXTRACTION_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_EXTRACTION_DATE_EXT]) && is_array($data[self::FIELD_EXTRACTION_DATE_EXT])) {
+                $ext = $data[self::FIELD_EXTRACTION_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDate) {
+                    $this->setExtractionDate($value);
+                } else if (is_array($value)) {
+                    $this->setExtractionDate(new FHIRDate(array_merge($ext, $value)));
+                } else {
+                    $this->setExtractionDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setExtractionDate(new FHIRDate($ext));
             }
         }
         if (isset($data[self::FIELD_REASON])) {
@@ -303,8 +310,8 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -398,8 +405,10 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getExtractionDate())) {
             $a[self::FIELD_EXTRACTION_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDate::FIELD_VALUE]);
                 $a[self::FIELD_EXTRACTION_DATE_EXT] = $enc;
             }
         }
@@ -408,6 +417,9 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getTooth())) {
             $a[self::FIELD_TOOTH] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

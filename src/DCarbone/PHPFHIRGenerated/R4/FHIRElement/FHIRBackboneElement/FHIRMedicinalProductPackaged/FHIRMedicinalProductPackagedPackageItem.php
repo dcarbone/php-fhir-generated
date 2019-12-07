@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,7 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -1286,28 +1286,76 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAlternateMaterial())) {
-            $a[self::FIELD_ALTERNATE_MATERIAL] = $vs;
+            $a[self::FIELD_ALTERNATE_MATERIAL] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ALTERNATE_MATERIAL][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getDevice())) {
-            $a[self::FIELD_DEVICE] = $vs;
+            $a[self::FIELD_DEVICE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_DEVICE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getManufacturedItem())) {
-            $a[self::FIELD_MANUFACTURED_ITEM] = $vs;
+            $a[self::FIELD_MANUFACTURED_ITEM] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MANUFACTURED_ITEM][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getManufacturer())) {
-            $a[self::FIELD_MANUFACTURER] = $vs;
+            $a[self::FIELD_MANUFACTURER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MANUFACTURER][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getMaterial())) {
-            $a[self::FIELD_MATERIAL] = $vs;
+            $a[self::FIELD_MATERIAL] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MATERIAL][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getOtherCharacteristics())) {
-            $a[self::FIELD_OTHER_CHARACTERISTICS] = $vs;
+            $a[self::FIELD_OTHER_CHARACTERISTICS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_OTHER_CHARACTERISTICS][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPackageItem())) {
-            $a[self::FIELD_PACKAGE_ITEM] = $vs;
+            $a[self::FIELD_PACKAGE_ITEM] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PACKAGE_ITEM][] = $v;
+            }
         }
         if (null !== ($v = $this->getPhysicalCharacteristics())) {
             $a[self::FIELD_PHYSICAL_CHARACTERISTICS] = $v;
@@ -1316,10 +1364,19 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
             $a[self::FIELD_QUANTITY] = $v;
         }
         if ([] !== ($vs = $this->getShelfLifeStorage())) {
-            $a[self::FIELD_SHELF_LIFE_STORAGE] = $vs;
+            $a[self::FIELD_SHELF_LIFE_STORAGE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SHELF_LIFE_STORAGE][] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

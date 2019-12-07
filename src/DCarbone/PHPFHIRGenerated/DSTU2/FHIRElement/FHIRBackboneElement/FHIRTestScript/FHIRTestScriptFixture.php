@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
     const FIELD_RESOURCE = 'resource';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Value of "true" or "false"
@@ -148,36 +148,50 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_AUTOCREATE])) {
-            $ext = (isset($data[self::FIELD_AUTOCREATE_EXT]) && is_array($data[self::FIELD_AUTOCREATE_EXT]))
-                ? $data[self::FIELD_AUTOCREATE_EXT]
-                : null;
-            if ($data[self::FIELD_AUTOCREATE] instanceof FHIRBoolean) {
-                $this->setAutocreate($data[self::FIELD_AUTOCREATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AUTOCREATE])) {
-                    $this->setAutocreate(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_AUTOCREATE]] + $ext));
-                } else if (is_array($data[self::FIELD_AUTOCREATE])) {
-                    $this->setAutocreate(new FHIRBoolean(array_merge($ext, $data[self::FIELD_AUTOCREATE])));
-                }
+        if (isset($data[self::FIELD_AUTOCREATE]) || isset($data[self::FIELD_AUTOCREATE_EXT])) {
+            if (isset($data[self::FIELD_AUTOCREATE])) {
+                $value = $data[self::FIELD_AUTOCREATE];
             } else {
-                $this->setAutocreate(new FHIRBoolean($data[self::FIELD_AUTOCREATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_AUTOCREATE_EXT]) && is_array($data[self::FIELD_AUTOCREATE_EXT])) {
+                $ext = $data[self::FIELD_AUTOCREATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setAutocreate($value);
+                } else if (is_array($value)) {
+                    $this->setAutocreate(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setAutocreate(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAutocreate(new FHIRBoolean($ext));
             }
         }
-        if (isset($data[self::FIELD_AUTODELETE])) {
-            $ext = (isset($data[self::FIELD_AUTODELETE_EXT]) && is_array($data[self::FIELD_AUTODELETE_EXT]))
-                ? $data[self::FIELD_AUTODELETE_EXT]
-                : null;
-            if ($data[self::FIELD_AUTODELETE] instanceof FHIRBoolean) {
-                $this->setAutodelete($data[self::FIELD_AUTODELETE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AUTODELETE])) {
-                    $this->setAutodelete(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_AUTODELETE]] + $ext));
-                } else if (is_array($data[self::FIELD_AUTODELETE])) {
-                    $this->setAutodelete(new FHIRBoolean(array_merge($ext, $data[self::FIELD_AUTODELETE])));
-                }
+        if (isset($data[self::FIELD_AUTODELETE]) || isset($data[self::FIELD_AUTODELETE_EXT])) {
+            if (isset($data[self::FIELD_AUTODELETE])) {
+                $value = $data[self::FIELD_AUTODELETE];
             } else {
-                $this->setAutodelete(new FHIRBoolean($data[self::FIELD_AUTODELETE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_AUTODELETE_EXT]) && is_array($data[self::FIELD_AUTODELETE_EXT])) {
+                $ext = $data[self::FIELD_AUTODELETE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setAutodelete($value);
+                } else if (is_array($value)) {
+                    $this->setAutodelete(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setAutodelete(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAutodelete(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_RESOURCE])) {
@@ -330,8 +344,8 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -433,20 +447,27 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAutocreate())) {
             $a[self::FIELD_AUTOCREATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_AUTOCREATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getAutodelete())) {
             $a[self::FIELD_AUTODELETE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_AUTODELETE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getResource())) {
             $a[self::FIELD_RESOURCE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,7 +110,7 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
     const FIELD_VALIDATOR = 'validator';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Describes validation requirements, source(s), status and dates for one or more
@@ -323,20 +323,27 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 $this->setFrequency(new FHIRTiming($data[self::FIELD_FREQUENCY]));
             }
         }
-        if (isset($data[self::FIELD_LAST_PERFORMED])) {
-            $ext = (isset($data[self::FIELD_LAST_PERFORMED_EXT]) && is_array($data[self::FIELD_LAST_PERFORMED_EXT]))
-                ? $data[self::FIELD_LAST_PERFORMED_EXT]
-                : null;
-            if ($data[self::FIELD_LAST_PERFORMED] instanceof FHIRDateTime) {
-                $this->setLastPerformed($data[self::FIELD_LAST_PERFORMED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_LAST_PERFORMED])) {
-                    $this->setLastPerformed(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_LAST_PERFORMED]] + $ext));
-                } else if (is_array($data[self::FIELD_LAST_PERFORMED])) {
-                    $this->setLastPerformed(new FHIRDateTime(array_merge($ext, $data[self::FIELD_LAST_PERFORMED])));
-                }
+        if (isset($data[self::FIELD_LAST_PERFORMED]) || isset($data[self::FIELD_LAST_PERFORMED_EXT])) {
+            if (isset($data[self::FIELD_LAST_PERFORMED])) {
+                $value = $data[self::FIELD_LAST_PERFORMED];
             } else {
-                $this->setLastPerformed(new FHIRDateTime($data[self::FIELD_LAST_PERFORMED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_LAST_PERFORMED_EXT]) && is_array($data[self::FIELD_LAST_PERFORMED_EXT])) {
+                $ext = $data[self::FIELD_LAST_PERFORMED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setLastPerformed($value);
+                } else if (is_array($value)) {
+                    $this->setLastPerformed(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setLastPerformed(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setLastPerformed(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_NEED])) {
@@ -346,20 +353,27 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 $this->setNeed(new FHIRCodeableConcept($data[self::FIELD_NEED]));
             }
         }
-        if (isset($data[self::FIELD_NEXT_SCHEDULED])) {
-            $ext = (isset($data[self::FIELD_NEXT_SCHEDULED_EXT]) && is_array($data[self::FIELD_NEXT_SCHEDULED_EXT]))
-                ? $data[self::FIELD_NEXT_SCHEDULED_EXT]
-                : null;
-            if ($data[self::FIELD_NEXT_SCHEDULED] instanceof FHIRDate) {
-                $this->setNextScheduled($data[self::FIELD_NEXT_SCHEDULED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_NEXT_SCHEDULED])) {
-                    $this->setNextScheduled(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_NEXT_SCHEDULED]] + $ext));
-                } else if (is_array($data[self::FIELD_NEXT_SCHEDULED])) {
-                    $this->setNextScheduled(new FHIRDate(array_merge($ext, $data[self::FIELD_NEXT_SCHEDULED])));
-                }
+        if (isset($data[self::FIELD_NEXT_SCHEDULED]) || isset($data[self::FIELD_NEXT_SCHEDULED_EXT])) {
+            if (isset($data[self::FIELD_NEXT_SCHEDULED])) {
+                $value = $data[self::FIELD_NEXT_SCHEDULED];
             } else {
-                $this->setNextScheduled(new FHIRDate($data[self::FIELD_NEXT_SCHEDULED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_NEXT_SCHEDULED_EXT]) && is_array($data[self::FIELD_NEXT_SCHEDULED_EXT])) {
+                $ext = $data[self::FIELD_NEXT_SCHEDULED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDate) {
+                    $this->setNextScheduled($value);
+                } else if (is_array($value)) {
+                    $this->setNextScheduled(new FHIRDate(array_merge($ext, $value)));
+                } else {
+                    $this->setNextScheduled(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setNextScheduled(new FHIRDate($ext));
             }
         }
         if (isset($data[self::FIELD_PRIMARY_SOURCE])) {
@@ -380,36 +394,50 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 $this->addPrimarySource(new FHIRVerificationResultPrimarySource($data[self::FIELD_PRIMARY_SOURCE]));
             }
         }
-        if (isset($data[self::FIELD_STATUS])) {
-            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT]))
-                ? $data[self::FIELD_STATUS_EXT]
-                : null;
-            if ($data[self::FIELD_STATUS] instanceof FHIRStatus) {
-                $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRStatus([FHIRStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
-                } else if (is_array($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRStatus(array_merge($ext, $data[self::FIELD_STATUS])));
-                }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            if (isset($data[self::FIELD_STATUS])) {
+                $value = $data[self::FIELD_STATUS];
             } else {
-                $this->setStatus(new FHIRStatus($data[self::FIELD_STATUS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
+                $ext = $data[self::FIELD_STATUS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRStatus) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIRStatus(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIRStatus([FHIRStatus::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setStatus(new FHIRStatus($ext));
             }
         }
-        if (isset($data[self::FIELD_STATUS_DATE])) {
-            $ext = (isset($data[self::FIELD_STATUS_DATE_EXT]) && is_array($data[self::FIELD_STATUS_DATE_EXT]))
-                ? $data[self::FIELD_STATUS_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_STATUS_DATE] instanceof FHIRDateTime) {
-                $this->setStatusDate($data[self::FIELD_STATUS_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STATUS_DATE])) {
-                    $this->setStatusDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_STATUS_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_STATUS_DATE])) {
-                    $this->setStatusDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_STATUS_DATE])));
-                }
+        if (isset($data[self::FIELD_STATUS_DATE]) || isset($data[self::FIELD_STATUS_DATE_EXT])) {
+            if (isset($data[self::FIELD_STATUS_DATE])) {
+                $value = $data[self::FIELD_STATUS_DATE];
             } else {
-                $this->setStatusDate(new FHIRDateTime($data[self::FIELD_STATUS_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STATUS_DATE_EXT]) && is_array($data[self::FIELD_STATUS_DATE_EXT])) {
+                $ext = $data[self::FIELD_STATUS_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setStatusDate($value);
+                } else if (is_array($value)) {
+                    $this->setStatusDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setStatusDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setStatusDate(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_TARGET])) {
@@ -430,33 +458,42 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
                 $this->addTarget(new FHIRReference($data[self::FIELD_TARGET]));
             }
         }
-        if (isset($data[self::FIELD_TARGET_LOCATION])) {
-            $ext = (isset($data[self::FIELD_TARGET_LOCATION_EXT]) && is_array($data[self::FIELD_TARGET_LOCATION_EXT]))
-                ? $data[self::FIELD_TARGET_LOCATION_EXT]
-                : null;
-            if (is_array($data[self::FIELD_TARGET_LOCATION])) {
-                foreach($data[self::FIELD_TARGET_LOCATION] as $i => $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRString) {
-                        $this->addTargetLocation($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addTargetLocation(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addTargetLocation(new FHIRString(array_merge($v, $ext[$i])));
-                        }
-                    } else {
-                        $this->addTargetLocation(new FHIRString($v));
-                    }
-                }
-            } elseif ($data[self::FIELD_TARGET_LOCATION] instanceof FHIRString) {
-                $this->addTargetLocation($data[self::FIELD_TARGET_LOCATION]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_TARGET_LOCATION])) {
-                $this->addTargetLocation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TARGET_LOCATION]] + $ext));
+        if (isset($data[self::FIELD_TARGET_LOCATION]) || isset($data[self::FIELD_TARGET_LOCATION_EXT])) {
+            if (isset($data[self::FIELD_TARGET_LOCATION])) {
+                $value = $data[self::FIELD_TARGET_LOCATION];
             } else {
-                $this->addTargetLocation(new FHIRString($data[self::FIELD_TARGET_LOCATION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_TARGET_LOCATION_EXT]) && is_array($data[self::FIELD_TARGET_LOCATION_EXT])) {
+                $ext = $data[self::FIELD_TARGET_LOCATION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->addTargetLocation($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRString) {
+                            $this->addTargetLocation($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addTargetLocation(new FHIRString(array_merge($v, $iext)));
+                            } else {
+                                $this->addTargetLocation(new FHIRString([FHIRString::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addTargetLocation(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->addTargetLocation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addTargetLocation(new FHIRString($iext));
+                }
             }
         }
         if (isset($data[self::FIELD_VALIDATION_PROCESS])) {
@@ -1368,8 +1405,10 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         }
         if (null !== ($v = $this->getLastPerformed())) {
             $a[self::FIELD_LAST_PERFORMED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_LAST_PERFORMED_EXT] = $enc;
             }
         }
@@ -1378,54 +1417,95 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         }
         if (null !== ($v = $this->getNextScheduled())) {
             $a[self::FIELD_NEXT_SCHEDULED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDate::FIELD_VALUE]);
                 $a[self::FIELD_NEXT_SCHEDULED_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getPrimarySource())) {
-            $a[self::FIELD_PRIMARY_SOURCE] = $vs;
+            $a[self::FIELD_PRIMARY_SOURCE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PRIMARY_SOURCE][] = $v;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRStatus::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRStatus::FIELD_VALUE]);
                 $a[self::FIELD_STATUS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getStatusDate())) {
             $a[self::FIELD_STATUS_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_STATUS_DATE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getTarget())) {
-            $a[self::FIELD_TARGET] = $vs;
+            $a[self::FIELD_TARGET] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_TARGET][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getTargetLocation())) {
             $a[self::FIELD_TARGET_LOCATION] = [];
+            $encs = [];
+            $encValued = false;
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
                 $a[self::FIELD_TARGET_LOCATION][] = $v->getValue();
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_TARGET_LOCATION_EXT][] = $enc;
+                $enc = $v->jsonSerialize();
+                $cnt = count($enc);
+                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                    $encs[] = null;
                 } else {
-                    $a[self::FIELD_TARGET_LOCATION_EXT][] = null;
+                    unset($enc[FHIRString::FIELD_VALUE]);
+                    $encs[] = $enc;
+                    $encValued = true;
                 }
+            }
+            if ($encValued) {
+                $a[self::FIELD_TARGET_LOCATION_EXT] = $encs;
             }
         }
         if ([] !== ($vs = $this->getValidationProcess())) {
-            $a[self::FIELD_VALIDATION_PROCESS] = $vs;
+            $a[self::FIELD_VALIDATION_PROCESS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_VALIDATION_PROCESS][] = $v;
+            }
         }
         if (null !== ($v = $this->getValidationType())) {
             $a[self::FIELD_VALIDATION_TYPE] = $v;
         }
         if ([] !== ($vs = $this->getValidator())) {
-            $a[self::FIELD_VALIDATOR] = $vs;
+            $a[self::FIELD_VALIDATOR] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_VALIDATOR][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

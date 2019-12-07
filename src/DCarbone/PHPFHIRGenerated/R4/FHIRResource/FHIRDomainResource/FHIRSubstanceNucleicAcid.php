@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
     const FIELD_SUBUNIT = 'subunit';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -184,36 +184,50 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_AREA_OF_HYBRIDISATION])) {
-            $ext = (isset($data[self::FIELD_AREA_OF_HYBRIDISATION_EXT]) && is_array($data[self::FIELD_AREA_OF_HYBRIDISATION_EXT]))
-                ? $data[self::FIELD_AREA_OF_HYBRIDISATION_EXT]
-                : null;
-            if ($data[self::FIELD_AREA_OF_HYBRIDISATION] instanceof FHIRString) {
-                $this->setAreaOfHybridisation($data[self::FIELD_AREA_OF_HYBRIDISATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AREA_OF_HYBRIDISATION])) {
-                    $this->setAreaOfHybridisation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_AREA_OF_HYBRIDISATION]] + $ext));
-                } else if (is_array($data[self::FIELD_AREA_OF_HYBRIDISATION])) {
-                    $this->setAreaOfHybridisation(new FHIRString(array_merge($ext, $data[self::FIELD_AREA_OF_HYBRIDISATION])));
-                }
+        if (isset($data[self::FIELD_AREA_OF_HYBRIDISATION]) || isset($data[self::FIELD_AREA_OF_HYBRIDISATION_EXT])) {
+            if (isset($data[self::FIELD_AREA_OF_HYBRIDISATION])) {
+                $value = $data[self::FIELD_AREA_OF_HYBRIDISATION];
             } else {
-                $this->setAreaOfHybridisation(new FHIRString($data[self::FIELD_AREA_OF_HYBRIDISATION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_AREA_OF_HYBRIDISATION_EXT]) && is_array($data[self::FIELD_AREA_OF_HYBRIDISATION_EXT])) {
+                $ext = $data[self::FIELD_AREA_OF_HYBRIDISATION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setAreaOfHybridisation($value);
+                } else if (is_array($value)) {
+                    $this->setAreaOfHybridisation(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setAreaOfHybridisation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAreaOfHybridisation(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_NUMBER_OF_SUBUNITS])) {
-            $ext = (isset($data[self::FIELD_NUMBER_OF_SUBUNITS_EXT]) && is_array($data[self::FIELD_NUMBER_OF_SUBUNITS_EXT]))
-                ? $data[self::FIELD_NUMBER_OF_SUBUNITS_EXT]
-                : null;
-            if ($data[self::FIELD_NUMBER_OF_SUBUNITS] instanceof FHIRInteger) {
-                $this->setNumberOfSubunits($data[self::FIELD_NUMBER_OF_SUBUNITS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_NUMBER_OF_SUBUNITS])) {
-                    $this->setNumberOfSubunits(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_NUMBER_OF_SUBUNITS]] + $ext));
-                } else if (is_array($data[self::FIELD_NUMBER_OF_SUBUNITS])) {
-                    $this->setNumberOfSubunits(new FHIRInteger(array_merge($ext, $data[self::FIELD_NUMBER_OF_SUBUNITS])));
-                }
+        if (isset($data[self::FIELD_NUMBER_OF_SUBUNITS]) || isset($data[self::FIELD_NUMBER_OF_SUBUNITS_EXT])) {
+            if (isset($data[self::FIELD_NUMBER_OF_SUBUNITS])) {
+                $value = $data[self::FIELD_NUMBER_OF_SUBUNITS];
             } else {
-                $this->setNumberOfSubunits(new FHIRInteger($data[self::FIELD_NUMBER_OF_SUBUNITS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_NUMBER_OF_SUBUNITS_EXT]) && is_array($data[self::FIELD_NUMBER_OF_SUBUNITS_EXT])) {
+                $ext = $data[self::FIELD_NUMBER_OF_SUBUNITS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setNumberOfSubunits($value);
+                } else if (is_array($value)) {
+                    $this->setNumberOfSubunits(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setNumberOfSubunits(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setNumberOfSubunits(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_OLIGO_NUCLEOTIDE_TYPE])) {
@@ -622,15 +636,19 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAreaOfHybridisation())) {
             $a[self::FIELD_AREA_OF_HYBRIDISATION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_AREA_OF_HYBRIDISATION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getNumberOfSubunits())) {
             $a[self::FIELD_NUMBER_OF_SUBUNITS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_NUMBER_OF_SUBUNITS_EXT] = $enc;
             }
         }
@@ -641,7 +659,16 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
             $a[self::FIELD_SEQUENCE_TYPE] = $v;
         }
         if ([] !== ($vs = $this->getSubunit())) {
-            $a[self::FIELD_SUBUNIT] = $vs;
+            $a[self::FIELD_SUBUNIT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SUBUNIT][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

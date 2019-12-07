@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -124,7 +124,7 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     const FIELD_WIDTH_EXT = '_width';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -461,20 +461,27 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 $this->setContent(new FHIRAttachment($data[self::FIELD_CONTENT]));
             }
         }
-        if (isset($data[self::FIELD_CREATED_DATE_TIME])) {
-            $ext = (isset($data[self::FIELD_CREATED_DATE_TIME_EXT]) && is_array($data[self::FIELD_CREATED_DATE_TIME_EXT]))
-                ? $data[self::FIELD_CREATED_DATE_TIME_EXT]
-                : null;
-            if ($data[self::FIELD_CREATED_DATE_TIME] instanceof FHIRDateTime) {
-                $this->setCreatedDateTime($data[self::FIELD_CREATED_DATE_TIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_CREATED_DATE_TIME])) {
-                    $this->setCreatedDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_CREATED_DATE_TIME]] + $ext));
-                } else if (is_array($data[self::FIELD_CREATED_DATE_TIME])) {
-                    $this->setCreatedDateTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_CREATED_DATE_TIME])));
-                }
+        if (isset($data[self::FIELD_CREATED_DATE_TIME]) || isset($data[self::FIELD_CREATED_DATE_TIME_EXT])) {
+            if (isset($data[self::FIELD_CREATED_DATE_TIME])) {
+                $value = $data[self::FIELD_CREATED_DATE_TIME];
             } else {
-                $this->setCreatedDateTime(new FHIRDateTime($data[self::FIELD_CREATED_DATE_TIME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_CREATED_DATE_TIME_EXT]) && is_array($data[self::FIELD_CREATED_DATE_TIME_EXT])) {
+                $ext = $data[self::FIELD_CREATED_DATE_TIME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setCreatedDateTime($value);
+                } else if (is_array($value)) {
+                    $this->setCreatedDateTime(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setCreatedDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setCreatedDateTime(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_CREATED_PERIOD])) {
@@ -491,36 +498,50 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 $this->setDevice(new FHIRReference($data[self::FIELD_DEVICE]));
             }
         }
-        if (isset($data[self::FIELD_DEVICE_NAME])) {
-            $ext = (isset($data[self::FIELD_DEVICE_NAME_EXT]) && is_array($data[self::FIELD_DEVICE_NAME_EXT]))
-                ? $data[self::FIELD_DEVICE_NAME_EXT]
-                : null;
-            if ($data[self::FIELD_DEVICE_NAME] instanceof FHIRString) {
-                $this->setDeviceName($data[self::FIELD_DEVICE_NAME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DEVICE_NAME])) {
-                    $this->setDeviceName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DEVICE_NAME]] + $ext));
-                } else if (is_array($data[self::FIELD_DEVICE_NAME])) {
-                    $this->setDeviceName(new FHIRString(array_merge($ext, $data[self::FIELD_DEVICE_NAME])));
-                }
+        if (isset($data[self::FIELD_DEVICE_NAME]) || isset($data[self::FIELD_DEVICE_NAME_EXT])) {
+            if (isset($data[self::FIELD_DEVICE_NAME])) {
+                $value = $data[self::FIELD_DEVICE_NAME];
             } else {
-                $this->setDeviceName(new FHIRString($data[self::FIELD_DEVICE_NAME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DEVICE_NAME_EXT]) && is_array($data[self::FIELD_DEVICE_NAME_EXT])) {
+                $ext = $data[self::FIELD_DEVICE_NAME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDeviceName($value);
+                } else if (is_array($value)) {
+                    $this->setDeviceName(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDeviceName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDeviceName(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_DURATION])) {
-            $ext = (isset($data[self::FIELD_DURATION_EXT]) && is_array($data[self::FIELD_DURATION_EXT]))
-                ? $data[self::FIELD_DURATION_EXT]
-                : null;
-            if ($data[self::FIELD_DURATION] instanceof FHIRDecimal) {
-                $this->setDuration($data[self::FIELD_DURATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DURATION])) {
-                    $this->setDuration(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_DURATION]] + $ext));
-                } else if (is_array($data[self::FIELD_DURATION])) {
-                    $this->setDuration(new FHIRDecimal(array_merge($ext, $data[self::FIELD_DURATION])));
-                }
+        if (isset($data[self::FIELD_DURATION]) || isset($data[self::FIELD_DURATION_EXT])) {
+            if (isset($data[self::FIELD_DURATION])) {
+                $value = $data[self::FIELD_DURATION];
             } else {
-                $this->setDuration(new FHIRDecimal($data[self::FIELD_DURATION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DURATION_EXT]) && is_array($data[self::FIELD_DURATION_EXT])) {
+                $ext = $data[self::FIELD_DURATION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setDuration($value);
+                } else if (is_array($value)) {
+                    $this->setDuration(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setDuration(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDuration(new FHIRDecimal($ext));
             }
         }
         if (isset($data[self::FIELD_ENCOUNTER])) {
@@ -530,36 +551,50 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 $this->setEncounter(new FHIRReference($data[self::FIELD_ENCOUNTER]));
             }
         }
-        if (isset($data[self::FIELD_FRAMES])) {
-            $ext = (isset($data[self::FIELD_FRAMES_EXT]) && is_array($data[self::FIELD_FRAMES_EXT]))
-                ? $data[self::FIELD_FRAMES_EXT]
-                : null;
-            if ($data[self::FIELD_FRAMES] instanceof FHIRPositiveInt) {
-                $this->setFrames($data[self::FIELD_FRAMES]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_FRAMES])) {
-                    $this->setFrames(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_FRAMES]] + $ext));
-                } else if (is_array($data[self::FIELD_FRAMES])) {
-                    $this->setFrames(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_FRAMES])));
-                }
+        if (isset($data[self::FIELD_FRAMES]) || isset($data[self::FIELD_FRAMES_EXT])) {
+            if (isset($data[self::FIELD_FRAMES])) {
+                $value = $data[self::FIELD_FRAMES];
             } else {
-                $this->setFrames(new FHIRPositiveInt($data[self::FIELD_FRAMES]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_FRAMES_EXT]) && is_array($data[self::FIELD_FRAMES_EXT])) {
+                $ext = $data[self::FIELD_FRAMES_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setFrames($value);
+                } else if (is_array($value)) {
+                    $this->setFrames(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setFrames(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setFrames(new FHIRPositiveInt($ext));
             }
         }
-        if (isset($data[self::FIELD_HEIGHT])) {
-            $ext = (isset($data[self::FIELD_HEIGHT_EXT]) && is_array($data[self::FIELD_HEIGHT_EXT]))
-                ? $data[self::FIELD_HEIGHT_EXT]
-                : null;
-            if ($data[self::FIELD_HEIGHT] instanceof FHIRPositiveInt) {
-                $this->setHeight($data[self::FIELD_HEIGHT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_HEIGHT])) {
-                    $this->setHeight(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_HEIGHT]] + $ext));
-                } else if (is_array($data[self::FIELD_HEIGHT])) {
-                    $this->setHeight(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_HEIGHT])));
-                }
+        if (isset($data[self::FIELD_HEIGHT]) || isset($data[self::FIELD_HEIGHT_EXT])) {
+            if (isset($data[self::FIELD_HEIGHT])) {
+                $value = $data[self::FIELD_HEIGHT];
             } else {
-                $this->setHeight(new FHIRPositiveInt($data[self::FIELD_HEIGHT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_HEIGHT_EXT]) && is_array($data[self::FIELD_HEIGHT_EXT])) {
+                $ext = $data[self::FIELD_HEIGHT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setHeight($value);
+                } else if (is_array($value)) {
+                    $this->setHeight(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setHeight(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setHeight(new FHIRPositiveInt($ext));
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
@@ -580,20 +615,27 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_ISSUED])) {
-            $ext = (isset($data[self::FIELD_ISSUED_EXT]) && is_array($data[self::FIELD_ISSUED_EXT]))
-                ? $data[self::FIELD_ISSUED_EXT]
-                : null;
-            if ($data[self::FIELD_ISSUED] instanceof FHIRInstant) {
-                $this->setIssued($data[self::FIELD_ISSUED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ISSUED])) {
-                    $this->setIssued(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_ISSUED]] + $ext));
-                } else if (is_array($data[self::FIELD_ISSUED])) {
-                    $this->setIssued(new FHIRInstant(array_merge($ext, $data[self::FIELD_ISSUED])));
-                }
+        if (isset($data[self::FIELD_ISSUED]) || isset($data[self::FIELD_ISSUED_EXT])) {
+            if (isset($data[self::FIELD_ISSUED])) {
+                $value = $data[self::FIELD_ISSUED];
             } else {
-                $this->setIssued(new FHIRInstant($data[self::FIELD_ISSUED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ISSUED_EXT]) && is_array($data[self::FIELD_ISSUED_EXT])) {
+                $ext = $data[self::FIELD_ISSUED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInstant) {
+                    $this->setIssued($value);
+                } else if (is_array($value)) {
+                    $this->setIssued(new FHIRInstant(array_merge($ext, $value)));
+                } else {
+                    $this->setIssued(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setIssued(new FHIRInstant($ext));
             }
         }
         if (isset($data[self::FIELD_MODALITY])) {
@@ -664,20 +706,27 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 $this->addReasonCode(new FHIRCodeableConcept($data[self::FIELD_REASON_CODE]));
             }
         }
-        if (isset($data[self::FIELD_STATUS])) {
-            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT]))
-                ? $data[self::FIELD_STATUS_EXT]
-                : null;
-            if ($data[self::FIELD_STATUS] instanceof FHIREventStatus) {
-                $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIREventStatus([FHIREventStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
-                } else if (is_array($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIREventStatus(array_merge($ext, $data[self::FIELD_STATUS])));
-                }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            if (isset($data[self::FIELD_STATUS])) {
+                $value = $data[self::FIELD_STATUS];
             } else {
-                $this->setStatus(new FHIREventStatus($data[self::FIELD_STATUS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
+                $ext = $data[self::FIELD_STATUS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIREventStatus) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIREventStatus(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIREventStatus([FHIREventStatus::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setStatus(new FHIREventStatus($ext));
             }
         }
         if (isset($data[self::FIELD_SUBJECT])) {
@@ -701,20 +750,27 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
                 $this->setView(new FHIRCodeableConcept($data[self::FIELD_VIEW]));
             }
         }
-        if (isset($data[self::FIELD_WIDTH])) {
-            $ext = (isset($data[self::FIELD_WIDTH_EXT]) && is_array($data[self::FIELD_WIDTH_EXT]))
-                ? $data[self::FIELD_WIDTH_EXT]
-                : null;
-            if ($data[self::FIELD_WIDTH] instanceof FHIRPositiveInt) {
-                $this->setWidth($data[self::FIELD_WIDTH]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_WIDTH])) {
-                    $this->setWidth(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_WIDTH]] + $ext));
-                } else if (is_array($data[self::FIELD_WIDTH])) {
-                    $this->setWidth(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_WIDTH])));
-                }
+        if (isset($data[self::FIELD_WIDTH]) || isset($data[self::FIELD_WIDTH_EXT])) {
+            if (isset($data[self::FIELD_WIDTH])) {
+                $value = $data[self::FIELD_WIDTH];
             } else {
-                $this->setWidth(new FHIRPositiveInt($data[self::FIELD_WIDTH]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_WIDTH_EXT]) && is_array($data[self::FIELD_WIDTH_EXT])) {
+                $ext = $data[self::FIELD_WIDTH_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setWidth($value);
+                } else if (is_array($value)) {
+                    $this->setWidth(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setWidth(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setWidth(new FHIRPositiveInt($ext));
             }
         }
     }
@@ -1986,7 +2042,13 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getBasedOn())) {
-            $a[self::FIELD_BASED_ON] = $vs;
+            $a[self::FIELD_BASED_ON] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_BASED_ON][] = $v;
+            }
         }
         if (null !== ($v = $this->getBodySite())) {
             $a[self::FIELD_BODY_SITE] = $v;
@@ -1996,8 +2058,10 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         if (null !== ($v = $this->getCreatedDateTime())) {
             $a[self::FIELD_CREATED_DATE_TIME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_CREATED_DATE_TIME_EXT] = $enc;
             }
         }
@@ -2009,15 +2073,19 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         if (null !== ($v = $this->getDeviceName())) {
             $a[self::FIELD_DEVICE_NAME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_DEVICE_NAME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDuration())) {
             $a[self::FIELD_DURATION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDecimal::FIELD_VALUE]);
                 $a[self::FIELD_DURATION_EXT] = $enc;
             }
         }
@@ -2026,25 +2094,37 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         if (null !== ($v = $this->getFrames())) {
             $a[self::FIELD_FRAMES] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
                 $a[self::FIELD_FRAMES_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getHeight())) {
             $a[self::FIELD_HEIGHT] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
                 $a[self::FIELD_HEIGHT_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if (null !== ($v = $this->getIssued())) {
             $a[self::FIELD_ISSUED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInstant::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInstant::FIELD_VALUE]);
                 $a[self::FIELD_ISSUED_EXT] = $enc;
             }
         }
@@ -2052,21 +2132,41 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
             $a[self::FIELD_MODALITY] = $v;
         }
         if ([] !== ($vs = $this->getNote())) {
-            $a[self::FIELD_NOTE] = $vs;
+            $a[self::FIELD_NOTE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_NOTE][] = $v;
+            }
         }
         if (null !== ($v = $this->getOperator())) {
             $a[self::FIELD_OPERATOR] = $v;
         }
         if ([] !== ($vs = $this->getPartOf())) {
-            $a[self::FIELD_PART_OF] = $vs;
+            $a[self::FIELD_PART_OF] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PART_OF][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getReasonCode())) {
-            $a[self::FIELD_REASON_CODE] = $vs;
+            $a[self::FIELD_REASON_CODE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_REASON_CODE][] = $v;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIREventStatus::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIREventStatus::FIELD_VALUE]);
                 $a[self::FIELD_STATUS_EXT] = $enc;
             }
         }
@@ -2081,10 +2181,15 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         if (null !== ($v = $this->getWidth())) {
             $a[self::FIELD_WIDTH] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
                 $a[self::FIELD_WIDTH_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

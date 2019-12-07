@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,7 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     const FIELD_VALID_CODED_VALUE_SET = 'validCodedValueSet';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -345,20 +345,27 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
                 $this->setMethod(new FHIRCodeableConcept($data[self::FIELD_METHOD]));
             }
         }
-        if (isset($data[self::FIELD_MULTIPLE_RESULTS_ALLOWED])) {
-            $ext = (isset($data[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT]) && is_array($data[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT]))
-                ? $data[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT]
-                : null;
-            if ($data[self::FIELD_MULTIPLE_RESULTS_ALLOWED] instanceof FHIRBoolean) {
-                $this->setMultipleResultsAllowed($data[self::FIELD_MULTIPLE_RESULTS_ALLOWED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_MULTIPLE_RESULTS_ALLOWED])) {
-                    $this->setMultipleResultsAllowed(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_MULTIPLE_RESULTS_ALLOWED]] + $ext));
-                } else if (is_array($data[self::FIELD_MULTIPLE_RESULTS_ALLOWED])) {
-                    $this->setMultipleResultsAllowed(new FHIRBoolean(array_merge($ext, $data[self::FIELD_MULTIPLE_RESULTS_ALLOWED])));
-                }
+        if (isset($data[self::FIELD_MULTIPLE_RESULTS_ALLOWED]) || isset($data[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT])) {
+            if (isset($data[self::FIELD_MULTIPLE_RESULTS_ALLOWED])) {
+                $value = $data[self::FIELD_MULTIPLE_RESULTS_ALLOWED];
             } else {
-                $this->setMultipleResultsAllowed(new FHIRBoolean($data[self::FIELD_MULTIPLE_RESULTS_ALLOWED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT]) && is_array($data[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT])) {
+                $ext = $data[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setMultipleResultsAllowed($value);
+                } else if (is_array($value)) {
+                    $this->setMultipleResultsAllowed(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setMultipleResultsAllowed(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setMultipleResultsAllowed(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_NORMAL_CODED_VALUE_SET])) {
@@ -368,49 +375,65 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
                 $this->setNormalCodedValueSet(new FHIRReference($data[self::FIELD_NORMAL_CODED_VALUE_SET]));
             }
         }
-        if (isset($data[self::FIELD_PERMITTED_DATA_TYPE])) {
-            $ext = (isset($data[self::FIELD_PERMITTED_DATA_TYPE_EXT]) && is_array($data[self::FIELD_PERMITTED_DATA_TYPE_EXT]))
-                ? $data[self::FIELD_PERMITTED_DATA_TYPE_EXT]
-                : null;
-            if (is_array($data[self::FIELD_PERMITTED_DATA_TYPE])) {
-                foreach($data[self::FIELD_PERMITTED_DATA_TYPE] as $i => $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRObservationDataType) {
-                        $this->addPermittedDataType($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addPermittedDataType(new FHIRObservationDataType([FHIRObservationDataType::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addPermittedDataType(new FHIRObservationDataType(array_merge($v, $ext[$i])));
-                        }
-                    } else {
-                        $this->addPermittedDataType(new FHIRObservationDataType($v));
-                    }
-                }
-            } elseif ($data[self::FIELD_PERMITTED_DATA_TYPE] instanceof FHIRObservationDataType) {
-                $this->addPermittedDataType($data[self::FIELD_PERMITTED_DATA_TYPE]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_PERMITTED_DATA_TYPE])) {
-                $this->addPermittedDataType(new FHIRObservationDataType([FHIRObservationDataType::FIELD_VALUE => $data[self::FIELD_PERMITTED_DATA_TYPE]] + $ext));
+        if (isset($data[self::FIELD_PERMITTED_DATA_TYPE]) || isset($data[self::FIELD_PERMITTED_DATA_TYPE_EXT])) {
+            if (isset($data[self::FIELD_PERMITTED_DATA_TYPE])) {
+                $value = $data[self::FIELD_PERMITTED_DATA_TYPE];
             } else {
-                $this->addPermittedDataType(new FHIRObservationDataType($data[self::FIELD_PERMITTED_DATA_TYPE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PERMITTED_DATA_TYPE_EXT]) && is_array($data[self::FIELD_PERMITTED_DATA_TYPE_EXT])) {
+                $ext = $data[self::FIELD_PERMITTED_DATA_TYPE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRObservationDataType) {
+                    $this->addPermittedDataType($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRObservationDataType) {
+                            $this->addPermittedDataType($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addPermittedDataType(new FHIRObservationDataType(array_merge($v, $iext)));
+                            } else {
+                                $this->addPermittedDataType(new FHIRObservationDataType([FHIRObservationDataType::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addPermittedDataType(new FHIRObservationDataType(array_merge($ext, $value)));
+                } else {
+                    $this->addPermittedDataType(new FHIRObservationDataType([FHIRObservationDataType::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addPermittedDataType(new FHIRObservationDataType($iext));
+                }
             }
         }
-        if (isset($data[self::FIELD_PREFERRED_REPORT_NAME])) {
-            $ext = (isset($data[self::FIELD_PREFERRED_REPORT_NAME_EXT]) && is_array($data[self::FIELD_PREFERRED_REPORT_NAME_EXT]))
-                ? $data[self::FIELD_PREFERRED_REPORT_NAME_EXT]
-                : null;
-            if ($data[self::FIELD_PREFERRED_REPORT_NAME] instanceof FHIRString) {
-                $this->setPreferredReportName($data[self::FIELD_PREFERRED_REPORT_NAME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PREFERRED_REPORT_NAME])) {
-                    $this->setPreferredReportName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PREFERRED_REPORT_NAME]] + $ext));
-                } else if (is_array($data[self::FIELD_PREFERRED_REPORT_NAME])) {
-                    $this->setPreferredReportName(new FHIRString(array_merge($ext, $data[self::FIELD_PREFERRED_REPORT_NAME])));
-                }
+        if (isset($data[self::FIELD_PREFERRED_REPORT_NAME]) || isset($data[self::FIELD_PREFERRED_REPORT_NAME_EXT])) {
+            if (isset($data[self::FIELD_PREFERRED_REPORT_NAME])) {
+                $value = $data[self::FIELD_PREFERRED_REPORT_NAME];
             } else {
-                $this->setPreferredReportName(new FHIRString($data[self::FIELD_PREFERRED_REPORT_NAME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PREFERRED_REPORT_NAME_EXT]) && is_array($data[self::FIELD_PREFERRED_REPORT_NAME_EXT])) {
+                $ext = $data[self::FIELD_PREFERRED_REPORT_NAME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setPreferredReportName($value);
+                } else if (is_array($value)) {
+                    $this->setPreferredReportName(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setPreferredReportName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPreferredReportName(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_QUALIFIED_INTERVAL])) {
@@ -1203,7 +1226,13 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
             $a[self::FIELD_ABNORMAL_CODED_VALUE_SET] = $v;
         }
         if ([] !== ($vs = $this->getCategory())) {
-            $a[self::FIELD_CATEGORY] = $vs;
+            $a[self::FIELD_CATEGORY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CATEGORY][] = $v;
+            }
         }
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v;
@@ -1212,15 +1241,23 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
             $a[self::FIELD_CRITICAL_CODED_VALUE_SET] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if (null !== ($v = $this->getMethod())) {
             $a[self::FIELD_METHOD] = $v;
         }
         if (null !== ($v = $this->getMultipleResultsAllowed())) {
             $a[self::FIELD_MULTIPLE_RESULTS_ALLOWED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_MULTIPLE_RESULTS_ALLOWED_EXT] = $enc;
             }
         }
@@ -1229,34 +1266,53 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
         }
         if ([] !== ($vs = $this->getPermittedDataType())) {
             $a[self::FIELD_PERMITTED_DATA_TYPE] = [];
+            $encs = [];
+            $encValued = false;
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
                 $a[self::FIELD_PERMITTED_DATA_TYPE][] = $v->getValue();
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PERMITTED_DATA_TYPE_EXT][] = $enc;
+                $enc = $v->jsonSerialize();
+                $cnt = count($enc);
+                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRObservationDataType::FIELD_VALUE]) || array_key_exists(FHIRObservationDataType::FIELD_VALUE, $enc)))) {
+                    $encs[] = null;
                 } else {
-                    $a[self::FIELD_PERMITTED_DATA_TYPE_EXT][] = null;
+                    unset($enc[FHIRObservationDataType::FIELD_VALUE]);
+                    $encs[] = $enc;
+                    $encValued = true;
                 }
+            }
+            if ($encValued) {
+                $a[self::FIELD_PERMITTED_DATA_TYPE_EXT] = $encs;
             }
         }
         if (null !== ($v = $this->getPreferredReportName())) {
             $a[self::FIELD_PREFERRED_REPORT_NAME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_PREFERRED_REPORT_NAME_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getQualifiedInterval())) {
-            $a[self::FIELD_QUALIFIED_INTERVAL] = $vs;
+            $a[self::FIELD_QUALIFIED_INTERVAL] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_QUALIFIED_INTERVAL][] = $v;
+            }
         }
         if (null !== ($v = $this->getQuantitativeDetails())) {
             $a[self::FIELD_QUANTITATIVE_DETAILS] = $v;
         }
         if (null !== ($v = $this->getValidCodedValueSet())) {
             $a[self::FIELD_VALID_CODED_VALUE_SET] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

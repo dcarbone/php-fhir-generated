@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSub
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
     const FIELD_QUANTITY = 'quantity';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -149,20 +149,27 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_EXPIRY])) {
-            $ext = (isset($data[self::FIELD_EXPIRY_EXT]) && is_array($data[self::FIELD_EXPIRY_EXT]))
-                ? $data[self::FIELD_EXPIRY_EXT]
-                : null;
-            if ($data[self::FIELD_EXPIRY] instanceof FHIRDateTime) {
-                $this->setExpiry($data[self::FIELD_EXPIRY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_EXPIRY])) {
-                    $this->setExpiry(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_EXPIRY]] + $ext));
-                } else if (is_array($data[self::FIELD_EXPIRY])) {
-                    $this->setExpiry(new FHIRDateTime(array_merge($ext, $data[self::FIELD_EXPIRY])));
-                }
+        if (isset($data[self::FIELD_EXPIRY]) || isset($data[self::FIELD_EXPIRY_EXT])) {
+            if (isset($data[self::FIELD_EXPIRY])) {
+                $value = $data[self::FIELD_EXPIRY];
             } else {
-                $this->setExpiry(new FHIRDateTime($data[self::FIELD_EXPIRY]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_EXPIRY_EXT]) && is_array($data[self::FIELD_EXPIRY_EXT])) {
+                $ext = $data[self::FIELD_EXPIRY_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setExpiry($value);
+                } else if (is_array($value)) {
+                    $this->setExpiry(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setExpiry(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setExpiry(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
@@ -318,8 +325,8 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -413,8 +420,10 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getExpiry())) {
             $a[self::FIELD_EXPIRY] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_EXPIRY_EXT] = $enc;
             }
         }
@@ -423,6 +432,9 @@ class FHIRSubstanceInstance extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getQuantity())) {
             $a[self::FIELD_QUANTITY] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

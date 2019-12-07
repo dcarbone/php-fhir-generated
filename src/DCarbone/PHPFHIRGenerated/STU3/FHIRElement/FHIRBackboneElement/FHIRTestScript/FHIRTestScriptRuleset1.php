@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
     const FIELD_RULESET_ID_EXT = '_rulesetId';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A structured set of tests against a FHIR server implementation to determine
@@ -149,20 +149,27 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
                 $this->addRule(new FHIRTestScriptRule3($data[self::FIELD_RULE]));
             }
         }
-        if (isset($data[self::FIELD_RULESET_ID])) {
-            $ext = (isset($data[self::FIELD_RULESET_ID_EXT]) && is_array($data[self::FIELD_RULESET_ID_EXT]))
-                ? $data[self::FIELD_RULESET_ID_EXT]
-                : null;
-            if ($data[self::FIELD_RULESET_ID] instanceof FHIRId) {
-                $this->setRulesetId($data[self::FIELD_RULESET_ID]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_RULESET_ID])) {
-                    $this->setRulesetId(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_RULESET_ID]] + $ext));
-                } else if (is_array($data[self::FIELD_RULESET_ID])) {
-                    $this->setRulesetId(new FHIRId(array_merge($ext, $data[self::FIELD_RULESET_ID])));
-                }
+        if (isset($data[self::FIELD_RULESET_ID]) || isset($data[self::FIELD_RULESET_ID_EXT])) {
+            if (isset($data[self::FIELD_RULESET_ID])) {
+                $value = $data[self::FIELD_RULESET_ID];
             } else {
-                $this->setRulesetId(new FHIRId($data[self::FIELD_RULESET_ID]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_RULESET_ID_EXT]) && is_array($data[self::FIELD_RULESET_ID_EXT])) {
+                $ext = $data[self::FIELD_RULESET_ID_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRId) {
+                    $this->setRulesetId($value);
+                } else if (is_array($value)) {
+                    $this->setRulesetId(new FHIRId(array_merge($ext, $value)));
+                } else {
+                    $this->setRulesetId(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setRulesetId(new FHIRId($ext));
             }
         }
     }
@@ -289,8 +296,8 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -384,14 +391,25 @@ class FHIRTestScriptRuleset1 extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getRule())) {
-            $a[self::FIELD_RULE] = $vs;
+            $a[self::FIELD_RULE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_RULE][] = $v;
+            }
         }
         if (null !== ($v = $this->getRulesetId())) {
             $a[self::FIELD_RULESET_ID] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRId::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRId::FIELD_VALUE]);
                 $a[self::FIELD_RULESET_ID_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

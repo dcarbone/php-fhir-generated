@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,7 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -324,36 +324,50 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $this->addContract(new FHIRReference($data[self::FIELD_CONTRACT]));
             }
         }
-        if (isset($data[self::FIELD_DEPENDENT])) {
-            $ext = (isset($data[self::FIELD_DEPENDENT_EXT]) && is_array($data[self::FIELD_DEPENDENT_EXT]))
-                ? $data[self::FIELD_DEPENDENT_EXT]
-                : null;
-            if ($data[self::FIELD_DEPENDENT] instanceof FHIRPositiveInt) {
-                $this->setDependent($data[self::FIELD_DEPENDENT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DEPENDENT])) {
-                    $this->setDependent(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_DEPENDENT]] + $ext));
-                } else if (is_array($data[self::FIELD_DEPENDENT])) {
-                    $this->setDependent(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_DEPENDENT])));
-                }
+        if (isset($data[self::FIELD_DEPENDENT]) || isset($data[self::FIELD_DEPENDENT_EXT])) {
+            if (isset($data[self::FIELD_DEPENDENT])) {
+                $value = $data[self::FIELD_DEPENDENT];
             } else {
-                $this->setDependent(new FHIRPositiveInt($data[self::FIELD_DEPENDENT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DEPENDENT_EXT]) && is_array($data[self::FIELD_DEPENDENT_EXT])) {
+                $ext = $data[self::FIELD_DEPENDENT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setDependent($value);
+                } else if (is_array($value)) {
+                    $this->setDependent(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setDependent(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDependent(new FHIRPositiveInt($ext));
             }
         }
-        if (isset($data[self::FIELD_GROUP])) {
-            $ext = (isset($data[self::FIELD_GROUP_EXT]) && is_array($data[self::FIELD_GROUP_EXT]))
-                ? $data[self::FIELD_GROUP_EXT]
-                : null;
-            if ($data[self::FIELD_GROUP] instanceof FHIRString) {
-                $this->setGroup($data[self::FIELD_GROUP]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_GROUP])) {
-                    $this->setGroup(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_GROUP]] + $ext));
-                } else if (is_array($data[self::FIELD_GROUP])) {
-                    $this->setGroup(new FHIRString(array_merge($ext, $data[self::FIELD_GROUP])));
-                }
+        if (isset($data[self::FIELD_GROUP]) || isset($data[self::FIELD_GROUP_EXT])) {
+            if (isset($data[self::FIELD_GROUP])) {
+                $value = $data[self::FIELD_GROUP];
             } else {
-                $this->setGroup(new FHIRString($data[self::FIELD_GROUP]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_GROUP_EXT]) && is_array($data[self::FIELD_GROUP_EXT])) {
+                $ext = $data[self::FIELD_GROUP_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setGroup($value);
+                } else if (is_array($value)) {
+                    $this->setGroup(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setGroup(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setGroup(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
@@ -395,52 +409,73 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
                 $this->setPeriod(new FHIRPeriod($data[self::FIELD_PERIOD]));
             }
         }
-        if (isset($data[self::FIELD_PLAN])) {
-            $ext = (isset($data[self::FIELD_PLAN_EXT]) && is_array($data[self::FIELD_PLAN_EXT]))
-                ? $data[self::FIELD_PLAN_EXT]
-                : null;
-            if ($data[self::FIELD_PLAN] instanceof FHIRString) {
-                $this->setPlan($data[self::FIELD_PLAN]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PLAN])) {
-                    $this->setPlan(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PLAN]] + $ext));
-                } else if (is_array($data[self::FIELD_PLAN])) {
-                    $this->setPlan(new FHIRString(array_merge($ext, $data[self::FIELD_PLAN])));
-                }
+        if (isset($data[self::FIELD_PLAN]) || isset($data[self::FIELD_PLAN_EXT])) {
+            if (isset($data[self::FIELD_PLAN])) {
+                $value = $data[self::FIELD_PLAN];
             } else {
-                $this->setPlan(new FHIRString($data[self::FIELD_PLAN]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PLAN_EXT]) && is_array($data[self::FIELD_PLAN_EXT])) {
+                $ext = $data[self::FIELD_PLAN_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setPlan($value);
+                } else if (is_array($value)) {
+                    $this->setPlan(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setPlan(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPlan(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_SEQUENCE])) {
-            $ext = (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT]))
-                ? $data[self::FIELD_SEQUENCE_EXT]
-                : null;
-            if ($data[self::FIELD_SEQUENCE] instanceof FHIRPositiveInt) {
-                $this->setSequence($data[self::FIELD_SEQUENCE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SEQUENCE])) {
-                    $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SEQUENCE]] + $ext));
-                } else if (is_array($data[self::FIELD_SEQUENCE])) {
-                    $this->setSequence(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_SEQUENCE])));
-                }
+        if (isset($data[self::FIELD_SEQUENCE]) || isset($data[self::FIELD_SEQUENCE_EXT])) {
+            if (isset($data[self::FIELD_SEQUENCE])) {
+                $value = $data[self::FIELD_SEQUENCE];
             } else {
-                $this->setSequence(new FHIRPositiveInt($data[self::FIELD_SEQUENCE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) {
+                $ext = $data[self::FIELD_SEQUENCE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setSequence($value);
+                } else if (is_array($value)) {
+                    $this->setSequence(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setSequence(new FHIRPositiveInt($ext));
             }
         }
-        if (isset($data[self::FIELD_SUB_PLAN])) {
-            $ext = (isset($data[self::FIELD_SUB_PLAN_EXT]) && is_array($data[self::FIELD_SUB_PLAN_EXT]))
-                ? $data[self::FIELD_SUB_PLAN_EXT]
-                : null;
-            if ($data[self::FIELD_SUB_PLAN] instanceof FHIRString) {
-                $this->setSubPlan($data[self::FIELD_SUB_PLAN]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SUB_PLAN])) {
-                    $this->setSubPlan(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SUB_PLAN]] + $ext));
-                } else if (is_array($data[self::FIELD_SUB_PLAN])) {
-                    $this->setSubPlan(new FHIRString(array_merge($ext, $data[self::FIELD_SUB_PLAN])));
-                }
+        if (isset($data[self::FIELD_SUB_PLAN]) || isset($data[self::FIELD_SUB_PLAN_EXT])) {
+            if (isset($data[self::FIELD_SUB_PLAN])) {
+                $value = $data[self::FIELD_SUB_PLAN];
             } else {
-                $this->setSubPlan(new FHIRString($data[self::FIELD_SUB_PLAN]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SUB_PLAN_EXT]) && is_array($data[self::FIELD_SUB_PLAN_EXT])) {
+                $ext = $data[self::FIELD_SUB_PLAN_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setSubPlan($value);
+                } else if (is_array($value)) {
+                    $this->setSubPlan(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setSubPlan(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setSubPlan(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_SUBSCRIBER])) {
@@ -1043,8 +1078,8 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -1252,24 +1287,40 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
             $a[self::FIELD_BIN] = $v;
         }
         if ([] !== ($vs = $this->getContract())) {
-            $a[self::FIELD_CONTRACT] = $vs;
+            $a[self::FIELD_CONTRACT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CONTRACT][] = $v;
+            }
         }
         if (null !== ($v = $this->getDependent())) {
             $a[self::FIELD_DEPENDENT] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
                 $a[self::FIELD_DEPENDENT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getGroup())) {
             $a[self::FIELD_GROUP] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_GROUP_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if (null !== ($v = $this->getIssuer())) {
             $a[self::FIELD_ISSUER] = $v;
@@ -1282,22 +1333,28 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         if (null !== ($v = $this->getPlan())) {
             $a[self::FIELD_PLAN] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_PLAN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSequence())) {
             $a[self::FIELD_SEQUENCE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
                 $a[self::FIELD_SEQUENCE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSubPlan())) {
             $a[self::FIELD_SUB_PLAN] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_SUB_PLAN_EXT] = $enc;
             }
         }
@@ -1309,6 +1366,9 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

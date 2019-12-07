@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRConformanceRest extends FHIRBackboneElement
     const FIELD_SECURITY = 'security';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * String of characters used to identify a name or a resource
@@ -197,65 +197,88 @@ class FHIRConformanceRest extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DOCUMENT_MAILBOX])) {
-            $ext = (isset($data[self::FIELD_DOCUMENT_MAILBOX_EXT]) && is_array($data[self::FIELD_DOCUMENT_MAILBOX_EXT]))
-                ? $data[self::FIELD_DOCUMENT_MAILBOX_EXT]
-                : null;
-            if (is_array($data[self::FIELD_DOCUMENT_MAILBOX])) {
-                foreach($data[self::FIELD_DOCUMENT_MAILBOX] as $i => $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRUri) {
-                        $this->addDocumentMailbox($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addDocumentMailbox(new FHIRUri([FHIRUri::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addDocumentMailbox(new FHIRUri(array_merge($v, $ext[$i])));
+        if (isset($data[self::FIELD_DOCUMENT_MAILBOX]) || isset($data[self::FIELD_DOCUMENT_MAILBOX_EXT])) {
+            if (isset($data[self::FIELD_DOCUMENT_MAILBOX])) {
+                $value = $data[self::FIELD_DOCUMENT_MAILBOX];
+            } else {
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DOCUMENT_MAILBOX_EXT]) && is_array($data[self::FIELD_DOCUMENT_MAILBOX_EXT])) {
+                $ext = $data[self::FIELD_DOCUMENT_MAILBOX_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->addDocumentMailbox($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRUri) {
+                            $this->addDocumentMailbox($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addDocumentMailbox(new FHIRUri(array_merge($v, $iext)));
+                            } else {
+                                $this->addDocumentMailbox(new FHIRUri([FHIRUri::FIELD_VALUE => $v] + $iext));
+                            }
                         }
-                    } else {
-                        $this->addDocumentMailbox(new FHIRUri($v));
                     }
+                } elseif (is_array($value)) {
+                    $this->addDocumentMailbox(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->addDocumentMailbox(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } elseif ($data[self::FIELD_DOCUMENT_MAILBOX] instanceof FHIRUri) {
-                $this->addDocumentMailbox($data[self::FIELD_DOCUMENT_MAILBOX]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_DOCUMENT_MAILBOX])) {
-                $this->addDocumentMailbox(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_DOCUMENT_MAILBOX]] + $ext));
-            } else {
-                $this->addDocumentMailbox(new FHIRUri($data[self::FIELD_DOCUMENT_MAILBOX]));
+            } else if ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addDocumentMailbox(new FHIRUri($iext));
+                }
             }
         }
-        if (isset($data[self::FIELD_DOCUMENTATION])) {
-            $ext = (isset($data[self::FIELD_DOCUMENTATION_EXT]) && is_array($data[self::FIELD_DOCUMENTATION_EXT]))
-                ? $data[self::FIELD_DOCUMENTATION_EXT]
-                : null;
-            if ($data[self::FIELD_DOCUMENTATION] instanceof FHIRString) {
-                $this->setDocumentation($data[self::FIELD_DOCUMENTATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DOCUMENTATION])) {
-                    $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DOCUMENTATION]] + $ext));
-                } else if (is_array($data[self::FIELD_DOCUMENTATION])) {
-                    $this->setDocumentation(new FHIRString(array_merge($ext, $data[self::FIELD_DOCUMENTATION])));
-                }
+        if (isset($data[self::FIELD_DOCUMENTATION]) || isset($data[self::FIELD_DOCUMENTATION_EXT])) {
+            if (isset($data[self::FIELD_DOCUMENTATION])) {
+                $value = $data[self::FIELD_DOCUMENTATION];
             } else {
-                $this->setDocumentation(new FHIRString($data[self::FIELD_DOCUMENTATION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DOCUMENTATION_EXT]) && is_array($data[self::FIELD_DOCUMENTATION_EXT])) {
+                $ext = $data[self::FIELD_DOCUMENTATION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDocumentation($value);
+                } else if (is_array($value)) {
+                    $this->setDocumentation(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDocumentation(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_MODE])) {
-            $ext = (isset($data[self::FIELD_MODE_EXT]) && is_array($data[self::FIELD_MODE_EXT]))
-                ? $data[self::FIELD_MODE_EXT]
-                : null;
-            if ($data[self::FIELD_MODE] instanceof FHIRRestfulConformanceMode) {
-                $this->setMode($data[self::FIELD_MODE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_MODE])) {
-                    $this->setMode(new FHIRRestfulConformanceMode([FHIRRestfulConformanceMode::FIELD_VALUE => $data[self::FIELD_MODE]] + $ext));
-                } else if (is_array($data[self::FIELD_MODE])) {
-                    $this->setMode(new FHIRRestfulConformanceMode(array_merge($ext, $data[self::FIELD_MODE])));
-                }
+        if (isset($data[self::FIELD_MODE]) || isset($data[self::FIELD_MODE_EXT])) {
+            if (isset($data[self::FIELD_MODE])) {
+                $value = $data[self::FIELD_MODE];
             } else {
-                $this->setMode(new FHIRRestfulConformanceMode($data[self::FIELD_MODE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_MODE_EXT]) && is_array($data[self::FIELD_MODE_EXT])) {
+                $ext = $data[self::FIELD_MODE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRRestfulConformanceMode) {
+                    $this->setMode($value);
+                } else if (is_array($value)) {
+                    $this->setMode(new FHIRRestfulConformanceMode(array_merge($ext, $value)));
+                } else {
+                    $this->setMode(new FHIRRestfulConformanceMode([FHIRRestfulConformanceMode::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setMode(new FHIRRestfulConformanceMode($ext));
             }
         }
         if (isset($data[self::FIELD_OPERATION])) {
@@ -688,8 +711,8 @@ class FHIRConformanceRest extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -835,44 +858,77 @@ class FHIRConformanceRest extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getDocumentMailbox())) {
             $a[self::FIELD_DOCUMENT_MAILBOX] = [];
+            $encs = [];
+            $encValued = false;
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
                 $a[self::FIELD_DOCUMENT_MAILBOX][] = $v->getValue();
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DOCUMENT_MAILBOX_EXT][] = $enc;
+                $enc = $v->jsonSerialize();
+                $cnt = count($enc);
+                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRUri::FIELD_VALUE]) || array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
+                    $encs[] = null;
                 } else {
-                    $a[self::FIELD_DOCUMENT_MAILBOX_EXT][] = null;
+                    unset($enc[FHIRUri::FIELD_VALUE]);
+                    $encs[] = $enc;
+                    $encValued = true;
                 }
+            }
+            if ($encValued) {
+                $a[self::FIELD_DOCUMENT_MAILBOX_EXT] = $encs;
             }
         }
         if (null !== ($v = $this->getDocumentation())) {
             $a[self::FIELD_DOCUMENTATION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_DOCUMENTATION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getMode())) {
             $a[self::FIELD_MODE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRRestfulConformanceMode::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRRestfulConformanceMode::FIELD_VALUE]);
                 $a[self::FIELD_MODE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getOperation())) {
-            $a[self::FIELD_OPERATION] = $vs;
+            $a[self::FIELD_OPERATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_OPERATION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getQuery())) {
-            $a[self::FIELD_QUERY] = $vs;
+            $a[self::FIELD_QUERY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_QUERY][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getResource())) {
-            $a[self::FIELD_RESOURCE] = $vs;
+            $a[self::FIELD_RESOURCE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_RESOURCE][] = $v;
+            }
         }
         if (null !== ($v = $this->getSecurity())) {
             $a[self::FIELD_SECURITY] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

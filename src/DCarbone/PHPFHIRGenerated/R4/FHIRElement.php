@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,10 +81,9 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
 
     const FIELD_EXTENSION = 'extension';
     const FIELD_ID = 'id';
-    const FIELD_ID_EXT = '_id';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Optional Extension Element - found in all resources.
@@ -396,11 +395,18 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
             $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         if ([] !== ($vs = $this->getExtension())) {
-            $a[self::FIELD_EXTENSION] = $vs;
+            $a[self::FIELD_EXTENSION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_EXTENSION][] = $v;
+            }
         }
         if (null !== ($v = $this->getId())) {
             $a[self::FIELD_ID] = $v;
         }
+
         return $a;
     }
 

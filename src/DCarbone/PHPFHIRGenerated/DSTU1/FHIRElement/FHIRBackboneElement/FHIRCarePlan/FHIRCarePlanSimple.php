@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,7 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
     const FIELD_TIMING_STRING_EXT = '_timingString';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * High-level categorization of the type of activity in a care plan.
@@ -250,20 +250,27 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CATEGORY])) {
-            $ext = (isset($data[self::FIELD_CATEGORY_EXT]) && is_array($data[self::FIELD_CATEGORY_EXT]))
-                ? $data[self::FIELD_CATEGORY_EXT]
-                : null;
-            if ($data[self::FIELD_CATEGORY] instanceof FHIRCarePlanActivityCategory) {
-                $this->setCategory($data[self::FIELD_CATEGORY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_CATEGORY])) {
-                    $this->setCategory(new FHIRCarePlanActivityCategory([FHIRCarePlanActivityCategory::FIELD_VALUE => $data[self::FIELD_CATEGORY]] + $ext));
-                } else if (is_array($data[self::FIELD_CATEGORY])) {
-                    $this->setCategory(new FHIRCarePlanActivityCategory(array_merge($ext, $data[self::FIELD_CATEGORY])));
-                }
+        if (isset($data[self::FIELD_CATEGORY]) || isset($data[self::FIELD_CATEGORY_EXT])) {
+            if (isset($data[self::FIELD_CATEGORY])) {
+                $value = $data[self::FIELD_CATEGORY];
             } else {
-                $this->setCategory(new FHIRCarePlanActivityCategory($data[self::FIELD_CATEGORY]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_CATEGORY_EXT]) && is_array($data[self::FIELD_CATEGORY_EXT])) {
+                $ext = $data[self::FIELD_CATEGORY_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRCarePlanActivityCategory) {
+                    $this->setCategory($value);
+                } else if (is_array($value)) {
+                    $this->setCategory(new FHIRCarePlanActivityCategory(array_merge($ext, $value)));
+                } else {
+                    $this->setCategory(new FHIRCarePlanActivityCategory([FHIRCarePlanActivityCategory::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setCategory(new FHIRCarePlanActivityCategory($ext));
             }
         }
         if (isset($data[self::FIELD_CODE])) {
@@ -280,20 +287,27 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
                 $this->setDailyAmount(new FHIRQuantity($data[self::FIELD_DAILY_AMOUNT]));
             }
         }
-        if (isset($data[self::FIELD_DETAILS])) {
-            $ext = (isset($data[self::FIELD_DETAILS_EXT]) && is_array($data[self::FIELD_DETAILS_EXT]))
-                ? $data[self::FIELD_DETAILS_EXT]
-                : null;
-            if ($data[self::FIELD_DETAILS] instanceof FHIRString) {
-                $this->setDetails($data[self::FIELD_DETAILS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DETAILS])) {
-                    $this->setDetails(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DETAILS]] + $ext));
-                } else if (is_array($data[self::FIELD_DETAILS])) {
-                    $this->setDetails(new FHIRString(array_merge($ext, $data[self::FIELD_DETAILS])));
-                }
+        if (isset($data[self::FIELD_DETAILS]) || isset($data[self::FIELD_DETAILS_EXT])) {
+            if (isset($data[self::FIELD_DETAILS])) {
+                $value = $data[self::FIELD_DETAILS];
             } else {
-                $this->setDetails(new FHIRString($data[self::FIELD_DETAILS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DETAILS_EXT]) && is_array($data[self::FIELD_DETAILS_EXT])) {
+                $ext = $data[self::FIELD_DETAILS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDetails($value);
+                } else if (is_array($value)) {
+                    $this->setDetails(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDetails(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDetails(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_LOCATION])) {
@@ -349,20 +363,27 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
                 $this->setTimingSchedule(new FHIRSchedule($data[self::FIELD_TIMING_SCHEDULE]));
             }
         }
-        if (isset($data[self::FIELD_TIMING_STRING])) {
-            $ext = (isset($data[self::FIELD_TIMING_STRING_EXT]) && is_array($data[self::FIELD_TIMING_STRING_EXT]))
-                ? $data[self::FIELD_TIMING_STRING_EXT]
-                : null;
-            if ($data[self::FIELD_TIMING_STRING] instanceof FHIRString) {
-                $this->setTimingString($data[self::FIELD_TIMING_STRING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_TIMING_STRING])) {
-                    $this->setTimingString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_TIMING_STRING]] + $ext));
-                } else if (is_array($data[self::FIELD_TIMING_STRING])) {
-                    $this->setTimingString(new FHIRString(array_merge($ext, $data[self::FIELD_TIMING_STRING])));
-                }
+        if (isset($data[self::FIELD_TIMING_STRING]) || isset($data[self::FIELD_TIMING_STRING_EXT])) {
+            if (isset($data[self::FIELD_TIMING_STRING])) {
+                $value = $data[self::FIELD_TIMING_STRING];
             } else {
-                $this->setTimingString(new FHIRString($data[self::FIELD_TIMING_STRING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_TIMING_STRING_EXT]) && is_array($data[self::FIELD_TIMING_STRING_EXT])) {
+                $ext = $data[self::FIELD_TIMING_STRING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setTimingString($value);
+                } else if (is_array($value)) {
+                    $this->setTimingString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setTimingString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setTimingString(new FHIRString($ext));
             }
         }
     }
@@ -782,8 +803,8 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -940,8 +961,10 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCategory())) {
             $a[self::FIELD_CATEGORY] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCarePlanActivityCategory::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRCarePlanActivityCategory::FIELD_VALUE]);
                 $a[self::FIELD_CATEGORY_EXT] = $enc;
             }
         }
@@ -953,8 +976,10 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDetails())) {
             $a[self::FIELD_DETAILS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_DETAILS_EXT] = $enc;
             }
         }
@@ -962,7 +987,13 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
             $a[self::FIELD_LOCATION] = $v;
         }
         if ([] !== ($vs = $this->getPerformer())) {
-            $a[self::FIELD_PERFORMER] = $vs;
+            $a[self::FIELD_PERFORMER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PERFORMER][] = $v;
+            }
         }
         if (null !== ($v = $this->getProduct())) {
             $a[self::FIELD_PRODUCT] = $v;
@@ -978,10 +1009,15 @@ class FHIRCarePlanSimple extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getTimingString())) {
             $a[self::FIELD_TIMING_STRING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_TIMING_STRING_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiolo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
     const FIELD_SOURCE = 'source';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -159,20 +159,27 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_COLLECTED_DATE_TIME])) {
-            $ext = (isset($data[self::FIELD_COLLECTED_DATE_TIME_EXT]) && is_array($data[self::FIELD_COLLECTED_DATE_TIME_EXT]))
-                ? $data[self::FIELD_COLLECTED_DATE_TIME_EXT]
-                : null;
-            if ($data[self::FIELD_COLLECTED_DATE_TIME] instanceof FHIRDateTime) {
-                $this->setCollectedDateTime($data[self::FIELD_COLLECTED_DATE_TIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_COLLECTED_DATE_TIME])) {
-                    $this->setCollectedDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_COLLECTED_DATE_TIME]] + $ext));
-                } else if (is_array($data[self::FIELD_COLLECTED_DATE_TIME])) {
-                    $this->setCollectedDateTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_COLLECTED_DATE_TIME])));
-                }
+        if (isset($data[self::FIELD_COLLECTED_DATE_TIME]) || isset($data[self::FIELD_COLLECTED_DATE_TIME_EXT])) {
+            if (isset($data[self::FIELD_COLLECTED_DATE_TIME])) {
+                $value = $data[self::FIELD_COLLECTED_DATE_TIME];
             } else {
-                $this->setCollectedDateTime(new FHIRDateTime($data[self::FIELD_COLLECTED_DATE_TIME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_COLLECTED_DATE_TIME_EXT]) && is_array($data[self::FIELD_COLLECTED_DATE_TIME_EXT])) {
+                $ext = $data[self::FIELD_COLLECTED_DATE_TIME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setCollectedDateTime($value);
+                } else if (is_array($value)) {
+                    $this->setCollectedDateTime(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setCollectedDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setCollectedDateTime(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_COLLECTED_PERIOD])) {
@@ -460,8 +467,10 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCollectedDateTime())) {
             $a[self::FIELD_COLLECTED_DATE_TIME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_COLLECTED_DATE_TIME_EXT] = $enc;
             }
         }
@@ -473,6 +482,9 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getSource())) {
             $a[self::FIELD_SOURCE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

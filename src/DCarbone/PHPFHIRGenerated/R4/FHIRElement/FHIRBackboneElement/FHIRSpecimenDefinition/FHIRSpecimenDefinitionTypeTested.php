@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,7 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A kind of specimen with associated set of requirements.
@@ -230,36 +230,50 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 $this->addHandling(new FHIRSpecimenDefinitionHandling($data[self::FIELD_HANDLING]));
             }
         }
-        if (isset($data[self::FIELD_IS_DERIVED])) {
-            $ext = (isset($data[self::FIELD_IS_DERIVED_EXT]) && is_array($data[self::FIELD_IS_DERIVED_EXT]))
-                ? $data[self::FIELD_IS_DERIVED_EXT]
-                : null;
-            if ($data[self::FIELD_IS_DERIVED] instanceof FHIRBoolean) {
-                $this->setIsDerived($data[self::FIELD_IS_DERIVED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_IS_DERIVED])) {
-                    $this->setIsDerived(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_IS_DERIVED]] + $ext));
-                } else if (is_array($data[self::FIELD_IS_DERIVED])) {
-                    $this->setIsDerived(new FHIRBoolean(array_merge($ext, $data[self::FIELD_IS_DERIVED])));
-                }
+        if (isset($data[self::FIELD_IS_DERIVED]) || isset($data[self::FIELD_IS_DERIVED_EXT])) {
+            if (isset($data[self::FIELD_IS_DERIVED])) {
+                $value = $data[self::FIELD_IS_DERIVED];
             } else {
-                $this->setIsDerived(new FHIRBoolean($data[self::FIELD_IS_DERIVED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_IS_DERIVED_EXT]) && is_array($data[self::FIELD_IS_DERIVED_EXT])) {
+                $ext = $data[self::FIELD_IS_DERIVED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setIsDerived($value);
+                } else if (is_array($value)) {
+                    $this->setIsDerived(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setIsDerived(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setIsDerived(new FHIRBoolean($ext));
             }
         }
-        if (isset($data[self::FIELD_PREFERENCE])) {
-            $ext = (isset($data[self::FIELD_PREFERENCE_EXT]) && is_array($data[self::FIELD_PREFERENCE_EXT]))
-                ? $data[self::FIELD_PREFERENCE_EXT]
-                : null;
-            if ($data[self::FIELD_PREFERENCE] instanceof FHIRSpecimenContainedPreference) {
-                $this->setPreference($data[self::FIELD_PREFERENCE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PREFERENCE])) {
-                    $this->setPreference(new FHIRSpecimenContainedPreference([FHIRSpecimenContainedPreference::FIELD_VALUE => $data[self::FIELD_PREFERENCE]] + $ext));
-                } else if (is_array($data[self::FIELD_PREFERENCE])) {
-                    $this->setPreference(new FHIRSpecimenContainedPreference(array_merge($ext, $data[self::FIELD_PREFERENCE])));
-                }
+        if (isset($data[self::FIELD_PREFERENCE]) || isset($data[self::FIELD_PREFERENCE_EXT])) {
+            if (isset($data[self::FIELD_PREFERENCE])) {
+                $value = $data[self::FIELD_PREFERENCE];
             } else {
-                $this->setPreference(new FHIRSpecimenContainedPreference($data[self::FIELD_PREFERENCE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PREFERENCE_EXT]) && is_array($data[self::FIELD_PREFERENCE_EXT])) {
+                $ext = $data[self::FIELD_PREFERENCE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRSpecimenContainedPreference) {
+                    $this->setPreference($value);
+                } else if (is_array($value)) {
+                    $this->setPreference(new FHIRSpecimenContainedPreference(array_merge($ext, $value)));
+                } else {
+                    $this->setPreference(new FHIRSpecimenContainedPreference([FHIRSpecimenContainedPreference::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPreference(new FHIRSpecimenContainedPreference($ext));
             }
         }
         if (isset($data[self::FIELD_REJECTION_CRITERION])) {
@@ -280,20 +294,27 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
                 $this->addRejectionCriterion(new FHIRCodeableConcept($data[self::FIELD_REJECTION_CRITERION]));
             }
         }
-        if (isset($data[self::FIELD_REQUIREMENT])) {
-            $ext = (isset($data[self::FIELD_REQUIREMENT_EXT]) && is_array($data[self::FIELD_REQUIREMENT_EXT]))
-                ? $data[self::FIELD_REQUIREMENT_EXT]
-                : null;
-            if ($data[self::FIELD_REQUIREMENT] instanceof FHIRString) {
-                $this->setRequirement($data[self::FIELD_REQUIREMENT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_REQUIREMENT])) {
-                    $this->setRequirement(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REQUIREMENT]] + $ext));
-                } else if (is_array($data[self::FIELD_REQUIREMENT])) {
-                    $this->setRequirement(new FHIRString(array_merge($ext, $data[self::FIELD_REQUIREMENT])));
-                }
+        if (isset($data[self::FIELD_REQUIREMENT]) || isset($data[self::FIELD_REQUIREMENT_EXT])) {
+            if (isset($data[self::FIELD_REQUIREMENT])) {
+                $value = $data[self::FIELD_REQUIREMENT];
             } else {
-                $this->setRequirement(new FHIRString($data[self::FIELD_REQUIREMENT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_REQUIREMENT_EXT]) && is_array($data[self::FIELD_REQUIREMENT_EXT])) {
+                $ext = $data[self::FIELD_REQUIREMENT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setRequirement($value);
+                } else if (is_array($value)) {
+                    $this->setRequirement(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setRequirement(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setRequirement(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_RETENTION_TIME])) {
@@ -792,29 +813,47 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
             $a[self::FIELD_CONTAINER] = $v;
         }
         if ([] !== ($vs = $this->getHandling())) {
-            $a[self::FIELD_HANDLING] = $vs;
+            $a[self::FIELD_HANDLING] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_HANDLING][] = $v;
+            }
         }
         if (null !== ($v = $this->getIsDerived())) {
             $a[self::FIELD_IS_DERIVED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_IS_DERIVED_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPreference())) {
             $a[self::FIELD_PREFERENCE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRSpecimenContainedPreference::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRSpecimenContainedPreference::FIELD_VALUE]);
                 $a[self::FIELD_PREFERENCE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getRejectionCriterion())) {
-            $a[self::FIELD_REJECTION_CRITERION] = $vs;
+            $a[self::FIELD_REJECTION_CRITERION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_REJECTION_CRITERION][] = $v;
+            }
         }
         if (null !== ($v = $this->getRequirement())) {
             $a[self::FIELD_REQUIREMENT] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_REQUIREMENT_EXT] = $enc;
             }
         }
@@ -823,6 +862,9 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

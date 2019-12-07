@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,7 +91,7 @@ class FHIRProvenanceRelatedAgent extends FHIRBackboneElement
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * String of characters used to identify a name or a resource
@@ -139,20 +139,27 @@ class FHIRProvenanceRelatedAgent extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_TARGET])) {
-            $ext = (isset($data[self::FIELD_TARGET_EXT]) && is_array($data[self::FIELD_TARGET_EXT]))
-                ? $data[self::FIELD_TARGET_EXT]
-                : null;
-            if ($data[self::FIELD_TARGET] instanceof FHIRUri) {
-                $this->setTarget($data[self::FIELD_TARGET]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_TARGET])) {
-                    $this->setTarget(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_TARGET]] + $ext));
-                } else if (is_array($data[self::FIELD_TARGET])) {
-                    $this->setTarget(new FHIRUri(array_merge($ext, $data[self::FIELD_TARGET])));
-                }
+        if (isset($data[self::FIELD_TARGET]) || isset($data[self::FIELD_TARGET_EXT])) {
+            if (isset($data[self::FIELD_TARGET])) {
+                $value = $data[self::FIELD_TARGET];
             } else {
-                $this->setTarget(new FHIRUri($data[self::FIELD_TARGET]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_TARGET_EXT]) && is_array($data[self::FIELD_TARGET_EXT])) {
+                $ext = $data[self::FIELD_TARGET_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setTarget($value);
+                } else if (is_array($value)) {
+                    $this->setTarget(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setTarget(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setTarget(new FHIRUri($ext));
             }
         }
         if (isset($data[self::FIELD_TYPE])) {
@@ -261,8 +268,8 @@ class FHIRProvenanceRelatedAgent extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -350,13 +357,18 @@ class FHIRProvenanceRelatedAgent extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getTarget())) {
             $a[self::FIELD_TARGET] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUri::FIELD_VALUE]);
                 $a[self::FIELD_TARGET_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

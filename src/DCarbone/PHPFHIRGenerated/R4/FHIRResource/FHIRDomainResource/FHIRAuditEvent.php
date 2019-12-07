@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,7 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Indicator for type of action performed during the event that generated the
@@ -262,20 +262,27 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ACTION])) {
-            $ext = (isset($data[self::FIELD_ACTION_EXT]) && is_array($data[self::FIELD_ACTION_EXT]))
-                ? $data[self::FIELD_ACTION_EXT]
-                : null;
-            if ($data[self::FIELD_ACTION] instanceof FHIRAuditEventAction) {
-                $this->setAction($data[self::FIELD_ACTION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ACTION])) {
-                    $this->setAction(new FHIRAuditEventAction([FHIRAuditEventAction::FIELD_VALUE => $data[self::FIELD_ACTION]] + $ext));
-                } else if (is_array($data[self::FIELD_ACTION])) {
-                    $this->setAction(new FHIRAuditEventAction(array_merge($ext, $data[self::FIELD_ACTION])));
-                }
+        if (isset($data[self::FIELD_ACTION]) || isset($data[self::FIELD_ACTION_EXT])) {
+            if (isset($data[self::FIELD_ACTION])) {
+                $value = $data[self::FIELD_ACTION];
             } else {
-                $this->setAction(new FHIRAuditEventAction($data[self::FIELD_ACTION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ACTION_EXT]) && is_array($data[self::FIELD_ACTION_EXT])) {
+                $ext = $data[self::FIELD_ACTION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRAuditEventAction) {
+                    $this->setAction($value);
+                } else if (is_array($value)) {
+                    $this->setAction(new FHIRAuditEventAction(array_merge($ext, $value)));
+                } else {
+                    $this->setAction(new FHIRAuditEventAction([FHIRAuditEventAction::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAction(new FHIRAuditEventAction($ext));
             }
         }
         if (isset($data[self::FIELD_AGENT])) {
@@ -314,36 +321,50 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 $this->addEntity(new FHIRAuditEventEntity($data[self::FIELD_ENTITY]));
             }
         }
-        if (isset($data[self::FIELD_OUTCOME])) {
-            $ext = (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT]))
-                ? $data[self::FIELD_OUTCOME_EXT]
-                : null;
-            if ($data[self::FIELD_OUTCOME] instanceof FHIRAuditEventOutcome) {
-                $this->setOutcome($data[self::FIELD_OUTCOME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_OUTCOME])) {
-                    $this->setOutcome(new FHIRAuditEventOutcome([FHIRAuditEventOutcome::FIELD_VALUE => $data[self::FIELD_OUTCOME]] + $ext));
-                } else if (is_array($data[self::FIELD_OUTCOME])) {
-                    $this->setOutcome(new FHIRAuditEventOutcome(array_merge($ext, $data[self::FIELD_OUTCOME])));
-                }
+        if (isset($data[self::FIELD_OUTCOME]) || isset($data[self::FIELD_OUTCOME_EXT])) {
+            if (isset($data[self::FIELD_OUTCOME])) {
+                $value = $data[self::FIELD_OUTCOME];
             } else {
-                $this->setOutcome(new FHIRAuditEventOutcome($data[self::FIELD_OUTCOME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT])) {
+                $ext = $data[self::FIELD_OUTCOME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRAuditEventOutcome) {
+                    $this->setOutcome($value);
+                } else if (is_array($value)) {
+                    $this->setOutcome(new FHIRAuditEventOutcome(array_merge($ext, $value)));
+                } else {
+                    $this->setOutcome(new FHIRAuditEventOutcome([FHIRAuditEventOutcome::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setOutcome(new FHIRAuditEventOutcome($ext));
             }
         }
-        if (isset($data[self::FIELD_OUTCOME_DESC])) {
-            $ext = (isset($data[self::FIELD_OUTCOME_DESC_EXT]) && is_array($data[self::FIELD_OUTCOME_DESC_EXT]))
-                ? $data[self::FIELD_OUTCOME_DESC_EXT]
-                : null;
-            if ($data[self::FIELD_OUTCOME_DESC] instanceof FHIRString) {
-                $this->setOutcomeDesc($data[self::FIELD_OUTCOME_DESC]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_OUTCOME_DESC])) {
-                    $this->setOutcomeDesc(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_OUTCOME_DESC]] + $ext));
-                } else if (is_array($data[self::FIELD_OUTCOME_DESC])) {
-                    $this->setOutcomeDesc(new FHIRString(array_merge($ext, $data[self::FIELD_OUTCOME_DESC])));
-                }
+        if (isset($data[self::FIELD_OUTCOME_DESC]) || isset($data[self::FIELD_OUTCOME_DESC_EXT])) {
+            if (isset($data[self::FIELD_OUTCOME_DESC])) {
+                $value = $data[self::FIELD_OUTCOME_DESC];
             } else {
-                $this->setOutcomeDesc(new FHIRString($data[self::FIELD_OUTCOME_DESC]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_OUTCOME_DESC_EXT]) && is_array($data[self::FIELD_OUTCOME_DESC_EXT])) {
+                $ext = $data[self::FIELD_OUTCOME_DESC_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setOutcomeDesc($value);
+                } else if (is_array($value)) {
+                    $this->setOutcomeDesc(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setOutcomeDesc(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setOutcomeDesc(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_PERIOD])) {
@@ -371,20 +392,27 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
                 $this->addPurposeOfEvent(new FHIRCodeableConcept($data[self::FIELD_PURPOSE_OF_EVENT]));
             }
         }
-        if (isset($data[self::FIELD_RECORDED])) {
-            $ext = (isset($data[self::FIELD_RECORDED_EXT]) && is_array($data[self::FIELD_RECORDED_EXT]))
-                ? $data[self::FIELD_RECORDED_EXT]
-                : null;
-            if ($data[self::FIELD_RECORDED] instanceof FHIRInstant) {
-                $this->setRecorded($data[self::FIELD_RECORDED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_RECORDED])) {
-                    $this->setRecorded(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_RECORDED]] + $ext));
-                } else if (is_array($data[self::FIELD_RECORDED])) {
-                    $this->setRecorded(new FHIRInstant(array_merge($ext, $data[self::FIELD_RECORDED])));
-                }
+        if (isset($data[self::FIELD_RECORDED]) || isset($data[self::FIELD_RECORDED_EXT])) {
+            if (isset($data[self::FIELD_RECORDED])) {
+                $value = $data[self::FIELD_RECORDED];
             } else {
-                $this->setRecorded(new FHIRInstant($data[self::FIELD_RECORDED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_RECORDED_EXT]) && is_array($data[self::FIELD_RECORDED_EXT])) {
+                $ext = $data[self::FIELD_RECORDED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInstant) {
+                    $this->setRecorded($value);
+                } else if (is_array($value)) {
+                    $this->setRecorded(new FHIRInstant(array_merge($ext, $value)));
+                } else {
+                    $this->setRecorded(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setRecorded(new FHIRInstant($ext));
             }
         }
         if (isset($data[self::FIELD_SOURCE])) {
@@ -1096,28 +1124,46 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAction())) {
             $a[self::FIELD_ACTION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRAuditEventAction::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRAuditEventAction::FIELD_VALUE]);
                 $a[self::FIELD_ACTION_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getAgent())) {
-            $a[self::FIELD_AGENT] = $vs;
+            $a[self::FIELD_AGENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_AGENT][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getEntity())) {
-            $a[self::FIELD_ENTITY] = $vs;
+            $a[self::FIELD_ENTITY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ENTITY][] = $v;
+            }
         }
         if (null !== ($v = $this->getOutcome())) {
             $a[self::FIELD_OUTCOME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRAuditEventOutcome::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRAuditEventOutcome::FIELD_VALUE]);
                 $a[self::FIELD_OUTCOME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getOutcomeDesc())) {
             $a[self::FIELD_OUTCOME_DESC] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_OUTCOME_DESC_EXT] = $enc;
             }
         }
@@ -1125,12 +1171,20 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $a[self::FIELD_PERIOD] = $v;
         }
         if ([] !== ($vs = $this->getPurposeOfEvent())) {
-            $a[self::FIELD_PURPOSE_OF_EVENT] = $vs;
+            $a[self::FIELD_PURPOSE_OF_EVENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PURPOSE_OF_EVENT][] = $v;
+            }
         }
         if (null !== ($v = $this->getRecorded())) {
             $a[self::FIELD_RECORDED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInstant::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInstant::FIELD_VALUE]);
                 $a[self::FIELD_RECORDED_EXT] = $enc;
             }
         }
@@ -1138,10 +1192,19 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
             $a[self::FIELD_SOURCE] = $v;
         }
         if ([] !== ($vs = $this->getSubtype())) {
-            $a[self::FIELD_SUBTYPE] = $vs;
+            $a[self::FIELD_SUBTYPE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SUBTYPE][] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -168,7 +168,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     const FIELD_VALUE_SET = 'ValueSet';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Records an unexpected reaction suspected to be related to the exposure of the
@@ -658,7 +658,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setAdverseReaction(new FHIRAdverseReaction($data[self::FIELD_ADVERSE_REACTION]));
             }
-            return;
         }
         if (isset($data[self::FIELD_ALERT])) {
             if ($data[self::FIELD_ALERT] instanceof FHIRAlert) {
@@ -666,7 +665,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setAlert(new FHIRAlert($data[self::FIELD_ALERT]));
             }
-            return;
         }
         if (isset($data[self::FIELD_ALLERGY_INTOLERANCE])) {
             if ($data[self::FIELD_ALLERGY_INTOLERANCE] instanceof FHIRAllergyIntolerance) {
@@ -674,7 +672,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setAllergyIntolerance(new FHIRAllergyIntolerance($data[self::FIELD_ALLERGY_INTOLERANCE]));
             }
-            return;
         }
         if (isset($data[self::FIELD_BINARY])) {
             if ($data[self::FIELD_BINARY] instanceof FHIRBinary) {
@@ -682,7 +679,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setBinary(new FHIRBinary($data[self::FIELD_BINARY]));
             }
-            return;
         }
         if (isset($data[self::FIELD_CARE_PLAN])) {
             if ($data[self::FIELD_CARE_PLAN] instanceof FHIRCarePlan) {
@@ -690,7 +686,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setCarePlan(new FHIRCarePlan($data[self::FIELD_CARE_PLAN]));
             }
-            return;
         }
         if (isset($data[self::FIELD_COMPOSITION])) {
             if ($data[self::FIELD_COMPOSITION] instanceof FHIRComposition) {
@@ -698,7 +693,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setComposition(new FHIRComposition($data[self::FIELD_COMPOSITION]));
             }
-            return;
         }
         if (isset($data[self::FIELD_CONCEPT_MAP])) {
             if ($data[self::FIELD_CONCEPT_MAP] instanceof FHIRConceptMap) {
@@ -706,7 +700,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setConceptMap(new FHIRConceptMap($data[self::FIELD_CONCEPT_MAP]));
             }
-            return;
         }
         if (isset($data[self::FIELD_CONDITION])) {
             if ($data[self::FIELD_CONDITION] instanceof FHIRCondition) {
@@ -714,7 +707,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setCondition(new FHIRCondition($data[self::FIELD_CONDITION]));
             }
-            return;
         }
         if (isset($data[self::FIELD_CONFORMANCE])) {
             if ($data[self::FIELD_CONFORMANCE] instanceof FHIRConformance) {
@@ -722,7 +714,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setConformance(new FHIRConformance($data[self::FIELD_CONFORMANCE]));
             }
-            return;
         }
         if (isset($data[self::FIELD_DEVICE])) {
             if ($data[self::FIELD_DEVICE] instanceof FHIRDevice) {
@@ -730,7 +721,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setDevice(new FHIRDevice($data[self::FIELD_DEVICE]));
             }
-            return;
         }
         if (isset($data[self::FIELD_DEVICE_OBSERVATION_REPORT])) {
             if ($data[self::FIELD_DEVICE_OBSERVATION_REPORT] instanceof FHIRDeviceObservationReport) {
@@ -738,7 +728,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setDeviceObservationReport(new FHIRDeviceObservationReport($data[self::FIELD_DEVICE_OBSERVATION_REPORT]));
             }
-            return;
         }
         if (isset($data[self::FIELD_DIAGNOSTIC_ORDER])) {
             if ($data[self::FIELD_DIAGNOSTIC_ORDER] instanceof FHIRDiagnosticOrder) {
@@ -746,7 +735,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setDiagnosticOrder(new FHIRDiagnosticOrder($data[self::FIELD_DIAGNOSTIC_ORDER]));
             }
-            return;
         }
         if (isset($data[self::FIELD_DIAGNOSTIC_REPORT])) {
             if ($data[self::FIELD_DIAGNOSTIC_REPORT] instanceof FHIRDiagnosticReport) {
@@ -754,7 +742,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setDiagnosticReport(new FHIRDiagnosticReport($data[self::FIELD_DIAGNOSTIC_REPORT]));
             }
-            return;
         }
         if (isset($data[self::FIELD_DOCUMENT_MANIFEST])) {
             if ($data[self::FIELD_DOCUMENT_MANIFEST] instanceof FHIRDocumentManifest) {
@@ -762,7 +749,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setDocumentManifest(new FHIRDocumentManifest($data[self::FIELD_DOCUMENT_MANIFEST]));
             }
-            return;
         }
         if (isset($data[self::FIELD_DOCUMENT_REFERENCE])) {
             if ($data[self::FIELD_DOCUMENT_REFERENCE] instanceof FHIRDocumentReference) {
@@ -770,7 +756,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setDocumentReference(new FHIRDocumentReference($data[self::FIELD_DOCUMENT_REFERENCE]));
             }
-            return;
         }
         if (isset($data[self::FIELD_ENCOUNTER])) {
             if ($data[self::FIELD_ENCOUNTER] instanceof FHIREncounter) {
@@ -778,7 +763,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setEncounter(new FHIREncounter($data[self::FIELD_ENCOUNTER]));
             }
-            return;
         }
         if (isset($data[self::FIELD_FAMILY_HISTORY])) {
             if ($data[self::FIELD_FAMILY_HISTORY] instanceof FHIRFamilyHistory) {
@@ -786,7 +770,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setFamilyHistory(new FHIRFamilyHistory($data[self::FIELD_FAMILY_HISTORY]));
             }
-            return;
         }
         if (isset($data[self::FIELD_GROUP])) {
             if ($data[self::FIELD_GROUP] instanceof FHIRGroup) {
@@ -794,7 +777,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setGroup(new FHIRGroup($data[self::FIELD_GROUP]));
             }
-            return;
         }
         if (isset($data[self::FIELD_IMAGING_STUDY])) {
             if ($data[self::FIELD_IMAGING_STUDY] instanceof FHIRImagingStudy) {
@@ -802,7 +784,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setImagingStudy(new FHIRImagingStudy($data[self::FIELD_IMAGING_STUDY]));
             }
-            return;
         }
         if (isset($data[self::FIELD_IMMUNIZATION])) {
             if ($data[self::FIELD_IMMUNIZATION] instanceof FHIRImmunization) {
@@ -810,7 +791,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setImmunization(new FHIRImmunization($data[self::FIELD_IMMUNIZATION]));
             }
-            return;
         }
         if (isset($data[self::FIELD_IMMUNIZATION_RECOMMENDATION])) {
             if ($data[self::FIELD_IMMUNIZATION_RECOMMENDATION] instanceof FHIRImmunizationRecommendation) {
@@ -818,7 +798,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setImmunizationRecommendation(new FHIRImmunizationRecommendation($data[self::FIELD_IMMUNIZATION_RECOMMENDATION]));
             }
-            return;
         }
         if (isset($data[self::FIELD_LIST])) {
             if ($data[self::FIELD_LIST] instanceof FHIRList) {
@@ -826,7 +805,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setList(new FHIRList($data[self::FIELD_LIST]));
             }
-            return;
         }
         if (isset($data[self::FIELD_LOCATION])) {
             if ($data[self::FIELD_LOCATION] instanceof FHIRLocation) {
@@ -834,7 +812,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setLocation(new FHIRLocation($data[self::FIELD_LOCATION]));
             }
-            return;
         }
         if (isset($data[self::FIELD_MEDIA])) {
             if ($data[self::FIELD_MEDIA] instanceof FHIRMedia) {
@@ -842,7 +819,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setMedia(new FHIRMedia($data[self::FIELD_MEDIA]));
             }
-            return;
         }
         if (isset($data[self::FIELD_MEDICATION])) {
             if ($data[self::FIELD_MEDICATION] instanceof FHIRMedication) {
@@ -850,7 +826,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setMedication(new FHIRMedication($data[self::FIELD_MEDICATION]));
             }
-            return;
         }
         if (isset($data[self::FIELD_MEDICATION_ADMINISTRATION])) {
             if ($data[self::FIELD_MEDICATION_ADMINISTRATION] instanceof FHIRMedicationAdministration) {
@@ -858,7 +833,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setMedicationAdministration(new FHIRMedicationAdministration($data[self::FIELD_MEDICATION_ADMINISTRATION]));
             }
-            return;
         }
         if (isset($data[self::FIELD_MEDICATION_DISPENSE])) {
             if ($data[self::FIELD_MEDICATION_DISPENSE] instanceof FHIRMedicationDispense) {
@@ -866,7 +840,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setMedicationDispense(new FHIRMedicationDispense($data[self::FIELD_MEDICATION_DISPENSE]));
             }
-            return;
         }
         if (isset($data[self::FIELD_MEDICATION_PRESCRIPTION])) {
             if ($data[self::FIELD_MEDICATION_PRESCRIPTION] instanceof FHIRMedicationPrescription) {
@@ -874,7 +847,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setMedicationPrescription(new FHIRMedicationPrescription($data[self::FIELD_MEDICATION_PRESCRIPTION]));
             }
-            return;
         }
         if (isset($data[self::FIELD_MEDICATION_STATEMENT])) {
             if ($data[self::FIELD_MEDICATION_STATEMENT] instanceof FHIRMedicationStatement) {
@@ -882,7 +854,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setMedicationStatement(new FHIRMedicationStatement($data[self::FIELD_MEDICATION_STATEMENT]));
             }
-            return;
         }
         if (isset($data[self::FIELD_MESSAGE_HEADER])) {
             if ($data[self::FIELD_MESSAGE_HEADER] instanceof FHIRMessageHeader) {
@@ -890,7 +861,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setMessageHeader(new FHIRMessageHeader($data[self::FIELD_MESSAGE_HEADER]));
             }
-            return;
         }
         if (isset($data[self::FIELD_OBSERVATION])) {
             if ($data[self::FIELD_OBSERVATION] instanceof FHIRObservation) {
@@ -898,7 +868,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setObservation(new FHIRObservation($data[self::FIELD_OBSERVATION]));
             }
-            return;
         }
         if (isset($data[self::FIELD_OPERATION_OUTCOME])) {
             if ($data[self::FIELD_OPERATION_OUTCOME] instanceof FHIROperationOutcome) {
@@ -906,7 +875,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setOperationOutcome(new FHIROperationOutcome($data[self::FIELD_OPERATION_OUTCOME]));
             }
-            return;
         }
         if (isset($data[self::FIELD_ORDER])) {
             if ($data[self::FIELD_ORDER] instanceof FHIROrder) {
@@ -914,7 +882,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setOrder(new FHIROrder($data[self::FIELD_ORDER]));
             }
-            return;
         }
         if (isset($data[self::FIELD_ORDER_RESPONSE])) {
             if ($data[self::FIELD_ORDER_RESPONSE] instanceof FHIROrderResponse) {
@@ -922,7 +889,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setOrderResponse(new FHIROrderResponse($data[self::FIELD_ORDER_RESPONSE]));
             }
-            return;
         }
         if (isset($data[self::FIELD_ORGANIZATION])) {
             if ($data[self::FIELD_ORGANIZATION] instanceof FHIROrganization) {
@@ -930,7 +896,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setOrganization(new FHIROrganization($data[self::FIELD_ORGANIZATION]));
             }
-            return;
         }
         if (isset($data[self::FIELD_OTHER])) {
             if ($data[self::FIELD_OTHER] instanceof FHIROther) {
@@ -938,7 +903,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setOther(new FHIROther($data[self::FIELD_OTHER]));
             }
-            return;
         }
         if (isset($data[self::FIELD_PATIENT])) {
             if ($data[self::FIELD_PATIENT] instanceof FHIRPatient) {
@@ -946,7 +910,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setPatient(new FHIRPatient($data[self::FIELD_PATIENT]));
             }
-            return;
         }
         if (isset($data[self::FIELD_PRACTITIONER])) {
             if ($data[self::FIELD_PRACTITIONER] instanceof FHIRPractitioner) {
@@ -954,7 +917,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setPractitioner(new FHIRPractitioner($data[self::FIELD_PRACTITIONER]));
             }
-            return;
         }
         if (isset($data[self::FIELD_PROCEDURE])) {
             if ($data[self::FIELD_PROCEDURE] instanceof FHIRProcedure) {
@@ -962,7 +924,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setProcedure(new FHIRProcedure($data[self::FIELD_PROCEDURE]));
             }
-            return;
         }
         if (isset($data[self::FIELD_PROFILE])) {
             if ($data[self::FIELD_PROFILE] instanceof FHIRProfile) {
@@ -970,7 +931,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setProfile(new FHIRProfile($data[self::FIELD_PROFILE]));
             }
-            return;
         }
         if (isset($data[self::FIELD_PROVENANCE])) {
             if ($data[self::FIELD_PROVENANCE] instanceof FHIRProvenance) {
@@ -978,7 +938,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setProvenance(new FHIRProvenance($data[self::FIELD_PROVENANCE]));
             }
-            return;
         }
         if (isset($data[self::FIELD_QUERY])) {
             if ($data[self::FIELD_QUERY] instanceof FHIRQuery) {
@@ -986,7 +945,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setQuery(new FHIRQuery($data[self::FIELD_QUERY]));
             }
-            return;
         }
         if (isset($data[self::FIELD_QUESTIONNAIRE])) {
             if ($data[self::FIELD_QUESTIONNAIRE] instanceof FHIRQuestionnaire) {
@@ -994,7 +952,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setQuestionnaire(new FHIRQuestionnaire($data[self::FIELD_QUESTIONNAIRE]));
             }
-            return;
         }
         if (isset($data[self::FIELD_RELATED_PERSON])) {
             if ($data[self::FIELD_RELATED_PERSON] instanceof FHIRRelatedPerson) {
@@ -1002,7 +959,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setRelatedPerson(new FHIRRelatedPerson($data[self::FIELD_RELATED_PERSON]));
             }
-            return;
         }
         if (isset($data[self::FIELD_SECURITY_EVENT])) {
             if ($data[self::FIELD_SECURITY_EVENT] instanceof FHIRSecurityEvent) {
@@ -1010,7 +966,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setSecurityEvent(new FHIRSecurityEvent($data[self::FIELD_SECURITY_EVENT]));
             }
-            return;
         }
         if (isset($data[self::FIELD_SPECIMEN])) {
             if ($data[self::FIELD_SPECIMEN] instanceof FHIRSpecimen) {
@@ -1018,7 +973,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setSpecimen(new FHIRSpecimen($data[self::FIELD_SPECIMEN]));
             }
-            return;
         }
         if (isset($data[self::FIELD_SUBSTANCE])) {
             if ($data[self::FIELD_SUBSTANCE] instanceof FHIRSubstance) {
@@ -1026,7 +980,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setSubstance(new FHIRSubstance($data[self::FIELD_SUBSTANCE]));
             }
-            return;
         }
         if (isset($data[self::FIELD_SUPPLY])) {
             if ($data[self::FIELD_SUPPLY] instanceof FHIRSupply) {
@@ -1034,7 +987,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setSupply(new FHIRSupply($data[self::FIELD_SUPPLY]));
             }
-            return;
         }
         if (isset($data[self::FIELD_VALUE_SET])) {
             if ($data[self::FIELD_VALUE_SET] instanceof FHIRValueSet) {
@@ -1042,7 +994,6 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
             } else {
                 $this->setValueSet(new FHIRValueSet($data[self::FIELD_VALUE_SET]));
             }
-            return;
         }
     }
 
@@ -2395,8 +2346,8 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = [];
+        return $errs;
     }
 
     /**

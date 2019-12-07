@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,7 +93,7 @@ class FHIRImagingObjectSelectionFrames extends FHIRBackboneElement
     const FIELD_URL_EXT = '_url';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * An integer with a value that is not negative (e.g. >= 0)
@@ -143,49 +143,65 @@ class FHIRImagingObjectSelectionFrames extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_FRAME_NUMBERS])) {
-            $ext = (isset($data[self::FIELD_FRAME_NUMBERS_EXT]) && is_array($data[self::FIELD_FRAME_NUMBERS_EXT]))
-                ? $data[self::FIELD_FRAME_NUMBERS_EXT]
-                : null;
-            if (is_array($data[self::FIELD_FRAME_NUMBERS])) {
-                foreach($data[self::FIELD_FRAME_NUMBERS] as $i => $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRUnsignedInt) {
-                        $this->addFrameNumbers($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addFrameNumbers(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addFrameNumbers(new FHIRUnsignedInt(array_merge($v, $ext[$i])));
-                        }
-                    } else {
-                        $this->addFrameNumbers(new FHIRUnsignedInt($v));
-                    }
-                }
-            } elseif ($data[self::FIELD_FRAME_NUMBERS] instanceof FHIRUnsignedInt) {
-                $this->addFrameNumbers($data[self::FIELD_FRAME_NUMBERS]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_FRAME_NUMBERS])) {
-                $this->addFrameNumbers(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $data[self::FIELD_FRAME_NUMBERS]] + $ext));
+        if (isset($data[self::FIELD_FRAME_NUMBERS]) || isset($data[self::FIELD_FRAME_NUMBERS_EXT])) {
+            if (isset($data[self::FIELD_FRAME_NUMBERS])) {
+                $value = $data[self::FIELD_FRAME_NUMBERS];
             } else {
-                $this->addFrameNumbers(new FHIRUnsignedInt($data[self::FIELD_FRAME_NUMBERS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_FRAME_NUMBERS_EXT]) && is_array($data[self::FIELD_FRAME_NUMBERS_EXT])) {
+                $ext = $data[self::FIELD_FRAME_NUMBERS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUnsignedInt) {
+                    $this->addFrameNumbers($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRUnsignedInt) {
+                            $this->addFrameNumbers($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addFrameNumbers(new FHIRUnsignedInt(array_merge($v, $iext)));
+                            } else {
+                                $this->addFrameNumbers(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addFrameNumbers(new FHIRUnsignedInt(array_merge($ext, $value)));
+                } else {
+                    $this->addFrameNumbers(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addFrameNumbers(new FHIRUnsignedInt($iext));
+                }
             }
         }
-        if (isset($data[self::FIELD_URL])) {
-            $ext = (isset($data[self::FIELD_URL_EXT]) && is_array($data[self::FIELD_URL_EXT]))
-                ? $data[self::FIELD_URL_EXT]
-                : null;
-            if ($data[self::FIELD_URL] instanceof FHIRUri) {
-                $this->setUrl($data[self::FIELD_URL]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_URL])) {
-                    $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_URL]] + $ext));
-                } else if (is_array($data[self::FIELD_URL])) {
-                    $this->setUrl(new FHIRUri(array_merge($ext, $data[self::FIELD_URL])));
-                }
+        if (isset($data[self::FIELD_URL]) || isset($data[self::FIELD_URL_EXT])) {
+            if (isset($data[self::FIELD_URL])) {
+                $value = $data[self::FIELD_URL];
             } else {
-                $this->setUrl(new FHIRUri($data[self::FIELD_URL]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_URL_EXT]) && is_array($data[self::FIELD_URL_EXT])) {
+                $ext = $data[self::FIELD_URL_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setUrl($value);
+                } else if (is_array($value)) {
+                    $this->setUrl(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setUrl(new FHIRUri($ext));
             }
         }
     }
@@ -317,8 +333,8 @@ class FHIRImagingObjectSelectionFrames extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -413,25 +429,38 @@ class FHIRImagingObjectSelectionFrames extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getFrameNumbers())) {
             $a[self::FIELD_FRAME_NUMBERS] = [];
+            $encs = [];
+            $encValued = false;
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
                 $a[self::FIELD_FRAME_NUMBERS][] = $v->getValue();
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_FRAME_NUMBERS_EXT][] = $enc;
+                $enc = $v->jsonSerialize();
+                $cnt = count($enc);
+                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRUnsignedInt::FIELD_VALUE]) || array_key_exists(FHIRUnsignedInt::FIELD_VALUE, $enc)))) {
+                    $encs[] = null;
                 } else {
-                    $a[self::FIELD_FRAME_NUMBERS_EXT][] = null;
+                    unset($enc[FHIRUnsignedInt::FIELD_VALUE]);
+                    $encs[] = $enc;
+                    $encValued = true;
                 }
+            }
+            if ($encValued) {
+                $a[self::FIELD_FRAME_NUMBERS_EXT] = $encs;
             }
         }
         if (null !== ($v = $this->getUrl())) {
             $a[self::FIELD_URL] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUri::FIELD_VALUE]);
                 $a[self::FIELD_URL_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

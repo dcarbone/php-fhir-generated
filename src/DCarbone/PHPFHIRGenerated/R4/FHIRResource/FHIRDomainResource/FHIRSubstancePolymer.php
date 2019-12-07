@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,7 +91,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
     const FIELD_REPEAT = 'repeat';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -212,33 +212,42 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 $this->setGeometry(new FHIRCodeableConcept($data[self::FIELD_GEOMETRY]));
             }
         }
-        if (isset($data[self::FIELD_MODIFICATION])) {
-            $ext = (isset($data[self::FIELD_MODIFICATION_EXT]) && is_array($data[self::FIELD_MODIFICATION_EXT]))
-                ? $data[self::FIELD_MODIFICATION_EXT]
-                : null;
-            if (is_array($data[self::FIELD_MODIFICATION])) {
-                foreach($data[self::FIELD_MODIFICATION] as $i => $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRString) {
-                        $this->addModification($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addModification(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addModification(new FHIRString(array_merge($v, $ext[$i])));
-                        }
-                    } else {
-                        $this->addModification(new FHIRString($v));
-                    }
-                }
-            } elseif ($data[self::FIELD_MODIFICATION] instanceof FHIRString) {
-                $this->addModification($data[self::FIELD_MODIFICATION]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_MODIFICATION])) {
-                $this->addModification(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MODIFICATION]] + $ext));
+        if (isset($data[self::FIELD_MODIFICATION]) || isset($data[self::FIELD_MODIFICATION_EXT])) {
+            if (isset($data[self::FIELD_MODIFICATION])) {
+                $value = $data[self::FIELD_MODIFICATION];
             } else {
-                $this->addModification(new FHIRString($data[self::FIELD_MODIFICATION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_MODIFICATION_EXT]) && is_array($data[self::FIELD_MODIFICATION_EXT])) {
+                $ext = $data[self::FIELD_MODIFICATION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->addModification($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRString) {
+                            $this->addModification($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addModification(new FHIRString(array_merge($v, $iext)));
+                            } else {
+                                $this->addModification(new FHIRString([FHIRString::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addModification(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->addModification(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addModification(new FHIRString($iext));
+                }
             }
         }
         if (isset($data[self::FIELD_MONOMER_SET])) {
@@ -734,31 +743,60 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
             $a[self::FIELD_CLASS] = $v;
         }
         if ([] !== ($vs = $this->getCopolymerConnectivity())) {
-            $a[self::FIELD_COPOLYMER_CONNECTIVITY] = $vs;
+            $a[self::FIELD_COPOLYMER_CONNECTIVITY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_COPOLYMER_CONNECTIVITY][] = $v;
+            }
         }
         if (null !== ($v = $this->getGeometry())) {
             $a[self::FIELD_GEOMETRY] = $v;
         }
         if ([] !== ($vs = $this->getModification())) {
             $a[self::FIELD_MODIFICATION] = [];
+            $encs = [];
+            $encValued = false;
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
                 $a[self::FIELD_MODIFICATION][] = $v->getValue();
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_MODIFICATION_EXT][] = $enc;
+                $enc = $v->jsonSerialize();
+                $cnt = count($enc);
+                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                    $encs[] = null;
                 } else {
-                    $a[self::FIELD_MODIFICATION_EXT][] = null;
+                    unset($enc[FHIRString::FIELD_VALUE]);
+                    $encs[] = $enc;
+                    $encValued = true;
                 }
+            }
+            if ($encValued) {
+                $a[self::FIELD_MODIFICATION_EXT] = $encs;
             }
         }
         if ([] !== ($vs = $this->getMonomerSet())) {
-            $a[self::FIELD_MONOMER_SET] = $vs;
+            $a[self::FIELD_MONOMER_SET] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MONOMER_SET][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getRepeat())) {
-            $a[self::FIELD_REPEAT] = $vs;
+            $a[self::FIELD_REPEAT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_REPEAT][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

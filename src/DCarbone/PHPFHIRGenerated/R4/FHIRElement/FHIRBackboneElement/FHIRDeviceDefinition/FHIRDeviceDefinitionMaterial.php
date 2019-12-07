@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
     const FIELD_SUBSTANCE = 'substance';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Value of "true" or "false"
@@ -142,36 +142,50 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ALLERGENIC_INDICATOR])) {
-            $ext = (isset($data[self::FIELD_ALLERGENIC_INDICATOR_EXT]) && is_array($data[self::FIELD_ALLERGENIC_INDICATOR_EXT]))
-                ? $data[self::FIELD_ALLERGENIC_INDICATOR_EXT]
-                : null;
-            if ($data[self::FIELD_ALLERGENIC_INDICATOR] instanceof FHIRBoolean) {
-                $this->setAllergenicIndicator($data[self::FIELD_ALLERGENIC_INDICATOR]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ALLERGENIC_INDICATOR])) {
-                    $this->setAllergenicIndicator(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ALLERGENIC_INDICATOR]] + $ext));
-                } else if (is_array($data[self::FIELD_ALLERGENIC_INDICATOR])) {
-                    $this->setAllergenicIndicator(new FHIRBoolean(array_merge($ext, $data[self::FIELD_ALLERGENIC_INDICATOR])));
-                }
+        if (isset($data[self::FIELD_ALLERGENIC_INDICATOR]) || isset($data[self::FIELD_ALLERGENIC_INDICATOR_EXT])) {
+            if (isset($data[self::FIELD_ALLERGENIC_INDICATOR])) {
+                $value = $data[self::FIELD_ALLERGENIC_INDICATOR];
             } else {
-                $this->setAllergenicIndicator(new FHIRBoolean($data[self::FIELD_ALLERGENIC_INDICATOR]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ALLERGENIC_INDICATOR_EXT]) && is_array($data[self::FIELD_ALLERGENIC_INDICATOR_EXT])) {
+                $ext = $data[self::FIELD_ALLERGENIC_INDICATOR_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setAllergenicIndicator($value);
+                } else if (is_array($value)) {
+                    $this->setAllergenicIndicator(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setAllergenicIndicator(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAllergenicIndicator(new FHIRBoolean($ext));
             }
         }
-        if (isset($data[self::FIELD_ALTERNATE])) {
-            $ext = (isset($data[self::FIELD_ALTERNATE_EXT]) && is_array($data[self::FIELD_ALTERNATE_EXT]))
-                ? $data[self::FIELD_ALTERNATE_EXT]
-                : null;
-            if ($data[self::FIELD_ALTERNATE] instanceof FHIRBoolean) {
-                $this->setAlternate($data[self::FIELD_ALTERNATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ALTERNATE])) {
-                    $this->setAlternate(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ALTERNATE]] + $ext));
-                } else if (is_array($data[self::FIELD_ALTERNATE])) {
-                    $this->setAlternate(new FHIRBoolean(array_merge($ext, $data[self::FIELD_ALTERNATE])));
-                }
+        if (isset($data[self::FIELD_ALTERNATE]) || isset($data[self::FIELD_ALTERNATE_EXT])) {
+            if (isset($data[self::FIELD_ALTERNATE])) {
+                $value = $data[self::FIELD_ALTERNATE];
             } else {
-                $this->setAlternate(new FHIRBoolean($data[self::FIELD_ALTERNATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ALTERNATE_EXT]) && is_array($data[self::FIELD_ALTERNATE_EXT])) {
+                $ext = $data[self::FIELD_ALTERNATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setAlternate($value);
+                } else if (is_array($value)) {
+                    $this->setAlternate(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setAlternate(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAlternate(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_SUBSTANCE])) {
@@ -415,20 +429,27 @@ class FHIRDeviceDefinitionMaterial extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAllergenicIndicator())) {
             $a[self::FIELD_ALLERGENIC_INDICATOR] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_ALLERGENIC_INDICATOR_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getAlternate())) {
             $a[self::FIELD_ALTERNATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_ALTERNATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSubstance())) {
             $a[self::FIELD_SUBSTANCE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

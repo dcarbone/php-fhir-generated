@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRBundleEntry extends FHIRBackboneElement
     const FIELD_SEARCH = 'search';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * String of characters used to identify a name or a resource
@@ -170,20 +170,27 @@ class FHIRBundleEntry extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_FULL_URL])) {
-            $ext = (isset($data[self::FIELD_FULL_URL_EXT]) && is_array($data[self::FIELD_FULL_URL_EXT]))
-                ? $data[self::FIELD_FULL_URL_EXT]
-                : null;
-            if ($data[self::FIELD_FULL_URL] instanceof FHIRUri) {
-                $this->setFullUrl($data[self::FIELD_FULL_URL]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_FULL_URL])) {
-                    $this->setFullUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_FULL_URL]] + $ext));
-                } else if (is_array($data[self::FIELD_FULL_URL])) {
-                    $this->setFullUrl(new FHIRUri(array_merge($ext, $data[self::FIELD_FULL_URL])));
-                }
+        if (isset($data[self::FIELD_FULL_URL]) || isset($data[self::FIELD_FULL_URL_EXT])) {
+            if (isset($data[self::FIELD_FULL_URL])) {
+                $value = $data[self::FIELD_FULL_URL];
             } else {
-                $this->setFullUrl(new FHIRUri($data[self::FIELD_FULL_URL]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_FULL_URL_EXT]) && is_array($data[self::FIELD_FULL_URL_EXT])) {
+                $ext = $data[self::FIELD_FULL_URL_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setFullUrl($value);
+                } else if (is_array($value)) {
+                    $this->setFullUrl(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setFullUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setFullUrl(new FHIRUri($ext));
             }
         }
         if (isset($data[self::FIELD_LINK])) {
@@ -474,8 +481,8 @@ class FHIRBundleEntry extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -600,13 +607,21 @@ class FHIRBundleEntry extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getFullUrl())) {
             $a[self::FIELD_FULL_URL] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUri::FIELD_VALUE]);
                 $a[self::FIELD_FULL_URL_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getLink())) {
-            $a[self::FIELD_LINK] = $vs;
+            $a[self::FIELD_LINK] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_LINK][] = $v;
+            }
         }
         if (null !== ($v = $this->getRequest())) {
             $a[self::FIELD_REQUEST] = $v;
@@ -619,6 +634,9 @@ class FHIRBundleEntry extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getSearch())) {
             $a[self::FIELD_SEARCH] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRBundleSearch extends FHIRBackboneElement
     const FIELD_SCORE_EXT = '_score';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Why an entry is in the result set - whether it's included as a match or because
@@ -132,36 +132,50 @@ class FHIRBundleSearch extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_MODE])) {
-            $ext = (isset($data[self::FIELD_MODE_EXT]) && is_array($data[self::FIELD_MODE_EXT]))
-                ? $data[self::FIELD_MODE_EXT]
-                : null;
-            if ($data[self::FIELD_MODE] instanceof FHIRSearchEntryMode) {
-                $this->setMode($data[self::FIELD_MODE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_MODE])) {
-                    $this->setMode(new FHIRSearchEntryMode([FHIRSearchEntryMode::FIELD_VALUE => $data[self::FIELD_MODE]] + $ext));
-                } else if (is_array($data[self::FIELD_MODE])) {
-                    $this->setMode(new FHIRSearchEntryMode(array_merge($ext, $data[self::FIELD_MODE])));
-                }
+        if (isset($data[self::FIELD_MODE]) || isset($data[self::FIELD_MODE_EXT])) {
+            if (isset($data[self::FIELD_MODE])) {
+                $value = $data[self::FIELD_MODE];
             } else {
-                $this->setMode(new FHIRSearchEntryMode($data[self::FIELD_MODE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_MODE_EXT]) && is_array($data[self::FIELD_MODE_EXT])) {
+                $ext = $data[self::FIELD_MODE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRSearchEntryMode) {
+                    $this->setMode($value);
+                } else if (is_array($value)) {
+                    $this->setMode(new FHIRSearchEntryMode(array_merge($ext, $value)));
+                } else {
+                    $this->setMode(new FHIRSearchEntryMode([FHIRSearchEntryMode::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setMode(new FHIRSearchEntryMode($ext));
             }
         }
-        if (isset($data[self::FIELD_SCORE])) {
-            $ext = (isset($data[self::FIELD_SCORE_EXT]) && is_array($data[self::FIELD_SCORE_EXT]))
-                ? $data[self::FIELD_SCORE_EXT]
-                : null;
-            if ($data[self::FIELD_SCORE] instanceof FHIRDecimal) {
-                $this->setScore($data[self::FIELD_SCORE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SCORE])) {
-                    $this->setScore(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_SCORE]] + $ext));
-                } else if (is_array($data[self::FIELD_SCORE])) {
-                    $this->setScore(new FHIRDecimal(array_merge($ext, $data[self::FIELD_SCORE])));
-                }
+        if (isset($data[self::FIELD_SCORE]) || isset($data[self::FIELD_SCORE_EXT])) {
+            if (isset($data[self::FIELD_SCORE])) {
+                $value = $data[self::FIELD_SCORE];
             } else {
-                $this->setScore(new FHIRDecimal($data[self::FIELD_SCORE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SCORE_EXT]) && is_array($data[self::FIELD_SCORE_EXT])) {
+                $ext = $data[self::FIELD_SCORE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setScore($value);
+                } else if (is_array($value)) {
+                    $this->setScore(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setScore(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setScore(new FHIRDecimal($ext));
             }
         }
     }
@@ -263,8 +277,8 @@ class FHIRBundleSearch extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -352,17 +366,24 @@ class FHIRBundleSearch extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getMode())) {
             $a[self::FIELD_MODE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRSearchEntryMode::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRSearchEntryMode::FIELD_VALUE]);
                 $a[self::FIELD_MODE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getScore())) {
             $a[self::FIELD_SCORE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDecimal::FIELD_VALUE]);
                 $a[self::FIELD_SCORE_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

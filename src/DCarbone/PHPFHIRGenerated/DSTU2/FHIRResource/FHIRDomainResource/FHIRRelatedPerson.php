@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,7 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     const FIELD_TELECOM = 'telecom';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * There is a variety of postal address formats defined around the world. This
@@ -263,36 +263,50 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
                 $this->addAddress(new FHIRAddress($data[self::FIELD_ADDRESS]));
             }
         }
-        if (isset($data[self::FIELD_BIRTH_DATE])) {
-            $ext = (isset($data[self::FIELD_BIRTH_DATE_EXT]) && is_array($data[self::FIELD_BIRTH_DATE_EXT]))
-                ? $data[self::FIELD_BIRTH_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_BIRTH_DATE] instanceof FHIRDate) {
-                $this->setBirthDate($data[self::FIELD_BIRTH_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_BIRTH_DATE])) {
-                    $this->setBirthDate(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_BIRTH_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_BIRTH_DATE])) {
-                    $this->setBirthDate(new FHIRDate(array_merge($ext, $data[self::FIELD_BIRTH_DATE])));
-                }
+        if (isset($data[self::FIELD_BIRTH_DATE]) || isset($data[self::FIELD_BIRTH_DATE_EXT])) {
+            if (isset($data[self::FIELD_BIRTH_DATE])) {
+                $value = $data[self::FIELD_BIRTH_DATE];
             } else {
-                $this->setBirthDate(new FHIRDate($data[self::FIELD_BIRTH_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_BIRTH_DATE_EXT]) && is_array($data[self::FIELD_BIRTH_DATE_EXT])) {
+                $ext = $data[self::FIELD_BIRTH_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDate) {
+                    $this->setBirthDate($value);
+                } else if (is_array($value)) {
+                    $this->setBirthDate(new FHIRDate(array_merge($ext, $value)));
+                } else {
+                    $this->setBirthDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setBirthDate(new FHIRDate($ext));
             }
         }
-        if (isset($data[self::FIELD_GENDER])) {
-            $ext = (isset($data[self::FIELD_GENDER_EXT]) && is_array($data[self::FIELD_GENDER_EXT]))
-                ? $data[self::FIELD_GENDER_EXT]
-                : null;
-            if ($data[self::FIELD_GENDER] instanceof FHIRCode) {
-                $this->setGender($data[self::FIELD_GENDER]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_GENDER])) {
-                    $this->setGender(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_GENDER]] + $ext));
-                } else if (is_array($data[self::FIELD_GENDER])) {
-                    $this->setGender(new FHIRCode(array_merge($ext, $data[self::FIELD_GENDER])));
-                }
+        if (isset($data[self::FIELD_GENDER]) || isset($data[self::FIELD_GENDER_EXT])) {
+            if (isset($data[self::FIELD_GENDER])) {
+                $value = $data[self::FIELD_GENDER];
             } else {
-                $this->setGender(new FHIRCode($data[self::FIELD_GENDER]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_GENDER_EXT]) && is_array($data[self::FIELD_GENDER_EXT])) {
+                $ext = $data[self::FIELD_GENDER_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRCode) {
+                    $this->setGender($value);
+                } else if (is_array($value)) {
+                    $this->setGender(new FHIRCode(array_merge($ext, $value)));
+                } else {
+                    $this->setGender(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setGender(new FHIRCode($ext));
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
@@ -848,8 +862,8 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -1020,24 +1034,40 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAddress())) {
-            $a[self::FIELD_ADDRESS] = $vs;
+            $a[self::FIELD_ADDRESS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ADDRESS][] = $v;
+            }
         }
         if (null !== ($v = $this->getBirthDate())) {
             $a[self::FIELD_BIRTH_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDate::FIELD_VALUE]);
                 $a[self::FIELD_BIRTH_DATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getGender())) {
             $a[self::FIELD_GENDER] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRCode::FIELD_VALUE]);
                 $a[self::FIELD_GENDER_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v;
@@ -1049,13 +1079,28 @@ class FHIRRelatedPerson extends FHIRDomainResource implements PHPFHIRContainedTy
             $a[self::FIELD_PERIOD] = $v;
         }
         if ([] !== ($vs = $this->getPhoto())) {
-            $a[self::FIELD_PHOTO] = $vs;
+            $a[self::FIELD_PHOTO] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PHOTO][] = $v;
+            }
         }
         if (null !== ($v = $this->getRelationship())) {
             $a[self::FIELD_RELATIONSHIP] = $v;
         }
         if ([] !== ($vs = $this->getTelecom())) {
-            $a[self::FIELD_TELECOM] = $vs;
+            $a[self::FIELD_TELECOM] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_TELECOM][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

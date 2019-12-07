@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,7 +93,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A kind of specimen with associated set of requirements.
@@ -257,20 +257,27 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
                 $this->setCapacity(new FHIRQuantity($data[self::FIELD_CAPACITY]));
             }
         }
-        if (isset($data[self::FIELD_DESCRIPTION])) {
-            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT]))
-                ? $data[self::FIELD_DESCRIPTION_EXT]
-                : null;
-            if ($data[self::FIELD_DESCRIPTION] instanceof FHIRString) {
-                $this->setDescription($data[self::FIELD_DESCRIPTION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DESCRIPTION])) {
-                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
-                } else if (is_array($data[self::FIELD_DESCRIPTION])) {
-                    $this->setDescription(new FHIRString(array_merge($ext, $data[self::FIELD_DESCRIPTION])));
-                }
+        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
+            if (isset($data[self::FIELD_DESCRIPTION])) {
+                $value = $data[self::FIELD_DESCRIPTION];
             } else {
-                $this->setDescription(new FHIRString($data[self::FIELD_DESCRIPTION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
+                $ext = $data[self::FIELD_DESCRIPTION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDescription($value);
+                } else if (is_array($value)) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDescription(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_MATERIAL])) {
@@ -287,36 +294,50 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
                 $this->setMinimumVolumeQuantity(new FHIRQuantity($data[self::FIELD_MINIMUM_VOLUME_QUANTITY]));
             }
         }
-        if (isset($data[self::FIELD_MINIMUM_VOLUME_STRING])) {
-            $ext = (isset($data[self::FIELD_MINIMUM_VOLUME_STRING_EXT]) && is_array($data[self::FIELD_MINIMUM_VOLUME_STRING_EXT]))
-                ? $data[self::FIELD_MINIMUM_VOLUME_STRING_EXT]
-                : null;
-            if ($data[self::FIELD_MINIMUM_VOLUME_STRING] instanceof FHIRString) {
-                $this->setMinimumVolumeString($data[self::FIELD_MINIMUM_VOLUME_STRING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_MINIMUM_VOLUME_STRING])) {
-                    $this->setMinimumVolumeString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MINIMUM_VOLUME_STRING]] + $ext));
-                } else if (is_array($data[self::FIELD_MINIMUM_VOLUME_STRING])) {
-                    $this->setMinimumVolumeString(new FHIRString(array_merge($ext, $data[self::FIELD_MINIMUM_VOLUME_STRING])));
-                }
+        if (isset($data[self::FIELD_MINIMUM_VOLUME_STRING]) || isset($data[self::FIELD_MINIMUM_VOLUME_STRING_EXT])) {
+            if (isset($data[self::FIELD_MINIMUM_VOLUME_STRING])) {
+                $value = $data[self::FIELD_MINIMUM_VOLUME_STRING];
             } else {
-                $this->setMinimumVolumeString(new FHIRString($data[self::FIELD_MINIMUM_VOLUME_STRING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_MINIMUM_VOLUME_STRING_EXT]) && is_array($data[self::FIELD_MINIMUM_VOLUME_STRING_EXT])) {
+                $ext = $data[self::FIELD_MINIMUM_VOLUME_STRING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setMinimumVolumeString($value);
+                } else if (is_array($value)) {
+                    $this->setMinimumVolumeString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setMinimumVolumeString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setMinimumVolumeString(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_PREPARATION])) {
-            $ext = (isset($data[self::FIELD_PREPARATION_EXT]) && is_array($data[self::FIELD_PREPARATION_EXT]))
-                ? $data[self::FIELD_PREPARATION_EXT]
-                : null;
-            if ($data[self::FIELD_PREPARATION] instanceof FHIRString) {
-                $this->setPreparation($data[self::FIELD_PREPARATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PREPARATION])) {
-                    $this->setPreparation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PREPARATION]] + $ext));
-                } else if (is_array($data[self::FIELD_PREPARATION])) {
-                    $this->setPreparation(new FHIRString(array_merge($ext, $data[self::FIELD_PREPARATION])));
-                }
+        if (isset($data[self::FIELD_PREPARATION]) || isset($data[self::FIELD_PREPARATION_EXT])) {
+            if (isset($data[self::FIELD_PREPARATION])) {
+                $value = $data[self::FIELD_PREPARATION];
             } else {
-                $this->setPreparation(new FHIRString($data[self::FIELD_PREPARATION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PREPARATION_EXT]) && is_array($data[self::FIELD_PREPARATION_EXT])) {
+                $ext = $data[self::FIELD_PREPARATION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setPreparation($value);
+                } else if (is_array($value)) {
+                    $this->setPreparation(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setPreparation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPreparation(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_TYPE])) {
@@ -843,7 +864,13 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAdditive())) {
-            $a[self::FIELD_ADDITIVE] = $vs;
+            $a[self::FIELD_ADDITIVE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ADDITIVE][] = $v;
+            }
         }
         if (null !== ($v = $this->getCap())) {
             $a[self::FIELD_CAP] = $v;
@@ -853,8 +880,10 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_DESCRIPTION_EXT] = $enc;
             }
         }
@@ -866,20 +895,27 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getMinimumVolumeString())) {
             $a[self::FIELD_MINIMUM_VOLUME_STRING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_MINIMUM_VOLUME_STRING_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPreparation())) {
             $a[self::FIELD_PREPARATION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_PREPARATION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

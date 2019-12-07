@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRHealt
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,7 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
     const FIELD_DAYS_OF_WEEK_EXT = '_daysOfWeek';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Value of "true" or "false"
@@ -155,81 +155,111 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ALL_DAY])) {
-            $ext = (isset($data[self::FIELD_ALL_DAY_EXT]) && is_array($data[self::FIELD_ALL_DAY_EXT]))
-                ? $data[self::FIELD_ALL_DAY_EXT]
-                : null;
-            if ($data[self::FIELD_ALL_DAY] instanceof FHIRBoolean) {
-                $this->setAllDay($data[self::FIELD_ALL_DAY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ALL_DAY])) {
-                    $this->setAllDay(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ALL_DAY]] + $ext));
-                } else if (is_array($data[self::FIELD_ALL_DAY])) {
-                    $this->setAllDay(new FHIRBoolean(array_merge($ext, $data[self::FIELD_ALL_DAY])));
-                }
+        if (isset($data[self::FIELD_ALL_DAY]) || isset($data[self::FIELD_ALL_DAY_EXT])) {
+            if (isset($data[self::FIELD_ALL_DAY])) {
+                $value = $data[self::FIELD_ALL_DAY];
             } else {
-                $this->setAllDay(new FHIRBoolean($data[self::FIELD_ALL_DAY]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ALL_DAY_EXT]) && is_array($data[self::FIELD_ALL_DAY_EXT])) {
+                $ext = $data[self::FIELD_ALL_DAY_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setAllDay($value);
+                } else if (is_array($value)) {
+                    $this->setAllDay(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setAllDay(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAllDay(new FHIRBoolean($ext));
             }
         }
-        if (isset($data[self::FIELD_AVAILABLE_END_TIME])) {
-            $ext = (isset($data[self::FIELD_AVAILABLE_END_TIME_EXT]) && is_array($data[self::FIELD_AVAILABLE_END_TIME_EXT]))
-                ? $data[self::FIELD_AVAILABLE_END_TIME_EXT]
-                : null;
-            if ($data[self::FIELD_AVAILABLE_END_TIME] instanceof FHIRTime) {
-                $this->setAvailableEndTime($data[self::FIELD_AVAILABLE_END_TIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AVAILABLE_END_TIME])) {
-                    $this->setAvailableEndTime(new FHIRTime([FHIRTime::FIELD_VALUE => $data[self::FIELD_AVAILABLE_END_TIME]] + $ext));
-                } else if (is_array($data[self::FIELD_AVAILABLE_END_TIME])) {
-                    $this->setAvailableEndTime(new FHIRTime(array_merge($ext, $data[self::FIELD_AVAILABLE_END_TIME])));
-                }
+        if (isset($data[self::FIELD_AVAILABLE_END_TIME]) || isset($data[self::FIELD_AVAILABLE_END_TIME_EXT])) {
+            if (isset($data[self::FIELD_AVAILABLE_END_TIME])) {
+                $value = $data[self::FIELD_AVAILABLE_END_TIME];
             } else {
-                $this->setAvailableEndTime(new FHIRTime($data[self::FIELD_AVAILABLE_END_TIME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_AVAILABLE_END_TIME_EXT]) && is_array($data[self::FIELD_AVAILABLE_END_TIME_EXT])) {
+                $ext = $data[self::FIELD_AVAILABLE_END_TIME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRTime) {
+                    $this->setAvailableEndTime($value);
+                } else if (is_array($value)) {
+                    $this->setAvailableEndTime(new FHIRTime(array_merge($ext, $value)));
+                } else {
+                    $this->setAvailableEndTime(new FHIRTime([FHIRTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAvailableEndTime(new FHIRTime($ext));
             }
         }
-        if (isset($data[self::FIELD_AVAILABLE_START_TIME])) {
-            $ext = (isset($data[self::FIELD_AVAILABLE_START_TIME_EXT]) && is_array($data[self::FIELD_AVAILABLE_START_TIME_EXT]))
-                ? $data[self::FIELD_AVAILABLE_START_TIME_EXT]
-                : null;
-            if ($data[self::FIELD_AVAILABLE_START_TIME] instanceof FHIRTime) {
-                $this->setAvailableStartTime($data[self::FIELD_AVAILABLE_START_TIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AVAILABLE_START_TIME])) {
-                    $this->setAvailableStartTime(new FHIRTime([FHIRTime::FIELD_VALUE => $data[self::FIELD_AVAILABLE_START_TIME]] + $ext));
-                } else if (is_array($data[self::FIELD_AVAILABLE_START_TIME])) {
-                    $this->setAvailableStartTime(new FHIRTime(array_merge($ext, $data[self::FIELD_AVAILABLE_START_TIME])));
-                }
+        if (isset($data[self::FIELD_AVAILABLE_START_TIME]) || isset($data[self::FIELD_AVAILABLE_START_TIME_EXT])) {
+            if (isset($data[self::FIELD_AVAILABLE_START_TIME])) {
+                $value = $data[self::FIELD_AVAILABLE_START_TIME];
             } else {
-                $this->setAvailableStartTime(new FHIRTime($data[self::FIELD_AVAILABLE_START_TIME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_AVAILABLE_START_TIME_EXT]) && is_array($data[self::FIELD_AVAILABLE_START_TIME_EXT])) {
+                $ext = $data[self::FIELD_AVAILABLE_START_TIME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRTime) {
+                    $this->setAvailableStartTime($value);
+                } else if (is_array($value)) {
+                    $this->setAvailableStartTime(new FHIRTime(array_merge($ext, $value)));
+                } else {
+                    $this->setAvailableStartTime(new FHIRTime([FHIRTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAvailableStartTime(new FHIRTime($ext));
             }
         }
-        if (isset($data[self::FIELD_DAYS_OF_WEEK])) {
-            $ext = (isset($data[self::FIELD_DAYS_OF_WEEK_EXT]) && is_array($data[self::FIELD_DAYS_OF_WEEK_EXT]))
-                ? $data[self::FIELD_DAYS_OF_WEEK_EXT]
-                : null;
-            if (is_array($data[self::FIELD_DAYS_OF_WEEK])) {
-                foreach($data[self::FIELD_DAYS_OF_WEEK] as $i => $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRDaysOfWeek) {
-                        $this->addDaysOfWeek($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addDaysOfWeek(new FHIRDaysOfWeek([FHIRDaysOfWeek::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addDaysOfWeek(new FHIRDaysOfWeek(array_merge($v, $ext[$i])));
+        if (isset($data[self::FIELD_DAYS_OF_WEEK]) || isset($data[self::FIELD_DAYS_OF_WEEK_EXT])) {
+            if (isset($data[self::FIELD_DAYS_OF_WEEK])) {
+                $value = $data[self::FIELD_DAYS_OF_WEEK];
+            } else {
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DAYS_OF_WEEK_EXT]) && is_array($data[self::FIELD_DAYS_OF_WEEK_EXT])) {
+                $ext = $data[self::FIELD_DAYS_OF_WEEK_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDaysOfWeek) {
+                    $this->addDaysOfWeek($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRDaysOfWeek) {
+                            $this->addDaysOfWeek($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addDaysOfWeek(new FHIRDaysOfWeek(array_merge($v, $iext)));
+                            } else {
+                                $this->addDaysOfWeek(new FHIRDaysOfWeek([FHIRDaysOfWeek::FIELD_VALUE => $v] + $iext));
+                            }
                         }
-                    } else {
-                        $this->addDaysOfWeek(new FHIRDaysOfWeek($v));
                     }
+                } elseif (is_array($value)) {
+                    $this->addDaysOfWeek(new FHIRDaysOfWeek(array_merge($ext, $value)));
+                } else {
+                    $this->addDaysOfWeek(new FHIRDaysOfWeek([FHIRDaysOfWeek::FIELD_VALUE => $value] + $ext));
                 }
-            } elseif ($data[self::FIELD_DAYS_OF_WEEK] instanceof FHIRDaysOfWeek) {
-                $this->addDaysOfWeek($data[self::FIELD_DAYS_OF_WEEK]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_DAYS_OF_WEEK])) {
-                $this->addDaysOfWeek(new FHIRDaysOfWeek([FHIRDaysOfWeek::FIELD_VALUE => $data[self::FIELD_DAYS_OF_WEEK]] + $ext));
-            } else {
-                $this->addDaysOfWeek(new FHIRDaysOfWeek($data[self::FIELD_DAYS_OF_WEEK]));
+            } else if ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addDaysOfWeek(new FHIRDaysOfWeek($iext));
+                }
             }
         }
     }
@@ -548,39 +578,56 @@ class FHIRHealthcareServiceAvailableTime extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAllDay())) {
             $a[self::FIELD_ALL_DAY] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_ALL_DAY_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getAvailableEndTime())) {
             $a[self::FIELD_AVAILABLE_END_TIME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRTime::FIELD_VALUE]);
                 $a[self::FIELD_AVAILABLE_END_TIME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getAvailableStartTime())) {
             $a[self::FIELD_AVAILABLE_START_TIME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRTime::FIELD_VALUE]);
                 $a[self::FIELD_AVAILABLE_START_TIME_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getDaysOfWeek())) {
             $a[self::FIELD_DAYS_OF_WEEK] = [];
+            $encs = [];
+            $encValued = false;
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
                 $a[self::FIELD_DAYS_OF_WEEK][] = $v->getValue();
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_DAYS_OF_WEEK_EXT][] = $enc;
+                $enc = $v->jsonSerialize();
+                $cnt = count($enc);
+                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRDaysOfWeek::FIELD_VALUE]) || array_key_exists(FHIRDaysOfWeek::FIELD_VALUE, $enc)))) {
+                    $encs[] = null;
                 } else {
-                    $a[self::FIELD_DAYS_OF_WEEK_EXT][] = null;
+                    unset($enc[FHIRDaysOfWeek::FIELD_VALUE]);
+                    $encs[] = $enc;
+                    $encValued = true;
                 }
             }
+            if ($encValued) {
+                $a[self::FIELD_DAYS_OF_WEEK_EXT] = $encs;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

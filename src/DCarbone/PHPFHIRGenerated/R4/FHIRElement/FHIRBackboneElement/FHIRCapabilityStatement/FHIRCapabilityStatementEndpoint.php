@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapab
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement
     const FIELD_PROTOCOL = 'protocol';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A URI that is a literal reference
@@ -134,20 +134,27 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ADDRESS])) {
-            $ext = (isset($data[self::FIELD_ADDRESS_EXT]) && is_array($data[self::FIELD_ADDRESS_EXT]))
-                ? $data[self::FIELD_ADDRESS_EXT]
-                : null;
-            if ($data[self::FIELD_ADDRESS] instanceof FHIRUrl) {
-                $this->setAddress($data[self::FIELD_ADDRESS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ADDRESS])) {
-                    $this->setAddress(new FHIRUrl([FHIRUrl::FIELD_VALUE => $data[self::FIELD_ADDRESS]] + $ext));
-                } else if (is_array($data[self::FIELD_ADDRESS])) {
-                    $this->setAddress(new FHIRUrl(array_merge($ext, $data[self::FIELD_ADDRESS])));
-                }
+        if (isset($data[self::FIELD_ADDRESS]) || isset($data[self::FIELD_ADDRESS_EXT])) {
+            if (isset($data[self::FIELD_ADDRESS])) {
+                $value = $data[self::FIELD_ADDRESS];
             } else {
-                $this->setAddress(new FHIRUrl($data[self::FIELD_ADDRESS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ADDRESS_EXT]) && is_array($data[self::FIELD_ADDRESS_EXT])) {
+                $ext = $data[self::FIELD_ADDRESS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUrl) {
+                    $this->setAddress($value);
+                } else if (is_array($value)) {
+                    $this->setAddress(new FHIRUrl(array_merge($ext, $value)));
+                } else {
+                    $this->setAddress(new FHIRUrl([FHIRUrl::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAddress(new FHIRUrl($ext));
             }
         }
         if (isset($data[self::FIELD_PROTOCOL])) {
@@ -345,13 +352,18 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAddress())) {
             $a[self::FIELD_ADDRESS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUrl::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUrl::FIELD_VALUE]);
                 $a[self::FIELD_ADDRESS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getProtocol())) {
             $a[self::FIELD_PROTOCOL] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProve
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     const FIELD_WHAT = 'what';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Provenance of a resource is a record that describes entities and processes
@@ -176,20 +176,27 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 $this->addAgent(new FHIRProvenanceAgent($data[self::FIELD_AGENT]));
             }
         }
-        if (isset($data[self::FIELD_ROLE])) {
-            $ext = (isset($data[self::FIELD_ROLE_EXT]) && is_array($data[self::FIELD_ROLE_EXT]))
-                ? $data[self::FIELD_ROLE_EXT]
-                : null;
-            if ($data[self::FIELD_ROLE] instanceof FHIRProvenanceEntityRole) {
-                $this->setRole($data[self::FIELD_ROLE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ROLE])) {
-                    $this->setRole(new FHIRProvenanceEntityRole([FHIRProvenanceEntityRole::FIELD_VALUE => $data[self::FIELD_ROLE]] + $ext));
-                } else if (is_array($data[self::FIELD_ROLE])) {
-                    $this->setRole(new FHIRProvenanceEntityRole(array_merge($ext, $data[self::FIELD_ROLE])));
-                }
+        if (isset($data[self::FIELD_ROLE]) || isset($data[self::FIELD_ROLE_EXT])) {
+            if (isset($data[self::FIELD_ROLE])) {
+                $value = $data[self::FIELD_ROLE];
             } else {
-                $this->setRole(new FHIRProvenanceEntityRole($data[self::FIELD_ROLE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ROLE_EXT]) && is_array($data[self::FIELD_ROLE_EXT])) {
+                $ext = $data[self::FIELD_ROLE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRProvenanceEntityRole) {
+                    $this->setRole($value);
+                } else if (is_array($value)) {
+                    $this->setRole(new FHIRProvenanceEntityRole(array_merge($ext, $value)));
+                } else {
+                    $this->setRole(new FHIRProvenanceEntityRole([FHIRProvenanceEntityRole::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setRole(new FHIRProvenanceEntityRole($ext));
             }
         }
         if (isset($data[self::FIELD_WHAT])) {
@@ -462,17 +469,28 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAgent())) {
-            $a[self::FIELD_AGENT] = $vs;
+            $a[self::FIELD_AGENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_AGENT][] = $v;
+            }
         }
         if (null !== ($v = $this->getRole())) {
             $a[self::FIELD_ROLE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRProvenanceEntityRole::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRProvenanceEntityRole::FIELD_VALUE]);
                 $a[self::FIELD_ROLE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getWhat())) {
             $a[self::FIELD_WHAT] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

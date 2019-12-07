@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,7 @@ class FHIRClinicalImpressionRuledOut extends FHIRBackboneElement
     const FIELD_REASON_EXT = '_reason';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -143,20 +143,27 @@ class FHIRClinicalImpressionRuledOut extends FHIRBackboneElement
                 $this->setItem(new FHIRCodeableConcept($data[self::FIELD_ITEM]));
             }
         }
-        if (isset($data[self::FIELD_REASON])) {
-            $ext = (isset($data[self::FIELD_REASON_EXT]) && is_array($data[self::FIELD_REASON_EXT]))
-                ? $data[self::FIELD_REASON_EXT]
-                : null;
-            if ($data[self::FIELD_REASON] instanceof FHIRString) {
-                $this->setReason($data[self::FIELD_REASON]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_REASON])) {
-                    $this->setReason(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REASON]] + $ext));
-                } else if (is_array($data[self::FIELD_REASON])) {
-                    $this->setReason(new FHIRString(array_merge($ext, $data[self::FIELD_REASON])));
-                }
+        if (isset($data[self::FIELD_REASON]) || isset($data[self::FIELD_REASON_EXT])) {
+            if (isset($data[self::FIELD_REASON])) {
+                $value = $data[self::FIELD_REASON];
             } else {
-                $this->setReason(new FHIRString($data[self::FIELD_REASON]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_REASON_EXT]) && is_array($data[self::FIELD_REASON_EXT])) {
+                $ext = $data[self::FIELD_REASON_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setReason($value);
+                } else if (is_array($value)) {
+                    $this->setReason(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setReason(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setReason(new FHIRString($ext));
             }
         }
     }
@@ -256,8 +263,8 @@ class FHIRClinicalImpressionRuledOut extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -348,10 +355,15 @@ class FHIRClinicalImpressionRuledOut extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getReason())) {
             $a[self::FIELD_REASON] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_REASON_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

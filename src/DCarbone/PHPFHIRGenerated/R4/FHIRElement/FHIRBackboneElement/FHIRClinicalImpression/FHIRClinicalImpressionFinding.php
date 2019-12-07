@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClini
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,7 +91,7 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
     const FIELD_ITEM_REFERENCE = 'itemReference';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -151,20 +151,27 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_BASIS])) {
-            $ext = (isset($data[self::FIELD_BASIS_EXT]) && is_array($data[self::FIELD_BASIS_EXT]))
-                ? $data[self::FIELD_BASIS_EXT]
-                : null;
-            if ($data[self::FIELD_BASIS] instanceof FHIRString) {
-                $this->setBasis($data[self::FIELD_BASIS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_BASIS])) {
-                    $this->setBasis(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_BASIS]] + $ext));
-                } else if (is_array($data[self::FIELD_BASIS])) {
-                    $this->setBasis(new FHIRString(array_merge($ext, $data[self::FIELD_BASIS])));
-                }
+        if (isset($data[self::FIELD_BASIS]) || isset($data[self::FIELD_BASIS_EXT])) {
+            if (isset($data[self::FIELD_BASIS])) {
+                $value = $data[self::FIELD_BASIS];
             } else {
-                $this->setBasis(new FHIRString($data[self::FIELD_BASIS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_BASIS_EXT]) && is_array($data[self::FIELD_BASIS_EXT])) {
+                $ext = $data[self::FIELD_BASIS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setBasis($value);
+                } else if (is_array($value)) {
+                    $this->setBasis(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setBasis(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setBasis(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_ITEM_CODEABLE_CONCEPT])) {
@@ -407,8 +414,10 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getBasis())) {
             $a[self::FIELD_BASIS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_BASIS_EXT] = $enc;
             }
         }
@@ -417,6 +426,9 @@ class FHIRClinicalImpressionFinding extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getItemReference())) {
             $a[self::FIELD_ITEM_REFERENCE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

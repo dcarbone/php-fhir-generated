@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,7 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
     const FIELD_VALIDITY_PERIOD = 'validityPeriod';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -351,20 +351,27 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
                 $this->setDataExclusivityPeriod(new FHIRPeriod($data[self::FIELD_DATA_EXCLUSIVITY_PERIOD]));
             }
         }
-        if (isset($data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION])) {
-            $ext = (isset($data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT]) && is_array($data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT]))
-                ? $data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT]
-                : null;
-            if ($data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION] instanceof FHIRDateTime) {
-                $this->setDateOfFirstAuthorization($data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION])) {
-                    $this->setDateOfFirstAuthorization(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION]] + $ext));
-                } else if (is_array($data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION])) {
-                    $this->setDateOfFirstAuthorization(new FHIRDateTime(array_merge($ext, $data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION])));
-                }
+        if (isset($data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION]) || isset($data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT])) {
+            if (isset($data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION])) {
+                $value = $data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION];
             } else {
-                $this->setDateOfFirstAuthorization(new FHIRDateTime($data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT]) && is_array($data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT])) {
+                $ext = $data[self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setDateOfFirstAuthorization($value);
+                } else if (is_array($value)) {
+                    $this->setDateOfFirstAuthorization(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setDateOfFirstAuthorization(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDateOfFirstAuthorization(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_HOLDER])) {
@@ -392,20 +399,27 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_INTERNATIONAL_BIRTH_DATE])) {
-            $ext = (isset($data[self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT]) && is_array($data[self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT]))
-                ? $data[self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_INTERNATIONAL_BIRTH_DATE] instanceof FHIRDateTime) {
-                $this->setInternationalBirthDate($data[self::FIELD_INTERNATIONAL_BIRTH_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_INTERNATIONAL_BIRTH_DATE])) {
-                    $this->setInternationalBirthDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_INTERNATIONAL_BIRTH_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_INTERNATIONAL_BIRTH_DATE])) {
-                    $this->setInternationalBirthDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_INTERNATIONAL_BIRTH_DATE])));
-                }
+        if (isset($data[self::FIELD_INTERNATIONAL_BIRTH_DATE]) || isset($data[self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT])) {
+            if (isset($data[self::FIELD_INTERNATIONAL_BIRTH_DATE])) {
+                $value = $data[self::FIELD_INTERNATIONAL_BIRTH_DATE];
             } else {
-                $this->setInternationalBirthDate(new FHIRDateTime($data[self::FIELD_INTERNATIONAL_BIRTH_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT]) && is_array($data[self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT])) {
+                $ext = $data[self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setInternationalBirthDate($value);
+                } else if (is_array($value)) {
+                    $this->setInternationalBirthDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setInternationalBirthDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setInternationalBirthDate(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_JURISDICTION])) {
@@ -465,20 +479,27 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
                 $this->setRegulator(new FHIRReference($data[self::FIELD_REGULATOR]));
             }
         }
-        if (isset($data[self::FIELD_RESTORE_DATE])) {
-            $ext = (isset($data[self::FIELD_RESTORE_DATE_EXT]) && is_array($data[self::FIELD_RESTORE_DATE_EXT]))
-                ? $data[self::FIELD_RESTORE_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_RESTORE_DATE] instanceof FHIRDateTime) {
-                $this->setRestoreDate($data[self::FIELD_RESTORE_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_RESTORE_DATE])) {
-                    $this->setRestoreDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_RESTORE_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_RESTORE_DATE])) {
-                    $this->setRestoreDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_RESTORE_DATE])));
-                }
+        if (isset($data[self::FIELD_RESTORE_DATE]) || isset($data[self::FIELD_RESTORE_DATE_EXT])) {
+            if (isset($data[self::FIELD_RESTORE_DATE])) {
+                $value = $data[self::FIELD_RESTORE_DATE];
             } else {
-                $this->setRestoreDate(new FHIRDateTime($data[self::FIELD_RESTORE_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_RESTORE_DATE_EXT]) && is_array($data[self::FIELD_RESTORE_DATE_EXT])) {
+                $ext = $data[self::FIELD_RESTORE_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setRestoreDate($value);
+                } else if (is_array($value)) {
+                    $this->setRestoreDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setRestoreDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setRestoreDate(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_STATUS])) {
@@ -488,20 +509,27 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
                 $this->setStatus(new FHIRCodeableConcept($data[self::FIELD_STATUS]));
             }
         }
-        if (isset($data[self::FIELD_STATUS_DATE])) {
-            $ext = (isset($data[self::FIELD_STATUS_DATE_EXT]) && is_array($data[self::FIELD_STATUS_DATE_EXT]))
-                ? $data[self::FIELD_STATUS_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_STATUS_DATE] instanceof FHIRDateTime) {
-                $this->setStatusDate($data[self::FIELD_STATUS_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STATUS_DATE])) {
-                    $this->setStatusDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_STATUS_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_STATUS_DATE])) {
-                    $this->setStatusDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_STATUS_DATE])));
-                }
+        if (isset($data[self::FIELD_STATUS_DATE]) || isset($data[self::FIELD_STATUS_DATE_EXT])) {
+            if (isset($data[self::FIELD_STATUS_DATE])) {
+                $value = $data[self::FIELD_STATUS_DATE];
             } else {
-                $this->setStatusDate(new FHIRDateTime($data[self::FIELD_STATUS_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STATUS_DATE_EXT]) && is_array($data[self::FIELD_STATUS_DATE_EXT])) {
+                $ext = $data[self::FIELD_STATUS_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setStatusDate($value);
+                } else if (is_array($value)) {
+                    $this->setStatusDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setStatusDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setStatusDate(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_SUBJECT])) {
@@ -1432,15 +1460,23 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getCountry())) {
-            $a[self::FIELD_COUNTRY] = $vs;
+            $a[self::FIELD_COUNTRY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_COUNTRY][] = $v;
+            }
         }
         if (null !== ($v = $this->getDataExclusivityPeriod())) {
             $a[self::FIELD_DATA_EXCLUSIVITY_PERIOD] = $v;
         }
         if (null !== ($v = $this->getDateOfFirstAuthorization())) {
             $a[self::FIELD_DATE_OF_FIRST_AUTHORIZATION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_DATE_OF_FIRST_AUTHORIZATION_EXT] = $enc;
             }
         }
@@ -1448,20 +1484,40 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
             $a[self::FIELD_HOLDER] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if (null !== ($v = $this->getInternationalBirthDate())) {
             $a[self::FIELD_INTERNATIONAL_BIRTH_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_INTERNATIONAL_BIRTH_DATE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getJurisdiction())) {
-            $a[self::FIELD_JURISDICTION] = $vs;
+            $a[self::FIELD_JURISDICTION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_JURISDICTION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getJurisdictionalAuthorization())) {
-            $a[self::FIELD_JURISDICTIONAL_AUTHORIZATION] = $vs;
+            $a[self::FIELD_JURISDICTIONAL_AUTHORIZATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_JURISDICTIONAL_AUTHORIZATION][] = $v;
+            }
         }
         if (null !== ($v = $this->getLegalBasis())) {
             $a[self::FIELD_LEGAL_BASIS] = $v;
@@ -1474,8 +1530,10 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
         }
         if (null !== ($v = $this->getRestoreDate())) {
             $a[self::FIELD_RESTORE_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_RESTORE_DATE_EXT] = $enc;
             }
         }
@@ -1484,8 +1542,10 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
         }
         if (null !== ($v = $this->getStatusDate())) {
             $a[self::FIELD_STATUS_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_STATUS_DATE_EXT] = $enc;
             }
         }
@@ -1494,6 +1554,9 @@ class FHIRMedicinalProductAuthorization extends FHIRDomainResource implements PH
         }
         if (null !== ($v = $this->getValidityPeriod())) {
             $a[self::FIELD_VALIDITY_PERIOD] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

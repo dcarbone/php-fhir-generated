@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRMoney extends FHIRElement
     const FIELD_VALUE_EXT = '_value';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -132,36 +132,50 @@ class FHIRMoney extends FHIRElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CURRENCY])) {
-            $ext = (isset($data[self::FIELD_CURRENCY_EXT]) && is_array($data[self::FIELD_CURRENCY_EXT]))
-                ? $data[self::FIELD_CURRENCY_EXT]
-                : null;
-            if ($data[self::FIELD_CURRENCY] instanceof FHIRCode) {
-                $this->setCurrency($data[self::FIELD_CURRENCY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_CURRENCY])) {
-                    $this->setCurrency(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_CURRENCY]] + $ext));
-                } else if (is_array($data[self::FIELD_CURRENCY])) {
-                    $this->setCurrency(new FHIRCode(array_merge($ext, $data[self::FIELD_CURRENCY])));
-                }
+        if (isset($data[self::FIELD_CURRENCY]) || isset($data[self::FIELD_CURRENCY_EXT])) {
+            if (isset($data[self::FIELD_CURRENCY])) {
+                $value = $data[self::FIELD_CURRENCY];
             } else {
-                $this->setCurrency(new FHIRCode($data[self::FIELD_CURRENCY]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_CURRENCY_EXT]) && is_array($data[self::FIELD_CURRENCY_EXT])) {
+                $ext = $data[self::FIELD_CURRENCY_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRCode) {
+                    $this->setCurrency($value);
+                } else if (is_array($value)) {
+                    $this->setCurrency(new FHIRCode(array_merge($ext, $value)));
+                } else {
+                    $this->setCurrency(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setCurrency(new FHIRCode($ext));
             }
         }
-        if (isset($data[self::FIELD_VALUE])) {
-            $ext = (isset($data[self::FIELD_VALUE_EXT]) && is_array($data[self::FIELD_VALUE_EXT]))
-                ? $data[self::FIELD_VALUE_EXT]
-                : null;
-            if ($data[self::FIELD_VALUE] instanceof FHIRDecimal) {
-                $this->setValue($data[self::FIELD_VALUE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_VALUE])) {
-                    $this->setValue(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_VALUE]] + $ext));
-                } else if (is_array($data[self::FIELD_VALUE])) {
-                    $this->setValue(new FHIRDecimal(array_merge($ext, $data[self::FIELD_VALUE])));
-                }
+        if (isset($data[self::FIELD_VALUE]) || isset($data[self::FIELD_VALUE_EXT])) {
+            if (isset($data[self::FIELD_VALUE])) {
+                $value = $data[self::FIELD_VALUE];
             } else {
-                $this->setValue(new FHIRDecimal($data[self::FIELD_VALUE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_VALUE_EXT]) && is_array($data[self::FIELD_VALUE_EXT])) {
+                $ext = $data[self::FIELD_VALUE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setValue($value);
+                } else if (is_array($value)) {
+                    $this->setValue(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setValue(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setValue(new FHIRDecimal($ext));
             }
         }
     }
@@ -369,17 +383,24 @@ class FHIRMoney extends FHIRElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCurrency())) {
             $a[self::FIELD_CURRENCY] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRCode::FIELD_VALUE]);
                 $a[self::FIELD_CURRENCY_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getValue())) {
             $a[self::FIELD_VALUE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDecimal::FIELD_VALUE]);
                 $a[self::FIELD_VALUE_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

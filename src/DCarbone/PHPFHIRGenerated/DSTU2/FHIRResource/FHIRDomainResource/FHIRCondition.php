@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,7 +131,7 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
     const FIELD_VERIFICATION_STATUS_EXT = '_verificationStatus';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Value of "true" or "false"
@@ -464,36 +464,50 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ABATEMENT_BOOLEAN])) {
-            $ext = (isset($data[self::FIELD_ABATEMENT_BOOLEAN_EXT]) && is_array($data[self::FIELD_ABATEMENT_BOOLEAN_EXT]))
-                ? $data[self::FIELD_ABATEMENT_BOOLEAN_EXT]
-                : null;
-            if ($data[self::FIELD_ABATEMENT_BOOLEAN] instanceof FHIRBoolean) {
-                $this->setAbatementBoolean($data[self::FIELD_ABATEMENT_BOOLEAN]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ABATEMENT_BOOLEAN])) {
-                    $this->setAbatementBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ABATEMENT_BOOLEAN]] + $ext));
-                } else if (is_array($data[self::FIELD_ABATEMENT_BOOLEAN])) {
-                    $this->setAbatementBoolean(new FHIRBoolean(array_merge($ext, $data[self::FIELD_ABATEMENT_BOOLEAN])));
-                }
+        if (isset($data[self::FIELD_ABATEMENT_BOOLEAN]) || isset($data[self::FIELD_ABATEMENT_BOOLEAN_EXT])) {
+            if (isset($data[self::FIELD_ABATEMENT_BOOLEAN])) {
+                $value = $data[self::FIELD_ABATEMENT_BOOLEAN];
             } else {
-                $this->setAbatementBoolean(new FHIRBoolean($data[self::FIELD_ABATEMENT_BOOLEAN]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ABATEMENT_BOOLEAN_EXT]) && is_array($data[self::FIELD_ABATEMENT_BOOLEAN_EXT])) {
+                $ext = $data[self::FIELD_ABATEMENT_BOOLEAN_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setAbatementBoolean($value);
+                } else if (is_array($value)) {
+                    $this->setAbatementBoolean(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setAbatementBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAbatementBoolean(new FHIRBoolean($ext));
             }
         }
-        if (isset($data[self::FIELD_ABATEMENT_DATE_TIME])) {
-            $ext = (isset($data[self::FIELD_ABATEMENT_DATE_TIME_EXT]) && is_array($data[self::FIELD_ABATEMENT_DATE_TIME_EXT]))
-                ? $data[self::FIELD_ABATEMENT_DATE_TIME_EXT]
-                : null;
-            if ($data[self::FIELD_ABATEMENT_DATE_TIME] instanceof FHIRDateTime) {
-                $this->setAbatementDateTime($data[self::FIELD_ABATEMENT_DATE_TIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ABATEMENT_DATE_TIME])) {
-                    $this->setAbatementDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_ABATEMENT_DATE_TIME]] + $ext));
-                } else if (is_array($data[self::FIELD_ABATEMENT_DATE_TIME])) {
-                    $this->setAbatementDateTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_ABATEMENT_DATE_TIME])));
-                }
+        if (isset($data[self::FIELD_ABATEMENT_DATE_TIME]) || isset($data[self::FIELD_ABATEMENT_DATE_TIME_EXT])) {
+            if (isset($data[self::FIELD_ABATEMENT_DATE_TIME])) {
+                $value = $data[self::FIELD_ABATEMENT_DATE_TIME];
             } else {
-                $this->setAbatementDateTime(new FHIRDateTime($data[self::FIELD_ABATEMENT_DATE_TIME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ABATEMENT_DATE_TIME_EXT]) && is_array($data[self::FIELD_ABATEMENT_DATE_TIME_EXT])) {
+                $ext = $data[self::FIELD_ABATEMENT_DATE_TIME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setAbatementDateTime($value);
+                } else if (is_array($value)) {
+                    $this->setAbatementDateTime(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setAbatementDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAbatementDateTime(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_ABATEMENT_PERIOD])) {
@@ -517,20 +531,27 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 $this->setAbatementRange(new FHIRRange($data[self::FIELD_ABATEMENT_RANGE]));
             }
         }
-        if (isset($data[self::FIELD_ABATEMENT_STRING])) {
-            $ext = (isset($data[self::FIELD_ABATEMENT_STRING_EXT]) && is_array($data[self::FIELD_ABATEMENT_STRING_EXT]))
-                ? $data[self::FIELD_ABATEMENT_STRING_EXT]
-                : null;
-            if ($data[self::FIELD_ABATEMENT_STRING] instanceof FHIRString) {
-                $this->setAbatementString($data[self::FIELD_ABATEMENT_STRING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ABATEMENT_STRING])) {
-                    $this->setAbatementString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ABATEMENT_STRING]] + $ext));
-                } else if (is_array($data[self::FIELD_ABATEMENT_STRING])) {
-                    $this->setAbatementString(new FHIRString(array_merge($ext, $data[self::FIELD_ABATEMENT_STRING])));
-                }
+        if (isset($data[self::FIELD_ABATEMENT_STRING]) || isset($data[self::FIELD_ABATEMENT_STRING_EXT])) {
+            if (isset($data[self::FIELD_ABATEMENT_STRING])) {
+                $value = $data[self::FIELD_ABATEMENT_STRING];
             } else {
-                $this->setAbatementString(new FHIRString($data[self::FIELD_ABATEMENT_STRING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ABATEMENT_STRING_EXT]) && is_array($data[self::FIELD_ABATEMENT_STRING_EXT])) {
+                $ext = $data[self::FIELD_ABATEMENT_STRING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setAbatementString($value);
+                } else if (is_array($value)) {
+                    $this->setAbatementString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setAbatementString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAbatementString(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_ASSERTER])) {
@@ -565,20 +586,27 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 $this->setCategory(new FHIRCodeableConcept($data[self::FIELD_CATEGORY]));
             }
         }
-        if (isset($data[self::FIELD_CLINICAL_STATUS])) {
-            $ext = (isset($data[self::FIELD_CLINICAL_STATUS_EXT]) && is_array($data[self::FIELD_CLINICAL_STATUS_EXT]))
-                ? $data[self::FIELD_CLINICAL_STATUS_EXT]
-                : null;
-            if ($data[self::FIELD_CLINICAL_STATUS] instanceof FHIRCode) {
-                $this->setClinicalStatus($data[self::FIELD_CLINICAL_STATUS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_CLINICAL_STATUS])) {
-                    $this->setClinicalStatus(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_CLINICAL_STATUS]] + $ext));
-                } else if (is_array($data[self::FIELD_CLINICAL_STATUS])) {
-                    $this->setClinicalStatus(new FHIRCode(array_merge($ext, $data[self::FIELD_CLINICAL_STATUS])));
-                }
+        if (isset($data[self::FIELD_CLINICAL_STATUS]) || isset($data[self::FIELD_CLINICAL_STATUS_EXT])) {
+            if (isset($data[self::FIELD_CLINICAL_STATUS])) {
+                $value = $data[self::FIELD_CLINICAL_STATUS];
             } else {
-                $this->setClinicalStatus(new FHIRCode($data[self::FIELD_CLINICAL_STATUS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_CLINICAL_STATUS_EXT]) && is_array($data[self::FIELD_CLINICAL_STATUS_EXT])) {
+                $ext = $data[self::FIELD_CLINICAL_STATUS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRCode) {
+                    $this->setClinicalStatus($value);
+                } else if (is_array($value)) {
+                    $this->setClinicalStatus(new FHIRCode(array_merge($ext, $value)));
+                } else {
+                    $this->setClinicalStatus(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setClinicalStatus(new FHIRCode($ext));
             }
         }
         if (isset($data[self::FIELD_CODE])) {
@@ -588,20 +616,27 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 $this->setCode(new FHIRCodeableConcept($data[self::FIELD_CODE]));
             }
         }
-        if (isset($data[self::FIELD_DATE_RECORDED])) {
-            $ext = (isset($data[self::FIELD_DATE_RECORDED_EXT]) && is_array($data[self::FIELD_DATE_RECORDED_EXT]))
-                ? $data[self::FIELD_DATE_RECORDED_EXT]
-                : null;
-            if ($data[self::FIELD_DATE_RECORDED] instanceof FHIRDate) {
-                $this->setDateRecorded($data[self::FIELD_DATE_RECORDED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DATE_RECORDED])) {
-                    $this->setDateRecorded(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_DATE_RECORDED]] + $ext));
-                } else if (is_array($data[self::FIELD_DATE_RECORDED])) {
-                    $this->setDateRecorded(new FHIRDate(array_merge($ext, $data[self::FIELD_DATE_RECORDED])));
-                }
+        if (isset($data[self::FIELD_DATE_RECORDED]) || isset($data[self::FIELD_DATE_RECORDED_EXT])) {
+            if (isset($data[self::FIELD_DATE_RECORDED])) {
+                $value = $data[self::FIELD_DATE_RECORDED];
             } else {
-                $this->setDateRecorded(new FHIRDate($data[self::FIELD_DATE_RECORDED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DATE_RECORDED_EXT]) && is_array($data[self::FIELD_DATE_RECORDED_EXT])) {
+                $ext = $data[self::FIELD_DATE_RECORDED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDate) {
+                    $this->setDateRecorded($value);
+                } else if (is_array($value)) {
+                    $this->setDateRecorded(new FHIRDate(array_merge($ext, $value)));
+                } else {
+                    $this->setDateRecorded(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDateRecorded(new FHIRDate($ext));
             }
         }
         if (isset($data[self::FIELD_ENCOUNTER])) {
@@ -647,36 +682,50 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_NOTES])) {
-            $ext = (isset($data[self::FIELD_NOTES_EXT]) && is_array($data[self::FIELD_NOTES_EXT]))
-                ? $data[self::FIELD_NOTES_EXT]
-                : null;
-            if ($data[self::FIELD_NOTES] instanceof FHIRString) {
-                $this->setNotes($data[self::FIELD_NOTES]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_NOTES])) {
-                    $this->setNotes(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NOTES]] + $ext));
-                } else if (is_array($data[self::FIELD_NOTES])) {
-                    $this->setNotes(new FHIRString(array_merge($ext, $data[self::FIELD_NOTES])));
-                }
+        if (isset($data[self::FIELD_NOTES]) || isset($data[self::FIELD_NOTES_EXT])) {
+            if (isset($data[self::FIELD_NOTES])) {
+                $value = $data[self::FIELD_NOTES];
             } else {
-                $this->setNotes(new FHIRString($data[self::FIELD_NOTES]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_NOTES_EXT]) && is_array($data[self::FIELD_NOTES_EXT])) {
+                $ext = $data[self::FIELD_NOTES_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setNotes($value);
+                } else if (is_array($value)) {
+                    $this->setNotes(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setNotes(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setNotes(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_ONSET_DATE_TIME])) {
-            $ext = (isset($data[self::FIELD_ONSET_DATE_TIME_EXT]) && is_array($data[self::FIELD_ONSET_DATE_TIME_EXT]))
-                ? $data[self::FIELD_ONSET_DATE_TIME_EXT]
-                : null;
-            if ($data[self::FIELD_ONSET_DATE_TIME] instanceof FHIRDateTime) {
-                $this->setOnsetDateTime($data[self::FIELD_ONSET_DATE_TIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ONSET_DATE_TIME])) {
-                    $this->setOnsetDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_ONSET_DATE_TIME]] + $ext));
-                } else if (is_array($data[self::FIELD_ONSET_DATE_TIME])) {
-                    $this->setOnsetDateTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_ONSET_DATE_TIME])));
-                }
+        if (isset($data[self::FIELD_ONSET_DATE_TIME]) || isset($data[self::FIELD_ONSET_DATE_TIME_EXT])) {
+            if (isset($data[self::FIELD_ONSET_DATE_TIME])) {
+                $value = $data[self::FIELD_ONSET_DATE_TIME];
             } else {
-                $this->setOnsetDateTime(new FHIRDateTime($data[self::FIELD_ONSET_DATE_TIME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ONSET_DATE_TIME_EXT]) && is_array($data[self::FIELD_ONSET_DATE_TIME_EXT])) {
+                $ext = $data[self::FIELD_ONSET_DATE_TIME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setOnsetDateTime($value);
+                } else if (is_array($value)) {
+                    $this->setOnsetDateTime(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setOnsetDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setOnsetDateTime(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_ONSET_PERIOD])) {
@@ -700,20 +749,27 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 $this->setOnsetRange(new FHIRRange($data[self::FIELD_ONSET_RANGE]));
             }
         }
-        if (isset($data[self::FIELD_ONSET_STRING])) {
-            $ext = (isset($data[self::FIELD_ONSET_STRING_EXT]) && is_array($data[self::FIELD_ONSET_STRING_EXT]))
-                ? $data[self::FIELD_ONSET_STRING_EXT]
-                : null;
-            if ($data[self::FIELD_ONSET_STRING] instanceof FHIRString) {
-                $this->setOnsetString($data[self::FIELD_ONSET_STRING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ONSET_STRING])) {
-                    $this->setOnsetString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ONSET_STRING]] + $ext));
-                } else if (is_array($data[self::FIELD_ONSET_STRING])) {
-                    $this->setOnsetString(new FHIRString(array_merge($ext, $data[self::FIELD_ONSET_STRING])));
-                }
+        if (isset($data[self::FIELD_ONSET_STRING]) || isset($data[self::FIELD_ONSET_STRING_EXT])) {
+            if (isset($data[self::FIELD_ONSET_STRING])) {
+                $value = $data[self::FIELD_ONSET_STRING];
             } else {
-                $this->setOnsetString(new FHIRString($data[self::FIELD_ONSET_STRING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ONSET_STRING_EXT]) && is_array($data[self::FIELD_ONSET_STRING_EXT])) {
+                $ext = $data[self::FIELD_ONSET_STRING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setOnsetString($value);
+                } else if (is_array($value)) {
+                    $this->setOnsetString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setOnsetString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setOnsetString(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_PATIENT])) {
@@ -737,20 +793,27 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
                 $this->setStage(new FHIRConditionStage($data[self::FIELD_STAGE]));
             }
         }
-        if (isset($data[self::FIELD_VERIFICATION_STATUS])) {
-            $ext = (isset($data[self::FIELD_VERIFICATION_STATUS_EXT]) && is_array($data[self::FIELD_VERIFICATION_STATUS_EXT]))
-                ? $data[self::FIELD_VERIFICATION_STATUS_EXT]
-                : null;
-            if ($data[self::FIELD_VERIFICATION_STATUS] instanceof FHIRConditionVerificationStatus) {
-                $this->setVerificationStatus($data[self::FIELD_VERIFICATION_STATUS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_VERIFICATION_STATUS])) {
-                    $this->setVerificationStatus(new FHIRConditionVerificationStatus([FHIRConditionVerificationStatus::FIELD_VALUE => $data[self::FIELD_VERIFICATION_STATUS]] + $ext));
-                } else if (is_array($data[self::FIELD_VERIFICATION_STATUS])) {
-                    $this->setVerificationStatus(new FHIRConditionVerificationStatus(array_merge($ext, $data[self::FIELD_VERIFICATION_STATUS])));
-                }
+        if (isset($data[self::FIELD_VERIFICATION_STATUS]) || isset($data[self::FIELD_VERIFICATION_STATUS_EXT])) {
+            if (isset($data[self::FIELD_VERIFICATION_STATUS])) {
+                $value = $data[self::FIELD_VERIFICATION_STATUS];
             } else {
-                $this->setVerificationStatus(new FHIRConditionVerificationStatus($data[self::FIELD_VERIFICATION_STATUS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_VERIFICATION_STATUS_EXT]) && is_array($data[self::FIELD_VERIFICATION_STATUS_EXT])) {
+                $ext = $data[self::FIELD_VERIFICATION_STATUS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRConditionVerificationStatus) {
+                    $this->setVerificationStatus($value);
+                } else if (is_array($value)) {
+                    $this->setVerificationStatus(new FHIRConditionVerificationStatus(array_merge($ext, $value)));
+                } else {
+                    $this->setVerificationStatus(new FHIRConditionVerificationStatus([FHIRConditionVerificationStatus::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setVerificationStatus(new FHIRConditionVerificationStatus($ext));
             }
         }
     }
@@ -1754,8 +1817,8 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -2058,15 +2121,19 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAbatementBoolean())) {
             $a[self::FIELD_ABATEMENT_BOOLEAN] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_ABATEMENT_BOOLEAN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getAbatementDateTime())) {
             $a[self::FIELD_ABATEMENT_DATE_TIME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_ABATEMENT_DATE_TIME_EXT] = $enc;
             }
         }
@@ -2081,8 +2148,10 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         if (null !== ($v = $this->getAbatementString())) {
             $a[self::FIELD_ABATEMENT_STRING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_ABATEMENT_STRING_EXT] = $enc;
             }
         }
@@ -2090,15 +2159,23 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
             $a[self::FIELD_ASSERTER] = $v;
         }
         if ([] !== ($vs = $this->getBodySite())) {
-            $a[self::FIELD_BODY_SITE] = $vs;
+            $a[self::FIELD_BODY_SITE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_BODY_SITE][] = $v;
+            }
         }
         if (null !== ($v = $this->getCategory())) {
             $a[self::FIELD_CATEGORY] = $v;
         }
         if (null !== ($v = $this->getClinicalStatus())) {
             $a[self::FIELD_CLINICAL_STATUS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRCode::FIELD_VALUE]);
                 $a[self::FIELD_CLINICAL_STATUS_EXT] = $enc;
             }
         }
@@ -2107,8 +2184,10 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         if (null !== ($v = $this->getDateRecorded())) {
             $a[self::FIELD_DATE_RECORDED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDate::FIELD_VALUE]);
                 $a[self::FIELD_DATE_RECORDED_EXT] = $enc;
             }
         }
@@ -2116,22 +2195,38 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
             $a[self::FIELD_ENCOUNTER] = $v;
         }
         if ([] !== ($vs = $this->getEvidence())) {
-            $a[self::FIELD_EVIDENCE] = $vs;
+            $a[self::FIELD_EVIDENCE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_EVIDENCE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if (null !== ($v = $this->getNotes())) {
             $a[self::FIELD_NOTES] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_NOTES_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getOnsetDateTime())) {
             $a[self::FIELD_ONSET_DATE_TIME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_ONSET_DATE_TIME_EXT] = $enc;
             }
         }
@@ -2146,8 +2241,10 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         if (null !== ($v = $this->getOnsetString())) {
             $a[self::FIELD_ONSET_STRING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_ONSET_STRING_EXT] = $enc;
             }
         }
@@ -2162,10 +2259,15 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         if (null !== ($v = $this->getVerificationStatus())) {
             $a[self::FIELD_VERIFICATION_STATUS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRConditionVerificationStatus::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRConditionVerificationStatus::FIELD_VALUE]);
                 $a[self::FIELD_VERIFICATION_STATUS_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

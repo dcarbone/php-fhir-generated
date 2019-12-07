@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     const FIELD_THREE_PRIME = 'threePrime';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -229,20 +229,27 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 $this->setFivePrime(new FHIRCodeableConcept($data[self::FIELD_FIVE_PRIME]));
             }
         }
-        if (isset($data[self::FIELD_LENGTH])) {
-            $ext = (isset($data[self::FIELD_LENGTH_EXT]) && is_array($data[self::FIELD_LENGTH_EXT]))
-                ? $data[self::FIELD_LENGTH_EXT]
-                : null;
-            if ($data[self::FIELD_LENGTH] instanceof FHIRInteger) {
-                $this->setLength($data[self::FIELD_LENGTH]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_LENGTH])) {
-                    $this->setLength(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_LENGTH]] + $ext));
-                } else if (is_array($data[self::FIELD_LENGTH])) {
-                    $this->setLength(new FHIRInteger(array_merge($ext, $data[self::FIELD_LENGTH])));
-                }
+        if (isset($data[self::FIELD_LENGTH]) || isset($data[self::FIELD_LENGTH_EXT])) {
+            if (isset($data[self::FIELD_LENGTH])) {
+                $value = $data[self::FIELD_LENGTH];
             } else {
-                $this->setLength(new FHIRInteger($data[self::FIELD_LENGTH]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_LENGTH_EXT]) && is_array($data[self::FIELD_LENGTH_EXT])) {
+                $ext = $data[self::FIELD_LENGTH_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setLength($value);
+                } else if (is_array($value)) {
+                    $this->setLength(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setLength(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setLength(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_LINKAGE])) {
@@ -263,20 +270,27 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 $this->addLinkage(new FHIRSubstanceNucleicAcidLinkage($data[self::FIELD_LINKAGE]));
             }
         }
-        if (isset($data[self::FIELD_SEQUENCE])) {
-            $ext = (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT]))
-                ? $data[self::FIELD_SEQUENCE_EXT]
-                : null;
-            if ($data[self::FIELD_SEQUENCE] instanceof FHIRString) {
-                $this->setSequence($data[self::FIELD_SEQUENCE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SEQUENCE])) {
-                    $this->setSequence(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SEQUENCE]] + $ext));
-                } else if (is_array($data[self::FIELD_SEQUENCE])) {
-                    $this->setSequence(new FHIRString(array_merge($ext, $data[self::FIELD_SEQUENCE])));
-                }
+        if (isset($data[self::FIELD_SEQUENCE]) || isset($data[self::FIELD_SEQUENCE_EXT])) {
+            if (isset($data[self::FIELD_SEQUENCE])) {
+                $value = $data[self::FIELD_SEQUENCE];
             } else {
-                $this->setSequence(new FHIRString($data[self::FIELD_SEQUENCE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) {
+                $ext = $data[self::FIELD_SEQUENCE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setSequence($value);
+                } else if (is_array($value)) {
+                    $this->setSequence(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setSequence(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setSequence(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_SEQUENCE_ATTACHMENT])) {
@@ -286,20 +300,27 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
                 $this->setSequenceAttachment(new FHIRAttachment($data[self::FIELD_SEQUENCE_ATTACHMENT]));
             }
         }
-        if (isset($data[self::FIELD_SUBUNIT])) {
-            $ext = (isset($data[self::FIELD_SUBUNIT_EXT]) && is_array($data[self::FIELD_SUBUNIT_EXT]))
-                ? $data[self::FIELD_SUBUNIT_EXT]
-                : null;
-            if ($data[self::FIELD_SUBUNIT] instanceof FHIRInteger) {
-                $this->setSubunit($data[self::FIELD_SUBUNIT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SUBUNIT])) {
-                    $this->setSubunit(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_SUBUNIT]] + $ext));
-                } else if (is_array($data[self::FIELD_SUBUNIT])) {
-                    $this->setSubunit(new FHIRInteger(array_merge($ext, $data[self::FIELD_SUBUNIT])));
-                }
+        if (isset($data[self::FIELD_SUBUNIT]) || isset($data[self::FIELD_SUBUNIT_EXT])) {
+            if (isset($data[self::FIELD_SUBUNIT])) {
+                $value = $data[self::FIELD_SUBUNIT];
             } else {
-                $this->setSubunit(new FHIRInteger($data[self::FIELD_SUBUNIT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SUBUNIT_EXT]) && is_array($data[self::FIELD_SUBUNIT_EXT])) {
+                $ext = $data[self::FIELD_SUBUNIT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setSubunit($value);
+                } else if (is_array($value)) {
+                    $this->setSubunit(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setSubunit(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setSubunit(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_SUGAR])) {
@@ -858,18 +879,28 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getLength())) {
             $a[self::FIELD_LENGTH] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_LENGTH_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getLinkage())) {
-            $a[self::FIELD_LINKAGE] = $vs;
+            $a[self::FIELD_LINKAGE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_LINKAGE][] = $v;
+            }
         }
         if (null !== ($v = $this->getSequence())) {
             $a[self::FIELD_SEQUENCE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_SEQUENCE_EXT] = $enc;
             }
         }
@@ -878,16 +909,27 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getSubunit())) {
             $a[self::FIELD_SUBUNIT] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_SUBUNIT_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getSugar())) {
-            $a[self::FIELD_SUGAR] = $vs;
+            $a[self::FIELD_SUGAR] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SUGAR][] = $v;
+            }
         }
         if (null !== ($v = $this->getThreePrime())) {
             $a[self::FIELD_THREE_PRIME] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

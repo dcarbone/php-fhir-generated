@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCharg
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
     const FIELD_PRICE_COMPONENT = 'priceComponent';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * The ChargeItemDefinition resource provides the properties that apply to the
@@ -426,10 +426,25 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getApplicability())) {
-            $a[self::FIELD_APPLICABILITY] = $vs;
+            $a[self::FIELD_APPLICABILITY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_APPLICABILITY][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPriceComponent())) {
-            $a[self::FIELD_PRICE_COMPONENT] = $vs;
+            $a[self::FIELD_PRICE_COMPONENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PRICE_COMPONENT][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

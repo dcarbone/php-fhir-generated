@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,7 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
     const FIELD_MATERIAL_TYPE = 'materialType';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -145,20 +145,27 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_FRACTION])) {
-            $ext = (isset($data[self::FIELD_FRACTION_EXT]) && is_array($data[self::FIELD_FRACTION_EXT]))
-                ? $data[self::FIELD_FRACTION_EXT]
-                : null;
-            if ($data[self::FIELD_FRACTION] instanceof FHIRString) {
-                $this->setFraction($data[self::FIELD_FRACTION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_FRACTION])) {
-                    $this->setFraction(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_FRACTION]] + $ext));
-                } else if (is_array($data[self::FIELD_FRACTION])) {
-                    $this->setFraction(new FHIRString(array_merge($ext, $data[self::FIELD_FRACTION])));
-                }
+        if (isset($data[self::FIELD_FRACTION]) || isset($data[self::FIELD_FRACTION_EXT])) {
+            if (isset($data[self::FIELD_FRACTION])) {
+                $value = $data[self::FIELD_FRACTION];
             } else {
-                $this->setFraction(new FHIRString($data[self::FIELD_FRACTION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_FRACTION_EXT]) && is_array($data[self::FIELD_FRACTION_EXT])) {
+                $ext = $data[self::FIELD_FRACTION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setFraction($value);
+                } else if (is_array($value)) {
+                    $this->setFraction(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setFraction(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setFraction(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_MATERIAL_TYPE])) {
@@ -360,13 +367,18 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getFraction())) {
             $a[self::FIELD_FRACTION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_FRACTION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getMaterialType())) {
             $a[self::FIELD_MATERIAL_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

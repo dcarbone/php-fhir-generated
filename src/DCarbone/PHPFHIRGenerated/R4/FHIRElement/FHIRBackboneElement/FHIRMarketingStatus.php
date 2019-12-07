@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,7 +90,7 @@ class FHIRMarketingStatus extends FHIRBackboneElement
     const FIELD_STATUS = 'status';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -211,20 +211,27 @@ class FHIRMarketingStatus extends FHIRBackboneElement
                 $this->setJurisdiction(new FHIRCodeableConcept($data[self::FIELD_JURISDICTION]));
             }
         }
-        if (isset($data[self::FIELD_RESTORE_DATE])) {
-            $ext = (isset($data[self::FIELD_RESTORE_DATE_EXT]) && is_array($data[self::FIELD_RESTORE_DATE_EXT]))
-                ? $data[self::FIELD_RESTORE_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_RESTORE_DATE] instanceof FHIRDateTime) {
-                $this->setRestoreDate($data[self::FIELD_RESTORE_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_RESTORE_DATE])) {
-                    $this->setRestoreDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_RESTORE_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_RESTORE_DATE])) {
-                    $this->setRestoreDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_RESTORE_DATE])));
-                }
+        if (isset($data[self::FIELD_RESTORE_DATE]) || isset($data[self::FIELD_RESTORE_DATE_EXT])) {
+            if (isset($data[self::FIELD_RESTORE_DATE])) {
+                $value = $data[self::FIELD_RESTORE_DATE];
             } else {
-                $this->setRestoreDate(new FHIRDateTime($data[self::FIELD_RESTORE_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_RESTORE_DATE_EXT]) && is_array($data[self::FIELD_RESTORE_DATE_EXT])) {
+                $ext = $data[self::FIELD_RESTORE_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setRestoreDate($value);
+                } else if (is_array($value)) {
+                    $this->setRestoreDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setRestoreDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setRestoreDate(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_STATUS])) {
@@ -577,13 +584,18 @@ class FHIRMarketingStatus extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getRestoreDate())) {
             $a[self::FIELD_RESTORE_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_RESTORE_DATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

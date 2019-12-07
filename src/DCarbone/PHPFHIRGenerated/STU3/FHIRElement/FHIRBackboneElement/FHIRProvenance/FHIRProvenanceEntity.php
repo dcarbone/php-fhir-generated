@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     const FIELD_WHAT_URI_EXT = '_whatUri';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Provenance of a resource is a record that describes entities and processes
@@ -205,20 +205,27 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 $this->addAgent(new FHIRProvenanceAgent($data[self::FIELD_AGENT]));
             }
         }
-        if (isset($data[self::FIELD_ROLE])) {
-            $ext = (isset($data[self::FIELD_ROLE_EXT]) && is_array($data[self::FIELD_ROLE_EXT]))
-                ? $data[self::FIELD_ROLE_EXT]
-                : null;
-            if ($data[self::FIELD_ROLE] instanceof FHIRProvenanceEntityRole) {
-                $this->setRole($data[self::FIELD_ROLE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ROLE])) {
-                    $this->setRole(new FHIRProvenanceEntityRole([FHIRProvenanceEntityRole::FIELD_VALUE => $data[self::FIELD_ROLE]] + $ext));
-                } else if (is_array($data[self::FIELD_ROLE])) {
-                    $this->setRole(new FHIRProvenanceEntityRole(array_merge($ext, $data[self::FIELD_ROLE])));
-                }
+        if (isset($data[self::FIELD_ROLE]) || isset($data[self::FIELD_ROLE_EXT])) {
+            if (isset($data[self::FIELD_ROLE])) {
+                $value = $data[self::FIELD_ROLE];
             } else {
-                $this->setRole(new FHIRProvenanceEntityRole($data[self::FIELD_ROLE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ROLE_EXT]) && is_array($data[self::FIELD_ROLE_EXT])) {
+                $ext = $data[self::FIELD_ROLE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRProvenanceEntityRole) {
+                    $this->setRole($value);
+                } else if (is_array($value)) {
+                    $this->setRole(new FHIRProvenanceEntityRole(array_merge($ext, $value)));
+                } else {
+                    $this->setRole(new FHIRProvenanceEntityRole([FHIRProvenanceEntityRole::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setRole(new FHIRProvenanceEntityRole($ext));
             }
         }
         if (isset($data[self::FIELD_WHAT_IDENTIFIER])) {
@@ -235,20 +242,27 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 $this->setWhatReference(new FHIRReference($data[self::FIELD_WHAT_REFERENCE]));
             }
         }
-        if (isset($data[self::FIELD_WHAT_URI])) {
-            $ext = (isset($data[self::FIELD_WHAT_URI_EXT]) && is_array($data[self::FIELD_WHAT_URI_EXT]))
-                ? $data[self::FIELD_WHAT_URI_EXT]
-                : null;
-            if ($data[self::FIELD_WHAT_URI] instanceof FHIRUri) {
-                $this->setWhatUri($data[self::FIELD_WHAT_URI]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_WHAT_URI])) {
-                    $this->setWhatUri(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_WHAT_URI]] + $ext));
-                } else if (is_array($data[self::FIELD_WHAT_URI])) {
-                    $this->setWhatUri(new FHIRUri(array_merge($ext, $data[self::FIELD_WHAT_URI])));
-                }
+        if (isset($data[self::FIELD_WHAT_URI]) || isset($data[self::FIELD_WHAT_URI_EXT])) {
+            if (isset($data[self::FIELD_WHAT_URI])) {
+                $value = $data[self::FIELD_WHAT_URI];
             } else {
-                $this->setWhatUri(new FHIRUri($data[self::FIELD_WHAT_URI]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_WHAT_URI_EXT]) && is_array($data[self::FIELD_WHAT_URI_EXT])) {
+                $ext = $data[self::FIELD_WHAT_URI_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setWhatUri($value);
+                } else if (is_array($value)) {
+                    $this->setWhatUri(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setWhatUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setWhatUri(new FHIRUri($ext));
             }
         }
     }
@@ -493,8 +507,8 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -606,12 +620,20 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAgent())) {
-            $a[self::FIELD_AGENT] = $vs;
+            $a[self::FIELD_AGENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_AGENT][] = $v;
+            }
         }
         if (null !== ($v = $this->getRole())) {
             $a[self::FIELD_ROLE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRProvenanceEntityRole::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRProvenanceEntityRole::FIELD_VALUE]);
                 $a[self::FIELD_ROLE_EXT] = $enc;
             }
         }
@@ -623,10 +645,15 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getWhatUri())) {
             $a[self::FIELD_WHAT_URI] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUri::FIELD_VALUE]);
                 $a[self::FIELD_WHAT_URI_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
     const FIELD_PATIENT_CHARACTERISTICS = 'patientCharacteristics';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Information about a medication that is used to support knowledge.
@@ -504,7 +504,13 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getDosage())) {
-            $a[self::FIELD_DOSAGE] = $vs;
+            $a[self::FIELD_DOSAGE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_DOSAGE][] = $v;
+            }
         }
         if (null !== ($v = $this->getIndicationCodeableConcept())) {
             $a[self::FIELD_INDICATION_CODEABLE_CONCEPT] = $v;
@@ -513,7 +519,16 @@ class FHIRMedicationKnowledgeAdministrationGuidelines extends FHIRBackboneElemen
             $a[self::FIELD_INDICATION_REFERENCE] = $v;
         }
         if ([] !== ($vs = $this->getPatientCharacteristics())) {
-            $a[self::FIELD_PATIENT_CHARACTERISTICS] = $vs;
+            $a[self::FIELD_PATIENT_CHARACTERISTICS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PATIENT_CHARACTERISTICS][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,7 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
     const FIELD_TELECOM = 'telecom';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * There is a variety of postal address formats defined around the world. This
@@ -297,20 +297,27 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
                 $this->setAddress(new FHIRAddress($data[self::FIELD_ADDRESS]));
             }
         }
-        if (isset($data[self::FIELD_BIRTH_DATE])) {
-            $ext = (isset($data[self::FIELD_BIRTH_DATE_EXT]) && is_array($data[self::FIELD_BIRTH_DATE_EXT]))
-                ? $data[self::FIELD_BIRTH_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_BIRTH_DATE] instanceof FHIRDateTime) {
-                $this->setBirthDate($data[self::FIELD_BIRTH_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_BIRTH_DATE])) {
-                    $this->setBirthDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_BIRTH_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_BIRTH_DATE])) {
-                    $this->setBirthDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_BIRTH_DATE])));
-                }
+        if (isset($data[self::FIELD_BIRTH_DATE]) || isset($data[self::FIELD_BIRTH_DATE_EXT])) {
+            if (isset($data[self::FIELD_BIRTH_DATE])) {
+                $value = $data[self::FIELD_BIRTH_DATE];
             } else {
-                $this->setBirthDate(new FHIRDateTime($data[self::FIELD_BIRTH_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_BIRTH_DATE_EXT]) && is_array($data[self::FIELD_BIRTH_DATE_EXT])) {
+                $ext = $data[self::FIELD_BIRTH_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setBirthDate($value);
+                } else if (is_array($value)) {
+                    $this->setBirthDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setBirthDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setBirthDate(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_COMMUNICATION])) {
@@ -1182,8 +1189,8 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -1402,22 +1409,42 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
         }
         if (null !== ($v = $this->getBirthDate())) {
             $a[self::FIELD_BIRTH_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_BIRTH_DATE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getCommunication())) {
-            $a[self::FIELD_COMMUNICATION] = $vs;
+            $a[self::FIELD_COMMUNICATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_COMMUNICATION][] = $v;
+            }
         }
         if (null !== ($v = $this->getGender())) {
             $a[self::FIELD_GENDER] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getLocation())) {
-            $a[self::FIELD_LOCATION] = $vs;
+            $a[self::FIELD_LOCATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_LOCATION][] = $v;
+            }
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v;
@@ -1429,19 +1456,52 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
             $a[self::FIELD_PERIOD] = $v;
         }
         if ([] !== ($vs = $this->getPhoto())) {
-            $a[self::FIELD_PHOTO] = $vs;
+            $a[self::FIELD_PHOTO] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PHOTO][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getQualification())) {
-            $a[self::FIELD_QUALIFICATION] = $vs;
+            $a[self::FIELD_QUALIFICATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_QUALIFICATION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getRole())) {
-            $a[self::FIELD_ROLE] = $vs;
+            $a[self::FIELD_ROLE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ROLE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSpecialty())) {
-            $a[self::FIELD_SPECIALTY] = $vs;
+            $a[self::FIELD_SPECIALTY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SPECIALTY][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getTelecom())) {
-            $a[self::FIELD_TELECOM] = $vs;
+            $a[self::FIELD_TELECOM] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_TELECOM][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

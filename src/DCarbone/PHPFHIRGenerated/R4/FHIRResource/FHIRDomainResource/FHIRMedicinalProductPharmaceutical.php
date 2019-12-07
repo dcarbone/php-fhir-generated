@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,7 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements P
     const FIELD_UNIT_OF_PRESENTATION = 'unitOfPresentation';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -822,22 +822,55 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements P
             $a[self::FIELD_ADMINISTRABLE_DOSE_FORM] = $v;
         }
         if ([] !== ($vs = $this->getCharacteristics())) {
-            $a[self::FIELD_CHARACTERISTICS] = $vs;
+            $a[self::FIELD_CHARACTERISTICS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CHARACTERISTICS][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getDevice())) {
-            $a[self::FIELD_DEVICE] = $vs;
+            $a[self::FIELD_DEVICE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_DEVICE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIngredient())) {
-            $a[self::FIELD_INGREDIENT] = $vs;
+            $a[self::FIELD_INGREDIENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_INGREDIENT][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getRouteOfAdministration())) {
-            $a[self::FIELD_ROUTE_OF_ADMINISTRATION] = $vs;
+            $a[self::FIELD_ROUTE_OF_ADMINISTRATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ROUTE_OF_ADMINISTRATION][] = $v;
+            }
         }
         if (null !== ($v = $this->getUnitOfPresentation())) {
             $a[self::FIELD_UNIT_OF_PRESENTATION] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

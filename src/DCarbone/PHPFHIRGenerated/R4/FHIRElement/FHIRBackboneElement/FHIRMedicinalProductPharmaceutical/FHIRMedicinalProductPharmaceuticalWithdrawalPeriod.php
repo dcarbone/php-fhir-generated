@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
     const FIELD_VALUE = 'value';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -146,20 +146,27 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_SUPPORTING_INFORMATION])) {
-            $ext = (isset($data[self::FIELD_SUPPORTING_INFORMATION_EXT]) && is_array($data[self::FIELD_SUPPORTING_INFORMATION_EXT]))
-                ? $data[self::FIELD_SUPPORTING_INFORMATION_EXT]
-                : null;
-            if ($data[self::FIELD_SUPPORTING_INFORMATION] instanceof FHIRString) {
-                $this->setSupportingInformation($data[self::FIELD_SUPPORTING_INFORMATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SUPPORTING_INFORMATION])) {
-                    $this->setSupportingInformation(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SUPPORTING_INFORMATION]] + $ext));
-                } else if (is_array($data[self::FIELD_SUPPORTING_INFORMATION])) {
-                    $this->setSupportingInformation(new FHIRString(array_merge($ext, $data[self::FIELD_SUPPORTING_INFORMATION])));
-                }
+        if (isset($data[self::FIELD_SUPPORTING_INFORMATION]) || isset($data[self::FIELD_SUPPORTING_INFORMATION_EXT])) {
+            if (isset($data[self::FIELD_SUPPORTING_INFORMATION])) {
+                $value = $data[self::FIELD_SUPPORTING_INFORMATION];
             } else {
-                $this->setSupportingInformation(new FHIRString($data[self::FIELD_SUPPORTING_INFORMATION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SUPPORTING_INFORMATION_EXT]) && is_array($data[self::FIELD_SUPPORTING_INFORMATION_EXT])) {
+                $ext = $data[self::FIELD_SUPPORTING_INFORMATION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setSupportingInformation($value);
+                } else if (is_array($value)) {
+                    $this->setSupportingInformation(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setSupportingInformation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setSupportingInformation(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_TISSUE])) {
@@ -405,8 +412,10 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getSupportingInformation())) {
             $a[self::FIELD_SUPPORTING_INFORMATION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_SUPPORTING_INFORMATION_EXT] = $enc;
             }
         }
@@ -414,10 +423,10 @@ class FHIRMedicinalProductPharmaceuticalWithdrawalPeriod extends FHIRBackboneEle
             $a[self::FIELD_TISSUE] = $v;
         }
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                $a[self::FIELD_VALUE_EXT] = $enc;
-            }
+            $a[self::FIELD_VALUE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

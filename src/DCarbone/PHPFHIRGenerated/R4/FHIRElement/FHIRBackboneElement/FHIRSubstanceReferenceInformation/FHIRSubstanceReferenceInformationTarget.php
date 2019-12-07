@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,7 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -251,20 +251,27 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
                 $this->setAmountRange(new FHIRRange($data[self::FIELD_AMOUNT_RANGE]));
             }
         }
-        if (isset($data[self::FIELD_AMOUNT_STRING])) {
-            $ext = (isset($data[self::FIELD_AMOUNT_STRING_EXT]) && is_array($data[self::FIELD_AMOUNT_STRING_EXT]))
-                ? $data[self::FIELD_AMOUNT_STRING_EXT]
-                : null;
-            if ($data[self::FIELD_AMOUNT_STRING] instanceof FHIRString) {
-                $this->setAmountString($data[self::FIELD_AMOUNT_STRING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AMOUNT_STRING])) {
-                    $this->setAmountString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_AMOUNT_STRING]] + $ext));
-                } else if (is_array($data[self::FIELD_AMOUNT_STRING])) {
-                    $this->setAmountString(new FHIRString(array_merge($ext, $data[self::FIELD_AMOUNT_STRING])));
-                }
+        if (isset($data[self::FIELD_AMOUNT_STRING]) || isset($data[self::FIELD_AMOUNT_STRING_EXT])) {
+            if (isset($data[self::FIELD_AMOUNT_STRING])) {
+                $value = $data[self::FIELD_AMOUNT_STRING];
             } else {
-                $this->setAmountString(new FHIRString($data[self::FIELD_AMOUNT_STRING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_AMOUNT_STRING_EXT]) && is_array($data[self::FIELD_AMOUNT_STRING_EXT])) {
+                $ext = $data[self::FIELD_AMOUNT_STRING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setAmountString($value);
+                } else if (is_array($value)) {
+                    $this->setAmountString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setAmountString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAmountString(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_AMOUNT_TYPE])) {
@@ -854,8 +861,10 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getAmountString())) {
             $a[self::FIELD_AMOUNT_STRING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_AMOUNT_STRING_EXT] = $enc;
             }
         }
@@ -872,13 +881,22 @@ class FHIRSubstanceReferenceInformationTarget extends FHIRBackboneElement
             $a[self::FIELD_ORGANISM_TYPE] = $v;
         }
         if ([] !== ($vs = $this->getSource())) {
-            $a[self::FIELD_SOURCE] = $vs;
+            $a[self::FIELD_SOURCE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SOURCE][] = $v;
+            }
         }
         if (null !== ($v = $this->getTarget())) {
             $a[self::FIELD_TARGET] = $v;
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

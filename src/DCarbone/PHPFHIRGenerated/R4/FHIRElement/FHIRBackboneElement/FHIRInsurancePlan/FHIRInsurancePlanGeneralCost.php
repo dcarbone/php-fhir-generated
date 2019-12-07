@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -157,20 +157,27 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_COMMENT])) {
-            $ext = (isset($data[self::FIELD_COMMENT_EXT]) && is_array($data[self::FIELD_COMMENT_EXT]))
-                ? $data[self::FIELD_COMMENT_EXT]
-                : null;
-            if ($data[self::FIELD_COMMENT] instanceof FHIRString) {
-                $this->setComment($data[self::FIELD_COMMENT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_COMMENT])) {
-                    $this->setComment(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_COMMENT]] + $ext));
-                } else if (is_array($data[self::FIELD_COMMENT])) {
-                    $this->setComment(new FHIRString(array_merge($ext, $data[self::FIELD_COMMENT])));
-                }
+        if (isset($data[self::FIELD_COMMENT]) || isset($data[self::FIELD_COMMENT_EXT])) {
+            if (isset($data[self::FIELD_COMMENT])) {
+                $value = $data[self::FIELD_COMMENT];
             } else {
-                $this->setComment(new FHIRString($data[self::FIELD_COMMENT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_COMMENT_EXT]) && is_array($data[self::FIELD_COMMENT_EXT])) {
+                $ext = $data[self::FIELD_COMMENT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setComment($value);
+                } else if (is_array($value)) {
+                    $this->setComment(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setComment(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setComment(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_COST])) {
@@ -180,20 +187,27 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
                 $this->setCost(new FHIRMoney($data[self::FIELD_COST]));
             }
         }
-        if (isset($data[self::FIELD_GROUP_SIZE])) {
-            $ext = (isset($data[self::FIELD_GROUP_SIZE_EXT]) && is_array($data[self::FIELD_GROUP_SIZE_EXT]))
-                ? $data[self::FIELD_GROUP_SIZE_EXT]
-                : null;
-            if ($data[self::FIELD_GROUP_SIZE] instanceof FHIRPositiveInt) {
-                $this->setGroupSize($data[self::FIELD_GROUP_SIZE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_GROUP_SIZE])) {
-                    $this->setGroupSize(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_GROUP_SIZE]] + $ext));
-                } else if (is_array($data[self::FIELD_GROUP_SIZE])) {
-                    $this->setGroupSize(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_GROUP_SIZE])));
-                }
+        if (isset($data[self::FIELD_GROUP_SIZE]) || isset($data[self::FIELD_GROUP_SIZE_EXT])) {
+            if (isset($data[self::FIELD_GROUP_SIZE])) {
+                $value = $data[self::FIELD_GROUP_SIZE];
             } else {
-                $this->setGroupSize(new FHIRPositiveInt($data[self::FIELD_GROUP_SIZE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_GROUP_SIZE_EXT]) && is_array($data[self::FIELD_GROUP_SIZE_EXT])) {
+                $ext = $data[self::FIELD_GROUP_SIZE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setGroupSize($value);
+                } else if (is_array($value)) {
+                    $this->setGroupSize(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setGroupSize(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setGroupSize(new FHIRPositiveInt($ext));
             }
         }
         if (isset($data[self::FIELD_TYPE])) {
@@ -477,8 +491,10 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getComment())) {
             $a[self::FIELD_COMMENT] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_COMMENT_EXT] = $enc;
             }
         }
@@ -487,13 +503,18 @@ class FHIRInsurancePlanGeneralCost extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getGroupSize())) {
             $a[self::FIELD_GROUP_SIZE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
                 $a[self::FIELD_GROUP_SIZE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

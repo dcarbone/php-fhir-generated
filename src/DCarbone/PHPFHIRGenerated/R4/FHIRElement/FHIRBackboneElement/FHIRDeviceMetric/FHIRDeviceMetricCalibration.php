@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
     const FIELD_TYPE_EXT = '_type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Describes the state of a metric calibration.
@@ -145,52 +145,73 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_STATE])) {
-            $ext = (isset($data[self::FIELD_STATE_EXT]) && is_array($data[self::FIELD_STATE_EXT]))
-                ? $data[self::FIELD_STATE_EXT]
-                : null;
-            if ($data[self::FIELD_STATE] instanceof FHIRDeviceMetricCalibrationState) {
-                $this->setState($data[self::FIELD_STATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STATE])) {
-                    $this->setState(new FHIRDeviceMetricCalibrationState([FHIRDeviceMetricCalibrationState::FIELD_VALUE => $data[self::FIELD_STATE]] + $ext));
-                } else if (is_array($data[self::FIELD_STATE])) {
-                    $this->setState(new FHIRDeviceMetricCalibrationState(array_merge($ext, $data[self::FIELD_STATE])));
-                }
+        if (isset($data[self::FIELD_STATE]) || isset($data[self::FIELD_STATE_EXT])) {
+            if (isset($data[self::FIELD_STATE])) {
+                $value = $data[self::FIELD_STATE];
             } else {
-                $this->setState(new FHIRDeviceMetricCalibrationState($data[self::FIELD_STATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STATE_EXT]) && is_array($data[self::FIELD_STATE_EXT])) {
+                $ext = $data[self::FIELD_STATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDeviceMetricCalibrationState) {
+                    $this->setState($value);
+                } else if (is_array($value)) {
+                    $this->setState(new FHIRDeviceMetricCalibrationState(array_merge($ext, $value)));
+                } else {
+                    $this->setState(new FHIRDeviceMetricCalibrationState([FHIRDeviceMetricCalibrationState::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setState(new FHIRDeviceMetricCalibrationState($ext));
             }
         }
-        if (isset($data[self::FIELD_TIME])) {
-            $ext = (isset($data[self::FIELD_TIME_EXT]) && is_array($data[self::FIELD_TIME_EXT]))
-                ? $data[self::FIELD_TIME_EXT]
-                : null;
-            if ($data[self::FIELD_TIME] instanceof FHIRInstant) {
-                $this->setTime($data[self::FIELD_TIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_TIME])) {
-                    $this->setTime(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_TIME]] + $ext));
-                } else if (is_array($data[self::FIELD_TIME])) {
-                    $this->setTime(new FHIRInstant(array_merge($ext, $data[self::FIELD_TIME])));
-                }
+        if (isset($data[self::FIELD_TIME]) || isset($data[self::FIELD_TIME_EXT])) {
+            if (isset($data[self::FIELD_TIME])) {
+                $value = $data[self::FIELD_TIME];
             } else {
-                $this->setTime(new FHIRInstant($data[self::FIELD_TIME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_TIME_EXT]) && is_array($data[self::FIELD_TIME_EXT])) {
+                $ext = $data[self::FIELD_TIME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInstant) {
+                    $this->setTime($value);
+                } else if (is_array($value)) {
+                    $this->setTime(new FHIRInstant(array_merge($ext, $value)));
+                } else {
+                    $this->setTime(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setTime(new FHIRInstant($ext));
             }
         }
-        if (isset($data[self::FIELD_TYPE])) {
-            $ext = (isset($data[self::FIELD_TYPE_EXT]) && is_array($data[self::FIELD_TYPE_EXT]))
-                ? $data[self::FIELD_TYPE_EXT]
-                : null;
-            if ($data[self::FIELD_TYPE] instanceof FHIRDeviceMetricCalibrationType) {
-                $this->setType($data[self::FIELD_TYPE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_TYPE])) {
-                    $this->setType(new FHIRDeviceMetricCalibrationType([FHIRDeviceMetricCalibrationType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
-                } else if (is_array($data[self::FIELD_TYPE])) {
-                    $this->setType(new FHIRDeviceMetricCalibrationType(array_merge($ext, $data[self::FIELD_TYPE])));
-                }
+        if (isset($data[self::FIELD_TYPE]) || isset($data[self::FIELD_TYPE_EXT])) {
+            if (isset($data[self::FIELD_TYPE])) {
+                $value = $data[self::FIELD_TYPE];
             } else {
-                $this->setType(new FHIRDeviceMetricCalibrationType($data[self::FIELD_TYPE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_TYPE_EXT]) && is_array($data[self::FIELD_TYPE_EXT])) {
+                $ext = $data[self::FIELD_TYPE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDeviceMetricCalibrationType) {
+                    $this->setType($value);
+                } else if (is_array($value)) {
+                    $this->setType(new FHIRDeviceMetricCalibrationType(array_merge($ext, $value)));
+                } else {
+                    $this->setType(new FHIRDeviceMetricCalibrationType([FHIRDeviceMetricCalibrationType::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setType(new FHIRDeviceMetricCalibrationType($ext));
             }
         }
     }
@@ -415,24 +436,33 @@ class FHIRDeviceMetricCalibration extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getState())) {
             $a[self::FIELD_STATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDeviceMetricCalibrationState::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDeviceMetricCalibrationState::FIELD_VALUE]);
                 $a[self::FIELD_STATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getTime())) {
             $a[self::FIELD_TIME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInstant::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInstant::FIELD_VALUE]);
                 $a[self::FIELD_TIME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDeviceMetricCalibrationType::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDeviceMetricCalibrationType::FIELD_VALUE]);
                 $a[self::FIELD_TYPE_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

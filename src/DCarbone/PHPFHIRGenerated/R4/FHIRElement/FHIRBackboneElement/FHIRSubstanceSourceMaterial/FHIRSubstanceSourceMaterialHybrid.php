@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     const FIELD_PATERNAL_ORGANISM_NAME_EXT = '_paternalOrganismName';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -195,68 +195,96 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
                 $this->setHybridType(new FHIRCodeableConcept($data[self::FIELD_HYBRID_TYPE]));
             }
         }
-        if (isset($data[self::FIELD_MATERNAL_ORGANISM_ID])) {
-            $ext = (isset($data[self::FIELD_MATERNAL_ORGANISM_ID_EXT]) && is_array($data[self::FIELD_MATERNAL_ORGANISM_ID_EXT]))
-                ? $data[self::FIELD_MATERNAL_ORGANISM_ID_EXT]
-                : null;
-            if ($data[self::FIELD_MATERNAL_ORGANISM_ID] instanceof FHIRString) {
-                $this->setMaternalOrganismId($data[self::FIELD_MATERNAL_ORGANISM_ID]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_MATERNAL_ORGANISM_ID])) {
-                    $this->setMaternalOrganismId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MATERNAL_ORGANISM_ID]] + $ext));
-                } else if (is_array($data[self::FIELD_MATERNAL_ORGANISM_ID])) {
-                    $this->setMaternalOrganismId(new FHIRString(array_merge($ext, $data[self::FIELD_MATERNAL_ORGANISM_ID])));
-                }
+        if (isset($data[self::FIELD_MATERNAL_ORGANISM_ID]) || isset($data[self::FIELD_MATERNAL_ORGANISM_ID_EXT])) {
+            if (isset($data[self::FIELD_MATERNAL_ORGANISM_ID])) {
+                $value = $data[self::FIELD_MATERNAL_ORGANISM_ID];
             } else {
-                $this->setMaternalOrganismId(new FHIRString($data[self::FIELD_MATERNAL_ORGANISM_ID]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_MATERNAL_ORGANISM_ID_EXT]) && is_array($data[self::FIELD_MATERNAL_ORGANISM_ID_EXT])) {
+                $ext = $data[self::FIELD_MATERNAL_ORGANISM_ID_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setMaternalOrganismId($value);
+                } else if (is_array($value)) {
+                    $this->setMaternalOrganismId(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setMaternalOrganismId(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setMaternalOrganismId(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_MATERNAL_ORGANISM_NAME])) {
-            $ext = (isset($data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT]) && is_array($data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT]))
-                ? $data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT]
-                : null;
-            if ($data[self::FIELD_MATERNAL_ORGANISM_NAME] instanceof FHIRString) {
-                $this->setMaternalOrganismName($data[self::FIELD_MATERNAL_ORGANISM_NAME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_MATERNAL_ORGANISM_NAME])) {
-                    $this->setMaternalOrganismName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MATERNAL_ORGANISM_NAME]] + $ext));
-                } else if (is_array($data[self::FIELD_MATERNAL_ORGANISM_NAME])) {
-                    $this->setMaternalOrganismName(new FHIRString(array_merge($ext, $data[self::FIELD_MATERNAL_ORGANISM_NAME])));
-                }
+        if (isset($data[self::FIELD_MATERNAL_ORGANISM_NAME]) || isset($data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT])) {
+            if (isset($data[self::FIELD_MATERNAL_ORGANISM_NAME])) {
+                $value = $data[self::FIELD_MATERNAL_ORGANISM_NAME];
             } else {
-                $this->setMaternalOrganismName(new FHIRString($data[self::FIELD_MATERNAL_ORGANISM_NAME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT]) && is_array($data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT])) {
+                $ext = $data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setMaternalOrganismName($value);
+                } else if (is_array($value)) {
+                    $this->setMaternalOrganismName(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setMaternalOrganismName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setMaternalOrganismName(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_PATERNAL_ORGANISM_ID])) {
-            $ext = (isset($data[self::FIELD_PATERNAL_ORGANISM_ID_EXT]) && is_array($data[self::FIELD_PATERNAL_ORGANISM_ID_EXT]))
-                ? $data[self::FIELD_PATERNAL_ORGANISM_ID_EXT]
-                : null;
-            if ($data[self::FIELD_PATERNAL_ORGANISM_ID] instanceof FHIRString) {
-                $this->setPaternalOrganismId($data[self::FIELD_PATERNAL_ORGANISM_ID]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PATERNAL_ORGANISM_ID])) {
-                    $this->setPaternalOrganismId(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PATERNAL_ORGANISM_ID]] + $ext));
-                } else if (is_array($data[self::FIELD_PATERNAL_ORGANISM_ID])) {
-                    $this->setPaternalOrganismId(new FHIRString(array_merge($ext, $data[self::FIELD_PATERNAL_ORGANISM_ID])));
-                }
+        if (isset($data[self::FIELD_PATERNAL_ORGANISM_ID]) || isset($data[self::FIELD_PATERNAL_ORGANISM_ID_EXT])) {
+            if (isset($data[self::FIELD_PATERNAL_ORGANISM_ID])) {
+                $value = $data[self::FIELD_PATERNAL_ORGANISM_ID];
             } else {
-                $this->setPaternalOrganismId(new FHIRString($data[self::FIELD_PATERNAL_ORGANISM_ID]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PATERNAL_ORGANISM_ID_EXT]) && is_array($data[self::FIELD_PATERNAL_ORGANISM_ID_EXT])) {
+                $ext = $data[self::FIELD_PATERNAL_ORGANISM_ID_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setPaternalOrganismId($value);
+                } else if (is_array($value)) {
+                    $this->setPaternalOrganismId(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setPaternalOrganismId(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPaternalOrganismId(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_PATERNAL_ORGANISM_NAME])) {
-            $ext = (isset($data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT]) && is_array($data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT]))
-                ? $data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT]
-                : null;
-            if ($data[self::FIELD_PATERNAL_ORGANISM_NAME] instanceof FHIRString) {
-                $this->setPaternalOrganismName($data[self::FIELD_PATERNAL_ORGANISM_NAME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PATERNAL_ORGANISM_NAME])) {
-                    $this->setPaternalOrganismName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PATERNAL_ORGANISM_NAME]] + $ext));
-                } else if (is_array($data[self::FIELD_PATERNAL_ORGANISM_NAME])) {
-                    $this->setPaternalOrganismName(new FHIRString(array_merge($ext, $data[self::FIELD_PATERNAL_ORGANISM_NAME])));
-                }
+        if (isset($data[self::FIELD_PATERNAL_ORGANISM_NAME]) || isset($data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT])) {
+            if (isset($data[self::FIELD_PATERNAL_ORGANISM_NAME])) {
+                $value = $data[self::FIELD_PATERNAL_ORGANISM_NAME];
             } else {
-                $this->setPaternalOrganismName(new FHIRString($data[self::FIELD_PATERNAL_ORGANISM_NAME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT]) && is_array($data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT])) {
+                $ext = $data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setPaternalOrganismName($value);
+                } else if (is_array($value)) {
+                    $this->setPaternalOrganismName(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setPaternalOrganismName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPaternalOrganismName(new FHIRString($ext));
             }
         }
     }
@@ -618,31 +646,42 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getMaternalOrganismId())) {
             $a[self::FIELD_MATERNAL_ORGANISM_ID] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_MATERNAL_ORGANISM_ID_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getMaternalOrganismName())) {
             $a[self::FIELD_MATERNAL_ORGANISM_NAME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_MATERNAL_ORGANISM_NAME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPaternalOrganismId())) {
             $a[self::FIELD_PATERNAL_ORGANISM_ID] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_PATERNAL_ORGANISM_ID_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPaternalOrganismName())) {
             $a[self::FIELD_PATERNAL_ORGANISM_NAME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_PATERNAL_ORGANISM_NAME_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

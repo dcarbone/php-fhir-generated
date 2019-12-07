@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Details of a Health Insurance product/plan provided by an organization.
@@ -158,20 +158,27 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
                 $this->addLimit(new FHIRInsurancePlanLimit($data[self::FIELD_LIMIT]));
             }
         }
-        if (isset($data[self::FIELD_REQUIREMENT])) {
-            $ext = (isset($data[self::FIELD_REQUIREMENT_EXT]) && is_array($data[self::FIELD_REQUIREMENT_EXT]))
-                ? $data[self::FIELD_REQUIREMENT_EXT]
-                : null;
-            if ($data[self::FIELD_REQUIREMENT] instanceof FHIRString) {
-                $this->setRequirement($data[self::FIELD_REQUIREMENT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_REQUIREMENT])) {
-                    $this->setRequirement(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_REQUIREMENT]] + $ext));
-                } else if (is_array($data[self::FIELD_REQUIREMENT])) {
-                    $this->setRequirement(new FHIRString(array_merge($ext, $data[self::FIELD_REQUIREMENT])));
-                }
+        if (isset($data[self::FIELD_REQUIREMENT]) || isset($data[self::FIELD_REQUIREMENT_EXT])) {
+            if (isset($data[self::FIELD_REQUIREMENT])) {
+                $value = $data[self::FIELD_REQUIREMENT];
             } else {
-                $this->setRequirement(new FHIRString($data[self::FIELD_REQUIREMENT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_REQUIREMENT_EXT]) && is_array($data[self::FIELD_REQUIREMENT_EXT])) {
+                $ext = $data[self::FIELD_REQUIREMENT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setRequirement($value);
+                } else if (is_array($value)) {
+                    $this->setRequirement(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setRequirement(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setRequirement(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_TYPE])) {
@@ -429,17 +436,28 @@ class FHIRInsurancePlanBenefit extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getLimit())) {
-            $a[self::FIELD_LIMIT] = $vs;
+            $a[self::FIELD_LIMIT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_LIMIT][] = $v;
+            }
         }
         if (null !== ($v = $this->getRequirement())) {
             $a[self::FIELD_REQUIREMENT] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_REQUIREMENT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

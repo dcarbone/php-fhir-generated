@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,7 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
     const FIELD_VALIDITY_PERIOD = 'validityPeriod';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -373,36 +373,50 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_LAST_UPDATED])) {
-            $ext = (isset($data[self::FIELD_LAST_UPDATED_EXT]) && is_array($data[self::FIELD_LAST_UPDATED_EXT]))
-                ? $data[self::FIELD_LAST_UPDATED_EXT]
-                : null;
-            if ($data[self::FIELD_LAST_UPDATED] instanceof FHIRDateTime) {
-                $this->setLastUpdated($data[self::FIELD_LAST_UPDATED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_LAST_UPDATED])) {
-                    $this->setLastUpdated(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_LAST_UPDATED]] + $ext));
-                } else if (is_array($data[self::FIELD_LAST_UPDATED])) {
-                    $this->setLastUpdated(new FHIRDateTime(array_merge($ext, $data[self::FIELD_LAST_UPDATED])));
-                }
+        if (isset($data[self::FIELD_LAST_UPDATED]) || isset($data[self::FIELD_LAST_UPDATED_EXT])) {
+            if (isset($data[self::FIELD_LAST_UPDATED])) {
+                $value = $data[self::FIELD_LAST_UPDATED];
             } else {
-                $this->setLastUpdated(new FHIRDateTime($data[self::FIELD_LAST_UPDATED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_LAST_UPDATED_EXT]) && is_array($data[self::FIELD_LAST_UPDATED_EXT])) {
+                $ext = $data[self::FIELD_LAST_UPDATED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setLastUpdated($value);
+                } else if (is_array($value)) {
+                    $this->setLastUpdated(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setLastUpdated(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setLastUpdated(new FHIRDateTime($ext));
             }
         }
-        if (isset($data[self::FIELD_ORDERABLE])) {
-            $ext = (isset($data[self::FIELD_ORDERABLE_EXT]) && is_array($data[self::FIELD_ORDERABLE_EXT]))
-                ? $data[self::FIELD_ORDERABLE_EXT]
-                : null;
-            if ($data[self::FIELD_ORDERABLE] instanceof FHIRBoolean) {
-                $this->setOrderable($data[self::FIELD_ORDERABLE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ORDERABLE])) {
-                    $this->setOrderable(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_ORDERABLE]] + $ext));
-                } else if (is_array($data[self::FIELD_ORDERABLE])) {
-                    $this->setOrderable(new FHIRBoolean(array_merge($ext, $data[self::FIELD_ORDERABLE])));
-                }
+        if (isset($data[self::FIELD_ORDERABLE]) || isset($data[self::FIELD_ORDERABLE_EXT])) {
+            if (isset($data[self::FIELD_ORDERABLE])) {
+                $value = $data[self::FIELD_ORDERABLE];
             } else {
-                $this->setOrderable(new FHIRBoolean($data[self::FIELD_ORDERABLE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ORDERABLE_EXT]) && is_array($data[self::FIELD_ORDERABLE_EXT])) {
+                $ext = $data[self::FIELD_ORDERABLE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setOrderable($value);
+                } else if (is_array($value)) {
+                    $this->setOrderable(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setOrderable(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setOrderable(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_REFERENCED_ITEM])) {
@@ -430,20 +444,27 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $this->addRelatedEntry(new FHIRCatalogEntryRelatedEntry($data[self::FIELD_RELATED_ENTRY]));
             }
         }
-        if (isset($data[self::FIELD_STATUS])) {
-            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT]))
-                ? $data[self::FIELD_STATUS_EXT]
-                : null;
-            if ($data[self::FIELD_STATUS] instanceof FHIRPublicationStatus) {
-                $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRPublicationStatus([FHIRPublicationStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
-                } else if (is_array($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRPublicationStatus(array_merge($ext, $data[self::FIELD_STATUS])));
-                }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            if (isset($data[self::FIELD_STATUS])) {
+                $value = $data[self::FIELD_STATUS];
             } else {
-                $this->setStatus(new FHIRPublicationStatus($data[self::FIELD_STATUS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
+                $ext = $data[self::FIELD_STATUS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRPublicationStatus) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIRPublicationStatus(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIRPublicationStatus([FHIRPublicationStatus::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setStatus(new FHIRPublicationStatus($ext));
             }
         }
         if (isset($data[self::FIELD_TYPE])) {
@@ -453,20 +474,27 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
         }
-        if (isset($data[self::FIELD_VALID_TO])) {
-            $ext = (isset($data[self::FIELD_VALID_TO_EXT]) && is_array($data[self::FIELD_VALID_TO_EXT]))
-                ? $data[self::FIELD_VALID_TO_EXT]
-                : null;
-            if ($data[self::FIELD_VALID_TO] instanceof FHIRDateTime) {
-                $this->setValidTo($data[self::FIELD_VALID_TO]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_VALID_TO])) {
-                    $this->setValidTo(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_VALID_TO]] + $ext));
-                } else if (is_array($data[self::FIELD_VALID_TO])) {
-                    $this->setValidTo(new FHIRDateTime(array_merge($ext, $data[self::FIELD_VALID_TO])));
-                }
+        if (isset($data[self::FIELD_VALID_TO]) || isset($data[self::FIELD_VALID_TO_EXT])) {
+            if (isset($data[self::FIELD_VALID_TO])) {
+                $value = $data[self::FIELD_VALID_TO];
             } else {
-                $this->setValidTo(new FHIRDateTime($data[self::FIELD_VALID_TO]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_VALID_TO_EXT]) && is_array($data[self::FIELD_VALID_TO_EXT])) {
+                $ext = $data[self::FIELD_VALID_TO_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setValidTo($value);
+                } else if (is_array($value)) {
+                    $this->setValidTo(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setValidTo(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setValidTo(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_VALIDITY_PERIOD])) {
@@ -1320,31 +1348,65 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAdditionalCharacteristic())) {
-            $a[self::FIELD_ADDITIONAL_CHARACTERISTIC] = $vs;
+            $a[self::FIELD_ADDITIONAL_CHARACTERISTIC] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ADDITIONAL_CHARACTERISTIC][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getAdditionalClassification())) {
-            $a[self::FIELD_ADDITIONAL_CLASSIFICATION] = $vs;
+            $a[self::FIELD_ADDITIONAL_CLASSIFICATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ADDITIONAL_CLASSIFICATION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getAdditionalIdentifier())) {
-            $a[self::FIELD_ADDITIONAL_IDENTIFIER] = $vs;
+            $a[self::FIELD_ADDITIONAL_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ADDITIONAL_IDENTIFIER][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getClassification())) {
-            $a[self::FIELD_CLASSIFICATION] = $vs;
+            $a[self::FIELD_CLASSIFICATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CLASSIFICATION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if (null !== ($v = $this->getLastUpdated())) {
             $a[self::FIELD_LAST_UPDATED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_LAST_UPDATED_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getOrderable())) {
             $a[self::FIELD_ORDERABLE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_ORDERABLE_EXT] = $enc;
             }
         }
@@ -1352,12 +1414,20 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
             $a[self::FIELD_REFERENCED_ITEM] = $v;
         }
         if ([] !== ($vs = $this->getRelatedEntry())) {
-            $a[self::FIELD_RELATED_ENTRY] = $vs;
+            $a[self::FIELD_RELATED_ENTRY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_RELATED_ENTRY][] = $v;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPublicationStatus::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRPublicationStatus::FIELD_VALUE]);
                 $a[self::FIELD_STATUS_EXT] = $enc;
             }
         }
@@ -1366,13 +1436,18 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         if (null !== ($v = $this->getValidTo())) {
             $a[self::FIELD_VALID_TO] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_VALID_TO_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getValidityPeriod())) {
             $a[self::FIELD_VALIDITY_PERIOD] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

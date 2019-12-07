@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
     const FIELD_CONTENT_STRING_EXT = '_contentString';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * For referring to data content defined in other formats.
@@ -161,20 +161,27 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
                 $this->setContentReference(new FHIRReference($data[self::FIELD_CONTENT_REFERENCE]));
             }
         }
-        if (isset($data[self::FIELD_CONTENT_STRING])) {
-            $ext = (isset($data[self::FIELD_CONTENT_STRING_EXT]) && is_array($data[self::FIELD_CONTENT_STRING_EXT]))
-                ? $data[self::FIELD_CONTENT_STRING_EXT]
-                : null;
-            if ($data[self::FIELD_CONTENT_STRING] instanceof FHIRString) {
-                $this->setContentString($data[self::FIELD_CONTENT_STRING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_CONTENT_STRING])) {
-                    $this->setContentString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CONTENT_STRING]] + $ext));
-                } else if (is_array($data[self::FIELD_CONTENT_STRING])) {
-                    $this->setContentString(new FHIRString(array_merge($ext, $data[self::FIELD_CONTENT_STRING])));
-                }
+        if (isset($data[self::FIELD_CONTENT_STRING]) || isset($data[self::FIELD_CONTENT_STRING_EXT])) {
+            if (isset($data[self::FIELD_CONTENT_STRING])) {
+                $value = $data[self::FIELD_CONTENT_STRING];
             } else {
-                $this->setContentString(new FHIRString($data[self::FIELD_CONTENT_STRING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_CONTENT_STRING_EXT]) && is_array($data[self::FIELD_CONTENT_STRING_EXT])) {
+                $ext = $data[self::FIELD_CONTENT_STRING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setContentString($value);
+                } else if (is_array($value)) {
+                    $this->setContentString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setContentString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setContentString(new FHIRString($ext));
             }
         }
     }
@@ -409,10 +416,15 @@ class FHIRCommunicationRequestPayload extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getContentString())) {
             $a[self::FIELD_CONTENT_STRING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_CONTENT_STRING_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

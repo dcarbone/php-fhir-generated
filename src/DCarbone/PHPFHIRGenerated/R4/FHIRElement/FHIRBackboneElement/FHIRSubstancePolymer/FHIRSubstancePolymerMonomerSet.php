@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -81,7 +81,7 @@ class FHIRSubstancePolymerMonomerSet extends FHIRBackboneElement
     const FIELD_STARTING_MATERIAL = 'startingMaterial';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -350,7 +350,16 @@ class FHIRSubstancePolymerMonomerSet extends FHIRBackboneElement
             $a[self::FIELD_RATIO_TYPE] = $v;
         }
         if ([] !== ($vs = $this->getStartingMaterial())) {
-            $a[self::FIELD_STARTING_MATERIAL] = $vs;
+            $a[self::FIELD_STARTING_MATERIAL] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_STARTING_MATERIAL][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

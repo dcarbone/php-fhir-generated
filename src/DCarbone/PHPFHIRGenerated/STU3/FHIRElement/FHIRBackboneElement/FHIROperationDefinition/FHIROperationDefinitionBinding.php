@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROpe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
     const FIELD_VALUE_SET_URI_EXT = '_valueSetUri';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Indication of the degree of conformance expectations associated with a binding.
@@ -147,20 +147,27 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_STRENGTH])) {
-            $ext = (isset($data[self::FIELD_STRENGTH_EXT]) && is_array($data[self::FIELD_STRENGTH_EXT]))
-                ? $data[self::FIELD_STRENGTH_EXT]
-                : null;
-            if ($data[self::FIELD_STRENGTH] instanceof FHIRBindingStrength) {
-                $this->setStrength($data[self::FIELD_STRENGTH]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STRENGTH])) {
-                    $this->setStrength(new FHIRBindingStrength([FHIRBindingStrength::FIELD_VALUE => $data[self::FIELD_STRENGTH]] + $ext));
-                } else if (is_array($data[self::FIELD_STRENGTH])) {
-                    $this->setStrength(new FHIRBindingStrength(array_merge($ext, $data[self::FIELD_STRENGTH])));
-                }
+        if (isset($data[self::FIELD_STRENGTH]) || isset($data[self::FIELD_STRENGTH_EXT])) {
+            if (isset($data[self::FIELD_STRENGTH])) {
+                $value = $data[self::FIELD_STRENGTH];
             } else {
-                $this->setStrength(new FHIRBindingStrength($data[self::FIELD_STRENGTH]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STRENGTH_EXT]) && is_array($data[self::FIELD_STRENGTH_EXT])) {
+                $ext = $data[self::FIELD_STRENGTH_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBindingStrength) {
+                    $this->setStrength($value);
+                } else if (is_array($value)) {
+                    $this->setStrength(new FHIRBindingStrength(array_merge($ext, $value)));
+                } else {
+                    $this->setStrength(new FHIRBindingStrength([FHIRBindingStrength::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setStrength(new FHIRBindingStrength($ext));
             }
         }
         if (isset($data[self::FIELD_VALUE_SET_REFERENCE])) {
@@ -170,20 +177,27 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
                 $this->setValueSetReference(new FHIRReference($data[self::FIELD_VALUE_SET_REFERENCE]));
             }
         }
-        if (isset($data[self::FIELD_VALUE_SET_URI])) {
-            $ext = (isset($data[self::FIELD_VALUE_SET_URI_EXT]) && is_array($data[self::FIELD_VALUE_SET_URI_EXT]))
-                ? $data[self::FIELD_VALUE_SET_URI_EXT]
-                : null;
-            if ($data[self::FIELD_VALUE_SET_URI] instanceof FHIRUri) {
-                $this->setValueSetUri($data[self::FIELD_VALUE_SET_URI]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_VALUE_SET_URI])) {
-                    $this->setValueSetUri(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_VALUE_SET_URI]] + $ext));
-                } else if (is_array($data[self::FIELD_VALUE_SET_URI])) {
-                    $this->setValueSetUri(new FHIRUri(array_merge($ext, $data[self::FIELD_VALUE_SET_URI])));
-                }
+        if (isset($data[self::FIELD_VALUE_SET_URI]) || isset($data[self::FIELD_VALUE_SET_URI_EXT])) {
+            if (isset($data[self::FIELD_VALUE_SET_URI])) {
+                $value = $data[self::FIELD_VALUE_SET_URI];
             } else {
-                $this->setValueSetUri(new FHIRUri($data[self::FIELD_VALUE_SET_URI]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_VALUE_SET_URI_EXT]) && is_array($data[self::FIELD_VALUE_SET_URI_EXT])) {
+                $ext = $data[self::FIELD_VALUE_SET_URI_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setValueSetUri($value);
+                } else if (is_array($value)) {
+                    $this->setValueSetUri(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setValueSetUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setValueSetUri(new FHIRUri($ext));
             }
         }
     }
@@ -317,8 +331,8 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -412,8 +426,10 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getStrength())) {
             $a[self::FIELD_STRENGTH] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBindingStrength::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBindingStrength::FIELD_VALUE]);
                 $a[self::FIELD_STRENGTH_EXT] = $enc;
             }
         }
@@ -422,10 +438,15 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getValueSetUri())) {
             $a[self::FIELD_VALUE_SET_URI] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUri::FIELD_VALUE]);
                 $a[self::FIELD_VALUE_SET_URI_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

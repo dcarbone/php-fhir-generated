@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
     const FIELD_SUBSTITUTION = 'substitution';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Information about a medication that is used to support knowledge.
@@ -494,10 +494,25 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
             $a[self::FIELD_REGULATORY_AUTHORITY] = $v;
         }
         if ([] !== ($vs = $this->getSchedule())) {
-            $a[self::FIELD_SCHEDULE] = $vs;
+            $a[self::FIELD_SCHEDULE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SCHEDULE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSubstitution())) {
-            $a[self::FIELD_SUBSTITUTION] = $vs;
+            $a[self::FIELD_SUBSTITUTION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SUBSTITUTION][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

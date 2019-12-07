@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
     const FIELD_UNIT_PRICE = 'unitPrice';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -332,33 +332,42 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
         }
-        if (isset($data[self::FIELD_SUPPORTING_INFO_SEQUENCE])) {
-            $ext = (isset($data[self::FIELD_SUPPORTING_INFO_SEQUENCE_EXT]) && is_array($data[self::FIELD_SUPPORTING_INFO_SEQUENCE_EXT]))
-                ? $data[self::FIELD_SUPPORTING_INFO_SEQUENCE_EXT]
-                : null;
-            if (is_array($data[self::FIELD_SUPPORTING_INFO_SEQUENCE])) {
-                foreach($data[self::FIELD_SUPPORTING_INFO_SEQUENCE] as $i => $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRPositiveInt) {
-                        $this->addSupportingInfoSequence($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addSupportingInfoSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addSupportingInfoSequence(new FHIRPositiveInt(array_merge($v, $ext[$i])));
-                        }
-                    } else {
-                        $this->addSupportingInfoSequence(new FHIRPositiveInt($v));
-                    }
-                }
-            } elseif ($data[self::FIELD_SUPPORTING_INFO_SEQUENCE] instanceof FHIRPositiveInt) {
-                $this->addSupportingInfoSequence($data[self::FIELD_SUPPORTING_INFO_SEQUENCE]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_SUPPORTING_INFO_SEQUENCE])) {
-                $this->addSupportingInfoSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SUPPORTING_INFO_SEQUENCE]] + $ext));
+        if (isset($data[self::FIELD_SUPPORTING_INFO_SEQUENCE]) || isset($data[self::FIELD_SUPPORTING_INFO_SEQUENCE_EXT])) {
+            if (isset($data[self::FIELD_SUPPORTING_INFO_SEQUENCE])) {
+                $value = $data[self::FIELD_SUPPORTING_INFO_SEQUENCE];
             } else {
-                $this->addSupportingInfoSequence(new FHIRPositiveInt($data[self::FIELD_SUPPORTING_INFO_SEQUENCE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SUPPORTING_INFO_SEQUENCE_EXT]) && is_array($data[self::FIELD_SUPPORTING_INFO_SEQUENCE_EXT])) {
+                $ext = $data[self::FIELD_SUPPORTING_INFO_SEQUENCE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->addSupportingInfoSequence($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRPositiveInt) {
+                            $this->addSupportingInfoSequence($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addSupportingInfoSequence(new FHIRPositiveInt(array_merge($v, $iext)));
+                            } else {
+                                $this->addSupportingInfoSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addSupportingInfoSequence(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->addSupportingInfoSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addSupportingInfoSequence(new FHIRPositiveInt($iext));
+                }
             }
         }
         if (isset($data[self::FIELD_UNIT_PRICE])) {
@@ -993,16 +1002,34 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
             $a[self::FIELD_CATEGORY] = $v;
         }
         if ([] !== ($vs = $this->getDetail())) {
-            $a[self::FIELD_DETAIL] = $vs;
+            $a[self::FIELD_DETAIL] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_DETAIL][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getDiagnosis())) {
-            $a[self::FIELD_DIAGNOSIS] = $vs;
+            $a[self::FIELD_DIAGNOSIS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_DIAGNOSIS][] = $v;
+            }
         }
         if (null !== ($v = $this->getFacility())) {
             $a[self::FIELD_FACILITY] = $v;
         }
         if ([] !== ($vs = $this->getModifier())) {
-            $a[self::FIELD_MODIFIER] = $vs;
+            $a[self::FIELD_MODIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MODIFIER][] = $v;
+            }
         }
         if (null !== ($v = $this->getProductOrService())) {
             $a[self::FIELD_PRODUCT_OR_SERVICE] = $v;
@@ -1015,21 +1042,32 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
         }
         if ([] !== ($vs = $this->getSupportingInfoSequence())) {
             $a[self::FIELD_SUPPORTING_INFO_SEQUENCE] = [];
+            $encs = [];
+            $encValued = false;
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
                 $a[self::FIELD_SUPPORTING_INFO_SEQUENCE][] = $v->getValue();
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SUPPORTING_INFO_SEQUENCE_EXT][] = $enc;
+                $enc = $v->jsonSerialize();
+                $cnt = count($enc);
+                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRPositiveInt::FIELD_VALUE]) || array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
+                    $encs[] = null;
                 } else {
-                    $a[self::FIELD_SUPPORTING_INFO_SEQUENCE_EXT][] = null;
+                    unset($enc[FHIRPositiveInt::FIELD_VALUE]);
+                    $encs[] = $enc;
+                    $encValued = true;
                 }
+            }
+            if ($encValued) {
+                $a[self::FIELD_SUPPORTING_INFO_SEQUENCE_EXT] = $encs;
             }
         }
         if (null !== ($v = $this->getUnitPrice())) {
             $a[self::FIELD_UNIT_PRICE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

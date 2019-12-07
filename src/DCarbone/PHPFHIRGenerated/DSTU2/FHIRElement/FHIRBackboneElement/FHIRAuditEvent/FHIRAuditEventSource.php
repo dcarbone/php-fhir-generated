@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ class FHIRAuditEventSource extends FHIRBackboneElement
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -152,20 +152,27 @@ class FHIRAuditEventSource extends FHIRBackboneElement
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_SITE])) {
-            $ext = (isset($data[self::FIELD_SITE_EXT]) && is_array($data[self::FIELD_SITE_EXT]))
-                ? $data[self::FIELD_SITE_EXT]
-                : null;
-            if ($data[self::FIELD_SITE] instanceof FHIRString) {
-                $this->setSite($data[self::FIELD_SITE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SITE])) {
-                    $this->setSite(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SITE]] + $ext));
-                } else if (is_array($data[self::FIELD_SITE])) {
-                    $this->setSite(new FHIRString(array_merge($ext, $data[self::FIELD_SITE])));
-                }
+        if (isset($data[self::FIELD_SITE]) || isset($data[self::FIELD_SITE_EXT])) {
+            if (isset($data[self::FIELD_SITE])) {
+                $value = $data[self::FIELD_SITE];
             } else {
-                $this->setSite(new FHIRString($data[self::FIELD_SITE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SITE_EXT]) && is_array($data[self::FIELD_SITE_EXT])) {
+                $ext = $data[self::FIELD_SITE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setSite($value);
+                } else if (is_array($value)) {
+                    $this->setSite(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setSite(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setSite(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_TYPE])) {
@@ -339,8 +346,8 @@ class FHIRAuditEventSource extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -444,13 +451,24 @@ class FHIRAuditEventSource extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getSite())) {
             $a[self::FIELD_SITE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_SITE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getType())) {
-            $a[self::FIELD_TYPE] = $vs;
+            $a[self::FIELD_TYPE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_TYPE][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,7 +90,7 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
     const FIELD_TIME_PERIOD = 'timePeriod';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -195,20 +195,27 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
                 $this->addAdditive(new FHIRReference($data[self::FIELD_ADDITIVE]));
             }
         }
-        if (isset($data[self::FIELD_DESCRIPTION])) {
-            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT]))
-                ? $data[self::FIELD_DESCRIPTION_EXT]
-                : null;
-            if ($data[self::FIELD_DESCRIPTION] instanceof FHIRString) {
-                $this->setDescription($data[self::FIELD_DESCRIPTION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DESCRIPTION])) {
-                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DESCRIPTION]] + $ext));
-                } else if (is_array($data[self::FIELD_DESCRIPTION])) {
-                    $this->setDescription(new FHIRString(array_merge($ext, $data[self::FIELD_DESCRIPTION])));
-                }
+        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
+            if (isset($data[self::FIELD_DESCRIPTION])) {
+                $value = $data[self::FIELD_DESCRIPTION];
             } else {
-                $this->setDescription(new FHIRString($data[self::FIELD_DESCRIPTION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
+                $ext = $data[self::FIELD_DESCRIPTION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDescription($value);
+                } else if (is_array($value)) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDescription(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_PROCEDURE])) {
@@ -218,20 +225,27 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
                 $this->setProcedure(new FHIRCodeableConcept($data[self::FIELD_PROCEDURE]));
             }
         }
-        if (isset($data[self::FIELD_TIME_DATE_TIME])) {
-            $ext = (isset($data[self::FIELD_TIME_DATE_TIME_EXT]) && is_array($data[self::FIELD_TIME_DATE_TIME_EXT]))
-                ? $data[self::FIELD_TIME_DATE_TIME_EXT]
-                : null;
-            if ($data[self::FIELD_TIME_DATE_TIME] instanceof FHIRDateTime) {
-                $this->setTimeDateTime($data[self::FIELD_TIME_DATE_TIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_TIME_DATE_TIME])) {
-                    $this->setTimeDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_TIME_DATE_TIME]] + $ext));
-                } else if (is_array($data[self::FIELD_TIME_DATE_TIME])) {
-                    $this->setTimeDateTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_TIME_DATE_TIME])));
-                }
+        if (isset($data[self::FIELD_TIME_DATE_TIME]) || isset($data[self::FIELD_TIME_DATE_TIME_EXT])) {
+            if (isset($data[self::FIELD_TIME_DATE_TIME])) {
+                $value = $data[self::FIELD_TIME_DATE_TIME];
             } else {
-                $this->setTimeDateTime(new FHIRDateTime($data[self::FIELD_TIME_DATE_TIME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_TIME_DATE_TIME_EXT]) && is_array($data[self::FIELD_TIME_DATE_TIME_EXT])) {
+                $ext = $data[self::FIELD_TIME_DATE_TIME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setTimeDateTime($value);
+                } else if (is_array($value)) {
+                    $this->setTimeDateTime(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setTimeDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setTimeDateTime(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_TIME_PERIOD])) {
@@ -597,12 +611,20 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAdditive())) {
-            $a[self::FIELD_ADDITIVE] = $vs;
+            $a[self::FIELD_ADDITIVE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ADDITIVE][] = $v;
+            }
         }
         if (null !== ($v = $this->getDescription())) {
             $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_DESCRIPTION_EXT] = $enc;
             }
         }
@@ -611,13 +633,18 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getTimeDateTime())) {
             $a[self::FIELD_TIME_DATE_TIME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_TIME_DATE_TIME_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getTimePeriod())) {
             $a[self::FIELD_TIME_PERIOD] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

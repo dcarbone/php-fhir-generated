@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCatal
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
     const FIELD_RELATIONTYPE_EXT = '_relationtype';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -136,20 +136,27 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
                 $this->setItem(new FHIRReference($data[self::FIELD_ITEM]));
             }
         }
-        if (isset($data[self::FIELD_RELATIONTYPE])) {
-            $ext = (isset($data[self::FIELD_RELATIONTYPE_EXT]) && is_array($data[self::FIELD_RELATIONTYPE_EXT]))
-                ? $data[self::FIELD_RELATIONTYPE_EXT]
-                : null;
-            if ($data[self::FIELD_RELATIONTYPE] instanceof FHIRCatalogEntryRelationType) {
-                $this->setRelationtype($data[self::FIELD_RELATIONTYPE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_RELATIONTYPE])) {
-                    $this->setRelationtype(new FHIRCatalogEntryRelationType([FHIRCatalogEntryRelationType::FIELD_VALUE => $data[self::FIELD_RELATIONTYPE]] + $ext));
-                } else if (is_array($data[self::FIELD_RELATIONTYPE])) {
-                    $this->setRelationtype(new FHIRCatalogEntryRelationType(array_merge($ext, $data[self::FIELD_RELATIONTYPE])));
-                }
+        if (isset($data[self::FIELD_RELATIONTYPE]) || isset($data[self::FIELD_RELATIONTYPE_EXT])) {
+            if (isset($data[self::FIELD_RELATIONTYPE])) {
+                $value = $data[self::FIELD_RELATIONTYPE];
             } else {
-                $this->setRelationtype(new FHIRCatalogEntryRelationType($data[self::FIELD_RELATIONTYPE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_RELATIONTYPE_EXT]) && is_array($data[self::FIELD_RELATIONTYPE_EXT])) {
+                $ext = $data[self::FIELD_RELATIONTYPE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRCatalogEntryRelationType) {
+                    $this->setRelationtype($value);
+                } else if (is_array($value)) {
+                    $this->setRelationtype(new FHIRCatalogEntryRelationType(array_merge($ext, $value)));
+                } else {
+                    $this->setRelationtype(new FHIRCatalogEntryRelationType([FHIRCatalogEntryRelationType::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setRelationtype(new FHIRCatalogEntryRelationType($ext));
             }
         }
     }
@@ -323,10 +330,15 @@ class FHIRCatalogEntryRelatedEntry extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getRelationtype())) {
             $a[self::FIELD_RELATIONTYPE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCatalogEntryRelationType::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRCatalogEntryRelationType::FIELD_VALUE]);
                 $a[self::FIELD_RELATIONTYPE_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

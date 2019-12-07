@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     const FIELD_PROCESS = 'process';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Example of workflow instance.
@@ -171,20 +171,27 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
                 $this->setOperation(new FHIRExampleScenarioOperation($data[self::FIELD_OPERATION]));
             }
         }
-        if (isset($data[self::FIELD_PAUSE])) {
-            $ext = (isset($data[self::FIELD_PAUSE_EXT]) && is_array($data[self::FIELD_PAUSE_EXT]))
-                ? $data[self::FIELD_PAUSE_EXT]
-                : null;
-            if ($data[self::FIELD_PAUSE] instanceof FHIRBoolean) {
-                $this->setPause($data[self::FIELD_PAUSE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PAUSE])) {
-                    $this->setPause(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_PAUSE]] + $ext));
-                } else if (is_array($data[self::FIELD_PAUSE])) {
-                    $this->setPause(new FHIRBoolean(array_merge($ext, $data[self::FIELD_PAUSE])));
-                }
+        if (isset($data[self::FIELD_PAUSE]) || isset($data[self::FIELD_PAUSE_EXT])) {
+            if (isset($data[self::FIELD_PAUSE])) {
+                $value = $data[self::FIELD_PAUSE];
             } else {
-                $this->setPause(new FHIRBoolean($data[self::FIELD_PAUSE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PAUSE_EXT]) && is_array($data[self::FIELD_PAUSE_EXT])) {
+                $ext = $data[self::FIELD_PAUSE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setPause($value);
+                } else if (is_array($value)) {
+                    $this->setPause(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setPause(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPause(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_PROCESS])) {
@@ -511,20 +518,37 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAlternative())) {
-            $a[self::FIELD_ALTERNATIVE] = $vs;
+            $a[self::FIELD_ALTERNATIVE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ALTERNATIVE][] = $v;
+            }
         }
         if (null !== ($v = $this->getOperation())) {
             $a[self::FIELD_OPERATION] = $v;
         }
         if (null !== ($v = $this->getPause())) {
             $a[self::FIELD_PAUSE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_PAUSE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getProcess())) {
-            $a[self::FIELD_PROCESS] = $vs;
+            $a[self::FIELD_PROCESS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PROCESS][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

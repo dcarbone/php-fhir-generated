@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,7 +91,7 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     const FIELD_UNIT_OF_PRESENTATION = 'unitOfPresentation';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -757,16 +757,34 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getIngredient())) {
-            $a[self::FIELD_INGREDIENT] = $vs;
+            $a[self::FIELD_INGREDIENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_INGREDIENT][] = $v;
+            }
         }
         if (null !== ($v = $this->getManufacturedDoseForm())) {
             $a[self::FIELD_MANUFACTURED_DOSE_FORM] = $v;
         }
         if ([] !== ($vs = $this->getManufacturer())) {
-            $a[self::FIELD_MANUFACTURER] = $vs;
+            $a[self::FIELD_MANUFACTURER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MANUFACTURER][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getOtherCharacteristics())) {
-            $a[self::FIELD_OTHER_CHARACTERISTICS] = $vs;
+            $a[self::FIELD_OTHER_CHARACTERISTICS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_OTHER_CHARACTERISTICS][] = $v;
+            }
         }
         if (null !== ($v = $this->getPhysicalCharacteristics())) {
             $a[self::FIELD_PHYSICAL_CHARACTERISTICS] = $v;
@@ -776,6 +794,9 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
         }
         if (null !== ($v = $this->getUnitOfPresentation())) {
             $a[self::FIELD_UNIT_OF_PRESENTATION] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

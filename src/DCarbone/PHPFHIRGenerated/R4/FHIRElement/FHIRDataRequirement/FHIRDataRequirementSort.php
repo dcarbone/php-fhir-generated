@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ class FHIRDataRequirementSort extends FHIRElement
     const FIELD_PATH_EXT = '_path';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * The possible sort directions, ascending or descending.
@@ -135,36 +135,50 @@ class FHIRDataRequirementSort extends FHIRElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DIRECTION])) {
-            $ext = (isset($data[self::FIELD_DIRECTION_EXT]) && is_array($data[self::FIELD_DIRECTION_EXT]))
-                ? $data[self::FIELD_DIRECTION_EXT]
-                : null;
-            if ($data[self::FIELD_DIRECTION] instanceof FHIRSortDirection) {
-                $this->setDirection($data[self::FIELD_DIRECTION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DIRECTION])) {
-                    $this->setDirection(new FHIRSortDirection([FHIRSortDirection::FIELD_VALUE => $data[self::FIELD_DIRECTION]] + $ext));
-                } else if (is_array($data[self::FIELD_DIRECTION])) {
-                    $this->setDirection(new FHIRSortDirection(array_merge($ext, $data[self::FIELD_DIRECTION])));
-                }
+        if (isset($data[self::FIELD_DIRECTION]) || isset($data[self::FIELD_DIRECTION_EXT])) {
+            if (isset($data[self::FIELD_DIRECTION])) {
+                $value = $data[self::FIELD_DIRECTION];
             } else {
-                $this->setDirection(new FHIRSortDirection($data[self::FIELD_DIRECTION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DIRECTION_EXT]) && is_array($data[self::FIELD_DIRECTION_EXT])) {
+                $ext = $data[self::FIELD_DIRECTION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRSortDirection) {
+                    $this->setDirection($value);
+                } else if (is_array($value)) {
+                    $this->setDirection(new FHIRSortDirection(array_merge($ext, $value)));
+                } else {
+                    $this->setDirection(new FHIRSortDirection([FHIRSortDirection::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDirection(new FHIRSortDirection($ext));
             }
         }
-        if (isset($data[self::FIELD_PATH])) {
-            $ext = (isset($data[self::FIELD_PATH_EXT]) && is_array($data[self::FIELD_PATH_EXT]))
-                ? $data[self::FIELD_PATH_EXT]
-                : null;
-            if ($data[self::FIELD_PATH] instanceof FHIRString) {
-                $this->setPath($data[self::FIELD_PATH]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PATH])) {
-                    $this->setPath(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PATH]] + $ext));
-                } else if (is_array($data[self::FIELD_PATH])) {
-                    $this->setPath(new FHIRString(array_merge($ext, $data[self::FIELD_PATH])));
-                }
+        if (isset($data[self::FIELD_PATH]) || isset($data[self::FIELD_PATH_EXT])) {
+            if (isset($data[self::FIELD_PATH])) {
+                $value = $data[self::FIELD_PATH];
             } else {
-                $this->setPath(new FHIRString($data[self::FIELD_PATH]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PATH_EXT]) && is_array($data[self::FIELD_PATH_EXT])) {
+                $ext = $data[self::FIELD_PATH_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setPath($value);
+                } else if (is_array($value)) {
+                    $this->setPath(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setPath(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPath(new FHIRString($ext));
             }
         }
     }
@@ -355,17 +369,24 @@ class FHIRDataRequirementSort extends FHIRElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDirection())) {
             $a[self::FIELD_DIRECTION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRSortDirection::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRSortDirection::FIELD_VALUE]);
                 $a[self::FIELD_DIRECTION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPath())) {
             $a[self::FIELD_PATH] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_PATH_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

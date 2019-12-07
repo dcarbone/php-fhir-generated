@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,7 +93,7 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
     const FIELD_WHEN_PREPARED_EXT = '_whenPrepared';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -304,20 +304,27 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
                 $this->addReceiver(new FHIRResourceReference($data[self::FIELD_RECEIVER]));
             }
         }
-        if (isset($data[self::FIELD_STATUS])) {
-            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT]))
-                ? $data[self::FIELD_STATUS_EXT]
-                : null;
-            if ($data[self::FIELD_STATUS] instanceof FHIRMedicationDispenseStatus) {
-                $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRMedicationDispenseStatus([FHIRMedicationDispenseStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
-                } else if (is_array($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRMedicationDispenseStatus(array_merge($ext, $data[self::FIELD_STATUS])));
-                }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            if (isset($data[self::FIELD_STATUS])) {
+                $value = $data[self::FIELD_STATUS];
             } else {
-                $this->setStatus(new FHIRMedicationDispenseStatus($data[self::FIELD_STATUS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
+                $ext = $data[self::FIELD_STATUS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRMedicationDispenseStatus) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIRMedicationDispenseStatus(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIRMedicationDispenseStatus([FHIRMedicationDispenseStatus::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setStatus(new FHIRMedicationDispenseStatus($ext));
             }
         }
         if (isset($data[self::FIELD_TYPE])) {
@@ -327,36 +334,50 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
                 $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
         }
-        if (isset($data[self::FIELD_WHEN_HANDED_OVER])) {
-            $ext = (isset($data[self::FIELD_WHEN_HANDED_OVER_EXT]) && is_array($data[self::FIELD_WHEN_HANDED_OVER_EXT]))
-                ? $data[self::FIELD_WHEN_HANDED_OVER_EXT]
-                : null;
-            if ($data[self::FIELD_WHEN_HANDED_OVER] instanceof FHIRDateTime) {
-                $this->setWhenHandedOver($data[self::FIELD_WHEN_HANDED_OVER]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_WHEN_HANDED_OVER])) {
-                    $this->setWhenHandedOver(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_WHEN_HANDED_OVER]] + $ext));
-                } else if (is_array($data[self::FIELD_WHEN_HANDED_OVER])) {
-                    $this->setWhenHandedOver(new FHIRDateTime(array_merge($ext, $data[self::FIELD_WHEN_HANDED_OVER])));
-                }
+        if (isset($data[self::FIELD_WHEN_HANDED_OVER]) || isset($data[self::FIELD_WHEN_HANDED_OVER_EXT])) {
+            if (isset($data[self::FIELD_WHEN_HANDED_OVER])) {
+                $value = $data[self::FIELD_WHEN_HANDED_OVER];
             } else {
-                $this->setWhenHandedOver(new FHIRDateTime($data[self::FIELD_WHEN_HANDED_OVER]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_WHEN_HANDED_OVER_EXT]) && is_array($data[self::FIELD_WHEN_HANDED_OVER_EXT])) {
+                $ext = $data[self::FIELD_WHEN_HANDED_OVER_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setWhenHandedOver($value);
+                } else if (is_array($value)) {
+                    $this->setWhenHandedOver(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setWhenHandedOver(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setWhenHandedOver(new FHIRDateTime($ext));
             }
         }
-        if (isset($data[self::FIELD_WHEN_PREPARED])) {
-            $ext = (isset($data[self::FIELD_WHEN_PREPARED_EXT]) && is_array($data[self::FIELD_WHEN_PREPARED_EXT]))
-                ? $data[self::FIELD_WHEN_PREPARED_EXT]
-                : null;
-            if ($data[self::FIELD_WHEN_PREPARED] instanceof FHIRDateTime) {
-                $this->setWhenPrepared($data[self::FIELD_WHEN_PREPARED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_WHEN_PREPARED])) {
-                    $this->setWhenPrepared(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_WHEN_PREPARED]] + $ext));
-                } else if (is_array($data[self::FIELD_WHEN_PREPARED])) {
-                    $this->setWhenPrepared(new FHIRDateTime(array_merge($ext, $data[self::FIELD_WHEN_PREPARED])));
-                }
+        if (isset($data[self::FIELD_WHEN_PREPARED]) || isset($data[self::FIELD_WHEN_PREPARED_EXT])) {
+            if (isset($data[self::FIELD_WHEN_PREPARED])) {
+                $value = $data[self::FIELD_WHEN_PREPARED];
             } else {
-                $this->setWhenPrepared(new FHIRDateTime($data[self::FIELD_WHEN_PREPARED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_WHEN_PREPARED_EXT]) && is_array($data[self::FIELD_WHEN_PREPARED_EXT])) {
+                $ext = $data[self::FIELD_WHEN_PREPARED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setWhenPrepared($value);
+                } else if (is_array($value)) {
+                    $this->setWhenPrepared(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setWhenPrepared(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setWhenPrepared(new FHIRDateTime($ext));
             }
         }
     }
@@ -781,8 +802,8 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -942,7 +963,13 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
             $a[self::FIELD_DESTINATION] = $v;
         }
         if ([] !== ($vs = $this->getDosage())) {
-            $a[self::FIELD_DOSAGE] = $vs;
+            $a[self::FIELD_DOSAGE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_DOSAGE][] = $v;
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
             $a[self::FIELD_IDENTIFIER] = $v;
@@ -954,12 +981,20 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
             $a[self::FIELD_QUANTITY] = $v;
         }
         if ([] !== ($vs = $this->getReceiver())) {
-            $a[self::FIELD_RECEIVER] = $vs;
+            $a[self::FIELD_RECEIVER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_RECEIVER][] = $v;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMedicationDispenseStatus::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRMedicationDispenseStatus::FIELD_VALUE]);
                 $a[self::FIELD_STATUS_EXT] = $enc;
             }
         }
@@ -968,17 +1003,24 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getWhenHandedOver())) {
             $a[self::FIELD_WHEN_HANDED_OVER] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_WHEN_HANDED_OVER_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getWhenPrepared())) {
             $a[self::FIELD_WHEN_PREPARED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_WHEN_PREPARED_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

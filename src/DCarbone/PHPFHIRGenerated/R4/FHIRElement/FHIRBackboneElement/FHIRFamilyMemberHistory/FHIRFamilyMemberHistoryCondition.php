@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamil
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,7 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
     const FIELD_OUTCOME = 'outcome';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -229,20 +229,27 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
                 $this->setCode(new FHIRCodeableConcept($data[self::FIELD_CODE]));
             }
         }
-        if (isset($data[self::FIELD_CONTRIBUTED_TO_DEATH])) {
-            $ext = (isset($data[self::FIELD_CONTRIBUTED_TO_DEATH_EXT]) && is_array($data[self::FIELD_CONTRIBUTED_TO_DEATH_EXT]))
-                ? $data[self::FIELD_CONTRIBUTED_TO_DEATH_EXT]
-                : null;
-            if ($data[self::FIELD_CONTRIBUTED_TO_DEATH] instanceof FHIRBoolean) {
-                $this->setContributedToDeath($data[self::FIELD_CONTRIBUTED_TO_DEATH]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_CONTRIBUTED_TO_DEATH])) {
-                    $this->setContributedToDeath(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_CONTRIBUTED_TO_DEATH]] + $ext));
-                } else if (is_array($data[self::FIELD_CONTRIBUTED_TO_DEATH])) {
-                    $this->setContributedToDeath(new FHIRBoolean(array_merge($ext, $data[self::FIELD_CONTRIBUTED_TO_DEATH])));
-                }
+        if (isset($data[self::FIELD_CONTRIBUTED_TO_DEATH]) || isset($data[self::FIELD_CONTRIBUTED_TO_DEATH_EXT])) {
+            if (isset($data[self::FIELD_CONTRIBUTED_TO_DEATH])) {
+                $value = $data[self::FIELD_CONTRIBUTED_TO_DEATH];
             } else {
-                $this->setContributedToDeath(new FHIRBoolean($data[self::FIELD_CONTRIBUTED_TO_DEATH]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_CONTRIBUTED_TO_DEATH_EXT]) && is_array($data[self::FIELD_CONTRIBUTED_TO_DEATH_EXT])) {
+                $ext = $data[self::FIELD_CONTRIBUTED_TO_DEATH_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setContributedToDeath($value);
+                } else if (is_array($value)) {
+                    $this->setContributedToDeath(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setContributedToDeath(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setContributedToDeath(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_NOTE])) {
@@ -284,20 +291,27 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
                 $this->setOnsetRange(new FHIRRange($data[self::FIELD_ONSET_RANGE]));
             }
         }
-        if (isset($data[self::FIELD_ONSET_STRING])) {
-            $ext = (isset($data[self::FIELD_ONSET_STRING_EXT]) && is_array($data[self::FIELD_ONSET_STRING_EXT]))
-                ? $data[self::FIELD_ONSET_STRING_EXT]
-                : null;
-            if ($data[self::FIELD_ONSET_STRING] instanceof FHIRString) {
-                $this->setOnsetString($data[self::FIELD_ONSET_STRING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ONSET_STRING])) {
-                    $this->setOnsetString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ONSET_STRING]] + $ext));
-                } else if (is_array($data[self::FIELD_ONSET_STRING])) {
-                    $this->setOnsetString(new FHIRString(array_merge($ext, $data[self::FIELD_ONSET_STRING])));
-                }
+        if (isset($data[self::FIELD_ONSET_STRING]) || isset($data[self::FIELD_ONSET_STRING_EXT])) {
+            if (isset($data[self::FIELD_ONSET_STRING])) {
+                $value = $data[self::FIELD_ONSET_STRING];
             } else {
-                $this->setOnsetString(new FHIRString($data[self::FIELD_ONSET_STRING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ONSET_STRING_EXT]) && is_array($data[self::FIELD_ONSET_STRING_EXT])) {
+                $ext = $data[self::FIELD_ONSET_STRING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setOnsetString($value);
+                } else if (is_array($value)) {
+                    $this->setOnsetString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setOnsetString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setOnsetString(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_OUTCOME])) {
@@ -788,13 +802,21 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getContributedToDeath())) {
             $a[self::FIELD_CONTRIBUTED_TO_DEATH] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_CONTRIBUTED_TO_DEATH_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getNote())) {
-            $a[self::FIELD_NOTE] = $vs;
+            $a[self::FIELD_NOTE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_NOTE][] = $v;
+            }
         }
         if (null !== ($v = $this->getOnsetAge())) {
             $a[self::FIELD_ONSET_AGE] = $v;
@@ -807,13 +829,18 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getOnsetString())) {
             $a[self::FIELD_ONSET_STRING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_ONSET_STRING_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getOutcome())) {
             $a[self::FIELD_OUTCOME] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

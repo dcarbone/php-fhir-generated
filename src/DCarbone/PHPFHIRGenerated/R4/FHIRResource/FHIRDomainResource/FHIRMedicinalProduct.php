@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,7 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -643,33 +643,42 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
                 $this->addSpecialDesignation(new FHIRMedicinalProductSpecialDesignation($data[self::FIELD_SPECIAL_DESIGNATION]));
             }
         }
-        if (isset($data[self::FIELD_SPECIAL_MEASURES])) {
-            $ext = (isset($data[self::FIELD_SPECIAL_MEASURES_EXT]) && is_array($data[self::FIELD_SPECIAL_MEASURES_EXT]))
-                ? $data[self::FIELD_SPECIAL_MEASURES_EXT]
-                : null;
-            if (is_array($data[self::FIELD_SPECIAL_MEASURES])) {
-                foreach($data[self::FIELD_SPECIAL_MEASURES] as $i => $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRString) {
-                        $this->addSpecialMeasures($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addSpecialMeasures(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addSpecialMeasures(new FHIRString(array_merge($v, $ext[$i])));
-                        }
-                    } else {
-                        $this->addSpecialMeasures(new FHIRString($v));
-                    }
-                }
-            } elseif ($data[self::FIELD_SPECIAL_MEASURES] instanceof FHIRString) {
-                $this->addSpecialMeasures($data[self::FIELD_SPECIAL_MEASURES]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_SPECIAL_MEASURES])) {
-                $this->addSpecialMeasures(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SPECIAL_MEASURES]] + $ext));
+        if (isset($data[self::FIELD_SPECIAL_MEASURES]) || isset($data[self::FIELD_SPECIAL_MEASURES_EXT])) {
+            if (isset($data[self::FIELD_SPECIAL_MEASURES])) {
+                $value = $data[self::FIELD_SPECIAL_MEASURES];
             } else {
-                $this->addSpecialMeasures(new FHIRString($data[self::FIELD_SPECIAL_MEASURES]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SPECIAL_MEASURES_EXT]) && is_array($data[self::FIELD_SPECIAL_MEASURES_EXT])) {
+                $ext = $data[self::FIELD_SPECIAL_MEASURES_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->addSpecialMeasures($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRString) {
+                            $this->addSpecialMeasures($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addSpecialMeasures(new FHIRString(array_merge($v, $iext)));
+                            } else {
+                                $this->addSpecialMeasures(new FHIRString([FHIRString::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addSpecialMeasures(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->addSpecialMeasures(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addSpecialMeasures(new FHIRString($iext));
+                }
             }
         }
         if (isset($data[self::FIELD_TYPE])) {
@@ -2012,73 +2021,162 @@ class FHIRMedicinalProduct extends FHIRDomainResource implements PHPFHIRContaine
             $a[self::FIELD_ADDITIONAL_MONITORING_INDICATOR] = $v;
         }
         if ([] !== ($vs = $this->getAttachedDocument())) {
-            $a[self::FIELD_ATTACHED_DOCUMENT] = $vs;
+            $a[self::FIELD_ATTACHED_DOCUMENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ATTACHED_DOCUMENT][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getClinicalTrial())) {
-            $a[self::FIELD_CLINICAL_TRIAL] = $vs;
+            $a[self::FIELD_CLINICAL_TRIAL] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CLINICAL_TRIAL][] = $v;
+            }
         }
         if (null !== ($v = $this->getCombinedPharmaceuticalDoseForm())) {
             $a[self::FIELD_COMBINED_PHARMACEUTICAL_DOSE_FORM] = $v;
         }
         if ([] !== ($vs = $this->getContact())) {
-            $a[self::FIELD_CONTACT] = $vs;
+            $a[self::FIELD_CONTACT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CONTACT][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getCrossReference())) {
-            $a[self::FIELD_CROSS_REFERENCE] = $vs;
+            $a[self::FIELD_CROSS_REFERENCE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CROSS_REFERENCE][] = $v;
+            }
         }
         if (null !== ($v = $this->getDomain())) {
             $a[self::FIELD_DOMAIN] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if (null !== ($v = $this->getLegalStatusOfSupply())) {
             $a[self::FIELD_LEGAL_STATUS_OF_SUPPLY] = $v;
         }
         if ([] !== ($vs = $this->getManufacturingBusinessOperation())) {
-            $a[self::FIELD_MANUFACTURING_BUSINESS_OPERATION] = $vs;
+            $a[self::FIELD_MANUFACTURING_BUSINESS_OPERATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MANUFACTURING_BUSINESS_OPERATION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getMarketingStatus())) {
-            $a[self::FIELD_MARKETING_STATUS] = $vs;
+            $a[self::FIELD_MARKETING_STATUS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MARKETING_STATUS][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getMasterFile())) {
-            $a[self::FIELD_MASTER_FILE] = $vs;
+            $a[self::FIELD_MASTER_FILE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MASTER_FILE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getName())) {
-            $a[self::FIELD_NAME] = $vs;
+            $a[self::FIELD_NAME] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_NAME][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPackagedMedicinalProduct())) {
-            $a[self::FIELD_PACKAGED_MEDICINAL_PRODUCT] = $vs;
+            $a[self::FIELD_PACKAGED_MEDICINAL_PRODUCT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PACKAGED_MEDICINAL_PRODUCT][] = $v;
+            }
         }
         if (null !== ($v = $this->getPaediatricUseIndicator())) {
             $a[self::FIELD_PAEDIATRIC_USE_INDICATOR] = $v;
         }
         if ([] !== ($vs = $this->getPharmaceuticalProduct())) {
-            $a[self::FIELD_PHARMACEUTICAL_PRODUCT] = $vs;
+            $a[self::FIELD_PHARMACEUTICAL_PRODUCT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PHARMACEUTICAL_PRODUCT][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getProductClassification())) {
-            $a[self::FIELD_PRODUCT_CLASSIFICATION] = $vs;
+            $a[self::FIELD_PRODUCT_CLASSIFICATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PRODUCT_CLASSIFICATION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSpecialDesignation())) {
-            $a[self::FIELD_SPECIAL_DESIGNATION] = $vs;
+            $a[self::FIELD_SPECIAL_DESIGNATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SPECIAL_DESIGNATION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSpecialMeasures())) {
             $a[self::FIELD_SPECIAL_MEASURES] = [];
+            $encs = [];
+            $encValued = false;
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
                 $a[self::FIELD_SPECIAL_MEASURES][] = $v->getValue();
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SPECIAL_MEASURES_EXT][] = $enc;
+                $enc = $v->jsonSerialize();
+                $cnt = count($enc);
+                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                    $encs[] = null;
                 } else {
-                    $a[self::FIELD_SPECIAL_MEASURES_EXT][] = null;
+                    unset($enc[FHIRString::FIELD_VALUE]);
+                    $encs[] = $enc;
+                    $encValued = true;
                 }
+            }
+            if ($encValued) {
+                $a[self::FIELD_SPECIAL_MEASURES_EXT] = $encs;
             }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

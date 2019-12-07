@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,7 +118,7 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     const FIELD_STATUS_EXT = '_status';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -484,20 +484,27 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 $this->setDataPeriod(new FHIRPeriod($data[self::FIELD_DATA_PERIOD]));
             }
         }
-        if (isset($data[self::FIELD_DATE_TIME])) {
-            $ext = (isset($data[self::FIELD_DATE_TIME_EXT]) && is_array($data[self::FIELD_DATE_TIME_EXT]))
-                ? $data[self::FIELD_DATE_TIME_EXT]
-                : null;
-            if ($data[self::FIELD_DATE_TIME] instanceof FHIRDateTime) {
-                $this->setDateTime($data[self::FIELD_DATE_TIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DATE_TIME])) {
-                    $this->setDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE_TIME]] + $ext));
-                } else if (is_array($data[self::FIELD_DATE_TIME])) {
-                    $this->setDateTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_DATE_TIME])));
-                }
+        if (isset($data[self::FIELD_DATE_TIME]) || isset($data[self::FIELD_DATE_TIME_EXT])) {
+            if (isset($data[self::FIELD_DATE_TIME])) {
+                $value = $data[self::FIELD_DATE_TIME];
             } else {
-                $this->setDateTime(new FHIRDateTime($data[self::FIELD_DATE_TIME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DATE_TIME_EXT]) && is_array($data[self::FIELD_DATE_TIME_EXT])) {
+                $ext = $data[self::FIELD_DATE_TIME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setDateTime($value);
+                } else if (is_array($value)) {
+                    $this->setDateTime(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDateTime(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_EXCEPT])) {
@@ -575,20 +582,27 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 $this->addPolicy(new FHIRConsentPolicy($data[self::FIELD_POLICY]));
             }
         }
-        if (isset($data[self::FIELD_POLICY_RULE])) {
-            $ext = (isset($data[self::FIELD_POLICY_RULE_EXT]) && is_array($data[self::FIELD_POLICY_RULE_EXT]))
-                ? $data[self::FIELD_POLICY_RULE_EXT]
-                : null;
-            if ($data[self::FIELD_POLICY_RULE] instanceof FHIRUri) {
-                $this->setPolicyRule($data[self::FIELD_POLICY_RULE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_POLICY_RULE])) {
-                    $this->setPolicyRule(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_POLICY_RULE]] + $ext));
-                } else if (is_array($data[self::FIELD_POLICY_RULE])) {
-                    $this->setPolicyRule(new FHIRUri(array_merge($ext, $data[self::FIELD_POLICY_RULE])));
-                }
+        if (isset($data[self::FIELD_POLICY_RULE]) || isset($data[self::FIELD_POLICY_RULE_EXT])) {
+            if (isset($data[self::FIELD_POLICY_RULE])) {
+                $value = $data[self::FIELD_POLICY_RULE];
             } else {
-                $this->setPolicyRule(new FHIRUri($data[self::FIELD_POLICY_RULE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_POLICY_RULE_EXT]) && is_array($data[self::FIELD_POLICY_RULE_EXT])) {
+                $ext = $data[self::FIELD_POLICY_RULE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setPolicyRule($value);
+                } else if (is_array($value)) {
+                    $this->setPolicyRule(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setPolicyRule(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPolicyRule(new FHIRUri($ext));
             }
         }
         if (isset($data[self::FIELD_PURPOSE])) {
@@ -648,20 +662,27 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
                 $this->setSourceReference(new FHIRReference($data[self::FIELD_SOURCE_REFERENCE]));
             }
         }
-        if (isset($data[self::FIELD_STATUS])) {
-            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT]))
-                ? $data[self::FIELD_STATUS_EXT]
-                : null;
-            if ($data[self::FIELD_STATUS] instanceof FHIRConsentState) {
-                $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRConsentState([FHIRConsentState::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
-                } else if (is_array($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRConsentState(array_merge($ext, $data[self::FIELD_STATUS])));
-                }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            if (isset($data[self::FIELD_STATUS])) {
+                $value = $data[self::FIELD_STATUS];
             } else {
-                $this->setStatus(new FHIRConsentState($data[self::FIELD_STATUS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
+                $ext = $data[self::FIELD_STATUS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRConsentState) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIRConsentState(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIRConsentState([FHIRConsentState::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setStatus(new FHIRConsentState($ext));
             }
         }
     }
@@ -1638,8 +1659,8 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -1912,38 +1933,82 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAction())) {
-            $a[self::FIELD_ACTION] = $vs;
+            $a[self::FIELD_ACTION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ACTION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getActor())) {
-            $a[self::FIELD_ACTOR] = $vs;
+            $a[self::FIELD_ACTOR] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ACTOR][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getCategory())) {
-            $a[self::FIELD_CATEGORY] = $vs;
+            $a[self::FIELD_CATEGORY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CATEGORY][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getConsentingParty())) {
-            $a[self::FIELD_CONSENTING_PARTY] = $vs;
+            $a[self::FIELD_CONSENTING_PARTY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CONSENTING_PARTY][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getData())) {
-            $a[self::FIELD_DATA] = $vs;
+            $a[self::FIELD_DATA] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_DATA][] = $v;
+            }
         }
         if (null !== ($v = $this->getDataPeriod())) {
             $a[self::FIELD_DATA_PERIOD] = $v;
         }
         if (null !== ($v = $this->getDateTime())) {
             $a[self::FIELD_DATE_TIME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_DATE_TIME_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getExcept())) {
-            $a[self::FIELD_EXCEPT] = $vs;
+            $a[self::FIELD_EXCEPT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_EXCEPT][] = $v;
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
             $a[self::FIELD_IDENTIFIER] = $v;
         }
         if ([] !== ($vs = $this->getOrganization())) {
-            $a[self::FIELD_ORGANIZATION] = $vs;
+            $a[self::FIELD_ORGANIZATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ORGANIZATION][] = $v;
+            }
         }
         if (null !== ($v = $this->getPatient())) {
             $a[self::FIELD_PATIENT] = $v;
@@ -1952,20 +2017,40 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
             $a[self::FIELD_PERIOD] = $v;
         }
         if ([] !== ($vs = $this->getPolicy())) {
-            $a[self::FIELD_POLICY] = $vs;
+            $a[self::FIELD_POLICY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_POLICY][] = $v;
+            }
         }
         if (null !== ($v = $this->getPolicyRule())) {
             $a[self::FIELD_POLICY_RULE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUri::FIELD_VALUE]);
                 $a[self::FIELD_POLICY_RULE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getPurpose())) {
-            $a[self::FIELD_PURPOSE] = $vs;
+            $a[self::FIELD_PURPOSE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PURPOSE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSecurityLabel())) {
-            $a[self::FIELD_SECURITY_LABEL] = $vs;
+            $a[self::FIELD_SECURITY_LABEL] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SECURITY_LABEL][] = $v;
+            }
         }
         if (null !== ($v = $this->getSourceAttachment())) {
             $a[self::FIELD_SOURCE_ATTACHMENT] = $v;
@@ -1978,10 +2063,15 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRConsentState::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRConsentState::FIELD_VALUE]);
                 $a[self::FIELD_STATUS_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
     const FIELD_VARIANT = 'variant';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A whole number
@@ -317,20 +317,27 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_COORDINATE_SYSTEM])) {
-            $ext = (isset($data[self::FIELD_COORDINATE_SYSTEM_EXT]) && is_array($data[self::FIELD_COORDINATE_SYSTEM_EXT]))
-                ? $data[self::FIELD_COORDINATE_SYSTEM_EXT]
-                : null;
-            if ($data[self::FIELD_COORDINATE_SYSTEM] instanceof FHIRInteger) {
-                $this->setCoordinateSystem($data[self::FIELD_COORDINATE_SYSTEM]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_COORDINATE_SYSTEM])) {
-                    $this->setCoordinateSystem(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_COORDINATE_SYSTEM]] + $ext));
-                } else if (is_array($data[self::FIELD_COORDINATE_SYSTEM])) {
-                    $this->setCoordinateSystem(new FHIRInteger(array_merge($ext, $data[self::FIELD_COORDINATE_SYSTEM])));
-                }
+        if (isset($data[self::FIELD_COORDINATE_SYSTEM]) || isset($data[self::FIELD_COORDINATE_SYSTEM_EXT])) {
+            if (isset($data[self::FIELD_COORDINATE_SYSTEM])) {
+                $value = $data[self::FIELD_COORDINATE_SYSTEM];
             } else {
-                $this->setCoordinateSystem(new FHIRInteger($data[self::FIELD_COORDINATE_SYSTEM]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_COORDINATE_SYSTEM_EXT]) && is_array($data[self::FIELD_COORDINATE_SYSTEM_EXT])) {
+                $ext = $data[self::FIELD_COORDINATE_SYSTEM_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setCoordinateSystem($value);
+                } else if (is_array($value)) {
+                    $this->setCoordinateSystem(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setCoordinateSystem(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setCoordinateSystem(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_DEVICE])) {
@@ -358,20 +365,27 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_OBSERVED_SEQ])) {
-            $ext = (isset($data[self::FIELD_OBSERVED_SEQ_EXT]) && is_array($data[self::FIELD_OBSERVED_SEQ_EXT]))
-                ? $data[self::FIELD_OBSERVED_SEQ_EXT]
-                : null;
-            if ($data[self::FIELD_OBSERVED_SEQ] instanceof FHIRString) {
-                $this->setObservedSeq($data[self::FIELD_OBSERVED_SEQ]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_OBSERVED_SEQ])) {
-                    $this->setObservedSeq(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_OBSERVED_SEQ]] + $ext));
-                } else if (is_array($data[self::FIELD_OBSERVED_SEQ])) {
-                    $this->setObservedSeq(new FHIRString(array_merge($ext, $data[self::FIELD_OBSERVED_SEQ])));
-                }
+        if (isset($data[self::FIELD_OBSERVED_SEQ]) || isset($data[self::FIELD_OBSERVED_SEQ_EXT])) {
+            if (isset($data[self::FIELD_OBSERVED_SEQ])) {
+                $value = $data[self::FIELD_OBSERVED_SEQ];
             } else {
-                $this->setObservedSeq(new FHIRString($data[self::FIELD_OBSERVED_SEQ]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_OBSERVED_SEQ_EXT]) && is_array($data[self::FIELD_OBSERVED_SEQ_EXT])) {
+                $ext = $data[self::FIELD_OBSERVED_SEQ_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setObservedSeq($value);
+                } else if (is_array($value)) {
+                    $this->setObservedSeq(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setObservedSeq(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setObservedSeq(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_PATIENT])) {
@@ -431,20 +445,27 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
         }
-        if (isset($data[self::FIELD_READ_COVERAGE])) {
-            $ext = (isset($data[self::FIELD_READ_COVERAGE_EXT]) && is_array($data[self::FIELD_READ_COVERAGE_EXT]))
-                ? $data[self::FIELD_READ_COVERAGE_EXT]
-                : null;
-            if ($data[self::FIELD_READ_COVERAGE] instanceof FHIRInteger) {
-                $this->setReadCoverage($data[self::FIELD_READ_COVERAGE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_READ_COVERAGE])) {
-                    $this->setReadCoverage(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_READ_COVERAGE]] + $ext));
-                } else if (is_array($data[self::FIELD_READ_COVERAGE])) {
-                    $this->setReadCoverage(new FHIRInteger(array_merge($ext, $data[self::FIELD_READ_COVERAGE])));
-                }
+        if (isset($data[self::FIELD_READ_COVERAGE]) || isset($data[self::FIELD_READ_COVERAGE_EXT])) {
+            if (isset($data[self::FIELD_READ_COVERAGE])) {
+                $value = $data[self::FIELD_READ_COVERAGE];
             } else {
-                $this->setReadCoverage(new FHIRInteger($data[self::FIELD_READ_COVERAGE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_READ_COVERAGE_EXT]) && is_array($data[self::FIELD_READ_COVERAGE_EXT])) {
+                $ext = $data[self::FIELD_READ_COVERAGE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setReadCoverage($value);
+                } else if (is_array($value)) {
+                    $this->setReadCoverage(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setReadCoverage(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setReadCoverage(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_REFERENCE_SEQ])) {
@@ -497,20 +518,27 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
                 $this->addStructureVariant(new FHIRMolecularSequenceStructureVariant($data[self::FIELD_STRUCTURE_VARIANT]));
             }
         }
-        if (isset($data[self::FIELD_TYPE])) {
-            $ext = (isset($data[self::FIELD_TYPE_EXT]) && is_array($data[self::FIELD_TYPE_EXT]))
-                ? $data[self::FIELD_TYPE_EXT]
-                : null;
-            if ($data[self::FIELD_TYPE] instanceof FHIRSequenceType) {
-                $this->setType($data[self::FIELD_TYPE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_TYPE])) {
-                    $this->setType(new FHIRSequenceType([FHIRSequenceType::FIELD_VALUE => $data[self::FIELD_TYPE]] + $ext));
-                } else if (is_array($data[self::FIELD_TYPE])) {
-                    $this->setType(new FHIRSequenceType(array_merge($ext, $data[self::FIELD_TYPE])));
-                }
+        if (isset($data[self::FIELD_TYPE]) || isset($data[self::FIELD_TYPE_EXT])) {
+            if (isset($data[self::FIELD_TYPE])) {
+                $value = $data[self::FIELD_TYPE];
             } else {
-                $this->setType(new FHIRSequenceType($data[self::FIELD_TYPE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_TYPE_EXT]) && is_array($data[self::FIELD_TYPE_EXT])) {
+                $ext = $data[self::FIELD_TYPE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRSequenceType) {
+                    $this->setType($value);
+                } else if (is_array($value)) {
+                    $this->setType(new FHIRSequenceType(array_merge($ext, $value)));
+                } else {
+                    $this->setType(new FHIRSequenceType([FHIRSequenceType::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setType(new FHIRSequenceType($ext));
             }
         }
         if (isset($data[self::FIELD_VARIANT])) {
@@ -1470,8 +1498,10 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCoordinateSystem())) {
             $a[self::FIELD_COORDINATE_SYSTEM] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_COORDINATE_SYSTEM_EXT] = $enc;
             }
         }
@@ -1479,12 +1509,20 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
             $a[self::FIELD_DEVICE] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if (null !== ($v = $this->getObservedSeq())) {
             $a[self::FIELD_OBSERVED_SEQ] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_OBSERVED_SEQ_EXT] = $enc;
             }
         }
@@ -1495,18 +1533,32 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
             $a[self::FIELD_PERFORMER] = $v;
         }
         if ([] !== ($vs = $this->getPointer())) {
-            $a[self::FIELD_POINTER] = $vs;
+            $a[self::FIELD_POINTER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_POINTER][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getQuality())) {
-            $a[self::FIELD_QUALITY] = $vs;
+            $a[self::FIELD_QUALITY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_QUALITY][] = $v;
+            }
         }
         if (null !== ($v = $this->getQuantity())) {
             $a[self::FIELD_QUANTITY] = $v;
         }
         if (null !== ($v = $this->getReadCoverage())) {
             $a[self::FIELD_READ_COVERAGE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_READ_COVERAGE_EXT] = $enc;
             }
         }
@@ -1514,23 +1566,46 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
             $a[self::FIELD_REFERENCE_SEQ] = $v;
         }
         if ([] !== ($vs = $this->getRepository())) {
-            $a[self::FIELD_REPOSITORY] = $vs;
+            $a[self::FIELD_REPOSITORY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_REPOSITORY][] = $v;
+            }
         }
         if (null !== ($v = $this->getSpecimen())) {
             $a[self::FIELD_SPECIMEN] = $v;
         }
         if ([] !== ($vs = $this->getStructureVariant())) {
-            $a[self::FIELD_STRUCTURE_VARIANT] = $vs;
+            $a[self::FIELD_STRUCTURE_VARIANT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_STRUCTURE_VARIANT][] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRSequenceType::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRSequenceType::FIELD_VALUE]);
                 $a[self::FIELD_TYPE_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getVariant())) {
-            $a[self::FIELD_VARIANT] = $vs;
+            $a[self::FIELD_VARIANT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_VARIANT][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

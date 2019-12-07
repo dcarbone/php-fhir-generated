@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpeci
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
     const FIELD_TEMPERATURE_RANGE = 'temperatureRange';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -159,20 +159,27 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_INSTRUCTION])) {
-            $ext = (isset($data[self::FIELD_INSTRUCTION_EXT]) && is_array($data[self::FIELD_INSTRUCTION_EXT]))
-                ? $data[self::FIELD_INSTRUCTION_EXT]
-                : null;
-            if ($data[self::FIELD_INSTRUCTION] instanceof FHIRString) {
-                $this->setInstruction($data[self::FIELD_INSTRUCTION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_INSTRUCTION])) {
-                    $this->setInstruction(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_INSTRUCTION]] + $ext));
-                } else if (is_array($data[self::FIELD_INSTRUCTION])) {
-                    $this->setInstruction(new FHIRString(array_merge($ext, $data[self::FIELD_INSTRUCTION])));
-                }
+        if (isset($data[self::FIELD_INSTRUCTION]) || isset($data[self::FIELD_INSTRUCTION_EXT])) {
+            if (isset($data[self::FIELD_INSTRUCTION])) {
+                $value = $data[self::FIELD_INSTRUCTION];
             } else {
-                $this->setInstruction(new FHIRString($data[self::FIELD_INSTRUCTION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_INSTRUCTION_EXT]) && is_array($data[self::FIELD_INSTRUCTION_EXT])) {
+                $ext = $data[self::FIELD_INSTRUCTION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setInstruction($value);
+                } else if (is_array($value)) {
+                    $this->setInstruction(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setInstruction(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setInstruction(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_MAX_DURATION])) {
@@ -460,8 +467,10 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getInstruction())) {
             $a[self::FIELD_INSTRUCTION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_INSTRUCTION_EXT] = $enc;
             }
         }
@@ -473,6 +482,9 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getTemperatureRange())) {
             $a[self::FIELD_TEMPERATURE_RANGE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

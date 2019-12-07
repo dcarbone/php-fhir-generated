@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,7 @@ class FHIRTimingRepeat extends FHIRElement
     const FIELD_WHEN_EXT = '_when';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A time period defined by a start and end date and optionally time.
@@ -306,164 +306,234 @@ class FHIRTimingRepeat extends FHIRElement
                 $this->setBoundsRange(new FHIRRange($data[self::FIELD_BOUNDS_RANGE]));
             }
         }
-        if (isset($data[self::FIELD_COUNT])) {
-            $ext = (isset($data[self::FIELD_COUNT_EXT]) && is_array($data[self::FIELD_COUNT_EXT]))
-                ? $data[self::FIELD_COUNT_EXT]
-                : null;
-            if ($data[self::FIELD_COUNT] instanceof FHIRInteger) {
-                $this->setCount($data[self::FIELD_COUNT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_COUNT])) {
-                    $this->setCount(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_COUNT]] + $ext));
-                } else if (is_array($data[self::FIELD_COUNT])) {
-                    $this->setCount(new FHIRInteger(array_merge($ext, $data[self::FIELD_COUNT])));
-                }
+        if (isset($data[self::FIELD_COUNT]) || isset($data[self::FIELD_COUNT_EXT])) {
+            if (isset($data[self::FIELD_COUNT])) {
+                $value = $data[self::FIELD_COUNT];
             } else {
-                $this->setCount(new FHIRInteger($data[self::FIELD_COUNT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_COUNT_EXT]) && is_array($data[self::FIELD_COUNT_EXT])) {
+                $ext = $data[self::FIELD_COUNT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setCount($value);
+                } else if (is_array($value)) {
+                    $this->setCount(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setCount(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setCount(new FHIRInteger($ext));
             }
         }
-        if (isset($data[self::FIELD_DURATION])) {
-            $ext = (isset($data[self::FIELD_DURATION_EXT]) && is_array($data[self::FIELD_DURATION_EXT]))
-                ? $data[self::FIELD_DURATION_EXT]
-                : null;
-            if ($data[self::FIELD_DURATION] instanceof FHIRDecimal) {
-                $this->setDuration($data[self::FIELD_DURATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DURATION])) {
-                    $this->setDuration(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_DURATION]] + $ext));
-                } else if (is_array($data[self::FIELD_DURATION])) {
-                    $this->setDuration(new FHIRDecimal(array_merge($ext, $data[self::FIELD_DURATION])));
-                }
+        if (isset($data[self::FIELD_DURATION]) || isset($data[self::FIELD_DURATION_EXT])) {
+            if (isset($data[self::FIELD_DURATION])) {
+                $value = $data[self::FIELD_DURATION];
             } else {
-                $this->setDuration(new FHIRDecimal($data[self::FIELD_DURATION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DURATION_EXT]) && is_array($data[self::FIELD_DURATION_EXT])) {
+                $ext = $data[self::FIELD_DURATION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setDuration($value);
+                } else if (is_array($value)) {
+                    $this->setDuration(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setDuration(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDuration(new FHIRDecimal($ext));
             }
         }
-        if (isset($data[self::FIELD_DURATION_MAX])) {
-            $ext = (isset($data[self::FIELD_DURATION_MAX_EXT]) && is_array($data[self::FIELD_DURATION_MAX_EXT]))
-                ? $data[self::FIELD_DURATION_MAX_EXT]
-                : null;
-            if ($data[self::FIELD_DURATION_MAX] instanceof FHIRDecimal) {
-                $this->setDurationMax($data[self::FIELD_DURATION_MAX]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DURATION_MAX])) {
-                    $this->setDurationMax(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_DURATION_MAX]] + $ext));
-                } else if (is_array($data[self::FIELD_DURATION_MAX])) {
-                    $this->setDurationMax(new FHIRDecimal(array_merge($ext, $data[self::FIELD_DURATION_MAX])));
-                }
+        if (isset($data[self::FIELD_DURATION_MAX]) || isset($data[self::FIELD_DURATION_MAX_EXT])) {
+            if (isset($data[self::FIELD_DURATION_MAX])) {
+                $value = $data[self::FIELD_DURATION_MAX];
             } else {
-                $this->setDurationMax(new FHIRDecimal($data[self::FIELD_DURATION_MAX]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DURATION_MAX_EXT]) && is_array($data[self::FIELD_DURATION_MAX_EXT])) {
+                $ext = $data[self::FIELD_DURATION_MAX_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setDurationMax($value);
+                } else if (is_array($value)) {
+                    $this->setDurationMax(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setDurationMax(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDurationMax(new FHIRDecimal($ext));
             }
         }
-        if (isset($data[self::FIELD_DURATION_UNITS])) {
-            $ext = (isset($data[self::FIELD_DURATION_UNITS_EXT]) && is_array($data[self::FIELD_DURATION_UNITS_EXT]))
-                ? $data[self::FIELD_DURATION_UNITS_EXT]
-                : null;
-            if ($data[self::FIELD_DURATION_UNITS] instanceof FHIRUnitsOfTime) {
-                $this->setDurationUnits($data[self::FIELD_DURATION_UNITS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DURATION_UNITS])) {
-                    $this->setDurationUnits(new FHIRUnitsOfTime([FHIRUnitsOfTime::FIELD_VALUE => $data[self::FIELD_DURATION_UNITS]] + $ext));
-                } else if (is_array($data[self::FIELD_DURATION_UNITS])) {
-                    $this->setDurationUnits(new FHIRUnitsOfTime(array_merge($ext, $data[self::FIELD_DURATION_UNITS])));
-                }
+        if (isset($data[self::FIELD_DURATION_UNITS]) || isset($data[self::FIELD_DURATION_UNITS_EXT])) {
+            if (isset($data[self::FIELD_DURATION_UNITS])) {
+                $value = $data[self::FIELD_DURATION_UNITS];
             } else {
-                $this->setDurationUnits(new FHIRUnitsOfTime($data[self::FIELD_DURATION_UNITS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DURATION_UNITS_EXT]) && is_array($data[self::FIELD_DURATION_UNITS_EXT])) {
+                $ext = $data[self::FIELD_DURATION_UNITS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUnitsOfTime) {
+                    $this->setDurationUnits($value);
+                } else if (is_array($value)) {
+                    $this->setDurationUnits(new FHIRUnitsOfTime(array_merge($ext, $value)));
+                } else {
+                    $this->setDurationUnits(new FHIRUnitsOfTime([FHIRUnitsOfTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDurationUnits(new FHIRUnitsOfTime($ext));
             }
         }
-        if (isset($data[self::FIELD_FREQUENCY])) {
-            $ext = (isset($data[self::FIELD_FREQUENCY_EXT]) && is_array($data[self::FIELD_FREQUENCY_EXT]))
-                ? $data[self::FIELD_FREQUENCY_EXT]
-                : null;
-            if ($data[self::FIELD_FREQUENCY] instanceof FHIRInteger) {
-                $this->setFrequency($data[self::FIELD_FREQUENCY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_FREQUENCY])) {
-                    $this->setFrequency(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_FREQUENCY]] + $ext));
-                } else if (is_array($data[self::FIELD_FREQUENCY])) {
-                    $this->setFrequency(new FHIRInteger(array_merge($ext, $data[self::FIELD_FREQUENCY])));
-                }
+        if (isset($data[self::FIELD_FREQUENCY]) || isset($data[self::FIELD_FREQUENCY_EXT])) {
+            if (isset($data[self::FIELD_FREQUENCY])) {
+                $value = $data[self::FIELD_FREQUENCY];
             } else {
-                $this->setFrequency(new FHIRInteger($data[self::FIELD_FREQUENCY]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_FREQUENCY_EXT]) && is_array($data[self::FIELD_FREQUENCY_EXT])) {
+                $ext = $data[self::FIELD_FREQUENCY_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setFrequency($value);
+                } else if (is_array($value)) {
+                    $this->setFrequency(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setFrequency(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setFrequency(new FHIRInteger($ext));
             }
         }
-        if (isset($data[self::FIELD_FREQUENCY_MAX])) {
-            $ext = (isset($data[self::FIELD_FREQUENCY_MAX_EXT]) && is_array($data[self::FIELD_FREQUENCY_MAX_EXT]))
-                ? $data[self::FIELD_FREQUENCY_MAX_EXT]
-                : null;
-            if ($data[self::FIELD_FREQUENCY_MAX] instanceof FHIRInteger) {
-                $this->setFrequencyMax($data[self::FIELD_FREQUENCY_MAX]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_FREQUENCY_MAX])) {
-                    $this->setFrequencyMax(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_FREQUENCY_MAX]] + $ext));
-                } else if (is_array($data[self::FIELD_FREQUENCY_MAX])) {
-                    $this->setFrequencyMax(new FHIRInteger(array_merge($ext, $data[self::FIELD_FREQUENCY_MAX])));
-                }
+        if (isset($data[self::FIELD_FREQUENCY_MAX]) || isset($data[self::FIELD_FREQUENCY_MAX_EXT])) {
+            if (isset($data[self::FIELD_FREQUENCY_MAX])) {
+                $value = $data[self::FIELD_FREQUENCY_MAX];
             } else {
-                $this->setFrequencyMax(new FHIRInteger($data[self::FIELD_FREQUENCY_MAX]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_FREQUENCY_MAX_EXT]) && is_array($data[self::FIELD_FREQUENCY_MAX_EXT])) {
+                $ext = $data[self::FIELD_FREQUENCY_MAX_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setFrequencyMax($value);
+                } else if (is_array($value)) {
+                    $this->setFrequencyMax(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setFrequencyMax(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setFrequencyMax(new FHIRInteger($ext));
             }
         }
-        if (isset($data[self::FIELD_PERIOD])) {
-            $ext = (isset($data[self::FIELD_PERIOD_EXT]) && is_array($data[self::FIELD_PERIOD_EXT]))
-                ? $data[self::FIELD_PERIOD_EXT]
-                : null;
-            if ($data[self::FIELD_PERIOD] instanceof FHIRDecimal) {
-                $this->setPeriod($data[self::FIELD_PERIOD]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PERIOD])) {
-                    $this->setPeriod(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_PERIOD]] + $ext));
-                } else if (is_array($data[self::FIELD_PERIOD])) {
-                    $this->setPeriod(new FHIRDecimal(array_merge($ext, $data[self::FIELD_PERIOD])));
-                }
+        if (isset($data[self::FIELD_PERIOD]) || isset($data[self::FIELD_PERIOD_EXT])) {
+            if (isset($data[self::FIELD_PERIOD])) {
+                $value = $data[self::FIELD_PERIOD];
             } else {
-                $this->setPeriod(new FHIRDecimal($data[self::FIELD_PERIOD]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PERIOD_EXT]) && is_array($data[self::FIELD_PERIOD_EXT])) {
+                $ext = $data[self::FIELD_PERIOD_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setPeriod($value);
+                } else if (is_array($value)) {
+                    $this->setPeriod(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setPeriod(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPeriod(new FHIRDecimal($ext));
             }
         }
-        if (isset($data[self::FIELD_PERIOD_MAX])) {
-            $ext = (isset($data[self::FIELD_PERIOD_MAX_EXT]) && is_array($data[self::FIELD_PERIOD_MAX_EXT]))
-                ? $data[self::FIELD_PERIOD_MAX_EXT]
-                : null;
-            if ($data[self::FIELD_PERIOD_MAX] instanceof FHIRDecimal) {
-                $this->setPeriodMax($data[self::FIELD_PERIOD_MAX]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PERIOD_MAX])) {
-                    $this->setPeriodMax(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $data[self::FIELD_PERIOD_MAX]] + $ext));
-                } else if (is_array($data[self::FIELD_PERIOD_MAX])) {
-                    $this->setPeriodMax(new FHIRDecimal(array_merge($ext, $data[self::FIELD_PERIOD_MAX])));
-                }
+        if (isset($data[self::FIELD_PERIOD_MAX]) || isset($data[self::FIELD_PERIOD_MAX_EXT])) {
+            if (isset($data[self::FIELD_PERIOD_MAX])) {
+                $value = $data[self::FIELD_PERIOD_MAX];
             } else {
-                $this->setPeriodMax(new FHIRDecimal($data[self::FIELD_PERIOD_MAX]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PERIOD_MAX_EXT]) && is_array($data[self::FIELD_PERIOD_MAX_EXT])) {
+                $ext = $data[self::FIELD_PERIOD_MAX_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setPeriodMax($value);
+                } else if (is_array($value)) {
+                    $this->setPeriodMax(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setPeriodMax(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPeriodMax(new FHIRDecimal($ext));
             }
         }
-        if (isset($data[self::FIELD_PERIOD_UNITS])) {
-            $ext = (isset($data[self::FIELD_PERIOD_UNITS_EXT]) && is_array($data[self::FIELD_PERIOD_UNITS_EXT]))
-                ? $data[self::FIELD_PERIOD_UNITS_EXT]
-                : null;
-            if ($data[self::FIELD_PERIOD_UNITS] instanceof FHIRUnitsOfTime) {
-                $this->setPeriodUnits($data[self::FIELD_PERIOD_UNITS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PERIOD_UNITS])) {
-                    $this->setPeriodUnits(new FHIRUnitsOfTime([FHIRUnitsOfTime::FIELD_VALUE => $data[self::FIELD_PERIOD_UNITS]] + $ext));
-                } else if (is_array($data[self::FIELD_PERIOD_UNITS])) {
-                    $this->setPeriodUnits(new FHIRUnitsOfTime(array_merge($ext, $data[self::FIELD_PERIOD_UNITS])));
-                }
+        if (isset($data[self::FIELD_PERIOD_UNITS]) || isset($data[self::FIELD_PERIOD_UNITS_EXT])) {
+            if (isset($data[self::FIELD_PERIOD_UNITS])) {
+                $value = $data[self::FIELD_PERIOD_UNITS];
             } else {
-                $this->setPeriodUnits(new FHIRUnitsOfTime($data[self::FIELD_PERIOD_UNITS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PERIOD_UNITS_EXT]) && is_array($data[self::FIELD_PERIOD_UNITS_EXT])) {
+                $ext = $data[self::FIELD_PERIOD_UNITS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUnitsOfTime) {
+                    $this->setPeriodUnits($value);
+                } else if (is_array($value)) {
+                    $this->setPeriodUnits(new FHIRUnitsOfTime(array_merge($ext, $value)));
+                } else {
+                    $this->setPeriodUnits(new FHIRUnitsOfTime([FHIRUnitsOfTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPeriodUnits(new FHIRUnitsOfTime($ext));
             }
         }
-        if (isset($data[self::FIELD_WHEN])) {
-            $ext = (isset($data[self::FIELD_WHEN_EXT]) && is_array($data[self::FIELD_WHEN_EXT]))
-                ? $data[self::FIELD_WHEN_EXT]
-                : null;
-            if ($data[self::FIELD_WHEN] instanceof FHIREventTiming) {
-                $this->setWhen($data[self::FIELD_WHEN]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_WHEN])) {
-                    $this->setWhen(new FHIREventTiming([FHIREventTiming::FIELD_VALUE => $data[self::FIELD_WHEN]] + $ext));
-                } else if (is_array($data[self::FIELD_WHEN])) {
-                    $this->setWhen(new FHIREventTiming(array_merge($ext, $data[self::FIELD_WHEN])));
-                }
+        if (isset($data[self::FIELD_WHEN]) || isset($data[self::FIELD_WHEN_EXT])) {
+            if (isset($data[self::FIELD_WHEN])) {
+                $value = $data[self::FIELD_WHEN];
             } else {
-                $this->setWhen(new FHIREventTiming($data[self::FIELD_WHEN]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_WHEN_EXT]) && is_array($data[self::FIELD_WHEN_EXT])) {
+                $ext = $data[self::FIELD_WHEN_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIREventTiming) {
+                    $this->setWhen($value);
+                } else if (is_array($value)) {
+                    $this->setWhen(new FHIREventTiming(array_merge($ext, $value)));
+                } else {
+                    $this->setWhen(new FHIREventTiming([FHIREventTiming::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setWhen(new FHIREventTiming($ext));
             }
         }
     }
@@ -949,8 +1019,8 @@ class FHIRTimingRepeat extends FHIRElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -1161,73 +1231,96 @@ class FHIRTimingRepeat extends FHIRElement
         }
         if (null !== ($v = $this->getCount())) {
             $a[self::FIELD_COUNT] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_COUNT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDuration())) {
             $a[self::FIELD_DURATION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDecimal::FIELD_VALUE]);
                 $a[self::FIELD_DURATION_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDurationMax())) {
             $a[self::FIELD_DURATION_MAX] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDecimal::FIELD_VALUE]);
                 $a[self::FIELD_DURATION_MAX_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDurationUnits())) {
             $a[self::FIELD_DURATION_UNITS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUnitsOfTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUnitsOfTime::FIELD_VALUE]);
                 $a[self::FIELD_DURATION_UNITS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getFrequency())) {
             $a[self::FIELD_FREQUENCY] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_FREQUENCY_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getFrequencyMax())) {
             $a[self::FIELD_FREQUENCY_MAX] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_FREQUENCY_MAX_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPeriod())) {
             $a[self::FIELD_PERIOD] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDecimal::FIELD_VALUE]);
                 $a[self::FIELD_PERIOD_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPeriodMax())) {
             $a[self::FIELD_PERIOD_MAX] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDecimal::FIELD_VALUE]);
                 $a[self::FIELD_PERIOD_MAX_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPeriodUnits())) {
             $a[self::FIELD_PERIOD_UNITS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUnitsOfTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUnitsOfTime::FIELD_VALUE]);
                 $a[self::FIELD_PERIOD_UNITS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getWhen())) {
             $a[self::FIELD_WHEN] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIREventTiming::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIREventTiming::FIELD_VALUE]);
                 $a[self::FIELD_WHEN_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

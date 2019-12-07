@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,7 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
     const FIELD_VALIDITY_PERIOD = 'validityPeriod';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Identifies the period time over which the supplied product is expected to be
@@ -210,20 +210,27 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
                 $this->setMedicationReference(new FHIRReference($data[self::FIELD_MEDICATION_REFERENCE]));
             }
         }
-        if (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])) {
-            $ext = (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT]) && is_array($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT]))
-                ? $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT]
-                : null;
-            if ($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] instanceof FHIRPositiveInt) {
-                $this->setNumberOfRepeatsAllowed($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])) {
-                    $this->setNumberOfRepeatsAllowed(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]] + $ext));
-                } else if (is_array($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])) {
-                    $this->setNumberOfRepeatsAllowed(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])));
-                }
+        if (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]) || isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT])) {
+            if (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED])) {
+                $value = $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED];
             } else {
-                $this->setNumberOfRepeatsAllowed(new FHIRPositiveInt($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT]) && is_array($data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT])) {
+                $ext = $data[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setNumberOfRepeatsAllowed($value);
+                } else if (is_array($value)) {
+                    $this->setNumberOfRepeatsAllowed(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setNumberOfRepeatsAllowed(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setNumberOfRepeatsAllowed(new FHIRPositiveInt($ext));
             }
         }
         if (isset($data[self::FIELD_QUANTITY])) {
@@ -465,8 +472,8 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -587,8 +594,10 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getNumberOfRepeatsAllowed())) {
             $a[self::FIELD_NUMBER_OF_REPEATS_ALLOWED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
                 $a[self::FIELD_NUMBER_OF_REPEATS_ALLOWED_EXT] = $enc;
             }
         }
@@ -597,6 +606,9 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getValidityPeriod())) {
             $a[self::FIELD_VALIDITY_PERIOD] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

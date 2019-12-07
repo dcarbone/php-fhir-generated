@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestS
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
     const FIELD_PROFILE = 'profile';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A whole number
@@ -131,20 +131,27 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_INDEX])) {
-            $ext = (isset($data[self::FIELD_INDEX_EXT]) && is_array($data[self::FIELD_INDEX_EXT]))
-                ? $data[self::FIELD_INDEX_EXT]
-                : null;
-            if ($data[self::FIELD_INDEX] instanceof FHIRInteger) {
-                $this->setIndex($data[self::FIELD_INDEX]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_INDEX])) {
-                    $this->setIndex(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_INDEX]] + $ext));
-                } else if (is_array($data[self::FIELD_INDEX])) {
-                    $this->setIndex(new FHIRInteger(array_merge($ext, $data[self::FIELD_INDEX])));
-                }
+        if (isset($data[self::FIELD_INDEX]) || isset($data[self::FIELD_INDEX_EXT])) {
+            if (isset($data[self::FIELD_INDEX])) {
+                $value = $data[self::FIELD_INDEX];
             } else {
-                $this->setIndex(new FHIRInteger($data[self::FIELD_INDEX]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_INDEX_EXT]) && is_array($data[self::FIELD_INDEX_EXT])) {
+                $ext = $data[self::FIELD_INDEX_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setIndex($value);
+                } else if (is_array($value)) {
+                    $this->setIndex(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setIndex(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setIndex(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_PROFILE])) {
@@ -340,13 +347,18 @@ class FHIRTestScriptDestination extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getIndex())) {
             $a[self::FIELD_INDEX] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_INDEX_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getProfile())) {
             $a[self::FIELD_PROFILE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

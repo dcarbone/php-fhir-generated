@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,7 @@ class FHIRTiming extends FHIRElement
     const FIELD_REPEAT = 'repeat';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -166,33 +166,42 @@ class FHIRTiming extends FHIRElement
                 $this->setCode(new FHIRCodeableConcept($data[self::FIELD_CODE]));
             }
         }
-        if (isset($data[self::FIELD_EVENT])) {
-            $ext = (isset($data[self::FIELD_EVENT_EXT]) && is_array($data[self::FIELD_EVENT_EXT]))
-                ? $data[self::FIELD_EVENT_EXT]
-                : null;
-            if (is_array($data[self::FIELD_EVENT])) {
-                foreach($data[self::FIELD_EVENT] as $i => $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRDateTime) {
-                        $this->addEvent($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addEvent(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addEvent(new FHIRDateTime(array_merge($v, $ext[$i])));
-                        }
-                    } else {
-                        $this->addEvent(new FHIRDateTime($v));
-                    }
-                }
-            } elseif ($data[self::FIELD_EVENT] instanceof FHIRDateTime) {
-                $this->addEvent($data[self::FIELD_EVENT]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_EVENT])) {
-                $this->addEvent(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_EVENT]] + $ext));
+        if (isset($data[self::FIELD_EVENT]) || isset($data[self::FIELD_EVENT_EXT])) {
+            if (isset($data[self::FIELD_EVENT])) {
+                $value = $data[self::FIELD_EVENT];
             } else {
-                $this->addEvent(new FHIRDateTime($data[self::FIELD_EVENT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_EVENT_EXT]) && is_array($data[self::FIELD_EVENT_EXT])) {
+                $ext = $data[self::FIELD_EVENT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->addEvent($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRDateTime) {
+                            $this->addEvent($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addEvent(new FHIRDateTime(array_merge($v, $iext)));
+                            } else {
+                                $this->addEvent(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addEvent(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->addEvent(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addEvent(new FHIRDateTime($iext));
+                }
             }
         }
         if (isset($data[self::FIELD_REPEAT])) {
@@ -382,8 +391,8 @@ class FHIRTiming extends FHIRElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -479,21 +488,32 @@ class FHIRTiming extends FHIRElement
         }
         if ([] !== ($vs = $this->getEvent())) {
             $a[self::FIELD_EVENT] = [];
+            $encs = [];
+            $encValued = false;
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
                 $a[self::FIELD_EVENT][] = $v->getValue();
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_EVENT_EXT][] = $enc;
+                $enc = $v->jsonSerialize();
+                $cnt = count($enc);
+                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRDateTime::FIELD_VALUE]) || array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                    $encs[] = null;
                 } else {
-                    $a[self::FIELD_EVENT_EXT][] = null;
+                    unset($enc[FHIRDateTime::FIELD_VALUE]);
+                    $encs[] = $enc;
+                    $encValued = true;
                 }
+            }
+            if ($encValued) {
+                $a[self::FIELD_EVENT_EXT] = $encs;
             }
         }
         if (null !== ($v = $this->getRepeat())) {
             $a[self::FIELD_REPEAT] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

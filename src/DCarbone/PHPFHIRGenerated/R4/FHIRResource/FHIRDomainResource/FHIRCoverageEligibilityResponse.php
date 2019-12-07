@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -116,7 +116,7 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
     const FIELD_STATUS_EXT = '_status';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -330,36 +330,50 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CREATED])) {
-            $ext = (isset($data[self::FIELD_CREATED_EXT]) && is_array($data[self::FIELD_CREATED_EXT]))
-                ? $data[self::FIELD_CREATED_EXT]
-                : null;
-            if ($data[self::FIELD_CREATED] instanceof FHIRDateTime) {
-                $this->setCreated($data[self::FIELD_CREATED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_CREATED])) {
-                    $this->setCreated(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_CREATED]] + $ext));
-                } else if (is_array($data[self::FIELD_CREATED])) {
-                    $this->setCreated(new FHIRDateTime(array_merge($ext, $data[self::FIELD_CREATED])));
-                }
+        if (isset($data[self::FIELD_CREATED]) || isset($data[self::FIELD_CREATED_EXT])) {
+            if (isset($data[self::FIELD_CREATED])) {
+                $value = $data[self::FIELD_CREATED];
             } else {
-                $this->setCreated(new FHIRDateTime($data[self::FIELD_CREATED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_CREATED_EXT]) && is_array($data[self::FIELD_CREATED_EXT])) {
+                $ext = $data[self::FIELD_CREATED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setCreated($value);
+                } else if (is_array($value)) {
+                    $this->setCreated(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setCreated(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setCreated(new FHIRDateTime($ext));
             }
         }
-        if (isset($data[self::FIELD_DISPOSITION])) {
-            $ext = (isset($data[self::FIELD_DISPOSITION_EXT]) && is_array($data[self::FIELD_DISPOSITION_EXT]))
-                ? $data[self::FIELD_DISPOSITION_EXT]
-                : null;
-            if ($data[self::FIELD_DISPOSITION] instanceof FHIRString) {
-                $this->setDisposition($data[self::FIELD_DISPOSITION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DISPOSITION])) {
-                    $this->setDisposition(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DISPOSITION]] + $ext));
-                } else if (is_array($data[self::FIELD_DISPOSITION])) {
-                    $this->setDisposition(new FHIRString(array_merge($ext, $data[self::FIELD_DISPOSITION])));
-                }
+        if (isset($data[self::FIELD_DISPOSITION]) || isset($data[self::FIELD_DISPOSITION_EXT])) {
+            if (isset($data[self::FIELD_DISPOSITION])) {
+                $value = $data[self::FIELD_DISPOSITION];
             } else {
-                $this->setDisposition(new FHIRString($data[self::FIELD_DISPOSITION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DISPOSITION_EXT]) && is_array($data[self::FIELD_DISPOSITION_EXT])) {
+                $ext = $data[self::FIELD_DISPOSITION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDisposition($value);
+                } else if (is_array($value)) {
+                    $this->setDisposition(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDisposition(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDisposition(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_ERROR])) {
@@ -430,20 +444,27 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 $this->setInsurer(new FHIRReference($data[self::FIELD_INSURER]));
             }
         }
-        if (isset($data[self::FIELD_OUTCOME])) {
-            $ext = (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT]))
-                ? $data[self::FIELD_OUTCOME_EXT]
-                : null;
-            if ($data[self::FIELD_OUTCOME] instanceof FHIRRemittanceOutcome) {
-                $this->setOutcome($data[self::FIELD_OUTCOME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_OUTCOME])) {
-                    $this->setOutcome(new FHIRRemittanceOutcome([FHIRRemittanceOutcome::FIELD_VALUE => $data[self::FIELD_OUTCOME]] + $ext));
-                } else if (is_array($data[self::FIELD_OUTCOME])) {
-                    $this->setOutcome(new FHIRRemittanceOutcome(array_merge($ext, $data[self::FIELD_OUTCOME])));
-                }
+        if (isset($data[self::FIELD_OUTCOME]) || isset($data[self::FIELD_OUTCOME_EXT])) {
+            if (isset($data[self::FIELD_OUTCOME])) {
+                $value = $data[self::FIELD_OUTCOME];
             } else {
-                $this->setOutcome(new FHIRRemittanceOutcome($data[self::FIELD_OUTCOME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT])) {
+                $ext = $data[self::FIELD_OUTCOME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRRemittanceOutcome) {
+                    $this->setOutcome($value);
+                } else if (is_array($value)) {
+                    $this->setOutcome(new FHIRRemittanceOutcome(array_merge($ext, $value)));
+                } else {
+                    $this->setOutcome(new FHIRRemittanceOutcome([FHIRRemittanceOutcome::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setOutcome(new FHIRRemittanceOutcome($ext));
             }
         }
         if (isset($data[self::FIELD_PATIENT])) {
@@ -453,49 +474,65 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 $this->setPatient(new FHIRReference($data[self::FIELD_PATIENT]));
             }
         }
-        if (isset($data[self::FIELD_PRE_AUTH_REF])) {
-            $ext = (isset($data[self::FIELD_PRE_AUTH_REF_EXT]) && is_array($data[self::FIELD_PRE_AUTH_REF_EXT]))
-                ? $data[self::FIELD_PRE_AUTH_REF_EXT]
-                : null;
-            if ($data[self::FIELD_PRE_AUTH_REF] instanceof FHIRString) {
-                $this->setPreAuthRef($data[self::FIELD_PRE_AUTH_REF]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PRE_AUTH_REF])) {
-                    $this->setPreAuthRef(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PRE_AUTH_REF]] + $ext));
-                } else if (is_array($data[self::FIELD_PRE_AUTH_REF])) {
-                    $this->setPreAuthRef(new FHIRString(array_merge($ext, $data[self::FIELD_PRE_AUTH_REF])));
-                }
+        if (isset($data[self::FIELD_PRE_AUTH_REF]) || isset($data[self::FIELD_PRE_AUTH_REF_EXT])) {
+            if (isset($data[self::FIELD_PRE_AUTH_REF])) {
+                $value = $data[self::FIELD_PRE_AUTH_REF];
             } else {
-                $this->setPreAuthRef(new FHIRString($data[self::FIELD_PRE_AUTH_REF]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PRE_AUTH_REF_EXT]) && is_array($data[self::FIELD_PRE_AUTH_REF_EXT])) {
+                $ext = $data[self::FIELD_PRE_AUTH_REF_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setPreAuthRef($value);
+                } else if (is_array($value)) {
+                    $this->setPreAuthRef(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setPreAuthRef(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPreAuthRef(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_PURPOSE])) {
-            $ext = (isset($data[self::FIELD_PURPOSE_EXT]) && is_array($data[self::FIELD_PURPOSE_EXT]))
-                ? $data[self::FIELD_PURPOSE_EXT]
-                : null;
-            if (is_array($data[self::FIELD_PURPOSE])) {
-                foreach($data[self::FIELD_PURPOSE] as $i => $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIREligibilityResponsePurpose) {
-                        $this->addPurpose($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addPurpose(new FHIREligibilityResponsePurpose([FHIREligibilityResponsePurpose::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addPurpose(new FHIREligibilityResponsePurpose(array_merge($v, $ext[$i])));
-                        }
-                    } else {
-                        $this->addPurpose(new FHIREligibilityResponsePurpose($v));
-                    }
-                }
-            } elseif ($data[self::FIELD_PURPOSE] instanceof FHIREligibilityResponsePurpose) {
-                $this->addPurpose($data[self::FIELD_PURPOSE]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_PURPOSE])) {
-                $this->addPurpose(new FHIREligibilityResponsePurpose([FHIREligibilityResponsePurpose::FIELD_VALUE => $data[self::FIELD_PURPOSE]] + $ext));
+        if (isset($data[self::FIELD_PURPOSE]) || isset($data[self::FIELD_PURPOSE_EXT])) {
+            if (isset($data[self::FIELD_PURPOSE])) {
+                $value = $data[self::FIELD_PURPOSE];
             } else {
-                $this->addPurpose(new FHIREligibilityResponsePurpose($data[self::FIELD_PURPOSE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PURPOSE_EXT]) && is_array($data[self::FIELD_PURPOSE_EXT])) {
+                $ext = $data[self::FIELD_PURPOSE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIREligibilityResponsePurpose) {
+                    $this->addPurpose($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIREligibilityResponsePurpose) {
+                            $this->addPurpose($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addPurpose(new FHIREligibilityResponsePurpose(array_merge($v, $iext)));
+                            } else {
+                                $this->addPurpose(new FHIREligibilityResponsePurpose([FHIREligibilityResponsePurpose::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addPurpose(new FHIREligibilityResponsePurpose(array_merge($ext, $value)));
+                } else {
+                    $this->addPurpose(new FHIREligibilityResponsePurpose([FHIREligibilityResponsePurpose::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addPurpose(new FHIREligibilityResponsePurpose($iext));
+                }
             }
         }
         if (isset($data[self::FIELD_REQUEST])) {
@@ -512,20 +549,27 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 $this->setRequestor(new FHIRReference($data[self::FIELD_REQUESTOR]));
             }
         }
-        if (isset($data[self::FIELD_SERVICED_DATE])) {
-            $ext = (isset($data[self::FIELD_SERVICED_DATE_EXT]) && is_array($data[self::FIELD_SERVICED_DATE_EXT]))
-                ? $data[self::FIELD_SERVICED_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_SERVICED_DATE] instanceof FHIRDate) {
-                $this->setServicedDate($data[self::FIELD_SERVICED_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SERVICED_DATE])) {
-                    $this->setServicedDate(new FHIRDate([FHIRDate::FIELD_VALUE => $data[self::FIELD_SERVICED_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_SERVICED_DATE])) {
-                    $this->setServicedDate(new FHIRDate(array_merge($ext, $data[self::FIELD_SERVICED_DATE])));
-                }
+        if (isset($data[self::FIELD_SERVICED_DATE]) || isset($data[self::FIELD_SERVICED_DATE_EXT])) {
+            if (isset($data[self::FIELD_SERVICED_DATE])) {
+                $value = $data[self::FIELD_SERVICED_DATE];
             } else {
-                $this->setServicedDate(new FHIRDate($data[self::FIELD_SERVICED_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SERVICED_DATE_EXT]) && is_array($data[self::FIELD_SERVICED_DATE_EXT])) {
+                $ext = $data[self::FIELD_SERVICED_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDate) {
+                    $this->setServicedDate($value);
+                } else if (is_array($value)) {
+                    $this->setServicedDate(new FHIRDate(array_merge($ext, $value)));
+                } else {
+                    $this->setServicedDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setServicedDate(new FHIRDate($ext));
             }
         }
         if (isset($data[self::FIELD_SERVICED_PERIOD])) {
@@ -535,20 +579,27 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
                 $this->setServicedPeriod(new FHIRPeriod($data[self::FIELD_SERVICED_PERIOD]));
             }
         }
-        if (isset($data[self::FIELD_STATUS])) {
-            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT]))
-                ? $data[self::FIELD_STATUS_EXT]
-                : null;
-            if ($data[self::FIELD_STATUS] instanceof FHIRFinancialResourceStatusCodes) {
-                $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRFinancialResourceStatusCodes([FHIRFinancialResourceStatusCodes::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
-                } else if (is_array($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRFinancialResourceStatusCodes(array_merge($ext, $data[self::FIELD_STATUS])));
-                }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            if (isset($data[self::FIELD_STATUS])) {
+                $value = $data[self::FIELD_STATUS];
             } else {
-                $this->setStatus(new FHIRFinancialResourceStatusCodes($data[self::FIELD_STATUS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
+                $ext = $data[self::FIELD_STATUS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRFinancialResourceStatusCodes) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIRFinancialResourceStatusCodes(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIRFinancialResourceStatusCodes([FHIRFinancialResourceStatusCodes::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setStatus(new FHIRFinancialResourceStatusCodes($ext));
             }
         }
     }
@@ -1450,37 +1501,61 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getCreated())) {
             $a[self::FIELD_CREATED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_CREATED_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDisposition())) {
             $a[self::FIELD_DISPOSITION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_DISPOSITION_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getError())) {
-            $a[self::FIELD_ERROR] = $vs;
+            $a[self::FIELD_ERROR] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ERROR][] = $v;
+            }
         }
         if (null !== ($v = $this->getForm())) {
             $a[self::FIELD_FORM] = $v;
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getInsurance())) {
-            $a[self::FIELD_INSURANCE] = $vs;
+            $a[self::FIELD_INSURANCE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_INSURANCE][] = $v;
+            }
         }
         if (null !== ($v = $this->getInsurer())) {
             $a[self::FIELD_INSURER] = $v;
         }
         if (null !== ($v = $this->getOutcome())) {
             $a[self::FIELD_OUTCOME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRRemittanceOutcome::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRRemittanceOutcome::FIELD_VALUE]);
                 $a[self::FIELD_OUTCOME_EXT] = $enc;
             }
         }
@@ -1489,24 +1564,34 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
         }
         if (null !== ($v = $this->getPreAuthRef())) {
             $a[self::FIELD_PRE_AUTH_REF] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_PRE_AUTH_REF_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getPurpose())) {
             $a[self::FIELD_PURPOSE] = [];
+            $encs = [];
+            $encValued = false;
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
                 $a[self::FIELD_PURPOSE][] = $v->getValue();
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_PURPOSE_EXT][] = $enc;
+                $enc = $v->jsonSerialize();
+                $cnt = count($enc);
+                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIREligibilityResponsePurpose::FIELD_VALUE]) || array_key_exists(FHIREligibilityResponsePurpose::FIELD_VALUE, $enc)))) {
+                    $encs[] = null;
                 } else {
-                    $a[self::FIELD_PURPOSE_EXT][] = null;
+                    unset($enc[FHIREligibilityResponsePurpose::FIELD_VALUE]);
+                    $encs[] = $enc;
+                    $encValued = true;
                 }
+            }
+            if ($encValued) {
+                $a[self::FIELD_PURPOSE_EXT] = $encs;
             }
         }
         if (null !== ($v = $this->getRequest())) {
@@ -1517,8 +1602,10 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
         }
         if (null !== ($v = $this->getServicedDate())) {
             $a[self::FIELD_SERVICED_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDate::FIELD_VALUE]);
                 $a[self::FIELD_SERVICED_DATE_EXT] = $enc;
             }
         }
@@ -1527,10 +1614,15 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRFinancialResourceStatusCodes::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRFinancialResourceStatusCodes::FIELD_VALUE]);
                 $a[self::FIELD_STATUS_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
     const FIELD_VARIANT_TYPE = 'variantType';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Value of "true" or "false"
@@ -163,20 +163,27 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_EXACT])) {
-            $ext = (isset($data[self::FIELD_EXACT_EXT]) && is_array($data[self::FIELD_EXACT_EXT]))
-                ? $data[self::FIELD_EXACT_EXT]
-                : null;
-            if ($data[self::FIELD_EXACT] instanceof FHIRBoolean) {
-                $this->setExact($data[self::FIELD_EXACT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_EXACT])) {
-                    $this->setExact(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_EXACT]] + $ext));
-                } else if (is_array($data[self::FIELD_EXACT])) {
-                    $this->setExact(new FHIRBoolean(array_merge($ext, $data[self::FIELD_EXACT])));
-                }
+        if (isset($data[self::FIELD_EXACT]) || isset($data[self::FIELD_EXACT_EXT])) {
+            if (isset($data[self::FIELD_EXACT])) {
+                $value = $data[self::FIELD_EXACT];
             } else {
-                $this->setExact(new FHIRBoolean($data[self::FIELD_EXACT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_EXACT_EXT]) && is_array($data[self::FIELD_EXACT_EXT])) {
+                $ext = $data[self::FIELD_EXACT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setExact($value);
+                } else if (is_array($value)) {
+                    $this->setExact(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setExact(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setExact(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_INNER])) {
@@ -186,20 +193,27 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
                 $this->setInner(new FHIRMolecularSequenceInner($data[self::FIELD_INNER]));
             }
         }
-        if (isset($data[self::FIELD_LENGTH])) {
-            $ext = (isset($data[self::FIELD_LENGTH_EXT]) && is_array($data[self::FIELD_LENGTH_EXT]))
-                ? $data[self::FIELD_LENGTH_EXT]
-                : null;
-            if ($data[self::FIELD_LENGTH] instanceof FHIRInteger) {
-                $this->setLength($data[self::FIELD_LENGTH]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_LENGTH])) {
-                    $this->setLength(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_LENGTH]] + $ext));
-                } else if (is_array($data[self::FIELD_LENGTH])) {
-                    $this->setLength(new FHIRInteger(array_merge($ext, $data[self::FIELD_LENGTH])));
-                }
+        if (isset($data[self::FIELD_LENGTH]) || isset($data[self::FIELD_LENGTH_EXT])) {
+            if (isset($data[self::FIELD_LENGTH])) {
+                $value = $data[self::FIELD_LENGTH];
             } else {
-                $this->setLength(new FHIRInteger($data[self::FIELD_LENGTH]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_LENGTH_EXT]) && is_array($data[self::FIELD_LENGTH_EXT])) {
+                $ext = $data[self::FIELD_LENGTH_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setLength($value);
+                } else if (is_array($value)) {
+                    $this->setLength(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setLength(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setLength(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_OUTER])) {
@@ -516,8 +530,10 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getExact())) {
             $a[self::FIELD_EXACT] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_EXACT_EXT] = $enc;
             }
         }
@@ -526,8 +542,10 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getLength())) {
             $a[self::FIELD_LENGTH] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_LENGTH_EXT] = $enc;
             }
         }
@@ -536,6 +554,9 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getVariantType())) {
             $a[self::FIELD_VARIANT_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     const FIELD_SYNONYM_EXT = '_synonym';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Information about a medication that is used to support knowledge.
@@ -628,20 +628,27 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $this->setPackaging(new FHIRMedicationKnowledgePackaging($data[self::FIELD_PACKAGING]));
             }
         }
-        if (isset($data[self::FIELD_PREPARATION_INSTRUCTION])) {
-            $ext = (isset($data[self::FIELD_PREPARATION_INSTRUCTION_EXT]) && is_array($data[self::FIELD_PREPARATION_INSTRUCTION_EXT]))
-                ? $data[self::FIELD_PREPARATION_INSTRUCTION_EXT]
-                : null;
-            if ($data[self::FIELD_PREPARATION_INSTRUCTION] instanceof FHIRMarkdown) {
-                $this->setPreparationInstruction($data[self::FIELD_PREPARATION_INSTRUCTION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PREPARATION_INSTRUCTION])) {
-                    $this->setPreparationInstruction(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_PREPARATION_INSTRUCTION]] + $ext));
-                } else if (is_array($data[self::FIELD_PREPARATION_INSTRUCTION])) {
-                    $this->setPreparationInstruction(new FHIRMarkdown(array_merge($ext, $data[self::FIELD_PREPARATION_INSTRUCTION])));
-                }
+        if (isset($data[self::FIELD_PREPARATION_INSTRUCTION]) || isset($data[self::FIELD_PREPARATION_INSTRUCTION_EXT])) {
+            if (isset($data[self::FIELD_PREPARATION_INSTRUCTION])) {
+                $value = $data[self::FIELD_PREPARATION_INSTRUCTION];
             } else {
-                $this->setPreparationInstruction(new FHIRMarkdown($data[self::FIELD_PREPARATION_INSTRUCTION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PREPARATION_INSTRUCTION_EXT]) && is_array($data[self::FIELD_PREPARATION_INSTRUCTION_EXT])) {
+                $ext = $data[self::FIELD_PREPARATION_INSTRUCTION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRMarkdown) {
+                    $this->setPreparationInstruction($value);
+                } else if (is_array($value)) {
+                    $this->setPreparationInstruction(new FHIRMarkdown(array_merge($ext, $value)));
+                } else {
+                    $this->setPreparationInstruction(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPreparationInstruction(new FHIRMarkdown($ext));
             }
         }
         if (isset($data[self::FIELD_PRODUCT_TYPE])) {
@@ -698,49 +705,65 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
                 $this->addRelatedMedicationKnowledge(new FHIRMedicationKnowledgeRelatedMedicationKnowledge($data[self::FIELD_RELATED_MEDICATION_KNOWLEDGE]));
             }
         }
-        if (isset($data[self::FIELD_STATUS])) {
-            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT]))
-                ? $data[self::FIELD_STATUS_EXT]
-                : null;
-            if ($data[self::FIELD_STATUS] instanceof FHIRCode) {
-                $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRCode([FHIRCode::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
-                } else if (is_array($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRCode(array_merge($ext, $data[self::FIELD_STATUS])));
-                }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            if (isset($data[self::FIELD_STATUS])) {
+                $value = $data[self::FIELD_STATUS];
             } else {
-                $this->setStatus(new FHIRCode($data[self::FIELD_STATUS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
+                $ext = $data[self::FIELD_STATUS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRCode) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIRCode(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setStatus(new FHIRCode($ext));
             }
         }
-        if (isset($data[self::FIELD_SYNONYM])) {
-            $ext = (isset($data[self::FIELD_SYNONYM_EXT]) && is_array($data[self::FIELD_SYNONYM_EXT]))
-                ? $data[self::FIELD_SYNONYM_EXT]
-                : null;
-            if (is_array($data[self::FIELD_SYNONYM])) {
-                foreach($data[self::FIELD_SYNONYM] as $i => $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRString) {
-                        $this->addSynonym($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addSynonym(new FHIRString([FHIRString::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addSynonym(new FHIRString(array_merge($v, $ext[$i])));
-                        }
-                    } else {
-                        $this->addSynonym(new FHIRString($v));
-                    }
-                }
-            } elseif ($data[self::FIELD_SYNONYM] instanceof FHIRString) {
-                $this->addSynonym($data[self::FIELD_SYNONYM]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_SYNONYM])) {
-                $this->addSynonym(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SYNONYM]] + $ext));
+        if (isset($data[self::FIELD_SYNONYM]) || isset($data[self::FIELD_SYNONYM_EXT])) {
+            if (isset($data[self::FIELD_SYNONYM])) {
+                $value = $data[self::FIELD_SYNONYM];
             } else {
-                $this->addSynonym(new FHIRString($data[self::FIELD_SYNONYM]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SYNONYM_EXT]) && is_array($data[self::FIELD_SYNONYM_EXT])) {
+                $ext = $data[self::FIELD_SYNONYM_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->addSynonym($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRString) {
+                            $this->addSynonym($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addSynonym(new FHIRString(array_merge($v, $iext)));
+                            } else {
+                                $this->addSynonym(new FHIRString([FHIRString::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addSynonym(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->addSynonym(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addSynonym(new FHIRString($iext));
+                }
             }
         }
     }
@@ -2178,90 +2201,189 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAdministrationGuidelines())) {
-            $a[self::FIELD_ADMINISTRATION_GUIDELINES] = $vs;
+            $a[self::FIELD_ADMINISTRATION_GUIDELINES] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ADMINISTRATION_GUIDELINES][] = $v;
+            }
         }
         if (null !== ($v = $this->getAmount())) {
             $a[self::FIELD_AMOUNT] = $v;
         }
         if ([] !== ($vs = $this->getAssociatedMedication())) {
-            $a[self::FIELD_ASSOCIATED_MEDICATION] = $vs;
+            $a[self::FIELD_ASSOCIATED_MEDICATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ASSOCIATED_MEDICATION][] = $v;
+            }
         }
         if (null !== ($v = $this->getCode())) {
             $a[self::FIELD_CODE] = $v;
         }
         if ([] !== ($vs = $this->getContraindication())) {
-            $a[self::FIELD_CONTRAINDICATION] = $vs;
+            $a[self::FIELD_CONTRAINDICATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CONTRAINDICATION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getCost())) {
-            $a[self::FIELD_COST] = $vs;
+            $a[self::FIELD_COST] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_COST][] = $v;
+            }
         }
         if (null !== ($v = $this->getDoseForm())) {
             $a[self::FIELD_DOSE_FORM] = $v;
         }
         if ([] !== ($vs = $this->getDrugCharacteristic())) {
-            $a[self::FIELD_DRUG_CHARACTERISTIC] = $vs;
+            $a[self::FIELD_DRUG_CHARACTERISTIC] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_DRUG_CHARACTERISTIC][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIngredient())) {
-            $a[self::FIELD_INGREDIENT] = $vs;
+            $a[self::FIELD_INGREDIENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_INGREDIENT][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIntendedRoute())) {
-            $a[self::FIELD_INTENDED_ROUTE] = $vs;
+            $a[self::FIELD_INTENDED_ROUTE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_INTENDED_ROUTE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getKinetics())) {
-            $a[self::FIELD_KINETICS] = $vs;
+            $a[self::FIELD_KINETICS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_KINETICS][] = $v;
+            }
         }
         if (null !== ($v = $this->getManufacturer())) {
             $a[self::FIELD_MANUFACTURER] = $v;
         }
         if ([] !== ($vs = $this->getMedicineClassification())) {
-            $a[self::FIELD_MEDICINE_CLASSIFICATION] = $vs;
+            $a[self::FIELD_MEDICINE_CLASSIFICATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MEDICINE_CLASSIFICATION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getMonitoringProgram())) {
-            $a[self::FIELD_MONITORING_PROGRAM] = $vs;
+            $a[self::FIELD_MONITORING_PROGRAM] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MONITORING_PROGRAM][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getMonograph())) {
-            $a[self::FIELD_MONOGRAPH] = $vs;
+            $a[self::FIELD_MONOGRAPH] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MONOGRAPH][] = $v;
+            }
         }
         if (null !== ($v = $this->getPackaging())) {
             $a[self::FIELD_PACKAGING] = $v;
         }
         if (null !== ($v = $this->getPreparationInstruction())) {
             $a[self::FIELD_PREPARATION_INSTRUCTION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMarkdown::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRMarkdown::FIELD_VALUE]);
                 $a[self::FIELD_PREPARATION_INSTRUCTION_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getProductType())) {
-            $a[self::FIELD_PRODUCT_TYPE] = $vs;
+            $a[self::FIELD_PRODUCT_TYPE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PRODUCT_TYPE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getRegulatory())) {
-            $a[self::FIELD_REGULATORY] = $vs;
+            $a[self::FIELD_REGULATORY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_REGULATORY][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getRelatedMedicationKnowledge())) {
-            $a[self::FIELD_RELATED_MEDICATION_KNOWLEDGE] = $vs;
+            $a[self::FIELD_RELATED_MEDICATION_KNOWLEDGE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_RELATED_MEDICATION_KNOWLEDGE][] = $v;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRCode::FIELD_VALUE]);
                 $a[self::FIELD_STATUS_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getSynonym())) {
             $a[self::FIELD_SYNONYM] = [];
+            $encs = [];
+            $encValued = false;
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
                 $a[self::FIELD_SYNONYM][] = $v->getValue();
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_SYNONYM_EXT][] = $enc;
+                $enc = $v->jsonSerialize();
+                $cnt = count($enc);
+                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                    $encs[] = null;
                 } else {
-                    $a[self::FIELD_SYNONYM_EXT][] = null;
+                    unset($enc[FHIRString::FIELD_VALUE]);
+                    $encs[] = $enc;
+                    $encValued = true;
                 }
             }
+            if ($encValued) {
+                $a[self::FIELD_SYNONYM_EXT] = $encs;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

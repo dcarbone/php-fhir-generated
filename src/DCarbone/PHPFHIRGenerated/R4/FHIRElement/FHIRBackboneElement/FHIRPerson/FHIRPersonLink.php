@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPerso
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -84,7 +84,7 @@ class FHIRPersonLink extends FHIRBackboneElement
     const FIELD_TARGET = 'target';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * The level of confidence that this link represents the same actual person, based
@@ -130,20 +130,27 @@ class FHIRPersonLink extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ASSURANCE])) {
-            $ext = (isset($data[self::FIELD_ASSURANCE_EXT]) && is_array($data[self::FIELD_ASSURANCE_EXT]))
-                ? $data[self::FIELD_ASSURANCE_EXT]
-                : null;
-            if ($data[self::FIELD_ASSURANCE] instanceof FHIRIdentityAssuranceLevel) {
-                $this->setAssurance($data[self::FIELD_ASSURANCE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ASSURANCE])) {
-                    $this->setAssurance(new FHIRIdentityAssuranceLevel([FHIRIdentityAssuranceLevel::FIELD_VALUE => $data[self::FIELD_ASSURANCE]] + $ext));
-                } else if (is_array($data[self::FIELD_ASSURANCE])) {
-                    $this->setAssurance(new FHIRIdentityAssuranceLevel(array_merge($ext, $data[self::FIELD_ASSURANCE])));
-                }
+        if (isset($data[self::FIELD_ASSURANCE]) || isset($data[self::FIELD_ASSURANCE_EXT])) {
+            if (isset($data[self::FIELD_ASSURANCE])) {
+                $value = $data[self::FIELD_ASSURANCE];
             } else {
-                $this->setAssurance(new FHIRIdentityAssuranceLevel($data[self::FIELD_ASSURANCE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ASSURANCE_EXT]) && is_array($data[self::FIELD_ASSURANCE_EXT])) {
+                $ext = $data[self::FIELD_ASSURANCE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRIdentityAssuranceLevel) {
+                    $this->setAssurance($value);
+                } else if (is_array($value)) {
+                    $this->setAssurance(new FHIRIdentityAssuranceLevel(array_merge($ext, $value)));
+                } else {
+                    $this->setAssurance(new FHIRIdentityAssuranceLevel([FHIRIdentityAssuranceLevel::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAssurance(new FHIRIdentityAssuranceLevel($ext));
             }
         }
         if (isset($data[self::FIELD_TARGET])) {
@@ -321,13 +328,18 @@ class FHIRPersonLink extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAssurance())) {
             $a[self::FIELD_ASSURANCE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRIdentityAssuranceLevel::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRIdentityAssuranceLevel::FIELD_VALUE]);
                 $a[self::FIELD_ASSURANCE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getTarget())) {
             $a[self::FIELD_TARGET] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

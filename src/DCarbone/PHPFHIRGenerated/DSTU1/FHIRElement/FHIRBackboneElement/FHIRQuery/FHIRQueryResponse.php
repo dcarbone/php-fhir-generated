@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -90,7 +90,7 @@ class FHIRQueryResponse extends FHIRBackboneElement
     const FIELD_TOTAL_EXT = '_total';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Optional Extensions Element - found in all resources.
@@ -228,20 +228,27 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 $this->addFirst(new FHIRExtension($data[self::FIELD_FIRST]));
             }
         }
-        if (isset($data[self::FIELD_IDENTIFIER])) {
-            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT]))
-                ? $data[self::FIELD_IDENTIFIER_EXT]
-                : null;
-            if ($data[self::FIELD_IDENTIFIER] instanceof FHIRUri) {
-                $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_IDENTIFIER])) {
-                    $this->setIdentifier(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_IDENTIFIER]] + $ext));
-                } else if (is_array($data[self::FIELD_IDENTIFIER])) {
-                    $this->setIdentifier(new FHIRUri(array_merge($ext, $data[self::FIELD_IDENTIFIER])));
-                }
+        if (isset($data[self::FIELD_IDENTIFIER]) || isset($data[self::FIELD_IDENTIFIER_EXT])) {
+            if (isset($data[self::FIELD_IDENTIFIER])) {
+                $value = $data[self::FIELD_IDENTIFIER];
             } else {
-                $this->setIdentifier(new FHIRUri($data[self::FIELD_IDENTIFIER]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT])) {
+                $ext = $data[self::FIELD_IDENTIFIER_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setIdentifier($value);
+                } else if (is_array($value)) {
+                    $this->setIdentifier(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setIdentifier(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setIdentifier(new FHIRUri($ext));
             }
         }
         if (isset($data[self::FIELD_LAST])) {
@@ -280,20 +287,27 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 $this->addNext(new FHIRExtension($data[self::FIELD_NEXT]));
             }
         }
-        if (isset($data[self::FIELD_OUTCOME])) {
-            $ext = (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT]))
-                ? $data[self::FIELD_OUTCOME_EXT]
-                : null;
-            if ($data[self::FIELD_OUTCOME] instanceof FHIRQueryOutcome) {
-                $this->setOutcome($data[self::FIELD_OUTCOME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_OUTCOME])) {
-                    $this->setOutcome(new FHIRQueryOutcome([FHIRQueryOutcome::FIELD_VALUE => $data[self::FIELD_OUTCOME]] + $ext));
-                } else if (is_array($data[self::FIELD_OUTCOME])) {
-                    $this->setOutcome(new FHIRQueryOutcome(array_merge($ext, $data[self::FIELD_OUTCOME])));
-                }
+        if (isset($data[self::FIELD_OUTCOME]) || isset($data[self::FIELD_OUTCOME_EXT])) {
+            if (isset($data[self::FIELD_OUTCOME])) {
+                $value = $data[self::FIELD_OUTCOME];
             } else {
-                $this->setOutcome(new FHIRQueryOutcome($data[self::FIELD_OUTCOME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT])) {
+                $ext = $data[self::FIELD_OUTCOME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRQueryOutcome) {
+                    $this->setOutcome($value);
+                } else if (is_array($value)) {
+                    $this->setOutcome(new FHIRQueryOutcome(array_merge($ext, $value)));
+                } else {
+                    $this->setOutcome(new FHIRQueryOutcome([FHIRQueryOutcome::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setOutcome(new FHIRQueryOutcome($ext));
             }
         }
         if (isset($data[self::FIELD_PARAMETER])) {
@@ -350,20 +364,27 @@ class FHIRQueryResponse extends FHIRBackboneElement
                 $this->addReference(new FHIRResourceReference($data[self::FIELD_REFERENCE]));
             }
         }
-        if (isset($data[self::FIELD_TOTAL])) {
-            $ext = (isset($data[self::FIELD_TOTAL_EXT]) && is_array($data[self::FIELD_TOTAL_EXT]))
-                ? $data[self::FIELD_TOTAL_EXT]
-                : null;
-            if ($data[self::FIELD_TOTAL] instanceof FHIRInteger) {
-                $this->setTotal($data[self::FIELD_TOTAL]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_TOTAL])) {
-                    $this->setTotal(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_TOTAL]] + $ext));
-                } else if (is_array($data[self::FIELD_TOTAL])) {
-                    $this->setTotal(new FHIRInteger(array_merge($ext, $data[self::FIELD_TOTAL])));
-                }
+        if (isset($data[self::FIELD_TOTAL]) || isset($data[self::FIELD_TOTAL_EXT])) {
+            if (isset($data[self::FIELD_TOTAL])) {
+                $value = $data[self::FIELD_TOTAL];
             } else {
-                $this->setTotal(new FHIRInteger($data[self::FIELD_TOTAL]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_TOTAL_EXT]) && is_array($data[self::FIELD_TOTAL_EXT])) {
+                $ext = $data[self::FIELD_TOTAL_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setTotal($value);
+                } else if (is_array($value)) {
+                    $this->setTotal(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setTotal(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setTotal(new FHIRInteger($ext));
             }
         }
     }
@@ -829,8 +850,8 @@ class FHIRQueryResponse extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -1009,43 +1030,88 @@ class FHIRQueryResponse extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getFirst())) {
-            $a[self::FIELD_FIRST] = $vs;
+            $a[self::FIELD_FIRST] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_FIRST][] = $v;
+            }
         }
         if (null !== ($v = $this->getIdentifier())) {
             $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUri::FIELD_VALUE]);
                 $a[self::FIELD_IDENTIFIER_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getLast())) {
-            $a[self::FIELD_LAST] = $vs;
+            $a[self::FIELD_LAST] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_LAST][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getNext())) {
-            $a[self::FIELD_NEXT] = $vs;
+            $a[self::FIELD_NEXT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_NEXT][] = $v;
+            }
         }
         if (null !== ($v = $this->getOutcome())) {
             $a[self::FIELD_OUTCOME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRQueryOutcome::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRQueryOutcome::FIELD_VALUE]);
                 $a[self::FIELD_OUTCOME_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getParameter())) {
-            $a[self::FIELD_PARAMETER] = $vs;
+            $a[self::FIELD_PARAMETER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PARAMETER][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPrevious())) {
-            $a[self::FIELD_PREVIOUS] = $vs;
+            $a[self::FIELD_PREVIOUS] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PREVIOUS][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getReference())) {
-            $a[self::FIELD_REFERENCE] = $vs;
+            $a[self::FIELD_REFERENCE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_REFERENCE][] = $v;
+            }
         }
         if (null !== ($v = $this->getTotal())) {
             $a[self::FIELD_TOTAL] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_TOTAL_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREn
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     const FIELD_SPECIAL_COURTESY = 'specialCourtesy';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * An interaction between a patient and healthcare provider(s) for the purpose of
@@ -326,20 +326,27 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $this->setPreAdmissionIdentifier(new FHIRIdentifier($data[self::FIELD_PRE_ADMISSION_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_RE_ADMISSION])) {
-            $ext = (isset($data[self::FIELD_RE_ADMISSION_EXT]) && is_array($data[self::FIELD_RE_ADMISSION_EXT]))
-                ? $data[self::FIELD_RE_ADMISSION_EXT]
-                : null;
-            if ($data[self::FIELD_RE_ADMISSION] instanceof FHIRBoolean) {
-                $this->setReAdmission($data[self::FIELD_RE_ADMISSION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_RE_ADMISSION])) {
-                    $this->setReAdmission(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_RE_ADMISSION]] + $ext));
-                } else if (is_array($data[self::FIELD_RE_ADMISSION])) {
-                    $this->setReAdmission(new FHIRBoolean(array_merge($ext, $data[self::FIELD_RE_ADMISSION])));
-                }
+        if (isset($data[self::FIELD_RE_ADMISSION]) || isset($data[self::FIELD_RE_ADMISSION_EXT])) {
+            if (isset($data[self::FIELD_RE_ADMISSION])) {
+                $value = $data[self::FIELD_RE_ADMISSION];
             } else {
-                $this->setReAdmission(new FHIRBoolean($data[self::FIELD_RE_ADMISSION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_RE_ADMISSION_EXT]) && is_array($data[self::FIELD_RE_ADMISSION_EXT])) {
+                $ext = $data[self::FIELD_RE_ADMISSION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setReAdmission($value);
+                } else if (is_array($value)) {
+                    $this->setReAdmission(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setReAdmission(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setReAdmission(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_SPECIAL_ARRANGEMENT])) {
@@ -860,8 +867,8 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -1029,7 +1036,13 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAccomodation())) {
-            $a[self::FIELD_ACCOMODATION] = $vs;
+            $a[self::FIELD_ACCOMODATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ACCOMODATION][] = $v;
+            }
         }
         if (null !== ($v = $this->getAdmitSource())) {
             $a[self::FIELD_ADMIT_SOURCE] = $v;
@@ -1057,16 +1070,33 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getReAdmission())) {
             $a[self::FIELD_RE_ADMISSION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_RE_ADMISSION_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getSpecialArrangement())) {
-            $a[self::FIELD_SPECIAL_ARRANGEMENT] = $vs;
+            $a[self::FIELD_SPECIAL_ARRANGEMENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SPECIAL_ARRANGEMENT][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSpecialCourtesy())) {
-            $a[self::FIELD_SPECIAL_COURTESY] = $vs;
+            $a[self::FIELD_SPECIAL_COURTESY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SPECIAL_COURTESY][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

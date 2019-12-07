@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMed
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
     const FIELD_ITEM_REFERENCE = 'itemReference';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A relationship of two Quantity values - expressed as a numerator and a
@@ -169,20 +169,27 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
                 $this->setAmount(new FHIRRatio($data[self::FIELD_AMOUNT]));
             }
         }
-        if (isset($data[self::FIELD_IS_ACTIVE])) {
-            $ext = (isset($data[self::FIELD_IS_ACTIVE_EXT]) && is_array($data[self::FIELD_IS_ACTIVE_EXT]))
-                ? $data[self::FIELD_IS_ACTIVE_EXT]
-                : null;
-            if ($data[self::FIELD_IS_ACTIVE] instanceof FHIRBoolean) {
-                $this->setIsActive($data[self::FIELD_IS_ACTIVE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_IS_ACTIVE])) {
-                    $this->setIsActive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_IS_ACTIVE]] + $ext));
-                } else if (is_array($data[self::FIELD_IS_ACTIVE])) {
-                    $this->setIsActive(new FHIRBoolean(array_merge($ext, $data[self::FIELD_IS_ACTIVE])));
-                }
+        if (isset($data[self::FIELD_IS_ACTIVE]) || isset($data[self::FIELD_IS_ACTIVE_EXT])) {
+            if (isset($data[self::FIELD_IS_ACTIVE])) {
+                $value = $data[self::FIELD_IS_ACTIVE];
             } else {
-                $this->setIsActive(new FHIRBoolean($data[self::FIELD_IS_ACTIVE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_IS_ACTIVE_EXT]) && is_array($data[self::FIELD_IS_ACTIVE_EXT])) {
+                $ext = $data[self::FIELD_IS_ACTIVE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setIsActive($value);
+                } else if (is_array($value)) {
+                    $this->setIsActive(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setIsActive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setIsActive(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_ITEM_CODEABLE_CONCEPT])) {
@@ -366,8 +373,8 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -470,8 +477,10 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getIsActive())) {
             $a[self::FIELD_IS_ACTIVE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_IS_ACTIVE_EXT] = $enc;
             }
         }
@@ -480,6 +489,9 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getItemReference())) {
             $a[self::FIELD_ITEM_REFERENCE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

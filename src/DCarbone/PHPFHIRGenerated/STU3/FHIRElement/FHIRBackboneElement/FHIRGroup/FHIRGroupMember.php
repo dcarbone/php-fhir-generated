@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ class FHIRGroupMember extends FHIRBackboneElement
     const FIELD_PERIOD = 'period';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -152,20 +152,27 @@ class FHIRGroupMember extends FHIRBackboneElement
                 $this->setEntity(new FHIRReference($data[self::FIELD_ENTITY]));
             }
         }
-        if (isset($data[self::FIELD_INACTIVE])) {
-            $ext = (isset($data[self::FIELD_INACTIVE_EXT]) && is_array($data[self::FIELD_INACTIVE_EXT]))
-                ? $data[self::FIELD_INACTIVE_EXT]
-                : null;
-            if ($data[self::FIELD_INACTIVE] instanceof FHIRBoolean) {
-                $this->setInactive($data[self::FIELD_INACTIVE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_INACTIVE])) {
-                    $this->setInactive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_INACTIVE]] + $ext));
-                } else if (is_array($data[self::FIELD_INACTIVE])) {
-                    $this->setInactive(new FHIRBoolean(array_merge($ext, $data[self::FIELD_INACTIVE])));
-                }
+        if (isset($data[self::FIELD_INACTIVE]) || isset($data[self::FIELD_INACTIVE_EXT])) {
+            if (isset($data[self::FIELD_INACTIVE])) {
+                $value = $data[self::FIELD_INACTIVE];
             } else {
-                $this->setInactive(new FHIRBoolean($data[self::FIELD_INACTIVE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_INACTIVE_EXT]) && is_array($data[self::FIELD_INACTIVE_EXT])) {
+                $ext = $data[self::FIELD_INACTIVE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setInactive($value);
+                } else if (is_array($value)) {
+                    $this->setInactive(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setInactive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setInactive(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_PERIOD])) {
@@ -302,8 +309,8 @@ class FHIRGroupMember extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -400,13 +407,18 @@ class FHIRGroupMember extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getInactive())) {
             $a[self::FIELD_INACTIVE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_INACTIVE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPeriod())) {
             $a[self::FIELD_PERIOD] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

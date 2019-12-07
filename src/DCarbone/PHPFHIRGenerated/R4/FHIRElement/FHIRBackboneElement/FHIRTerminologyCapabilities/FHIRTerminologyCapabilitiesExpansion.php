@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,7 +91,7 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
     const FIELD_TEXT_FILTER_EXT = '_textFilter';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Value of "true" or "false"
@@ -171,52 +171,73 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_HIERARCHICAL])) {
-            $ext = (isset($data[self::FIELD_HIERARCHICAL_EXT]) && is_array($data[self::FIELD_HIERARCHICAL_EXT]))
-                ? $data[self::FIELD_HIERARCHICAL_EXT]
-                : null;
-            if ($data[self::FIELD_HIERARCHICAL] instanceof FHIRBoolean) {
-                $this->setHierarchical($data[self::FIELD_HIERARCHICAL]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_HIERARCHICAL])) {
-                    $this->setHierarchical(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_HIERARCHICAL]] + $ext));
-                } else if (is_array($data[self::FIELD_HIERARCHICAL])) {
-                    $this->setHierarchical(new FHIRBoolean(array_merge($ext, $data[self::FIELD_HIERARCHICAL])));
-                }
+        if (isset($data[self::FIELD_HIERARCHICAL]) || isset($data[self::FIELD_HIERARCHICAL_EXT])) {
+            if (isset($data[self::FIELD_HIERARCHICAL])) {
+                $value = $data[self::FIELD_HIERARCHICAL];
             } else {
-                $this->setHierarchical(new FHIRBoolean($data[self::FIELD_HIERARCHICAL]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_HIERARCHICAL_EXT]) && is_array($data[self::FIELD_HIERARCHICAL_EXT])) {
+                $ext = $data[self::FIELD_HIERARCHICAL_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setHierarchical($value);
+                } else if (is_array($value)) {
+                    $this->setHierarchical(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setHierarchical(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setHierarchical(new FHIRBoolean($ext));
             }
         }
-        if (isset($data[self::FIELD_INCOMPLETE])) {
-            $ext = (isset($data[self::FIELD_INCOMPLETE_EXT]) && is_array($data[self::FIELD_INCOMPLETE_EXT]))
-                ? $data[self::FIELD_INCOMPLETE_EXT]
-                : null;
-            if ($data[self::FIELD_INCOMPLETE] instanceof FHIRBoolean) {
-                $this->setIncomplete($data[self::FIELD_INCOMPLETE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_INCOMPLETE])) {
-                    $this->setIncomplete(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_INCOMPLETE]] + $ext));
-                } else if (is_array($data[self::FIELD_INCOMPLETE])) {
-                    $this->setIncomplete(new FHIRBoolean(array_merge($ext, $data[self::FIELD_INCOMPLETE])));
-                }
+        if (isset($data[self::FIELD_INCOMPLETE]) || isset($data[self::FIELD_INCOMPLETE_EXT])) {
+            if (isset($data[self::FIELD_INCOMPLETE])) {
+                $value = $data[self::FIELD_INCOMPLETE];
             } else {
-                $this->setIncomplete(new FHIRBoolean($data[self::FIELD_INCOMPLETE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_INCOMPLETE_EXT]) && is_array($data[self::FIELD_INCOMPLETE_EXT])) {
+                $ext = $data[self::FIELD_INCOMPLETE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setIncomplete($value);
+                } else if (is_array($value)) {
+                    $this->setIncomplete(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setIncomplete(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setIncomplete(new FHIRBoolean($ext));
             }
         }
-        if (isset($data[self::FIELD_PAGING])) {
-            $ext = (isset($data[self::FIELD_PAGING_EXT]) && is_array($data[self::FIELD_PAGING_EXT]))
-                ? $data[self::FIELD_PAGING_EXT]
-                : null;
-            if ($data[self::FIELD_PAGING] instanceof FHIRBoolean) {
-                $this->setPaging($data[self::FIELD_PAGING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PAGING])) {
-                    $this->setPaging(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_PAGING]] + $ext));
-                } else if (is_array($data[self::FIELD_PAGING])) {
-                    $this->setPaging(new FHIRBoolean(array_merge($ext, $data[self::FIELD_PAGING])));
-                }
+        if (isset($data[self::FIELD_PAGING]) || isset($data[self::FIELD_PAGING_EXT])) {
+            if (isset($data[self::FIELD_PAGING])) {
+                $value = $data[self::FIELD_PAGING];
             } else {
-                $this->setPaging(new FHIRBoolean($data[self::FIELD_PAGING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PAGING_EXT]) && is_array($data[self::FIELD_PAGING_EXT])) {
+                $ext = $data[self::FIELD_PAGING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setPaging($value);
+                } else if (is_array($value)) {
+                    $this->setPaging(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setPaging(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPaging(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_PARAMETER])) {
@@ -237,20 +258,27 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
                 $this->addParameter(new FHIRTerminologyCapabilitiesParameter($data[self::FIELD_PARAMETER]));
             }
         }
-        if (isset($data[self::FIELD_TEXT_FILTER])) {
-            $ext = (isset($data[self::FIELD_TEXT_FILTER_EXT]) && is_array($data[self::FIELD_TEXT_FILTER_EXT]))
-                ? $data[self::FIELD_TEXT_FILTER_EXT]
-                : null;
-            if ($data[self::FIELD_TEXT_FILTER] instanceof FHIRMarkdown) {
-                $this->setTextFilter($data[self::FIELD_TEXT_FILTER]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_TEXT_FILTER])) {
-                    $this->setTextFilter(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_TEXT_FILTER]] + $ext));
-                } else if (is_array($data[self::FIELD_TEXT_FILTER])) {
-                    $this->setTextFilter(new FHIRMarkdown(array_merge($ext, $data[self::FIELD_TEXT_FILTER])));
-                }
+        if (isset($data[self::FIELD_TEXT_FILTER]) || isset($data[self::FIELD_TEXT_FILTER_EXT])) {
+            if (isset($data[self::FIELD_TEXT_FILTER])) {
+                $value = $data[self::FIELD_TEXT_FILTER];
             } else {
-                $this->setTextFilter(new FHIRMarkdown($data[self::FIELD_TEXT_FILTER]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_TEXT_FILTER_EXT]) && is_array($data[self::FIELD_TEXT_FILTER_EXT])) {
+                $ext = $data[self::FIELD_TEXT_FILTER_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRMarkdown) {
+                    $this->setTextFilter($value);
+                } else if (is_array($value)) {
+                    $this->setTextFilter(new FHIRMarkdown(array_merge($ext, $value)));
+                } else {
+                    $this->setTextFilter(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setTextFilter(new FHIRMarkdown($ext));
             }
         }
     }
@@ -628,34 +656,51 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getHierarchical())) {
             $a[self::FIELD_HIERARCHICAL] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_HIERARCHICAL_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getIncomplete())) {
             $a[self::FIELD_INCOMPLETE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_INCOMPLETE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getPaging())) {
             $a[self::FIELD_PAGING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_PAGING_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getParameter())) {
-            $a[self::FIELD_PARAMETER] = $vs;
+            $a[self::FIELD_PARAMETER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PARAMETER][] = $v;
+            }
         }
         if (null !== ($v = $this->getTextFilter())) {
             $a[self::FIELD_TEXT_FILTER] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMarkdown::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRMarkdown::FIELD_VALUE]);
                 $a[self::FIELD_TEXT_FILTER_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

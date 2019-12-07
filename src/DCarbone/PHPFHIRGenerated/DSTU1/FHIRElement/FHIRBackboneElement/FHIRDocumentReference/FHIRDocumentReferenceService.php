@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -79,7 +79,7 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -134,20 +134,27 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ADDRESS])) {
-            $ext = (isset($data[self::FIELD_ADDRESS_EXT]) && is_array($data[self::FIELD_ADDRESS_EXT]))
-                ? $data[self::FIELD_ADDRESS_EXT]
-                : null;
-            if ($data[self::FIELD_ADDRESS] instanceof FHIRString) {
-                $this->setAddress($data[self::FIELD_ADDRESS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ADDRESS])) {
-                    $this->setAddress(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_ADDRESS]] + $ext));
-                } else if (is_array($data[self::FIELD_ADDRESS])) {
-                    $this->setAddress(new FHIRString(array_merge($ext, $data[self::FIELD_ADDRESS])));
-                }
+        if (isset($data[self::FIELD_ADDRESS]) || isset($data[self::FIELD_ADDRESS_EXT])) {
+            if (isset($data[self::FIELD_ADDRESS])) {
+                $value = $data[self::FIELD_ADDRESS];
             } else {
-                $this->setAddress(new FHIRString($data[self::FIELD_ADDRESS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ADDRESS_EXT]) && is_array($data[self::FIELD_ADDRESS_EXT])) {
+                $ext = $data[self::FIELD_ADDRESS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setAddress($value);
+                } else if (is_array($value)) {
+                    $this->setAddress(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setAddress(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAddress(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_PARAMETER])) {
@@ -320,8 +327,8 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -422,16 +429,27 @@ class FHIRDocumentReferenceService extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAddress())) {
             $a[self::FIELD_ADDRESS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_ADDRESS_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getParameter())) {
-            $a[self::FIELD_PARAMETER] = $vs;
+            $a[self::FIELD_PARAMETER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_PARAMETER][] = $v;
+            }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

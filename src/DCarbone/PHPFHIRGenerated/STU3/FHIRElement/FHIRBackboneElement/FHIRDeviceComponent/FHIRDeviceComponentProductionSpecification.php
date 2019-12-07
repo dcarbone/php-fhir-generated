@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDev
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
     const FIELD_SPEC_TYPE = 'specType';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -154,20 +154,27 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
                 $this->setComponentId(new FHIRIdentifier($data[self::FIELD_COMPONENT_ID]));
             }
         }
-        if (isset($data[self::FIELD_PRODUCTION_SPEC])) {
-            $ext = (isset($data[self::FIELD_PRODUCTION_SPEC_EXT]) && is_array($data[self::FIELD_PRODUCTION_SPEC_EXT]))
-                ? $data[self::FIELD_PRODUCTION_SPEC_EXT]
-                : null;
-            if ($data[self::FIELD_PRODUCTION_SPEC] instanceof FHIRString) {
-                $this->setProductionSpec($data[self::FIELD_PRODUCTION_SPEC]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PRODUCTION_SPEC])) {
-                    $this->setProductionSpec(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_PRODUCTION_SPEC]] + $ext));
-                } else if (is_array($data[self::FIELD_PRODUCTION_SPEC])) {
-                    $this->setProductionSpec(new FHIRString(array_merge($ext, $data[self::FIELD_PRODUCTION_SPEC])));
-                }
+        if (isset($data[self::FIELD_PRODUCTION_SPEC]) || isset($data[self::FIELD_PRODUCTION_SPEC_EXT])) {
+            if (isset($data[self::FIELD_PRODUCTION_SPEC])) {
+                $value = $data[self::FIELD_PRODUCTION_SPEC];
             } else {
-                $this->setProductionSpec(new FHIRString($data[self::FIELD_PRODUCTION_SPEC]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PRODUCTION_SPEC_EXT]) && is_array($data[self::FIELD_PRODUCTION_SPEC_EXT])) {
+                $ext = $data[self::FIELD_PRODUCTION_SPEC_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setProductionSpec($value);
+                } else if (is_array($value)) {
+                    $this->setProductionSpec(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setProductionSpec(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setProductionSpec(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_SPEC_TYPE])) {
@@ -310,8 +317,8 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -408,13 +415,18 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getProductionSpec())) {
             $a[self::FIELD_PRODUCTION_SPEC] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_PRODUCTION_SPEC_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSpecType())) {
             $a[self::FIELD_SPEC_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

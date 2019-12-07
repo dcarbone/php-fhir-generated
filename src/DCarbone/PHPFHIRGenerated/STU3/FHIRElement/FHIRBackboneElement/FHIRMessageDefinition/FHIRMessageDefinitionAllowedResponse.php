@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
     const FIELD_SITUATION_EXT = '_situation';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -146,20 +146,27 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
                 $this->setMessage(new FHIRReference($data[self::FIELD_MESSAGE]));
             }
         }
-        if (isset($data[self::FIELD_SITUATION])) {
-            $ext = (isset($data[self::FIELD_SITUATION_EXT]) && is_array($data[self::FIELD_SITUATION_EXT]))
-                ? $data[self::FIELD_SITUATION_EXT]
-                : null;
-            if ($data[self::FIELD_SITUATION] instanceof FHIRMarkdown) {
-                $this->setSituation($data[self::FIELD_SITUATION]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SITUATION])) {
-                    $this->setSituation(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $data[self::FIELD_SITUATION]] + $ext));
-                } else if (is_array($data[self::FIELD_SITUATION])) {
-                    $this->setSituation(new FHIRMarkdown(array_merge($ext, $data[self::FIELD_SITUATION])));
-                }
+        if (isset($data[self::FIELD_SITUATION]) || isset($data[self::FIELD_SITUATION_EXT])) {
+            if (isset($data[self::FIELD_SITUATION])) {
+                $value = $data[self::FIELD_SITUATION];
             } else {
-                $this->setSituation(new FHIRMarkdown($data[self::FIELD_SITUATION]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SITUATION_EXT]) && is_array($data[self::FIELD_SITUATION_EXT])) {
+                $ext = $data[self::FIELD_SITUATION_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRMarkdown) {
+                    $this->setSituation($value);
+                } else if (is_array($value)) {
+                    $this->setSituation(new FHIRMarkdown(array_merge($ext, $value)));
+                } else {
+                    $this->setSituation(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setSituation(new FHIRMarkdown($ext));
             }
         }
     }
@@ -273,8 +280,8 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -365,10 +372,15 @@ class FHIRMessageDefinitionAllowedResponse extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getSituation())) {
             $a[self::FIELD_SITUATION] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMarkdown::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRMarkdown::FIELD_VALUE]);
                 $a[self::FIELD_SITUATION_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

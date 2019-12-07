@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ class FHIRDomainResource extends FHIRResource
     const FIELD_TEXT = 'text';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * These resources do not have an independent existence apart from the resource
@@ -517,8 +517,8 @@ class FHIRDomainResource extends FHIRResource
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -633,16 +633,37 @@ class FHIRDomainResource extends FHIRResource
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getContained())) {
-            $a[self::FIELD_CONTAINED] = $vs;
+            $a[self::FIELD_CONTAINED] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CONTAINED][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getExtension())) {
-            $a[self::FIELD_EXTENSION] = $vs;
+            $a[self::FIELD_EXTENSION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_EXTENSION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getModifierExtension())) {
-            $a[self::FIELD_MODIFIER_EXTENSION] = $vs;
+            $a[self::FIELD_MODIFIER_EXTENSION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_MODIFIER_EXTENSION][] = $v;
+            }
         }
         if (null !== ($v = $this->getText())) {
             $a[self::FIELD_TEXT] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

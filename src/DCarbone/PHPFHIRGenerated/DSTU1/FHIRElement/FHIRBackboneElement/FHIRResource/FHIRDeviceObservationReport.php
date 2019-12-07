@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,7 +85,7 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
     const FIELD_VIRTUAL_DEVICE = 'virtualDevice';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -169,20 +169,27 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_INSTANT])) {
-            $ext = (isset($data[self::FIELD_INSTANT_EXT]) && is_array($data[self::FIELD_INSTANT_EXT]))
-                ? $data[self::FIELD_INSTANT_EXT]
-                : null;
-            if ($data[self::FIELD_INSTANT] instanceof FHIRInstant) {
-                $this->setInstant($data[self::FIELD_INSTANT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_INSTANT])) {
-                    $this->setInstant(new FHIRInstant([FHIRInstant::FIELD_VALUE => $data[self::FIELD_INSTANT]] + $ext));
-                } else if (is_array($data[self::FIELD_INSTANT])) {
-                    $this->setInstant(new FHIRInstant(array_merge($ext, $data[self::FIELD_INSTANT])));
-                }
+        if (isset($data[self::FIELD_INSTANT]) || isset($data[self::FIELD_INSTANT_EXT])) {
+            if (isset($data[self::FIELD_INSTANT])) {
+                $value = $data[self::FIELD_INSTANT];
             } else {
-                $this->setInstant(new FHIRInstant($data[self::FIELD_INSTANT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_INSTANT_EXT]) && is_array($data[self::FIELD_INSTANT_EXT])) {
+                $ext = $data[self::FIELD_INSTANT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInstant) {
+                    $this->setInstant($value);
+                } else if (is_array($value)) {
+                    $this->setInstant(new FHIRInstant(array_merge($ext, $value)));
+                } else {
+                    $this->setInstant(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setInstant(new FHIRInstant($ext));
             }
         }
         if (isset($data[self::FIELD_SOURCE])) {
@@ -430,8 +437,8 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -547,8 +554,10 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
         }
         if (null !== ($v = $this->getInstant())) {
             $a[self::FIELD_INSTANT] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInstant::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInstant::FIELD_VALUE]);
                 $a[self::FIELD_INSTANT_EXT] = $enc;
             }
         }
@@ -559,7 +568,16 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
             $a[self::FIELD_SUBJECT] = $v;
         }
         if ([] !== ($vs = $this->getVirtualDevice())) {
-            $a[self::FIELD_VIRTUAL_DEVICE] = $vs;
+            $a[self::FIELD_VIRTUAL_DEVICE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_VIRTUAL_DEVICE][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

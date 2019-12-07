@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -83,7 +83,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
     const FIELD_LETHAL_DOSE_50 = 'lethalDose50';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -471,13 +471,28 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getAreaUnderCurve())) {
-            $a[self::FIELD_AREA_UNDER_CURVE] = $vs;
+            $a[self::FIELD_AREA_UNDER_CURVE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_AREA_UNDER_CURVE][] = $v;
+            }
         }
         if (null !== ($v = $this->getHalfLifePeriod())) {
             $a[self::FIELD_HALF_LIFE_PERIOD] = $v;
         }
         if ([] !== ($vs = $this->getLethalDose50())) {
-            $a[self::FIELD_LETHAL_DOSE_50] = $vs;
+            $a[self::FIELD_LETHAL_DOSE_50] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_LETHAL_DOSE_50][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

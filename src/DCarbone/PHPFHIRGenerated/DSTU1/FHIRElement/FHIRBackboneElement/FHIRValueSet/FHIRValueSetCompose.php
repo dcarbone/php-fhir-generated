@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,7 +78,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     const FIELD_INCLUDE = 'include';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A value set specifies a set of codes drawn from one or more code systems.
@@ -149,33 +149,42 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 $this->addExclude(new FHIRValueSetInclude($data[self::FIELD_EXCLUDE]));
             }
         }
-        if (isset($data[self::FIELD_IMPORT])) {
-            $ext = (isset($data[self::FIELD_IMPORT_EXT]) && is_array($data[self::FIELD_IMPORT_EXT]))
-                ? $data[self::FIELD_IMPORT_EXT]
-                : null;
-            if (is_array($data[self::FIELD_IMPORT])) {
-                foreach($data[self::FIELD_IMPORT] as $i => $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRUri) {
-                        $this->addImport($v);
-                    } elseif (null !== $ext && isset($ext[$i]) && is_array($ext[$i])) {
-                        if (is_scalar($v)) {
-                            $this->addImport(new FHIRUri([FHIRUri::FIELD_VALUE => $v] + $ext[$i]));
-                        } elseif (is_array($v)) {
-                            $this->addImport(new FHIRUri(array_merge($v, $ext[$i])));
-                        }
-                    } else {
-                        $this->addImport(new FHIRUri($v));
-                    }
-                }
-            } elseif ($data[self::FIELD_IMPORT] instanceof FHIRUri) {
-                $this->addImport($data[self::FIELD_IMPORT]);
-            } elseif (null !== $ext && is_scalar($data[self::FIELD_IMPORT])) {
-                $this->addImport(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_IMPORT]] + $ext));
+        if (isset($data[self::FIELD_IMPORT]) || isset($data[self::FIELD_IMPORT_EXT])) {
+            if (isset($data[self::FIELD_IMPORT])) {
+                $value = $data[self::FIELD_IMPORT];
             } else {
-                $this->addImport(new FHIRUri($data[self::FIELD_IMPORT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_IMPORT_EXT]) && is_array($data[self::FIELD_IMPORT_EXT])) {
+                $ext = $data[self::FIELD_IMPORT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->addImport($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRUri) {
+                            $this->addImport($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addImport(new FHIRUri(array_merge($v, $iext)));
+                            } else {
+                                $this->addImport(new FHIRUri([FHIRUri::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addImport(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->addImport(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addImport(new FHIRUri($iext));
+                }
             }
         }
         if (isset($data[self::FIELD_INCLUDE])) {
@@ -387,8 +396,8 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -494,25 +503,48 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getExclude())) {
-            $a[self::FIELD_EXCLUDE] = $vs;
+            $a[self::FIELD_EXCLUDE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_EXCLUDE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getImport())) {
             $a[self::FIELD_IMPORT] = [];
+            $encs = [];
+            $encValued = false;
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
                 $a[self::FIELD_IMPORT][] = $v->getValue();
-                if (1 < count($enc = $v->jsonSerialize())) {
-                    unset($enc[$v::FIELD_VALUE]);
-                    $a[self::FIELD_IMPORT_EXT][] = $enc;
+                $enc = $v->jsonSerialize();
+                $cnt = count($enc);
+                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRUri::FIELD_VALUE]) || array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
+                    $encs[] = null;
                 } else {
-                    $a[self::FIELD_IMPORT_EXT][] = null;
+                    unset($enc[FHIRUri::FIELD_VALUE]);
+                    $encs[] = $enc;
+                    $encValued = true;
                 }
+            }
+            if ($encValued) {
+                $a[self::FIELD_IMPORT_EXT] = $encs;
             }
         }
         if ([] !== ($vs = $this->getInclude())) {
-            $a[self::FIELD_INCLUDE] = $vs;
+            $a[self::FIELD_INCLUDE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_INCLUDE][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

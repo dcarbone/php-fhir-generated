@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
     const FIELD_SUSPECT_ENTITY = 'suspectEntity';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Overall nature of the adverse event, e.g. real or potential.
@@ -386,20 +386,27 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ACTUALITY])) {
-            $ext = (isset($data[self::FIELD_ACTUALITY_EXT]) && is_array($data[self::FIELD_ACTUALITY_EXT]))
-                ? $data[self::FIELD_ACTUALITY_EXT]
-                : null;
-            if ($data[self::FIELD_ACTUALITY] instanceof FHIRAdverseEventActuality) {
-                $this->setActuality($data[self::FIELD_ACTUALITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ACTUALITY])) {
-                    $this->setActuality(new FHIRAdverseEventActuality([FHIRAdverseEventActuality::FIELD_VALUE => $data[self::FIELD_ACTUALITY]] + $ext));
-                } else if (is_array($data[self::FIELD_ACTUALITY])) {
-                    $this->setActuality(new FHIRAdverseEventActuality(array_merge($ext, $data[self::FIELD_ACTUALITY])));
-                }
+        if (isset($data[self::FIELD_ACTUALITY]) || isset($data[self::FIELD_ACTUALITY_EXT])) {
+            if (isset($data[self::FIELD_ACTUALITY])) {
+                $value = $data[self::FIELD_ACTUALITY];
             } else {
-                $this->setActuality(new FHIRAdverseEventActuality($data[self::FIELD_ACTUALITY]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ACTUALITY_EXT]) && is_array($data[self::FIELD_ACTUALITY_EXT])) {
+                $ext = $data[self::FIELD_ACTUALITY_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRAdverseEventActuality) {
+                    $this->setActuality($value);
+                } else if (is_array($value)) {
+                    $this->setActuality(new FHIRAdverseEventActuality(array_merge($ext, $value)));
+                } else {
+                    $this->setActuality(new FHIRAdverseEventActuality([FHIRAdverseEventActuality::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setActuality(new FHIRAdverseEventActuality($ext));
             }
         }
         if (isset($data[self::FIELD_CATEGORY])) {
@@ -438,36 +445,50 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $this->addContributor(new FHIRReference($data[self::FIELD_CONTRIBUTOR]));
             }
         }
-        if (isset($data[self::FIELD_DATE])) {
-            $ext = (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT]))
-                ? $data[self::FIELD_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_DATE] instanceof FHIRDateTime) {
-                $this->setDate($data[self::FIELD_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DATE])) {
-                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_DATE])) {
-                    $this->setDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_DATE])));
-                }
+        if (isset($data[self::FIELD_DATE]) || isset($data[self::FIELD_DATE_EXT])) {
+            if (isset($data[self::FIELD_DATE])) {
+                $value = $data[self::FIELD_DATE];
             } else {
-                $this->setDate(new FHIRDateTime($data[self::FIELD_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT])) {
+                $ext = $data[self::FIELD_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setDate($value);
+                } else if (is_array($value)) {
+                    $this->setDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDate(new FHIRDateTime($ext));
             }
         }
-        if (isset($data[self::FIELD_DETECTED])) {
-            $ext = (isset($data[self::FIELD_DETECTED_EXT]) && is_array($data[self::FIELD_DETECTED_EXT]))
-                ? $data[self::FIELD_DETECTED_EXT]
-                : null;
-            if ($data[self::FIELD_DETECTED] instanceof FHIRDateTime) {
-                $this->setDetected($data[self::FIELD_DETECTED]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DETECTED])) {
-                    $this->setDetected(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DETECTED]] + $ext));
-                } else if (is_array($data[self::FIELD_DETECTED])) {
-                    $this->setDetected(new FHIRDateTime(array_merge($ext, $data[self::FIELD_DETECTED])));
-                }
+        if (isset($data[self::FIELD_DETECTED]) || isset($data[self::FIELD_DETECTED_EXT])) {
+            if (isset($data[self::FIELD_DETECTED])) {
+                $value = $data[self::FIELD_DETECTED];
             } else {
-                $this->setDetected(new FHIRDateTime($data[self::FIELD_DETECTED]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DETECTED_EXT]) && is_array($data[self::FIELD_DETECTED_EXT])) {
+                $ext = $data[self::FIELD_DETECTED_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setDetected($value);
+                } else if (is_array($value)) {
+                    $this->setDetected(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setDetected(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDetected(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_ENCOUNTER])) {
@@ -505,20 +526,27 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $this->setOutcome(new FHIRCodeableConcept($data[self::FIELD_OUTCOME]));
             }
         }
-        if (isset($data[self::FIELD_RECORDED_DATE])) {
-            $ext = (isset($data[self::FIELD_RECORDED_DATE_EXT]) && is_array($data[self::FIELD_RECORDED_DATE_EXT]))
-                ? $data[self::FIELD_RECORDED_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_RECORDED_DATE] instanceof FHIRDateTime) {
-                $this->setRecordedDate($data[self::FIELD_RECORDED_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_RECORDED_DATE])) {
-                    $this->setRecordedDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_RECORDED_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_RECORDED_DATE])) {
-                    $this->setRecordedDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_RECORDED_DATE])));
-                }
+        if (isset($data[self::FIELD_RECORDED_DATE]) || isset($data[self::FIELD_RECORDED_DATE_EXT])) {
+            if (isset($data[self::FIELD_RECORDED_DATE])) {
+                $value = $data[self::FIELD_RECORDED_DATE];
             } else {
-                $this->setRecordedDate(new FHIRDateTime($data[self::FIELD_RECORDED_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_RECORDED_DATE_EXT]) && is_array($data[self::FIELD_RECORDED_DATE_EXT])) {
+                $ext = $data[self::FIELD_RECORDED_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setRecordedDate($value);
+                } else if (is_array($value)) {
+                    $this->setRecordedDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setRecordedDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setRecordedDate(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_RECORDER])) {
@@ -1808,28 +1836,46 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getActuality())) {
             $a[self::FIELD_ACTUALITY] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRAdverseEventActuality::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRAdverseEventActuality::FIELD_VALUE]);
                 $a[self::FIELD_ACTUALITY_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getCategory())) {
-            $a[self::FIELD_CATEGORY] = $vs;
+            $a[self::FIELD_CATEGORY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CATEGORY][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getContributor())) {
-            $a[self::FIELD_CONTRIBUTOR] = $vs;
+            $a[self::FIELD_CONTRIBUTOR] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_CONTRIBUTOR][] = $v;
+            }
         }
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_DATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDetected())) {
             $a[self::FIELD_DETECTED] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_DETECTED_EXT] = $enc;
             }
         }
@@ -1850,8 +1896,10 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         if (null !== ($v = $this->getRecordedDate())) {
             $a[self::FIELD_RECORDED_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_RECORDED_DATE_EXT] = $enc;
             }
         }
@@ -1859,10 +1907,22 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
             $a[self::FIELD_RECORDER] = $v;
         }
         if ([] !== ($vs = $this->getReferenceDocument())) {
-            $a[self::FIELD_REFERENCE_DOCUMENT] = $vs;
+            $a[self::FIELD_REFERENCE_DOCUMENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_REFERENCE_DOCUMENT][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getResultingCondition())) {
-            $a[self::FIELD_RESULTING_CONDITION] = $vs;
+            $a[self::FIELD_RESULTING_CONDITION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_RESULTING_CONDITION][] = $v;
+            }
         }
         if (null !== ($v = $this->getSeriousness())) {
             $a[self::FIELD_SERIOUSNESS] = $v;
@@ -1871,16 +1931,37 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
             $a[self::FIELD_SEVERITY] = $v;
         }
         if ([] !== ($vs = $this->getStudy())) {
-            $a[self::FIELD_STUDY] = $vs;
+            $a[self::FIELD_STUDY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_STUDY][] = $v;
+            }
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;
         }
         if ([] !== ($vs = $this->getSubjectMedicalHistory())) {
-            $a[self::FIELD_SUBJECT_MEDICAL_HISTORY] = $vs;
+            $a[self::FIELD_SUBJECT_MEDICAL_HISTORY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SUBJECT_MEDICAL_HISTORY][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSuspectEntity())) {
-            $a[self::FIELD_SUSPECT_ENTITY] = $vs;
+            $a[self::FIELD_SUSPECT_ENTITY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SUSPECT_ENTITY][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

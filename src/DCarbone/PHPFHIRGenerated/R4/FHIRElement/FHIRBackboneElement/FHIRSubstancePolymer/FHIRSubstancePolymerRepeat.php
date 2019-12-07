@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -87,7 +87,7 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
     const FIELD_REPEAT_UNIT_AMOUNT_TYPE = 'repeatUnitAmountType';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -154,36 +154,50 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA])) {
-            $ext = (isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT]) && is_array($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT]))
-                ? $data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT]
-                : null;
-            if ($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA] instanceof FHIRString) {
-                $this->setAverageMolecularFormula($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA])) {
-                    $this->setAverageMolecularFormula(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_AVERAGE_MOLECULAR_FORMULA]] + $ext));
-                } else if (is_array($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA])) {
-                    $this->setAverageMolecularFormula(new FHIRString(array_merge($ext, $data[self::FIELD_AVERAGE_MOLECULAR_FORMULA])));
-                }
+        if (isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA]) || isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT])) {
+            if (isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA])) {
+                $value = $data[self::FIELD_AVERAGE_MOLECULAR_FORMULA];
             } else {
-                $this->setAverageMolecularFormula(new FHIRString($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT]) && is_array($data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT])) {
+                $ext = $data[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setAverageMolecularFormula($value);
+                } else if (is_array($value)) {
+                    $this->setAverageMolecularFormula(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setAverageMolecularFormula(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAverageMolecularFormula(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_NUMBER_OF_UNITS])) {
-            $ext = (isset($data[self::FIELD_NUMBER_OF_UNITS_EXT]) && is_array($data[self::FIELD_NUMBER_OF_UNITS_EXT]))
-                ? $data[self::FIELD_NUMBER_OF_UNITS_EXT]
-                : null;
-            if ($data[self::FIELD_NUMBER_OF_UNITS] instanceof FHIRInteger) {
-                $this->setNumberOfUnits($data[self::FIELD_NUMBER_OF_UNITS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_NUMBER_OF_UNITS])) {
-                    $this->setNumberOfUnits(new FHIRInteger([FHIRInteger::FIELD_VALUE => $data[self::FIELD_NUMBER_OF_UNITS]] + $ext));
-                } else if (is_array($data[self::FIELD_NUMBER_OF_UNITS])) {
-                    $this->setNumberOfUnits(new FHIRInteger(array_merge($ext, $data[self::FIELD_NUMBER_OF_UNITS])));
-                }
+        if (isset($data[self::FIELD_NUMBER_OF_UNITS]) || isset($data[self::FIELD_NUMBER_OF_UNITS_EXT])) {
+            if (isset($data[self::FIELD_NUMBER_OF_UNITS])) {
+                $value = $data[self::FIELD_NUMBER_OF_UNITS];
             } else {
-                $this->setNumberOfUnits(new FHIRInteger($data[self::FIELD_NUMBER_OF_UNITS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_NUMBER_OF_UNITS_EXT]) && is_array($data[self::FIELD_NUMBER_OF_UNITS_EXT])) {
+                $ext = $data[self::FIELD_NUMBER_OF_UNITS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setNumberOfUnits($value);
+                } else if (is_array($value)) {
+                    $this->setNumberOfUnits(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setNumberOfUnits(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setNumberOfUnits(new FHIRInteger($ext));
             }
         }
         if (isset($data[self::FIELD_REPEAT_UNIT])) {
@@ -512,23 +526,36 @@ class FHIRSubstancePolymerRepeat extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getAverageMolecularFormula())) {
             $a[self::FIELD_AVERAGE_MOLECULAR_FORMULA] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_AVERAGE_MOLECULAR_FORMULA_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getNumberOfUnits())) {
             $a[self::FIELD_NUMBER_OF_UNITS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRInteger::FIELD_VALUE]);
                 $a[self::FIELD_NUMBER_OF_UNITS_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getRepeatUnit())) {
-            $a[self::FIELD_REPEAT_UNIT] = $vs;
+            $a[self::FIELD_REPEAT_UNIT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_REPEAT_UNIT][] = $v;
+            }
         }
         if (null !== ($v = $this->getRepeatUnitAmountType())) {
             $a[self::FIELD_REPEAT_UNIT_AMOUNT_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

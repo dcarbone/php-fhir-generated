@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -86,7 +86,7 @@ class FHIRContractSigner extends FHIRBackboneElement
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -150,20 +150,27 @@ class FHIRContractSigner extends FHIRBackboneElement
                 $this->setParty(new FHIRReference($data[self::FIELD_PARTY]));
             }
         }
-        if (isset($data[self::FIELD_SIGNATURE])) {
-            $ext = (isset($data[self::FIELD_SIGNATURE_EXT]) && is_array($data[self::FIELD_SIGNATURE_EXT]))
-                ? $data[self::FIELD_SIGNATURE_EXT]
-                : null;
-            if ($data[self::FIELD_SIGNATURE] instanceof FHIRString) {
-                $this->setSignature($data[self::FIELD_SIGNATURE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SIGNATURE])) {
-                    $this->setSignature(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SIGNATURE]] + $ext));
-                } else if (is_array($data[self::FIELD_SIGNATURE])) {
-                    $this->setSignature(new FHIRString(array_merge($ext, $data[self::FIELD_SIGNATURE])));
-                }
+        if (isset($data[self::FIELD_SIGNATURE]) || isset($data[self::FIELD_SIGNATURE_EXT])) {
+            if (isset($data[self::FIELD_SIGNATURE])) {
+                $value = $data[self::FIELD_SIGNATURE];
             } else {
-                $this->setSignature(new FHIRString($data[self::FIELD_SIGNATURE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SIGNATURE_EXT]) && is_array($data[self::FIELD_SIGNATURE_EXT])) {
+                $ext = $data[self::FIELD_SIGNATURE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setSignature($value);
+                } else if (is_array($value)) {
+                    $this->setSignature(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setSignature(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setSignature(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_TYPE])) {
@@ -298,8 +305,8 @@ class FHIRContractSigner extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -396,13 +403,18 @@ class FHIRContractSigner extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getSignature())) {
             $a[self::FIELD_SIGNATURE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_SIGNATURE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

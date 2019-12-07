@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -92,7 +92,7 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
     const FIELD_RELATIVE_PATH_EXT = '_relativePath';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Value of "true" or "false"
@@ -164,36 +164,50 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_EXAMPLE_BOOLEAN])) {
-            $ext = (isset($data[self::FIELD_EXAMPLE_BOOLEAN_EXT]) && is_array($data[self::FIELD_EXAMPLE_BOOLEAN_EXT]))
-                ? $data[self::FIELD_EXAMPLE_BOOLEAN_EXT]
-                : null;
-            if ($data[self::FIELD_EXAMPLE_BOOLEAN] instanceof FHIRBoolean) {
-                $this->setExampleBoolean($data[self::FIELD_EXAMPLE_BOOLEAN]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_EXAMPLE_BOOLEAN])) {
-                    $this->setExampleBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_EXAMPLE_BOOLEAN]] + $ext));
-                } else if (is_array($data[self::FIELD_EXAMPLE_BOOLEAN])) {
-                    $this->setExampleBoolean(new FHIRBoolean(array_merge($ext, $data[self::FIELD_EXAMPLE_BOOLEAN])));
-                }
+        if (isset($data[self::FIELD_EXAMPLE_BOOLEAN]) || isset($data[self::FIELD_EXAMPLE_BOOLEAN_EXT])) {
+            if (isset($data[self::FIELD_EXAMPLE_BOOLEAN])) {
+                $value = $data[self::FIELD_EXAMPLE_BOOLEAN];
             } else {
-                $this->setExampleBoolean(new FHIRBoolean($data[self::FIELD_EXAMPLE_BOOLEAN]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_EXAMPLE_BOOLEAN_EXT]) && is_array($data[self::FIELD_EXAMPLE_BOOLEAN_EXT])) {
+                $ext = $data[self::FIELD_EXAMPLE_BOOLEAN_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setExampleBoolean($value);
+                } else if (is_array($value)) {
+                    $this->setExampleBoolean(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setExampleBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setExampleBoolean(new FHIRBoolean($ext));
             }
         }
-        if (isset($data[self::FIELD_EXAMPLE_CANONICAL])) {
-            $ext = (isset($data[self::FIELD_EXAMPLE_CANONICAL_EXT]) && is_array($data[self::FIELD_EXAMPLE_CANONICAL_EXT]))
-                ? $data[self::FIELD_EXAMPLE_CANONICAL_EXT]
-                : null;
-            if ($data[self::FIELD_EXAMPLE_CANONICAL] instanceof FHIRCanonical) {
-                $this->setExampleCanonical($data[self::FIELD_EXAMPLE_CANONICAL]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_EXAMPLE_CANONICAL])) {
-                    $this->setExampleCanonical(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $data[self::FIELD_EXAMPLE_CANONICAL]] + $ext));
-                } else if (is_array($data[self::FIELD_EXAMPLE_CANONICAL])) {
-                    $this->setExampleCanonical(new FHIRCanonical(array_merge($ext, $data[self::FIELD_EXAMPLE_CANONICAL])));
-                }
+        if (isset($data[self::FIELD_EXAMPLE_CANONICAL]) || isset($data[self::FIELD_EXAMPLE_CANONICAL_EXT])) {
+            if (isset($data[self::FIELD_EXAMPLE_CANONICAL])) {
+                $value = $data[self::FIELD_EXAMPLE_CANONICAL];
             } else {
-                $this->setExampleCanonical(new FHIRCanonical($data[self::FIELD_EXAMPLE_CANONICAL]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_EXAMPLE_CANONICAL_EXT]) && is_array($data[self::FIELD_EXAMPLE_CANONICAL_EXT])) {
+                $ext = $data[self::FIELD_EXAMPLE_CANONICAL_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRCanonical) {
+                    $this->setExampleCanonical($value);
+                } else if (is_array($value)) {
+                    $this->setExampleCanonical(new FHIRCanonical(array_merge($ext, $value)));
+                } else {
+                    $this->setExampleCanonical(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setExampleCanonical(new FHIRCanonical($ext));
             }
         }
         if (isset($data[self::FIELD_REFERENCE])) {
@@ -203,20 +217,27 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
                 $this->setReference(new FHIRReference($data[self::FIELD_REFERENCE]));
             }
         }
-        if (isset($data[self::FIELD_RELATIVE_PATH])) {
-            $ext = (isset($data[self::FIELD_RELATIVE_PATH_EXT]) && is_array($data[self::FIELD_RELATIVE_PATH_EXT]))
-                ? $data[self::FIELD_RELATIVE_PATH_EXT]
-                : null;
-            if ($data[self::FIELD_RELATIVE_PATH] instanceof FHIRUrl) {
-                $this->setRelativePath($data[self::FIELD_RELATIVE_PATH]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_RELATIVE_PATH])) {
-                    $this->setRelativePath(new FHIRUrl([FHIRUrl::FIELD_VALUE => $data[self::FIELD_RELATIVE_PATH]] + $ext));
-                } else if (is_array($data[self::FIELD_RELATIVE_PATH])) {
-                    $this->setRelativePath(new FHIRUrl(array_merge($ext, $data[self::FIELD_RELATIVE_PATH])));
-                }
+        if (isset($data[self::FIELD_RELATIVE_PATH]) || isset($data[self::FIELD_RELATIVE_PATH_EXT])) {
+            if (isset($data[self::FIELD_RELATIVE_PATH])) {
+                $value = $data[self::FIELD_RELATIVE_PATH];
             } else {
-                $this->setRelativePath(new FHIRUrl($data[self::FIELD_RELATIVE_PATH]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_RELATIVE_PATH_EXT]) && is_array($data[self::FIELD_RELATIVE_PATH_EXT])) {
+                $ext = $data[self::FIELD_RELATIVE_PATH_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUrl) {
+                    $this->setRelativePath($value);
+                } else if (is_array($value)) {
+                    $this->setRelativePath(new FHIRUrl(array_merge($ext, $value)));
+                } else {
+                    $this->setRelativePath(new FHIRUrl([FHIRUrl::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setRelativePath(new FHIRUrl($ext));
             }
         }
     }
@@ -515,15 +536,19 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getExampleBoolean())) {
             $a[self::FIELD_EXAMPLE_BOOLEAN] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_EXAMPLE_BOOLEAN_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getExampleCanonical())) {
             $a[self::FIELD_EXAMPLE_CANONICAL] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCanonical::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRCanonical::FIELD_VALUE]);
                 $a[self::FIELD_EXAMPLE_CANONICAL_EXT] = $enc;
             }
         }
@@ -532,10 +557,15 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getRelativePath())) {
             $a[self::FIELD_RELATIVE_PATH] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUrl::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUrl::FIELD_VALUE]);
                 $a[self::FIELD_RELATIVE_PATH_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

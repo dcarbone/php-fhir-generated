@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
     const FIELD_TARGET_DISEASE = 'targetDisease';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -208,84 +208,119 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
                 $this->setAuthority(new FHIRReference($data[self::FIELD_AUTHORITY]));
             }
         }
-        if (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT])) {
-            $ext = (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT]))
-                ? $data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT]
-                : null;
-            if ($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT] instanceof FHIRPositiveInt) {
-                $this->setDoseNumberPositiveInt($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT])) {
-                    $this->setDoseNumberPositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_DOSE_NUMBER_POSITIVE_INT]] + $ext));
-                } else if (is_array($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT])) {
-                    $this->setDoseNumberPositiveInt(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_DOSE_NUMBER_POSITIVE_INT])));
-                }
+        if (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT]) || isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT])) {
+            if (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT])) {
+                $value = $data[self::FIELD_DOSE_NUMBER_POSITIVE_INT];
             } else {
-                $this->setDoseNumberPositiveInt(new FHIRPositiveInt($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT])) {
+                $ext = $data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setDoseNumberPositiveInt($value);
+                } else if (is_array($value)) {
+                    $this->setDoseNumberPositiveInt(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setDoseNumberPositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDoseNumberPositiveInt(new FHIRPositiveInt($ext));
             }
         }
-        if (isset($data[self::FIELD_DOSE_NUMBER_STRING])) {
-            $ext = (isset($data[self::FIELD_DOSE_NUMBER_STRING_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_STRING_EXT]))
-                ? $data[self::FIELD_DOSE_NUMBER_STRING_EXT]
-                : null;
-            if ($data[self::FIELD_DOSE_NUMBER_STRING] instanceof FHIRString) {
-                $this->setDoseNumberString($data[self::FIELD_DOSE_NUMBER_STRING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DOSE_NUMBER_STRING])) {
-                    $this->setDoseNumberString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_DOSE_NUMBER_STRING]] + $ext));
-                } else if (is_array($data[self::FIELD_DOSE_NUMBER_STRING])) {
-                    $this->setDoseNumberString(new FHIRString(array_merge($ext, $data[self::FIELD_DOSE_NUMBER_STRING])));
-                }
+        if (isset($data[self::FIELD_DOSE_NUMBER_STRING]) || isset($data[self::FIELD_DOSE_NUMBER_STRING_EXT])) {
+            if (isset($data[self::FIELD_DOSE_NUMBER_STRING])) {
+                $value = $data[self::FIELD_DOSE_NUMBER_STRING];
             } else {
-                $this->setDoseNumberString(new FHIRString($data[self::FIELD_DOSE_NUMBER_STRING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DOSE_NUMBER_STRING_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_STRING_EXT])) {
+                $ext = $data[self::FIELD_DOSE_NUMBER_STRING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDoseNumberString($value);
+                } else if (is_array($value)) {
+                    $this->setDoseNumberString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDoseNumberString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDoseNumberString(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_SERIES])) {
-            $ext = (isset($data[self::FIELD_SERIES_EXT]) && is_array($data[self::FIELD_SERIES_EXT]))
-                ? $data[self::FIELD_SERIES_EXT]
-                : null;
-            if ($data[self::FIELD_SERIES] instanceof FHIRString) {
-                $this->setSeries($data[self::FIELD_SERIES]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SERIES])) {
-                    $this->setSeries(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SERIES]] + $ext));
-                } else if (is_array($data[self::FIELD_SERIES])) {
-                    $this->setSeries(new FHIRString(array_merge($ext, $data[self::FIELD_SERIES])));
-                }
+        if (isset($data[self::FIELD_SERIES]) || isset($data[self::FIELD_SERIES_EXT])) {
+            if (isset($data[self::FIELD_SERIES])) {
+                $value = $data[self::FIELD_SERIES];
             } else {
-                $this->setSeries(new FHIRString($data[self::FIELD_SERIES]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SERIES_EXT]) && is_array($data[self::FIELD_SERIES_EXT])) {
+                $ext = $data[self::FIELD_SERIES_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setSeries($value);
+                } else if (is_array($value)) {
+                    $this->setSeries(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setSeries(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setSeries(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT])) {
-            $ext = (isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT]))
-                ? $data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT]
-                : null;
-            if ($data[self::FIELD_SERIES_DOSES_POSITIVE_INT] instanceof FHIRPositiveInt) {
-                $this->setSeriesDosesPositiveInt($data[self::FIELD_SERIES_DOSES_POSITIVE_INT]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SERIES_DOSES_POSITIVE_INT])) {
-                    $this->setSeriesDosesPositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $data[self::FIELD_SERIES_DOSES_POSITIVE_INT]] + $ext));
-                } else if (is_array($data[self::FIELD_SERIES_DOSES_POSITIVE_INT])) {
-                    $this->setSeriesDosesPositiveInt(new FHIRPositiveInt(array_merge($ext, $data[self::FIELD_SERIES_DOSES_POSITIVE_INT])));
-                }
+        if (isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT]) || isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT])) {
+            if (isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT])) {
+                $value = $data[self::FIELD_SERIES_DOSES_POSITIVE_INT];
             } else {
-                $this->setSeriesDosesPositiveInt(new FHIRPositiveInt($data[self::FIELD_SERIES_DOSES_POSITIVE_INT]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT])) {
+                $ext = $data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setSeriesDosesPositiveInt($value);
+                } else if (is_array($value)) {
+                    $this->setSeriesDosesPositiveInt(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setSeriesDosesPositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setSeriesDosesPositiveInt(new FHIRPositiveInt($ext));
             }
         }
-        if (isset($data[self::FIELD_SERIES_DOSES_STRING])) {
-            $ext = (isset($data[self::FIELD_SERIES_DOSES_STRING_EXT]) && is_array($data[self::FIELD_SERIES_DOSES_STRING_EXT]))
-                ? $data[self::FIELD_SERIES_DOSES_STRING_EXT]
-                : null;
-            if ($data[self::FIELD_SERIES_DOSES_STRING] instanceof FHIRString) {
-                $this->setSeriesDosesString($data[self::FIELD_SERIES_DOSES_STRING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_SERIES_DOSES_STRING])) {
-                    $this->setSeriesDosesString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_SERIES_DOSES_STRING]] + $ext));
-                } else if (is_array($data[self::FIELD_SERIES_DOSES_STRING])) {
-                    $this->setSeriesDosesString(new FHIRString(array_merge($ext, $data[self::FIELD_SERIES_DOSES_STRING])));
-                }
+        if (isset($data[self::FIELD_SERIES_DOSES_STRING]) || isset($data[self::FIELD_SERIES_DOSES_STRING_EXT])) {
+            if (isset($data[self::FIELD_SERIES_DOSES_STRING])) {
+                $value = $data[self::FIELD_SERIES_DOSES_STRING];
             } else {
-                $this->setSeriesDosesString(new FHIRString($data[self::FIELD_SERIES_DOSES_STRING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_SERIES_DOSES_STRING_EXT]) && is_array($data[self::FIELD_SERIES_DOSES_STRING_EXT])) {
+                $ext = $data[self::FIELD_SERIES_DOSES_STRING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setSeriesDosesString($value);
+                } else if (is_array($value)) {
+                    $this->setSeriesDosesString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setSeriesDosesString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setSeriesDosesString(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_TARGET_DISEASE])) {
@@ -781,41 +816,60 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getDoseNumberPositiveInt())) {
             $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
                 $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDoseNumberString())) {
             $a[self::FIELD_DOSE_NUMBER_STRING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_DOSE_NUMBER_STRING_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSeries())) {
             $a[self::FIELD_SERIES] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_SERIES_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSeriesDosesPositiveInt())) {
             $a[self::FIELD_SERIES_DOSES_POSITIVE_INT] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
                 $a[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSeriesDosesString())) {
             $a[self::FIELD_SERIES_DOSES_STRING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_SERIES_DOSES_STRING_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getTargetDisease())) {
-            $a[self::FIELD_TARGET_DISEASE] = $vs;
+            $a[self::FIELD_TARGET_DISEASE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_TARGET_DISEASE][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

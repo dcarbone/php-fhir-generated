@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,7 +91,7 @@ class FHIRAdverseReaction extends FHIRResource implements PHPFHIRContainedTypeIn
     const FIELD_SYMPTOM = 'symptom';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
@@ -195,36 +195,50 @@ class FHIRAdverseReaction extends FHIRResource implements PHPFHIRContainedTypeIn
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DATE])) {
-            $ext = (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT]))
-                ? $data[self::FIELD_DATE_EXT]
-                : null;
-            if ($data[self::FIELD_DATE] instanceof FHIRDateTime) {
-                $this->setDate($data[self::FIELD_DATE]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DATE])) {
-                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE]] + $ext));
-                } else if (is_array($data[self::FIELD_DATE])) {
-                    $this->setDate(new FHIRDateTime(array_merge($ext, $data[self::FIELD_DATE])));
-                }
+        if (isset($data[self::FIELD_DATE]) || isset($data[self::FIELD_DATE_EXT])) {
+            if (isset($data[self::FIELD_DATE])) {
+                $value = $data[self::FIELD_DATE];
             } else {
-                $this->setDate(new FHIRDateTime($data[self::FIELD_DATE]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT])) {
+                $ext = $data[self::FIELD_DATE_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setDate($value);
+                } else if (is_array($value)) {
+                    $this->setDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDate(new FHIRDateTime($ext));
             }
         }
-        if (isset($data[self::FIELD_DID_NOT_OCCUR_FLAG])) {
-            $ext = (isset($data[self::FIELD_DID_NOT_OCCUR_FLAG_EXT]) && is_array($data[self::FIELD_DID_NOT_OCCUR_FLAG_EXT]))
-                ? $data[self::FIELD_DID_NOT_OCCUR_FLAG_EXT]
-                : null;
-            if ($data[self::FIELD_DID_NOT_OCCUR_FLAG] instanceof FHIRBoolean) {
-                $this->setDidNotOccurFlag($data[self::FIELD_DID_NOT_OCCUR_FLAG]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DID_NOT_OCCUR_FLAG])) {
-                    $this->setDidNotOccurFlag(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $data[self::FIELD_DID_NOT_OCCUR_FLAG]] + $ext));
-                } else if (is_array($data[self::FIELD_DID_NOT_OCCUR_FLAG])) {
-                    $this->setDidNotOccurFlag(new FHIRBoolean(array_merge($ext, $data[self::FIELD_DID_NOT_OCCUR_FLAG])));
-                }
+        if (isset($data[self::FIELD_DID_NOT_OCCUR_FLAG]) || isset($data[self::FIELD_DID_NOT_OCCUR_FLAG_EXT])) {
+            if (isset($data[self::FIELD_DID_NOT_OCCUR_FLAG])) {
+                $value = $data[self::FIELD_DID_NOT_OCCUR_FLAG];
             } else {
-                $this->setDidNotOccurFlag(new FHIRBoolean($data[self::FIELD_DID_NOT_OCCUR_FLAG]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DID_NOT_OCCUR_FLAG_EXT]) && is_array($data[self::FIELD_DID_NOT_OCCUR_FLAG_EXT])) {
+                $ext = $data[self::FIELD_DID_NOT_OCCUR_FLAG_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setDidNotOccurFlag($value);
+                } else if (is_array($value)) {
+                    $this->setDidNotOccurFlag(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setDidNotOccurFlag(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDidNotOccurFlag(new FHIRBoolean($ext));
             }
         }
         if (isset($data[self::FIELD_EXPOSURE])) {
@@ -641,8 +655,8 @@ class FHIRAdverseReaction extends FHIRResource implements PHPFHIRContainedTypeIn
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -789,23 +803,39 @@ class FHIRAdverseReaction extends FHIRResource implements PHPFHIRContainedTypeIn
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getDate())) {
             $a[self::FIELD_DATE] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_DATE_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getDidNotOccurFlag())) {
             $a[self::FIELD_DID_NOT_OCCUR_FLAG] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRBoolean::FIELD_VALUE]);
                 $a[self::FIELD_DID_NOT_OCCUR_FLAG_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getExposure())) {
-            $a[self::FIELD_EXPOSURE] = $vs;
+            $a[self::FIELD_EXPOSURE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_EXPOSURE][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if (null !== ($v = $this->getRecorder())) {
             $a[self::FIELD_RECORDER] = $v;
@@ -814,7 +844,16 @@ class FHIRAdverseReaction extends FHIRResource implements PHPFHIRContainedTypeIn
             $a[self::FIELD_SUBJECT] = $v;
         }
         if ([] !== ($vs = $this->getSymptom())) {
-            $a[self::FIELD_SYMPTOM] = $vs;
+            $a[self::FIELD_SYMPTOM] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SYMPTOM][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

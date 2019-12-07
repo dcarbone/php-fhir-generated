@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:36+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,7 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     const FIELD_SUBJECT = 'subject';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A sequence of Unicode characters
@@ -231,20 +231,27 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CLINICAL_NOTES])) {
-            $ext = (isset($data[self::FIELD_CLINICAL_NOTES_EXT]) && is_array($data[self::FIELD_CLINICAL_NOTES_EXT]))
-                ? $data[self::FIELD_CLINICAL_NOTES_EXT]
-                : null;
-            if ($data[self::FIELD_CLINICAL_NOTES] instanceof FHIRString) {
-                $this->setClinicalNotes($data[self::FIELD_CLINICAL_NOTES]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_CLINICAL_NOTES])) {
-                    $this->setClinicalNotes(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_CLINICAL_NOTES]] + $ext));
-                } else if (is_array($data[self::FIELD_CLINICAL_NOTES])) {
-                    $this->setClinicalNotes(new FHIRString(array_merge($ext, $data[self::FIELD_CLINICAL_NOTES])));
-                }
+        if (isset($data[self::FIELD_CLINICAL_NOTES]) || isset($data[self::FIELD_CLINICAL_NOTES_EXT])) {
+            if (isset($data[self::FIELD_CLINICAL_NOTES])) {
+                $value = $data[self::FIELD_CLINICAL_NOTES];
             } else {
-                $this->setClinicalNotes(new FHIRString($data[self::FIELD_CLINICAL_NOTES]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_CLINICAL_NOTES_EXT]) && is_array($data[self::FIELD_CLINICAL_NOTES_EXT])) {
+                $ext = $data[self::FIELD_CLINICAL_NOTES_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setClinicalNotes($value);
+                } else if (is_array($value)) {
+                    $this->setClinicalNotes(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setClinicalNotes(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setClinicalNotes(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_ENCOUNTER])) {
@@ -315,20 +322,27 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
                 $this->setOrderer(new FHIRResourceReference($data[self::FIELD_ORDERER]));
             }
         }
-        if (isset($data[self::FIELD_PRIORITY])) {
-            $ext = (isset($data[self::FIELD_PRIORITY_EXT]) && is_array($data[self::FIELD_PRIORITY_EXT]))
-                ? $data[self::FIELD_PRIORITY_EXT]
-                : null;
-            if ($data[self::FIELD_PRIORITY] instanceof FHIRDiagnosticOrderPriority) {
-                $this->setPriority($data[self::FIELD_PRIORITY]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_PRIORITY])) {
-                    $this->setPriority(new FHIRDiagnosticOrderPriority([FHIRDiagnosticOrderPriority::FIELD_VALUE => $data[self::FIELD_PRIORITY]] + $ext));
-                } else if (is_array($data[self::FIELD_PRIORITY])) {
-                    $this->setPriority(new FHIRDiagnosticOrderPriority(array_merge($ext, $data[self::FIELD_PRIORITY])));
-                }
+        if (isset($data[self::FIELD_PRIORITY]) || isset($data[self::FIELD_PRIORITY_EXT])) {
+            if (isset($data[self::FIELD_PRIORITY])) {
+                $value = $data[self::FIELD_PRIORITY];
             } else {
-                $this->setPriority(new FHIRDiagnosticOrderPriority($data[self::FIELD_PRIORITY]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_PRIORITY_EXT]) && is_array($data[self::FIELD_PRIORITY_EXT])) {
+                $ext = $data[self::FIELD_PRIORITY_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDiagnosticOrderPriority) {
+                    $this->setPriority($value);
+                } else if (is_array($value)) {
+                    $this->setPriority(new FHIRDiagnosticOrderPriority(array_merge($ext, $value)));
+                } else {
+                    $this->setPriority(new FHIRDiagnosticOrderPriority([FHIRDiagnosticOrderPriority::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setPriority(new FHIRDiagnosticOrderPriority($ext));
             }
         }
         if (isset($data[self::FIELD_SPECIMEN])) {
@@ -349,20 +363,27 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
                 $this->addSpecimen(new FHIRResourceReference($data[self::FIELD_SPECIMEN]));
             }
         }
-        if (isset($data[self::FIELD_STATUS])) {
-            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT]))
-                ? $data[self::FIELD_STATUS_EXT]
-                : null;
-            if ($data[self::FIELD_STATUS] instanceof FHIRDiagnosticOrderStatus) {
-                $this->setStatus($data[self::FIELD_STATUS]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRDiagnosticOrderStatus([FHIRDiagnosticOrderStatus::FIELD_VALUE => $data[self::FIELD_STATUS]] + $ext));
-                } else if (is_array($data[self::FIELD_STATUS])) {
-                    $this->setStatus(new FHIRDiagnosticOrderStatus(array_merge($ext, $data[self::FIELD_STATUS])));
-                }
+        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
+            if (isset($data[self::FIELD_STATUS])) {
+                $value = $data[self::FIELD_STATUS];
             } else {
-                $this->setStatus(new FHIRDiagnosticOrderStatus($data[self::FIELD_STATUS]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
+                $ext = $data[self::FIELD_STATUS_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDiagnosticOrderStatus) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIRDiagnosticOrderStatus(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIRDiagnosticOrderStatus([FHIRDiagnosticOrderStatus::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setStatus(new FHIRDiagnosticOrderStatus($ext));
             }
         }
         if (isset($data[self::FIELD_SUBJECT])) {
@@ -823,8 +844,8 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -988,8 +1009,10 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getClinicalNotes())) {
             $a[self::FIELD_CLINICAL_NOTES] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_CLINICAL_NOTES_EXT] = $enc;
             }
         }
@@ -997,36 +1020,67 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
             $a[self::FIELD_ENCOUNTER] = $v;
         }
         if ([] !== ($vs = $this->getEvent())) {
-            $a[self::FIELD_EVENT] = $vs;
+            $a[self::FIELD_EVENT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_EVENT][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $vs;
+            $a[self::FIELD_IDENTIFIER] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_IDENTIFIER][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getItem())) {
-            $a[self::FIELD_ITEM] = $vs;
+            $a[self::FIELD_ITEM] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ITEM][] = $v;
+            }
         }
         if (null !== ($v = $this->getOrderer())) {
             $a[self::FIELD_ORDERER] = $v;
         }
         if (null !== ($v = $this->getPriority())) {
             $a[self::FIELD_PRIORITY] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDiagnosticOrderPriority::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDiagnosticOrderPriority::FIELD_VALUE]);
                 $a[self::FIELD_PRIORITY_EXT] = $enc;
             }
         }
         if ([] !== ($vs = $this->getSpecimen())) {
-            $a[self::FIELD_SPECIMEN] = $vs;
+            $a[self::FIELD_SPECIMEN] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SPECIMEN][] = $v;
+            }
         }
         if (null !== ($v = $this->getStatus())) {
             $a[self::FIELD_STATUS] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDiagnosticOrderStatus::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDiagnosticOrderStatus::FIELD_VALUE]);
                 $a[self::FIELD_STATUS_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getSubject())) {
             $a[self::FIELD_SUBJECT] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,7 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement
     const FIELD_STEREOCHEMISTRY = 'stereochemistry';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -219,20 +219,27 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement
                 $this->setAmountQuantity(new FHIRQuantity($data[self::FIELD_AMOUNT_QUANTITY]));
             }
         }
-        if (isset($data[self::FIELD_AMOUNT_STRING])) {
-            $ext = (isset($data[self::FIELD_AMOUNT_STRING_EXT]) && is_array($data[self::FIELD_AMOUNT_STRING_EXT]))
-                ? $data[self::FIELD_AMOUNT_STRING_EXT]
-                : null;
-            if ($data[self::FIELD_AMOUNT_STRING] instanceof FHIRString) {
-                $this->setAmountString($data[self::FIELD_AMOUNT_STRING]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_AMOUNT_STRING])) {
-                    $this->setAmountString(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_AMOUNT_STRING]] + $ext));
-                } else if (is_array($data[self::FIELD_AMOUNT_STRING])) {
-                    $this->setAmountString(new FHIRString(array_merge($ext, $data[self::FIELD_AMOUNT_STRING])));
-                }
+        if (isset($data[self::FIELD_AMOUNT_STRING]) || isset($data[self::FIELD_AMOUNT_STRING_EXT])) {
+            if (isset($data[self::FIELD_AMOUNT_STRING])) {
+                $value = $data[self::FIELD_AMOUNT_STRING];
             } else {
-                $this->setAmountString(new FHIRString($data[self::FIELD_AMOUNT_STRING]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_AMOUNT_STRING_EXT]) && is_array($data[self::FIELD_AMOUNT_STRING_EXT])) {
+                $ext = $data[self::FIELD_AMOUNT_STRING_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setAmountString($value);
+                } else if (is_array($value)) {
+                    $this->setAmountString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setAmountString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setAmountString(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_IDENTIFIER])) {
@@ -242,36 +249,50 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_MOLECULAR_FORMULA])) {
-            $ext = (isset($data[self::FIELD_MOLECULAR_FORMULA_EXT]) && is_array($data[self::FIELD_MOLECULAR_FORMULA_EXT]))
-                ? $data[self::FIELD_MOLECULAR_FORMULA_EXT]
-                : null;
-            if ($data[self::FIELD_MOLECULAR_FORMULA] instanceof FHIRString) {
-                $this->setMolecularFormula($data[self::FIELD_MOLECULAR_FORMULA]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_MOLECULAR_FORMULA])) {
-                    $this->setMolecularFormula(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_MOLECULAR_FORMULA]] + $ext));
-                } else if (is_array($data[self::FIELD_MOLECULAR_FORMULA])) {
-                    $this->setMolecularFormula(new FHIRString(array_merge($ext, $data[self::FIELD_MOLECULAR_FORMULA])));
-                }
+        if (isset($data[self::FIELD_MOLECULAR_FORMULA]) || isset($data[self::FIELD_MOLECULAR_FORMULA_EXT])) {
+            if (isset($data[self::FIELD_MOLECULAR_FORMULA])) {
+                $value = $data[self::FIELD_MOLECULAR_FORMULA];
             } else {
-                $this->setMolecularFormula(new FHIRString($data[self::FIELD_MOLECULAR_FORMULA]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_MOLECULAR_FORMULA_EXT]) && is_array($data[self::FIELD_MOLECULAR_FORMULA_EXT])) {
+                $ext = $data[self::FIELD_MOLECULAR_FORMULA_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setMolecularFormula($value);
+                } else if (is_array($value)) {
+                    $this->setMolecularFormula(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setMolecularFormula(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setMolecularFormula(new FHIRString($ext));
             }
         }
-        if (isset($data[self::FIELD_NAME])) {
-            $ext = (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT]))
-                ? $data[self::FIELD_NAME_EXT]
-                : null;
-            if ($data[self::FIELD_NAME] instanceof FHIRString) {
-                $this->setName($data[self::FIELD_NAME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_NAME])) {
-                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $data[self::FIELD_NAME]] + $ext));
-                } else if (is_array($data[self::FIELD_NAME])) {
-                    $this->setName(new FHIRString(array_merge($ext, $data[self::FIELD_NAME])));
-                }
+        if (isset($data[self::FIELD_NAME]) || isset($data[self::FIELD_NAME_EXT])) {
+            if (isset($data[self::FIELD_NAME])) {
+                $value = $data[self::FIELD_NAME];
             } else {
-                $this->setName(new FHIRString($data[self::FIELD_NAME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) {
+                $ext = $data[self::FIELD_NAME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setName($value);
+                } else if (is_array($value)) {
+                    $this->setName(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setName(new FHIRString($ext));
             }
         }
         if (isset($data[self::FIELD_OPTICAL_ACTIVITY])) {
@@ -742,8 +763,10 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getAmountString())) {
             $a[self::FIELD_AMOUNT_STRING] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_AMOUNT_STRING_EXT] = $enc;
             }
         }
@@ -752,15 +775,19 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getMolecularFormula())) {
             $a[self::FIELD_MOLECULAR_FORMULA] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_MOLECULAR_FORMULA_EXT] = $enc;
             }
         }
         if (null !== ($v = $this->getName())) {
             $a[self::FIELD_NAME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRString::FIELD_VALUE]);
                 $a[self::FIELD_NAME_EXT] = $enc;
             }
         }
@@ -772,6 +799,9 @@ class FHIRSubstanceSpecificationMoiety extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getStereochemistry())) {
             $a[self::FIELD_STEREOCHEMISTRY] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

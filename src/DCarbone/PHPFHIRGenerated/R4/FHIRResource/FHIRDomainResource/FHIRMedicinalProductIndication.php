@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     const FIELD_UNDESIRABLE_EFFECT = 'undesirableEffect';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -942,7 +942,13 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getComorbidity())) {
-            $a[self::FIELD_COMORBIDITY] = $vs;
+            $a[self::FIELD_COMORBIDITY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_COMORBIDITY][] = $v;
+            }
         }
         if (null !== ($v = $this->getDiseaseStatus())) {
             $a[self::FIELD_DISEASE_STATUS] = $v;
@@ -957,16 +963,43 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
             $a[self::FIELD_INTENDED_EFFECT] = $v;
         }
         if ([] !== ($vs = $this->getOtherTherapy())) {
-            $a[self::FIELD_OTHER_THERAPY] = $vs;
+            $a[self::FIELD_OTHER_THERAPY] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_OTHER_THERAPY][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getPopulation())) {
-            $a[self::FIELD_POPULATION] = $vs;
+            $a[self::FIELD_POPULATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_POPULATION][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSubject())) {
-            $a[self::FIELD_SUBJECT] = $vs;
+            $a[self::FIELD_SUBJECT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_SUBJECT][] = $v;
+            }
         }
         if ([] !== ($vs = $this->getUndesirableEffect())) {
-            $a[self::FIELD_UNDESIRABLE_EFFECT] = $vs;
+            $a[self::FIELD_UNDESIRABLE_EFFECT] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_UNDESIRABLE_EFFECT][] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
     }

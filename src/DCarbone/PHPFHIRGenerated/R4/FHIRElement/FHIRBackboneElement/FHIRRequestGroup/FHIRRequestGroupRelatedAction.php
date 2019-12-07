@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRReque
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,7 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
     const FIELD_RELATIONSHIP_EXT = '_relationship';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -161,20 +161,27 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
             ));
         }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ACTION_ID])) {
-            $ext = (isset($data[self::FIELD_ACTION_ID_EXT]) && is_array($data[self::FIELD_ACTION_ID_EXT]))
-                ? $data[self::FIELD_ACTION_ID_EXT]
-                : null;
-            if ($data[self::FIELD_ACTION_ID] instanceof FHIRId) {
-                $this->setActionId($data[self::FIELD_ACTION_ID]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ACTION_ID])) {
-                    $this->setActionId(new FHIRId([FHIRId::FIELD_VALUE => $data[self::FIELD_ACTION_ID]] + $ext));
-                } else if (is_array($data[self::FIELD_ACTION_ID])) {
-                    $this->setActionId(new FHIRId(array_merge($ext, $data[self::FIELD_ACTION_ID])));
-                }
+        if (isset($data[self::FIELD_ACTION_ID]) || isset($data[self::FIELD_ACTION_ID_EXT])) {
+            if (isset($data[self::FIELD_ACTION_ID])) {
+                $value = $data[self::FIELD_ACTION_ID];
             } else {
-                $this->setActionId(new FHIRId($data[self::FIELD_ACTION_ID]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ACTION_ID_EXT]) && is_array($data[self::FIELD_ACTION_ID_EXT])) {
+                $ext = $data[self::FIELD_ACTION_ID_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRId) {
+                    $this->setActionId($value);
+                } else if (is_array($value)) {
+                    $this->setActionId(new FHIRId(array_merge($ext, $value)));
+                } else {
+                    $this->setActionId(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setActionId(new FHIRId($ext));
             }
         }
         if (isset($data[self::FIELD_OFFSET_DURATION])) {
@@ -191,20 +198,27 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
                 $this->setOffsetRange(new FHIRRange($data[self::FIELD_OFFSET_RANGE]));
             }
         }
-        if (isset($data[self::FIELD_RELATIONSHIP])) {
-            $ext = (isset($data[self::FIELD_RELATIONSHIP_EXT]) && is_array($data[self::FIELD_RELATIONSHIP_EXT]))
-                ? $data[self::FIELD_RELATIONSHIP_EXT]
-                : null;
-            if ($data[self::FIELD_RELATIONSHIP] instanceof FHIRActionRelationshipType) {
-                $this->setRelationship($data[self::FIELD_RELATIONSHIP]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_RELATIONSHIP])) {
-                    $this->setRelationship(new FHIRActionRelationshipType([FHIRActionRelationshipType::FIELD_VALUE => $data[self::FIELD_RELATIONSHIP]] + $ext));
-                } else if (is_array($data[self::FIELD_RELATIONSHIP])) {
-                    $this->setRelationship(new FHIRActionRelationshipType(array_merge($ext, $data[self::FIELD_RELATIONSHIP])));
-                }
+        if (isset($data[self::FIELD_RELATIONSHIP]) || isset($data[self::FIELD_RELATIONSHIP_EXT])) {
+            if (isset($data[self::FIELD_RELATIONSHIP])) {
+                $value = $data[self::FIELD_RELATIONSHIP];
             } else {
-                $this->setRelationship(new FHIRActionRelationshipType($data[self::FIELD_RELATIONSHIP]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_RELATIONSHIP_EXT]) && is_array($data[self::FIELD_RELATIONSHIP_EXT])) {
+                $ext = $data[self::FIELD_RELATIONSHIP_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRActionRelationshipType) {
+                    $this->setRelationship($value);
+                } else if (is_array($value)) {
+                    $this->setRelationship(new FHIRActionRelationshipType(array_merge($ext, $value)));
+                } else {
+                    $this->setRelationship(new FHIRActionRelationshipType([FHIRActionRelationshipType::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setRelationship(new FHIRActionRelationshipType($ext));
             }
         }
     }
@@ -471,8 +485,10 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
         $a = parent::jsonSerialize();
         if (null !== ($v = $this->getActionId())) {
             $a[self::FIELD_ACTION_ID] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRId::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRId::FIELD_VALUE]);
                 $a[self::FIELD_ACTION_ID_EXT] = $enc;
             }
         }
@@ -484,10 +500,15 @@ class FHIRRequestGroupRelatedAction extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getRelationship())) {
             $a[self::FIELD_RELATIONSHIP] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRActionRelationshipType::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRActionRelationshipType::FIELD_VALUE]);
                 $a[self::FIELD_RELATIONSHIP_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:38+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -88,7 +88,7 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     const FIELD_TYPE = 'type';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * The regulatory authorization of a medicinal product.
@@ -188,20 +188,27 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
                 $this->addApplication(new FHIRMedicinalProductAuthorizationProcedure($data[self::FIELD_APPLICATION]));
             }
         }
-        if (isset($data[self::FIELD_DATE_DATE_TIME])) {
-            $ext = (isset($data[self::FIELD_DATE_DATE_TIME_EXT]) && is_array($data[self::FIELD_DATE_DATE_TIME_EXT]))
-                ? $data[self::FIELD_DATE_DATE_TIME_EXT]
-                : null;
-            if ($data[self::FIELD_DATE_DATE_TIME] instanceof FHIRDateTime) {
-                $this->setDateDateTime($data[self::FIELD_DATE_DATE_TIME]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_DATE_DATE_TIME])) {
-                    $this->setDateDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $data[self::FIELD_DATE_DATE_TIME]] + $ext));
-                } else if (is_array($data[self::FIELD_DATE_DATE_TIME])) {
-                    $this->setDateDateTime(new FHIRDateTime(array_merge($ext, $data[self::FIELD_DATE_DATE_TIME])));
-                }
+        if (isset($data[self::FIELD_DATE_DATE_TIME]) || isset($data[self::FIELD_DATE_DATE_TIME_EXT])) {
+            if (isset($data[self::FIELD_DATE_DATE_TIME])) {
+                $value = $data[self::FIELD_DATE_DATE_TIME];
             } else {
-                $this->setDateDateTime(new FHIRDateTime($data[self::FIELD_DATE_DATE_TIME]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_DATE_DATE_TIME_EXT]) && is_array($data[self::FIELD_DATE_DATE_TIME_EXT])) {
+                $ext = $data[self::FIELD_DATE_DATE_TIME_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setDateDateTime($value);
+                } else if (is_array($value)) {
+                    $this->setDateDateTime(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setDateDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setDateDateTime(new FHIRDateTime($ext));
             }
         }
         if (isset($data[self::FIELD_DATE_PERIOD])) {
@@ -553,12 +560,20 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
     {
         $a = parent::jsonSerialize();
         if ([] !== ($vs = $this->getApplication())) {
-            $a[self::FIELD_APPLICATION] = $vs;
+            $a[self::FIELD_APPLICATION] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_APPLICATION][] = $v;
+            }
         }
         if (null !== ($v = $this->getDateDateTime())) {
             $a[self::FIELD_DATE_DATE_TIME] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRDateTime::FIELD_VALUE]);
                 $a[self::FIELD_DATE_DATE_TIME_EXT] = $enc;
             }
         }
@@ -570,6 +585,9 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getType())) {
             $a[self::FIELD_TYPE] = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }

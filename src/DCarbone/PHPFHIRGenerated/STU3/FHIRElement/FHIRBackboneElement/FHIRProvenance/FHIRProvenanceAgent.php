@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: November 30th, 2019 23:37+0000
+ * Class creation date: December 7th, 2019 16:37+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
     const FIELD_WHO_URI_EXT = '_whoUri';
 
     /** @var string */
-    protected $_xmlns = 'http://hl7.org/fhir';
+    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A reference from one resource to another.
@@ -197,20 +197,27 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                 $this->setOnBehalfOfReference(new FHIRReference($data[self::FIELD_ON_BEHALF_OF_REFERENCE]));
             }
         }
-        if (isset($data[self::FIELD_ON_BEHALF_OF_URI])) {
-            $ext = (isset($data[self::FIELD_ON_BEHALF_OF_URI_EXT]) && is_array($data[self::FIELD_ON_BEHALF_OF_URI_EXT]))
-                ? $data[self::FIELD_ON_BEHALF_OF_URI_EXT]
-                : null;
-            if ($data[self::FIELD_ON_BEHALF_OF_URI] instanceof FHIRUri) {
-                $this->setOnBehalfOfUri($data[self::FIELD_ON_BEHALF_OF_URI]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_ON_BEHALF_OF_URI])) {
-                    $this->setOnBehalfOfUri(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_ON_BEHALF_OF_URI]] + $ext));
-                } else if (is_array($data[self::FIELD_ON_BEHALF_OF_URI])) {
-                    $this->setOnBehalfOfUri(new FHIRUri(array_merge($ext, $data[self::FIELD_ON_BEHALF_OF_URI])));
-                }
+        if (isset($data[self::FIELD_ON_BEHALF_OF_URI]) || isset($data[self::FIELD_ON_BEHALF_OF_URI_EXT])) {
+            if (isset($data[self::FIELD_ON_BEHALF_OF_URI])) {
+                $value = $data[self::FIELD_ON_BEHALF_OF_URI];
             } else {
-                $this->setOnBehalfOfUri(new FHIRUri($data[self::FIELD_ON_BEHALF_OF_URI]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_ON_BEHALF_OF_URI_EXT]) && is_array($data[self::FIELD_ON_BEHALF_OF_URI_EXT])) {
+                $ext = $data[self::FIELD_ON_BEHALF_OF_URI_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setOnBehalfOfUri($value);
+                } else if (is_array($value)) {
+                    $this->setOnBehalfOfUri(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setOnBehalfOfUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setOnBehalfOfUri(new FHIRUri($ext));
             }
         }
         if (isset($data[self::FIELD_RELATED_AGENT_TYPE])) {
@@ -245,20 +252,27 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                 $this->setWhoReference(new FHIRReference($data[self::FIELD_WHO_REFERENCE]));
             }
         }
-        if (isset($data[self::FIELD_WHO_URI])) {
-            $ext = (isset($data[self::FIELD_WHO_URI_EXT]) && is_array($data[self::FIELD_WHO_URI_EXT]))
-                ? $data[self::FIELD_WHO_URI_EXT]
-                : null;
-            if ($data[self::FIELD_WHO_URI] instanceof FHIRUri) {
-                $this->setWhoUri($data[self::FIELD_WHO_URI]);
-            } elseif (null !== $ext) {
-                if (is_scalar($data[self::FIELD_WHO_URI])) {
-                    $this->setWhoUri(new FHIRUri([FHIRUri::FIELD_VALUE => $data[self::FIELD_WHO_URI]] + $ext));
-                } else if (is_array($data[self::FIELD_WHO_URI])) {
-                    $this->setWhoUri(new FHIRUri(array_merge($ext, $data[self::FIELD_WHO_URI])));
-                }
+        if (isset($data[self::FIELD_WHO_URI]) || isset($data[self::FIELD_WHO_URI_EXT])) {
+            if (isset($data[self::FIELD_WHO_URI])) {
+                $value = $data[self::FIELD_WHO_URI];
             } else {
-                $this->setWhoUri(new FHIRUri($data[self::FIELD_WHO_URI]));
+                $value = null;
+            }
+            if (isset($data[self::FIELD_WHO_URI_EXT]) && is_array($data[self::FIELD_WHO_URI_EXT])) {
+                $ext = $data[self::FIELD_WHO_URI_EXT];
+            } else {
+                $ext = [];
+            }
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setWhoUri($value);
+                } else if (is_array($value)) {
+                    $this->setWhoUri(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setWhoUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } else if ([] !== $ext) {
+                $this->setWhoUri(new FHIRUri($ext));
             }
         }
     }
@@ -518,8 +532,8 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      */
     public function _validationErrors()
     {
-        // TODO: implement validation
-        return [];
+        $errs = parent::_validationErrors();
+        return $errs;
     }
 
     /**
@@ -649,8 +663,10 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         }
         if (null !== ($v = $this->getOnBehalfOfUri())) {
             $a[self::FIELD_ON_BEHALF_OF_URI] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUri::FIELD_VALUE]);
                 $a[self::FIELD_ON_BEHALF_OF_URI_EXT] = $enc;
             }
         }
@@ -658,17 +674,28 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
             $a[self::FIELD_RELATED_AGENT_TYPE] = $v;
         }
         if ([] !== ($vs = $this->getRole())) {
-            $a[self::FIELD_ROLE] = $vs;
+            $a[self::FIELD_ROLE] = [];
+            foreach($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $a[self::FIELD_ROLE][] = $v;
+            }
         }
         if (null !== ($v = $this->getWhoReference())) {
             $a[self::FIELD_WHO_REFERENCE] = $v;
         }
         if (null !== ($v = $this->getWhoUri())) {
             $a[self::FIELD_WHO_URI] = $v->getValue();
-            if (1 < count($enc = $v->jsonSerialize())) {
-                unset($enc[$v::FIELD_VALUE]);
+            $enc = $v->jsonSerialize();
+            $cnt = count($enc);
+            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
+                unset($enc[FHIRUri::FIELD_VALUE]);
                 $a[self::FIELD_WHO_URI_EXT] = $enc;
             }
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
         }
         return $a;
     }
