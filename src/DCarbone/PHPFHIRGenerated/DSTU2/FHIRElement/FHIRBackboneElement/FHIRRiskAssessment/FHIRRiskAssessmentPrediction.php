@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRRi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:36+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -199,7 +199,7 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
      * Validation map for fields in type RiskAssessment.Prediction
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRRiskAssessmentPrediction Constructor
@@ -628,11 +628,198 @@ class FHIRRiskAssessmentPrediction extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        $errs = parent::_validationErrors();
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getOutcome())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_OUTCOME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getProbabilityCodeableConcept())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PROBABILITY_CODEABLE_CONCEPT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getProbabilityDecimal())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PROBABILITY_DECIMAL] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getProbabilityRange())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PROBABILITY_RANGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRationale())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_RATIONALE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRelativeRisk())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_RELATIVE_RISK] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getWhenPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_WHEN_PERIOD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getWhenRange())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_WHEN_RANGE] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_OUTCOME])) {
+            $v = $this->getOutcome();
+            foreach($validationRules[self::FIELD_OUTCOME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT_DOT_PREDICTION, self::FIELD_OUTCOME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OUTCOME])) {
+                        $errs[self::FIELD_OUTCOME] = [];
+                    }
+                    $errs[self::FIELD_OUTCOME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PROBABILITY_CODEABLE_CONCEPT])) {
+            $v = $this->getProbabilityCodeableConcept();
+            foreach($validationRules[self::FIELD_PROBABILITY_CODEABLE_CONCEPT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT_DOT_PREDICTION, self::FIELD_PROBABILITY_CODEABLE_CONCEPT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PROBABILITY_CODEABLE_CONCEPT])) {
+                        $errs[self::FIELD_PROBABILITY_CODEABLE_CONCEPT] = [];
+                    }
+                    $errs[self::FIELD_PROBABILITY_CODEABLE_CONCEPT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PROBABILITY_DECIMAL])) {
+            $v = $this->getProbabilityDecimal();
+            foreach($validationRules[self::FIELD_PROBABILITY_DECIMAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT_DOT_PREDICTION, self::FIELD_PROBABILITY_DECIMAL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PROBABILITY_DECIMAL])) {
+                        $errs[self::FIELD_PROBABILITY_DECIMAL] = [];
+                    }
+                    $errs[self::FIELD_PROBABILITY_DECIMAL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PROBABILITY_RANGE])) {
+            $v = $this->getProbabilityRange();
+            foreach($validationRules[self::FIELD_PROBABILITY_RANGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT_DOT_PREDICTION, self::FIELD_PROBABILITY_RANGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PROBABILITY_RANGE])) {
+                        $errs[self::FIELD_PROBABILITY_RANGE] = [];
+                    }
+                    $errs[self::FIELD_PROBABILITY_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RATIONALE])) {
+            $v = $this->getRationale();
+            foreach($validationRules[self::FIELD_RATIONALE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT_DOT_PREDICTION, self::FIELD_RATIONALE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RATIONALE])) {
+                        $errs[self::FIELD_RATIONALE] = [];
+                    }
+                    $errs[self::FIELD_RATIONALE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RELATIVE_RISK])) {
+            $v = $this->getRelativeRisk();
+            foreach($validationRules[self::FIELD_RELATIVE_RISK] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT_DOT_PREDICTION, self::FIELD_RELATIVE_RISK, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RELATIVE_RISK])) {
+                        $errs[self::FIELD_RELATIVE_RISK] = [];
+                    }
+                    $errs[self::FIELD_RELATIVE_RISK][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_WHEN_PERIOD])) {
+            $v = $this->getWhenPeriod();
+            foreach($validationRules[self::FIELD_WHEN_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT_DOT_PREDICTION, self::FIELD_WHEN_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_WHEN_PERIOD])) {
+                        $errs[self::FIELD_WHEN_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_WHEN_PERIOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_WHEN_RANGE])) {
+            $v = $this->getWhenRange();
+            foreach($validationRules[self::FIELD_WHEN_RANGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_ASSESSMENT_DOT_PREDICTION, self::FIELD_WHEN_RANGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_WHEN_RANGE])) {
+                        $errs[self::FIELD_WHEN_RANGE] = [];
+                    }
+                    $errs[self::FIELD_WHEN_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
         return $errs;
     }
 

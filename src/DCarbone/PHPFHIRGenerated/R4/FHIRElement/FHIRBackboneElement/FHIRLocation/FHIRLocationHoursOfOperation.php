@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRLocat
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,7 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
      * Validation map for fields in type Location.HoursOfOperation
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRLocationHoursOfOperation Constructor
@@ -446,12 +446,133 @@ class FHIRLocationHoursOfOperation extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getAllDay())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ALL_DAY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getClosingTime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CLOSING_TIME] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getDaysOfWeek())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_DAYS_OF_WEEK, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getOpeningTime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_OPENING_TIME] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_ALL_DAY])) {
+            $v = $this->getAllDay();
+            foreach($validationRules[self::FIELD_ALL_DAY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_LOCATION_DOT_HOURS_OF_OPERATION, self::FIELD_ALL_DAY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ALL_DAY])) {
+                        $errs[self::FIELD_ALL_DAY] = [];
+                    }
+                    $errs[self::FIELD_ALL_DAY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CLOSING_TIME])) {
+            $v = $this->getClosingTime();
+            foreach($validationRules[self::FIELD_CLOSING_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_LOCATION_DOT_HOURS_OF_OPERATION, self::FIELD_CLOSING_TIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CLOSING_TIME])) {
+                        $errs[self::FIELD_CLOSING_TIME] = [];
+                    }
+                    $errs[self::FIELD_CLOSING_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DAYS_OF_WEEK])) {
+            $v = $this->getDaysOfWeek();
+            foreach($validationRules[self::FIELD_DAYS_OF_WEEK] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_LOCATION_DOT_HOURS_OF_OPERATION, self::FIELD_DAYS_OF_WEEK, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DAYS_OF_WEEK])) {
+                        $errs[self::FIELD_DAYS_OF_WEEK] = [];
+                    }
+                    $errs[self::FIELD_DAYS_OF_WEEK][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_OPENING_TIME])) {
+            $v = $this->getOpeningTime();
+            foreach($validationRules[self::FIELD_OPENING_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_LOCATION_DOT_HOURS_OF_OPERATION, self::FIELD_OPENING_TIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OPENING_TIME])) {
+                        $errs[self::FIELD_OPENING_TIME] = [];
+                    }
+                    $errs[self::FIELD_OPENING_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

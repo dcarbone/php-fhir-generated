@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisio
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -279,7 +279,7 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * Validation map for fields in type VisionPrescription.LensSpecification
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRVisionPrescriptionLensSpecification Constructor
@@ -1162,12 +1162,305 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getAdd())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ADD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getAxis())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_AXIS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBackCurve())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BACK_CURVE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBrand())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BRAND] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getColor())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_COLOR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCylinder())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CYLINDER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDiameter())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DIAMETER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDuration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DURATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getEye())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EYE] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getNote())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_NOTE, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getPower())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_POWER] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getPrism())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_PRISM, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getProduct())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PRODUCT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSphere())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SPHERE] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_ADD])) {
+            $v = $this->getAdd();
+            foreach($validationRules[self::FIELD_ADD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_ADD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ADD])) {
+                        $errs[self::FIELD_ADD] = [];
+                    }
+                    $errs[self::FIELD_ADD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AXIS])) {
+            $v = $this->getAxis();
+            foreach($validationRules[self::FIELD_AXIS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_AXIS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AXIS])) {
+                        $errs[self::FIELD_AXIS] = [];
+                    }
+                    $errs[self::FIELD_AXIS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BACK_CURVE])) {
+            $v = $this->getBackCurve();
+            foreach($validationRules[self::FIELD_BACK_CURVE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_BACK_CURVE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BACK_CURVE])) {
+                        $errs[self::FIELD_BACK_CURVE] = [];
+                    }
+                    $errs[self::FIELD_BACK_CURVE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BRAND])) {
+            $v = $this->getBrand();
+            foreach($validationRules[self::FIELD_BRAND] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_BRAND, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BRAND])) {
+                        $errs[self::FIELD_BRAND] = [];
+                    }
+                    $errs[self::FIELD_BRAND][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COLOR])) {
+            $v = $this->getColor();
+            foreach($validationRules[self::FIELD_COLOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_COLOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COLOR])) {
+                        $errs[self::FIELD_COLOR] = [];
+                    }
+                    $errs[self::FIELD_COLOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CYLINDER])) {
+            $v = $this->getCylinder();
+            foreach($validationRules[self::FIELD_CYLINDER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_CYLINDER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CYLINDER])) {
+                        $errs[self::FIELD_CYLINDER] = [];
+                    }
+                    $errs[self::FIELD_CYLINDER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DIAMETER])) {
+            $v = $this->getDiameter();
+            foreach($validationRules[self::FIELD_DIAMETER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_DIAMETER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DIAMETER])) {
+                        $errs[self::FIELD_DIAMETER] = [];
+                    }
+                    $errs[self::FIELD_DIAMETER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DURATION])) {
+            $v = $this->getDuration();
+            foreach($validationRules[self::FIELD_DURATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_DURATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DURATION])) {
+                        $errs[self::FIELD_DURATION] = [];
+                    }
+                    $errs[self::FIELD_DURATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EYE])) {
+            $v = $this->getEye();
+            foreach($validationRules[self::FIELD_EYE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_EYE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EYE])) {
+                        $errs[self::FIELD_EYE] = [];
+                    }
+                    $errs[self::FIELD_EYE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_NOTE])) {
+            $v = $this->getNote();
+            foreach($validationRules[self::FIELD_NOTE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_NOTE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NOTE])) {
+                        $errs[self::FIELD_NOTE] = [];
+                    }
+                    $errs[self::FIELD_NOTE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_POWER])) {
+            $v = $this->getPower();
+            foreach($validationRules[self::FIELD_POWER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_POWER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_POWER])) {
+                        $errs[self::FIELD_POWER] = [];
+                    }
+                    $errs[self::FIELD_POWER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PRISM])) {
+            $v = $this->getPrism();
+            foreach($validationRules[self::FIELD_PRISM] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_PRISM, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PRISM])) {
+                        $errs[self::FIELD_PRISM] = [];
+                    }
+                    $errs[self::FIELD_PRISM][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PRODUCT])) {
+            $v = $this->getProduct();
+            foreach($validationRules[self::FIELD_PRODUCT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_PRODUCT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PRODUCT])) {
+                        $errs[self::FIELD_PRODUCT] = [];
+                    }
+                    $errs[self::FIELD_PRODUCT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SPHERE])) {
+            $v = $this->getSphere();
+            foreach($validationRules[self::FIELD_SPHERE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_LENS_SPECIFICATION, self::FIELD_SPHERE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SPHERE])) {
+                        $errs[self::FIELD_SPHERE] = [];
+                    }
+                    $errs[self::FIELD_SPHERE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

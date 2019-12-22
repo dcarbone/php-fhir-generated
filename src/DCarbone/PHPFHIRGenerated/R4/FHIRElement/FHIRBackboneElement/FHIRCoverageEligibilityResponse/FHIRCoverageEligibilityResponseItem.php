@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -275,7 +275,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * Validation map for fields in type CoverageEligibilityResponse.Item
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRCoverageEligibilityResponseItem Constructor
@@ -1092,12 +1092,307 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getAuthorizationRequired())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_AUTHORIZATION_REQUIRED] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getAuthorizationSupporting())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_AUTHORIZATION_SUPPORTING, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getAuthorizationUrl())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_AUTHORIZATION_URL] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getBenefit())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_BENEFIT, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getCategory())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CATEGORY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDescription())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getExcluded())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EXCLUDED] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getModifier())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_MODIFIER, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_NAME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getNetwork())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_NETWORK] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getProductOrService())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PRODUCT_OR_SERVICE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getProvider())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PROVIDER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getTerm())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TERM] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getUnit())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_UNIT] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_AUTHORIZATION_REQUIRED])) {
+            $v = $this->getAuthorizationRequired();
+            foreach($validationRules[self::FIELD_AUTHORIZATION_REQUIRED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_AUTHORIZATION_REQUIRED, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AUTHORIZATION_REQUIRED])) {
+                        $errs[self::FIELD_AUTHORIZATION_REQUIRED] = [];
+                    }
+                    $errs[self::FIELD_AUTHORIZATION_REQUIRED][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AUTHORIZATION_SUPPORTING])) {
+            $v = $this->getAuthorizationSupporting();
+            foreach($validationRules[self::FIELD_AUTHORIZATION_SUPPORTING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_AUTHORIZATION_SUPPORTING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AUTHORIZATION_SUPPORTING])) {
+                        $errs[self::FIELD_AUTHORIZATION_SUPPORTING] = [];
+                    }
+                    $errs[self::FIELD_AUTHORIZATION_SUPPORTING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AUTHORIZATION_URL])) {
+            $v = $this->getAuthorizationUrl();
+            foreach($validationRules[self::FIELD_AUTHORIZATION_URL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_AUTHORIZATION_URL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AUTHORIZATION_URL])) {
+                        $errs[self::FIELD_AUTHORIZATION_URL] = [];
+                    }
+                    $errs[self::FIELD_AUTHORIZATION_URL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BENEFIT])) {
+            $v = $this->getBenefit();
+            foreach($validationRules[self::FIELD_BENEFIT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_BENEFIT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BENEFIT])) {
+                        $errs[self::FIELD_BENEFIT] = [];
+                    }
+                    $errs[self::FIELD_BENEFIT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CATEGORY])) {
+            $v = $this->getCategory();
+            foreach($validationRules[self::FIELD_CATEGORY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_CATEGORY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CATEGORY])) {
+                        $errs[self::FIELD_CATEGORY] = [];
+                    }
+                    $errs[self::FIELD_CATEGORY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DESCRIPTION])) {
+            $v = $this->getDescription();
+            foreach($validationRules[self::FIELD_DESCRIPTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_DESCRIPTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DESCRIPTION])) {
+                        $errs[self::FIELD_DESCRIPTION] = [];
+                    }
+                    $errs[self::FIELD_DESCRIPTION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXCLUDED])) {
+            $v = $this->getExcluded();
+            foreach($validationRules[self::FIELD_EXCLUDED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_EXCLUDED, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXCLUDED])) {
+                        $errs[self::FIELD_EXCLUDED] = [];
+                    }
+                    $errs[self::FIELD_EXCLUDED][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER])) {
+            $v = $this->getModifier();
+            foreach($validationRules[self::FIELD_MODIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_MODIFIER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER])) {
+                        $errs[self::FIELD_MODIFIER] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_NAME])) {
+            $v = $this->getName();
+            foreach($validationRules[self::FIELD_NAME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_NAME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NAME])) {
+                        $errs[self::FIELD_NAME] = [];
+                    }
+                    $errs[self::FIELD_NAME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_NETWORK])) {
+            $v = $this->getNetwork();
+            foreach($validationRules[self::FIELD_NETWORK] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_NETWORK, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NETWORK])) {
+                        $errs[self::FIELD_NETWORK] = [];
+                    }
+                    $errs[self::FIELD_NETWORK][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PRODUCT_OR_SERVICE])) {
+            $v = $this->getProductOrService();
+            foreach($validationRules[self::FIELD_PRODUCT_OR_SERVICE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_PRODUCT_OR_SERVICE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PRODUCT_OR_SERVICE])) {
+                        $errs[self::FIELD_PRODUCT_OR_SERVICE] = [];
+                    }
+                    $errs[self::FIELD_PRODUCT_OR_SERVICE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PROVIDER])) {
+            $v = $this->getProvider();
+            foreach($validationRules[self::FIELD_PROVIDER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_PROVIDER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PROVIDER])) {
+                        $errs[self::FIELD_PROVIDER] = [];
+                    }
+                    $errs[self::FIELD_PROVIDER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TERM])) {
+            $v = $this->getTerm();
+            foreach($validationRules[self::FIELD_TERM] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_TERM, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TERM])) {
+                        $errs[self::FIELD_TERM] = [];
+                    }
+                    $errs[self::FIELD_TERM][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_UNIT])) {
+            $v = $this->getUnit();
+            foreach($validationRules[self::FIELD_UNIT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_ITEM, self::FIELD_UNIT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_UNIT])) {
+                        $errs[self::FIELD_UNIT] = [];
+                    }
+                    $errs[self::FIELD_UNIT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

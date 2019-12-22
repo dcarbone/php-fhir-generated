@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -286,7 +286,7 @@ class FHIRDosage extends FHIRBackboneElement
      * Validation map for fields in type Dosage
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRDosage Constructor
@@ -1061,12 +1061,305 @@ class FHIRDosage extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if ([] !== ($vs = $this->getAdditionalInstruction())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_ADDITIONAL_INSTRUCTION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getAsNeededBoolean())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_AS_NEEDED_BOOLEAN] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getAsNeededCodeableConcept())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getDoseAndRate())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_DOSE_AND_RATE, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getMaxDosePerAdministration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMaxDosePerLifetime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MAX_DOSE_PER_LIFETIME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMaxDosePerPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MAX_DOSE_PER_PERIOD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMethod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_METHOD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPatientInstruction())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PATIENT_INSTRUCTION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRoute())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ROUTE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSequence())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SEQUENCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSite())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SITE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getText())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TEXT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getTiming())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TIMING] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_ADDITIONAL_INSTRUCTION])) {
+            $v = $this->getAdditionalInstruction();
+            foreach($validationRules[self::FIELD_ADDITIONAL_INSTRUCTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_ADDITIONAL_INSTRUCTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ADDITIONAL_INSTRUCTION])) {
+                        $errs[self::FIELD_ADDITIONAL_INSTRUCTION] = [];
+                    }
+                    $errs[self::FIELD_ADDITIONAL_INSTRUCTION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AS_NEEDED_BOOLEAN])) {
+            $v = $this->getAsNeededBoolean();
+            foreach($validationRules[self::FIELD_AS_NEEDED_BOOLEAN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_AS_NEEDED_BOOLEAN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AS_NEEDED_BOOLEAN])) {
+                        $errs[self::FIELD_AS_NEEDED_BOOLEAN] = [];
+                    }
+                    $errs[self::FIELD_AS_NEEDED_BOOLEAN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT])) {
+            $v = $this->getAsNeededCodeableConcept();
+            foreach($validationRules[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_AS_NEEDED_CODEABLE_CONCEPT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT])) {
+                        $errs[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT] = [];
+                    }
+                    $errs[self::FIELD_AS_NEEDED_CODEABLE_CONCEPT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DOSE_AND_RATE])) {
+            $v = $this->getDoseAndRate();
+            foreach($validationRules[self::FIELD_DOSE_AND_RATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_DOSE_AND_RATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DOSE_AND_RATE])) {
+                        $errs[self::FIELD_DOSE_AND_RATE] = [];
+                    }
+                    $errs[self::FIELD_DOSE_AND_RATE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MAX_DOSE_PER_ADMINISTRATION])) {
+            $v = $this->getMaxDosePerAdministration();
+            foreach($validationRules[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_MAX_DOSE_PER_ADMINISTRATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MAX_DOSE_PER_ADMINISTRATION])) {
+                        $errs[self::FIELD_MAX_DOSE_PER_ADMINISTRATION] = [];
+                    }
+                    $errs[self::FIELD_MAX_DOSE_PER_ADMINISTRATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MAX_DOSE_PER_LIFETIME])) {
+            $v = $this->getMaxDosePerLifetime();
+            foreach($validationRules[self::FIELD_MAX_DOSE_PER_LIFETIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_MAX_DOSE_PER_LIFETIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MAX_DOSE_PER_LIFETIME])) {
+                        $errs[self::FIELD_MAX_DOSE_PER_LIFETIME] = [];
+                    }
+                    $errs[self::FIELD_MAX_DOSE_PER_LIFETIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MAX_DOSE_PER_PERIOD])) {
+            $v = $this->getMaxDosePerPeriod();
+            foreach($validationRules[self::FIELD_MAX_DOSE_PER_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_MAX_DOSE_PER_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MAX_DOSE_PER_PERIOD])) {
+                        $errs[self::FIELD_MAX_DOSE_PER_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_MAX_DOSE_PER_PERIOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_METHOD])) {
+            $v = $this->getMethod();
+            foreach($validationRules[self::FIELD_METHOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_METHOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_METHOD])) {
+                        $errs[self::FIELD_METHOD] = [];
+                    }
+                    $errs[self::FIELD_METHOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PATIENT_INSTRUCTION])) {
+            $v = $this->getPatientInstruction();
+            foreach($validationRules[self::FIELD_PATIENT_INSTRUCTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_PATIENT_INSTRUCTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PATIENT_INSTRUCTION])) {
+                        $errs[self::FIELD_PATIENT_INSTRUCTION] = [];
+                    }
+                    $errs[self::FIELD_PATIENT_INSTRUCTION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ROUTE])) {
+            $v = $this->getRoute();
+            foreach($validationRules[self::FIELD_ROUTE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_ROUTE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ROUTE])) {
+                        $errs[self::FIELD_ROUTE] = [];
+                    }
+                    $errs[self::FIELD_ROUTE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SEQUENCE])) {
+            $v = $this->getSequence();
+            foreach($validationRules[self::FIELD_SEQUENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_SEQUENCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SEQUENCE])) {
+                        $errs[self::FIELD_SEQUENCE] = [];
+                    }
+                    $errs[self::FIELD_SEQUENCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SITE])) {
+            $v = $this->getSite();
+            foreach($validationRules[self::FIELD_SITE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_SITE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SITE])) {
+                        $errs[self::FIELD_SITE] = [];
+                    }
+                    $errs[self::FIELD_SITE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TIMING])) {
+            $v = $this->getTiming();
+            foreach($validationRules[self::FIELD_TIMING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOSAGE, self::FIELD_TIMING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TIMING])) {
+                        $errs[self::FIELD_TIMING] = [];
+                    }
+                    $errs[self::FIELD_TIMING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

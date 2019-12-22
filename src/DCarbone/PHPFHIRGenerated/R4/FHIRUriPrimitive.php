@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,6 +68,8 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  */
 class FHIRUriPrimitive implements PHPFHIRTypeInterface
 {
+    use PHPFHIRValidationAssertionsTrait;
+
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_URI_HYPHEN_PRIMITIVE;
     const FIELD_VALUE = 'value';
@@ -84,7 +86,7 @@ class FHIRUriPrimitive implements PHPFHIRTypeInterface
      * Validation map for fields in type uri-primitive
      * @var array
      */
-    private static $_fieldValidation = [
+    private static $_validationRules = [
         self::FIELD_VALUE => [
             PHPFHIRConstants::VALIDATE_PATTERN => '/^\\S*$/',
         ],
@@ -168,12 +170,38 @@ class FHIRUriPrimitive implements PHPFHIRTypeInterface
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = [];
+        $validationRules = $this->_getValidationRules();
+        if (isset($validationRules[self::FIELD_VALUE]) && null !== ($v = $this->getValue())) {
+            foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_URI_HYPHEN_PRIMITIVE, self::FIELD_VALUE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE])) {
+                        $errs[self::FIELD_VALUE] = [];
+                    }
+                    $errs[self::FIELD_VALUE][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

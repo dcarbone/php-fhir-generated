@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:36+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -207,7 +207,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * Validation map for fields in type NutritionOrder.EnteralFormula
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRNutritionOrderEnteralFormula Constructor
@@ -708,11 +708,217 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        $errs = parent::_validationErrors();
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getAdditiveProductName())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ADDITIVE_PRODUCT_NAME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getAdditiveType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ADDITIVE_TYPE] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getAdministration())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_ADMINISTRATION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getAdministrationInstruction())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ADMINISTRATION_INSTRUCTION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBaseFormulaProductName())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBaseFormulaType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BASE_FORMULA_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCaloricDensity())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CALORIC_DENSITY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMaxVolumeToDeliver())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MAX_VOLUME_TO_DELIVER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRouteofAdministration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ROUTEOF_ADMINISTRATION] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_ADDITIVE_PRODUCT_NAME])) {
+            $v = $this->getAdditiveProductName();
+            foreach($validationRules[self::FIELD_ADDITIVE_PRODUCT_NAME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ADDITIVE_PRODUCT_NAME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ADDITIVE_PRODUCT_NAME])) {
+                        $errs[self::FIELD_ADDITIVE_PRODUCT_NAME] = [];
+                    }
+                    $errs[self::FIELD_ADDITIVE_PRODUCT_NAME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ADDITIVE_TYPE])) {
+            $v = $this->getAdditiveType();
+            foreach($validationRules[self::FIELD_ADDITIVE_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ADDITIVE_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ADDITIVE_TYPE])) {
+                        $errs[self::FIELD_ADDITIVE_TYPE] = [];
+                    }
+                    $errs[self::FIELD_ADDITIVE_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ADMINISTRATION])) {
+            $v = $this->getAdministration();
+            foreach($validationRules[self::FIELD_ADMINISTRATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ADMINISTRATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ADMINISTRATION])) {
+                        $errs[self::FIELD_ADMINISTRATION] = [];
+                    }
+                    $errs[self::FIELD_ADMINISTRATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
+            $v = $this->getAdministrationInstruction();
+            foreach($validationRules[self::FIELD_ADMINISTRATION_INSTRUCTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ADMINISTRATION_INSTRUCTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
+                        $errs[self::FIELD_ADMINISTRATION_INSTRUCTION] = [];
+                    }
+                    $errs[self::FIELD_ADMINISTRATION_INSTRUCTION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BASE_FORMULA_PRODUCT_NAME])) {
+            $v = $this->getBaseFormulaProductName();
+            foreach($validationRules[self::FIELD_BASE_FORMULA_PRODUCT_NAME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_BASE_FORMULA_PRODUCT_NAME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BASE_FORMULA_PRODUCT_NAME])) {
+                        $errs[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = [];
+                    }
+                    $errs[self::FIELD_BASE_FORMULA_PRODUCT_NAME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BASE_FORMULA_TYPE])) {
+            $v = $this->getBaseFormulaType();
+            foreach($validationRules[self::FIELD_BASE_FORMULA_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_BASE_FORMULA_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BASE_FORMULA_TYPE])) {
+                        $errs[self::FIELD_BASE_FORMULA_TYPE] = [];
+                    }
+                    $errs[self::FIELD_BASE_FORMULA_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CALORIC_DENSITY])) {
+            $v = $this->getCaloricDensity();
+            foreach($validationRules[self::FIELD_CALORIC_DENSITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_CALORIC_DENSITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CALORIC_DENSITY])) {
+                        $errs[self::FIELD_CALORIC_DENSITY] = [];
+                    }
+                    $errs[self::FIELD_CALORIC_DENSITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MAX_VOLUME_TO_DELIVER])) {
+            $v = $this->getMaxVolumeToDeliver();
+            foreach($validationRules[self::FIELD_MAX_VOLUME_TO_DELIVER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_MAX_VOLUME_TO_DELIVER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MAX_VOLUME_TO_DELIVER])) {
+                        $errs[self::FIELD_MAX_VOLUME_TO_DELIVER] = [];
+                    }
+                    $errs[self::FIELD_MAX_VOLUME_TO_DELIVER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ROUTEOF_ADMINISTRATION])) {
+            $v = $this->getRouteofAdministration();
+            foreach($validationRules[self::FIELD_ROUTEOF_ADMINISTRATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ROUTEOF_ADMINISTRATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ROUTEOF_ADMINISTRATION])) {
+                        $errs[self::FIELD_ROUTEOF_ADMINISTRATION] = [];
+                    }
+                    $errs[self::FIELD_ROUTEOF_ADMINISTRATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
         return $errs;
     }
 

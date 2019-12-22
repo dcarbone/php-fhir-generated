@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -209,7 +209,7 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * Validation map for fields in type ImmunizationRecommendation.Recommendation
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRImmunizationRecommendationRecommendation Constructor
@@ -762,11 +762,221 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        $errs = parent::_validationErrors();
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getDate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DATE] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getDateCriterion())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_DATE_CRITERION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getDoseNumber())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DOSE_NUMBER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getForecastStatus())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FORECAST_STATUS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getProtocol())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PROTOCOL] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getSupportingImmunization())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_SUPPORTING_IMMUNIZATION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getSupportingPatientInformation())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_SUPPORTING_PATIENT_INFORMATION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getTargetDisease())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TARGET_DISEASE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getVaccineCode())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VACCINE_CODE] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_DATE])) {
+            $v = $this->getDate();
+            foreach($validationRules[self::FIELD_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DATE])) {
+                        $errs[self::FIELD_DATE] = [];
+                    }
+                    $errs[self::FIELD_DATE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DATE_CRITERION])) {
+            $v = $this->getDateCriterion();
+            foreach($validationRules[self::FIELD_DATE_CRITERION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_DATE_CRITERION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DATE_CRITERION])) {
+                        $errs[self::FIELD_DATE_CRITERION] = [];
+                    }
+                    $errs[self::FIELD_DATE_CRITERION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DOSE_NUMBER])) {
+            $v = $this->getDoseNumber();
+            foreach($validationRules[self::FIELD_DOSE_NUMBER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_DOSE_NUMBER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DOSE_NUMBER])) {
+                        $errs[self::FIELD_DOSE_NUMBER] = [];
+                    }
+                    $errs[self::FIELD_DOSE_NUMBER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FORECAST_STATUS])) {
+            $v = $this->getForecastStatus();
+            foreach($validationRules[self::FIELD_FORECAST_STATUS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_FORECAST_STATUS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FORECAST_STATUS])) {
+                        $errs[self::FIELD_FORECAST_STATUS] = [];
+                    }
+                    $errs[self::FIELD_FORECAST_STATUS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PROTOCOL])) {
+            $v = $this->getProtocol();
+            foreach($validationRules[self::FIELD_PROTOCOL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_PROTOCOL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PROTOCOL])) {
+                        $errs[self::FIELD_PROTOCOL] = [];
+                    }
+                    $errs[self::FIELD_PROTOCOL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUPPORTING_IMMUNIZATION])) {
+            $v = $this->getSupportingImmunization();
+            foreach($validationRules[self::FIELD_SUPPORTING_IMMUNIZATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_SUPPORTING_IMMUNIZATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUPPORTING_IMMUNIZATION])) {
+                        $errs[self::FIELD_SUPPORTING_IMMUNIZATION] = [];
+                    }
+                    $errs[self::FIELD_SUPPORTING_IMMUNIZATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUPPORTING_PATIENT_INFORMATION])) {
+            $v = $this->getSupportingPatientInformation();
+            foreach($validationRules[self::FIELD_SUPPORTING_PATIENT_INFORMATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_SUPPORTING_PATIENT_INFORMATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUPPORTING_PATIENT_INFORMATION])) {
+                        $errs[self::FIELD_SUPPORTING_PATIENT_INFORMATION] = [];
+                    }
+                    $errs[self::FIELD_SUPPORTING_PATIENT_INFORMATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TARGET_DISEASE])) {
+            $v = $this->getTargetDisease();
+            foreach($validationRules[self::FIELD_TARGET_DISEASE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_TARGET_DISEASE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TARGET_DISEASE])) {
+                        $errs[self::FIELD_TARGET_DISEASE] = [];
+                    }
+                    $errs[self::FIELD_TARGET_DISEASE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VACCINE_CODE])) {
+            $v = $this->getVaccineCode();
+            foreach($validationRules[self::FIELD_VACCINE_CODE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_RECOMMENDATION_DOT_RECOMMENDATION, self::FIELD_VACCINE_CODE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VACCINE_CODE])) {
+                        $errs[self::FIELD_VACCINE_CODE] = [];
+                    }
+                    $errs[self::FIELD_VACCINE_CODE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
         return $errs;
     }
 

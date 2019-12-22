@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -182,7 +182,7 @@ class FHIRTriggerDefinition extends FHIRElement
      * Validation map for fields in type TriggerDefinition
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRTriggerDefinition Constructor
@@ -586,11 +586,169 @@ class FHIRTriggerDefinition extends FHIRElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        $errs = parent::_validationErrors();
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getEventData())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EVENT_DATA] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getEventName())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EVENT_NAME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getEventTimingDate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EVENT_TIMING_DATE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getEventTimingDateTime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EVENT_TIMING_DATE_TIME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getEventTimingReference())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EVENT_TIMING_REFERENCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getEventTimingTiming())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EVENT_TIMING_TIMING] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TYPE] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_EVENT_DATA])) {
+            $v = $this->getEventData();
+            foreach($validationRules[self::FIELD_EVENT_DATA] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TRIGGER_DEFINITION, self::FIELD_EVENT_DATA, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EVENT_DATA])) {
+                        $errs[self::FIELD_EVENT_DATA] = [];
+                    }
+                    $errs[self::FIELD_EVENT_DATA][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EVENT_NAME])) {
+            $v = $this->getEventName();
+            foreach($validationRules[self::FIELD_EVENT_NAME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TRIGGER_DEFINITION, self::FIELD_EVENT_NAME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EVENT_NAME])) {
+                        $errs[self::FIELD_EVENT_NAME] = [];
+                    }
+                    $errs[self::FIELD_EVENT_NAME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EVENT_TIMING_DATE])) {
+            $v = $this->getEventTimingDate();
+            foreach($validationRules[self::FIELD_EVENT_TIMING_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TRIGGER_DEFINITION, self::FIELD_EVENT_TIMING_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EVENT_TIMING_DATE])) {
+                        $errs[self::FIELD_EVENT_TIMING_DATE] = [];
+                    }
+                    $errs[self::FIELD_EVENT_TIMING_DATE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EVENT_TIMING_DATE_TIME])) {
+            $v = $this->getEventTimingDateTime();
+            foreach($validationRules[self::FIELD_EVENT_TIMING_DATE_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TRIGGER_DEFINITION, self::FIELD_EVENT_TIMING_DATE_TIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EVENT_TIMING_DATE_TIME])) {
+                        $errs[self::FIELD_EVENT_TIMING_DATE_TIME] = [];
+                    }
+                    $errs[self::FIELD_EVENT_TIMING_DATE_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EVENT_TIMING_REFERENCE])) {
+            $v = $this->getEventTimingReference();
+            foreach($validationRules[self::FIELD_EVENT_TIMING_REFERENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TRIGGER_DEFINITION, self::FIELD_EVENT_TIMING_REFERENCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EVENT_TIMING_REFERENCE])) {
+                        $errs[self::FIELD_EVENT_TIMING_REFERENCE] = [];
+                    }
+                    $errs[self::FIELD_EVENT_TIMING_REFERENCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EVENT_TIMING_TIMING])) {
+            $v = $this->getEventTimingTiming();
+            foreach($validationRules[self::FIELD_EVENT_TIMING_TIMING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TRIGGER_DEFINITION, self::FIELD_EVENT_TIMING_TIMING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EVENT_TIMING_TIMING])) {
+                        $errs[self::FIELD_EVENT_TIMING_TIMING] = [];
+                    }
+                    $errs[self::FIELD_EVENT_TIMING_TIMING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TRIGGER_DEFINITION, self::FIELD_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
+                    }
+                    $errs[self::FIELD_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
         return $errs;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -75,6 +75,7 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterface
 {
     use PHPFHIRCommentContainerTrait;
+    use PHPFHIRValidationAssertionsTrait;
 
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ELEMENT;
@@ -109,7 +110,7 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
      * Validation map for fields in type Element
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRElement Constructor
@@ -295,12 +296,39 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = [];
+        $validationRules = $this->_getValidationRules();
+        if ([] !== ($vs = $this->getExtension())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_EXTENSION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getId())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ID] = $fieldErrs;
+            }
+        }
+        return $errs;
     }
 
     /**

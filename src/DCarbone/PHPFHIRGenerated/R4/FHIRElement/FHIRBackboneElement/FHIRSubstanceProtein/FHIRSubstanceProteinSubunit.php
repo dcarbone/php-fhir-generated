@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -216,7 +216,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * Validation map for fields in type SubstanceProtein.Subunit
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRSubstanceProteinSubunit Constructor
@@ -713,12 +713,199 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getCTerminalModification())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_C_TERMINAL_MODIFICATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCTerminalModificationId())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_C_TERMINAL_MODIFICATION_ID] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getLength())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_LENGTH] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getNTerminalModification())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_N_TERMINAL_MODIFICATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getNTerminalModificationId())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_N_TERMINAL_MODIFICATION_ID] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSequence())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SEQUENCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSequenceAttachment())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SEQUENCE_ATTACHMENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSubunit())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUBUNIT] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_C_TERMINAL_MODIFICATION])) {
+            $v = $this->getCTerminalModification();
+            foreach($validationRules[self::FIELD_C_TERMINAL_MODIFICATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_C_TERMINAL_MODIFICATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_C_TERMINAL_MODIFICATION])) {
+                        $errs[self::FIELD_C_TERMINAL_MODIFICATION] = [];
+                    }
+                    $errs[self::FIELD_C_TERMINAL_MODIFICATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_C_TERMINAL_MODIFICATION_ID])) {
+            $v = $this->getCTerminalModificationId();
+            foreach($validationRules[self::FIELD_C_TERMINAL_MODIFICATION_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_C_TERMINAL_MODIFICATION_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_C_TERMINAL_MODIFICATION_ID])) {
+                        $errs[self::FIELD_C_TERMINAL_MODIFICATION_ID] = [];
+                    }
+                    $errs[self::FIELD_C_TERMINAL_MODIFICATION_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_LENGTH])) {
+            $v = $this->getLength();
+            foreach($validationRules[self::FIELD_LENGTH] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_LENGTH, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_LENGTH])) {
+                        $errs[self::FIELD_LENGTH] = [];
+                    }
+                    $errs[self::FIELD_LENGTH][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_N_TERMINAL_MODIFICATION])) {
+            $v = $this->getNTerminalModification();
+            foreach($validationRules[self::FIELD_N_TERMINAL_MODIFICATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_N_TERMINAL_MODIFICATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_N_TERMINAL_MODIFICATION])) {
+                        $errs[self::FIELD_N_TERMINAL_MODIFICATION] = [];
+                    }
+                    $errs[self::FIELD_N_TERMINAL_MODIFICATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_N_TERMINAL_MODIFICATION_ID])) {
+            $v = $this->getNTerminalModificationId();
+            foreach($validationRules[self::FIELD_N_TERMINAL_MODIFICATION_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_N_TERMINAL_MODIFICATION_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_N_TERMINAL_MODIFICATION_ID])) {
+                        $errs[self::FIELD_N_TERMINAL_MODIFICATION_ID] = [];
+                    }
+                    $errs[self::FIELD_N_TERMINAL_MODIFICATION_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SEQUENCE])) {
+            $v = $this->getSequence();
+            foreach($validationRules[self::FIELD_SEQUENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_SEQUENCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SEQUENCE])) {
+                        $errs[self::FIELD_SEQUENCE] = [];
+                    }
+                    $errs[self::FIELD_SEQUENCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SEQUENCE_ATTACHMENT])) {
+            $v = $this->getSequenceAttachment();
+            foreach($validationRules[self::FIELD_SEQUENCE_ATTACHMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_SEQUENCE_ATTACHMENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SEQUENCE_ATTACHMENT])) {
+                        $errs[self::FIELD_SEQUENCE_ATTACHMENT] = [];
+                    }
+                    $errs[self::FIELD_SEQUENCE_ATTACHMENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUBUNIT])) {
+            $v = $this->getSubunit();
+            foreach($validationRules[self::FIELD_SUBUNIT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_SUBUNIT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUBUNIT])) {
+                        $errs[self::FIELD_SUBUNIT] = [];
+                    }
+                    $errs[self::FIELD_SUBUNIT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

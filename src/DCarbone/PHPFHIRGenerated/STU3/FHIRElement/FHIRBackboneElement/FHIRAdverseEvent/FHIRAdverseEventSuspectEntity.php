@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAdv
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -181,7 +181,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * Validation map for fields in type AdverseEvent.SuspectEntity
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRAdverseEventSuspectEntity Constructor
@@ -529,11 +529,181 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        $errs = parent::_validationErrors();
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getCausality())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CAUSALITY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCausalityAssessment())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CAUSALITY_ASSESSMENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCausalityAuthor())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CAUSALITY_AUTHOR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCausalityMethod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CAUSALITY_METHOD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCausalityProductRelatedness())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCausalityResult())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CAUSALITY_RESULT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getInstance())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INSTANCE] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_CAUSALITY])) {
+            $v = $this->getCausality();
+            foreach($validationRules[self::FIELD_CAUSALITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_CAUSALITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CAUSALITY])) {
+                        $errs[self::FIELD_CAUSALITY] = [];
+                    }
+                    $errs[self::FIELD_CAUSALITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CAUSALITY_ASSESSMENT])) {
+            $v = $this->getCausalityAssessment();
+            foreach($validationRules[self::FIELD_CAUSALITY_ASSESSMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_CAUSALITY_ASSESSMENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CAUSALITY_ASSESSMENT])) {
+                        $errs[self::FIELD_CAUSALITY_ASSESSMENT] = [];
+                    }
+                    $errs[self::FIELD_CAUSALITY_ASSESSMENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CAUSALITY_AUTHOR])) {
+            $v = $this->getCausalityAuthor();
+            foreach($validationRules[self::FIELD_CAUSALITY_AUTHOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_CAUSALITY_AUTHOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CAUSALITY_AUTHOR])) {
+                        $errs[self::FIELD_CAUSALITY_AUTHOR] = [];
+                    }
+                    $errs[self::FIELD_CAUSALITY_AUTHOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CAUSALITY_METHOD])) {
+            $v = $this->getCausalityMethod();
+            foreach($validationRules[self::FIELD_CAUSALITY_METHOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_CAUSALITY_METHOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CAUSALITY_METHOD])) {
+                        $errs[self::FIELD_CAUSALITY_METHOD] = [];
+                    }
+                    $errs[self::FIELD_CAUSALITY_METHOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
+            $v = $this->getCausalityProductRelatedness();
+            foreach($validationRules[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
+                        $errs[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = [];
+                    }
+                    $errs[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CAUSALITY_RESULT])) {
+            $v = $this->getCausalityResult();
+            foreach($validationRules[self::FIELD_CAUSALITY_RESULT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_CAUSALITY_RESULT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CAUSALITY_RESULT])) {
+                        $errs[self::FIELD_CAUSALITY_RESULT] = [];
+                    }
+                    $errs[self::FIELD_CAUSALITY_RESULT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INSTANCE])) {
+            $v = $this->getInstance();
+            foreach($validationRules[self::FIELD_INSTANCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_INSTANCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INSTANCE])) {
+                        $errs[self::FIELD_INSTANCE] = [];
+                    }
+                    $errs[self::FIELD_INSTANCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
         return $errs;
     }
 

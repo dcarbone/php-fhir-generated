@@ -5,7 +5,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTests\FHIRResource\FHIRDomainRes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,18 +78,22 @@ class FHIRActivityDefinitionTest extends TestCase
         $this->assertInstanceOf('\DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRActivityDefinition', $type);
     }
 
+    private $_fetchedResources = [];
+
     /**
      * @param string $format Either xml or json
      * @return string
      */
     protected function fetchResource($format)
     {
+        if (isset($this->_fetchedResources[$format])) {
+            return $this->_fetchedResources[$format];
+        }
         $url = sprintf('http://hapi.fhir.org/baseDstu3/ActivityDefinition/?_count=1&_format=%s', $format);
         $ch = curl_init($url);
         curl_setopt_array($ch, [
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_TIMEOUT        => 10, // set low timeout to move things along...
         ]);
         $res = curl_exec($ch);
         $err = curl_error($ch);
@@ -100,6 +104,7 @@ class FHIRActivityDefinitionTest extends TestCase
         } else {
             $this->assertInternalType('string', $res);
         }
+        $this->_fetchedResources[$format] = $res;
         return $res;
     }
 
@@ -205,6 +210,55 @@ class FHIRActivityDefinitionTest extends TestCase
                 $e->getCode(),
                 $e
             );
+        }
+    }
+
+    public function testValidationXML()
+    {
+        $xml = $this->fetchResource('xml');
+        try {
+            $bundle = FHIRBundle::xmlUnserialize($xml);
+        } catch(\Exception $e) {
+            throw new AssertionFailedError(
+                sprintf(
+                    'Error building type "Bundle" from XML: %s; Returned XML: %s',
+                    $e->getMessage(),
+                    $xml
+                ),
+                $e->getCode(),
+                $e
+            );
+        }
+        $errs = $bundle->_getValidationErrors();
+        try {
+            $this->assertCount(0, $errs);
+        } catch (\Exception $e) {
+            $this->markTestSkipped(sprintf('Validation errors seen: %s', json_encode($errs, JSON_PRETTY_PRINT)));
+        }
+    }
+
+    public function testValidationJSON()
+    {
+        $json = $this->fetchResource('json');
+        $decoded = $this->decodeJSON($json, true);
+        try {
+            $bundle = new FHIRBundle($decoded);
+        } catch(\Exception $e) {
+            throw new AssertionFailedError(
+                sprintf(
+                    'Error building type "Bundle" from JSON: %s; Returned JSON: %s',
+                    $e->getMessage(),
+                    $json
+                ),
+                $e->getCode(),
+                $e
+            );
+        }
+        $errs = $bundle->_getValidationErrors();
+        try {
+            $this->assertCount(0, $errs);
+        } catch (\Exception $e) {
+            $this->markTestSkipped(sprintf('Validation errors seen: %s', json_encode($errs, JSON_PRETTY_PRINT)));
         }
     }
 }

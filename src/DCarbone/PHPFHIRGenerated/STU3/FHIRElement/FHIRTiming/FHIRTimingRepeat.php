@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -331,7 +331,7 @@ class FHIRTimingRepeat extends FHIRElement
      * Validation map for fields in type Timing.Repeat
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRTimingRepeat Constructor
@@ -1462,11 +1462,345 @@ class FHIRTimingRepeat extends FHIRElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        $errs = parent::_validationErrors();
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getBoundsDuration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BOUNDS_DURATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBoundsPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BOUNDS_PERIOD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBoundsRange())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BOUNDS_RANGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCount())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_COUNT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCountMax())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_COUNT_MAX] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getDayOfWeek())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_DAY_OF_WEEK, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getDuration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DURATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDurationMax())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DURATION_MAX] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDurationUnit())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DURATION_UNIT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getFrequency())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FREQUENCY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getFrequencyMax())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FREQUENCY_MAX] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getOffset())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_OFFSET] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PERIOD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPeriodMax())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PERIOD_MAX] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPeriodUnit())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PERIOD_UNIT] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getTimeOfDay())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_TIME_OF_DAY, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getWhen())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_WHEN, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BOUNDS_DURATION])) {
+            $v = $this->getBoundsDuration();
+            foreach($validationRules[self::FIELD_BOUNDS_DURATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_BOUNDS_DURATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BOUNDS_DURATION])) {
+                        $errs[self::FIELD_BOUNDS_DURATION] = [];
+                    }
+                    $errs[self::FIELD_BOUNDS_DURATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BOUNDS_PERIOD])) {
+            $v = $this->getBoundsPeriod();
+            foreach($validationRules[self::FIELD_BOUNDS_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_BOUNDS_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BOUNDS_PERIOD])) {
+                        $errs[self::FIELD_BOUNDS_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_BOUNDS_PERIOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BOUNDS_RANGE])) {
+            $v = $this->getBoundsRange();
+            foreach($validationRules[self::FIELD_BOUNDS_RANGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_BOUNDS_RANGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BOUNDS_RANGE])) {
+                        $errs[self::FIELD_BOUNDS_RANGE] = [];
+                    }
+                    $errs[self::FIELD_BOUNDS_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COUNT])) {
+            $v = $this->getCount();
+            foreach($validationRules[self::FIELD_COUNT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_COUNT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COUNT])) {
+                        $errs[self::FIELD_COUNT] = [];
+                    }
+                    $errs[self::FIELD_COUNT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COUNT_MAX])) {
+            $v = $this->getCountMax();
+            foreach($validationRules[self::FIELD_COUNT_MAX] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_COUNT_MAX, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COUNT_MAX])) {
+                        $errs[self::FIELD_COUNT_MAX] = [];
+                    }
+                    $errs[self::FIELD_COUNT_MAX][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DAY_OF_WEEK])) {
+            $v = $this->getDayOfWeek();
+            foreach($validationRules[self::FIELD_DAY_OF_WEEK] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_DAY_OF_WEEK, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DAY_OF_WEEK])) {
+                        $errs[self::FIELD_DAY_OF_WEEK] = [];
+                    }
+                    $errs[self::FIELD_DAY_OF_WEEK][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DURATION])) {
+            $v = $this->getDuration();
+            foreach($validationRules[self::FIELD_DURATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_DURATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DURATION])) {
+                        $errs[self::FIELD_DURATION] = [];
+                    }
+                    $errs[self::FIELD_DURATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DURATION_MAX])) {
+            $v = $this->getDurationMax();
+            foreach($validationRules[self::FIELD_DURATION_MAX] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_DURATION_MAX, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DURATION_MAX])) {
+                        $errs[self::FIELD_DURATION_MAX] = [];
+                    }
+                    $errs[self::FIELD_DURATION_MAX][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DURATION_UNIT])) {
+            $v = $this->getDurationUnit();
+            foreach($validationRules[self::FIELD_DURATION_UNIT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_DURATION_UNIT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DURATION_UNIT])) {
+                        $errs[self::FIELD_DURATION_UNIT] = [];
+                    }
+                    $errs[self::FIELD_DURATION_UNIT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FREQUENCY])) {
+            $v = $this->getFrequency();
+            foreach($validationRules[self::FIELD_FREQUENCY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_FREQUENCY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FREQUENCY])) {
+                        $errs[self::FIELD_FREQUENCY] = [];
+                    }
+                    $errs[self::FIELD_FREQUENCY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FREQUENCY_MAX])) {
+            $v = $this->getFrequencyMax();
+            foreach($validationRules[self::FIELD_FREQUENCY_MAX] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_FREQUENCY_MAX, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FREQUENCY_MAX])) {
+                        $errs[self::FIELD_FREQUENCY_MAX] = [];
+                    }
+                    $errs[self::FIELD_FREQUENCY_MAX][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_OFFSET])) {
+            $v = $this->getOffset();
+            foreach($validationRules[self::FIELD_OFFSET] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_OFFSET, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OFFSET])) {
+                        $errs[self::FIELD_OFFSET] = [];
+                    }
+                    $errs[self::FIELD_OFFSET][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PERIOD])) {
+            $v = $this->getPeriod();
+            foreach($validationRules[self::FIELD_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PERIOD])) {
+                        $errs[self::FIELD_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_PERIOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PERIOD_MAX])) {
+            $v = $this->getPeriodMax();
+            foreach($validationRules[self::FIELD_PERIOD_MAX] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_PERIOD_MAX, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PERIOD_MAX])) {
+                        $errs[self::FIELD_PERIOD_MAX] = [];
+                    }
+                    $errs[self::FIELD_PERIOD_MAX][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PERIOD_UNIT])) {
+            $v = $this->getPeriodUnit();
+            foreach($validationRules[self::FIELD_PERIOD_UNIT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_PERIOD_UNIT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PERIOD_UNIT])) {
+                        $errs[self::FIELD_PERIOD_UNIT] = [];
+                    }
+                    $errs[self::FIELD_PERIOD_UNIT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TIME_OF_DAY])) {
+            $v = $this->getTimeOfDay();
+            foreach($validationRules[self::FIELD_TIME_OF_DAY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_TIME_OF_DAY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TIME_OF_DAY])) {
+                        $errs[self::FIELD_TIME_OF_DAY] = [];
+                    }
+                    $errs[self::FIELD_TIME_OF_DAY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_WHEN])) {
+            $v = $this->getWhen();
+            foreach($validationRules[self::FIELD_WHEN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TIMING_DOT_REPEAT, self::FIELD_WHEN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_WHEN])) {
+                        $errs[self::FIELD_WHEN] = [];
+                    }
+                    $errs[self::FIELD_WHEN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
         return $errs;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -183,7 +183,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * Validation map for fields in type MolecularSequence.Roc
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRMolecularSequenceRoc Constructor
@@ -956,12 +956,196 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if ([] !== ($vs = $this->getFMeasure())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_F_MEASURE, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getNumFN())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_NUM_FN, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getNumFP())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_NUM_FP, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getNumTP())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_NUM_TP, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getPrecision())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_PRECISION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getScore())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_SCORE, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getSensitivity())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_SENSITIVITY, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_F_MEASURE])) {
+            $v = $this->getFMeasure();
+            foreach($validationRules[self::FIELD_F_MEASURE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_F_MEASURE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_F_MEASURE])) {
+                        $errs[self::FIELD_F_MEASURE] = [];
+                    }
+                    $errs[self::FIELD_F_MEASURE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_NUM_FN])) {
+            $v = $this->getNumFN();
+            foreach($validationRules[self::FIELD_NUM_FN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_NUM_FN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NUM_FN])) {
+                        $errs[self::FIELD_NUM_FN] = [];
+                    }
+                    $errs[self::FIELD_NUM_FN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_NUM_FP])) {
+            $v = $this->getNumFP();
+            foreach($validationRules[self::FIELD_NUM_FP] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_NUM_FP, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NUM_FP])) {
+                        $errs[self::FIELD_NUM_FP] = [];
+                    }
+                    $errs[self::FIELD_NUM_FP][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_NUM_TP])) {
+            $v = $this->getNumTP();
+            foreach($validationRules[self::FIELD_NUM_TP] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_NUM_TP, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NUM_TP])) {
+                        $errs[self::FIELD_NUM_TP] = [];
+                    }
+                    $errs[self::FIELD_NUM_TP][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PRECISION])) {
+            $v = $this->getPrecision();
+            foreach($validationRules[self::FIELD_PRECISION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_PRECISION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PRECISION])) {
+                        $errs[self::FIELD_PRECISION] = [];
+                    }
+                    $errs[self::FIELD_PRECISION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SCORE])) {
+            $v = $this->getScore();
+            foreach($validationRules[self::FIELD_SCORE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_SCORE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SCORE])) {
+                        $errs[self::FIELD_SCORE] = [];
+                    }
+                    $errs[self::FIELD_SCORE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SENSITIVITY])) {
+            $v = $this->getSensitivity();
+            foreach($validationRules[self::FIELD_SENSITIVITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_SENSITIVITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SENSITIVITY])) {
+                        $errs[self::FIELD_SENSITIVITY] = [];
+                    }
+                    $errs[self::FIELD_SENSITIVITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

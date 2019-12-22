@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSeq
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -205,7 +205,7 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
      * Validation map for fields in type Sequence.ReferenceSeq
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRSequenceReferenceSeq Constructor
@@ -694,11 +694,198 @@ class FHIRSequenceReferenceSeq extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        $errs = parent::_validationErrors();
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getChromosome())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CHROMOSOME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getGenomeBuild())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_GENOME_BUILD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getReferenceSeqId())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_REFERENCE_SEQ_ID] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getReferenceSeqPointer())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_REFERENCE_SEQ_POINTER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getReferenceSeqString())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_REFERENCE_SEQ_STRING] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getStrand())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_STRAND] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getWindowEnd())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_WINDOW_END] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getWindowStart())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_WINDOW_START] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_CHROMOSOME])) {
+            $v = $this->getChromosome();
+            foreach($validationRules[self::FIELD_CHROMOSOME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_REFERENCE_SEQ, self::FIELD_CHROMOSOME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CHROMOSOME])) {
+                        $errs[self::FIELD_CHROMOSOME] = [];
+                    }
+                    $errs[self::FIELD_CHROMOSOME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_GENOME_BUILD])) {
+            $v = $this->getGenomeBuild();
+            foreach($validationRules[self::FIELD_GENOME_BUILD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_REFERENCE_SEQ, self::FIELD_GENOME_BUILD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_GENOME_BUILD])) {
+                        $errs[self::FIELD_GENOME_BUILD] = [];
+                    }
+                    $errs[self::FIELD_GENOME_BUILD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REFERENCE_SEQ_ID])) {
+            $v = $this->getReferenceSeqId();
+            foreach($validationRules[self::FIELD_REFERENCE_SEQ_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_REFERENCE_SEQ, self::FIELD_REFERENCE_SEQ_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REFERENCE_SEQ_ID])) {
+                        $errs[self::FIELD_REFERENCE_SEQ_ID] = [];
+                    }
+                    $errs[self::FIELD_REFERENCE_SEQ_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REFERENCE_SEQ_POINTER])) {
+            $v = $this->getReferenceSeqPointer();
+            foreach($validationRules[self::FIELD_REFERENCE_SEQ_POINTER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_REFERENCE_SEQ, self::FIELD_REFERENCE_SEQ_POINTER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REFERENCE_SEQ_POINTER])) {
+                        $errs[self::FIELD_REFERENCE_SEQ_POINTER] = [];
+                    }
+                    $errs[self::FIELD_REFERENCE_SEQ_POINTER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REFERENCE_SEQ_STRING])) {
+            $v = $this->getReferenceSeqString();
+            foreach($validationRules[self::FIELD_REFERENCE_SEQ_STRING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_REFERENCE_SEQ, self::FIELD_REFERENCE_SEQ_STRING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REFERENCE_SEQ_STRING])) {
+                        $errs[self::FIELD_REFERENCE_SEQ_STRING] = [];
+                    }
+                    $errs[self::FIELD_REFERENCE_SEQ_STRING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_STRAND])) {
+            $v = $this->getStrand();
+            foreach($validationRules[self::FIELD_STRAND] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_REFERENCE_SEQ, self::FIELD_STRAND, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_STRAND])) {
+                        $errs[self::FIELD_STRAND] = [];
+                    }
+                    $errs[self::FIELD_STRAND][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_WINDOW_END])) {
+            $v = $this->getWindowEnd();
+            foreach($validationRules[self::FIELD_WINDOW_END] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_REFERENCE_SEQ, self::FIELD_WINDOW_END, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_WINDOW_END])) {
+                        $errs[self::FIELD_WINDOW_END] = [];
+                    }
+                    $errs[self::FIELD_WINDOW_END][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_WINDOW_START])) {
+            $v = $this->getWindowStart();
+            foreach($validationRules[self::FIELD_WINDOW_START] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SEQUENCE_DOT_REFERENCE_SEQ, self::FIELD_WINDOW_START, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_WINDOW_START])) {
+                        $errs[self::FIELD_WINDOW_START] = [];
+                    }
+                    $errs[self::FIELD_WINDOW_START][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
         return $errs;
     }
 

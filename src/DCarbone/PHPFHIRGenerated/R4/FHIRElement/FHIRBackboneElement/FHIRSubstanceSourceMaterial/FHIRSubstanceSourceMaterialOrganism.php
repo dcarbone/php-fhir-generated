@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -235,7 +235,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * Validation map for fields in type SubstanceSourceMaterial.Organism
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRSubstanceSourceMaterialOrganism Constructor
@@ -723,12 +723,201 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if ([] !== ($vs = $this->getAuthor())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_AUTHOR, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getFamily())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FAMILY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getGenus())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_GENUS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getHybrid())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_HYBRID] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getIntraspecificDescription())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INTRASPECIFIC_DESCRIPTION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getIntraspecificType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INTRASPECIFIC_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getOrganismGeneral())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ORGANISM_GENERAL] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSpecies())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SPECIES] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_AUTHOR])) {
+            $v = $this->getAuthor();
+            foreach($validationRules[self::FIELD_AUTHOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_ORGANISM, self::FIELD_AUTHOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AUTHOR])) {
+                        $errs[self::FIELD_AUTHOR] = [];
+                    }
+                    $errs[self::FIELD_AUTHOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FAMILY])) {
+            $v = $this->getFamily();
+            foreach($validationRules[self::FIELD_FAMILY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_ORGANISM, self::FIELD_FAMILY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FAMILY])) {
+                        $errs[self::FIELD_FAMILY] = [];
+                    }
+                    $errs[self::FIELD_FAMILY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_GENUS])) {
+            $v = $this->getGenus();
+            foreach($validationRules[self::FIELD_GENUS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_ORGANISM, self::FIELD_GENUS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_GENUS])) {
+                        $errs[self::FIELD_GENUS] = [];
+                    }
+                    $errs[self::FIELD_GENUS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_HYBRID])) {
+            $v = $this->getHybrid();
+            foreach($validationRules[self::FIELD_HYBRID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_ORGANISM, self::FIELD_HYBRID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_HYBRID])) {
+                        $errs[self::FIELD_HYBRID] = [];
+                    }
+                    $errs[self::FIELD_HYBRID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INTRASPECIFIC_DESCRIPTION])) {
+            $v = $this->getIntraspecificDescription();
+            foreach($validationRules[self::FIELD_INTRASPECIFIC_DESCRIPTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_ORGANISM, self::FIELD_INTRASPECIFIC_DESCRIPTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INTRASPECIFIC_DESCRIPTION])) {
+                        $errs[self::FIELD_INTRASPECIFIC_DESCRIPTION] = [];
+                    }
+                    $errs[self::FIELD_INTRASPECIFIC_DESCRIPTION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INTRASPECIFIC_TYPE])) {
+            $v = $this->getIntraspecificType();
+            foreach($validationRules[self::FIELD_INTRASPECIFIC_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_ORGANISM, self::FIELD_INTRASPECIFIC_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INTRASPECIFIC_TYPE])) {
+                        $errs[self::FIELD_INTRASPECIFIC_TYPE] = [];
+                    }
+                    $errs[self::FIELD_INTRASPECIFIC_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ORGANISM_GENERAL])) {
+            $v = $this->getOrganismGeneral();
+            foreach($validationRules[self::FIELD_ORGANISM_GENERAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_ORGANISM, self::FIELD_ORGANISM_GENERAL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ORGANISM_GENERAL])) {
+                        $errs[self::FIELD_ORGANISM_GENERAL] = [];
+                    }
+                    $errs[self::FIELD_ORGANISM_GENERAL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SPECIES])) {
+            $v = $this->getSpecies();
+            foreach($validationRules[self::FIELD_SPECIES] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_ORGANISM, self::FIELD_SPECIES, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SPECIES])) {
+                        $errs[self::FIELD_SPECIES] = [];
+                    }
+                    $errs[self::FIELD_SPECIES][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

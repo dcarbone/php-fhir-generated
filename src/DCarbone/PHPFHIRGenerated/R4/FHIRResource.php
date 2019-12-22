@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -76,6 +76,7 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
 class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterface
 {
     use PHPFHIRCommentContainerTrait;
+    use PHPFHIRValidationAssertionsTrait;
 
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE;
@@ -151,7 +152,7 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
      * Validation map for fields in type Resource
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRResource Constructor
@@ -466,12 +467,47 @@ class FHIRResource implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInter
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = [];
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getId())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ID] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getImplicitRules())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_IMPLICIT_RULES] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getLanguage())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_LANGUAGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMeta())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_META] = $fieldErrs;
+            }
+        }
+        return $errs;
     }
 
     /**

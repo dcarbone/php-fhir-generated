@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -187,7 +187,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * Validation map for fields in type SubstanceSpecification.Structure
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRSubstanceSpecificationStructure Constructor
@@ -684,12 +684,205 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if ([] !== ($vs = $this->getIsotope())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_ISOTOPE, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getMolecularFormula())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MOLECULAR_FORMULA] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMolecularFormulaByMoiety())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMolecularWeight())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MOLECULAR_WEIGHT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getOpticalActivity())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_OPTICAL_ACTIVITY] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getRepresentation())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_REPRESENTATION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getSource())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_SOURCE, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getStereochemistry())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_STEREOCHEMISTRY] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_ISOTOPE])) {
+            $v = $this->getIsotope();
+            foreach($validationRules[self::FIELD_ISOTOPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_STRUCTURE, self::FIELD_ISOTOPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ISOTOPE])) {
+                        $errs[self::FIELD_ISOTOPE] = [];
+                    }
+                    $errs[self::FIELD_ISOTOPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MOLECULAR_FORMULA])) {
+            $v = $this->getMolecularFormula();
+            foreach($validationRules[self::FIELD_MOLECULAR_FORMULA] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_STRUCTURE, self::FIELD_MOLECULAR_FORMULA, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MOLECULAR_FORMULA])) {
+                        $errs[self::FIELD_MOLECULAR_FORMULA] = [];
+                    }
+                    $errs[self::FIELD_MOLECULAR_FORMULA][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY])) {
+            $v = $this->getMolecularFormulaByMoiety();
+            foreach($validationRules[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_STRUCTURE, self::FIELD_MOLECULAR_FORMULA_BY_MOIETY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY])) {
+                        $errs[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY] = [];
+                    }
+                    $errs[self::FIELD_MOLECULAR_FORMULA_BY_MOIETY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MOLECULAR_WEIGHT])) {
+            $v = $this->getMolecularWeight();
+            foreach($validationRules[self::FIELD_MOLECULAR_WEIGHT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_STRUCTURE, self::FIELD_MOLECULAR_WEIGHT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MOLECULAR_WEIGHT])) {
+                        $errs[self::FIELD_MOLECULAR_WEIGHT] = [];
+                    }
+                    $errs[self::FIELD_MOLECULAR_WEIGHT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_OPTICAL_ACTIVITY])) {
+            $v = $this->getOpticalActivity();
+            foreach($validationRules[self::FIELD_OPTICAL_ACTIVITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_STRUCTURE, self::FIELD_OPTICAL_ACTIVITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OPTICAL_ACTIVITY])) {
+                        $errs[self::FIELD_OPTICAL_ACTIVITY] = [];
+                    }
+                    $errs[self::FIELD_OPTICAL_ACTIVITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REPRESENTATION])) {
+            $v = $this->getRepresentation();
+            foreach($validationRules[self::FIELD_REPRESENTATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_STRUCTURE, self::FIELD_REPRESENTATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REPRESENTATION])) {
+                        $errs[self::FIELD_REPRESENTATION] = [];
+                    }
+                    $errs[self::FIELD_REPRESENTATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SOURCE])) {
+            $v = $this->getSource();
+            foreach($validationRules[self::FIELD_SOURCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_STRUCTURE, self::FIELD_SOURCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SOURCE])) {
+                        $errs[self::FIELD_SOURCE] = [];
+                    }
+                    $errs[self::FIELD_SOURCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_STEREOCHEMISTRY])) {
+            $v = $this->getStereochemistry();
+            foreach($validationRules[self::FIELD_STEREOCHEMISTRY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SPECIFICATION_DOT_STRUCTURE, self::FIELD_STEREOCHEMISTRY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_STEREOCHEMISTRY])) {
+                        $errs[self::FIELD_STEREOCHEMISTRY] = [];
+                    }
+                    $errs[self::FIELD_STEREOCHEMISTRY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

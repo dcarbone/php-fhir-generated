@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -179,7 +179,7 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * Validation map for fields in type MedicinalProductIngredient.Strength
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRMedicinalProductIngredientStrength Constructor
@@ -590,12 +590,186 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getConcentration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CONCENTRATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getConcentrationLowLimit())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CONCENTRATION_LOW_LIMIT] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getCountry())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_COUNTRY, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getMeasurementPoint())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MEASUREMENT_POINT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPresentation())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PRESENTATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPresentationLowLimit())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PRESENTATION_LOW_LIMIT] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getReferenceStrength())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_REFERENCE_STRENGTH, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONCENTRATION])) {
+            $v = $this->getConcentration();
+            foreach($validationRules[self::FIELD_CONCENTRATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT_DOT_STRENGTH, self::FIELD_CONCENTRATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONCENTRATION])) {
+                        $errs[self::FIELD_CONCENTRATION] = [];
+                    }
+                    $errs[self::FIELD_CONCENTRATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONCENTRATION_LOW_LIMIT])) {
+            $v = $this->getConcentrationLowLimit();
+            foreach($validationRules[self::FIELD_CONCENTRATION_LOW_LIMIT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT_DOT_STRENGTH, self::FIELD_CONCENTRATION_LOW_LIMIT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONCENTRATION_LOW_LIMIT])) {
+                        $errs[self::FIELD_CONCENTRATION_LOW_LIMIT] = [];
+                    }
+                    $errs[self::FIELD_CONCENTRATION_LOW_LIMIT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COUNTRY])) {
+            $v = $this->getCountry();
+            foreach($validationRules[self::FIELD_COUNTRY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT_DOT_STRENGTH, self::FIELD_COUNTRY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COUNTRY])) {
+                        $errs[self::FIELD_COUNTRY] = [];
+                    }
+                    $errs[self::FIELD_COUNTRY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MEASUREMENT_POINT])) {
+            $v = $this->getMeasurementPoint();
+            foreach($validationRules[self::FIELD_MEASUREMENT_POINT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT_DOT_STRENGTH, self::FIELD_MEASUREMENT_POINT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MEASUREMENT_POINT])) {
+                        $errs[self::FIELD_MEASUREMENT_POINT] = [];
+                    }
+                    $errs[self::FIELD_MEASUREMENT_POINT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PRESENTATION])) {
+            $v = $this->getPresentation();
+            foreach($validationRules[self::FIELD_PRESENTATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT_DOT_STRENGTH, self::FIELD_PRESENTATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PRESENTATION])) {
+                        $errs[self::FIELD_PRESENTATION] = [];
+                    }
+                    $errs[self::FIELD_PRESENTATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PRESENTATION_LOW_LIMIT])) {
+            $v = $this->getPresentationLowLimit();
+            foreach($validationRules[self::FIELD_PRESENTATION_LOW_LIMIT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT_DOT_STRENGTH, self::FIELD_PRESENTATION_LOW_LIMIT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PRESENTATION_LOW_LIMIT])) {
+                        $errs[self::FIELD_PRESENTATION_LOW_LIMIT] = [];
+                    }
+                    $errs[self::FIELD_PRESENTATION_LOW_LIMIT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REFERENCE_STRENGTH])) {
+            $v = $this->getReferenceStrength();
+            foreach($validationRules[self::FIELD_REFERENCE_STRENGTH] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT_DOT_STRENGTH, self::FIELD_REFERENCE_STRENGTH, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REFERENCE_STRENGTH])) {
+                        $errs[self::FIELD_REFERENCE_STRENGTH] = [];
+                    }
+                    $errs[self::FIELD_REFERENCE_STRENGTH][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

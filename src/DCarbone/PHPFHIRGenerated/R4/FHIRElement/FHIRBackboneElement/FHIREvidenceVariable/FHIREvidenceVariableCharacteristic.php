@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREvide
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -322,7 +322,7 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
      * Validation map for fields in type EvidenceVariable.Characteristic
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIREvidenceVariableCharacteristic Constructor
@@ -1147,12 +1147,320 @@ class FHIREvidenceVariableCharacteristic extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getDefinitionCanonical())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFINITION_CANONICAL] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefinitionCodeableConcept())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFINITION_CODEABLE_CONCEPT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefinitionDataRequirement())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFINITION_DATA_REQUIREMENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefinitionExpression())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFINITION_EXPRESSION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefinitionReference())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFINITION_REFERENCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefinitionTriggerDefinition())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFINITION_TRIGGER_DEFINITION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDescription())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getExclude())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EXCLUDE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getGroupMeasure())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_GROUP_MEASURE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getParticipantEffectiveDateTime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getParticipantEffectiveDuration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getParticipantEffectivePeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getParticipantEffectiveTiming())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PARTICIPANT_EFFECTIVE_TIMING] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getTimeFromStart())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TIME_FROM_START] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getUsageContext())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_USAGE_CONTEXT, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFINITION_CANONICAL])) {
+            $v = $this->getDefinitionCanonical();
+            foreach($validationRules[self::FIELD_DEFINITION_CANONICAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_DEFINITION_CANONICAL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFINITION_CANONICAL])) {
+                        $errs[self::FIELD_DEFINITION_CANONICAL] = [];
+                    }
+                    $errs[self::FIELD_DEFINITION_CANONICAL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFINITION_CODEABLE_CONCEPT])) {
+            $v = $this->getDefinitionCodeableConcept();
+            foreach($validationRules[self::FIELD_DEFINITION_CODEABLE_CONCEPT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_DEFINITION_CODEABLE_CONCEPT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFINITION_CODEABLE_CONCEPT])) {
+                        $errs[self::FIELD_DEFINITION_CODEABLE_CONCEPT] = [];
+                    }
+                    $errs[self::FIELD_DEFINITION_CODEABLE_CONCEPT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFINITION_DATA_REQUIREMENT])) {
+            $v = $this->getDefinitionDataRequirement();
+            foreach($validationRules[self::FIELD_DEFINITION_DATA_REQUIREMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_DEFINITION_DATA_REQUIREMENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFINITION_DATA_REQUIREMENT])) {
+                        $errs[self::FIELD_DEFINITION_DATA_REQUIREMENT] = [];
+                    }
+                    $errs[self::FIELD_DEFINITION_DATA_REQUIREMENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFINITION_EXPRESSION])) {
+            $v = $this->getDefinitionExpression();
+            foreach($validationRules[self::FIELD_DEFINITION_EXPRESSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_DEFINITION_EXPRESSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFINITION_EXPRESSION])) {
+                        $errs[self::FIELD_DEFINITION_EXPRESSION] = [];
+                    }
+                    $errs[self::FIELD_DEFINITION_EXPRESSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFINITION_REFERENCE])) {
+            $v = $this->getDefinitionReference();
+            foreach($validationRules[self::FIELD_DEFINITION_REFERENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_DEFINITION_REFERENCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFINITION_REFERENCE])) {
+                        $errs[self::FIELD_DEFINITION_REFERENCE] = [];
+                    }
+                    $errs[self::FIELD_DEFINITION_REFERENCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFINITION_TRIGGER_DEFINITION])) {
+            $v = $this->getDefinitionTriggerDefinition();
+            foreach($validationRules[self::FIELD_DEFINITION_TRIGGER_DEFINITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_DEFINITION_TRIGGER_DEFINITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFINITION_TRIGGER_DEFINITION])) {
+                        $errs[self::FIELD_DEFINITION_TRIGGER_DEFINITION] = [];
+                    }
+                    $errs[self::FIELD_DEFINITION_TRIGGER_DEFINITION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DESCRIPTION])) {
+            $v = $this->getDescription();
+            foreach($validationRules[self::FIELD_DESCRIPTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_DESCRIPTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DESCRIPTION])) {
+                        $errs[self::FIELD_DESCRIPTION] = [];
+                    }
+                    $errs[self::FIELD_DESCRIPTION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXCLUDE])) {
+            $v = $this->getExclude();
+            foreach($validationRules[self::FIELD_EXCLUDE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_EXCLUDE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXCLUDE])) {
+                        $errs[self::FIELD_EXCLUDE] = [];
+                    }
+                    $errs[self::FIELD_EXCLUDE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_GROUP_MEASURE])) {
+            $v = $this->getGroupMeasure();
+            foreach($validationRules[self::FIELD_GROUP_MEASURE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_GROUP_MEASURE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_GROUP_MEASURE])) {
+                        $errs[self::FIELD_GROUP_MEASURE] = [];
+                    }
+                    $errs[self::FIELD_GROUP_MEASURE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME])) {
+            $v = $this->getParticipantEffectiveDateTime();
+            foreach($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME])) {
+                        $errs[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME] = [];
+                    }
+                    $errs[self::FIELD_PARTICIPANT_EFFECTIVE_DATE_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION])) {
+            $v = $this->getParticipantEffectiveDuration();
+            foreach($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_PARTICIPANT_EFFECTIVE_DURATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION])) {
+                        $errs[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION] = [];
+                    }
+                    $errs[self::FIELD_PARTICIPANT_EFFECTIVE_DURATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD])) {
+            $v = $this->getParticipantEffectivePeriod();
+            foreach($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD])) {
+                        $errs[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_PARTICIPANT_EFFECTIVE_PERIOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_TIMING])) {
+            $v = $this->getParticipantEffectiveTiming();
+            foreach($validationRules[self::FIELD_PARTICIPANT_EFFECTIVE_TIMING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_PARTICIPANT_EFFECTIVE_TIMING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PARTICIPANT_EFFECTIVE_TIMING])) {
+                        $errs[self::FIELD_PARTICIPANT_EFFECTIVE_TIMING] = [];
+                    }
+                    $errs[self::FIELD_PARTICIPANT_EFFECTIVE_TIMING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TIME_FROM_START])) {
+            $v = $this->getTimeFromStart();
+            foreach($validationRules[self::FIELD_TIME_FROM_START] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_TIME_FROM_START, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TIME_FROM_START])) {
+                        $errs[self::FIELD_TIME_FROM_START] = [];
+                    }
+                    $errs[self::FIELD_TIME_FROM_START][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_USAGE_CONTEXT])) {
+            $v = $this->getUsageContext();
+            foreach($validationRules[self::FIELD_USAGE_CONTEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_EVIDENCE_VARIABLE_DOT_CHARACTERISTIC, self::FIELD_USAGE_CONTEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_USAGE_CONTEXT])) {
+                        $errs[self::FIELD_USAGE_CONTEXT] = [];
+                    }
+                    $errs[self::FIELD_USAGE_CONTEXT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -204,7 +204,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * Validation map for fields in type SubstanceNucleicAcid.Subunit
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRSubstanceNucleicAcidSubunit Constructor
@@ -717,12 +717,203 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getFivePrime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FIVE_PRIME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getLength())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_LENGTH] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getLinkage())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_LINKAGE, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getSequence())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SEQUENCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSequenceAttachment())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SEQUENCE_ATTACHMENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSubunit())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUBUNIT] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getSugar())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_SUGAR, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getThreePrime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_THREE_PRIME] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_FIVE_PRIME])) {
+            $v = $this->getFivePrime();
+            foreach($validationRules[self::FIELD_FIVE_PRIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_FIVE_PRIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FIVE_PRIME])) {
+                        $errs[self::FIELD_FIVE_PRIME] = [];
+                    }
+                    $errs[self::FIELD_FIVE_PRIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_LENGTH])) {
+            $v = $this->getLength();
+            foreach($validationRules[self::FIELD_LENGTH] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_LENGTH, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_LENGTH])) {
+                        $errs[self::FIELD_LENGTH] = [];
+                    }
+                    $errs[self::FIELD_LENGTH][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_LINKAGE])) {
+            $v = $this->getLinkage();
+            foreach($validationRules[self::FIELD_LINKAGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_LINKAGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_LINKAGE])) {
+                        $errs[self::FIELD_LINKAGE] = [];
+                    }
+                    $errs[self::FIELD_LINKAGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SEQUENCE])) {
+            $v = $this->getSequence();
+            foreach($validationRules[self::FIELD_SEQUENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_SEQUENCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SEQUENCE])) {
+                        $errs[self::FIELD_SEQUENCE] = [];
+                    }
+                    $errs[self::FIELD_SEQUENCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SEQUENCE_ATTACHMENT])) {
+            $v = $this->getSequenceAttachment();
+            foreach($validationRules[self::FIELD_SEQUENCE_ATTACHMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_SEQUENCE_ATTACHMENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SEQUENCE_ATTACHMENT])) {
+                        $errs[self::FIELD_SEQUENCE_ATTACHMENT] = [];
+                    }
+                    $errs[self::FIELD_SEQUENCE_ATTACHMENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUBUNIT])) {
+            $v = $this->getSubunit();
+            foreach($validationRules[self::FIELD_SUBUNIT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_SUBUNIT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUBUNIT])) {
+                        $errs[self::FIELD_SUBUNIT] = [];
+                    }
+                    $errs[self::FIELD_SUBUNIT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUGAR])) {
+            $v = $this->getSugar();
+            foreach($validationRules[self::FIELD_SUGAR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_SUGAR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUGAR])) {
+                        $errs[self::FIELD_SUGAR] = [];
+                    }
+                    $errs[self::FIELD_SUGAR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_THREE_PRIME])) {
+            $v = $this->getThreePrime();
+            foreach($validationRules[self::FIELD_THREE_PRIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_NUCLEIC_ACID_DOT_SUBUNIT, self::FIELD_THREE_PRIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_THREE_PRIME])) {
+                        $errs[self::FIELD_THREE_PRIME] = [];
+                    }
+                    $errs[self::FIELD_THREE_PRIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

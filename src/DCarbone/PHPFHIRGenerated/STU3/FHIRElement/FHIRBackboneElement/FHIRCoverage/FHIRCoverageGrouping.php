@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCov
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -253,7 +253,7 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Validation map for fields in type Coverage.Grouping
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRCoverageGrouping Constructor
@@ -1048,11 +1048,266 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        $errs = parent::_validationErrors();
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getClass())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CLASS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getClassDisplay())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CLASS_DISPLAY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getGroup())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_GROUP] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getGroupDisplay())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_GROUP_DISPLAY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPlan())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PLAN] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPlanDisplay())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PLAN_DISPLAY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSubClass())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUB_CLASS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSubClassDisplay())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUB_CLASS_DISPLAY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSubGroup())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUB_GROUP] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSubGroupDisplay())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUB_GROUP_DISPLAY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSubPlan())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUB_PLAN] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSubPlanDisplay())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUB_PLAN_DISPLAY] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_CLASS])) {
+            $v = $this->getClass();
+            foreach($validationRules[self::FIELD_CLASS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_GROUPING, self::FIELD_CLASS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CLASS])) {
+                        $errs[self::FIELD_CLASS] = [];
+                    }
+                    $errs[self::FIELD_CLASS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CLASS_DISPLAY])) {
+            $v = $this->getClassDisplay();
+            foreach($validationRules[self::FIELD_CLASS_DISPLAY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_GROUPING, self::FIELD_CLASS_DISPLAY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CLASS_DISPLAY])) {
+                        $errs[self::FIELD_CLASS_DISPLAY] = [];
+                    }
+                    $errs[self::FIELD_CLASS_DISPLAY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_GROUP])) {
+            $v = $this->getGroup();
+            foreach($validationRules[self::FIELD_GROUP] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_GROUPING, self::FIELD_GROUP, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_GROUP])) {
+                        $errs[self::FIELD_GROUP] = [];
+                    }
+                    $errs[self::FIELD_GROUP][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_GROUP_DISPLAY])) {
+            $v = $this->getGroupDisplay();
+            foreach($validationRules[self::FIELD_GROUP_DISPLAY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_GROUPING, self::FIELD_GROUP_DISPLAY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_GROUP_DISPLAY])) {
+                        $errs[self::FIELD_GROUP_DISPLAY] = [];
+                    }
+                    $errs[self::FIELD_GROUP_DISPLAY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PLAN])) {
+            $v = $this->getPlan();
+            foreach($validationRules[self::FIELD_PLAN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_GROUPING, self::FIELD_PLAN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PLAN])) {
+                        $errs[self::FIELD_PLAN] = [];
+                    }
+                    $errs[self::FIELD_PLAN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PLAN_DISPLAY])) {
+            $v = $this->getPlanDisplay();
+            foreach($validationRules[self::FIELD_PLAN_DISPLAY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_GROUPING, self::FIELD_PLAN_DISPLAY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PLAN_DISPLAY])) {
+                        $errs[self::FIELD_PLAN_DISPLAY] = [];
+                    }
+                    $errs[self::FIELD_PLAN_DISPLAY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUB_CLASS])) {
+            $v = $this->getSubClass();
+            foreach($validationRules[self::FIELD_SUB_CLASS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_GROUPING, self::FIELD_SUB_CLASS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUB_CLASS])) {
+                        $errs[self::FIELD_SUB_CLASS] = [];
+                    }
+                    $errs[self::FIELD_SUB_CLASS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUB_CLASS_DISPLAY])) {
+            $v = $this->getSubClassDisplay();
+            foreach($validationRules[self::FIELD_SUB_CLASS_DISPLAY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_GROUPING, self::FIELD_SUB_CLASS_DISPLAY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUB_CLASS_DISPLAY])) {
+                        $errs[self::FIELD_SUB_CLASS_DISPLAY] = [];
+                    }
+                    $errs[self::FIELD_SUB_CLASS_DISPLAY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUB_GROUP])) {
+            $v = $this->getSubGroup();
+            foreach($validationRules[self::FIELD_SUB_GROUP] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_GROUPING, self::FIELD_SUB_GROUP, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUB_GROUP])) {
+                        $errs[self::FIELD_SUB_GROUP] = [];
+                    }
+                    $errs[self::FIELD_SUB_GROUP][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUB_GROUP_DISPLAY])) {
+            $v = $this->getSubGroupDisplay();
+            foreach($validationRules[self::FIELD_SUB_GROUP_DISPLAY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_GROUPING, self::FIELD_SUB_GROUP_DISPLAY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUB_GROUP_DISPLAY])) {
+                        $errs[self::FIELD_SUB_GROUP_DISPLAY] = [];
+                    }
+                    $errs[self::FIELD_SUB_GROUP_DISPLAY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUB_PLAN])) {
+            $v = $this->getSubPlan();
+            foreach($validationRules[self::FIELD_SUB_PLAN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_GROUPING, self::FIELD_SUB_PLAN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUB_PLAN])) {
+                        $errs[self::FIELD_SUB_PLAN] = [];
+                    }
+                    $errs[self::FIELD_SUB_PLAN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUB_PLAN_DISPLAY])) {
+            $v = $this->getSubPlanDisplay();
+            foreach($validationRules[self::FIELD_SUB_PLAN_DISPLAY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_DOT_GROUPING, self::FIELD_SUB_PLAN_DISPLAY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUB_PLAN_DISPLAY])) {
+                        $errs[self::FIELD_SUB_PLAN_DISPLAY] = [];
+                    }
+                    $errs[self::FIELD_SUB_PLAN_DISPLAY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
         return $errs;
     }
 

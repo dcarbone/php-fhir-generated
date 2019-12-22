@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:36+0000
+ * Class creation date: December 22nd, 2019 07:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,6 +113,7 @@ use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource
 class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterface
 {
     use PHPFHIRCommentContainerTrait;
+    use PHPFHIRValidationAssertionsTrait;
 
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_DOT_INLINE;
@@ -628,7 +629,7 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
      * Validation map for fields in type Resource.Inline
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRResourceInline Constructor
@@ -2342,11 +2343,271 @@ class FHIRResourceInline implements PHPFHIRCommentContainerInterface, PHPFHIRTyp
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
+    {
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
     {
         $errs = [];
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getAdverseReaction())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ADVERSE_REACTION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getAlert())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ALERT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getAllergyIntolerance())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ALLERGY_INTOLERANCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBinary())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BINARY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCarePlan())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CARE_PLAN] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getComposition())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_COMPOSITION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getConceptMap())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CONCEPT_MAP] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCondition())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CONDITION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getConformance())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CONFORMANCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDevice())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEVICE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDeviceObservationReport())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEVICE_OBSERVATION_REPORT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDiagnosticOrder())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DIAGNOSTIC_ORDER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDiagnosticReport())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DIAGNOSTIC_REPORT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDocumentManifest())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DOCUMENT_MANIFEST] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDocumentReference())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DOCUMENT_REFERENCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getEncounter())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ENCOUNTER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getFamilyHistory())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FAMILY_HISTORY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getGroup())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_GROUP] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getImagingStudy())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_IMAGING_STUDY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getImmunization())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_IMMUNIZATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getImmunizationRecommendation())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_IMMUNIZATION_RECOMMENDATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getList())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_LIST] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getLocation())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_LOCATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMedia())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MEDIA] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMedication())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MEDICATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMedicationAdministration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MEDICATION_ADMINISTRATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMedicationDispense())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MEDICATION_DISPENSE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMedicationPrescription())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MEDICATION_PRESCRIPTION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMedicationStatement())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MEDICATION_STATEMENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMessageHeader())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MESSAGE_HEADER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getObservation())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_OBSERVATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getOperationOutcome())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_OPERATION_OUTCOME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getOrder())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ORDER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getOrderResponse())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ORDER_RESPONSE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getOrganization())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ORGANIZATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getOther())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_OTHER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPatient())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PATIENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPractitioner())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PRACTITIONER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getProcedure())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PROCEDURE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getProfile())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PROFILE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getProvenance())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PROVENANCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getQuery())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_QUERY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getQuestionnaire())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_QUESTIONNAIRE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRelatedPerson())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_RELATED_PERSON] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSecurityEvent())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SECURITY_EVENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSpecimen())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SPECIMEN] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSubstance())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUBSTANCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSupply())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUPPLY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValueSet())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_SET] = $fieldErrs;
+            }
+        }
         return $errs;
     }
 

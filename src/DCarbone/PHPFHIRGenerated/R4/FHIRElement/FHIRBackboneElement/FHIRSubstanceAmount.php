@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -193,7 +193,7 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * Validation map for fields in type SubstanceAmount
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRSubstanceAmount Constructor
@@ -550,12 +550,165 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getAmountQuantity())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_AMOUNT_QUANTITY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getAmountRange())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_AMOUNT_RANGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getAmountString())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_AMOUNT_STRING] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getAmountText())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_AMOUNT_TEXT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getAmountType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_AMOUNT_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getReferenceRange())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_REFERENCE_RANGE] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_AMOUNT_QUANTITY])) {
+            $v = $this->getAmountQuantity();
+            foreach($validationRules[self::FIELD_AMOUNT_QUANTITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT, self::FIELD_AMOUNT_QUANTITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AMOUNT_QUANTITY])) {
+                        $errs[self::FIELD_AMOUNT_QUANTITY] = [];
+                    }
+                    $errs[self::FIELD_AMOUNT_QUANTITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AMOUNT_RANGE])) {
+            $v = $this->getAmountRange();
+            foreach($validationRules[self::FIELD_AMOUNT_RANGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT, self::FIELD_AMOUNT_RANGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AMOUNT_RANGE])) {
+                        $errs[self::FIELD_AMOUNT_RANGE] = [];
+                    }
+                    $errs[self::FIELD_AMOUNT_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AMOUNT_STRING])) {
+            $v = $this->getAmountString();
+            foreach($validationRules[self::FIELD_AMOUNT_STRING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT, self::FIELD_AMOUNT_STRING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AMOUNT_STRING])) {
+                        $errs[self::FIELD_AMOUNT_STRING] = [];
+                    }
+                    $errs[self::FIELD_AMOUNT_STRING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AMOUNT_TEXT])) {
+            $v = $this->getAmountText();
+            foreach($validationRules[self::FIELD_AMOUNT_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT, self::FIELD_AMOUNT_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AMOUNT_TEXT])) {
+                        $errs[self::FIELD_AMOUNT_TEXT] = [];
+                    }
+                    $errs[self::FIELD_AMOUNT_TEXT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AMOUNT_TYPE])) {
+            $v = $this->getAmountType();
+            foreach($validationRules[self::FIELD_AMOUNT_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT, self::FIELD_AMOUNT_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AMOUNT_TYPE])) {
+                        $errs[self::FIELD_AMOUNT_TYPE] = [];
+                    }
+                    $errs[self::FIELD_AMOUNT_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REFERENCE_RANGE])) {
+            $v = $this->getReferenceRange();
+            foreach($validationRules[self::FIELD_REFERENCE_RANGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_AMOUNT, self::FIELD_REFERENCE_RANGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REFERENCE_RANGE])) {
+                        $errs[self::FIELD_REFERENCE_RANGE] = [];
+                    }
+                    $errs[self::FIELD_REFERENCE_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

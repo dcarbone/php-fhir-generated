@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStruc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:37+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -997,7 +997,7 @@ class FHIRStructureMapSource extends FHIRBackboneElement
      * Validation map for fields in type StructureMap.Source
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRStructureMapSource Constructor
@@ -4172,12 +4172,1083 @@ class FHIRStructureMapSource extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        // TODO: implement validation
-        return [];
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getCheck())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CHECK] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCondition())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CONDITION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getContext())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CONTEXT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueAddress())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_ADDRESS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueAge())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_AGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueAnnotation())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_ANNOTATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueAttachment())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_ATTACHMENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueBase64Binary())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_BASE_64BINARY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueBoolean())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_BOOLEAN] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueCanonical())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_CANONICAL] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueCode())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_CODE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueCodeableConcept())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueCoding())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_CODING] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueContactDetail())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_CONTACT_DETAIL] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueContactPoint())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueContributor())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_CONTRIBUTOR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueCount())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_COUNT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueDataRequirement())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_DATA_REQUIREMENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueDate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_DATE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueDateTime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_DATE_TIME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueDecimal())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_DECIMAL] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueDistance())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_DISTANCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueDosage())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_DOSAGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueDuration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_DURATION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueExpression())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_EXPRESSION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueHumanName())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_HUMAN_NAME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueId())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_ID] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueIdentifier())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_IDENTIFIER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueInstant())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_INSTANT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueInteger())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_INTEGER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueMarkdown())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_MARKDOWN] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueMeta())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_META] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueMoney())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_MONEY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueOid())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_OID] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueParameterDefinition())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_PARAMETER_DEFINITION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValuePeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_PERIOD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValuePositiveInt())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_POSITIVE_INT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueQuantity())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_QUANTITY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueRange())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_RANGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueRatio())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_RATIO] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueReference())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_REFERENCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueRelatedArtifact())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_RELATED_ARTIFACT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueSampledData())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_SAMPLED_DATA] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueSignature())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_SIGNATURE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueString())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_STRING] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueTime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_TIME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueTiming())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_TIMING] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueTriggerDefinition())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_TRIGGER_DEFINITION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueUnsignedInt())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_UNSIGNED_INT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueUri())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_URI] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueUrl())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_URL] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueUsageContext())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_USAGE_CONTEXT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDefaultValueUuid())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DEFAULT_VALUE_UUID] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getElement())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ELEMENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getListMode())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_LIST_MODE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getLogMessage())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_LOG_MESSAGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMax())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MAX] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMin())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MIN] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getVariable())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VARIABLE] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_CHECK])) {
+            $v = $this->getCheck();
+            foreach($validationRules[self::FIELD_CHECK] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_CHECK, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CHECK])) {
+                        $errs[self::FIELD_CHECK] = [];
+                    }
+                    $errs[self::FIELD_CHECK][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONDITION])) {
+            $v = $this->getCondition();
+            foreach($validationRules[self::FIELD_CONDITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_CONDITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONDITION])) {
+                        $errs[self::FIELD_CONDITION] = [];
+                    }
+                    $errs[self::FIELD_CONDITION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONTEXT])) {
+            $v = $this->getContext();
+            foreach($validationRules[self::FIELD_CONTEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_CONTEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONTEXT])) {
+                        $errs[self::FIELD_CONTEXT] = [];
+                    }
+                    $errs[self::FIELD_CONTEXT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_ADDRESS])) {
+            $v = $this->getDefaultValueAddress();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_ADDRESS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_ADDRESS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_ADDRESS])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_ADDRESS] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_ADDRESS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_AGE])) {
+            $v = $this->getDefaultValueAge();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_AGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_AGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_AGE])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_AGE] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_AGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_ANNOTATION])) {
+            $v = $this->getDefaultValueAnnotation();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_ANNOTATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_ANNOTATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_ANNOTATION])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_ANNOTATION] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_ANNOTATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_ATTACHMENT])) {
+            $v = $this->getDefaultValueAttachment();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_ATTACHMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_ATTACHMENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_ATTACHMENT])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_ATTACHMENT] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_ATTACHMENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_BASE_64BINARY])) {
+            $v = $this->getDefaultValueBase64Binary();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_BASE_64BINARY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_BASE_64BINARY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_BASE_64BINARY])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_BASE_64BINARY] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_BASE_64BINARY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_BOOLEAN])) {
+            $v = $this->getDefaultValueBoolean();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_BOOLEAN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_BOOLEAN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_BOOLEAN])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_BOOLEAN] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_BOOLEAN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_CANONICAL])) {
+            $v = $this->getDefaultValueCanonical();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_CANONICAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_CANONICAL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_CANONICAL])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_CANONICAL] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_CANONICAL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_CODE])) {
+            $v = $this->getDefaultValueCode();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_CODE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_CODE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_CODE])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_CODE] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_CODE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT])) {
+            $v = $this->getDefaultValueCodeableConcept();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_CODEABLE_CONCEPT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_CODING])) {
+            $v = $this->getDefaultValueCoding();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_CODING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_CODING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_CODING])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_CODING] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_CODING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_CONTACT_DETAIL])) {
+            $v = $this->getDefaultValueContactDetail();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_CONTACT_DETAIL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_CONTACT_DETAIL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_CONTACT_DETAIL])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_CONTACT_DETAIL] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_CONTACT_DETAIL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_CONTACT_POINT])) {
+            $v = $this->getDefaultValueContactPoint();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_CONTACT_POINT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_CONTACT_POINT])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_CONTACT_POINT] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_CONTACT_POINT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_CONTRIBUTOR])) {
+            $v = $this->getDefaultValueContributor();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_CONTRIBUTOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_CONTRIBUTOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_CONTRIBUTOR])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_CONTRIBUTOR] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_CONTRIBUTOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_COUNT])) {
+            $v = $this->getDefaultValueCount();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_COUNT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_COUNT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_COUNT])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_COUNT] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_COUNT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_DATA_REQUIREMENT])) {
+            $v = $this->getDefaultValueDataRequirement();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_DATA_REQUIREMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_DATA_REQUIREMENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_DATA_REQUIREMENT])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_DATA_REQUIREMENT] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_DATA_REQUIREMENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_DATE])) {
+            $v = $this->getDefaultValueDate();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_DATE])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_DATE] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_DATE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_DATE_TIME])) {
+            $v = $this->getDefaultValueDateTime();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_DATE_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_DATE_TIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_DATE_TIME])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_DATE_TIME] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_DATE_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_DECIMAL])) {
+            $v = $this->getDefaultValueDecimal();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_DECIMAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_DECIMAL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_DECIMAL])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_DECIMAL] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_DECIMAL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_DISTANCE])) {
+            $v = $this->getDefaultValueDistance();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_DISTANCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_DISTANCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_DISTANCE])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_DISTANCE] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_DISTANCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_DOSAGE])) {
+            $v = $this->getDefaultValueDosage();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_DOSAGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_DOSAGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_DOSAGE])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_DOSAGE] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_DOSAGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_DURATION])) {
+            $v = $this->getDefaultValueDuration();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_DURATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_DURATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_DURATION])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_DURATION] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_DURATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_EXPRESSION])) {
+            $v = $this->getDefaultValueExpression();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_EXPRESSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_EXPRESSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_EXPRESSION])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_EXPRESSION] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_EXPRESSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_HUMAN_NAME])) {
+            $v = $this->getDefaultValueHumanName();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_HUMAN_NAME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_HUMAN_NAME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_HUMAN_NAME])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_HUMAN_NAME] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_HUMAN_NAME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_ID])) {
+            $v = $this->getDefaultValueId();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_ID])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_ID] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_IDENTIFIER])) {
+            $v = $this->getDefaultValueIdentifier();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_IDENTIFIER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_IDENTIFIER])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_IDENTIFIER] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_IDENTIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_INSTANT])) {
+            $v = $this->getDefaultValueInstant();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_INSTANT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_INSTANT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_INSTANT])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_INSTANT] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_INSTANT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_INTEGER])) {
+            $v = $this->getDefaultValueInteger();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_INTEGER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_INTEGER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_INTEGER])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_INTEGER] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_INTEGER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_MARKDOWN])) {
+            $v = $this->getDefaultValueMarkdown();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_MARKDOWN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_MARKDOWN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_MARKDOWN])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_MARKDOWN] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_MARKDOWN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_META])) {
+            $v = $this->getDefaultValueMeta();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_META])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_META] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_META][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_MONEY])) {
+            $v = $this->getDefaultValueMoney();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_MONEY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_MONEY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_MONEY])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_MONEY] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_MONEY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_OID])) {
+            $v = $this->getDefaultValueOid();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_OID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_OID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_OID])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_OID] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_OID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_PARAMETER_DEFINITION])) {
+            $v = $this->getDefaultValueParameterDefinition();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_PARAMETER_DEFINITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_PARAMETER_DEFINITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_PARAMETER_DEFINITION])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_PARAMETER_DEFINITION] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_PARAMETER_DEFINITION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_PERIOD])) {
+            $v = $this->getDefaultValuePeriod();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_PERIOD])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_PERIOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_POSITIVE_INT])) {
+            $v = $this->getDefaultValuePositiveInt();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_POSITIVE_INT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_POSITIVE_INT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_POSITIVE_INT])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_POSITIVE_INT] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_POSITIVE_INT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_QUANTITY])) {
+            $v = $this->getDefaultValueQuantity();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_QUANTITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_QUANTITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_QUANTITY])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_QUANTITY] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_QUANTITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_RANGE])) {
+            $v = $this->getDefaultValueRange();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_RANGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_RANGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_RANGE])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_RANGE] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_RATIO])) {
+            $v = $this->getDefaultValueRatio();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_RATIO] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_RATIO, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_RATIO])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_RATIO] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_RATIO][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_REFERENCE])) {
+            $v = $this->getDefaultValueReference();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_REFERENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_REFERENCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_REFERENCE])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_REFERENCE] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_REFERENCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_RELATED_ARTIFACT])) {
+            $v = $this->getDefaultValueRelatedArtifact();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_RELATED_ARTIFACT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_RELATED_ARTIFACT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_RELATED_ARTIFACT])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_RELATED_ARTIFACT] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_RELATED_ARTIFACT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_SAMPLED_DATA])) {
+            $v = $this->getDefaultValueSampledData();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_SAMPLED_DATA] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_SAMPLED_DATA, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_SAMPLED_DATA])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_SAMPLED_DATA] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_SAMPLED_DATA][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_SIGNATURE])) {
+            $v = $this->getDefaultValueSignature();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_SIGNATURE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_SIGNATURE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_SIGNATURE])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_SIGNATURE] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_SIGNATURE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_STRING])) {
+            $v = $this->getDefaultValueString();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_STRING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_STRING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_STRING])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_STRING] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_STRING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_TIME])) {
+            $v = $this->getDefaultValueTime();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_TIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_TIME])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_TIME] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_TIMING])) {
+            $v = $this->getDefaultValueTiming();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_TIMING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_TIMING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_TIMING])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_TIMING] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_TIMING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_TRIGGER_DEFINITION])) {
+            $v = $this->getDefaultValueTriggerDefinition();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_TRIGGER_DEFINITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_TRIGGER_DEFINITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_TRIGGER_DEFINITION])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_TRIGGER_DEFINITION] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_TRIGGER_DEFINITION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_UNSIGNED_INT])) {
+            $v = $this->getDefaultValueUnsignedInt();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_UNSIGNED_INT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_UNSIGNED_INT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_UNSIGNED_INT])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_UNSIGNED_INT] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_UNSIGNED_INT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_URI])) {
+            $v = $this->getDefaultValueUri();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_URI] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_URI, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_URI])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_URI] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_URI][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_URL])) {
+            $v = $this->getDefaultValueUrl();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_URL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_URL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_URL])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_URL] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_URL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_USAGE_CONTEXT])) {
+            $v = $this->getDefaultValueUsageContext();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_USAGE_CONTEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_USAGE_CONTEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_USAGE_CONTEXT])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_USAGE_CONTEXT] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_USAGE_CONTEXT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEFAULT_VALUE_UUID])) {
+            $v = $this->getDefaultValueUuid();
+            foreach($validationRules[self::FIELD_DEFAULT_VALUE_UUID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_DEFAULT_VALUE_UUID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEFAULT_VALUE_UUID])) {
+                        $errs[self::FIELD_DEFAULT_VALUE_UUID] = [];
+                    }
+                    $errs[self::FIELD_DEFAULT_VALUE_UUID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ELEMENT])) {
+            $v = $this->getElement();
+            foreach($validationRules[self::FIELD_ELEMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_ELEMENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ELEMENT])) {
+                        $errs[self::FIELD_ELEMENT] = [];
+                    }
+                    $errs[self::FIELD_ELEMENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_LIST_MODE])) {
+            $v = $this->getListMode();
+            foreach($validationRules[self::FIELD_LIST_MODE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_LIST_MODE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_LIST_MODE])) {
+                        $errs[self::FIELD_LIST_MODE] = [];
+                    }
+                    $errs[self::FIELD_LIST_MODE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_LOG_MESSAGE])) {
+            $v = $this->getLogMessage();
+            foreach($validationRules[self::FIELD_LOG_MESSAGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_LOG_MESSAGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_LOG_MESSAGE])) {
+                        $errs[self::FIELD_LOG_MESSAGE] = [];
+                    }
+                    $errs[self::FIELD_LOG_MESSAGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MAX])) {
+            $v = $this->getMax();
+            foreach($validationRules[self::FIELD_MAX] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_MAX, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MAX])) {
+                        $errs[self::FIELD_MAX] = [];
+                    }
+                    $errs[self::FIELD_MAX][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MIN])) {
+            $v = $this->getMin();
+            foreach($validationRules[self::FIELD_MIN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_MIN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MIN])) {
+                        $errs[self::FIELD_MIN] = [];
+                    }
+                    $errs[self::FIELD_MIN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
+                    }
+                    $errs[self::FIELD_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VARIABLE])) {
+            $v = $this->getVariable();
+            foreach($validationRules[self::FIELD_VARIABLE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_SOURCE, self::FIELD_VARIABLE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VARIABLE])) {
+                        $errs[self::FIELD_VARIABLE] = [];
+                    }
+                    $errs[self::FIELD_VARIABLE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        return $errs;
     }
 
     /**

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:36+0000
+ * Class creation date: December 22nd, 2019 07:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,11 +93,17 @@ interface PHPFHIRTypeInterface extends \JsonSerializable {
     public function _getFHIRXMLElementDefinition();
 
     /**
+     * Must return an associative array in structure ["field" => ["rule" => {constraint}]] to be used during validation
+     * @return array
+     */
+    public function _getValidationRules();
+
+    /**
      * Must return associative array where, if there are validation errors, the keys are the names of fields within the
      * type that failed validation.  The value must be a string message describing the manner of error
      * @return array
      */
-    public function _validationErrors();
+    public function _getValidationErrors();
 
     /**
      * @param \SimpleXMLElement|string|null $sxe

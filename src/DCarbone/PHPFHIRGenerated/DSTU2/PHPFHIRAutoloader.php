@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:36+0000
+ * Class creation date: December 22nd, 2019 07:25+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -78,6 +78,9 @@ if (!interface_exists('\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRCommentContainerI
 // traits
 if (!trait_exists('\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRCommentContainerTrait', false)) {
     require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRCommentContainerTrait.php';
+}
+if (!trait_exists('\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRValidationAssertionsTrait', false)) {
+    require __DIR__ . DIRECTORY_SEPARATOR . 'PHPFHIRValidationAssertionsTrait.php';
 }
 
 // common classes

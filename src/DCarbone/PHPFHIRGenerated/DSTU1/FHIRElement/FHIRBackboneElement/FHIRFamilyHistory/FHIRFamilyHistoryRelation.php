@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 7th, 2019 16:36+0000
+ * Class creation date: December 22nd, 2019 07:24+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -258,7 +258,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * Validation map for fields in type FamilyHistory.Relation
      * @var array
      */
-    private static $_fieldValidation = [    ];
+    private static $_validationRules = [    ];
 
     /**
      * FHIRFamilyHistoryRelation Constructor
@@ -990,11 +990,268 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     }
 
     /**
+     * Returns the validation rules that this type's fields must comply with to be considered "valid"
+     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
+     *
      * @return array
      */
-    public function _validationErrors()
+    public function _getValidationRules()
     {
-        $errs = parent::_validationErrors();
+        return self::$_validationRules;
+    }
+
+    /**
+     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
+     * passing.
+     *
+     * @return array
+     */
+    public function _getValidationErrors()
+    {
+        $errs = parent::_getValidationErrors();
+        $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getBornDate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BORN_DATE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBornPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BORN_PERIOD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBornString())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BORN_STRING] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getCondition())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_CONDITION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getDeceasedAge())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DECEASED_AGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDeceasedBoolean())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DECEASED_BOOLEAN] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDeceasedDate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DECEASED_DATE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDeceasedRange())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DECEASED_RANGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDeceasedString())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DECEASED_STRING] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_NAME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getNote())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_NOTE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRelationship())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_RELATIONSHIP] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_BORN_DATE])) {
+            $v = $this->getBornDate();
+            foreach($validationRules[self::FIELD_BORN_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_BORN_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BORN_DATE])) {
+                        $errs[self::FIELD_BORN_DATE] = [];
+                    }
+                    $errs[self::FIELD_BORN_DATE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BORN_PERIOD])) {
+            $v = $this->getBornPeriod();
+            foreach($validationRules[self::FIELD_BORN_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_BORN_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BORN_PERIOD])) {
+                        $errs[self::FIELD_BORN_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_BORN_PERIOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BORN_STRING])) {
+            $v = $this->getBornString();
+            foreach($validationRules[self::FIELD_BORN_STRING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_BORN_STRING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BORN_STRING])) {
+                        $errs[self::FIELD_BORN_STRING] = [];
+                    }
+                    $errs[self::FIELD_BORN_STRING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONDITION])) {
+            $v = $this->getCondition();
+            foreach($validationRules[self::FIELD_CONDITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_CONDITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONDITION])) {
+                        $errs[self::FIELD_CONDITION] = [];
+                    }
+                    $errs[self::FIELD_CONDITION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DECEASED_AGE])) {
+            $v = $this->getDeceasedAge();
+            foreach($validationRules[self::FIELD_DECEASED_AGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_AGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DECEASED_AGE])) {
+                        $errs[self::FIELD_DECEASED_AGE] = [];
+                    }
+                    $errs[self::FIELD_DECEASED_AGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DECEASED_BOOLEAN])) {
+            $v = $this->getDeceasedBoolean();
+            foreach($validationRules[self::FIELD_DECEASED_BOOLEAN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_BOOLEAN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DECEASED_BOOLEAN])) {
+                        $errs[self::FIELD_DECEASED_BOOLEAN] = [];
+                    }
+                    $errs[self::FIELD_DECEASED_BOOLEAN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DECEASED_DATE])) {
+            $v = $this->getDeceasedDate();
+            foreach($validationRules[self::FIELD_DECEASED_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DECEASED_DATE])) {
+                        $errs[self::FIELD_DECEASED_DATE] = [];
+                    }
+                    $errs[self::FIELD_DECEASED_DATE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DECEASED_RANGE])) {
+            $v = $this->getDeceasedRange();
+            foreach($validationRules[self::FIELD_DECEASED_RANGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_RANGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DECEASED_RANGE])) {
+                        $errs[self::FIELD_DECEASED_RANGE] = [];
+                    }
+                    $errs[self::FIELD_DECEASED_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DECEASED_STRING])) {
+            $v = $this->getDeceasedString();
+            foreach($validationRules[self::FIELD_DECEASED_STRING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_STRING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DECEASED_STRING])) {
+                        $errs[self::FIELD_DECEASED_STRING] = [];
+                    }
+                    $errs[self::FIELD_DECEASED_STRING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_NAME])) {
+            $v = $this->getName();
+            foreach($validationRules[self::FIELD_NAME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_NAME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NAME])) {
+                        $errs[self::FIELD_NAME] = [];
+                    }
+                    $errs[self::FIELD_NAME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_NOTE])) {
+            $v = $this->getNote();
+            foreach($validationRules[self::FIELD_NOTE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_NOTE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NOTE])) {
+                        $errs[self::FIELD_NOTE] = [];
+                    }
+                    $errs[self::FIELD_NOTE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RELATIONSHIP])) {
+            $v = $this->getRelationship();
+            foreach($validationRules[self::FIELD_RELATIONSHIP] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_RELATIONSHIP, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RELATIONSHIP])) {
+                        $errs[self::FIELD_RELATIONSHIP] = [];
+                    }
+                    $errs[self::FIELD_RELATIONSHIP][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
+            $v = $this->getModifierExtension();
+            foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BACKBONE_ELEMENT, self::FIELD_MODIFIER_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MODIFIER_EXTENSION])) {
+                        $errs[self::FIELD_MODIFIER_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_MODIFIER_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXTENSION])) {
+            $v = $this->getExtension();
+            foreach($validationRules[self::FIELD_EXTENSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_EXTENSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXTENSION])) {
+                        $errs[self::FIELD_EXTENSION] = [];
+                    }
+                    $errs[self::FIELD_EXTENSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ID])) {
+            $v = $this->getId();
+            foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ELEMENT, self::FIELD_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ID])) {
+                        $errs[self::FIELD_ID] = [];
+                    }
+                    $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
         return $errs;
     }
 
