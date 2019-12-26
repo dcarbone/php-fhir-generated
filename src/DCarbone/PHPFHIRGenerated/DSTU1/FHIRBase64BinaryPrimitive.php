@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 22nd, 2019 07:24+0000
+ * Class creation date: December 26th, 2019 15:43+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -165,6 +165,7 @@ class FHIRBase64BinaryPrimitive implements PHPFHIRTypeInterface
      *
      * @param resource $fileHandle
      * @return int|false
+     */
     public function _writeToFile($fileHandle)
     {
         $v = $this->getValue();
