@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,15 +62,22 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Represents a defined collection of entities that may be discussed or acted upon
@@ -85,19 +92,17 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GROUP_DOT_CHARACTERISTIC;
+
     const FIELD_CODE = 'code';
-    const FIELD_EXCLUDE = 'exclude';
-    const FIELD_EXCLUDE_EXT = '_exclude';
-    const FIELD_PERIOD = 'period';
+    const FIELD_VALUE_CODEABLE_CONCEPT = 'valueCodeableConcept';
     const FIELD_VALUE_BOOLEAN = 'valueBoolean';
     const FIELD_VALUE_BOOLEAN_EXT = '_valueBoolean';
-    const FIELD_VALUE_CODEABLE_CONCEPT = 'valueCodeableConcept';
     const FIELD_VALUE_QUANTITY = 'valueQuantity';
     const FIELD_VALUE_RANGE = 'valueRange';
     const FIELD_VALUE_REFERENCE = 'valueReference';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_EXCLUDE = 'exclude';
+    const FIELD_EXCLUDE_EXT = '_exclude';
+    const FIELD_PERIOD = 'period';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -109,8 +114,64 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $code = null;
-
+    protected null|FHIRCodeableConcept $code = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $valueCodeableConcept = null;
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    protected null|FHIRBoolean $valueBoolean = null;
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    protected null|FHIRQuantity $valueQuantity = null;
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
+     */
+    protected null|FHIRRange $valueRange = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $valueReference = null;
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -120,8 +181,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    protected $exclude = null;
-
+    protected null|FHIRBoolean $exclude = null;
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -132,140 +192,44 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    protected $period = null;
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    protected $valueBoolean = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $valueCodeableConcept = null;
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    protected $valueQuantity = null;
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
-     */
-    protected $valueRange = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $valueReference = null;
+    protected null|FHIRPeriod $period = null;
 
     /**
      * Validation map for fields in type Group.Characteristic
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRGroupCharacteristic Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRGroupCharacteristic::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CODE])) {
+        if (array_key_exists(self::FIELD_CODE, $data)) {
             if ($data[self::FIELD_CODE] instanceof FHIRCodeableConcept) {
                 $this->setCode($data[self::FIELD_CODE]);
             } else {
                 $this->setCode(new FHIRCodeableConcept($data[self::FIELD_CODE]));
             }
         }
-        if (isset($data[self::FIELD_EXCLUDE]) || isset($data[self::FIELD_EXCLUDE_EXT])) {
-            if (isset($data[self::FIELD_EXCLUDE])) {
-                $value = $data[self::FIELD_EXCLUDE];
+        if (array_key_exists(self::FIELD_VALUE_CODEABLE_CONCEPT, $data)) {
+            if ($data[self::FIELD_VALUE_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
+                $this->setValueCodeableConcept($data[self::FIELD_VALUE_CODEABLE_CONCEPT]);
             } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_EXCLUDE_EXT]) && is_array($data[self::FIELD_EXCLUDE_EXT])) {
-                $ext = $data[self::FIELD_EXCLUDE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setExclude($value);
-                } else if (is_array($value)) {
-                    $this->setExclude(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setExclude(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setExclude(new FHIRBoolean($ext));
+                $this->setValueCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_VALUE_CODEABLE_CONCEPT]));
             }
         }
-        if (isset($data[self::FIELD_PERIOD])) {
-            if ($data[self::FIELD_PERIOD] instanceof FHIRPeriod) {
-                $this->setPeriod($data[self::FIELD_PERIOD]);
-            } else {
-                $this->setPeriod(new FHIRPeriod($data[self::FIELD_PERIOD]));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_BOOLEAN]) || isset($data[self::FIELD_VALUE_BOOLEAN_EXT])) {
-            if (isset($data[self::FIELD_VALUE_BOOLEAN])) {
-                $value = $data[self::FIELD_VALUE_BOOLEAN];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_BOOLEAN_EXT]) && is_array($data[self::FIELD_VALUE_BOOLEAN_EXT])) {
-                $ext = $data[self::FIELD_VALUE_BOOLEAN_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_VALUE_BOOLEAN, $data) || array_key_exists(self::FIELD_VALUE_BOOLEAN_EXT, $data)) {
+            $value = $data[self::FIELD_VALUE_BOOLEAN] ?? null;
+            $ext = (isset($data[self::FIELD_VALUE_BOOLEAN_EXT]) && is_array($data[self::FIELD_VALUE_BOOLEAN_EXT])) ? $data[self::FIELD_VALUE_BOOLEAN_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setValueBoolean($value);
@@ -274,36 +238,55 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
                 } else {
                     $this->setValueBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setValueBoolean(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_CODEABLE_CONCEPT])) {
-            if ($data[self::FIELD_VALUE_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $this->setValueCodeableConcept($data[self::FIELD_VALUE_CODEABLE_CONCEPT]);
             } else {
-                $this->setValueCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_VALUE_CODEABLE_CONCEPT]));
+                $this->setValueBoolean(new FHIRBoolean(null));
             }
         }
-        if (isset($data[self::FIELD_VALUE_QUANTITY])) {
+        if (array_key_exists(self::FIELD_VALUE_QUANTITY, $data)) {
             if ($data[self::FIELD_VALUE_QUANTITY] instanceof FHIRQuantity) {
                 $this->setValueQuantity($data[self::FIELD_VALUE_QUANTITY]);
             } else {
                 $this->setValueQuantity(new FHIRQuantity($data[self::FIELD_VALUE_QUANTITY]));
             }
         }
-        if (isset($data[self::FIELD_VALUE_RANGE])) {
+        if (array_key_exists(self::FIELD_VALUE_RANGE, $data)) {
             if ($data[self::FIELD_VALUE_RANGE] instanceof FHIRRange) {
                 $this->setValueRange($data[self::FIELD_VALUE_RANGE]);
             } else {
                 $this->setValueRange(new FHIRRange($data[self::FIELD_VALUE_RANGE]));
             }
         }
-        if (isset($data[self::FIELD_VALUE_REFERENCE])) {
+        if (array_key_exists(self::FIELD_VALUE_REFERENCE, $data)) {
             if ($data[self::FIELD_VALUE_REFERENCE] instanceof FHIRReference) {
                 $this->setValueReference($data[self::FIELD_VALUE_REFERENCE]);
             } else {
                 $this->setValueReference(new FHIRReference($data[self::FIELD_VALUE_REFERENCE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_EXCLUDE, $data) || array_key_exists(self::FIELD_EXCLUDE_EXT, $data)) {
+            $value = $data[self::FIELD_EXCLUDE] ?? null;
+            $ext = (isset($data[self::FIELD_EXCLUDE_EXT]) && is_array($data[self::FIELD_EXCLUDE_EXT])) ? $data[self::FIELD_EXCLUDE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setExclude($value);
+                } else if (is_array($value)) {
+                    $this->setExclude(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setExclude(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setExclude(new FHIRBoolean($ext));
+            } else {
+                $this->setExclude(new FHIRBoolean(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_PERIOD, $data)) {
+            if ($data[self::FIELD_PERIOD] instanceof FHIRPeriod) {
+                $this->setPeriod($data[self::FIELD_PERIOD]);
+            } else {
+                $this->setPeriod(new FHIRPeriod($data[self::FIELD_PERIOD]));
             }
         }
     }
@@ -311,21 +294,9 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<GroupCharacteristic{$xmlns}></GroupCharacteristic>";
     }
 
     /**
@@ -338,7 +309,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getCode()
+    public function getCode(): null|FHIRCodeableConcept
     {
         return $this->code;
     }
@@ -354,9 +325,202 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $code
      * @return static
      */
-    public function setCode(FHIRCodeableConcept $code = null)
+    public function setCode(null|FHIRCodeableConcept $code = null): self
     {
+        if (null === $code) {
+            $code = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->code, $code);
         $this->code = $code;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getValueCodeableConcept(): null|FHIRCodeableConcept
+    {
+        return $this->valueCodeableConcept;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
+     * @return static
+     */
+    public function setValueCodeableConcept(null|FHIRCodeableConcept $valueCodeableConcept = null): self
+    {
+        if (null === $valueCodeableConcept) {
+            $valueCodeableConcept = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->valueCodeableConcept, $valueCodeableConcept);
+        $this->valueCodeableConcept = $valueCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    public function getValueBoolean(): null|FHIRBoolean
+    {
+        return $this->valueBoolean;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $valueBoolean
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $valueBoolean && !($valueBoolean instanceof FHIRBoolean)) {
+            $valueBoolean = new FHIRBoolean($valueBoolean);
+        }
+        $this->_trackValueSet($this->valueBoolean, $valueBoolean);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE_BOOLEAN])) {
+            $this->_primitiveXmlLocations[self::FIELD_VALUE_BOOLEAN] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_VALUE_BOOLEAN][0] = $xmlLocation;
+        $this->valueBoolean = $valueBoolean;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    public function getValueQuantity(): null|FHIRQuantity
+    {
+        return $this->valueQuantity;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $valueQuantity
+     * @return static
+     */
+    public function setValueQuantity(null|FHIRQuantity $valueQuantity = null): self
+    {
+        if (null === $valueQuantity) {
+            $valueQuantity = new FHIRQuantity();
+        }
+        $this->_trackValueSet($this->valueQuantity, $valueQuantity);
+        $this->valueQuantity = $valueQuantity;
+        return $this;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
+     */
+    public function getValueRange(): null|FHIRRange
+    {
+        return $this->valueRange;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $valueRange
+     * @return static
+     */
+    public function setValueRange(null|FHIRRange $valueRange = null): self
+    {
+        if (null === $valueRange) {
+            $valueRange = new FHIRRange();
+        }
+        $this->_trackValueSet($this->valueRange, $valueRange);
+        $this->valueRange = $valueRange;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getValueReference(): null|FHIRReference
+    {
+        return $this->valueReference;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the trait that holds (or does not hold - see 'exclude') for members
+     * of the group.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $valueReference
+     * @return static
+     */
+    public function setValueReference(null|FHIRReference $valueReference = null): self
+    {
+        if (null === $valueReference) {
+            $valueReference = new FHIRReference();
+        }
+        $this->_trackValueSet($this->valueReference, $valueReference);
+        $this->valueReference = $valueReference;
         return $this;
     }
 
@@ -369,7 +533,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    public function getExclude()
+    public function getExclude(): null|FHIRBoolean
     {
         return $this->exclude;
     }
@@ -381,20 +545,21 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * If true, indicates the characteristic is one that is NOT held by members of the
      * group.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $exclude
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $exclude
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setExclude($exclude = null)
+    public function setExclude(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $exclude = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $exclude) {
-            $this->exclude = null;
-            return $this;
+        if (null !== $exclude && !($exclude instanceof FHIRBoolean)) {
+            $exclude = new FHIRBoolean($exclude);
         }
-        if ($exclude instanceof FHIRBoolean) {
-            $this->exclude = $exclude;
-            return $this;
+        $this->_trackValueSet($this->exclude, $exclude);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXCLUDE])) {
+            $this->_primitiveXmlLocations[self::FIELD_EXCLUDE] = [];
         }
-        $this->exclude = new FHIRBoolean($exclude);
+        $this->_primitiveXmlLocations[self::FIELD_EXCLUDE][0] = $xmlLocation;
+        $this->exclude = $exclude;
         return $this;
     }
 
@@ -408,7 +573,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
+    public function getPeriod(): null|FHIRPeriod
     {
         return $this->period;
     }
@@ -424,181 +589,13 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $period
      * @return static
      */
-    public function setPeriod(FHIRPeriod $period = null)
+    public function setPeriod(null|FHIRPeriod $period = null): self
     {
+        if (null === $period) {
+            $period = new FHIRPeriod();
+        }
+        $this->_trackValueSet($this->period, $period);
         $this->period = $period;
-        return $this;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    public function getValueBoolean()
-    {
-        return $this->valueBoolean;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $valueBoolean
-     * @return static
-     */
-    public function setValueBoolean($valueBoolean = null)
-    {
-        if (null === $valueBoolean) {
-            $this->valueBoolean = null;
-            return $this;
-        }
-        if ($valueBoolean instanceof FHIRBoolean) {
-            $this->valueBoolean = $valueBoolean;
-            return $this;
-        }
-        $this->valueBoolean = new FHIRBoolean($valueBoolean);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getValueCodeableConcept()
-    {
-        return $this->valueCodeableConcept;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $valueCodeableConcept
-     * @return static
-     */
-    public function setValueCodeableConcept(FHIRCodeableConcept $valueCodeableConcept = null)
-    {
-        $this->valueCodeableConcept = $valueCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    public function getValueQuantity()
-    {
-        return $this->valueQuantity;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $valueQuantity
-     * @return static
-     */
-    public function setValueQuantity(FHIRQuantity $valueQuantity = null)
-    {
-        $this->valueQuantity = $valueQuantity;
-        return $this;
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
-     */
-    public function getValueRange()
-    {
-        return $this->valueRange;
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $valueRange
-     * @return static
-     */
-    public function setValueRange(FHIRRange $valueRange = null)
-    {
-        $this->valueRange = $valueRange;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getValueReference()
-    {
-        return $this->valueReference;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the trait that holds (or does not hold - see 'exclude') for members
-     * of the group. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $valueReference
-     * @return static
-     */
-    public function setValueReference(FHIRReference $valueReference = null)
-    {
-        $this->valueReference = $valueReference;
         return $this;
     }
 
@@ -608,9 +605,9 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -619,7 +616,7 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
@@ -628,24 +625,14 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
                 $errs[self::FIELD_CODE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getExclude())) {
+        if (null !== ($v = $this->getValueCodeableConcept())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_EXCLUDE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPeriod())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PERIOD] = $fieldErrs;
+                $errs[self::FIELD_VALUE_CODEABLE_CONCEPT] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getValueBoolean())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_VALUE_BOOLEAN] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueCodeableConcept())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_CODEABLE_CONCEPT] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getValueQuantity())) {
@@ -663,6 +650,16 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
                 $errs[self::FIELD_VALUE_REFERENCE] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getExclude())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EXCLUDE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PERIOD] = $fieldErrs;
+            }
+        }
         if (isset($validationRules[self::FIELD_CODE])) {
             $v = $this->getCode();
             foreach($validationRules[self::FIELD_CODE] as $rule => $constraint) {
@@ -675,27 +672,15 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_EXCLUDE])) {
-            $v = $this->getExclude();
-            foreach($validationRules[self::FIELD_EXCLUDE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GROUP_DOT_CHARACTERISTIC, self::FIELD_EXCLUDE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALUE_CODEABLE_CONCEPT])) {
+            $v = $this->getValueCodeableConcept();
+            foreach($validationRules[self::FIELD_VALUE_CODEABLE_CONCEPT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GROUP_DOT_CHARACTERISTIC, self::FIELD_VALUE_CODEABLE_CONCEPT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EXCLUDE])) {
-                        $errs[self::FIELD_EXCLUDE] = [];
+                    if (!isset($errs[self::FIELD_VALUE_CODEABLE_CONCEPT])) {
+                        $errs[self::FIELD_VALUE_CODEABLE_CONCEPT] = [];
                     }
-                    $errs[self::FIELD_EXCLUDE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PERIOD])) {
-            $v = $this->getPeriod();
-            foreach($validationRules[self::FIELD_PERIOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GROUP_DOT_CHARACTERISTIC, self::FIELD_PERIOD, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PERIOD])) {
-                        $errs[self::FIELD_PERIOD] = [];
-                    }
-                    $errs[self::FIELD_PERIOD][$rule] = $err;
+                    $errs[self::FIELD_VALUE_CODEABLE_CONCEPT][$rule] = $err;
                 }
             }
         }
@@ -708,18 +693,6 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
                         $errs[self::FIELD_VALUE_BOOLEAN] = [];
                     }
                     $errs[self::FIELD_VALUE_BOOLEAN][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VALUE_CODEABLE_CONCEPT])) {
-            $v = $this->getValueCodeableConcept();
-            foreach($validationRules[self::FIELD_VALUE_CODEABLE_CONCEPT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GROUP_DOT_CHARACTERISTIC, self::FIELD_VALUE_CODEABLE_CONCEPT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_CODEABLE_CONCEPT])) {
-                        $errs[self::FIELD_VALUE_CODEABLE_CONCEPT] = [];
-                    }
-                    $errs[self::FIELD_VALUE_CODEABLE_CONCEPT][$rule] = $err;
                 }
             }
         }
@@ -756,6 +729,30 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
                         $errs[self::FIELD_VALUE_REFERENCE] = [];
                     }
                     $errs[self::FIELD_VALUE_REFERENCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXCLUDE])) {
+            $v = $this->getExclude();
+            foreach($validationRules[self::FIELD_EXCLUDE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GROUP_DOT_CHARACTERISTIC, self::FIELD_EXCLUDE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXCLUDE])) {
+                        $errs[self::FIELD_EXCLUDE] = [];
+                    }
+                    $errs[self::FIELD_EXCLUDE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PERIOD])) {
+            $v = $this->getPeriod();
+            foreach($validationRules[self::FIELD_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GROUP_DOT_CHARACTERISTIC, self::FIELD_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PERIOD])) {
+                        $errs[self::FIELD_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_PERIOD][$rule] = $err;
                 }
             }
         }
@@ -799,179 +796,229 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRGroupCharacteristic::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRGroupCharacteristic::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRGroupCharacteristic;
-        } elseif (!is_object($type) || !($type instanceof FHIRGroupCharacteristic)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRGroupCharacteristic)) {
             throw new \RuntimeException(sprintf(
-                'FHIRGroupCharacteristic::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_CODE === $childName) {
+                $type->setCode(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_VALUE_CODEABLE_CONCEPT === $childName) {
+                $type->setValueCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_VALUE_BOOLEAN === $childName) {
+                $type->setValueBoolean(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_VALUE_QUANTITY === $childName) {
+                $type->setValueQuantity(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_VALUE_RANGE === $childName) {
+                $type->setValueRange(FHIRRange::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_VALUE_REFERENCE === $childName) {
+                $type->setValueReference(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXCLUDE === $childName) {
+                $type->setExclude(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PERIOD === $childName) {
+                $type->setPeriod(FHIRPeriod::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->code)) {
-            $type->setCode(FHIRCodeableConcept::xmlUnserialize($children->code));
-        }
-        if (isset($children->exclude)) {
-            $type->setExclude(FHIRBoolean::xmlUnserialize($children->exclude));
-        }
-        if (isset($attributes->exclude)) {
-            $pt = $type->getExclude();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->exclude);
-            } else {
-                $type->setExclude((string)$attributes->exclude);
-            }
-        }
-        if (isset($children->period)) {
-            $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
-        }
-        if (isset($children->valueBoolean)) {
-            $type->setValueBoolean(FHIRBoolean::xmlUnserialize($children->valueBoolean));
-        }
-        if (isset($attributes->valueBoolean)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_VALUE_BOOLEAN])) {
             $pt = $type->getValueBoolean();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueBoolean);
+                $pt->setValue((string)$attributes[self::FIELD_VALUE_BOOLEAN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setValueBoolean((string)$attributes->valueBoolean);
+                $type->setValueBoolean((string)$attributes[self::FIELD_VALUE_BOOLEAN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->valueCodeableConcept)) {
-            $type->setValueCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->valueCodeableConcept));
+        if (isset($attributes[self::FIELD_EXCLUDE])) {
+            $pt = $type->getExclude();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_EXCLUDE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setExclude((string)$attributes[self::FIELD_EXCLUDE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($children->valueQuantity)) {
-            $type->setValueQuantity(FHIRQuantity::xmlUnserialize($children->valueQuantity));
-        }
-        if (isset($children->valueRange)) {
-            $type->setValueRange(FHIRRange::xmlUnserialize($children->valueRange));
-        }
-        if (isset($children->valueReference)) {
-            $type->setValueReference(FHIRReference::xmlUnserialize($children->valueReference));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'GroupCharacteristic', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_BOOLEAN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValueBoolean())) {
+            $xw->writeAttribute(self::FIELD_VALUE_BOOLEAN, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_EXCLUDE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getExclude())) {
+            $xw->writeAttribute(self::FIELD_EXCLUDE, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getExclude())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXCLUDE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getValueBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_CODE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getValueCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_VALUE_CODEABLE_CONCEPT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_BOOLEAN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValueBoolean())) {
+            $xw->startElement(self::FIELD_VALUE_BOOLEAN);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getValueQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_VALUE_QUANTITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getValueRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_RANGE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_VALUE_RANGE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getValueReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_VALUE_REFERENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_EXCLUDE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getExclude())) {
+            $xw->startElement(self::FIELD_EXCLUDE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $xw->startElement(self::FIELD_PERIOD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
-            $a[self::FIELD_CODE] = $v;
+            $out->{self::FIELD_CODE} = $v;
+        }
+        if (null !== ($v = $this->getValueCodeableConcept())) {
+            $out->{self::FIELD_VALUE_CODEABLE_CONCEPT} = $v;
+        }
+        if (null !== ($v = $this->getValueBoolean())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_VALUE_BOOLEAN} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_VALUE_BOOLEAN_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueQuantity())) {
+            $out->{self::FIELD_VALUE_QUANTITY} = $v;
+        }
+        if (null !== ($v = $this->getValueRange())) {
+            $out->{self::FIELD_VALUE_RANGE} = $v;
+        }
+        if (null !== ($v = $this->getValueReference())) {
+            $out->{self::FIELD_VALUE_REFERENCE} = $v;
         }
         if (null !== ($v = $this->getExclude())) {
-            $a[self::FIELD_EXCLUDE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_EXCLUDE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_EXCLUDE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_EXCLUDE_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getPeriod())) {
-            $a[self::FIELD_PERIOD] = $v;
+            $out->{self::FIELD_PERIOD} = $v;
         }
-        if (null !== ($v = $this->getValueBoolean())) {
-            $a[self::FIELD_VALUE_BOOLEAN] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_BOOLEAN_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValueCodeableConcept())) {
-            $a[self::FIELD_VALUE_CODEABLE_CONCEPT] = $v;
-        }
-        if (null !== ($v = $this->getValueQuantity())) {
-            $a[self::FIELD_VALUE_QUANTITY] = $v;
-        }
-        if (null !== ($v = $this->getValueRange())) {
-            $a[self::FIELD_VALUE_RANGE] = $v;
-        }
-        if (null !== ($v = $this->getValueReference())) {
-            $a[self::FIELD_VALUE_REFERENCE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

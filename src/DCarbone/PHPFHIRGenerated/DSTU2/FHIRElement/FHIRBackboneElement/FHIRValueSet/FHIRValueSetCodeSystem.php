@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,12 +62,21 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter;
 
 /**
  * A value set specifies a set of codes drawn from one or more code systems.
@@ -79,38 +88,14 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_CODE_SYSTEM;
-    const FIELD_CASE_SENSITIVE = 'caseSensitive';
-    const FIELD_CASE_SENSITIVE_EXT = '_caseSensitive';
-    const FIELD_CONCEPT = 'concept';
+
     const FIELD_SYSTEM = 'system';
     const FIELD_SYSTEM_EXT = '_system';
     const FIELD_VERSION = 'version';
     const FIELD_VERSION_EXT = '_version';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If code comparison is case sensitive when codes within this system are compared
-     * to each other.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
-     */
-    protected $caseSensitive = null;
-
-    /**
-     * A value set specifies a set of codes drawn from one or more code systems.
-     *
-     * Concepts that are in the code system. The concept definitions are inherently
-     * hierarchical, but the definitions must be consulted to determine what the
-     * meaning of the hierarchical relationships are.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[]
-     */
-    protected $concept = [];
+    const FIELD_CASE_SENSITIVE = 'caseSensitive';
+    const FIELD_CASE_SENSITIVE_EXT = '_caseSensitive';
+    const FIELD_CONCEPT = 'concept';
 
     /**
      * String of characters used to identify a name or a resource
@@ -122,8 +107,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
-    protected $system = null;
-
+    protected null|FHIRUri $system = null;
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -137,86 +121,54 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    protected $version = null;
+    protected null|FHIRString $version = null;
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If code comparison is case sensitive when codes within this system are compared
+     * to each other.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
+     */
+    protected null|FHIRBoolean $caseSensitive = null;
+    /**
+     * A value set specifies a set of codes drawn from one or more code systems.
+     *
+     * Concepts that are in the code system. The concept definitions are inherently
+     * hierarchical, but the definitions must be consulted to determine what the
+     * meaning of the hierarchical relationships are.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[]
+     */
+    protected null|array $concept = [];
 
     /**
      * Validation map for fields in type ValueSet.CodeSystem
      * @var array
      */
-    private static $_validationRules = [
+    private const _VALIDATION_RULES = [
         self::FIELD_CONCEPT => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
+
     /**
      * FHIRValueSetCodeSystem Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRValueSetCodeSystem::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CASE_SENSITIVE]) || isset($data[self::FIELD_CASE_SENSITIVE_EXT])) {
-            if (isset($data[self::FIELD_CASE_SENSITIVE])) {
-                $value = $data[self::FIELD_CASE_SENSITIVE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CASE_SENSITIVE_EXT]) && is_array($data[self::FIELD_CASE_SENSITIVE_EXT])) {
-                $ext = $data[self::FIELD_CASE_SENSITIVE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setCaseSensitive($value);
-                } else if (is_array($value)) {
-                    $this->setCaseSensitive(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setCaseSensitive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setCaseSensitive(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_CONCEPT])) {
-            if (is_array($data[self::FIELD_CONCEPT])) {
-                foreach($data[self::FIELD_CONCEPT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRValueSetConcept) {
-                        $this->addConcept($v);
-                    } else {
-                        $this->addConcept(new FHIRValueSetConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_CONCEPT] instanceof FHIRValueSetConcept) {
-                $this->addConcept($data[self::FIELD_CONCEPT]);
-            } else {
-                $this->addConcept(new FHIRValueSetConcept($data[self::FIELD_CONCEPT]));
-            }
-        }
-        if (isset($data[self::FIELD_SYSTEM]) || isset($data[self::FIELD_SYSTEM_EXT])) {
-            if (isset($data[self::FIELD_SYSTEM])) {
-                $value = $data[self::FIELD_SYSTEM];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SYSTEM_EXT]) && is_array($data[self::FIELD_SYSTEM_EXT])) {
-                $ext = $data[self::FIELD_SYSTEM_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_SYSTEM, $data) || array_key_exists(self::FIELD_SYSTEM_EXT, $data)) {
+            $value = $data[self::FIELD_SYSTEM] ?? null;
+            $ext = (isset($data[self::FIELD_SYSTEM_EXT]) && is_array($data[self::FIELD_SYSTEM_EXT])) ? $data[self::FIELD_SYSTEM_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->setSystem($value);
@@ -225,21 +177,15 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
                 } else {
                     $this->setSystem(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSystem(new FHIRUri($ext));
+            } else {
+                $this->setSystem(new FHIRUri(null));
             }
         }
-        if (isset($data[self::FIELD_VERSION]) || isset($data[self::FIELD_VERSION_EXT])) {
-            if (isset($data[self::FIELD_VERSION])) {
-                $value = $data[self::FIELD_VERSION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VERSION_EXT]) && is_array($data[self::FIELD_VERSION_EXT])) {
-                $ext = $data[self::FIELD_VERSION_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_VERSION, $data) || array_key_exists(self::FIELD_VERSION_EXT, $data)) {
+            $value = $data[self::FIELD_VERSION] ?? null;
+            $ext = (isset($data[self::FIELD_VERSION_EXT]) && is_array($data[self::FIELD_VERSION_EXT])) ? $data[self::FIELD_VERSION_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setVersion($value);
@@ -248,8 +194,42 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
                 } else {
                     $this->setVersion(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setVersion(new FHIRString($ext));
+            } else {
+                $this->setVersion(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_CASE_SENSITIVE, $data) || array_key_exists(self::FIELD_CASE_SENSITIVE_EXT, $data)) {
+            $value = $data[self::FIELD_CASE_SENSITIVE] ?? null;
+            $ext = (isset($data[self::FIELD_CASE_SENSITIVE_EXT]) && is_array($data[self::FIELD_CASE_SENSITIVE_EXT])) ? $data[self::FIELD_CASE_SENSITIVE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setCaseSensitive($value);
+                } else if (is_array($value)) {
+                    $this->setCaseSensitive(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setCaseSensitive(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setCaseSensitive(new FHIRBoolean($ext));
+            } else {
+                $this->setCaseSensitive(new FHIRBoolean(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_CONCEPT, $data)) {
+            if (is_array($data[self::FIELD_CONCEPT])) {
+                foreach($data[self::FIELD_CONCEPT] as $v) {
+                    if ($v instanceof FHIRValueSetConcept) {
+                        $this->addConcept($v);
+                    } else {
+                        $this->addConcept(new FHIRValueSetConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_CONCEPT] instanceof FHIRValueSetConcept) {
+                $this->addConcept($data[self::FIELD_CONCEPT]);
+            } else {
+                $this->addConcept(new FHIRValueSetConcept($data[self::FIELD_CONCEPT]));
             }
         }
     }
@@ -257,115 +237,9 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ValueSetCodeSystem{$xmlns}></ValueSetCodeSystem>";
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If code comparison is case sensitive when codes within this system are compared
-     * to each other.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
-     */
-    public function getCaseSensitive()
-    {
-        return $this->caseSensitive;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If code comparison is case sensitive when codes within this system are compared
-     * to each other.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $caseSensitive
-     * @return static
-     */
-    public function setCaseSensitive($caseSensitive = null)
-    {
-        if (null === $caseSensitive) {
-            $this->caseSensitive = null;
-            return $this;
-        }
-        if ($caseSensitive instanceof FHIRBoolean) {
-            $this->caseSensitive = $caseSensitive;
-            return $this;
-        }
-        $this->caseSensitive = new FHIRBoolean($caseSensitive);
-        return $this;
-    }
-
-    /**
-     * A value set specifies a set of codes drawn from one or more code systems.
-     *
-     * Concepts that are in the code system. The concept definitions are inherently
-     * hierarchical, but the definitions must be consulted to determine what the
-     * meaning of the hierarchical relationships are.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[]
-     */
-    public function getConcept()
-    {
-        return $this->concept;
-    }
-
-    /**
-     * A value set specifies a set of codes drawn from one or more code systems.
-     *
-     * Concepts that are in the code system. The concept definitions are inherently
-     * hierarchical, but the definitions must be consulted to determine what the
-     * meaning of the hierarchical relationships are.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept $concept
-     * @return static
-     */
-    public function addConcept(FHIRValueSetConcept $concept = null)
-    {
-        $this->concept[] = $concept;
-        return $this;
-    }
-
-    /**
-     * A value set specifies a set of codes drawn from one or more code systems.
-     *
-     * Concepts that are in the code system. The concept definitions are inherently
-     * hierarchical, but the definitions must be consulted to determine what the
-     * meaning of the hierarchical relationships are.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[] $concept
-     * @return static
-     */
-    public function setConcept(array $concept = [])
-    {
-        $this->concept = [];
-        if ([] === $concept) {
-            return $this;
-        }
-        foreach($concept as $v) {
-            if ($v instanceof FHIRValueSetConcept) {
-                $this->addConcept($v);
-            } else {
-                $this->addConcept(new FHIRValueSetConcept($v));
-            }
-        }
-        return $this;
     }
 
     /**
@@ -378,7 +252,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
-    public function getSystem()
+    public function getSystem(): null|FHIRUri
     {
         return $this->system;
     }
@@ -391,20 +265,21 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      * An absolute URI that is used to reference this code system, including in
      * [Coding]{datatypes.html#Coding}.system.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $system
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $system
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSystem($system = null)
+    public function setSystem(null|string|FHIRUriPrimitive|FHIRUri $system = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $system) {
-            $this->system = null;
-            return $this;
+        if (null !== $system && !($system instanceof FHIRUri)) {
+            $system = new FHIRUri($system);
         }
-        if ($system instanceof FHIRUri) {
-            $this->system = $system;
-            return $this;
+        $this->_trackValueSet($this->system, $system);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SYSTEM])) {
+            $this->_primitiveXmlLocations[self::FIELD_SYSTEM] = [];
         }
-        $this->system = new FHIRUri($system);
+        $this->_primitiveXmlLocations[self::FIELD_SYSTEM][0] = $xmlLocation;
+        $this->system = $system;
         return $this;
     }
 
@@ -421,7 +296,7 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    public function getVersion()
+    public function getVersion(): null|FHIRString
     {
         return $this->version;
     }
@@ -437,20 +312,94 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      * systems are not well maintained, and the version needs to be defined and
      * tracked.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $version
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $version
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setVersion($version = null)
+    public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $version) {
-            $this->version = null;
-            return $this;
+        if (null !== $version && !($version instanceof FHIRString)) {
+            $version = new FHIRString($version);
         }
-        if ($version instanceof FHIRString) {
-            $this->version = $version;
-            return $this;
+        $this->_trackValueSet($this->version, $version);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_VERSION])) {
+            $this->_primitiveXmlLocations[self::FIELD_VERSION] = [];
         }
-        $this->version = new FHIRString($version);
+        $this->_primitiveXmlLocations[self::FIELD_VERSION][0] = $xmlLocation;
+        $this->version = $version;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If code comparison is case sensitive when codes within this system are compared
+     * to each other.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
+     */
+    public function getCaseSensitive(): null|FHIRBoolean
+    {
+        return $this->caseSensitive;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If code comparison is case sensitive when codes within this system are compared
+     * to each other.
+     *
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $caseSensitive
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setCaseSensitive(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $caseSensitive = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $caseSensitive && !($caseSensitive instanceof FHIRBoolean)) {
+            $caseSensitive = new FHIRBoolean($caseSensitive);
+        }
+        $this->_trackValueSet($this->caseSensitive, $caseSensitive);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_CASE_SENSITIVE])) {
+            $this->_primitiveXmlLocations[self::FIELD_CASE_SENSITIVE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_CASE_SENSITIVE][0] = $xmlLocation;
+        $this->caseSensitive = $caseSensitive;
+        return $this;
+    }
+
+    /**
+     * A value set specifies a set of codes drawn from one or more code systems.
+     *
+     * Concepts that are in the code system. The concept definitions are inherently
+     * hierarchical, but the definitions must be consulted to determine what the
+     * meaning of the hierarchical relationships are.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[]
+     */
+    public function getConcept(): null|array
+    {
+        return $this->concept;
+    }
+
+    /**
+     * A value set specifies a set of codes drawn from one or more code systems.
+     *
+     * Concepts that are in the code system. The concept definitions are inherently
+     * hierarchical, but the definitions must be consulted to determine what the
+     * meaning of the hierarchical relationships are.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept $concept
+     * @return static
+     */
+    public function addConcept(null|FHIRValueSetConcept $concept = null): self
+    {
+        if (null === $concept) {
+            $concept = new FHIRValueSetConcept();
+        }
+        $this->_trackValueAdded();
+        $this->concept[] = $concept;
         return $this;
     }
 
@@ -460,9 +409,9 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -471,22 +420,10 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCaseSensitive())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CASE_SENSITIVE] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getConcept())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_CONCEPT, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getSystem())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_SYSTEM] = $fieldErrs;
@@ -497,27 +434,15 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
                 $errs[self::FIELD_VERSION] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CASE_SENSITIVE])) {
-            $v = $this->getCaseSensitive();
-            foreach($validationRules[self::FIELD_CASE_SENSITIVE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_CODE_SYSTEM, self::FIELD_CASE_SENSITIVE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CASE_SENSITIVE])) {
-                        $errs[self::FIELD_CASE_SENSITIVE] = [];
-                    }
-                    $errs[self::FIELD_CASE_SENSITIVE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getCaseSensitive())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CASE_SENSITIVE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CONCEPT])) {
-            $v = $this->getConcept();
-            foreach($validationRules[self::FIELD_CONCEPT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_CODE_SYSTEM, self::FIELD_CONCEPT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONCEPT])) {
-                        $errs[self::FIELD_CONCEPT] = [];
-                    }
-                    $errs[self::FIELD_CONCEPT][$rule] = $err;
+        if ([] !== ($vs = $this->getConcept())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_CONCEPT, $i)] = $fieldErrs;
                 }
             }
         }
@@ -542,6 +467,30 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
                         $errs[self::FIELD_VERSION] = [];
                     }
                     $errs[self::FIELD_VERSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CASE_SENSITIVE])) {
+            $v = $this->getCaseSensitive();
+            foreach($validationRules[self::FIELD_CASE_SENSITIVE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_CODE_SYSTEM, self::FIELD_CASE_SENSITIVE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CASE_SENSITIVE])) {
+                        $errs[self::FIELD_CASE_SENSITIVE] = [];
+                    }
+                    $errs[self::FIELD_CASE_SENSITIVE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONCEPT])) {
+            $v = $this->getConcept();
+            foreach($validationRules[self::FIELD_CONCEPT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_CODE_SYSTEM, self::FIELD_CONCEPT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONCEPT])) {
+                        $errs[self::FIELD_CONCEPT] = [];
+                    }
+                    $errs[self::FIELD_CONCEPT][$rule] = $err;
                 }
             }
         }
@@ -585,170 +534,212 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRValueSetCodeSystem::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRValueSetCodeSystem::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRValueSetCodeSystem;
-        } elseif (!is_object($type) || !($type instanceof FHIRValueSetCodeSystem)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRValueSetCodeSystem)) {
             throw new \RuntimeException(sprintf(
-                'FHIRValueSetCodeSystem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCodeSystem or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_SYSTEM === $childName) {
+                $type->setSystem(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_VERSION === $childName) {
+                $type->setVersion(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CASE_SENSITIVE === $childName) {
+                $type->setCaseSensitive(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CONCEPT === $childName) {
+                $type->addConcept(FHIRValueSetConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->caseSensitive)) {
-            $type->setCaseSensitive(FHIRBoolean::xmlUnserialize($children->caseSensitive));
-        }
-        if (isset($attributes->caseSensitive)) {
-            $pt = $type->getCaseSensitive();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->caseSensitive);
-            } else {
-                $type->setCaseSensitive((string)$attributes->caseSensitive);
-            }
-        }
-        if (isset($children->concept)) {
-            foreach($children->concept as $child) {
-                $type->addConcept(FHIRValueSetConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->system)) {
-            $type->setSystem(FHIRUri::xmlUnserialize($children->system));
-        }
-        if (isset($attributes->system)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_SYSTEM])) {
             $pt = $type->getSystem();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->system);
+                $pt->setValue((string)$attributes[self::FIELD_SYSTEM], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setSystem((string)$attributes->system);
+                $type->setSystem((string)$attributes[self::FIELD_SYSTEM], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->version)) {
-            $type->setVersion(FHIRString::xmlUnserialize($children->version));
-        }
-        if (isset($attributes->version)) {
+        if (isset($attributes[self::FIELD_VERSION])) {
             $pt = $type->getVersion();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->version);
+                $pt->setValue((string)$attributes[self::FIELD_VERSION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setVersion((string)$attributes->version);
+                $type->setVersion((string)$attributes[self::FIELD_VERSION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_CASE_SENSITIVE])) {
+            $pt = $type->getCaseSensitive();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_CASE_SENSITIVE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setCaseSensitive((string)$attributes[self::FIELD_CASE_SENSITIVE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCaseSensitive())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CASE_SENSITIVE, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if ([] !== ($vs = $this->getConcept())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONCEPT, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getSystem())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SYSTEM, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getVersion())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VERSION, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ValueSetCodeSystem', $this->_getSourceXmlns());
         }
-        return $sxe;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SYSTEM] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSystem())) {
+            $xw->writeAttribute(self::FIELD_SYSTEM, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VERSION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getVersion())) {
+            $xw->writeAttribute(self::FIELD_VERSION, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CASE_SENSITIVE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCaseSensitive())) {
+            $xw->writeAttribute(self::FIELD_CASE_SENSITIVE, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SYSTEM] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSystem())) {
+            $xw->startElement(self::FIELD_SYSTEM);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VERSION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getVersion())) {
+            $xw->startElement(self::FIELD_VERSION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CASE_SENSITIVE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCaseSensitive())) {
+            $xw->startElement(self::FIELD_CASE_SENSITIVE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getConcept() as $v) {
+            $xw->startElement(self::FIELD_CONCEPT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCaseSensitive())) {
-            $a[self::FIELD_CASE_SENSITIVE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_CASE_SENSITIVE_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getConcept())) {
-            $a[self::FIELD_CONCEPT] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CONCEPT][] = $v;
-            }
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getSystem())) {
-            $a[self::FIELD_SYSTEM] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_SYSTEM_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_SYSTEM} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRUri::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SYSTEM_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getVersion())) {
-            $a[self::FIELD_VERSION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_VERSION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_VERSION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_VERSION_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getCaseSensitive())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_CASE_SENSITIVE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_CASE_SENSITIVE_EXT} = $ext;
+            }
         }
-        return $a;
-    }
+        if ([] !== ($vs = $this->getConcept())) {
+            $out->{self::FIELD_CONCEPT} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_CONCEPT}[] = $v;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

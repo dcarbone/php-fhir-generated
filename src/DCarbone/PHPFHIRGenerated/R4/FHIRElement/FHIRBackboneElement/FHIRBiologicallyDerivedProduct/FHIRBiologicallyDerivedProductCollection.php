@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiolo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,12 +62,19 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiolo
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * A material substance originating from a biological entity intended to be
@@ -80,39 +87,12 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT_DOT_COLLECTION;
+
+    const FIELD_COLLECTOR = 'collector';
+    const FIELD_SOURCE = 'source';
     const FIELD_COLLECTED_DATE_TIME = 'collectedDateTime';
     const FIELD_COLLECTED_DATE_TIME_EXT = '_collectedDateTime';
     const FIELD_COLLECTED_PERIOD = 'collectedPeriod';
-    const FIELD_COLLECTOR = 'collector';
-    const FIELD_SOURCE = 'source';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Time of product collection. (choose any one of collected*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
-     */
-    protected $collectedDateTime = null;
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Time of product collection. (choose any one of collected*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
-     */
-    protected $collectedPeriod = null;
 
     /**
      * A reference from one resource to another.
@@ -123,8 +103,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    protected $collector = null;
-
+    protected null|FHIRReference $collector = null;
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -135,41 +114,67 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    protected $source = null;
+    protected null|FHIRReference $source = null;
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Time of product collection.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     */
+    protected null|FHIRDateTime $collectedDateTime = null;
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Time of product collection.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     */
+    protected null|FHIRPeriod $collectedPeriod = null;
 
     /**
      * Validation map for fields in type BiologicallyDerivedProduct.Collection
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRBiologicallyDerivedProductCollection Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRBiologicallyDerivedProductCollection::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_COLLECTED_DATE_TIME]) || isset($data[self::FIELD_COLLECTED_DATE_TIME_EXT])) {
-            if (isset($data[self::FIELD_COLLECTED_DATE_TIME])) {
-                $value = $data[self::FIELD_COLLECTED_DATE_TIME];
+        if (array_key_exists(self::FIELD_COLLECTOR, $data)) {
+            if ($data[self::FIELD_COLLECTOR] instanceof FHIRReference) {
+                $this->setCollector($data[self::FIELD_COLLECTOR]);
             } else {
-                $value = null;
+                $this->setCollector(new FHIRReference($data[self::FIELD_COLLECTOR]));
             }
-            if (isset($data[self::FIELD_COLLECTED_DATE_TIME_EXT]) && is_array($data[self::FIELD_COLLECTED_DATE_TIME_EXT])) {
-                $ext = $data[self::FIELD_COLLECTED_DATE_TIME_EXT];
+        }
+        if (array_key_exists(self::FIELD_SOURCE, $data)) {
+            if ($data[self::FIELD_SOURCE] instanceof FHIRReference) {
+                $this->setSource($data[self::FIELD_SOURCE]);
             } else {
-                $ext = [];
+                $this->setSource(new FHIRReference($data[self::FIELD_SOURCE]));
             }
+        }
+        if (array_key_exists(self::FIELD_COLLECTED_DATE_TIME, $data) || array_key_exists(self::FIELD_COLLECTED_DATE_TIME_EXT, $data)) {
+            $value = $data[self::FIELD_COLLECTED_DATE_TIME] ?? null;
+            $ext = (isset($data[self::FIELD_COLLECTED_DATE_TIME_EXT]) && is_array($data[self::FIELD_COLLECTED_DATE_TIME_EXT])) ? $data[self::FIELD_COLLECTED_DATE_TIME_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setCollectedDateTime($value);
@@ -178,125 +183,27 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
                 } else {
                     $this->setCollectedDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setCollectedDateTime(new FHIRDateTime($ext));
+            } else {
+                $this->setCollectedDateTime(new FHIRDateTime(null));
             }
         }
-        if (isset($data[self::FIELD_COLLECTED_PERIOD])) {
+        if (array_key_exists(self::FIELD_COLLECTED_PERIOD, $data)) {
             if ($data[self::FIELD_COLLECTED_PERIOD] instanceof FHIRPeriod) {
                 $this->setCollectedPeriod($data[self::FIELD_COLLECTED_PERIOD]);
             } else {
                 $this->setCollectedPeriod(new FHIRPeriod($data[self::FIELD_COLLECTED_PERIOD]));
             }
         }
-        if (isset($data[self::FIELD_COLLECTOR])) {
-            if ($data[self::FIELD_COLLECTOR] instanceof FHIRReference) {
-                $this->setCollector($data[self::FIELD_COLLECTOR]);
-            } else {
-                $this->setCollector(new FHIRReference($data[self::FIELD_COLLECTOR]));
-            }
-        }
-        if (isset($data[self::FIELD_SOURCE])) {
-            if ($data[self::FIELD_SOURCE] instanceof FHIRReference) {
-                $this->setSource($data[self::FIELD_SOURCE]);
-            } else {
-                $this->setSource(new FHIRReference($data[self::FIELD_SOURCE]));
-            }
-        }
     }
 
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<BiologicallyDerivedProductCollection{$xmlns}></BiologicallyDerivedProductCollection>";
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Time of product collection. (choose any one of collected*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
-     */
-    public function getCollectedDateTime()
-    {
-        return $this->collectedDateTime;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Time of product collection. (choose any one of collected*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $collectedDateTime
-     * @return static
-     */
-    public function setCollectedDateTime($collectedDateTime = null)
-    {
-        if (null === $collectedDateTime) {
-            $this->collectedDateTime = null;
-            return $this;
-        }
-        if ($collectedDateTime instanceof FHIRDateTime) {
-            $this->collectedDateTime = $collectedDateTime;
-            return $this;
-        }
-        $this->collectedDateTime = new FHIRDateTime($collectedDateTime);
-        return $this;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Time of product collection. (choose any one of collected*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
-     */
-    public function getCollectedPeriod()
-    {
-        return $this->collectedPeriod;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Time of product collection. (choose any one of collected*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $collectedPeriod
-     * @return static
-     */
-    public function setCollectedPeriod(FHIRPeriod $collectedPeriod = null)
-    {
-        $this->collectedPeriod = $collectedPeriod;
-        return $this;
     }
 
     /**
@@ -308,7 +215,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getCollector()
+    public function getCollector(): null|FHIRReference
     {
         return $this->collector;
     }
@@ -323,8 +230,12 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $collector
      * @return static
      */
-    public function setCollector(FHIRReference $collector = null)
+    public function setCollector(null|FHIRReference $collector = null): self
     {
+        if (null === $collector) {
+            $collector = new FHIRReference();
+        }
+        $this->_trackValueSet($this->collector, $collector);
         $this->collector = $collector;
         return $this;
     }
@@ -339,7 +250,7 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getSource()
+    public function getSource(): null|FHIRReference
     {
         return $this->source;
     }
@@ -355,9 +266,92 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $source
      * @return static
      */
-    public function setSource(FHIRReference $source = null)
+    public function setSource(null|FHIRReference $source = null): self
     {
+        if (null === $source) {
+            $source = new FHIRReference();
+        }
+        $this->_trackValueSet($this->source, $source);
         $this->source = $source;
+        return $this;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Time of product collection.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     */
+    public function getCollectedDateTime(): null|FHIRDateTime
+    {
+        return $this->collectedDateTime;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Time of product collection.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $collectedDateTime
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setCollectedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $collectedDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $collectedDateTime && !($collectedDateTime instanceof FHIRDateTime)) {
+            $collectedDateTime = new FHIRDateTime($collectedDateTime);
+        }
+        $this->_trackValueSet($this->collectedDateTime, $collectedDateTime);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_COLLECTED_DATE_TIME])) {
+            $this->_primitiveXmlLocations[self::FIELD_COLLECTED_DATE_TIME] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_COLLECTED_DATE_TIME][0] = $xmlLocation;
+        $this->collectedDateTime = $collectedDateTime;
+        return $this;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Time of product collection.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     */
+    public function getCollectedPeriod(): null|FHIRPeriod
+    {
+        return $this->collectedPeriod;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Time of product collection.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $collectedPeriod
+     * @return static
+     */
+    public function setCollectedPeriod(null|FHIRPeriod $collectedPeriod = null): self
+    {
+        if (null === $collectedPeriod) {
+            $collectedPeriod = new FHIRPeriod();
+        }
+        $this->_trackValueSet($this->collectedPeriod, $collectedPeriod);
+        $this->collectedPeriod = $collectedPeriod;
         return $this;
     }
 
@@ -367,9 +361,9 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -378,20 +372,10 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCollectedDateTime())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_COLLECTED_DATE_TIME] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getCollectedPeriod())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_COLLECTED_PERIOD] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getCollector())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_COLLECTOR] = $fieldErrs;
@@ -402,28 +386,14 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
                 $errs[self::FIELD_SOURCE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_COLLECTED_DATE_TIME])) {
-            $v = $this->getCollectedDateTime();
-            foreach($validationRules[self::FIELD_COLLECTED_DATE_TIME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT_DOT_COLLECTION, self::FIELD_COLLECTED_DATE_TIME, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COLLECTED_DATE_TIME])) {
-                        $errs[self::FIELD_COLLECTED_DATE_TIME] = [];
-                    }
-                    $errs[self::FIELD_COLLECTED_DATE_TIME][$rule] = $err;
-                }
+        if (null !== ($v = $this->getCollectedDateTime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_COLLECTED_DATE_TIME] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_COLLECTED_PERIOD])) {
-            $v = $this->getCollectedPeriod();
-            foreach($validationRules[self::FIELD_COLLECTED_PERIOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT_DOT_COLLECTION, self::FIELD_COLLECTED_PERIOD, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COLLECTED_PERIOD])) {
-                        $errs[self::FIELD_COLLECTED_PERIOD] = [];
-                    }
-                    $errs[self::FIELD_COLLECTED_PERIOD][$rule] = $err;
-                }
+        if (null !== ($v = $this->getCollectedPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_COLLECTED_PERIOD] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_COLLECTOR])) {
@@ -447,6 +417,30 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
                         $errs[self::FIELD_SOURCE] = [];
                     }
                     $errs[self::FIELD_SOURCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COLLECTED_DATE_TIME])) {
+            $v = $this->getCollectedDateTime();
+            foreach($validationRules[self::FIELD_COLLECTED_DATE_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT_DOT_COLLECTION, self::FIELD_COLLECTED_DATE_TIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COLLECTED_DATE_TIME])) {
+                        $errs[self::FIELD_COLLECTED_DATE_TIME] = [];
+                    }
+                    $errs[self::FIELD_COLLECTED_DATE_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COLLECTED_PERIOD])) {
+            $v = $this->getCollectedPeriod();
+            foreach($validationRules[self::FIELD_COLLECTED_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_BIOLOGICALLY_DERIVED_PRODUCT_DOT_COLLECTION, self::FIELD_COLLECTED_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COLLECTED_PERIOD])) {
+                        $errs[self::FIELD_COLLECTED_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_COLLECTED_PERIOD][$rule] = $err;
                 }
             }
         }
@@ -490,129 +484,169 @@ class FHIRBiologicallyDerivedProductCollection extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRBiologicallyDerivedProductCollection::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRBiologicallyDerivedProductCollection::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRBiologicallyDerivedProductCollection;
-        } elseif (!is_object($type) || !($type instanceof FHIRBiologicallyDerivedProductCollection)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRBiologicallyDerivedProductCollection)) {
             throw new \RuntimeException(sprintf(
-                'FHIRBiologicallyDerivedProductCollection::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_COLLECTOR === $childName) {
+                $type->setCollector(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_SOURCE === $childName) {
+                $type->setSource(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_COLLECTED_DATE_TIME === $childName) {
+                $type->setCollectedDateTime(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_COLLECTED_PERIOD === $childName) {
+                $type->setCollectedPeriod(FHIRPeriod::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->collectedDateTime)) {
-            $type->setCollectedDateTime(FHIRDateTime::xmlUnserialize($children->collectedDateTime));
-        }
-        if (isset($attributes->collectedDateTime)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_COLLECTED_DATE_TIME])) {
             $pt = $type->getCollectedDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->collectedDateTime);
+                $pt->setValue((string)$attributes[self::FIELD_COLLECTED_DATE_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setCollectedDateTime((string)$attributes->collectedDateTime);
+                $type->setCollectedDateTime((string)$attributes[self::FIELD_COLLECTED_DATE_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->collectedPeriod)) {
-            $type->setCollectedPeriod(FHIRPeriod::xmlUnserialize($children->collectedPeriod));
-        }
-        if (isset($children->collector)) {
-            $type->setCollector(FHIRReference::xmlUnserialize($children->collector));
-        }
-        if (isset($children->source)) {
-            $type->setSource(FHIRReference::xmlUnserialize($children->source));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCollectedDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTED_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getCollectedPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTED_PERIOD, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'BiologicallyDerivedProductCollection', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_COLLECTED_DATE_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCollectedDateTime())) {
+            $xw->writeAttribute(self::FIELD_COLLECTED_DATE_TIME, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getCollector())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTOR, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_COLLECTOR);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getSource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_SOURCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_COLLECTED_DATE_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCollectedDateTime())) {
+            $xw->startElement(self::FIELD_COLLECTED_DATE_TIME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getCollectedPeriod())) {
+            $xw->startElement(self::FIELD_COLLECTED_PERIOD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getCollector())) {
+            $out->{self::FIELD_COLLECTOR} = $v;
+        }
+        if (null !== ($v = $this->getSource())) {
+            $out->{self::FIELD_SOURCE} = $v;
+        }
         if (null !== ($v = $this->getCollectedDateTime())) {
-            $a[self::FIELD_COLLECTED_DATE_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_COLLECTED_DATE_TIME_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_COLLECTED_DATE_TIME} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_COLLECTED_DATE_TIME_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getCollectedPeriod())) {
-            $a[self::FIELD_COLLECTED_PERIOD] = $v;
+            $out->{self::FIELD_COLLECTED_PERIOD} = $v;
         }
-        if (null !== ($v = $this->getCollector())) {
-            $a[self::FIELD_COLLECTOR] = $v;
-        }
-        if (null !== ($v = $this->getSource())) {
-            $a[self::FIELD_SOURCE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

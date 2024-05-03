@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,10 +64,17 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter;
 
 /**
  * Provenance of a resource is a record that describes entities and processes
@@ -87,51 +94,15 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_AGENT;
-    const FIELD_ON_BEHALF_OF_REFERENCE = 'onBehalfOfReference';
-    const FIELD_ON_BEHALF_OF_URI = 'onBehalfOfUri';
-    const FIELD_ON_BEHALF_OF_URI_EXT = '_onBehalfOfUri';
-    const FIELD_RELATED_AGENT_TYPE = 'relatedAgentType';
+
     const FIELD_ROLE = 'role';
-    const FIELD_WHO_REFERENCE = 'whoReference';
     const FIELD_WHO_URI = 'whoUri';
     const FIELD_WHO_URI_EXT = '_whoUri';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The individual, device, or organization for whom the change was made.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    protected $onBehalfOfReference = null;
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The individual, device, or organization for whom the change was made.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
-     */
-    protected $onBehalfOfUri = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The type of relationship between agents.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    protected $relatedAgentType = null;
+    const FIELD_WHO_REFERENCE = 'whoReference';
+    const FIELD_ON_BEHALF_OF_URI = 'onBehalfOfUri';
+    const FIELD_ON_BEHALF_OF_URI_EXT = '_onBehalfOfUri';
+    const FIELD_ON_BEHALF_OF_REFERENCE = 'onBehalfOfReference';
+    const FIELD_RELATED_AGENT_TYPE = 'relatedAgentType';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -144,19 +115,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $role = [];
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The individual, device or organization that participated in the event.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    protected $whoReference = null;
-
+    protected null|array $role = [];
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -166,103 +125,86 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    protected $whoUri = null;
+    protected null|FHIRUri $whoUri = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The individual, device or organization that participated in the event.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $whoReference = null;
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The individual, device, or organization for whom the change was made.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
+     */
+    protected null|FHIRUri $onBehalfOfUri = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The individual, device, or organization for whom the change was made.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $onBehalfOfReference = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of relationship between agents.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $relatedAgentType = null;
 
     /**
      * Validation map for fields in type Provenance.Agent
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRProvenanceAgent Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRProvenanceAgent::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ON_BEHALF_OF_REFERENCE])) {
-            if ($data[self::FIELD_ON_BEHALF_OF_REFERENCE] instanceof FHIRReference) {
-                $this->setOnBehalfOfReference($data[self::FIELD_ON_BEHALF_OF_REFERENCE]);
-            } else {
-                $this->setOnBehalfOfReference(new FHIRReference($data[self::FIELD_ON_BEHALF_OF_REFERENCE]));
-            }
-        }
-        if (isset($data[self::FIELD_ON_BEHALF_OF_URI]) || isset($data[self::FIELD_ON_BEHALF_OF_URI_EXT])) {
-            if (isset($data[self::FIELD_ON_BEHALF_OF_URI])) {
-                $value = $data[self::FIELD_ON_BEHALF_OF_URI];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ON_BEHALF_OF_URI_EXT]) && is_array($data[self::FIELD_ON_BEHALF_OF_URI_EXT])) {
-                $ext = $data[self::FIELD_ON_BEHALF_OF_URI_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $this->setOnBehalfOfUri($value);
-                } else if (is_array($value)) {
-                    $this->setOnBehalfOfUri(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $this->setOnBehalfOfUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setOnBehalfOfUri(new FHIRUri($ext));
-            }
-        }
-        if (isset($data[self::FIELD_RELATED_AGENT_TYPE])) {
-            if ($data[self::FIELD_RELATED_AGENT_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setRelatedAgentType($data[self::FIELD_RELATED_AGENT_TYPE]);
-            } else {
-                $this->setRelatedAgentType(new FHIRCodeableConcept($data[self::FIELD_RELATED_AGENT_TYPE]));
-            }
-        }
-        if (isset($data[self::FIELD_ROLE])) {
+        if (array_key_exists(self::FIELD_ROLE, $data)) {
             if (is_array($data[self::FIELD_ROLE])) {
                 foreach($data[self::FIELD_ROLE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addRole($v);
                     } else {
                         $this->addRole(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_ROLE] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_ROLE] instanceof FHIRCodeableConcept) {
                 $this->addRole($data[self::FIELD_ROLE]);
             } else {
                 $this->addRole(new FHIRCodeableConcept($data[self::FIELD_ROLE]));
             }
         }
-        if (isset($data[self::FIELD_WHO_REFERENCE])) {
-            if ($data[self::FIELD_WHO_REFERENCE] instanceof FHIRReference) {
-                $this->setWhoReference($data[self::FIELD_WHO_REFERENCE]);
-            } else {
-                $this->setWhoReference(new FHIRReference($data[self::FIELD_WHO_REFERENCE]));
-            }
-        }
-        if (isset($data[self::FIELD_WHO_URI]) || isset($data[self::FIELD_WHO_URI_EXT])) {
-            if (isset($data[self::FIELD_WHO_URI])) {
-                $value = $data[self::FIELD_WHO_URI];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_WHO_URI_EXT]) && is_array($data[self::FIELD_WHO_URI_EXT])) {
-                $ext = $data[self::FIELD_WHO_URI_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_WHO_URI, $data) || array_key_exists(self::FIELD_WHO_URI_EXT, $data)) {
+            $value = $data[self::FIELD_WHO_URI] ?? null;
+            $ext = (isset($data[self::FIELD_WHO_URI_EXT]) && is_array($data[self::FIELD_WHO_URI_EXT])) ? $data[self::FIELD_WHO_URI_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->setWhoUri($value);
@@ -271,8 +213,48 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                 } else {
                     $this->setWhoUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setWhoUri(new FHIRUri($ext));
+            } else {
+                $this->setWhoUri(new FHIRUri(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_WHO_REFERENCE, $data)) {
+            if ($data[self::FIELD_WHO_REFERENCE] instanceof FHIRReference) {
+                $this->setWhoReference($data[self::FIELD_WHO_REFERENCE]);
+            } else {
+                $this->setWhoReference(new FHIRReference($data[self::FIELD_WHO_REFERENCE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_ON_BEHALF_OF_URI, $data) || array_key_exists(self::FIELD_ON_BEHALF_OF_URI_EXT, $data)) {
+            $value = $data[self::FIELD_ON_BEHALF_OF_URI] ?? null;
+            $ext = (isset($data[self::FIELD_ON_BEHALF_OF_URI_EXT]) && is_array($data[self::FIELD_ON_BEHALF_OF_URI_EXT])) ? $data[self::FIELD_ON_BEHALF_OF_URI_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setOnBehalfOfUri($value);
+                } else if (is_array($value)) {
+                    $this->setOnBehalfOfUri(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setOnBehalfOfUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setOnBehalfOfUri(new FHIRUri($ext));
+            } else {
+                $this->setOnBehalfOfUri(new FHIRUri(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_ON_BEHALF_OF_REFERENCE, $data)) {
+            if ($data[self::FIELD_ON_BEHALF_OF_REFERENCE] instanceof FHIRReference) {
+                $this->setOnBehalfOfReference($data[self::FIELD_ON_BEHALF_OF_REFERENCE]);
+            } else {
+                $this->setOnBehalfOfReference(new FHIRReference($data[self::FIELD_ON_BEHALF_OF_REFERENCE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_RELATED_AGENT_TYPE, $data)) {
+            if ($data[self::FIELD_RELATED_AGENT_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setRelatedAgentType($data[self::FIELD_RELATED_AGENT_TYPE]);
+            } else {
+                $this->setRelatedAgentType(new FHIRCodeableConcept($data[self::FIELD_RELATED_AGENT_TYPE]));
             }
         }
     }
@@ -280,121 +262,9 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ProvenanceAgent{$xmlns}></ProvenanceAgent>";
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The individual, device, or organization for whom the change was made.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    public function getOnBehalfOfReference()
-    {
-        return $this->onBehalfOfReference;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The individual, device, or organization for whom the change was made.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $onBehalfOfReference
-     * @return static
-     */
-    public function setOnBehalfOfReference(FHIRReference $onBehalfOfReference = null)
-    {
-        $this->onBehalfOfReference = $onBehalfOfReference;
-        return $this;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The individual, device, or organization for whom the change was made.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
-     */
-    public function getOnBehalfOfUri()
-    {
-        return $this->onBehalfOfUri;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The individual, device, or organization for whom the change was made.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $onBehalfOfUri
-     * @return static
-     */
-    public function setOnBehalfOfUri($onBehalfOfUri = null)
-    {
-        if (null === $onBehalfOfUri) {
-            $this->onBehalfOfUri = null;
-            return $this;
-        }
-        if ($onBehalfOfUri instanceof FHIRUri) {
-            $this->onBehalfOfUri = $onBehalfOfUri;
-            return $this;
-        }
-        $this->onBehalfOfUri = new FHIRUri($onBehalfOfUri);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The type of relationship between agents.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    public function getRelatedAgentType()
-    {
-        return $this->relatedAgentType;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The type of relationship between agents.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $relatedAgentType
-     * @return static
-     */
-    public function setRelatedAgentType(FHIRCodeableConcept $relatedAgentType = null)
-    {
-        $this->relatedAgentType = $relatedAgentType;
-        return $this;
     }
 
     /**
@@ -408,7 +278,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getRole()
+    public function getRole(): null|array
     {
         return $this->role;
     }
@@ -425,37 +295,52 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $role
      * @return static
      */
-    public function addRole(FHIRCodeableConcept $role = null)
+    public function addRole(null|FHIRCodeableConcept $role = null): self
     {
+        if (null === $role) {
+            $role = new FHIRCodeableConcept();
+        }
+        $this->_trackValueAdded();
         $this->role[] = $role;
         return $this;
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The function of the agent with respect to the activity. The security role
-     * enabling the agent with respect to the activity.
+     * The individual, device or organization that participated in the event.
      *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[] $role
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
+     */
+    public function getWhoUri(): null|FHIRUri
+    {
+        return $this->whoUri;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The individual, device or organization that participated in the event.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $whoUri
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setRole(array $role = [])
+    public function setWhoUri(null|string|FHIRUriPrimitive|FHIRUri $whoUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->role = [];
-        if ([] === $role) {
-            return $this;
+        if (null !== $whoUri && !($whoUri instanceof FHIRUri)) {
+            $whoUri = new FHIRUri($whoUri);
         }
-        foreach($role as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addRole($v);
-            } else {
-                $this->addRole(new FHIRCodeableConcept($v));
-            }
+        $this->_trackValueSet($this->whoUri, $whoUri);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_WHO_URI])) {
+            $this->_primitiveXmlLocations[self::FIELD_WHO_URI] = [];
         }
+        $this->_primitiveXmlLocations[self::FIELD_WHO_URI][0] = $xmlLocation;
+        $this->whoUri = $whoUri;
         return $this;
     }
 
@@ -468,7 +353,7 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    public function getWhoReference()
+    public function getWhoReference(): null|FHIRReference
     {
         return $this->whoReference;
     }
@@ -483,8 +368,12 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $whoReference
      * @return static
      */
-    public function setWhoReference(FHIRReference $whoReference = null)
+    public function setWhoReference(null|FHIRReference $whoReference = null): self
     {
+        if (null === $whoReference) {
+            $whoReference = new FHIRReference();
+        }
+        $this->_trackValueSet($this->whoReference, $whoReference);
         $this->whoReference = $whoReference;
         return $this;
     }
@@ -494,13 +383,13 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The individual, device or organization that participated in the event.
+     * The individual, device, or organization for whom the change was made.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    public function getWhoUri()
+    public function getOnBehalfOfUri(): null|FHIRUri
     {
-        return $this->whoUri;
+        return $this->onBehalfOfUri;
     }
 
     /**
@@ -508,22 +397,93 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The individual, device or organization that participated in the event.
+     * The individual, device, or organization for whom the change was made.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $whoUri
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $onBehalfOfUri
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setWhoUri($whoUri = null)
+    public function setOnBehalfOfUri(null|string|FHIRUriPrimitive|FHIRUri $onBehalfOfUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $whoUri) {
-            $this->whoUri = null;
-            return $this;
+        if (null !== $onBehalfOfUri && !($onBehalfOfUri instanceof FHIRUri)) {
+            $onBehalfOfUri = new FHIRUri($onBehalfOfUri);
         }
-        if ($whoUri instanceof FHIRUri) {
-            $this->whoUri = $whoUri;
-            return $this;
+        $this->_trackValueSet($this->onBehalfOfUri, $onBehalfOfUri);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_ON_BEHALF_OF_URI])) {
+            $this->_primitiveXmlLocations[self::FIELD_ON_BEHALF_OF_URI] = [];
         }
-        $this->whoUri = new FHIRUri($whoUri);
+        $this->_primitiveXmlLocations[self::FIELD_ON_BEHALF_OF_URI][0] = $xmlLocation;
+        $this->onBehalfOfUri = $onBehalfOfUri;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The individual, device, or organization for whom the change was made.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    public function getOnBehalfOfReference(): null|FHIRReference
+    {
+        return $this->onBehalfOfReference;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The individual, device, or organization for whom the change was made.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $onBehalfOfReference
+     * @return static
+     */
+    public function setOnBehalfOfReference(null|FHIRReference $onBehalfOfReference = null): self
+    {
+        if (null === $onBehalfOfReference) {
+            $onBehalfOfReference = new FHIRReference();
+        }
+        $this->_trackValueSet($this->onBehalfOfReference, $onBehalfOfReference);
+        $this->onBehalfOfReference = $onBehalfOfReference;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of relationship between agents.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    public function getRelatedAgentType(): null|FHIRCodeableConcept
+    {
+        return $this->relatedAgentType;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of relationship between agents.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $relatedAgentType
+     * @return static
+     */
+    public function setRelatedAgentType(null|FHIRCodeableConcept $relatedAgentType = null): self
+    {
+        if (null === $relatedAgentType) {
+            $relatedAgentType = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->relatedAgentType, $relatedAgentType);
+        $this->relatedAgentType = $relatedAgentType;
         return $this;
     }
 
@@ -533,9 +493,9 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -544,25 +504,10 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getOnBehalfOfReference())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ON_BEHALF_OF_REFERENCE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getOnBehalfOfUri())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ON_BEHALF_OF_URI] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getRelatedAgentType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_RELATED_AGENT_TYPE] = $fieldErrs;
-            }
-        }
         if ([] !== ($vs = $this->getRole())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -570,50 +515,29 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getWhoReference())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_WHO_REFERENCE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getWhoUri())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_WHO_URI] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_ON_BEHALF_OF_REFERENCE])) {
-            $v = $this->getOnBehalfOfReference();
-            foreach($validationRules[self::FIELD_ON_BEHALF_OF_REFERENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_AGENT, self::FIELD_ON_BEHALF_OF_REFERENCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ON_BEHALF_OF_REFERENCE])) {
-                        $errs[self::FIELD_ON_BEHALF_OF_REFERENCE] = [];
-                    }
-                    $errs[self::FIELD_ON_BEHALF_OF_REFERENCE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getWhoReference())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_WHO_REFERENCE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_ON_BEHALF_OF_URI])) {
-            $v = $this->getOnBehalfOfUri();
-            foreach($validationRules[self::FIELD_ON_BEHALF_OF_URI] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_AGENT, self::FIELD_ON_BEHALF_OF_URI, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ON_BEHALF_OF_URI])) {
-                        $errs[self::FIELD_ON_BEHALF_OF_URI] = [];
-                    }
-                    $errs[self::FIELD_ON_BEHALF_OF_URI][$rule] = $err;
-                }
+        if (null !== ($v = $this->getOnBehalfOfUri())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ON_BEHALF_OF_URI] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_RELATED_AGENT_TYPE])) {
-            $v = $this->getRelatedAgentType();
-            foreach($validationRules[self::FIELD_RELATED_AGENT_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_AGENT, self::FIELD_RELATED_AGENT_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RELATED_AGENT_TYPE])) {
-                        $errs[self::FIELD_RELATED_AGENT_TYPE] = [];
-                    }
-                    $errs[self::FIELD_RELATED_AGENT_TYPE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getOnBehalfOfReference())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ON_BEHALF_OF_REFERENCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRelatedAgentType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_RELATED_AGENT_TYPE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_ROLE])) {
@@ -625,6 +549,18 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                         $errs[self::FIELD_ROLE] = [];
                     }
                     $errs[self::FIELD_ROLE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_WHO_URI])) {
+            $v = $this->getWhoUri();
+            foreach($validationRules[self::FIELD_WHO_URI] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_AGENT, self::FIELD_WHO_URI, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_WHO_URI])) {
+                        $errs[self::FIELD_WHO_URI] = [];
+                    }
+                    $errs[self::FIELD_WHO_URI][$rule] = $err;
                 }
             }
         }
@@ -640,15 +576,39 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_WHO_URI])) {
-            $v = $this->getWhoUri();
-            foreach($validationRules[self::FIELD_WHO_URI] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_AGENT, self::FIELD_WHO_URI, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ON_BEHALF_OF_URI])) {
+            $v = $this->getOnBehalfOfUri();
+            foreach($validationRules[self::FIELD_ON_BEHALF_OF_URI] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_AGENT, self::FIELD_ON_BEHALF_OF_URI, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_WHO_URI])) {
-                        $errs[self::FIELD_WHO_URI] = [];
+                    if (!isset($errs[self::FIELD_ON_BEHALF_OF_URI])) {
+                        $errs[self::FIELD_ON_BEHALF_OF_URI] = [];
                     }
-                    $errs[self::FIELD_WHO_URI][$rule] = $err;
+                    $errs[self::FIELD_ON_BEHALF_OF_URI][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ON_BEHALF_OF_REFERENCE])) {
+            $v = $this->getOnBehalfOfReference();
+            foreach($validationRules[self::FIELD_ON_BEHALF_OF_REFERENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_AGENT, self::FIELD_ON_BEHALF_OF_REFERENCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ON_BEHALF_OF_REFERENCE])) {
+                        $errs[self::FIELD_ON_BEHALF_OF_REFERENCE] = [];
+                    }
+                    $errs[self::FIELD_ON_BEHALF_OF_REFERENCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RELATED_AGENT_TYPE])) {
+            $v = $this->getRelatedAgentType();
+            foreach($validationRules[self::FIELD_RELATED_AGENT_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_AGENT, self::FIELD_RELATED_AGENT_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RELATED_AGENT_TYPE])) {
+                        $errs[self::FIELD_RELATED_AGENT_TYPE] = [];
+                    }
+                    $errs[self::FIELD_RELATED_AGENT_TYPE][$rule] = $err;
                 }
             }
         }
@@ -692,174 +652,212 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRProvenanceAgent::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRProvenanceAgent::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRProvenanceAgent;
-        } elseif (!is_object($type) || !($type instanceof FHIRProvenanceAgent)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRProvenanceAgent)) {
             throw new \RuntimeException(sprintf(
-                'FHIRProvenanceAgent::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_ROLE === $childName) {
+                $type->addRole(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_WHO_URI === $childName) {
+                $type->setWhoUri(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_WHO_REFERENCE === $childName) {
+                $type->setWhoReference(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ON_BEHALF_OF_URI === $childName) {
+                $type->setOnBehalfOfUri(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_ON_BEHALF_OF_REFERENCE === $childName) {
+                $type->setOnBehalfOfReference(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_RELATED_AGENT_TYPE === $childName) {
+                $type->setRelatedAgentType(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->onBehalfOfReference)) {
-            $type->setOnBehalfOfReference(FHIRReference::xmlUnserialize($children->onBehalfOfReference));
-        }
-        if (isset($children->onBehalfOfUri)) {
-            $type->setOnBehalfOfUri(FHIRUri::xmlUnserialize($children->onBehalfOfUri));
-        }
-        if (isset($attributes->onBehalfOfUri)) {
-            $pt = $type->getOnBehalfOfUri();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->onBehalfOfUri);
-            } else {
-                $type->setOnBehalfOfUri((string)$attributes->onBehalfOfUri);
-            }
-        }
-        if (isset($children->relatedAgentType)) {
-            $type->setRelatedAgentType(FHIRCodeableConcept::xmlUnserialize($children->relatedAgentType));
-        }
-        if (isset($children->role)) {
-            foreach($children->role as $child) {
-                $type->addRole(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->whoReference)) {
-            $type->setWhoReference(FHIRReference::xmlUnserialize($children->whoReference));
-        }
-        if (isset($children->whoUri)) {
-            $type->setWhoUri(FHIRUri::xmlUnserialize($children->whoUri));
-        }
-        if (isset($attributes->whoUri)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_WHO_URI])) {
             $pt = $type->getWhoUri();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->whoUri);
+                $pt->setValue((string)$attributes[self::FIELD_WHO_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setWhoUri((string)$attributes->whoUri);
+                $type->setWhoUri((string)$attributes[self::FIELD_WHO_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ON_BEHALF_OF_URI])) {
+            $pt = $type->getOnBehalfOfUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ON_BEHALF_OF_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setOnBehalfOfUri((string)$attributes[self::FIELD_ON_BEHALF_OF_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getOnBehalfOfReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ON_BEHALF_OF_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getOnBehalfOfUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ON_BEHALF_OF_URI, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getRelatedAgentType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RELATED_AGENT_TYPE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if ([] !== ($vs = $this->getRole())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ProvenanceAgent', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_WHO_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getWhoUri())) {
+            $xw->writeAttribute(self::FIELD_WHO_URI, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ON_BEHALF_OF_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOnBehalfOfUri())) {
+            $xw->writeAttribute(self::FIELD_ON_BEHALF_OF_URI, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        foreach ($this->getRole() as $v) {
+            $xw->startElement(self::FIELD_ROLE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_WHO_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getWhoUri())) {
+            $xw->startElement(self::FIELD_WHO_URI);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getWhoReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_WHO_REFERENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getWhoUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO_URI, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ON_BEHALF_OF_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOnBehalfOfUri())) {
+            $xw->startElement(self::FIELD_ON_BEHALF_OF_URI);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getOnBehalfOfReference())) {
+            $xw->startElement(self::FIELD_ON_BEHALF_OF_REFERENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getRelatedAgentType())) {
+            $xw->startElement(self::FIELD_RELATED_AGENT_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getOnBehalfOfReference())) {
-            $a[self::FIELD_ON_BEHALF_OF_REFERENCE] = $v;
-        }
-        if (null !== ($v = $this->getOnBehalfOfUri())) {
-            $a[self::FIELD_ON_BEHALF_OF_URI] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_ON_BEHALF_OF_URI_EXT] = $enc;
+        $out = parent::jsonSerialize();
+        if ([] !== ($vs = $this->getRole())) {
+            $out->{self::FIELD_ROLE} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_ROLE}[] = $v;
             }
         }
-        if (null !== ($v = $this->getRelatedAgentType())) {
-            $a[self::FIELD_RELATED_AGENT_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->getRole())) {
-            $a[self::FIELD_ROLE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ROLE][] = $v;
+        if (null !== ($v = $this->getWhoUri())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_WHO_URI} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRUri::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_WHO_URI_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getWhoReference())) {
-            $a[self::FIELD_WHO_REFERENCE] = $v;
+            $out->{self::FIELD_WHO_REFERENCE} = $v;
         }
-        if (null !== ($v = $this->getWhoUri())) {
-            $a[self::FIELD_WHO_URI] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_WHO_URI_EXT] = $enc;
+        if (null !== ($v = $this->getOnBehalfOfUri())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_ON_BEHALF_OF_URI} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRUri::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_ON_BEHALF_OF_URI_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getOnBehalfOfReference())) {
+            $out->{self::FIELD_ON_BEHALF_OF_REFERENCE} = $v;
         }
-        return $a;
-    }
+        if (null !== ($v = $this->getRelatedAgentType())) {
+            $out->{self::FIELD_RELATED_AGENT_TYPE} = $v;
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

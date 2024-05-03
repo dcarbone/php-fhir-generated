@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,10 +63,17 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskE
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * The RiskEvidenceSynthesis resource describes the likelihood of an outcome in a
@@ -80,15 +87,13 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RISK_EVIDENCE_SYNTHESIS_DOT_SAMPLE_SIZE;
+
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
-    const FIELD_NUMBER_OF_PARTICIPANTS = 'numberOfParticipants';
-    const FIELD_NUMBER_OF_PARTICIPANTS_EXT = '_numberOfParticipants';
     const FIELD_NUMBER_OF_STUDIES = 'numberOfStudies';
     const FIELD_NUMBER_OF_STUDIES_EXT = '_numberOfStudies';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_NUMBER_OF_PARTICIPANTS = 'numberOfParticipants';
+    const FIELD_NUMBER_OF_PARTICIPANTS_EXT = '_numberOfParticipants';
 
     /**
      * A sequence of Unicode characters
@@ -99,19 +104,7 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $description = null;
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Number of participants included in this evidence synthesis.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
-     */
-    protected $numberOfParticipants = null;
-
+    protected null|FHIRString $description = null;
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -121,41 +114,40 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    protected $numberOfStudies = null;
+    protected null|FHIRInteger $numberOfStudies = null;
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Number of participants included in this evidence synthesis.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    protected null|FHIRInteger $numberOfParticipants = null;
 
     /**
      * Validation map for fields in type RiskEvidenceSynthesis.SampleSize
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRRiskEvidenceSynthesisSampleSize Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRRiskEvidenceSynthesisSampleSize::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
-            if (isset($data[self::FIELD_DESCRIPTION])) {
-                $value = $data[self::FIELD_DESCRIPTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
-                $ext = $data[self::FIELD_DESCRIPTION_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_DESCRIPTION, $data) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $data)) {
+            $value = $data[self::FIELD_DESCRIPTION] ?? null;
+            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) ? $data[self::FIELD_DESCRIPTION_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setDescription($value);
@@ -164,44 +156,15 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
                 } else {
                     $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDescription(new FHIRString($ext));
+            } else {
+                $this->setDescription(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_NUMBER_OF_PARTICIPANTS]) || isset($data[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT])) {
-            if (isset($data[self::FIELD_NUMBER_OF_PARTICIPANTS])) {
-                $value = $data[self::FIELD_NUMBER_OF_PARTICIPANTS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT]) && is_array($data[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT])) {
-                $ext = $data[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setNumberOfParticipants($value);
-                } else if (is_array($value)) {
-                    $this->setNumberOfParticipants(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setNumberOfParticipants(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setNumberOfParticipants(new FHIRInteger($ext));
-            }
-        }
-        if (isset($data[self::FIELD_NUMBER_OF_STUDIES]) || isset($data[self::FIELD_NUMBER_OF_STUDIES_EXT])) {
-            if (isset($data[self::FIELD_NUMBER_OF_STUDIES])) {
-                $value = $data[self::FIELD_NUMBER_OF_STUDIES];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NUMBER_OF_STUDIES_EXT]) && is_array($data[self::FIELD_NUMBER_OF_STUDIES_EXT])) {
-                $ext = $data[self::FIELD_NUMBER_OF_STUDIES_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_NUMBER_OF_STUDIES, $data) || array_key_exists(self::FIELD_NUMBER_OF_STUDIES_EXT, $data)) {
+            $value = $data[self::FIELD_NUMBER_OF_STUDIES] ?? null;
+            $ext = (isset($data[self::FIELD_NUMBER_OF_STUDIES_EXT]) && is_array($data[self::FIELD_NUMBER_OF_STUDIES_EXT])) ? $data[self::FIELD_NUMBER_OF_STUDIES_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRInteger) {
                     $this->setNumberOfStudies($value);
@@ -210,8 +173,27 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
                 } else {
                     $this->setNumberOfStudies(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setNumberOfStudies(new FHIRInteger($ext));
+            } else {
+                $this->setNumberOfStudies(new FHIRInteger(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_NUMBER_OF_PARTICIPANTS, $data) || array_key_exists(self::FIELD_NUMBER_OF_PARTICIPANTS_EXT, $data)) {
+            $value = $data[self::FIELD_NUMBER_OF_PARTICIPANTS] ?? null;
+            $ext = (isset($data[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT]) && is_array($data[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT])) ? $data[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setNumberOfParticipants($value);
+                } else if (is_array($value)) {
+                    $this->setNumberOfParticipants(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setNumberOfParticipants(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setNumberOfParticipants(new FHIRInteger($ext));
+            } else {
+                $this->setNumberOfParticipants(new FHIRInteger(null));
             }
         }
     }
@@ -219,21 +201,9 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<RiskEvidenceSynthesisSampleSize{$xmlns}></RiskEvidenceSynthesisSampleSize>";
     }
 
     /**
@@ -245,7 +215,7 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    public function getDescription()
+    public function getDescription(): null|FHIRString
     {
         return $this->description;
     }
@@ -257,58 +227,21 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
      *
      * Human-readable summary of sample size.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $description
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $description
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDescription($description = null)
+    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $description) {
-            $this->description = null;
-            return $this;
+        if (null !== $description && !($description instanceof FHIRString)) {
+            $description = new FHIRString($description);
         }
-        if ($description instanceof FHIRString) {
-            $this->description = $description;
-            return $this;
+        $this->_trackValueSet($this->description, $description);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DESCRIPTION])) {
+            $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] = [];
         }
-        $this->description = new FHIRString($description);
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Number of participants included in this evidence synthesis.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
-     */
-    public function getNumberOfParticipants()
-    {
-        return $this->numberOfParticipants;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Number of participants included in this evidence synthesis.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $numberOfParticipants
-     * @return static
-     */
-    public function setNumberOfParticipants($numberOfParticipants = null)
-    {
-        if (null === $numberOfParticipants) {
-            $this->numberOfParticipants = null;
-            return $this;
-        }
-        if ($numberOfParticipants instanceof FHIRInteger) {
-            $this->numberOfParticipants = $numberOfParticipants;
-            return $this;
-        }
-        $this->numberOfParticipants = new FHIRInteger($numberOfParticipants);
+        $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
+        $this->description = $description;
         return $this;
     }
 
@@ -321,7 +254,7 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    public function getNumberOfStudies()
+    public function getNumberOfStudies(): null|FHIRInteger
     {
         return $this->numberOfStudies;
     }
@@ -333,20 +266,60 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
      *
      * Number of studies included in this evidence synthesis.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $numberOfStudies
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $numberOfStudies
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNumberOfStudies($numberOfStudies = null)
+    public function setNumberOfStudies(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numberOfStudies = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $numberOfStudies) {
-            $this->numberOfStudies = null;
-            return $this;
+        if (null !== $numberOfStudies && !($numberOfStudies instanceof FHIRInteger)) {
+            $numberOfStudies = new FHIRInteger($numberOfStudies);
         }
-        if ($numberOfStudies instanceof FHIRInteger) {
-            $this->numberOfStudies = $numberOfStudies;
-            return $this;
+        $this->_trackValueSet($this->numberOfStudies, $numberOfStudies);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_STUDIES])) {
+            $this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_STUDIES] = [];
         }
-        $this->numberOfStudies = new FHIRInteger($numberOfStudies);
+        $this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_STUDIES][0] = $xmlLocation;
+        $this->numberOfStudies = $numberOfStudies;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Number of participants included in this evidence synthesis.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    public function getNumberOfParticipants(): null|FHIRInteger
+    {
+        return $this->numberOfParticipants;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Number of participants included in this evidence synthesis.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $numberOfParticipants
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setNumberOfParticipants(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numberOfParticipants = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $numberOfParticipants && !($numberOfParticipants instanceof FHIRInteger)) {
+            $numberOfParticipants = new FHIRInteger($numberOfParticipants);
+        }
+        $this->_trackValueSet($this->numberOfParticipants, $numberOfParticipants);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_PARTICIPANTS])) {
+            $this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_PARTICIPANTS] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_PARTICIPANTS][0] = $xmlLocation;
+        $this->numberOfParticipants = $numberOfParticipants;
         return $this;
     }
 
@@ -356,9 +329,9 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -367,7 +340,7 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
@@ -376,14 +349,14 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
                 $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getNumberOfParticipants())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_NUMBER_OF_PARTICIPANTS] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getNumberOfStudies())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_NUMBER_OF_STUDIES] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getNumberOfParticipants())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_NUMBER_OF_PARTICIPANTS] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_DESCRIPTION])) {
@@ -398,18 +371,6 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_NUMBER_OF_PARTICIPANTS])) {
-            $v = $this->getNumberOfParticipants();
-            foreach($validationRules[self::FIELD_NUMBER_OF_PARTICIPANTS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_EVIDENCE_SYNTHESIS_DOT_SAMPLE_SIZE, self::FIELD_NUMBER_OF_PARTICIPANTS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NUMBER_OF_PARTICIPANTS])) {
-                        $errs[self::FIELD_NUMBER_OF_PARTICIPANTS] = [];
-                    }
-                    $errs[self::FIELD_NUMBER_OF_PARTICIPANTS][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_NUMBER_OF_STUDIES])) {
             $v = $this->getNumberOfStudies();
             foreach($validationRules[self::FIELD_NUMBER_OF_STUDIES] as $rule => $constraint) {
@@ -419,6 +380,18 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
                         $errs[self::FIELD_NUMBER_OF_STUDIES] = [];
                     }
                     $errs[self::FIELD_NUMBER_OF_STUDIES][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_NUMBER_OF_PARTICIPANTS])) {
+            $v = $this->getNumberOfParticipants();
+            foreach($validationRules[self::FIELD_NUMBER_OF_PARTICIPANTS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RISK_EVIDENCE_SYNTHESIS_DOT_SAMPLE_SIZE, self::FIELD_NUMBER_OF_PARTICIPANTS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NUMBER_OF_PARTICIPANTS])) {
+                        $errs[self::FIELD_NUMBER_OF_PARTICIPANTS] = [];
+                    }
+                    $errs[self::FIELD_NUMBER_OF_PARTICIPANTS][$rule] = $err;
                 }
             }
         }
@@ -462,148 +435,199 @@ class FHIRRiskEvidenceSynthesisSampleSize extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRRiskEvidenceSynthesisSampleSize::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRRiskEvidenceSynthesisSampleSize::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRRiskEvidenceSynthesisSampleSize;
-        } elseif (!is_object($type) || !($type instanceof FHIRRiskEvidenceSynthesisSampleSize)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRRiskEvidenceSynthesisSampleSize)) {
             throw new \RuntimeException(sprintf(
-                'FHIRRiskEvidenceSynthesisSampleSize::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_DESCRIPTION === $childName) {
+                $type->setDescription(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_NUMBER_OF_STUDIES === $childName) {
+                $type->setNumberOfStudies(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_NUMBER_OF_PARTICIPANTS === $childName) {
+                $type->setNumberOfParticipants(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->description)) {
-            $type->setDescription(FHIRString::xmlUnserialize($children->description));
-        }
-        if (isset($attributes->description)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_DESCRIPTION])) {
             $pt = $type->getDescription();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->description);
+                $pt->setValue((string)$attributes[self::FIELD_DESCRIPTION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setDescription((string)$attributes->description);
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->numberOfParticipants)) {
-            $type->setNumberOfParticipants(FHIRInteger::xmlUnserialize($children->numberOfParticipants));
-        }
-        if (isset($attributes->numberOfParticipants)) {
-            $pt = $type->getNumberOfParticipants();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->numberOfParticipants);
-            } else {
-                $type->setNumberOfParticipants((string)$attributes->numberOfParticipants);
-            }
-        }
-        if (isset($children->numberOfStudies)) {
-            $type->setNumberOfStudies(FHIRInteger::xmlUnserialize($children->numberOfStudies));
-        }
-        if (isset($attributes->numberOfStudies)) {
+        if (isset($attributes[self::FIELD_NUMBER_OF_STUDIES])) {
             $pt = $type->getNumberOfStudies();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->numberOfStudies);
+                $pt->setValue((string)$attributes[self::FIELD_NUMBER_OF_STUDIES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setNumberOfStudies((string)$attributes->numberOfStudies);
+                $type->setNumberOfStudies((string)$attributes[self::FIELD_NUMBER_OF_STUDIES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_NUMBER_OF_PARTICIPANTS])) {
+            $pt = $type->getNumberOfParticipants();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_NUMBER_OF_PARTICIPANTS], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setNumberOfParticipants((string)$attributes[self::FIELD_NUMBER_OF_PARTICIPANTS], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getNumberOfParticipants())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NUMBER_OF_PARTICIPANTS, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getNumberOfStudies())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NUMBER_OF_STUDIES, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        return $sxe;
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'RiskEvidenceSynthesisSampleSize', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDescription())) {
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_STUDIES] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNumberOfStudies())) {
+            $xw->writeAttribute(self::FIELD_NUMBER_OF_STUDIES, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_PARTICIPANTS] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNumberOfParticipants())) {
+            $xw->writeAttribute(self::FIELD_NUMBER_OF_PARTICIPANTS, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDescription())) {
+            $xw->startElement(self::FIELD_DESCRIPTION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_STUDIES] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNumberOfStudies())) {
+            $xw->startElement(self::FIELD_NUMBER_OF_STUDIES);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NUMBER_OF_PARTICIPANTS] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNumberOfParticipants())) {
+            $xw->startElement(self::FIELD_NUMBER_OF_PARTICIPANTS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DESCRIPTION} = $val;
             }
-        }
-        if (null !== ($v = $this->getNumberOfParticipants())) {
-            $a[self::FIELD_NUMBER_OF_PARTICIPANTS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_NUMBER_OF_PARTICIPANTS_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DESCRIPTION_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getNumberOfStudies())) {
-            $a[self::FIELD_NUMBER_OF_STUDIES] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_NUMBER_OF_STUDIES_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_NUMBER_OF_STUDIES} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInteger::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_NUMBER_OF_STUDIES_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getNumberOfParticipants())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_NUMBER_OF_PARTICIPANTS} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInteger::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_NUMBER_OF_PARTICIPANTS_EXT} = $ext;
+            }
         }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

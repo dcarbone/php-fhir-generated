@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,12 +62,19 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerif
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Describes validation requirements, source(s), status and dates for one or more
@@ -80,55 +87,26 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_PRIMARY_SOURCE;
-    const FIELD_CAN_PUSH_UPDATES = 'canPushUpdates';
-    const FIELD_COMMUNICATION_METHOD = 'communicationMethod';
-    const FIELD_PUSH_TYPE_AVAILABLE = 'pushTypeAvailable';
+
+    const FIELD_WHO = 'who';
     const FIELD_TYPE = 'type';
+    const FIELD_COMMUNICATION_METHOD = 'communicationMethod';
+    const FIELD_VALIDATION_STATUS = 'validationStatus';
     const FIELD_VALIDATION_DATE = 'validationDate';
     const FIELD_VALIDATION_DATE_EXT = '_validationDate';
-    const FIELD_VALIDATION_STATUS = 'validationStatus';
-    const FIELD_WHO = 'who';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_CAN_PUSH_UPDATES = 'canPushUpdates';
+    const FIELD_PUSH_TYPE_AVAILABLE = 'pushTypeAvailable';
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Ability of the primary source to push updates/alerts (yes; no; undetermined).
+     * Reference to the primary source.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    protected $canPushUpdates = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Method for communicating with the primary source (manual; API; Push).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $communicationMethod = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Type of alerts/updates the primary source can send (specific requested changes;
-     * any changes; as defined by source).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $pushTypeAvailable = [];
-
+    protected null|FHIRReference $who = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -141,8 +119,30 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $type = [];
-
+    protected null|array $type = [];
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Method for communicating with the primary source (manual; API; Push).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected null|array $communicationMethod = [];
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Status of the validation of the target against the primary source (successful;
+     * failed; unknown).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $validationStatus = null;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -155,126 +155,97 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    protected $validationDate = null;
-
+    protected null|FHIRDateTime $validationDate = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Status of the validation of the target against the primary source (successful;
-     * failed; unknown).
+     * Ability of the primary source to push updates/alerts (yes; no; undetermined).
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $validationStatus = null;
-
+    protected null|FHIRCodeableConcept $canPushUpdates = null;
     /**
-     * A reference from one resource to another.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Reference to the primary source.
+     * Type of alerts/updates the primary source can send (specific requested changes;
+     * any changes; as defined by source).
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $who = null;
+    protected null|array $pushTypeAvailable = [];
 
     /**
      * Validation map for fields in type VerificationResult.PrimarySource
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRVerificationResultPrimarySource Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRVerificationResultPrimarySource::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CAN_PUSH_UPDATES])) {
-            if ($data[self::FIELD_CAN_PUSH_UPDATES] instanceof FHIRCodeableConcept) {
-                $this->setCanPushUpdates($data[self::FIELD_CAN_PUSH_UPDATES]);
+        if (array_key_exists(self::FIELD_WHO, $data)) {
+            if ($data[self::FIELD_WHO] instanceof FHIRReference) {
+                $this->setWho($data[self::FIELD_WHO]);
             } else {
-                $this->setCanPushUpdates(new FHIRCodeableConcept($data[self::FIELD_CAN_PUSH_UPDATES]));
+                $this->setWho(new FHIRReference($data[self::FIELD_WHO]));
             }
         }
-        if (isset($data[self::FIELD_COMMUNICATION_METHOD])) {
-            if (is_array($data[self::FIELD_COMMUNICATION_METHOD])) {
-                foreach($data[self::FIELD_COMMUNICATION_METHOD] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addCommunicationMethod($v);
-                    } else {
-                        $this->addCommunicationMethod(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_COMMUNICATION_METHOD] instanceof FHIRCodeableConcept) {
-                $this->addCommunicationMethod($data[self::FIELD_COMMUNICATION_METHOD]);
-            } else {
-                $this->addCommunicationMethod(new FHIRCodeableConcept($data[self::FIELD_COMMUNICATION_METHOD]));
-            }
-        }
-        if (isset($data[self::FIELD_PUSH_TYPE_AVAILABLE])) {
-            if (is_array($data[self::FIELD_PUSH_TYPE_AVAILABLE])) {
-                foreach($data[self::FIELD_PUSH_TYPE_AVAILABLE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addPushTypeAvailable($v);
-                    } else {
-                        $this->addPushTypeAvailable(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_PUSH_TYPE_AVAILABLE] instanceof FHIRCodeableConcept) {
-                $this->addPushTypeAvailable($data[self::FIELD_PUSH_TYPE_AVAILABLE]);
-            } else {
-                $this->addPushTypeAvailable(new FHIRCodeableConcept($data[self::FIELD_PUSH_TYPE_AVAILABLE]));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE])) {
+        if (array_key_exists(self::FIELD_TYPE, $data)) {
             if (is_array($data[self::FIELD_TYPE])) {
                 foreach($data[self::FIELD_TYPE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRCodeableConcept) {
                         $this->addType($v);
                     } else {
                         $this->addType(new FHIRCodeableConcept($v));
                     }
                 }
-            } else if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+            } elseif ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
                 $this->addType($data[self::FIELD_TYPE]);
             } else {
                 $this->addType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
         }
-        if (isset($data[self::FIELD_VALIDATION_DATE]) || isset($data[self::FIELD_VALIDATION_DATE_EXT])) {
-            if (isset($data[self::FIELD_VALIDATION_DATE])) {
-                $value = $data[self::FIELD_VALIDATION_DATE];
+        if (array_key_exists(self::FIELD_COMMUNICATION_METHOD, $data)) {
+            if (is_array($data[self::FIELD_COMMUNICATION_METHOD])) {
+                foreach($data[self::FIELD_COMMUNICATION_METHOD] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addCommunicationMethod($v);
+                    } else {
+                        $this->addCommunicationMethod(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_COMMUNICATION_METHOD] instanceof FHIRCodeableConcept) {
+                $this->addCommunicationMethod($data[self::FIELD_COMMUNICATION_METHOD]);
             } else {
-                $value = null;
+                $this->addCommunicationMethod(new FHIRCodeableConcept($data[self::FIELD_COMMUNICATION_METHOD]));
             }
-            if (isset($data[self::FIELD_VALIDATION_DATE_EXT]) && is_array($data[self::FIELD_VALIDATION_DATE_EXT])) {
-                $ext = $data[self::FIELD_VALIDATION_DATE_EXT];
+        }
+        if (array_key_exists(self::FIELD_VALIDATION_STATUS, $data)) {
+            if ($data[self::FIELD_VALIDATION_STATUS] instanceof FHIRCodeableConcept) {
+                $this->setValidationStatus($data[self::FIELD_VALIDATION_STATUS]);
             } else {
-                $ext = [];
+                $this->setValidationStatus(new FHIRCodeableConcept($data[self::FIELD_VALIDATION_STATUS]));
             }
+        }
+        if (array_key_exists(self::FIELD_VALIDATION_DATE, $data) || array_key_exists(self::FIELD_VALIDATION_DATE_EXT, $data)) {
+            $value = $data[self::FIELD_VALIDATION_DATE] ?? null;
+            $ext = (isset($data[self::FIELD_VALIDATION_DATE_EXT]) && is_array($data[self::FIELD_VALIDATION_DATE_EXT])) ? $data[self::FIELD_VALIDATION_DATE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setValidationDate($value);
@@ -283,22 +254,32 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 } else {
                     $this->setValidationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setValidationDate(new FHIRDateTime($ext));
+            } else {
+                $this->setValidationDate(new FHIRDateTime(null));
             }
         }
-        if (isset($data[self::FIELD_VALIDATION_STATUS])) {
-            if ($data[self::FIELD_VALIDATION_STATUS] instanceof FHIRCodeableConcept) {
-                $this->setValidationStatus($data[self::FIELD_VALIDATION_STATUS]);
+        if (array_key_exists(self::FIELD_CAN_PUSH_UPDATES, $data)) {
+            if ($data[self::FIELD_CAN_PUSH_UPDATES] instanceof FHIRCodeableConcept) {
+                $this->setCanPushUpdates($data[self::FIELD_CAN_PUSH_UPDATES]);
             } else {
-                $this->setValidationStatus(new FHIRCodeableConcept($data[self::FIELD_VALIDATION_STATUS]));
+                $this->setCanPushUpdates(new FHIRCodeableConcept($data[self::FIELD_CAN_PUSH_UPDATES]));
             }
         }
-        if (isset($data[self::FIELD_WHO])) {
-            if ($data[self::FIELD_WHO] instanceof FHIRReference) {
-                $this->setWho($data[self::FIELD_WHO]);
+        if (array_key_exists(self::FIELD_PUSH_TYPE_AVAILABLE, $data)) {
+            if (is_array($data[self::FIELD_PUSH_TYPE_AVAILABLE])) {
+                foreach($data[self::FIELD_PUSH_TYPE_AVAILABLE] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addPushTypeAvailable($v);
+                    } else {
+                        $this->addPushTypeAvailable(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_PUSH_TYPE_AVAILABLE] instanceof FHIRCodeableConcept) {
+                $this->addPushTypeAvailable($data[self::FIELD_PUSH_TYPE_AVAILABLE]);
             } else {
-                $this->setWho(new FHIRReference($data[self::FIELD_WHO]));
+                $this->addPushTypeAvailable(new FHIRCodeableConcept($data[self::FIELD_PUSH_TYPE_AVAILABLE]));
             }
         }
     }
@@ -306,173 +287,42 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<VerificationResultPrimarySource{$xmlns}></VerificationResultPrimarySource>";
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Ability of the primary source to push updates/alerts (yes; no; undetermined).
+     * Reference to the primary source.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getCanPushUpdates()
+    public function getWho(): null|FHIRReference
     {
-        return $this->canPushUpdates;
+        return $this->who;
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Ability of the primary source to push updates/alerts (yes; no; undetermined).
+     * Reference to the primary source.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $canPushUpdates
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $who
      * @return static
      */
-    public function setCanPushUpdates(FHIRCodeableConcept $canPushUpdates = null)
+    public function setWho(null|FHIRReference $who = null): self
     {
-        $this->canPushUpdates = $canPushUpdates;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Method for communicating with the primary source (manual; API; Push).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getCommunicationMethod()
-    {
-        return $this->communicationMethod;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Method for communicating with the primary source (manual; API; Push).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $communicationMethod
-     * @return static
-     */
-    public function addCommunicationMethod(FHIRCodeableConcept $communicationMethod = null)
-    {
-        $this->communicationMethod[] = $communicationMethod;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Method for communicating with the primary source (manual; API; Push).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $communicationMethod
-     * @return static
-     */
-    public function setCommunicationMethod(array $communicationMethod = [])
-    {
-        $this->communicationMethod = [];
-        if ([] === $communicationMethod) {
-            return $this;
+        if (null === $who) {
+            $who = new FHIRReference();
         }
-        foreach($communicationMethod as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addCommunicationMethod($v);
-            } else {
-                $this->addCommunicationMethod(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Type of alerts/updates the primary source can send (specific requested changes;
-     * any changes; as defined by source).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getPushTypeAvailable()
-    {
-        return $this->pushTypeAvailable;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Type of alerts/updates the primary source can send (specific requested changes;
-     * any changes; as defined by source).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $pushTypeAvailable
-     * @return static
-     */
-    public function addPushTypeAvailable(FHIRCodeableConcept $pushTypeAvailable = null)
-    {
-        $this->pushTypeAvailable[] = $pushTypeAvailable;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Type of alerts/updates the primary source can send (specific requested changes;
-     * any changes; as defined by source).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $pushTypeAvailable
-     * @return static
-     */
-    public function setPushTypeAvailable(array $pushTypeAvailable = [])
-    {
-        $this->pushTypeAvailable = [];
-        if ([] === $pushTypeAvailable) {
-            return $this;
-        }
-        foreach($pushTypeAvailable as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addPushTypeAvailable($v);
-            } else {
-                $this->addPushTypeAvailable(new FHIRCodeableConcept($v));
-            }
-        }
+        $this->_trackValueSet($this->who, $who);
+        $this->who = $who;
         return $this;
     }
 
@@ -488,7 +338,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getType()
+    public function getType(): null|array
     {
         return $this->type;
     }
@@ -506,8 +356,12 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
      * @return static
      */
-    public function addType(FHIRCodeableConcept $type = null)
+    public function addType(null|FHIRCodeableConcept $type = null): self
     {
+        if (null === $type) {
+            $type = new FHIRCodeableConcept();
+        }
+        $this->_trackValueAdded();
         $this->type[] = $type;
         return $this;
     }
@@ -518,70 +372,33 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Type of primary source (License Board; Primary Education; Continuing Education;
-     * Postal Service; Relationship owner; Registration Authority; legal source;
-     * issuing source; authoritative source).
+     * Method for communicating with the primary source (manual; API; Push).
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $type
-     * @return static
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    public function setType(array $type = [])
+    public function getCommunicationMethod(): null|array
     {
-        $this->type = [];
-        if ([] === $type) {
-            return $this;
-        }
-        foreach($type as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addType($v);
-            } else {
-                $this->addType(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
+        return $this->communicationMethod;
     }
 
     /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * When the target was validated against the primary source.
+     * Method for communicating with the primary source (manual; API; Push).
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
-     */
-    public function getValidationDate()
-    {
-        return $this->validationDate;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * When the target was validated against the primary source.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $validationDate
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $communicationMethod
      * @return static
      */
-    public function setValidationDate($validationDate = null)
+    public function addCommunicationMethod(null|FHIRCodeableConcept $communicationMethod = null): self
     {
-        if (null === $validationDate) {
-            $this->validationDate = null;
-            return $this;
+        if (null === $communicationMethod) {
+            $communicationMethod = new FHIRCodeableConcept();
         }
-        if ($validationDate instanceof FHIRDateTime) {
-            $this->validationDate = $validationDate;
-            return $this;
-        }
-        $this->validationDate = new FHIRDateTime($validationDate);
+        $this->_trackValueAdded();
+        $this->communicationMethod[] = $communicationMethod;
         return $this;
     }
 
@@ -596,7 +413,7 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getValidationStatus()
+    public function getValidationStatus(): null|FHIRCodeableConcept
     {
         return $this->validationStatus;
     }
@@ -613,39 +430,132 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $validationStatus
      * @return static
      */
-    public function setValidationStatus(FHIRCodeableConcept $validationStatus = null)
+    public function setValidationStatus(null|FHIRCodeableConcept $validationStatus = null): self
     {
+        if (null === $validationStatus) {
+            $validationStatus = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->validationStatus, $validationStatus);
         $this->validationStatus = $validationStatus;
         return $this;
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Reference to the primary source.
+     * When the target was validated against the primary source.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    public function getWho()
+    public function getValidationDate(): null|FHIRDateTime
     {
-        return $this->who;
+        return $this->validationDate;
     }
 
     /**
-     * A reference from one resource to another.
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * When the target was validated against the primary source.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $validationDate
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setValidationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $validationDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $validationDate && !($validationDate instanceof FHIRDateTime)) {
+            $validationDate = new FHIRDateTime($validationDate);
+        }
+        $this->_trackValueSet($this->validationDate, $validationDate);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALIDATION_DATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_VALIDATION_DATE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_VALIDATION_DATE][0] = $xmlLocation;
+        $this->validationDate = $validationDate;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Reference to the primary source.
+     * Ability of the primary source to push updates/alerts (yes; no; undetermined).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $who
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCanPushUpdates(): null|FHIRCodeableConcept
+    {
+        return $this->canPushUpdates;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Ability of the primary source to push updates/alerts (yes; no; undetermined).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $canPushUpdates
      * @return static
      */
-    public function setWho(FHIRReference $who = null)
+    public function setCanPushUpdates(null|FHIRCodeableConcept $canPushUpdates = null): self
     {
-        $this->who = $who;
+        if (null === $canPushUpdates) {
+            $canPushUpdates = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->canPushUpdates, $canPushUpdates);
+        $this->canPushUpdates = $canPushUpdates;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of alerts/updates the primary source can send (specific requested changes;
+     * any changes; as defined by source).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getPushTypeAvailable(): null|array
+    {
+        return $this->pushTypeAvailable;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of alerts/updates the primary source can send (specific requested changes;
+     * any changes; as defined by source).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $pushTypeAvailable
+     * @return static
+     */
+    public function addPushTypeAvailable(null|FHIRCodeableConcept $pushTypeAvailable = null): self
+    {
+        if (null === $pushTypeAvailable) {
+            $pushTypeAvailable = new FHIRCodeableConcept();
+        }
+        $this->_trackValueAdded();
+        $this->pushTypeAvailable[] = $pushTypeAvailable;
         return $this;
     }
 
@@ -655,9 +565,9 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -666,27 +576,13 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCanPushUpdates())) {
+        if (null !== ($v = $this->getWho())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CAN_PUSH_UPDATES] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getCommunicationMethod())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_COMMUNICATION_METHOD, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getPushTypeAvailable())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_PUSH_TYPE_AVAILABLE, $i)] = $fieldErrs;
-                }
+                $errs[self::FIELD_WHO] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getType())) {
@@ -696,9 +592,11 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getValidationDate())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALIDATION_DATE] = $fieldErrs;
+        if ([] !== ($vs = $this->getCommunicationMethod())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_COMMUNICATION_METHOD, $i)] = $fieldErrs;
+                }
             }
         }
         if (null !== ($v = $this->getValidationStatus())) {
@@ -706,44 +604,32 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 $errs[self::FIELD_VALIDATION_STATUS] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getWho())) {
+        if (null !== ($v = $this->getValidationDate())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_WHO] = $fieldErrs;
+                $errs[self::FIELD_VALIDATION_DATE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CAN_PUSH_UPDATES])) {
-            $v = $this->getCanPushUpdates();
-            foreach($validationRules[self::FIELD_CAN_PUSH_UPDATES] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_PRIMARY_SOURCE, self::FIELD_CAN_PUSH_UPDATES, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CAN_PUSH_UPDATES])) {
-                        $errs[self::FIELD_CAN_PUSH_UPDATES] = [];
-                    }
-                    $errs[self::FIELD_CAN_PUSH_UPDATES][$rule] = $err;
+        if (null !== ($v = $this->getCanPushUpdates())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CAN_PUSH_UPDATES] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getPushTypeAvailable())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_PUSH_TYPE_AVAILABLE, $i)] = $fieldErrs;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_COMMUNICATION_METHOD])) {
-            $v = $this->getCommunicationMethod();
-            foreach($validationRules[self::FIELD_COMMUNICATION_METHOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_PRIMARY_SOURCE, self::FIELD_COMMUNICATION_METHOD, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_WHO])) {
+            $v = $this->getWho();
+            foreach($validationRules[self::FIELD_WHO] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_PRIMARY_SOURCE, self::FIELD_WHO, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COMMUNICATION_METHOD])) {
-                        $errs[self::FIELD_COMMUNICATION_METHOD] = [];
+                    if (!isset($errs[self::FIELD_WHO])) {
+                        $errs[self::FIELD_WHO] = [];
                     }
-                    $errs[self::FIELD_COMMUNICATION_METHOD][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PUSH_TYPE_AVAILABLE])) {
-            $v = $this->getPushTypeAvailable();
-            foreach($validationRules[self::FIELD_PUSH_TYPE_AVAILABLE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_PRIMARY_SOURCE, self::FIELD_PUSH_TYPE_AVAILABLE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PUSH_TYPE_AVAILABLE])) {
-                        $errs[self::FIELD_PUSH_TYPE_AVAILABLE] = [];
-                    }
-                    $errs[self::FIELD_PUSH_TYPE_AVAILABLE][$rule] = $err;
+                    $errs[self::FIELD_WHO][$rule] = $err;
                 }
             }
         }
@@ -759,15 +645,15 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALIDATION_DATE])) {
-            $v = $this->getValidationDate();
-            foreach($validationRules[self::FIELD_VALIDATION_DATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_PRIMARY_SOURCE, self::FIELD_VALIDATION_DATE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_COMMUNICATION_METHOD])) {
+            $v = $this->getCommunicationMethod();
+            foreach($validationRules[self::FIELD_COMMUNICATION_METHOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_PRIMARY_SOURCE, self::FIELD_COMMUNICATION_METHOD, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALIDATION_DATE])) {
-                        $errs[self::FIELD_VALIDATION_DATE] = [];
+                    if (!isset($errs[self::FIELD_COMMUNICATION_METHOD])) {
+                        $errs[self::FIELD_COMMUNICATION_METHOD] = [];
                     }
-                    $errs[self::FIELD_VALIDATION_DATE][$rule] = $err;
+                    $errs[self::FIELD_COMMUNICATION_METHOD][$rule] = $err;
                 }
             }
         }
@@ -783,15 +669,39 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_WHO])) {
-            $v = $this->getWho();
-            foreach($validationRules[self::FIELD_WHO] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_PRIMARY_SOURCE, self::FIELD_WHO, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALIDATION_DATE])) {
+            $v = $this->getValidationDate();
+            foreach($validationRules[self::FIELD_VALIDATION_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_PRIMARY_SOURCE, self::FIELD_VALIDATION_DATE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_WHO])) {
-                        $errs[self::FIELD_WHO] = [];
+                    if (!isset($errs[self::FIELD_VALIDATION_DATE])) {
+                        $errs[self::FIELD_VALIDATION_DATE] = [];
                     }
-                    $errs[self::FIELD_WHO][$rule] = $err;
+                    $errs[self::FIELD_VALIDATION_DATE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CAN_PUSH_UPDATES])) {
+            $v = $this->getCanPushUpdates();
+            foreach($validationRules[self::FIELD_CAN_PUSH_UPDATES] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_PRIMARY_SOURCE, self::FIELD_CAN_PUSH_UPDATES, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CAN_PUSH_UPDATES])) {
+                        $errs[self::FIELD_CAN_PUSH_UPDATES] = [];
+                    }
+                    $errs[self::FIELD_CAN_PUSH_UPDATES][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PUSH_TYPE_AVAILABLE])) {
+            $v = $this->getPushTypeAvailable();
+            foreach($validationRules[self::FIELD_PUSH_TYPE_AVAILABLE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VERIFICATION_RESULT_DOT_PRIMARY_SOURCE, self::FIELD_PUSH_TYPE_AVAILABLE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PUSH_TYPE_AVAILABLE])) {
+                        $errs[self::FIELD_PUSH_TYPE_AVAILABLE] = [];
+                    }
+                    $errs[self::FIELD_PUSH_TYPE_AVAILABLE][$rule] = $err;
                 }
             }
         }
@@ -835,195 +745,208 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRVerificationResultPrimarySource::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRVerificationResultPrimarySource::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRVerificationResultPrimarySource;
-        } elseif (!is_object($type) || !($type instanceof FHIRVerificationResultPrimarySource)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRVerificationResultPrimarySource)) {
             throw new \RuntimeException(sprintf(
-                'FHIRVerificationResultPrimarySource::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_WHO === $childName) {
+                $type->setWho(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TYPE === $childName) {
+                $type->addType(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_COMMUNICATION_METHOD === $childName) {
+                $type->addCommunicationMethod(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_VALIDATION_STATUS === $childName) {
+                $type->setValidationStatus(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_VALIDATION_DATE === $childName) {
+                $type->setValidationDate(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CAN_PUSH_UPDATES === $childName) {
+                $type->setCanPushUpdates(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PUSH_TYPE_AVAILABLE === $childName) {
+                $type->addPushTypeAvailable(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->canPushUpdates)) {
-            $type->setCanPushUpdates(FHIRCodeableConcept::xmlUnserialize($children->canPushUpdates));
-        }
-        if (isset($children->communicationMethod)) {
-            foreach($children->communicationMethod as $child) {
-                $type->addCommunicationMethod(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->pushTypeAvailable)) {
-            foreach($children->pushTypeAvailable as $child) {
-                $type->addPushTypeAvailable(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->type)) {
-            foreach($children->type as $child) {
-                $type->addType(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->validationDate)) {
-            $type->setValidationDate(FHIRDateTime::xmlUnserialize($children->validationDate));
-        }
-        if (isset($attributes->validationDate)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_VALIDATION_DATE])) {
             $pt = $type->getValidationDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->validationDate);
+                $pt->setValue((string)$attributes[self::FIELD_VALIDATION_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setValidationDate((string)$attributes->validationDate);
+                $type->setValidationDate((string)$attributes[self::FIELD_VALIDATION_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->validationStatus)) {
-            $type->setValidationStatus(FHIRCodeableConcept::xmlUnserialize($children->validationStatus));
-        }
-        if (isset($children->who)) {
-            $type->setWho(FHIRReference::xmlUnserialize($children->who));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCanPushUpdates())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CAN_PUSH_UPDATES, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if ([] !== ($vs = $this->getCommunicationMethod())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COMMUNICATION_METHOD, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if ([] !== ($vs = $this->getPushTypeAvailable())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PUSH_TYPE_AVAILABLE, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if ([] !== ($vs = $this->getType())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'VerificationResultPrimarySource', $this->_getSourceXmlns());
         }
-        if (null !== ($v = $this->getValidationDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATION_DATE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALIDATION_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValidationDate())) {
+            $xw->writeAttribute(self::FIELD_VALIDATION_DATE, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getWho())) {
+            $xw->startElement(self::FIELD_WHO);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getType() as $v) {
+            $xw->startElement(self::FIELD_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getCommunicationMethod() as $v) {
+            $xw->startElement(self::FIELD_COMMUNICATION_METHOD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getValidationStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALIDATION_STATUS, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_VALIDATION_STATUS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getWho())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALIDATION_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValidationDate())) {
+            $xw->startElement(self::FIELD_VALIDATION_DATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getCanPushUpdates())) {
+            $xw->startElement(self::FIELD_CAN_PUSH_UPDATES);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getPushTypeAvailable() as $v) {
+            $xw->startElement(self::FIELD_PUSH_TYPE_AVAILABLE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCanPushUpdates())) {
-            $a[self::FIELD_CAN_PUSH_UPDATES] = $v;
-        }
-        if ([] !== ($vs = $this->getCommunicationMethod())) {
-            $a[self::FIELD_COMMUNICATION_METHOD] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_COMMUNICATION_METHOD][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->getPushTypeAvailable())) {
-            $a[self::FIELD_PUSH_TYPE_AVAILABLE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PUSH_TYPE_AVAILABLE][] = $v;
-            }
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getWho())) {
+            $out->{self::FIELD_WHO} = $v;
         }
         if ([] !== ($vs = $this->getType())) {
-            $a[self::FIELD_TYPE] = [];
+            $out->{self::FIELD_TYPE} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_TYPE][] = $v;
+                $out->{self::FIELD_TYPE}[] = $v;
             }
         }
-        if (null !== ($v = $this->getValidationDate())) {
-            $a[self::FIELD_VALIDATION_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_VALIDATION_DATE_EXT] = $enc;
+        if ([] !== ($vs = $this->getCommunicationMethod())) {
+            $out->{self::FIELD_COMMUNICATION_METHOD} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_COMMUNICATION_METHOD}[] = $v;
             }
         }
         if (null !== ($v = $this->getValidationStatus())) {
-            $a[self::FIELD_VALIDATION_STATUS] = $v;
+            $out->{self::FIELD_VALIDATION_STATUS} = $v;
         }
-        if (null !== ($v = $this->getWho())) {
-            $a[self::FIELD_WHO] = $v;
+        if (null !== ($v = $this->getValidationDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_VALIDATION_DATE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_VALIDATION_DATE_EXT} = $ext;
+            }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getCanPushUpdates())) {
+            $out->{self::FIELD_CAN_PUSH_UPDATES} = $v;
         }
-        return $a;
-    }
+        if ([] !== ($vs = $this->getPushTypeAvailable())) {
+            $out->{self::FIELD_PUSH_TYPE_AVAILABLE} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_PUSH_TYPE_AVAILABLE}[] = $v;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,12 +62,19 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * The CoverageEligibilityRequest provides patient and insurance coverage
@@ -83,27 +90,23 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_INSURANCE;
-    const FIELD_BUSINESS_ARRANGEMENT = 'businessArrangement';
-    const FIELD_BUSINESS_ARRANGEMENT_EXT = '_businessArrangement';
-    const FIELD_COVERAGE = 'coverage';
+
     const FIELD_FOCAL = 'focal';
     const FIELD_FOCAL_EXT = '_focal';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_COVERAGE = 'coverage';
+    const FIELD_BUSINESS_ARRANGEMENT = 'businessArrangement';
+    const FIELD_BUSINESS_ARRANGEMENT_EXT = '_businessArrangement';
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A business agreement number established between the provider and the insurer for
-     * special business processing purposes.
+     * A flag to indicate that this Coverage is to be used for evaluation of this
+     * request when set to true.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    protected $businessArrangement = null;
-
+    protected null|FHIRBoolean $focal = null;
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -115,82 +118,41 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    protected $coverage = null;
-
+    protected null|FHIRReference $coverage = null;
     /**
-     * Value of "true" or "false"
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A flag to indicate that this Coverage is to be used for evaluation of this
-     * request when set to true.
+     * A business agreement number established between the provider and the insurer for
+     * special business processing purposes.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $focal = null;
+    protected null|FHIRString $businessArrangement = null;
 
     /**
      * Validation map for fields in type CoverageEligibilityRequest.Insurance
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRCoverageEligibilityRequestInsurance Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCoverageEligibilityRequestInsurance::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_BUSINESS_ARRANGEMENT]) || isset($data[self::FIELD_BUSINESS_ARRANGEMENT_EXT])) {
-            if (isset($data[self::FIELD_BUSINESS_ARRANGEMENT])) {
-                $value = $data[self::FIELD_BUSINESS_ARRANGEMENT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_BUSINESS_ARRANGEMENT_EXT]) && is_array($data[self::FIELD_BUSINESS_ARRANGEMENT_EXT])) {
-                $ext = $data[self::FIELD_BUSINESS_ARRANGEMENT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setBusinessArrangement($value);
-                } else if (is_array($value)) {
-                    $this->setBusinessArrangement(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setBusinessArrangement(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setBusinessArrangement(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_COVERAGE])) {
-            if ($data[self::FIELD_COVERAGE] instanceof FHIRReference) {
-                $this->setCoverage($data[self::FIELD_COVERAGE]);
-            } else {
-                $this->setCoverage(new FHIRReference($data[self::FIELD_COVERAGE]));
-            }
-        }
-        if (isset($data[self::FIELD_FOCAL]) || isset($data[self::FIELD_FOCAL_EXT])) {
-            if (isset($data[self::FIELD_FOCAL])) {
-                $value = $data[self::FIELD_FOCAL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_FOCAL_EXT]) && is_array($data[self::FIELD_FOCAL_EXT])) {
-                $ext = $data[self::FIELD_FOCAL_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_FOCAL, $data) || array_key_exists(self::FIELD_FOCAL_EXT, $data)) {
+            $value = $data[self::FIELD_FOCAL] ?? null;
+            $ext = (isset($data[self::FIELD_FOCAL_EXT]) && is_array($data[self::FIELD_FOCAL_EXT])) ? $data[self::FIELD_FOCAL_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setFocal($value);
@@ -199,8 +161,34 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
                 } else {
                     $this->setFocal(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setFocal(new FHIRBoolean($ext));
+            } else {
+                $this->setFocal(new FHIRBoolean(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_COVERAGE, $data)) {
+            if ($data[self::FIELD_COVERAGE] instanceof FHIRReference) {
+                $this->setCoverage($data[self::FIELD_COVERAGE]);
+            } else {
+                $this->setCoverage(new FHIRReference($data[self::FIELD_COVERAGE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_BUSINESS_ARRANGEMENT, $data) || array_key_exists(self::FIELD_BUSINESS_ARRANGEMENT_EXT, $data)) {
+            $value = $data[self::FIELD_BUSINESS_ARRANGEMENT] ?? null;
+            $ext = (isset($data[self::FIELD_BUSINESS_ARRANGEMENT_EXT]) && is_array($data[self::FIELD_BUSINESS_ARRANGEMENT_EXT])) ? $data[self::FIELD_BUSINESS_ARRANGEMENT_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setBusinessArrangement($value);
+                } else if (is_array($value)) {
+                    $this->setBusinessArrangement(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setBusinessArrangement(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setBusinessArrangement(new FHIRString($ext));
+            } else {
+                $this->setBusinessArrangement(new FHIRString(null));
             }
         }
     }
@@ -208,60 +196,47 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A flag to indicate that this Coverage is to be used for evaluation of this
+     * request when set to true.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    public function _getFHIRXMLElementDefinition()
+    public function getFocal(): null|FHIRBoolean
     {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<CoverageEligibilityRequestInsurance{$xmlns}></CoverageEligibilityRequestInsurance>";
+        return $this->focal;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A business agreement number established between the provider and the insurer for
-     * special business processing purposes.
+     * A flag to indicate that this Coverage is to be used for evaluation of this
+     * request when set to true.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getBusinessArrangement()
-    {
-        return $this->businessArrangement;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A business agreement number established between the provider and the insurer for
-     * special business processing purposes.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $businessArrangement
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $focal
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setBusinessArrangement($businessArrangement = null)
+    public function setFocal(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $focal = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $businessArrangement) {
-            $this->businessArrangement = null;
-            return $this;
+        if (null !== $focal && !($focal instanceof FHIRBoolean)) {
+            $focal = new FHIRBoolean($focal);
         }
-        if ($businessArrangement instanceof FHIRString) {
-            $this->businessArrangement = $businessArrangement;
-            return $this;
+        $this->_trackValueSet($this->focal, $focal);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_FOCAL])) {
+            $this->_primitiveXmlLocations[self::FIELD_FOCAL] = [];
         }
-        $this->businessArrangement = new FHIRString($businessArrangement);
+        $this->_primitiveXmlLocations[self::FIELD_FOCAL][0] = $xmlLocation;
+        $this->focal = $focal;
         return $this;
     }
 
@@ -276,7 +251,7 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getCoverage()
+    public function getCoverage(): null|FHIRReference
     {
         return $this->coverage;
     }
@@ -293,47 +268,54 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $coverage
      * @return static
      */
-    public function setCoverage(FHIRReference $coverage = null)
+    public function setCoverage(null|FHIRReference $coverage = null): self
     {
+        if (null === $coverage) {
+            $coverage = new FHIRReference();
+        }
+        $this->_trackValueSet($this->coverage, $coverage);
         $this->coverage = $coverage;
         return $this;
     }
 
     /**
-     * Value of "true" or "false"
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A flag to indicate that this Coverage is to be used for evaluation of this
-     * request when set to true.
+     * A business agreement number established between the provider and the insurer for
+     * special business processing purposes.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    public function getFocal()
+    public function getBusinessArrangement(): null|FHIRString
     {
-        return $this->focal;
+        return $this->businessArrangement;
     }
 
     /**
-     * Value of "true" or "false"
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A flag to indicate that this Coverage is to be used for evaluation of this
-     * request when set to true.
+     * A business agreement number established between the provider and the insurer for
+     * special business processing purposes.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $focal
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $businessArrangement
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setFocal($focal = null)
+    public function setBusinessArrangement(null|string|FHIRStringPrimitive|FHIRString $businessArrangement = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $focal) {
-            $this->focal = null;
-            return $this;
+        if (null !== $businessArrangement && !($businessArrangement instanceof FHIRString)) {
+            $businessArrangement = new FHIRString($businessArrangement);
         }
-        if ($focal instanceof FHIRBoolean) {
-            $this->focal = $focal;
-            return $this;
+        $this->_trackValueSet($this->businessArrangement, $businessArrangement);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_BUSINESS_ARRANGEMENT])) {
+            $this->_primitiveXmlLocations[self::FIELD_BUSINESS_ARRANGEMENT] = [];
         }
-        $this->focal = new FHIRBoolean($focal);
+        $this->_primitiveXmlLocations[self::FIELD_BUSINESS_ARRANGEMENT][0] = $xmlLocation;
+        $this->businessArrangement = $businessArrangement;
         return $this;
     }
 
@@ -343,9 +325,9 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -354,13 +336,13 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getBusinessArrangement())) {
+        if (null !== ($v = $this->getFocal())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_BUSINESS_ARRANGEMENT] = $fieldErrs;
+                $errs[self::FIELD_FOCAL] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getCoverage())) {
@@ -368,20 +350,20 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
                 $errs[self::FIELD_COVERAGE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getFocal())) {
+        if (null !== ($v = $this->getBusinessArrangement())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_FOCAL] = $fieldErrs;
+                $errs[self::FIELD_BUSINESS_ARRANGEMENT] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_BUSINESS_ARRANGEMENT])) {
-            $v = $this->getBusinessArrangement();
-            foreach($validationRules[self::FIELD_BUSINESS_ARRANGEMENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_INSURANCE, self::FIELD_BUSINESS_ARRANGEMENT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_FOCAL])) {
+            $v = $this->getFocal();
+            foreach($validationRules[self::FIELD_FOCAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_INSURANCE, self::FIELD_FOCAL, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BUSINESS_ARRANGEMENT])) {
-                        $errs[self::FIELD_BUSINESS_ARRANGEMENT] = [];
+                    if (!isset($errs[self::FIELD_FOCAL])) {
+                        $errs[self::FIELD_FOCAL] = [];
                     }
-                    $errs[self::FIELD_BUSINESS_ARRANGEMENT][$rule] = $err;
+                    $errs[self::FIELD_FOCAL][$rule] = $err;
                 }
             }
         }
@@ -397,15 +379,15 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_FOCAL])) {
-            $v = $this->getFocal();
-            foreach($validationRules[self::FIELD_FOCAL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_INSURANCE, self::FIELD_FOCAL, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_BUSINESS_ARRANGEMENT])) {
+            $v = $this->getBusinessArrangement();
+            foreach($validationRules[self::FIELD_BUSINESS_ARRANGEMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_INSURANCE, self::FIELD_BUSINESS_ARRANGEMENT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FOCAL])) {
-                        $errs[self::FIELD_FOCAL] = [];
+                    if (!isset($errs[self::FIELD_BUSINESS_ARRANGEMENT])) {
+                        $errs[self::FIELD_BUSINESS_ARRANGEMENT] = [];
                     }
-                    $errs[self::FIELD_FOCAL][$rule] = $err;
+                    $errs[self::FIELD_BUSINESS_ARRANGEMENT][$rule] = $err;
                 }
             }
         }
@@ -449,134 +431,179 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRCoverageEligibilityRequestInsurance::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRCoverageEligibilityRequestInsurance::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRCoverageEligibilityRequestInsurance;
-        } elseif (!is_object($type) || !($type instanceof FHIRCoverageEligibilityRequestInsurance)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRCoverageEligibilityRequestInsurance)) {
             throw new \RuntimeException(sprintf(
-                'FHIRCoverageEligibilityRequestInsurance::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_FOCAL === $childName) {
+                $type->setFocal(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_COVERAGE === $childName) {
+                $type->setCoverage(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_BUSINESS_ARRANGEMENT === $childName) {
+                $type->setBusinessArrangement(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->businessArrangement)) {
-            $type->setBusinessArrangement(FHIRString::xmlUnserialize($children->businessArrangement));
-        }
-        if (isset($attributes->businessArrangement)) {
-            $pt = $type->getBusinessArrangement();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->businessArrangement);
-            } else {
-                $type->setBusinessArrangement((string)$attributes->businessArrangement);
-            }
-        }
-        if (isset($children->coverage)) {
-            $type->setCoverage(FHIRReference::xmlUnserialize($children->coverage));
-        }
-        if (isset($children->focal)) {
-            $type->setFocal(FHIRBoolean::xmlUnserialize($children->focal));
-        }
-        if (isset($attributes->focal)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_FOCAL])) {
             $pt = $type->getFocal();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->focal);
+                $pt->setValue((string)$attributes[self::FIELD_FOCAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setFocal((string)$attributes->focal);
+                $type->setFocal((string)$attributes[self::FIELD_FOCAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_BUSINESS_ARRANGEMENT])) {
+            $pt = $type->getBusinessArrangement();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_BUSINESS_ARRANGEMENT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setBusinessArrangement((string)$attributes[self::FIELD_BUSINESS_ARRANGEMENT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getBusinessArrangement())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BUSINESS_ARRANGEMENT, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'CoverageEligibilityRequestInsurance', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_FOCAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getFocal())) {
+            $xw->writeAttribute(self::FIELD_FOCAL, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BUSINESS_ARRANGEMENT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBusinessArrangement())) {
+            $xw->writeAttribute(self::FIELD_BUSINESS_ARRANGEMENT, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_FOCAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getFocal())) {
+            $xw->startElement(self::FIELD_FOCAL);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getCoverage())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COVERAGE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_COVERAGE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getFocal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FOCAL, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BUSINESS_ARRANGEMENT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBusinessArrangement())) {
+            $xw->startElement(self::FIELD_BUSINESS_ARRANGEMENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getBusinessArrangement())) {
-            $a[self::FIELD_BUSINESS_ARRANGEMENT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_BUSINESS_ARRANGEMENT_EXT] = $enc;
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getFocal())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_FOCAL} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_FOCAL_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getCoverage())) {
-            $a[self::FIELD_COVERAGE] = $v;
+            $out->{self::FIELD_COVERAGE} = $v;
         }
-        if (null !== ($v = $this->getFocal())) {
-            $a[self::FIELD_FOCAL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_FOCAL_EXT] = $enc;
+        if (null !== ($v = $this->getBusinessArrangement())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_BUSINESS_ARRANGEMENT} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_BUSINESS_ARRANGEMENT_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,11 +62,19 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRDecimalPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
+use DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Raw data describing a biological sequence.
@@ -78,83 +86,21 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC;
-    const FIELD_F_MEASURE = 'fMeasure';
-    const FIELD_F_MEASURE_EXT = '_fMeasure';
-    const FIELD_NUM_FN = 'numFN';
-    const FIELD_NUM_FN_EXT = '_numFN';
-    const FIELD_NUM_FP = 'numFP';
-    const FIELD_NUM_FP_EXT = '_numFP';
-    const FIELD_NUM_TP = 'numTP';
-    const FIELD_NUM_TP_EXT = '_numTP';
-    const FIELD_PRECISION = 'precision';
-    const FIELD_PRECISION_EXT = '_precision';
+
     const FIELD_SCORE = 'score';
     const FIELD_SCORE_EXT = '_score';
+    const FIELD_NUM_TP = 'numTP';
+    const FIELD_NUM_TP_EXT = '_numTP';
+    const FIELD_NUM_FP = 'numFP';
+    const FIELD_NUM_FP_EXT = '_numFP';
+    const FIELD_NUM_FN = 'numFN';
+    const FIELD_NUM_FN_EXT = '_numFN';
+    const FIELD_PRECISION = 'precision';
+    const FIELD_PRECISION_EXT = '_precision';
     const FIELD_SENSITIVITY = 'sensitivity';
     const FIELD_SENSITIVITY_EXT = '_sensitivity';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Calculated fScore if the GQ score threshold was set to "score" field value.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
-     */
-    protected $fMeasure = [];
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The number of false negatives if the GQ score threshold was set to "score" field
-     * value.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
-     */
-    protected $numFN = [];
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The number of false positives if the GQ score threshold was set to "score" field
-     * value.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
-     */
-    protected $numFP = [];
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The number of true positives if the GQ score threshold was set to "score" field
-     * value.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
-     */
-    protected $numTP = [];
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Calculated precision if the GQ score threshold was set to "score" field value.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
-     */
-    protected $precision = [];
+    const FIELD_F_MEASURE = 'fMeasure';
+    const FIELD_F_MEASURE_EXT = '_fMeasure';
 
     /**
      * A whole number
@@ -165,8 +111,51 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
      */
-    protected $score = [];
-
+    protected null|array $score = [];
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The number of true positives if the GQ score threshold was set to "score" field
+     * value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
+     */
+    protected null|array $numTP = [];
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The number of false positives if the GQ score threshold was set to "score" field
+     * value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
+     */
+    protected null|array $numFP = [];
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The number of false negatives if the GQ score threshold was set to "score" field
+     * value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
+     */
+    protected null|array $numFN = [];
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Calculated precision if the GQ score threshold was set to "score" field value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
+     */
+    protected null|array $precision = [];
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
@@ -177,231 +166,41 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
      */
-    protected $sensitivity = [];
+    protected null|array $sensitivity = [];
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Calculated fScore if the GQ score threshold was set to "score" field value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
+     */
+    protected null|array $fMeasure = [];
 
     /**
      * Validation map for fields in type MolecularSequence.Roc
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRMolecularSequenceRoc Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMolecularSequenceRoc::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_F_MEASURE]) || isset($data[self::FIELD_F_MEASURE_EXT])) {
-            if (isset($data[self::FIELD_F_MEASURE])) {
-                $value = $data[self::FIELD_F_MEASURE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_F_MEASURE_EXT]) && is_array($data[self::FIELD_F_MEASURE_EXT])) {
-                $ext = $data[self::FIELD_F_MEASURE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->addFMeasure($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRDecimal) {
-                            $this->addFMeasure($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $this->addFMeasure(new FHIRDecimal(array_merge($v, $iext)));
-                            } else {
-                                $this->addFMeasure(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $this->addFMeasure(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->addFMeasure(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $this->addFMeasure(new FHIRDecimal($iext));
-                }
-            }
-        }
-        if (isset($data[self::FIELD_NUM_FN]) || isset($data[self::FIELD_NUM_FN_EXT])) {
-            if (isset($data[self::FIELD_NUM_FN])) {
-                $value = $data[self::FIELD_NUM_FN];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NUM_FN_EXT]) && is_array($data[self::FIELD_NUM_FN_EXT])) {
-                $ext = $data[self::FIELD_NUM_FN_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->addNumFN($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRInteger) {
-                            $this->addNumFN($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $this->addNumFN(new FHIRInteger(array_merge($v, $iext)));
-                            } else {
-                                $this->addNumFN(new FHIRInteger([FHIRInteger::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $this->addNumFN(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->addNumFN(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $this->addNumFN(new FHIRInteger($iext));
-                }
-            }
-        }
-        if (isset($data[self::FIELD_NUM_FP]) || isset($data[self::FIELD_NUM_FP_EXT])) {
-            if (isset($data[self::FIELD_NUM_FP])) {
-                $value = $data[self::FIELD_NUM_FP];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NUM_FP_EXT]) && is_array($data[self::FIELD_NUM_FP_EXT])) {
-                $ext = $data[self::FIELD_NUM_FP_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->addNumFP($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRInteger) {
-                            $this->addNumFP($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $this->addNumFP(new FHIRInteger(array_merge($v, $iext)));
-                            } else {
-                                $this->addNumFP(new FHIRInteger([FHIRInteger::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $this->addNumFP(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->addNumFP(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $this->addNumFP(new FHIRInteger($iext));
-                }
-            }
-        }
-        if (isset($data[self::FIELD_NUM_TP]) || isset($data[self::FIELD_NUM_TP_EXT])) {
-            if (isset($data[self::FIELD_NUM_TP])) {
-                $value = $data[self::FIELD_NUM_TP];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NUM_TP_EXT]) && is_array($data[self::FIELD_NUM_TP_EXT])) {
-                $ext = $data[self::FIELD_NUM_TP_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->addNumTP($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRInteger) {
-                            $this->addNumTP($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $this->addNumTP(new FHIRInteger(array_merge($v, $iext)));
-                            } else {
-                                $this->addNumTP(new FHIRInteger([FHIRInteger::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $this->addNumTP(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->addNumTP(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $this->addNumTP(new FHIRInteger($iext));
-                }
-            }
-        }
-        if (isset($data[self::FIELD_PRECISION]) || isset($data[self::FIELD_PRECISION_EXT])) {
-            if (isset($data[self::FIELD_PRECISION])) {
-                $value = $data[self::FIELD_PRECISION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PRECISION_EXT]) && is_array($data[self::FIELD_PRECISION_EXT])) {
-                $ext = $data[self::FIELD_PRECISION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->addPrecision($value);
-                } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRDecimal) {
-                            $this->addPrecision($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $this->addPrecision(new FHIRDecimal(array_merge($v, $iext)));
-                            } else {
-                                $this->addPrecision(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $this->addPrecision(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->addPrecision(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $this->addPrecision(new FHIRDecimal($iext));
-                }
-            }
-        }
-        if (isset($data[self::FIELD_SCORE]) || isset($data[self::FIELD_SCORE_EXT])) {
-            if (isset($data[self::FIELD_SCORE])) {
-                $value = $data[self::FIELD_SCORE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SCORE_EXT]) && is_array($data[self::FIELD_SCORE_EXT])) {
-                $ext = $data[self::FIELD_SCORE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_SCORE, $data) || array_key_exists(self::FIELD_SCORE_EXT, $data)) {
+            $value = $data[self::FIELD_SCORE] ?? null;
+            $ext = (isset($data[self::FIELD_SCORE_EXT]) && is_array($data[self::FIELD_SCORE_EXT])) ? $data[self::FIELD_SCORE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRInteger) {
                     $this->addScore($value);
@@ -423,23 +222,145 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 } else {
                     $this->addScore(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addScore(new FHIRInteger($iext));
                 }
+            } else {
+                $this->addScore(new FHIRInteger(null));
             }
         }
-        if (isset($data[self::FIELD_SENSITIVITY]) || isset($data[self::FIELD_SENSITIVITY_EXT])) {
-            if (isset($data[self::FIELD_SENSITIVITY])) {
-                $value = $data[self::FIELD_SENSITIVITY];
+        if (array_key_exists(self::FIELD_NUM_TP, $data) || array_key_exists(self::FIELD_NUM_TP_EXT, $data)) {
+            $value = $data[self::FIELD_NUM_TP] ?? null;
+            $ext = (isset($data[self::FIELD_NUM_TP_EXT]) && is_array($data[self::FIELD_NUM_TP_EXT])) ? $data[self::FIELD_NUM_TP_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->addNumTP($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRInteger) {
+                            $this->addNumTP($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addNumTP(new FHIRInteger(array_merge($v, $iext)));
+                            } else {
+                                $this->addNumTP(new FHIRInteger([FHIRInteger::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addNumTP(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->addNumTP(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addNumTP(new FHIRInteger($iext));
+                }
             } else {
-                $value = null;
+                $this->addNumTP(new FHIRInteger(null));
             }
-            if (isset($data[self::FIELD_SENSITIVITY_EXT]) && is_array($data[self::FIELD_SENSITIVITY_EXT])) {
-                $ext = $data[self::FIELD_SENSITIVITY_EXT];
+        }
+        if (array_key_exists(self::FIELD_NUM_FP, $data) || array_key_exists(self::FIELD_NUM_FP_EXT, $data)) {
+            $value = $data[self::FIELD_NUM_FP] ?? null;
+            $ext = (isset($data[self::FIELD_NUM_FP_EXT]) && is_array($data[self::FIELD_NUM_FP_EXT])) ? $data[self::FIELD_NUM_FP_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->addNumFP($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRInteger) {
+                            $this->addNumFP($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addNumFP(new FHIRInteger(array_merge($v, $iext)));
+                            } else {
+                                $this->addNumFP(new FHIRInteger([FHIRInteger::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addNumFP(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->addNumFP(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addNumFP(new FHIRInteger($iext));
+                }
             } else {
-                $ext = [];
+                $this->addNumFP(new FHIRInteger(null));
             }
+        }
+        if (array_key_exists(self::FIELD_NUM_FN, $data) || array_key_exists(self::FIELD_NUM_FN_EXT, $data)) {
+            $value = $data[self::FIELD_NUM_FN] ?? null;
+            $ext = (isset($data[self::FIELD_NUM_FN_EXT]) && is_array($data[self::FIELD_NUM_FN_EXT])) ? $data[self::FIELD_NUM_FN_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->addNumFN($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRInteger) {
+                            $this->addNumFN($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addNumFN(new FHIRInteger(array_merge($v, $iext)));
+                            } else {
+                                $this->addNumFN(new FHIRInteger([FHIRInteger::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addNumFN(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->addNumFN(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addNumFN(new FHIRInteger($iext));
+                }
+            } else {
+                $this->addNumFN(new FHIRInteger(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_PRECISION, $data) || array_key_exists(self::FIELD_PRECISION_EXT, $data)) {
+            $value = $data[self::FIELD_PRECISION] ?? null;
+            $ext = (isset($data[self::FIELD_PRECISION_EXT]) && is_array($data[self::FIELD_PRECISION_EXT])) ? $data[self::FIELD_PRECISION_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->addPrecision($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRDecimal) {
+                            $this->addPrecision($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addPrecision(new FHIRDecimal(array_merge($v, $iext)));
+                            } else {
+                                $this->addPrecision(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addPrecision(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->addPrecision(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addPrecision(new FHIRDecimal($iext));
+                }
+            } else {
+                $this->addPrecision(new FHIRDecimal(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_SENSITIVITY, $data) || array_key_exists(self::FIELD_SENSITIVITY_EXT, $data)) {
+            $value = $data[self::FIELD_SENSITIVITY] ?? null;
+            $ext = (isset($data[self::FIELD_SENSITIVITY_EXT]) && is_array($data[self::FIELD_SENSITIVITY_EXT])) ? $data[self::FIELD_SENSITIVITY_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDecimal) {
                     $this->addSensitivity($value);
@@ -461,10 +382,44 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 } else {
                     $this->addSensitivity(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addSensitivity(new FHIRDecimal($iext));
                 }
+            } else {
+                $this->addSensitivity(new FHIRDecimal(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_F_MEASURE, $data) || array_key_exists(self::FIELD_F_MEASURE_EXT, $data)) {
+            $value = $data[self::FIELD_F_MEASURE] ?? null;
+            $ext = (isset($data[self::FIELD_F_MEASURE_EXT]) && is_array($data[self::FIELD_F_MEASURE_EXT])) ? $data[self::FIELD_F_MEASURE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->addFMeasure($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRDecimal) {
+                            $this->addFMeasure($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addFMeasure(new FHIRDecimal(array_merge($v, $iext)));
+                            } else {
+                                $this->addFMeasure(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addFMeasure(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->addFMeasure(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addFMeasure(new FHIRDecimal($iext));
+                }
+            } else {
+                $this->addFMeasure(new FHIRDecimal(null));
             }
         }
     }
@@ -472,103 +427,23 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<MolecularSequenceRoc{$xmlns}></MolecularSequenceRoc>";
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Calculated fScore if the GQ score threshold was set to "score" field value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
-     */
-    public function getFMeasure()
-    {
-        return $this->fMeasure;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Calculated fScore if the GQ score threshold was set to "score" field value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $fMeasure
-     * @return static
-     */
-    public function addFMeasure($fMeasure = null)
-    {
-        if (null === $fMeasure) {
-            $this->fMeasure = [];
-            return $this;
-        }
-        if ($fMeasure instanceof FHIRDecimal) {
-            $this->fMeasure[] = $fMeasure;
-            return $this;
-        }
-        $this->fMeasure[] = new FHIRDecimal($fMeasure);
-        return $this;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Calculated fScore if the GQ score threshold was set to "score" field value.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[] $fMeasure
-     * @return static
-     */
-    public function setFMeasure(array $fMeasure = [])
-    {
-        $this->fMeasure = [];
-        if ([] === $fMeasure) {
-            return $this;
-        }
-        foreach($fMeasure as $v) {
-            if ($v instanceof FHIRDecimal) {
-                $this->addFMeasure($v);
-            } else {
-                $this->addFMeasure(new FHIRDecimal($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The number of false negatives if the GQ score threshold was set to "score" field
-     * value.
+     * Invidual data point representing the GQ (genotype quality) score threshold.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
      */
-    public function getNumFN()
+    public function getScore(): null|array
     {
-        return $this->numFN;
+        return $this->score;
     }
 
     /**
@@ -576,23 +451,23 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The number of false negatives if the GQ score threshold was set to "score" field
-     * value.
+     * Invidual data point representing the GQ (genotype quality) score threshold.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $numFN
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $score
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addNumFN($numFN = null)
+    public function addScore(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $score = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $numFN) {
-            $this->numFN = [];
-            return $this;
+        if (null !== $score && !($score instanceof FHIRInteger)) {
+            $score = new FHIRInteger($score);
         }
-        if ($numFN instanceof FHIRInteger) {
-            $this->numFN[] = $numFN;
-            return $this;
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SCORE])) {
+            $this->_primitiveXmlLocations[self::FIELD_SCORE] = [];
         }
-        $this->numFN[] = new FHIRInteger($numFN);
+        $this->_primitiveXmlLocations[self::FIELD_SCORE][] = $xmlLocation;
+        $this->score[] = $score;
         return $this;
     }
 
@@ -601,90 +476,27 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The number of false negatives if the GQ score threshold was set to "score" field
-     * value.
+     * Invidual data point representing the GQ (genotype quality) score threshold.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[] $numFN
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[] $score
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNumFN(array $numFN = [])
+    public function setScore(array $score = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->numFN = [];
-        if ([] === $numFN) {
+        unset($this->_primitiveXmlLocations[self::FIELD_SCORE]);
+        if ([] !== $this->score) {
+            $this->_trackValuesRemoved(count($this->score));
+            $this->score = [];
+        }
+        if ([] === $score) {
             return $this;
         }
-        foreach($numFN as $v) {
+        foreach($score as $v) {
             if ($v instanceof FHIRInteger) {
-                $this->addNumFN($v);
+                $this->addScore($v, $xmlLocation);
             } else {
-                $this->addNumFN(new FHIRInteger($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The number of false positives if the GQ score threshold was set to "score" field
-     * value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
-     */
-    public function getNumFP()
-    {
-        return $this->numFP;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The number of false positives if the GQ score threshold was set to "score" field
-     * value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $numFP
-     * @return static
-     */
-    public function addNumFP($numFP = null)
-    {
-        if (null === $numFP) {
-            $this->numFP = [];
-            return $this;
-        }
-        if ($numFP instanceof FHIRInteger) {
-            $this->numFP[] = $numFP;
-            return $this;
-        }
-        $this->numFP[] = new FHIRInteger($numFP);
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The number of false positives if the GQ score threshold was set to "score" field
-     * value.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[] $numFP
-     * @return static
-     */
-    public function setNumFP(array $numFP = [])
-    {
-        $this->numFP = [];
-        if ([] === $numFP) {
-            return $this;
-        }
-        foreach($numFP as $v) {
-            if ($v instanceof FHIRInteger) {
-                $this->addNumFP($v);
-            } else {
-                $this->addNumFP(new FHIRInteger($v));
+                $this->addScore(new FHIRInteger($v), $xmlLocation);
             }
         }
         return $this;
@@ -700,7 +512,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
      */
-    public function getNumTP()
+    public function getNumTP(): null|array
     {
         return $this->numTP;
     }
@@ -713,20 +525,21 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * The number of true positives if the GQ score threshold was set to "score" field
      * value.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $numTP
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $numTP
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addNumTP($numTP = null)
+    public function addNumTP(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numTP = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $numTP) {
-            $this->numTP = [];
-            return $this;
+        if (null !== $numTP && !($numTP instanceof FHIRInteger)) {
+            $numTP = new FHIRInteger($numTP);
         }
-        if ($numTP instanceof FHIRInteger) {
-            $this->numTP[] = $numTP;
-            return $this;
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_NUM_TP])) {
+            $this->_primitiveXmlLocations[self::FIELD_NUM_TP] = [];
         }
-        $this->numTP[] = new FHIRInteger($numTP);
+        $this->_primitiveXmlLocations[self::FIELD_NUM_TP][] = $xmlLocation;
+        $this->numTP[] = $numTP;
         return $this;
     }
 
@@ -739,19 +552,170 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * value.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[] $numTP
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNumTP(array $numTP = [])
+    public function setNumTP(array $numTP = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->numTP = [];
+        unset($this->_primitiveXmlLocations[self::FIELD_NUM_TP]);
+        if ([] !== $this->numTP) {
+            $this->_trackValuesRemoved(count($this->numTP));
+            $this->numTP = [];
+        }
         if ([] === $numTP) {
             return $this;
         }
         foreach($numTP as $v) {
             if ($v instanceof FHIRInteger) {
-                $this->addNumTP($v);
+                $this->addNumTP($v, $xmlLocation);
             } else {
-                $this->addNumTP(new FHIRInteger($v));
+                $this->addNumTP(new FHIRInteger($v), $xmlLocation);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The number of false positives if the GQ score threshold was set to "score" field
+     * value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
+     */
+    public function getNumFP(): null|array
+    {
+        return $this->numFP;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The number of false positives if the GQ score threshold was set to "score" field
+     * value.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $numFP
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function addNumFP(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numFP = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $numFP && !($numFP instanceof FHIRInteger)) {
+            $numFP = new FHIRInteger($numFP);
+        }
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_NUM_FP])) {
+            $this->_primitiveXmlLocations[self::FIELD_NUM_FP] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_NUM_FP][] = $xmlLocation;
+        $this->numFP[] = $numFP;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The number of false positives if the GQ score threshold was set to "score" field
+     * value.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[] $numFP
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setNumFP(array $numFP = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        unset($this->_primitiveXmlLocations[self::FIELD_NUM_FP]);
+        if ([] !== $this->numFP) {
+            $this->_trackValuesRemoved(count($this->numFP));
+            $this->numFP = [];
+        }
+        if ([] === $numFP) {
+            return $this;
+        }
+        foreach($numFP as $v) {
+            if ($v instanceof FHIRInteger) {
+                $this->addNumFP($v, $xmlLocation);
+            } else {
+                $this->addNumFP(new FHIRInteger($v), $xmlLocation);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The number of false negatives if the GQ score threshold was set to "score" field
+     * value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
+     */
+    public function getNumFN(): null|array
+    {
+        return $this->numFN;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The number of false negatives if the GQ score threshold was set to "score" field
+     * value.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $numFN
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function addNumFN(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $numFN = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $numFN && !($numFN instanceof FHIRInteger)) {
+            $numFN = new FHIRInteger($numFN);
+        }
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_NUM_FN])) {
+            $this->_primitiveXmlLocations[self::FIELD_NUM_FN] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_NUM_FN][] = $xmlLocation;
+        $this->numFN[] = $numFN;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The number of false negatives if the GQ score threshold was set to "score" field
+     * value.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[] $numFN
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setNumFN(array $numFN = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        unset($this->_primitiveXmlLocations[self::FIELD_NUM_FN]);
+        if ([] !== $this->numFN) {
+            $this->_trackValuesRemoved(count($this->numFN));
+            $this->numFN = [];
+        }
+        if ([] === $numFN) {
+            return $this;
+        }
+        foreach($numFN as $v) {
+            if ($v instanceof FHIRInteger) {
+                $this->addNumFN($v, $xmlLocation);
+            } else {
+                $this->addNumFN(new FHIRInteger($v), $xmlLocation);
             }
         }
         return $this;
@@ -767,7 +731,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
      */
-    public function getPrecision()
+    public function getPrecision(): null|array
     {
         return $this->precision;
     }
@@ -780,20 +744,21 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * Calculated precision if the GQ score threshold was set to "score" field value.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $precision
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\R4\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $precision
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addPrecision($precision = null)
+    public function addPrecision(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $precision = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $precision) {
-            $this->precision = [];
-            return $this;
+        if (null !== $precision && !($precision instanceof FHIRDecimal)) {
+            $precision = new FHIRDecimal($precision);
         }
-        if ($precision instanceof FHIRDecimal) {
-            $this->precision[] = $precision;
-            return $this;
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PRECISION])) {
+            $this->_primitiveXmlLocations[self::FIELD_PRECISION] = [];
         }
-        $this->precision[] = new FHIRDecimal($precision);
+        $this->_primitiveXmlLocations[self::FIELD_PRECISION][] = $xmlLocation;
+        $this->precision[] = $precision;
         return $this;
     }
 
@@ -806,83 +771,24 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * Calculated precision if the GQ score threshold was set to "score" field value.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[] $precision
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPrecision(array $precision = [])
+    public function setPrecision(array $precision = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->precision = [];
+        unset($this->_primitiveXmlLocations[self::FIELD_PRECISION]);
+        if ([] !== $this->precision) {
+            $this->_trackValuesRemoved(count($this->precision));
+            $this->precision = [];
+        }
         if ([] === $precision) {
             return $this;
         }
         foreach($precision as $v) {
             if ($v instanceof FHIRDecimal) {
-                $this->addPrecision($v);
+                $this->addPrecision($v, $xmlLocation);
             } else {
-                $this->addPrecision(new FHIRDecimal($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Invidual data point representing the GQ (genotype quality) score threshold.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[]
-     */
-    public function getScore()
-    {
-        return $this->score;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Invidual data point representing the GQ (genotype quality) score threshold.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $score
-     * @return static
-     */
-    public function addScore($score = null)
-    {
-        if (null === $score) {
-            $this->score = [];
-            return $this;
-        }
-        if ($score instanceof FHIRInteger) {
-            $this->score[] = $score;
-            return $this;
-        }
-        $this->score[] = new FHIRInteger($score);
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Invidual data point representing the GQ (genotype quality) score threshold.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger[] $score
-     * @return static
-     */
-    public function setScore(array $score = [])
-    {
-        $this->score = [];
-        if ([] === $score) {
-            return $this;
-        }
-        foreach($score as $v) {
-            if ($v instanceof FHIRInteger) {
-                $this->addScore($v);
-            } else {
-                $this->addScore(new FHIRInteger($v));
+                $this->addPrecision(new FHIRDecimal($v), $xmlLocation);
             }
         }
         return $this;
@@ -898,7 +804,7 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
      */
-    public function getSensitivity()
+    public function getSensitivity(): null|array
     {
         return $this->sensitivity;
     }
@@ -911,20 +817,21 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $sensitivity
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\R4\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $sensitivity
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addSensitivity($sensitivity = null)
+    public function addSensitivity(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $sensitivity = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $sensitivity) {
-            $this->sensitivity = [];
-            return $this;
+        if (null !== $sensitivity && !($sensitivity instanceof FHIRDecimal)) {
+            $sensitivity = new FHIRDecimal($sensitivity);
         }
-        if ($sensitivity instanceof FHIRDecimal) {
-            $this->sensitivity[] = $sensitivity;
-            return $this;
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SENSITIVITY])) {
+            $this->_primitiveXmlLocations[self::FIELD_SENSITIVITY] = [];
         }
-        $this->sensitivity[] = new FHIRDecimal($sensitivity);
+        $this->_primitiveXmlLocations[self::FIELD_SENSITIVITY][] = $xmlLocation;
+        $this->sensitivity[] = $sensitivity;
         return $this;
     }
 
@@ -937,19 +844,97 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[] $sensitivity
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSensitivity(array $sensitivity = [])
+    public function setSensitivity(array $sensitivity = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->sensitivity = [];
+        unset($this->_primitiveXmlLocations[self::FIELD_SENSITIVITY]);
+        if ([] !== $this->sensitivity) {
+            $this->_trackValuesRemoved(count($this->sensitivity));
+            $this->sensitivity = [];
+        }
         if ([] === $sensitivity) {
             return $this;
         }
         foreach($sensitivity as $v) {
             if ($v instanceof FHIRDecimal) {
-                $this->addSensitivity($v);
+                $this->addSensitivity($v, $xmlLocation);
             } else {
-                $this->addSensitivity(new FHIRDecimal($v));
+                $this->addSensitivity(new FHIRDecimal($v), $xmlLocation);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Calculated fScore if the GQ score threshold was set to "score" field value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[]
+     */
+    public function getFMeasure(): null|array
+    {
+        return $this->fMeasure;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Calculated fScore if the GQ score threshold was set to "score" field value.
+     *
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\R4\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $fMeasure
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function addFMeasure(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $fMeasure = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $fMeasure && !($fMeasure instanceof FHIRDecimal)) {
+            $fMeasure = new FHIRDecimal($fMeasure);
+        }
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_F_MEASURE])) {
+            $this->_primitiveXmlLocations[self::FIELD_F_MEASURE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_F_MEASURE][] = $xmlLocation;
+        $this->fMeasure[] = $fMeasure;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Calculated fScore if the GQ score threshold was set to "score" field value.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal[] $fMeasure
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setFMeasure(array $fMeasure = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        unset($this->_primitiveXmlLocations[self::FIELD_F_MEASURE]);
+        if ([] !== $this->fMeasure) {
+            $this->_trackValuesRemoved(count($this->fMeasure));
+            $this->fMeasure = [];
+        }
+        if ([] === $fMeasure) {
+            return $this;
+        }
+        foreach($fMeasure as $v) {
+            if ($v instanceof FHIRDecimal) {
+                $this->addFMeasure($v, $xmlLocation);
+            } else {
+                $this->addFMeasure(new FHIRDecimal($v), $xmlLocation);
             }
         }
         return $this;
@@ -961,9 +946,9 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -972,28 +957,14 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getFMeasure())) {
+        if ([] !== ($vs = $this->getScore())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_F_MEASURE, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getNumFN())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_NUM_FN, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getNumFP())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_NUM_FP, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_SCORE, $i)] = $fieldErrs;
                 }
             }
         }
@@ -1004,17 +975,24 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 }
             }
         }
+        if ([] !== ($vs = $this->getNumFP())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_NUM_FP, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getNumFN())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_NUM_FN, $i)] = $fieldErrs;
+                }
+            }
+        }
         if ([] !== ($vs = $this->getPrecision())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_PRECISION, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getScore())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_SCORE, $i)] = $fieldErrs;
                 }
             }
         }
@@ -1025,63 +1003,10 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_F_MEASURE])) {
-            $v = $this->getFMeasure();
-            foreach($validationRules[self::FIELD_F_MEASURE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_F_MEASURE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_F_MEASURE])) {
-                        $errs[self::FIELD_F_MEASURE] = [];
-                    }
-                    $errs[self::FIELD_F_MEASURE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_NUM_FN])) {
-            $v = $this->getNumFN();
-            foreach($validationRules[self::FIELD_NUM_FN] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_NUM_FN, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NUM_FN])) {
-                        $errs[self::FIELD_NUM_FN] = [];
-                    }
-                    $errs[self::FIELD_NUM_FN][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_NUM_FP])) {
-            $v = $this->getNumFP();
-            foreach($validationRules[self::FIELD_NUM_FP] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_NUM_FP, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NUM_FP])) {
-                        $errs[self::FIELD_NUM_FP] = [];
-                    }
-                    $errs[self::FIELD_NUM_FP][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_NUM_TP])) {
-            $v = $this->getNumTP();
-            foreach($validationRules[self::FIELD_NUM_TP] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_NUM_TP, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NUM_TP])) {
-                        $errs[self::FIELD_NUM_TP] = [];
-                    }
-                    $errs[self::FIELD_NUM_TP][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PRECISION])) {
-            $v = $this->getPrecision();
-            foreach($validationRules[self::FIELD_PRECISION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_PRECISION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PRECISION])) {
-                        $errs[self::FIELD_PRECISION] = [];
-                    }
-                    $errs[self::FIELD_PRECISION][$rule] = $err;
+        if ([] !== ($vs = $this->getFMeasure())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_F_MEASURE, $i)] = $fieldErrs;
                 }
             }
         }
@@ -1097,6 +1022,54 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_NUM_TP])) {
+            $v = $this->getNumTP();
+            foreach($validationRules[self::FIELD_NUM_TP] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_NUM_TP, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NUM_TP])) {
+                        $errs[self::FIELD_NUM_TP] = [];
+                    }
+                    $errs[self::FIELD_NUM_TP][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_NUM_FP])) {
+            $v = $this->getNumFP();
+            foreach($validationRules[self::FIELD_NUM_FP] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_NUM_FP, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NUM_FP])) {
+                        $errs[self::FIELD_NUM_FP] = [];
+                    }
+                    $errs[self::FIELD_NUM_FP][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_NUM_FN])) {
+            $v = $this->getNumFN();
+            foreach($validationRules[self::FIELD_NUM_FN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_NUM_FN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NUM_FN])) {
+                        $errs[self::FIELD_NUM_FN] = [];
+                    }
+                    $errs[self::FIELD_NUM_FN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PRECISION])) {
+            $v = $this->getPrecision();
+            foreach($validationRules[self::FIELD_PRECISION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_PRECISION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PRECISION])) {
+                        $errs[self::FIELD_PRECISION] = [];
+                    }
+                    $errs[self::FIELD_PRECISION][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_SENSITIVITY])) {
             $v = $this->getSensitivity();
             foreach($validationRules[self::FIELD_SENSITIVITY] as $rule => $constraint) {
@@ -1106,6 +1079,18 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
                         $errs[self::FIELD_SENSITIVITY] = [];
                     }
                     $errs[self::FIELD_SENSITIVITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_F_MEASURE])) {
+            $v = $this->getFMeasure();
+            foreach($validationRules[self::FIELD_F_MEASURE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MOLECULAR_SEQUENCE_DOT_ROC, self::FIELD_F_MEASURE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_F_MEASURE])) {
+                        $errs[self::FIELD_F_MEASURE] = [];
+                    }
+                    $errs[self::FIELD_F_MEASURE][$rule] = $err;
                 }
             }
         }
@@ -1149,331 +1134,424 @@ class FHIRMolecularSequenceRoc extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRMolecularSequenceRoc::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMolecularSequenceRoc::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRMolecularSequenceRoc;
-        } elseif (!is_object($type) || !($type instanceof FHIRMolecularSequenceRoc)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRMolecularSequenceRoc)) {
             throw new \RuntimeException(sprintf(
-                'FHIRMolecularSequenceRoc::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_SCORE === $childName) {
+                $type->addScore(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_NUM_TP === $childName) {
+                $type->addNumTP(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_NUM_FP === $childName) {
+                $type->addNumFP(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_NUM_FN === $childName) {
+                $type->addNumFN(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PRECISION === $childName) {
+                $type->addPrecision(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_SENSITIVITY === $childName) {
+                $type->addSensitivity(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_F_MEASURE === $childName) {
+                $type->addFMeasure(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->fMeasure)) {
-            foreach($children->fMeasure as $child) {
-                $type->addFMeasure(FHIRDecimal::xmlUnserialize($child));
-            }
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_SCORE])) {
+            $type->addScore((string)$attributes[self::FIELD_SCORE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
         }
-        if (isset($children->numFN)) {
-            foreach($children->numFN as $child) {
-                $type->addNumFN(FHIRInteger::xmlUnserialize($child));
-            }
+        if (isset($attributes[self::FIELD_NUM_TP])) {
+            $type->addNumTP((string)$attributes[self::FIELD_NUM_TP], PHPFHIRXmlLocationEnum::ATTRIBUTE);
         }
-        if (isset($children->numFP)) {
-            foreach($children->numFP as $child) {
-                $type->addNumFP(FHIRInteger::xmlUnserialize($child));
-            }
+        if (isset($attributes[self::FIELD_NUM_FP])) {
+            $type->addNumFP((string)$attributes[self::FIELD_NUM_FP], PHPFHIRXmlLocationEnum::ATTRIBUTE);
         }
-        if (isset($children->numTP)) {
-            foreach($children->numTP as $child) {
-                $type->addNumTP(FHIRInteger::xmlUnserialize($child));
-            }
+        if (isset($attributes[self::FIELD_NUM_FN])) {
+            $type->addNumFN((string)$attributes[self::FIELD_NUM_FN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
         }
-        if (isset($children->precision)) {
-            foreach($children->precision as $child) {
-                $type->addPrecision(FHIRDecimal::xmlUnserialize($child));
-            }
+        if (isset($attributes[self::FIELD_PRECISION])) {
+            $type->addPrecision((string)$attributes[self::FIELD_PRECISION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
         }
-        if (isset($children->score)) {
-            foreach($children->score as $child) {
-                $type->addScore(FHIRInteger::xmlUnserialize($child));
-            }
+        if (isset($attributes[self::FIELD_SENSITIVITY])) {
+            $type->addSensitivity((string)$attributes[self::FIELD_SENSITIVITY], PHPFHIRXmlLocationEnum::ATTRIBUTE);
         }
-        if (isset($children->sensitivity)) {
-            foreach($children->sensitivity as $child) {
-                $type->addSensitivity(FHIRDecimal::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_F_MEASURE])) {
+            $type->addFMeasure((string)$attributes[self::FIELD_F_MEASURE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getFMeasure())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'MolecularSequenceRoc', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SCORE] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getScore())) {
+            $xw->writeAttribute(self::FIELD_SCORE, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getScore()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_SCORE, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NUM_TP] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getNumTP())) {
+            $xw->writeAttribute(self::FIELD_NUM_TP, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getNumTP()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_NUM_TP, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NUM_FP] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getNumFP())) {
+            $xw->writeAttribute(self::FIELD_NUM_FP, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getNumFP()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_NUM_FP, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NUM_FN] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getNumFN())) {
+            $xw->writeAttribute(self::FIELD_NUM_FN, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getNumFN()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_NUM_FN, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PRECISION] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getPrecision())) {
+            $xw->writeAttribute(self::FIELD_PRECISION, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getPrecision()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_PRECISION, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SENSITIVITY] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getSensitivity())) {
+            $xw->writeAttribute(self::FIELD_SENSITIVITY, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getSensitivity()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_SENSITIVITY, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_F_MEASURE] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getFMeasure())) {
+            $xw->writeAttribute(self::FIELD_F_MEASURE, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getFMeasure()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_F_MEASURE, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SCORE] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getScore())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_SCORE);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_F_MEASURE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-        if ([] !== ($vs = $this->getNumFN())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NUM_TP] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getNumTP())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_NUM_TP);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NUM_FN, null, $v->_getFHIRXMLNamespace()));
             }
         }
-        if ([] !== ($vs = $this->getNumFP())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NUM_FP] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getNumFP())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_NUM_FP);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NUM_FP, null, $v->_getFHIRXMLNamespace()));
             }
         }
-        if ([] !== ($vs = $this->getNumTP())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NUM_FN] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getNumFN())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_NUM_FN);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NUM_TP, null, $v->_getFHIRXMLNamespace()));
             }
         }
-        if ([] !== ($vs = $this->getPrecision())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PRECISION] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getPrecision())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_PRECISION);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PRECISION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-        if ([] !== ($vs = $this->getScore())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SENSITIVITY] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getSensitivity())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_SENSITIVITY);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SCORE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-        if ([] !== ($vs = $this->getSensitivity())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_F_MEASURE] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getFMeasure())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_F_MEASURE);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SENSITIVITY, null, $v->_getFHIRXMLNamespace()));
             }
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getFMeasure())) {
-            $a[self::FIELD_F_MEASURE] = [];
-            $encs = [];
-            $encValued = false;
+        $out = parent::jsonSerialize();
+        if ([] !== ($vs = $this->getScore())) {
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_F_MEASURE][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRDecimal::FIELD_VALUE]) || array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRDecimal::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRInteger::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_F_MEASURE_EXT] = $encs;
+            if ([] !== $vals) {
+                $out->{self::FIELD_SCORE} = $vals;
             }
-        }
-        if ([] !== ($vs = $this->getNumFN())) {
-            $a[self::FIELD_NUM_FN] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_NUM_FN][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRInteger::FIELD_VALUE]) || array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRInteger::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_NUM_FN_EXT] = $encs;
-            }
-        }
-        if ([] !== ($vs = $this->getNumFP())) {
-            $a[self::FIELD_NUM_FP] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_NUM_FP][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRInteger::FIELD_VALUE]) || array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRInteger::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_NUM_FP_EXT] = $encs;
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SCORE_EXT} = $exts;
             }
         }
         if ([] !== ($vs = $this->getNumTP())) {
-            $a[self::FIELD_NUM_TP] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_NUM_TP][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRInteger::FIELD_VALUE]) || array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRInteger::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRInteger::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_NUM_TP_EXT] = $encs;
+            if ([] !== $vals) {
+                $out->{self::FIELD_NUM_TP} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_NUM_TP_EXT} = $exts;
+            }
+        }
+        if ([] !== ($vs = $this->getNumFP())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRInteger::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->{self::FIELD_NUM_FP} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_NUM_FP_EXT} = $exts;
+            }
+        }
+        if ([] !== ($vs = $this->getNumFN())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRInteger::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->{self::FIELD_NUM_FN} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_NUM_FN_EXT} = $exts;
             }
         }
         if ([] !== ($vs = $this->getPrecision())) {
-            $a[self::FIELD_PRECISION] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_PRECISION][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRDecimal::FIELD_VALUE]) || array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRDecimal::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRDecimal::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_PRECISION_EXT] = $encs;
+            if ([] !== $vals) {
+                $out->{self::FIELD_PRECISION} = $vals;
             }
-        }
-        if ([] !== ($vs = $this->getScore())) {
-            $a[self::FIELD_SCORE] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_SCORE][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRInteger::FIELD_VALUE]) || array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRInteger::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_SCORE_EXT] = $encs;
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PRECISION_EXT} = $exts;
             }
         }
         if ([] !== ($vs = $this->getSensitivity())) {
-            $a[self::FIELD_SENSITIVITY] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_SENSITIVITY][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRDecimal::FIELD_VALUE]) || array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRDecimal::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRDecimal::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_SENSITIVITY_EXT] = $encs;
+            if ([] !== $vals) {
+                $out->{self::FIELD_SENSITIVITY} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SENSITIVITY_EXT} = $exts;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getFMeasure())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRDecimal::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->{self::FIELD_F_MEASURE} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_F_MEASURE_EXT} = $exts;
+            }
         }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

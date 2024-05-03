@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,12 +62,20 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmun
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Describes the event of a patient being administered a vaccine or a record of an
@@ -80,17 +88,15 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_DOT_EDUCATION;
+
     const FIELD_DOCUMENT_TYPE = 'documentType';
     const FIELD_DOCUMENT_TYPE_EXT = '_documentType';
-    const FIELD_PRESENTATION_DATE = 'presentationDate';
-    const FIELD_PRESENTATION_DATE_EXT = '_presentationDate';
-    const FIELD_PUBLICATION_DATE = 'publicationDate';
-    const FIELD_PUBLICATION_DATE_EXT = '_publicationDate';
     const FIELD_REFERENCE = 'reference';
     const FIELD_REFERENCE_EXT = '_reference';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_PUBLICATION_DATE = 'publicationDate';
+    const FIELD_PUBLICATION_DATE_EXT = '_publicationDate';
+    const FIELD_PRESENTATION_DATE = 'presentationDate';
+    const FIELD_PRESENTATION_DATE_EXT = '_presentationDate';
 
     /**
      * A sequence of Unicode characters
@@ -101,22 +107,18 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $documentType = null;
-
+    protected null|FHIRString $documentType = null;
     /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date the educational material was given to the patient.
+     * Reference pointer to the educational material given to the patient if the
+     * information was on line.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    protected $presentationDate = null;
-
+    protected null|FHIRUri $reference = null;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -129,53 +131,43 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    protected $publicationDate = null;
-
+    protected null|FHIRDateTime $publicationDate = null;
     /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Reference pointer to the educational material given to the patient if the
-     * information was on line.
+     * Date the educational material was given to the patient.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    protected $reference = null;
+    protected null|FHIRDateTime $presentationDate = null;
 
     /**
      * Validation map for fields in type Immunization.Education
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRImmunizationEducation Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRImmunizationEducation::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DOCUMENT_TYPE]) || isset($data[self::FIELD_DOCUMENT_TYPE_EXT])) {
-            if (isset($data[self::FIELD_DOCUMENT_TYPE])) {
-                $value = $data[self::FIELD_DOCUMENT_TYPE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DOCUMENT_TYPE_EXT]) && is_array($data[self::FIELD_DOCUMENT_TYPE_EXT])) {
-                $ext = $data[self::FIELD_DOCUMENT_TYPE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_DOCUMENT_TYPE, $data) || array_key_exists(self::FIELD_DOCUMENT_TYPE_EXT, $data)) {
+            $value = $data[self::FIELD_DOCUMENT_TYPE] ?? null;
+            $ext = (isset($data[self::FIELD_DOCUMENT_TYPE_EXT]) && is_array($data[self::FIELD_DOCUMENT_TYPE_EXT])) ? $data[self::FIELD_DOCUMENT_TYPE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setDocumentType($value);
@@ -184,67 +176,15 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                 } else {
                     $this->setDocumentType(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDocumentType(new FHIRString($ext));
+            } else {
+                $this->setDocumentType(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_PRESENTATION_DATE]) || isset($data[self::FIELD_PRESENTATION_DATE_EXT])) {
-            if (isset($data[self::FIELD_PRESENTATION_DATE])) {
-                $value = $data[self::FIELD_PRESENTATION_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PRESENTATION_DATE_EXT]) && is_array($data[self::FIELD_PRESENTATION_DATE_EXT])) {
-                $ext = $data[self::FIELD_PRESENTATION_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setPresentationDate($value);
-                } else if (is_array($value)) {
-                    $this->setPresentationDate(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setPresentationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPresentationDate(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PUBLICATION_DATE]) || isset($data[self::FIELD_PUBLICATION_DATE_EXT])) {
-            if (isset($data[self::FIELD_PUBLICATION_DATE])) {
-                $value = $data[self::FIELD_PUBLICATION_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PUBLICATION_DATE_EXT]) && is_array($data[self::FIELD_PUBLICATION_DATE_EXT])) {
-                $ext = $data[self::FIELD_PUBLICATION_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setPublicationDate($value);
-                } else if (is_array($value)) {
-                    $this->setPublicationDate(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setPublicationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPublicationDate(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_REFERENCE]) || isset($data[self::FIELD_REFERENCE_EXT])) {
-            if (isset($data[self::FIELD_REFERENCE])) {
-                $value = $data[self::FIELD_REFERENCE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_REFERENCE_EXT]) && is_array($data[self::FIELD_REFERENCE_EXT])) {
-                $ext = $data[self::FIELD_REFERENCE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_REFERENCE, $data) || array_key_exists(self::FIELD_REFERENCE_EXT, $data)) {
+            $value = $data[self::FIELD_REFERENCE] ?? null;
+            $ext = (isset($data[self::FIELD_REFERENCE_EXT]) && is_array($data[self::FIELD_REFERENCE_EXT])) ? $data[self::FIELD_REFERENCE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->setReference($value);
@@ -253,8 +193,44 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                 } else {
                     $this->setReference(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setReference(new FHIRUri($ext));
+            } else {
+                $this->setReference(new FHIRUri(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_PUBLICATION_DATE, $data) || array_key_exists(self::FIELD_PUBLICATION_DATE_EXT, $data)) {
+            $value = $data[self::FIELD_PUBLICATION_DATE] ?? null;
+            $ext = (isset($data[self::FIELD_PUBLICATION_DATE_EXT]) && is_array($data[self::FIELD_PUBLICATION_DATE_EXT])) ? $data[self::FIELD_PUBLICATION_DATE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setPublicationDate($value);
+                } else if (is_array($value)) {
+                    $this->setPublicationDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setPublicationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPublicationDate(new FHIRDateTime($ext));
+            } else {
+                $this->setPublicationDate(new FHIRDateTime(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_PRESENTATION_DATE, $data) || array_key_exists(self::FIELD_PRESENTATION_DATE_EXT, $data)) {
+            $value = $data[self::FIELD_PRESENTATION_DATE] ?? null;
+            $ext = (isset($data[self::FIELD_PRESENTATION_DATE_EXT]) && is_array($data[self::FIELD_PRESENTATION_DATE_EXT])) ? $data[self::FIELD_PRESENTATION_DATE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setPresentationDate($value);
+                } else if (is_array($value)) {
+                    $this->setPresentationDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setPresentationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPresentationDate(new FHIRDateTime($ext));
+            } else {
+                $this->setPresentationDate(new FHIRDateTime(null));
             }
         }
     }
@@ -262,21 +238,9 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ImmunizationEducation{$xmlns}></ImmunizationEducation>";
     }
 
     /**
@@ -288,7 +252,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    public function getDocumentType()
+    public function getDocumentType(): null|FHIRString
     {
         return $this->documentType;
     }
@@ -300,64 +264,62 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      *
      * Identifier of the material presented to the patient.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $documentType
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $documentType
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDocumentType($documentType = null)
+    public function setDocumentType(null|string|FHIRStringPrimitive|FHIRString $documentType = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $documentType) {
-            $this->documentType = null;
-            return $this;
+        if (null !== $documentType && !($documentType instanceof FHIRString)) {
+            $documentType = new FHIRString($documentType);
         }
-        if ($documentType instanceof FHIRString) {
-            $this->documentType = $documentType;
-            return $this;
+        $this->_trackValueSet($this->documentType, $documentType);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DOCUMENT_TYPE])) {
+            $this->_primitiveXmlLocations[self::FIELD_DOCUMENT_TYPE] = [];
         }
-        $this->documentType = new FHIRString($documentType);
+        $this->_primitiveXmlLocations[self::FIELD_DOCUMENT_TYPE][0] = $xmlLocation;
+        $this->documentType = $documentType;
         return $this;
     }
 
     /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date the educational material was given to the patient.
+     * Reference pointer to the educational material given to the patient if the
+     * information was on line.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    public function getPresentationDate()
+    public function getReference(): null|FHIRUri
     {
-        return $this->presentationDate;
+        return $this->reference;
     }
 
     /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Date the educational material was given to the patient.
+     * Reference pointer to the educational material given to the patient if the
+     * information was on line.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $presentationDate
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $reference
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPresentationDate($presentationDate = null)
+    public function setReference(null|string|FHIRUriPrimitive|FHIRUri $reference = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $presentationDate) {
-            $this->presentationDate = null;
-            return $this;
+        if (null !== $reference && !($reference instanceof FHIRUri)) {
+            $reference = new FHIRUri($reference);
         }
-        if ($presentationDate instanceof FHIRDateTime) {
-            $this->presentationDate = $presentationDate;
-            return $this;
+        $this->_trackValueSet($this->reference, $reference);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_REFERENCE])) {
+            $this->_primitiveXmlLocations[self::FIELD_REFERENCE] = [];
         }
-        $this->presentationDate = new FHIRDateTime($presentationDate);
+        $this->_primitiveXmlLocations[self::FIELD_REFERENCE][0] = $xmlLocation;
+        $this->reference = $reference;
         return $this;
     }
 
@@ -373,7 +335,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    public function getPublicationDate()
+    public function getPublicationDate(): null|FHIRDateTime
     {
         return $this->publicationDate;
     }
@@ -388,60 +350,66 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      *
      * Date the educational material was published.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $publicationDate
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $publicationDate
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPublicationDate($publicationDate = null)
+    public function setPublicationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $publicationDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $publicationDate) {
-            $this->publicationDate = null;
-            return $this;
+        if (null !== $publicationDate && !($publicationDate instanceof FHIRDateTime)) {
+            $publicationDate = new FHIRDateTime($publicationDate);
         }
-        if ($publicationDate instanceof FHIRDateTime) {
-            $this->publicationDate = $publicationDate;
-            return $this;
+        $this->_trackValueSet($this->publicationDate, $publicationDate);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PUBLICATION_DATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_PUBLICATION_DATE] = [];
         }
-        $this->publicationDate = new FHIRDateTime($publicationDate);
+        $this->_primitiveXmlLocations[self::FIELD_PUBLICATION_DATE][0] = $xmlLocation;
+        $this->publicationDate = $publicationDate;
         return $this;
     }
 
     /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Reference pointer to the educational material given to the patient if the
-     * information was on line.
+     * Date the educational material was given to the patient.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    public function getReference()
+    public function getPresentationDate(): null|FHIRDateTime
     {
-        return $this->reference;
+        return $this->presentationDate;
     }
 
     /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Reference pointer to the educational material given to the patient if the
-     * information was on line.
+     * Date the educational material was given to the patient.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $reference
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $presentationDate
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setReference($reference = null)
+    public function setPresentationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $presentationDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $reference) {
-            $this->reference = null;
-            return $this;
+        if (null !== $presentationDate && !($presentationDate instanceof FHIRDateTime)) {
+            $presentationDate = new FHIRDateTime($presentationDate);
         }
-        if ($reference instanceof FHIRUri) {
-            $this->reference = $reference;
-            return $this;
+        $this->_trackValueSet($this->presentationDate, $presentationDate);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PRESENTATION_DATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_PRESENTATION_DATE] = [];
         }
-        $this->reference = new FHIRUri($reference);
+        $this->_primitiveXmlLocations[self::FIELD_PRESENTATION_DATE][0] = $xmlLocation;
+        $this->presentationDate = $presentationDate;
         return $this;
     }
 
@@ -451,9 +419,9 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -462,7 +430,7 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
@@ -471,9 +439,9 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                 $errs[self::FIELD_DOCUMENT_TYPE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getPresentationDate())) {
+        if (null !== ($v = $this->getReference())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PRESENTATION_DATE] = $fieldErrs;
+                $errs[self::FIELD_REFERENCE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getPublicationDate())) {
@@ -481,9 +449,9 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                 $errs[self::FIELD_PUBLICATION_DATE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getReference())) {
+        if (null !== ($v = $this->getPresentationDate())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REFERENCE] = $fieldErrs;
+                $errs[self::FIELD_PRESENTATION_DATE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_DOCUMENT_TYPE])) {
@@ -498,15 +466,15 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PRESENTATION_DATE])) {
-            $v = $this->getPresentationDate();
-            foreach($validationRules[self::FIELD_PRESENTATION_DATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_DOT_EDUCATION, self::FIELD_PRESENTATION_DATE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_REFERENCE])) {
+            $v = $this->getReference();
+            foreach($validationRules[self::FIELD_REFERENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_DOT_EDUCATION, self::FIELD_REFERENCE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PRESENTATION_DATE])) {
-                        $errs[self::FIELD_PRESENTATION_DATE] = [];
+                    if (!isset($errs[self::FIELD_REFERENCE])) {
+                        $errs[self::FIELD_REFERENCE] = [];
                     }
-                    $errs[self::FIELD_PRESENTATION_DATE][$rule] = $err;
+                    $errs[self::FIELD_REFERENCE][$rule] = $err;
                 }
             }
         }
@@ -522,15 +490,15 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_REFERENCE])) {
-            $v = $this->getReference();
-            foreach($validationRules[self::FIELD_REFERENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_DOT_EDUCATION, self::FIELD_REFERENCE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PRESENTATION_DATE])) {
+            $v = $this->getPresentationDate();
+            foreach($validationRules[self::FIELD_PRESENTATION_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_DOT_EDUCATION, self::FIELD_PRESENTATION_DATE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REFERENCE])) {
-                        $errs[self::FIELD_REFERENCE] = [];
+                    if (!isset($errs[self::FIELD_PRESENTATION_DATE])) {
+                        $errs[self::FIELD_PRESENTATION_DATE] = [];
                     }
-                    $errs[self::FIELD_REFERENCE][$rule] = $err;
+                    $errs[self::FIELD_PRESENTATION_DATE][$rule] = $err;
                 }
             }
         }
@@ -574,171 +542,229 @@ class FHIRImmunizationEducation extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationEducation $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationEducation
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRImmunizationEducation::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRImmunizationEducation::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRImmunizationEducation;
-        } elseif (!is_object($type) || !($type instanceof FHIRImmunizationEducation)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRImmunizationEducation)) {
             throw new \RuntimeException(sprintf(
-                'FHIRImmunizationEducation::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationEducation or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_DOCUMENT_TYPE === $childName) {
+                $type->setDocumentType(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_REFERENCE === $childName) {
+                $type->setReference(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PUBLICATION_DATE === $childName) {
+                $type->setPublicationDate(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PRESENTATION_DATE === $childName) {
+                $type->setPresentationDate(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->documentType)) {
-            $type->setDocumentType(FHIRString::xmlUnserialize($children->documentType));
-        }
-        if (isset($attributes->documentType)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_DOCUMENT_TYPE])) {
             $pt = $type->getDocumentType();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->documentType);
+                $pt->setValue((string)$attributes[self::FIELD_DOCUMENT_TYPE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setDocumentType((string)$attributes->documentType);
+                $type->setDocumentType((string)$attributes[self::FIELD_DOCUMENT_TYPE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->presentationDate)) {
-            $type->setPresentationDate(FHIRDateTime::xmlUnserialize($children->presentationDate));
-        }
-        if (isset($attributes->presentationDate)) {
-            $pt = $type->getPresentationDate();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->presentationDate);
-            } else {
-                $type->setPresentationDate((string)$attributes->presentationDate);
-            }
-        }
-        if (isset($children->publicationDate)) {
-            $type->setPublicationDate(FHIRDateTime::xmlUnserialize($children->publicationDate));
-        }
-        if (isset($attributes->publicationDate)) {
-            $pt = $type->getPublicationDate();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->publicationDate);
-            } else {
-                $type->setPublicationDate((string)$attributes->publicationDate);
-            }
-        }
-        if (isset($children->reference)) {
-            $type->setReference(FHIRUri::xmlUnserialize($children->reference));
-        }
-        if (isset($attributes->reference)) {
+        if (isset($attributes[self::FIELD_REFERENCE])) {
             $pt = $type->getReference();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->reference);
+                $pt->setValue((string)$attributes[self::FIELD_REFERENCE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setReference((string)$attributes->reference);
+                $type->setReference((string)$attributes[self::FIELD_REFERENCE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_PUBLICATION_DATE])) {
+            $pt = $type->getPublicationDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_PUBLICATION_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setPublicationDate((string)$attributes[self::FIELD_PUBLICATION_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_PRESENTATION_DATE])) {
+            $pt = $type->getPresentationDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_PRESENTATION_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setPresentationDate((string)$attributes[self::FIELD_PRESENTATION_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getDocumentType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENT_TYPE, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getPresentationDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRESENTATION_DATE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getPublicationDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PUBLICATION_DATE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ImmunizationEducation', $this->_getSourceXmlns());
         }
-        return $sxe;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DOCUMENT_TYPE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDocumentType())) {
+            $xw->writeAttribute(self::FIELD_DOCUMENT_TYPE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_REFERENCE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getReference())) {
+            $xw->writeAttribute(self::FIELD_REFERENCE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PUBLICATION_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPublicationDate())) {
+            $xw->writeAttribute(self::FIELD_PUBLICATION_DATE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PRESENTATION_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPresentationDate())) {
+            $xw->writeAttribute(self::FIELD_PRESENTATION_DATE, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DOCUMENT_TYPE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDocumentType())) {
+            $xw->startElement(self::FIELD_DOCUMENT_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_REFERENCE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getReference())) {
+            $xw->startElement(self::FIELD_REFERENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PUBLICATION_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPublicationDate())) {
+            $xw->startElement(self::FIELD_PUBLICATION_DATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PRESENTATION_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPresentationDate())) {
+            $xw->startElement(self::FIELD_PRESENTATION_DATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getDocumentType())) {
-            $a[self::FIELD_DOCUMENT_TYPE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DOCUMENT_TYPE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DOCUMENT_TYPE} = $val;
             }
-        }
-        if (null !== ($v = $this->getPresentationDate())) {
-            $a[self::FIELD_PRESENTATION_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_PRESENTATION_DATE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getPublicationDate())) {
-            $a[self::FIELD_PUBLICATION_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_PUBLICATION_DATE_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DOCUMENT_TYPE_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getReference())) {
-            $a[self::FIELD_REFERENCE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_REFERENCE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_REFERENCE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRUri::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_REFERENCE_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getPublicationDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PUBLICATION_DATE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PUBLICATION_DATE_EXT} = $ext;
+            }
         }
-        return $a;
-    }
+        if (null !== ($v = $this->getPresentationDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PRESENTATION_DATE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PRESENTATION_DATE_EXT} = $ext;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

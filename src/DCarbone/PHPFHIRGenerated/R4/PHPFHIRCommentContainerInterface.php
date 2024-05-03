@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,19 +72,19 @@ interface PHPFHIRCommentContainerInterface
      * Arbitrary comments of a hopefully useful nature
      * @return array
      */
-    public function _getFHIRComments();
+    public function _getFHIRComments(): array;
 
     /**
      * Set internal fhir_comments list, overwriting any previous value(s)
      * @param array $fhirComments
      * @return static
      */
-    public function _setFHIRComments(array $fhirComments);
+    public function _setFHIRComments(array $fhirComments): self;
 
     /**
      * Append comment string to internal fhir_comments list
      * @param string $fhirComment
      * @return static
      */
-    public function _addFHIRComment($fhirComment);
+    public function _addFHIRComment(string $fhirComment): self;
 }

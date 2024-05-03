@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,10 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQue
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\STU3\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRDatePrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRDateTimePrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRDecimalPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean;
@@ -69,6 +73,7 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuestionnaireItemType;
@@ -76,8 +81,16 @@ use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRIntegerPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRTimePrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter;
 
 /**
  * A structured set of questions intended to guide the collection of answers from
@@ -91,65 +104,62 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM;
-    const FIELD_CODE = 'code';
-    const FIELD_DEFINITION = 'definition';
-    const FIELD_DEFINITION_EXT = '_definition';
-    const FIELD_ENABLE_WHEN = 'enableWhen';
-    const FIELD_INITIAL_ATTACHMENT = 'initialAttachment';
-    const FIELD_INITIAL_BOOLEAN = 'initialBoolean';
-    const FIELD_INITIAL_BOOLEAN_EXT = '_initialBoolean';
-    const FIELD_INITIAL_CODING = 'initialCoding';
-    const FIELD_INITIAL_DATE = 'initialDate';
-    const FIELD_INITIAL_DATE_EXT = '_initialDate';
-    const FIELD_INITIAL_DATE_TIME = 'initialDateTime';
-    const FIELD_INITIAL_DATE_TIME_EXT = '_initialDateTime';
-    const FIELD_INITIAL_DECIMAL = 'initialDecimal';
-    const FIELD_INITIAL_DECIMAL_EXT = '_initialDecimal';
-    const FIELD_INITIAL_INTEGER = 'initialInteger';
-    const FIELD_INITIAL_INTEGER_EXT = '_initialInteger';
-    const FIELD_INITIAL_QUANTITY = 'initialQuantity';
-    const FIELD_INITIAL_REFERENCE = 'initialReference';
-    const FIELD_INITIAL_STRING = 'initialString';
-    const FIELD_INITIAL_STRING_EXT = '_initialString';
-    const FIELD_INITIAL_TIME = 'initialTime';
-    const FIELD_INITIAL_TIME_EXT = '_initialTime';
-    const FIELD_INITIAL_URI = 'initialUri';
-    const FIELD_INITIAL_URI_EXT = '_initialUri';
-    const FIELD_ITEM = 'item';
+
     const FIELD_LINK_ID = 'linkId';
     const FIELD_LINK_ID_EXT = '_linkId';
-    const FIELD_MAX_LENGTH = 'maxLength';
-    const FIELD_MAX_LENGTH_EXT = '_maxLength';
-    const FIELD_OPTION = 'option';
-    const FIELD_OPTIONS = 'options';
+    const FIELD_DEFINITION = 'definition';
+    const FIELD_DEFINITION_EXT = '_definition';
+    const FIELD_CODE = 'code';
     const FIELD_PREFIX = 'prefix';
     const FIELD_PREFIX_EXT = '_prefix';
-    const FIELD_READ_ONLY = 'readOnly';
-    const FIELD_READ_ONLY_EXT = '_readOnly';
-    const FIELD_REPEATS = 'repeats';
-    const FIELD_REPEATS_EXT = '_repeats';
-    const FIELD_REQUIRED = 'required';
-    const FIELD_REQUIRED_EXT = '_required';
     const FIELD_TEXT = 'text';
     const FIELD_TEXT_EXT = '_text';
     const FIELD_TYPE = 'type';
     const FIELD_TYPE_EXT = '_type';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_ENABLE_WHEN = 'enableWhen';
+    const FIELD_REQUIRED = 'required';
+    const FIELD_REQUIRED_EXT = '_required';
+    const FIELD_REPEATS = 'repeats';
+    const FIELD_REPEATS_EXT = '_repeats';
+    const FIELD_READ_ONLY = 'readOnly';
+    const FIELD_READ_ONLY_EXT = '_readOnly';
+    const FIELD_MAX_LENGTH = 'maxLength';
+    const FIELD_MAX_LENGTH_EXT = '_maxLength';
+    const FIELD_OPTIONS = 'options';
+    const FIELD_OPTION = 'option';
+    const FIELD_INITIAL_BOOLEAN = 'initialBoolean';
+    const FIELD_INITIAL_BOOLEAN_EXT = '_initialBoolean';
+    const FIELD_INITIAL_DECIMAL = 'initialDecimal';
+    const FIELD_INITIAL_DECIMAL_EXT = '_initialDecimal';
+    const FIELD_INITIAL_INTEGER = 'initialInteger';
+    const FIELD_INITIAL_INTEGER_EXT = '_initialInteger';
+    const FIELD_INITIAL_DATE = 'initialDate';
+    const FIELD_INITIAL_DATE_EXT = '_initialDate';
+    const FIELD_INITIAL_DATE_TIME = 'initialDateTime';
+    const FIELD_INITIAL_DATE_TIME_EXT = '_initialDateTime';
+    const FIELD_INITIAL_TIME = 'initialTime';
+    const FIELD_INITIAL_TIME_EXT = '_initialTime';
+    const FIELD_INITIAL_STRING = 'initialString';
+    const FIELD_INITIAL_STRING_EXT = '_initialString';
+    const FIELD_INITIAL_URI = 'initialUri';
+    const FIELD_INITIAL_URI_EXT = '_initialUri';
+    const FIELD_INITIAL_ATTACHMENT = 'initialAttachment';
+    const FIELD_INITIAL_CODING = 'initialCoding';
+    const FIELD_INITIAL_QUANTITY = 'initialQuantity';
+    const FIELD_INITIAL_REFERENCE = 'initialReference';
+    const FIELD_ITEM = 'item';
 
     /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A terminology code that corresponds to this group or question (e.g. a code from
-     * LOINC, which defines many questions and answers).
+     * An identifier that is unique within the Questionnaire allowing linkage to the
+     * equivalent item in a QuestionnaireResponse resource.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    protected $code = [];
-
+    protected null|FHIRString $linkId = null;
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -165,8 +175,52 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    protected $definition = null;
-
+    protected null|FHIRUri $definition = null;
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A terminology code that corresponds to this group or question (e.g. a code from
+     * LOINC, which defines many questions and answers).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
+     */
+    protected null|array $code = [];
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A short label for a particular group, question or set of display text within the
+     * questionnaire used for reference by the individual completing the questionnaire.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $prefix = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of a section, the text of a question or text content for a display
+     * item.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $text = null;
+    /**
+     * Distinguishes groups from questions and display text and indicates data type for
+     * questions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The type of questionnaire item this is - whether text for display, a grouping of
+     * other items or a particular type of data to be captured (string, integer, coded
+     * choice, etc.).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuestionnaireItemType
+     */
+    protected null|FHIRQuestionnaireItemType $type = null;
     /**
      * A structured set of questions intended to guide the collection of answers from
      * end-users. Questionnaires provide detailed control over order, presentation,
@@ -177,20 +231,71 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
      */
-    protected $enableWhen = [];
-
+    protected null|array $enableWhen = [];
     /**
-     * For referring to data content defined in other formats.
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An indication, if true, that the item must be present in a "completed"
+     * QuestionnaireResponse. If false, the item may be skipped when answering the
+     * questionnaire.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
+     */
+    protected null|FHIRBoolean $required = null;
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An indication, if true, that the item may occur multiple times in the response,
+     * collecting multiple answers answers for questions or multiple sets of answers
+     * for groups.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
+     */
+    protected null|FHIRBoolean $repeats = null;
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An indication, when true, that the value cannot be changed by a human respondent
+     * to the Questionnaire.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
+     */
+    protected null|FHIRBoolean $readOnly = null;
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The maximum number of characters that are permitted in the answer to be
+     * considered a "valid" QuestionnaireResponse.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
+     */
+    protected null|FHIRInteger $maxLength = null;
+    /**
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value that should be defaulted when initially rendering the questionnaire
-     * for user input.
+     * A reference to a value set containing a list of codes representing permitted
+     * answers for a "choice" or "open-choice" question.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    protected $initialAttachment = null;
-
+    protected null|FHIRReference $options = null;
+    /**
+     * A structured set of questions intended to guide the collection of answers from
+     * end-users. Questionnaires provide detailed control over order, presentation,
+     * phraseology and grouping to allow coherent, consistent data collection.
+     *
+     * One of the permitted answers for a "choice" or "open-choice" question.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption[]
+     */
+    protected null|array $option = [];
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -200,20 +305,30 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    protected $initialBoolean = null;
-
+    protected null|FHIRBoolean $initialBoolean = null;
     /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    protected $initialCoding = null;
-
+    protected null|FHIRDecimal $initialDecimal = null;
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The value that should be defaulted when initially rendering the questionnaire
+     * for user input.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
+     */
+    protected null|FHIRInteger $initialInteger = null;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -225,8 +340,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    protected $initialDate = null;
-
+    protected null|FHIRDate $initialDate = null;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -240,33 +354,61 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    protected $initialDateTime = null;
-
+    protected null|FHIRDateTime $initialDateTime = null;
     /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
-    protected $initialDecimal = null;
-
+    protected null|FHIRTime $initialTime = null;
     /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    protected $initialInteger = null;
-
+    protected null|FHIRString $initialString = null;
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The value that should be defaulted when initially rendering the questionnaire
+     * for user input.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
+     */
+    protected null|FHIRUri $initialUri = null;
+    /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value that should be defaulted when initially rendering the questionnaire
+     * for user input.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
+     */
+    protected null|FHIRAttachment $initialAttachment = null;
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value that should be defaulted when initially rendering the questionnaire
+     * for user input.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
+     */
+    protected null|FHIRCoding $initialCoding = null;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -279,8 +421,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    protected $initialQuantity = null;
-
+    protected null|FHIRQuantity $initialQuantity = null;
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -291,43 +432,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    protected $initialReference = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The value that should be defaulted when initially rendering the questionnaire
-     * for user input.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $initialString = null;
-
-    /**
-     * A time during the day, with no date specified
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The value that should be defaulted when initially rendering the questionnaire
-     * for user input.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
-     */
-    protected $initialTime = null;
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The value that should be defaulted when initially rendering the questionnaire
-     * for user input.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
-     */
-    protected $initialUri = null;
-
+    protected null|FHIRReference $initialReference = null;
     /**
      * A structured set of questions intended to guide the collection of answers from
      * end-users. Questionnaires provide detailed control over order, presentation,
@@ -337,7 +442,420 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
-    protected $item = [];
+    protected null|array $item = [];
+
+    /**
+     * Validation map for fields in type Questionnaire.Item
+     * @var array
+     */
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
+
+    /**
+     * FHIRQuestionnaireItem Constructor
+     * @param null|array $data
+     */
+    public function __construct(null|array $data = null)
+    {
+        if (null === $data || [] === $data) {
+            return;
+        }
+        parent::__construct($data);
+        if (array_key_exists(self::FIELD_LINK_ID, $data) || array_key_exists(self::FIELD_LINK_ID_EXT, $data)) {
+            $value = $data[self::FIELD_LINK_ID] ?? null;
+            $ext = (isset($data[self::FIELD_LINK_ID_EXT]) && is_array($data[self::FIELD_LINK_ID_EXT])) ? $data[self::FIELD_LINK_ID_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setLinkId($value);
+                } else if (is_array($value)) {
+                    $this->setLinkId(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setLinkId(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setLinkId(new FHIRString($ext));
+            } else {
+                $this->setLinkId(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_DEFINITION, $data) || array_key_exists(self::FIELD_DEFINITION_EXT, $data)) {
+            $value = $data[self::FIELD_DEFINITION] ?? null;
+            $ext = (isset($data[self::FIELD_DEFINITION_EXT]) && is_array($data[self::FIELD_DEFINITION_EXT])) ? $data[self::FIELD_DEFINITION_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setDefinition($value);
+                } else if (is_array($value)) {
+                    $this->setDefinition(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setDefinition(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDefinition(new FHIRUri($ext));
+            } else {
+                $this->setDefinition(new FHIRUri(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_CODE, $data)) {
+            if (is_array($data[self::FIELD_CODE])) {
+                foreach($data[self::FIELD_CODE] as $v) {
+                    if ($v instanceof FHIRCoding) {
+                        $this->addCode($v);
+                    } else {
+                        $this->addCode(new FHIRCoding($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_CODE] instanceof FHIRCoding) {
+                $this->addCode($data[self::FIELD_CODE]);
+            } else {
+                $this->addCode(new FHIRCoding($data[self::FIELD_CODE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_PREFIX, $data) || array_key_exists(self::FIELD_PREFIX_EXT, $data)) {
+            $value = $data[self::FIELD_PREFIX] ?? null;
+            $ext = (isset($data[self::FIELD_PREFIX_EXT]) && is_array($data[self::FIELD_PREFIX_EXT])) ? $data[self::FIELD_PREFIX_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setPrefix($value);
+                } else if (is_array($value)) {
+                    $this->setPrefix(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setPrefix(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPrefix(new FHIRString($ext));
+            } else {
+                $this->setPrefix(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_TEXT, $data) || array_key_exists(self::FIELD_TEXT_EXT, $data)) {
+            $value = $data[self::FIELD_TEXT] ?? null;
+            $ext = (isset($data[self::FIELD_TEXT_EXT]) && is_array($data[self::FIELD_TEXT_EXT])) ? $data[self::FIELD_TEXT_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setText($value);
+                } else if (is_array($value)) {
+                    $this->setText(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setText(new FHIRString($ext));
+            } else {
+                $this->setText(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_TYPE, $data) || array_key_exists(self::FIELD_TYPE_EXT, $data)) {
+            $value = $data[self::FIELD_TYPE] ?? null;
+            $ext = (isset($data[self::FIELD_TYPE_EXT]) && is_array($data[self::FIELD_TYPE_EXT])) ? $data[self::FIELD_TYPE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRQuestionnaireItemType) {
+                    $this->setType($value);
+                } else if (is_array($value)) {
+                    $this->setType(new FHIRQuestionnaireItemType(array_merge($ext, $value)));
+                } else {
+                    $this->setType(new FHIRQuestionnaireItemType([FHIRQuestionnaireItemType::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setType(new FHIRQuestionnaireItemType($ext));
+            } else {
+                $this->setType(new FHIRQuestionnaireItemType(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_ENABLE_WHEN, $data)) {
+            if (is_array($data[self::FIELD_ENABLE_WHEN])) {
+                foreach($data[self::FIELD_ENABLE_WHEN] as $v) {
+                    if ($v instanceof FHIRQuestionnaireEnableWhen) {
+                        $this->addEnableWhen($v);
+                    } else {
+                        $this->addEnableWhen(new FHIRQuestionnaireEnableWhen($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_ENABLE_WHEN] instanceof FHIRQuestionnaireEnableWhen) {
+                $this->addEnableWhen($data[self::FIELD_ENABLE_WHEN]);
+            } else {
+                $this->addEnableWhen(new FHIRQuestionnaireEnableWhen($data[self::FIELD_ENABLE_WHEN]));
+            }
+        }
+        if (array_key_exists(self::FIELD_REQUIRED, $data) || array_key_exists(self::FIELD_REQUIRED_EXT, $data)) {
+            $value = $data[self::FIELD_REQUIRED] ?? null;
+            $ext = (isset($data[self::FIELD_REQUIRED_EXT]) && is_array($data[self::FIELD_REQUIRED_EXT])) ? $data[self::FIELD_REQUIRED_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setRequired($value);
+                } else if (is_array($value)) {
+                    $this->setRequired(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setRequired(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setRequired(new FHIRBoolean($ext));
+            } else {
+                $this->setRequired(new FHIRBoolean(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_REPEATS, $data) || array_key_exists(self::FIELD_REPEATS_EXT, $data)) {
+            $value = $data[self::FIELD_REPEATS] ?? null;
+            $ext = (isset($data[self::FIELD_REPEATS_EXT]) && is_array($data[self::FIELD_REPEATS_EXT])) ? $data[self::FIELD_REPEATS_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setRepeats($value);
+                } else if (is_array($value)) {
+                    $this->setRepeats(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setRepeats(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setRepeats(new FHIRBoolean($ext));
+            } else {
+                $this->setRepeats(new FHIRBoolean(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_READ_ONLY, $data) || array_key_exists(self::FIELD_READ_ONLY_EXT, $data)) {
+            $value = $data[self::FIELD_READ_ONLY] ?? null;
+            $ext = (isset($data[self::FIELD_READ_ONLY_EXT]) && is_array($data[self::FIELD_READ_ONLY_EXT])) ? $data[self::FIELD_READ_ONLY_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setReadOnly($value);
+                } else if (is_array($value)) {
+                    $this->setReadOnly(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setReadOnly(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setReadOnly(new FHIRBoolean($ext));
+            } else {
+                $this->setReadOnly(new FHIRBoolean(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_MAX_LENGTH, $data) || array_key_exists(self::FIELD_MAX_LENGTH_EXT, $data)) {
+            $value = $data[self::FIELD_MAX_LENGTH] ?? null;
+            $ext = (isset($data[self::FIELD_MAX_LENGTH_EXT]) && is_array($data[self::FIELD_MAX_LENGTH_EXT])) ? $data[self::FIELD_MAX_LENGTH_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setMaxLength($value);
+                } else if (is_array($value)) {
+                    $this->setMaxLength(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setMaxLength(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setMaxLength(new FHIRInteger($ext));
+            } else {
+                $this->setMaxLength(new FHIRInteger(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_OPTIONS, $data)) {
+            if ($data[self::FIELD_OPTIONS] instanceof FHIRReference) {
+                $this->setOptions($data[self::FIELD_OPTIONS]);
+            } else {
+                $this->setOptions(new FHIRReference($data[self::FIELD_OPTIONS]));
+            }
+        }
+        if (array_key_exists(self::FIELD_OPTION, $data)) {
+            if (is_array($data[self::FIELD_OPTION])) {
+                foreach($data[self::FIELD_OPTION] as $v) {
+                    if ($v instanceof FHIRQuestionnaireOption) {
+                        $this->addOption($v);
+                    } else {
+                        $this->addOption(new FHIRQuestionnaireOption($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_OPTION] instanceof FHIRQuestionnaireOption) {
+                $this->addOption($data[self::FIELD_OPTION]);
+            } else {
+                $this->addOption(new FHIRQuestionnaireOption($data[self::FIELD_OPTION]));
+            }
+        }
+        if (array_key_exists(self::FIELD_INITIAL_BOOLEAN, $data) || array_key_exists(self::FIELD_INITIAL_BOOLEAN_EXT, $data)) {
+            $value = $data[self::FIELD_INITIAL_BOOLEAN] ?? null;
+            $ext = (isset($data[self::FIELD_INITIAL_BOOLEAN_EXT]) && is_array($data[self::FIELD_INITIAL_BOOLEAN_EXT])) ? $data[self::FIELD_INITIAL_BOOLEAN_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setInitialBoolean($value);
+                } else if (is_array($value)) {
+                    $this->setInitialBoolean(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setInitialBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setInitialBoolean(new FHIRBoolean($ext));
+            } else {
+                $this->setInitialBoolean(new FHIRBoolean(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_INITIAL_DECIMAL, $data) || array_key_exists(self::FIELD_INITIAL_DECIMAL_EXT, $data)) {
+            $value = $data[self::FIELD_INITIAL_DECIMAL] ?? null;
+            $ext = (isset($data[self::FIELD_INITIAL_DECIMAL_EXT]) && is_array($data[self::FIELD_INITIAL_DECIMAL_EXT])) ? $data[self::FIELD_INITIAL_DECIMAL_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setInitialDecimal($value);
+                } else if (is_array($value)) {
+                    $this->setInitialDecimal(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setInitialDecimal(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setInitialDecimal(new FHIRDecimal($ext));
+            } else {
+                $this->setInitialDecimal(new FHIRDecimal(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_INITIAL_INTEGER, $data) || array_key_exists(self::FIELD_INITIAL_INTEGER_EXT, $data)) {
+            $value = $data[self::FIELD_INITIAL_INTEGER] ?? null;
+            $ext = (isset($data[self::FIELD_INITIAL_INTEGER_EXT]) && is_array($data[self::FIELD_INITIAL_INTEGER_EXT])) ? $data[self::FIELD_INITIAL_INTEGER_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setInitialInteger($value);
+                } else if (is_array($value)) {
+                    $this->setInitialInteger(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setInitialInteger(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setInitialInteger(new FHIRInteger($ext));
+            } else {
+                $this->setInitialInteger(new FHIRInteger(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_INITIAL_DATE, $data) || array_key_exists(self::FIELD_INITIAL_DATE_EXT, $data)) {
+            $value = $data[self::FIELD_INITIAL_DATE] ?? null;
+            $ext = (isset($data[self::FIELD_INITIAL_DATE_EXT]) && is_array($data[self::FIELD_INITIAL_DATE_EXT])) ? $data[self::FIELD_INITIAL_DATE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDate) {
+                    $this->setInitialDate($value);
+                } else if (is_array($value)) {
+                    $this->setInitialDate(new FHIRDate(array_merge($ext, $value)));
+                } else {
+                    $this->setInitialDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setInitialDate(new FHIRDate($ext));
+            } else {
+                $this->setInitialDate(new FHIRDate(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_INITIAL_DATE_TIME, $data) || array_key_exists(self::FIELD_INITIAL_DATE_TIME_EXT, $data)) {
+            $value = $data[self::FIELD_INITIAL_DATE_TIME] ?? null;
+            $ext = (isset($data[self::FIELD_INITIAL_DATE_TIME_EXT]) && is_array($data[self::FIELD_INITIAL_DATE_TIME_EXT])) ? $data[self::FIELD_INITIAL_DATE_TIME_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setInitialDateTime($value);
+                } else if (is_array($value)) {
+                    $this->setInitialDateTime(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setInitialDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setInitialDateTime(new FHIRDateTime($ext));
+            } else {
+                $this->setInitialDateTime(new FHIRDateTime(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_INITIAL_TIME, $data) || array_key_exists(self::FIELD_INITIAL_TIME_EXT, $data)) {
+            $value = $data[self::FIELD_INITIAL_TIME] ?? null;
+            $ext = (isset($data[self::FIELD_INITIAL_TIME_EXT]) && is_array($data[self::FIELD_INITIAL_TIME_EXT])) ? $data[self::FIELD_INITIAL_TIME_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRTime) {
+                    $this->setInitialTime($value);
+                } else if (is_array($value)) {
+                    $this->setInitialTime(new FHIRTime(array_merge($ext, $value)));
+                } else {
+                    $this->setInitialTime(new FHIRTime([FHIRTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setInitialTime(new FHIRTime($ext));
+            } else {
+                $this->setInitialTime(new FHIRTime(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_INITIAL_STRING, $data) || array_key_exists(self::FIELD_INITIAL_STRING_EXT, $data)) {
+            $value = $data[self::FIELD_INITIAL_STRING] ?? null;
+            $ext = (isset($data[self::FIELD_INITIAL_STRING_EXT]) && is_array($data[self::FIELD_INITIAL_STRING_EXT])) ? $data[self::FIELD_INITIAL_STRING_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setInitialString($value);
+                } else if (is_array($value)) {
+                    $this->setInitialString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setInitialString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setInitialString(new FHIRString($ext));
+            } else {
+                $this->setInitialString(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_INITIAL_URI, $data) || array_key_exists(self::FIELD_INITIAL_URI_EXT, $data)) {
+            $value = $data[self::FIELD_INITIAL_URI] ?? null;
+            $ext = (isset($data[self::FIELD_INITIAL_URI_EXT]) && is_array($data[self::FIELD_INITIAL_URI_EXT])) ? $data[self::FIELD_INITIAL_URI_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setInitialUri($value);
+                } else if (is_array($value)) {
+                    $this->setInitialUri(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setInitialUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setInitialUri(new FHIRUri($ext));
+            } else {
+                $this->setInitialUri(new FHIRUri(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_INITIAL_ATTACHMENT, $data)) {
+            if ($data[self::FIELD_INITIAL_ATTACHMENT] instanceof FHIRAttachment) {
+                $this->setInitialAttachment($data[self::FIELD_INITIAL_ATTACHMENT]);
+            } else {
+                $this->setInitialAttachment(new FHIRAttachment($data[self::FIELD_INITIAL_ATTACHMENT]));
+            }
+        }
+        if (array_key_exists(self::FIELD_INITIAL_CODING, $data)) {
+            if ($data[self::FIELD_INITIAL_CODING] instanceof FHIRCoding) {
+                $this->setInitialCoding($data[self::FIELD_INITIAL_CODING]);
+            } else {
+                $this->setInitialCoding(new FHIRCoding($data[self::FIELD_INITIAL_CODING]));
+            }
+        }
+        if (array_key_exists(self::FIELD_INITIAL_QUANTITY, $data)) {
+            if ($data[self::FIELD_INITIAL_QUANTITY] instanceof FHIRQuantity) {
+                $this->setInitialQuantity($data[self::FIELD_INITIAL_QUANTITY]);
+            } else {
+                $this->setInitialQuantity(new FHIRQuantity($data[self::FIELD_INITIAL_QUANTITY]));
+            }
+        }
+        if (array_key_exists(self::FIELD_INITIAL_REFERENCE, $data)) {
+            if ($data[self::FIELD_INITIAL_REFERENCE] instanceof FHIRReference) {
+                $this->setInitialReference($data[self::FIELD_INITIAL_REFERENCE]);
+            } else {
+                $this->setInitialReference(new FHIRReference($data[self::FIELD_INITIAL_REFERENCE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_ITEM, $data)) {
+            if (is_array($data[self::FIELD_ITEM])) {
+                foreach($data[self::FIELD_ITEM] as $v) {
+                    if ($v instanceof FHIRQuestionnaireItem) {
+                        $this->addItem($v);
+                    } else {
+                        $this->addItem(new FHIRQuestionnaireItem($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_ITEM] instanceof FHIRQuestionnaireItem) {
+                $this->addItem($data[self::FIELD_ITEM]);
+            } else {
+                $this->addItem(new FHIRQuestionnaireItem($data[self::FIELD_ITEM]));
+            }
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function _getFhirTypeName(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
 
     /**
      * A sequence of Unicode characters
@@ -347,715 +865,36 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * An identifier that is unique within the Questionnaire allowing linkage to the
      * equivalent item in a QuestionnaireResponse resource.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    protected $linkId = null;
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The maximum number of characters that are permitted in the answer to be
-     * considered a "valid" QuestionnaireResponse.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
-     */
-    protected $maxLength = null;
-
-    /**
-     * A structured set of questions intended to guide the collection of answers from
-     * end-users. Questionnaires provide detailed control over order, presentation,
-     * phraseology and grouping to allow coherent, consistent data collection.
-     *
-     * One of the permitted answers for a "choice" or "open-choice" question.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption[]
-     */
-    protected $option = [];
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A reference to a value set containing a list of codes representing permitted
-     * answers for a "choice" or "open-choice" question.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    protected $options = null;
+    public function getLinkId(): null|FHIRString
+    {
+        return $this->linkId;
+    }
 
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A short label for a particular group, question or set of display text within the
-     * questionnaire used for reference by the individual completing the questionnaire.
+     * An identifier that is unique within the Questionnaire allowing linkage to the
+     * equivalent item in a QuestionnaireResponse resource.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $prefix = null;
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An indication, when true, that the value cannot be changed by a human respondent
-     * to the Questionnaire.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
-     */
-    protected $readOnly = null;
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An indication, if true, that the item may occur multiple times in the response,
-     * collecting multiple answers answers for questions or multiple sets of answers
-     * for groups.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
-     */
-    protected $repeats = null;
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An indication, if true, that the item must be present in a "completed"
-     * QuestionnaireResponse. If false, the item may be skipped when answering the
-     * questionnaire.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
-     */
-    protected $required = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of a section, the text of a question or text content for a display
-     * item.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $text = null;
-
-    /**
-     * Distinguishes groups from questions and display text and indicates data type for
-     * questions
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The type of questionnaire item this is - whether text for display, a grouping of
-     * other items or a particular type of data to be captured (string, integer, coded
-     * choice, etc.).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuestionnaireItemType
-     */
-    protected $type = null;
-
-    /**
-     * Validation map for fields in type Questionnaire.Item
-     * @var array
-     */
-    private static $_validationRules = [    ];
-
-    /**
-     * FHIRQuestionnaireItem Constructor
-     * @param null|array $data
-     */
-    public function __construct($data = null)
-    {
-        if (null === $data || [] === $data) {
-            return;
-        }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRQuestionnaireItem::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
-        parent::__construct($data);
-        if (isset($data[self::FIELD_CODE])) {
-            if (is_array($data[self::FIELD_CODE])) {
-                foreach($data[self::FIELD_CODE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCoding) {
-                        $this->addCode($v);
-                    } else {
-                        $this->addCode(new FHIRCoding($v));
-                    }
-                }
-            } else if ($data[self::FIELD_CODE] instanceof FHIRCoding) {
-                $this->addCode($data[self::FIELD_CODE]);
-            } else {
-                $this->addCode(new FHIRCoding($data[self::FIELD_CODE]));
-            }
-        }
-        if (isset($data[self::FIELD_DEFINITION]) || isset($data[self::FIELD_DEFINITION_EXT])) {
-            if (isset($data[self::FIELD_DEFINITION])) {
-                $value = $data[self::FIELD_DEFINITION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DEFINITION_EXT]) && is_array($data[self::FIELD_DEFINITION_EXT])) {
-                $ext = $data[self::FIELD_DEFINITION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $this->setDefinition($value);
-                } else if (is_array($value)) {
-                    $this->setDefinition(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $this->setDefinition(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDefinition(new FHIRUri($ext));
-            }
-        }
-        if (isset($data[self::FIELD_ENABLE_WHEN])) {
-            if (is_array($data[self::FIELD_ENABLE_WHEN])) {
-                foreach($data[self::FIELD_ENABLE_WHEN] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRQuestionnaireEnableWhen) {
-                        $this->addEnableWhen($v);
-                    } else {
-                        $this->addEnableWhen(new FHIRQuestionnaireEnableWhen($v));
-                    }
-                }
-            } else if ($data[self::FIELD_ENABLE_WHEN] instanceof FHIRQuestionnaireEnableWhen) {
-                $this->addEnableWhen($data[self::FIELD_ENABLE_WHEN]);
-            } else {
-                $this->addEnableWhen(new FHIRQuestionnaireEnableWhen($data[self::FIELD_ENABLE_WHEN]));
-            }
-        }
-        if (isset($data[self::FIELD_INITIAL_ATTACHMENT])) {
-            if ($data[self::FIELD_INITIAL_ATTACHMENT] instanceof FHIRAttachment) {
-                $this->setInitialAttachment($data[self::FIELD_INITIAL_ATTACHMENT]);
-            } else {
-                $this->setInitialAttachment(new FHIRAttachment($data[self::FIELD_INITIAL_ATTACHMENT]));
-            }
-        }
-        if (isset($data[self::FIELD_INITIAL_BOOLEAN]) || isset($data[self::FIELD_INITIAL_BOOLEAN_EXT])) {
-            if (isset($data[self::FIELD_INITIAL_BOOLEAN])) {
-                $value = $data[self::FIELD_INITIAL_BOOLEAN];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_INITIAL_BOOLEAN_EXT]) && is_array($data[self::FIELD_INITIAL_BOOLEAN_EXT])) {
-                $ext = $data[self::FIELD_INITIAL_BOOLEAN_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setInitialBoolean($value);
-                } else if (is_array($value)) {
-                    $this->setInitialBoolean(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setInitialBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setInitialBoolean(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_INITIAL_CODING])) {
-            if ($data[self::FIELD_INITIAL_CODING] instanceof FHIRCoding) {
-                $this->setInitialCoding($data[self::FIELD_INITIAL_CODING]);
-            } else {
-                $this->setInitialCoding(new FHIRCoding($data[self::FIELD_INITIAL_CODING]));
-            }
-        }
-        if (isset($data[self::FIELD_INITIAL_DATE]) || isset($data[self::FIELD_INITIAL_DATE_EXT])) {
-            if (isset($data[self::FIELD_INITIAL_DATE])) {
-                $value = $data[self::FIELD_INITIAL_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_INITIAL_DATE_EXT]) && is_array($data[self::FIELD_INITIAL_DATE_EXT])) {
-                $ext = $data[self::FIELD_INITIAL_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDate) {
-                    $this->setInitialDate($value);
-                } else if (is_array($value)) {
-                    $this->setInitialDate(new FHIRDate(array_merge($ext, $value)));
-                } else {
-                    $this->setInitialDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setInitialDate(new FHIRDate($ext));
-            }
-        }
-        if (isset($data[self::FIELD_INITIAL_DATE_TIME]) || isset($data[self::FIELD_INITIAL_DATE_TIME_EXT])) {
-            if (isset($data[self::FIELD_INITIAL_DATE_TIME])) {
-                $value = $data[self::FIELD_INITIAL_DATE_TIME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_INITIAL_DATE_TIME_EXT]) && is_array($data[self::FIELD_INITIAL_DATE_TIME_EXT])) {
-                $ext = $data[self::FIELD_INITIAL_DATE_TIME_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setInitialDateTime($value);
-                } else if (is_array($value)) {
-                    $this->setInitialDateTime(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setInitialDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setInitialDateTime(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_INITIAL_DECIMAL]) || isset($data[self::FIELD_INITIAL_DECIMAL_EXT])) {
-            if (isset($data[self::FIELD_INITIAL_DECIMAL])) {
-                $value = $data[self::FIELD_INITIAL_DECIMAL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_INITIAL_DECIMAL_EXT]) && is_array($data[self::FIELD_INITIAL_DECIMAL_EXT])) {
-                $ext = $data[self::FIELD_INITIAL_DECIMAL_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setInitialDecimal($value);
-                } else if (is_array($value)) {
-                    $this->setInitialDecimal(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setInitialDecimal(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setInitialDecimal(new FHIRDecimal($ext));
-            }
-        }
-        if (isset($data[self::FIELD_INITIAL_INTEGER]) || isset($data[self::FIELD_INITIAL_INTEGER_EXT])) {
-            if (isset($data[self::FIELD_INITIAL_INTEGER])) {
-                $value = $data[self::FIELD_INITIAL_INTEGER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_INITIAL_INTEGER_EXT]) && is_array($data[self::FIELD_INITIAL_INTEGER_EXT])) {
-                $ext = $data[self::FIELD_INITIAL_INTEGER_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setInitialInteger($value);
-                } else if (is_array($value)) {
-                    $this->setInitialInteger(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setInitialInteger(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setInitialInteger(new FHIRInteger($ext));
-            }
-        }
-        if (isset($data[self::FIELD_INITIAL_QUANTITY])) {
-            if ($data[self::FIELD_INITIAL_QUANTITY] instanceof FHIRQuantity) {
-                $this->setInitialQuantity($data[self::FIELD_INITIAL_QUANTITY]);
-            } else {
-                $this->setInitialQuantity(new FHIRQuantity($data[self::FIELD_INITIAL_QUANTITY]));
-            }
-        }
-        if (isset($data[self::FIELD_INITIAL_REFERENCE])) {
-            if ($data[self::FIELD_INITIAL_REFERENCE] instanceof FHIRReference) {
-                $this->setInitialReference($data[self::FIELD_INITIAL_REFERENCE]);
-            } else {
-                $this->setInitialReference(new FHIRReference($data[self::FIELD_INITIAL_REFERENCE]));
-            }
-        }
-        if (isset($data[self::FIELD_INITIAL_STRING]) || isset($data[self::FIELD_INITIAL_STRING_EXT])) {
-            if (isset($data[self::FIELD_INITIAL_STRING])) {
-                $value = $data[self::FIELD_INITIAL_STRING];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_INITIAL_STRING_EXT]) && is_array($data[self::FIELD_INITIAL_STRING_EXT])) {
-                $ext = $data[self::FIELD_INITIAL_STRING_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setInitialString($value);
-                } else if (is_array($value)) {
-                    $this->setInitialString(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setInitialString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setInitialString(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_INITIAL_TIME]) || isset($data[self::FIELD_INITIAL_TIME_EXT])) {
-            if (isset($data[self::FIELD_INITIAL_TIME])) {
-                $value = $data[self::FIELD_INITIAL_TIME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_INITIAL_TIME_EXT]) && is_array($data[self::FIELD_INITIAL_TIME_EXT])) {
-                $ext = $data[self::FIELD_INITIAL_TIME_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRTime) {
-                    $this->setInitialTime($value);
-                } else if (is_array($value)) {
-                    $this->setInitialTime(new FHIRTime(array_merge($ext, $value)));
-                } else {
-                    $this->setInitialTime(new FHIRTime([FHIRTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setInitialTime(new FHIRTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_INITIAL_URI]) || isset($data[self::FIELD_INITIAL_URI_EXT])) {
-            if (isset($data[self::FIELD_INITIAL_URI])) {
-                $value = $data[self::FIELD_INITIAL_URI];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_INITIAL_URI_EXT]) && is_array($data[self::FIELD_INITIAL_URI_EXT])) {
-                $ext = $data[self::FIELD_INITIAL_URI_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $this->setInitialUri($value);
-                } else if (is_array($value)) {
-                    $this->setInitialUri(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $this->setInitialUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setInitialUri(new FHIRUri($ext));
-            }
-        }
-        if (isset($data[self::FIELD_ITEM])) {
-            if (is_array($data[self::FIELD_ITEM])) {
-                foreach($data[self::FIELD_ITEM] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRQuestionnaireItem) {
-                        $this->addItem($v);
-                    } else {
-                        $this->addItem(new FHIRQuestionnaireItem($v));
-                    }
-                }
-            } else if ($data[self::FIELD_ITEM] instanceof FHIRQuestionnaireItem) {
-                $this->addItem($data[self::FIELD_ITEM]);
-            } else {
-                $this->addItem(new FHIRQuestionnaireItem($data[self::FIELD_ITEM]));
-            }
-        }
-        if (isset($data[self::FIELD_LINK_ID]) || isset($data[self::FIELD_LINK_ID_EXT])) {
-            if (isset($data[self::FIELD_LINK_ID])) {
-                $value = $data[self::FIELD_LINK_ID];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_LINK_ID_EXT]) && is_array($data[self::FIELD_LINK_ID_EXT])) {
-                $ext = $data[self::FIELD_LINK_ID_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setLinkId($value);
-                } else if (is_array($value)) {
-                    $this->setLinkId(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setLinkId(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setLinkId(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_MAX_LENGTH]) || isset($data[self::FIELD_MAX_LENGTH_EXT])) {
-            if (isset($data[self::FIELD_MAX_LENGTH])) {
-                $value = $data[self::FIELD_MAX_LENGTH];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_MAX_LENGTH_EXT]) && is_array($data[self::FIELD_MAX_LENGTH_EXT])) {
-                $ext = $data[self::FIELD_MAX_LENGTH_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setMaxLength($value);
-                } else if (is_array($value)) {
-                    $this->setMaxLength(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setMaxLength(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setMaxLength(new FHIRInteger($ext));
-            }
-        }
-        if (isset($data[self::FIELD_OPTION])) {
-            if (is_array($data[self::FIELD_OPTION])) {
-                foreach($data[self::FIELD_OPTION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRQuestionnaireOption) {
-                        $this->addOption($v);
-                    } else {
-                        $this->addOption(new FHIRQuestionnaireOption($v));
-                    }
-                }
-            } else if ($data[self::FIELD_OPTION] instanceof FHIRQuestionnaireOption) {
-                $this->addOption($data[self::FIELD_OPTION]);
-            } else {
-                $this->addOption(new FHIRQuestionnaireOption($data[self::FIELD_OPTION]));
-            }
-        }
-        if (isset($data[self::FIELD_OPTIONS])) {
-            if ($data[self::FIELD_OPTIONS] instanceof FHIRReference) {
-                $this->setOptions($data[self::FIELD_OPTIONS]);
-            } else {
-                $this->setOptions(new FHIRReference($data[self::FIELD_OPTIONS]));
-            }
-        }
-        if (isset($data[self::FIELD_PREFIX]) || isset($data[self::FIELD_PREFIX_EXT])) {
-            if (isset($data[self::FIELD_PREFIX])) {
-                $value = $data[self::FIELD_PREFIX];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PREFIX_EXT]) && is_array($data[self::FIELD_PREFIX_EXT])) {
-                $ext = $data[self::FIELD_PREFIX_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setPrefix($value);
-                } else if (is_array($value)) {
-                    $this->setPrefix(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setPrefix(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPrefix(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_READ_ONLY]) || isset($data[self::FIELD_READ_ONLY_EXT])) {
-            if (isset($data[self::FIELD_READ_ONLY])) {
-                $value = $data[self::FIELD_READ_ONLY];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_READ_ONLY_EXT]) && is_array($data[self::FIELD_READ_ONLY_EXT])) {
-                $ext = $data[self::FIELD_READ_ONLY_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setReadOnly($value);
-                } else if (is_array($value)) {
-                    $this->setReadOnly(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setReadOnly(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setReadOnly(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_REPEATS]) || isset($data[self::FIELD_REPEATS_EXT])) {
-            if (isset($data[self::FIELD_REPEATS])) {
-                $value = $data[self::FIELD_REPEATS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_REPEATS_EXT]) && is_array($data[self::FIELD_REPEATS_EXT])) {
-                $ext = $data[self::FIELD_REPEATS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setRepeats($value);
-                } else if (is_array($value)) {
-                    $this->setRepeats(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setRepeats(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setRepeats(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_REQUIRED]) || isset($data[self::FIELD_REQUIRED_EXT])) {
-            if (isset($data[self::FIELD_REQUIRED])) {
-                $value = $data[self::FIELD_REQUIRED];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_REQUIRED_EXT]) && is_array($data[self::FIELD_REQUIRED_EXT])) {
-                $ext = $data[self::FIELD_REQUIRED_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setRequired($value);
-                } else if (is_array($value)) {
-                    $this->setRequired(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setRequired(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setRequired(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_TEXT]) || isset($data[self::FIELD_TEXT_EXT])) {
-            if (isset($data[self::FIELD_TEXT])) {
-                $value = $data[self::FIELD_TEXT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TEXT_EXT]) && is_array($data[self::FIELD_TEXT_EXT])) {
-                $ext = $data[self::FIELD_TEXT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setText($value);
-                } else if (is_array($value)) {
-                    $this->setText(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setText(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE]) || isset($data[self::FIELD_TYPE_EXT])) {
-            if (isset($data[self::FIELD_TYPE])) {
-                $value = $data[self::FIELD_TYPE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TYPE_EXT]) && is_array($data[self::FIELD_TYPE_EXT])) {
-                $ext = $data[self::FIELD_TYPE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRQuestionnaireItemType) {
-                    $this->setType($value);
-                } else if (is_array($value)) {
-                    $this->setType(new FHIRQuestionnaireItemType(array_merge($ext, $value)));
-                } else {
-                    $this->setType(new FHIRQuestionnaireItemType([FHIRQuestionnaireItemType::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setType(new FHIRQuestionnaireItemType($ext));
-            }
-        }
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRTypeName()
-    {
-        return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<QuestionnaireItem{$xmlns}></QuestionnaireItem>";
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A terminology code that corresponds to this group or question (e.g. a code from
-     * LOINC, which defines many questions and answers).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A terminology code that corresponds to this group or question (e.g. a code from
-     * LOINC, which defines many questions and answers).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $code
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $linkId
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addCode(FHIRCoding $code = null)
+    public function setLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->code[] = $code;
-        return $this;
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A terminology code that corresponds to this group or question (e.g. a code from
-     * LOINC, which defines many questions and answers).
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[] $code
-     * @return static
-     */
-    public function setCode(array $code = [])
-    {
-        $this->code = [];
-        if ([] === $code) {
-            return $this;
+        if (null !== $linkId && !($linkId instanceof FHIRString)) {
+            $linkId = new FHIRString($linkId);
         }
-        foreach($code as $v) {
-            if ($v instanceof FHIRCoding) {
-                $this->addCode($v);
-            } else {
-                $this->addCode(new FHIRCoding($v));
-            }
+        $this->_trackValueSet($this->linkId, $linkId);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_LINK_ID])) {
+            $this->_primitiveXmlLocations[self::FIELD_LINK_ID] = [];
         }
+        $this->_primitiveXmlLocations[self::FIELD_LINK_ID][0] = $xmlLocation;
+        $this->linkId = $linkId;
         return $this;
     }
 
@@ -1074,7 +913,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    public function getDefinition()
+    public function getDefinition(): null|FHIRUri
     {
         return $this->definition;
     }
@@ -1092,20 +931,177 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * (ElementDefinition.binding) Any information provided in these elements on a
      * Questionnaire Item overrides the information from the definition.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $definition
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $definition
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDefinition($definition = null)
+    public function setDefinition(null|string|FHIRUriPrimitive|FHIRUri $definition = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $definition) {
-            $this->definition = null;
-            return $this;
+        if (null !== $definition && !($definition instanceof FHIRUri)) {
+            $definition = new FHIRUri($definition);
         }
-        if ($definition instanceof FHIRUri) {
-            $this->definition = $definition;
-            return $this;
+        $this->_trackValueSet($this->definition, $definition);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DEFINITION])) {
+            $this->_primitiveXmlLocations[self::FIELD_DEFINITION] = [];
         }
-        $this->definition = new FHIRUri($definition);
+        $this->_primitiveXmlLocations[self::FIELD_DEFINITION][0] = $xmlLocation;
+        $this->definition = $definition;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A terminology code that corresponds to this group or question (e.g. a code from
+     * LOINC, which defines many questions and answers).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
+     */
+    public function getCode(): null|array
+    {
+        return $this->code;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A terminology code that corresponds to this group or question (e.g. a code from
+     * LOINC, which defines many questions and answers).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $code
+     * @return static
+     */
+    public function addCode(null|FHIRCoding $code = null): self
+    {
+        if (null === $code) {
+            $code = new FHIRCoding();
+        }
+        $this->_trackValueAdded();
+        $this->code[] = $code;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A short label for a particular group, question or set of display text within the
+     * questionnaire used for reference by the individual completing the questionnaire.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getPrefix(): null|FHIRString
+    {
+        return $this->prefix;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A short label for a particular group, question or set of display text within the
+     * questionnaire used for reference by the individual completing the questionnaire.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $prefix
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setPrefix(null|string|FHIRStringPrimitive|FHIRString $prefix = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $prefix && !($prefix instanceof FHIRString)) {
+            $prefix = new FHIRString($prefix);
+        }
+        $this->_trackValueSet($this->prefix, $prefix);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PREFIX])) {
+            $this->_primitiveXmlLocations[self::FIELD_PREFIX] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_PREFIX][0] = $xmlLocation;
+        $this->prefix = $prefix;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of a section, the text of a question or text content for a display
+     * item.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getText(): null|FHIRString
+    {
+        return $this->text;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of a section, the text of a question or text content for a display
+     * item.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $text
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setText(null|string|FHIRStringPrimitive|FHIRString $text = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $text && !($text instanceof FHIRString)) {
+            $text = new FHIRString($text);
+        }
+        $this->_trackValueSet($this->text, $text);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_TEXT])) {
+            $this->_primitiveXmlLocations[self::FIELD_TEXT] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_TEXT][0] = $xmlLocation;
+        $this->text = $text;
+        return $this;
+    }
+
+    /**
+     * Distinguishes groups from questions and display text and indicates data type for
+     * questions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The type of questionnaire item this is - whether text for display, a grouping of
+     * other items or a particular type of data to be captured (string, integer, coded
+     * choice, etc.).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuestionnaireItemType
+     */
+    public function getType(): null|FHIRQuestionnaireItemType
+    {
+        return $this->type;
+    }
+
+    /**
+     * Distinguishes groups from questions and display text and indicates data type for
+     * questions
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The type of questionnaire item this is - whether text for display, a grouping of
+     * other items or a particular type of data to be captured (string, integer, coded
+     * choice, etc.).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuestionnaireItemType $type
+     * @return static
+     */
+    public function setType(null|FHIRQuestionnaireItemType $type = null): self
+    {
+        if (null === $type) {
+            $type = new FHIRQuestionnaireItemType();
+        }
+        $this->_trackValueSet($this->type, $type);
+        $this->type = $type;
         return $this;
     }
 
@@ -1119,7 +1115,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
      */
-    public function getEnableWhen()
+    public function getEnableWhen(): null|array
     {
         return $this->enableWhen;
     }
@@ -1135,9 +1131,211 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen $enableWhen
      * @return static
      */
-    public function addEnableWhen(FHIRQuestionnaireEnableWhen $enableWhen = null)
+    public function addEnableWhen(null|FHIRQuestionnaireEnableWhen $enableWhen = null): self
     {
+        if (null === $enableWhen) {
+            $enableWhen = new FHIRQuestionnaireEnableWhen();
+        }
+        $this->_trackValueAdded();
         $this->enableWhen[] = $enableWhen;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An indication, if true, that the item must be present in a "completed"
+     * QuestionnaireResponse. If false, the item may be skipped when answering the
+     * questionnaire.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
+     */
+    public function getRequired(): null|FHIRBoolean
+    {
+        return $this->required;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An indication, if true, that the item must be present in a "completed"
+     * QuestionnaireResponse. If false, the item may be skipped when answering the
+     * questionnaire.
+     *
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\STU3\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $required
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setRequired(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $required = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $required && !($required instanceof FHIRBoolean)) {
+            $required = new FHIRBoolean($required);
+        }
+        $this->_trackValueSet($this->required, $required);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_REQUIRED])) {
+            $this->_primitiveXmlLocations[self::FIELD_REQUIRED] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_REQUIRED][0] = $xmlLocation;
+        $this->required = $required;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An indication, if true, that the item may occur multiple times in the response,
+     * collecting multiple answers answers for questions or multiple sets of answers
+     * for groups.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
+     */
+    public function getRepeats(): null|FHIRBoolean
+    {
+        return $this->repeats;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An indication, if true, that the item may occur multiple times in the response,
+     * collecting multiple answers answers for questions or multiple sets of answers
+     * for groups.
+     *
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\STU3\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $repeats
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setRepeats(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $repeats = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $repeats && !($repeats instanceof FHIRBoolean)) {
+            $repeats = new FHIRBoolean($repeats);
+        }
+        $this->_trackValueSet($this->repeats, $repeats);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_REPEATS])) {
+            $this->_primitiveXmlLocations[self::FIELD_REPEATS] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_REPEATS][0] = $xmlLocation;
+        $this->repeats = $repeats;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An indication, when true, that the value cannot be changed by a human respondent
+     * to the Questionnaire.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
+     */
+    public function getReadOnly(): null|FHIRBoolean
+    {
+        return $this->readOnly;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An indication, when true, that the value cannot be changed by a human respondent
+     * to the Questionnaire.
+     *
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\STU3\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $readOnly
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setReadOnly(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $readOnly = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $readOnly && !($readOnly instanceof FHIRBoolean)) {
+            $readOnly = new FHIRBoolean($readOnly);
+        }
+        $this->_trackValueSet($this->readOnly, $readOnly);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_READ_ONLY])) {
+            $this->_primitiveXmlLocations[self::FIELD_READ_ONLY] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_READ_ONLY][0] = $xmlLocation;
+        $this->readOnly = $readOnly;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The maximum number of characters that are permitted in the answer to be
+     * considered a "valid" QuestionnaireResponse.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
+     */
+    public function getMaxLength(): null|FHIRInteger
+    {
+        return $this->maxLength;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The maximum number of characters that are permitted in the answer to be
+     * considered a "valid" QuestionnaireResponse.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\STU3\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $maxLength
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setMaxLength(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $maxLength = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $maxLength && !($maxLength instanceof FHIRInteger)) {
+            $maxLength = new FHIRInteger($maxLength);
+        }
+        $this->_trackValueSet($this->maxLength, $maxLength);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_MAX_LENGTH])) {
+            $this->_primitiveXmlLocations[self::FIELD_MAX_LENGTH] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_MAX_LENGTH][0] = $xmlLocation;
+        $this->maxLength = $maxLength;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to a value set containing a list of codes representing permitted
+     * answers for a "choice" or "open-choice" question.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    public function getOptions(): null|FHIRReference
+    {
+        return $this->options;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to a value set containing a list of codes representing permitted
+     * answers for a "choice" or "open-choice" question.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $options
+     * @return static
+     */
+    public function setOptions(null|FHIRReference $options = null): self
+    {
+        if (null === $options) {
+            $options = new FHIRReference();
+        }
+        $this->_trackValueSet($this->options, $options);
+        $this->options = $options;
         return $this;
     }
 
@@ -1146,57 +1344,32 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * end-users. Questionnaires provide detailed control over order, presentation,
      * phraseology and grouping to allow coherent, consistent data collection.
      *
-     * A constraint indicating that this item should only be enabled (displayed/allow
-     * answers to be captured) when the specified condition is true.
+     * One of the permitted answers for a "choice" or "open-choice" question.
      *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[] $enableWhen
-     * @return static
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption[]
      */
-    public function setEnableWhen(array $enableWhen = [])
+    public function getOption(): null|array
     {
-        $this->enableWhen = [];
-        if ([] === $enableWhen) {
-            return $this;
-        }
-        foreach($enableWhen as $v) {
-            if ($v instanceof FHIRQuestionnaireEnableWhen) {
-                $this->addEnableWhen($v);
-            } else {
-                $this->addEnableWhen(new FHIRQuestionnaireEnableWhen($v));
-            }
-        }
-        return $this;
+        return $this->option;
     }
 
     /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A structured set of questions intended to guide the collection of answers from
+     * end-users. Questionnaires provide detailed control over order, presentation,
+     * phraseology and grouping to allow coherent, consistent data collection.
      *
-     * The value that should be defaulted when initially rendering the questionnaire
-     * for user input.
+     * One of the permitted answers for a "choice" or "open-choice" question.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
-     */
-    public function getInitialAttachment()
-    {
-        return $this->initialAttachment;
-    }
-
-    /**
-     * For referring to data content defined in other formats.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value that should be defaulted when initially rendering the questionnaire
-     * for user input.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment $initialAttachment
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption $option
      * @return static
      */
-    public function setInitialAttachment(FHIRAttachment $initialAttachment = null)
+    public function addOption(null|FHIRQuestionnaireOption $option = null): self
     {
-        $this->initialAttachment = $initialAttachment;
+        if (null === $option) {
+            $option = new FHIRQuestionnaireOption();
+        }
+        $this->_trackValueAdded();
+        $this->option[] = $option;
         return $this;
     }
 
@@ -1209,7 +1382,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
-    public function getInitialBoolean()
+    public function getInitialBoolean(): null|FHIRBoolean
     {
         return $this->initialBoolean;
     }
@@ -1221,52 +1394,105 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $initialBoolean
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\STU3\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $initialBoolean
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInitialBoolean($initialBoolean = null)
+    public function setInitialBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $initialBoolean = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $initialBoolean) {
-            $this->initialBoolean = null;
-            return $this;
+        if (null !== $initialBoolean && !($initialBoolean instanceof FHIRBoolean)) {
+            $initialBoolean = new FHIRBoolean($initialBoolean);
         }
-        if ($initialBoolean instanceof FHIRBoolean) {
-            $this->initialBoolean = $initialBoolean;
-            return $this;
+        $this->_trackValueSet($this->initialBoolean, $initialBoolean);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_INITIAL_BOOLEAN])) {
+            $this->_primitiveXmlLocations[self::FIELD_INITIAL_BOOLEAN] = [];
         }
-        $this->initialBoolean = new FHIRBoolean($initialBoolean);
+        $this->_primitiveXmlLocations[self::FIELD_INITIAL_BOOLEAN][0] = $xmlLocation;
+        $this->initialBoolean = $initialBoolean;
         return $this;
     }
 
     /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    public function getInitialCoding()
+    public function getInitialDecimal(): null|FHIRDecimal
     {
-        return $this->initialCoding;
+        return $this->initialDecimal;
     }
 
     /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $initialCoding
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\STU3\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $initialDecimal
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInitialCoding(FHIRCoding $initialCoding = null)
+    public function setInitialDecimal(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $initialDecimal = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->initialCoding = $initialCoding;
+        if (null !== $initialDecimal && !($initialDecimal instanceof FHIRDecimal)) {
+            $initialDecimal = new FHIRDecimal($initialDecimal);
+        }
+        $this->_trackValueSet($this->initialDecimal, $initialDecimal);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_INITIAL_DECIMAL])) {
+            $this->_primitiveXmlLocations[self::FIELD_INITIAL_DECIMAL] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_INITIAL_DECIMAL][0] = $xmlLocation;
+        $this->initialDecimal = $initialDecimal;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The value that should be defaulted when initially rendering the questionnaire
+     * for user input.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
+     */
+    public function getInitialInteger(): null|FHIRInteger
+    {
+        return $this->initialInteger;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The value that should be defaulted when initially rendering the questionnaire
+     * for user input.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\STU3\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $initialInteger
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setInitialInteger(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $initialInteger = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $initialInteger && !($initialInteger instanceof FHIRInteger)) {
+            $initialInteger = new FHIRInteger($initialInteger);
+        }
+        $this->_trackValueSet($this->initialInteger, $initialInteger);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_INITIAL_INTEGER])) {
+            $this->_primitiveXmlLocations[self::FIELD_INITIAL_INTEGER] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_INITIAL_INTEGER][0] = $xmlLocation;
+        $this->initialInteger = $initialInteger;
         return $this;
     }
 
@@ -1281,7 +1507,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
-    public function getInitialDate()
+    public function getInitialDate(): null|FHIRDate
     {
         return $this->initialDate;
     }
@@ -1295,20 +1521,21 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $initialDate
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\STU3\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate $initialDate
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInitialDate($initialDate = null)
+    public function setInitialDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $initialDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $initialDate) {
-            $this->initialDate = null;
-            return $this;
+        if (null !== $initialDate && !($initialDate instanceof FHIRDate)) {
+            $initialDate = new FHIRDate($initialDate);
         }
-        if ($initialDate instanceof FHIRDate) {
-            $this->initialDate = $initialDate;
-            return $this;
+        $this->_trackValueSet($this->initialDate, $initialDate);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_INITIAL_DATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_INITIAL_DATE] = [];
         }
-        $this->initialDate = new FHIRDate($initialDate);
+        $this->_primitiveXmlLocations[self::FIELD_INITIAL_DATE][0] = $xmlLocation;
+        $this->initialDate = $initialDate;
         return $this;
     }
 
@@ -1325,7 +1552,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
-    public function getInitialDateTime()
+    public function getInitialDateTime(): null|FHIRDateTime
     {
         return $this->initialDateTime;
     }
@@ -1341,102 +1568,214 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $initialDateTime
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\STU3\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime $initialDateTime
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInitialDateTime($initialDateTime = null)
+    public function setInitialDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $initialDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $initialDateTime) {
-            $this->initialDateTime = null;
-            return $this;
+        if (null !== $initialDateTime && !($initialDateTime instanceof FHIRDateTime)) {
+            $initialDateTime = new FHIRDateTime($initialDateTime);
         }
-        if ($initialDateTime instanceof FHIRDateTime) {
-            $this->initialDateTime = $initialDateTime;
-            return $this;
+        $this->_trackValueSet($this->initialDateTime, $initialDateTime);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_INITIAL_DATE_TIME])) {
+            $this->_primitiveXmlLocations[self::FIELD_INITIAL_DATE_TIME] = [];
         }
-        $this->initialDateTime = new FHIRDateTime($initialDateTime);
+        $this->_primitiveXmlLocations[self::FIELD_INITIAL_DATE_TIME][0] = $xmlLocation;
+        $this->initialDateTime = $initialDateTime;
         return $this;
     }
 
     /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
-    public function getInitialDecimal()
+    public function getInitialTime(): null|FHIRTime
     {
-        return $this->initialDecimal;
+        return $this->initialTime;
     }
 
     /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * A time during the day, with no date specified
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $initialDecimal
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\STU3\FHIRTimePrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime $initialTime
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInitialDecimal($initialDecimal = null)
+    public function setInitialTime(null|string|\DateTimeInterface|FHIRTimePrimitive|FHIRTime $initialTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $initialDecimal) {
-            $this->initialDecimal = null;
-            return $this;
+        if (null !== $initialTime && !($initialTime instanceof FHIRTime)) {
+            $initialTime = new FHIRTime($initialTime);
         }
-        if ($initialDecimal instanceof FHIRDecimal) {
-            $this->initialDecimal = $initialDecimal;
-            return $this;
+        $this->_trackValueSet($this->initialTime, $initialTime);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_INITIAL_TIME])) {
+            $this->_primitiveXmlLocations[self::FIELD_INITIAL_TIME] = [];
         }
-        $this->initialDecimal = new FHIRDecimal($initialDecimal);
+        $this->_primitiveXmlLocations[self::FIELD_INITIAL_TIME][0] = $xmlLocation;
+        $this->initialTime = $initialTime;
         return $this;
     }
 
     /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    public function getInitialInteger()
+    public function getInitialString(): null|FHIRString
     {
-        return $this->initialInteger;
+        return $this->initialString;
     }
 
     /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value that should be defaulted when initially rendering the questionnaire
      * for user input.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $initialInteger
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $initialString
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInitialInteger($initialInteger = null)
+    public function setInitialString(null|string|FHIRStringPrimitive|FHIRString $initialString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $initialInteger) {
-            $this->initialInteger = null;
-            return $this;
+        if (null !== $initialString && !($initialString instanceof FHIRString)) {
+            $initialString = new FHIRString($initialString);
         }
-        if ($initialInteger instanceof FHIRInteger) {
-            $this->initialInteger = $initialInteger;
-            return $this;
+        $this->_trackValueSet($this->initialString, $initialString);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_INITIAL_STRING])) {
+            $this->_primitiveXmlLocations[self::FIELD_INITIAL_STRING] = [];
         }
-        $this->initialInteger = new FHIRInteger($initialInteger);
+        $this->_primitiveXmlLocations[self::FIELD_INITIAL_STRING][0] = $xmlLocation;
+        $this->initialString = $initialString;
+        return $this;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The value that should be defaulted when initially rendering the questionnaire
+     * for user input.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
+     */
+    public function getInitialUri(): null|FHIRUri
+    {
+        return $this->initialUri;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The value that should be defaulted when initially rendering the questionnaire
+     * for user input.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $initialUri
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setInitialUri(null|string|FHIRUriPrimitive|FHIRUri $initialUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $initialUri && !($initialUri instanceof FHIRUri)) {
+            $initialUri = new FHIRUri($initialUri);
+        }
+        $this->_trackValueSet($this->initialUri, $initialUri);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_INITIAL_URI])) {
+            $this->_primitiveXmlLocations[self::FIELD_INITIAL_URI] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_INITIAL_URI][0] = $xmlLocation;
+        $this->initialUri = $initialUri;
+        return $this;
+    }
+
+    /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value that should be defaulted when initially rendering the questionnaire
+     * for user input.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
+     */
+    public function getInitialAttachment(): null|FHIRAttachment
+    {
+        return $this->initialAttachment;
+    }
+
+    /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value that should be defaulted when initially rendering the questionnaire
+     * for user input.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment $initialAttachment
+     * @return static
+     */
+    public function setInitialAttachment(null|FHIRAttachment $initialAttachment = null): self
+    {
+        if (null === $initialAttachment) {
+            $initialAttachment = new FHIRAttachment();
+        }
+        $this->_trackValueSet($this->initialAttachment, $initialAttachment);
+        $this->initialAttachment = $initialAttachment;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value that should be defaulted when initially rendering the questionnaire
+     * for user input.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
+     */
+    public function getInitialCoding(): null|FHIRCoding
+    {
+        return $this->initialCoding;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value that should be defaulted when initially rendering the questionnaire
+     * for user input.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $initialCoding
+     * @return static
+     */
+    public function setInitialCoding(null|FHIRCoding $initialCoding = null): self
+    {
+        if (null === $initialCoding) {
+            $initialCoding = new FHIRCoding();
+        }
+        $this->_trackValueSet($this->initialCoding, $initialCoding);
+        $this->initialCoding = $initialCoding;
         return $this;
     }
 
@@ -1452,7 +1791,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    public function getInitialQuantity()
+    public function getInitialQuantity(): null|FHIRQuantity
     {
         return $this->initialQuantity;
     }
@@ -1470,8 +1809,12 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $initialQuantity
      * @return static
      */
-    public function setInitialQuantity(FHIRQuantity $initialQuantity = null)
+    public function setInitialQuantity(null|FHIRQuantity $initialQuantity = null): self
     {
+        if (null === $initialQuantity) {
+            $initialQuantity = new FHIRQuantity();
+        }
+        $this->_trackValueSet($this->initialQuantity, $initialQuantity);
         $this->initialQuantity = $initialQuantity;
         return $this;
     }
@@ -1486,7 +1829,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    public function getInitialReference()
+    public function getInitialReference(): null|FHIRReference
     {
         return $this->initialReference;
     }
@@ -1502,127 +1845,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $initialReference
      * @return static
      */
-    public function setInitialReference(FHIRReference $initialReference = null)
+    public function setInitialReference(null|FHIRReference $initialReference = null): self
     {
+        if (null === $initialReference) {
+            $initialReference = new FHIRReference();
+        }
+        $this->_trackValueSet($this->initialReference, $initialReference);
         $this->initialReference = $initialReference;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The value that should be defaulted when initially rendering the questionnaire
-     * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getInitialString()
-    {
-        return $this->initialString;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The value that should be defaulted when initially rendering the questionnaire
-     * for user input.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $initialString
-     * @return static
-     */
-    public function setInitialString($initialString = null)
-    {
-        if (null === $initialString) {
-            $this->initialString = null;
-            return $this;
-        }
-        if ($initialString instanceof FHIRString) {
-            $this->initialString = $initialString;
-            return $this;
-        }
-        $this->initialString = new FHIRString($initialString);
-        return $this;
-    }
-
-    /**
-     * A time during the day, with no date specified
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The value that should be defaulted when initially rendering the questionnaire
-     * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
-     */
-    public function getInitialTime()
-    {
-        return $this->initialTime;
-    }
-
-    /**
-     * A time during the day, with no date specified
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The value that should be defaulted when initially rendering the questionnaire
-     * for user input.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime $initialTime
-     * @return static
-     */
-    public function setInitialTime($initialTime = null)
-    {
-        if (null === $initialTime) {
-            $this->initialTime = null;
-            return $this;
-        }
-        if ($initialTime instanceof FHIRTime) {
-            $this->initialTime = $initialTime;
-            return $this;
-        }
-        $this->initialTime = new FHIRTime($initialTime);
-        return $this;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The value that should be defaulted when initially rendering the questionnaire
-     * for user input.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
-     */
-    public function getInitialUri()
-    {
-        return $this->initialUri;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The value that should be defaulted when initially rendering the questionnaire
-     * for user input.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $initialUri
-     * @return static
-     */
-    public function setInitialUri($initialUri = null)
-    {
-        if (null === $initialUri) {
-            $this->initialUri = null;
-            return $this;
-        }
-        if ($initialUri instanceof FHIRUri) {
-            $this->initialUri = $initialUri;
-            return $this;
-        }
-        $this->initialUri = new FHIRUri($initialUri);
         return $this;
     }
 
@@ -1635,7 +1864,7 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
-    public function getItem()
+    public function getItem(): null|array
     {
         return $this->item;
     }
@@ -1650,435 +1879,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem $item
      * @return static
      */
-    public function addItem(FHIRQuestionnaireItem $item = null)
+    public function addItem(null|FHIRQuestionnaireItem $item = null): self
     {
+        if (null === $item) {
+            $item = new FHIRQuestionnaireItem();
+        }
+        $this->_trackValueAdded();
         $this->item[] = $item;
-        return $this;
-    }
-
-    /**
-     * A structured set of questions intended to guide the collection of answers from
-     * end-users. Questionnaires provide detailed control over order, presentation,
-     * phraseology and grouping to allow coherent, consistent data collection.
-     *
-     * Text, questions and other groups to be nested beneath a question or group.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[] $item
-     * @return static
-     */
-    public function setItem(array $item = [])
-    {
-        $this->item = [];
-        if ([] === $item) {
-            return $this;
-        }
-        foreach($item as $v) {
-            if ($v instanceof FHIRQuestionnaireItem) {
-                $this->addItem($v);
-            } else {
-                $this->addItem(new FHIRQuestionnaireItem($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An identifier that is unique within the Questionnaire allowing linkage to the
-     * equivalent item in a QuestionnaireResponse resource.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getLinkId()
-    {
-        return $this->linkId;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An identifier that is unique within the Questionnaire allowing linkage to the
-     * equivalent item in a QuestionnaireResponse resource.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $linkId
-     * @return static
-     */
-    public function setLinkId($linkId = null)
-    {
-        if (null === $linkId) {
-            $this->linkId = null;
-            return $this;
-        }
-        if ($linkId instanceof FHIRString) {
-            $this->linkId = $linkId;
-            return $this;
-        }
-        $this->linkId = new FHIRString($linkId);
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The maximum number of characters that are permitted in the answer to be
-     * considered a "valid" QuestionnaireResponse.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
-     */
-    public function getMaxLength()
-    {
-        return $this->maxLength;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The maximum number of characters that are permitted in the answer to be
-     * considered a "valid" QuestionnaireResponse.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $maxLength
-     * @return static
-     */
-    public function setMaxLength($maxLength = null)
-    {
-        if (null === $maxLength) {
-            $this->maxLength = null;
-            return $this;
-        }
-        if ($maxLength instanceof FHIRInteger) {
-            $this->maxLength = $maxLength;
-            return $this;
-        }
-        $this->maxLength = new FHIRInteger($maxLength);
-        return $this;
-    }
-
-    /**
-     * A structured set of questions intended to guide the collection of answers from
-     * end-users. Questionnaires provide detailed control over order, presentation,
-     * phraseology and grouping to allow coherent, consistent data collection.
-     *
-     * One of the permitted answers for a "choice" or "open-choice" question.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption[]
-     */
-    public function getOption()
-    {
-        return $this->option;
-    }
-
-    /**
-     * A structured set of questions intended to guide the collection of answers from
-     * end-users. Questionnaires provide detailed control over order, presentation,
-     * phraseology and grouping to allow coherent, consistent data collection.
-     *
-     * One of the permitted answers for a "choice" or "open-choice" question.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption $option
-     * @return static
-     */
-    public function addOption(FHIRQuestionnaireOption $option = null)
-    {
-        $this->option[] = $option;
-        return $this;
-    }
-
-    /**
-     * A structured set of questions intended to guide the collection of answers from
-     * end-users. Questionnaires provide detailed control over order, presentation,
-     * phraseology and grouping to allow coherent, consistent data collection.
-     *
-     * One of the permitted answers for a "choice" or "open-choice" question.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireOption[] $option
-     * @return static
-     */
-    public function setOption(array $option = [])
-    {
-        $this->option = [];
-        if ([] === $option) {
-            return $this;
-        }
-        foreach($option as $v) {
-            if ($v instanceof FHIRQuestionnaireOption) {
-                $this->addOption($v);
-            } else {
-                $this->addOption(new FHIRQuestionnaireOption($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A reference to a value set containing a list of codes representing permitted
-     * answers for a "choice" or "open-choice" question.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    public function getOptions()
-    {
-        return $this->options;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A reference to a value set containing a list of codes representing permitted
-     * answers for a "choice" or "open-choice" question.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $options
-     * @return static
-     */
-    public function setOptions(FHIRReference $options = null)
-    {
-        $this->options = $options;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A short label for a particular group, question or set of display text within the
-     * questionnaire used for reference by the individual completing the questionnaire.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getPrefix()
-    {
-        return $this->prefix;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A short label for a particular group, question or set of display text within the
-     * questionnaire used for reference by the individual completing the questionnaire.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $prefix
-     * @return static
-     */
-    public function setPrefix($prefix = null)
-    {
-        if (null === $prefix) {
-            $this->prefix = null;
-            return $this;
-        }
-        if ($prefix instanceof FHIRString) {
-            $this->prefix = $prefix;
-            return $this;
-        }
-        $this->prefix = new FHIRString($prefix);
-        return $this;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An indication, when true, that the value cannot be changed by a human respondent
-     * to the Questionnaire.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
-     */
-    public function getReadOnly()
-    {
-        return $this->readOnly;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An indication, when true, that the value cannot be changed by a human respondent
-     * to the Questionnaire.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $readOnly
-     * @return static
-     */
-    public function setReadOnly($readOnly = null)
-    {
-        if (null === $readOnly) {
-            $this->readOnly = null;
-            return $this;
-        }
-        if ($readOnly instanceof FHIRBoolean) {
-            $this->readOnly = $readOnly;
-            return $this;
-        }
-        $this->readOnly = new FHIRBoolean($readOnly);
-        return $this;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An indication, if true, that the item may occur multiple times in the response,
-     * collecting multiple answers answers for questions or multiple sets of answers
-     * for groups.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
-     */
-    public function getRepeats()
-    {
-        return $this->repeats;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An indication, if true, that the item may occur multiple times in the response,
-     * collecting multiple answers answers for questions or multiple sets of answers
-     * for groups.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $repeats
-     * @return static
-     */
-    public function setRepeats($repeats = null)
-    {
-        if (null === $repeats) {
-            $this->repeats = null;
-            return $this;
-        }
-        if ($repeats instanceof FHIRBoolean) {
-            $this->repeats = $repeats;
-            return $this;
-        }
-        $this->repeats = new FHIRBoolean($repeats);
-        return $this;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An indication, if true, that the item must be present in a "completed"
-     * QuestionnaireResponse. If false, the item may be skipped when answering the
-     * questionnaire.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
-     */
-    public function getRequired()
-    {
-        return $this->required;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An indication, if true, that the item must be present in a "completed"
-     * QuestionnaireResponse. If false, the item may be skipped when answering the
-     * questionnaire.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $required
-     * @return static
-     */
-    public function setRequired($required = null)
-    {
-        if (null === $required) {
-            $this->required = null;
-            return $this;
-        }
-        if ($required instanceof FHIRBoolean) {
-            $this->required = $required;
-            return $this;
-        }
-        $this->required = new FHIRBoolean($required);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of a section, the text of a question or text content for a display
-     * item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getText()
-    {
-        return $this->text;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of a section, the text of a question or text content for a display
-     * item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $text
-     * @return static
-     */
-    public function setText($text = null)
-    {
-        if (null === $text) {
-            $this->text = null;
-            return $this;
-        }
-        if ($text instanceof FHIRString) {
-            $this->text = $text;
-            return $this;
-        }
-        $this->text = new FHIRString($text);
-        return $this;
-    }
-
-    /**
-     * Distinguishes groups from questions and display text and indicates data type for
-     * questions
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The type of questionnaire item this is - whether text for display, a grouping of
-     * other items or a particular type of data to be captured (string, integer, coded
-     * choice, etc.).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuestionnaireItemType
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * Distinguishes groups from questions and display text and indicates data type for
-     * questions
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The type of questionnaire item this is - whether text for display, a grouping of
-     * other items or a particular type of data to be captured (string, integer, coded
-     * choice, etc.).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuestionnaireItemType $type
-     * @return static
-     */
-    public function setType(FHIRQuestionnaireItemType $type = null)
-    {
-        $this->type = $type;
         return $this;
     }
 
@@ -2088,9 +1895,9 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -2099,15 +1906,13 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getCode())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_CODE, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getLinkId())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_LINK_ID] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDefinition())) {
@@ -2115,120 +1920,16 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 $errs[self::FIELD_DEFINITION] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getEnableWhen())) {
+        if ([] !== ($vs = $this->getCode())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_ENABLE_WHEN, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_CODE, $i)] = $fieldErrs;
                 }
-            }
-        }
-        if (null !== ($v = $this->getInitialAttachment())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INITIAL_ATTACHMENT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getInitialBoolean())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INITIAL_BOOLEAN] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getInitialCoding())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INITIAL_CODING] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getInitialDate())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INITIAL_DATE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getInitialDateTime())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INITIAL_DATE_TIME] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getInitialDecimal())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INITIAL_DECIMAL] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getInitialInteger())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INITIAL_INTEGER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getInitialQuantity())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INITIAL_QUANTITY] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getInitialReference())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INITIAL_REFERENCE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getInitialString())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INITIAL_STRING] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getInitialTime())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INITIAL_TIME] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getInitialUri())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INITIAL_URI] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getItem())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_ITEM, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getLinkId())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_LINK_ID] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getMaxLength())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_MAX_LENGTH] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getOption())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_OPTION, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getOptions())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_OPTIONS] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getPrefix())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_PREFIX] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getReadOnly())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_READ_ONLY] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getRepeats())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REPEATS] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getRequired())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REQUIRED] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getText())) {
@@ -2241,15 +1942,121 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 $errs[self::FIELD_TYPE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CODE])) {
-            $v = $this->getCode();
-            foreach($validationRules[self::FIELD_CODE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_CODE, $rule, $constraint, $v);
+        if ([] !== ($vs = $this->getEnableWhen())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_ENABLE_WHEN, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getRequired())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_REQUIRED] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRepeats())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_REPEATS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getReadOnly())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_READ_ONLY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getMaxLength())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_MAX_LENGTH] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getOptions())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_OPTIONS] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getOption())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_OPTION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getInitialBoolean())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INITIAL_BOOLEAN] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getInitialDecimal())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INITIAL_DECIMAL] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getInitialInteger())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INITIAL_INTEGER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getInitialDate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INITIAL_DATE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getInitialDateTime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INITIAL_DATE_TIME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getInitialTime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INITIAL_TIME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getInitialString())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INITIAL_STRING] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getInitialUri())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INITIAL_URI] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getInitialAttachment())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INITIAL_ATTACHMENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getInitialCoding())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INITIAL_CODING] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getInitialQuantity())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INITIAL_QUANTITY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getInitialReference())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INITIAL_REFERENCE] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getItem())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_ITEM, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_LINK_ID])) {
+            $v = $this->getLinkId();
+            foreach($validationRules[self::FIELD_LINK_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_LINK_ID, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CODE])) {
-                        $errs[self::FIELD_CODE] = [];
+                    if (!isset($errs[self::FIELD_LINK_ID])) {
+                        $errs[self::FIELD_LINK_ID] = [];
                     }
-                    $errs[self::FIELD_CODE][$rule] = $err;
+                    $errs[self::FIELD_LINK_ID][$rule] = $err;
                 }
             }
         }
@@ -2265,6 +2072,54 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_CODE])) {
+            $v = $this->getCode();
+            foreach($validationRules[self::FIELD_CODE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_CODE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CODE])) {
+                        $errs[self::FIELD_CODE] = [];
+                    }
+                    $errs[self::FIELD_CODE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PREFIX])) {
+            $v = $this->getPrefix();
+            foreach($validationRules[self::FIELD_PREFIX] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_PREFIX, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PREFIX])) {
+                        $errs[self::FIELD_PREFIX] = [];
+                    }
+                    $errs[self::FIELD_PREFIX][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
+                    }
+                    $errs[self::FIELD_TYPE][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_ENABLE_WHEN])) {
             $v = $this->getEnableWhen();
             foreach($validationRules[self::FIELD_ENABLE_WHEN] as $rule => $constraint) {
@@ -2277,15 +2132,75 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_INITIAL_ATTACHMENT])) {
-            $v = $this->getInitialAttachment();
-            foreach($validationRules[self::FIELD_INITIAL_ATTACHMENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_ATTACHMENT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_REQUIRED])) {
+            $v = $this->getRequired();
+            foreach($validationRules[self::FIELD_REQUIRED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_REQUIRED, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INITIAL_ATTACHMENT])) {
-                        $errs[self::FIELD_INITIAL_ATTACHMENT] = [];
+                    if (!isset($errs[self::FIELD_REQUIRED])) {
+                        $errs[self::FIELD_REQUIRED] = [];
                     }
-                    $errs[self::FIELD_INITIAL_ATTACHMENT][$rule] = $err;
+                    $errs[self::FIELD_REQUIRED][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_REPEATS])) {
+            $v = $this->getRepeats();
+            foreach($validationRules[self::FIELD_REPEATS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_REPEATS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_REPEATS])) {
+                        $errs[self::FIELD_REPEATS] = [];
+                    }
+                    $errs[self::FIELD_REPEATS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_READ_ONLY])) {
+            $v = $this->getReadOnly();
+            foreach($validationRules[self::FIELD_READ_ONLY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_READ_ONLY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_READ_ONLY])) {
+                        $errs[self::FIELD_READ_ONLY] = [];
+                    }
+                    $errs[self::FIELD_READ_ONLY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MAX_LENGTH])) {
+            $v = $this->getMaxLength();
+            foreach($validationRules[self::FIELD_MAX_LENGTH] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_MAX_LENGTH, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MAX_LENGTH])) {
+                        $errs[self::FIELD_MAX_LENGTH] = [];
+                    }
+                    $errs[self::FIELD_MAX_LENGTH][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_OPTIONS])) {
+            $v = $this->getOptions();
+            foreach($validationRules[self::FIELD_OPTIONS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_OPTIONS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OPTIONS])) {
+                        $errs[self::FIELD_OPTIONS] = [];
+                    }
+                    $errs[self::FIELD_OPTIONS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_OPTION])) {
+            $v = $this->getOption();
+            foreach($validationRules[self::FIELD_OPTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_OPTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OPTION])) {
+                        $errs[self::FIELD_OPTION] = [];
+                    }
+                    $errs[self::FIELD_OPTION][$rule] = $err;
                 }
             }
         }
@@ -2298,42 +2213,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                         $errs[self::FIELD_INITIAL_BOOLEAN] = [];
                     }
                     $errs[self::FIELD_INITIAL_BOOLEAN][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INITIAL_CODING])) {
-            $v = $this->getInitialCoding();
-            foreach($validationRules[self::FIELD_INITIAL_CODING] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_CODING, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INITIAL_CODING])) {
-                        $errs[self::FIELD_INITIAL_CODING] = [];
-                    }
-                    $errs[self::FIELD_INITIAL_CODING][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INITIAL_DATE])) {
-            $v = $this->getInitialDate();
-            foreach($validationRules[self::FIELD_INITIAL_DATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_DATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INITIAL_DATE])) {
-                        $errs[self::FIELD_INITIAL_DATE] = [];
-                    }
-                    $errs[self::FIELD_INITIAL_DATE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INITIAL_DATE_TIME])) {
-            $v = $this->getInitialDateTime();
-            foreach($validationRules[self::FIELD_INITIAL_DATE_TIME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_DATE_TIME, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INITIAL_DATE_TIME])) {
-                        $errs[self::FIELD_INITIAL_DATE_TIME] = [];
-                    }
-                    $errs[self::FIELD_INITIAL_DATE_TIME][$rule] = $err;
                 }
             }
         }
@@ -2361,6 +2240,90 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_INITIAL_DATE])) {
+            $v = $this->getInitialDate();
+            foreach($validationRules[self::FIELD_INITIAL_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INITIAL_DATE])) {
+                        $errs[self::FIELD_INITIAL_DATE] = [];
+                    }
+                    $errs[self::FIELD_INITIAL_DATE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INITIAL_DATE_TIME])) {
+            $v = $this->getInitialDateTime();
+            foreach($validationRules[self::FIELD_INITIAL_DATE_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_DATE_TIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INITIAL_DATE_TIME])) {
+                        $errs[self::FIELD_INITIAL_DATE_TIME] = [];
+                    }
+                    $errs[self::FIELD_INITIAL_DATE_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INITIAL_TIME])) {
+            $v = $this->getInitialTime();
+            foreach($validationRules[self::FIELD_INITIAL_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_TIME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INITIAL_TIME])) {
+                        $errs[self::FIELD_INITIAL_TIME] = [];
+                    }
+                    $errs[self::FIELD_INITIAL_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INITIAL_STRING])) {
+            $v = $this->getInitialString();
+            foreach($validationRules[self::FIELD_INITIAL_STRING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_STRING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INITIAL_STRING])) {
+                        $errs[self::FIELD_INITIAL_STRING] = [];
+                    }
+                    $errs[self::FIELD_INITIAL_STRING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INITIAL_URI])) {
+            $v = $this->getInitialUri();
+            foreach($validationRules[self::FIELD_INITIAL_URI] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_URI, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INITIAL_URI])) {
+                        $errs[self::FIELD_INITIAL_URI] = [];
+                    }
+                    $errs[self::FIELD_INITIAL_URI][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INITIAL_ATTACHMENT])) {
+            $v = $this->getInitialAttachment();
+            foreach($validationRules[self::FIELD_INITIAL_ATTACHMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_ATTACHMENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INITIAL_ATTACHMENT])) {
+                        $errs[self::FIELD_INITIAL_ATTACHMENT] = [];
+                    }
+                    $errs[self::FIELD_INITIAL_ATTACHMENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INITIAL_CODING])) {
+            $v = $this->getInitialCoding();
+            foreach($validationRules[self::FIELD_INITIAL_CODING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_CODING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INITIAL_CODING])) {
+                        $errs[self::FIELD_INITIAL_CODING] = [];
+                    }
+                    $errs[self::FIELD_INITIAL_CODING][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_INITIAL_QUANTITY])) {
             $v = $this->getInitialQuantity();
             foreach($validationRules[self::FIELD_INITIAL_QUANTITY] as $rule => $constraint) {
@@ -2385,42 +2348,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_INITIAL_STRING])) {
-            $v = $this->getInitialString();
-            foreach($validationRules[self::FIELD_INITIAL_STRING] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_STRING, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INITIAL_STRING])) {
-                        $errs[self::FIELD_INITIAL_STRING] = [];
-                    }
-                    $errs[self::FIELD_INITIAL_STRING][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INITIAL_TIME])) {
-            $v = $this->getInitialTime();
-            foreach($validationRules[self::FIELD_INITIAL_TIME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_TIME, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INITIAL_TIME])) {
-                        $errs[self::FIELD_INITIAL_TIME] = [];
-                    }
-                    $errs[self::FIELD_INITIAL_TIME][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INITIAL_URI])) {
-            $v = $this->getInitialUri();
-            foreach($validationRules[self::FIELD_INITIAL_URI] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_INITIAL_URI, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INITIAL_URI])) {
-                        $errs[self::FIELD_INITIAL_URI] = [];
-                    }
-                    $errs[self::FIELD_INITIAL_URI][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ITEM])) {
             $v = $this->getItem();
             foreach($validationRules[self::FIELD_ITEM] as $rule => $constraint) {
@@ -2430,126 +2357,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
                         $errs[self::FIELD_ITEM] = [];
                     }
                     $errs[self::FIELD_ITEM][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_LINK_ID])) {
-            $v = $this->getLinkId();
-            foreach($validationRules[self::FIELD_LINK_ID] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_LINK_ID, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_LINK_ID])) {
-                        $errs[self::FIELD_LINK_ID] = [];
-                    }
-                    $errs[self::FIELD_LINK_ID][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_MAX_LENGTH])) {
-            $v = $this->getMaxLength();
-            foreach($validationRules[self::FIELD_MAX_LENGTH] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_MAX_LENGTH, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MAX_LENGTH])) {
-                        $errs[self::FIELD_MAX_LENGTH] = [];
-                    }
-                    $errs[self::FIELD_MAX_LENGTH][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_OPTION])) {
-            $v = $this->getOption();
-            foreach($validationRules[self::FIELD_OPTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_OPTION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_OPTION])) {
-                        $errs[self::FIELD_OPTION] = [];
-                    }
-                    $errs[self::FIELD_OPTION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_OPTIONS])) {
-            $v = $this->getOptions();
-            foreach($validationRules[self::FIELD_OPTIONS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_OPTIONS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_OPTIONS])) {
-                        $errs[self::FIELD_OPTIONS] = [];
-                    }
-                    $errs[self::FIELD_OPTIONS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PREFIX])) {
-            $v = $this->getPrefix();
-            foreach($validationRules[self::FIELD_PREFIX] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_PREFIX, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PREFIX])) {
-                        $errs[self::FIELD_PREFIX] = [];
-                    }
-                    $errs[self::FIELD_PREFIX][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_READ_ONLY])) {
-            $v = $this->getReadOnly();
-            foreach($validationRules[self::FIELD_READ_ONLY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_READ_ONLY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_READ_ONLY])) {
-                        $errs[self::FIELD_READ_ONLY] = [];
-                    }
-                    $errs[self::FIELD_READ_ONLY][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_REPEATS])) {
-            $v = $this->getRepeats();
-            foreach($validationRules[self::FIELD_REPEATS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_REPEATS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REPEATS])) {
-                        $errs[self::FIELD_REPEATS] = [];
-                    }
-                    $errs[self::FIELD_REPEATS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_REQUIRED])) {
-            $v = $this->getRequired();
-            foreach($validationRules[self::FIELD_REQUIRED] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_REQUIRED, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REQUIRED])) {
-                        $errs[self::FIELD_REQUIRED] = [];
-                    }
-                    $errs[self::FIELD_REQUIRED][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_QUESTIONNAIRE_DOT_ITEM, self::FIELD_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
-                    }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
                 }
             }
         }
@@ -2593,595 +2400,708 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRQuestionnaireItem::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRQuestionnaireItem::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRQuestionnaireItem;
-        } elseif (!is_object($type) || !($type instanceof FHIRQuestionnaireItem)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRQuestionnaireItem)) {
             throw new \RuntimeException(sprintf(
-                'FHIRQuestionnaireItem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_LINK_ID === $childName) {
+                $type->setLinkId(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_DEFINITION === $childName) {
+                $type->setDefinition(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CODE === $childName) {
+                $type->addCode(FHIRCoding::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PREFIX === $childName) {
+                $type->setPrefix(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_TEXT === $childName) {
+                $type->setText(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_TYPE === $childName) {
+                $type->setType(FHIRQuestionnaireItemType::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ENABLE_WHEN === $childName) {
+                $type->addEnableWhen(FHIRQuestionnaireEnableWhen::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_REQUIRED === $childName) {
+                $type->setRequired(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_REPEATS === $childName) {
+                $type->setRepeats(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_READ_ONLY === $childName) {
+                $type->setReadOnly(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MAX_LENGTH === $childName) {
+                $type->setMaxLength(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_OPTIONS === $childName) {
+                $type->setOptions(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_OPTION === $childName) {
+                $type->addOption(FHIRQuestionnaireOption::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_INITIAL_BOOLEAN === $childName) {
+                $type->setInitialBoolean(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_INITIAL_DECIMAL === $childName) {
+                $type->setInitialDecimal(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_INITIAL_INTEGER === $childName) {
+                $type->setInitialInteger(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_INITIAL_DATE === $childName) {
+                $type->setInitialDate(FHIRDate::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_INITIAL_DATE_TIME === $childName) {
+                $type->setInitialDateTime(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_INITIAL_TIME === $childName) {
+                $type->setInitialTime(FHIRTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_INITIAL_STRING === $childName) {
+                $type->setInitialString(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_INITIAL_URI === $childName) {
+                $type->setInitialUri(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_INITIAL_ATTACHMENT === $childName) {
+                $type->setInitialAttachment(FHIRAttachment::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_INITIAL_CODING === $childName) {
+                $type->setInitialCoding(FHIRCoding::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_INITIAL_QUANTITY === $childName) {
+                $type->setInitialQuantity(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_INITIAL_REFERENCE === $childName) {
+                $type->setInitialReference(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ITEM === $childName) {
+                $type->addItem(FHIRQuestionnaireItem::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->code)) {
-            foreach($children->code as $child) {
-                $type->addCode(FHIRCoding::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->definition)) {
-            $type->setDefinition(FHIRUri::xmlUnserialize($children->definition));
-        }
-        if (isset($attributes->definition)) {
-            $pt = $type->getDefinition();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->definition);
-            } else {
-                $type->setDefinition((string)$attributes->definition);
-            }
-        }
-        if (isset($children->enableWhen)) {
-            foreach($children->enableWhen as $child) {
-                $type->addEnableWhen(FHIRQuestionnaireEnableWhen::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->initialAttachment)) {
-            $type->setInitialAttachment(FHIRAttachment::xmlUnserialize($children->initialAttachment));
-        }
-        if (isset($children->initialBoolean)) {
-            $type->setInitialBoolean(FHIRBoolean::xmlUnserialize($children->initialBoolean));
-        }
-        if (isset($attributes->initialBoolean)) {
-            $pt = $type->getInitialBoolean();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->initialBoolean);
-            } else {
-                $type->setInitialBoolean((string)$attributes->initialBoolean);
-            }
-        }
-        if (isset($children->initialCoding)) {
-            $type->setInitialCoding(FHIRCoding::xmlUnserialize($children->initialCoding));
-        }
-        if (isset($children->initialDate)) {
-            $type->setInitialDate(FHIRDate::xmlUnserialize($children->initialDate));
-        }
-        if (isset($attributes->initialDate)) {
-            $pt = $type->getInitialDate();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->initialDate);
-            } else {
-                $type->setInitialDate((string)$attributes->initialDate);
-            }
-        }
-        if (isset($children->initialDateTime)) {
-            $type->setInitialDateTime(FHIRDateTime::xmlUnserialize($children->initialDateTime));
-        }
-        if (isset($attributes->initialDateTime)) {
-            $pt = $type->getInitialDateTime();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->initialDateTime);
-            } else {
-                $type->setInitialDateTime((string)$attributes->initialDateTime);
-            }
-        }
-        if (isset($children->initialDecimal)) {
-            $type->setInitialDecimal(FHIRDecimal::xmlUnserialize($children->initialDecimal));
-        }
-        if (isset($attributes->initialDecimal)) {
-            $pt = $type->getInitialDecimal();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->initialDecimal);
-            } else {
-                $type->setInitialDecimal((string)$attributes->initialDecimal);
-            }
-        }
-        if (isset($children->initialInteger)) {
-            $type->setInitialInteger(FHIRInteger::xmlUnserialize($children->initialInteger));
-        }
-        if (isset($attributes->initialInteger)) {
-            $pt = $type->getInitialInteger();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->initialInteger);
-            } else {
-                $type->setInitialInteger((string)$attributes->initialInteger);
-            }
-        }
-        if (isset($children->initialQuantity)) {
-            $type->setInitialQuantity(FHIRQuantity::xmlUnserialize($children->initialQuantity));
-        }
-        if (isset($children->initialReference)) {
-            $type->setInitialReference(FHIRReference::xmlUnserialize($children->initialReference));
-        }
-        if (isset($children->initialString)) {
-            $type->setInitialString(FHIRString::xmlUnserialize($children->initialString));
-        }
-        if (isset($attributes->initialString)) {
-            $pt = $type->getInitialString();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->initialString);
-            } else {
-                $type->setInitialString((string)$attributes->initialString);
-            }
-        }
-        if (isset($children->initialTime)) {
-            $type->setInitialTime(FHIRTime::xmlUnserialize($children->initialTime));
-        }
-        if (isset($attributes->initialTime)) {
-            $pt = $type->getInitialTime();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->initialTime);
-            } else {
-                $type->setInitialTime((string)$attributes->initialTime);
-            }
-        }
-        if (isset($children->initialUri)) {
-            $type->setInitialUri(FHIRUri::xmlUnserialize($children->initialUri));
-        }
-        if (isset($attributes->initialUri)) {
-            $pt = $type->getInitialUri();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->initialUri);
-            } else {
-                $type->setInitialUri((string)$attributes->initialUri);
-            }
-        }
-        if (isset($children->item)) {
-            foreach($children->item as $child) {
-                $type->addItem(FHIRQuestionnaireItem::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->linkId)) {
-            $type->setLinkId(FHIRString::xmlUnserialize($children->linkId));
-        }
-        if (isset($attributes->linkId)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_LINK_ID])) {
             $pt = $type->getLinkId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->linkId);
+                $pt->setValue((string)$attributes[self::FIELD_LINK_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setLinkId((string)$attributes->linkId);
+                $type->setLinkId((string)$attributes[self::FIELD_LINK_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->maxLength)) {
-            $type->setMaxLength(FHIRInteger::xmlUnserialize($children->maxLength));
-        }
-        if (isset($attributes->maxLength)) {
-            $pt = $type->getMaxLength();
+        if (isset($attributes[self::FIELD_DEFINITION])) {
+            $pt = $type->getDefinition();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->maxLength);
+                $pt->setValue((string)$attributes[self::FIELD_DEFINITION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setMaxLength((string)$attributes->maxLength);
+                $type->setDefinition((string)$attributes[self::FIELD_DEFINITION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->option)) {
-            foreach($children->option as $child) {
-                $type->addOption(FHIRQuestionnaireOption::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->options)) {
-            $type->setOptions(FHIRReference::xmlUnserialize($children->options));
-        }
-        if (isset($children->prefix)) {
-            $type->setPrefix(FHIRString::xmlUnserialize($children->prefix));
-        }
-        if (isset($attributes->prefix)) {
+        if (isset($attributes[self::FIELD_PREFIX])) {
             $pt = $type->getPrefix();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->prefix);
+                $pt->setValue((string)$attributes[self::FIELD_PREFIX], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setPrefix((string)$attributes->prefix);
+                $type->setPrefix((string)$attributes[self::FIELD_PREFIX], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->readOnly)) {
-            $type->setReadOnly(FHIRBoolean::xmlUnserialize($children->readOnly));
-        }
-        if (isset($attributes->readOnly)) {
-            $pt = $type->getReadOnly();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->readOnly);
-            } else {
-                $type->setReadOnly((string)$attributes->readOnly);
-            }
-        }
-        if (isset($children->repeats)) {
-            $type->setRepeats(FHIRBoolean::xmlUnserialize($children->repeats));
-        }
-        if (isset($attributes->repeats)) {
-            $pt = $type->getRepeats();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->repeats);
-            } else {
-                $type->setRepeats((string)$attributes->repeats);
-            }
-        }
-        if (isset($children->required)) {
-            $type->setRequired(FHIRBoolean::xmlUnserialize($children->required));
-        }
-        if (isset($attributes->required)) {
-            $pt = $type->getRequired();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->required);
-            } else {
-                $type->setRequired((string)$attributes->required);
-            }
-        }
-        if (isset($children->text)) {
-            $type->setText(FHIRString::xmlUnserialize($children->text));
-        }
-        if (isset($attributes->text)) {
+        if (isset($attributes[self::FIELD_TEXT])) {
             $pt = $type->getText();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->text);
+                $pt->setValue((string)$attributes[self::FIELD_TEXT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setText((string)$attributes->text);
+                $type->setText((string)$attributes[self::FIELD_TEXT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->type)) {
-            $type->setType(FHIRQuestionnaireItemType::xmlUnserialize($children->type));
+        if (isset($attributes[self::FIELD_REQUIRED])) {
+            $pt = $type->getRequired();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_REQUIRED], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setRequired((string)$attributes[self::FIELD_REQUIRED], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_REPEATS])) {
+            $pt = $type->getRepeats();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_REPEATS], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setRepeats((string)$attributes[self::FIELD_REPEATS], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_READ_ONLY])) {
+            $pt = $type->getReadOnly();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_READ_ONLY], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setReadOnly((string)$attributes[self::FIELD_READ_ONLY], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_MAX_LENGTH])) {
+            $pt = $type->getMaxLength();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_MAX_LENGTH], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setMaxLength((string)$attributes[self::FIELD_MAX_LENGTH], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_INITIAL_BOOLEAN])) {
+            $pt = $type->getInitialBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_INITIAL_BOOLEAN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setInitialBoolean((string)$attributes[self::FIELD_INITIAL_BOOLEAN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_INITIAL_DECIMAL])) {
+            $pt = $type->getInitialDecimal();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_INITIAL_DECIMAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setInitialDecimal((string)$attributes[self::FIELD_INITIAL_DECIMAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_INITIAL_INTEGER])) {
+            $pt = $type->getInitialInteger();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_INITIAL_INTEGER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setInitialInteger((string)$attributes[self::FIELD_INITIAL_INTEGER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_INITIAL_DATE])) {
+            $pt = $type->getInitialDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_INITIAL_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setInitialDate((string)$attributes[self::FIELD_INITIAL_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_INITIAL_DATE_TIME])) {
+            $pt = $type->getInitialDateTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_INITIAL_DATE_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setInitialDateTime((string)$attributes[self::FIELD_INITIAL_DATE_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_INITIAL_TIME])) {
+            $pt = $type->getInitialTime();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_INITIAL_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setInitialTime((string)$attributes[self::FIELD_INITIAL_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_INITIAL_STRING])) {
+            $pt = $type->getInitialString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_INITIAL_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setInitialString((string)$attributes[self::FIELD_INITIAL_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_INITIAL_URI])) {
+            $pt = $type->getInitialUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_INITIAL_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setInitialUri((string)$attributes[self::FIELD_INITIAL_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getCode())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getDefinition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DEFINITION, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if ([] !== ($vs = $this->getEnableWhen())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ENABLE_WHEN, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getInitialAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'QuestionnaireItem', $this->_getSourceXmlns());
         }
-        if (null !== ($v = $this->getInitialBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_LINK_ID] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getLinkId())) {
+            $xw->writeAttribute(self::FIELD_LINK_ID, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getInitialCoding())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL_CODING, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DEFINITION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDefinition())) {
+            $xw->writeAttribute(self::FIELD_DEFINITION, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getInitialDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL_DATE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PREFIX] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPrefix())) {
+            $xw->writeAttribute(self::FIELD_PREFIX, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getInitialDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TEXT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getText())) {
+            $xw->writeAttribute(self::FIELD_TEXT, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getInitialDecimal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL_DECIMAL, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_REQUIRED] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRequired())) {
+            $xw->writeAttribute(self::FIELD_REQUIRED, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getInitialInteger())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL_INTEGER, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_REPEATS] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getRepeats())) {
+            $xw->writeAttribute(self::FIELD_REPEATS, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getInitialQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_READ_ONLY] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getReadOnly())) {
+            $xw->writeAttribute(self::FIELD_READ_ONLY, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getInitialReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_MAX_LENGTH] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getMaxLength())) {
+            $xw->writeAttribute(self::FIELD_MAX_LENGTH, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getInitialString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL_STRING, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_BOOLEAN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInitialBoolean())) {
+            $xw->writeAttribute(self::FIELD_INITIAL_BOOLEAN, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getInitialTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL_TIME, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_DECIMAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInitialDecimal())) {
+            $xw->writeAttribute(self::FIELD_INITIAL_DECIMAL, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getInitialUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL_URI, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_INTEGER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInitialInteger())) {
+            $xw->writeAttribute(self::FIELD_INITIAL_INTEGER, $v->getValue()?->getFormattedValue());
         }
-        if ([] !== ($vs = $this->getItem())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInitialDate())) {
+            $xw->writeAttribute(self::FIELD_INITIAL_DATE, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getLinkId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LINK_ID, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_DATE_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInitialDateTime())) {
+            $xw->writeAttribute(self::FIELD_INITIAL_DATE_TIME, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getMaxLength())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_LENGTH, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInitialTime())) {
+            $xw->writeAttribute(self::FIELD_INITIAL_TIME, $v->getValue()?->getFormattedValue());
         }
-        if ([] !== ($vs = $this->getOption())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OPTION, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInitialString())) {
+            $xw->writeAttribute(self::FIELD_INITIAL_STRING, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getOptions())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OPTIONS, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInitialUri())) {
+            $xw->writeAttribute(self::FIELD_INITIAL_URI, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getPrefix())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PREFIX, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_LINK_ID] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getLinkId())) {
+            $xw->startElement(self::FIELD_LINK_ID);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getReadOnly())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_READ_ONLY, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DEFINITION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDefinition())) {
+            $xw->startElement(self::FIELD_DEFINITION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getRepeats())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REPEATS, null, $v->_getFHIRXMLNamespace()));
+        foreach ($this->getCode() as $v) {
+            $xw->startElement(self::FIELD_CODE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getRequired())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUIRED, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PREFIX] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPrefix())) {
+            $xw->startElement(self::FIELD_PREFIX);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getText())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TEXT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getText())) {
+            $xw->startElement(self::FIELD_TEXT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        foreach ($this->getEnableWhen() as $v) {
+            $xw->startElement(self::FIELD_ENABLE_WHEN);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_REQUIRED] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRequired())) {
+            $xw->startElement(self::FIELD_REQUIRED);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_REPEATS] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getRepeats())) {
+            $xw->startElement(self::FIELD_REPEATS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_READ_ONLY] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getReadOnly())) {
+            $xw->startElement(self::FIELD_READ_ONLY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_MAX_LENGTH] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getMaxLength())) {
+            $xw->startElement(self::FIELD_MAX_LENGTH);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getOptions())) {
+            $xw->startElement(self::FIELD_OPTIONS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getOption() as $v) {
+            $xw->startElement(self::FIELD_OPTION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_BOOLEAN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInitialBoolean())) {
+            $xw->startElement(self::FIELD_INITIAL_BOOLEAN);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_DECIMAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInitialDecimal())) {
+            $xw->startElement(self::FIELD_INITIAL_DECIMAL);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_INTEGER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInitialInteger())) {
+            $xw->startElement(self::FIELD_INITIAL_INTEGER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInitialDate())) {
+            $xw->startElement(self::FIELD_INITIAL_DATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_DATE_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInitialDateTime())) {
+            $xw->startElement(self::FIELD_INITIAL_DATE_TIME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInitialTime())) {
+            $xw->startElement(self::FIELD_INITIAL_TIME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInitialString())) {
+            $xw->startElement(self::FIELD_INITIAL_STRING);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInitialUri())) {
+            $xw->startElement(self::FIELD_INITIAL_URI);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getInitialAttachment())) {
+            $xw->startElement(self::FIELD_INITIAL_ATTACHMENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getInitialCoding())) {
+            $xw->startElement(self::FIELD_INITIAL_CODING);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getInitialQuantity())) {
+            $xw->startElement(self::FIELD_INITIAL_QUANTITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getInitialReference())) {
+            $xw->startElement(self::FIELD_INITIAL_REFERENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getItem() as $v) {
+            $xw->startElement(self::FIELD_ITEM);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getCode())) {
-            $a[self::FIELD_CODE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CODE][] = $v;
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getLinkId())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_LINK_ID} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_LINK_ID_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getDefinition())) {
-            $a[self::FIELD_DEFINITION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_DEFINITION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DEFINITION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRUri::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DEFINITION_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->getEnableWhen())) {
-            $a[self::FIELD_ENABLE_WHEN] = [];
+        if ([] !== ($vs = $this->getCode())) {
+            $out->{self::FIELD_CODE} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ENABLE_WHEN][] = $v;
+                $out->{self::FIELD_CODE}[] = $v;
             }
-        }
-        if (null !== ($v = $this->getInitialAttachment())) {
-            $a[self::FIELD_INITIAL_ATTACHMENT] = $v;
-        }
-        if (null !== ($v = $this->getInitialBoolean())) {
-            $a[self::FIELD_INITIAL_BOOLEAN] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_INITIAL_BOOLEAN_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getInitialCoding())) {
-            $a[self::FIELD_INITIAL_CODING] = $v;
-        }
-        if (null !== ($v = $this->getInitialDate())) {
-            $a[self::FIELD_INITIAL_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDate::FIELD_VALUE]);
-                $a[self::FIELD_INITIAL_DATE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getInitialDateTime())) {
-            $a[self::FIELD_INITIAL_DATE_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_INITIAL_DATE_TIME_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getInitialDecimal())) {
-            $a[self::FIELD_INITIAL_DECIMAL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_INITIAL_DECIMAL_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getInitialInteger())) {
-            $a[self::FIELD_INITIAL_INTEGER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_INITIAL_INTEGER_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getInitialQuantity())) {
-            $a[self::FIELD_INITIAL_QUANTITY] = $v;
-        }
-        if (null !== ($v = $this->getInitialReference())) {
-            $a[self::FIELD_INITIAL_REFERENCE] = $v;
-        }
-        if (null !== ($v = $this->getInitialString())) {
-            $a[self::FIELD_INITIAL_STRING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_INITIAL_STRING_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getInitialTime())) {
-            $a[self::FIELD_INITIAL_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRTime::FIELD_VALUE]);
-                $a[self::FIELD_INITIAL_TIME_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getInitialUri())) {
-            $a[self::FIELD_INITIAL_URI] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_INITIAL_URI_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getItem())) {
-            $a[self::FIELD_ITEM] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ITEM][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getLinkId())) {
-            $a[self::FIELD_LINK_ID] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_LINK_ID_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getMaxLength())) {
-            $a[self::FIELD_MAX_LENGTH] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_MAX_LENGTH_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getOption())) {
-            $a[self::FIELD_OPTION] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_OPTION][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getOptions())) {
-            $a[self::FIELD_OPTIONS] = $v;
         }
         if (null !== ($v = $this->getPrefix())) {
-            $a[self::FIELD_PREFIX] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_PREFIX_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PREFIX} = $val;
             }
-        }
-        if (null !== ($v = $this->getReadOnly())) {
-            $a[self::FIELD_READ_ONLY] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_READ_ONLY_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getRepeats())) {
-            $a[self::FIELD_REPEATS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_REPEATS_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getRequired())) {
-            $a[self::FIELD_REQUIRED] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_REQUIRED_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PREFIX_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getText())) {
-            $a[self::FIELD_TEXT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_TEXT_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_TEXT} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_TEXT_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRQuestionnaireItemType::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRQuestionnaireItemType::FIELD_VALUE]);
-                $a[self::FIELD_TYPE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_TYPE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRQuestionnaireItemType::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_TYPE_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getEnableWhen())) {
+            $out->{self::FIELD_ENABLE_WHEN} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_ENABLE_WHEN}[] = $v;
+            }
         }
-        return $a;
-    }
+        if (null !== ($v = $this->getRequired())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_REQUIRED} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_REQUIRED_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getRepeats())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_REPEATS} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_REPEATS_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getReadOnly())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_READ_ONLY} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_READ_ONLY_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getMaxLength())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_MAX_LENGTH} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInteger::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_MAX_LENGTH_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getOptions())) {
+            $out->{self::FIELD_OPTIONS} = $v;
+        }
+        if ([] !== ($vs = $this->getOption())) {
+            $out->{self::FIELD_OPTION} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_OPTION}[] = $v;
+            }
+        }
+        if (null !== ($v = $this->getInitialBoolean())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_INITIAL_BOOLEAN} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_INITIAL_BOOLEAN_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getInitialDecimal())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_INITIAL_DECIMAL} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDecimal::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_INITIAL_DECIMAL_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getInitialInteger())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_INITIAL_INTEGER} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInteger::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_INITIAL_INTEGER_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getInitialDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_INITIAL_DATE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDate::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_INITIAL_DATE_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getInitialDateTime())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_INITIAL_DATE_TIME} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_INITIAL_DATE_TIME_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getInitialTime())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_INITIAL_TIME} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_INITIAL_TIME_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getInitialString())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_INITIAL_STRING} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_INITIAL_STRING_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getInitialUri())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_INITIAL_URI} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRUri::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_INITIAL_URI_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getInitialAttachment())) {
+            $out->{self::FIELD_INITIAL_ATTACHMENT} = $v;
+        }
+        if (null !== ($v = $this->getInitialCoding())) {
+            $out->{self::FIELD_INITIAL_CODING} = $v;
+        }
+        if (null !== ($v = $this->getInitialQuantity())) {
+            $out->{self::FIELD_INITIAL_QUANTITY} = $v;
+        }
+        if (null !== ($v = $this->getInitialReference())) {
+            $out->{self::FIELD_INITIAL_REFERENCE} = $v;
+        }
+        if ([] !== ($vs = $this->getItem())) {
+            $out->{self::FIELD_ITEM} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_ITEM}[] = $v;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,11 +64,17 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Measurements and simple assertions made about a patient, device or other
@@ -81,29 +87,57 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OBSERVATION_DOT_REFERENCE_RANGE;
-    const FIELD_AGE = 'age';
-    const FIELD_APPLIES_TO = 'appliesTo';
-    const FIELD_HIGH = 'high';
+
     const FIELD_LOW = 'low';
+    const FIELD_HIGH = 'high';
+    const FIELD_TYPE = 'type';
+    const FIELD_APPLIES_TO = 'appliesTo';
+    const FIELD_AGE = 'age';
     const FIELD_TEXT = 'text';
     const FIELD_TEXT_EXT = '_text';
-    const FIELD_TYPE = 'type';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
-     * A set of ordered Quantities defined by a low and high limit.
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The age at which this reference range is applicable. This is a neonatal age
-     * (e.g. number of weeks at term) if the meaning says so.
+     * The value of the low bound of the reference range. The low bound of the
+     * reference range endpoint is inclusive of the value (e.g. reference range is >=5
+     * - <=9). If the low bound is omitted, it is assumed to be meaningless (e.g.
+     * reference range is <=2.3).
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    protected $age = null;
-
+    protected null|FHIRQuantity $low = null;
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the high bound of the reference range. The high bound of the
+     * reference range endpoint is inclusive of the value (e.g. reference range is >=5
+     * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
+     * reference range is >= 2.3).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    protected null|FHIRQuantity $high = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Codes to indicate the what part of the targeted reference population it applies
+     * to. For example, the normal or therapeutic range.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $type = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -118,40 +152,18 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $appliesTo = [];
-
+    protected null|array $appliesTo = [];
     /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
+     * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The value of the high bound of the reference range. The high bound of the
-     * reference range endpoint is inclusive of the value (e.g. reference range is >=5
-     * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
-     * reference range is >= 2.3).
+     * The age at which this reference range is applicable. This is a neonatal age
+     * (e.g. number of weeks at term) if the meaning says so.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
-    protected $high = null;
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the low bound of the reference range. The low bound of the
-     * reference range endpoint is inclusive of the value (e.g. reference range is >=5
-     * - <=9). If the low bound is omitted, it is assumed to be meaningless (e.g.
-     * reference range is <=2.3).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    protected $low = null;
-
+    protected null|FHIRRange $age = null;
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -163,93 +175,73 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $text = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Codes to indicate the what part of the targeted reference population it applies
-     * to. For example, the normal or therapeutic range.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $type = null;
+    protected null|FHIRString $text = null;
 
     /**
      * Validation map for fields in type Observation.ReferenceRange
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRObservationReferenceRange Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRObservationReferenceRange::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_AGE])) {
-            if ($data[self::FIELD_AGE] instanceof FHIRRange) {
-                $this->setAge($data[self::FIELD_AGE]);
-            } else {
-                $this->setAge(new FHIRRange($data[self::FIELD_AGE]));
-            }
-        }
-        if (isset($data[self::FIELD_APPLIES_TO])) {
-            if (is_array($data[self::FIELD_APPLIES_TO])) {
-                foreach($data[self::FIELD_APPLIES_TO] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addAppliesTo($v);
-                    } else {
-                        $this->addAppliesTo(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_APPLIES_TO] instanceof FHIRCodeableConcept) {
-                $this->addAppliesTo($data[self::FIELD_APPLIES_TO]);
-            } else {
-                $this->addAppliesTo(new FHIRCodeableConcept($data[self::FIELD_APPLIES_TO]));
-            }
-        }
-        if (isset($data[self::FIELD_HIGH])) {
-            if ($data[self::FIELD_HIGH] instanceof FHIRQuantity) {
-                $this->setHigh($data[self::FIELD_HIGH]);
-            } else {
-                $this->setHigh(new FHIRQuantity($data[self::FIELD_HIGH]));
-            }
-        }
-        if (isset($data[self::FIELD_LOW])) {
+        if (array_key_exists(self::FIELD_LOW, $data)) {
             if ($data[self::FIELD_LOW] instanceof FHIRQuantity) {
                 $this->setLow($data[self::FIELD_LOW]);
             } else {
                 $this->setLow(new FHIRQuantity($data[self::FIELD_LOW]));
             }
         }
-        if (isset($data[self::FIELD_TEXT]) || isset($data[self::FIELD_TEXT_EXT])) {
-            if (isset($data[self::FIELD_TEXT])) {
-                $value = $data[self::FIELD_TEXT];
+        if (array_key_exists(self::FIELD_HIGH, $data)) {
+            if ($data[self::FIELD_HIGH] instanceof FHIRQuantity) {
+                $this->setHigh($data[self::FIELD_HIGH]);
             } else {
-                $value = null;
+                $this->setHigh(new FHIRQuantity($data[self::FIELD_HIGH]));
             }
-            if (isset($data[self::FIELD_TEXT_EXT]) && is_array($data[self::FIELD_TEXT_EXT])) {
-                $ext = $data[self::FIELD_TEXT_EXT];
+        }
+        if (array_key_exists(self::FIELD_TYPE, $data)) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
             } else {
-                $ext = [];
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
+        }
+        if (array_key_exists(self::FIELD_APPLIES_TO, $data)) {
+            if (is_array($data[self::FIELD_APPLIES_TO])) {
+                foreach($data[self::FIELD_APPLIES_TO] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addAppliesTo($v);
+                    } else {
+                        $this->addAppliesTo(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_APPLIES_TO] instanceof FHIRCodeableConcept) {
+                $this->addAppliesTo($data[self::FIELD_APPLIES_TO]);
+            } else {
+                $this->addAppliesTo(new FHIRCodeableConcept($data[self::FIELD_APPLIES_TO]));
+            }
+        }
+        if (array_key_exists(self::FIELD_AGE, $data)) {
+            if ($data[self::FIELD_AGE] instanceof FHIRRange) {
+                $this->setAge($data[self::FIELD_AGE]);
+            } else {
+                $this->setAge(new FHIRRange($data[self::FIELD_AGE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_TEXT, $data) || array_key_exists(self::FIELD_TEXT_EXT, $data)) {
+            $value = $data[self::FIELD_TEXT] ?? null;
+            $ext = (isset($data[self::FIELD_TEXT_EXT]) && is_array($data[self::FIELD_TEXT_EXT])) ? $data[self::FIELD_TEXT_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setText($value);
@@ -258,15 +250,10 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
                 } else {
                     $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setText(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
             } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+                $this->setText(new FHIRString(null));
             }
         }
     }
@@ -274,164 +261,9 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ObservationReferenceRange{$xmlns}></ObservationReferenceRange>";
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The age at which this reference range is applicable. This is a neonatal age
-     * (e.g. number of weeks at term) if the meaning says so.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
-     */
-    public function getAge()
-    {
-        return $this->age;
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The age at which this reference range is applicable. This is a neonatal age
-     * (e.g. number of weeks at term) if the meaning says so.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $age
-     * @return static
-     */
-    public function setAge(FHIRRange $age = null)
-    {
-        $this->age = $age;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Codes to indicate the target population this reference range applies to. For
-     * example, a reference range may be based on the normal population or a particular
-     * sex or race. Multiple `appliesTo` are interpreted as an "AND" of the target
-     * populations. For example, to represent a target population of African American
-     * females, both a code of female and a code for African American would be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getAppliesTo()
-    {
-        return $this->appliesTo;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Codes to indicate the target population this reference range applies to. For
-     * example, a reference range may be based on the normal population or a particular
-     * sex or race. Multiple `appliesTo` are interpreted as an "AND" of the target
-     * populations. For example, to represent a target population of African American
-     * females, both a code of female and a code for African American would be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $appliesTo
-     * @return static
-     */
-    public function addAppliesTo(FHIRCodeableConcept $appliesTo = null)
-    {
-        $this->appliesTo[] = $appliesTo;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Codes to indicate the target population this reference range applies to. For
-     * example, a reference range may be based on the normal population or a particular
-     * sex or race. Multiple `appliesTo` are interpreted as an "AND" of the target
-     * populations. For example, to represent a target population of African American
-     * females, both a code of female and a code for African American would be used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $appliesTo
-     * @return static
-     */
-    public function setAppliesTo(array $appliesTo = [])
-    {
-        $this->appliesTo = [];
-        if ([] === $appliesTo) {
-            return $this;
-        }
-        foreach($appliesTo as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addAppliesTo($v);
-            } else {
-                $this->addAppliesTo(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the high bound of the reference range. The high bound of the
-     * reference range endpoint is inclusive of the value (e.g. reference range is >=5
-     * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
-     * reference range is >= 2.3).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    public function getHigh()
-    {
-        return $this->high;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the high bound of the reference range. The high bound of the
-     * reference range endpoint is inclusive of the value (e.g. reference range is >=5
-     * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
-     * reference range is >= 2.3).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $high
-     * @return static
-     */
-    public function setHigh(FHIRQuantity $high = null)
-    {
-        $this->high = $high;
-        return $this;
     }
 
     /**
@@ -448,7 +280,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    public function getLow()
+    public function getLow(): null|FHIRQuantity
     {
         return $this->low;
     }
@@ -468,51 +300,57 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $low
      * @return static
      */
-    public function setLow(FHIRQuantity $low = null)
+    public function setLow(null|FHIRQuantity $low = null): self
     {
+        if (null === $low) {
+            $low = new FHIRQuantity();
+        }
+        $this->_trackValueSet($this->low, $low);
         $this->low = $low;
         return $this;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Text based reference range in an observation which may be used when a
-     * quantitative range is not appropriate for an observation. An example would be a
-     * reference value of "Negative" or a list or table of "normals".
+     * The value of the high bound of the reference range. The high bound of the
+     * reference range endpoint is inclusive of the value (e.g. reference range is >=5
+     * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
+     * reference range is >= 2.3).
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    public function getText()
+    public function getHigh(): null|FHIRQuantity
     {
-        return $this->text;
+        return $this->high;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Text based reference range in an observation which may be used when a
-     * quantitative range is not appropriate for an observation. An example would be a
-     * reference value of "Negative" or a list or table of "normals".
+     * The value of the high bound of the reference range. The high bound of the
+     * reference range endpoint is inclusive of the value (e.g. reference range is >=5
+     * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
+     * reference range is >= 2.3).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $text
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $high
      * @return static
      */
-    public function setText($text = null)
+    public function setHigh(null|FHIRQuantity $high = null): self
     {
-        if (null === $text) {
-            $this->text = null;
-            return $this;
+        if (null === $high) {
+            $high = new FHIRQuantity();
         }
-        if ($text instanceof FHIRString) {
-            $this->text = $text;
-            return $this;
-        }
-        $this->text = new FHIRString($text);
+        $this->_trackValueSet($this->high, $high);
+        $this->high = $high;
         return $this;
     }
 
@@ -527,7 +365,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
+    public function getType(): null|FHIRCodeableConcept
     {
         return $this->type;
     }
@@ -544,9 +382,136 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
      * @return static
      */
-    public function setType(FHIRCodeableConcept $type = null)
+    public function setType(null|FHIRCodeableConcept $type = null): self
     {
+        if (null === $type) {
+            $type = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->type, $type);
         $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Codes to indicate the target population this reference range applies to. For
+     * example, a reference range may be based on the normal population or a particular
+     * sex or race. Multiple `appliesTo` are interpreted as an "AND" of the target
+     * populations. For example, to represent a target population of African American
+     * females, both a code of female and a code for African American would be used.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getAppliesTo(): null|array
+    {
+        return $this->appliesTo;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Codes to indicate the target population this reference range applies to. For
+     * example, a reference range may be based on the normal population or a particular
+     * sex or race. Multiple `appliesTo` are interpreted as an "AND" of the target
+     * populations. For example, to represent a target population of African American
+     * females, both a code of female and a code for African American would be used.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $appliesTo
+     * @return static
+     */
+    public function addAppliesTo(null|FHIRCodeableConcept $appliesTo = null): self
+    {
+        if (null === $appliesTo) {
+            $appliesTo = new FHIRCodeableConcept();
+        }
+        $this->_trackValueAdded();
+        $this->appliesTo[] = $appliesTo;
+        return $this;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The age at which this reference range is applicable. This is a neonatal age
+     * (e.g. number of weeks at term) if the meaning says so.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
+     */
+    public function getAge(): null|FHIRRange
+    {
+        return $this->age;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The age at which this reference range is applicable. This is a neonatal age
+     * (e.g. number of weeks at term) if the meaning says so.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $age
+     * @return static
+     */
+    public function setAge(null|FHIRRange $age = null): self
+    {
+        if (null === $age) {
+            $age = new FHIRRange();
+        }
+        $this->_trackValueSet($this->age, $age);
+        $this->age = $age;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Text based reference range in an observation which may be used when a
+     * quantitative range is not appropriate for an observation. An example would be a
+     * reference value of "Negative" or a list or table of "normals".
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getText(): null|FHIRString
+    {
+        return $this->text;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Text based reference range in an observation which may be used when a
+     * quantitative range is not appropriate for an observation. An example would be a
+     * reference value of "Negative" or a list or table of "normals".
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $text
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setText(null|string|FHIRStringPrimitive|FHIRString $text = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $text && !($text instanceof FHIRString)) {
+            $text = new FHIRString($text);
+        }
+        $this->_trackValueSet($this->text, $text);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_TEXT])) {
+            $this->_primitiveXmlLocations[self::FIELD_TEXT] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_TEXT][0] = $xmlLocation;
+        $this->text = $text;
         return $this;
     }
 
@@ -556,9 +521,9 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -567,13 +532,23 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAge())) {
+        if (null !== ($v = $this->getLow())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_AGE] = $fieldErrs;
+                $errs[self::FIELD_LOW] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getHigh())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_HIGH] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TYPE] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getAppliesTo())) {
@@ -583,14 +558,9 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getHigh())) {
+        if (null !== ($v = $this->getAge())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_HIGH] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getLow())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_LOW] = $fieldErrs;
+                $errs[self::FIELD_AGE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getText())) {
@@ -598,32 +568,15 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
                 $errs[self::FIELD_TEXT] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_AGE])) {
-            $v = $this->getAge();
-            foreach($validationRules[self::FIELD_AGE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OBSERVATION_DOT_REFERENCE_RANGE, self::FIELD_AGE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_LOW])) {
+            $v = $this->getLow();
+            foreach($validationRules[self::FIELD_LOW] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OBSERVATION_DOT_REFERENCE_RANGE, self::FIELD_LOW, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_AGE])) {
-                        $errs[self::FIELD_AGE] = [];
+                    if (!isset($errs[self::FIELD_LOW])) {
+                        $errs[self::FIELD_LOW] = [];
                     }
-                    $errs[self::FIELD_AGE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_APPLIES_TO])) {
-            $v = $this->getAppliesTo();
-            foreach($validationRules[self::FIELD_APPLIES_TO] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OBSERVATION_DOT_REFERENCE_RANGE, self::FIELD_APPLIES_TO, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_APPLIES_TO])) {
-                        $errs[self::FIELD_APPLIES_TO] = [];
-                    }
-                    $errs[self::FIELD_APPLIES_TO][$rule] = $err;
+                    $errs[self::FIELD_LOW][$rule] = $err;
                 }
             }
         }
@@ -639,15 +592,39 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_LOW])) {
-            $v = $this->getLow();
-            foreach($validationRules[self::FIELD_LOW] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OBSERVATION_DOT_REFERENCE_RANGE, self::FIELD_LOW, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OBSERVATION_DOT_REFERENCE_RANGE, self::FIELD_TYPE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_LOW])) {
-                        $errs[self::FIELD_LOW] = [];
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
                     }
-                    $errs[self::FIELD_LOW][$rule] = $err;
+                    $errs[self::FIELD_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_APPLIES_TO])) {
+            $v = $this->getAppliesTo();
+            foreach($validationRules[self::FIELD_APPLIES_TO] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OBSERVATION_DOT_REFERENCE_RANGE, self::FIELD_APPLIES_TO, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_APPLIES_TO])) {
+                        $errs[self::FIELD_APPLIES_TO] = [];
+                    }
+                    $errs[self::FIELD_APPLIES_TO][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AGE])) {
+            $v = $this->getAge();
+            foreach($validationRules[self::FIELD_AGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OBSERVATION_DOT_REFERENCE_RANGE, self::FIELD_AGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AGE])) {
+                        $errs[self::FIELD_AGE] = [];
+                    }
+                    $errs[self::FIELD_AGE][$rule] = $err;
                 }
             }
         }
@@ -660,18 +637,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
                         $errs[self::FIELD_TEXT] = [];
                     }
                     $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OBSERVATION_DOT_REFERENCE_RANGE, self::FIELD_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
-                    }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
                 }
             }
         }
@@ -715,160 +680,192 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRObservationReferenceRange::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRObservationReferenceRange::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRObservationReferenceRange;
-        } elseif (!is_object($type) || !($type instanceof FHIRObservationReferenceRange)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRObservationReferenceRange)) {
             throw new \RuntimeException(sprintf(
-                'FHIRObservationReferenceRange::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_LOW === $childName) {
+                $type->setLow(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_HIGH === $childName) {
+                $type->setHigh(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TYPE === $childName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_APPLIES_TO === $childName) {
+                $type->addAppliesTo(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_AGE === $childName) {
+                $type->setAge(FHIRRange::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TEXT === $childName) {
+                $type->setText(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->age)) {
-            $type->setAge(FHIRRange::xmlUnserialize($children->age));
-        }
-        if (isset($children->appliesTo)) {
-            foreach($children->appliesTo as $child) {
-                $type->addAppliesTo(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->high)) {
-            $type->setHigh(FHIRQuantity::xmlUnserialize($children->high));
-        }
-        if (isset($children->low)) {
-            $type->setLow(FHIRQuantity::xmlUnserialize($children->low));
-        }
-        if (isset($children->text)) {
-            $type->setText(FHIRString::xmlUnserialize($children->text));
-        }
-        if (isset($attributes->text)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_TEXT])) {
             $pt = $type->getText();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->text);
+                $pt->setValue((string)$attributes[self::FIELD_TEXT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setText((string)$attributes->text);
+                $type->setText((string)$attributes[self::FIELD_TEXT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAge())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AGE, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if ([] !== ($vs = $this->getAppliesTo())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_APPLIES_TO, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ObservationReferenceRange', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TEXT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getText())) {
+            $xw->writeAttribute(self::FIELD_TEXT, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getLow())) {
+            $xw->startElement(self::FIELD_LOW);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getHigh())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_HIGH, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getLow())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOW, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getText())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_HIGH);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        foreach ($this->getAppliesTo() as $v) {
+            $xw->startElement(self::FIELD_APPLIES_TO);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getAge())) {
+            $xw->startElement(self::FIELD_AGE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TEXT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getText())) {
+            $xw->startElement(self::FIELD_TEXT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAge())) {
-            $a[self::FIELD_AGE] = $v;
-        }
-        if ([] !== ($vs = $this->getAppliesTo())) {
-            $a[self::FIELD_APPLIES_TO] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_APPLIES_TO][] = $v;
-            }
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getLow())) {
+            $out->{self::FIELD_LOW} = $v;
         }
         if (null !== ($v = $this->getHigh())) {
-            $a[self::FIELD_HIGH] = $v;
-        }
-        if (null !== ($v = $this->getLow())) {
-            $a[self::FIELD_LOW] = $v;
-        }
-        if (null !== ($v = $this->getText())) {
-            $a[self::FIELD_TEXT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_TEXT_EXT] = $enc;
-            }
+            $out->{self::FIELD_HIGH} = $v;
         }
         if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
+            $out->{self::FIELD_TYPE} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getAppliesTo())) {
+            $out->{self::FIELD_APPLIES_TO} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_APPLIES_TO}[] = $v;
+            }
         }
-        return $a;
-    }
+        if (null !== ($v = $this->getAge())) {
+            $out->{self::FIELD_AGE} = $v;
+        }
+        if (null !== ($v = $this->getText())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_TEXT} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_TEXT_EXT} = $ext;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

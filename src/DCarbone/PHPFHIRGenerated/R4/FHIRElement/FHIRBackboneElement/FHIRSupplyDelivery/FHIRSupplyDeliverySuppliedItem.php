@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSuppl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,10 +64,16 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSuppl
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Record of delivery of what is supplied.
@@ -79,39 +85,10 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUPPLY_DELIVERY_DOT_SUPPLIED_ITEM;
+
+    const FIELD_QUANTITY = 'quantity';
     const FIELD_ITEM_CODEABLE_CONCEPT = 'itemCodeableConcept';
     const FIELD_ITEM_REFERENCE = 'itemReference';
-    const FIELD_QUANTITY = 'quantity';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the medication, substance or device being dispensed. This is either a
-     * link to a resource representing the details of the item or a code that
-     * identifies the item from a known list. (choose any one of item*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $itemCodeableConcept = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the medication, substance or device being dispensed. This is either a
-     * link to a resource representing the details of the item or a code that
-     * identifies the item from a known list. (choose any one of item*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $itemReference = null;
 
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
@@ -124,141 +101,81 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    protected $quantity = null;
+    protected null|FHIRQuantity $quantity = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the medication, substance or device being dispensed. This is either a
+     * link to a resource representing the details of the item or a code that
+     * identifies the item from a known list.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $itemCodeableConcept = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the medication, substance or device being dispensed. This is either a
+     * link to a resource representing the details of the item or a code that
+     * identifies the item from a known list.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $itemReference = null;
 
     /**
      * Validation map for fields in type SupplyDelivery.SuppliedItem
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRSupplyDeliverySuppliedItem Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRSupplyDeliverySuppliedItem::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ITEM_CODEABLE_CONCEPT])) {
-            if ($data[self::FIELD_ITEM_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $this->setItemCodeableConcept($data[self::FIELD_ITEM_CODEABLE_CONCEPT]);
-            } else {
-                $this->setItemCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_ITEM_CODEABLE_CONCEPT]));
-            }
-        }
-        if (isset($data[self::FIELD_ITEM_REFERENCE])) {
-            if ($data[self::FIELD_ITEM_REFERENCE] instanceof FHIRReference) {
-                $this->setItemReference($data[self::FIELD_ITEM_REFERENCE]);
-            } else {
-                $this->setItemReference(new FHIRReference($data[self::FIELD_ITEM_REFERENCE]));
-            }
-        }
-        if (isset($data[self::FIELD_QUANTITY])) {
+        if (array_key_exists(self::FIELD_QUANTITY, $data)) {
             if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
             } else {
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
         }
+        if (array_key_exists(self::FIELD_ITEM_CODEABLE_CONCEPT, $data)) {
+            if ($data[self::FIELD_ITEM_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
+                $this->setItemCodeableConcept($data[self::FIELD_ITEM_CODEABLE_CONCEPT]);
+            } else {
+                $this->setItemCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_ITEM_CODEABLE_CONCEPT]));
+            }
+        }
+        if (array_key_exists(self::FIELD_ITEM_REFERENCE, $data)) {
+            if ($data[self::FIELD_ITEM_REFERENCE] instanceof FHIRReference) {
+                $this->setItemReference($data[self::FIELD_ITEM_REFERENCE]);
+            } else {
+                $this->setItemReference(new FHIRReference($data[self::FIELD_ITEM_REFERENCE]));
+            }
+        }
     }
 
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<SupplyDeliverySuppliedItem{$xmlns}></SupplyDeliverySuppliedItem>";
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the medication, substance or device being dispensed. This is either a
-     * link to a resource representing the details of the item or a code that
-     * identifies the item from a known list. (choose any one of item*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getItemCodeableConcept()
-    {
-        return $this->itemCodeableConcept;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the medication, substance or device being dispensed. This is either a
-     * link to a resource representing the details of the item or a code that
-     * identifies the item from a known list. (choose any one of item*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
-     * @return static
-     */
-    public function setItemCodeableConcept(FHIRCodeableConcept $itemCodeableConcept = null)
-    {
-        $this->itemCodeableConcept = $itemCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the medication, substance or device being dispensed. This is either a
-     * link to a resource representing the details of the item or a code that
-     * identifies the item from a known list. (choose any one of item*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getItemReference()
-    {
-        return $this->itemReference;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the medication, substance or device being dispensed. This is either a
-     * link to a resource representing the details of the item or a code that
-     * identifies the item from a known list. (choose any one of item*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $itemReference
-     * @return static
-     */
-    public function setItemReference(FHIRReference $itemReference = null)
-    {
-        $this->itemReference = $itemReference;
-        return $this;
     }
 
     /**
@@ -272,7 +189,7 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    public function getQuantity()
+    public function getQuantity(): null|FHIRQuantity
     {
         return $this->quantity;
     }
@@ -289,9 +206,91 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(FHIRQuantity $quantity = null)
+    public function setQuantity(null|FHIRQuantity $quantity = null): self
     {
+        if (null === $quantity) {
+            $quantity = new FHIRQuantity();
+        }
+        $this->_trackValueSet($this->quantity, $quantity);
         $this->quantity = $quantity;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the medication, substance or device being dispensed. This is either a
+     * link to a resource representing the details of the item or a code that
+     * identifies the item from a known list.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getItemCodeableConcept(): null|FHIRCodeableConcept
+    {
+        return $this->itemCodeableConcept;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the medication, substance or device being dispensed. This is either a
+     * link to a resource representing the details of the item or a code that
+     * identifies the item from a known list.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $itemCodeableConcept
+     * @return static
+     */
+    public function setItemCodeableConcept(null|FHIRCodeableConcept $itemCodeableConcept = null): self
+    {
+        if (null === $itemCodeableConcept) {
+            $itemCodeableConcept = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->itemCodeableConcept, $itemCodeableConcept);
+        $this->itemCodeableConcept = $itemCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the medication, substance or device being dispensed. This is either a
+     * link to a resource representing the details of the item or a code that
+     * identifies the item from a known list.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getItemReference(): null|FHIRReference
+    {
+        return $this->itemReference;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the medication, substance or device being dispensed. This is either a
+     * link to a resource representing the details of the item or a code that
+     * identifies the item from a known list.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $itemReference
+     * @return static
+     */
+    public function setItemReference(null|FHIRReference $itemReference = null): self
+    {
+        if (null === $itemReference) {
+            $itemReference = new FHIRReference();
+        }
+        $this->_trackValueSet($this->itemReference, $itemReference);
+        $this->itemReference = $itemReference;
         return $this;
     }
 
@@ -301,9 +300,9 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -312,10 +311,15 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getQuantity())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_QUANTITY] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getItemCodeableConcept())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_ITEM_CODEABLE_CONCEPT] = $fieldErrs;
@@ -326,9 +330,16 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
                 $errs[self::FIELD_ITEM_REFERENCE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getQuantity())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_QUANTITY] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_QUANTITY])) {
+            $v = $this->getQuantity();
+            foreach($validationRules[self::FIELD_QUANTITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUPPLY_DELIVERY_DOT_SUPPLIED_ITEM, self::FIELD_QUANTITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_QUANTITY])) {
+                        $errs[self::FIELD_QUANTITY] = [];
+                    }
+                    $errs[self::FIELD_QUANTITY][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_ITEM_CODEABLE_CONCEPT])) {
@@ -352,18 +363,6 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
                         $errs[self::FIELD_ITEM_REFERENCE] = [];
                     }
                     $errs[self::FIELD_ITEM_REFERENCE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_QUANTITY])) {
-            $v = $this->getQuantity();
-            foreach($validationRules[self::FIELD_QUANTITY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUPPLY_DELIVERY_DOT_SUPPLIED_ITEM, self::FIELD_QUANTITY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_QUANTITY])) {
-                        $errs[self::FIELD_QUANTITY] = [];
-                    }
-                    $errs[self::FIELD_QUANTITY][$rule] = $err;
                 }
             }
         }
@@ -407,106 +406,139 @@ class FHIRSupplyDeliverySuppliedItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRSupplyDeliverySuppliedItem::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSupplyDeliverySuppliedItem::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRSupplyDeliverySuppliedItem;
-        } elseif (!is_object($type) || !($type instanceof FHIRSupplyDeliverySuppliedItem)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRSupplyDeliverySuppliedItem)) {
             throw new \RuntimeException(sprintf(
-                'FHIRSupplyDeliverySuppliedItem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_QUANTITY === $childName) {
+                $type->setQuantity(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ITEM_CODEABLE_CONCEPT === $childName) {
+                $type->setItemCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ITEM_REFERENCE === $childName) {
+                $type->setItemReference(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->itemCodeableConcept)) {
-            $type->setItemCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->itemCodeableConcept));
-        }
-        if (isset($children->itemReference)) {
-            $type->setItemReference(FHIRReference::xmlUnserialize($children->itemReference));
-        }
-        if (isset($children->quantity)) {
-            $type->setQuantity(FHIRQuantity::xmlUnserialize($children->quantity));
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'SupplyDeliverySuppliedItem', $this->_getSourceXmlns());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getQuantity())) {
+            $xw->startElement(self::FIELD_QUANTITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
         if (null !== ($v = $this->getItemCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_ITEM_CODEABLE_CONCEPT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getItemReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_ITEM_REFERENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getQuantity())) {
+            $out->{self::FIELD_QUANTITY} = $v;
+        }
         if (null !== ($v = $this->getItemCodeableConcept())) {
-            $a[self::FIELD_ITEM_CODEABLE_CONCEPT] = $v;
+            $out->{self::FIELD_ITEM_CODEABLE_CONCEPT} = $v;
         }
         if (null !== ($v = $this->getItemReference())) {
-            $a[self::FIELD_ITEM_REFERENCE] = $v;
+            $out->{self::FIELD_ITEM_REFERENCE} = $v;
         }
-        if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

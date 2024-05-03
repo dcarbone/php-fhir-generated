@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMed
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,11 +64,17 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMed
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter;
 
 /**
  * Describes the event of a patient consuming or otherwise being administered a
@@ -84,105 +90,15 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE;
-    const FIELD_DOSE = 'dose';
-    const FIELD_METHOD = 'method';
-    const FIELD_RATE_QUANTITY = 'rateQuantity';
-    const FIELD_RATE_RATIO = 'rateRatio';
-    const FIELD_ROUTE = 'route';
-    const FIELD_SITE = 'site';
+
     const FIELD_TEXT = 'text';
     const FIELD_TEXT_EXT = '_text';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The amount of the medication given at one administration event. Use this value
-     * when the administration is essentially an instantaneous event such as a
-     * swallowing a tablet or giving an injection.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
-     */
-    protected $dose = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A coded value indicating the method by which the medication is intended to be or
-     * was introduced into or on the body. This attribute will most often NOT be
-     * populated. It is most commonly used for injections. For example, Slow Push, Deep
-     * IV.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    protected $method = null;
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the speed with which the medication was or will be introduced into
-     * the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100
-     * ml/hr. May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.
-     * Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
-     */
-    protected $rateQuantity = null;
-
-    /**
-     * A relationship of two Quantity values - expressed as a numerator and a
-     * denominator.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the speed with which the medication was or will be introduced into
-     * the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100
-     * ml/hr. May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.
-     * Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio
-     */
-    protected $rateRatio = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code specifying the route or physiological path of administration of a
-     * therapeutic agent into or onto the patient. For example, topical, intravenous,
-     * etc.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    protected $route = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A coded specification of the anatomic site where the medication first entered
-     * the body. For example, "left arm".
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    protected $site = null;
+    const FIELD_SITE = 'site';
+    const FIELD_ROUTE = 'route';
+    const FIELD_METHOD = 'method';
+    const FIELD_DOSE = 'dose';
+    const FIELD_RATE_RATIO = 'rateRatio';
+    const FIELD_RATE_QUANTITY = 'rateQuantity';
 
     /**
      * A sequence of Unicode characters
@@ -196,83 +112,112 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    protected $text = null;
+    protected null|FHIRString $text = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A coded specification of the anatomic site where the medication first entered
+     * the body. For example, "left arm".
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $site = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code specifying the route or physiological path of administration of a
+     * therapeutic agent into or onto the patient. For example, topical, intravenous,
+     * etc.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $route = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A coded value indicating the method by which the medication is intended to be or
+     * was introduced into or on the body. This attribute will most often NOT be
+     * populated. It is most commonly used for injections. For example, Slow Push, Deep
+     * IV.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $method = null;
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The amount of the medication given at one administration event. Use this value
+     * when the administration is essentially an instantaneous event such as a
+     * swallowing a tablet or giving an injection.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
+     */
+    protected null|FHIRQuantity $dose = null;
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the speed with which the medication was or will be introduced into
+     * the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100
+     * ml/hr. May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.
+     * Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio
+     */
+    protected null|FHIRRatio $rateRatio = null;
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the speed with which the medication was or will be introduced into
+     * the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100
+     * ml/hr. May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.
+     * Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
+     */
+    protected null|FHIRQuantity $rateQuantity = null;
 
     /**
      * Validation map for fields in type MedicationAdministration.Dosage
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRMedicationAdministrationDosage Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMedicationAdministrationDosage::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DOSE])) {
-            if ($data[self::FIELD_DOSE] instanceof FHIRQuantity) {
-                $this->setDose($data[self::FIELD_DOSE]);
-            } else {
-                $this->setDose(new FHIRQuantity($data[self::FIELD_DOSE]));
-            }
-        }
-        if (isset($data[self::FIELD_METHOD])) {
-            if ($data[self::FIELD_METHOD] instanceof FHIRCodeableConcept) {
-                $this->setMethod($data[self::FIELD_METHOD]);
-            } else {
-                $this->setMethod(new FHIRCodeableConcept($data[self::FIELD_METHOD]));
-            }
-        }
-        if (isset($data[self::FIELD_RATE_QUANTITY])) {
-            if ($data[self::FIELD_RATE_QUANTITY] instanceof FHIRQuantity) {
-                $this->setRateQuantity($data[self::FIELD_RATE_QUANTITY]);
-            } else {
-                $this->setRateQuantity(new FHIRQuantity($data[self::FIELD_RATE_QUANTITY]));
-            }
-        }
-        if (isset($data[self::FIELD_RATE_RATIO])) {
-            if ($data[self::FIELD_RATE_RATIO] instanceof FHIRRatio) {
-                $this->setRateRatio($data[self::FIELD_RATE_RATIO]);
-            } else {
-                $this->setRateRatio(new FHIRRatio($data[self::FIELD_RATE_RATIO]));
-            }
-        }
-        if (isset($data[self::FIELD_ROUTE])) {
-            if ($data[self::FIELD_ROUTE] instanceof FHIRCodeableConcept) {
-                $this->setRoute($data[self::FIELD_ROUTE]);
-            } else {
-                $this->setRoute(new FHIRCodeableConcept($data[self::FIELD_ROUTE]));
-            }
-        }
-        if (isset($data[self::FIELD_SITE])) {
-            if ($data[self::FIELD_SITE] instanceof FHIRCodeableConcept) {
-                $this->setSite($data[self::FIELD_SITE]);
-            } else {
-                $this->setSite(new FHIRCodeableConcept($data[self::FIELD_SITE]));
-            }
-        }
-        if (isset($data[self::FIELD_TEXT]) || isset($data[self::FIELD_TEXT_EXT])) {
-            if (isset($data[self::FIELD_TEXT])) {
-                $value = $data[self::FIELD_TEXT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TEXT_EXT]) && is_array($data[self::FIELD_TEXT_EXT])) {
-                $ext = $data[self::FIELD_TEXT_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_TEXT, $data) || array_key_exists(self::FIELD_TEXT_EXT, $data)) {
+            $value = $data[self::FIELD_TEXT] ?? null;
+            $ext = (isset($data[self::FIELD_TEXT_EXT]) && is_array($data[self::FIELD_TEXT_EXT])) ? $data[self::FIELD_TEXT_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setText($value);
@@ -281,8 +226,52 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
                 } else {
                     $this->setText(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setText(new FHIRString($ext));
+            } else {
+                $this->setText(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_SITE, $data)) {
+            if ($data[self::FIELD_SITE] instanceof FHIRCodeableConcept) {
+                $this->setSite($data[self::FIELD_SITE]);
+            } else {
+                $this->setSite(new FHIRCodeableConcept($data[self::FIELD_SITE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_ROUTE, $data)) {
+            if ($data[self::FIELD_ROUTE] instanceof FHIRCodeableConcept) {
+                $this->setRoute($data[self::FIELD_ROUTE]);
+            } else {
+                $this->setRoute(new FHIRCodeableConcept($data[self::FIELD_ROUTE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_METHOD, $data)) {
+            if ($data[self::FIELD_METHOD] instanceof FHIRCodeableConcept) {
+                $this->setMethod($data[self::FIELD_METHOD]);
+            } else {
+                $this->setMethod(new FHIRCodeableConcept($data[self::FIELD_METHOD]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DOSE, $data)) {
+            if ($data[self::FIELD_DOSE] instanceof FHIRQuantity) {
+                $this->setDose($data[self::FIELD_DOSE]);
+            } else {
+                $this->setDose(new FHIRQuantity($data[self::FIELD_DOSE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_RATE_RATIO, $data)) {
+            if ($data[self::FIELD_RATE_RATIO] instanceof FHIRRatio) {
+                $this->setRateRatio($data[self::FIELD_RATE_RATIO]);
+            } else {
+                $this->setRateRatio(new FHIRRatio($data[self::FIELD_RATE_RATIO]));
+            }
+        }
+        if (array_key_exists(self::FIELD_RATE_QUANTITY, $data)) {
+            if ($data[self::FIELD_RATE_QUANTITY] instanceof FHIRQuantity) {
+                $this->setRateQuantity($data[self::FIELD_RATE_QUANTITY]);
+            } else {
+                $this->setRateQuantity(new FHIRQuantity($data[self::FIELD_RATE_QUANTITY]));
             }
         }
     }
@@ -290,58 +279,131 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Free text dosage can be used for cases where the dosage administered is too
+     * complex to code. When coded dosage is present, the free text dosage may still be
+     * present for display to humans. The dosage instructions should reflect the dosage
+     * of the medication that was administered.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    public function _getFHIRXMLElementDefinition()
+    public function getText(): null|FHIRString
     {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<MedicationAdministrationDosage{$xmlns}></MedicationAdministrationDosage>";
+        return $this->text;
     }
 
     /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The amount of the medication given at one administration event. Use this value
-     * when the administration is essentially an instantaneous event such as a
-     * swallowing a tablet or giving an injection.
+     * Free text dosage can be used for cases where the dosage administered is too
+     * complex to code. When coded dosage is present, the free text dosage may still be
+     * present for display to humans. The dosage instructions should reflect the dosage
+     * of the medication that was administered.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
-     */
-    public function getDose()
-    {
-        return $this->dose;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The amount of the medication given at one administration event. Use this value
-     * when the administration is essentially an instantaneous event such as a
-     * swallowing a tablet or giving an injection.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $dose
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $text
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDose(FHIRQuantity $dose = null)
+    public function setText(null|string|FHIRStringPrimitive|FHIRString $text = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->dose = $dose;
+        if (null !== $text && !($text instanceof FHIRString)) {
+            $text = new FHIRString($text);
+        }
+        $this->_trackValueSet($this->text, $text);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_TEXT])) {
+            $this->_primitiveXmlLocations[self::FIELD_TEXT] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_TEXT][0] = $xmlLocation;
+        $this->text = $text;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A coded specification of the anatomic site where the medication first entered
+     * the body. For example, "left arm".
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    public function getSite(): null|FHIRCodeableConcept
+    {
+        return $this->site;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A coded specification of the anatomic site where the medication first entered
+     * the body. For example, "left arm".
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $site
+     * @return static
+     */
+    public function setSite(null|FHIRCodeableConcept $site = null): self
+    {
+        if (null === $site) {
+            $site = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->site, $site);
+        $this->site = $site;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code specifying the route or physiological path of administration of a
+     * therapeutic agent into or onto the patient. For example, topical, intravenous,
+     * etc.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    public function getRoute(): null|FHIRCodeableConcept
+    {
+        return $this->route;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code specifying the route or physiological path of administration of a
+     * therapeutic agent into or onto the patient. For example, topical, intravenous,
+     * etc.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $route
+     * @return static
+     */
+    public function setRoute(null|FHIRCodeableConcept $route = null): self
+    {
+        if (null === $route) {
+            $route = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->route, $route);
+        $this->route = $route;
         return $this;
     }
 
@@ -358,7 +420,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    public function getMethod()
+    public function getMethod(): null|FHIRCodeableConcept
     {
         return $this->method;
     }
@@ -377,9 +439,97 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $method
      * @return static
      */
-    public function setMethod(FHIRCodeableConcept $method = null)
+    public function setMethod(null|FHIRCodeableConcept $method = null): self
     {
+        if (null === $method) {
+            $method = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->method, $method);
         $this->method = $method;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The amount of the medication given at one administration event. Use this value
+     * when the administration is essentially an instantaneous event such as a
+     * swallowing a tablet or giving an injection.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
+     */
+    public function getDose(): null|FHIRQuantity
+    {
+        return $this->dose;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The amount of the medication given at one administration event. Use this value
+     * when the administration is essentially an instantaneous event such as a
+     * swallowing a tablet or giving an injection.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $dose
+     * @return static
+     */
+    public function setDose(null|FHIRQuantity $dose = null): self
+    {
+        if (null === $dose) {
+            $dose = new FHIRQuantity();
+        }
+        $this->_trackValueSet($this->dose, $dose);
+        $this->dose = $dose;
+        return $this;
+    }
+
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the speed with which the medication was or will be introduced into
+     * the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100
+     * ml/hr. May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.
+     * Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio
+     */
+    public function getRateRatio(): null|FHIRRatio
+    {
+        return $this->rateRatio;
+    }
+
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the speed with which the medication was or will be introduced into
+     * the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100
+     * ml/hr. May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.
+     * Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio $rateRatio
+     * @return static
+     */
+    public function setRateRatio(null|FHIRRatio $rateRatio = null): self
+    {
+        if (null === $rateRatio) {
+            $rateRatio = new FHIRRatio();
+        }
+        $this->_trackValueSet($this->rateRatio, $rateRatio);
+        $this->rateRatio = $rateRatio;
         return $this;
     }
 
@@ -397,7 +547,7 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    public function getRateQuantity()
+    public function getRateQuantity(): null|FHIRQuantity
     {
         return $this->rateQuantity;
     }
@@ -417,161 +567,13 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $rateQuantity
      * @return static
      */
-    public function setRateQuantity(FHIRQuantity $rateQuantity = null)
+    public function setRateQuantity(null|FHIRQuantity $rateQuantity = null): self
     {
+        if (null === $rateQuantity) {
+            $rateQuantity = new FHIRQuantity();
+        }
+        $this->_trackValueSet($this->rateQuantity, $rateQuantity);
         $this->rateQuantity = $rateQuantity;
-        return $this;
-    }
-
-    /**
-     * A relationship of two Quantity values - expressed as a numerator and a
-     * denominator.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the speed with which the medication was or will be introduced into
-     * the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100
-     * ml/hr. May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.
-     * Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio
-     */
-    public function getRateRatio()
-    {
-        return $this->rateRatio;
-    }
-
-    /**
-     * A relationship of two Quantity values - expressed as a numerator and a
-     * denominator.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the speed with which the medication was or will be introduced into
-     * the patient. Typically the rate for an infusion e.g. 100 ml per 1 hour or 100
-     * ml/hr. May also be expressed as a rate per unit of time e.g. 500 ml per 2 hours.
-     * Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio $rateRatio
-     * @return static
-     */
-    public function setRateRatio(FHIRRatio $rateRatio = null)
-    {
-        $this->rateRatio = $rateRatio;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code specifying the route or physiological path of administration of a
-     * therapeutic agent into or onto the patient. For example, topical, intravenous,
-     * etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    public function getRoute()
-    {
-        return $this->route;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code specifying the route or physiological path of administration of a
-     * therapeutic agent into or onto the patient. For example, topical, intravenous,
-     * etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $route
-     * @return static
-     */
-    public function setRoute(FHIRCodeableConcept $route = null)
-    {
-        $this->route = $route;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A coded specification of the anatomic site where the medication first entered
-     * the body. For example, "left arm".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    public function getSite()
-    {
-        return $this->site;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A coded specification of the anatomic site where the medication first entered
-     * the body. For example, "left arm".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $site
-     * @return static
-     */
-    public function setSite(FHIRCodeableConcept $site = null)
-    {
-        $this->site = $site;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Free text dosage can be used for cases where the dosage administered is too
-     * complex to code. When coded dosage is present, the free text dosage may still be
-     * present for display to humans. The dosage instructions should reflect the dosage
-     * of the medication that was administered.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getText()
-    {
-        return $this->text;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Free text dosage can be used for cases where the dosage administered is too
-     * complex to code. When coded dosage is present, the free text dosage may still be
-     * present for display to humans. The dosage instructions should reflect the dosage
-     * of the medication that was administered.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $text
-     * @return static
-     */
-    public function setText($text = null)
-    {
-        if (null === $text) {
-            $this->text = null;
-            return $this;
-        }
-        if ($text instanceof FHIRString) {
-            $this->text = $text;
-            return $this;
-        }
-        $this->text = new FHIRString($text);
         return $this;
     }
 
@@ -581,9 +583,9 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -592,33 +594,13 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getDose())) {
+        if (null !== ($v = $this->getText())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DOSE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getMethod())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_METHOD] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getRateQuantity())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_RATE_QUANTITY] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getRateRatio())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_RATE_RATIO] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getRoute())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ROUTE] = $fieldErrs;
+                $errs[self::FIELD_TEXT] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getSite())) {
@@ -626,68 +608,40 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
                 $errs[self::FIELD_SITE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getText())) {
+        if (null !== ($v = $this->getRoute())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TEXT] = $fieldErrs;
+                $errs[self::FIELD_ROUTE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DOSE])) {
-            $v = $this->getDose();
-            foreach($validationRules[self::FIELD_DOSE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE, self::FIELD_DOSE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DOSE])) {
-                        $errs[self::FIELD_DOSE] = [];
-                    }
-                    $errs[self::FIELD_DOSE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getMethod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_METHOD] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_METHOD])) {
-            $v = $this->getMethod();
-            foreach($validationRules[self::FIELD_METHOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE, self::FIELD_METHOD, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_METHOD])) {
-                        $errs[self::FIELD_METHOD] = [];
-                    }
-                    $errs[self::FIELD_METHOD][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDose())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DOSE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_RATE_QUANTITY])) {
-            $v = $this->getRateQuantity();
-            foreach($validationRules[self::FIELD_RATE_QUANTITY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE, self::FIELD_RATE_QUANTITY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RATE_QUANTITY])) {
-                        $errs[self::FIELD_RATE_QUANTITY] = [];
-                    }
-                    $errs[self::FIELD_RATE_QUANTITY][$rule] = $err;
-                }
+        if (null !== ($v = $this->getRateRatio())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_RATE_RATIO] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_RATE_RATIO])) {
-            $v = $this->getRateRatio();
-            foreach($validationRules[self::FIELD_RATE_RATIO] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE, self::FIELD_RATE_RATIO, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RATE_RATIO])) {
-                        $errs[self::FIELD_RATE_RATIO] = [];
-                    }
-                    $errs[self::FIELD_RATE_RATIO][$rule] = $err;
-                }
+        if (null !== ($v = $this->getRateQuantity())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_RATE_QUANTITY] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_ROUTE])) {
-            $v = $this->getRoute();
-            foreach($validationRules[self::FIELD_ROUTE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE, self::FIELD_ROUTE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE, self::FIELD_TEXT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ROUTE])) {
-                        $errs[self::FIELD_ROUTE] = [];
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
                     }
-                    $errs[self::FIELD_ROUTE][$rule] = $err;
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -703,15 +657,63 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE, self::FIELD_TEXT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ROUTE])) {
+            $v = $this->getRoute();
+            foreach($validationRules[self::FIELD_ROUTE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE, self::FIELD_ROUTE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
+                    if (!isset($errs[self::FIELD_ROUTE])) {
+                        $errs[self::FIELD_ROUTE] = [];
                     }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
+                    $errs[self::FIELD_ROUTE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_METHOD])) {
+            $v = $this->getMethod();
+            foreach($validationRules[self::FIELD_METHOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE, self::FIELD_METHOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_METHOD])) {
+                        $errs[self::FIELD_METHOD] = [];
+                    }
+                    $errs[self::FIELD_METHOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DOSE])) {
+            $v = $this->getDose();
+            foreach($validationRules[self::FIELD_DOSE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE, self::FIELD_DOSE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DOSE])) {
+                        $errs[self::FIELD_DOSE] = [];
+                    }
+                    $errs[self::FIELD_DOSE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RATE_RATIO])) {
+            $v = $this->getRateRatio();
+            foreach($validationRules[self::FIELD_RATE_RATIO] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE, self::FIELD_RATE_RATIO, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RATE_RATIO])) {
+                        $errs[self::FIELD_RATE_RATIO] = [];
+                    }
+                    $errs[self::FIELD_RATE_RATIO][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RATE_QUANTITY])) {
+            $v = $this->getRateQuantity();
+            foreach($validationRules[self::FIELD_RATE_QUANTITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_ADMINISTRATION_DOT_DOSAGE, self::FIELD_RATE_QUANTITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RATE_QUANTITY])) {
+                        $errs[self::FIELD_RATE_QUANTITY] = [];
+                    }
+                    $errs[self::FIELD_RATE_QUANTITY][$rule] = $err;
                 }
             }
         }
@@ -755,156 +757,199 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRMedicationAdministrationDosage::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicationAdministrationDosage::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRMedicationAdministrationDosage;
-        } elseif (!is_object($type) || !($type instanceof FHIRMedicationAdministrationDosage)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRMedicationAdministrationDosage)) {
             throw new \RuntimeException(sprintf(
-                'FHIRMedicationAdministrationDosage::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_TEXT === $childName) {
+                $type->setText(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_SITE === $childName) {
+                $type->setSite(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ROUTE === $childName) {
+                $type->setRoute(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_METHOD === $childName) {
+                $type->setMethod(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DOSE === $childName) {
+                $type->setDose(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_RATE_RATIO === $childName) {
+                $type->setRateRatio(FHIRRatio::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_RATE_QUANTITY === $childName) {
+                $type->setRateQuantity(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->dose)) {
-            $type->setDose(FHIRQuantity::xmlUnserialize($children->dose));
-        }
-        if (isset($children->method)) {
-            $type->setMethod(FHIRCodeableConcept::xmlUnserialize($children->method));
-        }
-        if (isset($children->rateQuantity)) {
-            $type->setRateQuantity(FHIRQuantity::xmlUnserialize($children->rateQuantity));
-        }
-        if (isset($children->rateRatio)) {
-            $type->setRateRatio(FHIRRatio::xmlUnserialize($children->rateRatio));
-        }
-        if (isset($children->route)) {
-            $type->setRoute(FHIRCodeableConcept::xmlUnserialize($children->route));
-        }
-        if (isset($children->site)) {
-            $type->setSite(FHIRCodeableConcept::xmlUnserialize($children->site));
-        }
-        if (isset($children->text)) {
-            $type->setText(FHIRString::xmlUnserialize($children->text));
-        }
-        if (isset($attributes->text)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_TEXT])) {
             $pt = $type->getText();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->text);
+                $pt->setValue((string)$attributes[self::FIELD_TEXT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setText((string)$attributes->text);
+                $type->setText((string)$attributes[self::FIELD_TEXT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getDose())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getMethod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getRateQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getRateRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_RATIO, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'MedicationAdministrationDosage', $this->_getSourceXmlns());
         }
-        if (null !== ($v = $this->getRoute())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ROUTE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TEXT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getText())) {
+            $xw->writeAttribute(self::FIELD_TEXT, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TEXT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getText())) {
+            $xw->startElement(self::FIELD_TEXT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getSite())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SITE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_SITE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getText())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TEXT, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getRoute())) {
+            $xw->startElement(self::FIELD_ROUTE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getMethod())) {
+            $xw->startElement(self::FIELD_METHOD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getDose())) {
+            $xw->startElement(self::FIELD_DOSE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getRateRatio())) {
+            $xw->startElement(self::FIELD_RATE_RATIO);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getRateQuantity())) {
+            $xw->startElement(self::FIELD_RATE_QUANTITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getDose())) {
-            $a[self::FIELD_DOSE] = $v;
-        }
-        if (null !== ($v = $this->getMethod())) {
-            $a[self::FIELD_METHOD] = $v;
-        }
-        if (null !== ($v = $this->getRateQuantity())) {
-            $a[self::FIELD_RATE_QUANTITY] = $v;
-        }
-        if (null !== ($v = $this->getRateRatio())) {
-            $a[self::FIELD_RATE_RATIO] = $v;
-        }
-        if (null !== ($v = $this->getRoute())) {
-            $a[self::FIELD_ROUTE] = $v;
-        }
-        if (null !== ($v = $this->getSite())) {
-            $a[self::FIELD_SITE] = $v;
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getText())) {
-            $a[self::FIELD_TEXT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_TEXT_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_TEXT} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_TEXT_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getSite())) {
+            $out->{self::FIELD_SITE} = $v;
         }
-        return $a;
-    }
+        if (null !== ($v = $this->getRoute())) {
+            $out->{self::FIELD_ROUTE} = $v;
+        }
+        if (null !== ($v = $this->getMethod())) {
+            $out->{self::FIELD_METHOD} = $v;
+        }
+        if (null !== ($v = $this->getDose())) {
+            $out->{self::FIELD_DOSE} = $v;
+        }
+        if (null !== ($v = $this->getRateRatio())) {
+            $out->{self::FIELD_RATE_RATIO} = $v;
+        }
+        if (null !== ($v = $this->getRateQuantity())) {
+            $out->{self::FIELD_RATE_QUANTITY} = $v;
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

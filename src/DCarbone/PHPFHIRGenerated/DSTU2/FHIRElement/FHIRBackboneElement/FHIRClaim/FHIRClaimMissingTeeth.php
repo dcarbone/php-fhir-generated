@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,11 +62,18 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter;
 
 /**
  * A provider issued list of services and products provided, or to be provided, to
@@ -79,14 +86,32 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_MISSING_TEETH;
+
+    const FIELD_TOOTH = 'tooth';
+    const FIELD_REASON = 'reason';
     const FIELD_EXTRACTION_DATE = 'extractionDate';
     const FIELD_EXTRACTION_DATE_EXT = '_extractionDate';
-    const FIELD_REASON = 'reason';
-    const FIELD_TOOTH = 'tooth';
 
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The code identifying which tooth is missing.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
+     */
+    protected null|FHIRCoding $tooth = null;
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Missing reason may be: E-extraction, O-other.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
+     */
+    protected null|FHIRCoding $reason = null;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -98,63 +123,44 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate
      */
-    protected $extractionDate = null;
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Missing reason may be: E-extraction, O-other.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
-     */
-    protected $reason = null;
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The code identifying which tooth is missing.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
-     */
-    protected $tooth = null;
+    protected null|FHIRDate $extractionDate = null;
 
     /**
      * Validation map for fields in type Claim.MissingTeeth
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRClaimMissingTeeth Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimMissingTeeth::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_EXTRACTION_DATE]) || isset($data[self::FIELD_EXTRACTION_DATE_EXT])) {
-            if (isset($data[self::FIELD_EXTRACTION_DATE])) {
-                $value = $data[self::FIELD_EXTRACTION_DATE];
+        if (array_key_exists(self::FIELD_TOOTH, $data)) {
+            if ($data[self::FIELD_TOOTH] instanceof FHIRCoding) {
+                $this->setTooth($data[self::FIELD_TOOTH]);
             } else {
-                $value = null;
+                $this->setTooth(new FHIRCoding($data[self::FIELD_TOOTH]));
             }
-            if (isset($data[self::FIELD_EXTRACTION_DATE_EXT]) && is_array($data[self::FIELD_EXTRACTION_DATE_EXT])) {
-                $ext = $data[self::FIELD_EXTRACTION_DATE_EXT];
+        }
+        if (array_key_exists(self::FIELD_REASON, $data)) {
+            if ($data[self::FIELD_REASON] instanceof FHIRCoding) {
+                $this->setReason($data[self::FIELD_REASON]);
             } else {
-                $ext = [];
+                $this->setReason(new FHIRCoding($data[self::FIELD_REASON]));
             }
+        }
+        if (array_key_exists(self::FIELD_EXTRACTION_DATE, $data) || array_key_exists(self::FIELD_EXTRACTION_DATE_EXT, $data)) {
+            $value = $data[self::FIELD_EXTRACTION_DATE] ?? null;
+            $ext = (isset($data[self::FIELD_EXTRACTION_DATE_EXT]) && is_array($data[self::FIELD_EXTRACTION_DATE_EXT])) ? $data[self::FIELD_EXTRACTION_DATE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDate) {
                     $this->setExtractionDate($value);
@@ -163,22 +169,10 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
                 } else {
                     $this->setExtractionDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setExtractionDate(new FHIRDate($ext));
-            }
-        }
-        if (isset($data[self::FIELD_REASON])) {
-            if ($data[self::FIELD_REASON] instanceof FHIRCoding) {
-                $this->setReason($data[self::FIELD_REASON]);
             } else {
-                $this->setReason(new FHIRCoding($data[self::FIELD_REASON]));
-            }
-        }
-        if (isset($data[self::FIELD_TOOTH])) {
-            if ($data[self::FIELD_TOOTH] instanceof FHIRCoding) {
-                $this->setTooth($data[self::FIELD_TOOTH]);
-            } else {
-                $this->setTooth(new FHIRCoding($data[self::FIELD_TOOTH]));
+                $this->setExtractionDate(new FHIRDate(null));
             }
         }
     }
@@ -186,93 +180,9 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ClaimMissingTeeth{$xmlns}></ClaimMissingTeeth>";
-    }
-
-    /**
-     * A date or partial date (e.g. just year or year + month). There is no time zone.
-     * The format is a union of the schema types gYear, gYearMonth and date. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The date of the extraction either known from records or patient reported
-     * estimate.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate
-     */
-    public function getExtractionDate()
-    {
-        return $this->extractionDate;
-    }
-
-    /**
-     * A date or partial date (e.g. just year or year + month). There is no time zone.
-     * The format is a union of the schema types gYear, gYearMonth and date. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The date of the extraction either known from records or patient reported
-     * estimate.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate $extractionDate
-     * @return static
-     */
-    public function setExtractionDate($extractionDate = null)
-    {
-        if (null === $extractionDate) {
-            $this->extractionDate = null;
-            return $this;
-        }
-        if ($extractionDate instanceof FHIRDate) {
-            $this->extractionDate = $extractionDate;
-            return $this;
-        }
-        $this->extractionDate = new FHIRDate($extractionDate);
-        return $this;
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Missing reason may be: E-extraction, O-other.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
-     */
-    public function getReason()
-    {
-        return $this->reason;
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Missing reason may be: E-extraction, O-other.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $reason
-     * @return static
-     */
-    public function setReason(FHIRCoding $reason = null)
-    {
-        $this->reason = $reason;
-        return $this;
     }
 
     /**
@@ -284,7 +194,7 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
-    public function getTooth()
+    public function getTooth(): null|FHIRCoding
     {
         return $this->tooth;
     }
@@ -299,9 +209,90 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $tooth
      * @return static
      */
-    public function setTooth(FHIRCoding $tooth = null)
+    public function setTooth(null|FHIRCoding $tooth = null): self
     {
+        if (null === $tooth) {
+            $tooth = new FHIRCoding();
+        }
+        $this->_trackValueSet($this->tooth, $tooth);
         $this->tooth = $tooth;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Missing reason may be: E-extraction, O-other.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
+     */
+    public function getReason(): null|FHIRCoding
+    {
+        return $this->reason;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Missing reason may be: E-extraction, O-other.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $reason
+     * @return static
+     */
+    public function setReason(null|FHIRCoding $reason = null): self
+    {
+        if (null === $reason) {
+            $reason = new FHIRCoding();
+        }
+        $this->_trackValueSet($this->reason, $reason);
+        $this->reason = $reason;
+        return $this;
+    }
+
+    /**
+     * A date or partial date (e.g. just year or year + month). There is no time zone.
+     * The format is a union of the schema types gYear, gYearMonth and date. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The date of the extraction either known from records or patient reported
+     * estimate.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate
+     */
+    public function getExtractionDate(): null|FHIRDate
+    {
+        return $this->extractionDate;
+    }
+
+    /**
+     * A date or partial date (e.g. just year or year + month). There is no time zone.
+     * The format is a union of the schema types gYear, gYearMonth and date. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The date of the extraction either known from records or patient reported
+     * estimate.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate $extractionDate
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setExtractionDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $extractionDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $extractionDate && !($extractionDate instanceof FHIRDate)) {
+            $extractionDate = new FHIRDate($extractionDate);
+        }
+        $this->_trackValueSet($this->extractionDate, $extractionDate);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXTRACTION_DATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_EXTRACTION_DATE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_EXTRACTION_DATE][0] = $xmlLocation;
+        $this->extractionDate = $extractionDate;
         return $this;
     }
 
@@ -311,9 +302,9 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -322,13 +313,13 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getExtractionDate())) {
+        if (null !== ($v = $this->getTooth())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_EXTRACTION_DATE] = $fieldErrs;
+                $errs[self::FIELD_TOOTH] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getReason())) {
@@ -336,20 +327,20 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
                 $errs[self::FIELD_REASON] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getTooth())) {
+        if (null !== ($v = $this->getExtractionDate())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TOOTH] = $fieldErrs;
+                $errs[self::FIELD_EXTRACTION_DATE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_EXTRACTION_DATE])) {
-            $v = $this->getExtractionDate();
-            foreach($validationRules[self::FIELD_EXTRACTION_DATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_MISSING_TEETH, self::FIELD_EXTRACTION_DATE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TOOTH])) {
+            $v = $this->getTooth();
+            foreach($validationRules[self::FIELD_TOOTH] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_MISSING_TEETH, self::FIELD_TOOTH, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EXTRACTION_DATE])) {
-                        $errs[self::FIELD_EXTRACTION_DATE] = [];
+                    if (!isset($errs[self::FIELD_TOOTH])) {
+                        $errs[self::FIELD_TOOTH] = [];
                     }
-                    $errs[self::FIELD_EXTRACTION_DATE][$rule] = $err;
+                    $errs[self::FIELD_TOOTH][$rule] = $err;
                 }
             }
         }
@@ -365,15 +356,15 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TOOTH])) {
-            $v = $this->getTooth();
-            foreach($validationRules[self::FIELD_TOOTH] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_MISSING_TEETH, self::FIELD_TOOTH, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_EXTRACTION_DATE])) {
+            $v = $this->getExtractionDate();
+            foreach($validationRules[self::FIELD_EXTRACTION_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_MISSING_TEETH, self::FIELD_EXTRACTION_DATE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TOOTH])) {
-                        $errs[self::FIELD_TOOTH] = [];
+                    if (!isset($errs[self::FIELD_EXTRACTION_DATE])) {
+                        $errs[self::FIELD_EXTRACTION_DATE] = [];
                     }
-                    $errs[self::FIELD_TOOTH][$rule] = $err;
+                    $errs[self::FIELD_EXTRACTION_DATE][$rule] = $err;
                 }
             }
         }
@@ -417,120 +408,159 @@ class FHIRClaimMissingTeeth extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimMissingTeeth $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimMissingTeeth
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRClaimMissingTeeth::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRClaimMissingTeeth::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRClaimMissingTeeth;
-        } elseif (!is_object($type) || !($type instanceof FHIRClaimMissingTeeth)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRClaimMissingTeeth)) {
             throw new \RuntimeException(sprintf(
-                'FHIRClaimMissingTeeth::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimMissingTeeth or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_TOOTH === $childName) {
+                $type->setTooth(FHIRCoding::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_REASON === $childName) {
+                $type->setReason(FHIRCoding::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTRACTION_DATE === $childName) {
+                $type->setExtractionDate(FHIRDate::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->extractionDate)) {
-            $type->setExtractionDate(FHIRDate::xmlUnserialize($children->extractionDate));
-        }
-        if (isset($attributes->extractionDate)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_EXTRACTION_DATE])) {
             $pt = $type->getExtractionDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->extractionDate);
+                $pt->setValue((string)$attributes[self::FIELD_EXTRACTION_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setExtractionDate((string)$attributes->extractionDate);
+                $type->setExtractionDate((string)$attributes[self::FIELD_EXTRACTION_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->reason)) {
-            $type->setReason(FHIRCoding::xmlUnserialize($children->reason));
-        }
-        if (isset($children->tooth)) {
-            $type->setTooth(FHIRCoding::xmlUnserialize($children->tooth));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getExtractionDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXTRACTION_DATE, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ClaimMissingTeeth', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_EXTRACTION_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getExtractionDate())) {
+            $xw->writeAttribute(self::FIELD_EXTRACTION_DATE, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getTooth())) {
+            $xw->startElement(self::FIELD_TOOTH);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getReason())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_REASON);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getTooth())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TOOTH, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_EXTRACTION_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getExtractionDate())) {
+            $xw->startElement(self::FIELD_EXTRACTION_DATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getExtractionDate())) {
-            $a[self::FIELD_EXTRACTION_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDate::FIELD_VALUE]);
-                $a[self::FIELD_EXTRACTION_DATE_EXT] = $enc;
-            }
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getTooth())) {
+            $out->{self::FIELD_TOOTH} = $v;
         }
         if (null !== ($v = $this->getReason())) {
-            $a[self::FIELD_REASON] = $v;
+            $out->{self::FIELD_REASON} = $v;
         }
-        if (null !== ($v = $this->getTooth())) {
-            $a[self::FIELD_TOOTH] = $v;
+        if (null !== ($v = $this->getExtractionDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_EXTRACTION_DATE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDate::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_EXTRACTION_DATE_EXT} = $ext;
+            }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

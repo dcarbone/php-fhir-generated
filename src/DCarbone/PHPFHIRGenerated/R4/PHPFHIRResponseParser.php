@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,58 +69,57 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  */
 class PHPFHIRResponseParser
 {
-    /** @var \DCarbone\PHPFHIRGenerated\R4\PHPFHIRResponseParserConfig $config */
-    private $config;
+    private const XML_START = ['<'];
+    private const JSON_START = ['{', '['];
+
+    /** @var \DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config */
+    private PHPFHIRConfig $config;
 
     /**
      * PHPFHIRResponseParser Constructor
-     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRResponseParserConfig $config
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config
      */
-    public function __construct(PHPFHIRResponseParserConfig $config = null)
+    public function __construct(null|PHPFHIRConfig $config = null)
     {
         if (null === $config) {
-            $config = new PHPFHIRResponseParserConfig;
+            $config = new PHPFHIRConfig;
         }
         $this->config = $config;
     }
 
     /**
-     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRResponseParserConfig
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig
      */
-    public function getConfig()
+    public function getConfig(): PHPFHIRConfig
     {
         return $this->config;
     }
 
     /**
-     * @param array|string|\SimpleXMLElement $input
-     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface|null
+     * Attempts to parse the provided input into FHIR objects.
+     *
+     * @param null|string|array|\stdClass|\SimpleXMLElement|\DOMDocument $input
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface
+     * @throws \Exception
      */
-    public function parse($input)
+    public function parse(null|string|array|\stdClass|\SimpleXMLElement|\DOMDocument $input): null|PHPFHIRTypeInterface
     {
-        $inputType = gettype($input);
-        if ('NULL' === $inputType) {
+        if (null === $input) {
             return null;
-        } elseif ('string' === $inputType) {
-            return $this->parseStringInput($input);
-        } elseif ('array' === $inputType) {
-            return $this->parseArrayInput($input);
-        } elseif ('object' === $inputType) {
-            return $this->parseObjectInput($input);
+        } else if (is_string($input)) {
+            return $this->parseString($input);
+        } else if (is_array($input)) {
+            return $this->parseArray($input);
         } else {
-            throw new \InvalidArgumentException(sprintf(
-                '%s::parse - $input must be XML or JSON encoded string, array, or instanceof \\SimpleXMLElement, %s seen.',
-                get_class($this),
-                $inputType
-            ));
+            return $this->parseObject($input);
         }
     }
 
     /**
      * @param array $input
-     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface|null
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface
      */
-    protected function parseArrayInput(array $input)
+    public function parseArray(array $input): null|PHPFHIRTypeInterface
     {
         if ([] === $input) {
             return null;
@@ -145,115 +144,118 @@ class PHPFHIRResponseParser
     }
 
     /**
-     * @param \SimpleXMLElement $input
-     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface|null
+     * @param \stdClass $input
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface
      */
-    protected function parseObjectSimpleXMLElementInput(\SimpleXMLElement $input)
+    public function parseStdClass(\stdClass $input): null|PHPFHIRTypeInterface
+    {
+        return $this->parseArray((array)$input);
+    }
+
+    /**
+     * @param \SimpleXMLElement $input
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface
+     */
+    public function parseSimpleXMLElement(\SimpleXMLElement $input): null|PHPFHIRTypeInterface
     {
         $elementName = $input->getName();
-        $className = PHPFHIRTypeMap::getTypeClass($elementName);
-        if (null === $className) {
+        /** @var \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface $fhirType */
+        $fhirType = PHPFHIRTypeMap::getTypeClass($elementName);
+        if (null === $fhirType) {
             throw new \UnexpectedValueException(sprintf(
-                'Unable to locate class for root XML element "%s". Input seen: %s',
+                'Unable to locate FHIR type for root XML element "%s". Input seen: %s',
                 $elementName,
                 $this->getPrintableStringInput($input->saveXML())
             ));
         }
-        return $className::xmlUnserialize($input);
+        return $fhirType::xmlUnserialize($input, $this->config);
     }
 
     /**
-     * @param object $input
-     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface|null
+     * @param \DOMDocument $input
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface
      */
-    protected function parseObjectInput($input)
+    public function parseDOMDocument(\DOMDocument $input): null|PHPFHIRTypeInterface
     {
-        if ($input instanceof PHPFHIRTypeInterface) {
-            return $input;
+        return $this->parseSimpleXMLElement(simplexml_import_dom($input));
+    }
+
+    /**
+     * @param \stdClass|\SimpleXMLElement|\DOMDocument $input
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface
+     */
+    public function parseObject(\stdClass|\SimpleXMLElement|\DOMDocument $input): null|PHPFHIRTypeInterface
+    {
+        if ($input instanceof \stdClass) {
+            return $this->parseStdClass($input);
         } elseif ($input instanceof \SimpleXMLElement) {
-            return $this->parseObjectSimpleXMLElementInput($input);
+            return $this->parseSimpleXMLElement($input);
+        } else {
+            return $this->parseDOMDocument($input);
         }
-        throw new \UnexpectedValueException(sprintf(
-            'Unable parse provided input object of type "%s"',
-            get_class($input)
-        ));
-        // TODO: implement \stdClass handling?
     }
 
     /**
      * @param string $input
-     * @param null|int $libxmlOpts
-     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface|null
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface
+     * @throws \Exception
      */
-    protected function parseStringXMLInput($input, $libxmlOpts = 591872)
+    public function parseXml(string $input): null|PHPFHIRTypeInterface
     {
-        libxml_use_internal_errors(true);
-        $sxe = new \SimpleXMLElement($input, $libxmlOpts);
-        $err = libxml_get_last_error();
-        libxml_use_internal_errors(false);
-        if ($sxe instanceof \SimpleXMLElement) {
-            return $this->parseObjectSimpleXMLElementInput($sxe);
-        }
-        throw new \DomainException(sprintf(
-            'Unable to parse provided input as XML.  Error: %s; Input: %s',
-            $err ? $err->message : 'Unknown',
-            $this->getPrintableStringInput($input)
-        ));
+        return $this->parseSimpleXMLElement(new \SimpleXMLElement($input, $this->config->getLibxmlOpts()));
     }
 
     /**
      * @param string $input
-     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface|null
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface
      */
-    protected function parseStringJSONInput($input)
+    public function parseJson(string $input): null|PHPFHIRTypeInterface
     {
         $decoded = json_decode($input, true);
         $err = json_last_error();
         if (JSON_ERROR_NONE !== $err) {
-            if (function_exists('php_last_error_msg')) {
-                $reason = json_last_error_msg();
-            } else {
-                $reason = $err;
-            }
             throw new \DomainException(sprintf(
                 'Unable to parse provided input as JSON.  Error: %s; Input: %s',
-                $reason,
+                json_last_error_msg(),
                $this->getPrintableStringInput($input)
             ));
         }
 
-        return $this->parseArrayInput($decoded);
+        return $this->parseArray($decoded);
     }
 
     /**
      * @param string $input
-     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface|null
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface
+     * @throws \Exception
      */
-    protected function parseStringInput($input)
+    public function parseString(string $input): null|PHPFHIRTypeInterface
     {
         $input = trim($input);
         if ('' === $input) {
             return null;
         }
         $chr = $input[0];
-        if ('<' === $chr) {
-            return $this->parseStringXMLInput($input);
-        } elseif ('{' === $chr) {
-            return $this->parseStringJSONInput($input);
-        } else {
-            throw new \UnexpectedValueException(sprintf(
-                'Input string must be either XML or JSON encoded object.  Provided: %s',
-               $this->getPrintableStringInput($input)
-            ));
+        if (in_array(self::XML_START, $chr, true)) {
+            return $this->parseXml($input);
+        } elseif (in_array(self::JSON_START, $chr, true)) {
+            return $this->parseJson($input);
         }
+        throw new \UnexpectedValueException(sprintf(
+            'Input string must be either XML or JSON encoded object.  Provided: %s',
+           $this->getPrintableStringInput($input)
+        ));
     }
 
     /**
      * @param string $input
      * @return string
      */
-    protected function getPrintableStringInput($input)
+    protected function getPrintableStringInput(string $input): string
     {
-        return strlen($input) > 100 ? substr($input, 0, 100) . '[...]' : $input;
+        if (strlen($input) > 100) {
+            return sprintf('%s[...]', substr($input, 0, 100));
+        }
+        return $input;
     }
 }

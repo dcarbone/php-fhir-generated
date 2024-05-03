@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPerson;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,10 +63,16 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPe
  */
 
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentityAssuranceLevel;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter;
 
 /**
  * Demographics and administrative information about a person independent of a
@@ -79,24 +85,10 @@ class FHIRPersonLink extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PERSON_DOT_LINK;
+
+    const FIELD_TARGET = 'target';
     const FIELD_ASSURANCE = 'assurance';
     const FIELD_ASSURANCE_EXT = '_assurance';
-    const FIELD_TARGET = 'target';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * The level of confidence that this link represents the same actual person, based
-     * on NIST Authentication Levels.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Level of assurance that this link is actually associated with the target
-     * resource.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentityAssuranceLevel
-     */
-    protected $assurance = null;
 
     /**
      * A reference from one resource to another.
@@ -107,41 +99,48 @@ class FHIRPersonLink extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    protected $target = null;
+    protected null|FHIRReference $target = null;
+    /**
+     * The level of confidence that this link represents the same actual person, based
+     * on NIST Authentication Levels.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Level of assurance that this link is actually associated with the target
+     * resource.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentityAssuranceLevel
+     */
+    protected null|FHIRIdentityAssuranceLevel $assurance = null;
 
     /**
      * Validation map for fields in type Person.Link
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRPersonLink Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRPersonLink::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ASSURANCE]) || isset($data[self::FIELD_ASSURANCE_EXT])) {
-            if (isset($data[self::FIELD_ASSURANCE])) {
-                $value = $data[self::FIELD_ASSURANCE];
+        if (array_key_exists(self::FIELD_TARGET, $data)) {
+            if ($data[self::FIELD_TARGET] instanceof FHIRReference) {
+                $this->setTarget($data[self::FIELD_TARGET]);
             } else {
-                $value = null;
+                $this->setTarget(new FHIRReference($data[self::FIELD_TARGET]));
             }
-            if (isset($data[self::FIELD_ASSURANCE_EXT]) && is_array($data[self::FIELD_ASSURANCE_EXT])) {
-                $ext = $data[self::FIELD_ASSURANCE_EXT];
-            } else {
-                $ext = [];
-            }
+        }
+        if (array_key_exists(self::FIELD_ASSURANCE, $data) || array_key_exists(self::FIELD_ASSURANCE_EXT, $data)) {
+            $value = $data[self::FIELD_ASSURANCE] ?? null;
+            $ext = (isset($data[self::FIELD_ASSURANCE_EXT]) && is_array($data[self::FIELD_ASSURANCE_EXT])) ? $data[self::FIELD_ASSURANCE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRIdentityAssuranceLevel) {
                     $this->setAssurance($value);
@@ -150,15 +149,10 @@ class FHIRPersonLink extends FHIRBackboneElement
                 } else {
                     $this->setAssurance(new FHIRIdentityAssuranceLevel([FHIRIdentityAssuranceLevel::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setAssurance(new FHIRIdentityAssuranceLevel($ext));
-            }
-        }
-        if (isset($data[self::FIELD_TARGET])) {
-            if ($data[self::FIELD_TARGET] instanceof FHIRReference) {
-                $this->setTarget($data[self::FIELD_TARGET]);
             } else {
-                $this->setTarget(new FHIRReference($data[self::FIELD_TARGET]));
+                $this->setAssurance(new FHIRIdentityAssuranceLevel(null));
             }
         }
     }
@@ -166,21 +160,43 @@ class FHIRPersonLink extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The resource to which this actual person is associated.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    public function _getFHIRXMLElementDefinition()
+    public function getTarget(): null|FHIRReference
     {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
+        return $this->target;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The resource to which this actual person is associated.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $target
+     * @return static
+     */
+    public function setTarget(null|FHIRReference $target = null): self
+    {
+        if (null === $target) {
+            $target = new FHIRReference();
         }
-        return "<PersonLink{$xmlns}></PersonLink>";
+        $this->_trackValueSet($this->target, $target);
+        $this->target = $target;
+        return $this;
     }
 
     /**
@@ -193,7 +209,7 @@ class FHIRPersonLink extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentityAssuranceLevel
      */
-    public function getAssurance()
+    public function getAssurance(): null|FHIRIdentityAssuranceLevel
     {
         return $this->assurance;
     }
@@ -209,39 +225,13 @@ class FHIRPersonLink extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentityAssuranceLevel $assurance
      * @return static
      */
-    public function setAssurance(FHIRIdentityAssuranceLevel $assurance = null)
+    public function setAssurance(null|FHIRIdentityAssuranceLevel $assurance = null): self
     {
+        if (null === $assurance) {
+            $assurance = new FHIRIdentityAssuranceLevel();
+        }
+        $this->_trackValueSet($this->assurance, $assurance);
         $this->assurance = $assurance;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The resource to which this actual person is associated.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    public function getTarget()
-    {
-        return $this->target;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The resource to which this actual person is associated.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $target
-     * @return static
-     */
-    public function setTarget(FHIRReference $target = null)
-    {
-        $this->target = $target;
         return $this;
     }
 
@@ -251,9 +241,9 @@ class FHIRPersonLink extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -262,30 +252,18 @@ class FHIRPersonLink extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAssurance())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ASSURANCE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getTarget())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_TARGET] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_ASSURANCE])) {
-            $v = $this->getAssurance();
-            foreach($validationRules[self::FIELD_ASSURANCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PERSON_DOT_LINK, self::FIELD_ASSURANCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ASSURANCE])) {
-                        $errs[self::FIELD_ASSURANCE] = [];
-                    }
-                    $errs[self::FIELD_ASSURANCE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getAssurance())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ASSURANCE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_TARGET])) {
@@ -297,6 +275,18 @@ class FHIRPersonLink extends FHIRBackboneElement
                         $errs[self::FIELD_TARGET] = [];
                     }
                     $errs[self::FIELD_TARGET][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ASSURANCE])) {
+            $v = $this->getAssurance();
+            foreach($validationRules[self::FIELD_ASSURANCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PERSON_DOT_LINK, self::FIELD_ASSURANCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ASSURANCE])) {
+                        $errs[self::FIELD_ASSURANCE] = [];
+                    }
+                    $errs[self::FIELD_ASSURANCE][$rule] = $err;
                 }
             }
         }
@@ -340,103 +330,136 @@ class FHIRPersonLink extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPerson\FHIRPersonLink $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPerson\FHIRPersonLink
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRPersonLink::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRPersonLink::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRPersonLink;
-        } elseif (!is_object($type) || !($type instanceof FHIRPersonLink)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRPersonLink)) {
             throw new \RuntimeException(sprintf(
-                'FHIRPersonLink::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPerson\FHIRPersonLink or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_TARGET === $childName) {
+                $type->setTarget(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ASSURANCE === $childName) {
+                $type->setAssurance(FHIRIdentityAssuranceLevel::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->assurance)) {
-            $type->setAssurance(FHIRIdentityAssuranceLevel::xmlUnserialize($children->assurance));
-        }
-        if (isset($children->target)) {
-            $type->setTarget(FHIRReference::xmlUnserialize($children->target));
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAssurance())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ASSURANCE, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'PersonLink', $this->_getSourceXmlns());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getTarget())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_TARGET);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getAssurance())) {
+            $xw->startElement(self::FIELD_ASSURANCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getTarget())) {
+            $out->{self::FIELD_TARGET} = $v;
+        }
         if (null !== ($v = $this->getAssurance())) {
-            $a[self::FIELD_ASSURANCE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRIdentityAssuranceLevel::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRIdentityAssuranceLevel::FIELD_VALUE]);
-                $a[self::FIELD_ASSURANCE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_ASSURANCE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRIdentityAssuranceLevel::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_ASSURANCE_EXT} = $ext;
             }
         }
-        if (null !== ($v = $this->getTarget())) {
-            $a[self::FIELD_TARGET] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

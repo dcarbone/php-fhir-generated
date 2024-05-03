@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,15 +62,29 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\R4\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\R4\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeMap;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Indication for the Medicinal Product.
@@ -83,43 +97,27 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION;
-    const FIELD_COMORBIDITY = 'comorbidity';
-    const FIELD_DISEASE_STATUS = 'diseaseStatus';
-    const FIELD_DISEASE_SYMPTOM_PROCEDURE = 'diseaseSymptomProcedure';
-    const FIELD_DURATION = 'duration';
-    const FIELD_INTENDED_EFFECT = 'intendedEffect';
-    const FIELD_OTHER_THERAPY = 'otherTherapy';
-    const FIELD_POPULATION = 'population';
+
     const FIELD_SUBJECT = 'subject';
+    const FIELD_DISEASE_SYMPTOM_PROCEDURE = 'diseaseSymptomProcedure';
+    const FIELD_DISEASE_STATUS = 'diseaseStatus';
+    const FIELD_COMORBIDITY = 'comorbidity';
+    const FIELD_INTENDED_EFFECT = 'intendedEffect';
+    const FIELD_DURATION = 'duration';
+    const FIELD_OTHER_THERAPY = 'otherTherapy';
     const FIELD_UNDESIRABLE_EFFECT = 'undesirableEffect';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_POPULATION = 'population';
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Comorbidity (concurrent condition) or co-infection as part of the indication.
+     * The medication for which this is an indication.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    protected $comorbidity = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The status of the disease or symptom for which the indication applies.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $diseaseStatus = null;
-
+    protected null|array $subject = [];
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -130,8 +128,40 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $diseaseSymptomProcedure = null;
-
+    protected null|FHIRCodeableConcept $diseaseSymptomProcedure = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The status of the disease or symptom for which the indication applies.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $diseaseStatus = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Comorbidity (concurrent condition) or co-infection as part of the indication.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected null|array $comorbidity = [];
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The intended effect, aim or strategy to be achieved by the indication.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $intendedEffect = null;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -143,20 +173,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    protected $duration = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The intended effect, aim or strategy to be achieved by the indication.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $intendedEffect = null;
-
+    protected null|FHIRQuantity $duration = null;
     /**
      * Indication for the Medicinal Product.
      *
@@ -165,30 +182,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy[]
      */
-    protected $otherTherapy = [];
-
-    /**
-     * A populatioof people with some set of grouping criteria.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The population group to which this applies.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation[]
-     */
-    protected $population = [];
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The medication for which this is an indication.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    protected $subject = [];
-
+    protected null|array $otherTherapy = [];
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -198,146 +192,138 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    protected $undesirableEffect = [];
+    protected null|array $undesirableEffect = [];
+    /**
+     * A populatioof people with some set of grouping criteria.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The population group to which this applies.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation[]
+     */
+    protected null|array $population = [];
 
     /**
      * Validation map for fields in type MedicinalProductIndication
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRMedicinalProductIndication Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMedicinalProductIndication::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_COMORBIDITY])) {
-            if (is_array($data[self::FIELD_COMORBIDITY])) {
-                foreach($data[self::FIELD_COMORBIDITY] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addComorbidity($v);
-                    } else {
-                        $this->addComorbidity(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_COMORBIDITY] instanceof FHIRCodeableConcept) {
-                $this->addComorbidity($data[self::FIELD_COMORBIDITY]);
-            } else {
-                $this->addComorbidity(new FHIRCodeableConcept($data[self::FIELD_COMORBIDITY]));
-            }
-        }
-        if (isset($data[self::FIELD_DISEASE_STATUS])) {
-            if ($data[self::FIELD_DISEASE_STATUS] instanceof FHIRCodeableConcept) {
-                $this->setDiseaseStatus($data[self::FIELD_DISEASE_STATUS]);
-            } else {
-                $this->setDiseaseStatus(new FHIRCodeableConcept($data[self::FIELD_DISEASE_STATUS]));
-            }
-        }
-        if (isset($data[self::FIELD_DISEASE_SYMPTOM_PROCEDURE])) {
-            if ($data[self::FIELD_DISEASE_SYMPTOM_PROCEDURE] instanceof FHIRCodeableConcept) {
-                $this->setDiseaseSymptomProcedure($data[self::FIELD_DISEASE_SYMPTOM_PROCEDURE]);
-            } else {
-                $this->setDiseaseSymptomProcedure(new FHIRCodeableConcept($data[self::FIELD_DISEASE_SYMPTOM_PROCEDURE]));
-            }
-        }
-        if (isset($data[self::FIELD_DURATION])) {
-            if ($data[self::FIELD_DURATION] instanceof FHIRQuantity) {
-                $this->setDuration($data[self::FIELD_DURATION]);
-            } else {
-                $this->setDuration(new FHIRQuantity($data[self::FIELD_DURATION]));
-            }
-        }
-        if (isset($data[self::FIELD_INTENDED_EFFECT])) {
-            if ($data[self::FIELD_INTENDED_EFFECT] instanceof FHIRCodeableConcept) {
-                $this->setIntendedEffect($data[self::FIELD_INTENDED_EFFECT]);
-            } else {
-                $this->setIntendedEffect(new FHIRCodeableConcept($data[self::FIELD_INTENDED_EFFECT]));
-            }
-        }
-        if (isset($data[self::FIELD_OTHER_THERAPY])) {
-            if (is_array($data[self::FIELD_OTHER_THERAPY])) {
-                foreach($data[self::FIELD_OTHER_THERAPY] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRMedicinalProductIndicationOtherTherapy) {
-                        $this->addOtherTherapy($v);
-                    } else {
-                        $this->addOtherTherapy(new FHIRMedicinalProductIndicationOtherTherapy($v));
-                    }
-                }
-            } else if ($data[self::FIELD_OTHER_THERAPY] instanceof FHIRMedicinalProductIndicationOtherTherapy) {
-                $this->addOtherTherapy($data[self::FIELD_OTHER_THERAPY]);
-            } else {
-                $this->addOtherTherapy(new FHIRMedicinalProductIndicationOtherTherapy($data[self::FIELD_OTHER_THERAPY]));
-            }
-        }
-        if (isset($data[self::FIELD_POPULATION])) {
-            if (is_array($data[self::FIELD_POPULATION])) {
-                foreach($data[self::FIELD_POPULATION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRPopulation) {
-                        $this->addPopulation($v);
-                    } else {
-                        $this->addPopulation(new FHIRPopulation($v));
-                    }
-                }
-            } else if ($data[self::FIELD_POPULATION] instanceof FHIRPopulation) {
-                $this->addPopulation($data[self::FIELD_POPULATION]);
-            } else {
-                $this->addPopulation(new FHIRPopulation($data[self::FIELD_POPULATION]));
-            }
-        }
-        if (isset($data[self::FIELD_SUBJECT])) {
+        if (array_key_exists(self::FIELD_SUBJECT, $data)) {
             if (is_array($data[self::FIELD_SUBJECT])) {
                 foreach($data[self::FIELD_SUBJECT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRReference) {
                         $this->addSubject($v);
                     } else {
                         $this->addSubject(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_SUBJECT] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_SUBJECT] instanceof FHIRReference) {
                 $this->addSubject($data[self::FIELD_SUBJECT]);
             } else {
                 $this->addSubject(new FHIRReference($data[self::FIELD_SUBJECT]));
             }
         }
-        if (isset($data[self::FIELD_UNDESIRABLE_EFFECT])) {
+        if (array_key_exists(self::FIELD_DISEASE_SYMPTOM_PROCEDURE, $data)) {
+            if ($data[self::FIELD_DISEASE_SYMPTOM_PROCEDURE] instanceof FHIRCodeableConcept) {
+                $this->setDiseaseSymptomProcedure($data[self::FIELD_DISEASE_SYMPTOM_PROCEDURE]);
+            } else {
+                $this->setDiseaseSymptomProcedure(new FHIRCodeableConcept($data[self::FIELD_DISEASE_SYMPTOM_PROCEDURE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DISEASE_STATUS, $data)) {
+            if ($data[self::FIELD_DISEASE_STATUS] instanceof FHIRCodeableConcept) {
+                $this->setDiseaseStatus($data[self::FIELD_DISEASE_STATUS]);
+            } else {
+                $this->setDiseaseStatus(new FHIRCodeableConcept($data[self::FIELD_DISEASE_STATUS]));
+            }
+        }
+        if (array_key_exists(self::FIELD_COMORBIDITY, $data)) {
+            if (is_array($data[self::FIELD_COMORBIDITY])) {
+                foreach($data[self::FIELD_COMORBIDITY] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addComorbidity($v);
+                    } else {
+                        $this->addComorbidity(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_COMORBIDITY] instanceof FHIRCodeableConcept) {
+                $this->addComorbidity($data[self::FIELD_COMORBIDITY]);
+            } else {
+                $this->addComorbidity(new FHIRCodeableConcept($data[self::FIELD_COMORBIDITY]));
+            }
+        }
+        if (array_key_exists(self::FIELD_INTENDED_EFFECT, $data)) {
+            if ($data[self::FIELD_INTENDED_EFFECT] instanceof FHIRCodeableConcept) {
+                $this->setIntendedEffect($data[self::FIELD_INTENDED_EFFECT]);
+            } else {
+                $this->setIntendedEffect(new FHIRCodeableConcept($data[self::FIELD_INTENDED_EFFECT]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DURATION, $data)) {
+            if ($data[self::FIELD_DURATION] instanceof FHIRQuantity) {
+                $this->setDuration($data[self::FIELD_DURATION]);
+            } else {
+                $this->setDuration(new FHIRQuantity($data[self::FIELD_DURATION]));
+            }
+        }
+        if (array_key_exists(self::FIELD_OTHER_THERAPY, $data)) {
+            if (is_array($data[self::FIELD_OTHER_THERAPY])) {
+                foreach($data[self::FIELD_OTHER_THERAPY] as $v) {
+                    if ($v instanceof FHIRMedicinalProductIndicationOtherTherapy) {
+                        $this->addOtherTherapy($v);
+                    } else {
+                        $this->addOtherTherapy(new FHIRMedicinalProductIndicationOtherTherapy($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_OTHER_THERAPY] instanceof FHIRMedicinalProductIndicationOtherTherapy) {
+                $this->addOtherTherapy($data[self::FIELD_OTHER_THERAPY]);
+            } else {
+                $this->addOtherTherapy(new FHIRMedicinalProductIndicationOtherTherapy($data[self::FIELD_OTHER_THERAPY]));
+            }
+        }
+        if (array_key_exists(self::FIELD_UNDESIRABLE_EFFECT, $data)) {
             if (is_array($data[self::FIELD_UNDESIRABLE_EFFECT])) {
                 foreach($data[self::FIELD_UNDESIRABLE_EFFECT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRReference) {
                         $this->addUndesirableEffect($v);
                     } else {
                         $this->addUndesirableEffect(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_UNDESIRABLE_EFFECT] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_UNDESIRABLE_EFFECT] instanceof FHIRReference) {
                 $this->addUndesirableEffect($data[self::FIELD_UNDESIRABLE_EFFECT]);
             } else {
                 $this->addUndesirableEffect(new FHIRReference($data[self::FIELD_UNDESIRABLE_EFFECT]));
+            }
+        }
+        if (array_key_exists(self::FIELD_POPULATION, $data)) {
+            if (is_array($data[self::FIELD_POPULATION])) {
+                foreach($data[self::FIELD_POPULATION] as $v) {
+                    if ($v instanceof FHIRPopulation) {
+                        $this->addPopulation($v);
+                    } else {
+                        $this->addPopulation(new FHIRPopulation($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_POPULATION] instanceof FHIRPopulation) {
+                $this->addPopulation($data[self::FIELD_POPULATION]);
+            } else {
+                $this->addPopulation(new FHIRPopulation($data[self::FIELD_POPULATION]));
             }
         }
     }
@@ -345,7 +331,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -353,111 +339,42 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
     /**
      * @return string
      */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<MedicinalProductIndication{$xmlns}></MedicinalProductIndication>";
-    }
-    /**
-     * @return string
-     */
-    public function _getResourceType()
+    public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Comorbidity (concurrent condition) or co-infection as part of the indication.
+     * The medication for which this is an indication.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    public function getComorbidity()
+    public function getSubject(): null|array
     {
-        return $this->comorbidity;
+        return $this->subject;
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Comorbidity (concurrent condition) or co-infection as part of the indication.
+     * The medication for which this is an indication.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $comorbidity
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
      * @return static
      */
-    public function addComorbidity(FHIRCodeableConcept $comorbidity = null)
+    public function addSubject(null|FHIRReference $subject = null): self
     {
-        $this->comorbidity[] = $comorbidity;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Comorbidity (concurrent condition) or co-infection as part of the indication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $comorbidity
-     * @return static
-     */
-    public function setComorbidity(array $comorbidity = [])
-    {
-        $this->comorbidity = [];
-        if ([] === $comorbidity) {
-            return $this;
+        if (null === $subject) {
+            $subject = new FHIRReference();
         }
-        foreach($comorbidity as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addComorbidity($v);
-            } else {
-                $this->addComorbidity(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The status of the disease or symptom for which the indication applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getDiseaseStatus()
-    {
-        return $this->diseaseStatus;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The status of the disease or symptom for which the indication applies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $diseaseStatus
-     * @return static
-     */
-    public function setDiseaseStatus(FHIRCodeableConcept $diseaseStatus = null)
-    {
-        $this->diseaseStatus = $diseaseStatus;
+        $this->_trackValueAdded();
+        $this->subject[] = $subject;
         return $this;
     }
 
@@ -471,7 +388,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getDiseaseSymptomProcedure()
+    public function getDiseaseSymptomProcedure(): null|FHIRCodeableConcept
     {
         return $this->diseaseSymptomProcedure;
     }
@@ -487,9 +404,121 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $diseaseSymptomProcedure
      * @return static
      */
-    public function setDiseaseSymptomProcedure(FHIRCodeableConcept $diseaseSymptomProcedure = null)
+    public function setDiseaseSymptomProcedure(null|FHIRCodeableConcept $diseaseSymptomProcedure = null): self
     {
+        if (null === $diseaseSymptomProcedure) {
+            $diseaseSymptomProcedure = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->diseaseSymptomProcedure, $diseaseSymptomProcedure);
         $this->diseaseSymptomProcedure = $diseaseSymptomProcedure;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The status of the disease or symptom for which the indication applies.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getDiseaseStatus(): null|FHIRCodeableConcept
+    {
+        return $this->diseaseStatus;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The status of the disease or symptom for which the indication applies.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $diseaseStatus
+     * @return static
+     */
+    public function setDiseaseStatus(null|FHIRCodeableConcept $diseaseStatus = null): self
+    {
+        if (null === $diseaseStatus) {
+            $diseaseStatus = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->diseaseStatus, $diseaseStatus);
+        $this->diseaseStatus = $diseaseStatus;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Comorbidity (concurrent condition) or co-infection as part of the indication.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getComorbidity(): null|array
+    {
+        return $this->comorbidity;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Comorbidity (concurrent condition) or co-infection as part of the indication.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $comorbidity
+     * @return static
+     */
+    public function addComorbidity(null|FHIRCodeableConcept $comorbidity = null): self
+    {
+        if (null === $comorbidity) {
+            $comorbidity = new FHIRCodeableConcept();
+        }
+        $this->_trackValueAdded();
+        $this->comorbidity[] = $comorbidity;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The intended effect, aim or strategy to be achieved by the indication.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getIntendedEffect(): null|FHIRCodeableConcept
+    {
+        return $this->intendedEffect;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The intended effect, aim or strategy to be achieved by the indication.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $intendedEffect
+     * @return static
+     */
+    public function setIntendedEffect(null|FHIRCodeableConcept $intendedEffect = null): self
+    {
+        if (null === $intendedEffect) {
+            $intendedEffect = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->intendedEffect, $intendedEffect);
+        $this->intendedEffect = $intendedEffect;
         return $this;
     }
 
@@ -504,7 +533,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    public function getDuration()
+    public function getDuration(): null|FHIRQuantity
     {
         return $this->duration;
     }
@@ -521,41 +550,13 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $duration
      * @return static
      */
-    public function setDuration(FHIRQuantity $duration = null)
+    public function setDuration(null|FHIRQuantity $duration = null): self
     {
+        if (null === $duration) {
+            $duration = new FHIRQuantity();
+        }
+        $this->_trackValueSet($this->duration, $duration);
         $this->duration = $duration;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The intended effect, aim or strategy to be achieved by the indication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getIntendedEffect()
-    {
-        return $this->intendedEffect;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The intended effect, aim or strategy to be achieved by the indication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $intendedEffect
-     * @return static
-     */
-    public function setIntendedEffect(FHIRCodeableConcept $intendedEffect = null)
-    {
-        $this->intendedEffect = $intendedEffect;
         return $this;
     }
 
@@ -567,7 +568,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy[]
      */
-    public function getOtherTherapy()
+    public function getOtherTherapy(): null|array
     {
         return $this->otherTherapy;
     }
@@ -581,146 +582,13 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy $otherTherapy
      * @return static
      */
-    public function addOtherTherapy(FHIRMedicinalProductIndicationOtherTherapy $otherTherapy = null)
+    public function addOtherTherapy(null|FHIRMedicinalProductIndicationOtherTherapy $otherTherapy = null): self
     {
+        if (null === $otherTherapy) {
+            $otherTherapy = new FHIRMedicinalProductIndicationOtherTherapy();
+        }
+        $this->_trackValueAdded();
         $this->otherTherapy[] = $otherTherapy;
-        return $this;
-    }
-
-    /**
-     * Indication for the Medicinal Product.
-     *
-     * Information about the use of the medicinal product in relation to other
-     * therapies described as part of the indication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy[] $otherTherapy
-     * @return static
-     */
-    public function setOtherTherapy(array $otherTherapy = [])
-    {
-        $this->otherTherapy = [];
-        if ([] === $otherTherapy) {
-            return $this;
-        }
-        foreach($otherTherapy as $v) {
-            if ($v instanceof FHIRMedicinalProductIndicationOtherTherapy) {
-                $this->addOtherTherapy($v);
-            } else {
-                $this->addOtherTherapy(new FHIRMedicinalProductIndicationOtherTherapy($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A populatioof people with some set of grouping criteria.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The population group to which this applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation[]
-     */
-    public function getPopulation()
-    {
-        return $this->population;
-    }
-
-    /**
-     * A populatioof people with some set of grouping criteria.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The population group to which this applies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation $population
-     * @return static
-     */
-    public function addPopulation(FHIRPopulation $population = null)
-    {
-        $this->population[] = $population;
-        return $this;
-    }
-
-    /**
-     * A populatioof people with some set of grouping criteria.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The population group to which this applies.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation[] $population
-     * @return static
-     */
-    public function setPopulation(array $population = [])
-    {
-        $this->population = [];
-        if ([] === $population) {
-            return $this;
-        }
-        foreach($population as $v) {
-            if ($v instanceof FHIRPopulation) {
-                $this->addPopulation($v);
-            } else {
-                $this->addPopulation(new FHIRPopulation($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The medication for which this is an indication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    public function getSubject()
-    {
-        return $this->subject;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The medication for which this is an indication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $subject
-     * @return static
-     */
-    public function addSubject(FHIRReference $subject = null)
-    {
-        $this->subject[] = $subject;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The medication for which this is an indication.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $subject
-     * @return static
-     */
-    public function setSubject(array $subject = [])
-    {
-        $this->subject = [];
-        if ([] === $subject) {
-            return $this;
-        }
-        foreach($subject as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addSubject($v);
-            } else {
-                $this->addSubject(new FHIRReference($v));
-            }
-        }
         return $this;
     }
 
@@ -733,7 +601,7 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
-    public function getUndesirableEffect()
+    public function getUndesirableEffect(): null|array
     {
         return $this->undesirableEffect;
     }
@@ -748,35 +616,47 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $undesirableEffect
      * @return static
      */
-    public function addUndesirableEffect(FHIRReference $undesirableEffect = null)
+    public function addUndesirableEffect(null|FHIRReference $undesirableEffect = null): self
     {
+        if (null === $undesirableEffect) {
+            $undesirableEffect = new FHIRReference();
+        }
+        $this->_trackValueAdded();
         $this->undesirableEffect[] = $undesirableEffect;
         return $this;
     }
 
     /**
-     * A reference from one resource to another.
+     * A populatioof people with some set of grouping criteria.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Describe the undesirable effects of the medicinal product.
+     * The population group to which this applies.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $undesirableEffect
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation[]
+     */
+    public function getPopulation(): null|array
+    {
+        return $this->population;
+    }
+
+    /**
+     * A populatioof people with some set of grouping criteria.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The population group to which this applies.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation $population
      * @return static
      */
-    public function setUndesirableEffect(array $undesirableEffect = [])
+    public function addPopulation(null|FHIRPopulation $population = null): self
     {
-        $this->undesirableEffect = [];
-        if ([] === $undesirableEffect) {
-            return $this;
+        if (null === $population) {
+            $population = new FHIRPopulation();
         }
-        foreach($undesirableEffect as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addUndesirableEffect($v);
-            } else {
-                $this->addUndesirableEffect(new FHIRReference($v));
-            }
-        }
+        $this->_trackValueAdded();
+        $this->population[] = $population;
         return $this;
     }
 
@@ -786,9 +666,9 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -797,20 +677,15 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getComorbidity())) {
+        if ([] !== ($vs = $this->getSubject())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_COMORBIDITY, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_SUBJECT, $i)] = $fieldErrs;
                 }
-            }
-        }
-        if (null !== ($v = $this->getDiseaseStatus())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DISEASE_STATUS] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDiseaseSymptomProcedure())) {
@@ -818,9 +693,16 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
                 $errs[self::FIELD_DISEASE_SYMPTOM_PROCEDURE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getDuration())) {
+        if (null !== ($v = $this->getDiseaseStatus())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DURATION] = $fieldErrs;
+                $errs[self::FIELD_DISEASE_STATUS] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getComorbidity())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_COMORBIDITY, $i)] = $fieldErrs;
+                }
             }
         }
         if (null !== ($v = $this->getIntendedEffect())) {
@@ -828,24 +710,15 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
                 $errs[self::FIELD_INTENDED_EFFECT] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getDuration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DURATION] = $fieldErrs;
+            }
+        }
         if ([] !== ($vs = $this->getOtherTherapy())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_OTHER_THERAPY, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getPopulation())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_POPULATION, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getSubject())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_SUBJECT, $i)] = $fieldErrs;
                 }
             }
         }
@@ -856,87 +729,10 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_COMORBIDITY])) {
-            $v = $this->getComorbidity();
-            foreach($validationRules[self::FIELD_COMORBIDITY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_COMORBIDITY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COMORBIDITY])) {
-                        $errs[self::FIELD_COMORBIDITY] = [];
-                    }
-                    $errs[self::FIELD_COMORBIDITY][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DISEASE_STATUS])) {
-            $v = $this->getDiseaseStatus();
-            foreach($validationRules[self::FIELD_DISEASE_STATUS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_DISEASE_STATUS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DISEASE_STATUS])) {
-                        $errs[self::FIELD_DISEASE_STATUS] = [];
-                    }
-                    $errs[self::FIELD_DISEASE_STATUS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DISEASE_SYMPTOM_PROCEDURE])) {
-            $v = $this->getDiseaseSymptomProcedure();
-            foreach($validationRules[self::FIELD_DISEASE_SYMPTOM_PROCEDURE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_DISEASE_SYMPTOM_PROCEDURE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DISEASE_SYMPTOM_PROCEDURE])) {
-                        $errs[self::FIELD_DISEASE_SYMPTOM_PROCEDURE] = [];
-                    }
-                    $errs[self::FIELD_DISEASE_SYMPTOM_PROCEDURE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DURATION])) {
-            $v = $this->getDuration();
-            foreach($validationRules[self::FIELD_DURATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_DURATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DURATION])) {
-                        $errs[self::FIELD_DURATION] = [];
-                    }
-                    $errs[self::FIELD_DURATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INTENDED_EFFECT])) {
-            $v = $this->getIntendedEffect();
-            foreach($validationRules[self::FIELD_INTENDED_EFFECT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_INTENDED_EFFECT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INTENDED_EFFECT])) {
-                        $errs[self::FIELD_INTENDED_EFFECT] = [];
-                    }
-                    $errs[self::FIELD_INTENDED_EFFECT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_OTHER_THERAPY])) {
-            $v = $this->getOtherTherapy();
-            foreach($validationRules[self::FIELD_OTHER_THERAPY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_OTHER_THERAPY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_OTHER_THERAPY])) {
-                        $errs[self::FIELD_OTHER_THERAPY] = [];
-                    }
-                    $errs[self::FIELD_OTHER_THERAPY][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_POPULATION])) {
-            $v = $this->getPopulation();
-            foreach($validationRules[self::FIELD_POPULATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_POPULATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_POPULATION])) {
-                        $errs[self::FIELD_POPULATION] = [];
-                    }
-                    $errs[self::FIELD_POPULATION][$rule] = $err;
+        if ([] !== ($vs = $this->getPopulation())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_POPULATION, $i)] = $fieldErrs;
                 }
             }
         }
@@ -952,6 +748,78 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_DISEASE_SYMPTOM_PROCEDURE])) {
+            $v = $this->getDiseaseSymptomProcedure();
+            foreach($validationRules[self::FIELD_DISEASE_SYMPTOM_PROCEDURE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_DISEASE_SYMPTOM_PROCEDURE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DISEASE_SYMPTOM_PROCEDURE])) {
+                        $errs[self::FIELD_DISEASE_SYMPTOM_PROCEDURE] = [];
+                    }
+                    $errs[self::FIELD_DISEASE_SYMPTOM_PROCEDURE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DISEASE_STATUS])) {
+            $v = $this->getDiseaseStatus();
+            foreach($validationRules[self::FIELD_DISEASE_STATUS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_DISEASE_STATUS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DISEASE_STATUS])) {
+                        $errs[self::FIELD_DISEASE_STATUS] = [];
+                    }
+                    $errs[self::FIELD_DISEASE_STATUS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COMORBIDITY])) {
+            $v = $this->getComorbidity();
+            foreach($validationRules[self::FIELD_COMORBIDITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_COMORBIDITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COMORBIDITY])) {
+                        $errs[self::FIELD_COMORBIDITY] = [];
+                    }
+                    $errs[self::FIELD_COMORBIDITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INTENDED_EFFECT])) {
+            $v = $this->getIntendedEffect();
+            foreach($validationRules[self::FIELD_INTENDED_EFFECT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_INTENDED_EFFECT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INTENDED_EFFECT])) {
+                        $errs[self::FIELD_INTENDED_EFFECT] = [];
+                    }
+                    $errs[self::FIELD_INTENDED_EFFECT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DURATION])) {
+            $v = $this->getDuration();
+            foreach($validationRules[self::FIELD_DURATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_DURATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DURATION])) {
+                        $errs[self::FIELD_DURATION] = [];
+                    }
+                    $errs[self::FIELD_DURATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_OTHER_THERAPY])) {
+            $v = $this->getOtherTherapy();
+            foreach($validationRules[self::FIELD_OTHER_THERAPY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_OTHER_THERAPY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_OTHER_THERAPY])) {
+                        $errs[self::FIELD_OTHER_THERAPY] = [];
+                    }
+                    $errs[self::FIELD_OTHER_THERAPY][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_UNDESIRABLE_EFFECT])) {
             $v = $this->getUndesirableEffect();
             foreach($validationRules[self::FIELD_UNDESIRABLE_EFFECT] as $rule => $constraint) {
@@ -961,6 +829,30 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
                         $errs[self::FIELD_UNDESIRABLE_EFFECT] = [];
                     }
                     $errs[self::FIELD_UNDESIRABLE_EFFECT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_POPULATION])) {
+            $v = $this->getPopulation();
+            foreach($validationRules[self::FIELD_POPULATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INDICATION, self::FIELD_POPULATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_POPULATION])) {
+                        $errs[self::FIELD_POPULATION] = [];
+                    }
+                    $errs[self::FIELD_POPULATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -1000,18 +892,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -1021,6 +901,18 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -1048,241 +940,248 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRMedicinalProductIndication::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicinalProductIndication::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRMedicinalProductIndication;
-        } elseif (!is_object($type) || !($type instanceof FHIRMedicinalProductIndication)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRMedicinalProductIndication)) {
             throw new \RuntimeException(sprintf(
-                'FHIRMedicinalProductIndication::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIndication or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_SUBJECT === $childName) {
+                $type->addSubject(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DISEASE_SYMPTOM_PROCEDURE === $childName) {
+                $type->setDiseaseSymptomProcedure(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DISEASE_STATUS === $childName) {
+                $type->setDiseaseStatus(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_COMORBIDITY === $childName) {
+                $type->addComorbidity(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_INTENDED_EFFECT === $childName) {
+                $type->setIntendedEffect(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DURATION === $childName) {
+                $type->setDuration(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_OTHER_THERAPY === $childName) {
+                $type->addOtherTherapy(FHIRMedicinalProductIndicationOtherTherapy::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_UNDESIRABLE_EFFECT === $childName) {
+                $type->addUndesirableEffect(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_POPULATION === $childName) {
+                $type->addPopulation(FHIRPopulation::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TEXT === $childName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CONTAINED === $childName) {
+                foreach ($n->children() as $nn) {
+                    $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn, $config));
+                }
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRId::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_META === $childName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_IMPLICIT_RULES === $childName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_LANGUAGE === $childName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->comorbidity)) {
-            foreach($children->comorbidity as $child) {
-                $type->addComorbidity(FHIRCodeableConcept::xmlUnserialize($child));
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->diseaseStatus)) {
-            $type->setDiseaseStatus(FHIRCodeableConcept::xmlUnserialize($children->diseaseStatus));
-        }
-        if (isset($children->diseaseSymptomProcedure)) {
-            $type->setDiseaseSymptomProcedure(FHIRCodeableConcept::xmlUnserialize($children->diseaseSymptomProcedure));
-        }
-        if (isset($children->duration)) {
-            $type->setDuration(FHIRQuantity::xmlUnserialize($children->duration));
-        }
-        if (isset($children->intendedEffect)) {
-            $type->setIntendedEffect(FHIRCodeableConcept::xmlUnserialize($children->intendedEffect));
-        }
-        if (isset($children->otherTherapy)) {
-            foreach($children->otherTherapy as $child) {
-                $type->addOtherTherapy(FHIRMedicinalProductIndicationOtherTherapy::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->population)) {
-            foreach($children->population as $child) {
-                $type->addPopulation(FHIRPopulation::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->subject)) {
-            foreach($children->subject as $child) {
-                $type->addSubject(FHIRReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->undesirableEffect)) {
-            foreach($children->undesirableEffect as $child) {
-                $type->addUndesirableEffect(FHIRReference::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_LANGUAGE])) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getComorbidity())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COMORBIDITY, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getDiseaseStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DISEASE_STATUS, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'MedicinalProductIndication', $this->_getSourceXmlns());
+        }
+        parent::xmlSerialize($xw, $config);
+        foreach ($this->getSubject() as $v) {
+            $xw->startElement(self::FIELD_SUBJECT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getDiseaseSymptomProcedure())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DISEASE_SYMPTOM_PROCEDURE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_DISEASE_SYMPTOM_PROCEDURE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getDiseaseStatus())) {
+            $xw->startElement(self::FIELD_DISEASE_STATUS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getComorbidity() as $v) {
+            $xw->startElement(self::FIELD_COMORBIDITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getIntendedEffect())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INTENDED_EFFECT, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_INTENDED_EFFECT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getOtherTherapy())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_OTHER_THERAPY, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null !== ($v = $this->getDuration())) {
+            $xw->startElement(self::FIELD_DURATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getPopulation())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_POPULATION, null, $v->_getFHIRXMLNamespace()));
-            }
+        foreach ($this->getOtherTherapy() as $v) {
+            $xw->startElement(self::FIELD_OTHER_THERAPY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getSubject())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUBJECT, null, $v->_getFHIRXMLNamespace()));
-            }
+        foreach ($this->getUndesirableEffect() as $v) {
+            $xw->startElement(self::FIELD_UNDESIRABLE_EFFECT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getUndesirableEffect())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_UNDESIRABLE_EFFECT, null, $v->_getFHIRXMLNamespace()));
-            }
+        foreach ($this->getPopulation() as $v) {
+            $xw->startElement(self::FIELD_POPULATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getComorbidity())) {
-            $a[self::FIELD_COMORBIDITY] = [];
+        $out = parent::jsonSerialize();
+        if ([] !== ($vs = $this->getSubject())) {
+            $out->{self::FIELD_SUBJECT} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_COMORBIDITY][] = $v;
+                $out->{self::FIELD_SUBJECT}[] = $v;
             }
-        }
-        if (null !== ($v = $this->getDiseaseStatus())) {
-            $a[self::FIELD_DISEASE_STATUS] = $v;
         }
         if (null !== ($v = $this->getDiseaseSymptomProcedure())) {
-            $a[self::FIELD_DISEASE_SYMPTOM_PROCEDURE] = $v;
+            $out->{self::FIELD_DISEASE_SYMPTOM_PROCEDURE} = $v;
         }
-        if (null !== ($v = $this->getDuration())) {
-            $a[self::FIELD_DURATION] = $v;
+        if (null !== ($v = $this->getDiseaseStatus())) {
+            $out->{self::FIELD_DISEASE_STATUS} = $v;
+        }
+        if ([] !== ($vs = $this->getComorbidity())) {
+            $out->{self::FIELD_COMORBIDITY} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_COMORBIDITY}[] = $v;
+            }
         }
         if (null !== ($v = $this->getIntendedEffect())) {
-            $a[self::FIELD_INTENDED_EFFECT] = $v;
+            $out->{self::FIELD_INTENDED_EFFECT} = $v;
+        }
+        if (null !== ($v = $this->getDuration())) {
+            $out->{self::FIELD_DURATION} = $v;
         }
         if ([] !== ($vs = $this->getOtherTherapy())) {
-            $a[self::FIELD_OTHER_THERAPY] = [];
+            $out->{self::FIELD_OTHER_THERAPY} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_OTHER_THERAPY][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->getPopulation())) {
-            $a[self::FIELD_POPULATION] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_POPULATION][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->getSubject())) {
-            $a[self::FIELD_SUBJECT] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_SUBJECT][] = $v;
+                $out->{self::FIELD_OTHER_THERAPY}[] = $v;
             }
         }
         if ([] !== ($vs = $this->getUndesirableEffect())) {
-            $a[self::FIELD_UNDESIRABLE_EFFECT] = [];
+            $out->{self::FIELD_UNDESIRABLE_EFFECT} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_UNDESIRABLE_EFFECT][] = $v;
+                $out->{self::FIELD_UNDESIRABLE_EFFECT}[] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getPopulation())) {
+            $out->{self::FIELD_POPULATION} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_POPULATION}[] = $v;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
-    }
 
+        $out->{PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE} = $this->_getResourceType();
+
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,11 +64,18 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmun
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Describes the event of a patient being administered a vaccine or a record of an
@@ -81,55 +88,19 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_DOT_PROTOCOL_APPLIED;
+
+    const FIELD_SERIES = 'series';
+    const FIELD_SERIES_EXT = '_series';
     const FIELD_AUTHORITY = 'authority';
+    const FIELD_TARGET_DISEASE = 'targetDisease';
     const FIELD_DOSE_NUMBER_POSITIVE_INT = 'doseNumberPositiveInt';
     const FIELD_DOSE_NUMBER_POSITIVE_INT_EXT = '_doseNumberPositiveInt';
     const FIELD_DOSE_NUMBER_STRING = 'doseNumberString';
     const FIELD_DOSE_NUMBER_STRING_EXT = '_doseNumberString';
-    const FIELD_SERIES = 'series';
-    const FIELD_SERIES_EXT = '_series';
     const FIELD_SERIES_DOSES_POSITIVE_INT = 'seriesDosesPositiveInt';
     const FIELD_SERIES_DOSES_POSITIVE_INT_EXT = '_seriesDosesPositiveInt';
     const FIELD_SERIES_DOSES_STRING = 'seriesDosesString';
     const FIELD_SERIES_DOSES_STRING_EXT = '_seriesDosesString';
-    const FIELD_TARGET_DISEASE = 'targetDisease';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the authority who published the protocol (e.g. ACIP) that is being
-     * followed.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $authority = null;
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Nominal position in a series. (choose any one of doseNumber*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
-     */
-    protected $doseNumberPositiveInt = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Nominal position in a series. (choose any one of doseNumber*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $doseNumberString = null;
 
     /**
      * A sequence of Unicode characters
@@ -141,32 +112,18 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $series = null;
-
+    protected null|FHIRString $series = null;
     /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The recommended number of doses to achieve immunity. (choose any one of
-     * seriesDoses*, but only one)
+     * Indicates the authority who published the protocol (e.g. ACIP) that is being
+     * followed.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    protected $seriesDosesPositiveInt = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The recommended number of doses to achieve immunity. (choose any one of
-     * seriesDoses*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $seriesDosesString = null;
-
+    protected null|FHIRReference $authority = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -177,94 +134,70 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $targetDisease = [];
+    protected null|array $targetDisease = [];
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Nominal position in a series.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
+     */
+    protected null|FHIRPositiveInt $doseNumberPositiveInt = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Nominal position in a series.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $doseNumberString = null;
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * The recommended number of doses to achieve immunity.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
+     */
+    protected null|FHIRPositiveInt $seriesDosesPositiveInt = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The recommended number of doses to achieve immunity.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $seriesDosesString = null;
 
     /**
      * Validation map for fields in type Immunization.ProtocolApplied
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRImmunizationProtocolApplied Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRImmunizationProtocolApplied::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_AUTHORITY])) {
-            if ($data[self::FIELD_AUTHORITY] instanceof FHIRReference) {
-                $this->setAuthority($data[self::FIELD_AUTHORITY]);
-            } else {
-                $this->setAuthority(new FHIRReference($data[self::FIELD_AUTHORITY]));
-            }
-        }
-        if (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT]) || isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT])) {
-            if (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT])) {
-                $value = $data[self::FIELD_DOSE_NUMBER_POSITIVE_INT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT])) {
-                $ext = $data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $this->setDoseNumberPositiveInt($value);
-                } else if (is_array($value)) {
-                    $this->setDoseNumberPositiveInt(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $this->setDoseNumberPositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDoseNumberPositiveInt(new FHIRPositiveInt($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DOSE_NUMBER_STRING]) || isset($data[self::FIELD_DOSE_NUMBER_STRING_EXT])) {
-            if (isset($data[self::FIELD_DOSE_NUMBER_STRING])) {
-                $value = $data[self::FIELD_DOSE_NUMBER_STRING];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DOSE_NUMBER_STRING_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_STRING_EXT])) {
-                $ext = $data[self::FIELD_DOSE_NUMBER_STRING_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDoseNumberString($value);
-                } else if (is_array($value)) {
-                    $this->setDoseNumberString(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDoseNumberString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDoseNumberString(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_SERIES]) || isset($data[self::FIELD_SERIES_EXT])) {
-            if (isset($data[self::FIELD_SERIES])) {
-                $value = $data[self::FIELD_SERIES];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SERIES_EXT]) && is_array($data[self::FIELD_SERIES_EXT])) {
-                $ext = $data[self::FIELD_SERIES_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_SERIES, $data) || array_key_exists(self::FIELD_SERIES_EXT, $data)) {
+            $value = $data[self::FIELD_SERIES] ?? null;
+            $ext = (isset($data[self::FIELD_SERIES_EXT]) && is_array($data[self::FIELD_SERIES_EXT])) ? $data[self::FIELD_SERIES_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setSeries($value);
@@ -273,21 +206,71 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
                 } else {
                     $this->setSeries(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSeries(new FHIRString($ext));
+            } else {
+                $this->setSeries(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT]) || isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT])) {
-            if (isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT])) {
-                $value = $data[self::FIELD_SERIES_DOSES_POSITIVE_INT];
+        if (array_key_exists(self::FIELD_AUTHORITY, $data)) {
+            if ($data[self::FIELD_AUTHORITY] instanceof FHIRReference) {
+                $this->setAuthority($data[self::FIELD_AUTHORITY]);
             } else {
-                $value = null;
+                $this->setAuthority(new FHIRReference($data[self::FIELD_AUTHORITY]));
             }
-            if (isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT])) {
-                $ext = $data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT];
+        }
+        if (array_key_exists(self::FIELD_TARGET_DISEASE, $data)) {
+            if (is_array($data[self::FIELD_TARGET_DISEASE])) {
+                foreach($data[self::FIELD_TARGET_DISEASE] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addTargetDisease($v);
+                    } else {
+                        $this->addTargetDisease(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_TARGET_DISEASE] instanceof FHIRCodeableConcept) {
+                $this->addTargetDisease($data[self::FIELD_TARGET_DISEASE]);
             } else {
-                $ext = [];
+                $this->addTargetDisease(new FHIRCodeableConcept($data[self::FIELD_TARGET_DISEASE]));
             }
+        }
+        if (array_key_exists(self::FIELD_DOSE_NUMBER_POSITIVE_INT, $data) || array_key_exists(self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT, $data)) {
+            $value = $data[self::FIELD_DOSE_NUMBER_POSITIVE_INT] ?? null;
+            $ext = (isset($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT])) ? $data[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setDoseNumberPositiveInt($value);
+                } else if (is_array($value)) {
+                    $this->setDoseNumberPositiveInt(new FHIRPositiveInt(array_merge($ext, $value)));
+                } else {
+                    $this->setDoseNumberPositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDoseNumberPositiveInt(new FHIRPositiveInt($ext));
+            } else {
+                $this->setDoseNumberPositiveInt(new FHIRPositiveInt(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_DOSE_NUMBER_STRING, $data) || array_key_exists(self::FIELD_DOSE_NUMBER_STRING_EXT, $data)) {
+            $value = $data[self::FIELD_DOSE_NUMBER_STRING] ?? null;
+            $ext = (isset($data[self::FIELD_DOSE_NUMBER_STRING_EXT]) && is_array($data[self::FIELD_DOSE_NUMBER_STRING_EXT])) ? $data[self::FIELD_DOSE_NUMBER_STRING_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDoseNumberString($value);
+                } else if (is_array($value)) {
+                    $this->setDoseNumberString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDoseNumberString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDoseNumberString(new FHIRString($ext));
+            } else {
+                $this->setDoseNumberString(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_SERIES_DOSES_POSITIVE_INT, $data) || array_key_exists(self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT, $data)) {
+            $value = $data[self::FIELD_SERIES_DOSES_POSITIVE_INT] ?? null;
+            $ext = (isset($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT]) && is_array($data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT])) ? $data[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRPositiveInt) {
                     $this->setSeriesDosesPositiveInt($value);
@@ -296,21 +279,15 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
                 } else {
                     $this->setSeriesDosesPositiveInt(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSeriesDosesPositiveInt(new FHIRPositiveInt($ext));
+            } else {
+                $this->setSeriesDosesPositiveInt(new FHIRPositiveInt(null));
             }
         }
-        if (isset($data[self::FIELD_SERIES_DOSES_STRING]) || isset($data[self::FIELD_SERIES_DOSES_STRING_EXT])) {
-            if (isset($data[self::FIELD_SERIES_DOSES_STRING])) {
-                $value = $data[self::FIELD_SERIES_DOSES_STRING];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SERIES_DOSES_STRING_EXT]) && is_array($data[self::FIELD_SERIES_DOSES_STRING_EXT])) {
-                $ext = $data[self::FIELD_SERIES_DOSES_STRING_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_SERIES_DOSES_STRING, $data) || array_key_exists(self::FIELD_SERIES_DOSES_STRING_EXT, $data)) {
+            $value = $data[self::FIELD_SERIES_DOSES_STRING] ?? null;
+            $ext = (isset($data[self::FIELD_SERIES_DOSES_STRING_EXT]) && is_array($data[self::FIELD_SERIES_DOSES_STRING_EXT])) ? $data[self::FIELD_SERIES_DOSES_STRING_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setSeriesDosesString($value);
@@ -319,26 +296,10 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
                 } else {
                     $this->setSeriesDosesString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSeriesDosesString(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_TARGET_DISEASE])) {
-            if (is_array($data[self::FIELD_TARGET_DISEASE])) {
-                foreach($data[self::FIELD_TARGET_DISEASE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addTargetDisease($v);
-                    } else {
-                        $this->addTargetDisease(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_TARGET_DISEASE] instanceof FHIRCodeableConcept) {
-                $this->addTargetDisease($data[self::FIELD_TARGET_DISEASE]);
             } else {
-                $this->addTargetDisease(new FHIRCodeableConcept($data[self::FIELD_TARGET_DISEASE]));
+                $this->setSeriesDosesString(new FHIRString(null));
             }
         }
     }
@@ -346,21 +307,50 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * One possible path to achieve presumed immunity against a disease - within the
+     * context of an authority.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    public function _getFHIRXMLElementDefinition()
+    public function getSeries(): null|FHIRString
     {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
+        return $this->series;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * One possible path to achieve presumed immunity against a disease - within the
+     * context of an authority.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $series
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setSeries(null|string|FHIRStringPrimitive|FHIRString $series = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $series && !($series instanceof FHIRString)) {
+            $series = new FHIRString($series);
         }
-        return "<ImmunizationProtocolApplied{$xmlns}></ImmunizationProtocolApplied>";
+        $this->_trackValueSet($this->series, $series);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SERIES])) {
+            $this->_primitiveXmlLocations[self::FIELD_SERIES] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_SERIES][0] = $xmlLocation;
+        $this->series = $series;
+        return $this;
     }
 
     /**
@@ -373,7 +363,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getAuthority()
+    public function getAuthority(): null|FHIRReference
     {
         return $this->authority;
     }
@@ -389,205 +379,13 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $authority
      * @return static
      */
-    public function setAuthority(FHIRReference $authority = null)
+    public function setAuthority(null|FHIRReference $authority = null): self
     {
+        if (null === $authority) {
+            $authority = new FHIRReference();
+        }
+        $this->_trackValueSet($this->authority, $authority);
         $this->authority = $authority;
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Nominal position in a series. (choose any one of doseNumber*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
-     */
-    public function getDoseNumberPositiveInt()
-    {
-        return $this->doseNumberPositiveInt;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Nominal position in a series. (choose any one of doseNumber*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $doseNumberPositiveInt
-     * @return static
-     */
-    public function setDoseNumberPositiveInt($doseNumberPositiveInt = null)
-    {
-        if (null === $doseNumberPositiveInt) {
-            $this->doseNumberPositiveInt = null;
-            return $this;
-        }
-        if ($doseNumberPositiveInt instanceof FHIRPositiveInt) {
-            $this->doseNumberPositiveInt = $doseNumberPositiveInt;
-            return $this;
-        }
-        $this->doseNumberPositiveInt = new FHIRPositiveInt($doseNumberPositiveInt);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Nominal position in a series. (choose any one of doseNumber*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getDoseNumberString()
-    {
-        return $this->doseNumberString;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Nominal position in a series. (choose any one of doseNumber*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $doseNumberString
-     * @return static
-     */
-    public function setDoseNumberString($doseNumberString = null)
-    {
-        if (null === $doseNumberString) {
-            $this->doseNumberString = null;
-            return $this;
-        }
-        if ($doseNumberString instanceof FHIRString) {
-            $this->doseNumberString = $doseNumberString;
-            return $this;
-        }
-        $this->doseNumberString = new FHIRString($doseNumberString);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * One possible path to achieve presumed immunity against a disease - within the
-     * context of an authority.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getSeries()
-    {
-        return $this->series;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * One possible path to achieve presumed immunity against a disease - within the
-     * context of an authority.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $series
-     * @return static
-     */
-    public function setSeries($series = null)
-    {
-        if (null === $series) {
-            $this->series = null;
-            return $this;
-        }
-        if ($series instanceof FHIRString) {
-            $this->series = $series;
-            return $this;
-        }
-        $this->series = new FHIRString($series);
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * The recommended number of doses to achieve immunity. (choose any one of
-     * seriesDoses*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
-     */
-    public function getSeriesDosesPositiveInt()
-    {
-        return $this->seriesDosesPositiveInt;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * The recommended number of doses to achieve immunity. (choose any one of
-     * seriesDoses*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $seriesDosesPositiveInt
-     * @return static
-     */
-    public function setSeriesDosesPositiveInt($seriesDosesPositiveInt = null)
-    {
-        if (null === $seriesDosesPositiveInt) {
-            $this->seriesDosesPositiveInt = null;
-            return $this;
-        }
-        if ($seriesDosesPositiveInt instanceof FHIRPositiveInt) {
-            $this->seriesDosesPositiveInt = $seriesDosesPositiveInt;
-            return $this;
-        }
-        $this->seriesDosesPositiveInt = new FHIRPositiveInt($seriesDosesPositiveInt);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The recommended number of doses to achieve immunity. (choose any one of
-     * seriesDoses*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getSeriesDosesString()
-    {
-        return $this->seriesDosesString;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The recommended number of doses to achieve immunity. (choose any one of
-     * seriesDoses*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $seriesDosesString
-     * @return static
-     */
-    public function setSeriesDosesString($seriesDosesString = null)
-    {
-        if (null === $seriesDosesString) {
-            $this->seriesDosesString = null;
-            return $this;
-        }
-        if ($seriesDosesString instanceof FHIRString) {
-            $this->seriesDosesString = $seriesDosesString;
-            return $this;
-        }
-        $this->seriesDosesString = new FHIRString($seriesDosesString);
         return $this;
     }
 
@@ -601,7 +399,7 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getTargetDisease()
+    public function getTargetDisease(): null|array
     {
         return $this->targetDisease;
     }
@@ -617,36 +415,169 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $targetDisease
      * @return static
      */
-    public function addTargetDisease(FHIRCodeableConcept $targetDisease = null)
+    public function addTargetDisease(null|FHIRCodeableConcept $targetDisease = null): self
     {
+        if (null === $targetDisease) {
+            $targetDisease = new FHIRCodeableConcept();
+        }
+        $this->_trackValueAdded();
         $this->targetDisease[] = $targetDisease;
         return $this;
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * The vaccine preventable disease the dose is being administered against.
+     * Nominal position in a series.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $targetDisease
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
+     */
+    public function getDoseNumberPositiveInt(): null|FHIRPositiveInt
+    {
+        return $this->doseNumberPositiveInt;
+    }
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Nominal position in a series.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $doseNumberPositiveInt
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTargetDisease(array $targetDisease = [])
+    public function setDoseNumberPositiveInt(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $doseNumberPositiveInt = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->targetDisease = [];
-        if ([] === $targetDisease) {
-            return $this;
+        if (null !== $doseNumberPositiveInt && !($doseNumberPositiveInt instanceof FHIRPositiveInt)) {
+            $doseNumberPositiveInt = new FHIRPositiveInt($doseNumberPositiveInt);
         }
-        foreach($targetDisease as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addTargetDisease($v);
-            } else {
-                $this->addTargetDisease(new FHIRCodeableConcept($v));
-            }
+        $this->_trackValueSet($this->doseNumberPositiveInt, $doseNumberPositiveInt);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DOSE_NUMBER_POSITIVE_INT])) {
+            $this->_primitiveXmlLocations[self::FIELD_DOSE_NUMBER_POSITIVE_INT] = [];
         }
+        $this->_primitiveXmlLocations[self::FIELD_DOSE_NUMBER_POSITIVE_INT][0] = $xmlLocation;
+        $this->doseNumberPositiveInt = $doseNumberPositiveInt;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Nominal position in a series.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getDoseNumberString(): null|FHIRString
+    {
+        return $this->doseNumberString;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Nominal position in a series.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $doseNumberString
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setDoseNumberString(null|string|FHIRStringPrimitive|FHIRString $doseNumberString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $doseNumberString && !($doseNumberString instanceof FHIRString)) {
+            $doseNumberString = new FHIRString($doseNumberString);
+        }
+        $this->_trackValueSet($this->doseNumberString, $doseNumberString);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DOSE_NUMBER_STRING])) {
+            $this->_primitiveXmlLocations[self::FIELD_DOSE_NUMBER_STRING] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_DOSE_NUMBER_STRING][0] = $xmlLocation;
+        $this->doseNumberString = $doseNumberString;
+        return $this;
+    }
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * The recommended number of doses to achieve immunity.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
+     */
+    public function getSeriesDosesPositiveInt(): null|FHIRPositiveInt
+    {
+        return $this->seriesDosesPositiveInt;
+    }
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * The recommended number of doses to achieve immunity.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $seriesDosesPositiveInt
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setSeriesDosesPositiveInt(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $seriesDosesPositiveInt = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $seriesDosesPositiveInt && !($seriesDosesPositiveInt instanceof FHIRPositiveInt)) {
+            $seriesDosesPositiveInt = new FHIRPositiveInt($seriesDosesPositiveInt);
+        }
+        $this->_trackValueSet($this->seriesDosesPositiveInt, $seriesDosesPositiveInt);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SERIES_DOSES_POSITIVE_INT])) {
+            $this->_primitiveXmlLocations[self::FIELD_SERIES_DOSES_POSITIVE_INT] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_SERIES_DOSES_POSITIVE_INT][0] = $xmlLocation;
+        $this->seriesDosesPositiveInt = $seriesDosesPositiveInt;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The recommended number of doses to achieve immunity.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getSeriesDosesString(): null|FHIRString
+    {
+        return $this->seriesDosesString;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The recommended number of doses to achieve immunity.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $seriesDosesString
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setSeriesDosesString(null|string|FHIRStringPrimitive|FHIRString $seriesDosesString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $seriesDosesString && !($seriesDosesString instanceof FHIRString)) {
+            $seriesDosesString = new FHIRString($seriesDosesString);
+        }
+        $this->_trackValueSet($this->seriesDosesString, $seriesDosesString);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SERIES_DOSES_STRING])) {
+            $this->_primitiveXmlLocations[self::FIELD_SERIES_DOSES_STRING] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_SERIES_DOSES_STRING][0] = $xmlLocation;
+        $this->seriesDosesString = $seriesDosesString;
         return $this;
     }
 
@@ -656,9 +587,9 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -667,13 +598,25 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getSeries())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SERIES] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getAuthority())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_AUTHORITY] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getTargetDisease())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_TARGET_DISEASE, $i)] = $fieldErrs;
+                }
             }
         }
         if (null !== ($v = $this->getDoseNumberPositiveInt())) {
@@ -686,11 +629,6 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
                 $errs[self::FIELD_DOSE_NUMBER_STRING] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getSeries())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SERIES] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getSeriesDosesPositiveInt())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_SERIES_DOSES_POSITIVE_INT] = $fieldErrs;
@@ -701,10 +639,15 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
                 $errs[self::FIELD_SERIES_DOSES_STRING] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getTargetDisease())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_TARGET_DISEASE, $i)] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_SERIES])) {
+            $v = $this->getSeries();
+            foreach($validationRules[self::FIELD_SERIES] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_DOT_PROTOCOL_APPLIED, self::FIELD_SERIES, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SERIES])) {
+                        $errs[self::FIELD_SERIES] = [];
+                    }
+                    $errs[self::FIELD_SERIES][$rule] = $err;
                 }
             }
         }
@@ -717,6 +660,18 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
                         $errs[self::FIELD_AUTHORITY] = [];
                     }
                     $errs[self::FIELD_AUTHORITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TARGET_DISEASE])) {
+            $v = $this->getTargetDisease();
+            foreach($validationRules[self::FIELD_TARGET_DISEASE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_DOT_PROTOCOL_APPLIED, self::FIELD_TARGET_DISEASE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TARGET_DISEASE])) {
+                        $errs[self::FIELD_TARGET_DISEASE] = [];
+                    }
+                    $errs[self::FIELD_TARGET_DISEASE][$rule] = $err;
                 }
             }
         }
@@ -744,18 +699,6 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SERIES])) {
-            $v = $this->getSeries();
-            foreach($validationRules[self::FIELD_SERIES] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_DOT_PROTOCOL_APPLIED, self::FIELD_SERIES, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SERIES])) {
-                        $errs[self::FIELD_SERIES] = [];
-                    }
-                    $errs[self::FIELD_SERIES][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_SERIES_DOSES_POSITIVE_INT])) {
             $v = $this->getSeriesDosesPositiveInt();
             foreach($validationRules[self::FIELD_SERIES_DOSES_POSITIVE_INT] as $rule => $constraint) {
@@ -777,18 +720,6 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
                         $errs[self::FIELD_SERIES_DOSES_STRING] = [];
                     }
                     $errs[self::FIELD_SERIES_DOSES_STRING][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TARGET_DISEASE])) {
-            $v = $this->getTargetDisease();
-            foreach($validationRules[self::FIELD_TARGET_DISEASE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_IMMUNIZATION_DOT_PROTOCOL_APPLIED, self::FIELD_TARGET_DISEASE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TARGET_DISEASE])) {
-                        $errs[self::FIELD_TARGET_DISEASE] = [];
-                    }
-                    $errs[self::FIELD_TARGET_DISEASE][$rule] = $err;
                 }
             }
         }
@@ -832,225 +763,282 @@ class FHIRImmunizationProtocolApplied extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRImmunizationProtocolApplied::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRImmunizationProtocolApplied::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRImmunizationProtocolApplied;
-        } elseif (!is_object($type) || !($type instanceof FHIRImmunizationProtocolApplied)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRImmunizationProtocolApplied)) {
             throw new \RuntimeException(sprintf(
-                'FHIRImmunizationProtocolApplied::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_SERIES === $childName) {
+                $type->setSeries(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_AUTHORITY === $childName) {
+                $type->setAuthority(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TARGET_DISEASE === $childName) {
+                $type->addTargetDisease(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DOSE_NUMBER_POSITIVE_INT === $childName) {
+                $type->setDoseNumberPositiveInt(FHIRPositiveInt::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_DOSE_NUMBER_STRING === $childName) {
+                $type->setDoseNumberString(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_SERIES_DOSES_POSITIVE_INT === $childName) {
+                $type->setSeriesDosesPositiveInt(FHIRPositiveInt::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_SERIES_DOSES_STRING === $childName) {
+                $type->setSeriesDosesString(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->authority)) {
-            $type->setAuthority(FHIRReference::xmlUnserialize($children->authority));
-        }
-        if (isset($children->doseNumberPositiveInt)) {
-            $type->setDoseNumberPositiveInt(FHIRPositiveInt::xmlUnserialize($children->doseNumberPositiveInt));
-        }
-        if (isset($attributes->doseNumberPositiveInt)) {
-            $pt = $type->getDoseNumberPositiveInt();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->doseNumberPositiveInt);
-            } else {
-                $type->setDoseNumberPositiveInt((string)$attributes->doseNumberPositiveInt);
-            }
-        }
-        if (isset($children->doseNumberString)) {
-            $type->setDoseNumberString(FHIRString::xmlUnserialize($children->doseNumberString));
-        }
-        if (isset($attributes->doseNumberString)) {
-            $pt = $type->getDoseNumberString();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->doseNumberString);
-            } else {
-                $type->setDoseNumberString((string)$attributes->doseNumberString);
-            }
-        }
-        if (isset($children->series)) {
-            $type->setSeries(FHIRString::xmlUnserialize($children->series));
-        }
-        if (isset($attributes->series)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_SERIES])) {
             $pt = $type->getSeries();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->series);
+                $pt->setValue((string)$attributes[self::FIELD_SERIES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setSeries((string)$attributes->series);
+                $type->setSeries((string)$attributes[self::FIELD_SERIES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->seriesDosesPositiveInt)) {
-            $type->setSeriesDosesPositiveInt(FHIRPositiveInt::xmlUnserialize($children->seriesDosesPositiveInt));
+        if (isset($attributes[self::FIELD_DOSE_NUMBER_POSITIVE_INT])) {
+            $pt = $type->getDoseNumberPositiveInt();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_DOSE_NUMBER_POSITIVE_INT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setDoseNumberPositiveInt((string)$attributes[self::FIELD_DOSE_NUMBER_POSITIVE_INT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($attributes->seriesDosesPositiveInt)) {
+        if (isset($attributes[self::FIELD_DOSE_NUMBER_STRING])) {
+            $pt = $type->getDoseNumberString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_DOSE_NUMBER_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setDoseNumberString((string)$attributes[self::FIELD_DOSE_NUMBER_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_SERIES_DOSES_POSITIVE_INT])) {
             $pt = $type->getSeriesDosesPositiveInt();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->seriesDosesPositiveInt);
+                $pt->setValue((string)$attributes[self::FIELD_SERIES_DOSES_POSITIVE_INT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setSeriesDosesPositiveInt((string)$attributes->seriesDosesPositiveInt);
+                $type->setSeriesDosesPositiveInt((string)$attributes[self::FIELD_SERIES_DOSES_POSITIVE_INT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->seriesDosesString)) {
-            $type->setSeriesDosesString(FHIRString::xmlUnserialize($children->seriesDosesString));
-        }
-        if (isset($attributes->seriesDosesString)) {
+        if (isset($attributes[self::FIELD_SERIES_DOSES_STRING])) {
             $pt = $type->getSeriesDosesString();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->seriesDosesString);
+                $pt->setValue((string)$attributes[self::FIELD_SERIES_DOSES_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setSeriesDosesString((string)$attributes->seriesDosesString);
+                $type->setSeriesDosesString((string)$attributes[self::FIELD_SERIES_DOSES_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->targetDisease)) {
-            foreach($children->targetDisease as $child) {
-                $type->addTargetDisease(FHIRCodeableConcept::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ImmunizationProtocolApplied', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SERIES] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSeries())) {
+            $xw->writeAttribute(self::FIELD_SERIES, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DOSE_NUMBER_POSITIVE_INT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDoseNumberPositiveInt())) {
+            $xw->writeAttribute(self::FIELD_DOSE_NUMBER_POSITIVE_INT, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DOSE_NUMBER_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDoseNumberString())) {
+            $xw->writeAttribute(self::FIELD_DOSE_NUMBER_STRING, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SERIES_DOSES_POSITIVE_INT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSeriesDosesPositiveInt())) {
+            $xw->writeAttribute(self::FIELD_SERIES_DOSES_POSITIVE_INT, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SERIES_DOSES_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSeriesDosesString())) {
+            $xw->writeAttribute(self::FIELD_SERIES_DOSES_STRING, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SERIES] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSeries())) {
+            $xw->startElement(self::FIELD_SERIES);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
         if (null !== ($v = $this->getAuthority())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORITY, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_AUTHORITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getDoseNumberPositiveInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_NUMBER_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
+        foreach ($this->getTargetDisease() as $v) {
+            $xw->startElement(self::FIELD_TARGET_DISEASE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getDoseNumberString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOSE_NUMBER_STRING, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DOSE_NUMBER_POSITIVE_INT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDoseNumberPositiveInt())) {
+            $xw->startElement(self::FIELD_DOSE_NUMBER_POSITIVE_INT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getSeries())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SERIES, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DOSE_NUMBER_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDoseNumberString())) {
+            $xw->startElement(self::FIELD_DOSE_NUMBER_STRING);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getSeriesDosesPositiveInt())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SERIES_DOSES_POSITIVE_INT, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SERIES_DOSES_POSITIVE_INT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSeriesDosesPositiveInt())) {
+            $xw->startElement(self::FIELD_SERIES_DOSES_POSITIVE_INT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getSeriesDosesString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SERIES_DOSES_STRING, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SERIES_DOSES_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSeriesDosesString())) {
+            $xw->startElement(self::FIELD_SERIES_DOSES_STRING);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getTargetDisease())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET_DISEASE, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getSeries())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_SERIES} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SERIES_EXT} = $ext;
+            }
+        }
         if (null !== ($v = $this->getAuthority())) {
-            $a[self::FIELD_AUTHORITY] = $v;
+            $out->{self::FIELD_AUTHORITY} = $v;
+        }
+        if ([] !== ($vs = $this->getTargetDisease())) {
+            $out->{self::FIELD_TARGET_DISEASE} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_TARGET_DISEASE}[] = $v;
+            }
         }
         if (null !== ($v = $this->getDoseNumberPositiveInt())) {
-            $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DOSE_NUMBER_POSITIVE_INT} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRPositiveInt::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DOSE_NUMBER_POSITIVE_INT_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getDoseNumberString())) {
-            $a[self::FIELD_DOSE_NUMBER_STRING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DOSE_NUMBER_STRING_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DOSE_NUMBER_STRING} = $val;
             }
-        }
-        if (null !== ($v = $this->getSeries())) {
-            $a[self::FIELD_SERIES] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_SERIES_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DOSE_NUMBER_STRING_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getSeriesDosesPositiveInt())) {
-            $a[self::FIELD_SERIES_DOSES_POSITIVE_INT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_SERIES_DOSES_POSITIVE_INT} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRPositiveInt::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SERIES_DOSES_POSITIVE_INT_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getSeriesDosesString())) {
-            $a[self::FIELD_SERIES_DOSES_STRING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_SERIES_DOSES_STRING_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_SERIES_DOSES_STRING} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SERIES_DOSES_STRING_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->getTargetDisease())) {
-            $a[self::FIELD_TARGET_DISEASE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_TARGET_DISEASE][] = $v;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,33 +66,36 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * Class FHIRBooleanPrimitive
  * @package \DCarbone\PHPFHIRGenerated\DSTU2
  */
-class FHIRBooleanPrimitive implements PHPFHIRTypeInterface
+class FHIRBooleanPrimitive implements PHPFHIRPrimitiveTypeInterface
 {
     use PHPFHIRValidationAssertionsTrait;
+    use PHPFHIRChangeTrackingTrait;
+    use PHPFHIRSourceXmlNamespaceTrait;
 
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BOOLEAN_HYPHEN_PRIMITIVE;
+
     const FIELD_VALUE = 'value';
 
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
     /**
-     * @var null|boolean
+     * @var null|bool
      */
-    protected $value = null;
+    protected null|bool $value = null;
 
     /**
      * Validation map for fields in type boolean-primitive
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRBooleanPrimitive Constructor
-     * @param null|boolean $value
+     * @param null|string|bool $value
      */
-    public function __construct($value = null)
+    public function __construct(null|string|bool $value = null)
     {
         $this->setValue($value);
     }
@@ -100,60 +103,23 @@ class FHIRBooleanPrimitive implements PHPFHIRTypeInterface
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
-
     /**
-     * @return string|null
+     * @return null|bool
      */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<boolean_primitive{$xmlns}></boolean_primitive>";
-    }
-
-    /**
-     * @return null|boolean
-     */
-    public function getValue()
+    public function getValue(): null|bool
     {
         return $this->value;
     }
 
     /**
-     * @param null|boolean $value
+     * @param null|string|bool $value
      * @return static
      */
-    public function setValue($value = null)
+    public function setValue(null|string|bool $value = null): self
     {
         if (null === $value) {
             $this->value = null;
@@ -166,14 +132,22 @@ class FHIRBooleanPrimitive implements PHPFHIRTypeInterface
     }
 
     /**
+     * @return string
+     */
+    public function getFormattedValue(): string
+    {
+        return $this->getValue() ? PHPFHIRConstants::STRING_TRUE : PHPFHIRConstants::STRING_FALSE;
+    }
+
+    /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
      * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -182,7 +156,7 @@ class FHIRBooleanPrimitive implements PHPFHIRTypeInterface
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = [];
         $validationRules = $this->_getValidationRules();
@@ -201,82 +175,111 @@ class FHIRBooleanPrimitive implements PHPFHIRTypeInterface
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRBooleanPrimitive $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRBooleanPrimitive
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRBooleanPrimitive::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRBooleanPrimitive::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRBooleanPrimitive;
-        } elseif (!is_object($type) || !($type instanceof FHIRBooleanPrimitive)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRBooleanPrimitive)) {
             throw new \RuntimeException(sprintf(
-                'FHIRBooleanPrimitive::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRBooleanPrimitive or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_VALUE === $childName) {
+                $valueAttr = $n->attributes()[self::FIELD_VALUE] ?? null;
+                if (null !== $valueAttr) {
+                    $type->setValue((string)$valueAttr);
+                } elseif ($n->hasChildren()) {
+                    $type->setValue($n->saveXML());
+                } else {
+                    $type->setValue((string)$n);
+                }
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($attributes->value)) {
-            $type->setValue((string)$attributes->value);
-        } elseif (isset($children->value)) {
-            $type->setValue((string)$children->value);
-        } elseif ('' !== ($v = (string)$sxe)) {
-            $type->setValue($v);
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_VALUE])) {
+            $type->setValue((string)$attributes[self::FIELD_VALUE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        $sxe->addAttribute(self::FIELD_VALUE, (string)$this);
-        return $sxe;
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'boolean_primitive', $this->_getSourceXmlns());
+        }
+        if (($this->_primitiveXmlLocations[self::FIELD_VALUE] ?? PHPFHIRXmlLocationEnum::ATTRIBUTE) === PHPFHIRXmlLocationEnum::ATTRIBUTE) {
+            $xw->writeAttribute(self::FIELD_VALUE, $this->getFormattedValue());
+        }
+        if (($this->_primitiveXmlLocations[self::FIELD_VALUE] ?? PHPFHIRXmlLocationEnum::ATTRIBUTE) === PHPFHIRXmlLocationEnum::ELEMENT) {
+            $xw->writeSimpleElement(self::FIELD_VALUE, $this->getFormattedValue());
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return null|boolean
+     * @return null|bool
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return $this->getValue();
     }
 
-
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
-        return $this->getValue() ? PHPFHIRConstants::STRING_TRUE : PHPFHIRConstants::STRING_FALSE;
+        return $this->getFormattedValue();
     }
 }

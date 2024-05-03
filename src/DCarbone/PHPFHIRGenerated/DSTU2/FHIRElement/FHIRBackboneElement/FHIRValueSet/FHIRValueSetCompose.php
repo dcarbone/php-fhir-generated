@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,9 +63,16 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  */
 
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter;
 
 /**
  * A value set specifies a set of codes drawn from one or more code systems.
@@ -77,22 +84,11 @@ class FHIRValueSetCompose extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_COMPOSE;
-    const FIELD_EXCLUDE = 'exclude';
+
     const FIELD_IMPORT = 'import';
     const FIELD_IMPORT_EXT = '_import';
     const FIELD_INCLUDE = 'include';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A value set specifies a set of codes drawn from one or more code systems.
-     *
-     * Exclude one or more codes from the value set.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
-     */
-    protected $exclude = [];
+    const FIELD_EXCLUDE = 'exclude';
 
     /**
      * String of characters used to identify a name or a resource
@@ -104,8 +100,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[]
      */
-    protected $import = [];
-
+    protected null|array $import = [];
     /**
      * A value set specifies a set of codes drawn from one or more code systems.
      *
@@ -113,59 +108,38 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
      */
-    protected $include = [];
+    protected null|array $include = [];
+    /**
+     * A value set specifies a set of codes drawn from one or more code systems.
+     *
+     * Exclude one or more codes from the value set.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
+     */
+    protected null|array $exclude = [];
 
     /**
      * Validation map for fields in type ValueSet.Compose
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRValueSetCompose Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRValueSetCompose::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_EXCLUDE])) {
-            if (is_array($data[self::FIELD_EXCLUDE])) {
-                foreach($data[self::FIELD_EXCLUDE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRValueSetInclude) {
-                        $this->addExclude($v);
-                    } else {
-                        $this->addExclude(new FHIRValueSetInclude($v));
-                    }
-                }
-            } else if ($data[self::FIELD_EXCLUDE] instanceof FHIRValueSetInclude) {
-                $this->addExclude($data[self::FIELD_EXCLUDE]);
-            } else {
-                $this->addExclude(new FHIRValueSetInclude($data[self::FIELD_EXCLUDE]));
-            }
-        }
-        if (isset($data[self::FIELD_IMPORT]) || isset($data[self::FIELD_IMPORT_EXT])) {
-            if (isset($data[self::FIELD_IMPORT])) {
-                $value = $data[self::FIELD_IMPORT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_IMPORT_EXT]) && is_array($data[self::FIELD_IMPORT_EXT])) {
-                $ext = $data[self::FIELD_IMPORT_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_IMPORT, $data) || array_key_exists(self::FIELD_IMPORT_EXT, $data)) {
+            $value = $data[self::FIELD_IMPORT] ?? null;
+            $ext = (isset($data[self::FIELD_IMPORT_EXT]) && is_array($data[self::FIELD_IMPORT_EXT])) ? $data[self::FIELD_IMPORT_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->addImport($value);
@@ -187,100 +161,52 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 } else {
                     $this->addImport(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addImport(new FHIRUri($iext));
                 }
+            } else {
+                $this->addImport(new FHIRUri(null));
             }
         }
-        if (isset($data[self::FIELD_INCLUDE])) {
+        if (array_key_exists(self::FIELD_INCLUDE, $data)) {
             if (is_array($data[self::FIELD_INCLUDE])) {
                 foreach($data[self::FIELD_INCLUDE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRValueSetInclude) {
                         $this->addInclude($v);
                     } else {
                         $this->addInclude(new FHIRValueSetInclude($v));
                     }
                 }
-            } else if ($data[self::FIELD_INCLUDE] instanceof FHIRValueSetInclude) {
+            } elseif ($data[self::FIELD_INCLUDE] instanceof FHIRValueSetInclude) {
                 $this->addInclude($data[self::FIELD_INCLUDE]);
             } else {
                 $this->addInclude(new FHIRValueSetInclude($data[self::FIELD_INCLUDE]));
             }
         }
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRTypeName()
-    {
-        return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ValueSetCompose{$xmlns}></ValueSetCompose>";
-    }
-
-    /**
-     * A value set specifies a set of codes drawn from one or more code systems.
-     *
-     * Exclude one or more codes from the value set.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
-     */
-    public function getExclude()
-    {
-        return $this->exclude;
-    }
-
-    /**
-     * A value set specifies a set of codes drawn from one or more code systems.
-     *
-     * Exclude one or more codes from the value set.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude $exclude
-     * @return static
-     */
-    public function addExclude(FHIRValueSetInclude $exclude = null)
-    {
-        $this->exclude[] = $exclude;
-        return $this;
-    }
-
-    /**
-     * A value set specifies a set of codes drawn from one or more code systems.
-     *
-     * Exclude one or more codes from the value set.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[] $exclude
-     * @return static
-     */
-    public function setExclude(array $exclude = [])
-    {
-        $this->exclude = [];
-        if ([] === $exclude) {
-            return $this;
-        }
-        foreach($exclude as $v) {
-            if ($v instanceof FHIRValueSetInclude) {
-                $this->addExclude($v);
+        if (array_key_exists(self::FIELD_EXCLUDE, $data)) {
+            if (is_array($data[self::FIELD_EXCLUDE])) {
+                foreach($data[self::FIELD_EXCLUDE] as $v) {
+                    if ($v instanceof FHIRValueSetInclude) {
+                        $this->addExclude($v);
+                    } else {
+                        $this->addExclude(new FHIRValueSetInclude($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_EXCLUDE] instanceof FHIRValueSetInclude) {
+                $this->addExclude($data[self::FIELD_EXCLUDE]);
             } else {
-                $this->addExclude(new FHIRValueSetInclude($v));
+                $this->addExclude(new FHIRValueSetInclude($data[self::FIELD_EXCLUDE]));
             }
         }
-        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function _getFhirTypeName(): string
+    {
+        return self::FHIR_TYPE_NAME;
     }
 
     /**
@@ -293,7 +219,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[]
      */
-    public function getImport()
+    public function getImport(): null|array
     {
         return $this->import;
     }
@@ -306,20 +232,21 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * Includes the contents of the referenced value set as a part of the contents of
      * this value set. This is an absolute URI that is a reference to ValueSet.uri.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $import
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri $import
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addImport($import = null)
+    public function addImport(null|string|FHIRUriPrimitive|FHIRUri $import = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $import) {
-            $this->import = [];
-            return $this;
+        if (null !== $import && !($import instanceof FHIRUri)) {
+            $import = new FHIRUri($import);
         }
-        if ($import instanceof FHIRUri) {
-            $this->import[] = $import;
-            return $this;
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_IMPORT])) {
+            $this->_primitiveXmlLocations[self::FIELD_IMPORT] = [];
         }
-        $this->import[] = new FHIRUri($import);
+        $this->_primitiveXmlLocations[self::FIELD_IMPORT][] = $xmlLocation;
+        $this->import[] = $import;
         return $this;
     }
 
@@ -332,19 +259,24 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * this value set. This is an absolute URI that is a reference to ValueSet.uri.
      *
      * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[] $import
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setImport(array $import = [])
+    public function setImport(array $import = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->import = [];
+        unset($this->_primitiveXmlLocations[self::FIELD_IMPORT]);
+        if ([] !== $this->import) {
+            $this->_trackValuesRemoved(count($this->import));
+            $this->import = [];
+        }
         if ([] === $import) {
             return $this;
         }
         foreach($import as $v) {
             if ($v instanceof FHIRUri) {
-                $this->addImport($v);
+                $this->addImport($v, $xmlLocation);
             } else {
-                $this->addImport(new FHIRUri($v));
+                $this->addImport(new FHIRUri($v), $xmlLocation);
             }
         }
         return $this;
@@ -357,7 +289,7 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
      */
-    public function getInclude()
+    public function getInclude(): null|array
     {
         return $this->include;
     }
@@ -370,8 +302,12 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude $include
      * @return static
      */
-    public function addInclude(FHIRValueSetInclude $include = null)
+    public function addInclude(null|FHIRValueSetInclude $include = null): self
     {
+        if (null === $include) {
+            $include = new FHIRValueSetInclude();
+        }
+        $this->_trackValueAdded();
         $this->include[] = $include;
         return $this;
     }
@@ -379,24 +315,30 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     /**
      * A value set specifies a set of codes drawn from one or more code systems.
      *
-     * Include one or more codes from a code system.
+     * Exclude one or more codes from the value set.
      *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[] $include
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
+     */
+    public function getExclude(): null|array
+    {
+        return $this->exclude;
+    }
+
+    /**
+     * A value set specifies a set of codes drawn from one or more code systems.
+     *
+     * Exclude one or more codes from the value set.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude $exclude
      * @return static
      */
-    public function setInclude(array $include = [])
+    public function addExclude(null|FHIRValueSetInclude $exclude = null): self
     {
-        $this->include = [];
-        if ([] === $include) {
-            return $this;
+        if (null === $exclude) {
+            $exclude = new FHIRValueSetInclude();
         }
-        foreach($include as $v) {
-            if ($v instanceof FHIRValueSetInclude) {
-                $this->addInclude($v);
-            } else {
-                $this->addInclude(new FHIRValueSetInclude($v));
-            }
-        }
+        $this->_trackValueAdded();
+        $this->exclude[] = $exclude;
         return $this;
     }
 
@@ -406,9 +348,9 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -417,17 +359,10 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getExclude())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_EXCLUDE, $i)] = $fieldErrs;
-                }
-            }
-        }
         if ([] !== ($vs = $this->getImport())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -442,15 +377,10 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_EXCLUDE])) {
-            $v = $this->getExclude();
-            foreach($validationRules[self::FIELD_EXCLUDE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_COMPOSE, self::FIELD_EXCLUDE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EXCLUDE])) {
-                        $errs[self::FIELD_EXCLUDE] = [];
-                    }
-                    $errs[self::FIELD_EXCLUDE][$rule] = $err;
+        if ([] !== ($vs = $this->getExclude())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_EXCLUDE, $i)] = $fieldErrs;
                 }
             }
         }
@@ -475,6 +405,18 @@ class FHIRValueSetCompose extends FHIRBackboneElement
                         $errs[self::FIELD_INCLUDE] = [];
                     }
                     $errs[self::FIELD_INCLUDE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXCLUDE])) {
+            $v = $this->getExclude();
+            foreach($validationRules[self::FIELD_EXCLUDE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_COMPOSE, self::FIELD_EXCLUDE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXCLUDE])) {
+                        $errs[self::FIELD_EXCLUDE] = [];
+                    }
+                    $errs[self::FIELD_EXCLUDE][$rule] = $err;
                 }
             }
         }
@@ -518,159 +460,180 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRValueSetCompose::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRValueSetCompose::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRValueSetCompose;
-        } elseif (!is_object($type) || !($type instanceof FHIRValueSetCompose)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRValueSetCompose)) {
             throw new \RuntimeException(sprintf(
-                'FHIRValueSetCompose::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_IMPORT === $childName) {
+                $type->addImport(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_INCLUDE === $childName) {
+                $type->addInclude(FHIRValueSetInclude::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXCLUDE === $childName) {
+                $type->addExclude(FHIRValueSetInclude::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->exclude)) {
-            foreach($children->exclude as $child) {
-                $type->addExclude(FHIRValueSetInclude::xmlUnserialize($child));
-            }
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_IMPORT])) {
+            $type->addImport((string)$attributes[self::FIELD_IMPORT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
         }
-        if (isset($children->import)) {
-            foreach($children->import as $child) {
-                $type->addImport(FHIRUri::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->include)) {
-            foreach($children->include as $child) {
-                $type->addInclude(FHIRValueSetInclude::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getExclude())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ValueSetCompose', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IMPORT] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getImport())) {
+            $xw->writeAttribute(self::FIELD_IMPORT, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getImport()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_IMPORT, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IMPORT] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getImport())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_IMPORT);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_EXCLUDE, null, $v->_getFHIRXMLNamespace()));
             }
         }
-        if ([] !== ($vs = $this->getImport())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IMPORT, null, $v->_getFHIRXMLNamespace()));
-            }
+        foreach ($this->getInclude() as $v) {
+            $xw->startElement(self::FIELD_INCLUDE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getInclude())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INCLUDE, null, $v->_getFHIRXMLNamespace()));
-            }
+        foreach ($this->getExclude() as $v) {
+            $xw->startElement(self::FIELD_EXCLUDE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getExclude())) {
-            $a[self::FIELD_EXCLUDE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_EXCLUDE][] = $v;
-            }
-        }
+        $out = parent::jsonSerialize();
         if ([] !== ($vs = $this->getImport())) {
-            $a[self::FIELD_IMPORT] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_IMPORT][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRUri::FIELD_VALUE]) || array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRUri::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRUri::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_IMPORT_EXT] = $encs;
+            if ([] !== $vals) {
+                $out->{self::FIELD_IMPORT} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_IMPORT_EXT} = $exts;
             }
         }
         if ([] !== ($vs = $this->getInclude())) {
-            $a[self::FIELD_INCLUDE] = [];
+            $out->{self::FIELD_INCLUDE} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_INCLUDE][] = $v;
+                $out->{self::FIELD_INCLUDE}[] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getExclude())) {
+            $out->{self::FIELD_EXCLUDE} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_EXCLUDE}[] = $v;
+            }
         }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

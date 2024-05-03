@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREn
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,14 +57,21 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREn
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter;
 
 /**
  * An interaction between a patient and healthcare provider(s) for the purpose of
@@ -77,113 +84,20 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION;
-    const FIELD_ACCOMODATION = 'accomodation';
-    const FIELD_ADMIT_SOURCE = 'admitSource';
-    const FIELD_DESTINATION = 'destination';
-    const FIELD_DIET = 'diet';
-    const FIELD_DISCHARGE_DIAGNOSIS = 'dischargeDiagnosis';
-    const FIELD_DISCHARGE_DISPOSITION = 'dischargeDisposition';
-    const FIELD_ORIGIN = 'origin';
-    const FIELD_PERIOD = 'period';
+
     const FIELD_PRE_ADMISSION_IDENTIFIER = 'preAdmissionIdentifier';
+    const FIELD_ORIGIN = 'origin';
+    const FIELD_ADMIT_SOURCE = 'admitSource';
+    const FIELD_PERIOD = 'period';
+    const FIELD_ACCOMODATION = 'accomodation';
+    const FIELD_DIET = 'diet';
+    const FIELD_SPECIAL_COURTESY = 'specialCourtesy';
+    const FIELD_SPECIAL_ARRANGEMENT = 'specialArrangement';
+    const FIELD_DESTINATION = 'destination';
+    const FIELD_DISCHARGE_DISPOSITION = 'dischargeDisposition';
+    const FIELD_DISCHARGE_DIAGNOSIS = 'dischargeDiagnosis';
     const FIELD_RE_ADMISSION = 'reAdmission';
     const FIELD_RE_ADMISSION_EXT = '_reAdmission';
-    const FIELD_SPECIAL_ARRANGEMENT = 'specialArrangement';
-    const FIELD_SPECIAL_COURTESY = 'specialCourtesy';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * An interaction between a patient and healthcare provider(s) for the purpose of
-     * providing healthcare service(s) or assessing the health status of a patient.
-     *
-     * Where the patient stays during this encounter.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAccomodation[]
-     */
-    protected $accomodation = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * From where patient was admitted (physician referral, transfer).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
-     */
-    protected $admitSource = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Location to which the patient is discharged.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    protected $destination = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Dietary restrictions for the patient.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
-     */
-    protected $diet = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The final diagnosis given a patient before release from the hospital after all
-     * testing, surgery, and workup are complete.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    protected $dischargeDiagnosis = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Category or kind of location after discharge.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
-     */
-    protected $dischargeDisposition = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The location from which the patient came before admission.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    protected $origin = null;
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Period during which the patient was admitted.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
-     */
-    protected $period = null;
 
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -194,30 +108,58 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
-    protected $preAdmissionIdentifier = null;
-
+    protected null|FHIRIdentifier $preAdmissionIdentifier = null;
     /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Whether this hospitalization is a readmission.
+     * The location from which the patient came before admission.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    protected $reAdmission = null;
-
+    protected null|FHIRResourceReference $origin = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Wheelchair, translator, stretcher, etc.
+     * From where patient was admitted (physician referral, transfer).
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    protected $specialArrangement = [];
-
+    protected null|FHIRCodeableConcept $admitSource = null;
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Period during which the patient was admitted.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
+     */
+    protected null|FHIRPeriod $period = null;
+    /**
+     * An interaction between a patient and healthcare provider(s) for the purpose of
+     * providing healthcare service(s) or assessing the health status of a patient.
+     *
+     * Where the patient stays during this encounter.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAccomodation[]
+     */
+    protected null|array $accomodation = [];
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Dietary restrictions for the patient.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $diet = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -228,115 +170,183 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $specialCourtesy = [];
+    protected null|array $specialCourtesy = [];
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Wheelchair, translator, stretcher, etc.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected null|array $specialArrangement = [];
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Location to which the patient is discharged.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     */
+    protected null|FHIRResourceReference $destination = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Category or kind of location after discharge.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $dischargeDisposition = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The final diagnosis given a patient before release from the hospital after all
+     * testing, surgery, and workup are complete.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     */
+    protected null|FHIRResourceReference $dischargeDiagnosis = null;
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Whether this hospitalization is a readmission.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
+     */
+    protected null|FHIRBoolean $reAdmission = null;
 
     /**
      * Validation map for fields in type Encounter.Hospitalization
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIREncounterHospitalization Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIREncounterHospitalization::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ACCOMODATION])) {
-            if (is_array($data[self::FIELD_ACCOMODATION])) {
-                foreach($data[self::FIELD_ACCOMODATION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIREncounterAccomodation) {
-                        $this->addAccomodation($v);
-                    } else {
-                        $this->addAccomodation(new FHIREncounterAccomodation($v));
-                    }
-                }
-            } else if ($data[self::FIELD_ACCOMODATION] instanceof FHIREncounterAccomodation) {
-                $this->addAccomodation($data[self::FIELD_ACCOMODATION]);
-            } else {
-                $this->addAccomodation(new FHIREncounterAccomodation($data[self::FIELD_ACCOMODATION]));
-            }
-        }
-        if (isset($data[self::FIELD_ADMIT_SOURCE])) {
-            if ($data[self::FIELD_ADMIT_SOURCE] instanceof FHIRCodeableConcept) {
-                $this->setAdmitSource($data[self::FIELD_ADMIT_SOURCE]);
-            } else {
-                $this->setAdmitSource(new FHIRCodeableConcept($data[self::FIELD_ADMIT_SOURCE]));
-            }
-        }
-        if (isset($data[self::FIELD_DESTINATION])) {
-            if ($data[self::FIELD_DESTINATION] instanceof FHIRResourceReference) {
-                $this->setDestination($data[self::FIELD_DESTINATION]);
-            } else {
-                $this->setDestination(new FHIRResourceReference($data[self::FIELD_DESTINATION]));
-            }
-        }
-        if (isset($data[self::FIELD_DIET])) {
-            if ($data[self::FIELD_DIET] instanceof FHIRCodeableConcept) {
-                $this->setDiet($data[self::FIELD_DIET]);
-            } else {
-                $this->setDiet(new FHIRCodeableConcept($data[self::FIELD_DIET]));
-            }
-        }
-        if (isset($data[self::FIELD_DISCHARGE_DIAGNOSIS])) {
-            if ($data[self::FIELD_DISCHARGE_DIAGNOSIS] instanceof FHIRResourceReference) {
-                $this->setDischargeDiagnosis($data[self::FIELD_DISCHARGE_DIAGNOSIS]);
-            } else {
-                $this->setDischargeDiagnosis(new FHIRResourceReference($data[self::FIELD_DISCHARGE_DIAGNOSIS]));
-            }
-        }
-        if (isset($data[self::FIELD_DISCHARGE_DISPOSITION])) {
-            if ($data[self::FIELD_DISCHARGE_DISPOSITION] instanceof FHIRCodeableConcept) {
-                $this->setDischargeDisposition($data[self::FIELD_DISCHARGE_DISPOSITION]);
-            } else {
-                $this->setDischargeDisposition(new FHIRCodeableConcept($data[self::FIELD_DISCHARGE_DISPOSITION]));
-            }
-        }
-        if (isset($data[self::FIELD_ORIGIN])) {
-            if ($data[self::FIELD_ORIGIN] instanceof FHIRResourceReference) {
-                $this->setOrigin($data[self::FIELD_ORIGIN]);
-            } else {
-                $this->setOrigin(new FHIRResourceReference($data[self::FIELD_ORIGIN]));
-            }
-        }
-        if (isset($data[self::FIELD_PERIOD])) {
-            if ($data[self::FIELD_PERIOD] instanceof FHIRPeriod) {
-                $this->setPeriod($data[self::FIELD_PERIOD]);
-            } else {
-                $this->setPeriod(new FHIRPeriod($data[self::FIELD_PERIOD]));
-            }
-        }
-        if (isset($data[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
+        if (array_key_exists(self::FIELD_PRE_ADMISSION_IDENTIFIER, $data)) {
             if ($data[self::FIELD_PRE_ADMISSION_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setPreAdmissionIdentifier($data[self::FIELD_PRE_ADMISSION_IDENTIFIER]);
             } else {
                 $this->setPreAdmissionIdentifier(new FHIRIdentifier($data[self::FIELD_PRE_ADMISSION_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_RE_ADMISSION]) || isset($data[self::FIELD_RE_ADMISSION_EXT])) {
-            if (isset($data[self::FIELD_RE_ADMISSION])) {
-                $value = $data[self::FIELD_RE_ADMISSION];
+        if (array_key_exists(self::FIELD_ORIGIN, $data)) {
+            if ($data[self::FIELD_ORIGIN] instanceof FHIRResourceReference) {
+                $this->setOrigin($data[self::FIELD_ORIGIN]);
             } else {
-                $value = null;
+                $this->setOrigin(new FHIRResourceReference($data[self::FIELD_ORIGIN]));
             }
-            if (isset($data[self::FIELD_RE_ADMISSION_EXT]) && is_array($data[self::FIELD_RE_ADMISSION_EXT])) {
-                $ext = $data[self::FIELD_RE_ADMISSION_EXT];
+        }
+        if (array_key_exists(self::FIELD_ADMIT_SOURCE, $data)) {
+            if ($data[self::FIELD_ADMIT_SOURCE] instanceof FHIRCodeableConcept) {
+                $this->setAdmitSource($data[self::FIELD_ADMIT_SOURCE]);
             } else {
-                $ext = [];
+                $this->setAdmitSource(new FHIRCodeableConcept($data[self::FIELD_ADMIT_SOURCE]));
             }
+        }
+        if (array_key_exists(self::FIELD_PERIOD, $data)) {
+            if ($data[self::FIELD_PERIOD] instanceof FHIRPeriod) {
+                $this->setPeriod($data[self::FIELD_PERIOD]);
+            } else {
+                $this->setPeriod(new FHIRPeriod($data[self::FIELD_PERIOD]));
+            }
+        }
+        if (array_key_exists(self::FIELD_ACCOMODATION, $data)) {
+            if (is_array($data[self::FIELD_ACCOMODATION])) {
+                foreach($data[self::FIELD_ACCOMODATION] as $v) {
+                    if ($v instanceof FHIREncounterAccomodation) {
+                        $this->addAccomodation($v);
+                    } else {
+                        $this->addAccomodation(new FHIREncounterAccomodation($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_ACCOMODATION] instanceof FHIREncounterAccomodation) {
+                $this->addAccomodation($data[self::FIELD_ACCOMODATION]);
+            } else {
+                $this->addAccomodation(new FHIREncounterAccomodation($data[self::FIELD_ACCOMODATION]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DIET, $data)) {
+            if ($data[self::FIELD_DIET] instanceof FHIRCodeableConcept) {
+                $this->setDiet($data[self::FIELD_DIET]);
+            } else {
+                $this->setDiet(new FHIRCodeableConcept($data[self::FIELD_DIET]));
+            }
+        }
+        if (array_key_exists(self::FIELD_SPECIAL_COURTESY, $data)) {
+            if (is_array($data[self::FIELD_SPECIAL_COURTESY])) {
+                foreach($data[self::FIELD_SPECIAL_COURTESY] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addSpecialCourtesy($v);
+                    } else {
+                        $this->addSpecialCourtesy(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_SPECIAL_COURTESY] instanceof FHIRCodeableConcept) {
+                $this->addSpecialCourtesy($data[self::FIELD_SPECIAL_COURTESY]);
+            } else {
+                $this->addSpecialCourtesy(new FHIRCodeableConcept($data[self::FIELD_SPECIAL_COURTESY]));
+            }
+        }
+        if (array_key_exists(self::FIELD_SPECIAL_ARRANGEMENT, $data)) {
+            if (is_array($data[self::FIELD_SPECIAL_ARRANGEMENT])) {
+                foreach($data[self::FIELD_SPECIAL_ARRANGEMENT] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addSpecialArrangement($v);
+                    } else {
+                        $this->addSpecialArrangement(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_SPECIAL_ARRANGEMENT] instanceof FHIRCodeableConcept) {
+                $this->addSpecialArrangement($data[self::FIELD_SPECIAL_ARRANGEMENT]);
+            } else {
+                $this->addSpecialArrangement(new FHIRCodeableConcept($data[self::FIELD_SPECIAL_ARRANGEMENT]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DESTINATION, $data)) {
+            if ($data[self::FIELD_DESTINATION] instanceof FHIRResourceReference) {
+                $this->setDestination($data[self::FIELD_DESTINATION]);
+            } else {
+                $this->setDestination(new FHIRResourceReference($data[self::FIELD_DESTINATION]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DISCHARGE_DISPOSITION, $data)) {
+            if ($data[self::FIELD_DISCHARGE_DISPOSITION] instanceof FHIRCodeableConcept) {
+                $this->setDischargeDisposition($data[self::FIELD_DISCHARGE_DISPOSITION]);
+            } else {
+                $this->setDischargeDisposition(new FHIRCodeableConcept($data[self::FIELD_DISCHARGE_DISPOSITION]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DISCHARGE_DIAGNOSIS, $data)) {
+            if ($data[self::FIELD_DISCHARGE_DIAGNOSIS] instanceof FHIRResourceReference) {
+                $this->setDischargeDiagnosis($data[self::FIELD_DISCHARGE_DIAGNOSIS]);
+            } else {
+                $this->setDischargeDiagnosis(new FHIRResourceReference($data[self::FIELD_DISCHARGE_DIAGNOSIS]));
+            }
+        }
+        if (array_key_exists(self::FIELD_RE_ADMISSION, $data) || array_key_exists(self::FIELD_RE_ADMISSION_EXT, $data)) {
+            $value = $data[self::FIELD_RE_ADMISSION] ?? null;
+            $ext = (isset($data[self::FIELD_RE_ADMISSION_EXT]) && is_array($data[self::FIELD_RE_ADMISSION_EXT])) ? $data[self::FIELD_RE_ADMISSION_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setReAdmission($value);
@@ -345,44 +355,10 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 } else {
                     $this->setReAdmission(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setReAdmission(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_SPECIAL_ARRANGEMENT])) {
-            if (is_array($data[self::FIELD_SPECIAL_ARRANGEMENT])) {
-                foreach($data[self::FIELD_SPECIAL_ARRANGEMENT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addSpecialArrangement($v);
-                    } else {
-                        $this->addSpecialArrangement(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_SPECIAL_ARRANGEMENT] instanceof FHIRCodeableConcept) {
-                $this->addSpecialArrangement($data[self::FIELD_SPECIAL_ARRANGEMENT]);
             } else {
-                $this->addSpecialArrangement(new FHIRCodeableConcept($data[self::FIELD_SPECIAL_ARRANGEMENT]));
-            }
-        }
-        if (isset($data[self::FIELD_SPECIAL_COURTESY])) {
-            if (is_array($data[self::FIELD_SPECIAL_COURTESY])) {
-                foreach($data[self::FIELD_SPECIAL_COURTESY] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addSpecialCourtesy($v);
-                    } else {
-                        $this->addSpecialCourtesy(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_SPECIAL_COURTESY] instanceof FHIRCodeableConcept) {
-                $this->addSpecialCourtesy($data[self::FIELD_SPECIAL_COURTESY]);
-            } else {
-                $this->addSpecialCourtesy(new FHIRCodeableConcept($data[self::FIELD_SPECIAL_COURTESY]));
+                $this->setReAdmission(new FHIRBoolean(null));
             }
         }
     }
@@ -390,73 +366,76 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Pre-admission identifier.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
-    public function _getFHIRXMLElementDefinition()
+    public function getPreAdmissionIdentifier(): null|FHIRIdentifier
     {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<EncounterHospitalization{$xmlns}></EncounterHospitalization>";
+        return $this->preAdmissionIdentifier;
     }
 
     /**
-     * An interaction between a patient and healthcare provider(s) for the purpose of
-     * providing healthcare service(s) or assessing the health status of a patient.
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the patient stays during this encounter.
+     * Pre-admission identifier.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAccomodation[]
-     */
-    public function getAccomodation()
-    {
-        return $this->accomodation;
-    }
-
-    /**
-     * An interaction between a patient and healthcare provider(s) for the purpose of
-     * providing healthcare service(s) or assessing the health status of a patient.
-     *
-     * Where the patient stays during this encounter.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAccomodation $accomodation
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $preAdmissionIdentifier
      * @return static
      */
-    public function addAccomodation(FHIREncounterAccomodation $accomodation = null)
+    public function setPreAdmissionIdentifier(null|FHIRIdentifier $preAdmissionIdentifier = null): self
     {
-        $this->accomodation[] = $accomodation;
+        if (null === $preAdmissionIdentifier) {
+            $preAdmissionIdentifier = new FHIRIdentifier();
+        }
+        $this->_trackValueSet($this->preAdmissionIdentifier, $preAdmissionIdentifier);
+        $this->preAdmissionIdentifier = $preAdmissionIdentifier;
         return $this;
     }
 
     /**
-     * An interaction between a patient and healthcare provider(s) for the purpose of
-     * providing healthcare service(s) or assessing the health status of a patient.
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Where the patient stays during this encounter.
+     * The location from which the patient came before admission.
      *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAccomodation[] $accomodation
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     */
+    public function getOrigin(): null|FHIRResourceReference
+    {
+        return $this->origin;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The location from which the patient came before admission.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $origin
      * @return static
      */
-    public function setAccomodation(array $accomodation = [])
+    public function setOrigin(null|FHIRResourceReference $origin = null): self
     {
-        $this->accomodation = [];
-        if ([] === $accomodation) {
-            return $this;
+        if (null === $origin) {
+            $origin = new FHIRResourceReference();
         }
-        foreach($accomodation as $v) {
-            if ($v instanceof FHIREncounterAccomodation) {
-                $this->addAccomodation($v);
-            } else {
-                $this->addAccomodation(new FHIREncounterAccomodation($v));
-            }
-        }
+        $this->_trackValueSet($this->origin, $origin);
+        $this->origin = $origin;
         return $this;
     }
 
@@ -470,7 +449,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    public function getAdmitSource()
+    public function getAdmitSource(): null|FHIRCodeableConcept
     {
         return $this->admitSource;
     }
@@ -486,39 +465,79 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $admitSource
      * @return static
      */
-    public function setAdmitSource(FHIRCodeableConcept $admitSource = null)
+    public function setAdmitSource(null|FHIRCodeableConcept $admitSource = null): self
     {
+        if (null === $admitSource) {
+            $admitSource = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->admitSource, $admitSource);
         $this->admitSource = $admitSource;
         return $this;
     }
 
     /**
-     * A reference from one resource to another.
+     * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Location to which the patient is discharged.
+     * Period during which the patient was admitted.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    public function getDestination()
+    public function getPeriod(): null|FHIRPeriod
     {
-        return $this->destination;
+        return $this->period;
     }
 
     /**
-     * A reference from one resource to another.
+     * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Location to which the patient is discharged.
+     * Period during which the patient was admitted.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $destination
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $period
      * @return static
      */
-    public function setDestination(FHIRResourceReference $destination = null)
+    public function setPeriod(null|FHIRPeriod $period = null): self
     {
-        $this->destination = $destination;
+        if (null === $period) {
+            $period = new FHIRPeriod();
+        }
+        $this->_trackValueSet($this->period, $period);
+        $this->period = $period;
+        return $this;
+    }
+
+    /**
+     * An interaction between a patient and healthcare provider(s) for the purpose of
+     * providing healthcare service(s) or assessing the health status of a patient.
+     *
+     * Where the patient stays during this encounter.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAccomodation[]
+     */
+    public function getAccomodation(): null|array
+    {
+        return $this->accomodation;
+    }
+
+    /**
+     * An interaction between a patient and healthcare provider(s) for the purpose of
+     * providing healthcare service(s) or assessing the health status of a patient.
+     *
+     * Where the patient stays during this encounter.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterAccomodation $accomodation
+     * @return static
+     */
+    public function addAccomodation(null|FHIREncounterAccomodation $accomodation = null): self
+    {
+        if (null === $accomodation) {
+            $accomodation = new FHIREncounterAccomodation();
+        }
+        $this->_trackValueAdded();
+        $this->accomodation[] = $accomodation;
         return $this;
     }
 
@@ -532,7 +551,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    public function getDiet()
+    public function getDiet(): null|FHIRCodeableConcept
     {
         return $this->diet;
     }
@@ -548,258 +567,13 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $diet
      * @return static
      */
-    public function setDiet(FHIRCodeableConcept $diet = null)
+    public function setDiet(null|FHIRCodeableConcept $diet = null): self
     {
+        if (null === $diet) {
+            $diet = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->diet, $diet);
         $this->diet = $diet;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The final diagnosis given a patient before release from the hospital after all
-     * testing, surgery, and workup are complete.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    public function getDischargeDiagnosis()
-    {
-        return $this->dischargeDiagnosis;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The final diagnosis given a patient before release from the hospital after all
-     * testing, surgery, and workup are complete.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $dischargeDiagnosis
-     * @return static
-     */
-    public function setDischargeDiagnosis(FHIRResourceReference $dischargeDiagnosis = null)
-    {
-        $this->dischargeDiagnosis = $dischargeDiagnosis;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Category or kind of location after discharge.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
-     */
-    public function getDischargeDisposition()
-    {
-        return $this->dischargeDisposition;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Category or kind of location after discharge.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $dischargeDisposition
-     * @return static
-     */
-    public function setDischargeDisposition(FHIRCodeableConcept $dischargeDisposition = null)
-    {
-        $this->dischargeDisposition = $dischargeDisposition;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The location from which the patient came before admission.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    public function getOrigin()
-    {
-        return $this->origin;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The location from which the patient came before admission.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $origin
-     * @return static
-     */
-    public function setOrigin(FHIRResourceReference $origin = null)
-    {
-        $this->origin = $origin;
-        return $this;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Period during which the patient was admitted.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
-     */
-    public function getPeriod()
-    {
-        return $this->period;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Period during which the patient was admitted.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $period
-     * @return static
-     */
-    public function setPeriod(FHIRPeriod $period = null)
-    {
-        $this->period = $period;
-        return $this;
-    }
-
-    /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Pre-admission identifier.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
-     */
-    public function getPreAdmissionIdentifier()
-    {
-        return $this->preAdmissionIdentifier;
-    }
-
-    /**
-     * A technical identifier - identifies some entity uniquely and unambiguously.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Pre-admission identifier.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $preAdmissionIdentifier
-     * @return static
-     */
-    public function setPreAdmissionIdentifier(FHIRIdentifier $preAdmissionIdentifier = null)
-    {
-        $this->preAdmissionIdentifier = $preAdmissionIdentifier;
-        return $this;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Whether this hospitalization is a readmission.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
-     */
-    public function getReAdmission()
-    {
-        return $this->reAdmission;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Whether this hospitalization is a readmission.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $reAdmission
-     * @return static
-     */
-    public function setReAdmission($reAdmission = null)
-    {
-        if (null === $reAdmission) {
-            $this->reAdmission = null;
-            return $this;
-        }
-        if ($reAdmission instanceof FHIRBoolean) {
-            $this->reAdmission = $reAdmission;
-            return $this;
-        }
-        $this->reAdmission = new FHIRBoolean($reAdmission);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Wheelchair, translator, stretcher, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getSpecialArrangement()
-    {
-        return $this->specialArrangement;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Wheelchair, translator, stretcher, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $specialArrangement
-     * @return static
-     */
-    public function addSpecialArrangement(FHIRCodeableConcept $specialArrangement = null)
-    {
-        $this->specialArrangement[] = $specialArrangement;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Wheelchair, translator, stretcher, etc.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[] $specialArrangement
-     * @return static
-     */
-    public function setSpecialArrangement(array $specialArrangement = [])
-    {
-        $this->specialArrangement = [];
-        if ([] === $specialArrangement) {
-            return $this;
-        }
-        foreach($specialArrangement as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addSpecialArrangement($v);
-            } else {
-                $this->addSpecialArrangement(new FHIRCodeableConcept($v));
-            }
-        }
         return $this;
     }
 
@@ -813,7 +587,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
-    public function getSpecialCourtesy()
+    public function getSpecialCourtesy(): null|array
     {
         return $this->specialCourtesy;
     }
@@ -829,8 +603,12 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $specialCourtesy
      * @return static
      */
-    public function addSpecialCourtesy(FHIRCodeableConcept $specialCourtesy = null)
+    public function addSpecialCourtesy(null|FHIRCodeableConcept $specialCourtesy = null): self
     {
+        if (null === $specialCourtesy) {
+            $specialCourtesy = new FHIRCodeableConcept();
+        }
+        $this->_trackValueAdded();
         $this->specialCourtesy[] = $specialCourtesy;
         return $this;
     }
@@ -841,24 +619,176 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Special courtesies (VIP, board member).
+     * Wheelchair, translator, stretcher, etc.
      *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[] $specialCourtesy
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getSpecialArrangement(): null|array
+    {
+        return $this->specialArrangement;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Wheelchair, translator, stretcher, etc.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $specialArrangement
      * @return static
      */
-    public function setSpecialCourtesy(array $specialCourtesy = [])
+    public function addSpecialArrangement(null|FHIRCodeableConcept $specialArrangement = null): self
     {
-        $this->specialCourtesy = [];
-        if ([] === $specialCourtesy) {
-            return $this;
+        if (null === $specialArrangement) {
+            $specialArrangement = new FHIRCodeableConcept();
         }
-        foreach($specialCourtesy as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addSpecialCourtesy($v);
-            } else {
-                $this->addSpecialCourtesy(new FHIRCodeableConcept($v));
-            }
+        $this->_trackValueAdded();
+        $this->specialArrangement[] = $specialArrangement;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Location to which the patient is discharged.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     */
+    public function getDestination(): null|FHIRResourceReference
+    {
+        return $this->destination;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Location to which the patient is discharged.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $destination
+     * @return static
+     */
+    public function setDestination(null|FHIRResourceReference $destination = null): self
+    {
+        if (null === $destination) {
+            $destination = new FHIRResourceReference();
         }
+        $this->_trackValueSet($this->destination, $destination);
+        $this->destination = $destination;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Category or kind of location after discharge.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
+     */
+    public function getDischargeDisposition(): null|FHIRCodeableConcept
+    {
+        return $this->dischargeDisposition;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Category or kind of location after discharge.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $dischargeDisposition
+     * @return static
+     */
+    public function setDischargeDisposition(null|FHIRCodeableConcept $dischargeDisposition = null): self
+    {
+        if (null === $dischargeDisposition) {
+            $dischargeDisposition = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->dischargeDisposition, $dischargeDisposition);
+        $this->dischargeDisposition = $dischargeDisposition;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The final diagnosis given a patient before release from the hospital after all
+     * testing, surgery, and workup are complete.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     */
+    public function getDischargeDiagnosis(): null|FHIRResourceReference
+    {
+        return $this->dischargeDiagnosis;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The final diagnosis given a patient before release from the hospital after all
+     * testing, surgery, and workup are complete.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $dischargeDiagnosis
+     * @return static
+     */
+    public function setDischargeDiagnosis(null|FHIRResourceReference $dischargeDiagnosis = null): self
+    {
+        if (null === $dischargeDiagnosis) {
+            $dischargeDiagnosis = new FHIRResourceReference();
+        }
+        $this->_trackValueSet($this->dischargeDiagnosis, $dischargeDiagnosis);
+        $this->dischargeDiagnosis = $dischargeDiagnosis;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Whether this hospitalization is a readmission.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
+     */
+    public function getReAdmission(): null|FHIRBoolean
+    {
+        return $this->reAdmission;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Whether this hospitalization is a readmission.
+     *
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $reAdmission
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setReAdmission(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $reAdmission = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $reAdmission && !($reAdmission instanceof FHIRBoolean)) {
+            $reAdmission = new FHIRBoolean($reAdmission);
+        }
+        $this->_trackValueSet($this->reAdmission, $reAdmission);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_RE_ADMISSION])) {
+            $this->_primitiveXmlLocations[self::FIELD_RE_ADMISSION] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_RE_ADMISSION][0] = $xmlLocation;
+        $this->reAdmission = $reAdmission;
         return $this;
     }
 
@@ -868,9 +798,9 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -879,40 +809,13 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getAccomodation())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_ACCOMODATION, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getAdmitSource())) {
+        if (null !== ($v = $this->getPreAdmissionIdentifier())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ADMIT_SOURCE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDestination())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DESTINATION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDiet())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DIET] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDischargeDiagnosis())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DISCHARGE_DIAGNOSIS] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDischargeDisposition())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DISCHARGE_DISPOSITION] = $fieldErrs;
+                $errs[self::FIELD_PRE_ADMISSION_IDENTIFIER] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getOrigin())) {
@@ -920,26 +823,26 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 $errs[self::FIELD_ORIGIN] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getAdmitSource())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ADMIT_SOURCE] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getPeriod())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_PERIOD] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getPreAdmissionIdentifier())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PRE_ADMISSION_IDENTIFIER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getReAdmission())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_RE_ADMISSION] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getSpecialArrangement())) {
+        if ([] !== ($vs = $this->getAccomodation())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_SPECIAL_ARRANGEMENT, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_ACCOMODATION, $i)] = $fieldErrs;
                 }
+            }
+        }
+        if (null !== ($v = $this->getDiet())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DIET] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getSpecialCourtesy())) {
@@ -949,75 +852,42 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ACCOMODATION])) {
-            $v = $this->getAccomodation();
-            foreach($validationRules[self::FIELD_ACCOMODATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_ACCOMODATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ACCOMODATION])) {
-                        $errs[self::FIELD_ACCOMODATION] = [];
-                    }
-                    $errs[self::FIELD_ACCOMODATION][$rule] = $err;
+        if ([] !== ($vs = $this->getSpecialArrangement())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_SPECIAL_ARRANGEMENT, $i)] = $fieldErrs;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ADMIT_SOURCE])) {
-            $v = $this->getAdmitSource();
-            foreach($validationRules[self::FIELD_ADMIT_SOURCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_ADMIT_SOURCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ADMIT_SOURCE])) {
-                        $errs[self::FIELD_ADMIT_SOURCE] = [];
-                    }
-                    $errs[self::FIELD_ADMIT_SOURCE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDestination())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DESTINATION] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DESTINATION])) {
-            $v = $this->getDestination();
-            foreach($validationRules[self::FIELD_DESTINATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DESTINATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DESTINATION])) {
-                        $errs[self::FIELD_DESTINATION] = [];
-                    }
-                    $errs[self::FIELD_DESTINATION][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDischargeDisposition())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DISCHARGE_DISPOSITION] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DIET])) {
-            $v = $this->getDiet();
-            foreach($validationRules[self::FIELD_DIET] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DIET, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DIET])) {
-                        $errs[self::FIELD_DIET] = [];
-                    }
-                    $errs[self::FIELD_DIET][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDischargeDiagnosis())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DISCHARGE_DIAGNOSIS] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DISCHARGE_DIAGNOSIS])) {
-            $v = $this->getDischargeDiagnosis();
-            foreach($validationRules[self::FIELD_DISCHARGE_DIAGNOSIS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DISCHARGE_DIAGNOSIS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DISCHARGE_DIAGNOSIS])) {
-                        $errs[self::FIELD_DISCHARGE_DIAGNOSIS] = [];
-                    }
-                    $errs[self::FIELD_DISCHARGE_DIAGNOSIS][$rule] = $err;
-                }
+        if (null !== ($v = $this->getReAdmission())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_RE_ADMISSION] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DISCHARGE_DISPOSITION])) {
-            $v = $this->getDischargeDisposition();
-            foreach($validationRules[self::FIELD_DISCHARGE_DISPOSITION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DISCHARGE_DISPOSITION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
+            $v = $this->getPreAdmissionIdentifier();
+            foreach($validationRules[self::FIELD_PRE_ADMISSION_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_PRE_ADMISSION_IDENTIFIER, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DISCHARGE_DISPOSITION])) {
-                        $errs[self::FIELD_DISCHARGE_DISPOSITION] = [];
+                    if (!isset($errs[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
+                        $errs[self::FIELD_PRE_ADMISSION_IDENTIFIER] = [];
                     }
-                    $errs[self::FIELD_DISCHARGE_DISPOSITION][$rule] = $err;
+                    $errs[self::FIELD_PRE_ADMISSION_IDENTIFIER][$rule] = $err;
                 }
             }
         }
@@ -1033,6 +903,18 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_ADMIT_SOURCE])) {
+            $v = $this->getAdmitSource();
+            foreach($validationRules[self::FIELD_ADMIT_SOURCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_ADMIT_SOURCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ADMIT_SOURCE])) {
+                        $errs[self::FIELD_ADMIT_SOURCE] = [];
+                    }
+                    $errs[self::FIELD_ADMIT_SOURCE][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_PERIOD])) {
             $v = $this->getPeriod();
             foreach($validationRules[self::FIELD_PERIOD] as $rule => $constraint) {
@@ -1045,27 +927,39 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
-            $v = $this->getPreAdmissionIdentifier();
-            foreach($validationRules[self::FIELD_PRE_ADMISSION_IDENTIFIER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_PRE_ADMISSION_IDENTIFIER, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ACCOMODATION])) {
+            $v = $this->getAccomodation();
+            foreach($validationRules[self::FIELD_ACCOMODATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_ACCOMODATION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PRE_ADMISSION_IDENTIFIER])) {
-                        $errs[self::FIELD_PRE_ADMISSION_IDENTIFIER] = [];
+                    if (!isset($errs[self::FIELD_ACCOMODATION])) {
+                        $errs[self::FIELD_ACCOMODATION] = [];
                     }
-                    $errs[self::FIELD_PRE_ADMISSION_IDENTIFIER][$rule] = $err;
+                    $errs[self::FIELD_ACCOMODATION][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_RE_ADMISSION])) {
-            $v = $this->getReAdmission();
-            foreach($validationRules[self::FIELD_RE_ADMISSION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_RE_ADMISSION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_DIET])) {
+            $v = $this->getDiet();
+            foreach($validationRules[self::FIELD_DIET] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DIET, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RE_ADMISSION])) {
-                        $errs[self::FIELD_RE_ADMISSION] = [];
+                    if (!isset($errs[self::FIELD_DIET])) {
+                        $errs[self::FIELD_DIET] = [];
                     }
-                    $errs[self::FIELD_RE_ADMISSION][$rule] = $err;
+                    $errs[self::FIELD_DIET][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SPECIAL_COURTESY])) {
+            $v = $this->getSpecialCourtesy();
+            foreach($validationRules[self::FIELD_SPECIAL_COURTESY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_SPECIAL_COURTESY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SPECIAL_COURTESY])) {
+                        $errs[self::FIELD_SPECIAL_COURTESY] = [];
+                    }
+                    $errs[self::FIELD_SPECIAL_COURTESY][$rule] = $err;
                 }
             }
         }
@@ -1081,15 +975,51 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SPECIAL_COURTESY])) {
-            $v = $this->getSpecialCourtesy();
-            foreach($validationRules[self::FIELD_SPECIAL_COURTESY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_SPECIAL_COURTESY, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_DESTINATION])) {
+            $v = $this->getDestination();
+            foreach($validationRules[self::FIELD_DESTINATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DESTINATION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SPECIAL_COURTESY])) {
-                        $errs[self::FIELD_SPECIAL_COURTESY] = [];
+                    if (!isset($errs[self::FIELD_DESTINATION])) {
+                        $errs[self::FIELD_DESTINATION] = [];
                     }
-                    $errs[self::FIELD_SPECIAL_COURTESY][$rule] = $err;
+                    $errs[self::FIELD_DESTINATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DISCHARGE_DISPOSITION])) {
+            $v = $this->getDischargeDisposition();
+            foreach($validationRules[self::FIELD_DISCHARGE_DISPOSITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DISCHARGE_DISPOSITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DISCHARGE_DISPOSITION])) {
+                        $errs[self::FIELD_DISCHARGE_DISPOSITION] = [];
+                    }
+                    $errs[self::FIELD_DISCHARGE_DISPOSITION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DISCHARGE_DIAGNOSIS])) {
+            $v = $this->getDischargeDiagnosis();
+            foreach($validationRules[self::FIELD_DISCHARGE_DIAGNOSIS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_DISCHARGE_DIAGNOSIS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DISCHARGE_DIAGNOSIS])) {
+                        $errs[self::FIELD_DISCHARGE_DIAGNOSIS] = [];
+                    }
+                    $errs[self::FIELD_DISCHARGE_DIAGNOSIS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RE_ADMISSION])) {
+            $v = $this->getReAdmission();
+            foreach($validationRules[self::FIELD_RE_ADMISSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ENCOUNTER_DOT_HOSPITALIZATION, self::FIELD_RE_ADMISSION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RE_ADMISSION])) {
+                        $errs[self::FIELD_RE_ADMISSION] = [];
+                    }
+                    $errs[self::FIELD_RE_ADMISSION][$rule] = $err;
                 }
             }
         }
@@ -1133,240 +1063,258 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIREncounterHospitalization::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIREncounterHospitalization::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIREncounterHospitalization;
-        } elseif (!is_object($type) || !($type instanceof FHIREncounterHospitalization)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIREncounterHospitalization)) {
             throw new \RuntimeException(sprintf(
-                'FHIREncounterHospitalization::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_PRE_ADMISSION_IDENTIFIER === $childName) {
+                $type->setPreAdmissionIdentifier(FHIRIdentifier::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ORIGIN === $childName) {
+                $type->setOrigin(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ADMIT_SOURCE === $childName) {
+                $type->setAdmitSource(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PERIOD === $childName) {
+                $type->setPeriod(FHIRPeriod::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ACCOMODATION === $childName) {
+                $type->addAccomodation(FHIREncounterAccomodation::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DIET === $childName) {
+                $type->setDiet(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_SPECIAL_COURTESY === $childName) {
+                $type->addSpecialCourtesy(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_SPECIAL_ARRANGEMENT === $childName) {
+                $type->addSpecialArrangement(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DESTINATION === $childName) {
+                $type->setDestination(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DISCHARGE_DISPOSITION === $childName) {
+                $type->setDischargeDisposition(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DISCHARGE_DIAGNOSIS === $childName) {
+                $type->setDischargeDiagnosis(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_RE_ADMISSION === $childName) {
+                $type->setReAdmission(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->accomodation)) {
-            foreach($children->accomodation as $child) {
-                $type->addAccomodation(FHIREncounterAccomodation::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->admitSource)) {
-            $type->setAdmitSource(FHIRCodeableConcept::xmlUnserialize($children->admitSource));
-        }
-        if (isset($children->destination)) {
-            $type->setDestination(FHIRResourceReference::xmlUnserialize($children->destination));
-        }
-        if (isset($children->diet)) {
-            $type->setDiet(FHIRCodeableConcept::xmlUnserialize($children->diet));
-        }
-        if (isset($children->dischargeDiagnosis)) {
-            $type->setDischargeDiagnosis(FHIRResourceReference::xmlUnserialize($children->dischargeDiagnosis));
-        }
-        if (isset($children->dischargeDisposition)) {
-            $type->setDischargeDisposition(FHIRCodeableConcept::xmlUnserialize($children->dischargeDisposition));
-        }
-        if (isset($children->origin)) {
-            $type->setOrigin(FHIRResourceReference::xmlUnserialize($children->origin));
-        }
-        if (isset($children->period)) {
-            $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
-        }
-        if (isset($children->preAdmissionIdentifier)) {
-            $type->setPreAdmissionIdentifier(FHIRIdentifier::xmlUnserialize($children->preAdmissionIdentifier));
-        }
-        if (isset($children->reAdmission)) {
-            $type->setReAdmission(FHIRBoolean::xmlUnserialize($children->reAdmission));
-        }
-        if (isset($attributes->reAdmission)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_RE_ADMISSION])) {
             $pt = $type->getReAdmission();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->reAdmission);
+                $pt->setValue((string)$attributes[self::FIELD_RE_ADMISSION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setReAdmission((string)$attributes->reAdmission);
+                $type->setReAdmission((string)$attributes[self::FIELD_RE_ADMISSION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->specialArrangement)) {
-            foreach($children->specialArrangement as $child) {
-                $type->addSpecialArrangement(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->specialCourtesy)) {
-            foreach($children->specialCourtesy as $child) {
-                $type->addSpecialCourtesy(FHIRCodeableConcept::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getAccomodation())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ACCOMODATION, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getAdmitSource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADMIT_SOURCE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getDestination())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESTINATION, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getDiet())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DIET, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'EncounterHospitalization', $this->_getSourceXmlns());
         }
-        if (null !== ($v = $this->getDischargeDiagnosis())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DISCHARGE_DIAGNOSIS, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_RE_ADMISSION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getReAdmission())) {
+            $xw->writeAttribute(self::FIELD_RE_ADMISSION, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getDischargeDisposition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DISCHARGE_DISPOSITION, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getPreAdmissionIdentifier())) {
+            $xw->startElement(self::FIELD_PRE_ADMISSION_IDENTIFIER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getOrigin())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORIGIN, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_ORIGIN);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getAdmitSource())) {
+            $xw->startElement(self::FIELD_ADMIT_SOURCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_PERIOD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getPreAdmissionIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRE_ADMISSION_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
+        foreach ($this->getAccomodation() as $v) {
+            $xw->startElement(self::FIELD_ACCOMODATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getReAdmission())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RE_ADMISSION, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getDiet())) {
+            $xw->startElement(self::FIELD_DIET);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getSpecialArrangement())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIAL_ARRANGEMENT, null, $v->_getFHIRXMLNamespace()));
-            }
+        foreach ($this->getSpecialCourtesy() as $v) {
+            $xw->startElement(self::FIELD_SPECIAL_COURTESY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getSpecialCourtesy())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIAL_COURTESY, null, $v->_getFHIRXMLNamespace()));
-            }
+        foreach ($this->getSpecialArrangement() as $v) {
+            $xw->startElement(self::FIELD_SPECIAL_ARRANGEMENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getDestination())) {
+            $xw->startElement(self::FIELD_DESTINATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getDischargeDisposition())) {
+            $xw->startElement(self::FIELD_DISCHARGE_DISPOSITION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getDischargeDiagnosis())) {
+            $xw->startElement(self::FIELD_DISCHARGE_DIAGNOSIS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_RE_ADMISSION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getReAdmission())) {
+            $xw->startElement(self::FIELD_RE_ADMISSION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getAccomodation())) {
-            $a[self::FIELD_ACCOMODATION] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ACCOMODATION][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getAdmitSource())) {
-            $a[self::FIELD_ADMIT_SOURCE] = $v;
-        }
-        if (null !== ($v = $this->getDestination())) {
-            $a[self::FIELD_DESTINATION] = $v;
-        }
-        if (null !== ($v = $this->getDiet())) {
-            $a[self::FIELD_DIET] = $v;
-        }
-        if (null !== ($v = $this->getDischargeDiagnosis())) {
-            $a[self::FIELD_DISCHARGE_DIAGNOSIS] = $v;
-        }
-        if (null !== ($v = $this->getDischargeDisposition())) {
-            $a[self::FIELD_DISCHARGE_DISPOSITION] = $v;
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getPreAdmissionIdentifier())) {
+            $out->{self::FIELD_PRE_ADMISSION_IDENTIFIER} = $v;
         }
         if (null !== ($v = $this->getOrigin())) {
-            $a[self::FIELD_ORIGIN] = $v;
+            $out->{self::FIELD_ORIGIN} = $v;
+        }
+        if (null !== ($v = $this->getAdmitSource())) {
+            $out->{self::FIELD_ADMIT_SOURCE} = $v;
         }
         if (null !== ($v = $this->getPeriod())) {
-            $a[self::FIELD_PERIOD] = $v;
+            $out->{self::FIELD_PERIOD} = $v;
         }
-        if (null !== ($v = $this->getPreAdmissionIdentifier())) {
-            $a[self::FIELD_PRE_ADMISSION_IDENTIFIER] = $v;
+        if ([] !== ($vs = $this->getAccomodation())) {
+            $out->{self::FIELD_ACCOMODATION} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_ACCOMODATION}[] = $v;
+            }
         }
-        if (null !== ($v = $this->getReAdmission())) {
-            $a[self::FIELD_RE_ADMISSION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_RE_ADMISSION_EXT] = $enc;
+        if (null !== ($v = $this->getDiet())) {
+            $out->{self::FIELD_DIET} = $v;
+        }
+        if ([] !== ($vs = $this->getSpecialCourtesy())) {
+            $out->{self::FIELD_SPECIAL_COURTESY} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_SPECIAL_COURTESY}[] = $v;
             }
         }
         if ([] !== ($vs = $this->getSpecialArrangement())) {
-            $a[self::FIELD_SPECIAL_ARRANGEMENT] = [];
+            $out->{self::FIELD_SPECIAL_ARRANGEMENT} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_SPECIAL_ARRANGEMENT][] = $v;
+                $out->{self::FIELD_SPECIAL_ARRANGEMENT}[] = $v;
             }
         }
-        if ([] !== ($vs = $this->getSpecialCourtesy())) {
-            $a[self::FIELD_SPECIAL_COURTESY] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_SPECIAL_COURTESY][] = $v;
+        if (null !== ($v = $this->getDestination())) {
+            $out->{self::FIELD_DESTINATION} = $v;
+        }
+        if (null !== ($v = $this->getDischargeDisposition())) {
+            $out->{self::FIELD_DISCHARGE_DISPOSITION} = $v;
+        }
+        if (null !== ($v = $this->getDischargeDiagnosis())) {
+            $out->{self::FIELD_DISCHARGE_DIAGNOSIS} = $v;
+        }
+        if (null !== ($v = $this->getReAdmission())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_RE_ADMISSION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_RE_ADMISSION_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

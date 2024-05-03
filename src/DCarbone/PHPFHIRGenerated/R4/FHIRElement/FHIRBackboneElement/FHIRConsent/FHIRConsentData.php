@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConse
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,9 +64,15 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConse
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConsentDataMeaning;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * A record of a healthcare consumer’s choices, which permits or denies
@@ -80,12 +86,10 @@ class FHIRConsentData extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONSENT_DOT_DATA;
+
     const FIELD_MEANING = 'meaning';
     const FIELD_MEANING_EXT = '_meaning';
     const FIELD_REFERENCE = 'reference';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * How a resource reference is interpreted when testing consent restrictions.
@@ -95,8 +99,7 @@ class FHIRConsentData extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConsentDataMeaning
      */
-    protected $meaning = null;
-
+    protected null|FHIRConsentDataMeaning $meaning = null;
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -107,41 +110,30 @@ class FHIRConsentData extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    protected $reference = null;
+    protected null|FHIRReference $reference = null;
 
     /**
      * Validation map for fields in type Consent.Data
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRConsentData Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRConsentData::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_MEANING]) || isset($data[self::FIELD_MEANING_EXT])) {
-            if (isset($data[self::FIELD_MEANING])) {
-                $value = $data[self::FIELD_MEANING];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_MEANING_EXT]) && is_array($data[self::FIELD_MEANING_EXT])) {
-                $ext = $data[self::FIELD_MEANING_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_MEANING, $data) || array_key_exists(self::FIELD_MEANING_EXT, $data)) {
+            $value = $data[self::FIELD_MEANING] ?? null;
+            $ext = (isset($data[self::FIELD_MEANING_EXT]) && is_array($data[self::FIELD_MEANING_EXT])) ? $data[self::FIELD_MEANING_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRConsentDataMeaning) {
                     $this->setMeaning($value);
@@ -150,11 +142,13 @@ class FHIRConsentData extends FHIRBackboneElement
                 } else {
                     $this->setMeaning(new FHIRConsentDataMeaning([FHIRConsentDataMeaning::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setMeaning(new FHIRConsentDataMeaning($ext));
+            } else {
+                $this->setMeaning(new FHIRConsentDataMeaning(null));
             }
         }
-        if (isset($data[self::FIELD_REFERENCE])) {
+        if (array_key_exists(self::FIELD_REFERENCE, $data)) {
             if ($data[self::FIELD_REFERENCE] instanceof FHIRReference) {
                 $this->setReference($data[self::FIELD_REFERENCE]);
             } else {
@@ -166,21 +160,9 @@ class FHIRConsentData extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ConsentData{$xmlns}></ConsentData>";
     }
 
     /**
@@ -191,7 +173,7 @@ class FHIRConsentData extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConsentDataMeaning
      */
-    public function getMeaning()
+    public function getMeaning(): null|FHIRConsentDataMeaning
     {
         return $this->meaning;
     }
@@ -205,8 +187,12 @@ class FHIRConsentData extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConsentDataMeaning $meaning
      * @return static
      */
-    public function setMeaning(FHIRConsentDataMeaning $meaning = null)
+    public function setMeaning(null|FHIRConsentDataMeaning $meaning = null): self
     {
+        if (null === $meaning) {
+            $meaning = new FHIRConsentDataMeaning();
+        }
+        $this->_trackValueSet($this->meaning, $meaning);
         $this->meaning = $meaning;
         return $this;
     }
@@ -221,7 +207,7 @@ class FHIRConsentData extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getReference()
+    public function getReference(): null|FHIRReference
     {
         return $this->reference;
     }
@@ -237,8 +223,12 @@ class FHIRConsentData extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $reference
      * @return static
      */
-    public function setReference(FHIRReference $reference = null)
+    public function setReference(null|FHIRReference $reference = null): self
     {
+        if (null === $reference) {
+            $reference = new FHIRReference();
+        }
+        $this->_trackValueSet($this->reference, $reference);
         $this->reference = $reference;
         return $this;
     }
@@ -249,9 +239,9 @@ class FHIRConsentData extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -260,7 +250,7 @@ class FHIRConsentData extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
@@ -338,103 +328,136 @@ class FHIRConsentData extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRConsentData::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRConsentData::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRConsentData;
-        } elseif (!is_object($type) || !($type instanceof FHIRConsentData)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRConsentData)) {
             throw new \RuntimeException(sprintf(
-                'FHIRConsentData::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_MEANING === $childName) {
+                $type->setMeaning(FHIRConsentDataMeaning::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_REFERENCE === $childName) {
+                $type->setReference(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->meaning)) {
-            $type->setMeaning(FHIRConsentDataMeaning::xmlUnserialize($children->meaning));
-        }
-        if (isset($children->reference)) {
-            $type->setReference(FHIRReference::xmlUnserialize($children->reference));
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ConsentData', $this->_getSourceXmlns());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getMeaning())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MEANING, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_MEANING);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_REFERENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getMeaning())) {
-            $a[self::FIELD_MEANING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRConsentDataMeaning::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRConsentDataMeaning::FIELD_VALUE]);
-                $a[self::FIELD_MEANING_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_MEANING} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRConsentDataMeaning::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_MEANING_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getReference())) {
-            $a[self::FIELD_REFERENCE] = $v;
+            $out->{self::FIELD_REFERENCE} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,18 +57,29 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRInstantPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeMap;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter;
 
 /**
  * The header for a message exchange that is either requesting or responding to an
@@ -84,86 +95,21 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER;
-    const FIELD_AUTHOR = 'author';
-    const FIELD_DATA = 'data';
-    const FIELD_DESTINATION = 'destination';
-    const FIELD_ENTERER = 'enterer';
-    const FIELD_EVENT = 'event';
+
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_IDENTIFIER_EXT = '_identifier';
-    const FIELD_REASON = 'reason';
-    const FIELD_RECEIVER = 'receiver';
-    const FIELD_RESPONSE = 'response';
-    const FIELD_RESPONSIBLE = 'responsible';
-    const FIELD_SOURCE = 'source';
     const FIELD_TIMESTAMP = 'timestamp';
     const FIELD_TIMESTAMP_EXT = '_timestamp';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The logical author of the message - the person or device that decided the
-     * described event should happen. Where there is more than one candidate, pick the
-     * most proximal to the MessageHeader. Can provide other authors in extensions.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    protected $author = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The actual data of the message - a reference to the root/focus class of the
-     * event.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
-     */
-    protected $data = [];
-
-    /**
-     * The header for a message exchange that is either requesting or responding to an
-     * action. The resource(s) that are the subject of the action as well as other
-     * Information related to the action are typically transmitted in a bundle in which
-     * the MessageHeader resource instance is the first resource in the bundle.
-     *
-     * The destination application which the message is intended for.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination[]
-     */
-    protected $destination = [];
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The person or device that performed the data entry leading to this message.
-     * Where there is more than one candidate, pick the most proximal to the message.
-     * Can provide other enterers in extensions.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    protected $enterer = null;
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Code that identifies the event this message represents and connects it with it's
-     * definition. Events defined as part of the FHIR specification have the system
-     * value "http://hl7.org/fhir/message-type".
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
-     */
-    protected $event = null;
+    const FIELD_EVENT = 'event';
+    const FIELD_RESPONSE = 'response';
+    const FIELD_SOURCE = 'source';
+    const FIELD_DESTINATION = 'destination';
+    const FIELD_ENTERER = 'enterer';
+    const FIELD_AUTHOR = 'author';
+    const FIELD_RECEIVER = 'receiver';
+    const FIELD_RESPONSIBLE = 'responsible';
+    const FIELD_REASON = 'reason';
+    const FIELD_DATA = 'data';
 
     /**
      * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
@@ -176,33 +122,28 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId
      */
-    protected $identifier = null;
-
+    protected null|FHIRId $identifier = null;
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * An instant in time - known at least to the second
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The time that the message was sent.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
+     */
+    protected null|FHIRInstant $timestamp = null;
+    /**
+     * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Coded indication of the cause for the event - indicates a reason for the
-     * occurance of the event that is a focus of this message.
+     * Code that identifies the event this message represents and connects it with it's
+     * definition. Events defined as part of the FHIR specification have the system
+     * value "http://hl7.org/fhir/message-type".
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
      */
-    protected $reason = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Allows data conveyed by a message to be addressed to a particular person or
-     * department when routing to a specific application isn't sufficient.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    protected $receiver = null;
-
+    protected null|FHIRCoding $event = null;
     /**
      * The header for a message exchange that is either requesting or responding to an
      * action. The resource(s) that are the subject of the action as well as other
@@ -214,8 +155,64 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse
      */
-    protected $response = null;
-
+    protected null|FHIRMessageHeaderResponse $response = null;
+    /**
+     * The header for a message exchange that is either requesting or responding to an
+     * action. The resource(s) that are the subject of the action as well as other
+     * Information related to the action are typically transmitted in a bundle in which
+     * the MessageHeader resource instance is the first resource in the bundle.
+     *
+     * The source application from which this message originated.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource
+     */
+    protected null|FHIRMessageHeaderSource $source = null;
+    /**
+     * The header for a message exchange that is either requesting or responding to an
+     * action. The resource(s) that are the subject of the action as well as other
+     * Information related to the action are typically transmitted in a bundle in which
+     * the MessageHeader resource instance is the first resource in the bundle.
+     *
+     * The destination application which the message is intended for.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination[]
+     */
+    protected null|array $destination = [];
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The person or device that performed the data entry leading to this message.
+     * Where there is more than one candidate, pick the most proximal to the message.
+     * Can provide other enterers in extensions.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     */
+    protected null|FHIRResourceReference $enterer = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The logical author of the message - the person or device that decided the
+     * described event should happen. Where there is more than one candidate, pick the
+     * most proximal to the MessageHeader. Can provide other authors in extensions.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     */
+    protected null|FHIRResourceReference $author = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Allows data conveyed by a message to be addressed to a particular person or
+     * department when routing to a specific application isn't sufficient.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     */
+    protected null|FHIRResourceReference $receiver = null;
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -227,120 +224,53 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    protected $responsible = null;
-
+    protected null|FHIRResourceReference $responsible = null;
     /**
-     * The header for a message exchange that is either requesting or responding to an
-     * action. The resource(s) that are the subject of the action as well as other
-     * Information related to the action are typically transmitted in a bundle in which
-     * the MessageHeader resource instance is the first resource in the bundle.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The source application from which this message originated.
+     * Coded indication of the cause for the event - indicates a reason for the
+     * occurance of the event that is a focus of this message.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    protected $source = null;
-
+    protected null|FHIRCodeableConcept $reason = null;
     /**
-     * An instant in time - known at least to the second
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The time that the message was sent.
+     * The actual data of the message - a reference to the root/focus class of the
+     * event.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    protected $timestamp = null;
+    protected null|array $data = [];
 
     /**
      * Validation map for fields in type MessageHeader
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRMessageHeader Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMessageHeader::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_AUTHOR])) {
-            if ($data[self::FIELD_AUTHOR] instanceof FHIRResourceReference) {
-                $this->setAuthor($data[self::FIELD_AUTHOR]);
-            } else {
-                $this->setAuthor(new FHIRResourceReference($data[self::FIELD_AUTHOR]));
-            }
-        }
-        if (isset($data[self::FIELD_DATA])) {
-            if (is_array($data[self::FIELD_DATA])) {
-                foreach($data[self::FIELD_DATA] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRResourceReference) {
-                        $this->addData($v);
-                    } else {
-                        $this->addData(new FHIRResourceReference($v));
-                    }
-                }
-            } else if ($data[self::FIELD_DATA] instanceof FHIRResourceReference) {
-                $this->addData($data[self::FIELD_DATA]);
-            } else {
-                $this->addData(new FHIRResourceReference($data[self::FIELD_DATA]));
-            }
-        }
-        if (isset($data[self::FIELD_DESTINATION])) {
-            if (is_array($data[self::FIELD_DESTINATION])) {
-                foreach($data[self::FIELD_DESTINATION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRMessageHeaderDestination) {
-                        $this->addDestination($v);
-                    } else {
-                        $this->addDestination(new FHIRMessageHeaderDestination($v));
-                    }
-                }
-            } else if ($data[self::FIELD_DESTINATION] instanceof FHIRMessageHeaderDestination) {
-                $this->addDestination($data[self::FIELD_DESTINATION]);
-            } else {
-                $this->addDestination(new FHIRMessageHeaderDestination($data[self::FIELD_DESTINATION]));
-            }
-        }
-        if (isset($data[self::FIELD_ENTERER])) {
-            if ($data[self::FIELD_ENTERER] instanceof FHIRResourceReference) {
-                $this->setEnterer($data[self::FIELD_ENTERER]);
-            } else {
-                $this->setEnterer(new FHIRResourceReference($data[self::FIELD_ENTERER]));
-            }
-        }
-        if (isset($data[self::FIELD_EVENT])) {
-            if ($data[self::FIELD_EVENT] instanceof FHIRCoding) {
-                $this->setEvent($data[self::FIELD_EVENT]);
-            } else {
-                $this->setEvent(new FHIRCoding($data[self::FIELD_EVENT]));
-            }
-        }
-        if (isset($data[self::FIELD_IDENTIFIER]) || isset($data[self::FIELD_IDENTIFIER_EXT])) {
-            if (isset($data[self::FIELD_IDENTIFIER])) {
-                $value = $data[self::FIELD_IDENTIFIER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT])) {
-                $ext = $data[self::FIELD_IDENTIFIER_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_IDENTIFIER, $data) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $data)) {
+            $value = $data[self::FIELD_IDENTIFIER] ?? null;
+            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT])) ? $data[self::FIELD_IDENTIFIER_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRId) {
                     $this->setIdentifier($value);
@@ -349,56 +279,15 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
                 } else {
                     $this->setIdentifier(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setIdentifier(new FHIRId($ext));
+            } else {
+                $this->setIdentifier(new FHIRId(null));
             }
         }
-        if (isset($data[self::FIELD_REASON])) {
-            if ($data[self::FIELD_REASON] instanceof FHIRCodeableConcept) {
-                $this->setReason($data[self::FIELD_REASON]);
-            } else {
-                $this->setReason(new FHIRCodeableConcept($data[self::FIELD_REASON]));
-            }
-        }
-        if (isset($data[self::FIELD_RECEIVER])) {
-            if ($data[self::FIELD_RECEIVER] instanceof FHIRResourceReference) {
-                $this->setReceiver($data[self::FIELD_RECEIVER]);
-            } else {
-                $this->setReceiver(new FHIRResourceReference($data[self::FIELD_RECEIVER]));
-            }
-        }
-        if (isset($data[self::FIELD_RESPONSE])) {
-            if ($data[self::FIELD_RESPONSE] instanceof FHIRMessageHeaderResponse) {
-                $this->setResponse($data[self::FIELD_RESPONSE]);
-            } else {
-                $this->setResponse(new FHIRMessageHeaderResponse($data[self::FIELD_RESPONSE]));
-            }
-        }
-        if (isset($data[self::FIELD_RESPONSIBLE])) {
-            if ($data[self::FIELD_RESPONSIBLE] instanceof FHIRResourceReference) {
-                $this->setResponsible($data[self::FIELD_RESPONSIBLE]);
-            } else {
-                $this->setResponsible(new FHIRResourceReference($data[self::FIELD_RESPONSIBLE]));
-            }
-        }
-        if (isset($data[self::FIELD_SOURCE])) {
-            if ($data[self::FIELD_SOURCE] instanceof FHIRMessageHeaderSource) {
-                $this->setSource($data[self::FIELD_SOURCE]);
-            } else {
-                $this->setSource(new FHIRMessageHeaderSource($data[self::FIELD_SOURCE]));
-            }
-        }
-        if (isset($data[self::FIELD_TIMESTAMP]) || isset($data[self::FIELD_TIMESTAMP_EXT])) {
-            if (isset($data[self::FIELD_TIMESTAMP])) {
-                $value = $data[self::FIELD_TIMESTAMP];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TIMESTAMP_EXT]) && is_array($data[self::FIELD_TIMESTAMP_EXT])) {
-                $ext = $data[self::FIELD_TIMESTAMP_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_TIMESTAMP, $data) || array_key_exists(self::FIELD_TIMESTAMP_EXT, $data)) {
+            $value = $data[self::FIELD_TIMESTAMP] ?? null;
+            $ext = (isset($data[self::FIELD_TIMESTAMP_EXT]) && is_array($data[self::FIELD_TIMESTAMP_EXT])) ? $data[self::FIELD_TIMESTAMP_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRInstant) {
                     $this->setTimestamp($value);
@@ -407,8 +296,96 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
                 } else {
                     $this->setTimestamp(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setTimestamp(new FHIRInstant($ext));
+            } else {
+                $this->setTimestamp(new FHIRInstant(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_EVENT, $data)) {
+            if ($data[self::FIELD_EVENT] instanceof FHIRCoding) {
+                $this->setEvent($data[self::FIELD_EVENT]);
+            } else {
+                $this->setEvent(new FHIRCoding($data[self::FIELD_EVENT]));
+            }
+        }
+        if (array_key_exists(self::FIELD_RESPONSE, $data)) {
+            if ($data[self::FIELD_RESPONSE] instanceof FHIRMessageHeaderResponse) {
+                $this->setResponse($data[self::FIELD_RESPONSE]);
+            } else {
+                $this->setResponse(new FHIRMessageHeaderResponse($data[self::FIELD_RESPONSE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_SOURCE, $data)) {
+            if ($data[self::FIELD_SOURCE] instanceof FHIRMessageHeaderSource) {
+                $this->setSource($data[self::FIELD_SOURCE]);
+            } else {
+                $this->setSource(new FHIRMessageHeaderSource($data[self::FIELD_SOURCE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DESTINATION, $data)) {
+            if (is_array($data[self::FIELD_DESTINATION])) {
+                foreach($data[self::FIELD_DESTINATION] as $v) {
+                    if ($v instanceof FHIRMessageHeaderDestination) {
+                        $this->addDestination($v);
+                    } else {
+                        $this->addDestination(new FHIRMessageHeaderDestination($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_DESTINATION] instanceof FHIRMessageHeaderDestination) {
+                $this->addDestination($data[self::FIELD_DESTINATION]);
+            } else {
+                $this->addDestination(new FHIRMessageHeaderDestination($data[self::FIELD_DESTINATION]));
+            }
+        }
+        if (array_key_exists(self::FIELD_ENTERER, $data)) {
+            if ($data[self::FIELD_ENTERER] instanceof FHIRResourceReference) {
+                $this->setEnterer($data[self::FIELD_ENTERER]);
+            } else {
+                $this->setEnterer(new FHIRResourceReference($data[self::FIELD_ENTERER]));
+            }
+        }
+        if (array_key_exists(self::FIELD_AUTHOR, $data)) {
+            if ($data[self::FIELD_AUTHOR] instanceof FHIRResourceReference) {
+                $this->setAuthor($data[self::FIELD_AUTHOR]);
+            } else {
+                $this->setAuthor(new FHIRResourceReference($data[self::FIELD_AUTHOR]));
+            }
+        }
+        if (array_key_exists(self::FIELD_RECEIVER, $data)) {
+            if ($data[self::FIELD_RECEIVER] instanceof FHIRResourceReference) {
+                $this->setReceiver($data[self::FIELD_RECEIVER]);
+            } else {
+                $this->setReceiver(new FHIRResourceReference($data[self::FIELD_RECEIVER]));
+            }
+        }
+        if (array_key_exists(self::FIELD_RESPONSIBLE, $data)) {
+            if ($data[self::FIELD_RESPONSIBLE] instanceof FHIRResourceReference) {
+                $this->setResponsible($data[self::FIELD_RESPONSIBLE]);
+            } else {
+                $this->setResponsible(new FHIRResourceReference($data[self::FIELD_RESPONSIBLE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_REASON, $data)) {
+            if ($data[self::FIELD_REASON] instanceof FHIRCodeableConcept) {
+                $this->setReason($data[self::FIELD_REASON]);
+            } else {
+                $this->setReason(new FHIRCodeableConcept($data[self::FIELD_REASON]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DATA, $data)) {
+            if (is_array($data[self::FIELD_DATA])) {
+                foreach($data[self::FIELD_DATA] as $v) {
+                    if ($v instanceof FHIRResourceReference) {
+                        $this->addData($v);
+                    } else {
+                        $this->addData(new FHIRResourceReference($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_DATA] instanceof FHIRResourceReference) {
+                $this->addData($data[self::FIELD_DATA]);
+            } else {
+                $this->addData(new FHIRResourceReference($data[self::FIELD_DATA]));
             }
         }
     }
@@ -416,7 +393,7 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -424,206 +401,88 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
     /**
      * @return string
      */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<MessageHeader{$xmlns}></MessageHeader>";
-    }
-    /**
-     * @return string
-     */
-    public function _getResourceType()
+    public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
+     * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
+     * with a length limit of 36 characters
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * The logical author of the message - the person or device that decided the
-     * described event should happen. Where there is more than one candidate, pick the
-     * most proximal to the MessageHeader. Can provide other authors in extensions.
+     * The identifier of this message.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId
      */
-    public function getAuthor()
+    public function getIdentifier(): null|FHIRId
     {
-        return $this->author;
+        return $this->identifier;
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
+     * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
+     * with a length limit of 36 characters
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * The logical author of the message - the person or device that decided the
-     * described event should happen. Where there is more than one candidate, pick the
-     * most proximal to the MessageHeader. Can provide other authors in extensions.
+     * The identifier of this message.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $author
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId $identifier
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAuthor(FHIRResourceReference $author = null)
+    public function setIdentifier(null|string|FHIRIdPrimitive|FHIRId $identifier = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->author = $author;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The actual data of the message - a reference to the root/focus class of the
-     * event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
-     */
-    public function getData()
-    {
-        return $this->data;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The actual data of the message - a reference to the root/focus class of the
-     * event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $data
-     * @return static
-     */
-    public function addData(FHIRResourceReference $data = null)
-    {
-        $this->data[] = $data;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The actual data of the message - a reference to the root/focus class of the
-     * event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $data
-     * @return static
-     */
-    public function setData(array $data = [])
-    {
-        $this->data = [];
-        if ([] === $data) {
-            return $this;
+        if (null !== $identifier && !($identifier instanceof FHIRId)) {
+            $identifier = new FHIRId($identifier);
         }
-        foreach($data as $v) {
-            if ($v instanceof FHIRResourceReference) {
-                $this->addData($v);
-            } else {
-                $this->addData(new FHIRResourceReference($v));
-            }
+        $this->_trackValueSet($this->identifier, $identifier);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_IDENTIFIER])) {
+            $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER] = [];
         }
+        $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER][0] = $xmlLocation;
+        $this->identifier = $identifier;
         return $this;
     }
 
     /**
-     * The header for a message exchange that is either requesting or responding to an
-     * action. The resource(s) that are the subject of the action as well as other
-     * Information related to the action are typically transmitted in a bundle in which
-     * the MessageHeader resource instance is the first resource in the bundle.
+     * An instant in time - known at least to the second
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The destination application which the message is intended for.
+     * The time that the message was sent.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination[]
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
      */
-    public function getDestination()
+    public function getTimestamp(): null|FHIRInstant
     {
-        return $this->destination;
+        return $this->timestamp;
     }
 
     /**
-     * The header for a message exchange that is either requesting or responding to an
-     * action. The resource(s) that are the subject of the action as well as other
-     * Information related to the action are typically transmitted in a bundle in which
-     * the MessageHeader resource instance is the first resource in the bundle.
+     * An instant in time - known at least to the second
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The destination application which the message is intended for.
+     * The time that the message was sent.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination $destination
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant $timestamp
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addDestination(FHIRMessageHeaderDestination $destination = null)
+    public function setTimestamp(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $timestamp = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->destination[] = $destination;
-        return $this;
-    }
-
-    /**
-     * The header for a message exchange that is either requesting or responding to an
-     * action. The resource(s) that are the subject of the action as well as other
-     * Information related to the action are typically transmitted in a bundle in which
-     * the MessageHeader resource instance is the first resource in the bundle.
-     *
-     * The destination application which the message is intended for.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination[] $destination
-     * @return static
-     */
-    public function setDestination(array $destination = [])
-    {
-        $this->destination = [];
-        if ([] === $destination) {
-            return $this;
+        if (null !== $timestamp && !($timestamp instanceof FHIRInstant)) {
+            $timestamp = new FHIRInstant($timestamp);
         }
-        foreach($destination as $v) {
-            if ($v instanceof FHIRMessageHeaderDestination) {
-                $this->addDestination($v);
-            } else {
-                $this->addDestination(new FHIRMessageHeaderDestination($v));
-            }
+        $this->_trackValueSet($this->timestamp, $timestamp);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_TIMESTAMP])) {
+            $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP] = [];
         }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The person or device that performed the data entry leading to this message.
-     * Where there is more than one candidate, pick the most proximal to the message.
-     * Can provide other enterers in extensions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    public function getEnterer()
-    {
-        return $this->enterer;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The person or device that performed the data entry leading to this message.
-     * Where there is more than one candidate, pick the most proximal to the message.
-     * Can provide other enterers in extensions.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $enterer
-     * @return static
-     */
-    public function setEnterer(FHIRResourceReference $enterer = null)
-    {
-        $this->enterer = $enterer;
+        $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP][0] = $xmlLocation;
+        $this->timestamp = $timestamp;
         return $this;
     }
 
@@ -638,7 +497,7 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
      */
-    public function getEvent()
+    public function getEvent(): null|FHIRCoding
     {
         return $this->event;
     }
@@ -655,117 +514,13 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding $event
      * @return static
      */
-    public function setEvent(FHIRCoding $event = null)
+    public function setEvent(null|FHIRCoding $event = null): self
     {
+        if (null === $event) {
+            $event = new FHIRCoding();
+        }
+        $this->_trackValueSet($this->event, $event);
         $this->event = $event;
-        return $this;
-    }
-
-    /**
-     * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
-     * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
-     * with a length limit of 36 characters
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * The identifier of this message.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId
-     */
-    public function getIdentifier()
-    {
-        return $this->identifier;
-    }
-
-    /**
-     * A whole number in the range to 2^64-1, optionally represented in hex, a uuid, an
-     * oid or any other combination of lower-case letters a-z, numerals, "-" and ".",
-     * with a length limit of 36 characters
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * The identifier of this message.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId $identifier
-     * @return static
-     */
-    public function setIdentifier($identifier = null)
-    {
-        if (null === $identifier) {
-            $this->identifier = null;
-            return $this;
-        }
-        if ($identifier instanceof FHIRId) {
-            $this->identifier = $identifier;
-            return $this;
-        }
-        $this->identifier = new FHIRId($identifier);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Coded indication of the cause for the event - indicates a reason for the
-     * occurance of the event that is a focus of this message.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
-     */
-    public function getReason()
-    {
-        return $this->reason;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Coded indication of the cause for the event - indicates a reason for the
-     * occurance of the event that is a focus of this message.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $reason
-     * @return static
-     */
-    public function setReason(FHIRCodeableConcept $reason = null)
-    {
-        $this->reason = $reason;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Allows data conveyed by a message to be addressed to a particular person or
-     * department when routing to a specific application isn't sufficient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    public function getReceiver()
-    {
-        return $this->receiver;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Allows data conveyed by a message to be addressed to a particular person or
-     * department when routing to a specific application isn't sufficient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $receiver
-     * @return static
-     */
-    public function setReceiver(FHIRResourceReference $receiver = null)
-    {
-        $this->receiver = $receiver;
         return $this;
     }
 
@@ -780,7 +535,7 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse
      */
-    public function getResponse()
+    public function getResponse(): null|FHIRMessageHeaderResponse
     {
         return $this->response;
     }
@@ -797,9 +552,197 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse $response
      * @return static
      */
-    public function setResponse(FHIRMessageHeaderResponse $response = null)
+    public function setResponse(null|FHIRMessageHeaderResponse $response = null): self
     {
+        if (null === $response) {
+            $response = new FHIRMessageHeaderResponse();
+        }
+        $this->_trackValueSet($this->response, $response);
         $this->response = $response;
+        return $this;
+    }
+
+    /**
+     * The header for a message exchange that is either requesting or responding to an
+     * action. The resource(s) that are the subject of the action as well as other
+     * Information related to the action are typically transmitted in a bundle in which
+     * the MessageHeader resource instance is the first resource in the bundle.
+     *
+     * The source application from which this message originated.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource
+     */
+    public function getSource(): null|FHIRMessageHeaderSource
+    {
+        return $this->source;
+    }
+
+    /**
+     * The header for a message exchange that is either requesting or responding to an
+     * action. The resource(s) that are the subject of the action as well as other
+     * Information related to the action are typically transmitted in a bundle in which
+     * the MessageHeader resource instance is the first resource in the bundle.
+     *
+     * The source application from which this message originated.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource $source
+     * @return static
+     */
+    public function setSource(null|FHIRMessageHeaderSource $source = null): self
+    {
+        if (null === $source) {
+            $source = new FHIRMessageHeaderSource();
+        }
+        $this->_trackValueSet($this->source, $source);
+        $this->source = $source;
+        return $this;
+    }
+
+    /**
+     * The header for a message exchange that is either requesting or responding to an
+     * action. The resource(s) that are the subject of the action as well as other
+     * Information related to the action are typically transmitted in a bundle in which
+     * the MessageHeader resource instance is the first resource in the bundle.
+     *
+     * The destination application which the message is intended for.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination[]
+     */
+    public function getDestination(): null|array
+    {
+        return $this->destination;
+    }
+
+    /**
+     * The header for a message exchange that is either requesting or responding to an
+     * action. The resource(s) that are the subject of the action as well as other
+     * Information related to the action are typically transmitted in a bundle in which
+     * the MessageHeader resource instance is the first resource in the bundle.
+     *
+     * The destination application which the message is intended for.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination $destination
+     * @return static
+     */
+    public function addDestination(null|FHIRMessageHeaderDestination $destination = null): self
+    {
+        if (null === $destination) {
+            $destination = new FHIRMessageHeaderDestination();
+        }
+        $this->_trackValueAdded();
+        $this->destination[] = $destination;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The person or device that performed the data entry leading to this message.
+     * Where there is more than one candidate, pick the most proximal to the message.
+     * Can provide other enterers in extensions.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     */
+    public function getEnterer(): null|FHIRResourceReference
+    {
+        return $this->enterer;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The person or device that performed the data entry leading to this message.
+     * Where there is more than one candidate, pick the most proximal to the message.
+     * Can provide other enterers in extensions.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $enterer
+     * @return static
+     */
+    public function setEnterer(null|FHIRResourceReference $enterer = null): self
+    {
+        if (null === $enterer) {
+            $enterer = new FHIRResourceReference();
+        }
+        $this->_trackValueSet($this->enterer, $enterer);
+        $this->enterer = $enterer;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The logical author of the message - the person or device that decided the
+     * described event should happen. Where there is more than one candidate, pick the
+     * most proximal to the MessageHeader. Can provide other authors in extensions.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     */
+    public function getAuthor(): null|FHIRResourceReference
+    {
+        return $this->author;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The logical author of the message - the person or device that decided the
+     * described event should happen. Where there is more than one candidate, pick the
+     * most proximal to the MessageHeader. Can provide other authors in extensions.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $author
+     * @return static
+     */
+    public function setAuthor(null|FHIRResourceReference $author = null): self
+    {
+        if (null === $author) {
+            $author = new FHIRResourceReference();
+        }
+        $this->_trackValueSet($this->author, $author);
+        $this->author = $author;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Allows data conveyed by a message to be addressed to a particular person or
+     * department when routing to a specific application isn't sufficient.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     */
+    public function getReceiver(): null|FHIRResourceReference
+    {
+        return $this->receiver;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Allows data conveyed by a message to be addressed to a particular person or
+     * department when routing to a specific application isn't sufficient.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $receiver
+     * @return static
+     */
+    public function setReceiver(null|FHIRResourceReference $receiver = null): self
+    {
+        if (null === $receiver) {
+            $receiver = new FHIRResourceReference();
+        }
+        $this->_trackValueSet($this->receiver, $receiver);
+        $this->receiver = $receiver;
         return $this;
     }
 
@@ -814,7 +757,7 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    public function getResponsible()
+    public function getResponsible(): null|FHIRResourceReference
     {
         return $this->responsible;
     }
@@ -831,77 +774,87 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $responsible
      * @return static
      */
-    public function setResponsible(FHIRResourceReference $responsible = null)
+    public function setResponsible(null|FHIRResourceReference $responsible = null): self
     {
+        if (null === $responsible) {
+            $responsible = new FHIRResourceReference();
+        }
+        $this->_trackValueSet($this->responsible, $responsible);
         $this->responsible = $responsible;
         return $this;
     }
 
     /**
-     * The header for a message exchange that is either requesting or responding to an
-     * action. The resource(s) that are the subject of the action as well as other
-     * Information related to the action are typically transmitted in a bundle in which
-     * the MessageHeader resource instance is the first resource in the bundle.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The source application from which this message originated.
+     * Coded indication of the cause for the event - indicates a reason for the
+     * occurance of the event that is a focus of this message.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    public function getSource()
+    public function getReason(): null|FHIRCodeableConcept
     {
-        return $this->source;
+        return $this->reason;
     }
 
     /**
-     * The header for a message exchange that is either requesting or responding to an
-     * action. The resource(s) that are the subject of the action as well as other
-     * Information related to the action are typically transmitted in a bundle in which
-     * the MessageHeader resource instance is the first resource in the bundle.
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The source application from which this message originated.
+     * Coded indication of the cause for the event - indicates a reason for the
+     * occurance of the event that is a focus of this message.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource $source
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $reason
      * @return static
      */
-    public function setSource(FHIRMessageHeaderSource $source = null)
+    public function setReason(null|FHIRCodeableConcept $reason = null): self
     {
-        $this->source = $source;
+        if (null === $reason) {
+            $reason = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->reason, $reason);
+        $this->reason = $reason;
         return $this;
     }
 
     /**
-     * An instant in time - known at least to the second
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The time that the message was sent.
+     * The actual data of the message - a reference to the root/focus class of the
+     * event.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    public function getTimestamp()
+    public function getData(): null|array
     {
-        return $this->timestamp;
+        return $this->data;
     }
 
     /**
-     * An instant in time - known at least to the second
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The time that the message was sent.
+     * The actual data of the message - a reference to the root/focus class of the
+     * event.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant $timestamp
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $data
      * @return static
      */
-    public function setTimestamp($timestamp = null)
+    public function addData(null|FHIRResourceReference $data = null): self
     {
-        if (null === $timestamp) {
-            $this->timestamp = null;
-            return $this;
+        if (null === $data) {
+            $data = new FHIRResourceReference();
         }
-        if ($timestamp instanceof FHIRInstant) {
-            $this->timestamp = $timestamp;
-            return $this;
-        }
-        $this->timestamp = new FHIRInstant($timestamp);
+        $this->_trackValueAdded();
+        $this->data[] = $data;
         return $this;
     }
 
@@ -911,9 +864,9 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -922,20 +875,33 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAuthor())) {
+        if (null !== ($v = $this->getIdentifier())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_AUTHOR] = $fieldErrs;
+                $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getData())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_DATA, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getTimestamp())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TIMESTAMP] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getEvent())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EVENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getResponse())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_RESPONSE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSource())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SOURCE] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getDestination())) {
@@ -950,19 +916,9 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
                 $errs[self::FIELD_ENTERER] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getEvent())) {
+        if (null !== ($v = $this->getAuthor())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_EVENT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getIdentifier())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getReason())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REASON] = $fieldErrs;
+                $errs[self::FIELD_AUTHOR] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getReceiver())) {
@@ -970,47 +926,80 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
                 $errs[self::FIELD_RECEIVER] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getResponse())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_RESPONSE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getResponsible())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_RESPONSIBLE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getSource())) {
+        if (null !== ($v = $this->getReason())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SOURCE] = $fieldErrs;
+                $errs[self::FIELD_REASON] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getTimestamp())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TIMESTAMP] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_AUTHOR])) {
-            $v = $this->getAuthor();
-            foreach($validationRules[self::FIELD_AUTHOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_AUTHOR, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_AUTHOR])) {
-                        $errs[self::FIELD_AUTHOR] = [];
-                    }
-                    $errs[self::FIELD_AUTHOR][$rule] = $err;
+        if ([] !== ($vs = $this->getData())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_DATA, $i)] = $fieldErrs;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DATA])) {
-            $v = $this->getData();
-            foreach($validationRules[self::FIELD_DATA] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_DATA, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
+            $v = $this->getIdentifier();
+            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DATA])) {
-                        $errs[self::FIELD_DATA] = [];
+                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
+                        $errs[self::FIELD_IDENTIFIER] = [];
                     }
-                    $errs[self::FIELD_DATA][$rule] = $err;
+                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TIMESTAMP])) {
+            $v = $this->getTimestamp();
+            foreach($validationRules[self::FIELD_TIMESTAMP] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_TIMESTAMP, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TIMESTAMP])) {
+                        $errs[self::FIELD_TIMESTAMP] = [];
+                    }
+                    $errs[self::FIELD_TIMESTAMP][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EVENT])) {
+            $v = $this->getEvent();
+            foreach($validationRules[self::FIELD_EVENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_EVENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EVENT])) {
+                        $errs[self::FIELD_EVENT] = [];
+                    }
+                    $errs[self::FIELD_EVENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RESPONSE])) {
+            $v = $this->getResponse();
+            foreach($validationRules[self::FIELD_RESPONSE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_RESPONSE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RESPONSE])) {
+                        $errs[self::FIELD_RESPONSE] = [];
+                    }
+                    $errs[self::FIELD_RESPONSE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SOURCE])) {
+            $v = $this->getSource();
+            foreach($validationRules[self::FIELD_SOURCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_SOURCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SOURCE])) {
+                        $errs[self::FIELD_SOURCE] = [];
+                    }
+                    $errs[self::FIELD_SOURCE][$rule] = $err;
                 }
             }
         }
@@ -1038,39 +1027,15 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_EVENT])) {
-            $v = $this->getEvent();
-            foreach($validationRules[self::FIELD_EVENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_EVENT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_AUTHOR])) {
+            $v = $this->getAuthor();
+            foreach($validationRules[self::FIELD_AUTHOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_AUTHOR, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EVENT])) {
-                        $errs[self::FIELD_EVENT] = [];
+                    if (!isset($errs[self::FIELD_AUTHOR])) {
+                        $errs[self::FIELD_AUTHOR] = [];
                     }
-                    $errs[self::FIELD_EVENT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
-            $v = $this->getIdentifier();
-            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
-                        $errs[self::FIELD_IDENTIFIER] = [];
-                    }
-                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_REASON])) {
-            $v = $this->getReason();
-            foreach($validationRules[self::FIELD_REASON] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_REASON, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REASON])) {
-                        $errs[self::FIELD_REASON] = [];
-                    }
-                    $errs[self::FIELD_REASON][$rule] = $err;
+                    $errs[self::FIELD_AUTHOR][$rule] = $err;
                 }
             }
         }
@@ -1086,18 +1051,6 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_RESPONSE])) {
-            $v = $this->getResponse();
-            foreach($validationRules[self::FIELD_RESPONSE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_RESPONSE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RESPONSE])) {
-                        $errs[self::FIELD_RESPONSE] = [];
-                    }
-                    $errs[self::FIELD_RESPONSE][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_RESPONSIBLE])) {
             $v = $this->getResponsible();
             foreach($validationRules[self::FIELD_RESPONSIBLE] as $rule => $constraint) {
@@ -1110,39 +1063,27 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SOURCE])) {
-            $v = $this->getSource();
-            foreach($validationRules[self::FIELD_SOURCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_SOURCE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_REASON])) {
+            $v = $this->getReason();
+            foreach($validationRules[self::FIELD_REASON] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_REASON, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SOURCE])) {
-                        $errs[self::FIELD_SOURCE] = [];
+                    if (!isset($errs[self::FIELD_REASON])) {
+                        $errs[self::FIELD_REASON] = [];
                     }
-                    $errs[self::FIELD_SOURCE][$rule] = $err;
+                    $errs[self::FIELD_REASON][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TIMESTAMP])) {
-            $v = $this->getTimestamp();
-            foreach($validationRules[self::FIELD_TIMESTAMP] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_TIMESTAMP, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_DATA])) {
+            $v = $this->getData();
+            foreach($validationRules[self::FIELD_DATA] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER, self::FIELD_DATA, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TIMESTAMP])) {
-                        $errs[self::FIELD_TIMESTAMP] = [];
+                    if (!isset($errs[self::FIELD_DATA])) {
+                        $errs[self::FIELD_DATA] = [];
                     }
-                    $errs[self::FIELD_TIMESTAMP][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_CONTAINED])) {
-            $v = $this->getContained();
-            foreach($validationRules[self::FIELD_CONTAINED] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_CONTAINED, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONTAINED])) {
-                        $errs[self::FIELD_CONTAINED] = [];
-                    }
-                    $errs[self::FIELD_CONTAINED][$rule] = $err;
+                    $errs[self::FIELD_DATA][$rule] = $err;
                 }
             }
         }
@@ -1167,6 +1108,18 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
                         $errs[self::FIELD_TEXT] = [];
                     }
                     $errs[self::FIELD_TEXT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONTAINED])) {
+            $v = $this->getContained();
+            foreach($validationRules[self::FIELD_CONTAINED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_CONTAINED, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONTAINED])) {
+                        $errs[self::FIELD_CONTAINED] = [];
+                    }
+                    $errs[self::FIELD_CONTAINED][$rule] = $err;
                 }
             }
         }
@@ -1210,241 +1163,293 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMessageHeader $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMessageHeader
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRMessageHeader::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMessageHeader::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRMessageHeader;
-        } elseif (!is_object($type) || !($type instanceof FHIRMessageHeader)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRMessageHeader)) {
             throw new \RuntimeException(sprintf(
-                'FHIRMessageHeader::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMessageHeader or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_IDENTIFIER === $childName) {
+                $type->setIdentifier(FHIRId::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_TIMESTAMP === $childName) {
+                $type->setTimestamp(FHIRInstant::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_EVENT === $childName) {
+                $type->setEvent(FHIRCoding::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_RESPONSE === $childName) {
+                $type->setResponse(FHIRMessageHeaderResponse::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_SOURCE === $childName) {
+                $type->setSource(FHIRMessageHeaderSource::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DESTINATION === $childName) {
+                $type->addDestination(FHIRMessageHeaderDestination::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ENTERER === $childName) {
+                $type->setEnterer(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_AUTHOR === $childName) {
+                $type->setAuthor(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_RECEIVER === $childName) {
+                $type->setReceiver(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_RESPONSIBLE === $childName) {
+                $type->setResponsible(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_REASON === $childName) {
+                $type->setReason(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DATA === $childName) {
+                $type->addData(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_LANGUAGE === $childName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_TEXT === $childName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CONTAINED === $childName) {
+                foreach ($n->children() as $nn) {
+                    $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn, $config));
+                }
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->author)) {
-            $type->setAuthor(FHIRResourceReference::xmlUnserialize($children->author));
-        }
-        if (isset($children->data)) {
-            foreach($children->data as $child) {
-                $type->addData(FHIRResourceReference::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->destination)) {
-            foreach($children->destination as $child) {
-                $type->addDestination(FHIRMessageHeaderDestination::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->enterer)) {
-            $type->setEnterer(FHIRResourceReference::xmlUnserialize($children->enterer));
-        }
-        if (isset($children->event)) {
-            $type->setEvent(FHIRCoding::xmlUnserialize($children->event));
-        }
-        if (isset($children->identifier)) {
-            $type->setIdentifier(FHIRId::xmlUnserialize($children->identifier));
-        }
-        if (isset($attributes->identifier)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_IDENTIFIER])) {
             $pt = $type->getIdentifier();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->identifier);
+                $pt->setValue((string)$attributes[self::FIELD_IDENTIFIER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setIdentifier((string)$attributes->identifier);
+                $type->setIdentifier((string)$attributes[self::FIELD_IDENTIFIER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->reason)) {
-            $type->setReason(FHIRCodeableConcept::xmlUnserialize($children->reason));
-        }
-        if (isset($children->receiver)) {
-            $type->setReceiver(FHIRResourceReference::xmlUnserialize($children->receiver));
-        }
-        if (isset($children->response)) {
-            $type->setResponse(FHIRMessageHeaderResponse::xmlUnserialize($children->response));
-        }
-        if (isset($children->responsible)) {
-            $type->setResponsible(FHIRResourceReference::xmlUnserialize($children->responsible));
-        }
-        if (isset($children->source)) {
-            $type->setSource(FHIRMessageHeaderSource::xmlUnserialize($children->source));
-        }
-        if (isset($children->timestamp)) {
-            $type->setTimestamp(FHIRInstant::xmlUnserialize($children->timestamp));
-        }
-        if (isset($attributes->timestamp)) {
+        if (isset($attributes[self::FIELD_TIMESTAMP])) {
             $pt = $type->getTimestamp();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->timestamp);
+                $pt->setValue((string)$attributes[self::FIELD_TIMESTAMP], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setTimestamp((string)$attributes->timestamp);
+                $type->setTimestamp((string)$attributes[self::FIELD_TIMESTAMP], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_LANGUAGE])) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAuthor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHOR, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if ([] !== ($vs = $this->getData())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DATA, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if ([] !== ($vs = $this->getDestination())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DESTINATION, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getEnterer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTERER, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'MessageHeader', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getIdentifier())) {
+            $xw->writeAttribute(self::FIELD_IDENTIFIER, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTimestamp())) {
+            $xw->writeAttribute(self::FIELD_TIMESTAMP, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getIdentifier())) {
+            $xw->startElement(self::FIELD_IDENTIFIER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTimestamp())) {
+            $xw->startElement(self::FIELD_TIMESTAMP);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getEvent())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EVENT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getReason())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getReceiver())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RECEIVER, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_EVENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getResponse())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getResponsible())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_RESPONSE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getSource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_SOURCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getTimestamp())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMESTAMP, null, $v->_getFHIRXMLNamespace()));
+        foreach ($this->getDestination() as $v) {
+            $xw->startElement(self::FIELD_DESTINATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getEnterer())) {
+            $xw->startElement(self::FIELD_ENTERER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getAuthor())) {
+            $xw->startElement(self::FIELD_AUTHOR);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getReceiver())) {
+            $xw->startElement(self::FIELD_RECEIVER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getResponsible())) {
+            $xw->startElement(self::FIELD_RESPONSIBLE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getReason())) {
+            $xw->startElement(self::FIELD_REASON);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getData() as $v) {
+            $xw->startElement(self::FIELD_DATA);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAuthor())) {
-            $a[self::FIELD_AUTHOR] = $v;
-        }
-        if ([] !== ($vs = $this->getData())) {
-            $a[self::FIELD_DATA] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_DATA][] = $v;
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getIdentifier())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_IDENTIFIER} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRId::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_IDENTIFIER_EXT} = $ext;
             }
         }
+        if (null !== ($v = $this->getTimestamp())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_TIMESTAMP} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInstant::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_TIMESTAMP_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getEvent())) {
+            $out->{self::FIELD_EVENT} = $v;
+        }
+        if (null !== ($v = $this->getResponse())) {
+            $out->{self::FIELD_RESPONSE} = $v;
+        }
+        if (null !== ($v = $this->getSource())) {
+            $out->{self::FIELD_SOURCE} = $v;
+        }
         if ([] !== ($vs = $this->getDestination())) {
-            $a[self::FIELD_DESTINATION] = [];
+            $out->{self::FIELD_DESTINATION} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_DESTINATION][] = $v;
+                $out->{self::FIELD_DESTINATION}[] = $v;
             }
         }
         if (null !== ($v = $this->getEnterer())) {
-            $a[self::FIELD_ENTERER] = $v;
+            $out->{self::FIELD_ENTERER} = $v;
         }
-        if (null !== ($v = $this->getEvent())) {
-            $a[self::FIELD_EVENT] = $v;
-        }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRId::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRId::FIELD_VALUE]);
-                $a[self::FIELD_IDENTIFIER_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getReason())) {
-            $a[self::FIELD_REASON] = $v;
+        if (null !== ($v = $this->getAuthor())) {
+            $out->{self::FIELD_AUTHOR} = $v;
         }
         if (null !== ($v = $this->getReceiver())) {
-            $a[self::FIELD_RECEIVER] = $v;
-        }
-        if (null !== ($v = $this->getResponse())) {
-            $a[self::FIELD_RESPONSE] = $v;
+            $out->{self::FIELD_RECEIVER} = $v;
         }
         if (null !== ($v = $this->getResponsible())) {
-            $a[self::FIELD_RESPONSIBLE] = $v;
+            $out->{self::FIELD_RESPONSIBLE} = $v;
         }
-        if (null !== ($v = $this->getSource())) {
-            $a[self::FIELD_SOURCE] = $v;
+        if (null !== ($v = $this->getReason())) {
+            $out->{self::FIELD_REASON} = $v;
         }
-        if (null !== ($v = $this->getTimestamp())) {
-            $a[self::FIELD_TIMESTAMP] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInstant::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInstant::FIELD_VALUE]);
-                $a[self::FIELD_TIMESTAMP_EXT] = $enc;
+        if ([] !== ($vs = $this->getData())) {
+            $out->{self::FIELD_DATA} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_DATA}[] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
-    }
 
+        $out->{PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE} = $this->_getResourceType();
+
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

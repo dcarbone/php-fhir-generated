@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,10 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRCanonicalPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging;
@@ -74,16 +78,29 @@ use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFHIRVersion;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext;
+use DCarbone\PHPFHIRGenerated\R4\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRMarkdownPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeMap;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
@@ -99,361 +116,51 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT;
-    const FIELD_CONTACT = 'contact';
-    const FIELD_COPYRIGHT = 'copyright';
-    const FIELD_COPYRIGHT_EXT = '_copyright';
-    const FIELD_DATE = 'date';
-    const FIELD_DATE_EXT = '_date';
-    const FIELD_DESCRIPTION = 'description';
-    const FIELD_DESCRIPTION_EXT = '_description';
-    const FIELD_DOCUMENT = 'document';
+
+    const FIELD_URL = 'url';
+    const FIELD_URL_EXT = '_url';
+    const FIELD_VERSION = 'version';
+    const FIELD_VERSION_EXT = '_version';
+    const FIELD_NAME = 'name';
+    const FIELD_NAME_EXT = '_name';
+    const FIELD_TITLE = 'title';
+    const FIELD_TITLE_EXT = '_title';
+    const FIELD_STATUS = 'status';
+    const FIELD_STATUS_EXT = '_status';
     const FIELD_EXPERIMENTAL = 'experimental';
     const FIELD_EXPERIMENTAL_EXT = '_experimental';
+    const FIELD_DATE = 'date';
+    const FIELD_DATE_EXT = '_date';
+    const FIELD_PUBLISHER = 'publisher';
+    const FIELD_PUBLISHER_EXT = '_publisher';
+    const FIELD_CONTACT = 'contact';
+    const FIELD_DESCRIPTION = 'description';
+    const FIELD_DESCRIPTION_EXT = '_description';
+    const FIELD_USE_CONTEXT = 'useContext';
+    const FIELD_JURISDICTION = 'jurisdiction';
+    const FIELD_PURPOSE = 'purpose';
+    const FIELD_PURPOSE_EXT = '_purpose';
+    const FIELD_COPYRIGHT = 'copyright';
+    const FIELD_COPYRIGHT_EXT = '_copyright';
+    const FIELD_KIND = 'kind';
+    const FIELD_KIND_EXT = '_kind';
+    const FIELD_INSTANTIATES = 'instantiates';
+    const FIELD_INSTANTIATES_EXT = '_instantiates';
+    const FIELD_IMPORTS = 'imports';
+    const FIELD_IMPORTS_EXT = '_imports';
+    const FIELD_SOFTWARE = 'software';
+    const FIELD_IMPLEMENTATION = 'implementation';
     const FIELD_FHIR_VERSION = 'fhirVersion';
     const FIELD_FHIR_VERSION_EXT = '_fhirVersion';
     const FIELD_FORMAT = 'format';
     const FIELD_FORMAT_EXT = '_format';
-    const FIELD_IMPLEMENTATION = 'implementation';
-    const FIELD_IMPLEMENTATION_GUIDE = 'implementationGuide';
-    const FIELD_IMPLEMENTATION_GUIDE_EXT = '_implementationGuide';
-    const FIELD_IMPORTS = 'imports';
-    const FIELD_IMPORTS_EXT = '_imports';
-    const FIELD_INSTANTIATES = 'instantiates';
-    const FIELD_INSTANTIATES_EXT = '_instantiates';
-    const FIELD_JURISDICTION = 'jurisdiction';
-    const FIELD_KIND = 'kind';
-    const FIELD_KIND_EXT = '_kind';
-    const FIELD_MESSAGING = 'messaging';
-    const FIELD_NAME = 'name';
-    const FIELD_NAME_EXT = '_name';
     const FIELD_PATCH_FORMAT = 'patchFormat';
     const FIELD_PATCH_FORMAT_EXT = '_patchFormat';
-    const FIELD_PUBLISHER = 'publisher';
-    const FIELD_PUBLISHER_EXT = '_publisher';
-    const FIELD_PURPOSE = 'purpose';
-    const FIELD_PURPOSE_EXT = '_purpose';
+    const FIELD_IMPLEMENTATION_GUIDE = 'implementationGuide';
+    const FIELD_IMPLEMENTATION_GUIDE_EXT = '_implementationGuide';
     const FIELD_REST = 'rest';
-    const FIELD_SOFTWARE = 'software';
-    const FIELD_STATUS = 'status';
-    const FIELD_STATUS_EXT = '_status';
-    const FIELD_TITLE = 'title';
-    const FIELD_TITLE_EXT = '_title';
-    const FIELD_URL = 'url';
-    const FIELD_URL_EXT = '_url';
-    const FIELD_USE_CONTEXT = 'useContext';
-    const FIELD_VERSION = 'version';
-    const FIELD_VERSION_EXT = '_version';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Specifies contact information for a person or organization.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Contact details to assist a user in finding and communicating with the
-     * publisher.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
-     */
-    protected $contact = [];
-
-    /**
-     * A string that may contain Github Flavored Markdown syntax for optional
-     * processing by a mark down presentation engine
-     * Systems are not required to have markdown support, so the text should be
-     * readable without markdown processing. The markdown syntax is GFM - see
-     * https://github.github.com/gfm/
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A copyright statement relating to the capability statement and/or its contents.
-     * Copyright statements are generally legal restrictions on the use and publishing
-     * of the capability statement.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
-     */
-    protected $copyright = null;
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The date (and optionally time) when the capability statement was published. The
-     * date must change when the business version changes and it must change if the
-     * status code changes. In addition, it should change when the substantive content
-     * of the capability statement changes.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
-     */
-    protected $date = null;
-
-    /**
-     * A string that may contain Github Flavored Markdown syntax for optional
-     * processing by a mark down presentation engine
-     * Systems are not required to have markdown support, so the text should be
-     * readable without markdown processing. The markdown syntax is GFM - see
-     * https://github.github.com/gfm/
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A free text natural language description of the capability statement from a
-     * consumer's perspective. Typically, this is used when the capability statement
-     * describes a desired rather than an actual solution, for example as a formal
-     * expression of requirements as part of an RFP.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
-     */
-    protected $description = null;
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * A document definition.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[]
-     */
-    protected $document = [];
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A Boolean value to indicate that this capability statement is authored for
-     * testing purposes (or education/evaluation/marketing) and is not intended to be
-     * used for genuine usage.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    protected $experimental = null;
-
-    /**
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The version of the FHIR specification that this CapabilityStatement describes
-     * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
-     * There is no default value.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFHIRVersion
-     */
-    protected $fhirVersion = null;
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A list of the formats supported by this implementation using their content
-     * types.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
-     */
-    protected $format = [];
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * Identifies a specific implementation instance that is described by the
-     * capability statement - i.e. a particular installation, rather than the
-     * capabilities of a software program.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation
-     */
-    protected $implementation = null;
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A list of implementation guides that the server does (or should) support in
-     * their entirety.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
-     */
-    protected $implementationGuide = [];
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Reference to a canonical URL of another CapabilityStatement that this software
-     * adds to. The capability statement automatically includes everything in the other
-     * statement, and it is not duplicated, though the server may repeat the same
-     * resources, interactions and operations to add additional details to them.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
-     */
-    protected $imports = [];
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Reference to a canonical URL of another CapabilityStatement that this software
-     * implements. This capability statement is a published API description that
-     * corresponds to a business service. The server may actually implement a subset of
-     * the capability statement it claims to implement, so the capability statement
-     * must specify the full capability details.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
-     */
-    protected $instantiates = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A legal or geographic region in which the capability statement is intended to be
-     * used.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $jurisdiction = [];
-
-    /**
-     * How a capability statement is intended to be used.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The way that this statement is intended to be used, to describe an actual
-     * running instance of software, a particular product (kind, not instance of
-     * software) or a class of implementation (e.g. a desired purchase).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCapabilityStatementKind
-     */
-    protected $kind = null;
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * A description of the messaging capabilities of the solution.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[]
-     */
-    protected $messaging = [];
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A natural language name identifying the capability statement. This name should
-     * be usable as an identifier for the module by machine processing applications
-     * such as code generation.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $name = null;
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A list of the patch formats supported by this implementation using their content
-     * types.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
-     */
-    protected $patchFormat = [];
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the organization or individual that published the capability
-     * statement.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $publisher = null;
-
-    /**
-     * A string that may contain Github Flavored Markdown syntax for optional
-     * processing by a mark down presentation engine
-     * Systems are not required to have markdown support, so the text should be
-     * readable without markdown processing. The markdown syntax is GFM - see
-     * https://github.github.com/gfm/
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Explanation of why this capability statement is needed and why it has been
-     * designed as it has.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
-     */
-    protected $purpose = null;
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * A definition of the restful capabilities of the solution, if any.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest[]
-     */
-    protected $rest = [];
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * Software that is covered by this capability statement. It is used when the
-     * capability statement describes the capabilities of a particular software
-     * version, independent of an installation.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
-     */
-    protected $software = null;
-
-    /**
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The status of this capability statement. Enables tracking the life-cycle of the
-     * content.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
-     */
-    protected $status = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A short, descriptive, user-friendly title for the capability statement.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $title = null;
+    const FIELD_MESSAGING = 'messaging';
+    const FIELD_DOCUMENT = 'document';
 
     /**
      * String of characters used to identify a name or a resource
@@ -470,8 +177,119 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    protected $url = null;
-
+    protected null|FHIRUri $url = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The identifier that is used to identify this version of the capability statement
+     * when it is referenced in a specification, model, design or instance. This is an
+     * arbitrary value managed by the capability statement author and is not expected
+     * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
+     * managed version is not available. There is also no expectation that versions can
+     * be placed in a lexicographical sequence.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $version = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A natural language name identifying the capability statement. This name should
+     * be usable as an identifier for the module by machine processing applications
+     * such as code generation.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $name = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A short, descriptive, user-friendly title for the capability statement.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $title = null;
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The status of this capability statement. Enables tracking the life-cycle of the
+     * content.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
+     */
+    protected null|FHIRPublicationStatus $status = null;
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A Boolean value to indicate that this capability statement is authored for
+     * testing purposes (or education/evaluation/marketing) and is not intended to be
+     * used for genuine usage.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    protected null|FHIRBoolean $experimental = null;
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The date (and optionally time) when the capability statement was published. The
+     * date must change when the business version changes and it must change if the
+     * status code changes. In addition, it should change when the substantive content
+     * of the capability statement changes.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     */
+    protected null|FHIRDateTime $date = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the organization or individual that published the capability
+     * statement.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $publisher = null;
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
+     */
+    protected null|array $contact = [];
+    /**
+     * A string that may contain Github Flavored Markdown syntax for optional
+     * processing by a mark down presentation engine
+     * Systems are not required to have markdown support, so the text should be
+     * readable without markdown processing. The markdown syntax is GFM - see
+     * https://github.github.com/gfm/
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A free text natural language description of the capability statement from a
+     * consumer's perspective. Typically, this is used when the capability statement
+     * describes a desired rather than an actual solution, for example as a formal
+     * expression of requirements as part of an RFP.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
+     */
+    protected null|FHIRMarkdown $description = null;
     /**
      * Specifies clinical/business/etc. metadata that can be used to retrieve, index
      * and/or categorize an artifact. This metadata can either be specific to the
@@ -488,166 +306,307 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
-    protected $useContext = [];
-
+    protected null|array $useContext = [];
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A legal or geographic region in which the capability statement is intended to be
+     * used.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected null|array $jurisdiction = [];
+    /**
+     * A string that may contain Github Flavored Markdown syntax for optional
+     * processing by a mark down presentation engine
+     * Systems are not required to have markdown support, so the text should be
+     * readable without markdown processing. The markdown syntax is GFM - see
+     * https://github.github.com/gfm/
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Explanation of why this capability statement is needed and why it has been
+     * designed as it has.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
+     */
+    protected null|FHIRMarkdown $purpose = null;
+    /**
+     * A string that may contain Github Flavored Markdown syntax for optional
+     * processing by a mark down presentation engine
+     * Systems are not required to have markdown support, so the text should be
+     * readable without markdown processing. The markdown syntax is GFM - see
+     * https://github.github.com/gfm/
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A copyright statement relating to the capability statement and/or its contents.
+     * Copyright statements are generally legal restrictions on the use and publishing
+     * of the capability statement.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
+     */
+    protected null|FHIRMarkdown $copyright = null;
+    /**
+     * How a capability statement is intended to be used.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The identifier that is used to identify this version of the capability statement
-     * when it is referenced in a specification, model, design or instance. This is an
-     * arbitrary value managed by the capability statement author and is not expected
-     * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
-     * managed version is not available. There is also no expectation that versions can
-     * be placed in a lexicographical sequence.
+     * The way that this statement is intended to be used, to describe an actual
+     * running instance of software, a particular product (kind, not instance of
+     * software) or a class of implementation (e.g. a desired purchase).
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCapabilityStatementKind
      */
-    protected $version = null;
+    protected null|FHIRCapabilityStatementKind $kind = null;
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Reference to a canonical URL of another CapabilityStatement that this software
+     * implements. This capability statement is a published API description that
+     * corresponds to a business service. The server may actually implement a subset of
+     * the capability statement it claims to implement, so the capability statement
+     * must specify the full capability details.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
+     */
+    protected null|array $instantiates = [];
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Reference to a canonical URL of another CapabilityStatement that this software
+     * adds to. The capability statement automatically includes everything in the other
+     * statement, and it is not duplicated, though the server may repeat the same
+     * resources, interactions and operations to add additional details to them.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
+     */
+    protected null|array $imports = [];
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * Software that is covered by this capability statement. It is used when the
+     * capability statement describes the capabilities of a particular software
+     * version, independent of an installation.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
+     */
+    protected null|FHIRCapabilityStatementSoftware $software = null;
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * Identifies a specific implementation instance that is described by the
+     * capability statement - i.e. a particular installation, rather than the
+     * capabilities of a software program.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation
+     */
+    protected null|FHIRCapabilityStatementImplementation $implementation = null;
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The version of the FHIR specification that this CapabilityStatement describes
+     * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
+     * There is no default value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFHIRVersion
+     */
+    protected null|FHIRFHIRVersion $fhirVersion = null;
+    /**
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A list of the formats supported by this implementation using their content
+     * types.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
+     */
+    protected null|array $format = [];
+    /**
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A list of the patch formats supported by this implementation using their content
+     * types.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
+     */
+    protected null|array $patchFormat = [];
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A list of implementation guides that the server does (or should) support in
+     * their entirety.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
+     */
+    protected null|array $implementationGuide = [];
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * A definition of the restful capabilities of the solution, if any.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest[]
+     */
+    protected null|array $rest = [];
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * A description of the messaging capabilities of the solution.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[]
+     */
+    protected null|array $messaging = [];
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * A document definition.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[]
+     */
+    protected null|array $document = [];
 
     /**
      * Validation map for fields in type CapabilityStatement
      * @var array
      */
-    private static $_validationRules = [
+    private const _VALIDATION_RULES = [
         self::FIELD_FORMAT => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
+
     /**
      * FHIRCapabilityStatement Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCapabilityStatement::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CONTACT])) {
-            if (is_array($data[self::FIELD_CONTACT])) {
-                foreach($data[self::FIELD_CONTACT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRContactDetail) {
-                        $this->addContact($v);
-                    } else {
-                        $this->addContact(new FHIRContactDetail($v));
-                    }
-                }
-            } else if ($data[self::FIELD_CONTACT] instanceof FHIRContactDetail) {
-                $this->addContact($data[self::FIELD_CONTACT]);
-            } else {
-                $this->addContact(new FHIRContactDetail($data[self::FIELD_CONTACT]));
-            }
-        }
-        if (isset($data[self::FIELD_COPYRIGHT]) || isset($data[self::FIELD_COPYRIGHT_EXT])) {
-            if (isset($data[self::FIELD_COPYRIGHT])) {
-                $value = $data[self::FIELD_COPYRIGHT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_COPYRIGHT_EXT]) && is_array($data[self::FIELD_COPYRIGHT_EXT])) {
-                $ext = $data[self::FIELD_COPYRIGHT_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_URL, $data) || array_key_exists(self::FIELD_URL_EXT, $data)) {
+            $value = $data[self::FIELD_URL] ?? null;
+            $ext = (isset($data[self::FIELD_URL_EXT]) && is_array($data[self::FIELD_URL_EXT])) ? $data[self::FIELD_URL_EXT] : [];
             if (null !== $value) {
-                if ($value instanceof FHIRMarkdown) {
-                    $this->setCopyright($value);
+                if ($value instanceof FHIRUri) {
+                    $this->setUrl($value);
                 } else if (is_array($value)) {
-                    $this->setCopyright(new FHIRMarkdown(array_merge($ext, $value)));
+                    $this->setUrl(new FHIRUri(array_merge($ext, $value)));
                 } else {
-                    $this->setCopyright(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
+                    $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setCopyright(new FHIRMarkdown($ext));
+            } elseif ([] !== $ext) {
+                $this->setUrl(new FHIRUri($ext));
+            } else {
+                $this->setUrl(new FHIRUri(null));
             }
         }
-        if (isset($data[self::FIELD_DATE]) || isset($data[self::FIELD_DATE_EXT])) {
-            if (isset($data[self::FIELD_DATE])) {
-                $value = $data[self::FIELD_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT])) {
-                $ext = $data[self::FIELD_DATE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_VERSION, $data) || array_key_exists(self::FIELD_VERSION_EXT, $data)) {
+            $value = $data[self::FIELD_VERSION] ?? null;
+            $ext = (isset($data[self::FIELD_VERSION_EXT]) && is_array($data[self::FIELD_VERSION_EXT])) ? $data[self::FIELD_VERSION_EXT] : [];
             if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setDate($value);
+                if ($value instanceof FHIRString) {
+                    $this->setVersion($value);
                 } else if (is_array($value)) {
-                    $this->setDate(new FHIRDateTime(array_merge($ext, $value)));
+                    $this->setVersion(new FHIRString(array_merge($ext, $value)));
                 } else {
-                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                    $this->setVersion(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setDate(new FHIRDateTime($ext));
+            } elseif ([] !== $ext) {
+                $this->setVersion(new FHIRString($ext));
+            } else {
+                $this->setVersion(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
-            if (isset($data[self::FIELD_DESCRIPTION])) {
-                $value = $data[self::FIELD_DESCRIPTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
-                $ext = $data[self::FIELD_DESCRIPTION_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_NAME, $data) || array_key_exists(self::FIELD_NAME_EXT, $data)) {
+            $value = $data[self::FIELD_NAME] ?? null;
+            $ext = (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) ? $data[self::FIELD_NAME_EXT] : [];
             if (null !== $value) {
-                if ($value instanceof FHIRMarkdown) {
-                    $this->setDescription($value);
+                if ($value instanceof FHIRString) {
+                    $this->setName($value);
                 } else if (is_array($value)) {
-                    $this->setDescription(new FHIRMarkdown(array_merge($ext, $value)));
+                    $this->setName(new FHIRString(array_merge($ext, $value)));
                 } else {
-                    $this->setDescription(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
+                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setDescription(new FHIRMarkdown($ext));
+            } elseif ([] !== $ext) {
+                $this->setName(new FHIRString($ext));
+            } else {
+                $this->setName(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_DOCUMENT])) {
-            if (is_array($data[self::FIELD_DOCUMENT])) {
-                foreach($data[self::FIELD_DOCUMENT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCapabilityStatementDocument) {
-                        $this->addDocument($v);
-                    } else {
-                        $this->addDocument(new FHIRCapabilityStatementDocument($v));
-                    }
+        if (array_key_exists(self::FIELD_TITLE, $data) || array_key_exists(self::FIELD_TITLE_EXT, $data)) {
+            $value = $data[self::FIELD_TITLE] ?? null;
+            $ext = (isset($data[self::FIELD_TITLE_EXT]) && is_array($data[self::FIELD_TITLE_EXT])) ? $data[self::FIELD_TITLE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setTitle($value);
+                } else if (is_array($value)) {
+                    $this->setTitle(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setTitle(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ($data[self::FIELD_DOCUMENT] instanceof FHIRCapabilityStatementDocument) {
-                $this->addDocument($data[self::FIELD_DOCUMENT]);
+            } elseif ([] !== $ext) {
+                $this->setTitle(new FHIRString($ext));
             } else {
-                $this->addDocument(new FHIRCapabilityStatementDocument($data[self::FIELD_DOCUMENT]));
+                $this->setTitle(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_EXPERIMENTAL]) || isset($data[self::FIELD_EXPERIMENTAL_EXT])) {
-            if (isset($data[self::FIELD_EXPERIMENTAL])) {
-                $value = $data[self::FIELD_EXPERIMENTAL];
+        if (array_key_exists(self::FIELD_STATUS, $data) || array_key_exists(self::FIELD_STATUS_EXT, $data)) {
+            $value = $data[self::FIELD_STATUS] ?? null;
+            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) ? $data[self::FIELD_STATUS_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRPublicationStatus) {
+                    $this->setStatus($value);
+                } else if (is_array($value)) {
+                    $this->setStatus(new FHIRPublicationStatus(array_merge($ext, $value)));
+                } else {
+                    $this->setStatus(new FHIRPublicationStatus([FHIRPublicationStatus::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setStatus(new FHIRPublicationStatus($ext));
             } else {
-                $value = null;
+                $this->setStatus(new FHIRPublicationStatus(null));
             }
-            if (isset($data[self::FIELD_EXPERIMENTAL_EXT]) && is_array($data[self::FIELD_EXPERIMENTAL_EXT])) {
-                $ext = $data[self::FIELD_EXPERIMENTAL_EXT];
-            } else {
-                $ext = [];
-            }
+        }
+        if (array_key_exists(self::FIELD_EXPERIMENTAL, $data) || array_key_exists(self::FIELD_EXPERIMENTAL_EXT, $data)) {
+            $value = $data[self::FIELD_EXPERIMENTAL] ?? null;
+            $ext = (isset($data[self::FIELD_EXPERIMENTAL_EXT]) && is_array($data[self::FIELD_EXPERIMENTAL_EXT])) ? $data[self::FIELD_EXPERIMENTAL_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setExperimental($value);
@@ -656,165 +615,162 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 } else {
                     $this->setExperimental(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setExperimental(new FHIRBoolean($ext));
+            } else {
+                $this->setExperimental(new FHIRBoolean(null));
             }
         }
-        if (isset($data[self::FIELD_FHIR_VERSION]) || isset($data[self::FIELD_FHIR_VERSION_EXT])) {
-            if (isset($data[self::FIELD_FHIR_VERSION])) {
-                $value = $data[self::FIELD_FHIR_VERSION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_FHIR_VERSION_EXT]) && is_array($data[self::FIELD_FHIR_VERSION_EXT])) {
-                $ext = $data[self::FIELD_FHIR_VERSION_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_DATE, $data) || array_key_exists(self::FIELD_DATE_EXT, $data)) {
+            $value = $data[self::FIELD_DATE] ?? null;
+            $ext = (isset($data[self::FIELD_DATE_EXT]) && is_array($data[self::FIELD_DATE_EXT])) ? $data[self::FIELD_DATE_EXT] : [];
             if (null !== $value) {
-                if ($value instanceof FHIRFHIRVersion) {
-                    $this->setFhirVersion($value);
+                if ($value instanceof FHIRDateTime) {
+                    $this->setDate($value);
                 } else if (is_array($value)) {
-                    $this->setFhirVersion(new FHIRFHIRVersion(array_merge($ext, $value)));
+                    $this->setDate(new FHIRDateTime(array_merge($ext, $value)));
                 } else {
-                    $this->setFhirVersion(new FHIRFHIRVersion([FHIRFHIRVersion::FIELD_VALUE => $value] + $ext));
+                    $this->setDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setFhirVersion(new FHIRFHIRVersion($ext));
+            } elseif ([] !== $ext) {
+                $this->setDate(new FHIRDateTime($ext));
+            } else {
+                $this->setDate(new FHIRDateTime(null));
             }
         }
-        if (isset($data[self::FIELD_FORMAT]) || isset($data[self::FIELD_FORMAT_EXT])) {
-            if (isset($data[self::FIELD_FORMAT])) {
-                $value = $data[self::FIELD_FORMAT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_FORMAT_EXT]) && is_array($data[self::FIELD_FORMAT_EXT])) {
-                $ext = $data[self::FIELD_FORMAT_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_PUBLISHER, $data) || array_key_exists(self::FIELD_PUBLISHER_EXT, $data)) {
+            $value = $data[self::FIELD_PUBLISHER] ?? null;
+            $ext = (isset($data[self::FIELD_PUBLISHER_EXT]) && is_array($data[self::FIELD_PUBLISHER_EXT])) ? $data[self::FIELD_PUBLISHER_EXT] : [];
             if (null !== $value) {
-                if ($value instanceof FHIRCode) {
-                    $this->addFormat($value);
+                if ($value instanceof FHIRString) {
+                    $this->setPublisher($value);
                 } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRCode) {
-                            $this->addFormat($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $this->addFormat(new FHIRCode(array_merge($v, $iext)));
-                            } else {
-                                $this->addFormat(new FHIRCode([FHIRCode::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
+                    $this->setPublisher(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setPublisher(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPublisher(new FHIRString($ext));
+            } else {
+                $this->setPublisher(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_CONTACT, $data)) {
+            if (is_array($data[self::FIELD_CONTACT])) {
+                foreach($data[self::FIELD_CONTACT] as $v) {
+                    if ($v instanceof FHIRContactDetail) {
+                        $this->addContact($v);
+                    } else {
+                        $this->addContact(new FHIRContactDetail($v));
                     }
-                } elseif (is_array($value)) {
-                    $this->addFormat(new FHIRCode(array_merge($ext, $value)));
-                } else {
-                    $this->addFormat(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $this->addFormat(new FHIRCode($iext));
-                }
+            } elseif ($data[self::FIELD_CONTACT] instanceof FHIRContactDetail) {
+                $this->addContact($data[self::FIELD_CONTACT]);
+            } else {
+                $this->addContact(new FHIRContactDetail($data[self::FIELD_CONTACT]));
             }
         }
-        if (isset($data[self::FIELD_IMPLEMENTATION])) {
-            if ($data[self::FIELD_IMPLEMENTATION] instanceof FHIRCapabilityStatementImplementation) {
-                $this->setImplementation($data[self::FIELD_IMPLEMENTATION]);
-            } else {
-                $this->setImplementation(new FHIRCapabilityStatementImplementation($data[self::FIELD_IMPLEMENTATION]));
-            }
-        }
-        if (isset($data[self::FIELD_IMPLEMENTATION_GUIDE]) || isset($data[self::FIELD_IMPLEMENTATION_GUIDE_EXT])) {
-            if (isset($data[self::FIELD_IMPLEMENTATION_GUIDE])) {
-                $value = $data[self::FIELD_IMPLEMENTATION_GUIDE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_IMPLEMENTATION_GUIDE_EXT]) && is_array($data[self::FIELD_IMPLEMENTATION_GUIDE_EXT])) {
-                $ext = $data[self::FIELD_IMPLEMENTATION_GUIDE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_DESCRIPTION, $data) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $data)) {
+            $value = $data[self::FIELD_DESCRIPTION] ?? null;
+            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) ? $data[self::FIELD_DESCRIPTION_EXT] : [];
             if (null !== $value) {
-                if ($value instanceof FHIRCanonical) {
-                    $this->addImplementationGuide($value);
+                if ($value instanceof FHIRMarkdown) {
+                    $this->setDescription($value);
                 } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRCanonical) {
-                            $this->addImplementationGuide($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $this->addImplementationGuide(new FHIRCanonical(array_merge($v, $iext)));
-                            } else {
-                                $this->addImplementationGuide(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $this->addImplementationGuide(new FHIRCanonical(array_merge($ext, $value)));
+                    $this->setDescription(new FHIRMarkdown(array_merge($ext, $value)));
                 } else {
-                    $this->addImplementationGuide(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
+                    $this->setDescription(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $this->addImplementationGuide(new FHIRCanonical($iext));
-                }
+            } elseif ([] !== $ext) {
+                $this->setDescription(new FHIRMarkdown($ext));
+            } else {
+                $this->setDescription(new FHIRMarkdown(null));
             }
         }
-        if (isset($data[self::FIELD_IMPORTS]) || isset($data[self::FIELD_IMPORTS_EXT])) {
-            if (isset($data[self::FIELD_IMPORTS])) {
-                $value = $data[self::FIELD_IMPORTS];
+        if (array_key_exists(self::FIELD_USE_CONTEXT, $data)) {
+            if (is_array($data[self::FIELD_USE_CONTEXT])) {
+                foreach($data[self::FIELD_USE_CONTEXT] as $v) {
+                    if ($v instanceof FHIRUsageContext) {
+                        $this->addUseContext($v);
+                    } else {
+                        $this->addUseContext(new FHIRUsageContext($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_USE_CONTEXT] instanceof FHIRUsageContext) {
+                $this->addUseContext($data[self::FIELD_USE_CONTEXT]);
             } else {
-                $value = null;
+                $this->addUseContext(new FHIRUsageContext($data[self::FIELD_USE_CONTEXT]));
             }
-            if (isset($data[self::FIELD_IMPORTS_EXT]) && is_array($data[self::FIELD_IMPORTS_EXT])) {
-                $ext = $data[self::FIELD_IMPORTS_EXT];
+        }
+        if (array_key_exists(self::FIELD_JURISDICTION, $data)) {
+            if (is_array($data[self::FIELD_JURISDICTION])) {
+                foreach($data[self::FIELD_JURISDICTION] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addJurisdiction($v);
+                    } else {
+                        $this->addJurisdiction(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_JURISDICTION] instanceof FHIRCodeableConcept) {
+                $this->addJurisdiction($data[self::FIELD_JURISDICTION]);
             } else {
-                $ext = [];
+                $this->addJurisdiction(new FHIRCodeableConcept($data[self::FIELD_JURISDICTION]));
             }
+        }
+        if (array_key_exists(self::FIELD_PURPOSE, $data) || array_key_exists(self::FIELD_PURPOSE_EXT, $data)) {
+            $value = $data[self::FIELD_PURPOSE] ?? null;
+            $ext = (isset($data[self::FIELD_PURPOSE_EXT]) && is_array($data[self::FIELD_PURPOSE_EXT])) ? $data[self::FIELD_PURPOSE_EXT] : [];
             if (null !== $value) {
-                if ($value instanceof FHIRCanonical) {
-                    $this->addImports($value);
+                if ($value instanceof FHIRMarkdown) {
+                    $this->setPurpose($value);
                 } else if (is_array($value)) {
-                    foreach($value as $i => $v) {
-                        if ($v instanceof FHIRCanonical) {
-                            $this->addImports($v);
-                        } else {
-                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
-                            if (is_array($v)) {
-                                $this->addImports(new FHIRCanonical(array_merge($v, $iext)));
-                            } else {
-                                $this->addImports(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $v] + $iext));
-                            }
-                        }
-                    }
-                } elseif (is_array($value)) {
-                    $this->addImports(new FHIRCanonical(array_merge($ext, $value)));
+                    $this->setPurpose(new FHIRMarkdown(array_merge($ext, $value)));
                 } else {
-                    $this->addImports(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
+                    $this->setPurpose(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                foreach($ext as $iext) {
-                    $this->addImports(new FHIRCanonical($iext));
-                }
+            } elseif ([] !== $ext) {
+                $this->setPurpose(new FHIRMarkdown($ext));
+            } else {
+                $this->setPurpose(new FHIRMarkdown(null));
             }
         }
-        if (isset($data[self::FIELD_INSTANTIATES]) || isset($data[self::FIELD_INSTANTIATES_EXT])) {
-            if (isset($data[self::FIELD_INSTANTIATES])) {
-                $value = $data[self::FIELD_INSTANTIATES];
+        if (array_key_exists(self::FIELD_COPYRIGHT, $data) || array_key_exists(self::FIELD_COPYRIGHT_EXT, $data)) {
+            $value = $data[self::FIELD_COPYRIGHT] ?? null;
+            $ext = (isset($data[self::FIELD_COPYRIGHT_EXT]) && is_array($data[self::FIELD_COPYRIGHT_EXT])) ? $data[self::FIELD_COPYRIGHT_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRMarkdown) {
+                    $this->setCopyright($value);
+                } else if (is_array($value)) {
+                    $this->setCopyright(new FHIRMarkdown(array_merge($ext, $value)));
+                } else {
+                    $this->setCopyright(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setCopyright(new FHIRMarkdown($ext));
             } else {
-                $value = null;
+                $this->setCopyright(new FHIRMarkdown(null));
             }
-            if (isset($data[self::FIELD_INSTANTIATES_EXT]) && is_array($data[self::FIELD_INSTANTIATES_EXT])) {
-                $ext = $data[self::FIELD_INSTANTIATES_EXT];
+        }
+        if (array_key_exists(self::FIELD_KIND, $data) || array_key_exists(self::FIELD_KIND_EXT, $data)) {
+            $value = $data[self::FIELD_KIND] ?? null;
+            $ext = (isset($data[self::FIELD_KIND_EXT]) && is_array($data[self::FIELD_KIND_EXT])) ? $data[self::FIELD_KIND_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRCapabilityStatementKind) {
+                    $this->setKind($value);
+                } else if (is_array($value)) {
+                    $this->setKind(new FHIRCapabilityStatementKind(array_merge($ext, $value)));
+                } else {
+                    $this->setKind(new FHIRCapabilityStatementKind([FHIRCapabilityStatementKind::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setKind(new FHIRCapabilityStatementKind($ext));
             } else {
-                $ext = [];
+                $this->setKind(new FHIRCapabilityStatementKind(null));
             }
+        }
+        if (array_key_exists(self::FIELD_INSTANTIATES, $data) || array_key_exists(self::FIELD_INSTANTIATES_EXT, $data)) {
+            $value = $data[self::FIELD_INSTANTIATES] ?? null;
+            $ext = (isset($data[self::FIELD_INSTANTIATES_EXT]) && is_array($data[self::FIELD_INSTANTIATES_EXT])) ? $data[self::FIELD_INSTANTIATES_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRCanonical) {
                     $this->addInstantiates($value);
@@ -836,105 +792,112 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 } else {
                     $this->addInstantiates(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addInstantiates(new FHIRCanonical($iext));
                 }
+            } else {
+                $this->addInstantiates(new FHIRCanonical(null));
             }
         }
-        if (isset($data[self::FIELD_JURISDICTION])) {
-            if (is_array($data[self::FIELD_JURISDICTION])) {
-                foreach($data[self::FIELD_JURISDICTION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addJurisdiction($v);
-                    } else {
-                        $this->addJurisdiction(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_JURISDICTION] instanceof FHIRCodeableConcept) {
-                $this->addJurisdiction($data[self::FIELD_JURISDICTION]);
-            } else {
-                $this->addJurisdiction(new FHIRCodeableConcept($data[self::FIELD_JURISDICTION]));
-            }
-        }
-        if (isset($data[self::FIELD_KIND]) || isset($data[self::FIELD_KIND_EXT])) {
-            if (isset($data[self::FIELD_KIND])) {
-                $value = $data[self::FIELD_KIND];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_KIND_EXT]) && is_array($data[self::FIELD_KIND_EXT])) {
-                $ext = $data[self::FIELD_KIND_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_IMPORTS, $data) || array_key_exists(self::FIELD_IMPORTS_EXT, $data)) {
+            $value = $data[self::FIELD_IMPORTS] ?? null;
+            $ext = (isset($data[self::FIELD_IMPORTS_EXT]) && is_array($data[self::FIELD_IMPORTS_EXT])) ? $data[self::FIELD_IMPORTS_EXT] : [];
             if (null !== $value) {
-                if ($value instanceof FHIRCapabilityStatementKind) {
-                    $this->setKind($value);
+                if ($value instanceof FHIRCanonical) {
+                    $this->addImports($value);
                 } else if (is_array($value)) {
-                    $this->setKind(new FHIRCapabilityStatementKind(array_merge($ext, $value)));
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRCanonical) {
+                            $this->addImports($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addImports(new FHIRCanonical(array_merge($v, $iext)));
+                            } else {
+                                $this->addImports(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addImports(new FHIRCanonical(array_merge($ext, $value)));
                 } else {
-                    $this->setKind(new FHIRCapabilityStatementKind([FHIRCapabilityStatementKind::FIELD_VALUE => $value] + $ext));
+                    $this->addImports(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setKind(new FHIRCapabilityStatementKind($ext));
+            } elseif ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addImports(new FHIRCanonical($iext));
+                }
+            } else {
+                $this->addImports(new FHIRCanonical(null));
             }
         }
-        if (isset($data[self::FIELD_MESSAGING])) {
-            if (is_array($data[self::FIELD_MESSAGING])) {
-                foreach($data[self::FIELD_MESSAGING] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCapabilityStatementMessaging) {
-                        $this->addMessaging($v);
-                    } else {
-                        $this->addMessaging(new FHIRCapabilityStatementMessaging($v));
-                    }
-                }
-            } else if ($data[self::FIELD_MESSAGING] instanceof FHIRCapabilityStatementMessaging) {
-                $this->addMessaging($data[self::FIELD_MESSAGING]);
+        if (array_key_exists(self::FIELD_SOFTWARE, $data)) {
+            if ($data[self::FIELD_SOFTWARE] instanceof FHIRCapabilityStatementSoftware) {
+                $this->setSoftware($data[self::FIELD_SOFTWARE]);
             } else {
-                $this->addMessaging(new FHIRCapabilityStatementMessaging($data[self::FIELD_MESSAGING]));
+                $this->setSoftware(new FHIRCapabilityStatementSoftware($data[self::FIELD_SOFTWARE]));
             }
         }
-        if (isset($data[self::FIELD_NAME]) || isset($data[self::FIELD_NAME_EXT])) {
-            if (isset($data[self::FIELD_NAME])) {
-                $value = $data[self::FIELD_NAME];
+        if (array_key_exists(self::FIELD_IMPLEMENTATION, $data)) {
+            if ($data[self::FIELD_IMPLEMENTATION] instanceof FHIRCapabilityStatementImplementation) {
+                $this->setImplementation($data[self::FIELD_IMPLEMENTATION]);
             } else {
-                $value = null;
+                $this->setImplementation(new FHIRCapabilityStatementImplementation($data[self::FIELD_IMPLEMENTATION]));
             }
-            if (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) {
-                $ext = $data[self::FIELD_NAME_EXT];
-            } else {
-                $ext = [];
-            }
+        }
+        if (array_key_exists(self::FIELD_FHIR_VERSION, $data) || array_key_exists(self::FIELD_FHIR_VERSION_EXT, $data)) {
+            $value = $data[self::FIELD_FHIR_VERSION] ?? null;
+            $ext = (isset($data[self::FIELD_FHIR_VERSION_EXT]) && is_array($data[self::FIELD_FHIR_VERSION_EXT])) ? $data[self::FIELD_FHIR_VERSION_EXT] : [];
             if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setName($value);
+                if ($value instanceof FHIRFHIRVersion) {
+                    $this->setFhirVersion($value);
                 } else if (is_array($value)) {
-                    $this->setName(new FHIRString(array_merge($ext, $value)));
+                    $this->setFhirVersion(new FHIRFHIRVersion(array_merge($ext, $value)));
                 } else {
-                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                    $this->setFhirVersion(new FHIRFHIRVersion([FHIRFHIRVersion::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setName(new FHIRString($ext));
+            } elseif ([] !== $ext) {
+                $this->setFhirVersion(new FHIRFHIRVersion($ext));
+            } else {
+                $this->setFhirVersion(new FHIRFHIRVersion(null));
             }
         }
-        if (isset($data[self::FIELD_PATCH_FORMAT]) || isset($data[self::FIELD_PATCH_FORMAT_EXT])) {
-            if (isset($data[self::FIELD_PATCH_FORMAT])) {
-                $value = $data[self::FIELD_PATCH_FORMAT];
+        if (array_key_exists(self::FIELD_FORMAT, $data) || array_key_exists(self::FIELD_FORMAT_EXT, $data)) {
+            $value = $data[self::FIELD_FORMAT] ?? null;
+            $ext = (isset($data[self::FIELD_FORMAT_EXT]) && is_array($data[self::FIELD_FORMAT_EXT])) ? $data[self::FIELD_FORMAT_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRCode) {
+                    $this->addFormat($value);
+                } else if (is_array($value)) {
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRCode) {
+                            $this->addFormat($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addFormat(new FHIRCode(array_merge($v, $iext)));
+                            } else {
+                                $this->addFormat(new FHIRCode([FHIRCode::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addFormat(new FHIRCode(array_merge($ext, $value)));
+                } else {
+                    $this->addFormat(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addFormat(new FHIRCode($iext));
+                }
             } else {
-                $value = null;
+                $this->addFormat(new FHIRCode(null));
             }
-            if (isset($data[self::FIELD_PATCH_FORMAT_EXT]) && is_array($data[self::FIELD_PATCH_FORMAT_EXT])) {
-                $ext = $data[self::FIELD_PATCH_FORMAT_EXT];
-            } else {
-                $ext = [];
-            }
+        }
+        if (array_key_exists(self::FIELD_PATCH_FORMAT, $data) || array_key_exists(self::FIELD_PATCH_FORMAT_EXT, $data)) {
+            $value = $data[self::FIELD_PATCH_FORMAT] ?? null;
+            $ext = (isset($data[self::FIELD_PATCH_FORMAT_EXT]) && is_array($data[self::FIELD_PATCH_FORMAT_EXT])) ? $data[self::FIELD_PATCH_FORMAT_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRCode) {
                     $this->addPatchFormat($value);
@@ -956,191 +919,89 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 } else {
                     $this->addPatchFormat(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addPatchFormat(new FHIRCode($iext));
                 }
+            } else {
+                $this->addPatchFormat(new FHIRCode(null));
             }
         }
-        if (isset($data[self::FIELD_PUBLISHER]) || isset($data[self::FIELD_PUBLISHER_EXT])) {
-            if (isset($data[self::FIELD_PUBLISHER])) {
-                $value = $data[self::FIELD_PUBLISHER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PUBLISHER_EXT]) && is_array($data[self::FIELD_PUBLISHER_EXT])) {
-                $ext = $data[self::FIELD_PUBLISHER_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_IMPLEMENTATION_GUIDE, $data) || array_key_exists(self::FIELD_IMPLEMENTATION_GUIDE_EXT, $data)) {
+            $value = $data[self::FIELD_IMPLEMENTATION_GUIDE] ?? null;
+            $ext = (isset($data[self::FIELD_IMPLEMENTATION_GUIDE_EXT]) && is_array($data[self::FIELD_IMPLEMENTATION_GUIDE_EXT])) ? $data[self::FIELD_IMPLEMENTATION_GUIDE_EXT] : [];
             if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setPublisher($value);
+                if ($value instanceof FHIRCanonical) {
+                    $this->addImplementationGuide($value);
                 } else if (is_array($value)) {
-                    $this->setPublisher(new FHIRString(array_merge($ext, $value)));
+                    foreach($value as $i => $v) {
+                        if ($v instanceof FHIRCanonical) {
+                            $this->addImplementationGuide($v);
+                        } else {
+                            $iext = (isset($ext[$i]) && is_array($ext[$i])) ? $ext[$i] : [];
+                            if (is_array($v)) {
+                                $this->addImplementationGuide(new FHIRCanonical(array_merge($v, $iext)));
+                            } else {
+                                $this->addImplementationGuide(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $v] + $iext));
+                            }
+                        }
+                    }
+                } elseif (is_array($value)) {
+                    $this->addImplementationGuide(new FHIRCanonical(array_merge($ext, $value)));
                 } else {
-                    $this->setPublisher(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                    $this->addImplementationGuide(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setPublisher(new FHIRString($ext));
+            } elseif ([] !== $ext) {
+                foreach($ext as $iext) {
+                    $this->addImplementationGuide(new FHIRCanonical($iext));
+                }
+            } else {
+                $this->addImplementationGuide(new FHIRCanonical(null));
             }
         }
-        if (isset($data[self::FIELD_PURPOSE]) || isset($data[self::FIELD_PURPOSE_EXT])) {
-            if (isset($data[self::FIELD_PURPOSE])) {
-                $value = $data[self::FIELD_PURPOSE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PURPOSE_EXT]) && is_array($data[self::FIELD_PURPOSE_EXT])) {
-                $ext = $data[self::FIELD_PURPOSE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRMarkdown) {
-                    $this->setPurpose($value);
-                } else if (is_array($value)) {
-                    $this->setPurpose(new FHIRMarkdown(array_merge($ext, $value)));
-                } else {
-                    $this->setPurpose(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPurpose(new FHIRMarkdown($ext));
-            }
-        }
-        if (isset($data[self::FIELD_REST])) {
+        if (array_key_exists(self::FIELD_REST, $data)) {
             if (is_array($data[self::FIELD_REST])) {
                 foreach($data[self::FIELD_REST] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRCapabilityStatementRest) {
                         $this->addRest($v);
                     } else {
                         $this->addRest(new FHIRCapabilityStatementRest($v));
                     }
                 }
-            } else if ($data[self::FIELD_REST] instanceof FHIRCapabilityStatementRest) {
+            } elseif ($data[self::FIELD_REST] instanceof FHIRCapabilityStatementRest) {
                 $this->addRest($data[self::FIELD_REST]);
             } else {
                 $this->addRest(new FHIRCapabilityStatementRest($data[self::FIELD_REST]));
             }
         }
-        if (isset($data[self::FIELD_SOFTWARE])) {
-            if ($data[self::FIELD_SOFTWARE] instanceof FHIRCapabilityStatementSoftware) {
-                $this->setSoftware($data[self::FIELD_SOFTWARE]);
-            } else {
-                $this->setSoftware(new FHIRCapabilityStatementSoftware($data[self::FIELD_SOFTWARE]));
-            }
-        }
-        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
-            if (isset($data[self::FIELD_STATUS])) {
-                $value = $data[self::FIELD_STATUS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
-                $ext = $data[self::FIELD_STATUS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRPublicationStatus) {
-                    $this->setStatus($value);
-                } else if (is_array($value)) {
-                    $this->setStatus(new FHIRPublicationStatus(array_merge($ext, $value)));
-                } else {
-                    $this->setStatus(new FHIRPublicationStatus([FHIRPublicationStatus::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setStatus(new FHIRPublicationStatus($ext));
-            }
-        }
-        if (isset($data[self::FIELD_TITLE]) || isset($data[self::FIELD_TITLE_EXT])) {
-            if (isset($data[self::FIELD_TITLE])) {
-                $value = $data[self::FIELD_TITLE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TITLE_EXT]) && is_array($data[self::FIELD_TITLE_EXT])) {
-                $ext = $data[self::FIELD_TITLE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setTitle($value);
-                } else if (is_array($value)) {
-                    $this->setTitle(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setTitle(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setTitle(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_URL]) || isset($data[self::FIELD_URL_EXT])) {
-            if (isset($data[self::FIELD_URL])) {
-                $value = $data[self::FIELD_URL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_URL_EXT]) && is_array($data[self::FIELD_URL_EXT])) {
-                $ext = $data[self::FIELD_URL_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $this->setUrl($value);
-                } else if (is_array($value)) {
-                    $this->setUrl(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $this->setUrl(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setUrl(new FHIRUri($ext));
-            }
-        }
-        if (isset($data[self::FIELD_USE_CONTEXT])) {
-            if (is_array($data[self::FIELD_USE_CONTEXT])) {
-                foreach($data[self::FIELD_USE_CONTEXT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRUsageContext) {
-                        $this->addUseContext($v);
+        if (array_key_exists(self::FIELD_MESSAGING, $data)) {
+            if (is_array($data[self::FIELD_MESSAGING])) {
+                foreach($data[self::FIELD_MESSAGING] as $v) {
+                    if ($v instanceof FHIRCapabilityStatementMessaging) {
+                        $this->addMessaging($v);
                     } else {
-                        $this->addUseContext(new FHIRUsageContext($v));
+                        $this->addMessaging(new FHIRCapabilityStatementMessaging($v));
                     }
                 }
-            } else if ($data[self::FIELD_USE_CONTEXT] instanceof FHIRUsageContext) {
-                $this->addUseContext($data[self::FIELD_USE_CONTEXT]);
+            } elseif ($data[self::FIELD_MESSAGING] instanceof FHIRCapabilityStatementMessaging) {
+                $this->addMessaging($data[self::FIELD_MESSAGING]);
             } else {
-                $this->addUseContext(new FHIRUsageContext($data[self::FIELD_USE_CONTEXT]));
+                $this->addMessaging(new FHIRCapabilityStatementMessaging($data[self::FIELD_MESSAGING]));
             }
         }
-        if (isset($data[self::FIELD_VERSION]) || isset($data[self::FIELD_VERSION_EXT])) {
-            if (isset($data[self::FIELD_VERSION])) {
-                $value = $data[self::FIELD_VERSION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VERSION_EXT]) && is_array($data[self::FIELD_VERSION_EXT])) {
-                $ext = $data[self::FIELD_VERSION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setVersion($value);
-                } else if (is_array($value)) {
-                    $this->setVersion(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setVersion(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+        if (array_key_exists(self::FIELD_DOCUMENT, $data)) {
+            if (is_array($data[self::FIELD_DOCUMENT])) {
+                foreach($data[self::FIELD_DOCUMENT] as $v) {
+                    if ($v instanceof FHIRCapabilityStatementDocument) {
+                        $this->addDocument($v);
+                    } else {
+                        $this->addDocument(new FHIRCapabilityStatementDocument($v));
+                    }
                 }
-            } else if ([] !== $ext) {
-                $this->setVersion(new FHIRString($ext));
+            } elseif ($data[self::FIELD_DOCUMENT] instanceof FHIRCapabilityStatementDocument) {
+                $this->addDocument($data[self::FIELD_DOCUMENT]);
+            } else {
+                $this->addDocument(new FHIRCapabilityStatementDocument($data[self::FIELD_DOCUMENT]));
             }
         }
     }
@@ -1148,7 +1009,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -1156,129 +1017,263 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     /**
      * @return string
      */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<CapabilityStatement{$xmlns}></CapabilityStatement>";
-    }
-    /**
-     * @return string
-     */
-    public function _getResourceType()
+    public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-
     /**
-     * Specifies contact information for a person or organization.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Contact details to assist a user in finding and communicating with the
-     * publisher.
+     * An absolute URI that is used to identify this capability statement when it is
+     * referenced in a specification, model, design or an instance; also called its
+     * canonical identifier. This SHOULD be globally unique and SHOULD be a literal
+     * address at which at which an authoritative instance of this capability statement
+     * is (or will be) published. This URL can be the target of a canonical reference.
+     * It SHALL remain the same when the capability statement is stored on different
+     * servers.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    public function getContact()
+    public function getUrl(): null|FHIRUri
     {
-        return $this->contact;
+        return $this->url;
     }
 
     /**
-     * Specifies contact information for a person or organization.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Contact details to assist a user in finding and communicating with the
-     * publisher.
+     * An absolute URI that is used to identify this capability statement when it is
+     * referenced in a specification, model, design or an instance; also called its
+     * canonical identifier. This SHOULD be globally unique and SHOULD be a literal
+     * address at which at which an authoritative instance of this capability statement
+     * is (or will be) published. This URL can be the target of a canonical reference.
+     * It SHALL remain the same when the capability statement is stored on different
+     * servers.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $contact
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $url
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addContact(FHIRContactDetail $contact = null)
+    public function setUrl(null|string|FHIRUriPrimitive|FHIRUri $url = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->contact[] = $contact;
+        if (null !== $url && !($url instanceof FHIRUri)) {
+            $url = new FHIRUri($url);
+        }
+        $this->_trackValueSet($this->url, $url);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_URL])) {
+            $this->_primitiveXmlLocations[self::FIELD_URL] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_URL][0] = $xmlLocation;
+        $this->url = $url;
         return $this;
     }
 
     /**
-     * Specifies contact information for a person or organization.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Contact details to assist a user in finding and communicating with the
-     * publisher.
+     * The identifier that is used to identify this version of the capability statement
+     * when it is referenced in a specification, model, design or instance. This is an
+     * arbitrary value managed by the capability statement author and is not expected
+     * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
+     * managed version is not available. There is also no expectation that versions can
+     * be placed in a lexicographical sequence.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[] $contact
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getVersion(): null|FHIRString
+    {
+        return $this->version;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The identifier that is used to identify this version of the capability statement
+     * when it is referenced in a specification, model, design or instance. This is an
+     * arbitrary value managed by the capability statement author and is not expected
+     * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
+     * managed version is not available. There is also no expectation that versions can
+     * be placed in a lexicographical sequence.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $version
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setContact(array $contact = [])
+    public function setVersion(null|string|FHIRStringPrimitive|FHIRString $version = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->contact = [];
-        if ([] === $contact) {
-            return $this;
+        if (null !== $version && !($version instanceof FHIRString)) {
+            $version = new FHIRString($version);
         }
-        foreach($contact as $v) {
-            if ($v instanceof FHIRContactDetail) {
-                $this->addContact($v);
-            } else {
-                $this->addContact(new FHIRContactDetail($v));
-            }
+        $this->_trackValueSet($this->version, $version);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_VERSION])) {
+            $this->_primitiveXmlLocations[self::FIELD_VERSION] = [];
         }
+        $this->_primitiveXmlLocations[self::FIELD_VERSION][0] = $xmlLocation;
+        $this->version = $version;
         return $this;
     }
 
     /**
-     * A string that may contain Github Flavored Markdown syntax for optional
-     * processing by a mark down presentation engine
-     * Systems are not required to have markdown support, so the text should be
-     * readable without markdown processing. The markdown syntax is GFM - see
-     * https://github.github.com/gfm/
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A copyright statement relating to the capability statement and/or its contents.
-     * Copyright statements are generally legal restrictions on the use and publishing
-     * of the capability statement.
+     * A natural language name identifying the capability statement. This name should
+     * be usable as an identifier for the module by machine processing applications
+     * such as code generation.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    public function getCopyright()
+    public function getName(): null|FHIRString
     {
-        return $this->copyright;
+        return $this->name;
     }
 
     /**
-     * A string that may contain Github Flavored Markdown syntax for optional
-     * processing by a mark down presentation engine
-     * Systems are not required to have markdown support, so the text should be
-     * readable without markdown processing. The markdown syntax is GFM - see
-     * https://github.github.com/gfm/
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A copyright statement relating to the capability statement and/or its contents.
-     * Copyright statements are generally legal restrictions on the use and publishing
-     * of the capability statement.
+     * A natural language name identifying the capability statement. This name should
+     * be usable as an identifier for the module by machine processing applications
+     * such as code generation.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $name
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCopyright($copyright = null)
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $copyright) {
-            $this->copyright = null;
-            return $this;
+        if (null !== $name && !($name instanceof FHIRString)) {
+            $name = new FHIRString($name);
         }
-        if ($copyright instanceof FHIRMarkdown) {
-            $this->copyright = $copyright;
-            return $this;
+        $this->_trackValueSet($this->name, $name);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_NAME])) {
+            $this->_primitiveXmlLocations[self::FIELD_NAME] = [];
         }
-        $this->copyright = new FHIRMarkdown($copyright);
+        $this->_primitiveXmlLocations[self::FIELD_NAME][0] = $xmlLocation;
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A short, descriptive, user-friendly title for the capability statement.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getTitle(): null|FHIRString
+    {
+        return $this->title;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A short, descriptive, user-friendly title for the capability statement.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $title
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setTitle(null|string|FHIRStringPrimitive|FHIRString $title = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $title && !($title instanceof FHIRString)) {
+            $title = new FHIRString($title);
+        }
+        $this->_trackValueSet($this->title, $title);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_TITLE])) {
+            $this->_primitiveXmlLocations[self::FIELD_TITLE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_TITLE][0] = $xmlLocation;
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The status of this capability statement. Enables tracking the life-cycle of the
+     * content.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
+     */
+    public function getStatus(): null|FHIRPublicationStatus
+    {
+        return $this->status;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The status of this capability statement. Enables tracking the life-cycle of the
+     * content.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus $status
+     * @return static
+     */
+    public function setStatus(null|FHIRPublicationStatus $status = null): self
+    {
+        if (null === $status) {
+            $status = new FHIRPublicationStatus();
+        }
+        $this->_trackValueSet($this->status, $status);
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A Boolean value to indicate that this capability statement is authored for
+     * testing purposes (or education/evaluation/marketing) and is not intended to be
+     * used for genuine usage.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    public function getExperimental(): null|FHIRBoolean
+    {
+        return $this->experimental;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A Boolean value to indicate that this capability statement is authored for
+     * testing purposes (or education/evaluation/marketing) and is not intended to be
+     * used for genuine usage.
+     *
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $experimental
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setExperimental(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $experimental = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $experimental && !($experimental instanceof FHIRBoolean)) {
+            $experimental = new FHIRBoolean($experimental);
+        }
+        $this->_trackValueSet($this->experimental, $experimental);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_EXPERIMENTAL])) {
+            $this->_primitiveXmlLocations[self::FIELD_EXPERIMENTAL] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_EXPERIMENTAL][0] = $xmlLocation;
+        $this->experimental = $experimental;
         return $this;
     }
 
@@ -1297,7 +1292,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    public function getDate()
+    public function getDate(): null|FHIRDateTime
     {
         return $this->date;
     }
@@ -1315,20 +1310,98 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * status code changes. In addition, it should change when the substantive content
      * of the capability statement changes.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $date
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $date
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDate($date = null)
+    public function setDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $date = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $date) {
-            $this->date = null;
-            return $this;
+        if (null !== $date && !($date instanceof FHIRDateTime)) {
+            $date = new FHIRDateTime($date);
         }
-        if ($date instanceof FHIRDateTime) {
-            $this->date = $date;
-            return $this;
+        $this->_trackValueSet($this->date, $date);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_DATE] = [];
         }
-        $this->date = new FHIRDateTime($date);
+        $this->_primitiveXmlLocations[self::FIELD_DATE][0] = $xmlLocation;
+        $this->date = $date;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the organization or individual that published the capability
+     * statement.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getPublisher(): null|FHIRString
+    {
+        return $this->publisher;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the organization or individual that published the capability
+     * statement.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $publisher
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setPublisher(null|string|FHIRStringPrimitive|FHIRString $publisher = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $publisher && !($publisher instanceof FHIRString)) {
+            $publisher = new FHIRString($publisher);
+        }
+        $this->_trackValueSet($this->publisher, $publisher);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PUBLISHER])) {
+            $this->_primitiveXmlLocations[self::FIELD_PUBLISHER] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_PUBLISHER][0] = $xmlLocation;
+        $this->publisher = $publisher;
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
+     */
+    public function getContact(): null|array
+    {
+        return $this->contact;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail $contact
+     * @return static
+     */
+    public function addContact(null|FHIRContactDetail $contact = null): self
+    {
+        if (null === $contact) {
+            $contact = new FHIRContactDetail();
+        }
+        $this->_trackValueAdded();
+        $this->contact[] = $contact;
         return $this;
     }
 
@@ -1348,7 +1421,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    public function getDescription()
+    public function getDescription(): null|FHIRMarkdown
     {
         return $this->description;
     }
@@ -1367,1044 +1440,21 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * describes a desired rather than an actual solution, for example as a formal
      * expression of requirements as part of an RFP.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $description
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $description
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDescription($description = null)
+    public function setDescription(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $description) {
-            $this->description = null;
-            return $this;
+        if (null !== $description && !($description instanceof FHIRMarkdown)) {
+            $description = new FHIRMarkdown($description);
         }
-        if ($description instanceof FHIRMarkdown) {
-            $this->description = $description;
-            return $this;
+        $this->_trackValueSet($this->description, $description);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DESCRIPTION])) {
+            $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] = [];
         }
-        $this->description = new FHIRMarkdown($description);
-        return $this;
-    }
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * A document definition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[]
-     */
-    public function getDocument()
-    {
-        return $this->document;
-    }
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * A document definition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument $document
-     * @return static
-     */
-    public function addDocument(FHIRCapabilityStatementDocument $document = null)
-    {
-        $this->document[] = $document;
-        return $this;
-    }
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * A document definition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[] $document
-     * @return static
-     */
-    public function setDocument(array $document = [])
-    {
-        $this->document = [];
-        if ([] === $document) {
-            return $this;
-        }
-        foreach($document as $v) {
-            if ($v instanceof FHIRCapabilityStatementDocument) {
-                $this->addDocument($v);
-            } else {
-                $this->addDocument(new FHIRCapabilityStatementDocument($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A Boolean value to indicate that this capability statement is authored for
-     * testing purposes (or education/evaluation/marketing) and is not intended to be
-     * used for genuine usage.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    public function getExperimental()
-    {
-        return $this->experimental;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A Boolean value to indicate that this capability statement is authored for
-     * testing purposes (or education/evaluation/marketing) and is not intended to be
-     * used for genuine usage.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $experimental
-     * @return static
-     */
-    public function setExperimental($experimental = null)
-    {
-        if (null === $experimental) {
-            $this->experimental = null;
-            return $this;
-        }
-        if ($experimental instanceof FHIRBoolean) {
-            $this->experimental = $experimental;
-            return $this;
-        }
-        $this->experimental = new FHIRBoolean($experimental);
-        return $this;
-    }
-
-    /**
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The version of the FHIR specification that this CapabilityStatement describes
-     * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
-     * There is no default value.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFHIRVersion
-     */
-    public function getFhirVersion()
-    {
-        return $this->fhirVersion;
-    }
-
-    /**
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The version of the FHIR specification that this CapabilityStatement describes
-     * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
-     * There is no default value.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFHIRVersion $fhirVersion
-     * @return static
-     */
-    public function setFhirVersion(FHIRFHIRVersion $fhirVersion = null)
-    {
-        $this->fhirVersion = $fhirVersion;
-        return $this;
-    }
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A list of the formats supported by this implementation using their content
-     * types.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
-     */
-    public function getFormat()
-    {
-        return $this->format;
-    }
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A list of the formats supported by this implementation using their content
-     * types.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $format
-     * @return static
-     */
-    public function addFormat($format = null)
-    {
-        if (null === $format) {
-            $this->format = [];
-            return $this;
-        }
-        if ($format instanceof FHIRCode) {
-            $this->format[] = $format;
-            return $this;
-        }
-        $this->format[] = new FHIRCode($format);
-        return $this;
-    }
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A list of the formats supported by this implementation using their content
-     * types.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[] $format
-     * @return static
-     */
-    public function setFormat(array $format = [])
-    {
-        $this->format = [];
-        if ([] === $format) {
-            return $this;
-        }
-        foreach($format as $v) {
-            if ($v instanceof FHIRCode) {
-                $this->addFormat($v);
-            } else {
-                $this->addFormat(new FHIRCode($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * Identifies a specific implementation instance that is described by the
-     * capability statement - i.e. a particular installation, rather than the
-     * capabilities of a software program.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation
-     */
-    public function getImplementation()
-    {
-        return $this->implementation;
-    }
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * Identifies a specific implementation instance that is described by the
-     * capability statement - i.e. a particular installation, rather than the
-     * capabilities of a software program.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation $implementation
-     * @return static
-     */
-    public function setImplementation(FHIRCapabilityStatementImplementation $implementation = null)
-    {
-        $this->implementation = $implementation;
-        return $this;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A list of implementation guides that the server does (or should) support in
-     * their entirety.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
-     */
-    public function getImplementationGuide()
-    {
-        return $this->implementationGuide;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A list of implementation guides that the server does (or should) support in
-     * their entirety.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $implementationGuide
-     * @return static
-     */
-    public function addImplementationGuide($implementationGuide = null)
-    {
-        if (null === $implementationGuide) {
-            $this->implementationGuide = [];
-            return $this;
-        }
-        if ($implementationGuide instanceof FHIRCanonical) {
-            $this->implementationGuide[] = $implementationGuide;
-            return $this;
-        }
-        $this->implementationGuide[] = new FHIRCanonical($implementationGuide);
-        return $this;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A list of implementation guides that the server does (or should) support in
-     * their entirety.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $implementationGuide
-     * @return static
-     */
-    public function setImplementationGuide(array $implementationGuide = [])
-    {
-        $this->implementationGuide = [];
-        if ([] === $implementationGuide) {
-            return $this;
-        }
-        foreach($implementationGuide as $v) {
-            if ($v instanceof FHIRCanonical) {
-                $this->addImplementationGuide($v);
-            } else {
-                $this->addImplementationGuide(new FHIRCanonical($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Reference to a canonical URL of another CapabilityStatement that this software
-     * adds to. The capability statement automatically includes everything in the other
-     * statement, and it is not duplicated, though the server may repeat the same
-     * resources, interactions and operations to add additional details to them.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
-     */
-    public function getImports()
-    {
-        return $this->imports;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Reference to a canonical URL of another CapabilityStatement that this software
-     * adds to. The capability statement automatically includes everything in the other
-     * statement, and it is not duplicated, though the server may repeat the same
-     * resources, interactions and operations to add additional details to them.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $imports
-     * @return static
-     */
-    public function addImports($imports = null)
-    {
-        if (null === $imports) {
-            $this->imports = [];
-            return $this;
-        }
-        if ($imports instanceof FHIRCanonical) {
-            $this->imports[] = $imports;
-            return $this;
-        }
-        $this->imports[] = new FHIRCanonical($imports);
-        return $this;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Reference to a canonical URL of another CapabilityStatement that this software
-     * adds to. The capability statement automatically includes everything in the other
-     * statement, and it is not duplicated, though the server may repeat the same
-     * resources, interactions and operations to add additional details to them.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $imports
-     * @return static
-     */
-    public function setImports(array $imports = [])
-    {
-        $this->imports = [];
-        if ([] === $imports) {
-            return $this;
-        }
-        foreach($imports as $v) {
-            if ($v instanceof FHIRCanonical) {
-                $this->addImports($v);
-            } else {
-                $this->addImports(new FHIRCanonical($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Reference to a canonical URL of another CapabilityStatement that this software
-     * implements. This capability statement is a published API description that
-     * corresponds to a business service. The server may actually implement a subset of
-     * the capability statement it claims to implement, so the capability statement
-     * must specify the full capability details.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
-     */
-    public function getInstantiates()
-    {
-        return $this->instantiates;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Reference to a canonical URL of another CapabilityStatement that this software
-     * implements. This capability statement is a published API description that
-     * corresponds to a business service. The server may actually implement a subset of
-     * the capability statement it claims to implement, so the capability statement
-     * must specify the full capability details.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $instantiates
-     * @return static
-     */
-    public function addInstantiates($instantiates = null)
-    {
-        if (null === $instantiates) {
-            $this->instantiates = [];
-            return $this;
-        }
-        if ($instantiates instanceof FHIRCanonical) {
-            $this->instantiates[] = $instantiates;
-            return $this;
-        }
-        $this->instantiates[] = new FHIRCanonical($instantiates);
-        return $this;
-    }
-
-    /**
-     * A URI that is a reference to a canonical URL on a FHIR resource
-     * see [Canonical References](references.html#canonical)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Reference to a canonical URL of another CapabilityStatement that this software
-     * implements. This capability statement is a published API description that
-     * corresponds to a business service. The server may actually implement a subset of
-     * the capability statement it claims to implement, so the capability statement
-     * must specify the full capability details.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $instantiates
-     * @return static
-     */
-    public function setInstantiates(array $instantiates = [])
-    {
-        $this->instantiates = [];
-        if ([] === $instantiates) {
-            return $this;
-        }
-        foreach($instantiates as $v) {
-            if ($v instanceof FHIRCanonical) {
-                $this->addInstantiates($v);
-            } else {
-                $this->addInstantiates(new FHIRCanonical($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A legal or geographic region in which the capability statement is intended to be
-     * used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getJurisdiction()
-    {
-        return $this->jurisdiction;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A legal or geographic region in which the capability statement is intended to be
-     * used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
-     * @return static
-     */
-    public function addJurisdiction(FHIRCodeableConcept $jurisdiction = null)
-    {
-        $this->jurisdiction[] = $jurisdiction;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A legal or geographic region in which the capability statement is intended to be
-     * used.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $jurisdiction
-     * @return static
-     */
-    public function setJurisdiction(array $jurisdiction = [])
-    {
-        $this->jurisdiction = [];
-        if ([] === $jurisdiction) {
-            return $this;
-        }
-        foreach($jurisdiction as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addJurisdiction($v);
-            } else {
-                $this->addJurisdiction(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * How a capability statement is intended to be used.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The way that this statement is intended to be used, to describe an actual
-     * running instance of software, a particular product (kind, not instance of
-     * software) or a class of implementation (e.g. a desired purchase).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCapabilityStatementKind
-     */
-    public function getKind()
-    {
-        return $this->kind;
-    }
-
-    /**
-     * How a capability statement is intended to be used.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The way that this statement is intended to be used, to describe an actual
-     * running instance of software, a particular product (kind, not instance of
-     * software) or a class of implementation (e.g. a desired purchase).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCapabilityStatementKind $kind
-     * @return static
-     */
-    public function setKind(FHIRCapabilityStatementKind $kind = null)
-    {
-        $this->kind = $kind;
-        return $this;
-    }
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * A description of the messaging capabilities of the solution.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[]
-     */
-    public function getMessaging()
-    {
-        return $this->messaging;
-    }
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * A description of the messaging capabilities of the solution.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging $messaging
-     * @return static
-     */
-    public function addMessaging(FHIRCapabilityStatementMessaging $messaging = null)
-    {
-        $this->messaging[] = $messaging;
-        return $this;
-    }
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * A description of the messaging capabilities of the solution.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[] $messaging
-     * @return static
-     */
-    public function setMessaging(array $messaging = [])
-    {
-        $this->messaging = [];
-        if ([] === $messaging) {
-            return $this;
-        }
-        foreach($messaging as $v) {
-            if ($v instanceof FHIRCapabilityStatementMessaging) {
-                $this->addMessaging($v);
-            } else {
-                $this->addMessaging(new FHIRCapabilityStatementMessaging($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A natural language name identifying the capability statement. This name should
-     * be usable as an identifier for the module by machine processing applications
-     * such as code generation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A natural language name identifying the capability statement. This name should
-     * be usable as an identifier for the module by machine processing applications
-     * such as code generation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $name
-     * @return static
-     */
-    public function setName($name = null)
-    {
-        if (null === $name) {
-            $this->name = null;
-            return $this;
-        }
-        if ($name instanceof FHIRString) {
-            $this->name = $name;
-            return $this;
-        }
-        $this->name = new FHIRString($name);
-        return $this;
-    }
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A list of the patch formats supported by this implementation using their content
-     * types.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
-     */
-    public function getPatchFormat()
-    {
-        return $this->patchFormat;
-    }
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A list of the patch formats supported by this implementation using their content
-     * types.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $patchFormat
-     * @return static
-     */
-    public function addPatchFormat($patchFormat = null)
-    {
-        if (null === $patchFormat) {
-            $this->patchFormat = [];
-            return $this;
-        }
-        if ($patchFormat instanceof FHIRCode) {
-            $this->patchFormat[] = $patchFormat;
-            return $this;
-        }
-        $this->patchFormat[] = new FHIRCode($patchFormat);
-        return $this;
-    }
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A list of the patch formats supported by this implementation using their content
-     * types.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[] $patchFormat
-     * @return static
-     */
-    public function setPatchFormat(array $patchFormat = [])
-    {
-        $this->patchFormat = [];
-        if ([] === $patchFormat) {
-            return $this;
-        }
-        foreach($patchFormat as $v) {
-            if ($v instanceof FHIRCode) {
-                $this->addPatchFormat($v);
-            } else {
-                $this->addPatchFormat(new FHIRCode($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the organization or individual that published the capability
-     * statement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getPublisher()
-    {
-        return $this->publisher;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the organization or individual that published the capability
-     * statement.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $publisher
-     * @return static
-     */
-    public function setPublisher($publisher = null)
-    {
-        if (null === $publisher) {
-            $this->publisher = null;
-            return $this;
-        }
-        if ($publisher instanceof FHIRString) {
-            $this->publisher = $publisher;
-            return $this;
-        }
-        $this->publisher = new FHIRString($publisher);
-        return $this;
-    }
-
-    /**
-     * A string that may contain Github Flavored Markdown syntax for optional
-     * processing by a mark down presentation engine
-     * Systems are not required to have markdown support, so the text should be
-     * readable without markdown processing. The markdown syntax is GFM - see
-     * https://github.github.com/gfm/
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Explanation of why this capability statement is needed and why it has been
-     * designed as it has.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
-     */
-    public function getPurpose()
-    {
-        return $this->purpose;
-    }
-
-    /**
-     * A string that may contain Github Flavored Markdown syntax for optional
-     * processing by a mark down presentation engine
-     * Systems are not required to have markdown support, so the text should be
-     * readable without markdown processing. The markdown syntax is GFM - see
-     * https://github.github.com/gfm/
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Explanation of why this capability statement is needed and why it has been
-     * designed as it has.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $purpose
-     * @return static
-     */
-    public function setPurpose($purpose = null)
-    {
-        if (null === $purpose) {
-            $this->purpose = null;
-            return $this;
-        }
-        if ($purpose instanceof FHIRMarkdown) {
-            $this->purpose = $purpose;
-            return $this;
-        }
-        $this->purpose = new FHIRMarkdown($purpose);
-        return $this;
-    }
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * A definition of the restful capabilities of the solution, if any.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest[]
-     */
-    public function getRest()
-    {
-        return $this->rest;
-    }
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * A definition of the restful capabilities of the solution, if any.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest $rest
-     * @return static
-     */
-    public function addRest(FHIRCapabilityStatementRest $rest = null)
-    {
-        $this->rest[] = $rest;
-        return $this;
-    }
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * A definition of the restful capabilities of the solution, if any.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest[] $rest
-     * @return static
-     */
-    public function setRest(array $rest = [])
-    {
-        $this->rest = [];
-        if ([] === $rest) {
-            return $this;
-        }
-        foreach($rest as $v) {
-            if ($v instanceof FHIRCapabilityStatementRest) {
-                $this->addRest($v);
-            } else {
-                $this->addRest(new FHIRCapabilityStatementRest($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * Software that is covered by this capability statement. It is used when the
-     * capability statement describes the capabilities of a particular software
-     * version, independent of an installation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
-     */
-    public function getSoftware()
-    {
-        return $this->software;
-    }
-
-    /**
-     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
-     * Server for a particular version of FHIR that may be used as a statement of
-     * actual server functionality or a statement of required or desired server
-     * implementation.
-     *
-     * Software that is covered by this capability statement. It is used when the
-     * capability statement describes the capabilities of a particular software
-     * version, independent of an installation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware $software
-     * @return static
-     */
-    public function setSoftware(FHIRCapabilityStatementSoftware $software = null)
-    {
-        $this->software = $software;
-        return $this;
-    }
-
-    /**
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The status of this capability statement. Enables tracking the life-cycle of the
-     * content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The status of this capability statement. Enables tracking the life-cycle of the
-     * content.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus $status
-     * @return static
-     */
-    public function setStatus(FHIRPublicationStatus $status = null)
-    {
-        $this->status = $status;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A short, descriptive, user-friendly title for the capability statement.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A short, descriptive, user-friendly title for the capability statement.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $title
-     * @return static
-     */
-    public function setTitle($title = null)
-    {
-        if (null === $title) {
-            $this->title = null;
-            return $this;
-        }
-        if ($title instanceof FHIRString) {
-            $this->title = $title;
-            return $this;
-        }
-        $this->title = new FHIRString($title);
-        return $this;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An absolute URI that is used to identify this capability statement when it is
-     * referenced in a specification, model, design or an instance; also called its
-     * canonical identifier. This SHOULD be globally unique and SHOULD be a literal
-     * address at which at which an authoritative instance of this capability statement
-     * is (or will be) published. This URL can be the target of a canonical reference.
-     * It SHALL remain the same when the capability statement is stored on different
-     * servers.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An absolute URI that is used to identify this capability statement when it is
-     * referenced in a specification, model, design or an instance; also called its
-     * canonical identifier. This SHOULD be globally unique and SHOULD be a literal
-     * address at which at which an authoritative instance of this capability statement
-     * is (or will be) published. This URL can be the target of a canonical reference.
-     * It SHALL remain the same when the capability statement is stored on different
-     * servers.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $url
-     * @return static
-     */
-    public function setUrl($url = null)
-    {
-        if (null === $url) {
-            $this->url = null;
-            return $this;
-        }
-        if ($url instanceof FHIRUri) {
-            $this->url = $url;
-            return $this;
-        }
-        $this->url = new FHIRUri($url);
+        $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
+        $this->description = $description;
         return $this;
     }
 
@@ -2424,7 +1474,7 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
-    public function getUseContext()
+    public function getUseContext(): null|array
     {
         return $this->useContext;
     }
@@ -2446,90 +1496,804 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext $useContext
      * @return static
      */
-    public function addUseContext(FHIRUsageContext $useContext = null)
+    public function addUseContext(null|FHIRUsageContext $useContext = null): self
     {
+        if (null === $useContext) {
+            $useContext = new FHIRUsageContext();
+        }
+        $this->_trackValueAdded();
         $this->useContext[] = $useContext;
         return $this;
     }
 
     /**
-     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
-     * and/or categorize an artifact. This metadata can either be specific to the
-     * applicable population (e.g., age category, DRG) or the specific context of care
-     * (e.g., venue, care setting, provider of care).
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The content was developed with a focus and intent of supporting the contexts
-     * that are listed. These contexts may be general categories (gender, age, ...) or
-     * may be references to specific programs (insurance plans, studies, ...) and may
-     * be used to assist with indexing and searching for appropriate capability
-     * statement instances.
+     * A legal or geographic region in which the capability statement is intended to be
+     * used.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[] $useContext
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getJurisdiction(): null|array
+    {
+        return $this->jurisdiction;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A legal or geographic region in which the capability statement is intended to be
+     * used.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $jurisdiction
      * @return static
      */
-    public function setUseContext(array $useContext = [])
+    public function addJurisdiction(null|FHIRCodeableConcept $jurisdiction = null): self
     {
-        $this->useContext = [];
-        if ([] === $useContext) {
+        if (null === $jurisdiction) {
+            $jurisdiction = new FHIRCodeableConcept();
+        }
+        $this->_trackValueAdded();
+        $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A string that may contain Github Flavored Markdown syntax for optional
+     * processing by a mark down presentation engine
+     * Systems are not required to have markdown support, so the text should be
+     * readable without markdown processing. The markdown syntax is GFM - see
+     * https://github.github.com/gfm/
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Explanation of why this capability statement is needed and why it has been
+     * designed as it has.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
+     */
+    public function getPurpose(): null|FHIRMarkdown
+    {
+        return $this->purpose;
+    }
+
+    /**
+     * A string that may contain Github Flavored Markdown syntax for optional
+     * processing by a mark down presentation engine
+     * Systems are not required to have markdown support, so the text should be
+     * readable without markdown processing. The markdown syntax is GFM - see
+     * https://github.github.com/gfm/
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Explanation of why this capability statement is needed and why it has been
+     * designed as it has.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $purpose
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setPurpose(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $purpose = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $purpose && !($purpose instanceof FHIRMarkdown)) {
+            $purpose = new FHIRMarkdown($purpose);
+        }
+        $this->_trackValueSet($this->purpose, $purpose);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PURPOSE])) {
+            $this->_primitiveXmlLocations[self::FIELD_PURPOSE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_PURPOSE][0] = $xmlLocation;
+        $this->purpose = $purpose;
+        return $this;
+    }
+
+    /**
+     * A string that may contain Github Flavored Markdown syntax for optional
+     * processing by a mark down presentation engine
+     * Systems are not required to have markdown support, so the text should be
+     * readable without markdown processing. The markdown syntax is GFM - see
+     * https://github.github.com/gfm/
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A copyright statement relating to the capability statement and/or its contents.
+     * Copyright statements are generally legal restrictions on the use and publishing
+     * of the capability statement.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
+     */
+    public function getCopyright(): null|FHIRMarkdown
+    {
+        return $this->copyright;
+    }
+
+    /**
+     * A string that may contain Github Flavored Markdown syntax for optional
+     * processing by a mark down presentation engine
+     * Systems are not required to have markdown support, so the text should be
+     * readable without markdown processing. The markdown syntax is GFM - see
+     * https://github.github.com/gfm/
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A copyright statement relating to the capability statement and/or its contents.
+     * Copyright statements are generally legal restrictions on the use and publishing
+     * of the capability statement.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $copyright && !($copyright instanceof FHIRMarkdown)) {
+            $copyright = new FHIRMarkdown($copyright);
+        }
+        $this->_trackValueSet($this->copyright, $copyright);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_COPYRIGHT])) {
+            $this->_primitiveXmlLocations[self::FIELD_COPYRIGHT] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_COPYRIGHT][0] = $xmlLocation;
+        $this->copyright = $copyright;
+        return $this;
+    }
+
+    /**
+     * How a capability statement is intended to be used.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The way that this statement is intended to be used, to describe an actual
+     * running instance of software, a particular product (kind, not instance of
+     * software) or a class of implementation (e.g. a desired purchase).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCapabilityStatementKind
+     */
+    public function getKind(): null|FHIRCapabilityStatementKind
+    {
+        return $this->kind;
+    }
+
+    /**
+     * How a capability statement is intended to be used.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The way that this statement is intended to be used, to describe an actual
+     * running instance of software, a particular product (kind, not instance of
+     * software) or a class of implementation (e.g. a desired purchase).
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCapabilityStatementKind $kind
+     * @return static
+     */
+    public function setKind(null|FHIRCapabilityStatementKind $kind = null): self
+    {
+        if (null === $kind) {
+            $kind = new FHIRCapabilityStatementKind();
+        }
+        $this->_trackValueSet($this->kind, $kind);
+        $this->kind = $kind;
+        return $this;
+    }
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Reference to a canonical URL of another CapabilityStatement that this software
+     * implements. This capability statement is a published API description that
+     * corresponds to a business service. The server may actually implement a subset of
+     * the capability statement it claims to implement, so the capability statement
+     * must specify the full capability details.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
+     */
+    public function getInstantiates(): null|array
+    {
+        return $this->instantiates;
+    }
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Reference to a canonical URL of another CapabilityStatement that this software
+     * implements. This capability statement is a published API description that
+     * corresponds to a business service. The server may actually implement a subset of
+     * the capability statement it claims to implement, so the capability statement
+     * must specify the full capability details.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $instantiates
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function addInstantiates(null|string|FHIRCanonicalPrimitive|FHIRCanonical $instantiates = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $instantiates && !($instantiates instanceof FHIRCanonical)) {
+            $instantiates = new FHIRCanonical($instantiates);
+        }
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_INSTANTIATES])) {
+            $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES][] = $xmlLocation;
+        $this->instantiates[] = $instantiates;
+        return $this;
+    }
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Reference to a canonical URL of another CapabilityStatement that this software
+     * implements. This capability statement is a published API description that
+     * corresponds to a business service. The server may actually implement a subset of
+     * the capability statement it claims to implement, so the capability statement
+     * must specify the full capability details.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $instantiates
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setInstantiates(array $instantiates = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        unset($this->_primitiveXmlLocations[self::FIELD_INSTANTIATES]);
+        if ([] !== $this->instantiates) {
+            $this->_trackValuesRemoved(count($this->instantiates));
+            $this->instantiates = [];
+        }
+        if ([] === $instantiates) {
             return $this;
         }
-        foreach($useContext as $v) {
-            if ($v instanceof FHIRUsageContext) {
-                $this->addUseContext($v);
+        foreach($instantiates as $v) {
+            if ($v instanceof FHIRCanonical) {
+                $this->addInstantiates($v, $xmlLocation);
             } else {
-                $this->addUseContext(new FHIRUsageContext($v));
+                $this->addInstantiates(new FHIRCanonical($v), $xmlLocation);
             }
         }
         return $this;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * The identifier that is used to identify this version of the capability statement
-     * when it is referenced in a specification, model, design or instance. This is an
-     * arbitrary value managed by the capability statement author and is not expected
-     * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
-     * managed version is not available. There is also no expectation that versions can
-     * be placed in a lexicographical sequence.
+     * Reference to a canonical URL of another CapabilityStatement that this software
+     * adds to. The capability statement automatically includes everything in the other
+     * statement, and it is not duplicated, though the server may repeat the same
+     * resources, interactions and operations to add additional details to them.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
-    public function getVersion()
+    public function getImports(): null|array
     {
-        return $this->version;
+        return $this->imports;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * The identifier that is used to identify this version of the capability statement
-     * when it is referenced in a specification, model, design or instance. This is an
-     * arbitrary value managed by the capability statement author and is not expected
-     * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
-     * managed version is not available. There is also no expectation that versions can
-     * be placed in a lexicographical sequence.
+     * Reference to a canonical URL of another CapabilityStatement that this software
+     * adds to. The capability statement automatically includes everything in the other
+     * statement, and it is not duplicated, though the server may repeat the same
+     * resources, interactions and operations to add additional details to them.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $version
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $imports
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setVersion($version = null)
+    public function addImports(null|string|FHIRCanonicalPrimitive|FHIRCanonical $imports = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $version) {
-            $this->version = null;
+        if (null !== $imports && !($imports instanceof FHIRCanonical)) {
+            $imports = new FHIRCanonical($imports);
+        }
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_IMPORTS])) {
+            $this->_primitiveXmlLocations[self::FIELD_IMPORTS] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_IMPORTS][] = $xmlLocation;
+        $this->imports[] = $imports;
+        return $this;
+    }
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Reference to a canonical URL of another CapabilityStatement that this software
+     * adds to. The capability statement automatically includes everything in the other
+     * statement, and it is not duplicated, though the server may repeat the same
+     * resources, interactions and operations to add additional details to them.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $imports
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setImports(array $imports = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        unset($this->_primitiveXmlLocations[self::FIELD_IMPORTS]);
+        if ([] !== $this->imports) {
+            $this->_trackValuesRemoved(count($this->imports));
+            $this->imports = [];
+        }
+        if ([] === $imports) {
             return $this;
         }
-        if ($version instanceof FHIRString) {
-            $this->version = $version;
+        foreach($imports as $v) {
+            if ($v instanceof FHIRCanonical) {
+                $this->addImports($v, $xmlLocation);
+            } else {
+                $this->addImports(new FHIRCanonical($v), $xmlLocation);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * Software that is covered by this capability statement. It is used when the
+     * capability statement describes the capabilities of a particular software
+     * version, independent of an installation.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
+     */
+    public function getSoftware(): null|FHIRCapabilityStatementSoftware
+    {
+        return $this->software;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * Software that is covered by this capability statement. It is used when the
+     * capability statement describes the capabilities of a particular software
+     * version, independent of an installation.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware $software
+     * @return static
+     */
+    public function setSoftware(null|FHIRCapabilityStatementSoftware $software = null): self
+    {
+        if (null === $software) {
+            $software = new FHIRCapabilityStatementSoftware();
+        }
+        $this->_trackValueSet($this->software, $software);
+        $this->software = $software;
+        return $this;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * Identifies a specific implementation instance that is described by the
+     * capability statement - i.e. a particular installation, rather than the
+     * capabilities of a software program.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation
+     */
+    public function getImplementation(): null|FHIRCapabilityStatementImplementation
+    {
+        return $this->implementation;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * Identifies a specific implementation instance that is described by the
+     * capability statement - i.e. a particular installation, rather than the
+     * capabilities of a software program.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation $implementation
+     * @return static
+     */
+    public function setImplementation(null|FHIRCapabilityStatementImplementation $implementation = null): self
+    {
+        if (null === $implementation) {
+            $implementation = new FHIRCapabilityStatementImplementation();
+        }
+        $this->_trackValueSet($this->implementation, $implementation);
+        $this->implementation = $implementation;
+        return $this;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The version of the FHIR specification that this CapabilityStatement describes
+     * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
+     * There is no default value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFHIRVersion
+     */
+    public function getFhirVersion(): null|FHIRFHIRVersion
+    {
+        return $this->fhirVersion;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The version of the FHIR specification that this CapabilityStatement describes
+     * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
+     * There is no default value.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFHIRVersion $fhirVersion
+     * @return static
+     */
+    public function setFhirVersion(null|FHIRFHIRVersion $fhirVersion = null): self
+    {
+        if (null === $fhirVersion) {
+            $fhirVersion = new FHIRFHIRVersion();
+        }
+        $this->_trackValueSet($this->fhirVersion, $fhirVersion);
+        $this->fhirVersion = $fhirVersion;
+        return $this;
+    }
+
+    /**
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A list of the formats supported by this implementation using their content
+     * types.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
+     */
+    public function getFormat(): null|array
+    {
+        return $this->format;
+    }
+
+    /**
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A list of the formats supported by this implementation using their content
+     * types.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $format
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function addFormat(null|string|FHIRCodePrimitive|FHIRCode $format = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $format && !($format instanceof FHIRCode)) {
+            $format = new FHIRCode($format);
+        }
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_FORMAT])) {
+            $this->_primitiveXmlLocations[self::FIELD_FORMAT] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_FORMAT][] = $xmlLocation;
+        $this->format[] = $format;
+        return $this;
+    }
+
+    /**
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A list of the formats supported by this implementation using their content
+     * types.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[] $format
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setFormat(array $format = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        unset($this->_primitiveXmlLocations[self::FIELD_FORMAT]);
+        if ([] !== $this->format) {
+            $this->_trackValuesRemoved(count($this->format));
+            $this->format = [];
+        }
+        if ([] === $format) {
             return $this;
         }
-        $this->version = new FHIRString($version);
+        foreach($format as $v) {
+            if ($v instanceof FHIRCode) {
+                $this->addFormat($v, $xmlLocation);
+            } else {
+                $this->addFormat(new FHIRCode($v), $xmlLocation);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A list of the patch formats supported by this implementation using their content
+     * types.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
+     */
+    public function getPatchFormat(): null|array
+    {
+        return $this->patchFormat;
+    }
+
+    /**
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A list of the patch formats supported by this implementation using their content
+     * types.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $patchFormat
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function addPatchFormat(null|string|FHIRCodePrimitive|FHIRCode $patchFormat = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $patchFormat && !($patchFormat instanceof FHIRCode)) {
+            $patchFormat = new FHIRCode($patchFormat);
+        }
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PATCH_FORMAT])) {
+            $this->_primitiveXmlLocations[self::FIELD_PATCH_FORMAT] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_PATCH_FORMAT][] = $xmlLocation;
+        $this->patchFormat[] = $patchFormat;
+        return $this;
+    }
+
+    /**
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A list of the patch formats supported by this implementation using their content
+     * types.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[] $patchFormat
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setPatchFormat(array $patchFormat = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        unset($this->_primitiveXmlLocations[self::FIELD_PATCH_FORMAT]);
+        if ([] !== $this->patchFormat) {
+            $this->_trackValuesRemoved(count($this->patchFormat));
+            $this->patchFormat = [];
+        }
+        if ([] === $patchFormat) {
+            return $this;
+        }
+        foreach($patchFormat as $v) {
+            if ($v instanceof FHIRCode) {
+                $this->addPatchFormat($v, $xmlLocation);
+            } else {
+                $this->addPatchFormat(new FHIRCode($v), $xmlLocation);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A list of implementation guides that the server does (or should) support in
+     * their entirety.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
+     */
+    public function getImplementationGuide(): null|array
+    {
+        return $this->implementationGuide;
+    }
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A list of implementation guides that the server does (or should) support in
+     * their entirety.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $implementationGuide
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function addImplementationGuide(null|string|FHIRCanonicalPrimitive|FHIRCanonical $implementationGuide = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $implementationGuide && !($implementationGuide instanceof FHIRCanonical)) {
+            $implementationGuide = new FHIRCanonical($implementationGuide);
+        }
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_IMPLEMENTATION_GUIDE])) {
+            $this->_primitiveXmlLocations[self::FIELD_IMPLEMENTATION_GUIDE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_IMPLEMENTATION_GUIDE][] = $xmlLocation;
+        $this->implementationGuide[] = $implementationGuide;
+        return $this;
+    }
+
+    /**
+     * A URI that is a reference to a canonical URL on a FHIR resource
+     * see [Canonical References](references.html#canonical)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A list of implementation guides that the server does (or should) support in
+     * their entirety.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[] $implementationGuide
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setImplementationGuide(array $implementationGuide = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        unset($this->_primitiveXmlLocations[self::FIELD_IMPLEMENTATION_GUIDE]);
+        if ([] !== $this->implementationGuide) {
+            $this->_trackValuesRemoved(count($this->implementationGuide));
+            $this->implementationGuide = [];
+        }
+        if ([] === $implementationGuide) {
+            return $this;
+        }
+        foreach($implementationGuide as $v) {
+            if ($v instanceof FHIRCanonical) {
+                $this->addImplementationGuide($v, $xmlLocation);
+            } else {
+                $this->addImplementationGuide(new FHIRCanonical($v), $xmlLocation);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * A definition of the restful capabilities of the solution, if any.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest[]
+     */
+    public function getRest(): null|array
+    {
+        return $this->rest;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * A definition of the restful capabilities of the solution, if any.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest $rest
+     * @return static
+     */
+    public function addRest(null|FHIRCapabilityStatementRest $rest = null): self
+    {
+        if (null === $rest) {
+            $rest = new FHIRCapabilityStatementRest();
+        }
+        $this->_trackValueAdded();
+        $this->rest[] = $rest;
+        return $this;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * A description of the messaging capabilities of the solution.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[]
+     */
+    public function getMessaging(): null|array
+    {
+        return $this->messaging;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * A description of the messaging capabilities of the solution.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging $messaging
+     * @return static
+     */
+    public function addMessaging(null|FHIRCapabilityStatementMessaging $messaging = null): self
+    {
+        if (null === $messaging) {
+            $messaging = new FHIRCapabilityStatementMessaging();
+        }
+        $this->_trackValueAdded();
+        $this->messaging[] = $messaging;
+        return $this;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * A document definition.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[]
+     */
+    public function getDocument(): null|array
+    {
+        return $this->document;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server for a particular version of FHIR that may be used as a statement of
+     * actual server functionality or a statement of required or desired server
+     * implementation.
+     *
+     * A document definition.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument $document
+     * @return static
+     */
+    public function addDocument(null|FHIRCapabilityStatementDocument $document = null): self
+    {
+        if (null === $document) {
+            $document = new FHIRCapabilityStatementDocument();
+        }
+        $this->_trackValueAdded();
+        $this->document[] = $document;
         return $this;
     }
 
@@ -2539,9 +2303,9 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -2550,20 +2314,38 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getContact())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_CONTACT, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getUrl())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_URL] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getCopyright())) {
+        if (null !== ($v = $this->getVersion())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_COPYRIGHT] = $fieldErrs;
+                $errs[self::FIELD_VERSION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getName())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_NAME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getTitle())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TITLE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_STATUS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getExperimental())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EXPERIMENTAL] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDate())) {
@@ -2571,21 +2353,74 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 $errs[self::FIELD_DATE] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getPublisher())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PUBLISHER] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getContact())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_CONTACT, $i)] = $fieldErrs;
+                }
+            }
+        }
         if (null !== ($v = $this->getDescription())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getDocument())) {
+        if ([] !== ($vs = $this->getUseContext())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_DOCUMENT, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_USE_CONTEXT, $i)] = $fieldErrs;
                 }
             }
         }
-        if (null !== ($v = $this->getExperimental())) {
+        if ([] !== ($vs = $this->getJurisdiction())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_JURISDICTION, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getPurpose())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_EXPERIMENTAL] = $fieldErrs;
+                $errs[self::FIELD_PURPOSE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCopyright())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_COPYRIGHT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getKind())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_KIND] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getInstantiates())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_INSTANTIATES, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if ([] !== ($vs = $this->getImports())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_IMPORTS, $i)] = $fieldErrs;
+                }
+            }
+        }
+        if (null !== ($v = $this->getSoftware())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SOFTWARE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getImplementation())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_IMPLEMENTATION] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getFhirVersion())) {
@@ -2600,9 +2435,11 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 }
             }
         }
-        if (null !== ($v = $this->getImplementation())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_IMPLEMENTATION] = $fieldErrs;
+        if ([] !== ($vs = $this->getPatchFormat())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_PATCH_FORMAT, $i)] = $fieldErrs;
+                }
             }
         }
         if ([] !== ($vs = $this->getImplementationGuide())) {
@@ -2612,30 +2449,11 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 }
             }
         }
-        if ([] !== ($vs = $this->getImports())) {
+        if ([] !== ($vs = $this->getRest())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_IMPORTS, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_REST, $i)] = $fieldErrs;
                 }
-            }
-        }
-        if ([] !== ($vs = $this->getInstantiates())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_INSTANTIATES, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if ([] !== ($vs = $this->getJurisdiction())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_JURISDICTION, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getKind())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_KIND] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getMessaging())) {
@@ -2645,88 +2463,82 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 }
             }
         }
-        if (null !== ($v = $this->getName())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_NAME] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getPatchFormat())) {
+        if ([] !== ($vs = $this->getDocument())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_PATCH_FORMAT, $i)] = $fieldErrs;
+                    $errs[sprintf('%s.%d', self::FIELD_DOCUMENT, $i)] = $fieldErrs;
                 }
             }
         }
-        if (null !== ($v = $this->getPublisher())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PUBLISHER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPurpose())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PURPOSE] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getRest())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_REST, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getSoftware())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SOFTWARE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getStatus())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_STATUS] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getTitle())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TITLE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getUrl())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_URL] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getUseContext())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_USE_CONTEXT, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getVersion())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VERSION] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_CONTACT])) {
-            $v = $this->getContact();
-            foreach($validationRules[self::FIELD_CONTACT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_CONTACT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_URL])) {
+            $v = $this->getUrl();
+            foreach($validationRules[self::FIELD_URL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_URL, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONTACT])) {
-                        $errs[self::FIELD_CONTACT] = [];
+                    if (!isset($errs[self::FIELD_URL])) {
+                        $errs[self::FIELD_URL] = [];
                     }
-                    $errs[self::FIELD_CONTACT][$rule] = $err;
+                    $errs[self::FIELD_URL][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_COPYRIGHT])) {
-            $v = $this->getCopyright();
-            foreach($validationRules[self::FIELD_COPYRIGHT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_COPYRIGHT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VERSION])) {
+            $v = $this->getVersion();
+            foreach($validationRules[self::FIELD_VERSION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_VERSION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COPYRIGHT])) {
-                        $errs[self::FIELD_COPYRIGHT] = [];
+                    if (!isset($errs[self::FIELD_VERSION])) {
+                        $errs[self::FIELD_VERSION] = [];
                     }
-                    $errs[self::FIELD_COPYRIGHT][$rule] = $err;
+                    $errs[self::FIELD_VERSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_NAME])) {
+            $v = $this->getName();
+            foreach($validationRules[self::FIELD_NAME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_NAME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NAME])) {
+                        $errs[self::FIELD_NAME] = [];
+                    }
+                    $errs[self::FIELD_NAME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TITLE])) {
+            $v = $this->getTitle();
+            foreach($validationRules[self::FIELD_TITLE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_TITLE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TITLE])) {
+                        $errs[self::FIELD_TITLE] = [];
+                    }
+                    $errs[self::FIELD_TITLE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_STATUS])) {
+            $v = $this->getStatus();
+            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_STATUS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_STATUS])) {
+                        $errs[self::FIELD_STATUS] = [];
+                    }
+                    $errs[self::FIELD_STATUS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EXPERIMENTAL])) {
+            $v = $this->getExperimental();
+            foreach($validationRules[self::FIELD_EXPERIMENTAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_EXPERIMENTAL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EXPERIMENTAL])) {
+                        $errs[self::FIELD_EXPERIMENTAL] = [];
+                    }
+                    $errs[self::FIELD_EXPERIMENTAL][$rule] = $err;
                 }
             }
         }
@@ -2742,6 +2554,30 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_PUBLISHER])) {
+            $v = $this->getPublisher();
+            foreach($validationRules[self::FIELD_PUBLISHER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_PUBLISHER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PUBLISHER])) {
+                        $errs[self::FIELD_PUBLISHER] = [];
+                    }
+                    $errs[self::FIELD_PUBLISHER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONTACT])) {
+            $v = $this->getContact();
+            foreach($validationRules[self::FIELD_CONTACT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_CONTACT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONTACT])) {
+                        $errs[self::FIELD_CONTACT] = [];
+                    }
+                    $errs[self::FIELD_CONTACT][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_DESCRIPTION])) {
             $v = $this->getDescription();
             foreach($validationRules[self::FIELD_DESCRIPTION] as $rule => $constraint) {
@@ -2754,27 +2590,111 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DOCUMENT])) {
-            $v = $this->getDocument();
-            foreach($validationRules[self::FIELD_DOCUMENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_DOCUMENT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_USE_CONTEXT])) {
+            $v = $this->getUseContext();
+            foreach($validationRules[self::FIELD_USE_CONTEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_USE_CONTEXT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DOCUMENT])) {
-                        $errs[self::FIELD_DOCUMENT] = [];
+                    if (!isset($errs[self::FIELD_USE_CONTEXT])) {
+                        $errs[self::FIELD_USE_CONTEXT] = [];
                     }
-                    $errs[self::FIELD_DOCUMENT][$rule] = $err;
+                    $errs[self::FIELD_USE_CONTEXT][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_EXPERIMENTAL])) {
-            $v = $this->getExperimental();
-            foreach($validationRules[self::FIELD_EXPERIMENTAL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_EXPERIMENTAL, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_JURISDICTION])) {
+            $v = $this->getJurisdiction();
+            foreach($validationRules[self::FIELD_JURISDICTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_JURISDICTION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EXPERIMENTAL])) {
-                        $errs[self::FIELD_EXPERIMENTAL] = [];
+                    if (!isset($errs[self::FIELD_JURISDICTION])) {
+                        $errs[self::FIELD_JURISDICTION] = [];
                     }
-                    $errs[self::FIELD_EXPERIMENTAL][$rule] = $err;
+                    $errs[self::FIELD_JURISDICTION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PURPOSE])) {
+            $v = $this->getPurpose();
+            foreach($validationRules[self::FIELD_PURPOSE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_PURPOSE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PURPOSE])) {
+                        $errs[self::FIELD_PURPOSE] = [];
+                    }
+                    $errs[self::FIELD_PURPOSE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COPYRIGHT])) {
+            $v = $this->getCopyright();
+            foreach($validationRules[self::FIELD_COPYRIGHT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_COPYRIGHT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COPYRIGHT])) {
+                        $errs[self::FIELD_COPYRIGHT] = [];
+                    }
+                    $errs[self::FIELD_COPYRIGHT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_KIND])) {
+            $v = $this->getKind();
+            foreach($validationRules[self::FIELD_KIND] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_KIND, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_KIND])) {
+                        $errs[self::FIELD_KIND] = [];
+                    }
+                    $errs[self::FIELD_KIND][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INSTANTIATES])) {
+            $v = $this->getInstantiates();
+            foreach($validationRules[self::FIELD_INSTANTIATES] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_INSTANTIATES, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INSTANTIATES])) {
+                        $errs[self::FIELD_INSTANTIATES] = [];
+                    }
+                    $errs[self::FIELD_INSTANTIATES][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_IMPORTS])) {
+            $v = $this->getImports();
+            foreach($validationRules[self::FIELD_IMPORTS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_IMPORTS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_IMPORTS])) {
+                        $errs[self::FIELD_IMPORTS] = [];
+                    }
+                    $errs[self::FIELD_IMPORTS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SOFTWARE])) {
+            $v = $this->getSoftware();
+            foreach($validationRules[self::FIELD_SOFTWARE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_SOFTWARE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SOFTWARE])) {
+                        $errs[self::FIELD_SOFTWARE] = [];
+                    }
+                    $errs[self::FIELD_SOFTWARE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_IMPLEMENTATION])) {
+            $v = $this->getImplementation();
+            foreach($validationRules[self::FIELD_IMPLEMENTATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_IMPLEMENTATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_IMPLEMENTATION])) {
+                        $errs[self::FIELD_IMPLEMENTATION] = [];
+                    }
+                    $errs[self::FIELD_IMPLEMENTATION][$rule] = $err;
                 }
             }
         }
@@ -2802,15 +2722,15 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_IMPLEMENTATION])) {
-            $v = $this->getImplementation();
-            foreach($validationRules[self::FIELD_IMPLEMENTATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_IMPLEMENTATION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PATCH_FORMAT])) {
+            $v = $this->getPatchFormat();
+            foreach($validationRules[self::FIELD_PATCH_FORMAT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_PATCH_FORMAT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_IMPLEMENTATION])) {
-                        $errs[self::FIELD_IMPLEMENTATION] = [];
+                    if (!isset($errs[self::FIELD_PATCH_FORMAT])) {
+                        $errs[self::FIELD_PATCH_FORMAT] = [];
                     }
-                    $errs[self::FIELD_IMPLEMENTATION][$rule] = $err;
+                    $errs[self::FIELD_PATCH_FORMAT][$rule] = $err;
                 }
             }
         }
@@ -2826,51 +2746,15 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_IMPORTS])) {
-            $v = $this->getImports();
-            foreach($validationRules[self::FIELD_IMPORTS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_IMPORTS, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_REST])) {
+            $v = $this->getRest();
+            foreach($validationRules[self::FIELD_REST] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_REST, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_IMPORTS])) {
-                        $errs[self::FIELD_IMPORTS] = [];
+                    if (!isset($errs[self::FIELD_REST])) {
+                        $errs[self::FIELD_REST] = [];
                     }
-                    $errs[self::FIELD_IMPORTS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INSTANTIATES])) {
-            $v = $this->getInstantiates();
-            foreach($validationRules[self::FIELD_INSTANTIATES] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_INSTANTIATES, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INSTANTIATES])) {
-                        $errs[self::FIELD_INSTANTIATES] = [];
-                    }
-                    $errs[self::FIELD_INSTANTIATES][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_JURISDICTION])) {
-            $v = $this->getJurisdiction();
-            foreach($validationRules[self::FIELD_JURISDICTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_JURISDICTION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_JURISDICTION])) {
-                        $errs[self::FIELD_JURISDICTION] = [];
-                    }
-                    $errs[self::FIELD_JURISDICTION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_KIND])) {
-            $v = $this->getKind();
-            foreach($validationRules[self::FIELD_KIND] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_KIND, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_KIND])) {
-                        $errs[self::FIELD_KIND] = [];
-                    }
-                    $errs[self::FIELD_KIND][$rule] = $err;
+                    $errs[self::FIELD_REST][$rule] = $err;
                 }
             }
         }
@@ -2886,135 +2770,27 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_NAME])) {
-            $v = $this->getName();
-            foreach($validationRules[self::FIELD_NAME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_NAME, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_DOCUMENT])) {
+            $v = $this->getDocument();
+            foreach($validationRules[self::FIELD_DOCUMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_DOCUMENT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NAME])) {
-                        $errs[self::FIELD_NAME] = [];
+                    if (!isset($errs[self::FIELD_DOCUMENT])) {
+                        $errs[self::FIELD_DOCUMENT] = [];
                     }
-                    $errs[self::FIELD_NAME][$rule] = $err;
+                    $errs[self::FIELD_DOCUMENT][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PATCH_FORMAT])) {
-            $v = $this->getPatchFormat();
-            foreach($validationRules[self::FIELD_PATCH_FORMAT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_PATCH_FORMAT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PATCH_FORMAT])) {
-                        $errs[self::FIELD_PATCH_FORMAT] = [];
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
                     }
-                    $errs[self::FIELD_PATCH_FORMAT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PUBLISHER])) {
-            $v = $this->getPublisher();
-            foreach($validationRules[self::FIELD_PUBLISHER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_PUBLISHER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PUBLISHER])) {
-                        $errs[self::FIELD_PUBLISHER] = [];
-                    }
-                    $errs[self::FIELD_PUBLISHER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PURPOSE])) {
-            $v = $this->getPurpose();
-            foreach($validationRules[self::FIELD_PURPOSE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_PURPOSE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PURPOSE])) {
-                        $errs[self::FIELD_PURPOSE] = [];
-                    }
-                    $errs[self::FIELD_PURPOSE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_REST])) {
-            $v = $this->getRest();
-            foreach($validationRules[self::FIELD_REST] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_REST, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REST])) {
-                        $errs[self::FIELD_REST] = [];
-                    }
-                    $errs[self::FIELD_REST][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SOFTWARE])) {
-            $v = $this->getSoftware();
-            foreach($validationRules[self::FIELD_SOFTWARE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_SOFTWARE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SOFTWARE])) {
-                        $errs[self::FIELD_SOFTWARE] = [];
-                    }
-                    $errs[self::FIELD_SOFTWARE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_STATUS])) {
-            $v = $this->getStatus();
-            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_STATUS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_STATUS])) {
-                        $errs[self::FIELD_STATUS] = [];
-                    }
-                    $errs[self::FIELD_STATUS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TITLE])) {
-            $v = $this->getTitle();
-            foreach($validationRules[self::FIELD_TITLE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_TITLE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TITLE])) {
-                        $errs[self::FIELD_TITLE] = [];
-                    }
-                    $errs[self::FIELD_TITLE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_URL])) {
-            $v = $this->getUrl();
-            foreach($validationRules[self::FIELD_URL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_URL, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_URL])) {
-                        $errs[self::FIELD_URL] = [];
-                    }
-                    $errs[self::FIELD_URL][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_USE_CONTEXT])) {
-            $v = $this->getUseContext();
-            foreach($validationRules[self::FIELD_USE_CONTEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_USE_CONTEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_USE_CONTEXT])) {
-                        $errs[self::FIELD_USE_CONTEXT] = [];
-                    }
-                    $errs[self::FIELD_USE_CONTEXT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_VERSION])) {
-            $v = $this->getVersion();
-            foreach($validationRules[self::FIELD_VERSION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CAPABILITY_STATEMENT, self::FIELD_VERSION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VERSION])) {
-                        $errs[self::FIELD_VERSION] = [];
-                    }
-                    $errs[self::FIELD_VERSION][$rule] = $err;
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -3054,18 +2830,6 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -3075,6 +2839,18 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -3102,700 +2878,817 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRCapabilityStatement::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRCapabilityStatement::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRCapabilityStatement;
-        } elseif (!is_object($type) || !($type instanceof FHIRCapabilityStatement)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRCapabilityStatement)) {
             throw new \RuntimeException(sprintf(
-                'FHIRCapabilityStatement::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRCapabilityStatement or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_URL === $childName) {
+                $type->setUrl(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_VERSION === $childName) {
+                $type->setVersion(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_NAME === $childName) {
+                $type->setName(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_TITLE === $childName) {
+                $type->setTitle(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_STATUS === $childName) {
+                $type->setStatus(FHIRPublicationStatus::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXPERIMENTAL === $childName) {
+                $type->setExperimental(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_DATE === $childName) {
+                $type->setDate(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PUBLISHER === $childName) {
+                $type->setPublisher(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CONTACT === $childName) {
+                $type->addContact(FHIRContactDetail::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DESCRIPTION === $childName) {
+                $type->setDescription(FHIRMarkdown::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_USE_CONTEXT === $childName) {
+                $type->addUseContext(FHIRUsageContext::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_JURISDICTION === $childName) {
+                $type->addJurisdiction(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PURPOSE === $childName) {
+                $type->setPurpose(FHIRMarkdown::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_COPYRIGHT === $childName) {
+                $type->setCopyright(FHIRMarkdown::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_KIND === $childName) {
+                $type->setKind(FHIRCapabilityStatementKind::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_INSTANTIATES === $childName) {
+                $type->addInstantiates(FHIRCanonical::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_IMPORTS === $childName) {
+                $type->addImports(FHIRCanonical::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_SOFTWARE === $childName) {
+                $type->setSoftware(FHIRCapabilityStatementSoftware::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_IMPLEMENTATION === $childName) {
+                $type->setImplementation(FHIRCapabilityStatementImplementation::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_FHIR_VERSION === $childName) {
+                $type->setFhirVersion(FHIRFHIRVersion::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_FORMAT === $childName) {
+                $type->addFormat(FHIRCode::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PATCH_FORMAT === $childName) {
+                $type->addPatchFormat(FHIRCode::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_IMPLEMENTATION_GUIDE === $childName) {
+                $type->addImplementationGuide(FHIRCanonical::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_REST === $childName) {
+                $type->addRest(FHIRCapabilityStatementRest::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MESSAGING === $childName) {
+                $type->addMessaging(FHIRCapabilityStatementMessaging::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DOCUMENT === $childName) {
+                $type->addDocument(FHIRCapabilityStatementDocument::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TEXT === $childName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CONTAINED === $childName) {
+                foreach ($n->children() as $nn) {
+                    $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn, $config));
+                }
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRId::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_META === $childName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_IMPLICIT_RULES === $childName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_LANGUAGE === $childName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->contact)) {
-            foreach($children->contact as $child) {
-                $type->addContact(FHIRContactDetail::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->copyright)) {
-            $type->setCopyright(FHIRMarkdown::xmlUnserialize($children->copyright));
-        }
-        if (isset($attributes->copyright)) {
-            $pt = $type->getCopyright();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->copyright);
-            } else {
-                $type->setCopyright((string)$attributes->copyright);
-            }
-        }
-        if (isset($children->date)) {
-            $type->setDate(FHIRDateTime::xmlUnserialize($children->date));
-        }
-        if (isset($attributes->date)) {
-            $pt = $type->getDate();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->date);
-            } else {
-                $type->setDate((string)$attributes->date);
-            }
-        }
-        if (isset($children->description)) {
-            $type->setDescription(FHIRMarkdown::xmlUnserialize($children->description));
-        }
-        if (isset($attributes->description)) {
-            $pt = $type->getDescription();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->description);
-            } else {
-                $type->setDescription((string)$attributes->description);
-            }
-        }
-        if (isset($children->document)) {
-            foreach($children->document as $child) {
-                $type->addDocument(FHIRCapabilityStatementDocument::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->experimental)) {
-            $type->setExperimental(FHIRBoolean::xmlUnserialize($children->experimental));
-        }
-        if (isset($attributes->experimental)) {
-            $pt = $type->getExperimental();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->experimental);
-            } else {
-                $type->setExperimental((string)$attributes->experimental);
-            }
-        }
-        if (isset($children->fhirVersion)) {
-            $type->setFhirVersion(FHIRFHIRVersion::xmlUnserialize($children->fhirVersion));
-        }
-        if (isset($children->format)) {
-            foreach($children->format as $child) {
-                $type->addFormat(FHIRCode::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->implementation)) {
-            $type->setImplementation(FHIRCapabilityStatementImplementation::xmlUnserialize($children->implementation));
-        }
-        if (isset($children->implementationGuide)) {
-            foreach($children->implementationGuide as $child) {
-                $type->addImplementationGuide(FHIRCanonical::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->imports)) {
-            foreach($children->imports as $child) {
-                $type->addImports(FHIRCanonical::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->instantiates)) {
-            foreach($children->instantiates as $child) {
-                $type->addInstantiates(FHIRCanonical::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->jurisdiction)) {
-            foreach($children->jurisdiction as $child) {
-                $type->addJurisdiction(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->kind)) {
-            $type->setKind(FHIRCapabilityStatementKind::xmlUnserialize($children->kind));
-        }
-        if (isset($children->messaging)) {
-            foreach($children->messaging as $child) {
-                $type->addMessaging(FHIRCapabilityStatementMessaging::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->name)) {
-            $type->setName(FHIRString::xmlUnserialize($children->name));
-        }
-        if (isset($attributes->name)) {
-            $pt = $type->getName();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->name);
-            } else {
-                $type->setName((string)$attributes->name);
-            }
-        }
-        if (isset($children->patchFormat)) {
-            foreach($children->patchFormat as $child) {
-                $type->addPatchFormat(FHIRCode::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->publisher)) {
-            $type->setPublisher(FHIRString::xmlUnserialize($children->publisher));
-        }
-        if (isset($attributes->publisher)) {
-            $pt = $type->getPublisher();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->publisher);
-            } else {
-                $type->setPublisher((string)$attributes->publisher);
-            }
-        }
-        if (isset($children->purpose)) {
-            $type->setPurpose(FHIRMarkdown::xmlUnserialize($children->purpose));
-        }
-        if (isset($attributes->purpose)) {
-            $pt = $type->getPurpose();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->purpose);
-            } else {
-                $type->setPurpose((string)$attributes->purpose);
-            }
-        }
-        if (isset($children->rest)) {
-            foreach($children->rest as $child) {
-                $type->addRest(FHIRCapabilityStatementRest::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->software)) {
-            $type->setSoftware(FHIRCapabilityStatementSoftware::xmlUnserialize($children->software));
-        }
-        if (isset($children->status)) {
-            $type->setStatus(FHIRPublicationStatus::xmlUnserialize($children->status));
-        }
-        if (isset($children->title)) {
-            $type->setTitle(FHIRString::xmlUnserialize($children->title));
-        }
-        if (isset($attributes->title)) {
-            $pt = $type->getTitle();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->title);
-            } else {
-                $type->setTitle((string)$attributes->title);
-            }
-        }
-        if (isset($children->url)) {
-            $type->setUrl(FHIRUri::xmlUnserialize($children->url));
-        }
-        if (isset($attributes->url)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_URL])) {
             $pt = $type->getUrl();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->url);
+                $pt->setValue((string)$attributes[self::FIELD_URL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setUrl((string)$attributes->url);
+                $type->setUrl((string)$attributes[self::FIELD_URL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->useContext)) {
-            foreach($children->useContext as $child) {
-                $type->addUseContext(FHIRUsageContext::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->version)) {
-            $type->setVersion(FHIRString::xmlUnserialize($children->version));
-        }
-        if (isset($attributes->version)) {
+        if (isset($attributes[self::FIELD_VERSION])) {
             $pt = $type->getVersion();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->version);
+                $pt->setValue((string)$attributes[self::FIELD_VERSION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setVersion((string)$attributes->version);
+                $type->setVersion((string)$attributes[self::FIELD_VERSION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_NAME])) {
+            $pt = $type->getName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setName((string)$attributes[self::FIELD_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_TITLE])) {
+            $pt = $type->getTitle();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_TITLE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setTitle((string)$attributes[self::FIELD_TITLE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_EXPERIMENTAL])) {
+            $pt = $type->getExperimental();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_EXPERIMENTAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setExperimental((string)$attributes[self::FIELD_EXPERIMENTAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_DATE])) {
+            $pt = $type->getDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setDate((string)$attributes[self::FIELD_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_PUBLISHER])) {
+            $pt = $type->getPublisher();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_PUBLISHER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setPublisher((string)$attributes[self::FIELD_PUBLISHER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_DESCRIPTION])) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_DESCRIPTION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_PURPOSE])) {
+            $pt = $type->getPurpose();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_PURPOSE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setPurpose((string)$attributes[self::FIELD_PURPOSE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_COPYRIGHT])) {
+            $pt = $type->getCopyright();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_COPYRIGHT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setCopyright((string)$attributes[self::FIELD_COPYRIGHT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_INSTANTIATES])) {
+            $type->addInstantiates((string)$attributes[self::FIELD_INSTANTIATES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_IMPORTS])) {
+            $type->addImports((string)$attributes[self::FIELD_IMPORTS], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_FORMAT])) {
+            $type->addFormat((string)$attributes[self::FIELD_FORMAT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_PATCH_FORMAT])) {
+            $type->addPatchFormat((string)$attributes[self::FIELD_PATCH_FORMAT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_IMPLEMENTATION_GUIDE])) {
+            $type->addImplementationGuide((string)$attributes[self::FIELD_IMPLEMENTATION_GUIDE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_LANGUAGE])) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getContact())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTACT, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getCopyright())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COPYRIGHT, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'CapabilityStatement', $this->_getSourceXmlns());
         }
-        if ([] !== ($vs = $this->getDocument())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENT, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_URL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getUrl())) {
+            $xw->writeAttribute(self::FIELD_URL, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getExperimental())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXPERIMENTAL, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VERSION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getVersion())) {
+            $xw->writeAttribute(self::FIELD_VERSION, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getFhirVersion())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FHIR_VERSION, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getName())) {
+            $xw->writeAttribute(self::FIELD_NAME, $v->getValue()?->getFormattedValue());
         }
-        if ([] !== ($vs = $this->getFormat())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_FORMAT, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TITLE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTitle())) {
+            $xw->writeAttribute(self::FIELD_TITLE, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getImplementation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IMPLEMENTATION, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_EXPERIMENTAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getExperimental())) {
+            $xw->writeAttribute(self::FIELD_EXPERIMENTAL, $v->getValue()?->getFormattedValue());
         }
-        if ([] !== ($vs = $this->getImplementationGuide())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IMPLEMENTATION_GUIDE, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDate())) {
+            $xw->writeAttribute(self::FIELD_DATE, $v->getValue()?->getFormattedValue());
         }
-        if ([] !== ($vs = $this->getImports())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IMPORTS, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PUBLISHER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPublisher())) {
+            $xw->writeAttribute(self::FIELD_PUBLISHER, $v->getValue()?->getFormattedValue());
         }
-        if ([] !== ($vs = $this->getInstantiates())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANTIATES, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDescription())) {
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $v->getValue()?->getFormattedValue());
         }
-        if ([] !== ($vs = $this->getJurisdiction())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_JURISDICTION, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PURPOSE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPurpose())) {
+            $xw->writeAttribute(self::FIELD_PURPOSE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_COPYRIGHT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCopyright())) {
+            $xw->writeAttribute(self::FIELD_COPYRIGHT, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getInstantiates())) {
+            $xw->writeAttribute(self::FIELD_INSTANTIATES, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getInstantiates()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_INSTANTIATES, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IMPORTS] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getImports())) {
+            $xw->writeAttribute(self::FIELD_IMPORTS, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getImports()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_IMPORTS, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_FORMAT] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getFormat())) {
+            $xw->writeAttribute(self::FIELD_FORMAT, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getFormat()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_FORMAT, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PATCH_FORMAT] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getPatchFormat())) {
+            $xw->writeAttribute(self::FIELD_PATCH_FORMAT, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getPatchFormat()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_PATCH_FORMAT, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IMPLEMENTATION_GUIDE] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getImplementationGuide())) {
+            $xw->writeAttribute(self::FIELD_IMPLEMENTATION_GUIDE, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getImplementationGuide()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_IMPLEMENTATION_GUIDE, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_URL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getUrl())) {
+            $xw->startElement(self::FIELD_URL);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VERSION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getVersion())) {
+            $xw->startElement(self::FIELD_VERSION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getName())) {
+            $xw->startElement(self::FIELD_NAME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TITLE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTitle())) {
+            $xw->startElement(self::FIELD_TITLE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getStatus())) {
+            $xw->startElement(self::FIELD_STATUS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_EXPERIMENTAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getExperimental())) {
+            $xw->startElement(self::FIELD_EXPERIMENTAL);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDate())) {
+            $xw->startElement(self::FIELD_DATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PUBLISHER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPublisher())) {
+            $xw->startElement(self::FIELD_PUBLISHER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getContact() as $v) {
+            $xw->startElement(self::FIELD_CONTACT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDescription())) {
+            $xw->startElement(self::FIELD_DESCRIPTION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getUseContext() as $v) {
+            $xw->startElement(self::FIELD_USE_CONTEXT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getJurisdiction() as $v) {
+            $xw->startElement(self::FIELD_JURISDICTION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PURPOSE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPurpose())) {
+            $xw->startElement(self::FIELD_PURPOSE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_COPYRIGHT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCopyright())) {
+            $xw->startElement(self::FIELD_COPYRIGHT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getKind())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_KIND, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_KIND);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getMessaging())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INSTANTIATES] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getInstantiates())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_INSTANTIATES);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MESSAGING, null, $v->_getFHIRXMLNamespace()));
             }
         }
-        if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getPatchFormat())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IMPORTS] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getImports())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_IMPORTS);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PATCH_FORMAT, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getPublisher())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PUBLISHER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPurpose())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PURPOSE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getRest())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REST, null, $v->_getFHIRXMLNamespace()));
             }
         }
         if (null !== ($v = $this->getSoftware())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOFTWARE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_SOFTWARE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getImplementation())) {
+            $xw->startElement(self::FIELD_IMPLEMENTATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getTitle())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TITLE, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getFhirVersion())) {
+            $xw->startElement(self::FIELD_FHIR_VERSION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getUrl())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_URL, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getUseContext())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_FORMAT] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getFormat())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_FORMAT);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_USE_CONTEXT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-        if (null !== ($v = $this->getVersion())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VERSION, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PATCH_FORMAT] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getPatchFormat())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_PATCH_FORMAT);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
+                }
+            }
         }
-        return $sxe;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IMPLEMENTATION_GUIDE] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getImplementationGuide())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_IMPLEMENTATION_GUIDE);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
+                }
+            }
+        }
+        foreach ($this->getRest() as $v) {
+            $xw->startElement(self::FIELD_REST);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getMessaging() as $v) {
+            $xw->startElement(self::FIELD_MESSAGING);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getDocument() as $v) {
+            $xw->startElement(self::FIELD_DOCUMENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getContact())) {
-            $a[self::FIELD_CONTACT] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CONTACT][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getCopyright())) {
-            $a[self::FIELD_COPYRIGHT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMarkdown::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRMarkdown::FIELD_VALUE]);
-                $a[self::FIELD_COPYRIGHT_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getDate())) {
-            $a[self::FIELD_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_DATE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMarkdown::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRMarkdown::FIELD_VALUE]);
-                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getDocument())) {
-            $a[self::FIELD_DOCUMENT] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_DOCUMENT][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getExperimental())) {
-            $a[self::FIELD_EXPERIMENTAL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_EXPERIMENTAL_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getFhirVersion())) {
-            $a[self::FIELD_FHIR_VERSION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRFHIRVersion::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRFHIRVersion::FIELD_VALUE]);
-                $a[self::FIELD_FHIR_VERSION_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getFormat())) {
-            $a[self::FIELD_FORMAT] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_FORMAT][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRCode::FIELD_VALUE]) || array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRCode::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_FORMAT_EXT] = $encs;
-            }
-        }
-        if (null !== ($v = $this->getImplementation())) {
-            $a[self::FIELD_IMPLEMENTATION] = $v;
-        }
-        if ([] !== ($vs = $this->getImplementationGuide())) {
-            $a[self::FIELD_IMPLEMENTATION_GUIDE] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IMPLEMENTATION_GUIDE][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRCanonical::FIELD_VALUE]) || array_key_exists(FHIRCanonical::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRCanonical::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_IMPLEMENTATION_GUIDE_EXT] = $encs;
-            }
-        }
-        if ([] !== ($vs = $this->getImports())) {
-            $a[self::FIELD_IMPORTS] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IMPORTS][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRCanonical::FIELD_VALUE]) || array_key_exists(FHIRCanonical::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRCanonical::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_IMPORTS_EXT] = $encs;
-            }
-        }
-        if ([] !== ($vs = $this->getInstantiates())) {
-            $a[self::FIELD_INSTANTIATES] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_INSTANTIATES][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRCanonical::FIELD_VALUE]) || array_key_exists(FHIRCanonical::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRCanonical::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_INSTANTIATES_EXT] = $encs;
-            }
-        }
-        if ([] !== ($vs = $this->getJurisdiction())) {
-            $a[self::FIELD_JURISDICTION] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_JURISDICTION][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getKind())) {
-            $a[self::FIELD_KIND] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCapabilityStatementKind::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCapabilityStatementKind::FIELD_VALUE]);
-                $a[self::FIELD_KIND_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getMessaging())) {
-            $a[self::FIELD_MESSAGING] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_MESSAGING][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_NAME_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getPatchFormat())) {
-            $a[self::FIELD_PATCH_FORMAT] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PATCH_FORMAT][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRCode::FIELD_VALUE]) || array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRCode::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
-            }
-            if ($encValued) {
-                $a[self::FIELD_PATCH_FORMAT_EXT] = $encs;
-            }
-        }
-        if (null !== ($v = $this->getPublisher())) {
-            $a[self::FIELD_PUBLISHER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_PUBLISHER_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getPurpose())) {
-            $a[self::FIELD_PURPOSE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMarkdown::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRMarkdown::FIELD_VALUE]);
-                $a[self::FIELD_PURPOSE_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getRest())) {
-            $a[self::FIELD_REST] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_REST][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getSoftware())) {
-            $a[self::FIELD_SOFTWARE] = $v;
-        }
-        if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPublicationStatus::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPublicationStatus::FIELD_VALUE]);
-                $a[self::FIELD_STATUS_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getTitle())) {
-            $a[self::FIELD_TITLE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_TITLE_EXT] = $enc;
-            }
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getUrl())) {
-            $a[self::FIELD_URL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_URL_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_URL} = $val;
             }
-        }
-        if ([] !== ($vs = $this->getUseContext())) {
-            $a[self::FIELD_USE_CONTEXT] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_USE_CONTEXT][] = $v;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRUri::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_URL_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getVersion())) {
-            $a[self::FIELD_VERSION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_VERSION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_VERSION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_VERSION_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getName())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_NAME} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_NAME_EXT} = $ext;
+            }
         }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
-    }
+        if (null !== ($v = $this->getTitle())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_TITLE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_TITLE_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_STATUS} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRPublicationStatus::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_STATUS_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getExperimental())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_EXPERIMENTAL} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_EXPERIMENTAL_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DATE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DATE_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PUBLISHER} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PUBLISHER_EXT} = $ext;
+            }
+        }
+        if ([] !== ($vs = $this->getContact())) {
+            $out->{self::FIELD_CONTACT} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_CONTACT}[] = $v;
+            }
+        }
+        if (null !== ($v = $this->getDescription())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DESCRIPTION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRMarkdown::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DESCRIPTION_EXT} = $ext;
+            }
+        }
+        if ([] !== ($vs = $this->getUseContext())) {
+            $out->{self::FIELD_USE_CONTEXT} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_USE_CONTEXT}[] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->getJurisdiction())) {
+            $out->{self::FIELD_JURISDICTION} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_JURISDICTION}[] = $v;
+            }
+        }
+        if (null !== ($v = $this->getPurpose())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PURPOSE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRMarkdown::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PURPOSE_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getCopyright())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_COPYRIGHT} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRMarkdown::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_COPYRIGHT_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getKind())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_KIND} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRCapabilityStatementKind::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_KIND_EXT} = $ext;
+            }
+        }
+        if ([] !== ($vs = $this->getInstantiates())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRCanonical::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->{self::FIELD_INSTANTIATES} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_INSTANTIATES_EXT} = $exts;
+            }
+        }
+        if ([] !== ($vs = $this->getImports())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRCanonical::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->{self::FIELD_IMPORTS} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_IMPORTS_EXT} = $exts;
+            }
+        }
+        if (null !== ($v = $this->getSoftware())) {
+            $out->{self::FIELD_SOFTWARE} = $v;
+        }
+        if (null !== ($v = $this->getImplementation())) {
+            $out->{self::FIELD_IMPLEMENTATION} = $v;
+        }
+        if (null !== ($v = $this->getFhirVersion())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_FHIR_VERSION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRFHIRVersion::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_FHIR_VERSION_EXT} = $ext;
+            }
+        }
+        if ([] !== ($vs = $this->getFormat())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRCode::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->{self::FIELD_FORMAT} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_FORMAT_EXT} = $exts;
+            }
+        }
+        if ([] !== ($vs = $this->getPatchFormat())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRCode::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->{self::FIELD_PATCH_FORMAT} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PATCH_FORMAT_EXT} = $exts;
+            }
+        }
+        if ([] !== ($vs = $this->getImplementationGuide())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRCanonical::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->{self::FIELD_IMPLEMENTATION_GUIDE} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_IMPLEMENTATION_GUIDE_EXT} = $exts;
+            }
+        }
+        if ([] !== ($vs = $this->getRest())) {
+            $out->{self::FIELD_REST} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_REST}[] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->getMessaging())) {
+            $out->{self::FIELD_MESSAGING} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_MESSAGING}[] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->getDocument())) {
+            $out->{self::FIELD_DOCUMENT} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_DOCUMENT}[] = $v;
+            }
+        }
 
+        $out->{PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE} = $this->_getResourceType();
+
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProvenance;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProve
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,10 +63,16 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProve
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProvenanceEntityRole;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Provenance of a resource is a record that describes entities and processes
@@ -86,14 +92,32 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_ENTITY;
-    const FIELD_AGENT = 'agent';
+
     const FIELD_ROLE = 'role';
     const FIELD_ROLE_EXT = '_role';
     const FIELD_WHAT = 'what';
+    const FIELD_AGENT = 'agent';
 
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
+    /**
+     * How an entity was used in an activity.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * How the entity was used during the activity.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProvenanceEntityRole
+     */
+    protected null|FHIRProvenanceEntityRole $role = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identity of the Entity used. May be a logical or physical uri and maybe absolute
+     * or relative.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $what = null;
     /**
      * Provenance of a resource is a record that describes entities and processes
      * involved in producing and delivering or otherwise influencing that resource.
@@ -112,7 +136,75 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[]
      */
-    protected $agent = [];
+    protected null|array $agent = [];
+
+    /**
+     * Validation map for fields in type Provenance.Entity
+     * @var array
+     */
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
+
+    /**
+     * FHIRProvenanceEntity Constructor
+     * @param null|array $data
+     */
+    public function __construct(null|array $data = null)
+    {
+        if (null === $data || [] === $data) {
+            return;
+        }
+        parent::__construct($data);
+        if (array_key_exists(self::FIELD_ROLE, $data) || array_key_exists(self::FIELD_ROLE_EXT, $data)) {
+            $value = $data[self::FIELD_ROLE] ?? null;
+            $ext = (isset($data[self::FIELD_ROLE_EXT]) && is_array($data[self::FIELD_ROLE_EXT])) ? $data[self::FIELD_ROLE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRProvenanceEntityRole) {
+                    $this->setRole($value);
+                } else if (is_array($value)) {
+                    $this->setRole(new FHIRProvenanceEntityRole(array_merge($ext, $value)));
+                } else {
+                    $this->setRole(new FHIRProvenanceEntityRole([FHIRProvenanceEntityRole::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setRole(new FHIRProvenanceEntityRole($ext));
+            } else {
+                $this->setRole(new FHIRProvenanceEntityRole(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_WHAT, $data)) {
+            if ($data[self::FIELD_WHAT] instanceof FHIRReference) {
+                $this->setWhat($data[self::FIELD_WHAT]);
+            } else {
+                $this->setWhat(new FHIRReference($data[self::FIELD_WHAT]));
+            }
+        }
+        if (array_key_exists(self::FIELD_AGENT, $data)) {
+            if (is_array($data[self::FIELD_AGENT])) {
+                foreach($data[self::FIELD_AGENT] as $v) {
+                    if ($v instanceof FHIRProvenanceAgent) {
+                        $this->addAgent($v);
+                    } else {
+                        $this->addAgent(new FHIRProvenanceAgent($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_AGENT] instanceof FHIRProvenanceAgent) {
+                $this->addAgent($data[self::FIELD_AGENT]);
+            } else {
+                $this->addAgent(new FHIRProvenanceAgent($data[self::FIELD_AGENT]));
+            }
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function _getFhirTypeName(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
 
     /**
      * How an entity was used in an activity.
@@ -120,9 +212,31 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * How the entity was used during the activity.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProvenanceEntityRole
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProvenanceEntityRole
      */
-    protected $role = null;
+    public function getRole(): null|FHIRProvenanceEntityRole
+    {
+        return $this->role;
+    }
+
+    /**
+     * How an entity was used in an activity.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * How the entity was used during the activity.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProvenanceEntityRole $role
+     * @return static
+     */
+    public function setRole(null|FHIRProvenanceEntityRole $role = null): self
+    {
+        if (null === $role) {
+            $role = new FHIRProvenanceEntityRole();
+        }
+        $this->_trackValueSet($this->role, $role);
+        $this->role = $role;
+        return $this;
+    }
 
     /**
      * A reference from one resource to another.
@@ -132,100 +246,32 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    protected $what = null;
-
-    /**
-     * Validation map for fields in type Provenance.Entity
-     * @var array
-     */
-    private static $_validationRules = [    ];
-
-    /**
-     * FHIRProvenanceEntity Constructor
-     * @param null|array $data
-     */
-    public function __construct($data = null)
+    public function getWhat(): null|FHIRReference
     {
-        if (null === $data || [] === $data) {
-            return;
-        }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRProvenanceEntity::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
-        parent::__construct($data);
-        if (isset($data[self::FIELD_AGENT])) {
-            if (is_array($data[self::FIELD_AGENT])) {
-                foreach($data[self::FIELD_AGENT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRProvenanceAgent) {
-                        $this->addAgent($v);
-                    } else {
-                        $this->addAgent(new FHIRProvenanceAgent($v));
-                    }
-                }
-            } else if ($data[self::FIELD_AGENT] instanceof FHIRProvenanceAgent) {
-                $this->addAgent($data[self::FIELD_AGENT]);
-            } else {
-                $this->addAgent(new FHIRProvenanceAgent($data[self::FIELD_AGENT]));
-            }
-        }
-        if (isset($data[self::FIELD_ROLE]) || isset($data[self::FIELD_ROLE_EXT])) {
-            if (isset($data[self::FIELD_ROLE])) {
-                $value = $data[self::FIELD_ROLE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ROLE_EXT]) && is_array($data[self::FIELD_ROLE_EXT])) {
-                $ext = $data[self::FIELD_ROLE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRProvenanceEntityRole) {
-                    $this->setRole($value);
-                } else if (is_array($value)) {
-                    $this->setRole(new FHIRProvenanceEntityRole(array_merge($ext, $value)));
-                } else {
-                    $this->setRole(new FHIRProvenanceEntityRole([FHIRProvenanceEntityRole::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setRole(new FHIRProvenanceEntityRole($ext));
-            }
-        }
-        if (isset($data[self::FIELD_WHAT])) {
-            if ($data[self::FIELD_WHAT] instanceof FHIRReference) {
-                $this->setWhat($data[self::FIELD_WHAT]);
-            } else {
-                $this->setWhat(new FHIRReference($data[self::FIELD_WHAT]));
-            }
-        }
+        return $this->what;
     }
 
     /**
-     * @return string
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identity of the Entity used. May be a logical or physical uri and maybe absolute
+     * or relative.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $what
+     * @return static
      */
-    public function _getFHIRTypeName()
+    public function setWhat(null|FHIRReference $what = null): self
     {
-        return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
+        if (null === $what) {
+            $what = new FHIRReference();
         }
-        return "<ProvenanceEntity{$xmlns}></ProvenanceEntity>";
+        $this->_trackValueSet($this->what, $what);
+        $this->what = $what;
+        return $this;
     }
 
     /**
@@ -246,7 +292,7 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[]
      */
-    public function getAgent()
+    public function getAgent(): null|array
     {
         return $this->agent;
     }
@@ -270,104 +316,13 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent $agent
      * @return static
      */
-    public function addAgent(FHIRProvenanceAgent $agent = null)
+    public function addAgent(null|FHIRProvenanceAgent $agent = null): self
     {
+        if (null === $agent) {
+            $agent = new FHIRProvenanceAgent();
+        }
+        $this->_trackValueAdded();
         $this->agent[] = $agent;
-        return $this;
-    }
-
-    /**
-     * Provenance of a resource is a record that describes entities and processes
-     * involved in producing and delivering or otherwise influencing that resource.
-     * Provenance provides a critical foundation for assessing authenticity, enabling
-     * trust, and allowing reproducibility. Provenance assertions are a form of
-     * contextual metadata and can themselves become important records with their own
-     * provenance. Provenance statement indicates clinical significance in terms of
-     * confidence in authenticity, reliability, and trustworthiness, integrity, and
-     * stage in lifecycle (e.g. Document Completion - has the artifact been legally
-     * authenticated), all of which may impact security, privacy, and trust policies.
-     *
-     * The entity is attributed to an agent to express the agent's responsibility for
-     * that entity, possibly along with other agents. This description can be
-     * understood as shorthand for saying that the agent was responsible for the
-     * activity which generated the entity.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[] $agent
-     * @return static
-     */
-    public function setAgent(array $agent = [])
-    {
-        $this->agent = [];
-        if ([] === $agent) {
-            return $this;
-        }
-        foreach($agent as $v) {
-            if ($v instanceof FHIRProvenanceAgent) {
-                $this->addAgent($v);
-            } else {
-                $this->addAgent(new FHIRProvenanceAgent($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * How an entity was used in an activity.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * How the entity was used during the activity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProvenanceEntityRole
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
-
-    /**
-     * How an entity was used in an activity.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * How the entity was used during the activity.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProvenanceEntityRole $role
-     * @return static
-     */
-    public function setRole(FHIRProvenanceEntityRole $role = null)
-    {
-        $this->role = $role;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identity of the Entity used. May be a logical or physical uri and maybe absolute
-     * or relative.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getWhat()
-    {
-        return $this->what;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identity of the Entity used. May be a logical or physical uri and maybe absolute
-     * or relative.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $what
-     * @return static
-     */
-    public function setWhat(FHIRReference $what = null)
-    {
-        $this->what = $what;
         return $this;
     }
 
@@ -377,9 +332,9 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -388,17 +343,10 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getAgent())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_AGENT, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getRole())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_ROLE] = $fieldErrs;
@@ -409,15 +357,10 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                 $errs[self::FIELD_WHAT] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_AGENT])) {
-            $v = $this->getAgent();
-            foreach($validationRules[self::FIELD_AGENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_ENTITY, self::FIELD_AGENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_AGENT])) {
-                        $errs[self::FIELD_AGENT] = [];
-                    }
-                    $errs[self::FIELD_AGENT][$rule] = $err;
+        if ([] !== ($vs = $this->getAgent())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_AGENT, $i)] = $fieldErrs;
                 }
             }
         }
@@ -442,6 +385,18 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
                         $errs[self::FIELD_WHAT] = [];
                     }
                     $errs[self::FIELD_WHAT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_AGENT])) {
+            $v = $this->getAgent();
+            foreach($validationRules[self::FIELD_AGENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROVENANCE_DOT_ENTITY, self::FIELD_AGENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_AGENT])) {
+                        $errs[self::FIELD_AGENT] = [];
+                    }
+                    $errs[self::FIELD_AGENT][$rule] = $err;
                 }
             }
         }
@@ -485,125 +440,149 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRProvenanceEntity::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRProvenanceEntity::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRProvenanceEntity;
-        } elseif (!is_object($type) || !($type instanceof FHIRProvenanceEntity)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRProvenanceEntity)) {
             throw new \RuntimeException(sprintf(
-                'FHIRProvenanceEntity::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_ROLE === $childName) {
+                $type->setRole(FHIRProvenanceEntityRole::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_WHAT === $childName) {
+                $type->setWhat(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_AGENT === $childName) {
+                $type->addAgent(FHIRProvenanceAgent::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->agent)) {
-            foreach($children->agent as $child) {
-                $type->addAgent(FHIRProvenanceAgent::xmlUnserialize($child));
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
-        }
-        if (isset($children->role)) {
-            $type->setRole(FHIRProvenanceEntityRole::xmlUnserialize($children->role));
-        }
-        if (isset($children->what)) {
-            $type->setWhat(FHIRReference::xmlUnserialize($children->what));
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getAgent())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_AGENT, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ProvenanceEntity', $this->_getSourceXmlns());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getRole())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_ROLE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getWhat())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHAT, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_WHAT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        foreach ($this->getAgent() as $v) {
+            $xw->startElement(self::FIELD_AGENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getAgent())) {
-            $a[self::FIELD_AGENT] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_AGENT][] = $v;
-            }
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getRole())) {
-            $a[self::FIELD_ROLE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRProvenanceEntityRole::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRProvenanceEntityRole::FIELD_VALUE]);
-                $a[self::FIELD_ROLE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_ROLE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRProvenanceEntityRole::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_ROLE_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getWhat())) {
-            $a[self::FIELD_WHAT] = $v;
+            $out->{self::FIELD_WHAT} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getAgent())) {
+            $out->{self::FIELD_AGENT} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_AGENT}[] = $v;
+            }
         }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

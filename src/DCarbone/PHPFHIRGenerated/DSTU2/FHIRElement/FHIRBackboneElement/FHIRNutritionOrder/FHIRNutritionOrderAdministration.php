@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,11 +63,17 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNu
  */
 
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRatio;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional
@@ -80,42 +86,11 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ADMINISTRATION;
+
+    const FIELD_SCHEDULE = 'schedule';
     const FIELD_QUANTITY = 'quantity';
     const FIELD_RATE_QUANTITY = 'rateQuantity';
     const FIELD_RATE_RATIO = 'rateRatio';
-    const FIELD_SCHEDULE = 'schedule';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * The volume of formula to provide to the patient per the specified administration
-     * schedule.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
-     */
-    protected $quantity = null;
-
-    /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
-     */
-    protected $rateQuantity = null;
-
-    /**
-     * A relationship of two Quantity values - expressed as a numerator and a
-     * denominator.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRatio
-     */
-    protected $rateRatio = null;
 
     /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
@@ -130,160 +105,89 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming
      */
-    protected $schedule = null;
+    protected null|FHIRTiming $schedule = null;
+    /**
+     * The volume of formula to provide to the patient per the specified administration
+     * schedule.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
+     */
+    protected null|FHIRSimpleQuantity $quantity = null;
+    /**
+     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
+     * according to the specified schedule.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
+     */
+    protected null|FHIRSimpleQuantity $rateQuantity = null;
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
+     * according to the specified schedule.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRatio
+     */
+    protected null|FHIRRatio $rateRatio = null;
 
     /**
      * Validation map for fields in type NutritionOrder.Administration
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRNutritionOrderAdministration Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRNutritionOrderAdministration::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_QUANTITY])) {
-            if ($data[self::FIELD_QUANTITY] instanceof FHIRSimpleQuantity) {
-                $this->setQuantity($data[self::FIELD_QUANTITY]);
-            } else {
-                $this->setQuantity(new FHIRSimpleQuantity($data[self::FIELD_QUANTITY]));
-            }
-        }
-        if (isset($data[self::FIELD_RATE_QUANTITY])) {
-            if ($data[self::FIELD_RATE_QUANTITY] instanceof FHIRSimpleQuantity) {
-                $this->setRateQuantity($data[self::FIELD_RATE_QUANTITY]);
-            } else {
-                $this->setRateQuantity(new FHIRSimpleQuantity($data[self::FIELD_RATE_QUANTITY]));
-            }
-        }
-        if (isset($data[self::FIELD_RATE_RATIO])) {
-            if ($data[self::FIELD_RATE_RATIO] instanceof FHIRRatio) {
-                $this->setRateRatio($data[self::FIELD_RATE_RATIO]);
-            } else {
-                $this->setRateRatio(new FHIRRatio($data[self::FIELD_RATE_RATIO]));
-            }
-        }
-        if (isset($data[self::FIELD_SCHEDULE])) {
+        if (array_key_exists(self::FIELD_SCHEDULE, $data)) {
             if ($data[self::FIELD_SCHEDULE] instanceof FHIRTiming) {
                 $this->setSchedule($data[self::FIELD_SCHEDULE]);
             } else {
                 $this->setSchedule(new FHIRTiming($data[self::FIELD_SCHEDULE]));
             }
         }
+        if (array_key_exists(self::FIELD_QUANTITY, $data)) {
+            if ($data[self::FIELD_QUANTITY] instanceof FHIRSimpleQuantity) {
+                $this->setQuantity($data[self::FIELD_QUANTITY]);
+            } else {
+                $this->setQuantity(new FHIRSimpleQuantity($data[self::FIELD_QUANTITY]));
+            }
+        }
+        if (array_key_exists(self::FIELD_RATE_QUANTITY, $data)) {
+            if ($data[self::FIELD_RATE_QUANTITY] instanceof FHIRSimpleQuantity) {
+                $this->setRateQuantity($data[self::FIELD_RATE_QUANTITY]);
+            } else {
+                $this->setRateQuantity(new FHIRSimpleQuantity($data[self::FIELD_RATE_QUANTITY]));
+            }
+        }
+        if (array_key_exists(self::FIELD_RATE_RATIO, $data)) {
+            if ($data[self::FIELD_RATE_RATIO] instanceof FHIRRatio) {
+                $this->setRateRatio($data[self::FIELD_RATE_RATIO]);
+            } else {
+                $this->setRateRatio(new FHIRRatio($data[self::FIELD_RATE_RATIO]));
+            }
+        }
     }
 
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<NutritionOrderAdministration{$xmlns}></NutritionOrderAdministration>";
-    }
-
-    /**
-     * The volume of formula to provide to the patient per the specified administration
-     * schedule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
-     */
-    public function getQuantity()
-    {
-        return $this->quantity;
-    }
-
-    /**
-     * The volume of formula to provide to the patient per the specified administration
-     * schedule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
-     * @return static
-     */
-    public function setQuantity(FHIRSimpleQuantity $quantity = null)
-    {
-        $this->quantity = $quantity;
-        return $this;
-    }
-
-    /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
-     */
-    public function getRateQuantity()
-    {
-        return $this->rateQuantity;
-    }
-
-    /**
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $rateQuantity
-     * @return static
-     */
-    public function setRateQuantity(FHIRSimpleQuantity $rateQuantity = null)
-    {
-        $this->rateQuantity = $rateQuantity;
-        return $this;
-    }
-
-    /**
-     * A relationship of two Quantity values - expressed as a numerator and a
-     * denominator.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRatio
-     */
-    public function getRateRatio()
-    {
-        return $this->rateRatio;
-    }
-
-    /**
-     * A relationship of two Quantity values - expressed as a numerator and a
-     * denominator.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
-     * according to the specified schedule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRatio $rateRatio
-     * @return static
-     */
-    public function setRateRatio(FHIRRatio $rateRatio = null)
-    {
-        $this->rateRatio = $rateRatio;
-        return $this;
     }
 
     /**
@@ -299,7 +203,7 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming
      */
-    public function getSchedule()
+    public function getSchedule(): null|FHIRTiming
     {
         return $this->schedule;
     }
@@ -318,9 +222,107 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming $schedule
      * @return static
      */
-    public function setSchedule(FHIRTiming $schedule = null)
+    public function setSchedule(null|FHIRTiming $schedule = null): self
     {
+        if (null === $schedule) {
+            $schedule = new FHIRTiming();
+        }
+        $this->_trackValueSet($this->schedule, $schedule);
         $this->schedule = $schedule;
+        return $this;
+    }
+
+    /**
+     * The volume of formula to provide to the patient per the specified administration
+     * schedule.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
+     */
+    public function getQuantity(): null|FHIRSimpleQuantity
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * The volume of formula to provide to the patient per the specified administration
+     * schedule.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $quantity
+     * @return static
+     */
+    public function setQuantity(null|FHIRSimpleQuantity $quantity = null): self
+    {
+        if (null === $quantity) {
+            $quantity = new FHIRSimpleQuantity();
+        }
+        $this->_trackValueSet($this->quantity, $quantity);
+        $this->quantity = $quantity;
+        return $this;
+    }
+
+    /**
+     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
+     * according to the specified schedule.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
+     */
+    public function getRateQuantity(): null|FHIRSimpleQuantity
+    {
+        return $this->rateQuantity;
+    }
+
+    /**
+     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
+     * according to the specified schedule.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $rateQuantity
+     * @return static
+     */
+    public function setRateQuantity(null|FHIRSimpleQuantity $rateQuantity = null): self
+    {
+        if (null === $rateQuantity) {
+            $rateQuantity = new FHIRSimpleQuantity();
+        }
+        $this->_trackValueSet($this->rateQuantity, $rateQuantity);
+        $this->rateQuantity = $rateQuantity;
+        return $this;
+    }
+
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
+     * according to the specified schedule.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRatio
+     */
+    public function getRateRatio(): null|FHIRRatio
+    {
+        return $this->rateRatio;
+    }
+
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
+     * according to the specified schedule.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRatio $rateRatio
+     * @return static
+     */
+    public function setRateRatio(null|FHIRRatio $rateRatio = null): self
+    {
+        if (null === $rateRatio) {
+            $rateRatio = new FHIRRatio();
+        }
+        $this->_trackValueSet($this->rateRatio, $rateRatio);
+        $this->rateRatio = $rateRatio;
         return $this;
     }
 
@@ -330,9 +332,9 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -341,10 +343,15 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getSchedule())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SCHEDULE] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getQuantity())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_QUANTITY] = $fieldErrs;
@@ -360,9 +367,16 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
                 $errs[self::FIELD_RATE_RATIO] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getSchedule())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SCHEDULE] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_SCHEDULE])) {
+            $v = $this->getSchedule();
+            foreach($validationRules[self::FIELD_SCHEDULE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ADMINISTRATION, self::FIELD_SCHEDULE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SCHEDULE])) {
+                        $errs[self::FIELD_SCHEDULE] = [];
+                    }
+                    $errs[self::FIELD_SCHEDULE][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_QUANTITY])) {
@@ -398,18 +412,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
                         $errs[self::FIELD_RATE_RATIO] = [];
                     }
                     $errs[self::FIELD_RATE_RATIO][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SCHEDULE])) {
-            $v = $this->getSchedule();
-            foreach($validationRules[self::FIELD_SCHEDULE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ADMINISTRATION, self::FIELD_SCHEDULE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SCHEDULE])) {
-                        $errs[self::FIELD_SCHEDULE] = [];
-                    }
-                    $errs[self::FIELD_SCHEDULE][$rule] = $err;
                 }
             }
         }
@@ -453,115 +455,149 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRNutritionOrderAdministration::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRNutritionOrderAdministration::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRNutritionOrderAdministration;
-        } elseif (!is_object($type) || !($type instanceof FHIRNutritionOrderAdministration)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRNutritionOrderAdministration)) {
             throw new \RuntimeException(sprintf(
-                'FHIRNutritionOrderAdministration::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_SCHEDULE === $childName) {
+                $type->setSchedule(FHIRTiming::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_QUANTITY === $childName) {
+                $type->setQuantity(FHIRSimpleQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_RATE_QUANTITY === $childName) {
+                $type->setRateQuantity(FHIRSimpleQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_RATE_RATIO === $childName) {
+                $type->setRateRatio(FHIRRatio::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->quantity)) {
-            $type->setQuantity(FHIRSimpleQuantity::xmlUnserialize($children->quantity));
-        }
-        if (isset($children->rateQuantity)) {
-            $type->setRateQuantity(FHIRSimpleQuantity::xmlUnserialize($children->rateQuantity));
-        }
-        if (isset($children->rateRatio)) {
-            $type->setRateRatio(FHIRRatio::xmlUnserialize($children->rateRatio));
-        }
-        if (isset($children->schedule)) {
-            $type->setSchedule(FHIRTiming::xmlUnserialize($children->schedule));
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'NutritionOrderAdministration', $this->_getSourceXmlns());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getSchedule())) {
+            $xw->startElement(self::FIELD_SCHEDULE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_QUANTITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getRateQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_RATE_QUANTITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getRateRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RATE_RATIO, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_RATE_RATIO);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getSchedule())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SCHEDULE, null, $v->_getFHIRXMLNamespace()));
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getSchedule())) {
+            $out->{self::FIELD_SCHEDULE} = $v;
+        }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            $out->{self::FIELD_QUANTITY} = $v;
         }
         if (null !== ($v = $this->getRateQuantity())) {
-            $a[self::FIELD_RATE_QUANTITY] = $v;
+            $out->{self::FIELD_RATE_QUANTITY} = $v;
         }
         if (null !== ($v = $this->getRateRatio())) {
-            $a[self::FIELD_RATE_RATIO] = $v;
+            $out->{self::FIELD_RATE_RATIO} = $v;
         }
-        if (null !== ($v = $this->getSchedule())) {
-            $a[self::FIELD_SCHEDULE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

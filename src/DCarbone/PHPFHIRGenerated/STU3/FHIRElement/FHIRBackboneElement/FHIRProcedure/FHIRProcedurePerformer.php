@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProcedure;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,9 +64,15 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter;
 
 /**
  * An action that is or was performed on a patient. This can be a physical
@@ -80,34 +86,10 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROCEDURE_DOT_PERFORMER;
+
+    const FIELD_ROLE = 'role';
     const FIELD_ACTOR = 'actor';
     const FIELD_ON_BEHALF_OF = 'onBehalfOf';
-    const FIELD_ROLE = 'role';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The practitioner who was involved in the procedure.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    protected $actor = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The organization the device or practitioner was acting on behalf of.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    protected $onBehalfOf = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -119,131 +101,76 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    protected $role = null;
+    protected null|FHIRCodeableConcept $role = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The practitioner who was involved in the procedure.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $actor = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The organization the device or practitioner was acting on behalf of.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $onBehalfOf = null;
 
     /**
      * Validation map for fields in type Procedure.Performer
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRProcedurePerformer Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRProcedurePerformer::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ACTOR])) {
-            if ($data[self::FIELD_ACTOR] instanceof FHIRReference) {
-                $this->setActor($data[self::FIELD_ACTOR]);
-            } else {
-                $this->setActor(new FHIRReference($data[self::FIELD_ACTOR]));
-            }
-        }
-        if (isset($data[self::FIELD_ON_BEHALF_OF])) {
-            if ($data[self::FIELD_ON_BEHALF_OF] instanceof FHIRReference) {
-                $this->setOnBehalfOf($data[self::FIELD_ON_BEHALF_OF]);
-            } else {
-                $this->setOnBehalfOf(new FHIRReference($data[self::FIELD_ON_BEHALF_OF]));
-            }
-        }
-        if (isset($data[self::FIELD_ROLE])) {
+        if (array_key_exists(self::FIELD_ROLE, $data)) {
             if ($data[self::FIELD_ROLE] instanceof FHIRCodeableConcept) {
                 $this->setRole($data[self::FIELD_ROLE]);
             } else {
                 $this->setRole(new FHIRCodeableConcept($data[self::FIELD_ROLE]));
             }
         }
+        if (array_key_exists(self::FIELD_ACTOR, $data)) {
+            if ($data[self::FIELD_ACTOR] instanceof FHIRReference) {
+                $this->setActor($data[self::FIELD_ACTOR]);
+            } else {
+                $this->setActor(new FHIRReference($data[self::FIELD_ACTOR]));
+            }
+        }
+        if (array_key_exists(self::FIELD_ON_BEHALF_OF, $data)) {
+            if ($data[self::FIELD_ON_BEHALF_OF] instanceof FHIRReference) {
+                $this->setOnBehalfOf($data[self::FIELD_ON_BEHALF_OF]);
+            } else {
+                $this->setOnBehalfOf(new FHIRReference($data[self::FIELD_ON_BEHALF_OF]));
+            }
+        }
     }
 
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ProcedurePerformer{$xmlns}></ProcedurePerformer>";
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The practitioner who was involved in the procedure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    public function getActor()
-    {
-        return $this->actor;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The practitioner who was involved in the procedure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $actor
-     * @return static
-     */
-    public function setActor(FHIRReference $actor = null)
-    {
-        $this->actor = $actor;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The organization the device or practitioner was acting on behalf of.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    public function getOnBehalfOf()
-    {
-        return $this->onBehalfOf;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The organization the device or practitioner was acting on behalf of.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $onBehalfOf
-     * @return static
-     */
-    public function setOnBehalfOf(FHIRReference $onBehalfOf = null)
-    {
-        $this->onBehalfOf = $onBehalfOf;
-        return $this;
     }
 
     /**
@@ -256,7 +183,7 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    public function getRole()
+    public function getRole(): null|FHIRCodeableConcept
     {
         return $this->role;
     }
@@ -272,9 +199,81 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $role
      * @return static
      */
-    public function setRole(FHIRCodeableConcept $role = null)
+    public function setRole(null|FHIRCodeableConcept $role = null): self
     {
+        if (null === $role) {
+            $role = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->role, $role);
         $this->role = $role;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The practitioner who was involved in the procedure.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    public function getActor(): null|FHIRReference
+    {
+        return $this->actor;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The practitioner who was involved in the procedure.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $actor
+     * @return static
+     */
+    public function setActor(null|FHIRReference $actor = null): self
+    {
+        if (null === $actor) {
+            $actor = new FHIRReference();
+        }
+        $this->_trackValueSet($this->actor, $actor);
+        $this->actor = $actor;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The organization the device or practitioner was acting on behalf of.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    public function getOnBehalfOf(): null|FHIRReference
+    {
+        return $this->onBehalfOf;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The organization the device or practitioner was acting on behalf of.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $onBehalfOf
+     * @return static
+     */
+    public function setOnBehalfOf(null|FHIRReference $onBehalfOf = null): self
+    {
+        if (null === $onBehalfOf) {
+            $onBehalfOf = new FHIRReference();
+        }
+        $this->_trackValueSet($this->onBehalfOf, $onBehalfOf);
+        $this->onBehalfOf = $onBehalfOf;
         return $this;
     }
 
@@ -284,9 +283,9 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -295,10 +294,15 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getRole())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ROLE] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getActor())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_ACTOR] = $fieldErrs;
@@ -309,9 +313,16 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
                 $errs[self::FIELD_ON_BEHALF_OF] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getRole())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ROLE] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_ROLE])) {
+            $v = $this->getRole();
+            foreach($validationRules[self::FIELD_ROLE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROCEDURE_DOT_PERFORMER, self::FIELD_ROLE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ROLE])) {
+                        $errs[self::FIELD_ROLE] = [];
+                    }
+                    $errs[self::FIELD_ROLE][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_ACTOR])) {
@@ -335,18 +346,6 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
                         $errs[self::FIELD_ON_BEHALF_OF] = [];
                     }
                     $errs[self::FIELD_ON_BEHALF_OF][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ROLE])) {
-            $v = $this->getRole();
-            foreach($validationRules[self::FIELD_ROLE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROCEDURE_DOT_PERFORMER, self::FIELD_ROLE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ROLE])) {
-                        $errs[self::FIELD_ROLE] = [];
-                    }
-                    $errs[self::FIELD_ROLE][$rule] = $err;
                 }
             }
         }
@@ -390,106 +389,139 @@ class FHIRProcedurePerformer extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRProcedurePerformer::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRProcedurePerformer::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRProcedurePerformer;
-        } elseif (!is_object($type) || !($type instanceof FHIRProcedurePerformer)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRProcedurePerformer)) {
             throw new \RuntimeException(sprintf(
-                'FHIRProcedurePerformer::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_ROLE === $childName) {
+                $type->setRole(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ACTOR === $childName) {
+                $type->setActor(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ON_BEHALF_OF === $childName) {
+                $type->setOnBehalfOf(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->actor)) {
-            $type->setActor(FHIRReference::xmlUnserialize($children->actor));
-        }
-        if (isset($children->onBehalfOf)) {
-            $type->setOnBehalfOf(FHIRReference::xmlUnserialize($children->onBehalfOf));
-        }
-        if (isset($children->role)) {
-            $type->setRole(FHIRCodeableConcept::xmlUnserialize($children->role));
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ProcedurePerformer', $this->_getSourceXmlns());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getRole())) {
+            $xw->startElement(self::FIELD_ROLE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
         if (null !== ($v = $this->getActor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ACTOR, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_ACTOR);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getOnBehalfOf())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ON_BEHALF_OF, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_ON_BEHALF_OF);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getRole())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getRole())) {
+            $out->{self::FIELD_ROLE} = $v;
+        }
         if (null !== ($v = $this->getActor())) {
-            $a[self::FIELD_ACTOR] = $v;
+            $out->{self::FIELD_ACTOR} = $v;
         }
         if (null !== ($v = $this->getOnBehalfOf())) {
-            $a[self::FIELD_ON_BEHALF_OF] = $v;
+            $out->{self::FIELD_ON_BEHALF_OF} = $v;
         }
-        if (null !== ($v = $this->getRole())) {
-            $a[self::FIELD_ROLE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

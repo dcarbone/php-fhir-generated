@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCondition;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,9 +64,15 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
 
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter;
 
 /**
  * Use to record detailed information about conditions, problems or diagnoses
@@ -81,23 +87,9 @@ class FHIRConditionStage extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONDITION_DOT_STAGE;
-    const FIELD_ASSESSMENT = 'assessment';
+
     const FIELD_SUMMARY = 'summary';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Reference to a formal record of the evidence on which the staging assessment is
-     * based.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
-     */
-    protected $assessment = [];
+    const FIELD_ASSESSMENT = 'assessment';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -110,134 +102,68 @@ class FHIRConditionStage extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    protected $summary = null;
+    protected null|FHIRCodeableConcept $summary = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference to a formal record of the evidence on which the staging assessment is
+     * based.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
+     */
+    protected null|array $assessment = [];
 
     /**
      * Validation map for fields in type Condition.Stage
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRConditionStage Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRConditionStage::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ASSESSMENT])) {
-            if (is_array($data[self::FIELD_ASSESSMENT])) {
-                foreach($data[self::FIELD_ASSESSMENT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRReference) {
-                        $this->addAssessment($v);
-                    } else {
-                        $this->addAssessment(new FHIRReference($v));
-                    }
-                }
-            } else if ($data[self::FIELD_ASSESSMENT] instanceof FHIRReference) {
-                $this->addAssessment($data[self::FIELD_ASSESSMENT]);
-            } else {
-                $this->addAssessment(new FHIRReference($data[self::FIELD_ASSESSMENT]));
-            }
-        }
-        if (isset($data[self::FIELD_SUMMARY])) {
+        if (array_key_exists(self::FIELD_SUMMARY, $data)) {
             if ($data[self::FIELD_SUMMARY] instanceof FHIRCodeableConcept) {
                 $this->setSummary($data[self::FIELD_SUMMARY]);
             } else {
                 $this->setSummary(new FHIRCodeableConcept($data[self::FIELD_SUMMARY]));
             }
         }
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRTypeName()
-    {
-        return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ConditionStage{$xmlns}></ConditionStage>";
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Reference to a formal record of the evidence on which the staging assessment is
-     * based.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
-     */
-    public function getAssessment()
-    {
-        return $this->assessment;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Reference to a formal record of the evidence on which the staging assessment is
-     * based.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $assessment
-     * @return static
-     */
-    public function addAssessment(FHIRReference $assessment = null)
-    {
-        $this->assessment[] = $assessment;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Reference to a formal record of the evidence on which the staging assessment is
-     * based.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[] $assessment
-     * @return static
-     */
-    public function setAssessment(array $assessment = [])
-    {
-        $this->assessment = [];
-        if ([] === $assessment) {
-            return $this;
-        }
-        foreach($assessment as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addAssessment($v);
+        if (array_key_exists(self::FIELD_ASSESSMENT, $data)) {
+            if (is_array($data[self::FIELD_ASSESSMENT])) {
+                foreach($data[self::FIELD_ASSESSMENT] as $v) {
+                    if ($v instanceof FHIRReference) {
+                        $this->addAssessment($v);
+                    } else {
+                        $this->addAssessment(new FHIRReference($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_ASSESSMENT] instanceof FHIRReference) {
+                $this->addAssessment($data[self::FIELD_ASSESSMENT]);
             } else {
-                $this->addAssessment(new FHIRReference($v));
+                $this->addAssessment(new FHIRReference($data[self::FIELD_ASSESSMENT]));
             }
         }
-        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function _getFhirTypeName(): string
+    {
+        return self::FHIR_TYPE_NAME;
     }
 
     /**
@@ -251,7 +177,7 @@ class FHIRConditionStage extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    public function getSummary()
+    public function getSummary(): null|FHIRCodeableConcept
     {
         return $this->summary;
     }
@@ -268,9 +194,49 @@ class FHIRConditionStage extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $summary
      * @return static
      */
-    public function setSummary(FHIRCodeableConcept $summary = null)
+    public function setSummary(null|FHIRCodeableConcept $summary = null): self
     {
+        if (null === $summary) {
+            $summary = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->summary, $summary);
         $this->summary = $summary;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference to a formal record of the evidence on which the staging assessment is
+     * based.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
+     */
+    public function getAssessment(): null|array
+    {
+        return $this->assessment;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference to a formal record of the evidence on which the staging assessment is
+     * based.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $assessment
+     * @return static
+     */
+    public function addAssessment(null|FHIRReference $assessment = null): self
+    {
+        if (null === $assessment) {
+            $assessment = new FHIRReference();
+        }
+        $this->_trackValueAdded();
+        $this->assessment[] = $assessment;
         return $this;
     }
 
@@ -280,9 +246,9 @@ class FHIRConditionStage extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -291,31 +257,19 @@ class FHIRConditionStage extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getAssessment())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_ASSESSMENT, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getSummary())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_SUMMARY] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_ASSESSMENT])) {
-            $v = $this->getAssessment();
-            foreach($validationRules[self::FIELD_ASSESSMENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONDITION_DOT_STAGE, self::FIELD_ASSESSMENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ASSESSMENT])) {
-                        $errs[self::FIELD_ASSESSMENT] = [];
-                    }
-                    $errs[self::FIELD_ASSESSMENT][$rule] = $err;
+        if ([] !== ($vs = $this->getAssessment())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_ASSESSMENT, $i)] = $fieldErrs;
                 }
             }
         }
@@ -328,6 +282,18 @@ class FHIRConditionStage extends FHIRBackboneElement
                         $errs[self::FIELD_SUMMARY] = [];
                     }
                     $errs[self::FIELD_SUMMARY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ASSESSMENT])) {
+            $v = $this->getAssessment();
+            foreach($validationRules[self::FIELD_ASSESSMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONDITION_DOT_STAGE, self::FIELD_ASSESSMENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ASSESSMENT])) {
+                        $errs[self::FIELD_ASSESSMENT] = [];
+                    }
+                    $errs[self::FIELD_ASSESSMENT][$rule] = $err;
                 }
             }
         }
@@ -371,110 +337,132 @@ class FHIRConditionStage extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRConditionStage::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRConditionStage::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRConditionStage;
-        } elseif (!is_object($type) || !($type instanceof FHIRConditionStage)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRConditionStage)) {
             throw new \RuntimeException(sprintf(
-                'FHIRConditionStage::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_SUMMARY === $childName) {
+                $type->setSummary(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ASSESSMENT === $childName) {
+                $type->addAssessment(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->assessment)) {
-            foreach($children->assessment as $child) {
-                $type->addAssessment(FHIRReference::xmlUnserialize($child));
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
-        }
-        if (isset($children->summary)) {
-            $type->setSummary(FHIRCodeableConcept::xmlUnserialize($children->summary));
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getAssessment())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ASSESSMENT, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ConditionStage', $this->_getSourceXmlns());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getSummary())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUMMARY, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_SUMMARY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        foreach ($this->getAssessment() as $v) {
+            $xw->startElement(self::FIELD_ASSESSMENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getSummary())) {
+            $out->{self::FIELD_SUMMARY} = $v;
+        }
         if ([] !== ($vs = $this->getAssessment())) {
-            $a[self::FIELD_ASSESSMENT] = [];
+            $out->{self::FIELD_ASSESSMENT} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ASSESSMENT][] = $v;
+                $out->{self::FIELD_ASSESSMENT}[] = $v;
             }
         }
-        if (null !== ($v = $this->getSummary())) {
-            $a[self::FIELD_SUMMARY] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

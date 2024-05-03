@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,15 +62,30 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResearchSubjectStatus;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeMap;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter;
 
 /**
  * A process where a researcher or organization plans and then executes a series of
@@ -88,55 +103,18 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESEARCH_SUBJECT;
-    const FIELD_ACTUAL_ARM = 'actualArm';
-    const FIELD_ACTUAL_ARM_EXT = '_actualArm';
-    const FIELD_ASSIGNED_ARM = 'assignedArm';
-    const FIELD_ASSIGNED_ARM_EXT = '_assignedArm';
-    const FIELD_CONSENT = 'consent';
+
     const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_INDIVIDUAL = 'individual';
-    const FIELD_PERIOD = 'period';
     const FIELD_STATUS = 'status';
     const FIELD_STATUS_EXT = '_status';
+    const FIELD_PERIOD = 'period';
     const FIELD_STUDY = 'study';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the arm in the study the subject actually followed as part of this
-     * study.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $actualArm = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the arm in the study the subject is expected to follow as part of
-     * this study.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $assignedArm = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A record of the patient's informed agreement to participate in the study.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    protected $consent = null;
+    const FIELD_INDIVIDUAL = 'individual';
+    const FIELD_ASSIGNED_ARM = 'assignedArm';
+    const FIELD_ASSIGNED_ARM_EXT = '_assignedArm';
+    const FIELD_ACTUAL_ARM = 'actualArm';
+    const FIELD_ACTUAL_ARM_EXT = '_actualArm';
+    const FIELD_CONSENT = 'consent';
 
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -147,19 +125,16 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    protected $identifier = null;
-
+    protected null|FHIRIdentifier $identifier = null;
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * Indicates the progression of a study subject through a study
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The record of the person or animal who is involved in the study.
+     * The current state of the subject.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResearchSubjectStatus
      */
-    protected $individual = null;
-
+    protected null|FHIRResearchSubjectStatus $status = null;
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -169,18 +144,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    protected $period = null;
-
-    /**
-     * Indicates the progression of a study subject through a study
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The current state of the subject.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResearchSubjectStatus
-     */
-    protected $status = null;
-
+    protected null|FHIRPeriod $period = null;
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -190,115 +154,79 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    protected $study = null;
+    protected null|FHIRReference $study = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The record of the person or animal who is involved in the study.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $individual = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the arm in the study the subject is expected to follow as part of
+     * this study.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $assignedArm = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the arm in the study the subject actually followed as part of this
+     * study.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $actualArm = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A record of the patient's informed agreement to participate in the study.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $consent = null;
 
     /**
      * Validation map for fields in type ResearchSubject
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRResearchSubject Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRResearchSubject::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ACTUAL_ARM]) || isset($data[self::FIELD_ACTUAL_ARM_EXT])) {
-            if (isset($data[self::FIELD_ACTUAL_ARM])) {
-                $value = $data[self::FIELD_ACTUAL_ARM];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ACTUAL_ARM_EXT]) && is_array($data[self::FIELD_ACTUAL_ARM_EXT])) {
-                $ext = $data[self::FIELD_ACTUAL_ARM_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setActualArm($value);
-                } else if (is_array($value)) {
-                    $this->setActualArm(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setActualArm(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setActualArm(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_ASSIGNED_ARM]) || isset($data[self::FIELD_ASSIGNED_ARM_EXT])) {
-            if (isset($data[self::FIELD_ASSIGNED_ARM])) {
-                $value = $data[self::FIELD_ASSIGNED_ARM];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ASSIGNED_ARM_EXT]) && is_array($data[self::FIELD_ASSIGNED_ARM_EXT])) {
-                $ext = $data[self::FIELD_ASSIGNED_ARM_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setAssignedArm($value);
-                } else if (is_array($value)) {
-                    $this->setAssignedArm(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setAssignedArm(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setAssignedArm(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_CONSENT])) {
-            if ($data[self::FIELD_CONSENT] instanceof FHIRReference) {
-                $this->setConsent($data[self::FIELD_CONSENT]);
-            } else {
-                $this->setConsent(new FHIRReference($data[self::FIELD_CONSENT]));
-            }
-        }
-        if (isset($data[self::FIELD_IDENTIFIER])) {
+        if (array_key_exists(self::FIELD_IDENTIFIER, $data)) {
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_INDIVIDUAL])) {
-            if ($data[self::FIELD_INDIVIDUAL] instanceof FHIRReference) {
-                $this->setIndividual($data[self::FIELD_INDIVIDUAL]);
-            } else {
-                $this->setIndividual(new FHIRReference($data[self::FIELD_INDIVIDUAL]));
-            }
-        }
-        if (isset($data[self::FIELD_PERIOD])) {
-            if ($data[self::FIELD_PERIOD] instanceof FHIRPeriod) {
-                $this->setPeriod($data[self::FIELD_PERIOD]);
-            } else {
-                $this->setPeriod(new FHIRPeriod($data[self::FIELD_PERIOD]));
-            }
-        }
-        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
-            if (isset($data[self::FIELD_STATUS])) {
-                $value = $data[self::FIELD_STATUS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
-                $ext = $data[self::FIELD_STATUS_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_STATUS, $data) || array_key_exists(self::FIELD_STATUS_EXT, $data)) {
+            $value = $data[self::FIELD_STATUS] ?? null;
+            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) ? $data[self::FIELD_STATUS_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRResearchSubjectStatus) {
                     $this->setStatus($value);
@@ -307,15 +235,72 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
                 } else {
                     $this->setStatus(new FHIRResearchSubjectStatus([FHIRResearchSubjectStatus::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setStatus(new FHIRResearchSubjectStatus($ext));
+            } else {
+                $this->setStatus(new FHIRResearchSubjectStatus(null));
             }
         }
-        if (isset($data[self::FIELD_STUDY])) {
+        if (array_key_exists(self::FIELD_PERIOD, $data)) {
+            if ($data[self::FIELD_PERIOD] instanceof FHIRPeriod) {
+                $this->setPeriod($data[self::FIELD_PERIOD]);
+            } else {
+                $this->setPeriod(new FHIRPeriod($data[self::FIELD_PERIOD]));
+            }
+        }
+        if (array_key_exists(self::FIELD_STUDY, $data)) {
             if ($data[self::FIELD_STUDY] instanceof FHIRReference) {
                 $this->setStudy($data[self::FIELD_STUDY]);
             } else {
                 $this->setStudy(new FHIRReference($data[self::FIELD_STUDY]));
+            }
+        }
+        if (array_key_exists(self::FIELD_INDIVIDUAL, $data)) {
+            if ($data[self::FIELD_INDIVIDUAL] instanceof FHIRReference) {
+                $this->setIndividual($data[self::FIELD_INDIVIDUAL]);
+            } else {
+                $this->setIndividual(new FHIRReference($data[self::FIELD_INDIVIDUAL]));
+            }
+        }
+        if (array_key_exists(self::FIELD_ASSIGNED_ARM, $data) || array_key_exists(self::FIELD_ASSIGNED_ARM_EXT, $data)) {
+            $value = $data[self::FIELD_ASSIGNED_ARM] ?? null;
+            $ext = (isset($data[self::FIELD_ASSIGNED_ARM_EXT]) && is_array($data[self::FIELD_ASSIGNED_ARM_EXT])) ? $data[self::FIELD_ASSIGNED_ARM_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setAssignedArm($value);
+                } else if (is_array($value)) {
+                    $this->setAssignedArm(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setAssignedArm(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setAssignedArm(new FHIRString($ext));
+            } else {
+                $this->setAssignedArm(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_ACTUAL_ARM, $data) || array_key_exists(self::FIELD_ACTUAL_ARM_EXT, $data)) {
+            $value = $data[self::FIELD_ACTUAL_ARM] ?? null;
+            $ext = (isset($data[self::FIELD_ACTUAL_ARM_EXT]) && is_array($data[self::FIELD_ACTUAL_ARM_EXT])) ? $data[self::FIELD_ACTUAL_ARM_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setActualArm($value);
+                } else if (is_array($value)) {
+                    $this->setActualArm(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setActualArm(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setActualArm(new FHIRString($ext));
+            } else {
+                $this->setActualArm(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_CONSENT, $data)) {
+            if ($data[self::FIELD_CONSENT] instanceof FHIRReference) {
+                $this->setConsent($data[self::FIELD_CONSENT]);
+            } else {
+                $this->setConsent(new FHIRReference($data[self::FIELD_CONSENT]));
             }
         }
     }
@@ -323,7 +308,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -331,131 +316,9 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
     /**
      * @return string
      */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ResearchSubject{$xmlns}></ResearchSubject>";
-    }
-    /**
-     * @return string
-     */
-    public function _getResourceType()
+    public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
-    }
-
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the arm in the study the subject actually followed as part of this
-     * study.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getActualArm()
-    {
-        return $this->actualArm;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the arm in the study the subject actually followed as part of this
-     * study.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $actualArm
-     * @return static
-     */
-    public function setActualArm($actualArm = null)
-    {
-        if (null === $actualArm) {
-            $this->actualArm = null;
-            return $this;
-        }
-        if ($actualArm instanceof FHIRString) {
-            $this->actualArm = $actualArm;
-            return $this;
-        }
-        $this->actualArm = new FHIRString($actualArm);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the arm in the study the subject is expected to follow as part of
-     * this study.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getAssignedArm()
-    {
-        return $this->assignedArm;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the arm in the study the subject is expected to follow as part of
-     * this study.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $assignedArm
-     * @return static
-     */
-    public function setAssignedArm($assignedArm = null)
-    {
-        if (null === $assignedArm) {
-            $this->assignedArm = null;
-            return $this;
-        }
-        if ($assignedArm instanceof FHIRString) {
-            $this->assignedArm = $assignedArm;
-            return $this;
-        }
-        $this->assignedArm = new FHIRString($assignedArm);
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A record of the patient's informed agreement to participate in the study.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    public function getConsent()
-    {
-        return $this->consent;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A record of the patient's informed agreement to participate in the study.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $consent
-     * @return static
-     */
-    public function setConsent(FHIRReference $consent = null)
-    {
-        $this->consent = $consent;
-        return $this;
     }
 
     /**
@@ -467,7 +330,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
+    public function getIdentifier(): null|FHIRIdentifier
     {
         return $this->identifier;
     }
@@ -482,39 +345,45 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function setIdentifier(null|FHIRIdentifier $identifier = null): self
     {
+        if (null === $identifier) {
+            $identifier = new FHIRIdentifier();
+        }
+        $this->_trackValueSet($this->identifier, $identifier);
         $this->identifier = $identifier;
         return $this;
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * Indicates the progression of a study subject through a study
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The record of the person or animal who is involved in the study.
+     * The current state of the subject.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResearchSubjectStatus
      */
-    public function getIndividual()
+    public function getStatus(): null|FHIRResearchSubjectStatus
     {
-        return $this->individual;
+        return $this->status;
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * Indicates the progression of a study subject through a study
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The record of the person or animal who is involved in the study.
+     * The current state of the subject.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $individual
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResearchSubjectStatus $status
      * @return static
      */
-    public function setIndividual(FHIRReference $individual = null)
+    public function setStatus(null|FHIRResearchSubjectStatus $status = null): self
     {
-        $this->individual = $individual;
+        if (null === $status) {
+            $status = new FHIRResearchSubjectStatus();
+        }
+        $this->_trackValueSet($this->status, $status);
+        $this->status = $status;
         return $this;
     }
 
@@ -527,7 +396,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
+    public function getPeriod(): null|FHIRPeriod
     {
         return $this->period;
     }
@@ -542,37 +411,13 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod $period
      * @return static
      */
-    public function setPeriod(FHIRPeriod $period = null)
+    public function setPeriod(null|FHIRPeriod $period = null): self
     {
+        if (null === $period) {
+            $period = new FHIRPeriod();
+        }
+        $this->_trackValueSet($this->period, $period);
         $this->period = $period;
-        return $this;
-    }
-
-    /**
-     * Indicates the progression of a study subject through a study
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The current state of the subject.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResearchSubjectStatus
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * Indicates the progression of a study subject through a study
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The current state of the subject.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResearchSubjectStatus $status
-     * @return static
-     */
-    public function setStatus(FHIRResearchSubjectStatus $status = null)
-    {
-        $this->status = $status;
         return $this;
     }
 
@@ -585,7 +430,7 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    public function getStudy()
+    public function getStudy(): null|FHIRReference
     {
         return $this->study;
     }
@@ -600,9 +445,163 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $study
      * @return static
      */
-    public function setStudy(FHIRReference $study = null)
+    public function setStudy(null|FHIRReference $study = null): self
     {
+        if (null === $study) {
+            $study = new FHIRReference();
+        }
+        $this->_trackValueSet($this->study, $study);
         $this->study = $study;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The record of the person or animal who is involved in the study.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    public function getIndividual(): null|FHIRReference
+    {
+        return $this->individual;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The record of the person or animal who is involved in the study.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $individual
+     * @return static
+     */
+    public function setIndividual(null|FHIRReference $individual = null): self
+    {
+        if (null === $individual) {
+            $individual = new FHIRReference();
+        }
+        $this->_trackValueSet($this->individual, $individual);
+        $this->individual = $individual;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the arm in the study the subject is expected to follow as part of
+     * this study.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getAssignedArm(): null|FHIRString
+    {
+        return $this->assignedArm;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the arm in the study the subject is expected to follow as part of
+     * this study.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $assignedArm
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setAssignedArm(null|string|FHIRStringPrimitive|FHIRString $assignedArm = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $assignedArm && !($assignedArm instanceof FHIRString)) {
+            $assignedArm = new FHIRString($assignedArm);
+        }
+        $this->_trackValueSet($this->assignedArm, $assignedArm);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_ASSIGNED_ARM])) {
+            $this->_primitiveXmlLocations[self::FIELD_ASSIGNED_ARM] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_ASSIGNED_ARM][0] = $xmlLocation;
+        $this->assignedArm = $assignedArm;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the arm in the study the subject actually followed as part of this
+     * study.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getActualArm(): null|FHIRString
+    {
+        return $this->actualArm;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the arm in the study the subject actually followed as part of this
+     * study.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $actualArm
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setActualArm(null|string|FHIRStringPrimitive|FHIRString $actualArm = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $actualArm && !($actualArm instanceof FHIRString)) {
+            $actualArm = new FHIRString($actualArm);
+        }
+        $this->_trackValueSet($this->actualArm, $actualArm);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_ACTUAL_ARM])) {
+            $this->_primitiveXmlLocations[self::FIELD_ACTUAL_ARM] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_ACTUAL_ARM][0] = $xmlLocation;
+        $this->actualArm = $actualArm;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A record of the patient's informed agreement to participate in the study.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    public function getConsent(): null|FHIRReference
+    {
+        return $this->consent;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A record of the patient's informed agreement to participate in the study.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $consent
+     * @return static
+     */
+    public function setConsent(null|FHIRReference $consent = null): self
+    {
+        if (null === $consent) {
+            $consent = new FHIRReference();
+        }
+        $this->_trackValueSet($this->consent, $consent);
+        $this->consent = $consent;
         return $this;
     }
 
@@ -612,9 +611,9 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -623,38 +622,13 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getActualArm())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ACTUAL_ARM] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getAssignedArm())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ASSIGNED_ARM] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getConsent())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CONSENT] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getIdentifier())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getIndividual())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INDIVIDUAL] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPeriod())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PERIOD] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getStatus())) {
@@ -662,45 +636,34 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
                 $errs[self::FIELD_STATUS] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PERIOD] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getStudy())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_STUDY] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_ACTUAL_ARM])) {
-            $v = $this->getActualArm();
-            foreach($validationRules[self::FIELD_ACTUAL_ARM] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESEARCH_SUBJECT, self::FIELD_ACTUAL_ARM, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ACTUAL_ARM])) {
-                        $errs[self::FIELD_ACTUAL_ARM] = [];
-                    }
-                    $errs[self::FIELD_ACTUAL_ARM][$rule] = $err;
-                }
+        if (null !== ($v = $this->getIndividual())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INDIVIDUAL] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_ASSIGNED_ARM])) {
-            $v = $this->getAssignedArm();
-            foreach($validationRules[self::FIELD_ASSIGNED_ARM] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESEARCH_SUBJECT, self::FIELD_ASSIGNED_ARM, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ASSIGNED_ARM])) {
-                        $errs[self::FIELD_ASSIGNED_ARM] = [];
-                    }
-                    $errs[self::FIELD_ASSIGNED_ARM][$rule] = $err;
-                }
+        if (null !== ($v = $this->getAssignedArm())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ASSIGNED_ARM] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CONSENT])) {
-            $v = $this->getConsent();
-            foreach($validationRules[self::FIELD_CONSENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESEARCH_SUBJECT, self::FIELD_CONSENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONSENT])) {
-                        $errs[self::FIELD_CONSENT] = [];
-                    }
-                    $errs[self::FIELD_CONSENT][$rule] = $err;
-                }
+        if (null !== ($v = $this->getActualArm())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ACTUAL_ARM] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getConsent())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CONSENT] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_IDENTIFIER])) {
@@ -712,30 +675,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
                         $errs[self::FIELD_IDENTIFIER] = [];
                     }
                     $errs[self::FIELD_IDENTIFIER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INDIVIDUAL])) {
-            $v = $this->getIndividual();
-            foreach($validationRules[self::FIELD_INDIVIDUAL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESEARCH_SUBJECT, self::FIELD_INDIVIDUAL, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INDIVIDUAL])) {
-                        $errs[self::FIELD_INDIVIDUAL] = [];
-                    }
-                    $errs[self::FIELD_INDIVIDUAL][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PERIOD])) {
-            $v = $this->getPeriod();
-            foreach($validationRules[self::FIELD_PERIOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESEARCH_SUBJECT, self::FIELD_PERIOD, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PERIOD])) {
-                        $errs[self::FIELD_PERIOD] = [];
-                    }
-                    $errs[self::FIELD_PERIOD][$rule] = $err;
                 }
             }
         }
@@ -751,6 +690,18 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_PERIOD])) {
+            $v = $this->getPeriod();
+            foreach($validationRules[self::FIELD_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESEARCH_SUBJECT, self::FIELD_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PERIOD])) {
+                        $errs[self::FIELD_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_PERIOD][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_STUDY])) {
             $v = $this->getStudy();
             foreach($validationRules[self::FIELD_STUDY] as $rule => $constraint) {
@@ -760,6 +711,66 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
                         $errs[self::FIELD_STUDY] = [];
                     }
                     $errs[self::FIELD_STUDY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_INDIVIDUAL])) {
+            $v = $this->getIndividual();
+            foreach($validationRules[self::FIELD_INDIVIDUAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESEARCH_SUBJECT, self::FIELD_INDIVIDUAL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INDIVIDUAL])) {
+                        $errs[self::FIELD_INDIVIDUAL] = [];
+                    }
+                    $errs[self::FIELD_INDIVIDUAL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ASSIGNED_ARM])) {
+            $v = $this->getAssignedArm();
+            foreach($validationRules[self::FIELD_ASSIGNED_ARM] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESEARCH_SUBJECT, self::FIELD_ASSIGNED_ARM, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ASSIGNED_ARM])) {
+                        $errs[self::FIELD_ASSIGNED_ARM] = [];
+                    }
+                    $errs[self::FIELD_ASSIGNED_ARM][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ACTUAL_ARM])) {
+            $v = $this->getActualArm();
+            foreach($validationRules[self::FIELD_ACTUAL_ARM] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESEARCH_SUBJECT, self::FIELD_ACTUAL_ARM, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ACTUAL_ARM])) {
+                        $errs[self::FIELD_ACTUAL_ARM] = [];
+                    }
+                    $errs[self::FIELD_ACTUAL_ARM][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONSENT])) {
+            $v = $this->getConsent();
+            foreach($validationRules[self::FIELD_CONSENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESEARCH_SUBJECT, self::FIELD_CONSENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONSENT])) {
+                        $errs[self::FIELD_CONSENT] = [];
+                    }
+                    $errs[self::FIELD_CONSENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -799,18 +810,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -820,6 +819,18 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -847,201 +858,270 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRResearchSubject $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRResearchSubject
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRResearchSubject::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRResearchSubject::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRResearchSubject;
-        } elseif (!is_object($type) || !($type instanceof FHIRResearchSubject)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRResearchSubject)) {
             throw new \RuntimeException(sprintf(
-                'FHIRResearchSubject::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource\FHIRResearchSubject or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_IDENTIFIER === $childName) {
+                $type->setIdentifier(FHIRIdentifier::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_STATUS === $childName) {
+                $type->setStatus(FHIRResearchSubjectStatus::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PERIOD === $childName) {
+                $type->setPeriod(FHIRPeriod::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_STUDY === $childName) {
+                $type->setStudy(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_INDIVIDUAL === $childName) {
+                $type->setIndividual(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ASSIGNED_ARM === $childName) {
+                $type->setAssignedArm(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_ACTUAL_ARM === $childName) {
+                $type->setActualArm(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CONSENT === $childName) {
+                $type->setConsent(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TEXT === $childName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CONTAINED === $childName) {
+                foreach ($n->children() as $nn) {
+                    $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn, $config));
+                }
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRId::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_META === $childName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_IMPLICIT_RULES === $childName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_LANGUAGE === $childName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->actualArm)) {
-            $type->setActualArm(FHIRString::xmlUnserialize($children->actualArm));
-        }
-        if (isset($attributes->actualArm)) {
-            $pt = $type->getActualArm();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->actualArm);
-            } else {
-                $type->setActualArm((string)$attributes->actualArm);
-            }
-        }
-        if (isset($children->assignedArm)) {
-            $type->setAssignedArm(FHIRString::xmlUnserialize($children->assignedArm));
-        }
-        if (isset($attributes->assignedArm)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ASSIGNED_ARM])) {
             $pt = $type->getAssignedArm();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->assignedArm);
+                $pt->setValue((string)$attributes[self::FIELD_ASSIGNED_ARM], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setAssignedArm((string)$attributes->assignedArm);
+                $type->setAssignedArm((string)$attributes[self::FIELD_ASSIGNED_ARM], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->consent)) {
-            $type->setConsent(FHIRReference::xmlUnserialize($children->consent));
+        if (isset($attributes[self::FIELD_ACTUAL_ARM])) {
+            $pt = $type->getActualArm();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ACTUAL_ARM], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setActualArm((string)$attributes[self::FIELD_ACTUAL_ARM], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($children->identifier)) {
-            $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($children->individual)) {
-            $type->setIndividual(FHIRReference::xmlUnserialize($children->individual));
+        if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($children->period)) {
-            $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
-        }
-        if (isset($children->status)) {
-            $type->setStatus(FHIRResearchSubjectStatus::xmlUnserialize($children->status));
-        }
-        if (isset($children->study)) {
-            $type->setStudy(FHIRReference::xmlUnserialize($children->study));
+        if (isset($attributes[self::FIELD_LANGUAGE])) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getActualArm())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ACTUAL_ARM, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getAssignedArm())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ASSIGNED_ARM, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getConsent())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONSENT, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ResearchSubject', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ASSIGNED_ARM] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAssignedArm())) {
+            $xw->writeAttribute(self::FIELD_ASSIGNED_ARM, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTUAL_ARM] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getActualArm())) {
+            $xw->writeAttribute(self::FIELD_ACTUAL_ARM, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getIndividual())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INDIVIDUAL, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_IDENTIFIER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_STATUS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $xw->startElement(self::FIELD_PERIOD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getStudy())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STUDY, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_STUDY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getIndividual())) {
+            $xw->startElement(self::FIELD_INDIVIDUAL);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ASSIGNED_ARM] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAssignedArm())) {
+            $xw->startElement(self::FIELD_ASSIGNED_ARM);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ACTUAL_ARM] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getActualArm())) {
+            $xw->startElement(self::FIELD_ACTUAL_ARM);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getConsent())) {
+            $xw->startElement(self::FIELD_CONSENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getActualArm())) {
-            $a[self::FIELD_ACTUAL_ARM] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_ACTUAL_ARM_EXT] = $enc;
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getIdentifier())) {
+            $out->{self::FIELD_IDENTIFIER} = $v;
+        }
+        if (null !== ($v = $this->getStatus())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_STATUS} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRResearchSubjectStatus::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_STATUS_EXT} = $ext;
             }
         }
+        if (null !== ($v = $this->getPeriod())) {
+            $out->{self::FIELD_PERIOD} = $v;
+        }
+        if (null !== ($v = $this->getStudy())) {
+            $out->{self::FIELD_STUDY} = $v;
+        }
+        if (null !== ($v = $this->getIndividual())) {
+            $out->{self::FIELD_INDIVIDUAL} = $v;
+        }
         if (null !== ($v = $this->getAssignedArm())) {
-            $a[self::FIELD_ASSIGNED_ARM] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_ASSIGNED_ARM_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_ASSIGNED_ARM} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_ASSIGNED_ARM_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getActualArm())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_ACTUAL_ARM} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_ACTUAL_ARM_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getConsent())) {
-            $a[self::FIELD_CONSENT] = $v;
+            $out->{self::FIELD_CONSENT} = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
-        }
-        if (null !== ($v = $this->getIndividual())) {
-            $a[self::FIELD_INDIVIDUAL] = $v;
-        }
-        if (null !== ($v = $this->getPeriod())) {
-            $a[self::FIELD_PERIOD] = $v;
-        }
-        if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRResearchSubjectStatus::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRResearchSubjectStatus::FIELD_VALUE]);
-                $a[self::FIELD_STATUS_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getStudy())) {
-            $a[self::FIELD_STUDY] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
-    }
 
+        $out->{PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE} = $this->_getResourceType();
+
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

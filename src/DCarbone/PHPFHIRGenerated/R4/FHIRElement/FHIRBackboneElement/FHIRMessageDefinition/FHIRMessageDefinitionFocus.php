@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,13 +62,22 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessa
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRCanonicalPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRUnsignedIntPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Defines the characteristics of a message that can be shared between systems,
@@ -82,17 +91,15 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MESSAGE_DEFINITION_DOT_FOCUS;
+
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
-    const FIELD_MAX = 'max';
-    const FIELD_MAX_EXT = '_max';
-    const FIELD_MIN = 'min';
-    const FIELD_MIN_EXT = '_min';
     const FIELD_PROFILE = 'profile';
     const FIELD_PROFILE_EXT = '_profile';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_MIN = 'min';
+    const FIELD_MIN_EXT = '_min';
+    const FIELD_MAX = 'max';
+    const FIELD_MAX_EXT = '_max';
 
     /**
      * A string which has at least one character and no leading or trailing whitespace
@@ -104,32 +111,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
-    protected $code = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Identifies the maximum number of resources of this type that must be pointed to
-     * by a message in order for it to be valid against this MessageDefinition.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $max = null;
-
-    /**
-     * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Identifies the minimum number of resources of this type that must be pointed to
-     * by a message in order for it to be valid against this MessageDefinition.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
-     */
-    protected $min = null;
-
+    protected null|FHIRCode $code = null;
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
@@ -141,41 +123,52 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    protected $profile = null;
+    protected null|FHIRCanonical $profile = null;
+    /**
+     * An integer with a value that is not negative (e.g. >= 0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Identifies the minimum number of resources of this type that must be pointed to
+     * by a message in order for it to be valid against this MessageDefinition.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
+     */
+    protected null|FHIRUnsignedInt $min = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Identifies the maximum number of resources of this type that must be pointed to
+     * by a message in order for it to be valid against this MessageDefinition.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $max = null;
 
     /**
      * Validation map for fields in type MessageDefinition.Focus
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRMessageDefinitionFocus Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMessageDefinitionFocus::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CODE]) || isset($data[self::FIELD_CODE_EXT])) {
-            if (isset($data[self::FIELD_CODE])) {
-                $value = $data[self::FIELD_CODE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CODE_EXT]) && is_array($data[self::FIELD_CODE_EXT])) {
-                $ext = $data[self::FIELD_CODE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_CODE, $data) || array_key_exists(self::FIELD_CODE_EXT, $data)) {
+            $value = $data[self::FIELD_CODE] ?? null;
+            $ext = (isset($data[self::FIELD_CODE_EXT]) && is_array($data[self::FIELD_CODE_EXT])) ? $data[self::FIELD_CODE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRCode) {
                     $this->setCode($value);
@@ -184,67 +177,15 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
                 } else {
                     $this->setCode(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setCode(new FHIRCode($ext));
+            } else {
+                $this->setCode(new FHIRCode(null));
             }
         }
-        if (isset($data[self::FIELD_MAX]) || isset($data[self::FIELD_MAX_EXT])) {
-            if (isset($data[self::FIELD_MAX])) {
-                $value = $data[self::FIELD_MAX];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_MAX_EXT]) && is_array($data[self::FIELD_MAX_EXT])) {
-                $ext = $data[self::FIELD_MAX_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setMax($value);
-                } else if (is_array($value)) {
-                    $this->setMax(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setMax(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setMax(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_MIN]) || isset($data[self::FIELD_MIN_EXT])) {
-            if (isset($data[self::FIELD_MIN])) {
-                $value = $data[self::FIELD_MIN];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_MIN_EXT]) && is_array($data[self::FIELD_MIN_EXT])) {
-                $ext = $data[self::FIELD_MIN_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUnsignedInt) {
-                    $this->setMin($value);
-                } else if (is_array($value)) {
-                    $this->setMin(new FHIRUnsignedInt(array_merge($ext, $value)));
-                } else {
-                    $this->setMin(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setMin(new FHIRUnsignedInt($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PROFILE]) || isset($data[self::FIELD_PROFILE_EXT])) {
-            if (isset($data[self::FIELD_PROFILE])) {
-                $value = $data[self::FIELD_PROFILE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PROFILE_EXT]) && is_array($data[self::FIELD_PROFILE_EXT])) {
-                $ext = $data[self::FIELD_PROFILE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_PROFILE, $data) || array_key_exists(self::FIELD_PROFILE_EXT, $data)) {
+            $value = $data[self::FIELD_PROFILE] ?? null;
+            $ext = (isset($data[self::FIELD_PROFILE_EXT]) && is_array($data[self::FIELD_PROFILE_EXT])) ? $data[self::FIELD_PROFILE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRCanonical) {
                     $this->setProfile($value);
@@ -253,8 +194,44 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
                 } else {
                     $this->setProfile(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setProfile(new FHIRCanonical($ext));
+            } else {
+                $this->setProfile(new FHIRCanonical(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_MIN, $data) || array_key_exists(self::FIELD_MIN_EXT, $data)) {
+            $value = $data[self::FIELD_MIN] ?? null;
+            $ext = (isset($data[self::FIELD_MIN_EXT]) && is_array($data[self::FIELD_MIN_EXT])) ? $data[self::FIELD_MIN_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUnsignedInt) {
+                    $this->setMin($value);
+                } else if (is_array($value)) {
+                    $this->setMin(new FHIRUnsignedInt(array_merge($ext, $value)));
+                } else {
+                    $this->setMin(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setMin(new FHIRUnsignedInt($ext));
+            } else {
+                $this->setMin(new FHIRUnsignedInt(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_MAX, $data) || array_key_exists(self::FIELD_MAX_EXT, $data)) {
+            $value = $data[self::FIELD_MAX] ?? null;
+            $ext = (isset($data[self::FIELD_MAX_EXT]) && is_array($data[self::FIELD_MAX_EXT])) ? $data[self::FIELD_MAX_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setMax($value);
+                } else if (is_array($value)) {
+                    $this->setMax(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setMax(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setMax(new FHIRString($ext));
+            } else {
+                $this->setMax(new FHIRString(null));
             }
         }
     }
@@ -262,21 +239,9 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<MessageDefinitionFocus{$xmlns}></MessageDefinitionFocus>";
     }
 
     /**
@@ -289,7 +254,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
-    public function getCode()
+    public function getCode(): null|FHIRCode
     {
         return $this->code;
     }
@@ -302,100 +267,21 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * The kind of resource that must be the focus for this message.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $code
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode $code
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCode($code = null)
+    public function setCode(null|string|FHIRCodePrimitive|FHIRCode $code = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $code) {
-            $this->code = null;
-            return $this;
+        if (null !== $code && !($code instanceof FHIRCode)) {
+            $code = new FHIRCode($code);
         }
-        if ($code instanceof FHIRCode) {
-            $this->code = $code;
-            return $this;
+        $this->_trackValueSet($this->code, $code);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_CODE])) {
+            $this->_primitiveXmlLocations[self::FIELD_CODE] = [];
         }
-        $this->code = new FHIRCode($code);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Identifies the maximum number of resources of this type that must be pointed to
-     * by a message in order for it to be valid against this MessageDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getMax()
-    {
-        return $this->max;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Identifies the maximum number of resources of this type that must be pointed to
-     * by a message in order for it to be valid against this MessageDefinition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $max
-     * @return static
-     */
-    public function setMax($max = null)
-    {
-        if (null === $max) {
-            $this->max = null;
-            return $this;
-        }
-        if ($max instanceof FHIRString) {
-            $this->max = $max;
-            return $this;
-        }
-        $this->max = new FHIRString($max);
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Identifies the minimum number of resources of this type that must be pointed to
-     * by a message in order for it to be valid against this MessageDefinition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
-     */
-    public function getMin()
-    {
-        return $this->min;
-    }
-
-    /**
-     * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Identifies the minimum number of resources of this type that must be pointed to
-     * by a message in order for it to be valid against this MessageDefinition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $min
-     * @return static
-     */
-    public function setMin($min = null)
-    {
-        if (null === $min) {
-            $this->min = null;
-            return $this;
-        }
-        if ($min instanceof FHIRUnsignedInt) {
-            $this->min = $min;
-            return $this;
-        }
-        $this->min = new FHIRUnsignedInt($min);
+        $this->_primitiveXmlLocations[self::FIELD_CODE][0] = $xmlLocation;
+        $this->code = $code;
         return $this;
     }
 
@@ -410,7 +296,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    public function getProfile()
+    public function getProfile(): null|FHIRCanonical
     {
         return $this->profile;
     }
@@ -424,20 +310,103 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      * A profile that reflects constraints for the focal resource (and potentially for
      * related resources).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $profile
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $profile
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setProfile($profile = null)
+    public function setProfile(null|string|FHIRCanonicalPrimitive|FHIRCanonical $profile = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $profile) {
-            $this->profile = null;
-            return $this;
+        if (null !== $profile && !($profile instanceof FHIRCanonical)) {
+            $profile = new FHIRCanonical($profile);
         }
-        if ($profile instanceof FHIRCanonical) {
-            $this->profile = $profile;
-            return $this;
+        $this->_trackValueSet($this->profile, $profile);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PROFILE])) {
+            $this->_primitiveXmlLocations[self::FIELD_PROFILE] = [];
         }
-        $this->profile = new FHIRCanonical($profile);
+        $this->_primitiveXmlLocations[self::FIELD_PROFILE][0] = $xmlLocation;
+        $this->profile = $profile;
+        return $this;
+    }
+
+    /**
+     * An integer with a value that is not negative (e.g. >= 0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Identifies the minimum number of resources of this type that must be pointed to
+     * by a message in order for it to be valid against this MessageDefinition.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
+     */
+    public function getMin(): null|FHIRUnsignedInt
+    {
+        return $this->min;
+    }
+
+    /**
+     * An integer with a value that is not negative (e.g. >= 0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Identifies the minimum number of resources of this type that must be pointed to
+     * by a message in order for it to be valid against this MessageDefinition.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $min
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setMin(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $min = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $min && !($min instanceof FHIRUnsignedInt)) {
+            $min = new FHIRUnsignedInt($min);
+        }
+        $this->_trackValueSet($this->min, $min);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_MIN])) {
+            $this->_primitiveXmlLocations[self::FIELD_MIN] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_MIN][0] = $xmlLocation;
+        $this->min = $min;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Identifies the maximum number of resources of this type that must be pointed to
+     * by a message in order for it to be valid against this MessageDefinition.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getMax(): null|FHIRString
+    {
+        return $this->max;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Identifies the maximum number of resources of this type that must be pointed to
+     * by a message in order for it to be valid against this MessageDefinition.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $max
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setMax(null|string|FHIRStringPrimitive|FHIRString $max = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $max && !($max instanceof FHIRString)) {
+            $max = new FHIRString($max);
+        }
+        $this->_trackValueSet($this->max, $max);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_MAX])) {
+            $this->_primitiveXmlLocations[self::FIELD_MAX] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_MAX][0] = $xmlLocation;
+        $this->max = $max;
         return $this;
     }
 
@@ -447,9 +416,9 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -458,7 +427,7 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
@@ -467,9 +436,9 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
                 $errs[self::FIELD_CODE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getMax())) {
+        if (null !== ($v = $this->getProfile())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_MAX] = $fieldErrs;
+                $errs[self::FIELD_PROFILE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getMin())) {
@@ -477,9 +446,9 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
                 $errs[self::FIELD_MIN] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getProfile())) {
+        if (null !== ($v = $this->getMax())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PROFILE] = $fieldErrs;
+                $errs[self::FIELD_MAX] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_CODE])) {
@@ -494,15 +463,15 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_MAX])) {
-            $v = $this->getMax();
-            foreach($validationRules[self::FIELD_MAX] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_DEFINITION_DOT_FOCUS, self::FIELD_MAX, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PROFILE])) {
+            $v = $this->getProfile();
+            foreach($validationRules[self::FIELD_PROFILE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_DEFINITION_DOT_FOCUS, self::FIELD_PROFILE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MAX])) {
-                        $errs[self::FIELD_MAX] = [];
+                    if (!isset($errs[self::FIELD_PROFILE])) {
+                        $errs[self::FIELD_PROFILE] = [];
                     }
-                    $errs[self::FIELD_MAX][$rule] = $err;
+                    $errs[self::FIELD_PROFILE][$rule] = $err;
                 }
             }
         }
@@ -518,15 +487,15 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PROFILE])) {
-            $v = $this->getProfile();
-            foreach($validationRules[self::FIELD_PROFILE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_DEFINITION_DOT_FOCUS, self::FIELD_PROFILE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_MAX])) {
+            $v = $this->getMax();
+            foreach($validationRules[self::FIELD_MAX] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_DEFINITION_DOT_FOCUS, self::FIELD_MAX, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PROFILE])) {
-                        $errs[self::FIELD_PROFILE] = [];
+                    if (!isset($errs[self::FIELD_MAX])) {
+                        $errs[self::FIELD_MAX] = [];
                     }
-                    $errs[self::FIELD_PROFILE][$rule] = $err;
+                    $errs[self::FIELD_MAX][$rule] = $err;
                 }
             }
         }
@@ -570,171 +539,229 @@ class FHIRMessageDefinitionFocus extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRMessageDefinitionFocus::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMessageDefinitionFocus::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRMessageDefinitionFocus;
-        } elseif (!is_object($type) || !($type instanceof FHIRMessageDefinitionFocus)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRMessageDefinitionFocus)) {
             throw new \RuntimeException(sprintf(
-                'FHIRMessageDefinitionFocus::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_CODE === $childName) {
+                $type->setCode(FHIRCode::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PROFILE === $childName) {
+                $type->setProfile(FHIRCanonical::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MIN === $childName) {
+                $type->setMin(FHIRUnsignedInt::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MAX === $childName) {
+                $type->setMax(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->code)) {
-            $type->setCode(FHIRCode::xmlUnserialize($children->code));
-        }
-        if (isset($attributes->code)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_CODE])) {
             $pt = $type->getCode();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->code);
+                $pt->setValue((string)$attributes[self::FIELD_CODE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setCode((string)$attributes->code);
+                $type->setCode((string)$attributes[self::FIELD_CODE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->max)) {
-            $type->setMax(FHIRString::xmlUnserialize($children->max));
-        }
-        if (isset($attributes->max)) {
-            $pt = $type->getMax();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->max);
-            } else {
-                $type->setMax((string)$attributes->max);
-            }
-        }
-        if (isset($children->min)) {
-            $type->setMin(FHIRUnsignedInt::xmlUnserialize($children->min));
-        }
-        if (isset($attributes->min)) {
-            $pt = $type->getMin();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->min);
-            } else {
-                $type->setMin((string)$attributes->min);
-            }
-        }
-        if (isset($children->profile)) {
-            $type->setProfile(FHIRCanonical::xmlUnserialize($children->profile));
-        }
-        if (isset($attributes->profile)) {
+        if (isset($attributes[self::FIELD_PROFILE])) {
             $pt = $type->getProfile();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->profile);
+                $pt->setValue((string)$attributes[self::FIELD_PROFILE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setProfile((string)$attributes->profile);
+                $type->setProfile((string)$attributes[self::FIELD_PROFILE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_MIN])) {
+            $pt = $type->getMin();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_MIN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setMin((string)$attributes[self::FIELD_MIN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_MAX])) {
+            $pt = $type->getMax();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_MAX], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setMax((string)$attributes[self::FIELD_MAX], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getMax())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getMin())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MIN, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getProfile())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PROFILE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'MessageDefinitionFocus', $this->_getSourceXmlns());
         }
-        return $sxe;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CODE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCode())) {
+            $xw->writeAttribute(self::FIELD_CODE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PROFILE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getProfile())) {
+            $xw->writeAttribute(self::FIELD_PROFILE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_MIN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getMin())) {
+            $xw->writeAttribute(self::FIELD_MIN, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_MAX] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getMax())) {
+            $xw->writeAttribute(self::FIELD_MAX, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CODE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCode())) {
+            $xw->startElement(self::FIELD_CODE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PROFILE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getProfile())) {
+            $xw->startElement(self::FIELD_PROFILE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_MIN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getMin())) {
+            $xw->startElement(self::FIELD_MIN);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_MAX] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getMax())) {
+            $xw->startElement(self::FIELD_MAX);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getCode())) {
-            $a[self::FIELD_CODE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCode::FIELD_VALUE]);
-                $a[self::FIELD_CODE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_CODE} = $val;
             }
-        }
-        if (null !== ($v = $this->getMax())) {
-            $a[self::FIELD_MAX] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_MAX_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getMin())) {
-            $a[self::FIELD_MIN] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUnsignedInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUnsignedInt::FIELD_VALUE]);
-                $a[self::FIELD_MIN_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRCode::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_CODE_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getProfile())) {
-            $a[self::FIELD_PROFILE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCanonical::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCanonical::FIELD_VALUE]);
-                $a[self::FIELD_PROFILE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PROFILE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRCanonical::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PROFILE_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getMin())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_MIN} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRUnsignedInt::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_MIN_EXT} = $ext;
+            }
         }
-        return $a;
-    }
+        if (null !== ($v = $this->getMax())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_MAX} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_MAX_EXT} = $ext;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

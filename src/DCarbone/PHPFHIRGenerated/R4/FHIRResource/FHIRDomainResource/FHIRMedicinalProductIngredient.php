@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,16 +62,31 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\R4\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\R4\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeMap;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * An ingredient of a manufactured item or pharmaceutical product.
@@ -84,26 +99,14 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT;
+
+    const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_ROLE = 'role';
     const FIELD_ALLERGENIC_INDICATOR = 'allergenicIndicator';
     const FIELD_ALLERGENIC_INDICATOR_EXT = '_allergenicIndicator';
-    const FIELD_IDENTIFIER = 'identifier';
     const FIELD_MANUFACTURER = 'manufacturer';
-    const FIELD_ROLE = 'role';
     const FIELD_SPECIFIED_SUBSTANCE = 'specifiedSubstance';
     const FIELD_SUBSTANCE = 'substance';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If the ingredient is a known or suspected allergen.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    protected $allergenicIndicator = null;
 
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
@@ -117,19 +120,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    protected $identifier = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Manufacturer of this Ingredient.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    protected $manufacturer = [];
-
+    protected null|FHIRIdentifier $identifier = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -140,8 +131,26 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $role = null;
-
+    protected null|FHIRCodeableConcept $role = null;
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If the ingredient is a known or suspected allergen.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    protected null|FHIRBoolean $allergenicIndicator = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Manufacturer of this Ingredient.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
+     */
+    protected null|array $manufacturer = [];
     /**
      * An ingredient of a manufactured item or pharmaceutical product.
      *
@@ -149,8 +158,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance[]
      */
-    protected $specifiedSubstance = [];
-
+    protected null|array $specifiedSubstance = [];
     /**
      * An ingredient of a manufactured item or pharmaceutical product.
      *
@@ -158,41 +166,44 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance
      */
-    protected $substance = null;
+    protected null|FHIRMedicinalProductIngredientSubstance $substance = null;
 
     /**
      * Validation map for fields in type MedicinalProductIngredient
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRMedicinalProductIngredient Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMedicinalProductIngredient::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ALLERGENIC_INDICATOR]) || isset($data[self::FIELD_ALLERGENIC_INDICATOR_EXT])) {
-            if (isset($data[self::FIELD_ALLERGENIC_INDICATOR])) {
-                $value = $data[self::FIELD_ALLERGENIC_INDICATOR];
+        if (array_key_exists(self::FIELD_IDENTIFIER, $data)) {
+            if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+                $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
             } else {
-                $value = null;
+                $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
-            if (isset($data[self::FIELD_ALLERGENIC_INDICATOR_EXT]) && is_array($data[self::FIELD_ALLERGENIC_INDICATOR_EXT])) {
-                $ext = $data[self::FIELD_ALLERGENIC_INDICATOR_EXT];
+        }
+        if (array_key_exists(self::FIELD_ROLE, $data)) {
+            if ($data[self::FIELD_ROLE] instanceof FHIRCodeableConcept) {
+                $this->setRole($data[self::FIELD_ROLE]);
             } else {
-                $ext = [];
+                $this->setRole(new FHIRCodeableConcept($data[self::FIELD_ROLE]));
             }
+        }
+        if (array_key_exists(self::FIELD_ALLERGENIC_INDICATOR, $data) || array_key_exists(self::FIELD_ALLERGENIC_INDICATOR_EXT, $data)) {
+            $value = $data[self::FIELD_ALLERGENIC_INDICATOR] ?? null;
+            $ext = (isset($data[self::FIELD_ALLERGENIC_INDICATOR_EXT]) && is_array($data[self::FIELD_ALLERGENIC_INDICATOR_EXT])) ? $data[self::FIELD_ALLERGENIC_INDICATOR_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setAllergenicIndicator($value);
@@ -201,61 +212,43 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
                 } else {
                     $this->setAllergenicIndicator(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setAllergenicIndicator(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_IDENTIFIER])) {
-            if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
-                $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
             } else {
-                $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
+                $this->setAllergenicIndicator(new FHIRBoolean(null));
             }
         }
-        if (isset($data[self::FIELD_MANUFACTURER])) {
+        if (array_key_exists(self::FIELD_MANUFACTURER, $data)) {
             if (is_array($data[self::FIELD_MANUFACTURER])) {
                 foreach($data[self::FIELD_MANUFACTURER] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRReference) {
                         $this->addManufacturer($v);
                     } else {
                         $this->addManufacturer(new FHIRReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_MANUFACTURER] instanceof FHIRReference) {
+            } elseif ($data[self::FIELD_MANUFACTURER] instanceof FHIRReference) {
                 $this->addManufacturer($data[self::FIELD_MANUFACTURER]);
             } else {
                 $this->addManufacturer(new FHIRReference($data[self::FIELD_MANUFACTURER]));
             }
         }
-        if (isset($data[self::FIELD_ROLE])) {
-            if ($data[self::FIELD_ROLE] instanceof FHIRCodeableConcept) {
-                $this->setRole($data[self::FIELD_ROLE]);
-            } else {
-                $this->setRole(new FHIRCodeableConcept($data[self::FIELD_ROLE]));
-            }
-        }
-        if (isset($data[self::FIELD_SPECIFIED_SUBSTANCE])) {
+        if (array_key_exists(self::FIELD_SPECIFIED_SUBSTANCE, $data)) {
             if (is_array($data[self::FIELD_SPECIFIED_SUBSTANCE])) {
                 foreach($data[self::FIELD_SPECIFIED_SUBSTANCE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRMedicinalProductIngredientSpecifiedSubstance) {
                         $this->addSpecifiedSubstance($v);
                     } else {
                         $this->addSpecifiedSubstance(new FHIRMedicinalProductIngredientSpecifiedSubstance($v));
                     }
                 }
-            } else if ($data[self::FIELD_SPECIFIED_SUBSTANCE] instanceof FHIRMedicinalProductIngredientSpecifiedSubstance) {
+            } elseif ($data[self::FIELD_SPECIFIED_SUBSTANCE] instanceof FHIRMedicinalProductIngredientSpecifiedSubstance) {
                 $this->addSpecifiedSubstance($data[self::FIELD_SPECIFIED_SUBSTANCE]);
             } else {
                 $this->addSpecifiedSubstance(new FHIRMedicinalProductIngredientSpecifiedSubstance($data[self::FIELD_SPECIFIED_SUBSTANCE]));
             }
         }
-        if (isset($data[self::FIELD_SUBSTANCE])) {
+        if (array_key_exists(self::FIELD_SUBSTANCE, $data)) {
             if ($data[self::FIELD_SUBSTANCE] instanceof FHIRMedicinalProductIngredientSubstance) {
                 $this->setSubstance($data[self::FIELD_SUBSTANCE]);
             } else {
@@ -267,7 +260,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -275,57 +268,9 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
     /**
      * @return string
      */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<MedicinalProductIngredient{$xmlns}></MedicinalProductIngredient>";
-    }
-    /**
-     * @return string
-     */
-    public function _getResourceType()
+    public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
-    }
-
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If the ingredient is a known or suspected allergen.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    public function getAllergenicIndicator()
-    {
-        return $this->allergenicIndicator;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If the ingredient is a known or suspected allergen.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $allergenicIndicator
-     * @return static
-     */
-    public function setAllergenicIndicator($allergenicIndicator = null)
-    {
-        if (null === $allergenicIndicator) {
-            $this->allergenicIndicator = null;
-            return $this;
-        }
-        if ($allergenicIndicator instanceof FHIRBoolean) {
-            $this->allergenicIndicator = $allergenicIndicator;
-            return $this;
-        }
-        $this->allergenicIndicator = new FHIRBoolean($allergenicIndicator);
-        return $this;
     }
 
     /**
@@ -340,7 +285,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
+    public function getIdentifier(): null|FHIRIdentifier
     {
         return $this->identifier;
     }
@@ -358,65 +303,13 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function setIdentifier(null|FHIRIdentifier $identifier = null): self
     {
+        if (null === $identifier) {
+            $identifier = new FHIRIdentifier();
+        }
+        $this->_trackValueSet($this->identifier, $identifier);
         $this->identifier = $identifier;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Manufacturer of this Ingredient.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
-     */
-    public function getManufacturer()
-    {
-        return $this->manufacturer;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Manufacturer of this Ingredient.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $manufacturer
-     * @return static
-     */
-    public function addManufacturer(FHIRReference $manufacturer = null)
-    {
-        $this->manufacturer[] = $manufacturer;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Manufacturer of this Ingredient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[] $manufacturer
-     * @return static
-     */
-    public function setManufacturer(array $manufacturer = [])
-    {
-        $this->manufacturer = [];
-        if ([] === $manufacturer) {
-            return $this;
-        }
-        foreach($manufacturer as $v) {
-            if ($v instanceof FHIRReference) {
-                $this->addManufacturer($v);
-            } else {
-                $this->addManufacturer(new FHIRReference($v));
-            }
-        }
         return $this;
     }
 
@@ -430,7 +323,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getRole()
+    public function getRole(): null|FHIRCodeableConcept
     {
         return $this->role;
     }
@@ -446,9 +339,84 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $role
      * @return static
      */
-    public function setRole(FHIRCodeableConcept $role = null)
+    public function setRole(null|FHIRCodeableConcept $role = null): self
     {
+        if (null === $role) {
+            $role = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->role, $role);
         $this->role = $role;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If the ingredient is a known or suspected allergen.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    public function getAllergenicIndicator(): null|FHIRBoolean
+    {
+        return $this->allergenicIndicator;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If the ingredient is a known or suspected allergen.
+     *
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $allergenicIndicator
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setAllergenicIndicator(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $allergenicIndicator = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $allergenicIndicator && !($allergenicIndicator instanceof FHIRBoolean)) {
+            $allergenicIndicator = new FHIRBoolean($allergenicIndicator);
+        }
+        $this->_trackValueSet($this->allergenicIndicator, $allergenicIndicator);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR])) {
+            $this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR][0] = $xmlLocation;
+        $this->allergenicIndicator = $allergenicIndicator;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Manufacturer of this Ingredient.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
+     */
+    public function getManufacturer(): null|array
+    {
+        return $this->manufacturer;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Manufacturer of this Ingredient.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $manufacturer
+     * @return static
+     */
+    public function addManufacturer(null|FHIRReference $manufacturer = null): self
+    {
+        if (null === $manufacturer) {
+            $manufacturer = new FHIRReference();
+        }
+        $this->_trackValueAdded();
+        $this->manufacturer[] = $manufacturer;
         return $this;
     }
 
@@ -459,7 +427,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance[]
      */
-    public function getSpecifiedSubstance()
+    public function getSpecifiedSubstance(): null|array
     {
         return $this->specifiedSubstance;
     }
@@ -472,33 +440,13 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance $specifiedSubstance
      * @return static
      */
-    public function addSpecifiedSubstance(FHIRMedicinalProductIngredientSpecifiedSubstance $specifiedSubstance = null)
+    public function addSpecifiedSubstance(null|FHIRMedicinalProductIngredientSpecifiedSubstance $specifiedSubstance = null): self
     {
+        if (null === $specifiedSubstance) {
+            $specifiedSubstance = new FHIRMedicinalProductIngredientSpecifiedSubstance();
+        }
+        $this->_trackValueAdded();
         $this->specifiedSubstance[] = $specifiedSubstance;
-        return $this;
-    }
-
-    /**
-     * An ingredient of a manufactured item or pharmaceutical product.
-     *
-     * A specified substance that comprises this ingredient.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance[] $specifiedSubstance
-     * @return static
-     */
-    public function setSpecifiedSubstance(array $specifiedSubstance = [])
-    {
-        $this->specifiedSubstance = [];
-        if ([] === $specifiedSubstance) {
-            return $this;
-        }
-        foreach($specifiedSubstance as $v) {
-            if ($v instanceof FHIRMedicinalProductIngredientSpecifiedSubstance) {
-                $this->addSpecifiedSubstance($v);
-            } else {
-                $this->addSpecifiedSubstance(new FHIRMedicinalProductIngredientSpecifiedSubstance($v));
-            }
-        }
         return $this;
     }
 
@@ -509,7 +457,7 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance
      */
-    public function getSubstance()
+    public function getSubstance(): null|FHIRMedicinalProductIngredientSubstance
     {
         return $this->substance;
     }
@@ -522,8 +470,12 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance $substance
      * @return static
      */
-    public function setSubstance(FHIRMedicinalProductIngredientSubstance $substance = null)
+    public function setSubstance(null|FHIRMedicinalProductIngredientSubstance $substance = null): self
     {
+        if (null === $substance) {
+            $substance = new FHIRMedicinalProductIngredientSubstance();
+        }
+        $this->_trackValueSet($this->substance, $substance);
         $this->substance = $substance;
         return $this;
     }
@@ -534,9 +486,9 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -545,18 +497,23 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAllergenicIndicator())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ALLERGENIC_INDICATOR] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getIdentifier())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRole())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ROLE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getAllergenicIndicator())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ALLERGENIC_INDICATOR] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getManufacturer())) {
@@ -564,11 +521,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_MANUFACTURER, $i)] = $fieldErrs;
                 }
-            }
-        }
-        if (null !== ($v = $this->getRole())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ROLE] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getSpecifiedSubstance())) {
@@ -583,18 +535,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
                 $errs[self::FIELD_SUBSTANCE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_ALLERGENIC_INDICATOR])) {
-            $v = $this->getAllergenicIndicator();
-            foreach($validationRules[self::FIELD_ALLERGENIC_INDICATOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT, self::FIELD_ALLERGENIC_INDICATOR, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ALLERGENIC_INDICATOR])) {
-                        $errs[self::FIELD_ALLERGENIC_INDICATOR] = [];
-                    }
-                    $errs[self::FIELD_ALLERGENIC_INDICATOR][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_IDENTIFIER])) {
             $v = $this->getIdentifier();
             foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
@@ -607,18 +547,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_MANUFACTURER])) {
-            $v = $this->getManufacturer();
-            foreach($validationRules[self::FIELD_MANUFACTURER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT, self::FIELD_MANUFACTURER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MANUFACTURER])) {
-                        $errs[self::FIELD_MANUFACTURER] = [];
-                    }
-                    $errs[self::FIELD_MANUFACTURER][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ROLE])) {
             $v = $this->getRole();
             foreach($validationRules[self::FIELD_ROLE] as $rule => $constraint) {
@@ -628,6 +556,30 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
                         $errs[self::FIELD_ROLE] = [];
                     }
                     $errs[self::FIELD_ROLE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ALLERGENIC_INDICATOR])) {
+            $v = $this->getAllergenicIndicator();
+            foreach($validationRules[self::FIELD_ALLERGENIC_INDICATOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT, self::FIELD_ALLERGENIC_INDICATOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ALLERGENIC_INDICATOR])) {
+                        $errs[self::FIELD_ALLERGENIC_INDICATOR] = [];
+                    }
+                    $errs[self::FIELD_ALLERGENIC_INDICATOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_MANUFACTURER])) {
+            $v = $this->getManufacturer();
+            foreach($validationRules[self::FIELD_MANUFACTURER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICINAL_PRODUCT_INGREDIENT, self::FIELD_MANUFACTURER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_MANUFACTURER])) {
+                        $errs[self::FIELD_MANUFACTURER] = [];
+                    }
+                    $errs[self::FIELD_MANUFACTURER][$rule] = $err;
                 }
             }
         }
@@ -652,6 +604,18 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
                         $errs[self::FIELD_SUBSTANCE] = [];
                     }
                     $errs[self::FIELD_SUBSTANCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -691,18 +655,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -712,6 +664,18 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -739,189 +703,229 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRMedicinalProductIngredient::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicinalProductIngredient::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRMedicinalProductIngredient;
-        } elseif (!is_object($type) || !($type instanceof FHIRMedicinalProductIngredient)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRMedicinalProductIngredient)) {
             throw new \RuntimeException(sprintf(
-                'FHIRMedicinalProductIngredient::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRMedicinalProductIngredient or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_IDENTIFIER === $childName) {
+                $type->setIdentifier(FHIRIdentifier::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ROLE === $childName) {
+                $type->setRole(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ALLERGENIC_INDICATOR === $childName) {
+                $type->setAllergenicIndicator(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MANUFACTURER === $childName) {
+                $type->addManufacturer(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_SPECIFIED_SUBSTANCE === $childName) {
+                $type->addSpecifiedSubstance(FHIRMedicinalProductIngredientSpecifiedSubstance::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_SUBSTANCE === $childName) {
+                $type->setSubstance(FHIRMedicinalProductIngredientSubstance::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TEXT === $childName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CONTAINED === $childName) {
+                foreach ($n->children() as $nn) {
+                    $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn, $config));
+                }
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRId::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_META === $childName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_IMPLICIT_RULES === $childName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_LANGUAGE === $childName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->allergenicIndicator)) {
-            $type->setAllergenicIndicator(FHIRBoolean::xmlUnserialize($children->allergenicIndicator));
-        }
-        if (isset($attributes->allergenicIndicator)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ALLERGENIC_INDICATOR])) {
             $pt = $type->getAllergenicIndicator();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->allergenicIndicator);
+                $pt->setValue((string)$attributes[self::FIELD_ALLERGENIC_INDICATOR], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setAllergenicIndicator((string)$attributes->allergenicIndicator);
+                $type->setAllergenicIndicator((string)$attributes[self::FIELD_ALLERGENIC_INDICATOR], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->identifier)) {
-            $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
-        }
-        if (isset($children->manufacturer)) {
-            foreach($children->manufacturer as $child) {
-                $type->addManufacturer(FHIRReference::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->role)) {
-            $type->setRole(FHIRCodeableConcept::xmlUnserialize($children->role));
-        }
-        if (isset($children->specifiedSubstance)) {
-            foreach($children->specifiedSubstance as $child) {
-                $type->addSpecifiedSubstance(FHIRMedicinalProductIngredientSpecifiedSubstance::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->substance)) {
-            $type->setSubstance(FHIRMedicinalProductIngredientSubstance::xmlUnserialize($children->substance));
+        if (isset($attributes[self::FIELD_LANGUAGE])) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAllergenicIndicator())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ALLERGENIC_INDICATOR, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'MedicinalProductIngredient', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAllergenicIndicator())) {
+            $xw->writeAttribute(self::FIELD_ALLERGENIC_INDICATOR, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getManufacturer())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MANUFACTURER, null, $v->_getFHIRXMLNamespace()));
-            }
+            $xw->startElement(self::FIELD_IDENTIFIER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getRole())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ROLE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_ROLE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getSpecifiedSubstance())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SPECIFIED_SUBSTANCE, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ALLERGENIC_INDICATOR] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAllergenicIndicator())) {
+            $xw->startElement(self::FIELD_ALLERGENIC_INDICATOR);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getManufacturer() as $v) {
+            $xw->startElement(self::FIELD_MANUFACTURER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getSpecifiedSubstance() as $v) {
+            $xw->startElement(self::FIELD_SPECIFIED_SUBSTANCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getSubstance())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSTANCE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_SUBSTANCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAllergenicIndicator())) {
-            $a[self::FIELD_ALLERGENIC_INDICATOR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_ALLERGENIC_INDICATOR_EXT] = $enc;
-            }
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
-        }
-        if ([] !== ($vs = $this->getManufacturer())) {
-            $a[self::FIELD_MANUFACTURER] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_MANUFACTURER][] = $v;
-            }
+            $out->{self::FIELD_IDENTIFIER} = $v;
         }
         if (null !== ($v = $this->getRole())) {
-            $a[self::FIELD_ROLE] = $v;
+            $out->{self::FIELD_ROLE} = $v;
+        }
+        if (null !== ($v = $this->getAllergenicIndicator())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_ALLERGENIC_INDICATOR} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_ALLERGENIC_INDICATOR_EXT} = $ext;
+            }
+        }
+        if ([] !== ($vs = $this->getManufacturer())) {
+            $out->{self::FIELD_MANUFACTURER} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_MANUFACTURER}[] = $v;
+            }
         }
         if ([] !== ($vs = $this->getSpecifiedSubstance())) {
-            $a[self::FIELD_SPECIFIED_SUBSTANCE] = [];
+            $out->{self::FIELD_SPECIFIED_SUBSTANCE} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_SPECIFIED_SUBSTANCE][] = $v;
+                $out->{self::FIELD_SPECIFIED_SUBSTANCE}[] = $v;
             }
         }
         if (null !== ($v = $this->getSubstance())) {
-            $a[self::FIELD_SUBSTANCE] = $v;
+            $out->{self::FIELD_SUBSTANCE} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
-    }
 
+        $out->{PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE} = $this->_getResourceType();
+
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

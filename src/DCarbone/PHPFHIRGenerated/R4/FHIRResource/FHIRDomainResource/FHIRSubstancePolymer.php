@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,14 +62,29 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\R4\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeMap;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Todo.
@@ -82,16 +97,14 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER;
+
     const FIELD_CLASS = 'class';
-    const FIELD_COPOLYMER_CONNECTIVITY = 'copolymerConnectivity';
     const FIELD_GEOMETRY = 'geometry';
+    const FIELD_COPOLYMER_CONNECTIVITY = 'copolymerConnectivity';
     const FIELD_MODIFICATION = 'modification';
     const FIELD_MODIFICATION_EXT = '_modification';
     const FIELD_MONOMER_SET = 'monomerSet';
     const FIELD_REPEAT = 'repeat';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -103,8 +116,18 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $class = null;
-
+    protected null|FHIRCodeableConcept $class = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Todo.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $geometry = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -115,20 +138,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $copolymerConnectivity = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Todo.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $geometry = null;
-
+    protected null|array $copolymerConnectivity = [];
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -138,8 +148,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    protected $modification = [];
-
+    protected null|array $modification = [];
     /**
      * Todo.
      *
@@ -147,8 +156,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet[]
      */
-    protected $monomerSet = [];
-
+    protected null|array $monomerSet = [];
     /**
      * Todo.
      *
@@ -156,73 +164,59 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat[]
      */
-    protected $repeat = [];
+    protected null|array $repeat = [];
 
     /**
      * Validation map for fields in type SubstancePolymer
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRSubstancePolymer Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRSubstancePolymer::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CLASS])) {
+        if (array_key_exists(self::FIELD_CLASS, $data)) {
             if ($data[self::FIELD_CLASS] instanceof FHIRCodeableConcept) {
                 $this->setClass($data[self::FIELD_CLASS]);
             } else {
                 $this->setClass(new FHIRCodeableConcept($data[self::FIELD_CLASS]));
             }
         }
-        if (isset($data[self::FIELD_COPOLYMER_CONNECTIVITY])) {
-            if (is_array($data[self::FIELD_COPOLYMER_CONNECTIVITY])) {
-                foreach($data[self::FIELD_COPOLYMER_CONNECTIVITY] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addCopolymerConnectivity($v);
-                    } else {
-                        $this->addCopolymerConnectivity(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_COPOLYMER_CONNECTIVITY] instanceof FHIRCodeableConcept) {
-                $this->addCopolymerConnectivity($data[self::FIELD_COPOLYMER_CONNECTIVITY]);
-            } else {
-                $this->addCopolymerConnectivity(new FHIRCodeableConcept($data[self::FIELD_COPOLYMER_CONNECTIVITY]));
-            }
-        }
-        if (isset($data[self::FIELD_GEOMETRY])) {
+        if (array_key_exists(self::FIELD_GEOMETRY, $data)) {
             if ($data[self::FIELD_GEOMETRY] instanceof FHIRCodeableConcept) {
                 $this->setGeometry($data[self::FIELD_GEOMETRY]);
             } else {
                 $this->setGeometry(new FHIRCodeableConcept($data[self::FIELD_GEOMETRY]));
             }
         }
-        if (isset($data[self::FIELD_MODIFICATION]) || isset($data[self::FIELD_MODIFICATION_EXT])) {
-            if (isset($data[self::FIELD_MODIFICATION])) {
-                $value = $data[self::FIELD_MODIFICATION];
+        if (array_key_exists(self::FIELD_COPOLYMER_CONNECTIVITY, $data)) {
+            if (is_array($data[self::FIELD_COPOLYMER_CONNECTIVITY])) {
+                foreach($data[self::FIELD_COPOLYMER_CONNECTIVITY] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addCopolymerConnectivity($v);
+                    } else {
+                        $this->addCopolymerConnectivity(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_COPOLYMER_CONNECTIVITY] instanceof FHIRCodeableConcept) {
+                $this->addCopolymerConnectivity($data[self::FIELD_COPOLYMER_CONNECTIVITY]);
             } else {
-                $value = null;
+                $this->addCopolymerConnectivity(new FHIRCodeableConcept($data[self::FIELD_COPOLYMER_CONNECTIVITY]));
             }
-            if (isset($data[self::FIELD_MODIFICATION_EXT]) && is_array($data[self::FIELD_MODIFICATION_EXT])) {
-                $ext = $data[self::FIELD_MODIFICATION_EXT];
-            } else {
-                $ext = [];
-            }
+        }
+        if (array_key_exists(self::FIELD_MODIFICATION, $data) || array_key_exists(self::FIELD_MODIFICATION_EXT, $data)) {
+            $value = $data[self::FIELD_MODIFICATION] ?? null;
+            $ext = (isset($data[self::FIELD_MODIFICATION_EXT]) && is_array($data[self::FIELD_MODIFICATION_EXT])) ? $data[self::FIELD_MODIFICATION_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->addModification($value);
@@ -244,43 +238,39 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 } else {
                     $this->addModification(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addModification(new FHIRString($iext));
                 }
+            } else {
+                $this->addModification(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_MONOMER_SET])) {
+        if (array_key_exists(self::FIELD_MONOMER_SET, $data)) {
             if (is_array($data[self::FIELD_MONOMER_SET])) {
                 foreach($data[self::FIELD_MONOMER_SET] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRSubstancePolymerMonomerSet) {
                         $this->addMonomerSet($v);
                     } else {
                         $this->addMonomerSet(new FHIRSubstancePolymerMonomerSet($v));
                     }
                 }
-            } else if ($data[self::FIELD_MONOMER_SET] instanceof FHIRSubstancePolymerMonomerSet) {
+            } elseif ($data[self::FIELD_MONOMER_SET] instanceof FHIRSubstancePolymerMonomerSet) {
                 $this->addMonomerSet($data[self::FIELD_MONOMER_SET]);
             } else {
                 $this->addMonomerSet(new FHIRSubstancePolymerMonomerSet($data[self::FIELD_MONOMER_SET]));
             }
         }
-        if (isset($data[self::FIELD_REPEAT])) {
+        if (array_key_exists(self::FIELD_REPEAT, $data)) {
             if (is_array($data[self::FIELD_REPEAT])) {
                 foreach($data[self::FIELD_REPEAT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRSubstancePolymerRepeat) {
                         $this->addRepeat($v);
                     } else {
                         $this->addRepeat(new FHIRSubstancePolymerRepeat($v));
                     }
                 }
-            } else if ($data[self::FIELD_REPEAT] instanceof FHIRSubstancePolymerRepeat) {
+            } elseif ($data[self::FIELD_REPEAT] instanceof FHIRSubstancePolymerRepeat) {
                 $this->addRepeat($data[self::FIELD_REPEAT]);
             } else {
                 $this->addRepeat(new FHIRSubstancePolymerRepeat($data[self::FIELD_REPEAT]));
@@ -291,7 +281,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -299,22 +289,10 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * @return string
      */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<SubstancePolymer{$xmlns}></SubstancePolymer>";
-    }
-    /**
-     * @return string
-     */
-    public function _getResourceType()
+    public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
-
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -326,7 +304,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getClass()
+    public function getClass(): null|FHIRCodeableConcept
     {
         return $this->class;
     }
@@ -342,68 +320,13 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $class
      * @return static
      */
-    public function setClass(FHIRCodeableConcept $class = null)
+    public function setClass(null|FHIRCodeableConcept $class = null): self
     {
+        if (null === $class) {
+            $class = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->class, $class);
         $this->class = $class;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Todo.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getCopolymerConnectivity()
-    {
-        return $this->copolymerConnectivity;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Todo.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $copolymerConnectivity
-     * @return static
-     */
-    public function addCopolymerConnectivity(FHIRCodeableConcept $copolymerConnectivity = null)
-    {
-        $this->copolymerConnectivity[] = $copolymerConnectivity;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[] $copolymerConnectivity
-     * @return static
-     */
-    public function setCopolymerConnectivity(array $copolymerConnectivity = [])
-    {
-        $this->copolymerConnectivity = [];
-        if ([] === $copolymerConnectivity) {
-            return $this;
-        }
-        foreach($copolymerConnectivity as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addCopolymerConnectivity($v);
-            } else {
-                $this->addCopolymerConnectivity(new FHIRCodeableConcept($v));
-            }
-        }
         return $this;
     }
 
@@ -417,7 +340,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getGeometry()
+    public function getGeometry(): null|FHIRCodeableConcept
     {
         return $this->geometry;
     }
@@ -433,9 +356,49 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $geometry
      * @return static
      */
-    public function setGeometry(FHIRCodeableConcept $geometry = null)
+    public function setGeometry(null|FHIRCodeableConcept $geometry = null): self
     {
+        if (null === $geometry) {
+            $geometry = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->geometry, $geometry);
         $this->geometry = $geometry;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Todo.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getCopolymerConnectivity(): null|array
+    {
+        return $this->copolymerConnectivity;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Todo.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $copolymerConnectivity
+     * @return static
+     */
+    public function addCopolymerConnectivity(null|FHIRCodeableConcept $copolymerConnectivity = null): self
+    {
+        if (null === $copolymerConnectivity) {
+            $copolymerConnectivity = new FHIRCodeableConcept();
+        }
+        $this->_trackValueAdded();
+        $this->copolymerConnectivity[] = $copolymerConnectivity;
         return $this;
     }
 
@@ -448,7 +411,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
-    public function getModification()
+    public function getModification(): null|array
     {
         return $this->modification;
     }
@@ -460,20 +423,21 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Todo.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $modification
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $modification
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addModification($modification = null)
+    public function addModification(null|string|FHIRStringPrimitive|FHIRString $modification = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $modification) {
-            $this->modification = [];
-            return $this;
+        if (null !== $modification && !($modification instanceof FHIRString)) {
+            $modification = new FHIRString($modification);
         }
-        if ($modification instanceof FHIRString) {
-            $this->modification[] = $modification;
-            return $this;
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_MODIFICATION])) {
+            $this->_primitiveXmlLocations[self::FIELD_MODIFICATION] = [];
         }
-        $this->modification[] = new FHIRString($modification);
+        $this->_primitiveXmlLocations[self::FIELD_MODIFICATION][] = $xmlLocation;
+        $this->modification[] = $modification;
         return $this;
     }
 
@@ -485,19 +449,24 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * Todo.
      *
      * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $modification
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setModification(array $modification = [])
+    public function setModification(array $modification = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->modification = [];
+        unset($this->_primitiveXmlLocations[self::FIELD_MODIFICATION]);
+        if ([] !== $this->modification) {
+            $this->_trackValuesRemoved(count($this->modification));
+            $this->modification = [];
+        }
         if ([] === $modification) {
             return $this;
         }
         foreach($modification as $v) {
             if ($v instanceof FHIRString) {
-                $this->addModification($v);
+                $this->addModification($v, $xmlLocation);
             } else {
-                $this->addModification(new FHIRString($v));
+                $this->addModification(new FHIRString($v), $xmlLocation);
             }
         }
         return $this;
@@ -510,7 +479,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet[]
      */
-    public function getMonomerSet()
+    public function getMonomerSet(): null|array
     {
         return $this->monomerSet;
     }
@@ -523,33 +492,13 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet $monomerSet
      * @return static
      */
-    public function addMonomerSet(FHIRSubstancePolymerMonomerSet $monomerSet = null)
+    public function addMonomerSet(null|FHIRSubstancePolymerMonomerSet $monomerSet = null): self
     {
+        if (null === $monomerSet) {
+            $monomerSet = new FHIRSubstancePolymerMonomerSet();
+        }
+        $this->_trackValueAdded();
         $this->monomerSet[] = $monomerSet;
-        return $this;
-    }
-
-    /**
-     * Todo.
-     *
-     * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet[] $monomerSet
-     * @return static
-     */
-    public function setMonomerSet(array $monomerSet = [])
-    {
-        $this->monomerSet = [];
-        if ([] === $monomerSet) {
-            return $this;
-        }
-        foreach($monomerSet as $v) {
-            if ($v instanceof FHIRSubstancePolymerMonomerSet) {
-                $this->addMonomerSet($v);
-            } else {
-                $this->addMonomerSet(new FHIRSubstancePolymerMonomerSet($v));
-            }
-        }
         return $this;
     }
 
@@ -560,7 +509,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat[]
      */
-    public function getRepeat()
+    public function getRepeat(): null|array
     {
         return $this->repeat;
     }
@@ -573,33 +522,13 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat $repeat
      * @return static
      */
-    public function addRepeat(FHIRSubstancePolymerRepeat $repeat = null)
+    public function addRepeat(null|FHIRSubstancePolymerRepeat $repeat = null): self
     {
+        if (null === $repeat) {
+            $repeat = new FHIRSubstancePolymerRepeat();
+        }
+        $this->_trackValueAdded();
         $this->repeat[] = $repeat;
-        return $this;
-    }
-
-    /**
-     * Todo.
-     *
-     * Todo.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat[] $repeat
-     * @return static
-     */
-    public function setRepeat(array $repeat = [])
-    {
-        $this->repeat = [];
-        if ([] === $repeat) {
-            return $this;
-        }
-        foreach($repeat as $v) {
-            if ($v instanceof FHIRSubstancePolymerRepeat) {
-                $this->addRepeat($v);
-            } else {
-                $this->addRepeat(new FHIRSubstancePolymerRepeat($v));
-            }
-        }
         return $this;
     }
 
@@ -609,9 +538,9 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -620,7 +549,7 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
@@ -629,16 +558,16 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 $errs[self::FIELD_CLASS] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getGeometry())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_GEOMETRY] = $fieldErrs;
+            }
+        }
         if ([] !== ($vs = $this->getCopolymerConnectivity())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_COPOLYMER_CONNECTIVITY, $i)] = $fieldErrs;
                 }
-            }
-        }
-        if (null !== ($v = $this->getGeometry())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_GEOMETRY] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getModification())) {
@@ -674,18 +603,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_COPOLYMER_CONNECTIVITY])) {
-            $v = $this->getCopolymerConnectivity();
-            foreach($validationRules[self::FIELD_COPOLYMER_CONNECTIVITY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER, self::FIELD_COPOLYMER_CONNECTIVITY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COPOLYMER_CONNECTIVITY])) {
-                        $errs[self::FIELD_COPOLYMER_CONNECTIVITY] = [];
-                    }
-                    $errs[self::FIELD_COPOLYMER_CONNECTIVITY][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_GEOMETRY])) {
             $v = $this->getGeometry();
             foreach($validationRules[self::FIELD_GEOMETRY] as $rule => $constraint) {
@@ -695,6 +612,18 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                         $errs[self::FIELD_GEOMETRY] = [];
                     }
                     $errs[self::FIELD_GEOMETRY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COPOLYMER_CONNECTIVITY])) {
+            $v = $this->getCopolymerConnectivity();
+            foreach($validationRules[self::FIELD_COPOLYMER_CONNECTIVITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_POLYMER, self::FIELD_COPOLYMER_CONNECTIVITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COPOLYMER_CONNECTIVITY])) {
+                        $errs[self::FIELD_COPOLYMER_CONNECTIVITY] = [];
+                    }
+                    $errs[self::FIELD_COPOLYMER_CONNECTIVITY][$rule] = $err;
                 }
             }
         }
@@ -734,6 +663,18 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_CONTAINED])) {
             $v = $this->getContained();
             foreach($validationRules[self::FIELD_CONTAINED] as $rule => $constraint) {
@@ -770,18 +711,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -791,6 +720,18 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -818,215 +759,247 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstancePolymer $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstancePolymer
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRSubstancePolymer::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSubstancePolymer::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRSubstancePolymer;
-        } elseif (!is_object($type) || !($type instanceof FHIRSubstancePolymer)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRSubstancePolymer)) {
             throw new \RuntimeException(sprintf(
-                'FHIRSubstancePolymer::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRSubstancePolymer or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_CLASS === $childName) {
+                $type->setClass(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_GEOMETRY === $childName) {
+                $type->setGeometry(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_COPOLYMER_CONNECTIVITY === $childName) {
+                $type->addCopolymerConnectivity(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFICATION === $childName) {
+                $type->addModification(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MONOMER_SET === $childName) {
+                $type->addMonomerSet(FHIRSubstancePolymerMonomerSet::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_REPEAT === $childName) {
+                $type->addRepeat(FHIRSubstancePolymerRepeat::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TEXT === $childName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CONTAINED === $childName) {
+                foreach ($n->children() as $nn) {
+                    $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn, $config));
+                }
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRId::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_META === $childName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_IMPLICIT_RULES === $childName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_LANGUAGE === $childName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->class)) {
-            $type->setClass(FHIRCodeableConcept::xmlUnserialize($children->class));
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_MODIFICATION])) {
+            $type->addModification((string)$attributes[self::FIELD_MODIFICATION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
         }
-        if (isset($children->copolymerConnectivity)) {
-            foreach($children->copolymerConnectivity as $child) {
-                $type->addCopolymerConnectivity(FHIRCodeableConcept::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->geometry)) {
-            $type->setGeometry(FHIRCodeableConcept::xmlUnserialize($children->geometry));
-        }
-        if (isset($children->modification)) {
-            foreach($children->modification as $child) {
-                $type->addModification(FHIRString::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->monomerSet)) {
-            foreach($children->monomerSet as $child) {
-                $type->addMonomerSet(FHIRSubstancePolymerMonomerSet::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->repeat)) {
-            foreach($children->repeat as $child) {
-                $type->addRepeat(FHIRSubstancePolymerRepeat::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_LANGUAGE])) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'SubstancePolymer', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_MODIFICATION] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getModification())) {
+            $xw->writeAttribute(self::FIELD_MODIFICATION, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getModification()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_MODIFICATION, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getClass())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CLASS, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getCopolymerConnectivity())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COPOLYMER_CONNECTIVITY, null, $v->_getFHIRXMLNamespace()));
-            }
+            $xw->startElement(self::FIELD_CLASS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getGeometry())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_GEOMETRY, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_GEOMETRY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getModification())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
+        foreach ($this->getCopolymerConnectivity() as $v) {
+            $xw->startElement(self::FIELD_COPOLYMER_CONNECTIVITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_MODIFICATION] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getModification())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_MODIFICATION);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MODIFICATION, null, $v->_getFHIRXMLNamespace()));
             }
         }
-        if ([] !== ($vs = $this->getMonomerSet())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MONOMER_SET, null, $v->_getFHIRXMLNamespace()));
-            }
+        foreach ($this->getMonomerSet() as $v) {
+            $xw->startElement(self::FIELD_MONOMER_SET);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getRepeat())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_REPEAT, null, $v->_getFHIRXMLNamespace()));
-            }
+        foreach ($this->getRepeat() as $v) {
+            $xw->startElement(self::FIELD_REPEAT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getClass())) {
-            $a[self::FIELD_CLASS] = $v;
-        }
-        if ([] !== ($vs = $this->getCopolymerConnectivity())) {
-            $a[self::FIELD_COPOLYMER_CONNECTIVITY] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_COPOLYMER_CONNECTIVITY][] = $v;
-            }
+            $out->{self::FIELD_CLASS} = $v;
         }
         if (null !== ($v = $this->getGeometry())) {
-            $a[self::FIELD_GEOMETRY] = $v;
+            $out->{self::FIELD_GEOMETRY} = $v;
+        }
+        if ([] !== ($vs = $this->getCopolymerConnectivity())) {
+            $out->{self::FIELD_COPOLYMER_CONNECTIVITY} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_COPOLYMER_CONNECTIVITY}[] = $v;
+            }
         }
         if ([] !== ($vs = $this->getModification())) {
-            $a[self::FIELD_MODIFICATION] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_MODIFICATION][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRString::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRString::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_MODIFICATION_EXT] = $encs;
+            if ([] !== $vals) {
+                $out->{self::FIELD_MODIFICATION} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_MODIFICATION_EXT} = $exts;
             }
         }
         if ([] !== ($vs = $this->getMonomerSet())) {
-            $a[self::FIELD_MONOMER_SET] = [];
+            $out->{self::FIELD_MONOMER_SET} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_MONOMER_SET][] = $v;
+                $out->{self::FIELD_MONOMER_SET}[] = $v;
             }
         }
         if ([] !== ($vs = $this->getRepeat())) {
-            $a[self::FIELD_REPEAT] = [];
+            $out->{self::FIELD_REPEAT} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_REPEAT][] = $v;
+                $out->{self::FIELD_REPEAT}[] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
-    }
 
+        $out->{PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE} = $this->_getResourceType();
+
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,9 +64,15 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Source material shall capture information on the taxonomic and anatomical
@@ -90,7 +96,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_HYBRID;
-    const FIELD_HYBRID_TYPE = 'hybridType';
+
     const FIELD_MATERNAL_ORGANISM_ID = 'maternalOrganismId';
     const FIELD_MATERNAL_ORGANISM_ID_EXT = '_maternalOrganismId';
     const FIELD_MATERNAL_ORGANISM_NAME = 'maternalOrganismName';
@@ -99,21 +105,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     const FIELD_PATERNAL_ORGANISM_ID_EXT = '_paternalOrganismId';
     const FIELD_PATERNAL_ORGANISM_NAME = 'paternalOrganismName';
     const FIELD_PATERNAL_ORGANISM_NAME_EXT = '_paternalOrganismName';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The hybrid type of an organism shall be specified.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $hybridType = null;
+    const FIELD_HYBRID_TYPE = 'hybridType';
 
     /**
      * A sequence of Unicode characters
@@ -127,8 +119,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $maternalOrganismId = null;
-
+    protected null|FHIRString $maternalOrganismId = null;
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -140,8 +131,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $maternalOrganismName = null;
-
+    protected null|FHIRString $maternalOrganismName = null;
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -152,8 +142,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $paternalOrganismId = null;
-
+    protected null|FHIRString $paternalOrganismId = null;
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -164,48 +153,41 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $paternalOrganismName = null;
+    protected null|FHIRString $paternalOrganismName = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The hybrid type of an organism shall be specified.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $hybridType = null;
 
     /**
      * Validation map for fields in type SubstanceSourceMaterial.Hybrid
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRSubstanceSourceMaterialHybrid Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRSubstanceSourceMaterialHybrid::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_HYBRID_TYPE])) {
-            if ($data[self::FIELD_HYBRID_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setHybridType($data[self::FIELD_HYBRID_TYPE]);
-            } else {
-                $this->setHybridType(new FHIRCodeableConcept($data[self::FIELD_HYBRID_TYPE]));
-            }
-        }
-        if (isset($data[self::FIELD_MATERNAL_ORGANISM_ID]) || isset($data[self::FIELD_MATERNAL_ORGANISM_ID_EXT])) {
-            if (isset($data[self::FIELD_MATERNAL_ORGANISM_ID])) {
-                $value = $data[self::FIELD_MATERNAL_ORGANISM_ID];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_MATERNAL_ORGANISM_ID_EXT]) && is_array($data[self::FIELD_MATERNAL_ORGANISM_ID_EXT])) {
-                $ext = $data[self::FIELD_MATERNAL_ORGANISM_ID_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_MATERNAL_ORGANISM_ID, $data) || array_key_exists(self::FIELD_MATERNAL_ORGANISM_ID_EXT, $data)) {
+            $value = $data[self::FIELD_MATERNAL_ORGANISM_ID] ?? null;
+            $ext = (isset($data[self::FIELD_MATERNAL_ORGANISM_ID_EXT]) && is_array($data[self::FIELD_MATERNAL_ORGANISM_ID_EXT])) ? $data[self::FIELD_MATERNAL_ORGANISM_ID_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setMaternalOrganismId($value);
@@ -214,21 +196,15 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
                 } else {
                     $this->setMaternalOrganismId(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setMaternalOrganismId(new FHIRString($ext));
+            } else {
+                $this->setMaternalOrganismId(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_MATERNAL_ORGANISM_NAME]) || isset($data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT])) {
-            if (isset($data[self::FIELD_MATERNAL_ORGANISM_NAME])) {
-                $value = $data[self::FIELD_MATERNAL_ORGANISM_NAME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT]) && is_array($data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT])) {
-                $ext = $data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_MATERNAL_ORGANISM_NAME, $data) || array_key_exists(self::FIELD_MATERNAL_ORGANISM_NAME_EXT, $data)) {
+            $value = $data[self::FIELD_MATERNAL_ORGANISM_NAME] ?? null;
+            $ext = (isset($data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT]) && is_array($data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT])) ? $data[self::FIELD_MATERNAL_ORGANISM_NAME_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setMaternalOrganismName($value);
@@ -237,21 +213,15 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
                 } else {
                     $this->setMaternalOrganismName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setMaternalOrganismName(new FHIRString($ext));
+            } else {
+                $this->setMaternalOrganismName(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_PATERNAL_ORGANISM_ID]) || isset($data[self::FIELD_PATERNAL_ORGANISM_ID_EXT])) {
-            if (isset($data[self::FIELD_PATERNAL_ORGANISM_ID])) {
-                $value = $data[self::FIELD_PATERNAL_ORGANISM_ID];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PATERNAL_ORGANISM_ID_EXT]) && is_array($data[self::FIELD_PATERNAL_ORGANISM_ID_EXT])) {
-                $ext = $data[self::FIELD_PATERNAL_ORGANISM_ID_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_PATERNAL_ORGANISM_ID, $data) || array_key_exists(self::FIELD_PATERNAL_ORGANISM_ID_EXT, $data)) {
+            $value = $data[self::FIELD_PATERNAL_ORGANISM_ID] ?? null;
+            $ext = (isset($data[self::FIELD_PATERNAL_ORGANISM_ID_EXT]) && is_array($data[self::FIELD_PATERNAL_ORGANISM_ID_EXT])) ? $data[self::FIELD_PATERNAL_ORGANISM_ID_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setPaternalOrganismId($value);
@@ -260,21 +230,15 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
                 } else {
                     $this->setPaternalOrganismId(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setPaternalOrganismId(new FHIRString($ext));
+            } else {
+                $this->setPaternalOrganismId(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_PATERNAL_ORGANISM_NAME]) || isset($data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT])) {
-            if (isset($data[self::FIELD_PATERNAL_ORGANISM_NAME])) {
-                $value = $data[self::FIELD_PATERNAL_ORGANISM_NAME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT]) && is_array($data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT])) {
-                $ext = $data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_PATERNAL_ORGANISM_NAME, $data) || array_key_exists(self::FIELD_PATERNAL_ORGANISM_NAME_EXT, $data)) {
+            $value = $data[self::FIELD_PATERNAL_ORGANISM_NAME] ?? null;
+            $ext = (isset($data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT]) && is_array($data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT])) ? $data[self::FIELD_PATERNAL_ORGANISM_NAME_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setPaternalOrganismName($value);
@@ -283,8 +247,17 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
                 } else {
                     $this->setPaternalOrganismName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setPaternalOrganismName(new FHIRString($ext));
+            } else {
+                $this->setPaternalOrganismName(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_HYBRID_TYPE, $data)) {
+            if ($data[self::FIELD_HYBRID_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setHybridType($data[self::FIELD_HYBRID_TYPE]);
+            } else {
+                $this->setHybridType(new FHIRCodeableConcept($data[self::FIELD_HYBRID_TYPE]));
             }
         }
     }
@@ -292,21 +265,179 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The identifier of the maternal species constituting the hybrid organism shall be
+     * specified based on a controlled vocabulary. For plants, the parents aren’t
+     * always known, and it is unlikely that it will be known which is maternal and
+     * which is paternal.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    public function _getFHIRXMLElementDefinition()
+    public function getMaternalOrganismId(): null|FHIRString
     {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
+        return $this->maternalOrganismId;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The identifier of the maternal species constituting the hybrid organism shall be
+     * specified based on a controlled vocabulary. For plants, the parents aren’t
+     * always known, and it is unlikely that it will be known which is maternal and
+     * which is paternal.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $maternalOrganismId
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setMaternalOrganismId(null|string|FHIRStringPrimitive|FHIRString $maternalOrganismId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $maternalOrganismId && !($maternalOrganismId instanceof FHIRString)) {
+            $maternalOrganismId = new FHIRString($maternalOrganismId);
         }
-        return "<SubstanceSourceMaterialHybrid{$xmlns}></SubstanceSourceMaterialHybrid>";
+        $this->_trackValueSet($this->maternalOrganismId, $maternalOrganismId);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_MATERNAL_ORGANISM_ID])) {
+            $this->_primitiveXmlLocations[self::FIELD_MATERNAL_ORGANISM_ID] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_MATERNAL_ORGANISM_ID][0] = $xmlLocation;
+        $this->maternalOrganismId = $maternalOrganismId;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the maternal species constituting the hybrid organism shall be
+     * specified. For plants, the parents aren’t always known, and it is unlikely
+     * that it will be known which is maternal and which is paternal.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getMaternalOrganismName(): null|FHIRString
+    {
+        return $this->maternalOrganismName;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the maternal species constituting the hybrid organism shall be
+     * specified. For plants, the parents aren’t always known, and it is unlikely
+     * that it will be known which is maternal and which is paternal.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $maternalOrganismName
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setMaternalOrganismName(null|string|FHIRStringPrimitive|FHIRString $maternalOrganismName = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $maternalOrganismName && !($maternalOrganismName instanceof FHIRString)) {
+            $maternalOrganismName = new FHIRString($maternalOrganismName);
+        }
+        $this->_trackValueSet($this->maternalOrganismName, $maternalOrganismName);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_MATERNAL_ORGANISM_NAME])) {
+            $this->_primitiveXmlLocations[self::FIELD_MATERNAL_ORGANISM_NAME] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_MATERNAL_ORGANISM_NAME][0] = $xmlLocation;
+        $this->maternalOrganismName = $maternalOrganismName;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The identifier of the paternal species constituting the hybrid organism shall be
+     * specified based on a controlled vocabulary.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getPaternalOrganismId(): null|FHIRString
+    {
+        return $this->paternalOrganismId;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The identifier of the paternal species constituting the hybrid organism shall be
+     * specified based on a controlled vocabulary.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $paternalOrganismId
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setPaternalOrganismId(null|string|FHIRStringPrimitive|FHIRString $paternalOrganismId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $paternalOrganismId && !($paternalOrganismId instanceof FHIRString)) {
+            $paternalOrganismId = new FHIRString($paternalOrganismId);
+        }
+        $this->_trackValueSet($this->paternalOrganismId, $paternalOrganismId);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PATERNAL_ORGANISM_ID])) {
+            $this->_primitiveXmlLocations[self::FIELD_PATERNAL_ORGANISM_ID] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_PATERNAL_ORGANISM_ID][0] = $xmlLocation;
+        $this->paternalOrganismId = $paternalOrganismId;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the paternal species constituting the hybrid organism shall be
+     * specified.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getPaternalOrganismName(): null|FHIRString
+    {
+        return $this->paternalOrganismName;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the paternal species constituting the hybrid organism shall be
+     * specified.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $paternalOrganismName
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setPaternalOrganismName(null|string|FHIRStringPrimitive|FHIRString $paternalOrganismName = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $paternalOrganismName && !($paternalOrganismName instanceof FHIRString)) {
+            $paternalOrganismName = new FHIRString($paternalOrganismName);
+        }
+        $this->_trackValueSet($this->paternalOrganismName, $paternalOrganismName);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PATERNAL_ORGANISM_NAME])) {
+            $this->_primitiveXmlLocations[self::FIELD_PATERNAL_ORGANISM_NAME] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_PATERNAL_ORGANISM_NAME][0] = $xmlLocation;
+        $this->paternalOrganismName = $paternalOrganismName;
+        return $this;
     }
 
     /**
@@ -319,7 +450,7 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getHybridType()
+    public function getHybridType(): null|FHIRCodeableConcept
     {
         return $this->hybridType;
     }
@@ -335,175 +466,13 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $hybridType
      * @return static
      */
-    public function setHybridType(FHIRCodeableConcept $hybridType = null)
+    public function setHybridType(null|FHIRCodeableConcept $hybridType = null): self
     {
+        if (null === $hybridType) {
+            $hybridType = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->hybridType, $hybridType);
         $this->hybridType = $hybridType;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The identifier of the maternal species constituting the hybrid organism shall be
-     * specified based on a controlled vocabulary. For plants, the parents aren’t
-     * always known, and it is unlikely that it will be known which is maternal and
-     * which is paternal.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getMaternalOrganismId()
-    {
-        return $this->maternalOrganismId;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The identifier of the maternal species constituting the hybrid organism shall be
-     * specified based on a controlled vocabulary. For plants, the parents aren’t
-     * always known, and it is unlikely that it will be known which is maternal and
-     * which is paternal.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $maternalOrganismId
-     * @return static
-     */
-    public function setMaternalOrganismId($maternalOrganismId = null)
-    {
-        if (null === $maternalOrganismId) {
-            $this->maternalOrganismId = null;
-            return $this;
-        }
-        if ($maternalOrganismId instanceof FHIRString) {
-            $this->maternalOrganismId = $maternalOrganismId;
-            return $this;
-        }
-        $this->maternalOrganismId = new FHIRString($maternalOrganismId);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the maternal species constituting the hybrid organism shall be
-     * specified. For plants, the parents aren’t always known, and it is unlikely
-     * that it will be known which is maternal and which is paternal.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getMaternalOrganismName()
-    {
-        return $this->maternalOrganismName;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the maternal species constituting the hybrid organism shall be
-     * specified. For plants, the parents aren’t always known, and it is unlikely
-     * that it will be known which is maternal and which is paternal.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $maternalOrganismName
-     * @return static
-     */
-    public function setMaternalOrganismName($maternalOrganismName = null)
-    {
-        if (null === $maternalOrganismName) {
-            $this->maternalOrganismName = null;
-            return $this;
-        }
-        if ($maternalOrganismName instanceof FHIRString) {
-            $this->maternalOrganismName = $maternalOrganismName;
-            return $this;
-        }
-        $this->maternalOrganismName = new FHIRString($maternalOrganismName);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The identifier of the paternal species constituting the hybrid organism shall be
-     * specified based on a controlled vocabulary.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getPaternalOrganismId()
-    {
-        return $this->paternalOrganismId;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The identifier of the paternal species constituting the hybrid organism shall be
-     * specified based on a controlled vocabulary.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $paternalOrganismId
-     * @return static
-     */
-    public function setPaternalOrganismId($paternalOrganismId = null)
-    {
-        if (null === $paternalOrganismId) {
-            $this->paternalOrganismId = null;
-            return $this;
-        }
-        if ($paternalOrganismId instanceof FHIRString) {
-            $this->paternalOrganismId = $paternalOrganismId;
-            return $this;
-        }
-        $this->paternalOrganismId = new FHIRString($paternalOrganismId);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the paternal species constituting the hybrid organism shall be
-     * specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getPaternalOrganismName()
-    {
-        return $this->paternalOrganismName;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the paternal species constituting the hybrid organism shall be
-     * specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $paternalOrganismName
-     * @return static
-     */
-    public function setPaternalOrganismName($paternalOrganismName = null)
-    {
-        if (null === $paternalOrganismName) {
-            $this->paternalOrganismName = null;
-            return $this;
-        }
-        if ($paternalOrganismName instanceof FHIRString) {
-            $this->paternalOrganismName = $paternalOrganismName;
-            return $this;
-        }
-        $this->paternalOrganismName = new FHIRString($paternalOrganismName);
         return $this;
     }
 
@@ -513,9 +482,9 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -524,15 +493,10 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getHybridType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_HYBRID_TYPE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getMaternalOrganismId())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_MATERNAL_ORGANISM_ID] = $fieldErrs;
@@ -553,16 +517,9 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
                 $errs[self::FIELD_PATERNAL_ORGANISM_NAME] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_HYBRID_TYPE])) {
-            $v = $this->getHybridType();
-            foreach($validationRules[self::FIELD_HYBRID_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_HYBRID, self::FIELD_HYBRID_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_HYBRID_TYPE])) {
-                        $errs[self::FIELD_HYBRID_TYPE] = [];
-                    }
-                    $errs[self::FIELD_HYBRID_TYPE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getHybridType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_HYBRID_TYPE] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_MATERNAL_ORGANISM_ID])) {
@@ -613,6 +570,18 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_HYBRID_TYPE])) {
+            $v = $this->getHybridType();
+            foreach($validationRules[self::FIELD_HYBRID_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_SOURCE_MATERIAL_DOT_HYBRID, self::FIELD_HYBRID_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_HYBRID_TYPE])) {
+                        $errs[self::FIELD_HYBRID_TYPE] = [];
+                    }
+                    $errs[self::FIELD_HYBRID_TYPE][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
             $v = $this->getModifierExtension();
             foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
@@ -653,180 +622,239 @@ class FHIRSubstanceSourceMaterialHybrid extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRSubstanceSourceMaterialHybrid::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSubstanceSourceMaterialHybrid::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRSubstanceSourceMaterialHybrid;
-        } elseif (!is_object($type) || !($type instanceof FHIRSubstanceSourceMaterialHybrid)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRSubstanceSourceMaterialHybrid)) {
             throw new \RuntimeException(sprintf(
-                'FHIRSubstanceSourceMaterialHybrid::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialHybrid or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_MATERNAL_ORGANISM_ID === $childName) {
+                $type->setMaternalOrganismId(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MATERNAL_ORGANISM_NAME === $childName) {
+                $type->setMaternalOrganismName(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PATERNAL_ORGANISM_ID === $childName) {
+                $type->setPaternalOrganismId(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PATERNAL_ORGANISM_NAME === $childName) {
+                $type->setPaternalOrganismName(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_HYBRID_TYPE === $childName) {
+                $type->setHybridType(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->hybridType)) {
-            $type->setHybridType(FHIRCodeableConcept::xmlUnserialize($children->hybridType));
-        }
-        if (isset($children->maternalOrganismId)) {
-            $type->setMaternalOrganismId(FHIRString::xmlUnserialize($children->maternalOrganismId));
-        }
-        if (isset($attributes->maternalOrganismId)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_MATERNAL_ORGANISM_ID])) {
             $pt = $type->getMaternalOrganismId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->maternalOrganismId);
+                $pt->setValue((string)$attributes[self::FIELD_MATERNAL_ORGANISM_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setMaternalOrganismId((string)$attributes->maternalOrganismId);
+                $type->setMaternalOrganismId((string)$attributes[self::FIELD_MATERNAL_ORGANISM_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->maternalOrganismName)) {
-            $type->setMaternalOrganismName(FHIRString::xmlUnserialize($children->maternalOrganismName));
-        }
-        if (isset($attributes->maternalOrganismName)) {
+        if (isset($attributes[self::FIELD_MATERNAL_ORGANISM_NAME])) {
             $pt = $type->getMaternalOrganismName();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->maternalOrganismName);
+                $pt->setValue((string)$attributes[self::FIELD_MATERNAL_ORGANISM_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setMaternalOrganismName((string)$attributes->maternalOrganismName);
+                $type->setMaternalOrganismName((string)$attributes[self::FIELD_MATERNAL_ORGANISM_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->paternalOrganismId)) {
-            $type->setPaternalOrganismId(FHIRString::xmlUnserialize($children->paternalOrganismId));
-        }
-        if (isset($attributes->paternalOrganismId)) {
+        if (isset($attributes[self::FIELD_PATERNAL_ORGANISM_ID])) {
             $pt = $type->getPaternalOrganismId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->paternalOrganismId);
+                $pt->setValue((string)$attributes[self::FIELD_PATERNAL_ORGANISM_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setPaternalOrganismId((string)$attributes->paternalOrganismId);
+                $type->setPaternalOrganismId((string)$attributes[self::FIELD_PATERNAL_ORGANISM_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->paternalOrganismName)) {
-            $type->setPaternalOrganismName(FHIRString::xmlUnserialize($children->paternalOrganismName));
-        }
-        if (isset($attributes->paternalOrganismName)) {
+        if (isset($attributes[self::FIELD_PATERNAL_ORGANISM_NAME])) {
             $pt = $type->getPaternalOrganismName();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->paternalOrganismName);
+                $pt->setValue((string)$attributes[self::FIELD_PATERNAL_ORGANISM_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setPaternalOrganismName((string)$attributes->paternalOrganismName);
+                $type->setPaternalOrganismName((string)$attributes[self::FIELD_PATERNAL_ORGANISM_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'SubstanceSourceMaterialHybrid', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_MATERNAL_ORGANISM_ID] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getMaternalOrganismId())) {
+            $xw->writeAttribute(self::FIELD_MATERNAL_ORGANISM_ID, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_MATERNAL_ORGANISM_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getMaternalOrganismName())) {
+            $xw->writeAttribute(self::FIELD_MATERNAL_ORGANISM_NAME, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PATERNAL_ORGANISM_ID] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPaternalOrganismId())) {
+            $xw->writeAttribute(self::FIELD_PATERNAL_ORGANISM_ID, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PATERNAL_ORGANISM_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPaternalOrganismName())) {
+            $xw->writeAttribute(self::FIELD_PATERNAL_ORGANISM_NAME, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_MATERNAL_ORGANISM_ID] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getMaternalOrganismId())) {
+            $xw->startElement(self::FIELD_MATERNAL_ORGANISM_ID);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_MATERNAL_ORGANISM_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getMaternalOrganismName())) {
+            $xw->startElement(self::FIELD_MATERNAL_ORGANISM_NAME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PATERNAL_ORGANISM_ID] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPaternalOrganismId())) {
+            $xw->startElement(self::FIELD_PATERNAL_ORGANISM_ID);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PATERNAL_ORGANISM_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPaternalOrganismName())) {
+            $xw->startElement(self::FIELD_PATERNAL_ORGANISM_NAME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
         if (null !== ($v = $this->getHybridType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_HYBRID_TYPE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_HYBRID_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getMaternalOrganismId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MATERNAL_ORGANISM_ID, null, $v->_getFHIRXMLNamespace()));
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getMaternalOrganismName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MATERNAL_ORGANISM_NAME, null, $v->_getFHIRXMLNamespace()));
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
         }
-        if (null !== ($v = $this->getPaternalOrganismId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATERNAL_ORGANISM_ID, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPaternalOrganismName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATERNAL_ORGANISM_NAME, null, $v->_getFHIRXMLNamespace()));
-        }
-        return $sxe;
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getHybridType())) {
-            $a[self::FIELD_HYBRID_TYPE] = $v;
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getMaternalOrganismId())) {
-            $a[self::FIELD_MATERNAL_ORGANISM_ID] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_MATERNAL_ORGANISM_ID_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_MATERNAL_ORGANISM_ID} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_MATERNAL_ORGANISM_ID_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getMaternalOrganismName())) {
-            $a[self::FIELD_MATERNAL_ORGANISM_NAME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_MATERNAL_ORGANISM_NAME_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_MATERNAL_ORGANISM_NAME} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_MATERNAL_ORGANISM_NAME_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getPaternalOrganismId())) {
-            $a[self::FIELD_PATERNAL_ORGANISM_ID] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_PATERNAL_ORGANISM_ID_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PATERNAL_ORGANISM_ID} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PATERNAL_ORGANISM_ID_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getPaternalOrganismName())) {
-            $a[self::FIELD_PATERNAL_ORGANISM_NAME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_PATERNAL_ORGANISM_NAME_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PATERNAL_ORGANISM_NAME} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PATERNAL_ORGANISM_NAME_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getHybridType())) {
+            $out->{self::FIELD_HYBRID_TYPE} = $v;
         }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

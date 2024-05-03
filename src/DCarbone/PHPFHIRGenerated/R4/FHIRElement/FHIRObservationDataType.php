@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,8 +64,13 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRObservationDataTypeList;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Permitted data type for observation value.
@@ -78,90 +83,78 @@ class FHIRObservationDataType extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OBSERVATION_DATA_TYPE;
-    const FIELD_VALUE = 'value';
 
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_VALUE = 'value';
 
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRObservationDataTypeList
      */
-    protected $value = null;
+    protected null|FHIRObservationDataTypeList $value = null;
 
     /**
      * Validation map for fields in type ObservationDataType
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRObservationDataType Constructor
-     * @param null|array $data
+     * @param null|array|string|FHIRObservationDataTypeList $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array|string|FHIRObservationDataTypeList $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (is_scalar($data)) {
-            $this->setValue(new FHIRObservationDataTypeList($data));
+        if (!is_array($data)) {
+            $this->setValue($data);
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRObservationDataType::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_VALUE])) {
-            $this->setValue($data[self::FIELD_VALUE]);
+        if (array_key_exists(self::FIELD_VALUE, $data)) {
+            if ($data[self::FIELD_VALUE] instanceof FHIRObservationDataTypeList) {
+                $this->setValue($data[self::FIELD_VALUE]);
+            } else {
+                $this->setValue(new FHIRObservationDataTypeList($data[self::FIELD_VALUE]));
+            }
         }
     }
 
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ObservationDataType{$xmlns}></ObservationDataType>";
-    }
-
-    /**
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRObservationDataTypeList
      */
-    public function getValue()
+    public function getValue(): null|FHIRObservationDataTypeList
     {
         return $this->value;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRObservationDataTypeList $value
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRObservationDataTypeList $value
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setValue($value = null)
+    public function setValue(null|string|FHIRObservationDataTypeList $value = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $value) {
-            $this->value = null;
-            return $this;
+        if (null !== $value && !($value instanceof FHIRObservationDataTypeList)) {
+            $value = new FHIRObservationDataTypeList($value);
         }
-        if ($value instanceof FHIRObservationDataTypeList) {
-            $this->value = $value;
-            return $this;
+        $this->_trackValueSet($this->value, $value);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE])) {
+            $this->_primitiveXmlLocations[self::FIELD_VALUE] = [];
         }
-        $this->value = new FHIRObservationDataTypeList($value);
+        $this->_primitiveXmlLocations[self::FIELD_VALUE][0] = $xmlLocation;
+        $this->value = $value;
         return $this;
     }
 
@@ -171,9 +164,9 @@ class FHIRObservationDataType extends FHIRElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -182,7 +175,7 @@ class FHIRObservationDataType extends FHIRElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
@@ -231,94 +224,130 @@ class FHIRObservationDataType extends FHIRElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRObservationDataType $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRObservationDataType
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRObservationDataType::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRObservationDataType::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRObservationDataType;
-        } elseif (!is_object($type) || !($type instanceof FHIRObservationDataType)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRObservationDataType)) {
             throw new \RuntimeException(sprintf(
-                'FHIRObservationDataType::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRObservationDataType or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_VALUE === $childName) {
+                $type->setValue(FHIRObservationDataTypeList::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->value)) {
-            $type->setValue(FHIRObservationDataTypeList::xmlUnserialize($children->value));
-        }
-        if (isset($attributes->value)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_VALUE])) {
             $pt = $type->getValue();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->value);
+                $pt->setValue((string)$attributes[self::FIELD_VALUE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setValue((string)$attributes->value);
+                $type->setValue((string)$attributes[self::FIELD_VALUE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getValue())) {
-            $sxe->addAttribute(self::FIELD_VALUE, (string)$v);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        return $sxe;
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ObservationDataType', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValue())) {
+            $xw->writeAttribute(self::FIELD_VALUE, $v->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValue())) {
+            $xw->startElement(self::FIELD_VALUE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getValue())) {
-            $a[self::FIELD_VALUE] = $v;
+            $out->{self::FIELD_VALUE} = $v;
         }
 
-        return $a;
+        return $out;
     }
-
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMessageHeader;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,11 +63,18 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMes
  */
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResponseType;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter;
 
 /**
  * The header for a message exchange that is either requesting or responding to an
@@ -82,36 +89,12 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER_DOT_RESPONSE;
+
+    const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_IDENTIFIER_EXT = '_identifier';
     const FIELD_CODE = 'code';
     const FIELD_CODE_EXT = '_code';
     const FIELD_DETAILS = 'details';
-    const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_IDENTIFIER_EXT = '_identifier';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * The kind of response to a message
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Code that identifies the type of response to the message - whether it was
-     * successful or not, and whether it should be resent or not.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResponseType
-     */
-    protected $code = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Full details of any issues found in the message.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    protected $details = null;
 
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -125,71 +108,50 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    protected $identifier = null;
+    protected null|FHIRId $identifier = null;
+    /**
+     * The kind of response to a message
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Code that identifies the type of response to the message - whether it was
+     * successful or not, and whether it should be resent or not.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResponseType
+     */
+    protected null|FHIRResponseType $code = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Full details of any issues found in the message.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $details = null;
 
     /**
      * Validation map for fields in type MessageHeader.Response
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRMessageHeaderResponse Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMessageHeaderResponse::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CODE]) || isset($data[self::FIELD_CODE_EXT])) {
-            if (isset($data[self::FIELD_CODE])) {
-                $value = $data[self::FIELD_CODE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CODE_EXT]) && is_array($data[self::FIELD_CODE_EXT])) {
-                $ext = $data[self::FIELD_CODE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRResponseType) {
-                    $this->setCode($value);
-                } else if (is_array($value)) {
-                    $this->setCode(new FHIRResponseType(array_merge($ext, $value)));
-                } else {
-                    $this->setCode(new FHIRResponseType([FHIRResponseType::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setCode(new FHIRResponseType($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DETAILS])) {
-            if ($data[self::FIELD_DETAILS] instanceof FHIRReference) {
-                $this->setDetails($data[self::FIELD_DETAILS]);
-            } else {
-                $this->setDetails(new FHIRReference($data[self::FIELD_DETAILS]));
-            }
-        }
-        if (isset($data[self::FIELD_IDENTIFIER]) || isset($data[self::FIELD_IDENTIFIER_EXT])) {
-            if (isset($data[self::FIELD_IDENTIFIER])) {
-                $value = $data[self::FIELD_IDENTIFIER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT])) {
-                $ext = $data[self::FIELD_IDENTIFIER_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_IDENTIFIER, $data) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $data)) {
+            $value = $data[self::FIELD_IDENTIFIER] ?? null;
+            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT])) ? $data[self::FIELD_IDENTIFIER_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRId) {
                     $this->setIdentifier($value);
@@ -198,8 +160,34 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
                 } else {
                     $this->setIdentifier(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setIdentifier(new FHIRId($ext));
+            } else {
+                $this->setIdentifier(new FHIRId(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_CODE, $data) || array_key_exists(self::FIELD_CODE_EXT, $data)) {
+            $value = $data[self::FIELD_CODE] ?? null;
+            $ext = (isset($data[self::FIELD_CODE_EXT]) && is_array($data[self::FIELD_CODE_EXT])) ? $data[self::FIELD_CODE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRResponseType) {
+                    $this->setCode($value);
+                } else if (is_array($value)) {
+                    $this->setCode(new FHIRResponseType(array_merge($ext, $value)));
+                } else {
+                    $this->setCode(new FHIRResponseType([FHIRResponseType::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setCode(new FHIRResponseType($ext));
+            } else {
+                $this->setCode(new FHIRResponseType(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_DETAILS, $data)) {
+            if ($data[self::FIELD_DETAILS] instanceof FHIRReference) {
+                $this->setDetails($data[self::FIELD_DETAILS]);
+            } else {
+                $this->setDetails(new FHIRReference($data[self::FIELD_DETAILS]));
             }
         }
     }
@@ -207,81 +195,9 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<MessageHeaderResponse{$xmlns}></MessageHeaderResponse>";
-    }
-
-    /**
-     * The kind of response to a message
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Code that identifies the type of response to the message - whether it was
-     * successful or not, and whether it should be resent or not.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResponseType
-     */
-    public function getCode()
-    {
-        return $this->code;
-    }
-
-    /**
-     * The kind of response to a message
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Code that identifies the type of response to the message - whether it was
-     * successful or not, and whether it should be resent or not.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResponseType $code
-     * @return static
-     */
-    public function setCode(FHIRResponseType $code = null)
-    {
-        $this->code = $code;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Full details of any issues found in the message.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    public function getDetails()
-    {
-        return $this->details;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Full details of any issues found in the message.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $details
-     * @return static
-     */
-    public function setDetails(FHIRReference $details = null)
-    {
-        $this->details = $details;
-        return $this;
     }
 
     /**
@@ -296,7 +212,7 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    public function getIdentifier()
+    public function getIdentifier(): null|FHIRId
     {
         return $this->identifier;
     }
@@ -311,20 +227,89 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      *
      * The MessageHeader.id of the message to which this message is a response.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $identifier
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setIdentifier($identifier = null)
+    public function setIdentifier(null|string|FHIRIdPrimitive|FHIRId $identifier = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $identifier) {
-            $this->identifier = null;
-            return $this;
+        if (null !== $identifier && !($identifier instanceof FHIRId)) {
+            $identifier = new FHIRId($identifier);
         }
-        if ($identifier instanceof FHIRId) {
-            $this->identifier = $identifier;
-            return $this;
+        $this->_trackValueSet($this->identifier, $identifier);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_IDENTIFIER])) {
+            $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER] = [];
         }
-        $this->identifier = new FHIRId($identifier);
+        $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER][0] = $xmlLocation;
+        $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * The kind of response to a message
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Code that identifies the type of response to the message - whether it was
+     * successful or not, and whether it should be resent or not.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResponseType
+     */
+    public function getCode(): null|FHIRResponseType
+    {
+        return $this->code;
+    }
+
+    /**
+     * The kind of response to a message
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Code that identifies the type of response to the message - whether it was
+     * successful or not, and whether it should be resent or not.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResponseType $code
+     * @return static
+     */
+    public function setCode(null|FHIRResponseType $code = null): self
+    {
+        if (null === $code) {
+            $code = new FHIRResponseType();
+        }
+        $this->_trackValueSet($this->code, $code);
+        $this->code = $code;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Full details of any issues found in the message.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    public function getDetails(): null|FHIRReference
+    {
+        return $this->details;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Full details of any issues found in the message.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $details
+     * @return static
+     */
+    public function setDetails(null|FHIRReference $details = null): self
+    {
+        if (null === $details) {
+            $details = new FHIRReference();
+        }
+        $this->_trackValueSet($this->details, $details);
+        $this->details = $details;
         return $this;
     }
 
@@ -334,9 +319,9 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -345,10 +330,15 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getIdentifier())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getCode())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_CODE] = $fieldErrs;
@@ -359,9 +349,16 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
                 $errs[self::FIELD_DETAILS] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
+            $v = $this->getIdentifier();
+            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER_DOT_RESPONSE, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
+                        $errs[self::FIELD_IDENTIFIER] = [];
+                    }
+                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_CODE])) {
@@ -385,18 +382,6 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
                         $errs[self::FIELD_DETAILS] = [];
                     }
                     $errs[self::FIELD_DETAILS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
-            $v = $this->getIdentifier();
-            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MESSAGE_HEADER_DOT_RESPONSE, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
-                        $errs[self::FIELD_IDENTIFIER] = [];
-                    }
-                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
                 }
             }
         }
@@ -440,126 +425,166 @@ class FHIRMessageHeaderResponse extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRMessageHeaderResponse::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMessageHeaderResponse::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRMessageHeaderResponse;
-        } elseif (!is_object($type) || !($type instanceof FHIRMessageHeaderResponse)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRMessageHeaderResponse)) {
             throw new \RuntimeException(sprintf(
-                'FHIRMessageHeaderResponse::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_IDENTIFIER === $childName) {
+                $type->setIdentifier(FHIRId::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CODE === $childName) {
+                $type->setCode(FHIRResponseType::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DETAILS === $childName) {
+                $type->setDetails(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->code)) {
-            $type->setCode(FHIRResponseType::xmlUnserialize($children->code));
-        }
-        if (isset($children->details)) {
-            $type->setDetails(FHIRReference::xmlUnserialize($children->details));
-        }
-        if (isset($children->identifier)) {
-            $type->setIdentifier(FHIRId::xmlUnserialize($children->identifier));
-        }
-        if (isset($attributes->identifier)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_IDENTIFIER])) {
             $pt = $type->getIdentifier();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->identifier);
+                $pt->setValue((string)$attributes[self::FIELD_IDENTIFIER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setIdentifier((string)$attributes->identifier);
+                $type->setIdentifier((string)$attributes[self::FIELD_IDENTIFIER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'MessageHeaderResponse', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getIdentifier())) {
+            $xw->writeAttribute(self::FIELD_IDENTIFIER, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getIdentifier())) {
+            $xw->startElement(self::FIELD_IDENTIFIER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
         if (null !== ($v = $this->getCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CODE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_CODE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getDetails())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAILS, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_DETAILS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getIdentifier())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_IDENTIFIER} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRId::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_IDENTIFIER_EXT} = $ext;
+            }
+        }
         if (null !== ($v = $this->getCode())) {
-            $a[self::FIELD_CODE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRResponseType::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRResponseType::FIELD_VALUE]);
-                $a[self::FIELD_CODE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_CODE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRResponseType::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_CODE_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getDetails())) {
-            $a[self::FIELD_DETAILS] = $v;
+            $out->{self::FIELD_DETAILS} = $v;
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRId::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRId::FIELD_VALUE]);
-                $a[self::FIELD_IDENTIFIER_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

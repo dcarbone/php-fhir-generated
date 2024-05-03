@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,13 +62,20 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Describes a required data item for evaluation in terms of the type of data, and
@@ -83,17 +90,15 @@ class FHIRDataRequirementDateFilter extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_DATA_REQUIREMENT_DOT_DATE_FILTER;
+
     const FIELD_PATH = 'path';
     const FIELD_PATH_EXT = '_path';
     const FIELD_SEARCH_PARAM = 'searchParam';
     const FIELD_SEARCH_PARAM_EXT = '_searchParam';
     const FIELD_VALUE_DATE_TIME = 'valueDateTime';
     const FIELD_VALUE_DATE_TIME_EXT = '_valueDateTime';
-    const FIELD_VALUE_DURATION = 'valueDuration';
     const FIELD_VALUE_PERIOD = 'valuePeriod';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_VALUE_DURATION = 'valueDuration';
 
     /**
      * A sequence of Unicode characters
@@ -111,8 +116,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $path = null;
-
+    protected null|FHIRString $path = null;
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -124,8 +128,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $searchParam = null;
-
+    protected null|FHIRString $searchParam = null;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -139,28 +142,11 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
+     * Duration before now.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    protected $valueDateTime = null;
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the filter. If period is specified, the filter will return only
-     * those data items that fall within the bounds determined by the Period, inclusive
-     * of the period boundaries. If dateTime is specified, the filter will return only
-     * those data items that are equal to the specified dateTime. If a Duration is
-     * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
-     */
-    protected $valueDuration = null;
-
+    protected null|FHIRDateTime $valueDateTime = null;
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -171,45 +157,49 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
+     * Duration before now.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    protected $valuePeriod = null;
+    protected null|FHIRPeriod $valuePeriod = null;
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the filter. If period is specified, the filter will return only
+     * those data items that fall within the bounds determined by the Period, inclusive
+     * of the period boundaries. If dateTime is specified, the filter will return only
+     * those data items that are equal to the specified dateTime. If a Duration is
+     * specified, the filter will return only those data items that fall within
+     * Duration before now.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     */
+    protected null|FHIRDuration $valueDuration = null;
 
     /**
      * Validation map for fields in type DataRequirement.DateFilter
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRDataRequirementDateFilter Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRDataRequirementDateFilter::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_PATH]) || isset($data[self::FIELD_PATH_EXT])) {
-            if (isset($data[self::FIELD_PATH])) {
-                $value = $data[self::FIELD_PATH];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PATH_EXT]) && is_array($data[self::FIELD_PATH_EXT])) {
-                $ext = $data[self::FIELD_PATH_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_PATH, $data) || array_key_exists(self::FIELD_PATH_EXT, $data)) {
+            $value = $data[self::FIELD_PATH] ?? null;
+            $ext = (isset($data[self::FIELD_PATH_EXT]) && is_array($data[self::FIELD_PATH_EXT])) ? $data[self::FIELD_PATH_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setPath($value);
@@ -218,21 +208,15 @@ class FHIRDataRequirementDateFilter extends FHIRElement
                 } else {
                     $this->setPath(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setPath(new FHIRString($ext));
+            } else {
+                $this->setPath(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_SEARCH_PARAM]) || isset($data[self::FIELD_SEARCH_PARAM_EXT])) {
-            if (isset($data[self::FIELD_SEARCH_PARAM])) {
-                $value = $data[self::FIELD_SEARCH_PARAM];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SEARCH_PARAM_EXT]) && is_array($data[self::FIELD_SEARCH_PARAM_EXT])) {
-                $ext = $data[self::FIELD_SEARCH_PARAM_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_SEARCH_PARAM, $data) || array_key_exists(self::FIELD_SEARCH_PARAM_EXT, $data)) {
+            $value = $data[self::FIELD_SEARCH_PARAM] ?? null;
+            $ext = (isset($data[self::FIELD_SEARCH_PARAM_EXT]) && is_array($data[self::FIELD_SEARCH_PARAM_EXT])) ? $data[self::FIELD_SEARCH_PARAM_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setSearchParam($value);
@@ -241,21 +225,15 @@ class FHIRDataRequirementDateFilter extends FHIRElement
                 } else {
                     $this->setSearchParam(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSearchParam(new FHIRString($ext));
+            } else {
+                $this->setSearchParam(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_VALUE_DATE_TIME]) || isset($data[self::FIELD_VALUE_DATE_TIME_EXT])) {
-            if (isset($data[self::FIELD_VALUE_DATE_TIME])) {
-                $value = $data[self::FIELD_VALUE_DATE_TIME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_DATE_TIME_EXT]) && is_array($data[self::FIELD_VALUE_DATE_TIME_EXT])) {
-                $ext = $data[self::FIELD_VALUE_DATE_TIME_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_VALUE_DATE_TIME, $data) || array_key_exists(self::FIELD_VALUE_DATE_TIME_EXT, $data)) {
+            $value = $data[self::FIELD_VALUE_DATE_TIME] ?? null;
+            $ext = (isset($data[self::FIELD_VALUE_DATE_TIME_EXT]) && is_array($data[self::FIELD_VALUE_DATE_TIME_EXT])) ? $data[self::FIELD_VALUE_DATE_TIME_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setValueDateTime($value);
@@ -264,44 +242,34 @@ class FHIRDataRequirementDateFilter extends FHIRElement
                 } else {
                     $this->setValueDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setValueDateTime(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_DURATION])) {
-            if ($data[self::FIELD_VALUE_DURATION] instanceof FHIRDuration) {
-                $this->setValueDuration($data[self::FIELD_VALUE_DURATION]);
             } else {
-                $this->setValueDuration(new FHIRDuration($data[self::FIELD_VALUE_DURATION]));
+                $this->setValueDateTime(new FHIRDateTime(null));
             }
         }
-        if (isset($data[self::FIELD_VALUE_PERIOD])) {
+        if (array_key_exists(self::FIELD_VALUE_PERIOD, $data)) {
             if ($data[self::FIELD_VALUE_PERIOD] instanceof FHIRPeriod) {
                 $this->setValuePeriod($data[self::FIELD_VALUE_PERIOD]);
             } else {
                 $this->setValuePeriod(new FHIRPeriod($data[self::FIELD_VALUE_PERIOD]));
             }
         }
+        if (array_key_exists(self::FIELD_VALUE_DURATION, $data)) {
+            if ($data[self::FIELD_VALUE_DURATION] instanceof FHIRDuration) {
+                $this->setValueDuration($data[self::FIELD_VALUE_DURATION]);
+            } else {
+                $this->setValueDuration(new FHIRDuration($data[self::FIELD_VALUE_DURATION]));
+            }
+        }
     }
 
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<DataRequirementDateFilter{$xmlns}></DataRequirementDateFilter>";
     }
 
     /**
@@ -320,7 +288,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    public function getPath()
+    public function getPath(): null|FHIRString
     {
         return $this->path;
     }
@@ -339,20 +307,21 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * integer constant. The path must resolve to an element of type date, dateTime,
      * Period, Schedule, or Timing.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $path
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $path
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPath($path = null)
+    public function setPath(null|string|FHIRStringPrimitive|FHIRString $path = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $path) {
-            $this->path = null;
-            return $this;
+        if (null !== $path && !($path instanceof FHIRString)) {
+            $path = new FHIRString($path);
         }
-        if ($path instanceof FHIRString) {
-            $this->path = $path;
-            return $this;
+        $this->_trackValueSet($this->path, $path);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PATH])) {
+            $this->_primitiveXmlLocations[self::FIELD_PATH] = [];
         }
-        $this->path = new FHIRString($path);
+        $this->_primitiveXmlLocations[self::FIELD_PATH][0] = $xmlLocation;
+        $this->path = $path;
         return $this;
     }
 
@@ -367,7 +336,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    public function getSearchParam()
+    public function getSearchParam(): null|FHIRString
     {
         return $this->searchParam;
     }
@@ -381,20 +350,21 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the DataRequirement, and which searches on elements of type date, dateTime,
      * Period, Schedule, or Timing.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $searchParam
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $searchParam
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSearchParam($searchParam = null)
+    public function setSearchParam(null|string|FHIRStringPrimitive|FHIRString $searchParam = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $searchParam) {
-            $this->searchParam = null;
-            return $this;
+        if (null !== $searchParam && !($searchParam instanceof FHIRString)) {
+            $searchParam = new FHIRString($searchParam);
         }
-        if ($searchParam instanceof FHIRString) {
-            $this->searchParam = $searchParam;
-            return $this;
+        $this->_trackValueSet($this->searchParam, $searchParam);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SEARCH_PARAM])) {
+            $this->_primitiveXmlLocations[self::FIELD_SEARCH_PARAM] = [];
         }
-        $this->searchParam = new FHIRString($searchParam);
+        $this->_primitiveXmlLocations[self::FIELD_SEARCH_PARAM][0] = $xmlLocation;
+        $this->searchParam = $searchParam;
         return $this;
     }
 
@@ -411,11 +381,11 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
+     * Duration before now.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    public function getValueDateTime()
+    public function getValueDateTime(): null|FHIRDateTime
     {
         return $this->valueDateTime;
     }
@@ -433,62 +403,23 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
+     * Duration before now.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $valueDateTime
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $valueDateTime
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setValueDateTime($valueDateTime = null)
+    public function setValueDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $valueDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $valueDateTime) {
-            $this->valueDateTime = null;
-            return $this;
+        if (null !== $valueDateTime && !($valueDateTime instanceof FHIRDateTime)) {
+            $valueDateTime = new FHIRDateTime($valueDateTime);
         }
-        if ($valueDateTime instanceof FHIRDateTime) {
-            $this->valueDateTime = $valueDateTime;
-            return $this;
+        $this->_trackValueSet($this->valueDateTime, $valueDateTime);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE_DATE_TIME])) {
+            $this->_primitiveXmlLocations[self::FIELD_VALUE_DATE_TIME] = [];
         }
-        $this->valueDateTime = new FHIRDateTime($valueDateTime);
-        return $this;
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the filter. If period is specified, the filter will return only
-     * those data items that fall within the bounds determined by the Period, inclusive
-     * of the period boundaries. If dateTime is specified, the filter will return only
-     * those data items that are equal to the specified dateTime. If a Duration is
-     * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
-     */
-    public function getValueDuration()
-    {
-        return $this->valueDuration;
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The value of the filter. If period is specified, the filter will return only
-     * those data items that fall within the bounds determined by the Period, inclusive
-     * of the period boundaries. If dateTime is specified, the filter will return only
-     * those data items that are equal to the specified dateTime. If a Duration is
-     * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
-     * @return static
-     */
-    public function setValueDuration(FHIRDuration $valueDuration = null)
-    {
-        $this->valueDuration = $valueDuration;
+        $this->_primitiveXmlLocations[self::FIELD_VALUE_DATE_TIME][0] = $xmlLocation;
+        $this->valueDateTime = $valueDateTime;
         return $this;
     }
 
@@ -502,11 +433,11 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
+     * Duration before now.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    public function getValuePeriod()
+    public function getValuePeriod(): null|FHIRPeriod
     {
         return $this->valuePeriod;
     }
@@ -521,14 +452,62 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * of the period boundaries. If dateTime is specified, the filter will return only
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
-     * Duration before now. (choose any one of value*, but only one)
+     * Duration before now.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $valuePeriod
      * @return static
      */
-    public function setValuePeriod(FHIRPeriod $valuePeriod = null)
+    public function setValuePeriod(null|FHIRPeriod $valuePeriod = null): self
     {
+        if (null === $valuePeriod) {
+            $valuePeriod = new FHIRPeriod();
+        }
+        $this->_trackValueSet($this->valuePeriod, $valuePeriod);
         $this->valuePeriod = $valuePeriod;
+        return $this;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the filter. If period is specified, the filter will return only
+     * those data items that fall within the bounds determined by the Period, inclusive
+     * of the period boundaries. If dateTime is specified, the filter will return only
+     * those data items that are equal to the specified dateTime. If a Duration is
+     * specified, the filter will return only those data items that fall within
+     * Duration before now.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     */
+    public function getValueDuration(): null|FHIRDuration
+    {
+        return $this->valueDuration;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The value of the filter. If period is specified, the filter will return only
+     * those data items that fall within the bounds determined by the Period, inclusive
+     * of the period boundaries. If dateTime is specified, the filter will return only
+     * those data items that are equal to the specified dateTime. If a Duration is
+     * specified, the filter will return only those data items that fall within
+     * Duration before now.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $valueDuration
+     * @return static
+     */
+    public function setValueDuration(null|FHIRDuration $valueDuration = null): self
+    {
+        if (null === $valueDuration) {
+            $valueDuration = new FHIRDuration();
+        }
+        $this->_trackValueSet($this->valueDuration, $valueDuration);
+        $this->valueDuration = $valueDuration;
         return $this;
     }
 
@@ -538,9 +517,9 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -549,7 +528,7 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
@@ -568,14 +547,14 @@ class FHIRDataRequirementDateFilter extends FHIRElement
                 $errs[self::FIELD_VALUE_DATE_TIME] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getValueDuration())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_DURATION] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getValuePeriod())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_VALUE_PERIOD] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValueDuration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_DURATION] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_PATH])) {
@@ -614,18 +593,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_DURATION])) {
-            $v = $this->getValueDuration();
-            foreach($validationRules[self::FIELD_VALUE_DURATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DATA_REQUIREMENT_DOT_DATE_FILTER, self::FIELD_VALUE_DURATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_DURATION])) {
-                        $errs[self::FIELD_VALUE_DURATION] = [];
-                    }
-                    $errs[self::FIELD_VALUE_DURATION][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_VALUE_PERIOD])) {
             $v = $this->getValuePeriod();
             foreach($validationRules[self::FIELD_VALUE_PERIOD] as $rule => $constraint) {
@@ -635,6 +602,18 @@ class FHIRDataRequirementDateFilter extends FHIRElement
                         $errs[self::FIELD_VALUE_PERIOD] = [];
                     }
                     $errs[self::FIELD_VALUE_PERIOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_DURATION])) {
+            $v = $this->getValueDuration();
+            foreach($validationRules[self::FIELD_VALUE_DURATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DATA_REQUIREMENT_DOT_DATE_FILTER, self::FIELD_VALUE_DURATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_DURATION])) {
+                        $errs[self::FIELD_VALUE_DURATION] = [];
+                    }
+                    $errs[self::FIELD_VALUE_DURATION][$rule] = $err;
                 }
             }
         }
@@ -666,166 +645,217 @@ class FHIRDataRequirementDateFilter extends FHIRElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRDataRequirementDateFilter::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRDataRequirementDateFilter::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRDataRequirementDateFilter;
-        } elseif (!is_object($type) || !($type instanceof FHIRDataRequirementDateFilter)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRDataRequirementDateFilter)) {
             throw new \RuntimeException(sprintf(
-                'FHIRDataRequirementDateFilter::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_PATH === $childName) {
+                $type->setPath(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_SEARCH_PARAM === $childName) {
+                $type->setSearchParam(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_VALUE_DATE_TIME === $childName) {
+                $type->setValueDateTime(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_VALUE_PERIOD === $childName) {
+                $type->setValuePeriod(FHIRPeriod::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_VALUE_DURATION === $childName) {
+                $type->setValueDuration(FHIRDuration::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->path)) {
-            $type->setPath(FHIRString::xmlUnserialize($children->path));
-        }
-        if (isset($attributes->path)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_PATH])) {
             $pt = $type->getPath();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->path);
+                $pt->setValue((string)$attributes[self::FIELD_PATH], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setPath((string)$attributes->path);
+                $type->setPath((string)$attributes[self::FIELD_PATH], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->searchParam)) {
-            $type->setSearchParam(FHIRString::xmlUnserialize($children->searchParam));
-        }
-        if (isset($attributes->searchParam)) {
+        if (isset($attributes[self::FIELD_SEARCH_PARAM])) {
             $pt = $type->getSearchParam();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->searchParam);
+                $pt->setValue((string)$attributes[self::FIELD_SEARCH_PARAM], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setSearchParam((string)$attributes->searchParam);
+                $type->setSearchParam((string)$attributes[self::FIELD_SEARCH_PARAM], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->valueDateTime)) {
-            $type->setValueDateTime(FHIRDateTime::xmlUnserialize($children->valueDateTime));
-        }
-        if (isset($attributes->valueDateTime)) {
+        if (isset($attributes[self::FIELD_VALUE_DATE_TIME])) {
             $pt = $type->getValueDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueDateTime);
+                $pt->setValue((string)$attributes[self::FIELD_VALUE_DATE_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setValueDateTime((string)$attributes->valueDateTime);
+                $type->setValueDateTime((string)$attributes[self::FIELD_VALUE_DATE_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->valueDuration)) {
-            $type->setValueDuration(FHIRDuration::xmlUnserialize($children->valueDuration));
-        }
-        if (isset($children->valuePeriod)) {
-            $type->setValuePeriod(FHIRPeriod::xmlUnserialize($children->valuePeriod));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getPath())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATH, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getSearchParam())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEARCH_PARAM, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getValueDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getValueDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DURATION, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'DataRequirementDateFilter', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PATH] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPath())) {
+            $xw->writeAttribute(self::FIELD_PATH, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SEARCH_PARAM] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSearchParam())) {
+            $xw->writeAttribute(self::FIELD_SEARCH_PARAM, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_DATE_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValueDateTime())) {
+            $xw->writeAttribute(self::FIELD_VALUE_DATE_TIME, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PATH] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPath())) {
+            $xw->startElement(self::FIELD_PATH);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SEARCH_PARAM] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSearchParam())) {
+            $xw->startElement(self::FIELD_SEARCH_PARAM);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_DATE_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValueDateTime())) {
+            $xw->startElement(self::FIELD_VALUE_DATE_TIME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getValuePeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_PERIOD, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_VALUE_PERIOD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getValueDuration())) {
+            $xw->startElement(self::FIELD_VALUE_DURATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getPath())) {
-            $a[self::FIELD_PATH] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_PATH_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PATH} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PATH_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getSearchParam())) {
-            $a[self::FIELD_SEARCH_PARAM] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_SEARCH_PARAM_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_SEARCH_PARAM} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SEARCH_PARAM_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getValueDateTime())) {
-            $a[self::FIELD_VALUE_DATE_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_DATE_TIME_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_VALUE_DATE_TIME} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_VALUE_DATE_TIME_EXT} = $ext;
             }
         }
-        if (null !== ($v = $this->getValueDuration())) {
-            $a[self::FIELD_VALUE_DURATION] = $v;
-        }
         if (null !== ($v = $this->getValuePeriod())) {
-            $a[self::FIELD_VALUE_PERIOD] = $v;
+            $out->{self::FIELD_VALUE_PERIOD} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getValueDuration())) {
+            $out->{self::FIELD_VALUE_DURATION} = $v;
         }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

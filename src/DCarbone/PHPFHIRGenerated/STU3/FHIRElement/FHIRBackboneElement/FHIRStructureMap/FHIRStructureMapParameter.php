@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureMap;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,14 +62,24 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStr
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\STU3\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRDecimalPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRIntegerPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter;
 
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
@@ -81,41 +91,17 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_PARAMETER;
-    const FIELD_VALUE_BOOLEAN = 'valueBoolean';
-    const FIELD_VALUE_BOOLEAN_EXT = '_valueBoolean';
-    const FIELD_VALUE_DECIMAL = 'valueDecimal';
-    const FIELD_VALUE_DECIMAL_EXT = '_valueDecimal';
+
     const FIELD_VALUE_ID = 'valueId';
     const FIELD_VALUE_ID_EXT = '_valueId';
-    const FIELD_VALUE_INTEGER = 'valueInteger';
-    const FIELD_VALUE_INTEGER_EXT = '_valueInteger';
     const FIELD_VALUE_STRING = 'valueString';
     const FIELD_VALUE_STRING_EXT = '_valueString';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Parameter value - variable or literal.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
-     */
-    protected $valueBoolean = null;
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Parameter value - variable or literal.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    protected $valueDecimal = null;
+    const FIELD_VALUE_BOOLEAN = 'valueBoolean';
+    const FIELD_VALUE_BOOLEAN_EXT = '_valueBoolean';
+    const FIELD_VALUE_INTEGER = 'valueInteger';
+    const FIELD_VALUE_INTEGER_EXT = '_valueInteger';
+    const FIELD_VALUE_DECIMAL = 'valueDecimal';
+    const FIELD_VALUE_DECIMAL_EXT = '_valueDecimal';
 
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -129,19 +115,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    protected $valueId = null;
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Parameter value - variable or literal.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
-     */
-    protected $valueInteger = null;
-
+    protected null|FHIRId $valueId = null;
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -151,87 +125,60 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    protected $valueString = null;
+    protected null|FHIRString $valueString = null;
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Parameter value - variable or literal.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
+     */
+    protected null|FHIRBoolean $valueBoolean = null;
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Parameter value - variable or literal.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
+     */
+    protected null|FHIRInteger $valueInteger = null;
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Parameter value - variable or literal.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    protected null|FHIRDecimal $valueDecimal = null;
 
     /**
      * Validation map for fields in type StructureMap.Parameter
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRStructureMapParameter Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRStructureMapParameter::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_VALUE_BOOLEAN]) || isset($data[self::FIELD_VALUE_BOOLEAN_EXT])) {
-            if (isset($data[self::FIELD_VALUE_BOOLEAN])) {
-                $value = $data[self::FIELD_VALUE_BOOLEAN];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_BOOLEAN_EXT]) && is_array($data[self::FIELD_VALUE_BOOLEAN_EXT])) {
-                $ext = $data[self::FIELD_VALUE_BOOLEAN_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setValueBoolean($value);
-                } else if (is_array($value)) {
-                    $this->setValueBoolean(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setValueBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueBoolean(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_DECIMAL]) || isset($data[self::FIELD_VALUE_DECIMAL_EXT])) {
-            if (isset($data[self::FIELD_VALUE_DECIMAL])) {
-                $value = $data[self::FIELD_VALUE_DECIMAL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_DECIMAL_EXT]) && is_array($data[self::FIELD_VALUE_DECIMAL_EXT])) {
-                $ext = $data[self::FIELD_VALUE_DECIMAL_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setValueDecimal($value);
-                } else if (is_array($value)) {
-                    $this->setValueDecimal(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setValueDecimal(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueDecimal(new FHIRDecimal($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_ID]) || isset($data[self::FIELD_VALUE_ID_EXT])) {
-            if (isset($data[self::FIELD_VALUE_ID])) {
-                $value = $data[self::FIELD_VALUE_ID];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_ID_EXT]) && is_array($data[self::FIELD_VALUE_ID_EXT])) {
-                $ext = $data[self::FIELD_VALUE_ID_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_VALUE_ID, $data) || array_key_exists(self::FIELD_VALUE_ID_EXT, $data)) {
+            $value = $data[self::FIELD_VALUE_ID] ?? null;
+            $ext = (isset($data[self::FIELD_VALUE_ID_EXT]) && is_array($data[self::FIELD_VALUE_ID_EXT])) ? $data[self::FIELD_VALUE_ID_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRId) {
                     $this->setValueId($value);
@@ -240,44 +187,15 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
                 } else {
                     $this->setValueId(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setValueId(new FHIRId($ext));
+            } else {
+                $this->setValueId(new FHIRId(null));
             }
         }
-        if (isset($data[self::FIELD_VALUE_INTEGER]) || isset($data[self::FIELD_VALUE_INTEGER_EXT])) {
-            if (isset($data[self::FIELD_VALUE_INTEGER])) {
-                $value = $data[self::FIELD_VALUE_INTEGER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_INTEGER_EXT]) && is_array($data[self::FIELD_VALUE_INTEGER_EXT])) {
-                $ext = $data[self::FIELD_VALUE_INTEGER_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setValueInteger($value);
-                } else if (is_array($value)) {
-                    $this->setValueInteger(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setValueInteger(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setValueInteger(new FHIRInteger($ext));
-            }
-        }
-        if (isset($data[self::FIELD_VALUE_STRING]) || isset($data[self::FIELD_VALUE_STRING_EXT])) {
-            if (isset($data[self::FIELD_VALUE_STRING])) {
-                $value = $data[self::FIELD_VALUE_STRING];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_VALUE_STRING_EXT]) && is_array($data[self::FIELD_VALUE_STRING_EXT])) {
-                $ext = $data[self::FIELD_VALUE_STRING_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_VALUE_STRING, $data) || array_key_exists(self::FIELD_VALUE_STRING_EXT, $data)) {
+            $value = $data[self::FIELD_VALUE_STRING] ?? null;
+            $ext = (isset($data[self::FIELD_VALUE_STRING_EXT]) && is_array($data[self::FIELD_VALUE_STRING_EXT])) ? $data[self::FIELD_VALUE_STRING_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setValueString($value);
@@ -286,8 +204,61 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
                 } else {
                     $this->setValueString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setValueString(new FHIRString($ext));
+            } else {
+                $this->setValueString(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_VALUE_BOOLEAN, $data) || array_key_exists(self::FIELD_VALUE_BOOLEAN_EXT, $data)) {
+            $value = $data[self::FIELD_VALUE_BOOLEAN] ?? null;
+            $ext = (isset($data[self::FIELD_VALUE_BOOLEAN_EXT]) && is_array($data[self::FIELD_VALUE_BOOLEAN_EXT])) ? $data[self::FIELD_VALUE_BOOLEAN_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setValueBoolean($value);
+                } else if (is_array($value)) {
+                    $this->setValueBoolean(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setValueBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueBoolean(new FHIRBoolean($ext));
+            } else {
+                $this->setValueBoolean(new FHIRBoolean(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_VALUE_INTEGER, $data) || array_key_exists(self::FIELD_VALUE_INTEGER_EXT, $data)) {
+            $value = $data[self::FIELD_VALUE_INTEGER] ?? null;
+            $ext = (isset($data[self::FIELD_VALUE_INTEGER_EXT]) && is_array($data[self::FIELD_VALUE_INTEGER_EXT])) ? $data[self::FIELD_VALUE_INTEGER_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setValueInteger($value);
+                } else if (is_array($value)) {
+                    $this->setValueInteger(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setValueInteger(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueInteger(new FHIRInteger($ext));
+            } else {
+                $this->setValueInteger(new FHIRInteger(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_VALUE_DECIMAL, $data) || array_key_exists(self::FIELD_VALUE_DECIMAL_EXT, $data)) {
+            $value = $data[self::FIELD_VALUE_DECIMAL] ?? null;
+            $ext = (isset($data[self::FIELD_VALUE_DECIMAL_EXT]) && is_array($data[self::FIELD_VALUE_DECIMAL_EXT])) ? $data[self::FIELD_VALUE_DECIMAL_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setValueDecimal($value);
+                } else if (is_array($value)) {
+                    $this->setValueDecimal(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setValueDecimal(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setValueDecimal(new FHIRDecimal($ext));
+            } else {
+                $this->setValueDecimal(new FHIRDecimal(null));
             }
         }
     }
@@ -295,97 +266,9 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<StructureMapParameter{$xmlns}></StructureMapParameter>";
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Parameter value - variable or literal.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
-     */
-    public function getValueBoolean()
-    {
-        return $this->valueBoolean;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Parameter value - variable or literal.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $valueBoolean
-     * @return static
-     */
-    public function setValueBoolean($valueBoolean = null)
-    {
-        if (null === $valueBoolean) {
-            $this->valueBoolean = null;
-            return $this;
-        }
-        if ($valueBoolean instanceof FHIRBoolean) {
-            $this->valueBoolean = $valueBoolean;
-            return $this;
-        }
-        $this->valueBoolean = new FHIRBoolean($valueBoolean);
-        return $this;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Parameter value - variable or literal.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    public function getValueDecimal()
-    {
-        return $this->valueDecimal;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Parameter value - variable or literal.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $valueDecimal
-     * @return static
-     */
-    public function setValueDecimal($valueDecimal = null)
-    {
-        if (null === $valueDecimal) {
-            $this->valueDecimal = null;
-            return $this;
-        }
-        if ($valueDecimal instanceof FHIRDecimal) {
-            $this->valueDecimal = $valueDecimal;
-            return $this;
-        }
-        $this->valueDecimal = new FHIRDecimal($valueDecimal);
-        return $this;
     }
 
     /**
@@ -400,7 +283,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
-    public function getValueId()
+    public function getValueId(): null|FHIRId
     {
         return $this->valueId;
     }
@@ -415,58 +298,21 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      *
      * Parameter value - variable or literal.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $valueId
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId $valueId
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setValueId($valueId = null)
+    public function setValueId(null|string|FHIRIdPrimitive|FHIRId $valueId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $valueId) {
-            $this->valueId = null;
-            return $this;
+        if (null !== $valueId && !($valueId instanceof FHIRId)) {
+            $valueId = new FHIRId($valueId);
         }
-        if ($valueId instanceof FHIRId) {
-            $this->valueId = $valueId;
-            return $this;
+        $this->_trackValueSet($this->valueId, $valueId);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE_ID])) {
+            $this->_primitiveXmlLocations[self::FIELD_VALUE_ID] = [];
         }
-        $this->valueId = new FHIRId($valueId);
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Parameter value - variable or literal.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
-     */
-    public function getValueInteger()
-    {
-        return $this->valueInteger;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Parameter value - variable or literal.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $valueInteger
-     * @return static
-     */
-    public function setValueInteger($valueInteger = null)
-    {
-        if (null === $valueInteger) {
-            $this->valueInteger = null;
-            return $this;
-        }
-        if ($valueInteger instanceof FHIRInteger) {
-            $this->valueInteger = $valueInteger;
-            return $this;
-        }
-        $this->valueInteger = new FHIRInteger($valueInteger);
+        $this->_primitiveXmlLocations[self::FIELD_VALUE_ID][0] = $xmlLocation;
+        $this->valueId = $valueId;
         return $this;
     }
 
@@ -479,7 +325,7 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    public function getValueString()
+    public function getValueString(): null|FHIRString
     {
         return $this->valueString;
     }
@@ -491,20 +337,138 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      *
      * Parameter value - variable or literal.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $valueString
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $valueString
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setValueString($valueString = null)
+    public function setValueString(null|string|FHIRStringPrimitive|FHIRString $valueString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $valueString) {
-            $this->valueString = null;
-            return $this;
+        if (null !== $valueString && !($valueString instanceof FHIRString)) {
+            $valueString = new FHIRString($valueString);
         }
-        if ($valueString instanceof FHIRString) {
-            $this->valueString = $valueString;
-            return $this;
+        $this->_trackValueSet($this->valueString, $valueString);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE_STRING])) {
+            $this->_primitiveXmlLocations[self::FIELD_VALUE_STRING] = [];
         }
-        $this->valueString = new FHIRString($valueString);
+        $this->_primitiveXmlLocations[self::FIELD_VALUE_STRING][0] = $xmlLocation;
+        $this->valueString = $valueString;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Parameter value - variable or literal.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
+     */
+    public function getValueBoolean(): null|FHIRBoolean
+    {
+        return $this->valueBoolean;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Parameter value - variable or literal.
+     *
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\STU3\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean $valueBoolean
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setValueBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $valueBoolean = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $valueBoolean && !($valueBoolean instanceof FHIRBoolean)) {
+            $valueBoolean = new FHIRBoolean($valueBoolean);
+        }
+        $this->_trackValueSet($this->valueBoolean, $valueBoolean);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE_BOOLEAN])) {
+            $this->_primitiveXmlLocations[self::FIELD_VALUE_BOOLEAN] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_VALUE_BOOLEAN][0] = $xmlLocation;
+        $this->valueBoolean = $valueBoolean;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Parameter value - variable or literal.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
+     */
+    public function getValueInteger(): null|FHIRInteger
+    {
+        return $this->valueInteger;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Parameter value - variable or literal.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\STU3\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $valueInteger
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setValueInteger(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $valueInteger = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $valueInteger && !($valueInteger instanceof FHIRInteger)) {
+            $valueInteger = new FHIRInteger($valueInteger);
+        }
+        $this->_trackValueSet($this->valueInteger, $valueInteger);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE_INTEGER])) {
+            $this->_primitiveXmlLocations[self::FIELD_VALUE_INTEGER] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_VALUE_INTEGER][0] = $xmlLocation;
+        $this->valueInteger = $valueInteger;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Parameter value - variable or literal.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    public function getValueDecimal(): null|FHIRDecimal
+    {
+        return $this->valueDecimal;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Parameter value - variable or literal.
+     *
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\STU3\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $valueDecimal
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setValueDecimal(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $valueDecimal = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $valueDecimal && !($valueDecimal instanceof FHIRDecimal)) {
+            $valueDecimal = new FHIRDecimal($valueDecimal);
+        }
+        $this->_trackValueSet($this->valueDecimal, $valueDecimal);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_VALUE_DECIMAL])) {
+            $this->_primitiveXmlLocations[self::FIELD_VALUE_DECIMAL] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_VALUE_DECIMAL][0] = $xmlLocation;
+        $this->valueDecimal = $valueDecimal;
         return $this;
     }
 
@@ -514,9 +478,9 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -525,28 +489,13 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getValueBoolean())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_BOOLEAN] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueDecimal())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_DECIMAL] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getValueId())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_VALUE_ID] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getValueInteger())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_VALUE_INTEGER] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getValueString())) {
@@ -554,28 +503,19 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
                 $errs[self::FIELD_VALUE_STRING] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_BOOLEAN])) {
-            $v = $this->getValueBoolean();
-            foreach($validationRules[self::FIELD_VALUE_BOOLEAN] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_PARAMETER, self::FIELD_VALUE_BOOLEAN, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_BOOLEAN])) {
-                        $errs[self::FIELD_VALUE_BOOLEAN] = [];
-                    }
-                    $errs[self::FIELD_VALUE_BOOLEAN][$rule] = $err;
-                }
+        if (null !== ($v = $this->getValueBoolean())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_BOOLEAN] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_DECIMAL])) {
-            $v = $this->getValueDecimal();
-            foreach($validationRules[self::FIELD_VALUE_DECIMAL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_PARAMETER, self::FIELD_VALUE_DECIMAL, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_DECIMAL])) {
-                        $errs[self::FIELD_VALUE_DECIMAL] = [];
-                    }
-                    $errs[self::FIELD_VALUE_DECIMAL][$rule] = $err;
-                }
+        if (null !== ($v = $this->getValueInteger())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_INTEGER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getValueDecimal())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_VALUE_DECIMAL] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_VALUE_ID])) {
@@ -587,6 +527,30 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
                         $errs[self::FIELD_VALUE_ID] = [];
                     }
                     $errs[self::FIELD_VALUE_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_STRING])) {
+            $v = $this->getValueString();
+            foreach($validationRules[self::FIELD_VALUE_STRING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_PARAMETER, self::FIELD_VALUE_STRING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_STRING])) {
+                        $errs[self::FIELD_VALUE_STRING] = [];
+                    }
+                    $errs[self::FIELD_VALUE_STRING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_VALUE_BOOLEAN])) {
+            $v = $this->getValueBoolean();
+            foreach($validationRules[self::FIELD_VALUE_BOOLEAN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_PARAMETER, self::FIELD_VALUE_BOOLEAN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_VALUE_BOOLEAN])) {
+                        $errs[self::FIELD_VALUE_BOOLEAN] = [];
+                    }
+                    $errs[self::FIELD_VALUE_BOOLEAN][$rule] = $err;
                 }
             }
         }
@@ -602,15 +566,15 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_VALUE_STRING])) {
-            $v = $this->getValueString();
-            foreach($validationRules[self::FIELD_VALUE_STRING] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_PARAMETER, self::FIELD_VALUE_STRING, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_VALUE_DECIMAL])) {
+            $v = $this->getValueDecimal();
+            foreach($validationRules[self::FIELD_VALUE_DECIMAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_PARAMETER, self::FIELD_VALUE_DECIMAL, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE_STRING])) {
-                        $errs[self::FIELD_VALUE_STRING] = [];
+                    if (!isset($errs[self::FIELD_VALUE_DECIMAL])) {
+                        $errs[self::FIELD_VALUE_DECIMAL] = [];
                     }
-                    $errs[self::FIELD_VALUE_STRING][$rule] = $err;
+                    $errs[self::FIELD_VALUE_DECIMAL][$rule] = $err;
                 }
             }
         }
@@ -654,194 +618,259 @@ class FHIRStructureMapParameter extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRStructureMapParameter::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRStructureMapParameter::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRStructureMapParameter;
-        } elseif (!is_object($type) || !($type instanceof FHIRStructureMapParameter)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRStructureMapParameter)) {
             throw new \RuntimeException(sprintf(
-                'FHIRStructureMapParameter::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_VALUE_ID === $childName) {
+                $type->setValueId(FHIRId::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_VALUE_STRING === $childName) {
+                $type->setValueString(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_VALUE_BOOLEAN === $childName) {
+                $type->setValueBoolean(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_VALUE_INTEGER === $childName) {
+                $type->setValueInteger(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_VALUE_DECIMAL === $childName) {
+                $type->setValueDecimal(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->valueBoolean)) {
-            $type->setValueBoolean(FHIRBoolean::xmlUnserialize($children->valueBoolean));
-        }
-        if (isset($attributes->valueBoolean)) {
-            $pt = $type->getValueBoolean();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueBoolean);
-            } else {
-                $type->setValueBoolean((string)$attributes->valueBoolean);
-            }
-        }
-        if (isset($children->valueDecimal)) {
-            $type->setValueDecimal(FHIRDecimal::xmlUnserialize($children->valueDecimal));
-        }
-        if (isset($attributes->valueDecimal)) {
-            $pt = $type->getValueDecimal();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueDecimal);
-            } else {
-                $type->setValueDecimal((string)$attributes->valueDecimal);
-            }
-        }
-        if (isset($children->valueId)) {
-            $type->setValueId(FHIRId::xmlUnserialize($children->valueId));
-        }
-        if (isset($attributes->valueId)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_VALUE_ID])) {
             $pt = $type->getValueId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueId);
+                $pt->setValue((string)$attributes[self::FIELD_VALUE_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setValueId((string)$attributes->valueId);
+                $type->setValueId((string)$attributes[self::FIELD_VALUE_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->valueInteger)) {
-            $type->setValueInteger(FHIRInteger::xmlUnserialize($children->valueInteger));
-        }
-        if (isset($attributes->valueInteger)) {
-            $pt = $type->getValueInteger();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueInteger);
-            } else {
-                $type->setValueInteger((string)$attributes->valueInteger);
-            }
-        }
-        if (isset($children->valueString)) {
-            $type->setValueString(FHIRString::xmlUnserialize($children->valueString));
-        }
-        if (isset($attributes->valueString)) {
+        if (isset($attributes[self::FIELD_VALUE_STRING])) {
             $pt = $type->getValueString();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->valueString);
+                $pt->setValue((string)$attributes[self::FIELD_VALUE_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setValueString((string)$attributes->valueString);
+                $type->setValueString((string)$attributes[self::FIELD_VALUE_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_VALUE_BOOLEAN])) {
+            $pt = $type->getValueBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_VALUE_BOOLEAN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setValueBoolean((string)$attributes[self::FIELD_VALUE_BOOLEAN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_VALUE_INTEGER])) {
+            $pt = $type->getValueInteger();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_VALUE_INTEGER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setValueInteger((string)$attributes[self::FIELD_VALUE_INTEGER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_VALUE_DECIMAL])) {
+            $pt = $type->getValueDecimal();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_VALUE_DECIMAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setValueDecimal((string)$attributes[self::FIELD_VALUE_DECIMAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getValueBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getValueDecimal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_DECIMAL, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getValueId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_ID, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getValueInteger())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_INTEGER, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'StructureMapParameter', $this->_getSourceXmlns());
         }
-        if (null !== ($v = $this->getValueString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_VALUE_STRING, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_ID] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValueId())) {
+            $xw->writeAttribute(self::FIELD_VALUE_ID, $v->getValue()?->getFormattedValue());
         }
-        return $sxe;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValueString())) {
+            $xw->writeAttribute(self::FIELD_VALUE_STRING, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_BOOLEAN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValueBoolean())) {
+            $xw->writeAttribute(self::FIELD_VALUE_BOOLEAN, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_INTEGER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValueInteger())) {
+            $xw->writeAttribute(self::FIELD_VALUE_INTEGER, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_DECIMAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getValueDecimal())) {
+            $xw->writeAttribute(self::FIELD_VALUE_DECIMAL, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_ID] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValueId())) {
+            $xw->startElement(self::FIELD_VALUE_ID);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValueString())) {
+            $xw->startElement(self::FIELD_VALUE_STRING);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_BOOLEAN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValueBoolean())) {
+            $xw->startElement(self::FIELD_VALUE_BOOLEAN);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_INTEGER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValueInteger())) {
+            $xw->startElement(self::FIELD_VALUE_INTEGER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_VALUE_DECIMAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getValueDecimal())) {
+            $xw->startElement(self::FIELD_VALUE_DECIMAL);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getValueBoolean())) {
-            $a[self::FIELD_VALUE_BOOLEAN] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_BOOLEAN_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getValueDecimal())) {
-            $a[self::FIELD_VALUE_DECIMAL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_DECIMAL_EXT] = $enc;
-            }
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getValueId())) {
-            $a[self::FIELD_VALUE_ID] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRId::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRId::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_ID_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_VALUE_ID} = $val;
             }
-        }
-        if (null !== ($v = $this->getValueInteger())) {
-            $a[self::FIELD_VALUE_INTEGER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_INTEGER_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRId::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_VALUE_ID_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getValueString())) {
-            $a[self::FIELD_VALUE_STRING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_VALUE_STRING_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_VALUE_STRING} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_VALUE_STRING_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getValueBoolean())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_VALUE_BOOLEAN} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_VALUE_BOOLEAN_EXT} = $ext;
+            }
         }
-        return $a;
-    }
+        if (null !== ($v = $this->getValueInteger())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_VALUE_INTEGER} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInteger::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_VALUE_INTEGER_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getValueDecimal())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_VALUE_DECIMAL} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDecimal::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_VALUE_DECIMAL_EXT} = $ext;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

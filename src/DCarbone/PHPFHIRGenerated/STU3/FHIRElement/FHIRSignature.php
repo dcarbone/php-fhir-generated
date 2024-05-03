@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,9 +62,18 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\STU3\FHIRBase64BinaryPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRInstantPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter;
 
 /**
  * A digital signature along with supporting context. The signature may be
@@ -81,72 +90,20 @@ class FHIRSignature extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SIGNATURE;
-    const FIELD_BLOB = 'blob';
-    const FIELD_BLOB_EXT = '_blob';
-    const FIELD_CONTENT_TYPE = 'contentType';
-    const FIELD_CONTENT_TYPE_EXT = '_contentType';
-    const FIELD_ON_BEHALF_OF_REFERENCE = 'onBehalfOfReference';
-    const FIELD_ON_BEHALF_OF_URI = 'onBehalfOfUri';
-    const FIELD_ON_BEHALF_OF_URI_EXT = '_onBehalfOfUri';
+
     const FIELD_TYPE = 'type';
     const FIELD_WHEN = 'when';
     const FIELD_WHEN_EXT = '_when';
-    const FIELD_WHO_REFERENCE = 'whoReference';
     const FIELD_WHO_URI = 'whoUri';
     const FIELD_WHO_URI_EXT = '_whoUri';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A stream of bytes
-     * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The base64 encoding of the Signature content. When signature is not recorded
-     * electronically this element would be empty.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
-     */
-    protected $blob = null;
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A mime type that indicates the technical format of the signature. Important mime
-     * types are application/signature+xml for X ML DigSig, application/jwt for JWT,
-     * and image/* for a graphical image of a signature, etc.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
-     */
-    protected $contentType = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A reference to an application-usable description of the identity that is
-     * represented by the signature.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    protected $onBehalfOfReference = null;
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A reference to an application-usable description of the identity that is
-     * represented by the signature.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
-     */
-    protected $onBehalfOfUri = null;
+    const FIELD_WHO_REFERENCE = 'whoReference';
+    const FIELD_ON_BEHALF_OF_URI = 'onBehalfOfUri';
+    const FIELD_ON_BEHALF_OF_URI_EXT = '_onBehalfOfUri';
+    const FIELD_ON_BEHALF_OF_REFERENCE = 'onBehalfOfReference';
+    const FIELD_CONTENT_TYPE = 'contentType';
+    const FIELD_CONTENT_TYPE_EXT = '_contentType';
+    const FIELD_BLOB = 'blob';
+    const FIELD_BLOB_EXT = '_blob';
 
     /**
      * A reference to a code defined by a terminology system.
@@ -159,8 +116,7 @@ class FHIRSignature extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
-    protected $type = [];
-
+    protected null|array $type = [];
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
@@ -172,20 +128,7 @@ class FHIRSignature extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    protected $when = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A reference to an application-usable description of the identity that signed
-     * (e.g. the signature used their private key).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    protected $whoReference = null;
-
+    protected null|FHIRInstant $when = null;
     /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
@@ -196,139 +139,106 @@ class FHIRSignature extends FHIRElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    protected $whoUri = null;
+    protected null|FHIRUri $whoUri = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to an application-usable description of the identity that signed
+     * (e.g. the signature used their private key).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $whoReference = null;
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A reference to an application-usable description of the identity that is
+     * represented by the signature.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
+     */
+    protected null|FHIRUri $onBehalfOfUri = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to an application-usable description of the identity that is
+     * represented by the signature.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $onBehalfOfReference = null;
+    /**
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A mime type that indicates the technical format of the signature. Important mime
+     * types are application/signature+xml for X ML DigSig, application/jwt for JWT,
+     * and image/* for a graphical image of a signature, etc.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
+     */
+    protected null|FHIRCode $contentType = null;
+    /**
+     * A stream of bytes
+     * A stream of bytes, base64 encoded
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The base64 encoding of the Signature content. When signature is not recorded
+     * electronically this element would be empty.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
+     */
+    protected null|FHIRBase64Binary $blob = null;
 
     /**
      * Validation map for fields in type Signature
      * @var array
      */
-    private static $_validationRules = [
+    private const _VALIDATION_RULES = [
         self::FIELD_TYPE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
+
     /**
      * FHIRSignature Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRSignature::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_BLOB]) || isset($data[self::FIELD_BLOB_EXT])) {
-            if (isset($data[self::FIELD_BLOB])) {
-                $value = $data[self::FIELD_BLOB];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_BLOB_EXT]) && is_array($data[self::FIELD_BLOB_EXT])) {
-                $ext = $data[self::FIELD_BLOB_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBase64Binary) {
-                    $this->setBlob($value);
-                } else if (is_array($value)) {
-                    $this->setBlob(new FHIRBase64Binary(array_merge($ext, $value)));
-                } else {
-                    $this->setBlob(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setBlob(new FHIRBase64Binary($ext));
-            }
-        }
-        if (isset($data[self::FIELD_CONTENT_TYPE]) || isset($data[self::FIELD_CONTENT_TYPE_EXT])) {
-            if (isset($data[self::FIELD_CONTENT_TYPE])) {
-                $value = $data[self::FIELD_CONTENT_TYPE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CONTENT_TYPE_EXT]) && is_array($data[self::FIELD_CONTENT_TYPE_EXT])) {
-                $ext = $data[self::FIELD_CONTENT_TYPE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRCode) {
-                    $this->setContentType($value);
-                } else if (is_array($value)) {
-                    $this->setContentType(new FHIRCode(array_merge($ext, $value)));
-                } else {
-                    $this->setContentType(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setContentType(new FHIRCode($ext));
-            }
-        }
-        if (isset($data[self::FIELD_ON_BEHALF_OF_REFERENCE])) {
-            if ($data[self::FIELD_ON_BEHALF_OF_REFERENCE] instanceof FHIRReference) {
-                $this->setOnBehalfOfReference($data[self::FIELD_ON_BEHALF_OF_REFERENCE]);
-            } else {
-                $this->setOnBehalfOfReference(new FHIRReference($data[self::FIELD_ON_BEHALF_OF_REFERENCE]));
-            }
-        }
-        if (isset($data[self::FIELD_ON_BEHALF_OF_URI]) || isset($data[self::FIELD_ON_BEHALF_OF_URI_EXT])) {
-            if (isset($data[self::FIELD_ON_BEHALF_OF_URI])) {
-                $value = $data[self::FIELD_ON_BEHALF_OF_URI];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ON_BEHALF_OF_URI_EXT]) && is_array($data[self::FIELD_ON_BEHALF_OF_URI_EXT])) {
-                $ext = $data[self::FIELD_ON_BEHALF_OF_URI_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRUri) {
-                    $this->setOnBehalfOfUri($value);
-                } else if (is_array($value)) {
-                    $this->setOnBehalfOfUri(new FHIRUri(array_merge($ext, $value)));
-                } else {
-                    $this->setOnBehalfOfUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setOnBehalfOfUri(new FHIRUri($ext));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE])) {
+        if (array_key_exists(self::FIELD_TYPE, $data)) {
             if (is_array($data[self::FIELD_TYPE])) {
                 foreach($data[self::FIELD_TYPE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addType($v);
                     } else {
                         $this->addType(new FHIRCoding($v));
                     }
                 }
-            } else if ($data[self::FIELD_TYPE] instanceof FHIRCoding) {
+            } elseif ($data[self::FIELD_TYPE] instanceof FHIRCoding) {
                 $this->addType($data[self::FIELD_TYPE]);
             } else {
                 $this->addType(new FHIRCoding($data[self::FIELD_TYPE]));
             }
         }
-        if (isset($data[self::FIELD_WHEN]) || isset($data[self::FIELD_WHEN_EXT])) {
-            if (isset($data[self::FIELD_WHEN])) {
-                $value = $data[self::FIELD_WHEN];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_WHEN_EXT]) && is_array($data[self::FIELD_WHEN_EXT])) {
-                $ext = $data[self::FIELD_WHEN_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_WHEN, $data) || array_key_exists(self::FIELD_WHEN_EXT, $data)) {
+            $value = $data[self::FIELD_WHEN] ?? null;
+            $ext = (isset($data[self::FIELD_WHEN_EXT]) && is_array($data[self::FIELD_WHEN_EXT])) ? $data[self::FIELD_WHEN_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRInstant) {
                     $this->setWhen($value);
@@ -337,28 +247,15 @@ class FHIRSignature extends FHIRElement
                 } else {
                     $this->setWhen(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setWhen(new FHIRInstant($ext));
+            } else {
+                $this->setWhen(new FHIRInstant(null));
             }
         }
-        if (isset($data[self::FIELD_WHO_REFERENCE])) {
-            if ($data[self::FIELD_WHO_REFERENCE] instanceof FHIRReference) {
-                $this->setWhoReference($data[self::FIELD_WHO_REFERENCE]);
-            } else {
-                $this->setWhoReference(new FHIRReference($data[self::FIELD_WHO_REFERENCE]));
-            }
-        }
-        if (isset($data[self::FIELD_WHO_URI]) || isset($data[self::FIELD_WHO_URI_EXT])) {
-            if (isset($data[self::FIELD_WHO_URI])) {
-                $value = $data[self::FIELD_WHO_URI];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_WHO_URI_EXT]) && is_array($data[self::FIELD_WHO_URI_EXT])) {
-                $ext = $data[self::FIELD_WHO_URI_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_WHO_URI, $data) || array_key_exists(self::FIELD_WHO_URI_EXT, $data)) {
+            $value = $data[self::FIELD_WHO_URI] ?? null;
+            $ext = (isset($data[self::FIELD_WHO_URI_EXT]) && is_array($data[self::FIELD_WHO_URI_EXT])) ? $data[self::FIELD_WHO_URI_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->setWhoUri($value);
@@ -367,8 +264,75 @@ class FHIRSignature extends FHIRElement
                 } else {
                     $this->setWhoUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setWhoUri(new FHIRUri($ext));
+            } else {
+                $this->setWhoUri(new FHIRUri(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_WHO_REFERENCE, $data)) {
+            if ($data[self::FIELD_WHO_REFERENCE] instanceof FHIRReference) {
+                $this->setWhoReference($data[self::FIELD_WHO_REFERENCE]);
+            } else {
+                $this->setWhoReference(new FHIRReference($data[self::FIELD_WHO_REFERENCE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_ON_BEHALF_OF_URI, $data) || array_key_exists(self::FIELD_ON_BEHALF_OF_URI_EXT, $data)) {
+            $value = $data[self::FIELD_ON_BEHALF_OF_URI] ?? null;
+            $ext = (isset($data[self::FIELD_ON_BEHALF_OF_URI_EXT]) && is_array($data[self::FIELD_ON_BEHALF_OF_URI_EXT])) ? $data[self::FIELD_ON_BEHALF_OF_URI_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRUri) {
+                    $this->setOnBehalfOfUri($value);
+                } else if (is_array($value)) {
+                    $this->setOnBehalfOfUri(new FHIRUri(array_merge($ext, $value)));
+                } else {
+                    $this->setOnBehalfOfUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setOnBehalfOfUri(new FHIRUri($ext));
+            } else {
+                $this->setOnBehalfOfUri(new FHIRUri(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_ON_BEHALF_OF_REFERENCE, $data)) {
+            if ($data[self::FIELD_ON_BEHALF_OF_REFERENCE] instanceof FHIRReference) {
+                $this->setOnBehalfOfReference($data[self::FIELD_ON_BEHALF_OF_REFERENCE]);
+            } else {
+                $this->setOnBehalfOfReference(new FHIRReference($data[self::FIELD_ON_BEHALF_OF_REFERENCE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_CONTENT_TYPE, $data) || array_key_exists(self::FIELD_CONTENT_TYPE_EXT, $data)) {
+            $value = $data[self::FIELD_CONTENT_TYPE] ?? null;
+            $ext = (isset($data[self::FIELD_CONTENT_TYPE_EXT]) && is_array($data[self::FIELD_CONTENT_TYPE_EXT])) ? $data[self::FIELD_CONTENT_TYPE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRCode) {
+                    $this->setContentType($value);
+                } else if (is_array($value)) {
+                    $this->setContentType(new FHIRCode(array_merge($ext, $value)));
+                } else {
+                    $this->setContentType(new FHIRCode([FHIRCode::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setContentType(new FHIRCode($ext));
+            } else {
+                $this->setContentType(new FHIRCode(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_BLOB, $data) || array_key_exists(self::FIELD_BLOB_EXT, $data)) {
+            $value = $data[self::FIELD_BLOB] ?? null;
+            $ext = (isset($data[self::FIELD_BLOB_EXT]) && is_array($data[self::FIELD_BLOB_EXT])) ? $data[self::FIELD_BLOB_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBase64Binary) {
+                    $this->setBlob($value);
+                } else if (is_array($value)) {
+                    $this->setBlob(new FHIRBase64Binary(array_merge($ext, $value)));
+                } else {
+                    $this->setBlob(new FHIRBase64Binary([FHIRBase64Binary::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setBlob(new FHIRBase64Binary($ext));
+            } else {
+                $this->setBlob(new FHIRBase64Binary(null));
             }
         }
     }
@@ -376,177 +340,9 @@ class FHIRSignature extends FHIRElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<Signature{$xmlns}></Signature>";
-    }
-
-    /**
-     * A stream of bytes
-     * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The base64 encoding of the Signature content. When signature is not recorded
-     * electronically this element would be empty.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
-     */
-    public function getBlob()
-    {
-        return $this->blob;
-    }
-
-    /**
-     * A stream of bytes
-     * A stream of bytes, base64 encoded
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The base64 encoding of the Signature content. When signature is not recorded
-     * electronically this element would be empty.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary $blob
-     * @return static
-     */
-    public function setBlob($blob = null)
-    {
-        if (null === $blob) {
-            $this->blob = null;
-            return $this;
-        }
-        if ($blob instanceof FHIRBase64Binary) {
-            $this->blob = $blob;
-            return $this;
-        }
-        $this->blob = new FHIRBase64Binary($blob);
-        return $this;
-    }
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A mime type that indicates the technical format of the signature. Important mime
-     * types are application/signature+xml for X ML DigSig, application/jwt for JWT,
-     * and image/* for a graphical image of a signature, etc.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
-     */
-    public function getContentType()
-    {
-        return $this->contentType;
-    }
-
-    /**
-     * A string which has at least one character and no leading or trailing whitespace
-     * and where there is no whitespace other than single spaces in the contents
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A mime type that indicates the technical format of the signature. Important mime
-     * types are application/signature+xml for X ML DigSig, application/jwt for JWT,
-     * and image/* for a graphical image of a signature, etc.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode $contentType
-     * @return static
-     */
-    public function setContentType($contentType = null)
-    {
-        if (null === $contentType) {
-            $this->contentType = null;
-            return $this;
-        }
-        if ($contentType instanceof FHIRCode) {
-            $this->contentType = $contentType;
-            return $this;
-        }
-        $this->contentType = new FHIRCode($contentType);
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A reference to an application-usable description of the identity that is
-     * represented by the signature.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    public function getOnBehalfOfReference()
-    {
-        return $this->onBehalfOfReference;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A reference to an application-usable description of the identity that is
-     * represented by the signature.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $onBehalfOfReference
-     * @return static
-     */
-    public function setOnBehalfOfReference(FHIRReference $onBehalfOfReference = null)
-    {
-        $this->onBehalfOfReference = $onBehalfOfReference;
-        return $this;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A reference to an application-usable description of the identity that is
-     * represented by the signature.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
-     */
-    public function getOnBehalfOfUri()
-    {
-        return $this->onBehalfOfUri;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A reference to an application-usable description of the identity that is
-     * represented by the signature.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $onBehalfOfUri
-     * @return static
-     */
-    public function setOnBehalfOfUri($onBehalfOfUri = null)
-    {
-        if (null === $onBehalfOfUri) {
-            $this->onBehalfOfUri = null;
-            return $this;
-        }
-        if ($onBehalfOfUri instanceof FHIRUri) {
-            $this->onBehalfOfUri = $onBehalfOfUri;
-            return $this;
-        }
-        $this->onBehalfOfUri = new FHIRUri($onBehalfOfUri);
-        return $this;
     }
 
     /**
@@ -560,7 +356,7 @@ class FHIRSignature extends FHIRElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
-    public function getType()
+    public function getType(): null|array
     {
         return $this->type;
     }
@@ -577,37 +373,13 @@ class FHIRSignature extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding $type
      * @return static
      */
-    public function addType(FHIRCoding $type = null)
+    public function addType(null|FHIRCoding $type = null): self
     {
+        if (null === $type) {
+            $type = new FHIRCoding();
+        }
+        $this->_trackValueAdded();
         $this->type[] = $type;
-        return $this;
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * An indication of the reason that the entity signed this document. This may be
-     * explicitly included as part of the signature information and can be used when
-     * determining accountability for various actions concerning the document.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[] $type
-     * @return static
-     */
-    public function setType(array $type = [])
-    {
-        $this->type = [];
-        if ([] === $type) {
-            return $this;
-        }
-        foreach($type as $v) {
-            if ($v instanceof FHIRCoding) {
-                $this->addType($v);
-            } else {
-                $this->addType(new FHIRCoding($v));
-            }
-        }
         return $this;
     }
 
@@ -622,7 +394,7 @@ class FHIRSignature extends FHIRElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
-    public function getWhen()
+    public function getWhen(): null|FHIRInstant
     {
         return $this->when;
     }
@@ -636,20 +408,62 @@ class FHIRSignature extends FHIRElement
      *
      * When the digital signature was signed.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $when
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\STU3\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant $when
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setWhen($when = null)
+    public function setWhen(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $when = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $when) {
-            $this->when = null;
-            return $this;
+        if (null !== $when && !($when instanceof FHIRInstant)) {
+            $when = new FHIRInstant($when);
         }
-        if ($when instanceof FHIRInstant) {
-            $this->when = $when;
-            return $this;
+        $this->_trackValueSet($this->when, $when);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_WHEN])) {
+            $this->_primitiveXmlLocations[self::FIELD_WHEN] = [];
         }
-        $this->when = new FHIRInstant($when);
+        $this->_primitiveXmlLocations[self::FIELD_WHEN][0] = $xmlLocation;
+        $this->when = $when;
+        return $this;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A reference to an application-usable description of the identity that signed
+     * (e.g. the signature used their private key).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
+     */
+    public function getWhoUri(): null|FHIRUri
+    {
+        return $this->whoUri;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A reference to an application-usable description of the identity that signed
+     * (e.g. the signature used their private key).
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $whoUri
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setWhoUri(null|string|FHIRUriPrimitive|FHIRUri $whoUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $whoUri && !($whoUri instanceof FHIRUri)) {
+            $whoUri = new FHIRUri($whoUri);
+        }
+        $this->_trackValueSet($this->whoUri, $whoUri);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_WHO_URI])) {
+            $this->_primitiveXmlLocations[self::FIELD_WHO_URI] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_WHO_URI][0] = $xmlLocation;
+        $this->whoUri = $whoUri;
         return $this;
     }
 
@@ -663,7 +477,7 @@ class FHIRSignature extends FHIRElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    public function getWhoReference()
+    public function getWhoReference(): null|FHIRReference
     {
         return $this->whoReference;
     }
@@ -679,8 +493,12 @@ class FHIRSignature extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $whoReference
      * @return static
      */
-    public function setWhoReference(FHIRReference $whoReference = null)
+    public function setWhoReference(null|FHIRReference $whoReference = null): self
     {
+        if (null === $whoReference) {
+            $whoReference = new FHIRReference();
+        }
+        $this->_trackValueSet($this->whoReference, $whoReference);
         $this->whoReference = $whoReference;
         return $this;
     }
@@ -690,14 +508,14 @@ class FHIRSignature extends FHIRElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A reference to an application-usable description of the identity that signed
-     * (e.g. the signature used their private key).
+     * A reference to an application-usable description of the identity that is
+     * represented by the signature.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
-    public function getWhoUri()
+    public function getOnBehalfOfUri(): null|FHIRUri
     {
-        return $this->whoUri;
+        return $this->onBehalfOfUri;
     }
 
     /**
@@ -705,23 +523,146 @@ class FHIRSignature extends FHIRElement
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A reference to an application-usable description of the identity that signed
-     * (e.g. the signature used their private key).
+     * A reference to an application-usable description of the identity that is
+     * represented by the signature.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $whoUri
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri $onBehalfOfUri
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setWhoUri($whoUri = null)
+    public function setOnBehalfOfUri(null|string|FHIRUriPrimitive|FHIRUri $onBehalfOfUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $whoUri) {
-            $this->whoUri = null;
-            return $this;
+        if (null !== $onBehalfOfUri && !($onBehalfOfUri instanceof FHIRUri)) {
+            $onBehalfOfUri = new FHIRUri($onBehalfOfUri);
         }
-        if ($whoUri instanceof FHIRUri) {
-            $this->whoUri = $whoUri;
-            return $this;
+        $this->_trackValueSet($this->onBehalfOfUri, $onBehalfOfUri);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_ON_BEHALF_OF_URI])) {
+            $this->_primitiveXmlLocations[self::FIELD_ON_BEHALF_OF_URI] = [];
         }
-        $this->whoUri = new FHIRUri($whoUri);
+        $this->_primitiveXmlLocations[self::FIELD_ON_BEHALF_OF_URI][0] = $xmlLocation;
+        $this->onBehalfOfUri = $onBehalfOfUri;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to an application-usable description of the identity that is
+     * represented by the signature.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    public function getOnBehalfOfReference(): null|FHIRReference
+    {
+        return $this->onBehalfOfReference;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to an application-usable description of the identity that is
+     * represented by the signature.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $onBehalfOfReference
+     * @return static
+     */
+    public function setOnBehalfOfReference(null|FHIRReference $onBehalfOfReference = null): self
+    {
+        if (null === $onBehalfOfReference) {
+            $onBehalfOfReference = new FHIRReference();
+        }
+        $this->_trackValueSet($this->onBehalfOfReference, $onBehalfOfReference);
+        $this->onBehalfOfReference = $onBehalfOfReference;
+        return $this;
+    }
+
+    /**
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A mime type that indicates the technical format of the signature. Important mime
+     * types are application/signature+xml for X ML DigSig, application/jwt for JWT,
+     * and image/* for a graphical image of a signature, etc.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
+     */
+    public function getContentType(): null|FHIRCode
+    {
+        return $this->contentType;
+    }
+
+    /**
+     * A string which has at least one character and no leading or trailing whitespace
+     * and where there is no whitespace other than single spaces in the contents
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A mime type that indicates the technical format of the signature. Important mime
+     * types are application/signature+xml for X ML DigSig, application/jwt for JWT,
+     * and image/* for a graphical image of a signature, etc.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRCodePrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode $contentType
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setContentType(null|string|FHIRCodePrimitive|FHIRCode $contentType = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $contentType && !($contentType instanceof FHIRCode)) {
+            $contentType = new FHIRCode($contentType);
+        }
+        $this->_trackValueSet($this->contentType, $contentType);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE])) {
+            $this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE][0] = $xmlLocation;
+        $this->contentType = $contentType;
+        return $this;
+    }
+
+    /**
+     * A stream of bytes
+     * A stream of bytes, base64 encoded
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The base64 encoding of the Signature content. When signature is not recorded
+     * electronically this element would be empty.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
+     */
+    public function getBlob(): null|FHIRBase64Binary
+    {
+        return $this->blob;
+    }
+
+    /**
+     * A stream of bytes
+     * A stream of bytes, base64 encoded
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The base64 encoding of the Signature content. When signature is not recorded
+     * electronically this element would be empty.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRBase64BinaryPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary $blob
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setBlob(null|string|FHIRBase64BinaryPrimitive|FHIRBase64Binary $blob = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $blob && !($blob instanceof FHIRBase64Binary)) {
+            $blob = new FHIRBase64Binary($blob);
+        }
+        $this->_trackValueSet($this->blob, $blob);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_BLOB])) {
+            $this->_primitiveXmlLocations[self::FIELD_BLOB] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_BLOB][0] = $xmlLocation;
+        $this->blob = $blob;
         return $this;
     }
 
@@ -731,9 +672,9 @@ class FHIRSignature extends FHIRElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -742,30 +683,10 @@ class FHIRSignature extends FHIRElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getBlob())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_BLOB] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getContentType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CONTENT_TYPE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getOnBehalfOfReference())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ON_BEHALF_OF_REFERENCE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getOnBehalfOfUri())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ON_BEHALF_OF_URI] = $fieldErrs;
-            }
-        }
         if ([] !== ($vs = $this->getType())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -778,62 +699,34 @@ class FHIRSignature extends FHIRElement
                 $errs[self::FIELD_WHEN] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getWhoReference())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_WHO_REFERENCE] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getWhoUri())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_WHO_URI] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_BLOB])) {
-            $v = $this->getBlob();
-            foreach($validationRules[self::FIELD_BLOB] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SIGNATURE, self::FIELD_BLOB, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BLOB])) {
-                        $errs[self::FIELD_BLOB] = [];
-                    }
-                    $errs[self::FIELD_BLOB][$rule] = $err;
-                }
+        if (null !== ($v = $this->getWhoReference())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_WHO_REFERENCE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CONTENT_TYPE])) {
-            $v = $this->getContentType();
-            foreach($validationRules[self::FIELD_CONTENT_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SIGNATURE, self::FIELD_CONTENT_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONTENT_TYPE])) {
-                        $errs[self::FIELD_CONTENT_TYPE] = [];
-                    }
-                    $errs[self::FIELD_CONTENT_TYPE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getOnBehalfOfUri())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ON_BEHALF_OF_URI] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_ON_BEHALF_OF_REFERENCE])) {
-            $v = $this->getOnBehalfOfReference();
-            foreach($validationRules[self::FIELD_ON_BEHALF_OF_REFERENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SIGNATURE, self::FIELD_ON_BEHALF_OF_REFERENCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ON_BEHALF_OF_REFERENCE])) {
-                        $errs[self::FIELD_ON_BEHALF_OF_REFERENCE] = [];
-                    }
-                    $errs[self::FIELD_ON_BEHALF_OF_REFERENCE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getOnBehalfOfReference())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ON_BEHALF_OF_REFERENCE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_ON_BEHALF_OF_URI])) {
-            $v = $this->getOnBehalfOfUri();
-            foreach($validationRules[self::FIELD_ON_BEHALF_OF_URI] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SIGNATURE, self::FIELD_ON_BEHALF_OF_URI, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ON_BEHALF_OF_URI])) {
-                        $errs[self::FIELD_ON_BEHALF_OF_URI] = [];
-                    }
-                    $errs[self::FIELD_ON_BEHALF_OF_URI][$rule] = $err;
-                }
+        if (null !== ($v = $this->getContentType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CONTENT_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBlob())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BLOB] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_TYPE])) {
@@ -860,6 +753,18 @@ class FHIRSignature extends FHIRElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_WHO_URI])) {
+            $v = $this->getWhoUri();
+            foreach($validationRules[self::FIELD_WHO_URI] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SIGNATURE, self::FIELD_WHO_URI, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_WHO_URI])) {
+                        $errs[self::FIELD_WHO_URI] = [];
+                    }
+                    $errs[self::FIELD_WHO_URI][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_WHO_REFERENCE])) {
             $v = $this->getWhoReference();
             foreach($validationRules[self::FIELD_WHO_REFERENCE] as $rule => $constraint) {
@@ -872,15 +777,51 @@ class FHIRSignature extends FHIRElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_WHO_URI])) {
-            $v = $this->getWhoUri();
-            foreach($validationRules[self::FIELD_WHO_URI] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SIGNATURE, self::FIELD_WHO_URI, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ON_BEHALF_OF_URI])) {
+            $v = $this->getOnBehalfOfUri();
+            foreach($validationRules[self::FIELD_ON_BEHALF_OF_URI] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SIGNATURE, self::FIELD_ON_BEHALF_OF_URI, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_WHO_URI])) {
-                        $errs[self::FIELD_WHO_URI] = [];
+                    if (!isset($errs[self::FIELD_ON_BEHALF_OF_URI])) {
+                        $errs[self::FIELD_ON_BEHALF_OF_URI] = [];
                     }
-                    $errs[self::FIELD_WHO_URI][$rule] = $err;
+                    $errs[self::FIELD_ON_BEHALF_OF_URI][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ON_BEHALF_OF_REFERENCE])) {
+            $v = $this->getOnBehalfOfReference();
+            foreach($validationRules[self::FIELD_ON_BEHALF_OF_REFERENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SIGNATURE, self::FIELD_ON_BEHALF_OF_REFERENCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ON_BEHALF_OF_REFERENCE])) {
+                        $errs[self::FIELD_ON_BEHALF_OF_REFERENCE] = [];
+                    }
+                    $errs[self::FIELD_ON_BEHALF_OF_REFERENCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONTENT_TYPE])) {
+            $v = $this->getContentType();
+            foreach($validationRules[self::FIELD_CONTENT_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SIGNATURE, self::FIELD_CONTENT_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONTENT_TYPE])) {
+                        $errs[self::FIELD_CONTENT_TYPE] = [];
+                    }
+                    $errs[self::FIELD_CONTENT_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BLOB])) {
+            $v = $this->getBlob();
+            foreach($validationRules[self::FIELD_BLOB] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SIGNATURE, self::FIELD_BLOB, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BLOB])) {
+                        $errs[self::FIELD_BLOB] = [];
+                    }
+                    $errs[self::FIELD_BLOB][$rule] = $err;
                 }
             }
         }
@@ -912,234 +853,290 @@ class FHIRSignature extends FHIRElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRSignature::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSignature::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRSignature;
-        } elseif (!is_object($type) || !($type instanceof FHIRSignature)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRSignature)) {
             throw new \RuntimeException(sprintf(
-                'FHIRSignature::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_TYPE === $childName) {
+                $type->addType(FHIRCoding::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_WHEN === $childName) {
+                $type->setWhen(FHIRInstant::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_WHO_URI === $childName) {
+                $type->setWhoUri(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_WHO_REFERENCE === $childName) {
+                $type->setWhoReference(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ON_BEHALF_OF_URI === $childName) {
+                $type->setOnBehalfOfUri(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_ON_BEHALF_OF_REFERENCE === $childName) {
+                $type->setOnBehalfOfReference(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CONTENT_TYPE === $childName) {
+                $type->setContentType(FHIRCode::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_BLOB === $childName) {
+                $type->setBlob(FHIRBase64Binary::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->blob)) {
-            $type->setBlob(FHIRBase64Binary::xmlUnserialize($children->blob));
-        }
-        if (isset($attributes->blob)) {
-            $pt = $type->getBlob();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->blob);
-            } else {
-                $type->setBlob((string)$attributes->blob);
-            }
-        }
-        if (isset($children->contentType)) {
-            $type->setContentType(FHIRCode::xmlUnserialize($children->contentType));
-        }
-        if (isset($attributes->contentType)) {
-            $pt = $type->getContentType();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->contentType);
-            } else {
-                $type->setContentType((string)$attributes->contentType);
-            }
-        }
-        if (isset($children->onBehalfOfReference)) {
-            $type->setOnBehalfOfReference(FHIRReference::xmlUnserialize($children->onBehalfOfReference));
-        }
-        if (isset($children->onBehalfOfUri)) {
-            $type->setOnBehalfOfUri(FHIRUri::xmlUnserialize($children->onBehalfOfUri));
-        }
-        if (isset($attributes->onBehalfOfUri)) {
-            $pt = $type->getOnBehalfOfUri();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->onBehalfOfUri);
-            } else {
-                $type->setOnBehalfOfUri((string)$attributes->onBehalfOfUri);
-            }
-        }
-        if (isset($children->type)) {
-            foreach($children->type as $child) {
-                $type->addType(FHIRCoding::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->when)) {
-            $type->setWhen(FHIRInstant::xmlUnserialize($children->when));
-        }
-        if (isset($attributes->when)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_WHEN])) {
             $pt = $type->getWhen();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->when);
+                $pt->setValue((string)$attributes[self::FIELD_WHEN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setWhen((string)$attributes->when);
+                $type->setWhen((string)$attributes[self::FIELD_WHEN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->whoReference)) {
-            $type->setWhoReference(FHIRReference::xmlUnserialize($children->whoReference));
-        }
-        if (isset($children->whoUri)) {
-            $type->setWhoUri(FHIRUri::xmlUnserialize($children->whoUri));
-        }
-        if (isset($attributes->whoUri)) {
+        if (isset($attributes[self::FIELD_WHO_URI])) {
             $pt = $type->getWhoUri();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->whoUri);
+                $pt->setValue((string)$attributes[self::FIELD_WHO_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setWhoUri((string)$attributes->whoUri);
+                $type->setWhoUri((string)$attributes[self::FIELD_WHO_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ON_BEHALF_OF_URI])) {
+            $pt = $type->getOnBehalfOfUri();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ON_BEHALF_OF_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setOnBehalfOfUri((string)$attributes[self::FIELD_ON_BEHALF_OF_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_CONTENT_TYPE])) {
+            $pt = $type->getContentType();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_CONTENT_TYPE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setContentType((string)$attributes[self::FIELD_CONTENT_TYPE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_BLOB])) {
+            $pt = $type->getBlob();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_BLOB], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setBlob((string)$attributes[self::FIELD_BLOB], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getBlob())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BLOB, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getContentType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONTENT_TYPE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getOnBehalfOfReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ON_BEHALF_OF_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getOnBehalfOfUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ON_BEHALF_OF_URI, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'Signature', $this->_getSourceXmlns());
         }
-        if ([] !== ($vs = $this->getType())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_WHEN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getWhen())) {
+            $xw->writeAttribute(self::FIELD_WHEN, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getWhen())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHEN, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_WHO_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getWhoUri())) {
+            $xw->writeAttribute(self::FIELD_WHO_URI, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ON_BEHALF_OF_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOnBehalfOfUri())) {
+            $xw->writeAttribute(self::FIELD_ON_BEHALF_OF_URI, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getContentType())) {
+            $xw->writeAttribute(self::FIELD_CONTENT_TYPE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BLOB] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBlob())) {
+            $xw->writeAttribute(self::FIELD_BLOB, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        foreach ($this->getType() as $v) {
+            $xw->startElement(self::FIELD_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_WHEN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getWhen())) {
+            $xw->startElement(self::FIELD_WHEN);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_WHO_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getWhoUri())) {
+            $xw->startElement(self::FIELD_WHO_URI);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getWhoReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_WHO_REFERENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getWhoUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_WHO_URI, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ON_BEHALF_OF_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOnBehalfOfUri())) {
+            $xw->startElement(self::FIELD_ON_BEHALF_OF_URI);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getOnBehalfOfReference())) {
+            $xw->startElement(self::FIELD_ON_BEHALF_OF_REFERENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getContentType())) {
+            $xw->startElement(self::FIELD_CONTENT_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BLOB] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBlob())) {
+            $xw->startElement(self::FIELD_BLOB);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getBlob())) {
-            $a[self::FIELD_BLOB] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBase64Binary::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBase64Binary::FIELD_VALUE]);
-                $a[self::FIELD_BLOB_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getContentType())) {
-            $a[self::FIELD_CONTENT_TYPE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCode::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCode::FIELD_VALUE]);
-                $a[self::FIELD_CONTENT_TYPE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getOnBehalfOfReference())) {
-            $a[self::FIELD_ON_BEHALF_OF_REFERENCE] = $v;
-        }
-        if (null !== ($v = $this->getOnBehalfOfUri())) {
-            $a[self::FIELD_ON_BEHALF_OF_URI] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_ON_BEHALF_OF_URI_EXT] = $enc;
-            }
-        }
+        $out = parent::jsonSerialize();
         if ([] !== ($vs = $this->getType())) {
-            $a[self::FIELD_TYPE] = [];
+            $out->{self::FIELD_TYPE} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_TYPE][] = $v;
+                $out->{self::FIELD_TYPE}[] = $v;
             }
         }
         if (null !== ($v = $this->getWhen())) {
-            $a[self::FIELD_WHEN] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInstant::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInstant::FIELD_VALUE]);
-                $a[self::FIELD_WHEN_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_WHEN} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInstant::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_WHEN_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getWhoUri())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_WHO_URI} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRUri::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_WHO_URI_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getWhoReference())) {
-            $a[self::FIELD_WHO_REFERENCE] = $v;
+            $out->{self::FIELD_WHO_REFERENCE} = $v;
         }
-        if (null !== ($v = $this->getWhoUri())) {
-            $a[self::FIELD_WHO_URI] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_WHO_URI_EXT] = $enc;
+        if (null !== ($v = $this->getOnBehalfOfUri())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_ON_BEHALF_OF_URI} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRUri::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_ON_BEHALF_OF_URI_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getOnBehalfOfReference())) {
+            $out->{self::FIELD_ON_BEHALF_OF_REFERENCE} = $v;
         }
-        return $a;
-    }
+        if (null !== ($v = $this->getContentType())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_CONTENT_TYPE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRCode::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_CONTENT_TYPE_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getBlob())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_BLOB} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBase64Binary::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_BLOB_EXT} = $ext;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

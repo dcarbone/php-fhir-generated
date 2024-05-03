@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU1;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,6 +65,8 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
 {
     use PHPFHIRCommentContainerTrait;
     use PHPFHIRValidationAssertionsTrait;
+    use PHPFHIRChangeTrackingTrait;
+    use PHPFHIRSourceXmlNamespaceTrait;
 
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_BINARY;
@@ -72,156 +74,124 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
     const FIELD_CONTENT_TYPE = 'contentType';
     const FIELD_ID = 'id';
 
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive
      */
-    protected $contentType = null;
-
+    protected null|FHIRStringPrimitive $contentType = null;
     /**
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive
      */
-    protected $id = null;
+    protected null|FHIRIdPrimitive $id = null;
 
     /**
      * Validation map for fields in type Binary
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRBinary Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRBinary::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
+
         if (isset($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
             if (is_array($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
                 $this->_setFHIRComments($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
-            } else if (is_string($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
+            } elseif (is_string($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS])) {
                 $this->_addFHIRComment($data[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS]);
             }
         }
-        if (isset($data[self::FIELD_CONTENT_TYPE])) {
-            $this->setContentType($data[self::FIELD_CONTENT_TYPE]);
+        if (array_key_exists(self::FIELD_CONTENT_TYPE, $data)) {
+            if ($data[self::FIELD_CONTENT_TYPE] instanceof FHIRStringPrimitive) {
+                $this->setContentType($data[self::FIELD_CONTENT_TYPE]);
+            } else {
+                $this->setContentType(new FHIRStringPrimitive($data[self::FIELD_CONTENT_TYPE]));
+            }
         }
-        if (isset($data[self::FIELD_ID])) {
-            $this->setId($data[self::FIELD_ID]);
+        if (array_key_exists(self::FIELD_ID, $data)) {
+            if ($data[self::FIELD_ID] instanceof FHIRIdPrimitive) {
+                $this->setId($data[self::FIELD_ID]);
+            } else {
+                $this->setId(new FHIRIdPrimitive($data[self::FIELD_ID]));
+            }
         }
     }
 
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string|null
-     */
-    public function _getFHIRXMLNamespace()
-    {
-        return '' === $this->_xmlns ? null : $this->_xmlns;
-    }
-
-    /**
-     * @param null|string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace)
-    {
-        if (null === $xmlNamespace || is_string($xmlNamespace)) {
-            $this->_xmlns = (string)$xmlNamespace;
-            return $this;
-        }
-        throw new \InvalidArgumentException(sprintf(
-            '$xmlNamespace must be a null or string value, %s seen.',
-            gettype($xmlNamespace)
-        ));
-    }
-
-    /**
      * @return string
      */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<Binary{$xmlns}></Binary>";
-    }
-    /**
-     * @return string
-     */
-    public function _getResourceType()
+    public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
-
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive
      */
-    public function getContentType()
+    public function getContentType(): null|FHIRStringPrimitive
     {
         return $this->contentType;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive $contentType
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive $contentType
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setContentType($contentType = null)
+    public function setContentType(null|string|FHIRStringPrimitive $contentType = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $contentType) {
-            $this->contentType = null;
-            return $this;
+        if (null !== $contentType && !($contentType instanceof FHIRStringPrimitive)) {
+            $contentType = new FHIRStringPrimitive($contentType);
         }
-        if ($contentType instanceof FHIRStringPrimitive) {
-            $this->contentType = $contentType;
-            return $this;
+        $this->_trackValueSet($this->contentType, $contentType);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE])) {
+            $this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE] = [];
         }
-        $this->contentType = new FHIRStringPrimitive($contentType);
+        $this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE][0] = $xmlLocation;
+        $this->contentType = $contentType;
         return $this;
     }
 
     /**
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive
      */
-    public function getId()
+    public function getId(): null|FHIRIdPrimitive
     {
         return $this->id;
     }
 
     /**
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive $id
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive $id
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setId($id = null)
+    public function setId(null|string|FHIRIdPrimitive $id = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $id) {
-            $this->id = null;
-            return $this;
+        if (null !== $id && !($id instanceof FHIRIdPrimitive)) {
+            $id = new FHIRIdPrimitive($id);
         }
-        if ($id instanceof FHIRIdPrimitive) {
-            $this->id = $id;
-            return $this;
+        $this->_trackValueSet($this->id, $id);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_ID])) {
+            $this->_primitiveXmlLocations[self::FIELD_ID] = [];
         }
-        $this->id = new FHIRIdPrimitive($id);
+        $this->_primitiveXmlLocations[self::FIELD_ID][0] = $xmlLocation;
+        $this->id = $id;
         return $this;
     }
 
@@ -231,9 +201,9 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -242,7 +212,7 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = [];
         $validationRules = $this->_getValidationRules();
@@ -260,112 +230,148 @@ class FHIRBinary implements PHPFHIRCommentContainerInterface, PHPFHIRContainedTy
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRBinary $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRBinary
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRBinary::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRBinary::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRBinary;
-        } elseif (!is_object($type) || !($type instanceof FHIRBinary)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRBinary)) {
             throw new \RuntimeException(sprintf(
-                'FHIRBinary::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRBinary or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_CONTENT_TYPE === $childName) {
+                $type->setContentType(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->contentType)) {
-            $type->setContentType(FHIRStringPrimitive::xmlUnserialize($children->contentType));
-        }
-        if (isset($attributes->contentType)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_CONTENT_TYPE])) {
             $pt = $type->getContentType();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->contentType);
+                $pt->setValue((string)$attributes[self::FIELD_CONTENT_TYPE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setContentType((string)$attributes->contentType);
+                $type->setContentType((string)$attributes[self::FIELD_CONTENT_TYPE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->id)) {
-            $type->setId(FHIRIdPrimitive::xmlUnserialize($children->id));
-        }
-        if (isset($attributes->id)) {
+        if (isset($attributes[self::FIELD_ID])) {
             $pt = $type->getId();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->id);
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setId((string)$attributes->id);
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (null !== ($v = $this->getContentType())) {
-            $sxe->addAttribute(self::FIELD_CONTENT_TYPE, (string)$v);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getId())) {
-            $sxe->addAttribute(self::FIELD_ID, (string)$v);
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        return $sxe;
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'Binary', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getContentType())) {
+            $xw->writeAttribute(self::FIELD_CONTENT_TYPE, $v->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ID] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getId())) {
+            $xw->writeAttribute(self::FIELD_ID, $v->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CONTENT_TYPE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getContentType())) {
+            $xw->startElement(self::FIELD_CONTENT_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ID] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getId())) {
+            $xw->startElement(self::FIELD_ID);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = [];
+        $out = new \stdClass();
         if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+            $out->{PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS} = $vs;
         }
         if (null !== ($v = $this->getContentType())) {
-            $a[self::FIELD_CONTENT_TYPE] = $v;
+            $out->{self::FIELD_CONTENT_TYPE} = $v;
         }
         if (null !== ($v = $this->getId())) {
-            $a[self::FIELD_ID] = $v;
+            $out->{self::FIELD_ID} = $v;
+        }
+        if ([] !== ($vs = $this->_getFHIRComments())) {
+            $out->{PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS} = $vs;
         }
 
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
-    }
+        $out->{PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE} = $this->_getResourceType();
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

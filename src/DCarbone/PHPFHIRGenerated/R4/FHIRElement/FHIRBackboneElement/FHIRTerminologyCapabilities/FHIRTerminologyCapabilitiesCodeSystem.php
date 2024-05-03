@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,11 +62,19 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRCanonicalPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * A TerminologyCapabilities resource documents a set of capabilities (behaviors)
@@ -80,24 +88,12 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TERMINOLOGY_CAPABILITIES_DOT_CODE_SYSTEM;
-    const FIELD_SUBSUMPTION = 'subsumption';
-    const FIELD_SUBSUMPTION_EXT = '_subsumption';
+
     const FIELD_URI = 'uri';
     const FIELD_URI_EXT = '_uri';
     const FIELD_VERSION = 'version';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * True if subsumption is supported for this version of the code system.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    protected $subsumption = null;
+    const FIELD_SUBSUMPTION = 'subsumption';
+    const FIELD_SUBSUMPTION_EXT = '_subsumption';
 
     /**
      * A URI that is a reference to a canonical URL on a FHIR resource
@@ -109,8 +105,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    protected $uri = null;
-
+    protected null|FHIRCanonical $uri = null;
     /**
      * A TerminologyCapabilities resource documents a set of capabilities (behaviors)
      * of a FHIR Terminology Server that may be used as a statement of actual server
@@ -120,64 +115,39 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion[]
      */
-    protected $version = [];
+    protected null|array $version = [];
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * True if subsumption is supported for this version of the code system.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    protected null|FHIRBoolean $subsumption = null;
 
     /**
      * Validation map for fields in type TerminologyCapabilities.CodeSystem
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRTerminologyCapabilitiesCodeSystem Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRTerminologyCapabilitiesCodeSystem::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_SUBSUMPTION]) || isset($data[self::FIELD_SUBSUMPTION_EXT])) {
-            if (isset($data[self::FIELD_SUBSUMPTION])) {
-                $value = $data[self::FIELD_SUBSUMPTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SUBSUMPTION_EXT]) && is_array($data[self::FIELD_SUBSUMPTION_EXT])) {
-                $ext = $data[self::FIELD_SUBSUMPTION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setSubsumption($value);
-                } else if (is_array($value)) {
-                    $this->setSubsumption(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setSubsumption(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setSubsumption(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_URI]) || isset($data[self::FIELD_URI_EXT])) {
-            if (isset($data[self::FIELD_URI])) {
-                $value = $data[self::FIELD_URI];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_URI_EXT]) && is_array($data[self::FIELD_URI_EXT])) {
-                $ext = $data[self::FIELD_URI_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_URI, $data) || array_key_exists(self::FIELD_URI_EXT, $data)) {
+            $value = $data[self::FIELD_URI] ?? null;
+            $ext = (isset($data[self::FIELD_URI_EXT]) && is_array($data[self::FIELD_URI_EXT])) ? $data[self::FIELD_URI_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRCanonical) {
                     $this->setUri($value);
@@ -186,26 +156,42 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
                 } else {
                     $this->setUri(new FHIRCanonical([FHIRCanonical::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setUri(new FHIRCanonical($ext));
+            } else {
+                $this->setUri(new FHIRCanonical(null));
             }
         }
-        if (isset($data[self::FIELD_VERSION])) {
+        if (array_key_exists(self::FIELD_VERSION, $data)) {
             if (is_array($data[self::FIELD_VERSION])) {
                 foreach($data[self::FIELD_VERSION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRTerminologyCapabilitiesVersion) {
                         $this->addVersion($v);
                     } else {
                         $this->addVersion(new FHIRTerminologyCapabilitiesVersion($v));
                     }
                 }
-            } else if ($data[self::FIELD_VERSION] instanceof FHIRTerminologyCapabilitiesVersion) {
+            } elseif ($data[self::FIELD_VERSION] instanceof FHIRTerminologyCapabilitiesVersion) {
                 $this->addVersion($data[self::FIELD_VERSION]);
             } else {
                 $this->addVersion(new FHIRTerminologyCapabilitiesVersion($data[self::FIELD_VERSION]));
+            }
+        }
+        if (array_key_exists(self::FIELD_SUBSUMPTION, $data) || array_key_exists(self::FIELD_SUBSUMPTION_EXT, $data)) {
+            $value = $data[self::FIELD_SUBSUMPTION] ?? null;
+            $ext = (isset($data[self::FIELD_SUBSUMPTION_EXT]) && is_array($data[self::FIELD_SUBSUMPTION_EXT])) ? $data[self::FIELD_SUBSUMPTION_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setSubsumption($value);
+                } else if (is_array($value)) {
+                    $this->setSubsumption(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setSubsumption(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setSubsumption(new FHIRBoolean($ext));
+            } else {
+                $this->setSubsumption(new FHIRBoolean(null));
             }
         }
     }
@@ -213,57 +199,9 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<TerminologyCapabilitiesCodeSystem{$xmlns}></TerminologyCapabilitiesCodeSystem>";
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * True if subsumption is supported for this version of the code system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    public function getSubsumption()
-    {
-        return $this->subsumption;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * True if subsumption is supported for this version of the code system.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $subsumption
-     * @return static
-     */
-    public function setSubsumption($subsumption = null)
-    {
-        if (null === $subsumption) {
-            $this->subsumption = null;
-            return $this;
-        }
-        if ($subsumption instanceof FHIRBoolean) {
-            $this->subsumption = $subsumption;
-            return $this;
-        }
-        $this->subsumption = new FHIRBoolean($subsumption);
-        return $this;
     }
 
     /**
@@ -276,7 +214,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
-    public function getUri()
+    public function getUri(): null|FHIRCanonical
     {
         return $this->uri;
     }
@@ -289,20 +227,21 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      *
      * URI for the Code System.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $uri
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRCanonicalPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical $uri
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setUri($uri = null)
+    public function setUri(null|string|FHIRCanonicalPrimitive|FHIRCanonical $uri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $uri) {
-            $this->uri = null;
-            return $this;
+        if (null !== $uri && !($uri instanceof FHIRCanonical)) {
+            $uri = new FHIRCanonical($uri);
         }
-        if ($uri instanceof FHIRCanonical) {
-            $this->uri = $uri;
-            return $this;
+        $this->_trackValueSet($this->uri, $uri);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_URI])) {
+            $this->_primitiveXmlLocations[self::FIELD_URI] = [];
         }
-        $this->uri = new FHIRCanonical($uri);
+        $this->_primitiveXmlLocations[self::FIELD_URI][0] = $xmlLocation;
+        $this->uri = $uri;
         return $this;
     }
 
@@ -315,7 +254,7 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion[]
      */
-    public function getVersion()
+    public function getVersion(): null|array
     {
         return $this->version;
     }
@@ -330,35 +269,50 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion $version
      * @return static
      */
-    public function addVersion(FHIRTerminologyCapabilitiesVersion $version = null)
+    public function addVersion(null|FHIRTerminologyCapabilitiesVersion $version = null): self
     {
+        if (null === $version) {
+            $version = new FHIRTerminologyCapabilitiesVersion();
+        }
+        $this->_trackValueAdded();
         $this->version[] = $version;
         return $this;
     }
 
     /**
-     * A TerminologyCapabilities resource documents a set of capabilities (behaviors)
-     * of a FHIR Terminology Server that may be used as a statement of actual server
-     * functionality or a statement of required or desired server implementation.
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * For the code system, a list of versions that are supported by the server.
+     * True if subsumption is supported for this version of the code system.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion[] $version
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    public function getSubsumption(): null|FHIRBoolean
+    {
+        return $this->subsumption;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * True if subsumption is supported for this version of the code system.
+     *
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $subsumption
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setVersion(array $version = [])
+    public function setSubsumption(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $subsumption = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->version = [];
-        if ([] === $version) {
-            return $this;
+        if (null !== $subsumption && !($subsumption instanceof FHIRBoolean)) {
+            $subsumption = new FHIRBoolean($subsumption);
         }
-        foreach($version as $v) {
-            if ($v instanceof FHIRTerminologyCapabilitiesVersion) {
-                $this->addVersion($v);
-            } else {
-                $this->addVersion(new FHIRTerminologyCapabilitiesVersion($v));
-            }
+        $this->_trackValueSet($this->subsumption, $subsumption);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SUBSUMPTION])) {
+            $this->_primitiveXmlLocations[self::FIELD_SUBSUMPTION] = [];
         }
+        $this->_primitiveXmlLocations[self::FIELD_SUBSUMPTION][0] = $xmlLocation;
+        $this->subsumption = $subsumption;
         return $this;
     }
 
@@ -368,9 +322,9 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -379,15 +333,10 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getSubsumption())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SUBSUMPTION] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getUri())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_URI] = $fieldErrs;
@@ -400,16 +349,9 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SUBSUMPTION])) {
-            $v = $this->getSubsumption();
-            foreach($validationRules[self::FIELD_SUBSUMPTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TERMINOLOGY_CAPABILITIES_DOT_CODE_SYSTEM, self::FIELD_SUBSUMPTION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUBSUMPTION])) {
-                        $errs[self::FIELD_SUBSUMPTION] = [];
-                    }
-                    $errs[self::FIELD_SUBSUMPTION][$rule] = $err;
-                }
+        if (null !== ($v = $this->getSubsumption())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUBSUMPTION] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_URI])) {
@@ -433,6 +375,18 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
                         $errs[self::FIELD_VERSION] = [];
                     }
                     $errs[self::FIELD_VERSION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUBSUMPTION])) {
+            $v = $this->getSubsumption();
+            foreach($validationRules[self::FIELD_SUBSUMPTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_TERMINOLOGY_CAPABILITIES_DOT_CODE_SYSTEM, self::FIELD_SUBSUMPTION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUBSUMPTION])) {
+                        $errs[self::FIELD_SUBSUMPTION] = [];
+                    }
+                    $errs[self::FIELD_SUBSUMPTION][$rule] = $err;
                 }
             }
         }
@@ -476,147 +430,182 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRTerminologyCapabilitiesCodeSystem::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRTerminologyCapabilitiesCodeSystem::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRTerminologyCapabilitiesCodeSystem;
-        } elseif (!is_object($type) || !($type instanceof FHIRTerminologyCapabilitiesCodeSystem)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRTerminologyCapabilitiesCodeSystem)) {
             throw new \RuntimeException(sprintf(
-                'FHIRTerminologyCapabilitiesCodeSystem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_URI === $childName) {
+                $type->setUri(FHIRCanonical::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_VERSION === $childName) {
+                $type->addVersion(FHIRTerminologyCapabilitiesVersion::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_SUBSUMPTION === $childName) {
+                $type->setSubsumption(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->subsumption)) {
-            $type->setSubsumption(FHIRBoolean::xmlUnserialize($children->subsumption));
-        }
-        if (isset($attributes->subsumption)) {
-            $pt = $type->getSubsumption();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->subsumption);
-            } else {
-                $type->setSubsumption((string)$attributes->subsumption);
-            }
-        }
-        if (isset($children->uri)) {
-            $type->setUri(FHIRCanonical::xmlUnserialize($children->uri));
-        }
-        if (isset($attributes->uri)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_URI])) {
             $pt = $type->getUri();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->uri);
+                $pt->setValue((string)$attributes[self::FIELD_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setUri((string)$attributes->uri);
+                $type->setUri((string)$attributes[self::FIELD_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->version)) {
-            foreach($children->version as $child) {
-                $type->addVersion(FHIRTerminologyCapabilitiesVersion::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_SUBSUMPTION])) {
+            $pt = $type->getSubsumption();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_SUBSUMPTION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setSubsumption((string)$attributes[self::FIELD_SUBSUMPTION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getSubsumption())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSUMPTION, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_URI, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if ([] !== ($vs = $this->getVersion())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_VERSION, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        return $sxe;
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'TerminologyCapabilitiesCodeSystem', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getUri())) {
+            $xw->writeAttribute(self::FIELD_URI, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SUBSUMPTION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSubsumption())) {
+            $xw->writeAttribute(self::FIELD_SUBSUMPTION, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getUri())) {
+            $xw->startElement(self::FIELD_URI);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getVersion() as $v) {
+            $xw->startElement(self::FIELD_VERSION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SUBSUMPTION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSubsumption())) {
+            $xw->startElement(self::FIELD_SUBSUMPTION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getSubsumption())) {
-            $a[self::FIELD_SUBSUMPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_SUBSUMPTION_EXT] = $enc;
-            }
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getUri())) {
-            $a[self::FIELD_URI] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRCanonical::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRCanonical::FIELD_VALUE]);
-                $a[self::FIELD_URI_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_URI} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRCanonical::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_URI_EXT} = $ext;
             }
         }
         if ([] !== ($vs = $this->getVersion())) {
-            $a[self::FIELD_VERSION] = [];
+            $out->{self::FIELD_VERSION} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_VERSION][] = $v;
+                $out->{self::FIELD_VERSION}[] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getSubsumption())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_SUBSUMPTION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SUBSUMPTION_EXT} = $ext;
+            }
         }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,12 +62,20 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter;
 
 /**
  * A provider issued list of services and products provided, or to be provided, to
@@ -80,14 +88,12 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_DOT_PROSTHESIS;
+
     const FIELD_INITIAL = 'initial';
     const FIELD_INITIAL_EXT = '_initial';
     const FIELD_PRIOR_DATE = 'priorDate';
     const FIELD_PRIOR_DATE_EXT = '_priorDate';
     const FIELD_PRIOR_MATERIAL = 'priorMaterial';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Value of "true" or "false"
@@ -97,8 +103,7 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    protected $initial = null;
-
+    protected null|FHIRBoolean $initial = null;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -109,8 +114,7 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate
      */
-    protected $priorDate = null;
-
+    protected null|FHIRDate $priorDate = null;
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -120,41 +124,30 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
-    protected $priorMaterial = null;
+    protected null|FHIRCoding $priorMaterial = null;
 
     /**
      * Validation map for fields in type Claim.Prosthesis
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRClaimProsthesis Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimProsthesis::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_INITIAL]) || isset($data[self::FIELD_INITIAL_EXT])) {
-            if (isset($data[self::FIELD_INITIAL])) {
-                $value = $data[self::FIELD_INITIAL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_INITIAL_EXT]) && is_array($data[self::FIELD_INITIAL_EXT])) {
-                $ext = $data[self::FIELD_INITIAL_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_INITIAL, $data) || array_key_exists(self::FIELD_INITIAL_EXT, $data)) {
+            $value = $data[self::FIELD_INITIAL] ?? null;
+            $ext = (isset($data[self::FIELD_INITIAL_EXT]) && is_array($data[self::FIELD_INITIAL_EXT])) ? $data[self::FIELD_INITIAL_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setInitial($value);
@@ -163,21 +156,15 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
                 } else {
                     $this->setInitial(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setInitial(new FHIRBoolean($ext));
+            } else {
+                $this->setInitial(new FHIRBoolean(null));
             }
         }
-        if (isset($data[self::FIELD_PRIOR_DATE]) || isset($data[self::FIELD_PRIOR_DATE_EXT])) {
-            if (isset($data[self::FIELD_PRIOR_DATE])) {
-                $value = $data[self::FIELD_PRIOR_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PRIOR_DATE_EXT]) && is_array($data[self::FIELD_PRIOR_DATE_EXT])) {
-                $ext = $data[self::FIELD_PRIOR_DATE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_PRIOR_DATE, $data) || array_key_exists(self::FIELD_PRIOR_DATE_EXT, $data)) {
+            $value = $data[self::FIELD_PRIOR_DATE] ?? null;
+            $ext = (isset($data[self::FIELD_PRIOR_DATE_EXT]) && is_array($data[self::FIELD_PRIOR_DATE_EXT])) ? $data[self::FIELD_PRIOR_DATE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDate) {
                     $this->setPriorDate($value);
@@ -186,11 +173,13 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
                 } else {
                     $this->setPriorDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setPriorDate(new FHIRDate($ext));
+            } else {
+                $this->setPriorDate(new FHIRDate(null));
             }
         }
-        if (isset($data[self::FIELD_PRIOR_MATERIAL])) {
+        if (array_key_exists(self::FIELD_PRIOR_MATERIAL, $data)) {
             if ($data[self::FIELD_PRIOR_MATERIAL] instanceof FHIRCoding) {
                 $this->setPriorMaterial($data[self::FIELD_PRIOR_MATERIAL]);
             } else {
@@ -202,21 +191,9 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ClaimProsthesis{$xmlns}></ClaimProsthesis>";
     }
 
     /**
@@ -227,7 +204,7 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    public function getInitial()
+    public function getInitial(): null|FHIRBoolean
     {
         return $this->initial;
     }
@@ -238,20 +215,21 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      *
      * Indicates whether this is the initial placement of a fixed prosthesis.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $initial
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $initial
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInitial($initial = null)
+    public function setInitial(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $initial = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $initial) {
-            $this->initial = null;
-            return $this;
+        if (null !== $initial && !($initial instanceof FHIRBoolean)) {
+            $initial = new FHIRBoolean($initial);
         }
-        if ($initial instanceof FHIRBoolean) {
-            $this->initial = $initial;
-            return $this;
+        $this->_trackValueSet($this->initial, $initial);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_INITIAL])) {
+            $this->_primitiveXmlLocations[self::FIELD_INITIAL] = [];
         }
-        $this->initial = new FHIRBoolean($initial);
+        $this->_primitiveXmlLocations[self::FIELD_INITIAL][0] = $xmlLocation;
+        $this->initial = $initial;
         return $this;
     }
 
@@ -265,7 +243,7 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate
      */
-    public function getPriorDate()
+    public function getPriorDate(): null|FHIRDate
     {
         return $this->priorDate;
     }
@@ -278,20 +256,21 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      *
      * Date of the initial placement.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate $priorDate
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate $priorDate
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPriorDate($priorDate = null)
+    public function setPriorDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $priorDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $priorDate) {
-            $this->priorDate = null;
-            return $this;
+        if (null !== $priorDate && !($priorDate instanceof FHIRDate)) {
+            $priorDate = new FHIRDate($priorDate);
         }
-        if ($priorDate instanceof FHIRDate) {
-            $this->priorDate = $priorDate;
-            return $this;
+        $this->_trackValueSet($this->priorDate, $priorDate);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PRIOR_DATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_PRIOR_DATE] = [];
         }
-        $this->priorDate = new FHIRDate($priorDate);
+        $this->_primitiveXmlLocations[self::FIELD_PRIOR_DATE][0] = $xmlLocation;
+        $this->priorDate = $priorDate;
         return $this;
     }
 
@@ -304,7 +283,7 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
-    public function getPriorMaterial()
+    public function getPriorMaterial(): null|FHIRCoding
     {
         return $this->priorMaterial;
     }
@@ -319,8 +298,12 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $priorMaterial
      * @return static
      */
-    public function setPriorMaterial(FHIRCoding $priorMaterial = null)
+    public function setPriorMaterial(null|FHIRCoding $priorMaterial = null): self
     {
+        if (null === $priorMaterial) {
+            $priorMaterial = new FHIRCoding();
+        }
+        $this->_trackValueSet($this->priorMaterial, $priorMaterial);
         $this->priorMaterial = $priorMaterial;
         return $this;
     }
@@ -331,9 +314,9 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -342,7 +325,7 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
@@ -437,134 +420,179 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimProsthesis $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimProsthesis
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRClaimProsthesis::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRClaimProsthesis::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRClaimProsthesis;
-        } elseif (!is_object($type) || !($type instanceof FHIRClaimProsthesis)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRClaimProsthesis)) {
             throw new \RuntimeException(sprintf(
-                'FHIRClaimProsthesis::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimProsthesis or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_INITIAL === $childName) {
+                $type->setInitial(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PRIOR_DATE === $childName) {
+                $type->setPriorDate(FHIRDate::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PRIOR_MATERIAL === $childName) {
+                $type->setPriorMaterial(FHIRCoding::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->initial)) {
-            $type->setInitial(FHIRBoolean::xmlUnserialize($children->initial));
-        }
-        if (isset($attributes->initial)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_INITIAL])) {
             $pt = $type->getInitial();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->initial);
+                $pt->setValue((string)$attributes[self::FIELD_INITIAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setInitial((string)$attributes->initial);
+                $type->setInitial((string)$attributes[self::FIELD_INITIAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->priorDate)) {
-            $type->setPriorDate(FHIRDate::xmlUnserialize($children->priorDate));
-        }
-        if (isset($attributes->priorDate)) {
+        if (isset($attributes[self::FIELD_PRIOR_DATE])) {
             $pt = $type->getPriorDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->priorDate);
+                $pt->setValue((string)$attributes[self::FIELD_PRIOR_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setPriorDate((string)$attributes->priorDate);
+                $type->setPriorDate((string)$attributes[self::FIELD_PRIOR_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->priorMaterial)) {
-            $type->setPriorMaterial(FHIRCoding::xmlUnserialize($children->priorMaterial));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getInitial())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INITIAL, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getPriorDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRIOR_DATE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ClaimProsthesis', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInitial())) {
+            $xw->writeAttribute(self::FIELD_INITIAL, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PRIOR_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPriorDate())) {
+            $xw->writeAttribute(self::FIELD_PRIOR_DATE, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INITIAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInitial())) {
+            $xw->startElement(self::FIELD_INITIAL);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PRIOR_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPriorDate())) {
+            $xw->startElement(self::FIELD_PRIOR_DATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getPriorMaterial())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRIOR_MATERIAL, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_PRIOR_MATERIAL);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getInitial())) {
-            $a[self::FIELD_INITIAL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_INITIAL_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_INITIAL} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_INITIAL_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getPriorDate())) {
-            $a[self::FIELD_PRIOR_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDate::FIELD_VALUE]);
-                $a[self::FIELD_PRIOR_DATE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PRIOR_DATE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDate::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PRIOR_DATE_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getPriorMaterial())) {
-            $a[self::FIELD_PRIOR_MATERIAL] = $v;
+            $out->{self::FIELD_PRIOR_MATERIAL} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

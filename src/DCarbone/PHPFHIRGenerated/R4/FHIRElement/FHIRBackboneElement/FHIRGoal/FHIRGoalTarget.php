@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGoal;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGoal;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,18 +62,27 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGoal;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Describes the intended objective(s) for a patient, group or organization care,
@@ -87,163 +96,21 @@ class FHIRGoalTarget extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_GOAL_DOT_TARGET;
-    const FIELD_DETAIL_BOOLEAN = 'detailBoolean';
-    const FIELD_DETAIL_BOOLEAN_EXT = '_detailBoolean';
-    const FIELD_DETAIL_CODEABLE_CONCEPT = 'detailCodeableConcept';
-    const FIELD_DETAIL_INTEGER = 'detailInteger';
-    const FIELD_DETAIL_INTEGER_EXT = '_detailInteger';
+
+    const FIELD_MEASURE = 'measure';
     const FIELD_DETAIL_QUANTITY = 'detailQuantity';
     const FIELD_DETAIL_RANGE = 'detailRange';
-    const FIELD_DETAIL_RATIO = 'detailRatio';
+    const FIELD_DETAIL_CODEABLE_CONCEPT = 'detailCodeableConcept';
     const FIELD_DETAIL_STRING = 'detailString';
     const FIELD_DETAIL_STRING_EXT = '_detailString';
+    const FIELD_DETAIL_BOOLEAN = 'detailBoolean';
+    const FIELD_DETAIL_BOOLEAN_EXT = '_detailBoolean';
+    const FIELD_DETAIL_INTEGER = 'detailInteger';
+    const FIELD_DETAIL_INTEGER_EXT = '_detailInteger';
+    const FIELD_DETAIL_RATIO = 'detailRatio';
     const FIELD_DUE_DATE = 'dueDate';
     const FIELD_DUE_DATE_EXT = '_dueDate';
     const FIELD_DUE_DURATION = 'dueDuration';
-    const FIELD_MEASURE = 'measure';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    protected $detailBoolean = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $detailCodeableConcept = null;
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
-     */
-    protected $detailInteger = null;
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    protected $detailQuantity = null;
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
-     */
-    protected $detailRange = null;
-
-    /**
-     * A relationship of two Quantity values - expressed as a numerator and a
-     * denominator.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
-     */
-    protected $detailRatio = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $detailString = null;
-
-    /**
-     * A date or partial date (e.g. just year or year + month). There is no time zone.
-     * The format is a union of the schema types gYear, gYearMonth and date. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicates either the date or the duration after start by which the goal should
-     * be met. (choose any one of due*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
-     */
-    protected $dueDate = null;
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates either the date or the duration after start by which the goal should
-     * be met. (choose any one of due*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
-     */
-    protected $dueDuration = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -256,115 +123,189 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $measure = null;
+    protected null|FHIRCodeableConcept $measure = null;
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    protected null|FHIRQuantity $detailQuantity = null;
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
+     */
+    protected null|FHIRRange $detailRange = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $detailCodeableConcept = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $detailString = null;
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    protected null|FHIRBoolean $detailBoolean = null;
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    protected null|FHIRInteger $detailInteger = null;
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
+     */
+    protected null|FHIRRatio $detailRatio = null;
+    /**
+     * A date or partial date (e.g. just year or year + month). There is no time zone.
+     * The format is a union of the schema types gYear, gYearMonth and date. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates either the date or the duration after start by which the goal should
+     * be met.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
+     */
+    protected null|FHIRDate $dueDate = null;
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates either the date or the duration after start by which the goal should
+     * be met.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     */
+    protected null|FHIRDuration $dueDuration = null;
 
     /**
      * Validation map for fields in type Goal.Target
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRGoalTarget Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRGoalTarget::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DETAIL_BOOLEAN]) || isset($data[self::FIELD_DETAIL_BOOLEAN_EXT])) {
-            if (isset($data[self::FIELD_DETAIL_BOOLEAN])) {
-                $value = $data[self::FIELD_DETAIL_BOOLEAN];
+        if (array_key_exists(self::FIELD_MEASURE, $data)) {
+            if ($data[self::FIELD_MEASURE] instanceof FHIRCodeableConcept) {
+                $this->setMeasure($data[self::FIELD_MEASURE]);
             } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DETAIL_BOOLEAN_EXT]) && is_array($data[self::FIELD_DETAIL_BOOLEAN_EXT])) {
-                $ext = $data[self::FIELD_DETAIL_BOOLEAN_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setDetailBoolean($value);
-                } else if (is_array($value)) {
-                    $this->setDetailBoolean(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setDetailBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDetailBoolean(new FHIRBoolean($ext));
+                $this->setMeasure(new FHIRCodeableConcept($data[self::FIELD_MEASURE]));
             }
         }
-        if (isset($data[self::FIELD_DETAIL_CODEABLE_CONCEPT])) {
-            if ($data[self::FIELD_DETAIL_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $this->setDetailCodeableConcept($data[self::FIELD_DETAIL_CODEABLE_CONCEPT]);
-            } else {
-                $this->setDetailCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_DETAIL_CODEABLE_CONCEPT]));
-            }
-        }
-        if (isset($data[self::FIELD_DETAIL_INTEGER]) || isset($data[self::FIELD_DETAIL_INTEGER_EXT])) {
-            if (isset($data[self::FIELD_DETAIL_INTEGER])) {
-                $value = $data[self::FIELD_DETAIL_INTEGER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DETAIL_INTEGER_EXT]) && is_array($data[self::FIELD_DETAIL_INTEGER_EXT])) {
-                $ext = $data[self::FIELD_DETAIL_INTEGER_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setDetailInteger($value);
-                } else if (is_array($value)) {
-                    $this->setDetailInteger(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setDetailInteger(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDetailInteger(new FHIRInteger($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DETAIL_QUANTITY])) {
+        if (array_key_exists(self::FIELD_DETAIL_QUANTITY, $data)) {
             if ($data[self::FIELD_DETAIL_QUANTITY] instanceof FHIRQuantity) {
                 $this->setDetailQuantity($data[self::FIELD_DETAIL_QUANTITY]);
             } else {
                 $this->setDetailQuantity(new FHIRQuantity($data[self::FIELD_DETAIL_QUANTITY]));
             }
         }
-        if (isset($data[self::FIELD_DETAIL_RANGE])) {
+        if (array_key_exists(self::FIELD_DETAIL_RANGE, $data)) {
             if ($data[self::FIELD_DETAIL_RANGE] instanceof FHIRRange) {
                 $this->setDetailRange($data[self::FIELD_DETAIL_RANGE]);
             } else {
                 $this->setDetailRange(new FHIRRange($data[self::FIELD_DETAIL_RANGE]));
             }
         }
-        if (isset($data[self::FIELD_DETAIL_RATIO])) {
-            if ($data[self::FIELD_DETAIL_RATIO] instanceof FHIRRatio) {
-                $this->setDetailRatio($data[self::FIELD_DETAIL_RATIO]);
+        if (array_key_exists(self::FIELD_DETAIL_CODEABLE_CONCEPT, $data)) {
+            if ($data[self::FIELD_DETAIL_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
+                $this->setDetailCodeableConcept($data[self::FIELD_DETAIL_CODEABLE_CONCEPT]);
             } else {
-                $this->setDetailRatio(new FHIRRatio($data[self::FIELD_DETAIL_RATIO]));
+                $this->setDetailCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_DETAIL_CODEABLE_CONCEPT]));
             }
         }
-        if (isset($data[self::FIELD_DETAIL_STRING]) || isset($data[self::FIELD_DETAIL_STRING_EXT])) {
-            if (isset($data[self::FIELD_DETAIL_STRING])) {
-                $value = $data[self::FIELD_DETAIL_STRING];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DETAIL_STRING_EXT]) && is_array($data[self::FIELD_DETAIL_STRING_EXT])) {
-                $ext = $data[self::FIELD_DETAIL_STRING_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_DETAIL_STRING, $data) || array_key_exists(self::FIELD_DETAIL_STRING_EXT, $data)) {
+            $value = $data[self::FIELD_DETAIL_STRING] ?? null;
+            $ext = (isset($data[self::FIELD_DETAIL_STRING_EXT]) && is_array($data[self::FIELD_DETAIL_STRING_EXT])) ? $data[self::FIELD_DETAIL_STRING_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setDetailString($value);
@@ -373,21 +314,56 @@ class FHIRGoalTarget extends FHIRBackboneElement
                 } else {
                     $this->setDetailString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDetailString(new FHIRString($ext));
+            } else {
+                $this->setDetailString(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_DUE_DATE]) || isset($data[self::FIELD_DUE_DATE_EXT])) {
-            if (isset($data[self::FIELD_DUE_DATE])) {
-                $value = $data[self::FIELD_DUE_DATE];
+        if (array_key_exists(self::FIELD_DETAIL_BOOLEAN, $data) || array_key_exists(self::FIELD_DETAIL_BOOLEAN_EXT, $data)) {
+            $value = $data[self::FIELD_DETAIL_BOOLEAN] ?? null;
+            $ext = (isset($data[self::FIELD_DETAIL_BOOLEAN_EXT]) && is_array($data[self::FIELD_DETAIL_BOOLEAN_EXT])) ? $data[self::FIELD_DETAIL_BOOLEAN_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setDetailBoolean($value);
+                } else if (is_array($value)) {
+                    $this->setDetailBoolean(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setDetailBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDetailBoolean(new FHIRBoolean($ext));
             } else {
-                $value = null;
+                $this->setDetailBoolean(new FHIRBoolean(null));
             }
-            if (isset($data[self::FIELD_DUE_DATE_EXT]) && is_array($data[self::FIELD_DUE_DATE_EXT])) {
-                $ext = $data[self::FIELD_DUE_DATE_EXT];
+        }
+        if (array_key_exists(self::FIELD_DETAIL_INTEGER, $data) || array_key_exists(self::FIELD_DETAIL_INTEGER_EXT, $data)) {
+            $value = $data[self::FIELD_DETAIL_INTEGER] ?? null;
+            $ext = (isset($data[self::FIELD_DETAIL_INTEGER_EXT]) && is_array($data[self::FIELD_DETAIL_INTEGER_EXT])) ? $data[self::FIELD_DETAIL_INTEGER_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setDetailInteger($value);
+                } else if (is_array($value)) {
+                    $this->setDetailInteger(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setDetailInteger(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDetailInteger(new FHIRInteger($ext));
             } else {
-                $ext = [];
+                $this->setDetailInteger(new FHIRInteger(null));
             }
+        }
+        if (array_key_exists(self::FIELD_DETAIL_RATIO, $data)) {
+            if ($data[self::FIELD_DETAIL_RATIO] instanceof FHIRRatio) {
+                $this->setDetailRatio($data[self::FIELD_DETAIL_RATIO]);
+            } else {
+                $this->setDetailRatio(new FHIRRatio($data[self::FIELD_DETAIL_RATIO]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DUE_DATE, $data) || array_key_exists(self::FIELD_DUE_DATE_EXT, $data)) {
+            $value = $data[self::FIELD_DUE_DATE] ?? null;
+            $ext = (isset($data[self::FIELD_DUE_DATE_EXT]) && is_array($data[self::FIELD_DUE_DATE_EXT])) ? $data[self::FIELD_DUE_DATE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDate) {
                     $this->setDueDate($value);
@@ -396,428 +372,27 @@ class FHIRGoalTarget extends FHIRBackboneElement
                 } else {
                     $this->setDueDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDueDate(new FHIRDate($ext));
+            } else {
+                $this->setDueDate(new FHIRDate(null));
             }
         }
-        if (isset($data[self::FIELD_DUE_DURATION])) {
+        if (array_key_exists(self::FIELD_DUE_DURATION, $data)) {
             if ($data[self::FIELD_DUE_DURATION] instanceof FHIRDuration) {
                 $this->setDueDuration($data[self::FIELD_DUE_DURATION]);
             } else {
                 $this->setDueDuration(new FHIRDuration($data[self::FIELD_DUE_DURATION]));
             }
         }
-        if (isset($data[self::FIELD_MEASURE])) {
-            if ($data[self::FIELD_MEASURE] instanceof FHIRCodeableConcept) {
-                $this->setMeasure($data[self::FIELD_MEASURE]);
-            } else {
-                $this->setMeasure(new FHIRCodeableConcept($data[self::FIELD_MEASURE]));
-            }
-        }
     }
 
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<GoalTarget{$xmlns}></GoalTarget>";
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    public function getDetailBoolean()
-    {
-        return $this->detailBoolean;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $detailBoolean
-     * @return static
-     */
-    public function setDetailBoolean($detailBoolean = null)
-    {
-        if (null === $detailBoolean) {
-            $this->detailBoolean = null;
-            return $this;
-        }
-        if ($detailBoolean instanceof FHIRBoolean) {
-            $this->detailBoolean = $detailBoolean;
-            return $this;
-        }
-        $this->detailBoolean = new FHIRBoolean($detailBoolean);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getDetailCodeableConcept()
-    {
-        return $this->detailCodeableConcept;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
-     * @return static
-     */
-    public function setDetailCodeableConcept(FHIRCodeableConcept $detailCodeableConcept = null)
-    {
-        $this->detailCodeableConcept = $detailCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
-     */
-    public function getDetailInteger()
-    {
-        return $this->detailInteger;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $detailInteger
-     * @return static
-     */
-    public function setDetailInteger($detailInteger = null)
-    {
-        if (null === $detailInteger) {
-            $this->detailInteger = null;
-            return $this;
-        }
-        if ($detailInteger instanceof FHIRInteger) {
-            $this->detailInteger = $detailInteger;
-            return $this;
-        }
-        $this->detailInteger = new FHIRInteger($detailInteger);
-        return $this;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
-     */
-    public function getDetailQuantity()
-    {
-        return $this->detailQuantity;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $detailQuantity
-     * @return static
-     */
-    public function setDetailQuantity(FHIRQuantity $detailQuantity = null)
-    {
-        $this->detailQuantity = $detailQuantity;
-        return $this;
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
-     */
-    public function getDetailRange()
-    {
-        return $this->detailRange;
-    }
-
-    /**
-     * A set of ordered Quantities defined by a low and high limit.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $detailRange
-     * @return static
-     */
-    public function setDetailRange(FHIRRange $detailRange = null)
-    {
-        $this->detailRange = $detailRange;
-        return $this;
-    }
-
-    /**
-     * A relationship of two Quantity values - expressed as a numerator and a
-     * denominator.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
-     */
-    public function getDetailRatio()
-    {
-        return $this->detailRatio;
-    }
-
-    /**
-     * A relationship of two Quantity values - expressed as a numerator and a
-     * denominator.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $detailRatio
-     * @return static
-     */
-    public function setDetailRatio(FHIRRatio $detailRatio = null)
-    {
-        $this->detailRatio = $detailRatio;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getDetailString()
-    {
-        return $this->detailString;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The target value of the focus to be achieved to signify the fulfillment of the
-     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
-     * can be specified. When a low value is missing, it indicates that the goal is
-     * achieved at any focus value at or below the high value. Similarly, if the high
-     * value is missing, it indicates that the goal is achieved at any focus value at
-     * or above the low value. (choose any one of detail*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $detailString
-     * @return static
-     */
-    public function setDetailString($detailString = null)
-    {
-        if (null === $detailString) {
-            $this->detailString = null;
-            return $this;
-        }
-        if ($detailString instanceof FHIRString) {
-            $this->detailString = $detailString;
-            return $this;
-        }
-        $this->detailString = new FHIRString($detailString);
-        return $this;
-    }
-
-    /**
-     * A date or partial date (e.g. just year or year + month). There is no time zone.
-     * The format is a union of the schema types gYear, gYearMonth and date. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicates either the date or the duration after start by which the goal should
-     * be met. (choose any one of due*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
-     */
-    public function getDueDate()
-    {
-        return $this->dueDate;
-    }
-
-    /**
-     * A date or partial date (e.g. just year or year + month). There is no time zone.
-     * The format is a union of the schema types gYear, gYearMonth and date. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicates either the date or the duration after start by which the goal should
-     * be met. (choose any one of due*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $dueDate
-     * @return static
-     */
-    public function setDueDate($dueDate = null)
-    {
-        if (null === $dueDate) {
-            $this->dueDate = null;
-            return $this;
-        }
-        if ($dueDate instanceof FHIRDate) {
-            $this->dueDate = $dueDate;
-            return $this;
-        }
-        $this->dueDate = new FHIRDate($dueDate);
-        return $this;
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates either the date or the duration after start by which the goal should
-     * be met. (choose any one of due*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
-     */
-    public function getDueDuration()
-    {
-        return $this->dueDuration;
-    }
-
-    /**
-     * A length of time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates either the date or the duration after start by which the goal should
-     * be met. (choose any one of due*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $dueDuration
-     * @return static
-     */
-    public function setDueDuration(FHIRDuration $dueDuration = null)
-    {
-        $this->dueDuration = $dueDuration;
-        return $this;
     }
 
     /**
@@ -831,7 +406,7 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getMeasure()
+    public function getMeasure(): null|FHIRCodeableConcept
     {
         return $this->measure;
     }
@@ -848,9 +423,421 @@ class FHIRGoalTarget extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $measure
      * @return static
      */
-    public function setMeasure(FHIRCodeableConcept $measure = null)
+    public function setMeasure(null|FHIRCodeableConcept $measure = null): self
     {
+        if (null === $measure) {
+            $measure = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->measure, $measure);
         $this->measure = $measure;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     */
+    public function getDetailQuantity(): null|FHIRQuantity
+    {
+        return $this->detailQuantity;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $detailQuantity
+     * @return static
+     */
+    public function setDetailQuantity(null|FHIRQuantity $detailQuantity = null): self
+    {
+        if (null === $detailQuantity) {
+            $detailQuantity = new FHIRQuantity();
+        }
+        $this->_trackValueSet($this->detailQuantity, $detailQuantity);
+        $this->detailQuantity = $detailQuantity;
+        return $this;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
+     */
+    public function getDetailRange(): null|FHIRRange
+    {
+        return $this->detailRange;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange $detailRange
+     * @return static
+     */
+    public function setDetailRange(null|FHIRRange $detailRange = null): self
+    {
+        if (null === $detailRange) {
+            $detailRange = new FHIRRange();
+        }
+        $this->_trackValueSet($this->detailRange, $detailRange);
+        $this->detailRange = $detailRange;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getDetailCodeableConcept(): null|FHIRCodeableConcept
+    {
+        return $this->detailCodeableConcept;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $detailCodeableConcept
+     * @return static
+     */
+    public function setDetailCodeableConcept(null|FHIRCodeableConcept $detailCodeableConcept = null): self
+    {
+        if (null === $detailCodeableConcept) {
+            $detailCodeableConcept = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->detailCodeableConcept, $detailCodeableConcept);
+        $this->detailCodeableConcept = $detailCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getDetailString(): null|FHIRString
+    {
+        return $this->detailString;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $detailString
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setDetailString(null|string|FHIRStringPrimitive|FHIRString $detailString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $detailString && !($detailString instanceof FHIRString)) {
+            $detailString = new FHIRString($detailString);
+        }
+        $this->_trackValueSet($this->detailString, $detailString);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DETAIL_STRING])) {
+            $this->_primitiveXmlLocations[self::FIELD_DETAIL_STRING] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_DETAIL_STRING][0] = $xmlLocation;
+        $this->detailString = $detailString;
+        return $this;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    public function getDetailBoolean(): null|FHIRBoolean
+    {
+        return $this->detailBoolean;
+    }
+
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $detailBoolean
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setDetailBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $detailBoolean = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $detailBoolean && !($detailBoolean instanceof FHIRBoolean)) {
+            $detailBoolean = new FHIRBoolean($detailBoolean);
+        }
+        $this->_trackValueSet($this->detailBoolean, $detailBoolean);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DETAIL_BOOLEAN])) {
+            $this->_primitiveXmlLocations[self::FIELD_DETAIL_BOOLEAN] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_DETAIL_BOOLEAN][0] = $xmlLocation;
+        $this->detailBoolean = $detailBoolean;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    public function getDetailInteger(): null|FHIRInteger
+    {
+        return $this->detailInteger;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $detailInteger
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setDetailInteger(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $detailInteger = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $detailInteger && !($detailInteger instanceof FHIRInteger)) {
+            $detailInteger = new FHIRInteger($detailInteger);
+        }
+        $this->_trackValueSet($this->detailInteger, $detailInteger);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DETAIL_INTEGER])) {
+            $this->_primitiveXmlLocations[self::FIELD_DETAIL_INTEGER] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_DETAIL_INTEGER][0] = $xmlLocation;
+        $this->detailInteger = $detailInteger;
+        return $this;
+    }
+
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
+     */
+    public function getDetailRatio(): null|FHIRRatio
+    {
+        return $this->detailRatio;
+    }
+
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target value of the focus to be achieved to signify the fulfillment of the
+     * goal, e.g. 150 pounds, 7.0%. Either the high or low or both values of the range
+     * can be specified. When a low value is missing, it indicates that the goal is
+     * achieved at any focus value at or below the high value. Similarly, if the high
+     * value is missing, it indicates that the goal is achieved at any focus value at
+     * or above the low value.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio $detailRatio
+     * @return static
+     */
+    public function setDetailRatio(null|FHIRRatio $detailRatio = null): self
+    {
+        if (null === $detailRatio) {
+            $detailRatio = new FHIRRatio();
+        }
+        $this->_trackValueSet($this->detailRatio, $detailRatio);
+        $this->detailRatio = $detailRatio;
+        return $this;
+    }
+
+    /**
+     * A date or partial date (e.g. just year or year + month). There is no time zone.
+     * The format is a union of the schema types gYear, gYearMonth and date. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates either the date or the duration after start by which the goal should
+     * be met.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
+     */
+    public function getDueDate(): null|FHIRDate
+    {
+        return $this->dueDate;
+    }
+
+    /**
+     * A date or partial date (e.g. just year or year + month). There is no time zone.
+     * The format is a union of the schema types gYear, gYearMonth and date. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates either the date or the duration after start by which the goal should
+     * be met.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\R4\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $dueDate
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setDueDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $dueDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $dueDate && !($dueDate instanceof FHIRDate)) {
+            $dueDate = new FHIRDate($dueDate);
+        }
+        $this->_trackValueSet($this->dueDate, $dueDate);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DUE_DATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_DUE_DATE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_DUE_DATE][0] = $xmlLocation;
+        $this->dueDate = $dueDate;
+        return $this;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates either the date or the duration after start by which the goal should
+     * be met.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
+     */
+    public function getDueDuration(): null|FHIRDuration
+    {
+        return $this->dueDuration;
+    }
+
+    /**
+     * A length of time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates either the date or the duration after start by which the goal should
+     * be met.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration $dueDuration
+     * @return static
+     */
+    public function setDueDuration(null|FHIRDuration $dueDuration = null): self
+    {
+        if (null === $dueDuration) {
+            $dueDuration = new FHIRDuration();
+        }
+        $this->_trackValueSet($this->dueDuration, $dueDuration);
+        $this->dueDuration = $dueDuration;
         return $this;
     }
 
@@ -860,9 +847,9 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -871,23 +858,13 @@ class FHIRGoalTarget extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getDetailBoolean())) {
+        if (null !== ($v = $this->getMeasure())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DETAIL_BOOLEAN] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDetailCodeableConcept())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DETAIL_CODEABLE_CONCEPT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDetailInteger())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DETAIL_INTEGER] = $fieldErrs;
+                $errs[self::FIELD_MEASURE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDetailQuantity())) {
@@ -900,14 +877,29 @@ class FHIRGoalTarget extends FHIRBackboneElement
                 $errs[self::FIELD_DETAIL_RANGE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getDetailRatio())) {
+        if (null !== ($v = $this->getDetailCodeableConcept())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DETAIL_RATIO] = $fieldErrs;
+                $errs[self::FIELD_DETAIL_CODEABLE_CONCEPT] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDetailString())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_DETAIL_STRING] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDetailBoolean())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DETAIL_BOOLEAN] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDetailInteger())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DETAIL_INTEGER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDetailRatio())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DETAIL_RATIO] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDueDate())) {
@@ -920,44 +912,15 @@ class FHIRGoalTarget extends FHIRBackboneElement
                 $errs[self::FIELD_DUE_DURATION] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getMeasure())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_MEASURE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_DETAIL_BOOLEAN])) {
-            $v = $this->getDetailBoolean();
-            foreach($validationRules[self::FIELD_DETAIL_BOOLEAN] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GOAL_DOT_TARGET, self::FIELD_DETAIL_BOOLEAN, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_MEASURE])) {
+            $v = $this->getMeasure();
+            foreach($validationRules[self::FIELD_MEASURE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GOAL_DOT_TARGET, self::FIELD_MEASURE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DETAIL_BOOLEAN])) {
-                        $errs[self::FIELD_DETAIL_BOOLEAN] = [];
+                    if (!isset($errs[self::FIELD_MEASURE])) {
+                        $errs[self::FIELD_MEASURE] = [];
                     }
-                    $errs[self::FIELD_DETAIL_BOOLEAN][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DETAIL_CODEABLE_CONCEPT])) {
-            $v = $this->getDetailCodeableConcept();
-            foreach($validationRules[self::FIELD_DETAIL_CODEABLE_CONCEPT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GOAL_DOT_TARGET, self::FIELD_DETAIL_CODEABLE_CONCEPT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DETAIL_CODEABLE_CONCEPT])) {
-                        $errs[self::FIELD_DETAIL_CODEABLE_CONCEPT] = [];
-                    }
-                    $errs[self::FIELD_DETAIL_CODEABLE_CONCEPT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DETAIL_INTEGER])) {
-            $v = $this->getDetailInteger();
-            foreach($validationRules[self::FIELD_DETAIL_INTEGER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GOAL_DOT_TARGET, self::FIELD_DETAIL_INTEGER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DETAIL_INTEGER])) {
-                        $errs[self::FIELD_DETAIL_INTEGER] = [];
-                    }
-                    $errs[self::FIELD_DETAIL_INTEGER][$rule] = $err;
+                    $errs[self::FIELD_MEASURE][$rule] = $err;
                 }
             }
         }
@@ -985,15 +948,15 @@ class FHIRGoalTarget extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DETAIL_RATIO])) {
-            $v = $this->getDetailRatio();
-            foreach($validationRules[self::FIELD_DETAIL_RATIO] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GOAL_DOT_TARGET, self::FIELD_DETAIL_RATIO, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_DETAIL_CODEABLE_CONCEPT])) {
+            $v = $this->getDetailCodeableConcept();
+            foreach($validationRules[self::FIELD_DETAIL_CODEABLE_CONCEPT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GOAL_DOT_TARGET, self::FIELD_DETAIL_CODEABLE_CONCEPT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DETAIL_RATIO])) {
-                        $errs[self::FIELD_DETAIL_RATIO] = [];
+                    if (!isset($errs[self::FIELD_DETAIL_CODEABLE_CONCEPT])) {
+                        $errs[self::FIELD_DETAIL_CODEABLE_CONCEPT] = [];
                     }
-                    $errs[self::FIELD_DETAIL_RATIO][$rule] = $err;
+                    $errs[self::FIELD_DETAIL_CODEABLE_CONCEPT][$rule] = $err;
                 }
             }
         }
@@ -1006,6 +969,42 @@ class FHIRGoalTarget extends FHIRBackboneElement
                         $errs[self::FIELD_DETAIL_STRING] = [];
                     }
                     $errs[self::FIELD_DETAIL_STRING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DETAIL_BOOLEAN])) {
+            $v = $this->getDetailBoolean();
+            foreach($validationRules[self::FIELD_DETAIL_BOOLEAN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GOAL_DOT_TARGET, self::FIELD_DETAIL_BOOLEAN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DETAIL_BOOLEAN])) {
+                        $errs[self::FIELD_DETAIL_BOOLEAN] = [];
+                    }
+                    $errs[self::FIELD_DETAIL_BOOLEAN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DETAIL_INTEGER])) {
+            $v = $this->getDetailInteger();
+            foreach($validationRules[self::FIELD_DETAIL_INTEGER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GOAL_DOT_TARGET, self::FIELD_DETAIL_INTEGER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DETAIL_INTEGER])) {
+                        $errs[self::FIELD_DETAIL_INTEGER] = [];
+                    }
+                    $errs[self::FIELD_DETAIL_INTEGER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DETAIL_RATIO])) {
+            $v = $this->getDetailRatio();
+            foreach($validationRules[self::FIELD_DETAIL_RATIO] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GOAL_DOT_TARGET, self::FIELD_DETAIL_RATIO, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DETAIL_RATIO])) {
+                        $errs[self::FIELD_DETAIL_RATIO] = [];
+                    }
+                    $errs[self::FIELD_DETAIL_RATIO][$rule] = $err;
                 }
             }
         }
@@ -1030,18 +1029,6 @@ class FHIRGoalTarget extends FHIRBackboneElement
                         $errs[self::FIELD_DUE_DURATION] = [];
                     }
                     $errs[self::FIELD_DUE_DURATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_MEASURE])) {
-            $v = $this->getMeasure();
-            foreach($validationRules[self::FIELD_MEASURE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_GOAL_DOT_TARGET, self::FIELD_MEASURE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_MEASURE])) {
-                        $errs[self::FIELD_MEASURE] = [];
-                    }
-                    $errs[self::FIELD_MEASURE][$rule] = $err;
                 }
             }
         }
@@ -1085,225 +1072,289 @@ class FHIRGoalTarget extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRGoalTarget::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRGoalTarget::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRGoalTarget;
-        } elseif (!is_object($type) || !($type instanceof FHIRGoalTarget)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRGoalTarget)) {
             throw new \RuntimeException(sprintf(
-                'FHIRGoalTarget::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_MEASURE === $childName) {
+                $type->setMeasure(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DETAIL_QUANTITY === $childName) {
+                $type->setDetailQuantity(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DETAIL_RANGE === $childName) {
+                $type->setDetailRange(FHIRRange::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DETAIL_CODEABLE_CONCEPT === $childName) {
+                $type->setDetailCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DETAIL_STRING === $childName) {
+                $type->setDetailString(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_DETAIL_BOOLEAN === $childName) {
+                $type->setDetailBoolean(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_DETAIL_INTEGER === $childName) {
+                $type->setDetailInteger(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_DETAIL_RATIO === $childName) {
+                $type->setDetailRatio(FHIRRatio::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DUE_DATE === $childName) {
+                $type->setDueDate(FHIRDate::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_DUE_DURATION === $childName) {
+                $type->setDueDuration(FHIRDuration::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->detailBoolean)) {
-            $type->setDetailBoolean(FHIRBoolean::xmlUnserialize($children->detailBoolean));
-        }
-        if (isset($attributes->detailBoolean)) {
-            $pt = $type->getDetailBoolean();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->detailBoolean);
-            } else {
-                $type->setDetailBoolean((string)$attributes->detailBoolean);
-            }
-        }
-        if (isset($children->detailCodeableConcept)) {
-            $type->setDetailCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->detailCodeableConcept));
-        }
-        if (isset($children->detailInteger)) {
-            $type->setDetailInteger(FHIRInteger::xmlUnserialize($children->detailInteger));
-        }
-        if (isset($attributes->detailInteger)) {
-            $pt = $type->getDetailInteger();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->detailInteger);
-            } else {
-                $type->setDetailInteger((string)$attributes->detailInteger);
-            }
-        }
-        if (isset($children->detailQuantity)) {
-            $type->setDetailQuantity(FHIRQuantity::xmlUnserialize($children->detailQuantity));
-        }
-        if (isset($children->detailRange)) {
-            $type->setDetailRange(FHIRRange::xmlUnserialize($children->detailRange));
-        }
-        if (isset($children->detailRatio)) {
-            $type->setDetailRatio(FHIRRatio::xmlUnserialize($children->detailRatio));
-        }
-        if (isset($children->detailString)) {
-            $type->setDetailString(FHIRString::xmlUnserialize($children->detailString));
-        }
-        if (isset($attributes->detailString)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_DETAIL_STRING])) {
             $pt = $type->getDetailString();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->detailString);
+                $pt->setValue((string)$attributes[self::FIELD_DETAIL_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setDetailString((string)$attributes->detailString);
+                $type->setDetailString((string)$attributes[self::FIELD_DETAIL_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->dueDate)) {
-            $type->setDueDate(FHIRDate::xmlUnserialize($children->dueDate));
+        if (isset($attributes[self::FIELD_DETAIL_BOOLEAN])) {
+            $pt = $type->getDetailBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_DETAIL_BOOLEAN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setDetailBoolean((string)$attributes[self::FIELD_DETAIL_BOOLEAN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($attributes->dueDate)) {
+        if (isset($attributes[self::FIELD_DETAIL_INTEGER])) {
+            $pt = $type->getDetailInteger();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_DETAIL_INTEGER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setDetailInteger((string)$attributes[self::FIELD_DETAIL_INTEGER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_DUE_DATE])) {
             $pt = $type->getDueDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->dueDate);
+                $pt->setValue((string)$attributes[self::FIELD_DUE_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setDueDate((string)$attributes->dueDate);
+                $type->setDueDate((string)$attributes[self::FIELD_DUE_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->dueDuration)) {
-            $type->setDueDuration(FHIRDuration::xmlUnserialize($children->dueDuration));
-        }
-        if (isset($children->measure)) {
-            $type->setMeasure(FHIRCodeableConcept::xmlUnserialize($children->measure));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getDetailBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getDetailCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getDetailInteger())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_INTEGER, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'GoalTarget', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DETAIL_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDetailString())) {
+            $xw->writeAttribute(self::FIELD_DETAIL_STRING, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DETAIL_BOOLEAN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDetailBoolean())) {
+            $xw->writeAttribute(self::FIELD_DETAIL_BOOLEAN, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DETAIL_INTEGER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDetailInteger())) {
+            $xw->writeAttribute(self::FIELD_DETAIL_INTEGER, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DUE_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDueDate())) {
+            $xw->writeAttribute(self::FIELD_DUE_DATE, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getMeasure())) {
+            $xw->startElement(self::FIELD_MEASURE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getDetailQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_DETAIL_QUANTITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getDetailRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_RANGE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_DETAIL_RANGE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getDetailCodeableConcept())) {
+            $xw->startElement(self::FIELD_DETAIL_CODEABLE_CONCEPT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DETAIL_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDetailString())) {
+            $xw->startElement(self::FIELD_DETAIL_STRING);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DETAIL_BOOLEAN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDetailBoolean())) {
+            $xw->startElement(self::FIELD_DETAIL_BOOLEAN);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DETAIL_INTEGER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDetailInteger())) {
+            $xw->startElement(self::FIELD_DETAIL_INTEGER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getDetailRatio())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_RATIO, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_DETAIL_RATIO);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getDetailString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL_STRING, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDueDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DUE_DATE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DUE_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDueDate())) {
+            $xw->startElement(self::FIELD_DUE_DATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getDueDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DUE_DURATION, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_DUE_DURATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getMeasure())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MEASURE, null, $v->_getFHIRXMLNamespace()));
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getDetailBoolean())) {
-            $a[self::FIELD_DETAIL_BOOLEAN] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_DETAIL_BOOLEAN_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getDetailCodeableConcept())) {
-            $a[self::FIELD_DETAIL_CODEABLE_CONCEPT] = $v;
-        }
-        if (null !== ($v = $this->getDetailInteger())) {
-            $a[self::FIELD_DETAIL_INTEGER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_DETAIL_INTEGER_EXT] = $enc;
-            }
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getMeasure())) {
+            $out->{self::FIELD_MEASURE} = $v;
         }
         if (null !== ($v = $this->getDetailQuantity())) {
-            $a[self::FIELD_DETAIL_QUANTITY] = $v;
+            $out->{self::FIELD_DETAIL_QUANTITY} = $v;
         }
         if (null !== ($v = $this->getDetailRange())) {
-            $a[self::FIELD_DETAIL_RANGE] = $v;
+            $out->{self::FIELD_DETAIL_RANGE} = $v;
         }
-        if (null !== ($v = $this->getDetailRatio())) {
-            $a[self::FIELD_DETAIL_RATIO] = $v;
+        if (null !== ($v = $this->getDetailCodeableConcept())) {
+            $out->{self::FIELD_DETAIL_CODEABLE_CONCEPT} = $v;
         }
         if (null !== ($v = $this->getDetailString())) {
-            $a[self::FIELD_DETAIL_STRING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DETAIL_STRING_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DETAIL_STRING} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DETAIL_STRING_EXT} = $ext;
             }
         }
+        if (null !== ($v = $this->getDetailBoolean())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DETAIL_BOOLEAN} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DETAIL_BOOLEAN_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDetailInteger())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DETAIL_INTEGER} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInteger::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DETAIL_INTEGER_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDetailRatio())) {
+            $out->{self::FIELD_DETAIL_RATIO} = $v;
+        }
         if (null !== ($v = $this->getDueDate())) {
-            $a[self::FIELD_DUE_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDate::FIELD_VALUE]);
-                $a[self::FIELD_DUE_DATE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DUE_DATE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDate::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DUE_DATE_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getDueDuration())) {
-            $a[self::FIELD_DUE_DURATION] = $v;
+            $out->{self::FIELD_DUE_DURATION} = $v;
         }
-        if (null !== ($v = $this->getMeasure())) {
-            $a[self::FIELD_MEASURE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

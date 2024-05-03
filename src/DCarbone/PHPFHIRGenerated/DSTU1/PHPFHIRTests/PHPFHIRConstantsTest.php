@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTests;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -2391,6 +2391,12 @@ class PHPFHIRConstantsTest extends TestCase
     {
         $this->assertEquals('ValueSetStatus-list', PHPFHIRConstants::TYPE_NAME_VALUE_SET_STATUS_HYPHEN_LIST);
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRValueSetStatusList', PHPFHIRConstants::TYPE_CLASS_VALUE_SET_STATUS_HYPHEN_LIST);
+    }
+
+    public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU1_FHIRXhtml()
+    {
+        $this->assertEquals('Xhtml', PHPFHIRConstants::TYPE_NAME_XHTML);
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRXhtml', PHPFHIRConstants::TYPE_CLASS_XHTML);
     }
 
     public function testTypeConstantsDefinedDCarbone_PHPFHIRGenerated_DSTU1_FHIRIdPrimitive_FHIRXmlIdRef()

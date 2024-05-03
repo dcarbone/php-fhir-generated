@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,12 +62,20 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRDecimalPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
+use DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Set of definitional characteristics for a kind of observation or measurement
@@ -80,28 +88,13 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_OBSERVATION_DEFINITION_DOT_QUANTITATIVE_DETAILS;
+
+    const FIELD_CUSTOMARY_UNIT = 'customaryUnit';
+    const FIELD_UNIT = 'unit';
     const FIELD_CONVERSION_FACTOR = 'conversionFactor';
     const FIELD_CONVERSION_FACTOR_EXT = '_conversionFactor';
-    const FIELD_CUSTOMARY_UNIT = 'customaryUnit';
     const FIELD_DECIMAL_PRECISION = 'decimalPrecision';
     const FIELD_DECIMAL_PRECISION_EXT = '_decimalPrecision';
-    const FIELD_UNIT = 'unit';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Factor for converting value expressed with SI unit to value expressed with
-     * customary unit.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
-     */
-    protected $conversionFactor = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -114,20 +107,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $customaryUnit = null;
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Number of digits after decimal separator when the results of such observations
-     * are of type Quantity.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
-     */
-    protected $decimalPrecision = null;
-
+    protected null|FHIRCodeableConcept $customaryUnit = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -139,41 +119,67 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $unit = null;
+    protected null|FHIRCodeableConcept $unit = null;
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Factor for converting value expressed with SI unit to value expressed with
+     * customary unit.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
+     */
+    protected null|FHIRDecimal $conversionFactor = null;
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Number of digits after decimal separator when the results of such observations
+     * are of type Quantity.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    protected null|FHIRInteger $decimalPrecision = null;
 
     /**
      * Validation map for fields in type ObservationDefinition.QuantitativeDetails
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRObservationDefinitionQuantitativeDetails Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRObservationDefinitionQuantitativeDetails::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CONVERSION_FACTOR]) || isset($data[self::FIELD_CONVERSION_FACTOR_EXT])) {
-            if (isset($data[self::FIELD_CONVERSION_FACTOR])) {
-                $value = $data[self::FIELD_CONVERSION_FACTOR];
+        if (array_key_exists(self::FIELD_CUSTOMARY_UNIT, $data)) {
+            if ($data[self::FIELD_CUSTOMARY_UNIT] instanceof FHIRCodeableConcept) {
+                $this->setCustomaryUnit($data[self::FIELD_CUSTOMARY_UNIT]);
             } else {
-                $value = null;
+                $this->setCustomaryUnit(new FHIRCodeableConcept($data[self::FIELD_CUSTOMARY_UNIT]));
             }
-            if (isset($data[self::FIELD_CONVERSION_FACTOR_EXT]) && is_array($data[self::FIELD_CONVERSION_FACTOR_EXT])) {
-                $ext = $data[self::FIELD_CONVERSION_FACTOR_EXT];
+        }
+        if (array_key_exists(self::FIELD_UNIT, $data)) {
+            if ($data[self::FIELD_UNIT] instanceof FHIRCodeableConcept) {
+                $this->setUnit($data[self::FIELD_UNIT]);
             } else {
-                $ext = [];
+                $this->setUnit(new FHIRCodeableConcept($data[self::FIELD_UNIT]));
             }
+        }
+        if (array_key_exists(self::FIELD_CONVERSION_FACTOR, $data) || array_key_exists(self::FIELD_CONVERSION_FACTOR_EXT, $data)) {
+            $value = $data[self::FIELD_CONVERSION_FACTOR] ?? null;
+            $ext = (isset($data[self::FIELD_CONVERSION_FACTOR_EXT]) && is_array($data[self::FIELD_CONVERSION_FACTOR_EXT])) ? $data[self::FIELD_CONVERSION_FACTOR_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDecimal) {
                     $this->setConversionFactor($value);
@@ -182,28 +188,15 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
                 } else {
                     $this->setConversionFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setConversionFactor(new FHIRDecimal($ext));
+            } else {
+                $this->setConversionFactor(new FHIRDecimal(null));
             }
         }
-        if (isset($data[self::FIELD_CUSTOMARY_UNIT])) {
-            if ($data[self::FIELD_CUSTOMARY_UNIT] instanceof FHIRCodeableConcept) {
-                $this->setCustomaryUnit($data[self::FIELD_CUSTOMARY_UNIT]);
-            } else {
-                $this->setCustomaryUnit(new FHIRCodeableConcept($data[self::FIELD_CUSTOMARY_UNIT]));
-            }
-        }
-        if (isset($data[self::FIELD_DECIMAL_PRECISION]) || isset($data[self::FIELD_DECIMAL_PRECISION_EXT])) {
-            if (isset($data[self::FIELD_DECIMAL_PRECISION])) {
-                $value = $data[self::FIELD_DECIMAL_PRECISION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DECIMAL_PRECISION_EXT]) && is_array($data[self::FIELD_DECIMAL_PRECISION_EXT])) {
-                $ext = $data[self::FIELD_DECIMAL_PRECISION_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_DECIMAL_PRECISION, $data) || array_key_exists(self::FIELD_DECIMAL_PRECISION_EXT, $data)) {
+            $value = $data[self::FIELD_DECIMAL_PRECISION] ?? null;
+            $ext = (isset($data[self::FIELD_DECIMAL_PRECISION_EXT]) && is_array($data[self::FIELD_DECIMAL_PRECISION_EXT])) ? $data[self::FIELD_DECIMAL_PRECISION_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRInteger) {
                     $this->setDecimalPrecision($value);
@@ -212,15 +205,10 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
                 } else {
                     $this->setDecimalPrecision(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDecimalPrecision(new FHIRInteger($ext));
-            }
-        }
-        if (isset($data[self::FIELD_UNIT])) {
-            if ($data[self::FIELD_UNIT] instanceof FHIRCodeableConcept) {
-                $this->setUnit($data[self::FIELD_UNIT]);
             } else {
-                $this->setUnit(new FHIRCodeableConcept($data[self::FIELD_UNIT]));
+                $this->setDecimalPrecision(new FHIRInteger(null));
             }
         }
     }
@@ -228,63 +216,9 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ObservationDefinitionQuantitativeDetails{$xmlns}></ObservationDefinitionQuantitativeDetails>";
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Factor for converting value expressed with SI unit to value expressed with
-     * customary unit.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
-     */
-    public function getConversionFactor()
-    {
-        return $this->conversionFactor;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Factor for converting value expressed with SI unit to value expressed with
-     * customary unit.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $conversionFactor
-     * @return static
-     */
-    public function setConversionFactor($conversionFactor = null)
-    {
-        if (null === $conversionFactor) {
-            $this->conversionFactor = null;
-            return $this;
-        }
-        if ($conversionFactor instanceof FHIRDecimal) {
-            $this->conversionFactor = $conversionFactor;
-            return $this;
-        }
-        $this->conversionFactor = new FHIRDecimal($conversionFactor);
-        return $this;
     }
 
     /**
@@ -298,7 +232,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getCustomaryUnit()
+    public function getCustomaryUnit(): null|FHIRCodeableConcept
     {
         return $this->customaryUnit;
     }
@@ -315,49 +249,13 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $customaryUnit
      * @return static
      */
-    public function setCustomaryUnit(FHIRCodeableConcept $customaryUnit = null)
+    public function setCustomaryUnit(null|FHIRCodeableConcept $customaryUnit = null): self
     {
+        if (null === $customaryUnit) {
+            $customaryUnit = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->customaryUnit, $customaryUnit);
         $this->customaryUnit = $customaryUnit;
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Number of digits after decimal separator when the results of such observations
-     * are of type Quantity.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
-     */
-    public function getDecimalPrecision()
-    {
-        return $this->decimalPrecision;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Number of digits after decimal separator when the results of such observations
-     * are of type Quantity.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $decimalPrecision
-     * @return static
-     */
-    public function setDecimalPrecision($decimalPrecision = null)
-    {
-        if (null === $decimalPrecision) {
-            $this->decimalPrecision = null;
-            return $this;
-        }
-        if ($decimalPrecision instanceof FHIRInteger) {
-            $this->decimalPrecision = $decimalPrecision;
-            return $this;
-        }
-        $this->decimalPrecision = new FHIRInteger($decimalPrecision);
         return $this;
     }
 
@@ -372,7 +270,7 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getUnit()
+    public function getUnit(): null|FHIRCodeableConcept
     {
         return $this->unit;
     }
@@ -389,9 +287,97 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $unit
      * @return static
      */
-    public function setUnit(FHIRCodeableConcept $unit = null)
+    public function setUnit(null|FHIRCodeableConcept $unit = null): self
     {
+        if (null === $unit) {
+            $unit = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->unit, $unit);
         $this->unit = $unit;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Factor for converting value expressed with SI unit to value expressed with
+     * customary unit.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
+     */
+    public function getConversionFactor(): null|FHIRDecimal
+    {
+        return $this->conversionFactor;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Factor for converting value expressed with SI unit to value expressed with
+     * customary unit.
+     *
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\R4\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $conversionFactor
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setConversionFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $conversionFactor = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $conversionFactor && !($conversionFactor instanceof FHIRDecimal)) {
+            $conversionFactor = new FHIRDecimal($conversionFactor);
+        }
+        $this->_trackValueSet($this->conversionFactor, $conversionFactor);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_CONVERSION_FACTOR])) {
+            $this->_primitiveXmlLocations[self::FIELD_CONVERSION_FACTOR] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_CONVERSION_FACTOR][0] = $xmlLocation;
+        $this->conversionFactor = $conversionFactor;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Number of digits after decimal separator when the results of such observations
+     * are of type Quantity.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    public function getDecimalPrecision(): null|FHIRInteger
+    {
+        return $this->decimalPrecision;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Number of digits after decimal separator when the results of such observations
+     * are of type Quantity.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $decimalPrecision
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setDecimalPrecision(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $decimalPrecision = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $decimalPrecision && !($decimalPrecision instanceof FHIRInteger)) {
+            $decimalPrecision = new FHIRInteger($decimalPrecision);
+        }
+        $this->_trackValueSet($this->decimalPrecision, $decimalPrecision);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DECIMAL_PRECISION])) {
+            $this->_primitiveXmlLocations[self::FIELD_DECIMAL_PRECISION] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_DECIMAL_PRECISION][0] = $xmlLocation;
+        $this->decimalPrecision = $decimalPrecision;
         return $this;
     }
 
@@ -401,9 +387,9 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -412,23 +398,13 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getConversionFactor())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CONVERSION_FACTOR] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getCustomaryUnit())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_CUSTOMARY_UNIT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDecimalPrecision())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DECIMAL_PRECISION] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getUnit())) {
@@ -436,16 +412,14 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
                 $errs[self::FIELD_UNIT] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CONVERSION_FACTOR])) {
-            $v = $this->getConversionFactor();
-            foreach($validationRules[self::FIELD_CONVERSION_FACTOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OBSERVATION_DEFINITION_DOT_QUANTITATIVE_DETAILS, self::FIELD_CONVERSION_FACTOR, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONVERSION_FACTOR])) {
-                        $errs[self::FIELD_CONVERSION_FACTOR] = [];
-                    }
-                    $errs[self::FIELD_CONVERSION_FACTOR][$rule] = $err;
-                }
+        if (null !== ($v = $this->getConversionFactor())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CONVERSION_FACTOR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDecimalPrecision())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DECIMAL_PRECISION] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_CUSTOMARY_UNIT])) {
@@ -460,18 +434,6 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DECIMAL_PRECISION])) {
-            $v = $this->getDecimalPrecision();
-            foreach($validationRules[self::FIELD_DECIMAL_PRECISION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OBSERVATION_DEFINITION_DOT_QUANTITATIVE_DETAILS, self::FIELD_DECIMAL_PRECISION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DECIMAL_PRECISION])) {
-                        $errs[self::FIELD_DECIMAL_PRECISION] = [];
-                    }
-                    $errs[self::FIELD_DECIMAL_PRECISION][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_UNIT])) {
             $v = $this->getUnit();
             foreach($validationRules[self::FIELD_UNIT] as $rule => $constraint) {
@@ -481,6 +443,30 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
                         $errs[self::FIELD_UNIT] = [];
                     }
                     $errs[self::FIELD_UNIT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONVERSION_FACTOR])) {
+            $v = $this->getConversionFactor();
+            foreach($validationRules[self::FIELD_CONVERSION_FACTOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OBSERVATION_DEFINITION_DOT_QUANTITATIVE_DETAILS, self::FIELD_CONVERSION_FACTOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONVERSION_FACTOR])) {
+                        $errs[self::FIELD_CONVERSION_FACTOR] = [];
+                    }
+                    $errs[self::FIELD_CONVERSION_FACTOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DECIMAL_PRECISION])) {
+            $v = $this->getDecimalPrecision();
+            foreach($validationRules[self::FIELD_DECIMAL_PRECISION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_OBSERVATION_DEFINITION_DOT_QUANTITATIVE_DETAILS, self::FIELD_DECIMAL_PRECISION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DECIMAL_PRECISION])) {
+                        $errs[self::FIELD_DECIMAL_PRECISION] = [];
+                    }
+                    $errs[self::FIELD_DECIMAL_PRECISION][$rule] = $err;
                 }
             }
         }
@@ -524,143 +510,189 @@ class FHIRObservationDefinitionQuantitativeDetails extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRObservationDefinitionQuantitativeDetails::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRObservationDefinitionQuantitativeDetails::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRObservationDefinitionQuantitativeDetails;
-        } elseif (!is_object($type) || !($type instanceof FHIRObservationDefinitionQuantitativeDetails)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRObservationDefinitionQuantitativeDetails)) {
             throw new \RuntimeException(sprintf(
-                'FHIRObservationDefinitionQuantitativeDetails::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_CUSTOMARY_UNIT === $childName) {
+                $type->setCustomaryUnit(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_UNIT === $childName) {
+                $type->setUnit(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CONVERSION_FACTOR === $childName) {
+                $type->setConversionFactor(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_DECIMAL_PRECISION === $childName) {
+                $type->setDecimalPrecision(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->conversionFactor)) {
-            $type->setConversionFactor(FHIRDecimal::xmlUnserialize($children->conversionFactor));
-        }
-        if (isset($attributes->conversionFactor)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_CONVERSION_FACTOR])) {
             $pt = $type->getConversionFactor();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->conversionFactor);
+                $pt->setValue((string)$attributes[self::FIELD_CONVERSION_FACTOR], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setConversionFactor((string)$attributes->conversionFactor);
+                $type->setConversionFactor((string)$attributes[self::FIELD_CONVERSION_FACTOR], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->customaryUnit)) {
-            $type->setCustomaryUnit(FHIRCodeableConcept::xmlUnserialize($children->customaryUnit));
-        }
-        if (isset($children->decimalPrecision)) {
-            $type->setDecimalPrecision(FHIRInteger::xmlUnserialize($children->decimalPrecision));
-        }
-        if (isset($attributes->decimalPrecision)) {
+        if (isset($attributes[self::FIELD_DECIMAL_PRECISION])) {
             $pt = $type->getDecimalPrecision();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->decimalPrecision);
+                $pt->setValue((string)$attributes[self::FIELD_DECIMAL_PRECISION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setDecimalPrecision((string)$attributes->decimalPrecision);
+                $type->setDecimalPrecision((string)$attributes[self::FIELD_DECIMAL_PRECISION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->unit)) {
-            $type->setUnit(FHIRCodeableConcept::xmlUnserialize($children->unit));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getConversionFactor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONVERSION_FACTOR, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ObservationDefinitionQuantitativeDetails', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CONVERSION_FACTOR] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getConversionFactor())) {
+            $xw->writeAttribute(self::FIELD_CONVERSION_FACTOR, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DECIMAL_PRECISION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDecimalPrecision())) {
+            $xw->writeAttribute(self::FIELD_DECIMAL_PRECISION, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getCustomaryUnit())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CUSTOMARY_UNIT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getDecimalPrecision())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECIMAL_PRECISION, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_CUSTOMARY_UNIT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getUnit())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_UNIT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CONVERSION_FACTOR] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getConversionFactor())) {
+            $xw->startElement(self::FIELD_CONVERSION_FACTOR);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DECIMAL_PRECISION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDecimalPrecision())) {
+            $xw->startElement(self::FIELD_DECIMAL_PRECISION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getConversionFactor())) {
-            $a[self::FIELD_CONVERSION_FACTOR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_CONVERSION_FACTOR_EXT] = $enc;
-            }
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getCustomaryUnit())) {
-            $a[self::FIELD_CUSTOMARY_UNIT] = $v;
-        }
-        if (null !== ($v = $this->getDecimalPrecision())) {
-            $a[self::FIELD_DECIMAL_PRECISION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_DECIMAL_PRECISION_EXT] = $enc;
-            }
+            $out->{self::FIELD_CUSTOMARY_UNIT} = $v;
         }
         if (null !== ($v = $this->getUnit())) {
-            $a[self::FIELD_UNIT] = $v;
+            $out->{self::FIELD_UNIT} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getConversionFactor())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_CONVERSION_FACTOR} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDecimal::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_CONVERSION_FACTOR_EXT} = $ext;
+            }
         }
-        return $a;
-    }
+        if (null !== ($v = $this->getDecimalPrecision())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DECIMAL_PRECISION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInteger::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DECIMAL_PRECISION_EXT} = $ext;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

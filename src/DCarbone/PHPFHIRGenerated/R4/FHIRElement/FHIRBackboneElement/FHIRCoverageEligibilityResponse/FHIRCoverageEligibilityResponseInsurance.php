@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,12 +62,19 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * This resource provides eligibility and plan details from the processing of an
@@ -80,25 +87,12 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_INSURANCE;
-    const FIELD_BENEFIT_PERIOD = 'benefitPeriod';
+
     const FIELD_COVERAGE = 'coverage';
     const FIELD_INFORCE = 'inforce';
     const FIELD_INFORCE_EXT = '_inforce';
+    const FIELD_BENEFIT_PERIOD = 'benefitPeriod';
     const FIELD_ITEM = 'item';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The term of the benefits documented in this response.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
-     */
-    protected $benefitPeriod = null;
 
     /**
      * A reference from one resource to another.
@@ -111,8 +105,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    protected $coverage = null;
-
+    protected null|FHIRReference $coverage = null;
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -122,8 +115,17 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    protected $inforce = null;
-
+    protected null|FHIRBoolean $inforce = null;
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The term of the benefits documented in this response.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     */
+    protected null|FHIRPeriod $benefitPeriod = null;
     /**
      * This resource provides eligibility and plan details from the processing of an
      * CoverageEligibilityRequest resource.
@@ -133,55 +135,37 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem[]
      */
-    protected $item = [];
+    protected null|array $item = [];
 
     /**
      * Validation map for fields in type CoverageEligibilityResponse.Insurance
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRCoverageEligibilityResponseInsurance Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCoverageEligibilityResponseInsurance::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_BENEFIT_PERIOD])) {
-            if ($data[self::FIELD_BENEFIT_PERIOD] instanceof FHIRPeriod) {
-                $this->setBenefitPeriod($data[self::FIELD_BENEFIT_PERIOD]);
-            } else {
-                $this->setBenefitPeriod(new FHIRPeriod($data[self::FIELD_BENEFIT_PERIOD]));
-            }
-        }
-        if (isset($data[self::FIELD_COVERAGE])) {
+        if (array_key_exists(self::FIELD_COVERAGE, $data)) {
             if ($data[self::FIELD_COVERAGE] instanceof FHIRReference) {
                 $this->setCoverage($data[self::FIELD_COVERAGE]);
             } else {
                 $this->setCoverage(new FHIRReference($data[self::FIELD_COVERAGE]));
             }
         }
-        if (isset($data[self::FIELD_INFORCE]) || isset($data[self::FIELD_INFORCE_EXT])) {
-            if (isset($data[self::FIELD_INFORCE])) {
-                $value = $data[self::FIELD_INFORCE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_INFORCE_EXT]) && is_array($data[self::FIELD_INFORCE_EXT])) {
-                $ext = $data[self::FIELD_INFORCE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_INFORCE, $data) || array_key_exists(self::FIELD_INFORCE_EXT, $data)) {
+            $value = $data[self::FIELD_INFORCE] ?? null;
+            $ext = (isset($data[self::FIELD_INFORCE_EXT]) && is_array($data[self::FIELD_INFORCE_EXT])) ? $data[self::FIELD_INFORCE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setInforce($value);
@@ -190,23 +174,29 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
                 } else {
                     $this->setInforce(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setInforce(new FHIRBoolean($ext));
+            } else {
+                $this->setInforce(new FHIRBoolean(null));
             }
         }
-        if (isset($data[self::FIELD_ITEM])) {
+        if (array_key_exists(self::FIELD_BENEFIT_PERIOD, $data)) {
+            if ($data[self::FIELD_BENEFIT_PERIOD] instanceof FHIRPeriod) {
+                $this->setBenefitPeriod($data[self::FIELD_BENEFIT_PERIOD]);
+            } else {
+                $this->setBenefitPeriod(new FHIRPeriod($data[self::FIELD_BENEFIT_PERIOD]));
+            }
+        }
+        if (array_key_exists(self::FIELD_ITEM, $data)) {
             if (is_array($data[self::FIELD_ITEM])) {
                 foreach($data[self::FIELD_ITEM] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRCoverageEligibilityResponseItem) {
                         $this->addItem($v);
                     } else {
                         $this->addItem(new FHIRCoverageEligibilityResponseItem($v));
                     }
                 }
-            } else if ($data[self::FIELD_ITEM] instanceof FHIRCoverageEligibilityResponseItem) {
+            } elseif ($data[self::FIELD_ITEM] instanceof FHIRCoverageEligibilityResponseItem) {
                 $this->addItem($data[self::FIELD_ITEM]);
             } else {
                 $this->addItem(new FHIRCoverageEligibilityResponseItem($data[self::FIELD_ITEM]));
@@ -217,51 +207,9 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<CoverageEligibilityResponseInsurance{$xmlns}></CoverageEligibilityResponseInsurance>";
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The term of the benefits documented in this response.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
-     */
-    public function getBenefitPeriod()
-    {
-        return $this->benefitPeriod;
-    }
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The term of the benefits documented in this response.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $benefitPeriod
-     * @return static
-     */
-    public function setBenefitPeriod(FHIRPeriod $benefitPeriod = null)
-    {
-        $this->benefitPeriod = $benefitPeriod;
-        return $this;
     }
 
     /**
@@ -275,7 +223,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getCoverage()
+    public function getCoverage(): null|FHIRReference
     {
         return $this->coverage;
     }
@@ -292,8 +240,12 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $coverage
      * @return static
      */
-    public function setCoverage(FHIRReference $coverage = null)
+    public function setCoverage(null|FHIRReference $coverage = null): self
     {
+        if (null === $coverage) {
+            $coverage = new FHIRReference();
+        }
+        $this->_trackValueSet($this->coverage, $coverage);
         $this->coverage = $coverage;
         return $this;
     }
@@ -307,7 +259,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    public function getInforce()
+    public function getInforce(): null|FHIRBoolean
     {
         return $this->inforce;
     }
@@ -319,20 +271,55 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      * Flag indicating if the coverage provided is inforce currently if no service
      * date(s) specified or for the whole duration of the service dates.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $inforce
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $inforce
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setInforce($inforce = null)
+    public function setInforce(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $inforce = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $inforce) {
-            $this->inforce = null;
-            return $this;
+        if (null !== $inforce && !($inforce instanceof FHIRBoolean)) {
+            $inforce = new FHIRBoolean($inforce);
         }
-        if ($inforce instanceof FHIRBoolean) {
-            $this->inforce = $inforce;
-            return $this;
+        $this->_trackValueSet($this->inforce, $inforce);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_INFORCE])) {
+            $this->_primitiveXmlLocations[self::FIELD_INFORCE] = [];
         }
-        $this->inforce = new FHIRBoolean($inforce);
+        $this->_primitiveXmlLocations[self::FIELD_INFORCE][0] = $xmlLocation;
+        $this->inforce = $inforce;
+        return $this;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The term of the benefits documented in this response.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     */
+    public function getBenefitPeriod(): null|FHIRPeriod
+    {
+        return $this->benefitPeriod;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The term of the benefits documented in this response.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $benefitPeriod
+     * @return static
+     */
+    public function setBenefitPeriod(null|FHIRPeriod $benefitPeriod = null): self
+    {
+        if (null === $benefitPeriod) {
+            $benefitPeriod = new FHIRPeriod();
+        }
+        $this->_trackValueSet($this->benefitPeriod, $benefitPeriod);
+        $this->benefitPeriod = $benefitPeriod;
         return $this;
     }
 
@@ -345,7 +332,7 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem[]
      */
-    public function getItem()
+    public function getItem(): null|array
     {
         return $this->item;
     }
@@ -360,35 +347,13 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem $item
      * @return static
      */
-    public function addItem(FHIRCoverageEligibilityResponseItem $item = null)
+    public function addItem(null|FHIRCoverageEligibilityResponseItem $item = null): self
     {
+        if (null === $item) {
+            $item = new FHIRCoverageEligibilityResponseItem();
+        }
+        $this->_trackValueAdded();
         $this->item[] = $item;
-        return $this;
-    }
-
-    /**
-     * This resource provides eligibility and plan details from the processing of an
-     * CoverageEligibilityRequest resource.
-     *
-     * Benefits and optionally current balances, and authorization details by category
-     * or service.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem[] $item
-     * @return static
-     */
-    public function setItem(array $item = [])
-    {
-        $this->item = [];
-        if ([] === $item) {
-            return $this;
-        }
-        foreach($item as $v) {
-            if ($v instanceof FHIRCoverageEligibilityResponseItem) {
-                $this->addItem($v);
-            } else {
-                $this->addItem(new FHIRCoverageEligibilityResponseItem($v));
-            }
-        }
         return $this;
     }
 
@@ -398,9 +363,9 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -409,15 +374,10 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getBenefitPeriod())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_BENEFIT_PERIOD] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getCoverage())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_COVERAGE] = $fieldErrs;
@@ -428,22 +388,15 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
                 $errs[self::FIELD_INFORCE] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getBenefitPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BENEFIT_PERIOD] = $fieldErrs;
+            }
+        }
         if ([] !== ($vs = $this->getItem())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_ITEM, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_BENEFIT_PERIOD])) {
-            $v = $this->getBenefitPeriod();
-            foreach($validationRules[self::FIELD_BENEFIT_PERIOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_INSURANCE, self::FIELD_BENEFIT_PERIOD, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BENEFIT_PERIOD])) {
-                        $errs[self::FIELD_BENEFIT_PERIOD] = [];
-                    }
-                    $errs[self::FIELD_BENEFIT_PERIOD][$rule] = $err;
                 }
             }
         }
@@ -468,6 +421,18 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
                         $errs[self::FIELD_INFORCE] = [];
                     }
                     $errs[self::FIELD_INFORCE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BENEFIT_PERIOD])) {
+            $v = $this->getBenefitPeriod();
+            foreach($validationRules[self::FIELD_BENEFIT_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_RESPONSE_DOT_INSURANCE, self::FIELD_BENEFIT_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BENEFIT_PERIOD])) {
+                        $errs[self::FIELD_BENEFIT_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_BENEFIT_PERIOD][$rule] = $err;
                 }
             }
         }
@@ -523,142 +488,172 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseInsurance $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseInsurance
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRCoverageEligibilityResponseInsurance::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRCoverageEligibilityResponseInsurance::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRCoverageEligibilityResponseInsurance;
-        } elseif (!is_object($type) || !($type instanceof FHIRCoverageEligibilityResponseInsurance)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRCoverageEligibilityResponseInsurance)) {
             throw new \RuntimeException(sprintf(
-                'FHIRCoverageEligibilityResponseInsurance::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseInsurance or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_COVERAGE === $childName) {
+                $type->setCoverage(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_INFORCE === $childName) {
+                $type->setInforce(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_BENEFIT_PERIOD === $childName) {
+                $type->setBenefitPeriod(FHIRPeriod::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ITEM === $childName) {
+                $type->addItem(FHIRCoverageEligibilityResponseItem::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->benefitPeriod)) {
-            $type->setBenefitPeriod(FHIRPeriod::xmlUnserialize($children->benefitPeriod));
-        }
-        if (isset($children->coverage)) {
-            $type->setCoverage(FHIRReference::xmlUnserialize($children->coverage));
-        }
-        if (isset($children->inforce)) {
-            $type->setInforce(FHIRBoolean::xmlUnserialize($children->inforce));
-        }
-        if (isset($attributes->inforce)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_INFORCE])) {
             $pt = $type->getInforce();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->inforce);
+                $pt->setValue((string)$attributes[self::FIELD_INFORCE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setInforce((string)$attributes->inforce);
+                $type->setInforce((string)$attributes[self::FIELD_INFORCE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->item)) {
-            foreach($children->item as $child) {
-                $type->addItem(FHIRCoverageEligibilityResponseItem::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getBenefitPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BENEFIT_PERIOD, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'CoverageEligibilityResponseInsurance', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INFORCE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getInforce())) {
+            $xw->writeAttribute(self::FIELD_INFORCE, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getCoverage())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COVERAGE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_COVERAGE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getInforce())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INFORCE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_INFORCE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getInforce())) {
+            $xw->startElement(self::FIELD_INFORCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getItem())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ITEM, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null !== ($v = $this->getBenefitPeriod())) {
+            $xw->startElement(self::FIELD_BENEFIT_PERIOD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        foreach ($this->getItem() as $v) {
+            $xw->startElement(self::FIELD_ITEM);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getBenefitPeriod())) {
-            $a[self::FIELD_BENEFIT_PERIOD] = $v;
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getCoverage())) {
-            $a[self::FIELD_COVERAGE] = $v;
+            $out->{self::FIELD_COVERAGE} = $v;
         }
         if (null !== ($v = $this->getInforce())) {
-            $a[self::FIELD_INFORCE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_INFORCE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_INFORCE} = $val;
             }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_INFORCE_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getBenefitPeriod())) {
+            $out->{self::FIELD_BENEFIT_PERIOD} = $v;
         }
         if ([] !== ($vs = $this->getItem())) {
-            $a[self::FIELD_ITEM] = [];
+            $out->{self::FIELD_ITEM} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ITEM][] = $v;
+                $out->{self::FIELD_ITEM}[] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,8 +63,12 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive;
  */
 
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter;
 
 /**
  * Class FHIRUnitsOfTimeList
@@ -74,137 +78,11 @@ class FHIRUnitsOfTimeList extends FHIRStringPrimitive
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_UNITS_OF_TIME_HYPHEN_LIST;
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Validation map for fields in type UnitsOfTime-list
-     * @var array
-     */
-    private static $_validationRules = [
-        self::FIELD_VALUE => [
-            PHPFHIRConstants::VALIDATE_ENUM => ['s','min','h','d','wk','mo','a',],
-        ],
-    ];
-
-    /**
-     * FHIRUnitsOfTimeList Constructor
-     * @param null|string $value
-     */
-    public function __construct($value = null)
-    {
-        parent::__construct($value);
-    }
-
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<UnitsOfTime_list{$xmlns}></UnitsOfTime_list>";
-    }
-
-    /**
-     * Returns the validation rules that this type's fields must comply with to be considered "valid"
-     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
-     *
-     * @return array
-     */
-    public function _getValidationRules()
-    {
-        return self::$_validationRules;
-    }
-
-    /**
-     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
-     * passing.
-     *
-     * @return array
-     */
-    public function _getValidationErrors()
-    {
-        $errs = parent::_getValidationErrors();
-        $validationRules = $this->_getValidationRules();
-        if (isset($validationRules[self::FIELD_VALUE])) {
-            $v = $this->getValue();
-            foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRING_HYPHEN_PRIMITIVE, self::FIELD_VALUE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE])) {
-                        $errs[self::FIELD_VALUE] = [];
-                    }
-                    $errs[self::FIELD_VALUE][$rule] = $err;
-                }
-            }
-        }
-        return $errs;
-    }
-
-    /**
-     * @param \SimpleXMLElement|string|null $sxe
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRUnitsOfTimeList $type
-     * @param null|int $libxmlOpts
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRUnitsOfTimeList
-     */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
-    {
-        if (null === $sxe) {
-            return null;
-        }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRUnitsOfTimeList::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
-        }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRUnitsOfTimeList::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
-        }
-        if (null === $type) {
-            $type = new FHIRUnitsOfTimeList;
-        } elseif (!is_object($type) || !($type instanceof FHIRUnitsOfTimeList)) {
-            throw new \RuntimeException(sprintf(
-                'FHIRUnitsOfTimeList::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive\FHIRUnitsOfTimeList or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
-            ));
-        }
-        FHIRStringPrimitive::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
-            }
-        }
-        return $type;
-    }
-
-    /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
-     */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
-    {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
-        }
-        parent::xmlSerialize($sxe);
-        return $sxe;
     }
 }

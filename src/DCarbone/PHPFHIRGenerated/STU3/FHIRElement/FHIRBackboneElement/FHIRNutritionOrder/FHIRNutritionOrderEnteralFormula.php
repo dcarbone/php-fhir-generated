@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNut
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,10 +64,16 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNut
 
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter;
 
 /**
  * A request to supply a diet, formula feeding (enteral) or oral nutritional
@@ -80,83 +86,19 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA;
-    const FIELD_ADDITIVE_PRODUCT_NAME = 'additiveProductName';
-    const FIELD_ADDITIVE_PRODUCT_NAME_EXT = '_additiveProductName';
-    const FIELD_ADDITIVE_TYPE = 'additiveType';
-    const FIELD_ADMINISTRATION = 'administration';
-    const FIELD_ADMINISTRATION_INSTRUCTION = 'administrationInstruction';
-    const FIELD_ADMINISTRATION_INSTRUCTION_EXT = '_administrationInstruction';
+
+    const FIELD_BASE_FORMULA_TYPE = 'baseFormulaType';
     const FIELD_BASE_FORMULA_PRODUCT_NAME = 'baseFormulaProductName';
     const FIELD_BASE_FORMULA_PRODUCT_NAME_EXT = '_baseFormulaProductName';
-    const FIELD_BASE_FORMULA_TYPE = 'baseFormulaType';
+    const FIELD_ADDITIVE_TYPE = 'additiveType';
+    const FIELD_ADDITIVE_PRODUCT_NAME = 'additiveProductName';
+    const FIELD_ADDITIVE_PRODUCT_NAME_EXT = '_additiveProductName';
     const FIELD_CALORIC_DENSITY = 'caloricDensity';
-    const FIELD_MAX_VOLUME_TO_DELIVER = 'maxVolumeToDeliver';
     const FIELD_ROUTEOF_ADMINISTRATION = 'routeofAdministration';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The product or brand name of the type of modular component to be added to the
-     * formula.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $additiveProductName = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the type of modular component such as protein, carbohydrate, fat or
-     * fiber to be provided in addition to or mixed with the base formula.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    protected $additiveType = null;
-
-    /**
-     * A request to supply a diet, formula feeding (enteral) or oral nutritional
-     * supplement to a patient/resident.
-     *
-     * Formula administration instructions as structured data. This repeating structure
-     * allows for changing the administration rate or volume over time for both bolus
-     * and continuous feeding. An example of this would be an instruction to increase
-     * the rate of continuous feeding every 2 hours.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration[]
-     */
-    protected $administration = [];
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Free text formula administration, feeding instructions or additional
-     * instructions or information.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $administrationInstruction = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The product or brand name of the enteral or infant formula product such as "ACME
-     * Adult Standard Formula".
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $baseFormulaProductName = null;
+    const FIELD_ADMINISTRATION = 'administration';
+    const FIELD_MAX_VOLUME_TO_DELIVER = 'maxVolumeToDeliver';
+    const FIELD_ADMINISTRATION_INSTRUCTION = 'administrationInstruction';
+    const FIELD_ADMINISTRATION_INSTRUCTION_EXT = '_administrationInstruction';
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -169,8 +111,41 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    protected $baseFormulaType = null;
-
+    protected null|FHIRCodeableConcept $baseFormulaType = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The product or brand name of the enteral or infant formula product such as "ACME
+     * Adult Standard Formula".
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $baseFormulaProductName = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the type of modular component such as protein, carbohydrate, fat or
+     * fiber to be provided in addition to or mixed with the base formula.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $additiveType = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The product or brand name of the type of modular component to be added to the
+     * formula.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $additiveProductName = null;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -185,22 +160,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    protected $caloricDensity = null;
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The maximum total quantity of formula that may be administered to a subject over
-     * the period of time, e.g. 1440 mL over 24 hours.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
-     */
-    protected $maxVolumeToDeliver = null;
-
+    protected null|FHIRQuantity $caloricDensity = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -213,112 +173,73 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    protected $routeofAdministration = null;
+    protected null|FHIRCodeableConcept $routeofAdministration = null;
+    /**
+     * A request to supply a diet, formula feeding (enteral) or oral nutritional
+     * supplement to a patient/resident.
+     *
+     * Formula administration instructions as structured data. This repeating structure
+     * allows for changing the administration rate or volume over time for both bolus
+     * and continuous feeding. An example of this would be an instruction to increase
+     * the rate of continuous feeding every 2 hours.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration[]
+     */
+    protected null|array $administration = [];
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The maximum total quantity of formula that may be administered to a subject over
+     * the period of time, e.g. 1440 mL over 24 hours.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
+     */
+    protected null|FHIRQuantity $maxVolumeToDeliver = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Free text formula administration, feeding instructions or additional
+     * instructions or information.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $administrationInstruction = null;
 
     /**
      * Validation map for fields in type NutritionOrder.EnteralFormula
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRNutritionOrderEnteralFormula Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRNutritionOrderEnteralFormula::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ADDITIVE_PRODUCT_NAME]) || isset($data[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT])) {
-            if (isset($data[self::FIELD_ADDITIVE_PRODUCT_NAME])) {
-                $value = $data[self::FIELD_ADDITIVE_PRODUCT_NAME];
+        if (array_key_exists(self::FIELD_BASE_FORMULA_TYPE, $data)) {
+            if ($data[self::FIELD_BASE_FORMULA_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setBaseFormulaType($data[self::FIELD_BASE_FORMULA_TYPE]);
             } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT]) && is_array($data[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT])) {
-                $ext = $data[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setAdditiveProductName($value);
-                } else if (is_array($value)) {
-                    $this->setAdditiveProductName(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setAdditiveProductName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setAdditiveProductName(new FHIRString($ext));
+                $this->setBaseFormulaType(new FHIRCodeableConcept($data[self::FIELD_BASE_FORMULA_TYPE]));
             }
         }
-        if (isset($data[self::FIELD_ADDITIVE_TYPE])) {
-            if ($data[self::FIELD_ADDITIVE_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setAdditiveType($data[self::FIELD_ADDITIVE_TYPE]);
-            } else {
-                $this->setAdditiveType(new FHIRCodeableConcept($data[self::FIELD_ADDITIVE_TYPE]));
-            }
-        }
-        if (isset($data[self::FIELD_ADMINISTRATION])) {
-            if (is_array($data[self::FIELD_ADMINISTRATION])) {
-                foreach($data[self::FIELD_ADMINISTRATION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRNutritionOrderAdministration) {
-                        $this->addAdministration($v);
-                    } else {
-                        $this->addAdministration(new FHIRNutritionOrderAdministration($v));
-                    }
-                }
-            } else if ($data[self::FIELD_ADMINISTRATION] instanceof FHIRNutritionOrderAdministration) {
-                $this->addAdministration($data[self::FIELD_ADMINISTRATION]);
-            } else {
-                $this->addAdministration(new FHIRNutritionOrderAdministration($data[self::FIELD_ADMINISTRATION]));
-            }
-        }
-        if (isset($data[self::FIELD_ADMINISTRATION_INSTRUCTION]) || isset($data[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT])) {
-            if (isset($data[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
-                $value = $data[self::FIELD_ADMINISTRATION_INSTRUCTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT]) && is_array($data[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT])) {
-                $ext = $data[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setAdministrationInstruction($value);
-                } else if (is_array($value)) {
-                    $this->setAdministrationInstruction(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setAdministrationInstruction(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setAdministrationInstruction(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_BASE_FORMULA_PRODUCT_NAME]) || isset($data[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT])) {
-            if (isset($data[self::FIELD_BASE_FORMULA_PRODUCT_NAME])) {
-                $value = $data[self::FIELD_BASE_FORMULA_PRODUCT_NAME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT]) && is_array($data[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT])) {
-                $ext = $data[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_BASE_FORMULA_PRODUCT_NAME, $data) || array_key_exists(self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT, $data)) {
+            $value = $data[self::FIELD_BASE_FORMULA_PRODUCT_NAME] ?? null;
+            $ext = (isset($data[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT]) && is_array($data[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT])) ? $data[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setBaseFormulaProductName($value);
@@ -327,274 +248,97 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 } else {
                     $this->setBaseFormulaProductName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setBaseFormulaProductName(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_BASE_FORMULA_TYPE])) {
-            if ($data[self::FIELD_BASE_FORMULA_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setBaseFormulaType($data[self::FIELD_BASE_FORMULA_TYPE]);
             } else {
-                $this->setBaseFormulaType(new FHIRCodeableConcept($data[self::FIELD_BASE_FORMULA_TYPE]));
+                $this->setBaseFormulaProductName(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_CALORIC_DENSITY])) {
+        if (array_key_exists(self::FIELD_ADDITIVE_TYPE, $data)) {
+            if ($data[self::FIELD_ADDITIVE_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setAdditiveType($data[self::FIELD_ADDITIVE_TYPE]);
+            } else {
+                $this->setAdditiveType(new FHIRCodeableConcept($data[self::FIELD_ADDITIVE_TYPE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_ADDITIVE_PRODUCT_NAME, $data) || array_key_exists(self::FIELD_ADDITIVE_PRODUCT_NAME_EXT, $data)) {
+            $value = $data[self::FIELD_ADDITIVE_PRODUCT_NAME] ?? null;
+            $ext = (isset($data[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT]) && is_array($data[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT])) ? $data[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setAdditiveProductName($value);
+                } else if (is_array($value)) {
+                    $this->setAdditiveProductName(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setAdditiveProductName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setAdditiveProductName(new FHIRString($ext));
+            } else {
+                $this->setAdditiveProductName(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_CALORIC_DENSITY, $data)) {
             if ($data[self::FIELD_CALORIC_DENSITY] instanceof FHIRQuantity) {
                 $this->setCaloricDensity($data[self::FIELD_CALORIC_DENSITY]);
             } else {
                 $this->setCaloricDensity(new FHIRQuantity($data[self::FIELD_CALORIC_DENSITY]));
             }
         }
-        if (isset($data[self::FIELD_MAX_VOLUME_TO_DELIVER])) {
-            if ($data[self::FIELD_MAX_VOLUME_TO_DELIVER] instanceof FHIRQuantity) {
-                $this->setMaxVolumeToDeliver($data[self::FIELD_MAX_VOLUME_TO_DELIVER]);
-            } else {
-                $this->setMaxVolumeToDeliver(new FHIRQuantity($data[self::FIELD_MAX_VOLUME_TO_DELIVER]));
-            }
-        }
-        if (isset($data[self::FIELD_ROUTEOF_ADMINISTRATION])) {
+        if (array_key_exists(self::FIELD_ROUTEOF_ADMINISTRATION, $data)) {
             if ($data[self::FIELD_ROUTEOF_ADMINISTRATION] instanceof FHIRCodeableConcept) {
                 $this->setRouteofAdministration($data[self::FIELD_ROUTEOF_ADMINISTRATION]);
             } else {
                 $this->setRouteofAdministration(new FHIRCodeableConcept($data[self::FIELD_ROUTEOF_ADMINISTRATION]));
             }
         }
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRTypeName()
-    {
-        return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<NutritionOrderEnteralFormula{$xmlns}></NutritionOrderEnteralFormula>";
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The product or brand name of the type of modular component to be added to the
-     * formula.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getAdditiveProductName()
-    {
-        return $this->additiveProductName;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The product or brand name of the type of modular component to be added to the
-     * formula.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $additiveProductName
-     * @return static
-     */
-    public function setAdditiveProductName($additiveProductName = null)
-    {
-        if (null === $additiveProductName) {
-            $this->additiveProductName = null;
-            return $this;
-        }
-        if ($additiveProductName instanceof FHIRString) {
-            $this->additiveProductName = $additiveProductName;
-            return $this;
-        }
-        $this->additiveProductName = new FHIRString($additiveProductName);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the type of modular component such as protein, carbohydrate, fat or
-     * fiber to be provided in addition to or mixed with the base formula.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    public function getAdditiveType()
-    {
-        return $this->additiveType;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the type of modular component such as protein, carbohydrate, fat or
-     * fiber to be provided in addition to or mixed with the base formula.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $additiveType
-     * @return static
-     */
-    public function setAdditiveType(FHIRCodeableConcept $additiveType = null)
-    {
-        $this->additiveType = $additiveType;
-        return $this;
-    }
-
-    /**
-     * A request to supply a diet, formula feeding (enteral) or oral nutritional
-     * supplement to a patient/resident.
-     *
-     * Formula administration instructions as structured data. This repeating structure
-     * allows for changing the administration rate or volume over time for both bolus
-     * and continuous feeding. An example of this would be an instruction to increase
-     * the rate of continuous feeding every 2 hours.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration[]
-     */
-    public function getAdministration()
-    {
-        return $this->administration;
-    }
-
-    /**
-     * A request to supply a diet, formula feeding (enteral) or oral nutritional
-     * supplement to a patient/resident.
-     *
-     * Formula administration instructions as structured data. This repeating structure
-     * allows for changing the administration rate or volume over time for both bolus
-     * and continuous feeding. An example of this would be an instruction to increase
-     * the rate of continuous feeding every 2 hours.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration $administration
-     * @return static
-     */
-    public function addAdministration(FHIRNutritionOrderAdministration $administration = null)
-    {
-        $this->administration[] = $administration;
-        return $this;
-    }
-
-    /**
-     * A request to supply a diet, formula feeding (enteral) or oral nutritional
-     * supplement to a patient/resident.
-     *
-     * Formula administration instructions as structured data. This repeating structure
-     * allows for changing the administration rate or volume over time for both bolus
-     * and continuous feeding. An example of this would be an instruction to increase
-     * the rate of continuous feeding every 2 hours.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration[] $administration
-     * @return static
-     */
-    public function setAdministration(array $administration = [])
-    {
-        $this->administration = [];
-        if ([] === $administration) {
-            return $this;
-        }
-        foreach($administration as $v) {
-            if ($v instanceof FHIRNutritionOrderAdministration) {
-                $this->addAdministration($v);
+        if (array_key_exists(self::FIELD_ADMINISTRATION, $data)) {
+            if (is_array($data[self::FIELD_ADMINISTRATION])) {
+                foreach($data[self::FIELD_ADMINISTRATION] as $v) {
+                    if ($v instanceof FHIRNutritionOrderAdministration) {
+                        $this->addAdministration($v);
+                    } else {
+                        $this->addAdministration(new FHIRNutritionOrderAdministration($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_ADMINISTRATION] instanceof FHIRNutritionOrderAdministration) {
+                $this->addAdministration($data[self::FIELD_ADMINISTRATION]);
             } else {
-                $this->addAdministration(new FHIRNutritionOrderAdministration($v));
+                $this->addAdministration(new FHIRNutritionOrderAdministration($data[self::FIELD_ADMINISTRATION]));
             }
         }
-        return $this;
+        if (array_key_exists(self::FIELD_MAX_VOLUME_TO_DELIVER, $data)) {
+            if ($data[self::FIELD_MAX_VOLUME_TO_DELIVER] instanceof FHIRQuantity) {
+                $this->setMaxVolumeToDeliver($data[self::FIELD_MAX_VOLUME_TO_DELIVER]);
+            } else {
+                $this->setMaxVolumeToDeliver(new FHIRQuantity($data[self::FIELD_MAX_VOLUME_TO_DELIVER]));
+            }
+        }
+        if (array_key_exists(self::FIELD_ADMINISTRATION_INSTRUCTION, $data) || array_key_exists(self::FIELD_ADMINISTRATION_INSTRUCTION_EXT, $data)) {
+            $value = $data[self::FIELD_ADMINISTRATION_INSTRUCTION] ?? null;
+            $ext = (isset($data[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT]) && is_array($data[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT])) ? $data[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setAdministrationInstruction($value);
+                } else if (is_array($value)) {
+                    $this->setAdministrationInstruction(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setAdministrationInstruction(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setAdministrationInstruction(new FHIRString($ext));
+            } else {
+                $this->setAdministrationInstruction(new FHIRString(null));
+            }
+        }
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Free text formula administration, feeding instructions or additional
-     * instructions or information.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     * @return string
      */
-    public function getAdministrationInstruction()
+    public function _getFhirTypeName(): string
     {
-        return $this->administrationInstruction;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Free text formula administration, feeding instructions or additional
-     * instructions or information.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $administrationInstruction
-     * @return static
-     */
-    public function setAdministrationInstruction($administrationInstruction = null)
-    {
-        if (null === $administrationInstruction) {
-            $this->administrationInstruction = null;
-            return $this;
-        }
-        if ($administrationInstruction instanceof FHIRString) {
-            $this->administrationInstruction = $administrationInstruction;
-            return $this;
-        }
-        $this->administrationInstruction = new FHIRString($administrationInstruction);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The product or brand name of the enteral or infant formula product such as "ACME
-     * Adult Standard Formula".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getBaseFormulaProductName()
-    {
-        return $this->baseFormulaProductName;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The product or brand name of the enteral or infant formula product such as "ACME
-     * Adult Standard Formula".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $baseFormulaProductName
-     * @return static
-     */
-    public function setBaseFormulaProductName($baseFormulaProductName = null)
-    {
-        if (null === $baseFormulaProductName) {
-            $this->baseFormulaProductName = null;
-            return $this;
-        }
-        if ($baseFormulaProductName instanceof FHIRString) {
-            $this->baseFormulaProductName = $baseFormulaProductName;
-            return $this;
-        }
-        $this->baseFormulaProductName = new FHIRString($baseFormulaProductName);
-        return $this;
+        return self::FHIR_TYPE_NAME;
     }
 
     /**
@@ -608,7 +352,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    public function getBaseFormulaType()
+    public function getBaseFormulaType(): null|FHIRCodeableConcept
     {
         return $this->baseFormulaType;
     }
@@ -625,9 +369,133 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $baseFormulaType
      * @return static
      */
-    public function setBaseFormulaType(FHIRCodeableConcept $baseFormulaType = null)
+    public function setBaseFormulaType(null|FHIRCodeableConcept $baseFormulaType = null): self
     {
+        if (null === $baseFormulaType) {
+            $baseFormulaType = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->baseFormulaType, $baseFormulaType);
         $this->baseFormulaType = $baseFormulaType;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The product or brand name of the enteral or infant formula product such as "ACME
+     * Adult Standard Formula".
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getBaseFormulaProductName(): null|FHIRString
+    {
+        return $this->baseFormulaProductName;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The product or brand name of the enteral or infant formula product such as "ACME
+     * Adult Standard Formula".
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $baseFormulaProductName
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setBaseFormulaProductName(null|string|FHIRStringPrimitive|FHIRString $baseFormulaProductName = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $baseFormulaProductName && !($baseFormulaProductName instanceof FHIRString)) {
+            $baseFormulaProductName = new FHIRString($baseFormulaProductName);
+        }
+        $this->_trackValueSet($this->baseFormulaProductName, $baseFormulaProductName);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME])) {
+            $this->_primitiveXmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME][0] = $xmlLocation;
+        $this->baseFormulaProductName = $baseFormulaProductName;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the type of modular component such as protein, carbohydrate, fat or
+     * fiber to be provided in addition to or mixed with the base formula.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    public function getAdditiveType(): null|FHIRCodeableConcept
+    {
+        return $this->additiveType;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the type of modular component such as protein, carbohydrate, fat or
+     * fiber to be provided in addition to or mixed with the base formula.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $additiveType
+     * @return static
+     */
+    public function setAdditiveType(null|FHIRCodeableConcept $additiveType = null): self
+    {
+        if (null === $additiveType) {
+            $additiveType = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->additiveType, $additiveType);
+        $this->additiveType = $additiveType;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The product or brand name of the type of modular component to be added to the
+     * formula.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getAdditiveProductName(): null|FHIRString
+    {
+        return $this->additiveProductName;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The product or brand name of the type of modular component to be added to the
+     * formula.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $additiveProductName
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setAdditiveProductName(null|string|FHIRStringPrimitive|FHIRString $additiveProductName = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $additiveProductName && !($additiveProductName instanceof FHIRString)) {
+            $additiveProductName = new FHIRString($additiveProductName);
+        }
+        $this->_trackValueSet($this->additiveProductName, $additiveProductName);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_ADDITIVE_PRODUCT_NAME])) {
+            $this->_primitiveXmlLocations[self::FIELD_ADDITIVE_PRODUCT_NAME] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_ADDITIVE_PRODUCT_NAME][0] = $xmlLocation;
+        $this->additiveProductName = $additiveProductName;
         return $this;
     }
 
@@ -645,7 +513,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
-    public function getCaloricDensity()
+    public function getCaloricDensity(): null|FHIRQuantity
     {
         return $this->caloricDensity;
     }
@@ -665,45 +533,13 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $caloricDensity
      * @return static
      */
-    public function setCaloricDensity(FHIRQuantity $caloricDensity = null)
+    public function setCaloricDensity(null|FHIRQuantity $caloricDensity = null): self
     {
+        if (null === $caloricDensity) {
+            $caloricDensity = new FHIRQuantity();
+        }
+        $this->_trackValueSet($this->caloricDensity, $caloricDensity);
         $this->caloricDensity = $caloricDensity;
-        return $this;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The maximum total quantity of formula that may be administered to a subject over
-     * the period of time, e.g. 1440 mL over 24 hours.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
-     */
-    public function getMaxVolumeToDeliver()
-    {
-        return $this->maxVolumeToDeliver;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The maximum total quantity of formula that may be administered to a subject over
-     * the period of time, e.g. 1440 mL over 24 hours.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $maxVolumeToDeliver
-     * @return static
-     */
-    public function setMaxVolumeToDeliver(FHIRQuantity $maxVolumeToDeliver = null)
-    {
-        $this->maxVolumeToDeliver = $maxVolumeToDeliver;
         return $this;
     }
 
@@ -719,7 +555,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    public function getRouteofAdministration()
+    public function getRouteofAdministration(): null|FHIRCodeableConcept
     {
         return $this->routeofAdministration;
     }
@@ -737,9 +573,132 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $routeofAdministration
      * @return static
      */
-    public function setRouteofAdministration(FHIRCodeableConcept $routeofAdministration = null)
+    public function setRouteofAdministration(null|FHIRCodeableConcept $routeofAdministration = null): self
     {
+        if (null === $routeofAdministration) {
+            $routeofAdministration = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->routeofAdministration, $routeofAdministration);
         $this->routeofAdministration = $routeofAdministration;
+        return $this;
+    }
+
+    /**
+     * A request to supply a diet, formula feeding (enteral) or oral nutritional
+     * supplement to a patient/resident.
+     *
+     * Formula administration instructions as structured data. This repeating structure
+     * allows for changing the administration rate or volume over time for both bolus
+     * and continuous feeding. An example of this would be an instruction to increase
+     * the rate of continuous feeding every 2 hours.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration[]
+     */
+    public function getAdministration(): null|array
+    {
+        return $this->administration;
+    }
+
+    /**
+     * A request to supply a diet, formula feeding (enteral) or oral nutritional
+     * supplement to a patient/resident.
+     *
+     * Formula administration instructions as structured data. This repeating structure
+     * allows for changing the administration rate or volume over time for both bolus
+     * and continuous feeding. An example of this would be an instruction to increase
+     * the rate of continuous feeding every 2 hours.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration $administration
+     * @return static
+     */
+    public function addAdministration(null|FHIRNutritionOrderAdministration $administration = null): self
+    {
+        if (null === $administration) {
+            $administration = new FHIRNutritionOrderAdministration();
+        }
+        $this->_trackValueAdded();
+        $this->administration[] = $administration;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The maximum total quantity of formula that may be administered to a subject over
+     * the period of time, e.g. 1440 mL over 24 hours.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
+     */
+    public function getMaxVolumeToDeliver(): null|FHIRQuantity
+    {
+        return $this->maxVolumeToDeliver;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The maximum total quantity of formula that may be administered to a subject over
+     * the period of time, e.g. 1440 mL over 24 hours.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $maxVolumeToDeliver
+     * @return static
+     */
+    public function setMaxVolumeToDeliver(null|FHIRQuantity $maxVolumeToDeliver = null): self
+    {
+        if (null === $maxVolumeToDeliver) {
+            $maxVolumeToDeliver = new FHIRQuantity();
+        }
+        $this->_trackValueSet($this->maxVolumeToDeliver, $maxVolumeToDeliver);
+        $this->maxVolumeToDeliver = $maxVolumeToDeliver;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Free text formula administration, feeding instructions or additional
+     * instructions or information.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getAdministrationInstruction(): null|FHIRString
+    {
+        return $this->administrationInstruction;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Free text formula administration, feeding instructions or additional
+     * instructions or information.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $administrationInstruction
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setAdministrationInstruction(null|string|FHIRStringPrimitive|FHIRString $administrationInstruction = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $administrationInstruction && !($administrationInstruction instanceof FHIRString)) {
+            $administrationInstruction = new FHIRString($administrationInstruction);
+        }
+        $this->_trackValueSet($this->administrationInstruction, $administrationInstruction);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
+            $this->_primitiveXmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION][0] = $xmlLocation;
+        $this->administrationInstruction = $administrationInstruction;
         return $this;
     }
 
@@ -749,9 +708,9 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -760,18 +719,38 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAdditiveProductName())) {
+        if (null !== ($v = $this->getBaseFormulaType())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ADDITIVE_PRODUCT_NAME] = $fieldErrs;
+                $errs[self::FIELD_BASE_FORMULA_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBaseFormulaProductName())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getAdditiveType())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_ADDITIVE_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getAdditiveProductName())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ADDITIVE_PRODUCT_NAME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCaloricDensity())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CALORIC_DENSITY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRouteofAdministration())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ROUTEOF_ADMINISTRATION] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getAdministration())) {
@@ -781,81 +760,25 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getAdministrationInstruction())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ADMINISTRATION_INSTRUCTION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getBaseFormulaProductName())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getBaseFormulaType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_BASE_FORMULA_TYPE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getCaloricDensity())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CALORIC_DENSITY] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getMaxVolumeToDeliver())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_MAX_VOLUME_TO_DELIVER] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getRouteofAdministration())) {
+        if (null !== ($v = $this->getAdministrationInstruction())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ROUTEOF_ADMINISTRATION] = $fieldErrs;
+                $errs[self::FIELD_ADMINISTRATION_INSTRUCTION] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_ADDITIVE_PRODUCT_NAME])) {
-            $v = $this->getAdditiveProductName();
-            foreach($validationRules[self::FIELD_ADDITIVE_PRODUCT_NAME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ADDITIVE_PRODUCT_NAME, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_BASE_FORMULA_TYPE])) {
+            $v = $this->getBaseFormulaType();
+            foreach($validationRules[self::FIELD_BASE_FORMULA_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_BASE_FORMULA_TYPE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ADDITIVE_PRODUCT_NAME])) {
-                        $errs[self::FIELD_ADDITIVE_PRODUCT_NAME] = [];
+                    if (!isset($errs[self::FIELD_BASE_FORMULA_TYPE])) {
+                        $errs[self::FIELD_BASE_FORMULA_TYPE] = [];
                     }
-                    $errs[self::FIELD_ADDITIVE_PRODUCT_NAME][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ADDITIVE_TYPE])) {
-            $v = $this->getAdditiveType();
-            foreach($validationRules[self::FIELD_ADDITIVE_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ADDITIVE_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ADDITIVE_TYPE])) {
-                        $errs[self::FIELD_ADDITIVE_TYPE] = [];
-                    }
-                    $errs[self::FIELD_ADDITIVE_TYPE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ADMINISTRATION])) {
-            $v = $this->getAdministration();
-            foreach($validationRules[self::FIELD_ADMINISTRATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ADMINISTRATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ADMINISTRATION])) {
-                        $errs[self::FIELD_ADMINISTRATION] = [];
-                    }
-                    $errs[self::FIELD_ADMINISTRATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
-            $v = $this->getAdministrationInstruction();
-            foreach($validationRules[self::FIELD_ADMINISTRATION_INSTRUCTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ADMINISTRATION_INSTRUCTION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
-                        $errs[self::FIELD_ADMINISTRATION_INSTRUCTION] = [];
-                    }
-                    $errs[self::FIELD_ADMINISTRATION_INSTRUCTION][$rule] = $err;
+                    $errs[self::FIELD_BASE_FORMULA_TYPE][$rule] = $err;
                 }
             }
         }
@@ -871,15 +794,27 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_BASE_FORMULA_TYPE])) {
-            $v = $this->getBaseFormulaType();
-            foreach($validationRules[self::FIELD_BASE_FORMULA_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_BASE_FORMULA_TYPE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ADDITIVE_TYPE])) {
+            $v = $this->getAdditiveType();
+            foreach($validationRules[self::FIELD_ADDITIVE_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ADDITIVE_TYPE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BASE_FORMULA_TYPE])) {
-                        $errs[self::FIELD_BASE_FORMULA_TYPE] = [];
+                    if (!isset($errs[self::FIELD_ADDITIVE_TYPE])) {
+                        $errs[self::FIELD_ADDITIVE_TYPE] = [];
                     }
-                    $errs[self::FIELD_BASE_FORMULA_TYPE][$rule] = $err;
+                    $errs[self::FIELD_ADDITIVE_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ADDITIVE_PRODUCT_NAME])) {
+            $v = $this->getAdditiveProductName();
+            foreach($validationRules[self::FIELD_ADDITIVE_PRODUCT_NAME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ADDITIVE_PRODUCT_NAME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ADDITIVE_PRODUCT_NAME])) {
+                        $errs[self::FIELD_ADDITIVE_PRODUCT_NAME] = [];
+                    }
+                    $errs[self::FIELD_ADDITIVE_PRODUCT_NAME][$rule] = $err;
                 }
             }
         }
@@ -895,6 +830,30 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_ROUTEOF_ADMINISTRATION])) {
+            $v = $this->getRouteofAdministration();
+            foreach($validationRules[self::FIELD_ROUTEOF_ADMINISTRATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ROUTEOF_ADMINISTRATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ROUTEOF_ADMINISTRATION])) {
+                        $errs[self::FIELD_ROUTEOF_ADMINISTRATION] = [];
+                    }
+                    $errs[self::FIELD_ROUTEOF_ADMINISTRATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ADMINISTRATION])) {
+            $v = $this->getAdministration();
+            foreach($validationRules[self::FIELD_ADMINISTRATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ADMINISTRATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ADMINISTRATION])) {
+                        $errs[self::FIELD_ADMINISTRATION] = [];
+                    }
+                    $errs[self::FIELD_ADMINISTRATION][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_MAX_VOLUME_TO_DELIVER])) {
             $v = $this->getMaxVolumeToDeliver();
             foreach($validationRules[self::FIELD_MAX_VOLUME_TO_DELIVER] as $rule => $constraint) {
@@ -907,15 +866,15 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ROUTEOF_ADMINISTRATION])) {
-            $v = $this->getRouteofAdministration();
-            foreach($validationRules[self::FIELD_ROUTEOF_ADMINISTRATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ROUTEOF_ADMINISTRATION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
+            $v = $this->getAdministrationInstruction();
+            foreach($validationRules[self::FIELD_ADMINISTRATION_INSTRUCTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_NUTRITION_ORDER_DOT_ENTERAL_FORMULA, self::FIELD_ADMINISTRATION_INSTRUCTION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ROUTEOF_ADMINISTRATION])) {
-                        $errs[self::FIELD_ROUTEOF_ADMINISTRATION] = [];
+                    if (!isset($errs[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
+                        $errs[self::FIELD_ADMINISTRATION_INSTRUCTION] = [];
                     }
-                    $errs[self::FIELD_ROUTEOF_ADMINISTRATION][$rule] = $err;
+                    $errs[self::FIELD_ADMINISTRATION_INSTRUCTION][$rule] = $err;
                 }
             }
         }
@@ -959,215 +918,262 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRNutritionOrderEnteralFormula::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRNutritionOrderEnteralFormula::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRNutritionOrderEnteralFormula;
-        } elseif (!is_object($type) || !($type instanceof FHIRNutritionOrderEnteralFormula)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRNutritionOrderEnteralFormula)) {
             throw new \RuntimeException(sprintf(
-                'FHIRNutritionOrderEnteralFormula::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_BASE_FORMULA_TYPE === $childName) {
+                $type->setBaseFormulaType(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_BASE_FORMULA_PRODUCT_NAME === $childName) {
+                $type->setBaseFormulaProductName(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_ADDITIVE_TYPE === $childName) {
+                $type->setAdditiveType(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ADDITIVE_PRODUCT_NAME === $childName) {
+                $type->setAdditiveProductName(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CALORIC_DENSITY === $childName) {
+                $type->setCaloricDensity(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ROUTEOF_ADMINISTRATION === $childName) {
+                $type->setRouteofAdministration(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ADMINISTRATION === $childName) {
+                $type->addAdministration(FHIRNutritionOrderAdministration::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MAX_VOLUME_TO_DELIVER === $childName) {
+                $type->setMaxVolumeToDeliver(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ADMINISTRATION_INSTRUCTION === $childName) {
+                $type->setAdministrationInstruction(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->additiveProductName)) {
-            $type->setAdditiveProductName(FHIRString::xmlUnserialize($children->additiveProductName));
-        }
-        if (isset($attributes->additiveProductName)) {
-            $pt = $type->getAdditiveProductName();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->additiveProductName);
-            } else {
-                $type->setAdditiveProductName((string)$attributes->additiveProductName);
-            }
-        }
-        if (isset($children->additiveType)) {
-            $type->setAdditiveType(FHIRCodeableConcept::xmlUnserialize($children->additiveType));
-        }
-        if (isset($children->administration)) {
-            foreach($children->administration as $child) {
-                $type->addAdministration(FHIRNutritionOrderAdministration::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->administrationInstruction)) {
-            $type->setAdministrationInstruction(FHIRString::xmlUnserialize($children->administrationInstruction));
-        }
-        if (isset($attributes->administrationInstruction)) {
-            $pt = $type->getAdministrationInstruction();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->administrationInstruction);
-            } else {
-                $type->setAdministrationInstruction((string)$attributes->administrationInstruction);
-            }
-        }
-        if (isset($children->baseFormulaProductName)) {
-            $type->setBaseFormulaProductName(FHIRString::xmlUnserialize($children->baseFormulaProductName));
-        }
-        if (isset($attributes->baseFormulaProductName)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_BASE_FORMULA_PRODUCT_NAME])) {
             $pt = $type->getBaseFormulaProductName();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->baseFormulaProductName);
+                $pt->setValue((string)$attributes[self::FIELD_BASE_FORMULA_PRODUCT_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setBaseFormulaProductName((string)$attributes->baseFormulaProductName);
+                $type->setBaseFormulaProductName((string)$attributes[self::FIELD_BASE_FORMULA_PRODUCT_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->baseFormulaType)) {
-            $type->setBaseFormulaType(FHIRCodeableConcept::xmlUnserialize($children->baseFormulaType));
+        if (isset($attributes[self::FIELD_ADDITIVE_PRODUCT_NAME])) {
+            $pt = $type->getAdditiveProductName();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ADDITIVE_PRODUCT_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setAdditiveProductName((string)$attributes[self::FIELD_ADDITIVE_PRODUCT_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($children->caloricDensity)) {
-            $type->setCaloricDensity(FHIRQuantity::xmlUnserialize($children->caloricDensity));
+        if (isset($attributes[self::FIELD_ADMINISTRATION_INSTRUCTION])) {
+            $pt = $type->getAdministrationInstruction();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ADMINISTRATION_INSTRUCTION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setAdministrationInstruction((string)$attributes[self::FIELD_ADMINISTRATION_INSTRUCTION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($children->maxVolumeToDeliver)) {
-            $type->setMaxVolumeToDeliver(FHIRQuantity::xmlUnserialize($children->maxVolumeToDeliver));
-        }
-        if (isset($children->routeofAdministration)) {
-            $type->setRouteofAdministration(FHIRCodeableConcept::xmlUnserialize($children->routeofAdministration));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAdditiveProductName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_PRODUCT_NAME, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'NutritionOrderEnteralFormula', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBaseFormulaProductName())) {
+            $xw->writeAttribute(self::FIELD_BASE_FORMULA_PRODUCT_NAME, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ADDITIVE_PRODUCT_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAdditiveProductName())) {
+            $xw->writeAttribute(self::FIELD_ADDITIVE_PRODUCT_NAME, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAdministrationInstruction())) {
+            $xw->writeAttribute(self::FIELD_ADMINISTRATION_INSTRUCTION, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getBaseFormulaType())) {
+            $xw->startElement(self::FIELD_BASE_FORMULA_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BASE_FORMULA_PRODUCT_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBaseFormulaProductName())) {
+            $xw->startElement(self::FIELD_BASE_FORMULA_PRODUCT_NAME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getAdditiveType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADDITIVE_TYPE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_ADDITIVE_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getAdministration())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_ADMINISTRATION, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getAdministrationInstruction())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADMINISTRATION_INSTRUCTION, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getBaseFormulaProductName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BASE_FORMULA_PRODUCT_NAME, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getBaseFormulaType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BASE_FORMULA_TYPE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ADDITIVE_PRODUCT_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAdditiveProductName())) {
+            $xw->startElement(self::FIELD_ADDITIVE_PRODUCT_NAME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getCaloricDensity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CALORIC_DENSITY, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getMaxVolumeToDeliver())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_MAX_VOLUME_TO_DELIVER, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_CALORIC_DENSITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getRouteofAdministration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ROUTEOF_ADMINISTRATION, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_ROUTEOF_ADMINISTRATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        foreach ($this->getAdministration() as $v) {
+            $xw->startElement(self::FIELD_ADMINISTRATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getMaxVolumeToDeliver())) {
+            $xw->startElement(self::FIELD_MAX_VOLUME_TO_DELIVER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ADMINISTRATION_INSTRUCTION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAdministrationInstruction())) {
+            $xw->startElement(self::FIELD_ADMINISTRATION_INSTRUCTION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAdditiveProductName())) {
-            $a[self::FIELD_ADDITIVE_PRODUCT_NAME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_ADDITIVE_PRODUCT_NAME_EXT] = $enc;
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getBaseFormulaType())) {
+            $out->{self::FIELD_BASE_FORMULA_TYPE} = $v;
+        }
+        if (null !== ($v = $this->getBaseFormulaProductName())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_BASE_FORMULA_PRODUCT_NAME} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getAdditiveType())) {
-            $a[self::FIELD_ADDITIVE_TYPE] = $v;
+            $out->{self::FIELD_ADDITIVE_TYPE} = $v;
         }
-        if ([] !== ($vs = $this->getAdministration())) {
-            $a[self::FIELD_ADMINISTRATION] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_ADMINISTRATION][] = $v;
+        if (null !== ($v = $this->getAdditiveProductName())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_ADDITIVE_PRODUCT_NAME} = $val;
             }
-        }
-        if (null !== ($v = $this->getAdministrationInstruction())) {
-            $a[self::FIELD_ADMINISTRATION_INSTRUCTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_ADMINISTRATION_INSTRUCTION_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_ADDITIVE_PRODUCT_NAME_EXT} = $ext;
             }
-        }
-        if (null !== ($v = $this->getBaseFormulaProductName())) {
-            $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_BASE_FORMULA_PRODUCT_NAME_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getBaseFormulaType())) {
-            $a[self::FIELD_BASE_FORMULA_TYPE] = $v;
         }
         if (null !== ($v = $this->getCaloricDensity())) {
-            $a[self::FIELD_CALORIC_DENSITY] = $v;
-        }
-        if (null !== ($v = $this->getMaxVolumeToDeliver())) {
-            $a[self::FIELD_MAX_VOLUME_TO_DELIVER] = $v;
+            $out->{self::FIELD_CALORIC_DENSITY} = $v;
         }
         if (null !== ($v = $this->getRouteofAdministration())) {
-            $a[self::FIELD_ROUTEOF_ADMINISTRATION] = $v;
+            $out->{self::FIELD_ROUTEOF_ADMINISTRATION} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getAdministration())) {
+            $out->{self::FIELD_ADMINISTRATION} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_ADMINISTRATION}[] = $v;
+            }
         }
-        return $a;
-    }
+        if (null !== ($v = $this->getMaxVolumeToDeliver())) {
+            $out->{self::FIELD_MAX_VOLUME_TO_DELIVER} = $v;
+        }
+        if (null !== ($v = $this->getAdministrationInstruction())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_ADMINISTRATION_INSTRUCTION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_ADMINISTRATION_INSTRUCTION_EXT} = $ext;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

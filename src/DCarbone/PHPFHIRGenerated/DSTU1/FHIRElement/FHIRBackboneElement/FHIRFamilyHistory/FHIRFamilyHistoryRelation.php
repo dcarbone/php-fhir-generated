@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,16 +57,25 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFa
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRBooleanPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRDatePrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter;
 
 /**
  * Significant health events and conditions for people related to the subject
@@ -79,29 +88,59 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION;
-    const FIELD_BORN_DATE = 'bornDate';
-    const FIELD_BORN_DATE_EXT = '_bornDate';
-    const FIELD_BORN_PERIOD = 'bornPeriod';
-    const FIELD_BORN_STRING = 'bornString';
-    const FIELD_BORN_STRING_EXT = '_bornString';
-    const FIELD_CONDITION = 'condition';
-    const FIELD_DECEASED_AGE = 'deceasedAge';
-    const FIELD_DECEASED_BOOLEAN = 'deceasedBoolean';
-    const FIELD_DECEASED_BOOLEAN_EXT = '_deceasedBoolean';
-    const FIELD_DECEASED_DATE = 'deceasedDate';
-    const FIELD_DECEASED_DATE_EXT = '_deceasedDate';
-    const FIELD_DECEASED_RANGE = 'deceasedRange';
-    const FIELD_DECEASED_STRING = 'deceasedString';
-    const FIELD_DECEASED_STRING_EXT = '_deceasedString';
+
     const FIELD_NAME = 'name';
     const FIELD_NAME_EXT = '_name';
+    const FIELD_RELATIONSHIP = 'relationship';
+    const FIELD_BORN_PERIOD = 'bornPeriod';
+    const FIELD_BORN_DATE = 'bornDate';
+    const FIELD_BORN_DATE_EXT = '_bornDate';
+    const FIELD_BORN_STRING = 'bornString';
+    const FIELD_BORN_STRING_EXT = '_bornString';
+    const FIELD_DECEASED_BOOLEAN = 'deceasedBoolean';
+    const FIELD_DECEASED_BOOLEAN_EXT = '_deceasedBoolean';
+    const FIELD_DECEASED_AGE = 'deceasedAge';
+    const FIELD_DECEASED_RANGE = 'deceasedRange';
+    const FIELD_DECEASED_DATE = 'deceasedDate';
+    const FIELD_DECEASED_DATE_EXT = '_deceasedDate';
+    const FIELD_DECEASED_STRING = 'deceasedString';
+    const FIELD_DECEASED_STRING_EXT = '_deceasedString';
     const FIELD_NOTE = 'note';
     const FIELD_NOTE_EXT = '_note';
-    const FIELD_RELATIONSHIP = 'relationship';
+    const FIELD_CONDITION = 'condition';
 
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * This will either be a name or a description. E.g. "Aunt Susan", "my cousin with
+     * the red hair".
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $name = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of relationship this person has to the patient (father, mother, brother
+     * etc.).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $relationship = null;
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The actual or approximate date of birth of the relative.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
+     */
+    protected null|FHIRPeriod $bornPeriod = null;
     /**
      * A date, or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -112,19 +151,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
      */
-    protected $bornDate = null;
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The actual or approximate date of birth of the relative.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
-     */
-    protected $bornPeriod = null;
-
+    protected null|FHIRDate $bornDate = null;
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -133,32 +160,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    protected $bornString = null;
-
-    /**
-     * Significant health events and conditions for people related to the subject
-     * relevant in the context of care for the subject.
-     *
-     * The significant Conditions (or condition) that the family member had. This is a
-     * repeating section to allow a system to represent more than one condition per
-     * resource, though there is nothing stopping multiple resources - one per
-     * condition.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition[]
-     */
-    protected $condition = [];
-
-    /**
-     * If this resource is indicating that the related person is deceased, then an
-     * indicator of whether the person is deceased (yes) or not (no) or the age or age
-     * range or description of age at death - can be indicated here. If the reason for
-     * death is known, then it can be indicated in the outcome code of the condition -
-     * in this case the deceased property should still be set.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge
-     */
-    protected $deceasedAge = null;
-
+    protected null|FHIRString $bornString = null;
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -171,24 +173,17 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    protected $deceasedBoolean = null;
-
+    protected null|FHIRBoolean $deceasedBoolean = null;
     /**
-     * A date, or partial date (e.g. just year or year + month). There is no time zone.
-     * The format is a union of the schema types gYear, gYearMonth and date. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
      * If this resource is indicating that the related person is deceased, then an
      * indicator of whether the person is deceased (yes) or not (no) or the age or age
      * range or description of age at death - can be indicated here. If the reason for
      * death is known, then it can be indicated in the outcome code of the condition -
      * in this case the deceased property should still be set.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge
      */
-    protected $deceasedDate = null;
-
+    protected null|FHIRAge $deceasedAge = null;
     /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
@@ -202,8 +197,22 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange
      */
-    protected $deceasedRange = null;
-
+    protected null|FHIRRange $deceasedRange = null;
+    /**
+     * A date, or partial date (e.g. just year or year + month). There is no time zone.
+     * The format is a union of the schema types gYear, gYearMonth and date. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If this resource is indicating that the related person is deceased, then an
+     * indicator of whether the person is deceased (yes) or not (no) or the age or age
+     * range or description of age at death - can be indicated here. If the reason for
+     * death is known, then it can be indicated in the outcome code of the condition -
+     * in this case the deceased property should still be set.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
+     */
+    protected null|FHIRDate $deceasedDate = null;
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -216,19 +225,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    protected $deceasedString = null;
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * This will either be a name or a description. E.g. "Aunt Susan", "my cousin with
-     * the red hair".
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
-     */
-    protected $name = null;
-
+    protected null|FHIRString $deceasedString = null;
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -239,7 +236,249 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    protected $note = null;
+    protected null|FHIRString $note = null;
+    /**
+     * Significant health events and conditions for people related to the subject
+     * relevant in the context of care for the subject.
+     *
+     * The significant Conditions (or condition) that the family member had. This is a
+     * repeating section to allow a system to represent more than one condition per
+     * resource, though there is nothing stopping multiple resources - one per
+     * condition.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition[]
+     */
+    protected null|array $condition = [];
+
+    /**
+     * Validation map for fields in type FamilyHistory.Relation
+     * @var array
+     */
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
+
+    /**
+     * FHIRFamilyHistoryRelation Constructor
+     * @param null|array $data
+     */
+    public function __construct(null|array $data = null)
+    {
+        if (null === $data || [] === $data) {
+            return;
+        }
+        parent::__construct($data);
+        if (array_key_exists(self::FIELD_NAME, $data) || array_key_exists(self::FIELD_NAME_EXT, $data)) {
+            $value = $data[self::FIELD_NAME] ?? null;
+            $ext = (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) ? $data[self::FIELD_NAME_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setName($value);
+                } else if (is_array($value)) {
+                    $this->setName(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setName(new FHIRString($ext));
+            } else {
+                $this->setName(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_RELATIONSHIP, $data)) {
+            if ($data[self::FIELD_RELATIONSHIP] instanceof FHIRCodeableConcept) {
+                $this->setRelationship($data[self::FIELD_RELATIONSHIP]);
+            } else {
+                $this->setRelationship(new FHIRCodeableConcept($data[self::FIELD_RELATIONSHIP]));
+            }
+        }
+        if (array_key_exists(self::FIELD_BORN_PERIOD, $data)) {
+            if ($data[self::FIELD_BORN_PERIOD] instanceof FHIRPeriod) {
+                $this->setBornPeriod($data[self::FIELD_BORN_PERIOD]);
+            } else {
+                $this->setBornPeriod(new FHIRPeriod($data[self::FIELD_BORN_PERIOD]));
+            }
+        }
+        if (array_key_exists(self::FIELD_BORN_DATE, $data) || array_key_exists(self::FIELD_BORN_DATE_EXT, $data)) {
+            $value = $data[self::FIELD_BORN_DATE] ?? null;
+            $ext = (isset($data[self::FIELD_BORN_DATE_EXT]) && is_array($data[self::FIELD_BORN_DATE_EXT])) ? $data[self::FIELD_BORN_DATE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDate) {
+                    $this->setBornDate($value);
+                } else if (is_array($value)) {
+                    $this->setBornDate(new FHIRDate(array_merge($ext, $value)));
+                } else {
+                    $this->setBornDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setBornDate(new FHIRDate($ext));
+            } else {
+                $this->setBornDate(new FHIRDate(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_BORN_STRING, $data) || array_key_exists(self::FIELD_BORN_STRING_EXT, $data)) {
+            $value = $data[self::FIELD_BORN_STRING] ?? null;
+            $ext = (isset($data[self::FIELD_BORN_STRING_EXT]) && is_array($data[self::FIELD_BORN_STRING_EXT])) ? $data[self::FIELD_BORN_STRING_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setBornString($value);
+                } else if (is_array($value)) {
+                    $this->setBornString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setBornString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setBornString(new FHIRString($ext));
+            } else {
+                $this->setBornString(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_DECEASED_BOOLEAN, $data) || array_key_exists(self::FIELD_DECEASED_BOOLEAN_EXT, $data)) {
+            $value = $data[self::FIELD_DECEASED_BOOLEAN] ?? null;
+            $ext = (isset($data[self::FIELD_DECEASED_BOOLEAN_EXT]) && is_array($data[self::FIELD_DECEASED_BOOLEAN_EXT])) ? $data[self::FIELD_DECEASED_BOOLEAN_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setDeceasedBoolean($value);
+                } else if (is_array($value)) {
+                    $this->setDeceasedBoolean(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setDeceasedBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDeceasedBoolean(new FHIRBoolean($ext));
+            } else {
+                $this->setDeceasedBoolean(new FHIRBoolean(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_DECEASED_AGE, $data)) {
+            if ($data[self::FIELD_DECEASED_AGE] instanceof FHIRAge) {
+                $this->setDeceasedAge($data[self::FIELD_DECEASED_AGE]);
+            } else {
+                $this->setDeceasedAge(new FHIRAge($data[self::FIELD_DECEASED_AGE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DECEASED_RANGE, $data)) {
+            if ($data[self::FIELD_DECEASED_RANGE] instanceof FHIRRange) {
+                $this->setDeceasedRange($data[self::FIELD_DECEASED_RANGE]);
+            } else {
+                $this->setDeceasedRange(new FHIRRange($data[self::FIELD_DECEASED_RANGE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DECEASED_DATE, $data) || array_key_exists(self::FIELD_DECEASED_DATE_EXT, $data)) {
+            $value = $data[self::FIELD_DECEASED_DATE] ?? null;
+            $ext = (isset($data[self::FIELD_DECEASED_DATE_EXT]) && is_array($data[self::FIELD_DECEASED_DATE_EXT])) ? $data[self::FIELD_DECEASED_DATE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDate) {
+                    $this->setDeceasedDate($value);
+                } else if (is_array($value)) {
+                    $this->setDeceasedDate(new FHIRDate(array_merge($ext, $value)));
+                } else {
+                    $this->setDeceasedDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDeceasedDate(new FHIRDate($ext));
+            } else {
+                $this->setDeceasedDate(new FHIRDate(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_DECEASED_STRING, $data) || array_key_exists(self::FIELD_DECEASED_STRING_EXT, $data)) {
+            $value = $data[self::FIELD_DECEASED_STRING] ?? null;
+            $ext = (isset($data[self::FIELD_DECEASED_STRING_EXT]) && is_array($data[self::FIELD_DECEASED_STRING_EXT])) ? $data[self::FIELD_DECEASED_STRING_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDeceasedString($value);
+                } else if (is_array($value)) {
+                    $this->setDeceasedString(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDeceasedString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDeceasedString(new FHIRString($ext));
+            } else {
+                $this->setDeceasedString(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_NOTE, $data) || array_key_exists(self::FIELD_NOTE_EXT, $data)) {
+            $value = $data[self::FIELD_NOTE] ?? null;
+            $ext = (isset($data[self::FIELD_NOTE_EXT]) && is_array($data[self::FIELD_NOTE_EXT])) ? $data[self::FIELD_NOTE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setNote($value);
+                } else if (is_array($value)) {
+                    $this->setNote(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setNote(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setNote(new FHIRString($ext));
+            } else {
+                $this->setNote(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_CONDITION, $data)) {
+            if (is_array($data[self::FIELD_CONDITION])) {
+                foreach($data[self::FIELD_CONDITION] as $v) {
+                    if ($v instanceof FHIRFamilyHistoryCondition) {
+                        $this->addCondition($v);
+                    } else {
+                        $this->addCondition(new FHIRFamilyHistoryCondition($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_CONDITION] instanceof FHIRFamilyHistoryCondition) {
+                $this->addCondition($data[self::FIELD_CONDITION]);
+            } else {
+                $this->addCondition(new FHIRFamilyHistoryCondition($data[self::FIELD_CONDITION]));
+            }
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function _getFhirTypeName(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * This will either be a name or a description. E.g. "Aunt Susan", "my cousin with
+     * the red hair".
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
+     */
+    public function getName(): null|FHIRString
+    {
+        return $this->name;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * This will either be a name or a description. E.g. "Aunt Susan", "my cousin with
+     * the red hair".
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $name
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $name && !($name instanceof FHIRString)) {
+            $name = new FHIRString($name);
+        }
+        $this->_trackValueSet($this->name, $name);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_NAME])) {
+            $this->_primitiveXmlLocations[self::FIELD_NAME] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_NAME][0] = $xmlLocation;
+        $this->name = $name;
+        return $this;
+    }
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -250,298 +489,32 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * The type of relationship this person has to the patient (father, mother, brother
      * etc.).
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    protected $relationship = null;
-
-    /**
-     * Validation map for fields in type FamilyHistory.Relation
-     * @var array
-     */
-    private static $_validationRules = [    ];
-
-    /**
-     * FHIRFamilyHistoryRelation Constructor
-     * @param null|array $data
-     */
-    public function __construct($data = null)
+    public function getRelationship(): null|FHIRCodeableConcept
     {
-        if (null === $data || [] === $data) {
-            return;
-        }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRFamilyHistoryRelation::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
-        parent::__construct($data);
-        if (isset($data[self::FIELD_BORN_DATE]) || isset($data[self::FIELD_BORN_DATE_EXT])) {
-            if (isset($data[self::FIELD_BORN_DATE])) {
-                $value = $data[self::FIELD_BORN_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_BORN_DATE_EXT]) && is_array($data[self::FIELD_BORN_DATE_EXT])) {
-                $ext = $data[self::FIELD_BORN_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDate) {
-                    $this->setBornDate($value);
-                } else if (is_array($value)) {
-                    $this->setBornDate(new FHIRDate(array_merge($ext, $value)));
-                } else {
-                    $this->setBornDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setBornDate(new FHIRDate($ext));
-            }
-        }
-        if (isset($data[self::FIELD_BORN_PERIOD])) {
-            if ($data[self::FIELD_BORN_PERIOD] instanceof FHIRPeriod) {
-                $this->setBornPeriod($data[self::FIELD_BORN_PERIOD]);
-            } else {
-                $this->setBornPeriod(new FHIRPeriod($data[self::FIELD_BORN_PERIOD]));
-            }
-        }
-        if (isset($data[self::FIELD_BORN_STRING]) || isset($data[self::FIELD_BORN_STRING_EXT])) {
-            if (isset($data[self::FIELD_BORN_STRING])) {
-                $value = $data[self::FIELD_BORN_STRING];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_BORN_STRING_EXT]) && is_array($data[self::FIELD_BORN_STRING_EXT])) {
-                $ext = $data[self::FIELD_BORN_STRING_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setBornString($value);
-                } else if (is_array($value)) {
-                    $this->setBornString(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setBornString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setBornString(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_CONDITION])) {
-            if (is_array($data[self::FIELD_CONDITION])) {
-                foreach($data[self::FIELD_CONDITION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRFamilyHistoryCondition) {
-                        $this->addCondition($v);
-                    } else {
-                        $this->addCondition(new FHIRFamilyHistoryCondition($v));
-                    }
-                }
-            } else if ($data[self::FIELD_CONDITION] instanceof FHIRFamilyHistoryCondition) {
-                $this->addCondition($data[self::FIELD_CONDITION]);
-            } else {
-                $this->addCondition(new FHIRFamilyHistoryCondition($data[self::FIELD_CONDITION]));
-            }
-        }
-        if (isset($data[self::FIELD_DECEASED_AGE])) {
-            if ($data[self::FIELD_DECEASED_AGE] instanceof FHIRAge) {
-                $this->setDeceasedAge($data[self::FIELD_DECEASED_AGE]);
-            } else {
-                $this->setDeceasedAge(new FHIRAge($data[self::FIELD_DECEASED_AGE]));
-            }
-        }
-        if (isset($data[self::FIELD_DECEASED_BOOLEAN]) || isset($data[self::FIELD_DECEASED_BOOLEAN_EXT])) {
-            if (isset($data[self::FIELD_DECEASED_BOOLEAN])) {
-                $value = $data[self::FIELD_DECEASED_BOOLEAN];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DECEASED_BOOLEAN_EXT]) && is_array($data[self::FIELD_DECEASED_BOOLEAN_EXT])) {
-                $ext = $data[self::FIELD_DECEASED_BOOLEAN_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setDeceasedBoolean($value);
-                } else if (is_array($value)) {
-                    $this->setDeceasedBoolean(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setDeceasedBoolean(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDeceasedBoolean(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DECEASED_DATE]) || isset($data[self::FIELD_DECEASED_DATE_EXT])) {
-            if (isset($data[self::FIELD_DECEASED_DATE])) {
-                $value = $data[self::FIELD_DECEASED_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DECEASED_DATE_EXT]) && is_array($data[self::FIELD_DECEASED_DATE_EXT])) {
-                $ext = $data[self::FIELD_DECEASED_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDate) {
-                    $this->setDeceasedDate($value);
-                } else if (is_array($value)) {
-                    $this->setDeceasedDate(new FHIRDate(array_merge($ext, $value)));
-                } else {
-                    $this->setDeceasedDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDeceasedDate(new FHIRDate($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DECEASED_RANGE])) {
-            if ($data[self::FIELD_DECEASED_RANGE] instanceof FHIRRange) {
-                $this->setDeceasedRange($data[self::FIELD_DECEASED_RANGE]);
-            } else {
-                $this->setDeceasedRange(new FHIRRange($data[self::FIELD_DECEASED_RANGE]));
-            }
-        }
-        if (isset($data[self::FIELD_DECEASED_STRING]) || isset($data[self::FIELD_DECEASED_STRING_EXT])) {
-            if (isset($data[self::FIELD_DECEASED_STRING])) {
-                $value = $data[self::FIELD_DECEASED_STRING];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DECEASED_STRING_EXT]) && is_array($data[self::FIELD_DECEASED_STRING_EXT])) {
-                $ext = $data[self::FIELD_DECEASED_STRING_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDeceasedString($value);
-                } else if (is_array($value)) {
-                    $this->setDeceasedString(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDeceasedString(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDeceasedString(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_NAME]) || isset($data[self::FIELD_NAME_EXT])) {
-            if (isset($data[self::FIELD_NAME])) {
-                $value = $data[self::FIELD_NAME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) {
-                $ext = $data[self::FIELD_NAME_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setName($value);
-                } else if (is_array($value)) {
-                    $this->setName(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setName(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_NOTE]) || isset($data[self::FIELD_NOTE_EXT])) {
-            if (isset($data[self::FIELD_NOTE])) {
-                $value = $data[self::FIELD_NOTE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NOTE_EXT]) && is_array($data[self::FIELD_NOTE_EXT])) {
-                $ext = $data[self::FIELD_NOTE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setNote($value);
-                } else if (is_array($value)) {
-                    $this->setNote(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setNote(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setNote(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_RELATIONSHIP])) {
-            if ($data[self::FIELD_RELATIONSHIP] instanceof FHIRCodeableConcept) {
-                $this->setRelationship($data[self::FIELD_RELATIONSHIP]);
-            } else {
-                $this->setRelationship(new FHIRCodeableConcept($data[self::FIELD_RELATIONSHIP]));
-            }
-        }
+        return $this->relationship;
     }
 
     /**
-     * @return string
-     */
-    public function _getFHIRTypeName()
-    {
-        return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<FamilyHistoryRelation{$xmlns}></FamilyHistoryRelation>";
-    }
-
-    /**
-     * A date, or partial date (e.g. just year or year + month). There is no time zone.
-     * The format is a union of the schema types gYear, gYearMonth and date. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The actual or approximate date of birth of the relative.
+     * The type of relationship this person has to the patient (father, mother, brother
+     * etc.).
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
-     */
-    public function getBornDate()
-    {
-        return $this->bornDate;
-    }
-
-    /**
-     * A date, or partial date (e.g. just year or year + month). There is no time zone.
-     * The format is a union of the schema types gYear, gYearMonth and date. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The actual or approximate date of birth of the relative.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate $bornDate
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $relationship
      * @return static
      */
-    public function setBornDate($bornDate = null)
+    public function setRelationship(null|FHIRCodeableConcept $relationship = null): self
     {
-        if (null === $bornDate) {
-            $this->bornDate = null;
-            return $this;
+        if (null === $relationship) {
+            $relationship = new FHIRCodeableConcept();
         }
-        if ($bornDate instanceof FHIRDate) {
-            $this->bornDate = $bornDate;
-            return $this;
-        }
-        $this->bornDate = new FHIRDate($bornDate);
+        $this->_trackValueSet($this->relationship, $relationship);
+        $this->relationship = $relationship;
         return $this;
     }
 
@@ -554,7 +527,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    public function getBornPeriod()
+    public function getBornPeriod(): null|FHIRPeriod
     {
         return $this->bornPeriod;
     }
@@ -569,9 +542,54 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $bornPeriod
      * @return static
      */
-    public function setBornPeriod(FHIRPeriod $bornPeriod = null)
+    public function setBornPeriod(null|FHIRPeriod $bornPeriod = null): self
     {
+        if (null === $bornPeriod) {
+            $bornPeriod = new FHIRPeriod();
+        }
+        $this->_trackValueSet($this->bornPeriod, $bornPeriod);
         $this->bornPeriod = $bornPeriod;
+        return $this;
+    }
+
+    /**
+     * A date, or partial date (e.g. just year or year + month). There is no time zone.
+     * The format is a union of the schema types gYear, gYearMonth and date. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The actual or approximate date of birth of the relative.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
+     */
+    public function getBornDate(): null|FHIRDate
+    {
+        return $this->bornDate;
+    }
+
+    /**
+     * A date, or partial date (e.g. just year or year + month). There is no time zone.
+     * The format is a union of the schema types gYear, gYearMonth and date. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The actual or approximate date of birth of the relative.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate $bornDate
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setBornDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $bornDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $bornDate && !($bornDate instanceof FHIRDate)) {
+            $bornDate = new FHIRDate($bornDate);
+        }
+        $this->_trackValueSet($this->bornDate, $bornDate);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_BORN_DATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_BORN_DATE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_BORN_DATE][0] = $xmlLocation;
+        $this->bornDate = $bornDate;
         return $this;
     }
 
@@ -583,7 +601,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    public function getBornString()
+    public function getBornString(): null|FHIRString
     {
         return $this->bornString;
     }
@@ -594,112 +612,21 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * The actual or approximate date of birth of the relative.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $bornString
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $bornString
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setBornString($bornString = null)
+    public function setBornString(null|string|FHIRStringPrimitive|FHIRString $bornString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $bornString) {
-            $this->bornString = null;
-            return $this;
+        if (null !== $bornString && !($bornString instanceof FHIRString)) {
+            $bornString = new FHIRString($bornString);
         }
-        if ($bornString instanceof FHIRString) {
-            $this->bornString = $bornString;
-            return $this;
+        $this->_trackValueSet($this->bornString, $bornString);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_BORN_STRING])) {
+            $this->_primitiveXmlLocations[self::FIELD_BORN_STRING] = [];
         }
-        $this->bornString = new FHIRString($bornString);
-        return $this;
-    }
-
-    /**
-     * Significant health events and conditions for people related to the subject
-     * relevant in the context of care for the subject.
-     *
-     * The significant Conditions (or condition) that the family member had. This is a
-     * repeating section to allow a system to represent more than one condition per
-     * resource, though there is nothing stopping multiple resources - one per
-     * condition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition[]
-     */
-    public function getCondition()
-    {
-        return $this->condition;
-    }
-
-    /**
-     * Significant health events and conditions for people related to the subject
-     * relevant in the context of care for the subject.
-     *
-     * The significant Conditions (or condition) that the family member had. This is a
-     * repeating section to allow a system to represent more than one condition per
-     * resource, though there is nothing stopping multiple resources - one per
-     * condition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition $condition
-     * @return static
-     */
-    public function addCondition(FHIRFamilyHistoryCondition $condition = null)
-    {
-        $this->condition[] = $condition;
-        return $this;
-    }
-
-    /**
-     * Significant health events and conditions for people related to the subject
-     * relevant in the context of care for the subject.
-     *
-     * The significant Conditions (or condition) that the family member had. This is a
-     * repeating section to allow a system to represent more than one condition per
-     * resource, though there is nothing stopping multiple resources - one per
-     * condition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition[] $condition
-     * @return static
-     */
-    public function setCondition(array $condition = [])
-    {
-        $this->condition = [];
-        if ([] === $condition) {
-            return $this;
-        }
-        foreach($condition as $v) {
-            if ($v instanceof FHIRFamilyHistoryCondition) {
-                $this->addCondition($v);
-            } else {
-                $this->addCondition(new FHIRFamilyHistoryCondition($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * If this resource is indicating that the related person is deceased, then an
-     * indicator of whether the person is deceased (yes) or not (no) or the age or age
-     * range or description of age at death - can be indicated here. If the reason for
-     * death is known, then it can be indicated in the outcome code of the condition -
-     * in this case the deceased property should still be set.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge
-     */
-    public function getDeceasedAge()
-    {
-        return $this->deceasedAge;
-    }
-
-    /**
-     * If this resource is indicating that the related person is deceased, then an
-     * indicator of whether the person is deceased (yes) or not (no) or the age or age
-     * range or description of age at death - can be indicated here. If the reason for
-     * death is known, then it can be indicated in the outcome code of the condition -
-     * in this case the deceased property should still be set.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
-     * @return static
-     */
-    public function setDeceasedAge(FHIRAge $deceasedAge = null)
-    {
-        $this->deceasedAge = $deceasedAge;
+        $this->_primitiveXmlLocations[self::FIELD_BORN_STRING][0] = $xmlLocation;
+        $this->bornString = $bornString;
         return $this;
     }
 
@@ -715,7 +642,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    public function getDeceasedBoolean()
+    public function getDeceasedBoolean(): null|FHIRBoolean
     {
         return $this->deceasedBoolean;
     }
@@ -730,68 +657,55 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * death is known, then it can be indicated in the outcome code of the condition -
      * in this case the deceased property should still be set.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $deceasedBoolean
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $deceasedBoolean
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDeceasedBoolean($deceasedBoolean = null)
+    public function setDeceasedBoolean(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $deceasedBoolean = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $deceasedBoolean) {
-            $this->deceasedBoolean = null;
-            return $this;
+        if (null !== $deceasedBoolean && !($deceasedBoolean instanceof FHIRBoolean)) {
+            $deceasedBoolean = new FHIRBoolean($deceasedBoolean);
         }
-        if ($deceasedBoolean instanceof FHIRBoolean) {
-            $this->deceasedBoolean = $deceasedBoolean;
-            return $this;
+        $this->_trackValueSet($this->deceasedBoolean, $deceasedBoolean);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN])) {
+            $this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN] = [];
         }
-        $this->deceasedBoolean = new FHIRBoolean($deceasedBoolean);
+        $this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN][0] = $xmlLocation;
+        $this->deceasedBoolean = $deceasedBoolean;
         return $this;
     }
 
     /**
-     * A date, or partial date (e.g. just year or year + month). There is no time zone.
-     * The format is a union of the schema types gYear, gYearMonth and date. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
      * If this resource is indicating that the related person is deceased, then an
      * indicator of whether the person is deceased (yes) or not (no) or the age or age
      * range or description of age at death - can be indicated here. If the reason for
      * death is known, then it can be indicated in the outcome code of the condition -
      * in this case the deceased property should still be set.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge
      */
-    public function getDeceasedDate()
+    public function getDeceasedAge(): null|FHIRAge
     {
-        return $this->deceasedDate;
+        return $this->deceasedAge;
     }
 
     /**
-     * A date, or partial date (e.g. just year or year + month). There is no time zone.
-     * The format is a union of the schema types gYear, gYearMonth and date. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
      * If this resource is indicating that the related person is deceased, then an
      * indicator of whether the person is deceased (yes) or not (no) or the age or age
      * range or description of age at death - can be indicated here. If the reason for
      * death is known, then it can be indicated in the outcome code of the condition -
      * in this case the deceased property should still be set.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate $deceasedDate
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge $deceasedAge
      * @return static
      */
-    public function setDeceasedDate($deceasedDate = null)
+    public function setDeceasedAge(null|FHIRAge $deceasedAge = null): self
     {
-        if (null === $deceasedDate) {
-            $this->deceasedDate = null;
-            return $this;
+        if (null === $deceasedAge) {
+            $deceasedAge = new FHIRAge();
         }
-        if ($deceasedDate instanceof FHIRDate) {
-            $this->deceasedDate = $deceasedDate;
-            return $this;
-        }
-        $this->deceasedDate = new FHIRDate($deceasedDate);
+        $this->_trackValueSet($this->deceasedAge, $deceasedAge);
+        $this->deceasedAge = $deceasedAge;
         return $this;
     }
 
@@ -808,7 +722,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange
      */
-    public function getDeceasedRange()
+    public function getDeceasedRange(): null|FHIRRange
     {
         return $this->deceasedRange;
     }
@@ -827,9 +741,62 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange $deceasedRange
      * @return static
      */
-    public function setDeceasedRange(FHIRRange $deceasedRange = null)
+    public function setDeceasedRange(null|FHIRRange $deceasedRange = null): self
     {
+        if (null === $deceasedRange) {
+            $deceasedRange = new FHIRRange();
+        }
+        $this->_trackValueSet($this->deceasedRange, $deceasedRange);
         $this->deceasedRange = $deceasedRange;
+        return $this;
+    }
+
+    /**
+     * A date, or partial date (e.g. just year or year + month). There is no time zone.
+     * The format is a union of the schema types gYear, gYearMonth and date. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If this resource is indicating that the related person is deceased, then an
+     * indicator of whether the person is deceased (yes) or not (no) or the age or age
+     * range or description of age at death - can be indicated here. If the reason for
+     * death is known, then it can be indicated in the outcome code of the condition -
+     * in this case the deceased property should still be set.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
+     */
+    public function getDeceasedDate(): null|FHIRDate
+    {
+        return $this->deceasedDate;
+    }
+
+    /**
+     * A date, or partial date (e.g. just year or year + month). There is no time zone.
+     * The format is a union of the schema types gYear, gYearMonth and date. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If this resource is indicating that the related person is deceased, then an
+     * indicator of whether the person is deceased (yes) or not (no) or the age or age
+     * range or description of age at death - can be indicated here. If the reason for
+     * death is known, then it can be indicated in the outcome code of the condition -
+     * in this case the deceased property should still be set.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate $deceasedDate
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setDeceasedDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $deceasedDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $deceasedDate && !($deceasedDate instanceof FHIRDate)) {
+            $deceasedDate = new FHIRDate($deceasedDate);
+        }
+        $this->_trackValueSet($this->deceasedDate, $deceasedDate);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE][0] = $xmlLocation;
+        $this->deceasedDate = $deceasedDate;
         return $this;
     }
 
@@ -845,7 +812,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    public function getDeceasedString()
+    public function getDeceasedString(): null|FHIRString
     {
         return $this->deceasedString;
     }
@@ -860,58 +827,21 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * death is known, then it can be indicated in the outcome code of the condition -
      * in this case the deceased property should still be set.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $deceasedString
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $deceasedString
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDeceasedString($deceasedString = null)
+    public function setDeceasedString(null|string|FHIRStringPrimitive|FHIRString $deceasedString = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $deceasedString) {
-            $this->deceasedString = null;
-            return $this;
+        if (null !== $deceasedString && !($deceasedString instanceof FHIRString)) {
+            $deceasedString = new FHIRString($deceasedString);
         }
-        if ($deceasedString instanceof FHIRString) {
-            $this->deceasedString = $deceasedString;
-            return $this;
+        $this->_trackValueSet($this->deceasedString, $deceasedString);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DECEASED_STRING])) {
+            $this->_primitiveXmlLocations[self::FIELD_DECEASED_STRING] = [];
         }
-        $this->deceasedString = new FHIRString($deceasedString);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * This will either be a name or a description. E.g. "Aunt Susan", "my cousin with
-     * the red hair".
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * This will either be a name or a description. E.g. "Aunt Susan", "my cousin with
-     * the red hair".
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $name
-     * @return static
-     */
-    public function setName($name = null)
-    {
-        if (null === $name) {
-            $this->name = null;
-            return $this;
-        }
-        if ($name instanceof FHIRString) {
-            $this->name = $name;
-            return $this;
-        }
-        $this->name = new FHIRString($name);
+        $this->_primitiveXmlLocations[self::FIELD_DECEASED_STRING][0] = $xmlLocation;
+        $this->deceasedString = $deceasedString;
         return $this;
     }
 
@@ -925,7 +855,7 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    public function getNote()
+    public function getNote(): null|FHIRString
     {
         return $this->note;
     }
@@ -938,54 +868,59 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * person. Ideally, the note would be in the condition property, but this is not
      * always possible.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $note
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $note
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setNote($note = null)
+    public function setNote(null|string|FHIRStringPrimitive|FHIRString $note = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $note) {
-            $this->note = null;
-            return $this;
+        if (null !== $note && !($note instanceof FHIRString)) {
+            $note = new FHIRString($note);
         }
-        if ($note instanceof FHIRString) {
-            $this->note = $note;
-            return $this;
+        $this->_trackValueSet($this->note, $note);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_NOTE])) {
+            $this->_primitiveXmlLocations[self::FIELD_NOTE] = [];
         }
-        $this->note = new FHIRString($note);
+        $this->_primitiveXmlLocations[self::FIELD_NOTE][0] = $xmlLocation;
+        $this->note = $note;
         return $this;
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * Significant health events and conditions for people related to the subject
+     * relevant in the context of care for the subject.
      *
-     * The type of relationship this person has to the patient (father, mother, brother
-     * etc.).
+     * The significant Conditions (or condition) that the family member had. This is a
+     * repeating section to allow a system to represent more than one condition per
+     * resource, though there is nothing stopping multiple resources - one per
+     * condition.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition[]
      */
-    public function getRelationship()
+    public function getCondition(): null|array
     {
-        return $this->relationship;
+        return $this->condition;
     }
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * Significant health events and conditions for people related to the subject
+     * relevant in the context of care for the subject.
      *
-     * The type of relationship this person has to the patient (father, mother, brother
-     * etc.).
+     * The significant Conditions (or condition) that the family member had. This is a
+     * repeating section to allow a system to represent more than one condition per
+     * resource, though there is nothing stopping multiple resources - one per
+     * condition.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $relationship
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition $condition
      * @return static
      */
-    public function setRelationship(FHIRCodeableConcept $relationship = null)
+    public function addCondition(null|FHIRFamilyHistoryCondition $condition = null): self
     {
-        $this->relationship = $relationship;
+        if (null === $condition) {
+            $condition = new FHIRFamilyHistoryCondition();
+        }
+        $this->_trackValueAdded();
+        $this->condition[] = $condition;
         return $this;
     }
 
@@ -995,9 +930,9 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -1006,65 +941,13 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getBornDate())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_BORN_DATE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getBornPeriod())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_BORN_PERIOD] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getBornString())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_BORN_STRING] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getCondition())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_CONDITION, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getDeceasedAge())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DECEASED_AGE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDeceasedBoolean())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DECEASED_BOOLEAN] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDeceasedDate())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DECEASED_DATE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDeceasedRange())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DECEASED_RANGE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDeceasedString())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DECEASED_STRING] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getName())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_NAME] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getNote())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_NOTE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getRelationship())) {
@@ -1072,111 +955,55 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
                 $errs[self::FIELD_RELATIONSHIP] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_BORN_DATE])) {
-            $v = $this->getBornDate();
-            foreach($validationRules[self::FIELD_BORN_DATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_BORN_DATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BORN_DATE])) {
-                        $errs[self::FIELD_BORN_DATE] = [];
-                    }
-                    $errs[self::FIELD_BORN_DATE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getBornPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BORN_PERIOD] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_BORN_PERIOD])) {
-            $v = $this->getBornPeriod();
-            foreach($validationRules[self::FIELD_BORN_PERIOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_BORN_PERIOD, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BORN_PERIOD])) {
-                        $errs[self::FIELD_BORN_PERIOD] = [];
-                    }
-                    $errs[self::FIELD_BORN_PERIOD][$rule] = $err;
-                }
+        if (null !== ($v = $this->getBornDate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BORN_DATE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_BORN_STRING])) {
-            $v = $this->getBornString();
-            foreach($validationRules[self::FIELD_BORN_STRING] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_BORN_STRING, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BORN_STRING])) {
-                        $errs[self::FIELD_BORN_STRING] = [];
-                    }
-                    $errs[self::FIELD_BORN_STRING][$rule] = $err;
-                }
+        if (null !== ($v = $this->getBornString())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BORN_STRING] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CONDITION])) {
-            $v = $this->getCondition();
-            foreach($validationRules[self::FIELD_CONDITION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_CONDITION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONDITION])) {
-                        $errs[self::FIELD_CONDITION] = [];
-                    }
-                    $errs[self::FIELD_CONDITION][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDeceasedBoolean())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DECEASED_BOOLEAN] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DECEASED_AGE])) {
-            $v = $this->getDeceasedAge();
-            foreach($validationRules[self::FIELD_DECEASED_AGE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_AGE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DECEASED_AGE])) {
-                        $errs[self::FIELD_DECEASED_AGE] = [];
-                    }
-                    $errs[self::FIELD_DECEASED_AGE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDeceasedAge())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DECEASED_AGE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DECEASED_BOOLEAN])) {
-            $v = $this->getDeceasedBoolean();
-            foreach($validationRules[self::FIELD_DECEASED_BOOLEAN] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_BOOLEAN, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DECEASED_BOOLEAN])) {
-                        $errs[self::FIELD_DECEASED_BOOLEAN] = [];
-                    }
-                    $errs[self::FIELD_DECEASED_BOOLEAN][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDeceasedRange())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DECEASED_RANGE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DECEASED_DATE])) {
-            $v = $this->getDeceasedDate();
-            foreach($validationRules[self::FIELD_DECEASED_DATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_DATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DECEASED_DATE])) {
-                        $errs[self::FIELD_DECEASED_DATE] = [];
-                    }
-                    $errs[self::FIELD_DECEASED_DATE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDeceasedDate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DECEASED_DATE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DECEASED_RANGE])) {
-            $v = $this->getDeceasedRange();
-            foreach($validationRules[self::FIELD_DECEASED_RANGE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_RANGE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DECEASED_RANGE])) {
-                        $errs[self::FIELD_DECEASED_RANGE] = [];
-                    }
-                    $errs[self::FIELD_DECEASED_RANGE][$rule] = $err;
-                }
+        if (null !== ($v = $this->getDeceasedString())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DECEASED_STRING] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DECEASED_STRING])) {
-            $v = $this->getDeceasedString();
-            foreach($validationRules[self::FIELD_DECEASED_STRING] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_STRING, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DECEASED_STRING])) {
-                        $errs[self::FIELD_DECEASED_STRING] = [];
-                    }
-                    $errs[self::FIELD_DECEASED_STRING][$rule] = $err;
+        if (null !== ($v = $this->getNote())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_NOTE] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getCondition())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_CONDITION, $i)] = $fieldErrs;
                 }
             }
         }
@@ -1192,6 +1019,114 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_RELATIONSHIP])) {
+            $v = $this->getRelationship();
+            foreach($validationRules[self::FIELD_RELATIONSHIP] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_RELATIONSHIP, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RELATIONSHIP])) {
+                        $errs[self::FIELD_RELATIONSHIP] = [];
+                    }
+                    $errs[self::FIELD_RELATIONSHIP][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BORN_PERIOD])) {
+            $v = $this->getBornPeriod();
+            foreach($validationRules[self::FIELD_BORN_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_BORN_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BORN_PERIOD])) {
+                        $errs[self::FIELD_BORN_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_BORN_PERIOD][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BORN_DATE])) {
+            $v = $this->getBornDate();
+            foreach($validationRules[self::FIELD_BORN_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_BORN_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BORN_DATE])) {
+                        $errs[self::FIELD_BORN_DATE] = [];
+                    }
+                    $errs[self::FIELD_BORN_DATE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BORN_STRING])) {
+            $v = $this->getBornString();
+            foreach($validationRules[self::FIELD_BORN_STRING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_BORN_STRING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BORN_STRING])) {
+                        $errs[self::FIELD_BORN_STRING] = [];
+                    }
+                    $errs[self::FIELD_BORN_STRING][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DECEASED_BOOLEAN])) {
+            $v = $this->getDeceasedBoolean();
+            foreach($validationRules[self::FIELD_DECEASED_BOOLEAN] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_BOOLEAN, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DECEASED_BOOLEAN])) {
+                        $errs[self::FIELD_DECEASED_BOOLEAN] = [];
+                    }
+                    $errs[self::FIELD_DECEASED_BOOLEAN][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DECEASED_AGE])) {
+            $v = $this->getDeceasedAge();
+            foreach($validationRules[self::FIELD_DECEASED_AGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_AGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DECEASED_AGE])) {
+                        $errs[self::FIELD_DECEASED_AGE] = [];
+                    }
+                    $errs[self::FIELD_DECEASED_AGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DECEASED_RANGE])) {
+            $v = $this->getDeceasedRange();
+            foreach($validationRules[self::FIELD_DECEASED_RANGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_RANGE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DECEASED_RANGE])) {
+                        $errs[self::FIELD_DECEASED_RANGE] = [];
+                    }
+                    $errs[self::FIELD_DECEASED_RANGE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DECEASED_DATE])) {
+            $v = $this->getDeceasedDate();
+            foreach($validationRules[self::FIELD_DECEASED_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DECEASED_DATE])) {
+                        $errs[self::FIELD_DECEASED_DATE] = [];
+                    }
+                    $errs[self::FIELD_DECEASED_DATE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DECEASED_STRING])) {
+            $v = $this->getDeceasedString();
+            foreach($validationRules[self::FIELD_DECEASED_STRING] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_DECEASED_STRING, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DECEASED_STRING])) {
+                        $errs[self::FIELD_DECEASED_STRING] = [];
+                    }
+                    $errs[self::FIELD_DECEASED_STRING][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_NOTE])) {
             $v = $this->getNote();
             foreach($validationRules[self::FIELD_NOTE] as $rule => $constraint) {
@@ -1204,15 +1139,15 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_RELATIONSHIP])) {
-            $v = $this->getRelationship();
-            foreach($validationRules[self::FIELD_RELATIONSHIP] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_RELATIONSHIP, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CONDITION])) {
+            $v = $this->getCondition();
+            foreach($validationRules[self::FIELD_CONDITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_FAMILY_HISTORY_DOT_RELATION, self::FIELD_CONDITION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RELATIONSHIP])) {
-                        $errs[self::FIELD_RELATIONSHIP] = [];
+                    if (!isset($errs[self::FIELD_CONDITION])) {
+                        $errs[self::FIELD_CONDITION] = [];
                     }
-                    $errs[self::FIELD_RELATIONSHIP][$rule] = $err;
+                    $errs[self::FIELD_CONDITION][$rule] = $err;
                 }
             }
         }
@@ -1256,298 +1191,372 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryRelation $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryRelation
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRFamilyHistoryRelation::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRFamilyHistoryRelation::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRFamilyHistoryRelation;
-        } elseif (!is_object($type) || !($type instanceof FHIRFamilyHistoryRelation)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRFamilyHistoryRelation)) {
             throw new \RuntimeException(sprintf(
-                'FHIRFamilyHistoryRelation::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryRelation or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_NAME === $childName) {
+                $type->setName(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_RELATIONSHIP === $childName) {
+                $type->setRelationship(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_BORN_PERIOD === $childName) {
+                $type->setBornPeriod(FHIRPeriod::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_BORN_DATE === $childName) {
+                $type->setBornDate(FHIRDate::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_BORN_STRING === $childName) {
+                $type->setBornString(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_DECEASED_BOOLEAN === $childName) {
+                $type->setDeceasedBoolean(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_DECEASED_AGE === $childName) {
+                $type->setDeceasedAge(FHIRAge::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DECEASED_RANGE === $childName) {
+                $type->setDeceasedRange(FHIRRange::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DECEASED_DATE === $childName) {
+                $type->setDeceasedDate(FHIRDate::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_DECEASED_STRING === $childName) {
+                $type->setDeceasedString(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_NOTE === $childName) {
+                $type->setNote(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CONDITION === $childName) {
+                $type->addCondition(FHIRFamilyHistoryCondition::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->bornDate)) {
-            $type->setBornDate(FHIRDate::xmlUnserialize($children->bornDate));
-        }
-        if (isset($attributes->bornDate)) {
-            $pt = $type->getBornDate();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->bornDate);
-            } else {
-                $type->setBornDate((string)$attributes->bornDate);
-            }
-        }
-        if (isset($children->bornPeriod)) {
-            $type->setBornPeriod(FHIRPeriod::xmlUnserialize($children->bornPeriod));
-        }
-        if (isset($children->bornString)) {
-            $type->setBornString(FHIRString::xmlUnserialize($children->bornString));
-        }
-        if (isset($attributes->bornString)) {
-            $pt = $type->getBornString();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->bornString);
-            } else {
-                $type->setBornString((string)$attributes->bornString);
-            }
-        }
-        if (isset($children->condition)) {
-            foreach($children->condition as $child) {
-                $type->addCondition(FHIRFamilyHistoryCondition::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->deceasedAge)) {
-            $type->setDeceasedAge(FHIRAge::xmlUnserialize($children->deceasedAge));
-        }
-        if (isset($children->deceasedBoolean)) {
-            $type->setDeceasedBoolean(FHIRBoolean::xmlUnserialize($children->deceasedBoolean));
-        }
-        if (isset($attributes->deceasedBoolean)) {
-            $pt = $type->getDeceasedBoolean();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->deceasedBoolean);
-            } else {
-                $type->setDeceasedBoolean((string)$attributes->deceasedBoolean);
-            }
-        }
-        if (isset($children->deceasedDate)) {
-            $type->setDeceasedDate(FHIRDate::xmlUnserialize($children->deceasedDate));
-        }
-        if (isset($attributes->deceasedDate)) {
-            $pt = $type->getDeceasedDate();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->deceasedDate);
-            } else {
-                $type->setDeceasedDate((string)$attributes->deceasedDate);
-            }
-        }
-        if (isset($children->deceasedRange)) {
-            $type->setDeceasedRange(FHIRRange::xmlUnserialize($children->deceasedRange));
-        }
-        if (isset($children->deceasedString)) {
-            $type->setDeceasedString(FHIRString::xmlUnserialize($children->deceasedString));
-        }
-        if (isset($attributes->deceasedString)) {
-            $pt = $type->getDeceasedString();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->deceasedString);
-            } else {
-                $type->setDeceasedString((string)$attributes->deceasedString);
-            }
-        }
-        if (isset($children->name)) {
-            $type->setName(FHIRString::xmlUnserialize($children->name));
-        }
-        if (isset($attributes->name)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_NAME])) {
             $pt = $type->getName();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->name);
+                $pt->setValue((string)$attributes[self::FIELD_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setName((string)$attributes->name);
+                $type->setName((string)$attributes[self::FIELD_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->note)) {
-            $type->setNote(FHIRString::xmlUnserialize($children->note));
+        if (isset($attributes[self::FIELD_BORN_DATE])) {
+            $pt = $type->getBornDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_BORN_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setBornDate((string)$attributes[self::FIELD_BORN_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($attributes->note)) {
+        if (isset($attributes[self::FIELD_BORN_STRING])) {
+            $pt = $type->getBornString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_BORN_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setBornString((string)$attributes[self::FIELD_BORN_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_DECEASED_BOOLEAN])) {
+            $pt = $type->getDeceasedBoolean();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_DECEASED_BOOLEAN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setDeceasedBoolean((string)$attributes[self::FIELD_DECEASED_BOOLEAN], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_DECEASED_DATE])) {
+            $pt = $type->getDeceasedDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_DECEASED_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setDeceasedDate((string)$attributes[self::FIELD_DECEASED_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_DECEASED_STRING])) {
+            $pt = $type->getDeceasedString();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_DECEASED_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setDeceasedString((string)$attributes[self::FIELD_DECEASED_STRING], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_NOTE])) {
             $pt = $type->getNote();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->note);
+                $pt->setValue((string)$attributes[self::FIELD_NOTE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setNote((string)$attributes->note);
+                $type->setNote((string)$attributes[self::FIELD_NOTE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->relationship)) {
-            $type->setRelationship(FHIRCodeableConcept::xmlUnserialize($children->relationship));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getBornDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_DATE, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getBornPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_PERIOD, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getBornString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BORN_STRING, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if ([] !== ($vs = $this->getCondition())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONDITION, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'FamilyHistoryRelation', $this->_getSourceXmlns());
         }
-        if (null !== ($v = $this->getDeceasedAge())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_AGE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getName())) {
+            $xw->writeAttribute(self::FIELD_NAME, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getDeceasedBoolean())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_BOOLEAN, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BORN_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBornDate())) {
+            $xw->writeAttribute(self::FIELD_BORN_DATE, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getDeceasedDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_DATE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BORN_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBornString())) {
+            $xw->writeAttribute(self::FIELD_BORN_STRING, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getDeceasedRange())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_RANGE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDeceasedBoolean())) {
+            $xw->writeAttribute(self::FIELD_DECEASED_BOOLEAN, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getDeceasedString())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DECEASED_STRING, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDeceasedDate())) {
+            $xw->writeAttribute(self::FIELD_DECEASED_DATE, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDeceasedString())) {
+            $xw->writeAttribute(self::FIELD_DECEASED_STRING, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getNote())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NOTE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNote())) {
+            $xw->writeAttribute(self::FIELD_NOTE, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getName())) {
+            $xw->startElement(self::FIELD_NAME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getRelationship())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_RELATIONSHIP);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getBornPeriod())) {
+            $xw->startElement(self::FIELD_BORN_PERIOD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BORN_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBornDate())) {
+            $xw->startElement(self::FIELD_BORN_DATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BORN_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBornString())) {
+            $xw->startElement(self::FIELD_BORN_STRING);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_BOOLEAN] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDeceasedBoolean())) {
+            $xw->startElement(self::FIELD_DECEASED_BOOLEAN);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getDeceasedAge())) {
+            $xw->startElement(self::FIELD_DECEASED_AGE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getDeceasedRange())) {
+            $xw->startElement(self::FIELD_DECEASED_RANGE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDeceasedDate())) {
+            $xw->startElement(self::FIELD_DECEASED_DATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DECEASED_STRING] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDeceasedString())) {
+            $xw->startElement(self::FIELD_DECEASED_STRING);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NOTE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNote())) {
+            $xw->startElement(self::FIELD_NOTE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getCondition() as $v) {
+            $xw->startElement(self::FIELD_CONDITION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getBornDate())) {
-            $a[self::FIELD_BORN_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDate::FIELD_VALUE]);
-                $a[self::FIELD_BORN_DATE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getBornPeriod())) {
-            $a[self::FIELD_BORN_PERIOD] = $v;
-        }
-        if (null !== ($v = $this->getBornString())) {
-            $a[self::FIELD_BORN_STRING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_BORN_STRING_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getCondition())) {
-            $a[self::FIELD_CONDITION] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CONDITION][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getDeceasedAge())) {
-            $a[self::FIELD_DECEASED_AGE] = $v;
-        }
-        if (null !== ($v = $this->getDeceasedBoolean())) {
-            $a[self::FIELD_DECEASED_BOOLEAN] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_DECEASED_BOOLEAN_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getDeceasedDate())) {
-            $a[self::FIELD_DECEASED_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDate::FIELD_VALUE]);
-                $a[self::FIELD_DECEASED_DATE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getDeceasedRange())) {
-            $a[self::FIELD_DECEASED_RANGE] = $v;
-        }
-        if (null !== ($v = $this->getDeceasedString())) {
-            $a[self::FIELD_DECEASED_STRING] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DECEASED_STRING_EXT] = $enc;
-            }
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_NAME_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_NAME} = $val;
             }
-        }
-        if (null !== ($v = $this->getNote())) {
-            $a[self::FIELD_NOTE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_NOTE_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_NAME_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getRelationship())) {
-            $a[self::FIELD_RELATIONSHIP] = $v;
+            $out->{self::FIELD_RELATIONSHIP} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getBornPeriod())) {
+            $out->{self::FIELD_BORN_PERIOD} = $v;
         }
-        return $a;
-    }
+        if (null !== ($v = $this->getBornDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_BORN_DATE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDate::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_BORN_DATE_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getBornString())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_BORN_STRING} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_BORN_STRING_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDeceasedBoolean())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DECEASED_BOOLEAN} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DECEASED_BOOLEAN_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDeceasedAge())) {
+            $out->{self::FIELD_DECEASED_AGE} = $v;
+        }
+        if (null !== ($v = $this->getDeceasedRange())) {
+            $out->{self::FIELD_DECEASED_RANGE} = $v;
+        }
+        if (null !== ($v = $this->getDeceasedDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DECEASED_DATE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDate::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DECEASED_DATE_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDeceasedString())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DECEASED_STRING} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DECEASED_STRING_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getNote())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_NOTE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_NOTE_EXT} = $ext;
+            }
+        }
+        if ([] !== ($vs = $this->getCondition())) {
+            $out->{self::FIELD_CONDITION} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_CONDITION}[] = $v;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

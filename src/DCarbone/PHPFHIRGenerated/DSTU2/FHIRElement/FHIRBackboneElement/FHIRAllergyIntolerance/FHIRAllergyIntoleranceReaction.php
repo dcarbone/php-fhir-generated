@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,15 +62,23 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCertainty;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceSeverity;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter;
 
 /**
  * Risk of harmful or undesirable, physiological response which is unique to an
@@ -83,22 +91,37 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_DOT_REACTION;
+
+    const FIELD_SUBSTANCE = 'substance';
     const FIELD_CERTAINTY = 'certainty';
     const FIELD_CERTAINTY_EXT = '_certainty';
+    const FIELD_MANIFESTATION = 'manifestation';
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
-    const FIELD_EXPOSURE_ROUTE = 'exposureRoute';
-    const FIELD_MANIFESTATION = 'manifestation';
-    const FIELD_NOTE = 'note';
     const FIELD_ONSET = 'onset';
     const FIELD_ONSET_EXT = '_onset';
     const FIELD_SEVERITY = 'severity';
     const FIELD_SEVERITY_EXT = '_severity';
-    const FIELD_SUBSTANCE = 'substance';
+    const FIELD_EXPOSURE_ROUTE = 'exposureRoute';
+    const FIELD_NOTE = 'note';
 
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identification of the specific substance considered to be responsible for the
+     * Adverse Reaction event. Note: the substance for a specific reaction may be
+     * different to the substance identified as the cause of the risk, but must be
+     * consistent with it. For instance, it may be a more specific substance (e.g. a
+     * brand medication) or a composite substance that includes the identified
+     * substance. It must be clinically safe to only process the
+     * AllergyIntolerance.substance and ignore the AllergyIntolerance.event.substance.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $substance = null;
     /**
      * Statement about the degree of clinical certainty that a Specific Substance was
      * the cause of the Manifestation in an reaction event.
@@ -109,32 +132,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCertainty
      */
-    protected $certainty = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Text description about the reaction as a whole, including details of the
-     * manifestation if required.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    protected $description = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identification of the route by which the subject was exposed to the substance.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
-     */
-    protected $exposureRoute = null;
-
+    protected null|FHIRAllergyIntoleranceCertainty $certainty = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -146,20 +144,18 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
-    protected $manifestation = [];
-
+    protected null|array $manifestation = [];
     /**
-     * A text note which also contains information about who made the statement and
-     * when.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Additional text about the adverse reaction event not captured in other fields.
+     * Text description about the reaction as a whole, including details of the
+     * manifestation if required.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    protected $note = null;
-
+    protected null|FHIRString $description = null;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -172,8 +168,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    protected $onset = null;
-
+    protected null|FHIRDateTime $onset = null;
     /**
      * Clinical assessment of the severity of a reaction event as a whole, potentially
      * considering multiple different manifestations.
@@ -184,63 +179,63 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceSeverity
      */
-    protected $severity = null;
-
+    protected null|FHIRAllergyIntoleranceSeverity $severity = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Identification of the specific substance considered to be responsible for the
-     * Adverse Reaction event. Note: the substance for a specific reaction may be
-     * different to the substance identified as the cause of the risk, but must be
-     * consistent with it. For instance, it may be a more specific substance (e.g. a
-     * brand medication) or a composite substance that includes the identified
-     * substance. It must be clinically safe to only process the
-     * AllergyIntolerance.substance and ignore the AllergyIntolerance.event.substance.
+     * Identification of the route by which the subject was exposed to the substance.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    protected $substance = null;
+    protected null|FHIRCodeableConcept $exposureRoute = null;
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional text about the adverse reaction event not captured in other fields.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation
+     */
+    protected null|FHIRAnnotation $note = null;
 
     /**
      * Validation map for fields in type AllergyIntolerance.Reaction
      * @var array
      */
-    private static $_validationRules = [
+    private const _VALIDATION_RULES = [
         self::FIELD_MANIFESTATION => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
+
     /**
      * FHIRAllergyIntoleranceReaction Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRAllergyIntoleranceReaction::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CERTAINTY]) || isset($data[self::FIELD_CERTAINTY_EXT])) {
-            if (isset($data[self::FIELD_CERTAINTY])) {
-                $value = $data[self::FIELD_CERTAINTY];
+        if (array_key_exists(self::FIELD_SUBSTANCE, $data)) {
+            if ($data[self::FIELD_SUBSTANCE] instanceof FHIRCodeableConcept) {
+                $this->setSubstance($data[self::FIELD_SUBSTANCE]);
             } else {
-                $value = null;
+                $this->setSubstance(new FHIRCodeableConcept($data[self::FIELD_SUBSTANCE]));
             }
-            if (isset($data[self::FIELD_CERTAINTY_EXT]) && is_array($data[self::FIELD_CERTAINTY_EXT])) {
-                $ext = $data[self::FIELD_CERTAINTY_EXT];
-            } else {
-                $ext = [];
-            }
+        }
+        if (array_key_exists(self::FIELD_CERTAINTY, $data) || array_key_exists(self::FIELD_CERTAINTY_EXT, $data)) {
+            $value = $data[self::FIELD_CERTAINTY] ?? null;
+            $ext = (isset($data[self::FIELD_CERTAINTY_EXT]) && is_array($data[self::FIELD_CERTAINTY_EXT])) ? $data[self::FIELD_CERTAINTY_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRAllergyIntoleranceCertainty) {
                     $this->setCertainty($value);
@@ -249,21 +244,30 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
                 } else {
                     $this->setCertainty(new FHIRAllergyIntoleranceCertainty([FHIRAllergyIntoleranceCertainty::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setCertainty(new FHIRAllergyIntoleranceCertainty($ext));
+            } else {
+                $this->setCertainty(new FHIRAllergyIntoleranceCertainty(null));
             }
         }
-        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
-            if (isset($data[self::FIELD_DESCRIPTION])) {
-                $value = $data[self::FIELD_DESCRIPTION];
+        if (array_key_exists(self::FIELD_MANIFESTATION, $data)) {
+            if (is_array($data[self::FIELD_MANIFESTATION])) {
+                foreach($data[self::FIELD_MANIFESTATION] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addManifestation($v);
+                    } else {
+                        $this->addManifestation(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_MANIFESTATION] instanceof FHIRCodeableConcept) {
+                $this->addManifestation($data[self::FIELD_MANIFESTATION]);
             } else {
-                $value = null;
+                $this->addManifestation(new FHIRCodeableConcept($data[self::FIELD_MANIFESTATION]));
             }
-            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
-                $ext = $data[self::FIELD_DESCRIPTION_EXT];
-            } else {
-                $ext = [];
-            }
+        }
+        if (array_key_exists(self::FIELD_DESCRIPTION, $data) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $data)) {
+            $value = $data[self::FIELD_DESCRIPTION] ?? null;
+            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) ? $data[self::FIELD_DESCRIPTION_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setDescription($value);
@@ -272,53 +276,15 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
                 } else {
                     $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDescription(new FHIRString($ext));
+            } else {
+                $this->setDescription(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_EXPOSURE_ROUTE])) {
-            if ($data[self::FIELD_EXPOSURE_ROUTE] instanceof FHIRCodeableConcept) {
-                $this->setExposureRoute($data[self::FIELD_EXPOSURE_ROUTE]);
-            } else {
-                $this->setExposureRoute(new FHIRCodeableConcept($data[self::FIELD_EXPOSURE_ROUTE]));
-            }
-        }
-        if (isset($data[self::FIELD_MANIFESTATION])) {
-            if (is_array($data[self::FIELD_MANIFESTATION])) {
-                foreach($data[self::FIELD_MANIFESTATION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addManifestation($v);
-                    } else {
-                        $this->addManifestation(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_MANIFESTATION] instanceof FHIRCodeableConcept) {
-                $this->addManifestation($data[self::FIELD_MANIFESTATION]);
-            } else {
-                $this->addManifestation(new FHIRCodeableConcept($data[self::FIELD_MANIFESTATION]));
-            }
-        }
-        if (isset($data[self::FIELD_NOTE])) {
-            if ($data[self::FIELD_NOTE] instanceof FHIRAnnotation) {
-                $this->setNote($data[self::FIELD_NOTE]);
-            } else {
-                $this->setNote(new FHIRAnnotation($data[self::FIELD_NOTE]));
-            }
-        }
-        if (isset($data[self::FIELD_ONSET]) || isset($data[self::FIELD_ONSET_EXT])) {
-            if (isset($data[self::FIELD_ONSET])) {
-                $value = $data[self::FIELD_ONSET];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ONSET_EXT]) && is_array($data[self::FIELD_ONSET_EXT])) {
-                $ext = $data[self::FIELD_ONSET_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_ONSET, $data) || array_key_exists(self::FIELD_ONSET_EXT, $data)) {
+            $value = $data[self::FIELD_ONSET] ?? null;
+            $ext = (isset($data[self::FIELD_ONSET_EXT]) && is_array($data[self::FIELD_ONSET_EXT])) ? $data[self::FIELD_ONSET_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setOnset($value);
@@ -327,21 +293,15 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
                 } else {
                     $this->setOnset(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setOnset(new FHIRDateTime($ext));
+            } else {
+                $this->setOnset(new FHIRDateTime(null));
             }
         }
-        if (isset($data[self::FIELD_SEVERITY]) || isset($data[self::FIELD_SEVERITY_EXT])) {
-            if (isset($data[self::FIELD_SEVERITY])) {
-                $value = $data[self::FIELD_SEVERITY];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SEVERITY_EXT]) && is_array($data[self::FIELD_SEVERITY_EXT])) {
-                $ext = $data[self::FIELD_SEVERITY_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_SEVERITY, $data) || array_key_exists(self::FIELD_SEVERITY_EXT, $data)) {
+            $value = $data[self::FIELD_SEVERITY] ?? null;
+            $ext = (isset($data[self::FIELD_SEVERITY_EXT]) && is_array($data[self::FIELD_SEVERITY_EXT])) ? $data[self::FIELD_SEVERITY_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRAllergyIntoleranceSeverity) {
                     $this->setSeverity($value);
@@ -350,15 +310,24 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
                 } else {
                     $this->setSeverity(new FHIRAllergyIntoleranceSeverity([FHIRAllergyIntoleranceSeverity::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSeverity(new FHIRAllergyIntoleranceSeverity($ext));
+            } else {
+                $this->setSeverity(new FHIRAllergyIntoleranceSeverity(null));
             }
         }
-        if (isset($data[self::FIELD_SUBSTANCE])) {
-            if ($data[self::FIELD_SUBSTANCE] instanceof FHIRCodeableConcept) {
-                $this->setSubstance($data[self::FIELD_SUBSTANCE]);
+        if (array_key_exists(self::FIELD_EXPOSURE_ROUTE, $data)) {
+            if ($data[self::FIELD_EXPOSURE_ROUTE] instanceof FHIRCodeableConcept) {
+                $this->setExposureRoute($data[self::FIELD_EXPOSURE_ROUTE]);
             } else {
-                $this->setSubstance(new FHIRCodeableConcept($data[self::FIELD_SUBSTANCE]));
+                $this->setExposureRoute(new FHIRCodeableConcept($data[self::FIELD_EXPOSURE_ROUTE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_NOTE, $data)) {
+            if ($data[self::FIELD_NOTE] instanceof FHIRAnnotation) {
+                $this->setNote($data[self::FIELD_NOTE]);
+            } else {
+                $this->setNote(new FHIRAnnotation($data[self::FIELD_NOTE]));
             }
         }
     }
@@ -366,295 +335,9 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<AllergyIntoleranceReaction{$xmlns}></AllergyIntoleranceReaction>";
-    }
-
-    /**
-     * Statement about the degree of clinical certainty that a Specific Substance was
-     * the cause of the Manifestation in an reaction event.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Statement about the degree of clinical certainty that the specific substance was
-     * the cause of the manifestation in this reaction event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCertainty
-     */
-    public function getCertainty()
-    {
-        return $this->certainty;
-    }
-
-    /**
-     * Statement about the degree of clinical certainty that a Specific Substance was
-     * the cause of the Manifestation in an reaction event.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Statement about the degree of clinical certainty that the specific substance was
-     * the cause of the manifestation in this reaction event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCertainty $certainty
-     * @return static
-     */
-    public function setCertainty(FHIRAllergyIntoleranceCertainty $certainty = null)
-    {
-        $this->certainty = $certainty;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Text description about the reaction as a whole, including details of the
-     * manifestation if required.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Text description about the reaction as a whole, including details of the
-     * manifestation if required.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $description
-     * @return static
-     */
-    public function setDescription($description = null)
-    {
-        if (null === $description) {
-            $this->description = null;
-            return $this;
-        }
-        if ($description instanceof FHIRString) {
-            $this->description = $description;
-            return $this;
-        }
-        $this->description = new FHIRString($description);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identification of the route by which the subject was exposed to the substance.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
-     */
-    public function getExposureRoute()
-    {
-        return $this->exposureRoute;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identification of the route by which the subject was exposed to the substance.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $exposureRoute
-     * @return static
-     */
-    public function setExposureRoute(FHIRCodeableConcept $exposureRoute = null)
-    {
-        $this->exposureRoute = $exposureRoute;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Clinical symptoms and/or signs that are observed or associated with the adverse
-     * reaction event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getManifestation()
-    {
-        return $this->manifestation;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Clinical symptoms and/or signs that are observed or associated with the adverse
-     * reaction event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $manifestation
-     * @return static
-     */
-    public function addManifestation(FHIRCodeableConcept $manifestation = null)
-    {
-        $this->manifestation[] = $manifestation;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Clinical symptoms and/or signs that are observed or associated with the adverse
-     * reaction event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[] $manifestation
-     * @return static
-     */
-    public function setManifestation(array $manifestation = [])
-    {
-        $this->manifestation = [];
-        if ([] === $manifestation) {
-            return $this;
-        }
-        foreach($manifestation as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addManifestation($v);
-            } else {
-                $this->addManifestation(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A text note which also contains information about who made the statement and
-     * when.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Additional text about the adverse reaction event not captured in other fields.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation
-     */
-    public function getNote()
-    {
-        return $this->note;
-    }
-
-    /**
-     * A text note which also contains information about who made the statement and
-     * when.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Additional text about the adverse reaction event not captured in other fields.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation $note
-     * @return static
-     */
-    public function setNote(FHIRAnnotation $note = null)
-    {
-        $this->note = $note;
-        return $this;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Record of the date and/or time of the onset of the Reaction.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
-     */
-    public function getOnset()
-    {
-        return $this->onset;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Record of the date and/or time of the onset of the Reaction.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $onset
-     * @return static
-     */
-    public function setOnset($onset = null)
-    {
-        if (null === $onset) {
-            $this->onset = null;
-            return $this;
-        }
-        if ($onset instanceof FHIRDateTime) {
-            $this->onset = $onset;
-            return $this;
-        }
-        $this->onset = new FHIRDateTime($onset);
-        return $this;
-    }
-
-    /**
-     * Clinical assessment of the severity of a reaction event as a whole, potentially
-     * considering multiple different manifestations.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Clinical assessment of the severity of the reaction event as a whole,
-     * potentially considering multiple different manifestations.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceSeverity
-     */
-    public function getSeverity()
-    {
-        return $this->severity;
-    }
-
-    /**
-     * Clinical assessment of the severity of a reaction event as a whole, potentially
-     * considering multiple different manifestations.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Clinical assessment of the severity of the reaction event as a whole,
-     * potentially considering multiple different manifestations.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceSeverity $severity
-     * @return static
-     */
-    public function setSeverity(FHIRAllergyIntoleranceSeverity $severity = null)
-    {
-        $this->severity = $severity;
-        return $this;
     }
 
     /**
@@ -673,7 +356,7 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
-    public function getSubstance()
+    public function getSubstance(): null|FHIRCodeableConcept
     {
         return $this->substance;
     }
@@ -695,9 +378,281 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $substance
      * @return static
      */
-    public function setSubstance(FHIRCodeableConcept $substance = null)
+    public function setSubstance(null|FHIRCodeableConcept $substance = null): self
     {
+        if (null === $substance) {
+            $substance = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->substance, $substance);
         $this->substance = $substance;
+        return $this;
+    }
+
+    /**
+     * Statement about the degree of clinical certainty that a Specific Substance was
+     * the cause of the Manifestation in an reaction event.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Statement about the degree of clinical certainty that the specific substance was
+     * the cause of the manifestation in this reaction event.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCertainty
+     */
+    public function getCertainty(): null|FHIRAllergyIntoleranceCertainty
+    {
+        return $this->certainty;
+    }
+
+    /**
+     * Statement about the degree of clinical certainty that a Specific Substance was
+     * the cause of the Manifestation in an reaction event.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Statement about the degree of clinical certainty that the specific substance was
+     * the cause of the manifestation in this reaction event.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCertainty $certainty
+     * @return static
+     */
+    public function setCertainty(null|FHIRAllergyIntoleranceCertainty $certainty = null): self
+    {
+        if (null === $certainty) {
+            $certainty = new FHIRAllergyIntoleranceCertainty();
+        }
+        $this->_trackValueSet($this->certainty, $certainty);
+        $this->certainty = $certainty;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Clinical symptoms and/or signs that are observed or associated with the adverse
+     * reaction event.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getManifestation(): null|array
+    {
+        return $this->manifestation;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Clinical symptoms and/or signs that are observed or associated with the adverse
+     * reaction event.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $manifestation
+     * @return static
+     */
+    public function addManifestation(null|FHIRCodeableConcept $manifestation = null): self
+    {
+        if (null === $manifestation) {
+            $manifestation = new FHIRCodeableConcept();
+        }
+        $this->_trackValueAdded();
+        $this->manifestation[] = $manifestation;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Text description about the reaction as a whole, including details of the
+     * manifestation if required.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    public function getDescription(): null|FHIRString
+    {
+        return $this->description;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Text description about the reaction as a whole, including details of the
+     * manifestation if required.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $description
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $description && !($description instanceof FHIRString)) {
+            $description = new FHIRString($description);
+        }
+        $this->_trackValueSet($this->description, $description);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DESCRIPTION])) {
+            $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Record of the date and/or time of the onset of the Reaction.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
+     */
+    public function getOnset(): null|FHIRDateTime
+    {
+        return $this->onset;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Record of the date and/or time of the onset of the Reaction.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $onset
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setOnset(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $onset = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $onset && !($onset instanceof FHIRDateTime)) {
+            $onset = new FHIRDateTime($onset);
+        }
+        $this->_trackValueSet($this->onset, $onset);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_ONSET])) {
+            $this->_primitiveXmlLocations[self::FIELD_ONSET] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_ONSET][0] = $xmlLocation;
+        $this->onset = $onset;
+        return $this;
+    }
+
+    /**
+     * Clinical assessment of the severity of a reaction event as a whole, potentially
+     * considering multiple different manifestations.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Clinical assessment of the severity of the reaction event as a whole,
+     * potentially considering multiple different manifestations.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceSeverity
+     */
+    public function getSeverity(): null|FHIRAllergyIntoleranceSeverity
+    {
+        return $this->severity;
+    }
+
+    /**
+     * Clinical assessment of the severity of a reaction event as a whole, potentially
+     * considering multiple different manifestations.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Clinical assessment of the severity of the reaction event as a whole,
+     * potentially considering multiple different manifestations.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceSeverity $severity
+     * @return static
+     */
+    public function setSeverity(null|FHIRAllergyIntoleranceSeverity $severity = null): self
+    {
+        if (null === $severity) {
+            $severity = new FHIRAllergyIntoleranceSeverity();
+        }
+        $this->_trackValueSet($this->severity, $severity);
+        $this->severity = $severity;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identification of the route by which the subject was exposed to the substance.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
+     */
+    public function getExposureRoute(): null|FHIRCodeableConcept
+    {
+        return $this->exposureRoute;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identification of the route by which the subject was exposed to the substance.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept $exposureRoute
+     * @return static
+     */
+    public function setExposureRoute(null|FHIRCodeableConcept $exposureRoute = null): self
+    {
+        if (null === $exposureRoute) {
+            $exposureRoute = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->exposureRoute, $exposureRoute);
+        $this->exposureRoute = $exposureRoute;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional text about the adverse reaction event not captured in other fields.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation
+     */
+    public function getNote(): null|FHIRAnnotation
+    {
+        return $this->note;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional text about the adverse reaction event not captured in other fields.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation $note
+     * @return static
+     */
+    public function setNote(null|FHIRAnnotation $note = null): self
+    {
+        if (null === $note) {
+            $note = new FHIRAnnotation();
+        }
+        $this->_trackValueSet($this->note, $note);
+        $this->note = $note;
         return $this;
     }
 
@@ -707,9 +662,9 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -718,23 +673,18 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getSubstance())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUBSTANCE] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getCertainty())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_CERTAINTY] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getDescription())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getExposureRoute())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_EXPOSURE_ROUTE] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getManifestation())) {
@@ -744,9 +694,9 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getNote())) {
+        if (null !== ($v = $this->getDescription())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_NOTE] = $fieldErrs;
+                $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getOnset())) {
@@ -759,9 +709,26 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
                 $errs[self::FIELD_SEVERITY] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getSubstance())) {
+        if (null !== ($v = $this->getExposureRoute())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SUBSTANCE] = $fieldErrs;
+                $errs[self::FIELD_EXPOSURE_ROUTE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getNote())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_NOTE] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUBSTANCE])) {
+            $v = $this->getSubstance();
+            foreach($validationRules[self::FIELD_SUBSTANCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_DOT_REACTION, self::FIELD_SUBSTANCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUBSTANCE])) {
+                        $errs[self::FIELD_SUBSTANCE] = [];
+                    }
+                    $errs[self::FIELD_SUBSTANCE][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_CERTAINTY])) {
@@ -773,30 +740,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
                         $errs[self::FIELD_CERTAINTY] = [];
                     }
                     $errs[self::FIELD_CERTAINTY][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_DESCRIPTION])) {
-            $v = $this->getDescription();
-            foreach($validationRules[self::FIELD_DESCRIPTION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_DOT_REACTION, self::FIELD_DESCRIPTION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DESCRIPTION])) {
-                        $errs[self::FIELD_DESCRIPTION] = [];
-                    }
-                    $errs[self::FIELD_DESCRIPTION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_EXPOSURE_ROUTE])) {
-            $v = $this->getExposureRoute();
-            foreach($validationRules[self::FIELD_EXPOSURE_ROUTE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_DOT_REACTION, self::FIELD_EXPOSURE_ROUTE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EXPOSURE_ROUTE])) {
-                        $errs[self::FIELD_EXPOSURE_ROUTE] = [];
-                    }
-                    $errs[self::FIELD_EXPOSURE_ROUTE][$rule] = $err;
                 }
             }
         }
@@ -812,15 +755,15 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_NOTE])) {
-            $v = $this->getNote();
-            foreach($validationRules[self::FIELD_NOTE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_DOT_REACTION, self::FIELD_NOTE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_DESCRIPTION])) {
+            $v = $this->getDescription();
+            foreach($validationRules[self::FIELD_DESCRIPTION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_DOT_REACTION, self::FIELD_DESCRIPTION, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NOTE])) {
-                        $errs[self::FIELD_NOTE] = [];
+                    if (!isset($errs[self::FIELD_DESCRIPTION])) {
+                        $errs[self::FIELD_DESCRIPTION] = [];
                     }
-                    $errs[self::FIELD_NOTE][$rule] = $err;
+                    $errs[self::FIELD_DESCRIPTION][$rule] = $err;
                 }
             }
         }
@@ -848,15 +791,27 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SUBSTANCE])) {
-            $v = $this->getSubstance();
-            foreach($validationRules[self::FIELD_SUBSTANCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_DOT_REACTION, self::FIELD_SUBSTANCE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_EXPOSURE_ROUTE])) {
+            $v = $this->getExposureRoute();
+            foreach($validationRules[self::FIELD_EXPOSURE_ROUTE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_DOT_REACTION, self::FIELD_EXPOSURE_ROUTE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUBSTANCE])) {
-                        $errs[self::FIELD_SUBSTANCE] = [];
+                    if (!isset($errs[self::FIELD_EXPOSURE_ROUTE])) {
+                        $errs[self::FIELD_EXPOSURE_ROUTE] = [];
                     }
-                    $errs[self::FIELD_SUBSTANCE][$rule] = $err;
+                    $errs[self::FIELD_EXPOSURE_ROUTE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_NOTE])) {
+            $v = $this->getNote();
+            foreach($validationRules[self::FIELD_NOTE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ALLERGY_INTOLERANCE_DOT_REACTION, self::FIELD_NOTE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NOTE])) {
+                        $errs[self::FIELD_NOTE] = [];
+                    }
+                    $errs[self::FIELD_NOTE][$rule] = $err;
                 }
             }
         }
@@ -900,204 +855,246 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRAllergyIntoleranceReaction::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRAllergyIntoleranceReaction::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRAllergyIntoleranceReaction;
-        } elseif (!is_object($type) || !($type instanceof FHIRAllergyIntoleranceReaction)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRAllergyIntoleranceReaction)) {
             throw new \RuntimeException(sprintf(
-                'FHIRAllergyIntoleranceReaction::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_SUBSTANCE === $childName) {
+                $type->setSubstance(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CERTAINTY === $childName) {
+                $type->setCertainty(FHIRAllergyIntoleranceCertainty::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MANIFESTATION === $childName) {
+                $type->addManifestation(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DESCRIPTION === $childName) {
+                $type->setDescription(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_ONSET === $childName) {
+                $type->setOnset(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_SEVERITY === $childName) {
+                $type->setSeverity(FHIRAllergyIntoleranceSeverity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXPOSURE_ROUTE === $childName) {
+                $type->setExposureRoute(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_NOTE === $childName) {
+                $type->setNote(FHIRAnnotation::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->certainty)) {
-            $type->setCertainty(FHIRAllergyIntoleranceCertainty::xmlUnserialize($children->certainty));
-        }
-        if (isset($children->description)) {
-            $type->setDescription(FHIRString::xmlUnserialize($children->description));
-        }
-        if (isset($attributes->description)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_DESCRIPTION])) {
             $pt = $type->getDescription();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->description);
+                $pt->setValue((string)$attributes[self::FIELD_DESCRIPTION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setDescription((string)$attributes->description);
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->exposureRoute)) {
-            $type->setExposureRoute(FHIRCodeableConcept::xmlUnserialize($children->exposureRoute));
-        }
-        if (isset($children->manifestation)) {
-            foreach($children->manifestation as $child) {
-                $type->addManifestation(FHIRCodeableConcept::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->note)) {
-            $type->setNote(FHIRAnnotation::xmlUnserialize($children->note));
-        }
-        if (isset($children->onset)) {
-            $type->setOnset(FHIRDateTime::xmlUnserialize($children->onset));
-        }
-        if (isset($attributes->onset)) {
+        if (isset($attributes[self::FIELD_ONSET])) {
             $pt = $type->getOnset();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->onset);
+                $pt->setValue((string)$attributes[self::FIELD_ONSET], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setOnset((string)$attributes->onset);
+                $type->setOnset((string)$attributes[self::FIELD_ONSET], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->severity)) {
-            $type->setSeverity(FHIRAllergyIntoleranceSeverity::xmlUnserialize($children->severity));
-        }
-        if (isset($children->substance)) {
-            $type->setSubstance(FHIRCodeableConcept::xmlUnserialize($children->substance));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'AllergyIntoleranceReaction', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDescription())) {
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ONSET] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOnset())) {
+            $xw->writeAttribute(self::FIELD_ONSET, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getSubstance())) {
+            $xw->startElement(self::FIELD_SUBSTANCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
         if (null !== ($v = $this->getCertainty())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CERTAINTY, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_CERTAINTY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
+        foreach ($this->getManifestation() as $v) {
+            $xw->startElement(self::FIELD_MANIFESTATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getExposureRoute())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EXPOSURE_ROUTE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDescription())) {
+            $xw->startElement(self::FIELD_DESCRIPTION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getManifestation())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MANIFESTATION, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getNote())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getOnset())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ONSET, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ONSET] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOnset())) {
+            $xw->startElement(self::FIELD_ONSET);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getSeverity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEVERITY, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_SEVERITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getSubstance())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSTANCE, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getExposureRoute())) {
+            $xw->startElement(self::FIELD_EXPOSURE_ROUTE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getNote())) {
+            $xw->startElement(self::FIELD_NOTE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getSubstance())) {
+            $out->{self::FIELD_SUBSTANCE} = $v;
+        }
         if (null !== ($v = $this->getCertainty())) {
-            $a[self::FIELD_CERTAINTY] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRAllergyIntoleranceCertainty::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRAllergyIntoleranceCertainty::FIELD_VALUE]);
-                $a[self::FIELD_CERTAINTY_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_CERTAINTY} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRAllergyIntoleranceCertainty::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_CERTAINTY_EXT} = $ext;
+            }
+        }
+        if ([] !== ($vs = $this->getManifestation())) {
+            $out->{self::FIELD_MANIFESTATION} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_MANIFESTATION}[] = $v;
             }
         }
         if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DESCRIPTION} = $val;
             }
-        }
-        if (null !== ($v = $this->getExposureRoute())) {
-            $a[self::FIELD_EXPOSURE_ROUTE] = $v;
-        }
-        if ([] !== ($vs = $this->getManifestation())) {
-            $a[self::FIELD_MANIFESTATION] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_MANIFESTATION][] = $v;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DESCRIPTION_EXT} = $ext;
             }
-        }
-        if (null !== ($v = $this->getNote())) {
-            $a[self::FIELD_NOTE] = $v;
         }
         if (null !== ($v = $this->getOnset())) {
-            $a[self::FIELD_ONSET] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_ONSET_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_ONSET} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_ONSET_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getSeverity())) {
-            $a[self::FIELD_SEVERITY] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRAllergyIntoleranceSeverity::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRAllergyIntoleranceSeverity::FIELD_VALUE]);
-                $a[self::FIELD_SEVERITY_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_SEVERITY} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRAllergyIntoleranceSeverity::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SEVERITY_EXT} = $ext;
             }
         }
-        if (null !== ($v = $this->getSubstance())) {
-            $a[self::FIELD_SUBSTANCE] = $v;
+        if (null !== ($v = $this->getExposureRoute())) {
+            $out->{self::FIELD_EXPOSURE_ROUTE} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getNote())) {
+            $out->{self::FIELD_NOTE} = $v;
         }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

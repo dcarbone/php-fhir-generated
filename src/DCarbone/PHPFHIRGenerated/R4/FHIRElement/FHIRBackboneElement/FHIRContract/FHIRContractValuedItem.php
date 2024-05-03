@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,18 +62,27 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRDecimalPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRUnsignedIntPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
@@ -86,32 +95,62 @@ class FHIRContractValuedItem extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM;
-    const FIELD_EFFECTIVE_TIME = 'effectiveTime';
-    const FIELD_EFFECTIVE_TIME_EXT = '_effectiveTime';
+
     const FIELD_ENTITY_CODEABLE_CONCEPT = 'entityCodeableConcept';
     const FIELD_ENTITY_REFERENCE = 'entityReference';
+    const FIELD_IDENTIFIER = 'identifier';
+    const FIELD_EFFECTIVE_TIME = 'effectiveTime';
+    const FIELD_EFFECTIVE_TIME_EXT = '_effectiveTime';
+    const FIELD_QUANTITY = 'quantity';
+    const FIELD_UNIT_PRICE = 'unitPrice';
     const FIELD_FACTOR = 'factor';
     const FIELD_FACTOR_EXT = '_factor';
-    const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_LINK_ID = 'linkId';
-    const FIELD_LINK_ID_EXT = '_linkId';
+    const FIELD_POINTS = 'points';
+    const FIELD_POINTS_EXT = '_points';
     const FIELD_NET = 'net';
     const FIELD_PAYMENT = 'payment';
     const FIELD_PAYMENT_EXT = '_payment';
     const FIELD_PAYMENT_DATE = 'paymentDate';
     const FIELD_PAYMENT_DATE_EXT = '_paymentDate';
-    const FIELD_POINTS = 'points';
-    const FIELD_POINTS_EXT = '_points';
-    const FIELD_QUANTITY = 'quantity';
-    const FIELD_RECIPIENT = 'recipient';
     const FIELD_RESPONSIBLE = 'responsible';
+    const FIELD_RECIPIENT = 'recipient';
+    const FIELD_LINK_ID = 'linkId';
+    const FIELD_LINK_ID_EXT = '_linkId';
     const FIELD_SECURITY_LABEL_NUMBER = 'securityLabelNumber';
     const FIELD_SECURITY_LABEL_NUMBER_EXT = '_securityLabelNumber';
-    const FIELD_UNIT_PRICE = 'unitPrice';
 
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specific type of Contract Valued Item that may be priced.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $entityCodeableConcept = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specific type of Contract Valued Item that may be priced.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $entityReference = null;
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies a Contract Valued Item instance.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
+     */
+    protected null|FHIRIdentifier $identifier = null;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -125,33 +164,30 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    protected $effectiveTime = null;
-
+    protected null|FHIRDateTime $effectiveTime = null;
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
+     * Specifies the units by which the Contract Valued Item is measured or counted,
+     * and quantifies the countable or measurable Contract Valued Item instances.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    protected $entityCodeableConcept = null;
-
+    protected null|FHIRQuantity $quantity = null;
     /**
-     * A reference from one resource to another.
+     * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
+     * A Contract Valued Item unit valuation measure.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
-    protected $entityReference = null;
-
+    protected null|FHIRMoney $unitPrice = null;
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
@@ -164,71 +200,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
-    protected $factor = null;
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies a Contract Valued Item instance.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
-     */
-    protected $identifier = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Id of the clause or question text related to the context of this valuedItem in
-     * the referenced form or QuestionnaireResponse.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
-     */
-    protected $linkId = [];
-
-    /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Expresses the product of the Contract Valued Item unitQuantity and the
-     * unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per
-     * Point) * factor Number * points = net Amount. Quantity, factor and points are
-     * assumed to be 1 if not supplied.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
-     */
-    protected $net = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Terms of valuation.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $payment = null;
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * When payment is due.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
-     */
-    protected $paymentDate = null;
-
+    protected null|FHIRDecimal $factor = null;
     /**
      * A rational number with implicit precision
      * Do not use an IEEE type floating point type, instead use something that works
@@ -242,33 +214,43 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
-    protected $points = null;
-
+    protected null|FHIRDecimal $points = null;
     /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
+     * An amount of economic utility in some recognized currency.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specifies the units by which the Contract Valued Item is measured or counted,
-     * and quantifies the countable or measurable Contract Valued Item instances.
+     * Expresses the product of the Contract Valued Item unitQuantity and the
+     * unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per
+     * Point) * factor Number * points = net Amount. Quantity, factor and points are
+     * assumed to be 1 if not supplied.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
-    protected $quantity = null;
-
+    protected null|FHIRMoney $net = null;
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Who will receive payment.
+     * Terms of valuation.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $recipient = null;
-
+    protected null|FHIRString $payment = null;
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * When payment is due.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     */
+    protected null|FHIRDateTime $paymentDate = null;
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -278,8 +260,28 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    protected $responsible = null;
-
+    protected null|FHIRReference $responsible = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who will receive payment.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $recipient = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Id of the clause or question text related to the context of this valuedItem in
+     * the referenced form or QuestionnaireResponse.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
+     */
+    protected null|array $linkId = [];
     /**
      * An integer with a value that is not negative (e.g. >= 0)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -290,52 +292,51 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[]
      */
-    protected $securityLabelNumber = [];
-
-    /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A Contract Valued Item unit valuation measure.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
-     */
-    protected $unitPrice = null;
+    protected null|array $securityLabelNumber = [];
 
     /**
      * Validation map for fields in type Contract.ValuedItem
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRContractValuedItem Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRContractValuedItem::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_EFFECTIVE_TIME]) || isset($data[self::FIELD_EFFECTIVE_TIME_EXT])) {
-            if (isset($data[self::FIELD_EFFECTIVE_TIME])) {
-                $value = $data[self::FIELD_EFFECTIVE_TIME];
+        if (array_key_exists(self::FIELD_ENTITY_CODEABLE_CONCEPT, $data)) {
+            if ($data[self::FIELD_ENTITY_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
+                $this->setEntityCodeableConcept($data[self::FIELD_ENTITY_CODEABLE_CONCEPT]);
             } else {
-                $value = null;
+                $this->setEntityCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_ENTITY_CODEABLE_CONCEPT]));
             }
-            if (isset($data[self::FIELD_EFFECTIVE_TIME_EXT]) && is_array($data[self::FIELD_EFFECTIVE_TIME_EXT])) {
-                $ext = $data[self::FIELD_EFFECTIVE_TIME_EXT];
+        }
+        if (array_key_exists(self::FIELD_ENTITY_REFERENCE, $data)) {
+            if ($data[self::FIELD_ENTITY_REFERENCE] instanceof FHIRReference) {
+                $this->setEntityReference($data[self::FIELD_ENTITY_REFERENCE]);
             } else {
-                $ext = [];
+                $this->setEntityReference(new FHIRReference($data[self::FIELD_ENTITY_REFERENCE]));
             }
+        }
+        if (array_key_exists(self::FIELD_IDENTIFIER, $data)) {
+            if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+                $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
+            } else {
+                $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
+            }
+        }
+        if (array_key_exists(self::FIELD_EFFECTIVE_TIME, $data) || array_key_exists(self::FIELD_EFFECTIVE_TIME_EXT, $data)) {
+            $value = $data[self::FIELD_EFFECTIVE_TIME] ?? null;
+            $ext = (isset($data[self::FIELD_EFFECTIVE_TIME_EXT]) && is_array($data[self::FIELD_EFFECTIVE_TIME_EXT])) ? $data[self::FIELD_EFFECTIVE_TIME_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setEffectiveTime($value);
@@ -344,35 +345,29 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 } else {
                     $this->setEffectiveTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setEffectiveTime(new FHIRDateTime($ext));
+            } else {
+                $this->setEffectiveTime(new FHIRDateTime(null));
             }
         }
-        if (isset($data[self::FIELD_ENTITY_CODEABLE_CONCEPT])) {
-            if ($data[self::FIELD_ENTITY_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $this->setEntityCodeableConcept($data[self::FIELD_ENTITY_CODEABLE_CONCEPT]);
+        if (array_key_exists(self::FIELD_QUANTITY, $data)) {
+            if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
+                $this->setQuantity($data[self::FIELD_QUANTITY]);
             } else {
-                $this->setEntityCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_ENTITY_CODEABLE_CONCEPT]));
+                $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
         }
-        if (isset($data[self::FIELD_ENTITY_REFERENCE])) {
-            if ($data[self::FIELD_ENTITY_REFERENCE] instanceof FHIRReference) {
-                $this->setEntityReference($data[self::FIELD_ENTITY_REFERENCE]);
+        if (array_key_exists(self::FIELD_UNIT_PRICE, $data)) {
+            if ($data[self::FIELD_UNIT_PRICE] instanceof FHIRMoney) {
+                $this->setUnitPrice($data[self::FIELD_UNIT_PRICE]);
             } else {
-                $this->setEntityReference(new FHIRReference($data[self::FIELD_ENTITY_REFERENCE]));
+                $this->setUnitPrice(new FHIRMoney($data[self::FIELD_UNIT_PRICE]));
             }
         }
-        if (isset($data[self::FIELD_FACTOR]) || isset($data[self::FIELD_FACTOR_EXT])) {
-            if (isset($data[self::FIELD_FACTOR])) {
-                $value = $data[self::FIELD_FACTOR];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_FACTOR_EXT]) && is_array($data[self::FIELD_FACTOR_EXT])) {
-                $ext = $data[self::FIELD_FACTOR_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_FACTOR, $data) || array_key_exists(self::FIELD_FACTOR_EXT, $data)) {
+            $value = $data[self::FIELD_FACTOR] ?? null;
+            $ext = (isset($data[self::FIELD_FACTOR_EXT]) && is_array($data[self::FIELD_FACTOR_EXT])) ? $data[self::FIELD_FACTOR_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDecimal) {
                     $this->setFactor($value);
@@ -381,28 +376,87 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 } else {
                     $this->setFactor(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setFactor(new FHIRDecimal($ext));
+            } else {
+                $this->setFactor(new FHIRDecimal(null));
             }
         }
-        if (isset($data[self::FIELD_IDENTIFIER])) {
-            if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
-                $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
+        if (array_key_exists(self::FIELD_POINTS, $data) || array_key_exists(self::FIELD_POINTS_EXT, $data)) {
+            $value = $data[self::FIELD_POINTS] ?? null;
+            $ext = (isset($data[self::FIELD_POINTS_EXT]) && is_array($data[self::FIELD_POINTS_EXT])) ? $data[self::FIELD_POINTS_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setPoints($value);
+                } else if (is_array($value)) {
+                    $this->setPoints(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setPoints(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPoints(new FHIRDecimal($ext));
             } else {
-                $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
+                $this->setPoints(new FHIRDecimal(null));
             }
         }
-        if (isset($data[self::FIELD_LINK_ID]) || isset($data[self::FIELD_LINK_ID_EXT])) {
-            if (isset($data[self::FIELD_LINK_ID])) {
-                $value = $data[self::FIELD_LINK_ID];
+        if (array_key_exists(self::FIELD_NET, $data)) {
+            if ($data[self::FIELD_NET] instanceof FHIRMoney) {
+                $this->setNet($data[self::FIELD_NET]);
             } else {
-                $value = null;
+                $this->setNet(new FHIRMoney($data[self::FIELD_NET]));
             }
-            if (isset($data[self::FIELD_LINK_ID_EXT]) && is_array($data[self::FIELD_LINK_ID_EXT])) {
-                $ext = $data[self::FIELD_LINK_ID_EXT];
+        }
+        if (array_key_exists(self::FIELD_PAYMENT, $data) || array_key_exists(self::FIELD_PAYMENT_EXT, $data)) {
+            $value = $data[self::FIELD_PAYMENT] ?? null;
+            $ext = (isset($data[self::FIELD_PAYMENT_EXT]) && is_array($data[self::FIELD_PAYMENT_EXT])) ? $data[self::FIELD_PAYMENT_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setPayment($value);
+                } else if (is_array($value)) {
+                    $this->setPayment(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setPayment(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPayment(new FHIRString($ext));
             } else {
-                $ext = [];
+                $this->setPayment(new FHIRString(null));
             }
+        }
+        if (array_key_exists(self::FIELD_PAYMENT_DATE, $data) || array_key_exists(self::FIELD_PAYMENT_DATE_EXT, $data)) {
+            $value = $data[self::FIELD_PAYMENT_DATE] ?? null;
+            $ext = (isset($data[self::FIELD_PAYMENT_DATE_EXT]) && is_array($data[self::FIELD_PAYMENT_DATE_EXT])) ? $data[self::FIELD_PAYMENT_DATE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setPaymentDate($value);
+                } else if (is_array($value)) {
+                    $this->setPaymentDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setPaymentDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPaymentDate(new FHIRDateTime($ext));
+            } else {
+                $this->setPaymentDate(new FHIRDateTime(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_RESPONSIBLE, $data)) {
+            if ($data[self::FIELD_RESPONSIBLE] instanceof FHIRReference) {
+                $this->setResponsible($data[self::FIELD_RESPONSIBLE]);
+            } else {
+                $this->setResponsible(new FHIRReference($data[self::FIELD_RESPONSIBLE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_RECIPIENT, $data)) {
+            if ($data[self::FIELD_RECIPIENT] instanceof FHIRReference) {
+                $this->setRecipient($data[self::FIELD_RECIPIENT]);
+            } else {
+                $this->setRecipient(new FHIRReference($data[self::FIELD_RECIPIENT]));
+            }
+        }
+        if (array_key_exists(self::FIELD_LINK_ID, $data) || array_key_exists(self::FIELD_LINK_ID_EXT, $data)) {
+            $value = $data[self::FIELD_LINK_ID] ?? null;
+            $ext = (isset($data[self::FIELD_LINK_ID_EXT]) && is_array($data[self::FIELD_LINK_ID_EXT])) ? $data[self::FIELD_LINK_ID_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->addLinkId($value);
@@ -424,120 +478,17 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 } else {
                     $this->addLinkId(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addLinkId(new FHIRString($iext));
                 }
+            } else {
+                $this->addLinkId(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_NET])) {
-            if ($data[self::FIELD_NET] instanceof FHIRMoney) {
-                $this->setNet($data[self::FIELD_NET]);
-            } else {
-                $this->setNet(new FHIRMoney($data[self::FIELD_NET]));
-            }
-        }
-        if (isset($data[self::FIELD_PAYMENT]) || isset($data[self::FIELD_PAYMENT_EXT])) {
-            if (isset($data[self::FIELD_PAYMENT])) {
-                $value = $data[self::FIELD_PAYMENT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PAYMENT_EXT]) && is_array($data[self::FIELD_PAYMENT_EXT])) {
-                $ext = $data[self::FIELD_PAYMENT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setPayment($value);
-                } else if (is_array($value)) {
-                    $this->setPayment(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setPayment(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPayment(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PAYMENT_DATE]) || isset($data[self::FIELD_PAYMENT_DATE_EXT])) {
-            if (isset($data[self::FIELD_PAYMENT_DATE])) {
-                $value = $data[self::FIELD_PAYMENT_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PAYMENT_DATE_EXT]) && is_array($data[self::FIELD_PAYMENT_DATE_EXT])) {
-                $ext = $data[self::FIELD_PAYMENT_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setPaymentDate($value);
-                } else if (is_array($value)) {
-                    $this->setPaymentDate(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setPaymentDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPaymentDate(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_POINTS]) || isset($data[self::FIELD_POINTS_EXT])) {
-            if (isset($data[self::FIELD_POINTS])) {
-                $value = $data[self::FIELD_POINTS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_POINTS_EXT]) && is_array($data[self::FIELD_POINTS_EXT])) {
-                $ext = $data[self::FIELD_POINTS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setPoints($value);
-                } else if (is_array($value)) {
-                    $this->setPoints(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setPoints(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPoints(new FHIRDecimal($ext));
-            }
-        }
-        if (isset($data[self::FIELD_QUANTITY])) {
-            if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
-                $this->setQuantity($data[self::FIELD_QUANTITY]);
-            } else {
-                $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
-            }
-        }
-        if (isset($data[self::FIELD_RECIPIENT])) {
-            if ($data[self::FIELD_RECIPIENT] instanceof FHIRReference) {
-                $this->setRecipient($data[self::FIELD_RECIPIENT]);
-            } else {
-                $this->setRecipient(new FHIRReference($data[self::FIELD_RECIPIENT]));
-            }
-        }
-        if (isset($data[self::FIELD_RESPONSIBLE])) {
-            if ($data[self::FIELD_RESPONSIBLE] instanceof FHIRReference) {
-                $this->setResponsible($data[self::FIELD_RESPONSIBLE]);
-            } else {
-                $this->setResponsible(new FHIRReference($data[self::FIELD_RESPONSIBLE]));
-            }
-        }
-        if (isset($data[self::FIELD_SECURITY_LABEL_NUMBER]) || isset($data[self::FIELD_SECURITY_LABEL_NUMBER_EXT])) {
-            if (isset($data[self::FIELD_SECURITY_LABEL_NUMBER])) {
-                $value = $data[self::FIELD_SECURITY_LABEL_NUMBER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SECURITY_LABEL_NUMBER_EXT]) && is_array($data[self::FIELD_SECURITY_LABEL_NUMBER_EXT])) {
-                $ext = $data[self::FIELD_SECURITY_LABEL_NUMBER_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_SECURITY_LABEL_NUMBER, $data) || array_key_exists(self::FIELD_SECURITY_LABEL_NUMBER_EXT, $data)) {
+            $value = $data[self::FIELD_SECURITY_LABEL_NUMBER] ?? null;
+            $ext = (isset($data[self::FIELD_SECURITY_LABEL_NUMBER_EXT]) && is_array($data[self::FIELD_SECURITY_LABEL_NUMBER_EXT])) ? $data[self::FIELD_SECURITY_LABEL_NUMBER_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRUnsignedInt) {
                     $this->addSecurityLabelNumber($value);
@@ -559,17 +510,12 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 } else {
                     $this->addSecurityLabelNumber(new FHIRUnsignedInt([FHIRUnsignedInt::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addSecurityLabelNumber(new FHIRUnsignedInt($iext));
                 }
-            }
-        }
-        if (isset($data[self::FIELD_UNIT_PRICE])) {
-            if ($data[self::FIELD_UNIT_PRICE] instanceof FHIRMoney) {
-                $this->setUnitPrice($data[self::FIELD_UNIT_PRICE]);
             } else {
-                $this->setUnitPrice(new FHIRMoney($data[self::FIELD_UNIT_PRICE]));
+                $this->addSecurityLabelNumber(new FHIRUnsignedInt(null));
             }
         }
     }
@@ -577,67 +523,9 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ContractValuedItem{$xmlns}></ContractValuedItem>";
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicates the time during which this Contract ValuedItem information is
-     * effective.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
-     */
-    public function getEffectiveTime()
-    {
-        return $this->effectiveTime;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicates the time during which this Contract ValuedItem information is
-     * effective.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $effectiveTime
-     * @return static
-     */
-    public function setEffectiveTime($effectiveTime = null)
-    {
-        if (null === $effectiveTime) {
-            $this->effectiveTime = null;
-            return $this;
-        }
-        if ($effectiveTime instanceof FHIRDateTime) {
-            $this->effectiveTime = $effectiveTime;
-            return $this;
-        }
-        $this->effectiveTime = new FHIRDateTime($effectiveTime);
-        return $this;
     }
 
     /**
@@ -646,12 +534,11 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
+     * Specific type of Contract Valued Item that may be priced.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getEntityCodeableConcept()
+    public function getEntityCodeableConcept(): null|FHIRCodeableConcept
     {
         return $this->entityCodeableConcept;
     }
@@ -662,14 +549,17 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
+     * Specific type of Contract Valued Item that may be priced.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $entityCodeableConcept
      * @return static
      */
-    public function setEntityCodeableConcept(FHIRCodeableConcept $entityCodeableConcept = null)
+    public function setEntityCodeableConcept(null|FHIRCodeableConcept $entityCodeableConcept = null): self
     {
+        if (null === $entityCodeableConcept) {
+            $entityCodeableConcept = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->entityCodeableConcept, $entityCodeableConcept);
         $this->entityCodeableConcept = $entityCodeableConcept;
         return $this;
     }
@@ -679,12 +569,11 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
+     * Specific type of Contract Valued Item that may be priced.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getEntityReference()
+    public function getEntityReference(): null|FHIRReference
     {
         return $this->entityReference;
     }
@@ -694,59 +583,18 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Specific type of Contract Valued Item that may be priced. (choose any one of
-     * entity*, but only one)
+     * Specific type of Contract Valued Item that may be priced.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $entityReference
      * @return static
      */
-    public function setEntityReference(FHIRReference $entityReference = null)
+    public function setEntityReference(null|FHIRReference $entityReference = null): self
     {
+        if (null === $entityReference) {
+            $entityReference = new FHIRReference();
+        }
+        $this->_trackValueSet($this->entityReference, $entityReference);
         $this->entityReference = $entityReference;
-        return $this;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A real number that represents a multiplier used in determining the overall value
-     * of the Contract Valued Item delivered. The concept of a Factor allows for a
-     * discount or surcharge multiplier to be applied to a monetary amount.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
-     */
-    public function getFactor()
-    {
-        return $this->factor;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A real number that represents a multiplier used in determining the overall value
-     * of the Contract Valued Item delivered. The concept of a Factor allows for a
-     * discount or surcharge multiplier to be applied to a monetary amount.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $factor
-     * @return static
-     */
-    public function setFactor($factor = null)
-    {
-        if (null === $factor) {
-            $this->factor = null;
-            return $this;
-        }
-        if ($factor instanceof FHIRDecimal) {
-            $this->factor = $factor;
-            return $this;
-        }
-        $this->factor = new FHIRDecimal($factor);
         return $this;
     }
 
@@ -760,7 +608,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
+    public function getIdentifier(): null|FHIRIdentifier
     {
         return $this->identifier;
     }
@@ -776,154 +624,17 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function setIdentifier(null|FHIRIdentifier $identifier = null): self
     {
+        if (null === $identifier) {
+            $identifier = new FHIRIdentifier();
+        }
+        $this->_trackValueSet($this->identifier, $identifier);
         $this->identifier = $identifier;
         return $this;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Id of the clause or question text related to the context of this valuedItem in
-     * the referenced form or QuestionnaireResponse.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
-     */
-    public function getLinkId()
-    {
-        return $this->linkId;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Id of the clause or question text related to the context of this valuedItem in
-     * the referenced form or QuestionnaireResponse.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $linkId
-     * @return static
-     */
-    public function addLinkId($linkId = null)
-    {
-        if (null === $linkId) {
-            $this->linkId = [];
-            return $this;
-        }
-        if ($linkId instanceof FHIRString) {
-            $this->linkId[] = $linkId;
-            return $this;
-        }
-        $this->linkId[] = new FHIRString($linkId);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Id of the clause or question text related to the context of this valuedItem in
-     * the referenced form or QuestionnaireResponse.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $linkId
-     * @return static
-     */
-    public function setLinkId(array $linkId = [])
-    {
-        $this->linkId = [];
-        if ([] === $linkId) {
-            return $this;
-        }
-        foreach($linkId as $v) {
-            if ($v instanceof FHIRString) {
-                $this->addLinkId($v);
-            } else {
-                $this->addLinkId(new FHIRString($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Expresses the product of the Contract Valued Item unitQuantity and the
-     * unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per
-     * Point) * factor Number * points = net Amount. Quantity, factor and points are
-     * assumed to be 1 if not supplied.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
-     */
-    public function getNet()
-    {
-        return $this->net;
-    }
-
-    /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Expresses the product of the Contract Valued Item unitQuantity and the
-     * unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per
-     * Point) * factor Number * points = net Amount. Quantity, factor and points are
-     * assumed to be 1 if not supplied.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $net
-     * @return static
-     */
-    public function setNet(FHIRMoney $net = null)
-    {
-        $this->net = $net;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Terms of valuation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getPayment()
-    {
-        return $this->payment;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Terms of valuation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $payment
-     * @return static
-     */
-    public function setPayment($payment = null)
-    {
-        if (null === $payment) {
-            $this->payment = null;
-            return $this;
-        }
-        if ($payment instanceof FHIRString) {
-            $this->payment = $payment;
-            return $this;
-        }
-        $this->payment = new FHIRString($payment);
-        return $this;
-    }
-
-    /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
@@ -931,13 +642,14 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When payment is due.
+     * Indicates the time during which this Contract ValuedItem information is
+     * effective.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    public function getPaymentDate()
+    public function getEffectiveTime(): null|FHIRDateTime
     {
-        return $this->paymentDate;
+        return $this->effectiveTime;
     }
 
     /**
@@ -948,68 +660,24 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * SHALL be valid dates.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * When payment is due.
+     * Indicates the time during which this Contract ValuedItem information is
+     * effective.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $paymentDate
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $effectiveTime
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPaymentDate($paymentDate = null)
+    public function setEffectiveTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $effectiveTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $paymentDate) {
-            $this->paymentDate = null;
-            return $this;
+        if (null !== $effectiveTime && !($effectiveTime instanceof FHIRDateTime)) {
+            $effectiveTime = new FHIRDateTime($effectiveTime);
         }
-        if ($paymentDate instanceof FHIRDateTime) {
-            $this->paymentDate = $paymentDate;
-            return $this;
+        $this->_trackValueSet($this->effectiveTime, $effectiveTime);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_TIME])) {
+            $this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_TIME] = [];
         }
-        $this->paymentDate = new FHIRDateTime($paymentDate);
-        return $this;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An amount that expresses the weighting (based on difficulty, cost and/or
-     * resource intensiveness) associated with the Contract Valued Item delivered. The
-     * concept of Points allows for assignment of point values for a Contract Valued
-     * Item, such that a monetary amount can be assigned to each point.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
-     */
-    public function getPoints()
-    {
-        return $this->points;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use an IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * An amount that expresses the weighting (based on difficulty, cost and/or
-     * resource intensiveness) associated with the Contract Valued Item delivered. The
-     * concept of Points allows for assignment of point values for a Contract Valued
-     * Item, such that a monetary amount can be assigned to each point.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $points
-     * @return static
-     */
-    public function setPoints($points = null)
-    {
-        if (null === $points) {
-            $this->points = null;
-            return $this;
-        }
-        if ($points instanceof FHIRDecimal) {
-            $this->points = $points;
-            return $this;
-        }
-        $this->points = new FHIRDecimal($points);
+        $this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_TIME][0] = $xmlLocation;
+        $this->effectiveTime = $effectiveTime;
         return $this;
     }
 
@@ -1025,7 +693,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
-    public function getQuantity()
+    public function getQuantity(): null|FHIRQuantity
     {
         return $this->quantity;
     }
@@ -1043,136 +711,13 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(FHIRQuantity $quantity = null)
+    public function setQuantity(null|FHIRQuantity $quantity = null): self
     {
+        if (null === $quantity) {
+            $quantity = new FHIRQuantity();
+        }
+        $this->_trackValueSet($this->quantity, $quantity);
         $this->quantity = $quantity;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Who will receive payment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getRecipient()
-    {
-        return $this->recipient;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Who will receive payment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $recipient
-     * @return static
-     */
-    public function setRecipient(FHIRReference $recipient = null)
-    {
-        $this->recipient = $recipient;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Who will make payment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getResponsible()
-    {
-        return $this->responsible;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Who will make payment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $responsible
-     * @return static
-     */
-    public function setResponsible(FHIRReference $responsible = null)
-    {
-        $this->responsible = $responsible;
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A set of security labels that define which terms are controlled by this
-     * condition.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[]
-     */
-    public function getSecurityLabelNumber()
-    {
-        return $this->securityLabelNumber;
-    }
-
-    /**
-     * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A set of security labels that define which terms are controlled by this
-     * condition.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $securityLabelNumber
-     * @return static
-     */
-    public function addSecurityLabelNumber($securityLabelNumber = null)
-    {
-        if (null === $securityLabelNumber) {
-            $this->securityLabelNumber = [];
-            return $this;
-        }
-        if ($securityLabelNumber instanceof FHIRUnsignedInt) {
-            $this->securityLabelNumber[] = $securityLabelNumber;
-            return $this;
-        }
-        $this->securityLabelNumber[] = new FHIRUnsignedInt($securityLabelNumber);
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is not negative (e.g. >= 0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A set of security labels that define which terms are controlled by this
-     * condition.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[] $securityLabelNumber
-     * @return static
-     */
-    public function setSecurityLabelNumber(array $securityLabelNumber = [])
-    {
-        $this->securityLabelNumber = [];
-        if ([] === $securityLabelNumber) {
-            return $this;
-        }
-        foreach($securityLabelNumber as $v) {
-            if ($v instanceof FHIRUnsignedInt) {
-                $this->addSecurityLabelNumber($v);
-            } else {
-                $this->addSecurityLabelNumber(new FHIRUnsignedInt($v));
-            }
-        }
         return $this;
     }
 
@@ -1185,7 +730,7 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
-    public function getUnitPrice()
+    public function getUnitPrice(): null|FHIRMoney
     {
         return $this->unitPrice;
     }
@@ -1200,9 +745,443 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $unitPrice
      * @return static
      */
-    public function setUnitPrice(FHIRMoney $unitPrice = null)
+    public function setUnitPrice(null|FHIRMoney $unitPrice = null): self
     {
+        if (null === $unitPrice) {
+            $unitPrice = new FHIRMoney();
+        }
+        $this->_trackValueSet($this->unitPrice, $unitPrice);
         $this->unitPrice = $unitPrice;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A real number that represents a multiplier used in determining the overall value
+     * of the Contract Valued Item delivered. The concept of a Factor allows for a
+     * discount or surcharge multiplier to be applied to a monetary amount.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
+     */
+    public function getFactor(): null|FHIRDecimal
+    {
+        return $this->factor;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A real number that represents a multiplier used in determining the overall value
+     * of the Contract Valued Item delivered. The concept of a Factor allows for a
+     * discount or surcharge multiplier to be applied to a monetary amount.
+     *
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\R4\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $factor
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setFactor(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $factor = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $factor && !($factor instanceof FHIRDecimal)) {
+            $factor = new FHIRDecimal($factor);
+        }
+        $this->_trackValueSet($this->factor, $factor);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_FACTOR])) {
+            $this->_primitiveXmlLocations[self::FIELD_FACTOR] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_FACTOR][0] = $xmlLocation;
+        $this->factor = $factor;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An amount that expresses the weighting (based on difficulty, cost and/or
+     * resource intensiveness) associated with the Contract Valued Item delivered. The
+     * concept of Points allows for assignment of point values for a Contract Valued
+     * Item, such that a monetary amount can be assigned to each point.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
+     */
+    public function getPoints(): null|FHIRDecimal
+    {
+        return $this->points;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use an IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An amount that expresses the weighting (based on difficulty, cost and/or
+     * resource intensiveness) associated with the Contract Valued Item delivered. The
+     * concept of Points allows for assignment of point values for a Contract Valued
+     * Item, such that a monetary amount can be assigned to each point.
+     *
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\R4\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal $points
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setPoints(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $points = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $points && !($points instanceof FHIRDecimal)) {
+            $points = new FHIRDecimal($points);
+        }
+        $this->_trackValueSet($this->points, $points);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_POINTS])) {
+            $this->_primitiveXmlLocations[self::FIELD_POINTS] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_POINTS][0] = $xmlLocation;
+        $this->points = $points;
+        return $this;
+    }
+
+    /**
+     * An amount of economic utility in some recognized currency.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Expresses the product of the Contract Valued Item unitQuantity and the
+     * unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per
+     * Point) * factor Number * points = net Amount. Quantity, factor and points are
+     * assumed to be 1 if not supplied.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
+     */
+    public function getNet(): null|FHIRMoney
+    {
+        return $this->net;
+    }
+
+    /**
+     * An amount of economic utility in some recognized currency.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Expresses the product of the Contract Valued Item unitQuantity and the
+     * unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per
+     * Point) * factor Number * points = net Amount. Quantity, factor and points are
+     * assumed to be 1 if not supplied.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $net
+     * @return static
+     */
+    public function setNet(null|FHIRMoney $net = null): self
+    {
+        if (null === $net) {
+            $net = new FHIRMoney();
+        }
+        $this->_trackValueSet($this->net, $net);
+        $this->net = $net;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Terms of valuation.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getPayment(): null|FHIRString
+    {
+        return $this->payment;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Terms of valuation.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $payment
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setPayment(null|string|FHIRStringPrimitive|FHIRString $payment = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $payment && !($payment instanceof FHIRString)) {
+            $payment = new FHIRString($payment);
+        }
+        $this->_trackValueSet($this->payment, $payment);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PAYMENT])) {
+            $this->_primitiveXmlLocations[self::FIELD_PAYMENT] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_PAYMENT][0] = $xmlLocation;
+        $this->payment = $payment;
+        return $this;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * When payment is due.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     */
+    public function getPaymentDate(): null|FHIRDateTime
+    {
+        return $this->paymentDate;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * When payment is due.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $paymentDate
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setPaymentDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $paymentDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $paymentDate && !($paymentDate instanceof FHIRDateTime)) {
+            $paymentDate = new FHIRDateTime($paymentDate);
+        }
+        $this->_trackValueSet($this->paymentDate, $paymentDate);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE][0] = $xmlLocation;
+        $this->paymentDate = $paymentDate;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who will make payment.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getResponsible(): null|FHIRReference
+    {
+        return $this->responsible;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who will make payment.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $responsible
+     * @return static
+     */
+    public function setResponsible(null|FHIRReference $responsible = null): self
+    {
+        if (null === $responsible) {
+            $responsible = new FHIRReference();
+        }
+        $this->_trackValueSet($this->responsible, $responsible);
+        $this->responsible = $responsible;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who will receive payment.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getRecipient(): null|FHIRReference
+    {
+        return $this->recipient;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who will receive payment.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $recipient
+     * @return static
+     */
+    public function setRecipient(null|FHIRReference $recipient = null): self
+    {
+        if (null === $recipient) {
+            $recipient = new FHIRReference();
+        }
+        $this->_trackValueSet($this->recipient, $recipient);
+        $this->recipient = $recipient;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Id of the clause or question text related to the context of this valuedItem in
+     * the referenced form or QuestionnaireResponse.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
+     */
+    public function getLinkId(): null|array
+    {
+        return $this->linkId;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Id of the clause or question text related to the context of this valuedItem in
+     * the referenced form or QuestionnaireResponse.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $linkId
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function addLinkId(null|string|FHIRStringPrimitive|FHIRString $linkId = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $linkId && !($linkId instanceof FHIRString)) {
+            $linkId = new FHIRString($linkId);
+        }
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_LINK_ID])) {
+            $this->_primitiveXmlLocations[self::FIELD_LINK_ID] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_LINK_ID][] = $xmlLocation;
+        $this->linkId[] = $linkId;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Id of the clause or question text related to the context of this valuedItem in
+     * the referenced form or QuestionnaireResponse.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[] $linkId
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setLinkId(array $linkId = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        unset($this->_primitiveXmlLocations[self::FIELD_LINK_ID]);
+        if ([] !== $this->linkId) {
+            $this->_trackValuesRemoved(count($this->linkId));
+            $this->linkId = [];
+        }
+        if ([] === $linkId) {
+            return $this;
+        }
+        foreach($linkId as $v) {
+            if ($v instanceof FHIRString) {
+                $this->addLinkId($v, $xmlLocation);
+            } else {
+                $this->addLinkId(new FHIRString($v), $xmlLocation);
+            }
+        }
+        return $this;
+    }
+
+    /**
+     * An integer with a value that is not negative (e.g. >= 0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A set of security labels that define which terms are controlled by this
+     * condition.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[]
+     */
+    public function getSecurityLabelNumber(): null|array
+    {
+        return $this->securityLabelNumber;
+    }
+
+    /**
+     * An integer with a value that is not negative (e.g. >= 0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A set of security labels that define which terms are controlled by this
+     * condition.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRUnsignedIntPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt $securityLabelNumber
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function addSecurityLabelNumber(null|string|int|float|FHIRUnsignedIntPrimitive|FHIRUnsignedInt $securityLabelNumber = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $securityLabelNumber && !($securityLabelNumber instanceof FHIRUnsignedInt)) {
+            $securityLabelNumber = new FHIRUnsignedInt($securityLabelNumber);
+        }
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SECURITY_LABEL_NUMBER])) {
+            $this->_primitiveXmlLocations[self::FIELD_SECURITY_LABEL_NUMBER] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_SECURITY_LABEL_NUMBER][] = $xmlLocation;
+        $this->securityLabelNumber[] = $securityLabelNumber;
+        return $this;
+    }
+
+    /**
+     * An integer with a value that is not negative (e.g. >= 0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A set of security labels that define which terms are controlled by this
+     * condition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[] $securityLabelNumber
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setSecurityLabelNumber(array $securityLabelNumber = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        unset($this->_primitiveXmlLocations[self::FIELD_SECURITY_LABEL_NUMBER]);
+        if ([] !== $this->securityLabelNumber) {
+            $this->_trackValuesRemoved(count($this->securityLabelNumber));
+            $this->securityLabelNumber = [];
+        }
+        if ([] === $securityLabelNumber) {
+            return $this;
+        }
+        foreach($securityLabelNumber as $v) {
+            if ($v instanceof FHIRUnsignedInt) {
+                $this->addSecurityLabelNumber($v, $xmlLocation);
+            } else {
+                $this->addSecurityLabelNumber(new FHIRUnsignedInt($v), $xmlLocation);
+            }
+        }
         return $this;
     }
 
@@ -1212,9 +1191,9 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -1223,15 +1202,10 @@ class FHIRContractValuedItem extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getEffectiveTime())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_EFFECTIVE_TIME] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getEntityCodeableConcept())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_ENTITY_CODEABLE_CONCEPT] = $fieldErrs;
@@ -1242,21 +1216,34 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 $errs[self::FIELD_ENTITY_REFERENCE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getFactor())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_FACTOR] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getIdentifier())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getLinkId())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_LINK_ID, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getEffectiveTime())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EFFECTIVE_TIME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getQuantity())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_QUANTITY] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getUnitPrice())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_UNIT_PRICE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getFactor())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FACTOR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPoints())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_POINTS] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getNet())) {
@@ -1274,14 +1261,9 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 $errs[self::FIELD_PAYMENT_DATE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getPoints())) {
+        if (null !== ($v = $this->getResponsible())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_POINTS] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getQuantity())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_QUANTITY] = $fieldErrs;
+                $errs[self::FIELD_RESPONSIBLE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getRecipient())) {
@@ -1289,32 +1271,17 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 $errs[self::FIELD_RECIPIENT] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getResponsible())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_RESPONSIBLE] = $fieldErrs;
+        if ([] !== ($vs = $this->getLinkId())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_LINK_ID, $i)] = $fieldErrs;
+                }
             }
         }
         if ([] !== ($vs = $this->getSecurityLabelNumber())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_SECURITY_LABEL_NUMBER, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getUnitPrice())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_UNIT_PRICE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_EFFECTIVE_TIME])) {
-            $v = $this->getEffectiveTime();
-            foreach($validationRules[self::FIELD_EFFECTIVE_TIME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_EFFECTIVE_TIME, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EFFECTIVE_TIME])) {
-                        $errs[self::FIELD_EFFECTIVE_TIME] = [];
-                    }
-                    $errs[self::FIELD_EFFECTIVE_TIME][$rule] = $err;
                 }
             }
         }
@@ -1342,18 +1309,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_FACTOR])) {
-            $v = $this->getFactor();
-            foreach($validationRules[self::FIELD_FACTOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_FACTOR, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FACTOR])) {
-                        $errs[self::FIELD_FACTOR] = [];
-                    }
-                    $errs[self::FIELD_FACTOR][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_IDENTIFIER])) {
             $v = $this->getIdentifier();
             foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
@@ -1366,15 +1321,63 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_LINK_ID])) {
-            $v = $this->getLinkId();
-            foreach($validationRules[self::FIELD_LINK_ID] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_LINK_ID, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_EFFECTIVE_TIME])) {
+            $v = $this->getEffectiveTime();
+            foreach($validationRules[self::FIELD_EFFECTIVE_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_EFFECTIVE_TIME, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_LINK_ID])) {
-                        $errs[self::FIELD_LINK_ID] = [];
+                    if (!isset($errs[self::FIELD_EFFECTIVE_TIME])) {
+                        $errs[self::FIELD_EFFECTIVE_TIME] = [];
                     }
-                    $errs[self::FIELD_LINK_ID][$rule] = $err;
+                    $errs[self::FIELD_EFFECTIVE_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_QUANTITY])) {
+            $v = $this->getQuantity();
+            foreach($validationRules[self::FIELD_QUANTITY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_QUANTITY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_QUANTITY])) {
+                        $errs[self::FIELD_QUANTITY] = [];
+                    }
+                    $errs[self::FIELD_QUANTITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_UNIT_PRICE])) {
+            $v = $this->getUnitPrice();
+            foreach($validationRules[self::FIELD_UNIT_PRICE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_UNIT_PRICE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_UNIT_PRICE])) {
+                        $errs[self::FIELD_UNIT_PRICE] = [];
+                    }
+                    $errs[self::FIELD_UNIT_PRICE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FACTOR])) {
+            $v = $this->getFactor();
+            foreach($validationRules[self::FIELD_FACTOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_FACTOR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FACTOR])) {
+                        $errs[self::FIELD_FACTOR] = [];
+                    }
+                    $errs[self::FIELD_FACTOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_POINTS])) {
+            $v = $this->getPoints();
+            foreach($validationRules[self::FIELD_POINTS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_POINTS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_POINTS])) {
+                        $errs[self::FIELD_POINTS] = [];
+                    }
+                    $errs[self::FIELD_POINTS][$rule] = $err;
                 }
             }
         }
@@ -1414,27 +1417,15 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_POINTS])) {
-            $v = $this->getPoints();
-            foreach($validationRules[self::FIELD_POINTS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_POINTS, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_RESPONSIBLE])) {
+            $v = $this->getResponsible();
+            foreach($validationRules[self::FIELD_RESPONSIBLE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_RESPONSIBLE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_POINTS])) {
-                        $errs[self::FIELD_POINTS] = [];
+                    if (!isset($errs[self::FIELD_RESPONSIBLE])) {
+                        $errs[self::FIELD_RESPONSIBLE] = [];
                     }
-                    $errs[self::FIELD_POINTS][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_QUANTITY])) {
-            $v = $this->getQuantity();
-            foreach($validationRules[self::FIELD_QUANTITY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_QUANTITY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_QUANTITY])) {
-                        $errs[self::FIELD_QUANTITY] = [];
-                    }
-                    $errs[self::FIELD_QUANTITY][$rule] = $err;
+                    $errs[self::FIELD_RESPONSIBLE][$rule] = $err;
                 }
             }
         }
@@ -1450,15 +1441,15 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_RESPONSIBLE])) {
-            $v = $this->getResponsible();
-            foreach($validationRules[self::FIELD_RESPONSIBLE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_RESPONSIBLE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_LINK_ID])) {
+            $v = $this->getLinkId();
+            foreach($validationRules[self::FIELD_LINK_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_LINK_ID, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RESPONSIBLE])) {
-                        $errs[self::FIELD_RESPONSIBLE] = [];
+                    if (!isset($errs[self::FIELD_LINK_ID])) {
+                        $errs[self::FIELD_LINK_ID] = [];
                     }
-                    $errs[self::FIELD_RESPONSIBLE][$rule] = $err;
+                    $errs[self::FIELD_LINK_ID][$rule] = $err;
                 }
             }
         }
@@ -1471,18 +1462,6 @@ class FHIRContractValuedItem extends FHIRBackboneElement
                         $errs[self::FIELD_SECURITY_LABEL_NUMBER] = [];
                     }
                     $errs[self::FIELD_SECURITY_LABEL_NUMBER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_UNIT_PRICE])) {
-            $v = $this->getUnitPrice();
-            foreach($validationRules[self::FIELD_UNIT_PRICE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_VALUED_ITEM, self::FIELD_UNIT_PRICE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_UNIT_PRICE])) {
-                        $errs[self::FIELD_UNIT_PRICE] = [];
-                    }
-                    $errs[self::FIELD_UNIT_PRICE][$rule] = $err;
                 }
             }
         }
@@ -1526,338 +1505,429 @@ class FHIRContractValuedItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRContractValuedItem::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRContractValuedItem::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRContractValuedItem;
-        } elseif (!is_object($type) || !($type instanceof FHIRContractValuedItem)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRContractValuedItem)) {
             throw new \RuntimeException(sprintf(
-                'FHIRContractValuedItem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_ENTITY_CODEABLE_CONCEPT === $childName) {
+                $type->setEntityCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ENTITY_REFERENCE === $childName) {
+                $type->setEntityReference(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_IDENTIFIER === $childName) {
+                $type->setIdentifier(FHIRIdentifier::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EFFECTIVE_TIME === $childName) {
+                $type->setEffectiveTime(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_QUANTITY === $childName) {
+                $type->setQuantity(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_UNIT_PRICE === $childName) {
+                $type->setUnitPrice(FHIRMoney::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_FACTOR === $childName) {
+                $type->setFactor(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_POINTS === $childName) {
+                $type->setPoints(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_NET === $childName) {
+                $type->setNet(FHIRMoney::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PAYMENT === $childName) {
+                $type->setPayment(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PAYMENT_DATE === $childName) {
+                $type->setPaymentDate(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_RESPONSIBLE === $childName) {
+                $type->setResponsible(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_RECIPIENT === $childName) {
+                $type->setRecipient(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_LINK_ID === $childName) {
+                $type->addLinkId(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_SECURITY_LABEL_NUMBER === $childName) {
+                $type->addSecurityLabelNumber(FHIRUnsignedInt::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->effectiveTime)) {
-            $type->setEffectiveTime(FHIRDateTime::xmlUnserialize($children->effectiveTime));
-        }
-        if (isset($attributes->effectiveTime)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_EFFECTIVE_TIME])) {
             $pt = $type->getEffectiveTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->effectiveTime);
+                $pt->setValue((string)$attributes[self::FIELD_EFFECTIVE_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setEffectiveTime((string)$attributes->effectiveTime);
+                $type->setEffectiveTime((string)$attributes[self::FIELD_EFFECTIVE_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->entityCodeableConcept)) {
-            $type->setEntityCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->entityCodeableConcept));
-        }
-        if (isset($children->entityReference)) {
-            $type->setEntityReference(FHIRReference::xmlUnserialize($children->entityReference));
-        }
-        if (isset($children->factor)) {
-            $type->setFactor(FHIRDecimal::xmlUnserialize($children->factor));
-        }
-        if (isset($attributes->factor)) {
+        if (isset($attributes[self::FIELD_FACTOR])) {
             $pt = $type->getFactor();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->factor);
+                $pt->setValue((string)$attributes[self::FIELD_FACTOR], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setFactor((string)$attributes->factor);
+                $type->setFactor((string)$attributes[self::FIELD_FACTOR], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->identifier)) {
-            $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
-        }
-        if (isset($children->linkId)) {
-            foreach($children->linkId as $child) {
-                $type->addLinkId(FHIRString::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->net)) {
-            $type->setNet(FHIRMoney::xmlUnserialize($children->net));
-        }
-        if (isset($children->payment)) {
-            $type->setPayment(FHIRString::xmlUnserialize($children->payment));
-        }
-        if (isset($attributes->payment)) {
-            $pt = $type->getPayment();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->payment);
-            } else {
-                $type->setPayment((string)$attributes->payment);
-            }
-        }
-        if (isset($children->paymentDate)) {
-            $type->setPaymentDate(FHIRDateTime::xmlUnserialize($children->paymentDate));
-        }
-        if (isset($attributes->paymentDate)) {
-            $pt = $type->getPaymentDate();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->paymentDate);
-            } else {
-                $type->setPaymentDate((string)$attributes->paymentDate);
-            }
-        }
-        if (isset($children->points)) {
-            $type->setPoints(FHIRDecimal::xmlUnserialize($children->points));
-        }
-        if (isset($attributes->points)) {
+        if (isset($attributes[self::FIELD_POINTS])) {
             $pt = $type->getPoints();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->points);
+                $pt->setValue((string)$attributes[self::FIELD_POINTS], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setPoints((string)$attributes->points);
+                $type->setPoints((string)$attributes[self::FIELD_POINTS], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->quantity)) {
-            $type->setQuantity(FHIRQuantity::xmlUnserialize($children->quantity));
-        }
-        if (isset($children->recipient)) {
-            $type->setRecipient(FHIRReference::xmlUnserialize($children->recipient));
-        }
-        if (isset($children->responsible)) {
-            $type->setResponsible(FHIRReference::xmlUnserialize($children->responsible));
-        }
-        if (isset($children->securityLabelNumber)) {
-            foreach($children->securityLabelNumber as $child) {
-                $type->addSecurityLabelNumber(FHIRUnsignedInt::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_PAYMENT])) {
+            $pt = $type->getPayment();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_PAYMENT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setPayment((string)$attributes[self::FIELD_PAYMENT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->unitPrice)) {
-            $type->setUnitPrice(FHIRMoney::xmlUnserialize($children->unitPrice));
+        if (isset($attributes[self::FIELD_PAYMENT_DATE])) {
+            $pt = $type->getPaymentDate();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_PAYMENT_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setPaymentDate((string)$attributes[self::FIELD_PAYMENT_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_LINK_ID])) {
+            $type->addLinkId((string)$attributes[self::FIELD_LINK_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_SECURITY_LABEL_NUMBER])) {
+            $type->addSecurityLabelNumber((string)$attributes[self::FIELD_SECURITY_LABEL_NUMBER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getEffectiveTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EFFECTIVE_TIME, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ContractValuedItem', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getEffectiveTime())) {
+            $xw->writeAttribute(self::FIELD_EFFECTIVE_TIME, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_FACTOR] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getFactor())) {
+            $xw->writeAttribute(self::FIELD_FACTOR, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_POINTS] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPoints())) {
+            $xw->writeAttribute(self::FIELD_POINTS, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYMENT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPayment())) {
+            $xw->writeAttribute(self::FIELD_PAYMENT, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPaymentDate())) {
+            $xw->writeAttribute(self::FIELD_PAYMENT_DATE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_LINK_ID] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getLinkId())) {
+            $xw->writeAttribute(self::FIELD_LINK_ID, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getLinkId()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_LINK_ID, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SECURITY_LABEL_NUMBER] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getSecurityLabelNumber())) {
+            $xw->writeAttribute(self::FIELD_SECURITY_LABEL_NUMBER, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getSecurityLabelNumber()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_SECURITY_LABEL_NUMBER, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getEntityCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_ENTITY_CODEABLE_CONCEPT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getEntityReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ENTITY_REFERENCE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getFactor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FACTOR, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_ENTITY_REFERENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_IDENTIFIER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getLinkId())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_LINK_ID, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getNet())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NET, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPayment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPaymentDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_DATE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPoints())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_POINTS, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_EFFECTIVE_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getEffectiveTime())) {
+            $xw->startElement(self::FIELD_EFFECTIVE_TIME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getRecipient())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RECIPIENT, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getResponsible())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESPONSIBLE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getSecurityLabelNumber())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SECURITY_LABEL_NUMBER, null, $v->_getFHIRXMLNamespace()));
-            }
+            $xw->startElement(self::FIELD_QUANTITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getUnitPrice())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_UNIT_PRICE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_UNIT_PRICE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_FACTOR] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getFactor())) {
+            $xw->startElement(self::FIELD_FACTOR);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_POINTS] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPoints())) {
+            $xw->startElement(self::FIELD_POINTS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getNet())) {
+            $xw->startElement(self::FIELD_NET);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYMENT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPayment())) {
+            $xw->startElement(self::FIELD_PAYMENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPaymentDate())) {
+            $xw->startElement(self::FIELD_PAYMENT_DATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getResponsible())) {
+            $xw->startElement(self::FIELD_RESPONSIBLE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getRecipient())) {
+            $xw->startElement(self::FIELD_RECIPIENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_LINK_ID] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getLinkId())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_LINK_ID);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
+                }
+            }
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SECURITY_LABEL_NUMBER] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getSecurityLabelNumber())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_SECURITY_LABEL_NUMBER);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
+                }
+            }
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getEffectiveTime())) {
-            $a[self::FIELD_EFFECTIVE_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_EFFECTIVE_TIME_EXT] = $enc;
-            }
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getEntityCodeableConcept())) {
-            $a[self::FIELD_ENTITY_CODEABLE_CONCEPT] = $v;
+            $out->{self::FIELD_ENTITY_CODEABLE_CONCEPT} = $v;
         }
         if (null !== ($v = $this->getEntityReference())) {
-            $a[self::FIELD_ENTITY_REFERENCE] = $v;
-        }
-        if (null !== ($v = $this->getFactor())) {
-            $a[self::FIELD_FACTOR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_FACTOR_EXT] = $enc;
-            }
+            $out->{self::FIELD_ENTITY_REFERENCE} = $v;
         }
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
+            $out->{self::FIELD_IDENTIFIER} = $v;
         }
-        if ([] !== ($vs = $this->getLinkId())) {
-            $a[self::FIELD_LINK_ID] = [];
-            $encs = [];
-            $encValued = false;
-            foreach ($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_LINK_ID][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRString::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
-                }
+        if (null !== ($v = $this->getEffectiveTime())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_EFFECTIVE_TIME} = $val;
             }
-            if ($encValued) {
-                $a[self::FIELD_LINK_ID_EXT] = $encs;
-            }
-        }
-        if (null !== ($v = $this->getNet())) {
-            $a[self::FIELD_NET] = $v;
-        }
-        if (null !== ($v = $this->getPayment())) {
-            $a[self::FIELD_PAYMENT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_PAYMENT_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getPaymentDate())) {
-            $a[self::FIELD_PAYMENT_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_PAYMENT_DATE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getPoints())) {
-            $a[self::FIELD_POINTS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_POINTS_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_EFFECTIVE_TIME_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            $out->{self::FIELD_QUANTITY} = $v;
         }
-        if (null !== ($v = $this->getRecipient())) {
-            $a[self::FIELD_RECIPIENT] = $v;
+        if (null !== ($v = $this->getUnitPrice())) {
+            $out->{self::FIELD_UNIT_PRICE} = $v;
+        }
+        if (null !== ($v = $this->getFactor())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_FACTOR} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDecimal::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_FACTOR_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getPoints())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_POINTS} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDecimal::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_POINTS_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getNet())) {
+            $out->{self::FIELD_NET} = $v;
+        }
+        if (null !== ($v = $this->getPayment())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PAYMENT} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PAYMENT_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getPaymentDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PAYMENT_DATE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PAYMENT_DATE_EXT} = $ext;
+            }
         }
         if (null !== ($v = $this->getResponsible())) {
-            $a[self::FIELD_RESPONSIBLE] = $v;
+            $out->{self::FIELD_RESPONSIBLE} = $v;
         }
-        if ([] !== ($vs = $this->getSecurityLabelNumber())) {
-            $a[self::FIELD_SECURITY_LABEL_NUMBER] = [];
-            $encs = [];
-            $encValued = false;
+        if (null !== ($v = $this->getRecipient())) {
+            $out->{self::FIELD_RECIPIENT} = $v;
+        }
+        if ([] !== ($vs = $this->getLinkId())) {
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_SECURITY_LABEL_NUMBER][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRUnsignedInt::FIELD_VALUE]) || array_key_exists(FHIRUnsignedInt::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRUnsignedInt::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRString::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_SECURITY_LABEL_NUMBER_EXT] = $encs;
+            if ([] !== $vals) {
+                $out->{self::FIELD_LINK_ID} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_LINK_ID_EXT} = $exts;
             }
         }
-        if (null !== ($v = $this->getUnitPrice())) {
-            $a[self::FIELD_UNIT_PRICE] = $v;
+        if ([] !== ($vs = $this->getSecurityLabelNumber())) {
+            $vals = [];
+            $exts = [];
+            foreach ($vs as $v) {
+                if (null === $v) {
+                    continue;
+                }
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRUnsignedInt::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
+                }
+            }
+            if ([] !== $vals) {
+                $out->{self::FIELD_SECURITY_LABEL_NUMBER} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SECURITY_LABEL_NUMBER_EXT} = $exts;
+            }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

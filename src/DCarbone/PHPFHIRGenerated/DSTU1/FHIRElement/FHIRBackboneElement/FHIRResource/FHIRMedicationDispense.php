@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,15 +57,25 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationDispenseStatus;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeMap;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter;
 
 /**
  * Dispensing a medication to a named patient. This includes a description of the
@@ -79,50 +89,15 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE;
-    const FIELD_AUTHORIZING_PRESCRIPTION = 'authorizingPrescription';
-    const FIELD_DISPENSE = 'dispense';
-    const FIELD_DISPENSER = 'dispenser';
+
     const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_PATIENT = 'patient';
     const FIELD_STATUS = 'status';
     const FIELD_STATUS_EXT = '_status';
+    const FIELD_PATIENT = 'patient';
+    const FIELD_DISPENSER = 'dispenser';
+    const FIELD_AUTHORIZING_PRESCRIPTION = 'authorizingPrescription';
+    const FIELD_DISPENSE = 'dispense';
     const FIELD_SUBSTITUTION = 'substitution';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the medication order that is being dispensed against.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
-     */
-    protected $authorizingPrescription = [];
-
-    /**
-     * Dispensing a medication to a named patient. This includes a description of the
-     * supply provided and the instructions for administering the medication.
-     *
-     * Indicates the details of the dispense event such as the days supply and quantity
-     * of medication dispensed.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense[]
-     */
-    protected $dispense = [];
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The individual responsible for dispensing the medication.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    protected $dispenser = null;
 
     /**
      * A technical identifier - identifies some entity uniquely and unambiguously.
@@ -134,8 +109,16 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
-    protected $identifier = null;
-
+    protected null|FHIRIdentifier $identifier = null;
+    /**
+     * A code specifying the state of the dispense event.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A code specifying the state of the set of dispense events.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationDispenseStatus
+     */
+    protected null|FHIRMedicationDispenseStatus $status = null;
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -146,18 +129,37 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    protected $patient = null;
-
+    protected null|FHIRResourceReference $patient = null;
     /**
-     * A code specifying the state of the dispense event.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A code specifying the state of the set of dispense events.
+     * The individual responsible for dispensing the medication.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationDispenseStatus
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    protected $status = null;
-
+    protected null|FHIRResourceReference $dispenser = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the medication order that is being dispensed against.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
+     */
+    protected null|array $authorizingPrescription = [];
+    /**
+     * Dispensing a medication to a named patient. This includes a description of the
+     * supply provided and the instructions for administering the medication.
+     *
+     * Indicates the details of the dispense event such as the days supply and quantity
+     * of medication dispensed.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense[]
+     */
+    protected null|array $dispense = [];
     /**
      * Dispensing a medication to a named patient. This includes a description of the
      * supply provided and the instructions for administering the medication.
@@ -169,98 +171,37 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution
      */
-    protected $substitution = null;
+    protected null|FHIRMedicationDispenseSubstitution $substitution = null;
 
     /**
      * Validation map for fields in type MedicationDispense
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRMedicationDispense Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRMedicationDispense::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_AUTHORIZING_PRESCRIPTION])) {
-            if (is_array($data[self::FIELD_AUTHORIZING_PRESCRIPTION])) {
-                foreach($data[self::FIELD_AUTHORIZING_PRESCRIPTION] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRResourceReference) {
-                        $this->addAuthorizingPrescription($v);
-                    } else {
-                        $this->addAuthorizingPrescription(new FHIRResourceReference($v));
-                    }
-                }
-            } else if ($data[self::FIELD_AUTHORIZING_PRESCRIPTION] instanceof FHIRResourceReference) {
-                $this->addAuthorizingPrescription($data[self::FIELD_AUTHORIZING_PRESCRIPTION]);
-            } else {
-                $this->addAuthorizingPrescription(new FHIRResourceReference($data[self::FIELD_AUTHORIZING_PRESCRIPTION]));
-            }
-        }
-        if (isset($data[self::FIELD_DISPENSE])) {
-            if (is_array($data[self::FIELD_DISPENSE])) {
-                foreach($data[self::FIELD_DISPENSE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRMedicationDispenseDispense) {
-                        $this->addDispense($v);
-                    } else {
-                        $this->addDispense(new FHIRMedicationDispenseDispense($v));
-                    }
-                }
-            } else if ($data[self::FIELD_DISPENSE] instanceof FHIRMedicationDispenseDispense) {
-                $this->addDispense($data[self::FIELD_DISPENSE]);
-            } else {
-                $this->addDispense(new FHIRMedicationDispenseDispense($data[self::FIELD_DISPENSE]));
-            }
-        }
-        if (isset($data[self::FIELD_DISPENSER])) {
-            if ($data[self::FIELD_DISPENSER] instanceof FHIRResourceReference) {
-                $this->setDispenser($data[self::FIELD_DISPENSER]);
-            } else {
-                $this->setDispenser(new FHIRResourceReference($data[self::FIELD_DISPENSER]));
-            }
-        }
-        if (isset($data[self::FIELD_IDENTIFIER])) {
+        if (array_key_exists(self::FIELD_IDENTIFIER, $data)) {
             if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->setIdentifier($data[self::FIELD_IDENTIFIER]);
             } else {
                 $this->setIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_PATIENT])) {
-            if ($data[self::FIELD_PATIENT] instanceof FHIRResourceReference) {
-                $this->setPatient($data[self::FIELD_PATIENT]);
-            } else {
-                $this->setPatient(new FHIRResourceReference($data[self::FIELD_PATIENT]));
-            }
-        }
-        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
-            if (isset($data[self::FIELD_STATUS])) {
-                $value = $data[self::FIELD_STATUS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
-                $ext = $data[self::FIELD_STATUS_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_STATUS, $data) || array_key_exists(self::FIELD_STATUS_EXT, $data)) {
+            $value = $data[self::FIELD_STATUS] ?? null;
+            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) ? $data[self::FIELD_STATUS_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRMedicationDispenseStatus) {
                     $this->setStatus($value);
@@ -269,11 +210,57 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
                 } else {
                     $this->setStatus(new FHIRMedicationDispenseStatus([FHIRMedicationDispenseStatus::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setStatus(new FHIRMedicationDispenseStatus($ext));
+            } else {
+                $this->setStatus(new FHIRMedicationDispenseStatus(null));
             }
         }
-        if (isset($data[self::FIELD_SUBSTITUTION])) {
+        if (array_key_exists(self::FIELD_PATIENT, $data)) {
+            if ($data[self::FIELD_PATIENT] instanceof FHIRResourceReference) {
+                $this->setPatient($data[self::FIELD_PATIENT]);
+            } else {
+                $this->setPatient(new FHIRResourceReference($data[self::FIELD_PATIENT]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DISPENSER, $data)) {
+            if ($data[self::FIELD_DISPENSER] instanceof FHIRResourceReference) {
+                $this->setDispenser($data[self::FIELD_DISPENSER]);
+            } else {
+                $this->setDispenser(new FHIRResourceReference($data[self::FIELD_DISPENSER]));
+            }
+        }
+        if (array_key_exists(self::FIELD_AUTHORIZING_PRESCRIPTION, $data)) {
+            if (is_array($data[self::FIELD_AUTHORIZING_PRESCRIPTION])) {
+                foreach($data[self::FIELD_AUTHORIZING_PRESCRIPTION] as $v) {
+                    if ($v instanceof FHIRResourceReference) {
+                        $this->addAuthorizingPrescription($v);
+                    } else {
+                        $this->addAuthorizingPrescription(new FHIRResourceReference($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_AUTHORIZING_PRESCRIPTION] instanceof FHIRResourceReference) {
+                $this->addAuthorizingPrescription($data[self::FIELD_AUTHORIZING_PRESCRIPTION]);
+            } else {
+                $this->addAuthorizingPrescription(new FHIRResourceReference($data[self::FIELD_AUTHORIZING_PRESCRIPTION]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DISPENSE, $data)) {
+            if (is_array($data[self::FIELD_DISPENSE])) {
+                foreach($data[self::FIELD_DISPENSE] as $v) {
+                    if ($v instanceof FHIRMedicationDispenseDispense) {
+                        $this->addDispense($v);
+                    } else {
+                        $this->addDispense(new FHIRMedicationDispenseDispense($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_DISPENSE] instanceof FHIRMedicationDispenseDispense) {
+                $this->addDispense($data[self::FIELD_DISPENSE]);
+            } else {
+                $this->addDispense(new FHIRMedicationDispenseDispense($data[self::FIELD_DISPENSE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_SUBSTITUTION, $data)) {
             if ($data[self::FIELD_SUBSTITUTION] instanceof FHIRMedicationDispenseSubstitution) {
                 $this->setSubstitution($data[self::FIELD_SUBSTITUTION]);
             } else {
@@ -285,7 +272,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -293,163 +280,9 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     /**
      * @return string
      */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<MedicationDispense{$xmlns}></MedicationDispense>";
-    }
-    /**
-     * @return string
-     */
-    public function _getResourceType()
+    public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
-    }
-
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the medication order that is being dispensed against.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
-     */
-    public function getAuthorizingPrescription()
-    {
-        return $this->authorizingPrescription;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the medication order that is being dispensed against.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $authorizingPrescription
-     * @return static
-     */
-    public function addAuthorizingPrescription(FHIRResourceReference $authorizingPrescription = null)
-    {
-        $this->authorizingPrescription[] = $authorizingPrescription;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Indicates the medication order that is being dispensed against.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $authorizingPrescription
-     * @return static
-     */
-    public function setAuthorizingPrescription(array $authorizingPrescription = [])
-    {
-        $this->authorizingPrescription = [];
-        if ([] === $authorizingPrescription) {
-            return $this;
-        }
-        foreach($authorizingPrescription as $v) {
-            if ($v instanceof FHIRResourceReference) {
-                $this->addAuthorizingPrescription($v);
-            } else {
-                $this->addAuthorizingPrescription(new FHIRResourceReference($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * Dispensing a medication to a named patient. This includes a description of the
-     * supply provided and the instructions for administering the medication.
-     *
-     * Indicates the details of the dispense event such as the days supply and quantity
-     * of medication dispensed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense[]
-     */
-    public function getDispense()
-    {
-        return $this->dispense;
-    }
-
-    /**
-     * Dispensing a medication to a named patient. This includes a description of the
-     * supply provided and the instructions for administering the medication.
-     *
-     * Indicates the details of the dispense event such as the days supply and quantity
-     * of medication dispensed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense $dispense
-     * @return static
-     */
-    public function addDispense(FHIRMedicationDispenseDispense $dispense = null)
-    {
-        $this->dispense[] = $dispense;
-        return $this;
-    }
-
-    /**
-     * Dispensing a medication to a named patient. This includes a description of the
-     * supply provided and the instructions for administering the medication.
-     *
-     * Indicates the details of the dispense event such as the days supply and quantity
-     * of medication dispensed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense[] $dispense
-     * @return static
-     */
-    public function setDispense(array $dispense = [])
-    {
-        $this->dispense = [];
-        if ([] === $dispense) {
-            return $this;
-        }
-        foreach($dispense as $v) {
-            if ($v instanceof FHIRMedicationDispenseDispense) {
-                $this->addDispense($v);
-            } else {
-                $this->addDispense(new FHIRMedicationDispenseDispense($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The individual responsible for dispensing the medication.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    public function getDispenser()
-    {
-        return $this->dispenser;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The individual responsible for dispensing the medication.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $dispenser
-     * @return static
-     */
-    public function setDispenser(FHIRResourceReference $dispenser = null)
-    {
-        $this->dispenser = $dispenser;
-        return $this;
     }
 
     /**
@@ -462,7 +295,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
-    public function getIdentifier()
+    public function getIdentifier(): null|FHIRIdentifier
     {
         return $this->identifier;
     }
@@ -478,9 +311,45 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function setIdentifier(FHIRIdentifier $identifier = null)
+    public function setIdentifier(null|FHIRIdentifier $identifier = null): self
     {
+        if (null === $identifier) {
+            $identifier = new FHIRIdentifier();
+        }
+        $this->_trackValueSet($this->identifier, $identifier);
         $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * A code specifying the state of the dispense event.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A code specifying the state of the set of dispense events.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationDispenseStatus
+     */
+    public function getStatus(): null|FHIRMedicationDispenseStatus
+    {
+        return $this->status;
+    }
+
+    /**
+     * A code specifying the state of the dispense event.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A code specifying the state of the set of dispense events.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationDispenseStatus $status
+     * @return static
+     */
+    public function setStatus(null|FHIRMedicationDispenseStatus $status = null): self
+    {
+        if (null === $status) {
+            $status = new FHIRMedicationDispenseStatus();
+        }
+        $this->_trackValueSet($this->status, $status);
+        $this->status = $status;
         return $this;
     }
 
@@ -494,7 +363,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    public function getPatient()
+    public function getPatient(): null|FHIRResourceReference
     {
         return $this->patient;
     }
@@ -510,37 +379,115 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $patient
      * @return static
      */
-    public function setPatient(FHIRResourceReference $patient = null)
+    public function setPatient(null|FHIRResourceReference $patient = null): self
     {
+        if (null === $patient) {
+            $patient = new FHIRResourceReference();
+        }
+        $this->_trackValueSet($this->patient, $patient);
         $this->patient = $patient;
         return $this;
     }
 
     /**
-     * A code specifying the state of the dispense event.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A code specifying the state of the set of dispense events.
+     * The individual responsible for dispensing the medication.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationDispenseStatus
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    public function getStatus()
+    public function getDispenser(): null|FHIRResourceReference
     {
-        return $this->status;
+        return $this->dispenser;
     }
 
     /**
-     * A code specifying the state of the dispense event.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A code specifying the state of the set of dispense events.
+     * The individual responsible for dispensing the medication.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationDispenseStatus $status
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $dispenser
      * @return static
      */
-    public function setStatus(FHIRMedicationDispenseStatus $status = null)
+    public function setDispenser(null|FHIRResourceReference $dispenser = null): self
     {
-        $this->status = $status;
+        if (null === $dispenser) {
+            $dispenser = new FHIRResourceReference();
+        }
+        $this->_trackValueSet($this->dispenser, $dispenser);
+        $this->dispenser = $dispenser;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the medication order that is being dispensed against.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
+     */
+    public function getAuthorizingPrescription(): null|array
+    {
+        return $this->authorizingPrescription;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the medication order that is being dispensed against.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $authorizingPrescription
+     * @return static
+     */
+    public function addAuthorizingPrescription(null|FHIRResourceReference $authorizingPrescription = null): self
+    {
+        if (null === $authorizingPrescription) {
+            $authorizingPrescription = new FHIRResourceReference();
+        }
+        $this->_trackValueAdded();
+        $this->authorizingPrescription[] = $authorizingPrescription;
+        return $this;
+    }
+
+    /**
+     * Dispensing a medication to a named patient. This includes a description of the
+     * supply provided and the instructions for administering the medication.
+     *
+     * Indicates the details of the dispense event such as the days supply and quantity
+     * of medication dispensed.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense[]
+     */
+    public function getDispense(): null|array
+    {
+        return $this->dispense;
+    }
+
+    /**
+     * Dispensing a medication to a named patient. This includes a description of the
+     * supply provided and the instructions for administering the medication.
+     *
+     * Indicates the details of the dispense event such as the days supply and quantity
+     * of medication dispensed.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense $dispense
+     * @return static
+     */
+    public function addDispense(null|FHIRMedicationDispenseDispense $dispense = null): self
+    {
+        if (null === $dispense) {
+            $dispense = new FHIRMedicationDispenseDispense();
+        }
+        $this->_trackValueAdded();
+        $this->dispense[] = $dispense;
         return $this;
     }
 
@@ -555,7 +502,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution
      */
-    public function getSubstitution()
+    public function getSubstitution(): null|FHIRMedicationDispenseSubstitution
     {
         return $this->substitution;
     }
@@ -572,8 +519,12 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution $substitution
      * @return static
      */
-    public function setSubstitution(FHIRMedicationDispenseSubstitution $substitution = null)
+    public function setSubstitution(null|FHIRMedicationDispenseSubstitution $substitution = null): self
     {
+        if (null === $substitution) {
+            $substitution = new FHIRMedicationDispenseSubstitution();
+        }
+        $this->_trackValueSet($this->substitution, $substitution);
         $this->substitution = $substitution;
         return $this;
     }
@@ -584,9 +535,9 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -595,10 +546,30 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getIdentifier())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getStatus())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_STATUS] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPatient())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PATIENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getDispenser())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DISPENSER] = $fieldErrs;
+            }
+        }
         if ([] !== ($vs = $this->getAuthorizingPrescription())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -613,29 +584,57 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
                 }
             }
         }
-        if (null !== ($v = $this->getDispenser())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DISPENSER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getIdentifier())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPatient())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PATIENT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getStatus())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_STATUS] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getSubstitution())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_SUBSTITUTION] = $fieldErrs;
+            }
+        }
+        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
+            $v = $this->getIdentifier();
+            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
+                        $errs[self::FIELD_IDENTIFIER] = [];
+                    }
+                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_STATUS])) {
+            $v = $this->getStatus();
+            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE, self::FIELD_STATUS, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_STATUS])) {
+                        $errs[self::FIELD_STATUS] = [];
+                    }
+                    $errs[self::FIELD_STATUS][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PATIENT])) {
+            $v = $this->getPatient();
+            foreach($validationRules[self::FIELD_PATIENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE, self::FIELD_PATIENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PATIENT])) {
+                        $errs[self::FIELD_PATIENT] = [];
+                    }
+                    $errs[self::FIELD_PATIENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DISPENSER])) {
+            $v = $this->getDispenser();
+            foreach($validationRules[self::FIELD_DISPENSER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE, self::FIELD_DISPENSER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DISPENSER])) {
+                        $errs[self::FIELD_DISPENSER] = [];
+                    }
+                    $errs[self::FIELD_DISPENSER][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_AUTHORIZING_PRESCRIPTION])) {
@@ -662,54 +661,6 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DISPENSER])) {
-            $v = $this->getDispenser();
-            foreach($validationRules[self::FIELD_DISPENSER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE, self::FIELD_DISPENSER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DISPENSER])) {
-                        $errs[self::FIELD_DISPENSER] = [];
-                    }
-                    $errs[self::FIELD_DISPENSER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_IDENTIFIER])) {
-            $v = $this->getIdentifier();
-            foreach($validationRules[self::FIELD_IDENTIFIER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE, self::FIELD_IDENTIFIER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_IDENTIFIER])) {
-                        $errs[self::FIELD_IDENTIFIER] = [];
-                    }
-                    $errs[self::FIELD_IDENTIFIER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PATIENT])) {
-            $v = $this->getPatient();
-            foreach($validationRules[self::FIELD_PATIENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE, self::FIELD_PATIENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PATIENT])) {
-                        $errs[self::FIELD_PATIENT] = [];
-                    }
-                    $errs[self::FIELD_PATIENT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_STATUS])) {
-            $v = $this->getStatus();
-            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_MEDICATION_DISPENSE, self::FIELD_STATUS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_STATUS])) {
-                        $errs[self::FIELD_STATUS] = [];
-                    }
-                    $errs[self::FIELD_STATUS][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_SUBSTITUTION])) {
             $v = $this->getSubstitution();
             foreach($validationRules[self::FIELD_SUBSTITUTION] as $rule => $constraint) {
@@ -719,18 +670,6 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
                         $errs[self::FIELD_SUBSTITUTION] = [];
                     }
                     $errs[self::FIELD_SUBSTITUTION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_CONTAINED])) {
-            $v = $this->getContained();
-            foreach($validationRules[self::FIELD_CONTAINED] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_CONTAINED, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONTAINED])) {
-                        $errs[self::FIELD_CONTAINED] = [];
-                    }
-                    $errs[self::FIELD_CONTAINED][$rule] = $err;
                 }
             }
         }
@@ -755,6 +694,18 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
                         $errs[self::FIELD_TEXT] = [];
                     }
                     $errs[self::FIELD_TEXT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CONTAINED])) {
+            $v = $this->getContained();
+            foreach($validationRules[self::FIELD_CONTAINED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_CONTAINED, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CONTAINED])) {
+                        $errs[self::FIELD_CONTAINED] = [];
+                    }
+                    $errs[self::FIELD_CONTAINED][$rule] = $err;
                 }
             }
         }
@@ -798,174 +749,210 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRMedicationDispense::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRMedicationDispense::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRMedicationDispense;
-        } elseif (!is_object($type) || !($type instanceof FHIRMedicationDispense)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRMedicationDispense)) {
             throw new \RuntimeException(sprintf(
-                'FHIRMedicationDispense::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRResource\FHIRMedicationDispense or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_IDENTIFIER === $childName) {
+                $type->setIdentifier(FHIRIdentifier::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_STATUS === $childName) {
+                $type->setStatus(FHIRMedicationDispenseStatus::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PATIENT === $childName) {
+                $type->setPatient(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DISPENSER === $childName) {
+                $type->setDispenser(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_AUTHORIZING_PRESCRIPTION === $childName) {
+                $type->addAuthorizingPrescription(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DISPENSE === $childName) {
+                $type->addDispense(FHIRMedicationDispenseDispense::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_SUBSTITUTION === $childName) {
+                $type->setSubstitution(FHIRMedicationDispenseSubstitution::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_LANGUAGE === $childName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_TEXT === $childName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CONTAINED === $childName) {
+                foreach ($n->children() as $nn) {
+                    $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn, $config));
+                }
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->authorizingPrescription)) {
-            foreach($children->authorizingPrescription as $child) {
-                $type->addAuthorizingPrescription(FHIRResourceReference::xmlUnserialize($child));
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_LANGUAGE])) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->dispense)) {
-            foreach($children->dispense as $child) {
-                $type->addDispense(FHIRMedicationDispenseDispense::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
-        }
-        if (isset($children->dispenser)) {
-            $type->setDispenser(FHIRResourceReference::xmlUnserialize($children->dispenser));
-        }
-        if (isset($children->identifier)) {
-            $type->setIdentifier(FHIRIdentifier::xmlUnserialize($children->identifier));
-        }
-        if (isset($children->patient)) {
-            $type->setPatient(FHIRResourceReference::xmlUnserialize($children->patient));
-        }
-        if (isset($children->status)) {
-            $type->setStatus(FHIRMedicationDispenseStatus::xmlUnserialize($children->status));
-        }
-        if (isset($children->substitution)) {
-            $type->setSubstitution(FHIRMedicationDispenseSubstitution::xmlUnserialize($children->substitution));
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getAuthorizingPrescription())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_AUTHORIZING_PRESCRIPTION, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if ([] !== ($vs = $this->getDispense())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DISPENSE, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getDispenser())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DISPENSER, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'MedicationDispense', $this->_getSourceXmlns());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPatient())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PATIENT, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_IDENTIFIER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_STATUS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getPatient())) {
+            $xw->startElement(self::FIELD_PATIENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getDispenser())) {
+            $xw->startElement(self::FIELD_DISPENSER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getAuthorizingPrescription() as $v) {
+            $xw->startElement(self::FIELD_AUTHORIZING_PRESCRIPTION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getDispense() as $v) {
+            $xw->startElement(self::FIELD_DISPENSE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getSubstitution())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBSTITUTION, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_SUBSTITUTION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getIdentifier())) {
+            $out->{self::FIELD_IDENTIFIER} = $v;
+        }
+        if (null !== ($v = $this->getStatus())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_STATUS} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRMedicationDispenseStatus::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_STATUS_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getPatient())) {
+            $out->{self::FIELD_PATIENT} = $v;
+        }
+        if (null !== ($v = $this->getDispenser())) {
+            $out->{self::FIELD_DISPENSER} = $v;
+        }
         if ([] !== ($vs = $this->getAuthorizingPrescription())) {
-            $a[self::FIELD_AUTHORIZING_PRESCRIPTION] = [];
+            $out->{self::FIELD_AUTHORIZING_PRESCRIPTION} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_AUTHORIZING_PRESCRIPTION][] = $v;
+                $out->{self::FIELD_AUTHORIZING_PRESCRIPTION}[] = $v;
             }
         }
         if ([] !== ($vs = $this->getDispense())) {
-            $a[self::FIELD_DISPENSE] = [];
+            $out->{self::FIELD_DISPENSE} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_DISPENSE][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getDispenser())) {
-            $a[self::FIELD_DISPENSER] = $v;
-        }
-        if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v;
-        }
-        if (null !== ($v = $this->getPatient())) {
-            $a[self::FIELD_PATIENT] = $v;
-        }
-        if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMedicationDispenseStatus::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRMedicationDispenseStatus::FIELD_VALUE]);
-                $a[self::FIELD_STATUS_EXT] = $enc;
+                $out->{self::FIELD_DISPENSE}[] = $v;
             }
         }
         if (null !== ($v = $this->getSubstitution())) {
-            $a[self::FIELD_SUBSTITUTION] = $v;
+            $out->{self::FIELD_SUBSTITUTION} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
-    }
 
+        $out->{PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE} = $this->_getResourceType();
+
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

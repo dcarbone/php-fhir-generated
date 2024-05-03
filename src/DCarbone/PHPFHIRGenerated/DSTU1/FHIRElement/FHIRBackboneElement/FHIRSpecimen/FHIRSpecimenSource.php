@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSpecimen;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,10 +58,16 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSp
  */
 
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHierarchicalRelationshipType;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter;
 
 /**
  * Sample for analysis.
@@ -73,12 +79,10 @@ class FHIRSpecimenSource extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN_DOT_SOURCE;
+
     const FIELD_RELATIONSHIP = 'relationship';
     const FIELD_RELATIONSHIP_EXT = '_relationship';
     const FIELD_TARGET = 'target';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Type indicating if this is a parent or child relationship
@@ -88,8 +92,7 @@ class FHIRSpecimenSource extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHierarchicalRelationshipType
      */
-    protected $relationship = null;
-
+    protected null|FHIRHierarchicalRelationshipType $relationship = null;
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -99,41 +102,30 @@ class FHIRSpecimenSource extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    protected $target = [];
+    protected null|array $target = [];
 
     /**
      * Validation map for fields in type Specimen.Source
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRSpecimenSource Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRSpecimenSource::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_RELATIONSHIP]) || isset($data[self::FIELD_RELATIONSHIP_EXT])) {
-            if (isset($data[self::FIELD_RELATIONSHIP])) {
-                $value = $data[self::FIELD_RELATIONSHIP];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_RELATIONSHIP_EXT]) && is_array($data[self::FIELD_RELATIONSHIP_EXT])) {
-                $ext = $data[self::FIELD_RELATIONSHIP_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_RELATIONSHIP, $data) || array_key_exists(self::FIELD_RELATIONSHIP_EXT, $data)) {
+            $value = $data[self::FIELD_RELATIONSHIP] ?? null;
+            $ext = (isset($data[self::FIELD_RELATIONSHIP_EXT]) && is_array($data[self::FIELD_RELATIONSHIP_EXT])) ? $data[self::FIELD_RELATIONSHIP_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRHierarchicalRelationshipType) {
                     $this->setRelationship($value);
@@ -142,23 +134,22 @@ class FHIRSpecimenSource extends FHIRBackboneElement
                 } else {
                     $this->setRelationship(new FHIRHierarchicalRelationshipType([FHIRHierarchicalRelationshipType::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setRelationship(new FHIRHierarchicalRelationshipType($ext));
+            } else {
+                $this->setRelationship(new FHIRHierarchicalRelationshipType(null));
             }
         }
-        if (isset($data[self::FIELD_TARGET])) {
+        if (array_key_exists(self::FIELD_TARGET, $data)) {
             if (is_array($data[self::FIELD_TARGET])) {
                 foreach($data[self::FIELD_TARGET] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRResourceReference) {
                         $this->addTarget($v);
                     } else {
                         $this->addTarget(new FHIRResourceReference($v));
                     }
                 }
-            } else if ($data[self::FIELD_TARGET] instanceof FHIRResourceReference) {
+            } elseif ($data[self::FIELD_TARGET] instanceof FHIRResourceReference) {
                 $this->addTarget($data[self::FIELD_TARGET]);
             } else {
                 $this->addTarget(new FHIRResourceReference($data[self::FIELD_TARGET]));
@@ -169,21 +160,9 @@ class FHIRSpecimenSource extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<SpecimenSource{$xmlns}></SpecimenSource>";
     }
 
     /**
@@ -194,7 +173,7 @@ class FHIRSpecimenSource extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHierarchicalRelationshipType
      */
-    public function getRelationship()
+    public function getRelationship(): null|FHIRHierarchicalRelationshipType
     {
         return $this->relationship;
     }
@@ -208,8 +187,12 @@ class FHIRSpecimenSource extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHierarchicalRelationshipType $relationship
      * @return static
      */
-    public function setRelationship(FHIRHierarchicalRelationshipType $relationship = null)
+    public function setRelationship(null|FHIRHierarchicalRelationshipType $relationship = null): self
     {
+        if (null === $relationship) {
+            $relationship = new FHIRHierarchicalRelationshipType();
+        }
+        $this->_trackValueSet($this->relationship, $relationship);
         $this->relationship = $relationship;
         return $this;
     }
@@ -223,7 +206,7 @@ class FHIRSpecimenSource extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
-    public function getTarget()
+    public function getTarget(): null|array
     {
         return $this->target;
     }
@@ -238,35 +221,13 @@ class FHIRSpecimenSource extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $target
      * @return static
      */
-    public function addTarget(FHIRResourceReference $target = null)
+    public function addTarget(null|FHIRResourceReference $target = null): self
     {
+        if (null === $target) {
+            $target = new FHIRResourceReference();
+        }
+        $this->_trackValueAdded();
         $this->target[] = $target;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The specimen resource that is the target of this relationship.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[] $target
-     * @return static
-     */
-    public function setTarget(array $target = [])
-    {
-        $this->target = [];
-        if ([] === $target) {
-            return $this;
-        }
-        foreach($target as $v) {
-            if ($v instanceof FHIRResourceReference) {
-                $this->addTarget($v);
-            } else {
-                $this->addTarget(new FHIRResourceReference($v));
-            }
-        }
         return $this;
     }
 
@@ -276,9 +237,9 @@ class FHIRSpecimenSource extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -287,7 +248,7 @@ class FHIRSpecimenSource extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
@@ -367,116 +328,139 @@ class FHIRSpecimenSource extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenSource $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenSource
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRSpecimenSource::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSpecimenSource::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRSpecimenSource;
-        } elseif (!is_object($type) || !($type instanceof FHIRSpecimenSource)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRSpecimenSource)) {
             throw new \RuntimeException(sprintf(
-                'FHIRSpecimenSource::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenSource or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_RELATIONSHIP === $childName) {
+                $type->setRelationship(FHIRHierarchicalRelationshipType::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TARGET === $childName) {
+                $type->addTarget(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->relationship)) {
-            $type->setRelationship(FHIRHierarchicalRelationshipType::xmlUnserialize($children->relationship));
-        }
-        if (isset($children->target)) {
-            foreach($children->target as $child) {
-                $type->addTarget(FHIRResourceReference::xmlUnserialize($child));
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'SpecimenSource', $this->_getSourceXmlns());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getRelationship())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_RELATIONSHIP);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getTarget())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET, null, $v->_getFHIRXMLNamespace()));
-            }
+        foreach ($this->getTarget() as $v) {
+            $xw->startElement(self::FIELD_TARGET);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getRelationship())) {
-            $a[self::FIELD_RELATIONSHIP] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRHierarchicalRelationshipType::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRHierarchicalRelationshipType::FIELD_VALUE]);
-                $a[self::FIELD_RELATIONSHIP_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_RELATIONSHIP} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRHierarchicalRelationshipType::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_RELATIONSHIP_EXT} = $ext;
             }
         }
         if ([] !== ($vs = $this->getTarget())) {
-            $a[self::FIELD_TARGET] = [];
+            $out->{self::FIELD_TARGET} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_TARGET][] = $v;
+                $out->{self::FIELD_TARGET}[] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

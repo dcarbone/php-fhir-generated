@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestScript;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestS
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,11 +62,18 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestS
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * A structured set of tests against a FHIR server or client implementation to
@@ -79,14 +86,12 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_TEST_SCRIPT_DOT_FIXTURE;
+
     const FIELD_AUTOCREATE = 'autocreate';
     const FIELD_AUTOCREATE_EXT = '_autocreate';
     const FIELD_AUTODELETE = 'autodelete';
     const FIELD_AUTODELETE_EXT = '_autodelete';
     const FIELD_RESOURCE = 'resource';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
 
     /**
      * Value of "true" or "false"
@@ -99,8 +104,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    protected $autocreate = null;
-
+    protected null|FHIRBoolean $autocreate = null;
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -112,8 +116,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    protected $autodelete = null;
-
+    protected null|FHIRBoolean $autodelete = null;
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -124,41 +127,30 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    protected $resource = null;
+    protected null|FHIRReference $resource = null;
 
     /**
      * Validation map for fields in type TestScript.Fixture
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRTestScriptFixture Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRTestScriptFixture::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_AUTOCREATE]) || isset($data[self::FIELD_AUTOCREATE_EXT])) {
-            if (isset($data[self::FIELD_AUTOCREATE])) {
-                $value = $data[self::FIELD_AUTOCREATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_AUTOCREATE_EXT]) && is_array($data[self::FIELD_AUTOCREATE_EXT])) {
-                $ext = $data[self::FIELD_AUTOCREATE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_AUTOCREATE, $data) || array_key_exists(self::FIELD_AUTOCREATE_EXT, $data)) {
+            $value = $data[self::FIELD_AUTOCREATE] ?? null;
+            $ext = (isset($data[self::FIELD_AUTOCREATE_EXT]) && is_array($data[self::FIELD_AUTOCREATE_EXT])) ? $data[self::FIELD_AUTOCREATE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setAutocreate($value);
@@ -167,21 +159,15 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
                 } else {
                     $this->setAutocreate(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setAutocreate(new FHIRBoolean($ext));
+            } else {
+                $this->setAutocreate(new FHIRBoolean(null));
             }
         }
-        if (isset($data[self::FIELD_AUTODELETE]) || isset($data[self::FIELD_AUTODELETE_EXT])) {
-            if (isset($data[self::FIELD_AUTODELETE])) {
-                $value = $data[self::FIELD_AUTODELETE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_AUTODELETE_EXT]) && is_array($data[self::FIELD_AUTODELETE_EXT])) {
-                $ext = $data[self::FIELD_AUTODELETE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_AUTODELETE, $data) || array_key_exists(self::FIELD_AUTODELETE_EXT, $data)) {
+            $value = $data[self::FIELD_AUTODELETE] ?? null;
+            $ext = (isset($data[self::FIELD_AUTODELETE_EXT]) && is_array($data[self::FIELD_AUTODELETE_EXT])) ? $data[self::FIELD_AUTODELETE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setAutodelete($value);
@@ -190,11 +176,13 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
                 } else {
                     $this->setAutodelete(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setAutodelete(new FHIRBoolean($ext));
+            } else {
+                $this->setAutodelete(new FHIRBoolean(null));
             }
         }
-        if (isset($data[self::FIELD_RESOURCE])) {
+        if (array_key_exists(self::FIELD_RESOURCE, $data)) {
             if ($data[self::FIELD_RESOURCE] instanceof FHIRReference) {
                 $this->setResource($data[self::FIELD_RESOURCE]);
             } else {
@@ -206,21 +194,9 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<TestScriptFixture{$xmlns}></TestScriptFixture>";
     }
 
     /**
@@ -234,7 +210,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    public function getAutocreate()
+    public function getAutocreate(): null|FHIRBoolean
     {
         return $this->autocreate;
     }
@@ -248,20 +224,21 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      * therefore no create operation is required for this fixture in the
      * TestScript.setup section.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $autocreate
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $autocreate
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAutocreate($autocreate = null)
+    public function setAutocreate(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $autocreate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $autocreate) {
-            $this->autocreate = null;
-            return $this;
+        if (null !== $autocreate && !($autocreate instanceof FHIRBoolean)) {
+            $autocreate = new FHIRBoolean($autocreate);
         }
-        if ($autocreate instanceof FHIRBoolean) {
-            $this->autocreate = $autocreate;
-            return $this;
+        $this->_trackValueSet($this->autocreate, $autocreate);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_AUTOCREATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_AUTOCREATE] = [];
         }
-        $this->autocreate = new FHIRBoolean($autocreate);
+        $this->_primitiveXmlLocations[self::FIELD_AUTOCREATE][0] = $xmlLocation;
+        $this->autocreate = $autocreate;
         return $this;
     }
 
@@ -276,7 +253,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    public function getAutodelete()
+    public function getAutodelete(): null|FHIRBoolean
     {
         return $this->autodelete;
     }
@@ -290,20 +267,21 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      * therefore no delete operation is required for this fixture in the
      * TestScript.teardown section.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $autodelete
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $autodelete
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAutodelete($autodelete = null)
+    public function setAutodelete(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $autodelete = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $autodelete) {
-            $this->autodelete = null;
-            return $this;
+        if (null !== $autodelete && !($autodelete instanceof FHIRBoolean)) {
+            $autodelete = new FHIRBoolean($autodelete);
         }
-        if ($autodelete instanceof FHIRBoolean) {
-            $this->autodelete = $autodelete;
-            return $this;
+        $this->_trackValueSet($this->autodelete, $autodelete);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_AUTODELETE])) {
+            $this->_primitiveXmlLocations[self::FIELD_AUTODELETE] = [];
         }
-        $this->autodelete = new FHIRBoolean($autodelete);
+        $this->_primitiveXmlLocations[self::FIELD_AUTODELETE][0] = $xmlLocation;
+        $this->autodelete = $autodelete;
         return $this;
     }
 
@@ -317,7 +295,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getResource()
+    public function getResource(): null|FHIRReference
     {
         return $this->resource;
     }
@@ -333,8 +311,12 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $resource
      * @return static
      */
-    public function setResource(FHIRReference $resource = null)
+    public function setResource(null|FHIRReference $resource = null): self
     {
+        if (null === $resource) {
+            $resource = new FHIRReference();
+        }
+        $this->_trackValueSet($this->resource, $resource);
         $this->resource = $resource;
         return $this;
     }
@@ -345,9 +327,9 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -356,7 +338,7 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
@@ -451,134 +433,179 @@ class FHIRTestScriptFixture extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRTestScriptFixture::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRTestScriptFixture::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRTestScriptFixture;
-        } elseif (!is_object($type) || !($type instanceof FHIRTestScriptFixture)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRTestScriptFixture)) {
             throw new \RuntimeException(sprintf(
-                'FHIRTestScriptFixture::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_AUTOCREATE === $childName) {
+                $type->setAutocreate(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_AUTODELETE === $childName) {
+                $type->setAutodelete(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_RESOURCE === $childName) {
+                $type->setResource(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->autocreate)) {
-            $type->setAutocreate(FHIRBoolean::xmlUnserialize($children->autocreate));
-        }
-        if (isset($attributes->autocreate)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_AUTOCREATE])) {
             $pt = $type->getAutocreate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->autocreate);
+                $pt->setValue((string)$attributes[self::FIELD_AUTOCREATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setAutocreate((string)$attributes->autocreate);
+                $type->setAutocreate((string)$attributes[self::FIELD_AUTOCREATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->autodelete)) {
-            $type->setAutodelete(FHIRBoolean::xmlUnserialize($children->autodelete));
-        }
-        if (isset($attributes->autodelete)) {
+        if (isset($attributes[self::FIELD_AUTODELETE])) {
             $pt = $type->getAutodelete();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->autodelete);
+                $pt->setValue((string)$attributes[self::FIELD_AUTODELETE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setAutodelete((string)$attributes->autodelete);
+                $type->setAutodelete((string)$attributes[self::FIELD_AUTODELETE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->resource)) {
-            $type->setResource(FHIRReference::xmlUnserialize($children->resource));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAutocreate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTOCREATE, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getAutodelete())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AUTODELETE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'TestScriptFixture', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_AUTOCREATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAutocreate())) {
+            $xw->writeAttribute(self::FIELD_AUTOCREATE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_AUTODELETE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAutodelete())) {
+            $xw->writeAttribute(self::FIELD_AUTODELETE, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_AUTOCREATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAutocreate())) {
+            $xw->startElement(self::FIELD_AUTOCREATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_AUTODELETE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAutodelete())) {
+            $xw->startElement(self::FIELD_AUTODELETE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getResource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RESOURCE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_RESOURCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getAutocreate())) {
-            $a[self::FIELD_AUTOCREATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_AUTOCREATE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_AUTOCREATE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_AUTOCREATE_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getAutodelete())) {
-            $a[self::FIELD_AUTODELETE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_AUTODELETE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_AUTODELETE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_AUTODELETE_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getResource())) {
-            $a[self::FIELD_RESOURCE] = $v;
+            $out->{self::FIELD_RESOURCE} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

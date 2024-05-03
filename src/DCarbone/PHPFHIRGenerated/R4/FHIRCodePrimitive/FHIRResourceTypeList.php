@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,8 +63,12 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive;
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Class FHIRResourceTypeList
@@ -74,137 +78,11 @@ class FHIRResourceTypeList extends FHIRCodePrimitive
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RESOURCE_TYPE_HYPHEN_LIST;
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Validation map for fields in type ResourceType-list
-     * @var array
-     */
-    private static $_validationRules = [
-        self::FIELD_VALUE => [
-            PHPFHIRConstants::VALIDATE_ENUM => ['Account','ActivityDefinition','AdverseEvent','AllergyIntolerance','Appointment','AppointmentResponse','AuditEvent','Basic','Binary','BiologicallyDerivedProduct','BodyStructure','Bundle','CapabilityStatement','CarePlan','CareTeam','CatalogEntry','ChargeItem','ChargeItemDefinition','Claim','ClaimResponse','ClinicalImpression','CodeSystem','Communication','CommunicationRequest','CompartmentDefinition','Composition','ConceptMap','Condition','Consent','Contract','Coverage','CoverageEligibilityRequest','CoverageEligibilityResponse','DetectedIssue','Device','DeviceDefinition','DeviceMetric','DeviceRequest','DeviceUseStatement','DiagnosticReport','DocumentManifest','DocumentReference','DomainResource','EffectEvidenceSynthesis','Encounter','Endpoint','EnrollmentRequest','EnrollmentResponse','EpisodeOfCare','EventDefinition','Evidence','EvidenceVariable','ExampleScenario','ExplanationOfBenefit','FamilyMemberHistory','Flag','Goal','GraphDefinition','Group','GuidanceResponse','HealthcareService','ImagingStudy','Immunization','ImmunizationEvaluation','ImmunizationRecommendation','ImplementationGuide','InsurancePlan','Invoice','Library','Linkage','List','Location','Measure','MeasureReport','Media','Medication','MedicationAdministration','MedicationDispense','MedicationKnowledge','MedicationRequest','MedicationStatement','MedicinalProduct','MedicinalProductAuthorization','MedicinalProductContraindication','MedicinalProductIndication','MedicinalProductIngredient','MedicinalProductInteraction','MedicinalProductManufactured','MedicinalProductPackaged','MedicinalProductPharmaceutical','MedicinalProductUndesirableEffect','MessageDefinition','MessageHeader','MolecularSequence','NamingSystem','NutritionOrder','Observation','ObservationDefinition','OperationDefinition','OperationOutcome','Organization','OrganizationAffiliation','Parameters','Patient','PaymentNotice','PaymentReconciliation','Person','PlanDefinition','Practitioner','PractitionerRole','Procedure','Provenance','Questionnaire','QuestionnaireResponse','RelatedPerson','RequestGroup','ResearchDefinition','ResearchElementDefinition','ResearchStudy','ResearchSubject','Resource','RiskAssessment','RiskEvidenceSynthesis','Schedule','SearchParameter','ServiceRequest','Slot','Specimen','SpecimenDefinition','StructureDefinition','StructureMap','Subscription','Substance','SubstanceNucleicAcid','SubstancePolymer','SubstanceProtein','SubstanceReferenceInformation','SubstanceSourceMaterial','SubstanceSpecification','SupplyDelivery','SupplyRequest','Task','TerminologyCapabilities','TestReport','TestScript','ValueSet','VerificationResult','VisionPrescription',],
-        ],
-    ];
-
-    /**
-     * FHIRResourceTypeList Constructor
-     * @param null|string $value
-     */
-    public function __construct($value = null)
-    {
-        parent::__construct($value);
-    }
-
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ResourceType_list{$xmlns}></ResourceType_list>";
-    }
-
-    /**
-     * Returns the validation rules that this type's fields must comply with to be considered "valid"
-     * The returned array is in ["fieldname[.offset]" => ["rule" => {constraint}]]
-     *
-     * @return array
-     */
-    public function _getValidationRules()
-    {
-        return self::$_validationRules;
-    }
-
-    /**
-     * Validates that this type conforms to the specifications set forth for it by FHIR.  An empty array must be seen as
-     * passing.
-     *
-     * @return array
-     */
-    public function _getValidationErrors()
-    {
-        $errs = parent::_getValidationErrors();
-        $validationRules = $this->_getValidationRules();
-        if (isset($validationRules[self::FIELD_VALUE])) {
-            $v = $this->getValue();
-            foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CODE_HYPHEN_PRIMITIVE, self::FIELD_VALUE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_VALUE])) {
-                        $errs[self::FIELD_VALUE] = [];
-                    }
-                    $errs[self::FIELD_VALUE][$rule] = $err;
-                }
-            }
-        }
-        return $errs;
-    }
-
-    /**
-     * @param \SimpleXMLElement|string|null $sxe
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRResourceTypeList $type
-     * @param null|int $libxmlOpts
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRResourceTypeList
-     */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
-    {
-        if (null === $sxe) {
-            return null;
-        }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRResourceTypeList::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
-        }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRResourceTypeList::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
-        }
-        if (null === $type) {
-            $type = new FHIRResourceTypeList;
-        } elseif (!is_object($type) || !($type instanceof FHIRResourceTypeList)) {
-            throw new \RuntimeException(sprintf(
-                'FHIRResourceTypeList::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive\FHIRResourceTypeList or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
-            ));
-        }
-        FHIRCodePrimitive::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
-            }
-        }
-        return $type;
-    }
-
-    /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
-     */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
-    {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
-        }
-        parent::xmlSerialize($sxe);
-        return $sxe;
     }
 }

@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,8 +64,13 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
 
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter;
 
 /**
  * A set of ordered Quantities defined by a low and high limit.
@@ -79,104 +84,64 @@ class FHIRRange extends FHIRElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_RANGE;
-    const FIELD_HIGH = 'high';
+
     const FIELD_LOW = 'low';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * The high limit. The boundary is inclusive.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
-     */
-    protected $high = null;
+    const FIELD_HIGH = 'high';
 
     /**
      * The low limit. The boundary is inclusive.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
-    protected $low = null;
+    protected null|FHIRSimpleQuantity $low = null;
+    /**
+     * The high limit. The boundary is inclusive.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
+     */
+    protected null|FHIRSimpleQuantity $high = null;
 
     /**
      * Validation map for fields in type Range
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRRange Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRRange::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_HIGH])) {
-            if ($data[self::FIELD_HIGH] instanceof FHIRSimpleQuantity) {
-                $this->setHigh($data[self::FIELD_HIGH]);
-            } else {
-                $this->setHigh(new FHIRSimpleQuantity($data[self::FIELD_HIGH]));
-            }
-        }
-        if (isset($data[self::FIELD_LOW])) {
+        if (array_key_exists(self::FIELD_LOW, $data)) {
             if ($data[self::FIELD_LOW] instanceof FHIRSimpleQuantity) {
                 $this->setLow($data[self::FIELD_LOW]);
             } else {
                 $this->setLow(new FHIRSimpleQuantity($data[self::FIELD_LOW]));
             }
         }
+        if (array_key_exists(self::FIELD_HIGH, $data)) {
+            if ($data[self::FIELD_HIGH] instanceof FHIRSimpleQuantity) {
+                $this->setHigh($data[self::FIELD_HIGH]);
+            } else {
+                $this->setHigh(new FHIRSimpleQuantity($data[self::FIELD_HIGH]));
+            }
+        }
     }
 
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<Range{$xmlns}></Range>";
-    }
-
-    /**
-     * The high limit. The boundary is inclusive.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
-     */
-    public function getHigh()
-    {
-        return $this->high;
-    }
-
-    /**
-     * The high limit. The boundary is inclusive.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $high
-     * @return static
-     */
-    public function setHigh(FHIRSimpleQuantity $high = null)
-    {
-        $this->high = $high;
-        return $this;
     }
 
     /**
@@ -184,7 +149,7 @@ class FHIRRange extends FHIRElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
-    public function getLow()
+    public function getLow(): null|FHIRSimpleQuantity
     {
         return $this->low;
     }
@@ -195,9 +160,39 @@ class FHIRRange extends FHIRElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $low
      * @return static
      */
-    public function setLow(FHIRSimpleQuantity $low = null)
+    public function setLow(null|FHIRSimpleQuantity $low = null): self
     {
+        if (null === $low) {
+            $low = new FHIRSimpleQuantity();
+        }
+        $this->_trackValueSet($this->low, $low);
         $this->low = $low;
+        return $this;
+    }
+
+    /**
+     * The high limit. The boundary is inclusive.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
+     */
+    public function getHigh(): null|FHIRSimpleQuantity
+    {
+        return $this->high;
+    }
+
+    /**
+     * The high limit. The boundary is inclusive.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity $high
+     * @return static
+     */
+    public function setHigh(null|FHIRSimpleQuantity $high = null): self
+    {
+        if (null === $high) {
+            $high = new FHIRSimpleQuantity();
+        }
+        $this->_trackValueSet($this->high, $high);
+        $this->high = $high;
         return $this;
     }
 
@@ -207,9 +202,9 @@ class FHIRRange extends FHIRElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -218,30 +213,18 @@ class FHIRRange extends FHIRElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getHigh())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_HIGH] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getLow())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_LOW] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_HIGH])) {
-            $v = $this->getHigh();
-            foreach($validationRules[self::FIELD_HIGH] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RANGE, self::FIELD_HIGH, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_HIGH])) {
-                        $errs[self::FIELD_HIGH] = [];
-                    }
-                    $errs[self::FIELD_HIGH][$rule] = $err;
-                }
+        if (null !== ($v = $this->getHigh())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_HIGH] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_LOW])) {
@@ -253,6 +236,18 @@ class FHIRRange extends FHIRElement
                         $errs[self::FIELD_LOW] = [];
                     }
                     $errs[self::FIELD_LOW][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_HIGH])) {
+            $v = $this->getHigh();
+            foreach($validationRules[self::FIELD_HIGH] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RANGE, self::FIELD_HIGH, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_HIGH])) {
+                        $errs[self::FIELD_HIGH] = [];
+                    }
+                    $errs[self::FIELD_HIGH][$rule] = $err;
                 }
             }
         }
@@ -284,97 +279,127 @@ class FHIRRange extends FHIRElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRange $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRange
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRRange::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRRange::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRRange;
-        } elseif (!is_object($type) || !($type instanceof FHIRRange)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRRange)) {
             throw new \RuntimeException(sprintf(
-                'FHIRRange::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRange or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_LOW === $childName) {
+                $type->setLow(FHIRSimpleQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_HIGH === $childName) {
+                $type->setHigh(FHIRSimpleQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->high)) {
-            $type->setHigh(FHIRSimpleQuantity::xmlUnserialize($children->high));
-        }
-        if (isset($children->low)) {
-            $type->setLow(FHIRSimpleQuantity::xmlUnserialize($children->low));
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getHigh())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_HIGH, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'Range', $this->_getSourceXmlns());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getLow())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LOW, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_LOW);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getHigh())) {
+            $xw->startElement(self::FIELD_HIGH);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getHigh())) {
-            $a[self::FIELD_HIGH] = $v;
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getLow())) {
-            $a[self::FIELD_LOW] = $v;
+            $out->{self::FIELD_LOW} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getHigh())) {
+            $out->{self::FIELD_HIGH} = $v;
         }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

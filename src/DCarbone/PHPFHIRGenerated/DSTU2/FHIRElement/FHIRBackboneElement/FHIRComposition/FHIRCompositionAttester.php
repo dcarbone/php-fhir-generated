@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRComposition;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,12 +62,19 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCompositionAttestationMode;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter;
 
 /**
  * A set of healthcare-related information that is assembled together into a single
@@ -84,14 +91,12 @@ class FHIRCompositionAttester extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COMPOSITION_DOT_ATTESTER;
+
     const FIELD_MODE = 'mode';
     const FIELD_MODE_EXT = '_mode';
-    const FIELD_PARTY = 'party';
     const FIELD_TIME = 'time';
     const FIELD_TIME_EXT = '_time';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_PARTY = 'party';
 
     /**
      * The way in which a person authenticated a composition.
@@ -101,19 +106,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCompositionAttestationMode[]
      */
-    protected $mode = [];
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Who attested the composition in the specified way.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    protected $party = null;
-
+    protected null|array $mode = [];
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -126,45 +119,44 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    protected $time = null;
+    protected null|FHIRDateTime $time = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who attested the composition in the specified way.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $party = null;
 
     /**
      * Validation map for fields in type Composition.Attester
      * @var array
      */
-    private static $_validationRules = [
+    private const _VALIDATION_RULES = [
         self::FIELD_MODE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
+
     /**
      * FHIRCompositionAttester Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCompositionAttester::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_MODE]) || isset($data[self::FIELD_MODE_EXT])) {
-            if (isset($data[self::FIELD_MODE])) {
-                $value = $data[self::FIELD_MODE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_MODE_EXT]) && is_array($data[self::FIELD_MODE_EXT])) {
-                $ext = $data[self::FIELD_MODE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_MODE, $data) || array_key_exists(self::FIELD_MODE_EXT, $data)) {
+            $value = $data[self::FIELD_MODE] ?? null;
+            $ext = (isset($data[self::FIELD_MODE_EXT]) && is_array($data[self::FIELD_MODE_EXT])) ? $data[self::FIELD_MODE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRCompositionAttestationMode) {
                     $this->addMode($value);
@@ -186,30 +178,17 @@ class FHIRCompositionAttester extends FHIRBackboneElement
                 } else {
                     $this->addMode(new FHIRCompositionAttestationMode([FHIRCompositionAttestationMode::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addMode(new FHIRCompositionAttestationMode($iext));
                 }
+            } else {
+                $this->addMode(new FHIRCompositionAttestationMode(null));
             }
         }
-        if (isset($data[self::FIELD_PARTY])) {
-            if ($data[self::FIELD_PARTY] instanceof FHIRReference) {
-                $this->setParty($data[self::FIELD_PARTY]);
-            } else {
-                $this->setParty(new FHIRReference($data[self::FIELD_PARTY]));
-            }
-        }
-        if (isset($data[self::FIELD_TIME]) || isset($data[self::FIELD_TIME_EXT])) {
-            if (isset($data[self::FIELD_TIME])) {
-                $value = $data[self::FIELD_TIME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TIME_EXT]) && is_array($data[self::FIELD_TIME_EXT])) {
-                $ext = $data[self::FIELD_TIME_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_TIME, $data) || array_key_exists(self::FIELD_TIME_EXT, $data)) {
+            $value = $data[self::FIELD_TIME] ?? null;
+            $ext = (isset($data[self::FIELD_TIME_EXT]) && is_array($data[self::FIELD_TIME_EXT])) ? $data[self::FIELD_TIME_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setTime($value);
@@ -218,8 +197,17 @@ class FHIRCompositionAttester extends FHIRBackboneElement
                 } else {
                     $this->setTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setTime(new FHIRDateTime($ext));
+            } else {
+                $this->setTime(new FHIRDateTime(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_PARTY, $data)) {
+            if ($data[self::FIELD_PARTY] instanceof FHIRReference) {
+                $this->setParty($data[self::FIELD_PARTY]);
+            } else {
+                $this->setParty(new FHIRReference($data[self::FIELD_PARTY]));
             }
         }
     }
@@ -227,21 +215,9 @@ class FHIRCompositionAttester extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<CompositionAttester{$xmlns}></CompositionAttester>";
     }
 
     /**
@@ -252,7 +228,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCompositionAttestationMode[]
      */
-    public function getMode()
+    public function getMode(): null|array
     {
         return $this->mode;
     }
@@ -266,64 +242,13 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCompositionAttestationMode $mode
      * @return static
      */
-    public function addMode(FHIRCompositionAttestationMode $mode = null)
+    public function addMode(null|FHIRCompositionAttestationMode $mode = null): self
     {
+        if (null === $mode) {
+            $mode = new FHIRCompositionAttestationMode();
+        }
+        $this->_trackValueAdded();
         $this->mode[] = $mode;
-        return $this;
-    }
-
-    /**
-     * The way in which a person authenticated a composition.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The type of attestation the authenticator offers.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCompositionAttestationMode[] $mode
-     * @return static
-     */
-    public function setMode(array $mode = [])
-    {
-        $this->mode = [];
-        if ([] === $mode) {
-            return $this;
-        }
-        foreach($mode as $v) {
-            if ($v instanceof FHIRCompositionAttestationMode) {
-                $this->addMode($v);
-            } else {
-                $this->addMode(new FHIRCompositionAttestationMode($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Who attested the composition in the specified way.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    public function getParty()
-    {
-        return $this->party;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Who attested the composition in the specified way.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $party
-     * @return static
-     */
-    public function setParty(FHIRReference $party = null)
-    {
-        $this->party = $party;
         return $this;
     }
 
@@ -339,7 +264,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
-    public function getTime()
+    public function getTime(): null|FHIRDateTime
     {
         return $this->time;
     }
@@ -354,20 +279,55 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      *
      * When composition was attested by the party.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $time
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime $time
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setTime($time = null)
+    public function setTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $time = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $time) {
-            $this->time = null;
-            return $this;
+        if (null !== $time && !($time instanceof FHIRDateTime)) {
+            $time = new FHIRDateTime($time);
         }
-        if ($time instanceof FHIRDateTime) {
-            $this->time = $time;
-            return $this;
+        $this->_trackValueSet($this->time, $time);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_TIME])) {
+            $this->_primitiveXmlLocations[self::FIELD_TIME] = [];
         }
-        $this->time = new FHIRDateTime($time);
+        $this->_primitiveXmlLocations[self::FIELD_TIME][0] = $xmlLocation;
+        $this->time = $time;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who attested the composition in the specified way.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    public function getParty(): null|FHIRReference
+    {
+        return $this->party;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who attested the composition in the specified way.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $party
+     * @return static
+     */
+    public function setParty(null|FHIRReference $party = null): self
+    {
+        if (null === $party) {
+            $party = new FHIRReference();
+        }
+        $this->_trackValueSet($this->party, $party);
+        $this->party = $party;
         return $this;
     }
 
@@ -377,9 +337,9 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -388,7 +348,7 @@ class FHIRCompositionAttester extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
@@ -399,14 +359,14 @@ class FHIRCompositionAttester extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getParty())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PARTY] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getTime())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_TIME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getParty())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PARTY] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_MODE])) {
@@ -421,18 +381,6 @@ class FHIRCompositionAttester extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PARTY])) {
-            $v = $this->getParty();
-            foreach($validationRules[self::FIELD_PARTY] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COMPOSITION_DOT_ATTESTER, self::FIELD_PARTY, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PARTY])) {
-                        $errs[self::FIELD_PARTY] = [];
-                    }
-                    $errs[self::FIELD_PARTY][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_TIME])) {
             $v = $this->getTime();
             foreach($validationRules[self::FIELD_TIME] as $rule => $constraint) {
@@ -442,6 +390,18 @@ class FHIRCompositionAttester extends FHIRBackboneElement
                         $errs[self::FIELD_TIME] = [];
                     }
                     $errs[self::FIELD_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PARTY])) {
+            $v = $this->getParty();
+            foreach($validationRules[self::FIELD_PARTY] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COMPOSITION_DOT_ATTESTER, self::FIELD_PARTY, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PARTY])) {
+                        $errs[self::FIELD_PARTY] = [];
+                    }
+                    $errs[self::FIELD_PARTY][$rule] = $err;
                 }
             }
         }
@@ -485,147 +445,180 @@ class FHIRCompositionAttester extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRCompositionAttester::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRCompositionAttester::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRCompositionAttester;
-        } elseif (!is_object($type) || !($type instanceof FHIRCompositionAttester)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRCompositionAttester)) {
             throw new \RuntimeException(sprintf(
-                'FHIRCompositionAttester::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_MODE === $childName) {
+                $type->addMode(FHIRCompositionAttestationMode::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TIME === $childName) {
+                $type->setTime(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PARTY === $childName) {
+                $type->setParty(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->mode)) {
-            foreach($children->mode as $child) {
-                $type->addMode(FHIRCompositionAttestationMode::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->party)) {
-            $type->setParty(FHIRReference::xmlUnserialize($children->party));
-        }
-        if (isset($children->time)) {
-            $type->setTime(FHIRDateTime::xmlUnserialize($children->time));
-        }
-        if (isset($attributes->time)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_TIME])) {
             $pt = $type->getTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->time);
+                $pt->setValue((string)$attributes[self::FIELD_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setTime((string)$attributes->time);
+                $type->setTime((string)$attributes[self::FIELD_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getMode())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_MODE, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'CompositionAttester', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTime())) {
+            $xw->writeAttribute(self::FIELD_TIME, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        foreach ($this->getMode() as $v) {
+            $xw->startElement(self::FIELD_MODE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTime())) {
+            $xw->startElement(self::FIELD_TIME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getParty())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PARTY, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_PARTY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIME, null, $v->_getFHIRXMLNamespace()));
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
         if ([] !== ($vs = $this->getMode())) {
-            $a[self::FIELD_MODE] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_MODE][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRCompositionAttestationMode::FIELD_VALUE]) || array_key_exists(FHIRCompositionAttestationMode::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRCompositionAttestationMode::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRCompositionAttestationMode::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_MODE_EXT] = $encs;
+            if ([] !== $vals) {
+                $out->{self::FIELD_MODE} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_MODE_EXT} = $exts;
+            }
+        }
+        if (null !== ($v = $this->getTime())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_TIME} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_TIME_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getParty())) {
-            $a[self::FIELD_PARTY] = $v;
+            $out->{self::FIELD_PARTY} = $v;
         }
-        if (null !== ($v = $this->getTime())) {
-            $a[self::FIELD_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_TIME_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

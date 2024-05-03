@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,16 +62,32 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRCodePrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMeta;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSubscriptionStatus;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRInstantPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeMap;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter;
 
 /**
  * The subscription resource is used to define a push based subscription from a
@@ -88,23 +104,75 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSCRIPTION;
-    const FIELD_CHANNEL = 'channel';
-    const FIELD_CONTACT = 'contact';
+
     const FIELD_CRITERIA = 'criteria';
     const FIELD_CRITERIA_EXT = '_criteria';
-    const FIELD_END = 'end';
-    const FIELD_END_EXT = '_end';
-    const FIELD_ERROR = 'error';
-    const FIELD_ERROR_EXT = '_error';
+    const FIELD_CONTACT = 'contact';
     const FIELD_REASON = 'reason';
     const FIELD_REASON_EXT = '_reason';
     const FIELD_STATUS = 'status';
     const FIELD_STATUS_EXT = '_status';
+    const FIELD_ERROR = 'error';
+    const FIELD_ERROR_EXT = '_error';
+    const FIELD_CHANNEL = 'channel';
+    const FIELD_END = 'end';
+    const FIELD_END_EXT = '_end';
     const FIELD_TAG = 'tag';
 
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The rules that the server should use to determine when to generate notifications
+     * for this subscription.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $criteria = null;
+    /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details for a human to contact about the subscription. The primary use
+     * of this for system administrator troubleshooting.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint[]
+     */
+    protected null|array $contact = [];
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A description of why this subscription is defined.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $reason = null;
+    /**
+     * The status of a subscription.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The status of the subscription, which marks the server state for managing the
+     * subscription.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSubscriptionStatus
+     */
+    protected null|FHIRSubscriptionStatus $status = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A record of the last error that occurred when the server processed a
+     * notification.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $error = null;
     /**
      * The subscription resource is used to define a push based subscription from a
      * server to another system. Once a subscription is registered with the server, the
@@ -117,33 +185,7 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel
      */
-    protected $channel = null;
-
-    /**
-     * Details for all kinds of technology mediated contact points for a person or
-     * organization, including telephone, email, etc.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Contact details for a human to contact about the subscription. The primary use
-     * of this for system administrator troubleshooting.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint[]
-     */
-    protected $contact = [];
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The rules that the server should use to determine when to generate notifications
-     * for this subscription.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    protected $criteria = null;
-
+    protected null|FHIRSubscriptionChannel $channel = null;
     /**
      * An instant in time - known at least to the second
      * Note: This is intended for precisely observed times, typically system logs etc.,
@@ -155,42 +197,7 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
      */
-    protected $end = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A record of the last error that occurred when the server processed a
-     * notification.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    protected $error = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A description of why this subscription is defined.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    protected $reason = null;
-
-    /**
-     * The status of a subscription.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The status of the subscription, which marks the server state for managing the
-     * subscription.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSubscriptionStatus
-     */
-    protected $status = null;
-
+    protected null|FHIRInstant $end = null;
     /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
@@ -201,66 +208,30 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding[]
      */
-    protected $tag = [];
+    protected null|array $tag = [];
 
     /**
      * Validation map for fields in type Subscription
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRSubscription Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRSubscription::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CHANNEL])) {
-            if ($data[self::FIELD_CHANNEL] instanceof FHIRSubscriptionChannel) {
-                $this->setChannel($data[self::FIELD_CHANNEL]);
-            } else {
-                $this->setChannel(new FHIRSubscriptionChannel($data[self::FIELD_CHANNEL]));
-            }
-        }
-        if (isset($data[self::FIELD_CONTACT])) {
-            if (is_array($data[self::FIELD_CONTACT])) {
-                foreach($data[self::FIELD_CONTACT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRContactPoint) {
-                        $this->addContact($v);
-                    } else {
-                        $this->addContact(new FHIRContactPoint($v));
-                    }
-                }
-            } else if ($data[self::FIELD_CONTACT] instanceof FHIRContactPoint) {
-                $this->addContact($data[self::FIELD_CONTACT]);
-            } else {
-                $this->addContact(new FHIRContactPoint($data[self::FIELD_CONTACT]));
-            }
-        }
-        if (isset($data[self::FIELD_CRITERIA]) || isset($data[self::FIELD_CRITERIA_EXT])) {
-            if (isset($data[self::FIELD_CRITERIA])) {
-                $value = $data[self::FIELD_CRITERIA];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CRITERIA_EXT]) && is_array($data[self::FIELD_CRITERIA_EXT])) {
-                $ext = $data[self::FIELD_CRITERIA_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_CRITERIA, $data) || array_key_exists(self::FIELD_CRITERIA_EXT, $data)) {
+            $value = $data[self::FIELD_CRITERIA] ?? null;
+            $ext = (isset($data[self::FIELD_CRITERIA_EXT]) && is_array($data[self::FIELD_CRITERIA_EXT])) ? $data[self::FIELD_CRITERIA_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setCriteria($value);
@@ -269,67 +240,30 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
                 } else {
                     $this->setCriteria(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setCriteria(new FHIRString($ext));
+            } else {
+                $this->setCriteria(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_END]) || isset($data[self::FIELD_END_EXT])) {
-            if (isset($data[self::FIELD_END])) {
-                $value = $data[self::FIELD_END];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_END_EXT]) && is_array($data[self::FIELD_END_EXT])) {
-                $ext = $data[self::FIELD_END_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInstant) {
-                    $this->setEnd($value);
-                } else if (is_array($value)) {
-                    $this->setEnd(new FHIRInstant(array_merge($ext, $value)));
-                } else {
-                    $this->setEnd(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
+        if (array_key_exists(self::FIELD_CONTACT, $data)) {
+            if (is_array($data[self::FIELD_CONTACT])) {
+                foreach($data[self::FIELD_CONTACT] as $v) {
+                    if ($v instanceof FHIRContactPoint) {
+                        $this->addContact($v);
+                    } else {
+                        $this->addContact(new FHIRContactPoint($v));
+                    }
                 }
-            } else if ([] !== $ext) {
-                $this->setEnd(new FHIRInstant($ext));
+            } elseif ($data[self::FIELD_CONTACT] instanceof FHIRContactPoint) {
+                $this->addContact($data[self::FIELD_CONTACT]);
+            } else {
+                $this->addContact(new FHIRContactPoint($data[self::FIELD_CONTACT]));
             }
         }
-        if (isset($data[self::FIELD_ERROR]) || isset($data[self::FIELD_ERROR_EXT])) {
-            if (isset($data[self::FIELD_ERROR])) {
-                $value = $data[self::FIELD_ERROR];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ERROR_EXT]) && is_array($data[self::FIELD_ERROR_EXT])) {
-                $ext = $data[self::FIELD_ERROR_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setError($value);
-                } else if (is_array($value)) {
-                    $this->setError(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setError(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setError(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_REASON]) || isset($data[self::FIELD_REASON_EXT])) {
-            if (isset($data[self::FIELD_REASON])) {
-                $value = $data[self::FIELD_REASON];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_REASON_EXT]) && is_array($data[self::FIELD_REASON_EXT])) {
-                $ext = $data[self::FIELD_REASON_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_REASON, $data) || array_key_exists(self::FIELD_REASON_EXT, $data)) {
+            $value = $data[self::FIELD_REASON] ?? null;
+            $ext = (isset($data[self::FIELD_REASON_EXT]) && is_array($data[self::FIELD_REASON_EXT])) ? $data[self::FIELD_REASON_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setReason($value);
@@ -338,21 +272,15 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
                 } else {
                     $this->setReason(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setReason(new FHIRString($ext));
+            } else {
+                $this->setReason(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
-            if (isset($data[self::FIELD_STATUS])) {
-                $value = $data[self::FIELD_STATUS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
-                $ext = $data[self::FIELD_STATUS_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_STATUS, $data) || array_key_exists(self::FIELD_STATUS_EXT, $data)) {
+            $value = $data[self::FIELD_STATUS] ?? null;
+            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) ? $data[self::FIELD_STATUS_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRSubscriptionStatus) {
                     $this->setStatus($value);
@@ -361,23 +289,63 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
                 } else {
                     $this->setStatus(new FHIRSubscriptionStatus([FHIRSubscriptionStatus::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setStatus(new FHIRSubscriptionStatus($ext));
+            } else {
+                $this->setStatus(new FHIRSubscriptionStatus(null));
             }
         }
-        if (isset($data[self::FIELD_TAG])) {
+        if (array_key_exists(self::FIELD_ERROR, $data) || array_key_exists(self::FIELD_ERROR_EXT, $data)) {
+            $value = $data[self::FIELD_ERROR] ?? null;
+            $ext = (isset($data[self::FIELD_ERROR_EXT]) && is_array($data[self::FIELD_ERROR_EXT])) ? $data[self::FIELD_ERROR_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setError($value);
+                } else if (is_array($value)) {
+                    $this->setError(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setError(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setError(new FHIRString($ext));
+            } else {
+                $this->setError(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_CHANNEL, $data)) {
+            if ($data[self::FIELD_CHANNEL] instanceof FHIRSubscriptionChannel) {
+                $this->setChannel($data[self::FIELD_CHANNEL]);
+            } else {
+                $this->setChannel(new FHIRSubscriptionChannel($data[self::FIELD_CHANNEL]));
+            }
+        }
+        if (array_key_exists(self::FIELD_END, $data) || array_key_exists(self::FIELD_END_EXT, $data)) {
+            $value = $data[self::FIELD_END] ?? null;
+            $ext = (isset($data[self::FIELD_END_EXT]) && is_array($data[self::FIELD_END_EXT])) ? $data[self::FIELD_END_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInstant) {
+                    $this->setEnd($value);
+                } else if (is_array($value)) {
+                    $this->setEnd(new FHIRInstant(array_merge($ext, $value)));
+                } else {
+                    $this->setEnd(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setEnd(new FHIRInstant($ext));
+            } else {
+                $this->setEnd(new FHIRInstant(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_TAG, $data)) {
             if (is_array($data[self::FIELD_TAG])) {
                 foreach($data[self::FIELD_TAG] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRCoding) {
                         $this->addTag($v);
                     } else {
                         $this->addTag(new FHIRCoding($v));
                     }
                 }
-            } else if ($data[self::FIELD_TAG] instanceof FHIRCoding) {
+            } elseif ($data[self::FIELD_TAG] instanceof FHIRCoding) {
                 $this->addTag($data[self::FIELD_TAG]);
             } else {
                 $this->addTag(new FHIRCoding($data[self::FIELD_TAG]));
@@ -388,7 +356,7 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -396,22 +364,203 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
     /**
      * @return string
      */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<Subscription{$xmlns}></Subscription>";
-    }
-    /**
-     * @return string
-     */
-    public function _getResourceType()
+    public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
     }
 
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The rules that the server should use to determine when to generate notifications
+     * for this subscription.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    public function getCriteria(): null|FHIRString
+    {
+        return $this->criteria;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The rules that the server should use to determine when to generate notifications
+     * for this subscription.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $criteria
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setCriteria(null|string|FHIRStringPrimitive|FHIRString $criteria = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $criteria && !($criteria instanceof FHIRString)) {
+            $criteria = new FHIRString($criteria);
+        }
+        $this->_trackValueSet($this->criteria, $criteria);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_CRITERIA])) {
+            $this->_primitiveXmlLocations[self::FIELD_CRITERIA] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_CRITERIA][0] = $xmlLocation;
+        $this->criteria = $criteria;
+        return $this;
+    }
+
+    /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details for a human to contact about the subscription. The primary use
+     * of this for system administrator troubleshooting.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint[]
+     */
+    public function getContact(): null|array
+    {
+        return $this->contact;
+    }
+
+    /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details for a human to contact about the subscription. The primary use
+     * of this for system administrator troubleshooting.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint $contact
+     * @return static
+     */
+    public function addContact(null|FHIRContactPoint $contact = null): self
+    {
+        if (null === $contact) {
+            $contact = new FHIRContactPoint();
+        }
+        $this->_trackValueAdded();
+        $this->contact[] = $contact;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A description of why this subscription is defined.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    public function getReason(): null|FHIRString
+    {
+        return $this->reason;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A description of why this subscription is defined.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $reason
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setReason(null|string|FHIRStringPrimitive|FHIRString $reason = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $reason && !($reason instanceof FHIRString)) {
+            $reason = new FHIRString($reason);
+        }
+        $this->_trackValueSet($this->reason, $reason);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_REASON])) {
+            $this->_primitiveXmlLocations[self::FIELD_REASON] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_REASON][0] = $xmlLocation;
+        $this->reason = $reason;
+        return $this;
+    }
+
+    /**
+     * The status of a subscription.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The status of the subscription, which marks the server state for managing the
+     * subscription.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSubscriptionStatus
+     */
+    public function getStatus(): null|FHIRSubscriptionStatus
+    {
+        return $this->status;
+    }
+
+    /**
+     * The status of a subscription.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The status of the subscription, which marks the server state for managing the
+     * subscription.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSubscriptionStatus $status
+     * @return static
+     */
+    public function setStatus(null|FHIRSubscriptionStatus $status = null): self
+    {
+        if (null === $status) {
+            $status = new FHIRSubscriptionStatus();
+        }
+        $this->_trackValueSet($this->status, $status);
+        $this->status = $status;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A record of the last error that occurred when the server processed a
+     * notification.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    public function getError(): null|FHIRString
+    {
+        return $this->error;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A record of the last error that occurred when the server processed a
+     * notification.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $error
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setError(null|string|FHIRStringPrimitive|FHIRString $error = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $error && !($error instanceof FHIRString)) {
+            $error = new FHIRString($error);
+        }
+        $this->_trackValueSet($this->error, $error);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_ERROR])) {
+            $this->_primitiveXmlLocations[self::FIELD_ERROR] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_ERROR][0] = $xmlLocation;
+        $this->error = $error;
+        return $this;
+    }
 
     /**
      * The subscription resource is used to define a push based subscription from a
@@ -425,7 +574,7 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel
      */
-    public function getChannel()
+    public function getChannel(): null|FHIRSubscriptionChannel
     {
         return $this->channel;
     }
@@ -443,111 +592,13 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel $channel
      * @return static
      */
-    public function setChannel(FHIRSubscriptionChannel $channel = null)
+    public function setChannel(null|FHIRSubscriptionChannel $channel = null): self
     {
+        if (null === $channel) {
+            $channel = new FHIRSubscriptionChannel();
+        }
+        $this->_trackValueSet($this->channel, $channel);
         $this->channel = $channel;
-        return $this;
-    }
-
-    /**
-     * Details for all kinds of technology mediated contact points for a person or
-     * organization, including telephone, email, etc.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Contact details for a human to contact about the subscription. The primary use
-     * of this for system administrator troubleshooting.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint[]
-     */
-    public function getContact()
-    {
-        return $this->contact;
-    }
-
-    /**
-     * Details for all kinds of technology mediated contact points for a person or
-     * organization, including telephone, email, etc.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Contact details for a human to contact about the subscription. The primary use
-     * of this for system administrator troubleshooting.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint $contact
-     * @return static
-     */
-    public function addContact(FHIRContactPoint $contact = null)
-    {
-        $this->contact[] = $contact;
-        return $this;
-    }
-
-    /**
-     * Details for all kinds of technology mediated contact points for a person or
-     * organization, including telephone, email, etc.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Contact details for a human to contact about the subscription. The primary use
-     * of this for system administrator troubleshooting.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint[] $contact
-     * @return static
-     */
-    public function setContact(array $contact = [])
-    {
-        $this->contact = [];
-        if ([] === $contact) {
-            return $this;
-        }
-        foreach($contact as $v) {
-            if ($v instanceof FHIRContactPoint) {
-                $this->addContact($v);
-            } else {
-                $this->addContact(new FHIRContactPoint($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The rules that the server should use to determine when to generate notifications
-     * for this subscription.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    public function getCriteria()
-    {
-        return $this->criteria;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The rules that the server should use to determine when to generate notifications
-     * for this subscription.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $criteria
-     * @return static
-     */
-    public function setCriteria($criteria = null)
-    {
-        if (null === $criteria) {
-            $this->criteria = null;
-            return $this;
-        }
-        if ($criteria instanceof FHIRString) {
-            $this->criteria = $criteria;
-            return $this;
-        }
-        $this->criteria = new FHIRString($criteria);
         return $this;
     }
 
@@ -562,7 +613,7 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
      */
-    public function getEnd()
+    public function getEnd(): null|FHIRInstant
     {
         return $this->end;
     }
@@ -576,128 +627,21 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * The time for the server to turn the subscription off.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant $end
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant $end
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setEnd($end = null)
+    public function setEnd(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $end = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $end) {
-            $this->end = null;
-            return $this;
+        if (null !== $end && !($end instanceof FHIRInstant)) {
+            $end = new FHIRInstant($end);
         }
-        if ($end instanceof FHIRInstant) {
-            $this->end = $end;
-            return $this;
+        $this->_trackValueSet($this->end, $end);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_END])) {
+            $this->_primitiveXmlLocations[self::FIELD_END] = [];
         }
-        $this->end = new FHIRInstant($end);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A record of the last error that occurred when the server processed a
-     * notification.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    public function getError()
-    {
-        return $this->error;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A record of the last error that occurred when the server processed a
-     * notification.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $error
-     * @return static
-     */
-    public function setError($error = null)
-    {
-        if (null === $error) {
-            $this->error = null;
-            return $this;
-        }
-        if ($error instanceof FHIRString) {
-            $this->error = $error;
-            return $this;
-        }
-        $this->error = new FHIRString($error);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A description of why this subscription is defined.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    public function getReason()
-    {
-        return $this->reason;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A description of why this subscription is defined.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $reason
-     * @return static
-     */
-    public function setReason($reason = null)
-    {
-        if (null === $reason) {
-            $this->reason = null;
-            return $this;
-        }
-        if ($reason instanceof FHIRString) {
-            $this->reason = $reason;
-            return $this;
-        }
-        $this->reason = new FHIRString($reason);
-        return $this;
-    }
-
-    /**
-     * The status of a subscription.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The status of the subscription, which marks the server state for managing the
-     * subscription.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSubscriptionStatus
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
-
-    /**
-     * The status of a subscription.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The status of the subscription, which marks the server state for managing the
-     * subscription.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSubscriptionStatus $status
-     * @return static
-     */
-    public function setStatus(FHIRSubscriptionStatus $status = null)
-    {
-        $this->status = $status;
+        $this->_primitiveXmlLocations[self::FIELD_END][0] = $xmlLocation;
+        $this->end = $end;
         return $this;
     }
 
@@ -711,7 +655,7 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding[]
      */
-    public function getTag()
+    public function getTag(): null|array
     {
         return $this->tag;
     }
@@ -727,36 +671,13 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $tag
      * @return static
      */
-    public function addTag(FHIRCoding $tag = null)
+    public function addTag(null|FHIRCoding $tag = null): self
     {
+        if (null === $tag) {
+            $tag = new FHIRCoding();
+        }
+        $this->_trackValueAdded();
         $this->tag[] = $tag;
-        return $this;
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A tag to add to any resource that matches the criteria, after the subscription
-     * is processed.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding[] $tag
-     * @return static
-     */
-    public function setTag(array $tag = [])
-    {
-        $this->tag = [];
-        if ([] === $tag) {
-            return $this;
-        }
-        foreach($tag as $v) {
-            if ($v instanceof FHIRCoding) {
-                $this->addTag($v);
-            } else {
-                $this->addTag(new FHIRCoding($v));
-            }
-        }
         return $this;
     }
 
@@ -766,9 +687,9 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -777,13 +698,13 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getChannel())) {
+        if (null !== ($v = $this->getCriteria())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CHANNEL] = $fieldErrs;
+                $errs[self::FIELD_CRITERIA] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getContact())) {
@@ -791,21 +712,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_CONTACT, $i)] = $fieldErrs;
                 }
-            }
-        }
-        if (null !== ($v = $this->getCriteria())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CRITERIA] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getEnd())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_END] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getError())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ERROR] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getReason())) {
@@ -818,34 +724,25 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
                 $errs[self::FIELD_STATUS] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getError())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_ERROR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getChannel())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CHANNEL] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getEnd())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_END] = $fieldErrs;
+            }
+        }
         if ([] !== ($vs = $this->getTag())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                     $errs[sprintf('%s.%d', self::FIELD_TAG, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_CHANNEL])) {
-            $v = $this->getChannel();
-            foreach($validationRules[self::FIELD_CHANNEL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSCRIPTION, self::FIELD_CHANNEL, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CHANNEL])) {
-                        $errs[self::FIELD_CHANNEL] = [];
-                    }
-                    $errs[self::FIELD_CHANNEL][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_CONTACT])) {
-            $v = $this->getContact();
-            foreach($validationRules[self::FIELD_CONTACT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSCRIPTION, self::FIELD_CONTACT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONTACT])) {
-                        $errs[self::FIELD_CONTACT] = [];
-                    }
-                    $errs[self::FIELD_CONTACT][$rule] = $err;
                 }
             }
         }
@@ -861,27 +758,15 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_END])) {
-            $v = $this->getEnd();
-            foreach($validationRules[self::FIELD_END] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSCRIPTION, self::FIELD_END, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CONTACT])) {
+            $v = $this->getContact();
+            foreach($validationRules[self::FIELD_CONTACT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSCRIPTION, self::FIELD_CONTACT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_END])) {
-                        $errs[self::FIELD_END] = [];
+                    if (!isset($errs[self::FIELD_CONTACT])) {
+                        $errs[self::FIELD_CONTACT] = [];
                     }
-                    $errs[self::FIELD_END][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_ERROR])) {
-            $v = $this->getError();
-            foreach($validationRules[self::FIELD_ERROR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSCRIPTION, self::FIELD_ERROR, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ERROR])) {
-                        $errs[self::FIELD_ERROR] = [];
-                    }
-                    $errs[self::FIELD_ERROR][$rule] = $err;
+                    $errs[self::FIELD_CONTACT][$rule] = $err;
                 }
             }
         }
@@ -909,6 +794,42 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_ERROR])) {
+            $v = $this->getError();
+            foreach($validationRules[self::FIELD_ERROR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSCRIPTION, self::FIELD_ERROR, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ERROR])) {
+                        $errs[self::FIELD_ERROR] = [];
+                    }
+                    $errs[self::FIELD_ERROR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CHANNEL])) {
+            $v = $this->getChannel();
+            foreach($validationRules[self::FIELD_CHANNEL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSCRIPTION, self::FIELD_CHANNEL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CHANNEL])) {
+                        $errs[self::FIELD_CHANNEL] = [];
+                    }
+                    $errs[self::FIELD_CHANNEL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_END])) {
+            $v = $this->getEnd();
+            foreach($validationRules[self::FIELD_END] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSCRIPTION, self::FIELD_END, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_END])) {
+                        $errs[self::FIELD_END] = [];
+                    }
+                    $errs[self::FIELD_END][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_TAG])) {
             $v = $this->getTag();
             foreach($validationRules[self::FIELD_TAG] as $rule => $constraint) {
@@ -918,6 +839,18 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
                         $errs[self::FIELD_TAG] = [];
                     }
                     $errs[self::FIELD_TAG][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -957,18 +890,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -978,6 +899,18 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -1005,255 +938,316 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRSubscription $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRSubscription
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRSubscription::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSubscription::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRSubscription;
-        } elseif (!is_object($type) || !($type instanceof FHIRSubscription)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRSubscription)) {
             throw new \RuntimeException(sprintf(
-                'FHIRSubscription::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource\FHIRSubscription or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_CRITERIA === $childName) {
+                $type->setCriteria(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CONTACT === $childName) {
+                $type->addContact(FHIRContactPoint::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_REASON === $childName) {
+                $type->setReason(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_STATUS === $childName) {
+                $type->setStatus(FHIRSubscriptionStatus::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ERROR === $childName) {
+                $type->setError(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CHANNEL === $childName) {
+                $type->setChannel(FHIRSubscriptionChannel::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_END === $childName) {
+                $type->setEnd(FHIRInstant::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_TAG === $childName) {
+                $type->addTag(FHIRCoding::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TEXT === $childName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CONTAINED === $childName) {
+                foreach ($n->children() as $nn) {
+                    $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn, $config));
+                }
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRId::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_META === $childName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_IMPLICIT_RULES === $childName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_LANGUAGE === $childName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->channel)) {
-            $type->setChannel(FHIRSubscriptionChannel::xmlUnserialize($children->channel));
-        }
-        if (isset($children->contact)) {
-            foreach($children->contact as $child) {
-                $type->addContact(FHIRContactPoint::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->criteria)) {
-            $type->setCriteria(FHIRString::xmlUnserialize($children->criteria));
-        }
-        if (isset($attributes->criteria)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_CRITERIA])) {
             $pt = $type->getCriteria();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->criteria);
+                $pt->setValue((string)$attributes[self::FIELD_CRITERIA], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setCriteria((string)$attributes->criteria);
+                $type->setCriteria((string)$attributes[self::FIELD_CRITERIA], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->end)) {
-            $type->setEnd(FHIRInstant::xmlUnserialize($children->end));
-        }
-        if (isset($attributes->end)) {
-            $pt = $type->getEnd();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->end);
-            } else {
-                $type->setEnd((string)$attributes->end);
-            }
-        }
-        if (isset($children->error)) {
-            $type->setError(FHIRString::xmlUnserialize($children->error));
-        }
-        if (isset($attributes->error)) {
-            $pt = $type->getError();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->error);
-            } else {
-                $type->setError((string)$attributes->error);
-            }
-        }
-        if (isset($children->reason)) {
-            $type->setReason(FHIRString::xmlUnserialize($children->reason));
-        }
-        if (isset($attributes->reason)) {
+        if (isset($attributes[self::FIELD_REASON])) {
             $pt = $type->getReason();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->reason);
+                $pt->setValue((string)$attributes[self::FIELD_REASON], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setReason((string)$attributes->reason);
+                $type->setReason((string)$attributes[self::FIELD_REASON], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->status)) {
-            $type->setStatus(FHIRSubscriptionStatus::xmlUnserialize($children->status));
+        if (isset($attributes[self::FIELD_ERROR])) {
+            $pt = $type->getError();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ERROR], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setError((string)$attributes[self::FIELD_ERROR], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($children->tag)) {
-            foreach($children->tag as $child) {
-                $type->addTag(FHIRCoding::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_END])) {
+            $pt = $type->getEnd();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_END], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setEnd((string)$attributes[self::FIELD_END], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_LANGUAGE])) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getChannel())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CHANNEL, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if ([] !== ($vs = $this->getContact())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTACT, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getCriteria())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CRITERIA, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getEnd())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_END, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'Subscription', $this->_getSourceXmlns());
         }
-        if (null !== ($v = $this->getError())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ERROR, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CRITERIA] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCriteria())) {
+            $xw->writeAttribute(self::FIELD_CRITERIA, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getReason())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REASON, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_REASON] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getReason())) {
+            $xw->writeAttribute(self::FIELD_REASON, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ERROR] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getError())) {
+            $xw->writeAttribute(self::FIELD_ERROR, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_END] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getEnd())) {
+            $xw->writeAttribute(self::FIELD_END, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CRITERIA] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCriteria())) {
+            $xw->startElement(self::FIELD_CRITERIA);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getContact() as $v) {
+            $xw->startElement(self::FIELD_CONTACT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_REASON] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getReason())) {
+            $xw->startElement(self::FIELD_REASON);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_STATUS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getTag())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TAG, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ERROR] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getError())) {
+            $xw->startElement(self::FIELD_ERROR);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getChannel())) {
+            $xw->startElement(self::FIELD_CHANNEL);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_END] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getEnd())) {
+            $xw->startElement(self::FIELD_END);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getTag() as $v) {
+            $xw->startElement(self::FIELD_TAG);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getChannel())) {
-            $a[self::FIELD_CHANNEL] = $v;
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getCriteria())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_CRITERIA} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_CRITERIA_EXT} = $ext;
+            }
         }
         if ([] !== ($vs = $this->getContact())) {
-            $a[self::FIELD_CONTACT] = [];
+            $out->{self::FIELD_CONTACT} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CONTACT][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getCriteria())) {
-            $a[self::FIELD_CRITERIA] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_CRITERIA_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getEnd())) {
-            $a[self::FIELD_END] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInstant::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInstant::FIELD_VALUE]);
-                $a[self::FIELD_END_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getError())) {
-            $a[self::FIELD_ERROR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_ERROR_EXT] = $enc;
+                $out->{self::FIELD_CONTACT}[] = $v;
             }
         }
         if (null !== ($v = $this->getReason())) {
-            $a[self::FIELD_REASON] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_REASON_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_REASON} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_REASON_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRSubscriptionStatus::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRSubscriptionStatus::FIELD_VALUE]);
-                $a[self::FIELD_STATUS_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_STATUS} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRSubscriptionStatus::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_STATUS_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getError())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_ERROR} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_ERROR_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getChannel())) {
+            $out->{self::FIELD_CHANNEL} = $v;
+        }
+        if (null !== ($v = $this->getEnd())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_END} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInstant::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_END_EXT} = $ext;
             }
         }
         if ([] !== ($vs = $this->getTag())) {
-            $a[self::FIELD_TAG] = [];
+            $out->{self::FIELD_TAG} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_TAG][] = $v;
+                $out->{self::FIELD_TAG}[] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
-    }
 
+        $out->{PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE} = $this->_getResourceType();
+
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

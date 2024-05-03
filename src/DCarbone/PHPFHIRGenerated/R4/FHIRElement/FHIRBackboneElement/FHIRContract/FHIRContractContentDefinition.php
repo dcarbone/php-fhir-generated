@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,14 +62,22 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRMarkdownPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
@@ -82,36 +90,51 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_CONTENT_DEFINITION;
-    const FIELD_COPYRIGHT = 'copyright';
-    const FIELD_COPYRIGHT_EXT = '_copyright';
+
+    const FIELD_TYPE = 'type';
+    const FIELD_SUB_TYPE = 'subType';
+    const FIELD_PUBLISHER = 'publisher';
     const FIELD_PUBLICATION_DATE = 'publicationDate';
     const FIELD_PUBLICATION_DATE_EXT = '_publicationDate';
     const FIELD_PUBLICATION_STATUS = 'publicationStatus';
     const FIELD_PUBLICATION_STATUS_EXT = '_publicationStatus';
-    const FIELD_PUBLISHER = 'publisher';
-    const FIELD_SUB_TYPE = 'subType';
-    const FIELD_TYPE = 'type';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
+    const FIELD_COPYRIGHT = 'copyright';
+    const FIELD_COPYRIGHT_EXT = '_copyright';
 
     /**
-     * A string that may contain Github Flavored Markdown syntax for optional
-     * processing by a mark down presentation engine
-     * Systems are not required to have markdown support, so the text should be
-     * readable without markdown processing. The markdown syntax is GFM - see
-     * https://github.github.com/gfm/
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A copyright statement relating to Contract precursor content. Copyright
-     * statements are generally legal restrictions on the use and publishing of the
-     * Contract precursor content.
+     * Precusory content structure and use, i.e., a boilerplate, template, application
+     * for a contract such as an insurance policy or benefits under a program, e.g.,
+     * workers compensation.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $copyright = null;
-
+    protected null|FHIRCodeableConcept $type = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Detailed Precusory content type.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $subType = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The individual or organization that published the Contract precursor content.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $publisher = null;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -127,8 +150,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    protected $publicationDate = null;
-
+    protected null|FHIRDateTime $publicationDate = null;
     /**
      * Status of the publication of contract content.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -139,30 +161,124 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes
      */
-    protected $publicationStatus = null;
+    protected null|FHIRContractResourcePublicationStatusCodes $publicationStatus = null;
+    /**
+     * A string that may contain Github Flavored Markdown syntax for optional
+     * processing by a mark down presentation engine
+     * Systems are not required to have markdown support, so the text should be
+     * readable without markdown processing. The markdown syntax is GFM - see
+     * https://github.github.com/gfm/
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A copyright statement relating to Contract precursor content. Copyright
+     * statements are generally legal restrictions on the use and publishing of the
+     * Contract precursor content.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
+     */
+    protected null|FHIRMarkdown $copyright = null;
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The individual or organization that published the Contract precursor content.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     * Validation map for fields in type Contract.ContentDefinition
+     * @var array
      */
-    protected $publisher = null;
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Detailed Precusory content type.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * FHIRContractContentDefinition Constructor
+     * @param null|array $data
      */
-    protected $subType = null;
+    public function __construct(null|array $data = null)
+    {
+        if (null === $data || [] === $data) {
+            return;
+        }
+        parent::__construct($data);
+        if (array_key_exists(self::FIELD_TYPE, $data)) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
+            } else {
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_SUB_TYPE, $data)) {
+            if ($data[self::FIELD_SUB_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setSubType($data[self::FIELD_SUB_TYPE]);
+            } else {
+                $this->setSubType(new FHIRCodeableConcept($data[self::FIELD_SUB_TYPE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_PUBLISHER, $data)) {
+            if ($data[self::FIELD_PUBLISHER] instanceof FHIRReference) {
+                $this->setPublisher($data[self::FIELD_PUBLISHER]);
+            } else {
+                $this->setPublisher(new FHIRReference($data[self::FIELD_PUBLISHER]));
+            }
+        }
+        if (array_key_exists(self::FIELD_PUBLICATION_DATE, $data) || array_key_exists(self::FIELD_PUBLICATION_DATE_EXT, $data)) {
+            $value = $data[self::FIELD_PUBLICATION_DATE] ?? null;
+            $ext = (isset($data[self::FIELD_PUBLICATION_DATE_EXT]) && is_array($data[self::FIELD_PUBLICATION_DATE_EXT])) ? $data[self::FIELD_PUBLICATION_DATE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setPublicationDate($value);
+                } else if (is_array($value)) {
+                    $this->setPublicationDate(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setPublicationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPublicationDate(new FHIRDateTime($ext));
+            } else {
+                $this->setPublicationDate(new FHIRDateTime(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_PUBLICATION_STATUS, $data) || array_key_exists(self::FIELD_PUBLICATION_STATUS_EXT, $data)) {
+            $value = $data[self::FIELD_PUBLICATION_STATUS] ?? null;
+            $ext = (isset($data[self::FIELD_PUBLICATION_STATUS_EXT]) && is_array($data[self::FIELD_PUBLICATION_STATUS_EXT])) ? $data[self::FIELD_PUBLICATION_STATUS_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRContractResourcePublicationStatusCodes) {
+                    $this->setPublicationStatus($value);
+                } else if (is_array($value)) {
+                    $this->setPublicationStatus(new FHIRContractResourcePublicationStatusCodes(array_merge($ext, $value)));
+                } else {
+                    $this->setPublicationStatus(new FHIRContractResourcePublicationStatusCodes([FHIRContractResourcePublicationStatusCodes::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPublicationStatus(new FHIRContractResourcePublicationStatusCodes($ext));
+            } else {
+                $this->setPublicationStatus(new FHIRContractResourcePublicationStatusCodes(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_COPYRIGHT, $data) || array_key_exists(self::FIELD_COPYRIGHT_EXT, $data)) {
+            $value = $data[self::FIELD_COPYRIGHT] ?? null;
+            $ext = (isset($data[self::FIELD_COPYRIGHT_EXT]) && is_array($data[self::FIELD_COPYRIGHT_EXT])) ? $data[self::FIELD_COPYRIGHT_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRMarkdown) {
+                    $this->setCopyright($value);
+                } else if (is_array($value)) {
+                    $this->setCopyright(new FHIRMarkdown(array_merge($ext, $value)));
+                } else {
+                    $this->setCopyright(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setCopyright(new FHIRMarkdown($ext));
+            } else {
+                $this->setCopyright(new FHIRMarkdown(null));
+            }
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function _getFhirTypeName(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -174,191 +290,103 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * for a contract such as an insurance policy or benefits under a program, e.g.,
      * workers compensation.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $type = null;
-
-    /**
-     * Validation map for fields in type Contract.ContentDefinition
-     * @var array
-     */
-    private static $_validationRules = [    ];
-
-    /**
-     * FHIRContractContentDefinition Constructor
-     * @param null|array $data
-     */
-    public function __construct($data = null)
+    public function getType(): null|FHIRCodeableConcept
     {
-        if (null === $data || [] === $data) {
-            return;
-        }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRContractContentDefinition::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
-        parent::__construct($data);
-        if (isset($data[self::FIELD_COPYRIGHT]) || isset($data[self::FIELD_COPYRIGHT_EXT])) {
-            if (isset($data[self::FIELD_COPYRIGHT])) {
-                $value = $data[self::FIELD_COPYRIGHT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_COPYRIGHT_EXT]) && is_array($data[self::FIELD_COPYRIGHT_EXT])) {
-                $ext = $data[self::FIELD_COPYRIGHT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRMarkdown) {
-                    $this->setCopyright($value);
-                } else if (is_array($value)) {
-                    $this->setCopyright(new FHIRMarkdown(array_merge($ext, $value)));
-                } else {
-                    $this->setCopyright(new FHIRMarkdown([FHIRMarkdown::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setCopyright(new FHIRMarkdown($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PUBLICATION_DATE]) || isset($data[self::FIELD_PUBLICATION_DATE_EXT])) {
-            if (isset($data[self::FIELD_PUBLICATION_DATE])) {
-                $value = $data[self::FIELD_PUBLICATION_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PUBLICATION_DATE_EXT]) && is_array($data[self::FIELD_PUBLICATION_DATE_EXT])) {
-                $ext = $data[self::FIELD_PUBLICATION_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setPublicationDate($value);
-                } else if (is_array($value)) {
-                    $this->setPublicationDate(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setPublicationDate(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPublicationDate(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PUBLICATION_STATUS]) || isset($data[self::FIELD_PUBLICATION_STATUS_EXT])) {
-            if (isset($data[self::FIELD_PUBLICATION_STATUS])) {
-                $value = $data[self::FIELD_PUBLICATION_STATUS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PUBLICATION_STATUS_EXT]) && is_array($data[self::FIELD_PUBLICATION_STATUS_EXT])) {
-                $ext = $data[self::FIELD_PUBLICATION_STATUS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRContractResourcePublicationStatusCodes) {
-                    $this->setPublicationStatus($value);
-                } else if (is_array($value)) {
-                    $this->setPublicationStatus(new FHIRContractResourcePublicationStatusCodes(array_merge($ext, $value)));
-                } else {
-                    $this->setPublicationStatus(new FHIRContractResourcePublicationStatusCodes([FHIRContractResourcePublicationStatusCodes::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPublicationStatus(new FHIRContractResourcePublicationStatusCodes($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PUBLISHER])) {
-            if ($data[self::FIELD_PUBLISHER] instanceof FHIRReference) {
-                $this->setPublisher($data[self::FIELD_PUBLISHER]);
-            } else {
-                $this->setPublisher(new FHIRReference($data[self::FIELD_PUBLISHER]));
-            }
-        }
-        if (isset($data[self::FIELD_SUB_TYPE])) {
-            if ($data[self::FIELD_SUB_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setSubType($data[self::FIELD_SUB_TYPE]);
-            } else {
-                $this->setSubType(new FHIRCodeableConcept($data[self::FIELD_SUB_TYPE]));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
-            } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
-            }
-        }
+        return $this->type;
     }
 
     /**
-     * @return string
-     */
-    public function _getFHIRTypeName()
-    {
-        return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ContractContentDefinition{$xmlns}></ContractContentDefinition>";
-    }
-
-    /**
-     * A string that may contain Github Flavored Markdown syntax for optional
-     * processing by a mark down presentation engine
-     * Systems are not required to have markdown support, so the text should be
-     * readable without markdown processing. The markdown syntax is GFM - see
-     * https://github.github.com/gfm/
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A copyright statement relating to Contract precursor content. Copyright
-     * statements are generally legal restrictions on the use and publishing of the
-     * Contract precursor content.
+     * Precusory content structure and use, i.e., a boilerplate, template, application
+     * for a contract such as an insurance policy or benefits under a program, e.g.,
+     * workers compensation.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
-     */
-    public function getCopyright()
-    {
-        return $this->copyright;
-    }
-
-    /**
-     * A string that may contain Github Flavored Markdown syntax for optional
-     * processing by a mark down presentation engine
-     * Systems are not required to have markdown support, so the text should be
-     * readable without markdown processing. The markdown syntax is GFM - see
-     * https://github.github.com/gfm/
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A copyright statement relating to Contract precursor content. Copyright
-     * statements are generally legal restrictions on the use and publishing of the
-     * Contract precursor content.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
      * @return static
      */
-    public function setCopyright($copyright = null)
+    public function setType(null|FHIRCodeableConcept $type = null): self
     {
-        if (null === $copyright) {
-            $this->copyright = null;
-            return $this;
+        if (null === $type) {
+            $type = new FHIRCodeableConcept();
         }
-        if ($copyright instanceof FHIRMarkdown) {
-            $this->copyright = $copyright;
-            return $this;
+        $this->_trackValueSet($this->type, $type);
+        $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Detailed Precusory content type.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getSubType(): null|FHIRCodeableConcept
+    {
+        return $this->subType;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Detailed Precusory content type.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subType
+     * @return static
+     */
+    public function setSubType(null|FHIRCodeableConcept $subType = null): self
+    {
+        if (null === $subType) {
+            $subType = new FHIRCodeableConcept();
         }
-        $this->copyright = new FHIRMarkdown($copyright);
+        $this->_trackValueSet($this->subType, $subType);
+        $this->subType = $subType;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The individual or organization that published the Contract precursor content.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getPublisher(): null|FHIRReference
+    {
+        return $this->publisher;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The individual or organization that published the Contract precursor content.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $publisher
+     * @return static
+     */
+    public function setPublisher(null|FHIRReference $publisher = null): self
+    {
+        if (null === $publisher) {
+            $publisher = new FHIRReference();
+        }
+        $this->_trackValueSet($this->publisher, $publisher);
+        $this->publisher = $publisher;
         return $this;
     }
 
@@ -377,7 +405,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    public function getPublicationDate()
+    public function getPublicationDate(): null|FHIRDateTime
     {
         return $this->publicationDate;
     }
@@ -395,20 +423,21 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * changes. In addition, it should change when the substantive content of the
      * contract changes.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $publicationDate
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $publicationDate
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPublicationDate($publicationDate = null)
+    public function setPublicationDate(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $publicationDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $publicationDate) {
-            $this->publicationDate = null;
-            return $this;
+        if (null !== $publicationDate && !($publicationDate instanceof FHIRDateTime)) {
+            $publicationDate = new FHIRDateTime($publicationDate);
         }
-        if ($publicationDate instanceof FHIRDateTime) {
-            $this->publicationDate = $publicationDate;
-            return $this;
+        $this->_trackValueSet($this->publicationDate, $publicationDate);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PUBLICATION_DATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_PUBLICATION_DATE] = [];
         }
-        $this->publicationDate = new FHIRDateTime($publicationDate);
+        $this->_primitiveXmlLocations[self::FIELD_PUBLICATION_DATE][0] = $xmlLocation;
+        $this->publicationDate = $publicationDate;
         return $this;
     }
 
@@ -422,7 +451,7 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes
      */
-    public function getPublicationStatus()
+    public function getPublicationStatus(): null|FHIRContractResourcePublicationStatusCodes
     {
         return $this->publicationStatus;
     }
@@ -438,107 +467,64 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes $publicationStatus
      * @return static
      */
-    public function setPublicationStatus(FHIRContractResourcePublicationStatusCodes $publicationStatus = null)
+    public function setPublicationStatus(null|FHIRContractResourcePublicationStatusCodes $publicationStatus = null): self
     {
+        if (null === $publicationStatus) {
+            $publicationStatus = new FHIRContractResourcePublicationStatusCodes();
+        }
+        $this->_trackValueSet($this->publicationStatus, $publicationStatus);
         $this->publicationStatus = $publicationStatus;
         return $this;
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A string that may contain Github Flavored Markdown syntax for optional
+     * processing by a mark down presentation engine
+     * Systems are not required to have markdown support, so the text should be
+     * readable without markdown processing. The markdown syntax is GFM - see
+     * https://github.github.com/gfm/
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * The individual or organization that published the Contract precursor content.
+     * A copyright statement relating to Contract precursor content. Copyright
+     * statements are generally legal restrictions on the use and publishing of the
+     * Contract precursor content.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
-    public function getPublisher()
+    public function getCopyright(): null|FHIRMarkdown
     {
-        return $this->publisher;
+        return $this->copyright;
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * A string that may contain Github Flavored Markdown syntax for optional
+     * processing by a mark down presentation engine
+     * Systems are not required to have markdown support, so the text should be
+     * readable without markdown processing. The markdown syntax is GFM - see
+     * https://github.github.com/gfm/
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * The individual or organization that published the Contract precursor content.
+     * A copyright statement relating to Contract precursor content. Copyright
+     * statements are generally legal restrictions on the use and publishing of the
+     * Contract precursor content.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $publisher
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRMarkdownPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown $copyright
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setPublisher(FHIRReference $publisher = null)
+    public function setCopyright(null|string|FHIRMarkdownPrimitive|FHIRMarkdown $copyright = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->publisher = $publisher;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Detailed Precusory content type.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getSubType()
-    {
-        return $this->subType;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Detailed Precusory content type.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $subType
-     * @return static
-     */
-    public function setSubType(FHIRCodeableConcept $subType = null)
-    {
-        $this->subType = $subType;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Precusory content structure and use, i.e., a boilerplate, template, application
-     * for a contract such as an insurance policy or benefits under a program, e.g.,
-     * workers compensation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Precusory content structure and use, i.e., a boilerplate, template, application
-     * for a contract such as an insurance policy or benefits under a program, e.g.,
-     * workers compensation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $type
-     * @return static
-     */
-    public function setType(FHIRCodeableConcept $type = null)
-    {
-        $this->type = $type;
+        if (null !== $copyright && !($copyright instanceof FHIRMarkdown)) {
+            $copyright = new FHIRMarkdown($copyright);
+        }
+        $this->_trackValueSet($this->copyright, $copyright);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_COPYRIGHT])) {
+            $this->_primitiveXmlLocations[self::FIELD_COPYRIGHT] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_COPYRIGHT][0] = $xmlLocation;
+        $this->copyright = $copyright;
         return $this;
     }
 
@@ -548,9 +534,9 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -559,13 +545,23 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCopyright())) {
+        if (null !== ($v = $this->getType())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_COPYRIGHT] = $fieldErrs;
+                $errs[self::FIELD_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSubType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SUB_TYPE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PUBLISHER] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getPublicationDate())) {
@@ -578,30 +574,44 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
                 $errs[self::FIELD_PUBLICATION_STATUS] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getPublisher())) {
+        if (null !== ($v = $this->getCopyright())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PUBLISHER] = $fieldErrs;
+                $errs[self::FIELD_COPYRIGHT] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getSubType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SUB_TYPE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_COPYRIGHT])) {
-            $v = $this->getCopyright();
-            foreach($validationRules[self::FIELD_COPYRIGHT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_CONTENT_DEFINITION, self::FIELD_COPYRIGHT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_CONTENT_DEFINITION, self::FIELD_TYPE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COPYRIGHT])) {
-                        $errs[self::FIELD_COPYRIGHT] = [];
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
                     }
-                    $errs[self::FIELD_COPYRIGHT][$rule] = $err;
+                    $errs[self::FIELD_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SUB_TYPE])) {
+            $v = $this->getSubType();
+            foreach($validationRules[self::FIELD_SUB_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_CONTENT_DEFINITION, self::FIELD_SUB_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUB_TYPE])) {
+                        $errs[self::FIELD_SUB_TYPE] = [];
+                    }
+                    $errs[self::FIELD_SUB_TYPE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PUBLISHER])) {
+            $v = $this->getPublisher();
+            foreach($validationRules[self::FIELD_PUBLISHER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_CONTENT_DEFINITION, self::FIELD_PUBLISHER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PUBLISHER])) {
+                        $errs[self::FIELD_PUBLISHER] = [];
+                    }
+                    $errs[self::FIELD_PUBLISHER][$rule] = $err;
                 }
             }
         }
@@ -629,39 +639,15 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PUBLISHER])) {
-            $v = $this->getPublisher();
-            foreach($validationRules[self::FIELD_PUBLISHER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_CONTENT_DEFINITION, self::FIELD_PUBLISHER, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_COPYRIGHT])) {
+            $v = $this->getCopyright();
+            foreach($validationRules[self::FIELD_COPYRIGHT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_CONTENT_DEFINITION, self::FIELD_COPYRIGHT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PUBLISHER])) {
-                        $errs[self::FIELD_PUBLISHER] = [];
+                    if (!isset($errs[self::FIELD_COPYRIGHT])) {
+                        $errs[self::FIELD_COPYRIGHT] = [];
                     }
-                    $errs[self::FIELD_PUBLISHER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SUB_TYPE])) {
-            $v = $this->getSubType();
-            foreach($validationRules[self::FIELD_SUB_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_CONTENT_DEFINITION, self::FIELD_SUB_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUB_TYPE])) {
-                        $errs[self::FIELD_SUB_TYPE] = [];
-                    }
-                    $errs[self::FIELD_SUB_TYPE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CONTRACT_DOT_CONTENT_DEFINITION, self::FIELD_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
-                    }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
+                    $errs[self::FIELD_COPYRIGHT][$rule] = $err;
                 }
             }
         }
@@ -705,167 +691,216 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRContractContentDefinition::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRContractContentDefinition::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRContractContentDefinition;
-        } elseif (!is_object($type) || !($type instanceof FHIRContractContentDefinition)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRContractContentDefinition)) {
             throw new \RuntimeException(sprintf(
-                'FHIRContractContentDefinition::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContentDefinition or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_TYPE === $childName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_SUB_TYPE === $childName) {
+                $type->setSubType(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PUBLISHER === $childName) {
+                $type->setPublisher(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PUBLICATION_DATE === $childName) {
+                $type->setPublicationDate(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PUBLICATION_STATUS === $childName) {
+                $type->setPublicationStatus(FHIRContractResourcePublicationStatusCodes::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_COPYRIGHT === $childName) {
+                $type->setCopyright(FHIRMarkdown::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->copyright)) {
-            $type->setCopyright(FHIRMarkdown::xmlUnserialize($children->copyright));
-        }
-        if (isset($attributes->copyright)) {
-            $pt = $type->getCopyright();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->copyright);
-            } else {
-                $type->setCopyright((string)$attributes->copyright);
-            }
-        }
-        if (isset($children->publicationDate)) {
-            $type->setPublicationDate(FHIRDateTime::xmlUnserialize($children->publicationDate));
-        }
-        if (isset($attributes->publicationDate)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_PUBLICATION_DATE])) {
             $pt = $type->getPublicationDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->publicationDate);
+                $pt->setValue((string)$attributes[self::FIELD_PUBLICATION_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setPublicationDate((string)$attributes->publicationDate);
+                $type->setPublicationDate((string)$attributes[self::FIELD_PUBLICATION_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->publicationStatus)) {
-            $type->setPublicationStatus(FHIRContractResourcePublicationStatusCodes::xmlUnserialize($children->publicationStatus));
+        if (isset($attributes[self::FIELD_COPYRIGHT])) {
+            $pt = $type->getCopyright();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_COPYRIGHT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setCopyright((string)$attributes[self::FIELD_COPYRIGHT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($children->publisher)) {
-            $type->setPublisher(FHIRReference::xmlUnserialize($children->publisher));
-        }
-        if (isset($children->subType)) {
-            $type->setSubType(FHIRCodeableConcept::xmlUnserialize($children->subType));
-        }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCopyright())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COPYRIGHT, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getPublicationDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PUBLICATION_DATE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getPublicationStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PUBLICATION_STATUS, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getPublisher())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PUBLISHER, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ContractContentDefinition', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PUBLICATION_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPublicationDate())) {
+            $xw->writeAttribute(self::FIELD_PUBLICATION_DATE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_COPYRIGHT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCopyright())) {
+            $xw->writeAttribute(self::FIELD_COPYRIGHT, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getType())) {
+            $xw->startElement(self::FIELD_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getSubType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUB_TYPE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_SUB_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getPublisher())) {
+            $xw->startElement(self::FIELD_PUBLISHER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PUBLICATION_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPublicationDate())) {
+            $xw->startElement(self::FIELD_PUBLICATION_DATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getPublicationStatus())) {
+            $xw->startElement(self::FIELD_PUBLICATION_STATUS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_COPYRIGHT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCopyright())) {
+            $xw->startElement(self::FIELD_COPYRIGHT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCopyright())) {
-            $a[self::FIELD_COPYRIGHT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRMarkdown::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRMarkdown::FIELD_VALUE]);
-                $a[self::FIELD_COPYRIGHT_EXT] = $enc;
-            }
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getType())) {
+            $out->{self::FIELD_TYPE} = $v;
+        }
+        if (null !== ($v = $this->getSubType())) {
+            $out->{self::FIELD_SUB_TYPE} = $v;
+        }
+        if (null !== ($v = $this->getPublisher())) {
+            $out->{self::FIELD_PUBLISHER} = $v;
         }
         if (null !== ($v = $this->getPublicationDate())) {
-            $a[self::FIELD_PUBLICATION_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_PUBLICATION_DATE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PUBLICATION_DATE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PUBLICATION_DATE_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getPublicationStatus())) {
-            $a[self::FIELD_PUBLICATION_STATUS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRContractResourcePublicationStatusCodes::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRContractResourcePublicationStatusCodes::FIELD_VALUE]);
-                $a[self::FIELD_PUBLICATION_STATUS_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PUBLICATION_STATUS} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRContractResourcePublicationStatusCodes::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PUBLICATION_STATUS_EXT} = $ext;
             }
         }
-        if (null !== ($v = $this->getPublisher())) {
-            $a[self::FIELD_PUBLISHER] = $v;
+        if (null !== ($v = $this->getCopyright())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_COPYRIGHT} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRMarkdown::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_COPYRIGHT_EXT} = $ext;
+            }
         }
-        if (null !== ($v = $this->getSubType())) {
-            $a[self::FIELD_SUB_TYPE] = $v;
-        }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

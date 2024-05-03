@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAdv
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,10 +65,16 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAdv
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAdverseEventCausality;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter;
 
 /**
  * Actual or potential/avoided event causing unintended physical injury resulting
@@ -83,19 +89,29 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY;
+
+    const FIELD_INSTANCE = 'instance';
     const FIELD_CAUSALITY = 'causality';
     const FIELD_CAUSALITY_EXT = '_causality';
     const FIELD_CAUSALITY_ASSESSMENT = 'causalityAssessment';
-    const FIELD_CAUSALITY_AUTHOR = 'causalityAuthor';
-    const FIELD_CAUSALITY_METHOD = 'causalityMethod';
     const FIELD_CAUSALITY_PRODUCT_RELATEDNESS = 'causalityProductRelatedness';
     const FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT = '_causalityProductRelatedness';
+    const FIELD_CAUSALITY_METHOD = 'causalityMethod';
+    const FIELD_CAUSALITY_AUTHOR = 'causalityAuthor';
     const FIELD_CAUSALITY_RESULT = 'causalityResult';
-    const FIELD_INSTANCE = 'instance';
 
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the actual instance of what caused the adverse event. May be a
+     * substance, medication, medication administration, medication statement or a
+     * device.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $instance = null;
     /**
      * TODO
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -104,8 +120,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAdverseEventCausality
      */
-    protected $causality = null;
-
+    protected null|FHIRAdverseEventCausality $causality = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -116,31 +131,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    protected $causalityAssessment = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * AdverseEvent.suspectEntity.causalityAuthor.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    protected $causalityAuthor = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * method1 | method2.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    protected $causalityMethod = null;
-
+    protected null|FHIRCodeableConcept $causalityAssessment = null;
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
@@ -150,8 +141,28 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
-    protected $causalityProductRelatedness = null;
-
+    protected null|FHIRString $causalityProductRelatedness = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * method1 | method2.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $causalityMethod = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * AdverseEvent.suspectEntity.causalityAuthor.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $causalityAuthor = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -162,54 +173,37 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    protected $causalityResult = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifies the actual instance of what caused the adverse event. May be a
-     * substance, medication, medication administration, medication statement or a
-     * device.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    protected $instance = null;
+    protected null|FHIRCodeableConcept $causalityResult = null;
 
     /**
      * Validation map for fields in type AdverseEvent.SuspectEntity
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRAdverseEventSuspectEntity Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRAdverseEventSuspectEntity::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CAUSALITY]) || isset($data[self::FIELD_CAUSALITY_EXT])) {
-            if (isset($data[self::FIELD_CAUSALITY])) {
-                $value = $data[self::FIELD_CAUSALITY];
+        if (array_key_exists(self::FIELD_INSTANCE, $data)) {
+            if ($data[self::FIELD_INSTANCE] instanceof FHIRReference) {
+                $this->setInstance($data[self::FIELD_INSTANCE]);
             } else {
-                $value = null;
+                $this->setInstance(new FHIRReference($data[self::FIELD_INSTANCE]));
             }
-            if (isset($data[self::FIELD_CAUSALITY_EXT]) && is_array($data[self::FIELD_CAUSALITY_EXT])) {
-                $ext = $data[self::FIELD_CAUSALITY_EXT];
-            } else {
-                $ext = [];
-            }
+        }
+        if (array_key_exists(self::FIELD_CAUSALITY, $data) || array_key_exists(self::FIELD_CAUSALITY_EXT, $data)) {
+            $value = $data[self::FIELD_CAUSALITY] ?? null;
+            $ext = (isset($data[self::FIELD_CAUSALITY_EXT]) && is_array($data[self::FIELD_CAUSALITY_EXT])) ? $data[self::FIELD_CAUSALITY_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRAdverseEventCausality) {
                     $this->setCausality($value);
@@ -218,42 +212,22 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 } else {
                     $this->setCausality(new FHIRAdverseEventCausality([FHIRAdverseEventCausality::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setCausality(new FHIRAdverseEventCausality($ext));
+            } else {
+                $this->setCausality(new FHIRAdverseEventCausality(null));
             }
         }
-        if (isset($data[self::FIELD_CAUSALITY_ASSESSMENT])) {
+        if (array_key_exists(self::FIELD_CAUSALITY_ASSESSMENT, $data)) {
             if ($data[self::FIELD_CAUSALITY_ASSESSMENT] instanceof FHIRCodeableConcept) {
                 $this->setCausalityAssessment($data[self::FIELD_CAUSALITY_ASSESSMENT]);
             } else {
                 $this->setCausalityAssessment(new FHIRCodeableConcept($data[self::FIELD_CAUSALITY_ASSESSMENT]));
             }
         }
-        if (isset($data[self::FIELD_CAUSALITY_AUTHOR])) {
-            if ($data[self::FIELD_CAUSALITY_AUTHOR] instanceof FHIRReference) {
-                $this->setCausalityAuthor($data[self::FIELD_CAUSALITY_AUTHOR]);
-            } else {
-                $this->setCausalityAuthor(new FHIRReference($data[self::FIELD_CAUSALITY_AUTHOR]));
-            }
-        }
-        if (isset($data[self::FIELD_CAUSALITY_METHOD])) {
-            if ($data[self::FIELD_CAUSALITY_METHOD] instanceof FHIRCodeableConcept) {
-                $this->setCausalityMethod($data[self::FIELD_CAUSALITY_METHOD]);
-            } else {
-                $this->setCausalityMethod(new FHIRCodeableConcept($data[self::FIELD_CAUSALITY_METHOD]));
-            }
-        }
-        if (isset($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS]) || isset($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT])) {
-            if (isset($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
-                $value = $data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT]) && is_array($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT])) {
-                $ext = $data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS, $data) || array_key_exists(self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT, $data)) {
+            $value = $data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] ?? null;
+            $ext = (isset($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT]) && is_array($data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT])) ? $data[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setCausalityProductRelatedness($value);
@@ -262,236 +236,41 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 } else {
                     $this->setCausalityProductRelatedness(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setCausalityProductRelatedness(new FHIRString($ext));
+            } else {
+                $this->setCausalityProductRelatedness(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_CAUSALITY_RESULT])) {
+        if (array_key_exists(self::FIELD_CAUSALITY_METHOD, $data)) {
+            if ($data[self::FIELD_CAUSALITY_METHOD] instanceof FHIRCodeableConcept) {
+                $this->setCausalityMethod($data[self::FIELD_CAUSALITY_METHOD]);
+            } else {
+                $this->setCausalityMethod(new FHIRCodeableConcept($data[self::FIELD_CAUSALITY_METHOD]));
+            }
+        }
+        if (array_key_exists(self::FIELD_CAUSALITY_AUTHOR, $data)) {
+            if ($data[self::FIELD_CAUSALITY_AUTHOR] instanceof FHIRReference) {
+                $this->setCausalityAuthor($data[self::FIELD_CAUSALITY_AUTHOR]);
+            } else {
+                $this->setCausalityAuthor(new FHIRReference($data[self::FIELD_CAUSALITY_AUTHOR]));
+            }
+        }
+        if (array_key_exists(self::FIELD_CAUSALITY_RESULT, $data)) {
             if ($data[self::FIELD_CAUSALITY_RESULT] instanceof FHIRCodeableConcept) {
                 $this->setCausalityResult($data[self::FIELD_CAUSALITY_RESULT]);
             } else {
                 $this->setCausalityResult(new FHIRCodeableConcept($data[self::FIELD_CAUSALITY_RESULT]));
             }
         }
-        if (isset($data[self::FIELD_INSTANCE])) {
-            if ($data[self::FIELD_INSTANCE] instanceof FHIRReference) {
-                $this->setInstance($data[self::FIELD_INSTANCE]);
-            } else {
-                $this->setInstance(new FHIRReference($data[self::FIELD_INSTANCE]));
-            }
-        }
     }
 
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<AdverseEventSuspectEntity{$xmlns}></AdverseEventSuspectEntity>";
-    }
-
-    /**
-     * TODO
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * causality1 | causality2.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAdverseEventCausality
-     */
-    public function getCausality()
-    {
-        return $this->causality;
-    }
-
-    /**
-     * TODO
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * causality1 | causality2.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAdverseEventCausality $causality
-     * @return static
-     */
-    public function setCausality(FHIRAdverseEventCausality $causality = null)
-    {
-        $this->causality = $causality;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * assess1 | assess2.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    public function getCausalityAssessment()
-    {
-        return $this->causalityAssessment;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * assess1 | assess2.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $causalityAssessment
-     * @return static
-     */
-    public function setCausalityAssessment(FHIRCodeableConcept $causalityAssessment = null)
-    {
-        $this->causalityAssessment = $causalityAssessment;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * AdverseEvent.suspectEntity.causalityAuthor.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
-     */
-    public function getCausalityAuthor()
-    {
-        return $this->causalityAuthor;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * AdverseEvent.suspectEntity.causalityAuthor.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $causalityAuthor
-     * @return static
-     */
-    public function setCausalityAuthor(FHIRReference $causalityAuthor = null)
-    {
-        $this->causalityAuthor = $causalityAuthor;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * method1 | method2.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    public function getCausalityMethod()
-    {
-        return $this->causalityMethod;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * method1 | method2.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $causalityMethod
-     * @return static
-     */
-    public function setCausalityMethod(FHIRCodeableConcept $causalityMethod = null)
-    {
-        $this->causalityMethod = $causalityMethod;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * AdverseEvent.suspectEntity.causalityProductRelatedness.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getCausalityProductRelatedness()
-    {
-        return $this->causalityProductRelatedness;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * AdverseEvent.suspectEntity.causalityProductRelatedness.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $causalityProductRelatedness
-     * @return static
-     */
-    public function setCausalityProductRelatedness($causalityProductRelatedness = null)
-    {
-        if (null === $causalityProductRelatedness) {
-            $this->causalityProductRelatedness = null;
-            return $this;
-        }
-        if ($causalityProductRelatedness instanceof FHIRString) {
-            $this->causalityProductRelatedness = $causalityProductRelatedness;
-            return $this;
-        }
-        $this->causalityProductRelatedness = new FHIRString($causalityProductRelatedness);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * result1 | result2.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
-     */
-    public function getCausalityResult()
-    {
-        return $this->causalityResult;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * result1 | result2.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $causalityResult
-     * @return static
-     */
-    public function setCausalityResult(FHIRCodeableConcept $causalityResult = null)
-    {
-        $this->causalityResult = $causalityResult;
-        return $this;
     }
 
     /**
@@ -505,7 +284,7 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
-    public function getInstance()
+    public function getInstance(): null|FHIRReference
     {
         return $this->instance;
     }
@@ -522,9 +301,226 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $instance
      * @return static
      */
-    public function setInstance(FHIRReference $instance = null)
+    public function setInstance(null|FHIRReference $instance = null): self
     {
+        if (null === $instance) {
+            $instance = new FHIRReference();
+        }
+        $this->_trackValueSet($this->instance, $instance);
         $this->instance = $instance;
+        return $this;
+    }
+
+    /**
+     * TODO
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * causality1 | causality2.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAdverseEventCausality
+     */
+    public function getCausality(): null|FHIRAdverseEventCausality
+    {
+        return $this->causality;
+    }
+
+    /**
+     * TODO
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * causality1 | causality2.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAdverseEventCausality $causality
+     * @return static
+     */
+    public function setCausality(null|FHIRAdverseEventCausality $causality = null): self
+    {
+        if (null === $causality) {
+            $causality = new FHIRAdverseEventCausality();
+        }
+        $this->_trackValueSet($this->causality, $causality);
+        $this->causality = $causality;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * assess1 | assess2.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCausalityAssessment(): null|FHIRCodeableConcept
+    {
+        return $this->causalityAssessment;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * assess1 | assess2.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $causalityAssessment
+     * @return static
+     */
+    public function setCausalityAssessment(null|FHIRCodeableConcept $causalityAssessment = null): self
+    {
+        if (null === $causalityAssessment) {
+            $causalityAssessment = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->causalityAssessment, $causalityAssessment);
+        $this->causalityAssessment = $causalityAssessment;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * AdverseEvent.suspectEntity.causalityProductRelatedness.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getCausalityProductRelatedness(): null|FHIRString
+    {
+        return $this->causalityProductRelatedness;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * AdverseEvent.suspectEntity.causalityProductRelatedness.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $causalityProductRelatedness
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setCausalityProductRelatedness(null|string|FHIRStringPrimitive|FHIRString $causalityProductRelatedness = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $causalityProductRelatedness && !($causalityProductRelatedness instanceof FHIRString)) {
+            $causalityProductRelatedness = new FHIRString($causalityProductRelatedness);
+        }
+        $this->_trackValueSet($this->causalityProductRelatedness, $causalityProductRelatedness);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
+            $this->_primitiveXmlLocations[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS][0] = $xmlLocation;
+        $this->causalityProductRelatedness = $causalityProductRelatedness;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * method1 | method2.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCausalityMethod(): null|FHIRCodeableConcept
+    {
+        return $this->causalityMethod;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * method1 | method2.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $causalityMethod
+     * @return static
+     */
+    public function setCausalityMethod(null|FHIRCodeableConcept $causalityMethod = null): self
+    {
+        if (null === $causalityMethod) {
+            $causalityMethod = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->causalityMethod, $causalityMethod);
+        $this->causalityMethod = $causalityMethod;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * AdverseEvent.suspectEntity.causalityAuthor.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
+     */
+    public function getCausalityAuthor(): null|FHIRReference
+    {
+        return $this->causalityAuthor;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * AdverseEvent.suspectEntity.causalityAuthor.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference $causalityAuthor
+     * @return static
+     */
+    public function setCausalityAuthor(null|FHIRReference $causalityAuthor = null): self
+    {
+        if (null === $causalityAuthor) {
+            $causalityAuthor = new FHIRReference();
+        }
+        $this->_trackValueSet($this->causalityAuthor, $causalityAuthor);
+        $this->causalityAuthor = $causalityAuthor;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * result1 | result2.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
+     */
+    public function getCausalityResult(): null|FHIRCodeableConcept
+    {
+        return $this->causalityResult;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * result1 | result2.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $causalityResult
+     * @return static
+     */
+    public function setCausalityResult(null|FHIRCodeableConcept $causalityResult = null): self
+    {
+        if (null === $causalityResult) {
+            $causalityResult = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->causalityResult, $causalityResult);
+        $this->causalityResult = $causalityResult;
         return $this;
     }
 
@@ -534,9 +530,9 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -545,10 +541,15 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getInstance())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_INSTANCE] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getCausality())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_CAUSALITY] = $fieldErrs;
@@ -559,9 +560,9 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 $errs[self::FIELD_CAUSALITY_ASSESSMENT] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getCausalityAuthor())) {
+        if (null !== ($v = $this->getCausalityProductRelatedness())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CAUSALITY_AUTHOR] = $fieldErrs;
+                $errs[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getCausalityMethod())) {
@@ -569,9 +570,9 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 $errs[self::FIELD_CAUSALITY_METHOD] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getCausalityProductRelatedness())) {
+        if (null !== ($v = $this->getCausalityAuthor())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = $fieldErrs;
+                $errs[self::FIELD_CAUSALITY_AUTHOR] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getCausalityResult())) {
@@ -579,9 +580,16 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 $errs[self::FIELD_CAUSALITY_RESULT] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getInstance())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_INSTANCE] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_INSTANCE])) {
+            $v = $this->getInstance();
+            foreach($validationRules[self::FIELD_INSTANCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_INSTANCE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_INSTANCE])) {
+                        $errs[self::FIELD_INSTANCE] = [];
+                    }
+                    $errs[self::FIELD_INSTANCE][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_CAUSALITY])) {
@@ -608,15 +616,15 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_CAUSALITY_AUTHOR])) {
-            $v = $this->getCausalityAuthor();
-            foreach($validationRules[self::FIELD_CAUSALITY_AUTHOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_CAUSALITY_AUTHOR, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
+            $v = $this->getCausalityProductRelatedness();
+            foreach($validationRules[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CAUSALITY_AUTHOR])) {
-                        $errs[self::FIELD_CAUSALITY_AUTHOR] = [];
+                    if (!isset($errs[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
+                        $errs[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = [];
                     }
-                    $errs[self::FIELD_CAUSALITY_AUTHOR][$rule] = $err;
+                    $errs[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS][$rule] = $err;
                 }
             }
         }
@@ -632,15 +640,15 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
-            $v = $this->getCausalityProductRelatedness();
-            foreach($validationRules[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CAUSALITY_AUTHOR])) {
+            $v = $this->getCausalityAuthor();
+            foreach($validationRules[self::FIELD_CAUSALITY_AUTHOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_CAUSALITY_AUTHOR, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
-                        $errs[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = [];
+                    if (!isset($errs[self::FIELD_CAUSALITY_AUTHOR])) {
+                        $errs[self::FIELD_CAUSALITY_AUTHOR] = [];
                     }
-                    $errs[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS][$rule] = $err;
+                    $errs[self::FIELD_CAUSALITY_AUTHOR][$rule] = $err;
                 }
             }
         }
@@ -653,18 +661,6 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
                         $errs[self::FIELD_CAUSALITY_RESULT] = [];
                     }
                     $errs[self::FIELD_CAUSALITY_RESULT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_INSTANCE])) {
-            $v = $this->getInstance();
-            foreach($validationRules[self::FIELD_INSTANCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_ADVERSE_EVENT_DOT_SUSPECT_ENTITY, self::FIELD_INSTANCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_INSTANCE])) {
-                        $errs[self::FIELD_INSTANCE] = [];
-                    }
-                    $errs[self::FIELD_INSTANCE][$rule] = $err;
                 }
             }
         }
@@ -708,162 +704,206 @@ class FHIRAdverseEventSuspectEntity extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRAdverseEventSuspectEntity::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRAdverseEventSuspectEntity::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRAdverseEventSuspectEntity;
-        } elseif (!is_object($type) || !($type instanceof FHIRAdverseEventSuspectEntity)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRAdverseEventSuspectEntity)) {
             throw new \RuntimeException(sprintf(
-                'FHIRAdverseEventSuspectEntity::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_INSTANCE === $childName) {
+                $type->setInstance(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CAUSALITY === $childName) {
+                $type->setCausality(FHIRAdverseEventCausality::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CAUSALITY_ASSESSMENT === $childName) {
+                $type->setCausalityAssessment(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS === $childName) {
+                $type->setCausalityProductRelatedness(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CAUSALITY_METHOD === $childName) {
+                $type->setCausalityMethod(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CAUSALITY_AUTHOR === $childName) {
+                $type->setCausalityAuthor(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CAUSALITY_RESULT === $childName) {
+                $type->setCausalityResult(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->causality)) {
-            $type->setCausality(FHIRAdverseEventCausality::xmlUnserialize($children->causality));
-        }
-        if (isset($children->causalityAssessment)) {
-            $type->setCausalityAssessment(FHIRCodeableConcept::xmlUnserialize($children->causalityAssessment));
-        }
-        if (isset($children->causalityAuthor)) {
-            $type->setCausalityAuthor(FHIRReference::xmlUnserialize($children->causalityAuthor));
-        }
-        if (isset($children->causalityMethod)) {
-            $type->setCausalityMethod(FHIRCodeableConcept::xmlUnserialize($children->causalityMethod));
-        }
-        if (isset($children->causalityProductRelatedness)) {
-            $type->setCausalityProductRelatedness(FHIRString::xmlUnserialize($children->causalityProductRelatedness));
-        }
-        if (isset($attributes->causalityProductRelatedness)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS])) {
             $pt = $type->getCausalityProductRelatedness();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->causalityProductRelatedness);
+                $pt->setValue((string)$attributes[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setCausalityProductRelatedness((string)$attributes->causalityProductRelatedness);
+                $type->setCausalityProductRelatedness((string)$attributes[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->causalityResult)) {
-            $type->setCausalityResult(FHIRCodeableConcept::xmlUnserialize($children->causalityResult));
-        }
-        if (isset($children->instance)) {
-            $type->setInstance(FHIRReference::xmlUnserialize($children->instance));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'AdverseEventSuspectEntity', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCausalityProductRelatedness())) {
+            $xw->writeAttribute(self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getInstance())) {
+            $xw->startElement(self::FIELD_INSTANCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
         if (null !== ($v = $this->getCausality())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_CAUSALITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getCausalityAssessment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY_ASSESSMENT, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_CAUSALITY_ASSESSMENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getCausalityAuthor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY_AUTHOR, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCausalityProductRelatedness())) {
+            $xw->startElement(self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getCausalityMethod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY_METHOD, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_CAUSALITY_METHOD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getCausalityProductRelatedness())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getCausalityAuthor())) {
+            $xw->startElement(self::FIELD_CAUSALITY_AUTHOR);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getCausalityResult())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CAUSALITY_RESULT, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_CAUSALITY_RESULT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getInstance())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INSTANCE, null, $v->_getFHIRXMLNamespace()));
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getInstance())) {
+            $out->{self::FIELD_INSTANCE} = $v;
+        }
         if (null !== ($v = $this->getCausality())) {
-            $a[self::FIELD_CAUSALITY] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRAdverseEventCausality::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRAdverseEventCausality::FIELD_VALUE]);
-                $a[self::FIELD_CAUSALITY_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_CAUSALITY} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRAdverseEventCausality::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_CAUSALITY_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getCausalityAssessment())) {
-            $a[self::FIELD_CAUSALITY_ASSESSMENT] = $v;
-        }
-        if (null !== ($v = $this->getCausalityAuthor())) {
-            $a[self::FIELD_CAUSALITY_AUTHOR] = $v;
-        }
-        if (null !== ($v = $this->getCausalityMethod())) {
-            $a[self::FIELD_CAUSALITY_METHOD] = $v;
+            $out->{self::FIELD_CAUSALITY_ASSESSMENT} = $v;
         }
         if (null !== ($v = $this->getCausalityProductRelatedness())) {
-            $a[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_CAUSALITY_PRODUCT_RELATEDNESS_EXT} = $ext;
             }
         }
+        if (null !== ($v = $this->getCausalityMethod())) {
+            $out->{self::FIELD_CAUSALITY_METHOD} = $v;
+        }
+        if (null !== ($v = $this->getCausalityAuthor())) {
+            $out->{self::FIELD_CAUSALITY_AUTHOR} = $v;
+        }
         if (null !== ($v = $this->getCausalityResult())) {
-            $a[self::FIELD_CAUSALITY_RESULT] = $v;
+            $out->{self::FIELD_CAUSALITY_RESULT} = $v;
         }
-        if (null !== ($v = $this->getInstance())) {
-            $a[self::FIELD_INSTANCE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

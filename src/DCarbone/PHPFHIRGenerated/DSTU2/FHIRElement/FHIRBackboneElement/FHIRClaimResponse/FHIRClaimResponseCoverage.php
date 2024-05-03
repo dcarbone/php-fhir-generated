@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,14 +62,23 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRPositiveIntPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter;
 
 /**
  * This resource provides the adjudication details from the processing of a Claim
@@ -82,100 +91,19 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_COVERAGE;
-    const FIELD_BUSINESS_ARRANGEMENT = 'businessArrangement';
-    const FIELD_BUSINESS_ARRANGEMENT_EXT = '_businessArrangement';
-    const FIELD_CLAIM_RESPONSE = 'claimResponse';
-    const FIELD_COVERAGE = 'coverage';
-    const FIELD_FOCAL = 'focal';
-    const FIELD_FOCAL_EXT = '_focal';
-    const FIELD_ORIGINAL_RULESET = 'originalRuleset';
-    const FIELD_PRE_AUTH_REF = 'preAuthRef';
-    const FIELD_PRE_AUTH_REF_EXT = '_preAuthRef';
-    const FIELD_RELATIONSHIP = 'relationship';
+
     const FIELD_SEQUENCE = 'sequence';
     const FIELD_SEQUENCE_EXT = '_sequence';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The contract number of a business agreement which describes the terms and
-     * conditions.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    protected $businessArrangement = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The Coverages adjudication details.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    protected $claimResponse = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Reference to the program or plan identification, underwriter or payor.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
-     */
-    protected $coverage = null;
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The instance number of the Coverage which is the focus for adjudication. The
-     * Coverage against which the claim is to be adjudicated.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
-     */
-    protected $focal = null;
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The style (standard) and version of the original material which was converted
-     * into this resource.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
-     */
-    protected $originalRuleset = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A list of references from the Insurer to which these services pertain.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
-     */
-    protected $preAuthRef = [];
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The relationship of the patient to the subscriber.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
-     */
-    protected $relationship = null;
+    const FIELD_FOCAL = 'focal';
+    const FIELD_FOCAL_EXT = '_focal';
+    const FIELD_COVERAGE = 'coverage';
+    const FIELD_BUSINESS_ARRANGEMENT = 'businessArrangement';
+    const FIELD_BUSINESS_ARRANGEMENT_EXT = '_businessArrangement';
+    const FIELD_RELATIONSHIP = 'relationship';
+    const FIELD_PRE_AUTH_REF = 'preAuthRef';
+    const FIELD_PRE_AUTH_REF_EXT = '_preAuthRef';
+    const FIELD_CLAIM_RESPONSE = 'claimResponse';
+    const FIELD_ORIGINAL_RULESET = 'originalRuleset';
 
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -186,78 +114,119 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
-    protected $sequence = null;
+    protected null|FHIRPositiveInt $sequence = null;
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The instance number of the Coverage which is the focus for adjudication. The
+     * Coverage against which the claim is to be adjudicated.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
+     */
+    protected null|FHIRBoolean $focal = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference to the program or plan identification, underwriter or payor.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $coverage = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The contract number of a business agreement which describes the terms and
+     * conditions.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $businessArrangement = null;
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The relationship of the patient to the subscriber.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
+     */
+    protected null|FHIRCoding $relationship = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A list of references from the Insurer to which these services pertain.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
+     */
+    protected null|array $preAuthRef = [];
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The Coverages adjudication details.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $claimResponse = null;
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The style (standard) and version of the original material which was converted
+     * into this resource.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
+     */
+    protected null|FHIRCoding $originalRuleset = null;
 
     /**
      * Validation map for fields in type ClaimResponse.Coverage
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRClaimResponseCoverage Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRClaimResponseCoverage::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_BUSINESS_ARRANGEMENT]) || isset($data[self::FIELD_BUSINESS_ARRANGEMENT_EXT])) {
-            if (isset($data[self::FIELD_BUSINESS_ARRANGEMENT])) {
-                $value = $data[self::FIELD_BUSINESS_ARRANGEMENT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_BUSINESS_ARRANGEMENT_EXT]) && is_array($data[self::FIELD_BUSINESS_ARRANGEMENT_EXT])) {
-                $ext = $data[self::FIELD_BUSINESS_ARRANGEMENT_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_SEQUENCE, $data) || array_key_exists(self::FIELD_SEQUENCE_EXT, $data)) {
+            $value = $data[self::FIELD_SEQUENCE] ?? null;
+            $ext = (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) ? $data[self::FIELD_SEQUENCE_EXT] : [];
             if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setBusinessArrangement($value);
+                if ($value instanceof FHIRPositiveInt) {
+                    $this->setSequence($value);
                 } else if (is_array($value)) {
-                    $this->setBusinessArrangement(new FHIRString(array_merge($ext, $value)));
+                    $this->setSequence(new FHIRPositiveInt(array_merge($ext, $value)));
                 } else {
-                    $this->setBusinessArrangement(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                    $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
-                $this->setBusinessArrangement(new FHIRString($ext));
+            } elseif ([] !== $ext) {
+                $this->setSequence(new FHIRPositiveInt($ext));
+            } else {
+                $this->setSequence(new FHIRPositiveInt(null));
             }
         }
-        if (isset($data[self::FIELD_CLAIM_RESPONSE])) {
-            if ($data[self::FIELD_CLAIM_RESPONSE] instanceof FHIRReference) {
-                $this->setClaimResponse($data[self::FIELD_CLAIM_RESPONSE]);
-            } else {
-                $this->setClaimResponse(new FHIRReference($data[self::FIELD_CLAIM_RESPONSE]));
-            }
-        }
-        if (isset($data[self::FIELD_COVERAGE])) {
-            if ($data[self::FIELD_COVERAGE] instanceof FHIRReference) {
-                $this->setCoverage($data[self::FIELD_COVERAGE]);
-            } else {
-                $this->setCoverage(new FHIRReference($data[self::FIELD_COVERAGE]));
-            }
-        }
-        if (isset($data[self::FIELD_FOCAL]) || isset($data[self::FIELD_FOCAL_EXT])) {
-            if (isset($data[self::FIELD_FOCAL])) {
-                $value = $data[self::FIELD_FOCAL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_FOCAL_EXT]) && is_array($data[self::FIELD_FOCAL_EXT])) {
-                $ext = $data[self::FIELD_FOCAL_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_FOCAL, $data) || array_key_exists(self::FIELD_FOCAL_EXT, $data)) {
+            $value = $data[self::FIELD_FOCAL] ?? null;
+            $ext = (isset($data[self::FIELD_FOCAL_EXT]) && is_array($data[self::FIELD_FOCAL_EXT])) ? $data[self::FIELD_FOCAL_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRBoolean) {
                     $this->setFocal($value);
@@ -266,28 +235,46 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
                 } else {
                     $this->setFocal(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setFocal(new FHIRBoolean($ext));
+            } else {
+                $this->setFocal(new FHIRBoolean(null));
             }
         }
-        if (isset($data[self::FIELD_ORIGINAL_RULESET])) {
-            if ($data[self::FIELD_ORIGINAL_RULESET] instanceof FHIRCoding) {
-                $this->setOriginalRuleset($data[self::FIELD_ORIGINAL_RULESET]);
+        if (array_key_exists(self::FIELD_COVERAGE, $data)) {
+            if ($data[self::FIELD_COVERAGE] instanceof FHIRReference) {
+                $this->setCoverage($data[self::FIELD_COVERAGE]);
             } else {
-                $this->setOriginalRuleset(new FHIRCoding($data[self::FIELD_ORIGINAL_RULESET]));
+                $this->setCoverage(new FHIRReference($data[self::FIELD_COVERAGE]));
             }
         }
-        if (isset($data[self::FIELD_PRE_AUTH_REF]) || isset($data[self::FIELD_PRE_AUTH_REF_EXT])) {
-            if (isset($data[self::FIELD_PRE_AUTH_REF])) {
-                $value = $data[self::FIELD_PRE_AUTH_REF];
+        if (array_key_exists(self::FIELD_BUSINESS_ARRANGEMENT, $data) || array_key_exists(self::FIELD_BUSINESS_ARRANGEMENT_EXT, $data)) {
+            $value = $data[self::FIELD_BUSINESS_ARRANGEMENT] ?? null;
+            $ext = (isset($data[self::FIELD_BUSINESS_ARRANGEMENT_EXT]) && is_array($data[self::FIELD_BUSINESS_ARRANGEMENT_EXT])) ? $data[self::FIELD_BUSINESS_ARRANGEMENT_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setBusinessArrangement($value);
+                } else if (is_array($value)) {
+                    $this->setBusinessArrangement(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setBusinessArrangement(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setBusinessArrangement(new FHIRString($ext));
             } else {
-                $value = null;
+                $this->setBusinessArrangement(new FHIRString(null));
             }
-            if (isset($data[self::FIELD_PRE_AUTH_REF_EXT]) && is_array($data[self::FIELD_PRE_AUTH_REF_EXT])) {
-                $ext = $data[self::FIELD_PRE_AUTH_REF_EXT];
+        }
+        if (array_key_exists(self::FIELD_RELATIONSHIP, $data)) {
+            if ($data[self::FIELD_RELATIONSHIP] instanceof FHIRCoding) {
+                $this->setRelationship($data[self::FIELD_RELATIONSHIP]);
             } else {
-                $ext = [];
+                $this->setRelationship(new FHIRCoding($data[self::FIELD_RELATIONSHIP]));
             }
+        }
+        if (array_key_exists(self::FIELD_PRE_AUTH_REF, $data) || array_key_exists(self::FIELD_PRE_AUTH_REF_EXT, $data)) {
+            $value = $data[self::FIELD_PRE_AUTH_REF] ?? null;
+            $ext = (isset($data[self::FIELD_PRE_AUTH_REF_EXT]) && is_array($data[self::FIELD_PRE_AUTH_REF_EXT])) ? $data[self::FIELD_PRE_AUTH_REF_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->addPreAuthRef($value);
@@ -309,40 +296,26 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
                 } else {
                     $this->addPreAuthRef(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addPreAuthRef(new FHIRString($iext));
                 }
+            } else {
+                $this->addPreAuthRef(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_RELATIONSHIP])) {
-            if ($data[self::FIELD_RELATIONSHIP] instanceof FHIRCoding) {
-                $this->setRelationship($data[self::FIELD_RELATIONSHIP]);
+        if (array_key_exists(self::FIELD_CLAIM_RESPONSE, $data)) {
+            if ($data[self::FIELD_CLAIM_RESPONSE] instanceof FHIRReference) {
+                $this->setClaimResponse($data[self::FIELD_CLAIM_RESPONSE]);
             } else {
-                $this->setRelationship(new FHIRCoding($data[self::FIELD_RELATIONSHIP]));
+                $this->setClaimResponse(new FHIRReference($data[self::FIELD_CLAIM_RESPONSE]));
             }
         }
-        if (isset($data[self::FIELD_SEQUENCE]) || isset($data[self::FIELD_SEQUENCE_EXT])) {
-            if (isset($data[self::FIELD_SEQUENCE])) {
-                $value = $data[self::FIELD_SEQUENCE];
+        if (array_key_exists(self::FIELD_ORIGINAL_RULESET, $data)) {
+            if ($data[self::FIELD_ORIGINAL_RULESET] instanceof FHIRCoding) {
+                $this->setOriginalRuleset($data[self::FIELD_ORIGINAL_RULESET]);
             } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) {
-                $ext = $data[self::FIELD_SEQUENCE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRPositiveInt) {
-                    $this->setSequence($value);
-                } else if (is_array($value)) {
-                    $this->setSequence(new FHIRPositiveInt(array_merge($ext, $value)));
-                } else {
-                    $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setSequence(new FHIRPositiveInt($ext));
+                $this->setOriginalRuleset(new FHIRCoding($data[self::FIELD_ORIGINAL_RULESET]));
             }
         }
     }
@@ -350,90 +323,86 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A service line item.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
-    public function _getFHIRXMLElementDefinition()
+    public function getSequence(): null|FHIRPositiveInt
     {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ClaimResponseCoverage{$xmlns}></ClaimResponseCoverage>";
+        return $this->sequence;
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * The contract number of a business agreement which describes the terms and
-     * conditions.
+     * A service line item.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
-     */
-    public function getBusinessArrangement()
-    {
-        return $this->businessArrangement;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The contract number of a business agreement which describes the terms and
-     * conditions.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $businessArrangement
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt $sequence
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setBusinessArrangement($businessArrangement = null)
+    public function setSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $businessArrangement) {
-            $this->businessArrangement = null;
-            return $this;
+        if (null !== $sequence && !($sequence instanceof FHIRPositiveInt)) {
+            $sequence = new FHIRPositiveInt($sequence);
         }
-        if ($businessArrangement instanceof FHIRString) {
-            $this->businessArrangement = $businessArrangement;
-            return $this;
+        $this->_trackValueSet($this->sequence, $sequence);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SEQUENCE])) {
+            $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] = [];
         }
-        $this->businessArrangement = new FHIRString($businessArrangement);
+        $this->_primitiveXmlLocations[self::FIELD_SEQUENCE][0] = $xmlLocation;
+        $this->sequence = $sequence;
         return $this;
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The Coverages adjudication details.
+     * The instance number of the Coverage which is the focus for adjudication. The
+     * Coverage against which the claim is to be adjudicated.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
-    public function getClaimResponse()
+    public function getFocal(): null|FHIRBoolean
     {
-        return $this->claimResponse;
+        return $this->focal;
     }
 
     /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The Coverages adjudication details.
+     * The instance number of the Coverage which is the focus for adjudication. The
+     * Coverage against which the claim is to be adjudicated.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $claimResponse
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $focal
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setClaimResponse(FHIRReference $claimResponse = null)
+    public function setFocal(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $focal = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->claimResponse = $claimResponse;
+        if (null !== $focal && !($focal instanceof FHIRBoolean)) {
+            $focal = new FHIRBoolean($focal);
+        }
+        $this->_trackValueSet($this->focal, $focal);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_FOCAL])) {
+            $this->_primitiveXmlLocations[self::FIELD_FOCAL] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_FOCAL][0] = $xmlLocation;
+        $this->focal = $focal;
         return $this;
     }
 
@@ -446,7 +415,7 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
-    public function getCoverage()
+    public function getCoverage(): null|FHIRReference
     {
         return $this->coverage;
     }
@@ -461,47 +430,192 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $coverage
      * @return static
      */
-    public function setCoverage(FHIRReference $coverage = null)
+    public function setCoverage(null|FHIRReference $coverage = null): self
     {
+        if (null === $coverage) {
+            $coverage = new FHIRReference();
+        }
+        $this->_trackValueSet($this->coverage, $coverage);
         $this->coverage = $coverage;
         return $this;
     }
 
     /**
-     * Value of "true" or "false"
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The instance number of the Coverage which is the focus for adjudication. The
-     * Coverage against which the claim is to be adjudicated.
+     * The contract number of a business agreement which describes the terms and
+     * conditions.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
-    public function getFocal()
+    public function getBusinessArrangement(): null|FHIRString
     {
-        return $this->focal;
+        return $this->businessArrangement;
     }
 
     /**
-     * Value of "true" or "false"
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The instance number of the Coverage which is the focus for adjudication. The
-     * Coverage against which the claim is to be adjudicated.
+     * The contract number of a business agreement which describes the terms and
+     * conditions.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean $focal
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $businessArrangement
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setFocal($focal = null)
+    public function setBusinessArrangement(null|string|FHIRStringPrimitive|FHIRString $businessArrangement = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $focal) {
-            $this->focal = null;
+        if (null !== $businessArrangement && !($businessArrangement instanceof FHIRString)) {
+            $businessArrangement = new FHIRString($businessArrangement);
+        }
+        $this->_trackValueSet($this->businessArrangement, $businessArrangement);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_BUSINESS_ARRANGEMENT])) {
+            $this->_primitiveXmlLocations[self::FIELD_BUSINESS_ARRANGEMENT] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_BUSINESS_ARRANGEMENT][0] = $xmlLocation;
+        $this->businessArrangement = $businessArrangement;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The relationship of the patient to the subscriber.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
+     */
+    public function getRelationship(): null|FHIRCoding
+    {
+        return $this->relationship;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The relationship of the patient to the subscriber.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $relationship
+     * @return static
+     */
+    public function setRelationship(null|FHIRCoding $relationship = null): self
+    {
+        if (null === $relationship) {
+            $relationship = new FHIRCoding();
+        }
+        $this->_trackValueSet($this->relationship, $relationship);
+        $this->relationship = $relationship;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A list of references from the Insurer to which these services pertain.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
+     */
+    public function getPreAuthRef(): null|array
+    {
+        return $this->preAuthRef;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A list of references from the Insurer to which these services pertain.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $preAuthRef
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function addPreAuthRef(null|string|FHIRStringPrimitive|FHIRString $preAuthRef = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $preAuthRef && !($preAuthRef instanceof FHIRString)) {
+            $preAuthRef = new FHIRString($preAuthRef);
+        }
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PRE_AUTH_REF])) {
+            $this->_primitiveXmlLocations[self::FIELD_PRE_AUTH_REF] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_PRE_AUTH_REF][] = $xmlLocation;
+        $this->preAuthRef[] = $preAuthRef;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A list of references from the Insurer to which these services pertain.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[] $preAuthRef
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setPreAuthRef(array $preAuthRef = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        unset($this->_primitiveXmlLocations[self::FIELD_PRE_AUTH_REF]);
+        if ([] !== $this->preAuthRef) {
+            $this->_trackValuesRemoved(count($this->preAuthRef));
+            $this->preAuthRef = [];
+        }
+        if ([] === $preAuthRef) {
             return $this;
         }
-        if ($focal instanceof FHIRBoolean) {
-            $this->focal = $focal;
-            return $this;
+        foreach($preAuthRef as $v) {
+            if ($v instanceof FHIRString) {
+                $this->addPreAuthRef($v, $xmlLocation);
+            } else {
+                $this->addPreAuthRef(new FHIRString($v), $xmlLocation);
+            }
         }
-        $this->focal = new FHIRBoolean($focal);
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The Coverages adjudication details.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
+     */
+    public function getClaimResponse(): null|FHIRReference
+    {
+        return $this->claimResponse;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The Coverages adjudication details.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference $claimResponse
+     * @return static
+     */
+    public function setClaimResponse(null|FHIRReference $claimResponse = null): self
+    {
+        if (null === $claimResponse) {
+            $claimResponse = new FHIRReference();
+        }
+        $this->_trackValueSet($this->claimResponse, $claimResponse);
+        $this->claimResponse = $claimResponse;
         return $this;
     }
 
@@ -515,7 +629,7 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
-    public function getOriginalRuleset()
+    public function getOriginalRuleset(): null|FHIRCoding
     {
         return $this->originalRuleset;
     }
@@ -531,141 +645,13 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $originalRuleset
      * @return static
      */
-    public function setOriginalRuleset(FHIRCoding $originalRuleset = null)
+    public function setOriginalRuleset(null|FHIRCoding $originalRuleset = null): self
     {
+        if (null === $originalRuleset) {
+            $originalRuleset = new FHIRCoding();
+        }
+        $this->_trackValueSet($this->originalRuleset, $originalRuleset);
         $this->originalRuleset = $originalRuleset;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A list of references from the Insurer to which these services pertain.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
-     */
-    public function getPreAuthRef()
-    {
-        return $this->preAuthRef;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A list of references from the Insurer to which these services pertain.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString $preAuthRef
-     * @return static
-     */
-    public function addPreAuthRef($preAuthRef = null)
-    {
-        if (null === $preAuthRef) {
-            $this->preAuthRef = [];
-            return $this;
-        }
-        if ($preAuthRef instanceof FHIRString) {
-            $this->preAuthRef[] = $preAuthRef;
-            return $this;
-        }
-        $this->preAuthRef[] = new FHIRString($preAuthRef);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A list of references from the Insurer to which these services pertain.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[] $preAuthRef
-     * @return static
-     */
-    public function setPreAuthRef(array $preAuthRef = [])
-    {
-        $this->preAuthRef = [];
-        if ([] === $preAuthRef) {
-            return $this;
-        }
-        foreach($preAuthRef as $v) {
-            if ($v instanceof FHIRString) {
-                $this->addPreAuthRef($v);
-            } else {
-                $this->addPreAuthRef(new FHIRString($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The relationship of the patient to the subscriber.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
-     */
-    public function getRelationship()
-    {
-        return $this->relationship;
-    }
-
-    /**
-     * A reference to a code defined by a terminology system.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The relationship of the patient to the subscriber.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding $relationship
-     * @return static
-     */
-    public function setRelationship(FHIRCoding $relationship = null)
-    {
-        $this->relationship = $relationship;
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A service line item.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
-     */
-    public function getSequence()
-    {
-        return $this->sequence;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * A service line item.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt $sequence
-     * @return static
-     */
-    public function setSequence($sequence = null)
-    {
-        if (null === $sequence) {
-            $this->sequence = null;
-            return $this;
-        }
-        if ($sequence instanceof FHIRPositiveInt) {
-            $this->sequence = $sequence;
-            return $this;
-        }
-        $this->sequence = new FHIRPositiveInt($sequence);
         return $this;
     }
 
@@ -675,9 +661,9 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -686,23 +672,13 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getBusinessArrangement())) {
+        if (null !== ($v = $this->getSequence())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_BUSINESS_ARRANGEMENT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getClaimResponse())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CLAIM_RESPONSE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getCoverage())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_COVERAGE] = $fieldErrs;
+                $errs[self::FIELD_SEQUENCE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getFocal())) {
@@ -710,9 +686,19 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
                 $errs[self::FIELD_FOCAL] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getOriginalRuleset())) {
+        if (null !== ($v = $this->getCoverage())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ORIGINAL_RULESET] = $fieldErrs;
+                $errs[self::FIELD_COVERAGE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBusinessArrangement())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BUSINESS_ARRANGEMENT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getRelationship())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_RELATIONSHIP] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getPreAuthRef())) {
@@ -722,49 +708,25 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getRelationship())) {
+        if (null !== ($v = $this->getClaimResponse())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_RELATIONSHIP] = $fieldErrs;
+                $errs[self::FIELD_CLAIM_RESPONSE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getSequence())) {
+        if (null !== ($v = $this->getOriginalRuleset())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SEQUENCE] = $fieldErrs;
+                $errs[self::FIELD_ORIGINAL_RULESET] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_BUSINESS_ARRANGEMENT])) {
-            $v = $this->getBusinessArrangement();
-            foreach($validationRules[self::FIELD_BUSINESS_ARRANGEMENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_COVERAGE, self::FIELD_BUSINESS_ARRANGEMENT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SEQUENCE])) {
+            $v = $this->getSequence();
+            foreach($validationRules[self::FIELD_SEQUENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_COVERAGE, self::FIELD_SEQUENCE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BUSINESS_ARRANGEMENT])) {
-                        $errs[self::FIELD_BUSINESS_ARRANGEMENT] = [];
+                    if (!isset($errs[self::FIELD_SEQUENCE])) {
+                        $errs[self::FIELD_SEQUENCE] = [];
                     }
-                    $errs[self::FIELD_BUSINESS_ARRANGEMENT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_CLAIM_RESPONSE])) {
-            $v = $this->getClaimResponse();
-            foreach($validationRules[self::FIELD_CLAIM_RESPONSE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_COVERAGE, self::FIELD_CLAIM_RESPONSE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CLAIM_RESPONSE])) {
-                        $errs[self::FIELD_CLAIM_RESPONSE] = [];
-                    }
-                    $errs[self::FIELD_CLAIM_RESPONSE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_COVERAGE])) {
-            $v = $this->getCoverage();
-            foreach($validationRules[self::FIELD_COVERAGE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_COVERAGE, self::FIELD_COVERAGE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COVERAGE])) {
-                        $errs[self::FIELD_COVERAGE] = [];
-                    }
-                    $errs[self::FIELD_COVERAGE][$rule] = $err;
+                    $errs[self::FIELD_SEQUENCE][$rule] = $err;
                 }
             }
         }
@@ -780,27 +742,27 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_ORIGINAL_RULESET])) {
-            $v = $this->getOriginalRuleset();
-            foreach($validationRules[self::FIELD_ORIGINAL_RULESET] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_COVERAGE, self::FIELD_ORIGINAL_RULESET, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_COVERAGE])) {
+            $v = $this->getCoverage();
+            foreach($validationRules[self::FIELD_COVERAGE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_COVERAGE, self::FIELD_COVERAGE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ORIGINAL_RULESET])) {
-                        $errs[self::FIELD_ORIGINAL_RULESET] = [];
+                    if (!isset($errs[self::FIELD_COVERAGE])) {
+                        $errs[self::FIELD_COVERAGE] = [];
                     }
-                    $errs[self::FIELD_ORIGINAL_RULESET][$rule] = $err;
+                    $errs[self::FIELD_COVERAGE][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PRE_AUTH_REF])) {
-            $v = $this->getPreAuthRef();
-            foreach($validationRules[self::FIELD_PRE_AUTH_REF] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_COVERAGE, self::FIELD_PRE_AUTH_REF, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_BUSINESS_ARRANGEMENT])) {
+            $v = $this->getBusinessArrangement();
+            foreach($validationRules[self::FIELD_BUSINESS_ARRANGEMENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_COVERAGE, self::FIELD_BUSINESS_ARRANGEMENT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PRE_AUTH_REF])) {
-                        $errs[self::FIELD_PRE_AUTH_REF] = [];
+                    if (!isset($errs[self::FIELD_BUSINESS_ARRANGEMENT])) {
+                        $errs[self::FIELD_BUSINESS_ARRANGEMENT] = [];
                     }
-                    $errs[self::FIELD_PRE_AUTH_REF][$rule] = $err;
+                    $errs[self::FIELD_BUSINESS_ARRANGEMENT][$rule] = $err;
                 }
             }
         }
@@ -816,15 +778,39 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SEQUENCE])) {
-            $v = $this->getSequence();
-            foreach($validationRules[self::FIELD_SEQUENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_COVERAGE, self::FIELD_SEQUENCE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PRE_AUTH_REF])) {
+            $v = $this->getPreAuthRef();
+            foreach($validationRules[self::FIELD_PRE_AUTH_REF] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_COVERAGE, self::FIELD_PRE_AUTH_REF, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SEQUENCE])) {
-                        $errs[self::FIELD_SEQUENCE] = [];
+                    if (!isset($errs[self::FIELD_PRE_AUTH_REF])) {
+                        $errs[self::FIELD_PRE_AUTH_REF] = [];
                     }
-                    $errs[self::FIELD_SEQUENCE][$rule] = $err;
+                    $errs[self::FIELD_PRE_AUTH_REF][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CLAIM_RESPONSE])) {
+            $v = $this->getClaimResponse();
+            foreach($validationRules[self::FIELD_CLAIM_RESPONSE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_COVERAGE, self::FIELD_CLAIM_RESPONSE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CLAIM_RESPONSE])) {
+                        $errs[self::FIELD_CLAIM_RESPONSE] = [];
+                    }
+                    $errs[self::FIELD_CLAIM_RESPONSE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_ORIGINAL_RULESET])) {
+            $v = $this->getOriginalRuleset();
+            foreach($validationRules[self::FIELD_ORIGINAL_RULESET] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_CLAIM_RESPONSE_DOT_COVERAGE, self::FIELD_ORIGINAL_RULESET, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_ORIGINAL_RULESET])) {
+                        $errs[self::FIELD_ORIGINAL_RULESET] = [];
+                    }
+                    $errs[self::FIELD_ORIGINAL_RULESET][$rule] = $err;
                 }
             }
         }
@@ -868,220 +854,284 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseCoverage $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseCoverage
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRClaimResponseCoverage::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRClaimResponseCoverage::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRClaimResponseCoverage;
-        } elseif (!is_object($type) || !($type instanceof FHIRClaimResponseCoverage)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRClaimResponseCoverage)) {
             throw new \RuntimeException(sprintf(
-                'FHIRClaimResponseCoverage::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseCoverage or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_SEQUENCE === $childName) {
+                $type->setSequence(FHIRPositiveInt::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_FOCAL === $childName) {
+                $type->setFocal(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_COVERAGE === $childName) {
+                $type->setCoverage(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_BUSINESS_ARRANGEMENT === $childName) {
+                $type->setBusinessArrangement(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_RELATIONSHIP === $childName) {
+                $type->setRelationship(FHIRCoding::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PRE_AUTH_REF === $childName) {
+                $type->addPreAuthRef(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CLAIM_RESPONSE === $childName) {
+                $type->setClaimResponse(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ORIGINAL_RULESET === $childName) {
+                $type->setOriginalRuleset(FHIRCoding::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->businessArrangement)) {
-            $type->setBusinessArrangement(FHIRString::xmlUnserialize($children->businessArrangement));
-        }
-        if (isset($attributes->businessArrangement)) {
-            $pt = $type->getBusinessArrangement();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->businessArrangement);
-            } else {
-                $type->setBusinessArrangement((string)$attributes->businessArrangement);
-            }
-        }
-        if (isset($children->claimResponse)) {
-            $type->setClaimResponse(FHIRReference::xmlUnserialize($children->claimResponse));
-        }
-        if (isset($children->coverage)) {
-            $type->setCoverage(FHIRReference::xmlUnserialize($children->coverage));
-        }
-        if (isset($children->focal)) {
-            $type->setFocal(FHIRBoolean::xmlUnserialize($children->focal));
-        }
-        if (isset($attributes->focal)) {
-            $pt = $type->getFocal();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->focal);
-            } else {
-                $type->setFocal((string)$attributes->focal);
-            }
-        }
-        if (isset($children->originalRuleset)) {
-            $type->setOriginalRuleset(FHIRCoding::xmlUnserialize($children->originalRuleset));
-        }
-        if (isset($children->preAuthRef)) {
-            foreach($children->preAuthRef as $child) {
-                $type->addPreAuthRef(FHIRString::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->relationship)) {
-            $type->setRelationship(FHIRCoding::xmlUnserialize($children->relationship));
-        }
-        if (isset($children->sequence)) {
-            $type->setSequence(FHIRPositiveInt::xmlUnserialize($children->sequence));
-        }
-        if (isset($attributes->sequence)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_SEQUENCE])) {
             $pt = $type->getSequence();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->sequence);
+                $pt->setValue((string)$attributes[self::FIELD_SEQUENCE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setSequence((string)$attributes->sequence);
+                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_FOCAL])) {
+            $pt = $type->getFocal();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_FOCAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setFocal((string)$attributes[self::FIELD_FOCAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_BUSINESS_ARRANGEMENT])) {
+            $pt = $type->getBusinessArrangement();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_BUSINESS_ARRANGEMENT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setBusinessArrangement((string)$attributes[self::FIELD_BUSINESS_ARRANGEMENT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_PRE_AUTH_REF])) {
+            $type->addPreAuthRef((string)$attributes[self::FIELD_PRE_AUTH_REF], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getBusinessArrangement())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BUSINESS_ARRANGEMENT, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getClaimResponse())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CLAIM_RESPONSE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ClaimResponseCoverage', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSequence())) {
+            $xw->writeAttribute(self::FIELD_SEQUENCE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_FOCAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getFocal())) {
+            $xw->writeAttribute(self::FIELD_FOCAL, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BUSINESS_ARRANGEMENT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBusinessArrangement())) {
+            $xw->writeAttribute(self::FIELD_BUSINESS_ARRANGEMENT, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PRE_AUTH_REF] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getPreAuthRef())) {
+            $xw->writeAttribute(self::FIELD_PRE_AUTH_REF, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getPreAuthRef()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_PRE_AUTH_REF, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSequence())) {
+            $xw->startElement(self::FIELD_SEQUENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_FOCAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getFocal())) {
+            $xw->startElement(self::FIELD_FOCAL);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getCoverage())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COVERAGE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_COVERAGE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getFocal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FOCAL, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getOriginalRuleset())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ORIGINAL_RULESET, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getPreAuthRef())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PRE_AUTH_REF, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BUSINESS_ARRANGEMENT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBusinessArrangement())) {
+            $xw->startElement(self::FIELD_BUSINESS_ARRANGEMENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getRelationship())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_RELATIONSHIP, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_RELATIONSHIP);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getSequence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PRE_AUTH_REF] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getPreAuthRef())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_PRE_AUTH_REF);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
+                }
+            }
         }
-        return $sxe;
+        if (null !== ($v = $this->getClaimResponse())) {
+            $xw->startElement(self::FIELD_CLAIM_RESPONSE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getOriginalRuleset())) {
+            $xw->startElement(self::FIELD_ORIGINAL_RULESET);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getBusinessArrangement())) {
-            $a[self::FIELD_BUSINESS_ARRANGEMENT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_BUSINESS_ARRANGEMENT_EXT] = $enc;
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getSequence())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_SEQUENCE} = $val;
             }
-        }
-        if (null !== ($v = $this->getClaimResponse())) {
-            $a[self::FIELD_CLAIM_RESPONSE] = $v;
-        }
-        if (null !== ($v = $this->getCoverage())) {
-            $a[self::FIELD_COVERAGE] = $v;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRPositiveInt::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SEQUENCE_EXT} = $ext;
+            }
         }
         if (null !== ($v = $this->getFocal())) {
-            $a[self::FIELD_FOCAL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_FOCAL_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_FOCAL} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_FOCAL_EXT} = $ext;
             }
         }
-        if (null !== ($v = $this->getOriginalRuleset())) {
-            $a[self::FIELD_ORIGINAL_RULESET] = $v;
+        if (null !== ($v = $this->getCoverage())) {
+            $out->{self::FIELD_COVERAGE} = $v;
+        }
+        if (null !== ($v = $this->getBusinessArrangement())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_BUSINESS_ARRANGEMENT} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_BUSINESS_ARRANGEMENT_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getRelationship())) {
+            $out->{self::FIELD_RELATIONSHIP} = $v;
         }
         if ([] !== ($vs = $this->getPreAuthRef())) {
-            $a[self::FIELD_PRE_AUTH_REF] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_PRE_AUTH_REF][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRString::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRString::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_PRE_AUTH_REF_EXT] = $encs;
+            if ([] !== $vals) {
+                $out->{self::FIELD_PRE_AUTH_REF} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PRE_AUTH_REF_EXT} = $exts;
             }
         }
-        if (null !== ($v = $this->getRelationship())) {
-            $a[self::FIELD_RELATIONSHIP] = $v;
+        if (null !== ($v = $this->getClaimResponse())) {
+            $out->{self::FIELD_CLAIM_RESPONSE} = $v;
         }
-        if (null !== ($v = $this->getSequence())) {
-            $a[self::FIELD_SEQUENCE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_SEQUENCE_EXT] = $enc;
-            }
+        if (null !== ($v = $this->getOriginalRuleset())) {
+            $out->{self::FIELD_ORIGINAL_RULESET} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

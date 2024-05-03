@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,10 +64,17 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoi
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * Invoice containing collected ChargeItems from an Account with calculated
@@ -80,15 +87,35 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_INVOICE_DOT_LINE_ITEM;
-    const FIELD_CHARGE_ITEM_CODEABLE_CONCEPT = 'chargeItemCodeableConcept';
-    const FIELD_CHARGE_ITEM_REFERENCE = 'chargeItemReference';
-    const FIELD_PRICE_COMPONENT = 'priceComponent';
+
     const FIELD_SEQUENCE = 'sequence';
     const FIELD_SEQUENCE_EXT = '_sequence';
+    const FIELD_CHARGE_ITEM_REFERENCE = 'chargeItemReference';
+    const FIELD_CHARGE_ITEM_CODEABLE_CONCEPT = 'chargeItemCodeableConcept';
+    const FIELD_PRICE_COMPONENT = 'priceComponent';
 
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Sequence in which the items appear on the invoice.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
+     */
+    protected null|FHIRPositiveInt $sequence = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The ChargeItem contains information such as the billing code, date, amount etc.
+     * If no further details are required for the lineItem, inline billing codes can be
+     * added using the CodeableConcept data type instead of the Reference.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $chargeItemReference = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -97,27 +124,11 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
+     * added using the CodeableConcept data type instead of the Reference.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $chargeItemCodeableConcept = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The ChargeItem contains information such as the billing code, date, amount etc.
-     * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $chargeItemReference = null;
-
+    protected null|FHIRCodeableConcept $chargeItemCodeableConcept = null;
     /**
      * Invoice containing collected ChargeItems from an Account with calculated
      * individual and total price for Billing purpose.
@@ -131,84 +142,30 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoicePriceComponent[]
      */
-    protected $priceComponent = [];
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Sequence in which the items appear on the invoice.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
-     */
-    protected $sequence = null;
+    protected null|array $priceComponent = [];
 
     /**
      * Validation map for fields in type Invoice.LineItem
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRInvoiceLineItem Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRInvoiceLineItem::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT])) {
-            if ($data[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
-                $this->setChargeItemCodeableConcept($data[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT]);
-            } else {
-                $this->setChargeItemCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT]));
-            }
-        }
-        if (isset($data[self::FIELD_CHARGE_ITEM_REFERENCE])) {
-            if ($data[self::FIELD_CHARGE_ITEM_REFERENCE] instanceof FHIRReference) {
-                $this->setChargeItemReference($data[self::FIELD_CHARGE_ITEM_REFERENCE]);
-            } else {
-                $this->setChargeItemReference(new FHIRReference($data[self::FIELD_CHARGE_ITEM_REFERENCE]));
-            }
-        }
-        if (isset($data[self::FIELD_PRICE_COMPONENT])) {
-            if (is_array($data[self::FIELD_PRICE_COMPONENT])) {
-                foreach($data[self::FIELD_PRICE_COMPONENT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRInvoicePriceComponent) {
-                        $this->addPriceComponent($v);
-                    } else {
-                        $this->addPriceComponent(new FHIRInvoicePriceComponent($v));
-                    }
-                }
-            } else if ($data[self::FIELD_PRICE_COMPONENT] instanceof FHIRInvoicePriceComponent) {
-                $this->addPriceComponent($data[self::FIELD_PRICE_COMPONENT]);
-            } else {
-                $this->addPriceComponent(new FHIRInvoicePriceComponent($data[self::FIELD_PRICE_COMPONENT]));
-            }
-        }
-        if (isset($data[self::FIELD_SEQUENCE]) || isset($data[self::FIELD_SEQUENCE_EXT])) {
-            if (isset($data[self::FIELD_SEQUENCE])) {
-                $value = $data[self::FIELD_SEQUENCE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) {
-                $ext = $data[self::FIELD_SEQUENCE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_SEQUENCE, $data) || array_key_exists(self::FIELD_SEQUENCE_EXT, $data)) {
+            $value = $data[self::FIELD_SEQUENCE] ?? null;
+            $ext = (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) ? $data[self::FIELD_SEQUENCE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRPositiveInt) {
                     $this->setSequence($value);
@@ -217,8 +174,39 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
                 } else {
                     $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSequence(new FHIRPositiveInt($ext));
+            } else {
+                $this->setSequence(new FHIRPositiveInt(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_CHARGE_ITEM_REFERENCE, $data)) {
+            if ($data[self::FIELD_CHARGE_ITEM_REFERENCE] instanceof FHIRReference) {
+                $this->setChargeItemReference($data[self::FIELD_CHARGE_ITEM_REFERENCE]);
+            } else {
+                $this->setChargeItemReference(new FHIRReference($data[self::FIELD_CHARGE_ITEM_REFERENCE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT, $data)) {
+            if ($data[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT] instanceof FHIRCodeableConcept) {
+                $this->setChargeItemCodeableConcept($data[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT]);
+            } else {
+                $this->setChargeItemCodeableConcept(new FHIRCodeableConcept($data[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT]));
+            }
+        }
+        if (array_key_exists(self::FIELD_PRICE_COMPONENT, $data)) {
+            if (is_array($data[self::FIELD_PRICE_COMPONENT])) {
+                foreach($data[self::FIELD_PRICE_COMPONENT] as $v) {
+                    if ($v instanceof FHIRInvoicePriceComponent) {
+                        $this->addPriceComponent($v);
+                    } else {
+                        $this->addPriceComponent(new FHIRInvoicePriceComponent($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_PRICE_COMPONENT] instanceof FHIRInvoicePriceComponent) {
+                $this->addPriceComponent($data[self::FIELD_PRICE_COMPONENT]);
+            } else {
+                $this->addPriceComponent(new FHIRInvoicePriceComponent($data[self::FIELD_PRICE_COMPONENT]));
             }
         }
     }
@@ -226,21 +214,86 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Sequence in which the items appear on the invoice.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
-    public function _getFHIRXMLElementDefinition()
+    public function getSequence(): null|FHIRPositiveInt
     {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
+        return $this->sequence;
+    }
+
+    /**
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * Sequence in which the items appear on the invoice.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $sequence
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $sequence && !($sequence instanceof FHIRPositiveInt)) {
+            $sequence = new FHIRPositiveInt($sequence);
         }
-        return "<InvoiceLineItem{$xmlns}></InvoiceLineItem>";
+        $this->_trackValueSet($this->sequence, $sequence);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SEQUENCE])) {
+            $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_SEQUENCE][0] = $xmlLocation;
+        $this->sequence = $sequence;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The ChargeItem contains information such as the billing code, date, amount etc.
+     * If no further details are required for the lineItem, inline billing codes can be
+     * added using the CodeableConcept data type instead of the Reference.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getChargeItemReference(): null|FHIRReference
+    {
+        return $this->chargeItemReference;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The ChargeItem contains information such as the billing code, date, amount etc.
+     * If no further details are required for the lineItem, inline billing codes can be
+     * added using the CodeableConcept data type instead of the Reference.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $chargeItemReference
+     * @return static
+     */
+    public function setChargeItemReference(null|FHIRReference $chargeItemReference = null): self
+    {
+        if (null === $chargeItemReference) {
+            $chargeItemReference = new FHIRReference();
+        }
+        $this->_trackValueSet($this->chargeItemReference, $chargeItemReference);
+        $this->chargeItemReference = $chargeItemReference;
+        return $this;
     }
 
     /**
@@ -251,12 +304,11 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
+     * added using the CodeableConcept data type instead of the Reference.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    public function getChargeItemCodeableConcept()
+    public function getChargeItemCodeableConcept(): null|FHIRCodeableConcept
     {
         return $this->chargeItemCodeableConcept;
     }
@@ -269,51 +321,18 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * The ChargeItem contains information such as the billing code, date, amount etc.
      * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
+     * added using the CodeableConcept data type instead of the Reference.
      *
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $chargeItemCodeableConcept
      * @return static
      */
-    public function setChargeItemCodeableConcept(FHIRCodeableConcept $chargeItemCodeableConcept = null)
+    public function setChargeItemCodeableConcept(null|FHIRCodeableConcept $chargeItemCodeableConcept = null): self
     {
+        if (null === $chargeItemCodeableConcept) {
+            $chargeItemCodeableConcept = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->chargeItemCodeableConcept, $chargeItemCodeableConcept);
         $this->chargeItemCodeableConcept = $chargeItemCodeableConcept;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The ChargeItem contains information such as the billing code, date, amount etc.
-     * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getChargeItemReference()
-    {
-        return $this->chargeItemReference;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The ChargeItem contains information such as the billing code, date, amount etc.
-     * If no further details are required for the lineItem, inline billing codes can be
-     * added using the CodeableConcept data type instead of the Reference. (choose any
-     * one of chargeItem*, but only one)
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $chargeItemReference
-     * @return static
-     */
-    public function setChargeItemReference(FHIRReference $chargeItemReference = null)
-    {
-        $this->chargeItemReference = $chargeItemReference;
         return $this;
     }
 
@@ -330,7 +349,7 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoicePriceComponent[]
      */
-    public function getPriceComponent()
+    public function getPriceComponent(): null|array
     {
         return $this->priceComponent;
     }
@@ -349,77 +368,13 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoicePriceComponent $priceComponent
      * @return static
      */
-    public function addPriceComponent(FHIRInvoicePriceComponent $priceComponent = null)
+    public function addPriceComponent(null|FHIRInvoicePriceComponent $priceComponent = null): self
     {
+        if (null === $priceComponent) {
+            $priceComponent = new FHIRInvoicePriceComponent();
+        }
+        $this->_trackValueAdded();
         $this->priceComponent[] = $priceComponent;
-        return $this;
-    }
-
-    /**
-     * Invoice containing collected ChargeItems from an Account with calculated
-     * individual and total price for Billing purpose.
-     *
-     * The price for a ChargeItem may be calculated as a base price with
-     * surcharges/deductions that apply in certain conditions. A ChargeItemDefinition
-     * resource that defines the prices, factors and conditions that apply to a billing
-     * code is currently under development. The priceComponent element can be used to
-     * offer transparency to the recipient of the Invoice as to how the prices have
-     * been calculated.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoicePriceComponent[] $priceComponent
-     * @return static
-     */
-    public function setPriceComponent(array $priceComponent = [])
-    {
-        $this->priceComponent = [];
-        if ([] === $priceComponent) {
-            return $this;
-        }
-        foreach($priceComponent as $v) {
-            if ($v instanceof FHIRInvoicePriceComponent) {
-                $this->addPriceComponent($v);
-            } else {
-                $this->addPriceComponent(new FHIRInvoicePriceComponent($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Sequence in which the items appear on the invoice.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
-     */
-    public function getSequence()
-    {
-        return $this->sequence;
-    }
-
-    /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
-     *
-     * Sequence in which the items appear on the invoice.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $sequence
-     * @return static
-     */
-    public function setSequence($sequence = null)
-    {
-        if (null === $sequence) {
-            $this->sequence = null;
-            return $this;
-        }
-        if ($sequence instanceof FHIRPositiveInt) {
-            $this->sequence = $sequence;
-            return $this;
-        }
-        $this->sequence = new FHIRPositiveInt($sequence);
         return $this;
     }
 
@@ -429,9 +384,9 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -440,18 +395,23 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getChargeItemCodeableConcept())) {
+        if (null !== ($v = $this->getSequence())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT] = $fieldErrs;
+                $errs[self::FIELD_SEQUENCE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getChargeItemReference())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_CHARGE_ITEM_REFERENCE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getChargeItemCodeableConcept())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getPriceComponent())) {
@@ -461,20 +421,15 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getSequence())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SEQUENCE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT])) {
-            $v = $this->getChargeItemCodeableConcept();
-            foreach($validationRules[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_INVOICE_DOT_LINE_ITEM, self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SEQUENCE])) {
+            $v = $this->getSequence();
+            foreach($validationRules[self::FIELD_SEQUENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_INVOICE_DOT_LINE_ITEM, self::FIELD_SEQUENCE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT])) {
-                        $errs[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT] = [];
+                    if (!isset($errs[self::FIELD_SEQUENCE])) {
+                        $errs[self::FIELD_SEQUENCE] = [];
                     }
-                    $errs[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT][$rule] = $err;
+                    $errs[self::FIELD_SEQUENCE][$rule] = $err;
                 }
             }
         }
@@ -490,6 +445,18 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT])) {
+            $v = $this->getChargeItemCodeableConcept();
+            foreach($validationRules[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_INVOICE_DOT_LINE_ITEM, self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT])) {
+                        $errs[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT] = [];
+                    }
+                    $errs[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_PRICE_COMPONENT])) {
             $v = $this->getPriceComponent();
             foreach($validationRules[self::FIELD_PRICE_COMPONENT] as $rule => $constraint) {
@@ -499,18 +466,6 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
                         $errs[self::FIELD_PRICE_COMPONENT] = [];
                     }
                     $errs[self::FIELD_PRICE_COMPONENT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SEQUENCE])) {
-            $v = $this->getSequence();
-            foreach($validationRules[self::FIELD_SEQUENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_INVOICE_DOT_LINE_ITEM, self::FIELD_SEQUENCE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SEQUENCE])) {
-                        $errs[self::FIELD_SEQUENCE] = [];
-                    }
-                    $errs[self::FIELD_SEQUENCE][$rule] = $err;
                 }
             }
         }
@@ -554,142 +509,172 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRInvoiceLineItem::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRInvoiceLineItem::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRInvoiceLineItem;
-        } elseif (!is_object($type) || !($type instanceof FHIRInvoiceLineItem)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRInvoiceLineItem)) {
             throw new \RuntimeException(sprintf(
-                'FHIRInvoiceLineItem::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_SEQUENCE === $childName) {
+                $type->setSequence(FHIRPositiveInt::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CHARGE_ITEM_REFERENCE === $childName) {
+                $type->setChargeItemReference(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT === $childName) {
+                $type->setChargeItemCodeableConcept(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PRICE_COMPONENT === $childName) {
+                $type->addPriceComponent(FHIRInvoicePriceComponent::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->chargeItemCodeableConcept)) {
-            $type->setChargeItemCodeableConcept(FHIRCodeableConcept::xmlUnserialize($children->chargeItemCodeableConcept));
-        }
-        if (isset($children->chargeItemReference)) {
-            $type->setChargeItemReference(FHIRReference::xmlUnserialize($children->chargeItemReference));
-        }
-        if (isset($children->priceComponent)) {
-            foreach($children->priceComponent as $child) {
-                $type->addPriceComponent(FHIRInvoicePriceComponent::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->sequence)) {
-            $type->setSequence(FHIRPositiveInt::xmlUnserialize($children->sequence));
-        }
-        if (isset($attributes->sequence)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_SEQUENCE])) {
             $pt = $type->getSequence();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->sequence);
+                $pt->setValue((string)$attributes[self::FIELD_SEQUENCE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setSequence((string)$attributes->sequence);
+                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getChargeItemCodeableConcept())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'InvoiceLineItem', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSequence())) {
+            $xw->writeAttribute(self::FIELD_SEQUENCE, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSequence())) {
+            $xw->startElement(self::FIELD_SEQUENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getChargeItemReference())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CHARGE_ITEM_REFERENCE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_CHARGE_ITEM_REFERENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getPriceComponent())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PRICE_COMPONENT, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null !== ($v = $this->getChargeItemCodeableConcept())) {
+            $xw->startElement(self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getSequence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
+        foreach ($this->getPriceComponent() as $v) {
+            $xw->startElement(self::FIELD_PRICE_COMPONENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getChargeItemCodeableConcept())) {
-            $a[self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT] = $v;
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getSequence())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_SEQUENCE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRPositiveInt::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SEQUENCE_EXT} = $ext;
+            }
         }
         if (null !== ($v = $this->getChargeItemReference())) {
-            $a[self::FIELD_CHARGE_ITEM_REFERENCE] = $v;
+            $out->{self::FIELD_CHARGE_ITEM_REFERENCE} = $v;
+        }
+        if (null !== ($v = $this->getChargeItemCodeableConcept())) {
+            $out->{self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT} = $v;
         }
         if ([] !== ($vs = $this->getPriceComponent())) {
-            $a[self::FIELD_PRICE_COMPONENT] = [];
+            $out->{self::FIELD_PRICE_COMPONENT} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PRICE_COMPONENT][] = $v;
+                $out->{self::FIELD_PRICE_COMPONENT}[] = $v;
             }
         }
-        if (null !== ($v = $this->getSequence())) {
-            $a[self::FIELD_SEQUENCE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_SEQUENCE_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

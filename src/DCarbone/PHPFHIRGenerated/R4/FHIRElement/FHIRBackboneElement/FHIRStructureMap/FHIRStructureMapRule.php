@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStruc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,10 +63,17 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStruc
  */
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * A Map of relationships between 2 structures that can be used to transform data.
@@ -78,37 +85,15 @@ class FHIRStructureMapRule extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_RULE;
+
+    const FIELD_NAME = 'name';
+    const FIELD_NAME_EXT = '_name';
+    const FIELD_SOURCE = 'source';
+    const FIELD_TARGET = 'target';
+    const FIELD_RULE = 'rule';
     const FIELD_DEPENDENT = 'dependent';
     const FIELD_DOCUMENTATION = 'documentation';
     const FIELD_DOCUMENTATION_EXT = '_documentation';
-    const FIELD_NAME = 'name';
-    const FIELD_NAME_EXT = '_name';
-    const FIELD_RULE = 'rule';
-    const FIELD_SOURCE = 'source';
-    const FIELD_TARGET = 'target';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A Map of relationships between 2 structures that can be used to transform data.
-     *
-     * Which other rules to apply in the context of this rule.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent[]
-     */
-    protected $dependent = [];
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Documentation for this instance of data.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $documentation = null;
 
     /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
@@ -122,17 +107,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
-    protected $name = null;
-
-    /**
-     * A Map of relationships between 2 structures that can be used to transform data.
-     *
-     * Rules contained in this rule.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[]
-     */
-    protected $rule = [];
-
+    protected null|FHIRId $name = null;
     /**
      * A Map of relationships between 2 structures that can be used to transform data.
      *
@@ -140,8 +115,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource[]
      */
-    protected $source = [];
-
+    protected null|array $source = [];
     /**
      * A Map of relationships between 2 structures that can be used to transform data.
      *
@@ -149,86 +123,60 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget[]
      */
-    protected $target = [];
+    protected null|array $target = [];
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
+     * Rules contained in this rule.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[]
+     */
+    protected null|array $rule = [];
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
+     * Which other rules to apply in the context of this rule.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent[]
+     */
+    protected null|array $dependent = [];
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Documentation for this instance of data.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $documentation = null;
 
     /**
      * Validation map for fields in type StructureMap.Rule
      * @var array
      */
-    private static $_validationRules = [
+    private const _VALIDATION_RULES = [
         self::FIELD_SOURCE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
 
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
+
     /**
      * FHIRStructureMapRule Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRStructureMapRule::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_DEPENDENT])) {
-            if (is_array($data[self::FIELD_DEPENDENT])) {
-                foreach($data[self::FIELD_DEPENDENT] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRStructureMapDependent) {
-                        $this->addDependent($v);
-                    } else {
-                        $this->addDependent(new FHIRStructureMapDependent($v));
-                    }
-                }
-            } else if ($data[self::FIELD_DEPENDENT] instanceof FHIRStructureMapDependent) {
-                $this->addDependent($data[self::FIELD_DEPENDENT]);
-            } else {
-                $this->addDependent(new FHIRStructureMapDependent($data[self::FIELD_DEPENDENT]));
-            }
-        }
-        if (isset($data[self::FIELD_DOCUMENTATION]) || isset($data[self::FIELD_DOCUMENTATION_EXT])) {
-            if (isset($data[self::FIELD_DOCUMENTATION])) {
-                $value = $data[self::FIELD_DOCUMENTATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DOCUMENTATION_EXT]) && is_array($data[self::FIELD_DOCUMENTATION_EXT])) {
-                $ext = $data[self::FIELD_DOCUMENTATION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDocumentation($value);
-                } else if (is_array($value)) {
-                    $this->setDocumentation(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDocumentation(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_NAME]) || isset($data[self::FIELD_NAME_EXT])) {
-            if (isset($data[self::FIELD_NAME])) {
-                $value = $data[self::FIELD_NAME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) {
-                $ext = $data[self::FIELD_NAME_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_NAME, $data) || array_key_exists(self::FIELD_NAME_EXT, $data)) {
+            $value = $data[self::FIELD_NAME] ?? null;
+            $ext = (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) ? $data[self::FIELD_NAME_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRId) {
                     $this->setName($value);
@@ -237,172 +185,97 @@ class FHIRStructureMapRule extends FHIRBackboneElement
                 } else {
                     $this->setName(new FHIRId([FHIRId::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setName(new FHIRId($ext));
-            }
-        }
-        if (isset($data[self::FIELD_RULE])) {
-            if (is_array($data[self::FIELD_RULE])) {
-                foreach($data[self::FIELD_RULE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRStructureMapRule) {
-                        $this->addRule($v);
-                    } else {
-                        $this->addRule(new FHIRStructureMapRule($v));
-                    }
-                }
-            } else if ($data[self::FIELD_RULE] instanceof FHIRStructureMapRule) {
-                $this->addRule($data[self::FIELD_RULE]);
             } else {
-                $this->addRule(new FHIRStructureMapRule($data[self::FIELD_RULE]));
+                $this->setName(new FHIRId(null));
             }
         }
-        if (isset($data[self::FIELD_SOURCE])) {
+        if (array_key_exists(self::FIELD_SOURCE, $data)) {
             if (is_array($data[self::FIELD_SOURCE])) {
                 foreach($data[self::FIELD_SOURCE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRStructureMapSource) {
                         $this->addSource($v);
                     } else {
                         $this->addSource(new FHIRStructureMapSource($v));
                     }
                 }
-            } else if ($data[self::FIELD_SOURCE] instanceof FHIRStructureMapSource) {
+            } elseif ($data[self::FIELD_SOURCE] instanceof FHIRStructureMapSource) {
                 $this->addSource($data[self::FIELD_SOURCE]);
             } else {
                 $this->addSource(new FHIRStructureMapSource($data[self::FIELD_SOURCE]));
             }
         }
-        if (isset($data[self::FIELD_TARGET])) {
+        if (array_key_exists(self::FIELD_TARGET, $data)) {
             if (is_array($data[self::FIELD_TARGET])) {
                 foreach($data[self::FIELD_TARGET] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRStructureMapTarget) {
                         $this->addTarget($v);
                     } else {
                         $this->addTarget(new FHIRStructureMapTarget($v));
                     }
                 }
-            } else if ($data[self::FIELD_TARGET] instanceof FHIRStructureMapTarget) {
+            } elseif ($data[self::FIELD_TARGET] instanceof FHIRStructureMapTarget) {
                 $this->addTarget($data[self::FIELD_TARGET]);
             } else {
                 $this->addTarget(new FHIRStructureMapTarget($data[self::FIELD_TARGET]));
             }
         }
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRTypeName()
-    {
-        return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<StructureMapRule{$xmlns}></StructureMapRule>";
-    }
-
-    /**
-     * A Map of relationships between 2 structures that can be used to transform data.
-     *
-     * Which other rules to apply in the context of this rule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent[]
-     */
-    public function getDependent()
-    {
-        return $this->dependent;
-    }
-
-    /**
-     * A Map of relationships between 2 structures that can be used to transform data.
-     *
-     * Which other rules to apply in the context of this rule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent $dependent
-     * @return static
-     */
-    public function addDependent(FHIRStructureMapDependent $dependent = null)
-    {
-        $this->dependent[] = $dependent;
-        return $this;
-    }
-
-    /**
-     * A Map of relationships between 2 structures that can be used to transform data.
-     *
-     * Which other rules to apply in the context of this rule.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent[] $dependent
-     * @return static
-     */
-    public function setDependent(array $dependent = [])
-    {
-        $this->dependent = [];
-        if ([] === $dependent) {
-            return $this;
-        }
-        foreach($dependent as $v) {
-            if ($v instanceof FHIRStructureMapDependent) {
-                $this->addDependent($v);
+        if (array_key_exists(self::FIELD_RULE, $data)) {
+            if (is_array($data[self::FIELD_RULE])) {
+                foreach($data[self::FIELD_RULE] as $v) {
+                    if ($v instanceof FHIRStructureMapRule) {
+                        $this->addRule($v);
+                    } else {
+                        $this->addRule(new FHIRStructureMapRule($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_RULE] instanceof FHIRStructureMapRule) {
+                $this->addRule($data[self::FIELD_RULE]);
             } else {
-                $this->addDependent(new FHIRStructureMapDependent($v));
+                $this->addRule(new FHIRStructureMapRule($data[self::FIELD_RULE]));
             }
         }
-        return $this;
+        if (array_key_exists(self::FIELD_DEPENDENT, $data)) {
+            if (is_array($data[self::FIELD_DEPENDENT])) {
+                foreach($data[self::FIELD_DEPENDENT] as $v) {
+                    if ($v instanceof FHIRStructureMapDependent) {
+                        $this->addDependent($v);
+                    } else {
+                        $this->addDependent(new FHIRStructureMapDependent($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_DEPENDENT] instanceof FHIRStructureMapDependent) {
+                $this->addDependent($data[self::FIELD_DEPENDENT]);
+            } else {
+                $this->addDependent(new FHIRStructureMapDependent($data[self::FIELD_DEPENDENT]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DOCUMENTATION, $data) || array_key_exists(self::FIELD_DOCUMENTATION_EXT, $data)) {
+            $value = $data[self::FIELD_DOCUMENTATION] ?? null;
+            $ext = (isset($data[self::FIELD_DOCUMENTATION_EXT]) && is_array($data[self::FIELD_DOCUMENTATION_EXT])) ? $data[self::FIELD_DOCUMENTATION_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDocumentation($value);
+                } else if (is_array($value)) {
+                    $this->setDocumentation(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDocumentation(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDocumentation(new FHIRString($ext));
+            } else {
+                $this->setDocumentation(new FHIRString(null));
+            }
+        }
     }
 
     /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Documentation for this instance of data.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     * @return string
      */
-    public function getDocumentation()
+    public function _getFhirTypeName(): string
     {
-        return $this->documentation;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Documentation for this instance of data.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $documentation
-     * @return static
-     */
-    public function setDocumentation($documentation = null)
-    {
-        if (null === $documentation) {
-            $this->documentation = null;
-            return $this;
-        }
-        if ($documentation instanceof FHIRString) {
-            $this->documentation = $documentation;
-            return $this;
-        }
-        $this->documentation = new FHIRString($documentation);
-        return $this;
+        return self::FHIR_TYPE_NAME;
     }
 
     /**
@@ -417,7 +290,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
-    public function getName()
+    public function getName(): null|FHIRId
     {
         return $this->name;
     }
@@ -432,70 +305,21 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      *
      * Name of the rule for internal references.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $name
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRIdPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId $name
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setName($name = null)
+    public function setName(null|string|FHIRIdPrimitive|FHIRId $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $name) {
-            $this->name = null;
-            return $this;
+        if (null !== $name && !($name instanceof FHIRId)) {
+            $name = new FHIRId($name);
         }
-        if ($name instanceof FHIRId) {
-            $this->name = $name;
-            return $this;
+        $this->_trackValueSet($this->name, $name);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_NAME])) {
+            $this->_primitiveXmlLocations[self::FIELD_NAME] = [];
         }
-        $this->name = new FHIRId($name);
-        return $this;
-    }
-
-    /**
-     * A Map of relationships between 2 structures that can be used to transform data.
-     *
-     * Rules contained in this rule.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[]
-     */
-    public function getRule()
-    {
-        return $this->rule;
-    }
-
-    /**
-     * A Map of relationships between 2 structures that can be used to transform data.
-     *
-     * Rules contained in this rule.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule $rule
-     * @return static
-     */
-    public function addRule(FHIRStructureMapRule $rule = null)
-    {
-        $this->rule[] = $rule;
-        return $this;
-    }
-
-    /**
-     * A Map of relationships between 2 structures that can be used to transform data.
-     *
-     * Rules contained in this rule.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[] $rule
-     * @return static
-     */
-    public function setRule(array $rule = [])
-    {
-        $this->rule = [];
-        if ([] === $rule) {
-            return $this;
-        }
-        foreach($rule as $v) {
-            if ($v instanceof FHIRStructureMapRule) {
-                $this->addRule($v);
-            } else {
-                $this->addRule(new FHIRStructureMapRule($v));
-            }
-        }
+        $this->_primitiveXmlLocations[self::FIELD_NAME][0] = $xmlLocation;
+        $this->name = $name;
         return $this;
     }
 
@@ -506,7 +330,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource[]
      */
-    public function getSource()
+    public function getSource(): null|array
     {
         return $this->source;
     }
@@ -519,33 +343,13 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource $source
      * @return static
      */
-    public function addSource(FHIRStructureMapSource $source = null)
+    public function addSource(null|FHIRStructureMapSource $source = null): self
     {
+        if (null === $source) {
+            $source = new FHIRStructureMapSource();
+        }
+        $this->_trackValueAdded();
         $this->source[] = $source;
-        return $this;
-    }
-
-    /**
-     * A Map of relationships between 2 structures that can be used to transform data.
-     *
-     * Source inputs to the mapping.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource[] $source
-     * @return static
-     */
-    public function setSource(array $source = [])
-    {
-        $this->source = [];
-        if ([] === $source) {
-            return $this;
-        }
-        foreach($source as $v) {
-            if ($v instanceof FHIRStructureMapSource) {
-                $this->addSource($v);
-            } else {
-                $this->addSource(new FHIRStructureMapSource($v));
-            }
-        }
         return $this;
     }
 
@@ -556,7 +360,7 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget[]
      */
-    public function getTarget()
+    public function getTarget(): null|array
     {
         return $this->target;
     }
@@ -569,8 +373,12 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget $target
      * @return static
      */
-    public function addTarget(FHIRStructureMapTarget $target = null)
+    public function addTarget(null|FHIRStructureMapTarget $target = null): self
     {
+        if (null === $target) {
+            $target = new FHIRStructureMapTarget();
+        }
+        $this->_trackValueAdded();
         $this->target[] = $target;
         return $this;
     }
@@ -578,24 +386,99 @@ class FHIRStructureMapRule extends FHIRBackboneElement
     /**
      * A Map of relationships between 2 structures that can be used to transform data.
      *
-     * Content to create because of this mapping rule.
+     * Rules contained in this rule.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget[] $target
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[]
+     */
+    public function getRule(): null|array
+    {
+        return $this->rule;
+    }
+
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
+     * Rules contained in this rule.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule $rule
      * @return static
      */
-    public function setTarget(array $target = [])
+    public function addRule(null|FHIRStructureMapRule $rule = null): self
     {
-        $this->target = [];
-        if ([] === $target) {
-            return $this;
+        if (null === $rule) {
+            $rule = new FHIRStructureMapRule();
         }
-        foreach($target as $v) {
-            if ($v instanceof FHIRStructureMapTarget) {
-                $this->addTarget($v);
-            } else {
-                $this->addTarget(new FHIRStructureMapTarget($v));
-            }
+        $this->_trackValueAdded();
+        $this->rule[] = $rule;
+        return $this;
+    }
+
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
+     * Which other rules to apply in the context of this rule.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent[]
+     */
+    public function getDependent(): null|array
+    {
+        return $this->dependent;
+    }
+
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
+     * Which other rules to apply in the context of this rule.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent $dependent
+     * @return static
+     */
+    public function addDependent(null|FHIRStructureMapDependent $dependent = null): self
+    {
+        if (null === $dependent) {
+            $dependent = new FHIRStructureMapDependent();
         }
+        $this->_trackValueAdded();
+        $this->dependent[] = $dependent;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Documentation for this instance of data.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getDocumentation(): null|FHIRString
+    {
+        return $this->documentation;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Documentation for this instance of data.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $documentation
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setDocumentation(null|string|FHIRStringPrimitive|FHIRString $documentation = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $documentation && !($documentation instanceof FHIRString)) {
+            $documentation = new FHIRString($documentation);
+        }
+        $this->_trackValueSet($this->documentation, $documentation);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DOCUMENTATION])) {
+            $this->_primitiveXmlLocations[self::FIELD_DOCUMENTATION] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_DOCUMENTATION][0] = $xmlLocation;
+        $this->documentation = $documentation;
         return $this;
     }
 
@@ -605,9 +488,9 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -616,32 +499,13 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getDependent())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_DEPENDENT, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getDocumentation())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DOCUMENTATION] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getName())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_NAME] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getRule())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_RULE, $i)] = $fieldErrs;
-                }
             }
         }
         if ([] !== ($vs = $this->getSource())) {
@@ -658,28 +522,23 @@ class FHIRStructureMapRule extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DEPENDENT])) {
-            $v = $this->getDependent();
-            foreach($validationRules[self::FIELD_DEPENDENT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_RULE, self::FIELD_DEPENDENT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DEPENDENT])) {
-                        $errs[self::FIELD_DEPENDENT] = [];
-                    }
-                    $errs[self::FIELD_DEPENDENT][$rule] = $err;
+        if ([] !== ($vs = $this->getRule())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_RULE, $i)] = $fieldErrs;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DOCUMENTATION])) {
-            $v = $this->getDocumentation();
-            foreach($validationRules[self::FIELD_DOCUMENTATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_RULE, self::FIELD_DOCUMENTATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DOCUMENTATION])) {
-                        $errs[self::FIELD_DOCUMENTATION] = [];
-                    }
-                    $errs[self::FIELD_DOCUMENTATION][$rule] = $err;
+        if ([] !== ($vs = $this->getDependent())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_DEPENDENT, $i)] = $fieldErrs;
                 }
+            }
+        }
+        if (null !== ($v = $this->getDocumentation())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DOCUMENTATION] = $fieldErrs;
             }
         }
         if (isset($validationRules[self::FIELD_NAME])) {
@@ -691,18 +550,6 @@ class FHIRStructureMapRule extends FHIRBackboneElement
                         $errs[self::FIELD_NAME] = [];
                     }
                     $errs[self::FIELD_NAME][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_RULE])) {
-            $v = $this->getRule();
-            foreach($validationRules[self::FIELD_RULE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_RULE, self::FIELD_RULE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_RULE])) {
-                        $errs[self::FIELD_RULE] = [];
-                    }
-                    $errs[self::FIELD_RULE][$rule] = $err;
                 }
             }
         }
@@ -727,6 +574,42 @@ class FHIRStructureMapRule extends FHIRBackboneElement
                         $errs[self::FIELD_TARGET] = [];
                     }
                     $errs[self::FIELD_TARGET][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_RULE])) {
+            $v = $this->getRule();
+            foreach($validationRules[self::FIELD_RULE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_RULE, self::FIELD_RULE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_RULE])) {
+                        $errs[self::FIELD_RULE] = [];
+                    }
+                    $errs[self::FIELD_RULE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DEPENDENT])) {
+            $v = $this->getDependent();
+            foreach($validationRules[self::FIELD_DEPENDENT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_RULE, self::FIELD_DEPENDENT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DEPENDENT])) {
+                        $errs[self::FIELD_DEPENDENT] = [];
+                    }
+                    $errs[self::FIELD_DEPENDENT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DOCUMENTATION])) {
+            $v = $this->getDocumentation();
+            foreach($validationRules[self::FIELD_DOCUMENTATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_STRUCTURE_MAP_DOT_RULE, self::FIELD_DOCUMENTATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DOCUMENTATION])) {
+                        $errs[self::FIELD_DOCUMENTATION] = [];
+                    }
+                    $errs[self::FIELD_DOCUMENTATION][$rule] = $err;
                 }
             }
         }
@@ -770,213 +653,221 @@ class FHIRStructureMapRule extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRStructureMapRule::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRStructureMapRule::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRStructureMapRule;
-        } elseif (!is_object($type) || !($type instanceof FHIRStructureMapRule)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRStructureMapRule)) {
             throw new \RuntimeException(sprintf(
-                'FHIRStructureMapRule::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_NAME === $childName) {
+                $type->setName(FHIRId::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_SOURCE === $childName) {
+                $type->addSource(FHIRStructureMapSource::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TARGET === $childName) {
+                $type->addTarget(FHIRStructureMapTarget::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_RULE === $childName) {
+                $type->addRule(FHIRStructureMapRule::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DEPENDENT === $childName) {
+                $type->addDependent(FHIRStructureMapDependent::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DOCUMENTATION === $childName) {
+                $type->setDocumentation(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->dependent)) {
-            foreach($children->dependent as $child) {
-                $type->addDependent(FHIRStructureMapDependent::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->documentation)) {
-            $type->setDocumentation(FHIRString::xmlUnserialize($children->documentation));
-        }
-        if (isset($attributes->documentation)) {
-            $pt = $type->getDocumentation();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->documentation);
-            } else {
-                $type->setDocumentation((string)$attributes->documentation);
-            }
-        }
-        if (isset($children->name)) {
-            $type->setName(FHIRId::xmlUnserialize($children->name));
-        }
-        if (isset($attributes->name)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_NAME])) {
             $pt = $type->getName();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->name);
+                $pt->setValue((string)$attributes[self::FIELD_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setName((string)$attributes->name);
+                $type->setName((string)$attributes[self::FIELD_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->rule)) {
-            foreach($children->rule as $child) {
-                $type->addRule(FHIRStructureMapRule::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_DOCUMENTATION])) {
+            $pt = $type->getDocumentation();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_DOCUMENTATION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setDocumentation((string)$attributes[self::FIELD_DOCUMENTATION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->source)) {
-            foreach($children->source as $child) {
-                $type->addSource(FHIRStructureMapSource::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->target)) {
-            foreach($children->target as $child) {
-                $type->addTarget(FHIRStructureMapTarget::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getDependent())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DEPENDENT, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getDocumentation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DOCUMENTATION, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if ([] !== ($vs = $this->getRule())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_RULE, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'StructureMapRule', $this->_getSourceXmlns());
         }
-        if ([] !== ($vs = $this->getSource())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getName())) {
+            $xw->writeAttribute(self::FIELD_NAME, $v->getValue()?->getFormattedValue());
         }
-        if ([] !== ($vs = $this->getTarget())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_TARGET, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DOCUMENTATION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDocumentation())) {
+            $xw->writeAttribute(self::FIELD_DOCUMENTATION, $v->getValue()?->getFormattedValue());
         }
-        return $sxe;
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getName())) {
+            $xw->startElement(self::FIELD_NAME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getSource() as $v) {
+            $xw->startElement(self::FIELD_SOURCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getTarget() as $v) {
+            $xw->startElement(self::FIELD_TARGET);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getRule() as $v) {
+            $xw->startElement(self::FIELD_RULE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getDependent() as $v) {
+            $xw->startElement(self::FIELD_DEPENDENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DOCUMENTATION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDocumentation())) {
+            $xw->startElement(self::FIELD_DOCUMENTATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getDependent())) {
-            $a[self::FIELD_DEPENDENT] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_DEPENDENT][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getDocumentation())) {
-            $a[self::FIELD_DOCUMENTATION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DOCUMENTATION_EXT] = $enc;
-            }
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRId::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRId::FIELD_VALUE]);
-                $a[self::FIELD_NAME_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_NAME} = $val;
             }
-        }
-        if ([] !== ($vs = $this->getRule())) {
-            $a[self::FIELD_RULE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_RULE][] = $v;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRId::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_NAME_EXT} = $ext;
             }
         }
         if ([] !== ($vs = $this->getSource())) {
-            $a[self::FIELD_SOURCE] = [];
+            $out->{self::FIELD_SOURCE} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_SOURCE][] = $v;
+                $out->{self::FIELD_SOURCE}[] = $v;
             }
         }
         if ([] !== ($vs = $this->getTarget())) {
-            $a[self::FIELD_TARGET] = [];
+            $out->{self::FIELD_TARGET} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_TARGET][] = $v;
+                $out->{self::FIELD_TARGET}[] = $v;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if ([] !== ($vs = $this->getRule())) {
+            $out->{self::FIELD_RULE} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_RULE}[] = $v;
+            }
         }
-        return $a;
-    }
+        if ([] !== ($vs = $this->getDependent())) {
+            $out->{self::FIELD_DEPENDENT} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_DEPENDENT}[] = $v;
+            }
+        }
+        if (null !== ($v = $this->getDocumentation())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DOCUMENTATION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DOCUMENTATION_EXT} = $ext;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

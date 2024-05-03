@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,22 +62,39 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRCodePrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRDatePrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrative;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRemittanceOutcome;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\R4\FHIRIdPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRContainedTypeInterface;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeMap;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * This resource provides the details including amount of a payment and allocates
@@ -91,30 +108,59 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION;
-    const FIELD_CREATED = 'created';
-    const FIELD_CREATED_EXT = '_created';
-    const FIELD_DETAIL = 'detail';
-    const FIELD_DISPOSITION = 'disposition';
-    const FIELD_DISPOSITION_EXT = '_disposition';
-    const FIELD_FORM_CODE = 'formCode';
+
     const FIELD_IDENTIFIER = 'identifier';
-    const FIELD_OUTCOME = 'outcome';
-    const FIELD_OUTCOME_EXT = '_outcome';
-    const FIELD_PAYMENT_AMOUNT = 'paymentAmount';
-    const FIELD_PAYMENT_DATE = 'paymentDate';
-    const FIELD_PAYMENT_DATE_EXT = '_paymentDate';
-    const FIELD_PAYMENT_IDENTIFIER = 'paymentIdentifier';
-    const FIELD_PAYMENT_ISSUER = 'paymentIssuer';
-    const FIELD_PERIOD = 'period';
-    const FIELD_PROCESS_NOTE = 'processNote';
-    const FIELD_REQUEST = 'request';
-    const FIELD_REQUESTOR = 'requestor';
     const FIELD_STATUS = 'status';
     const FIELD_STATUS_EXT = '_status';
+    const FIELD_PERIOD = 'period';
+    const FIELD_CREATED = 'created';
+    const FIELD_CREATED_EXT = '_created';
+    const FIELD_PAYMENT_ISSUER = 'paymentIssuer';
+    const FIELD_REQUEST = 'request';
+    const FIELD_REQUESTOR = 'requestor';
+    const FIELD_OUTCOME = 'outcome';
+    const FIELD_OUTCOME_EXT = '_outcome';
+    const FIELD_DISPOSITION = 'disposition';
+    const FIELD_DISPOSITION_EXT = '_disposition';
+    const FIELD_PAYMENT_DATE = 'paymentDate';
+    const FIELD_PAYMENT_DATE_EXT = '_paymentDate';
+    const FIELD_PAYMENT_AMOUNT = 'paymentAmount';
+    const FIELD_PAYMENT_IDENTIFIER = 'paymentIdentifier';
+    const FIELD_DETAIL = 'detail';
+    const FIELD_FORM_CODE = 'formCode';
+    const FIELD_PROCESS_NOTE = 'processNote';
 
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier assigned to this payment reconciliation.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
+     */
+    protected null|array $identifier = [];
+    /**
+     * A code specifying the state of the resource instance.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The status of the resource instance.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     */
+    protected null|FHIRFinancialResourceStatusCodes $status = null;
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The period of time for which payments have been gathered into this bulk payment
+     * for settlement.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
+     */
+    protected null|FHIRPeriod $period = null;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -127,18 +173,45 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    protected $created = null;
-
+    protected null|FHIRDateTime $created = null;
     /**
-     * This resource provides the details including amount of a payment and allocates
-     * the payment items being paid.
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Distribution of the payment amount for a previously acknowledged payable.
+     * The party who generated the payment.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[]
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    protected $detail = [];
-
+    protected null|FHIRReference $paymentIssuer = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Original request resource reference.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $request = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The practitioner who is responsible for the services rendered to the patient.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $requestor = null;
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The outcome of a request for a reconciliation.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRemittanceOutcome
+     */
+    protected null|FHIRRemittanceOutcome $outcome = null;
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -149,52 +222,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $disposition = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code for the form to be used for printing the content.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    protected $formCode = null;
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A unique identifier assigned to this payment reconciliation.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
-     */
-    protected $identifier = [];
-
-    /**
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The outcome of a request for a reconciliation.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRemittanceOutcome
-     */
-    protected $outcome = null;
-
-    /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Total payment amount as indicated on the financial instrument.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
-     */
-    protected $paymentAmount = null;
-
+    protected null|FHIRString $disposition = null;
     /**
      * A date or partial date (e.g. just year or year + month). There is no time zone.
      * The format is a union of the schema types gYear, gYearMonth and date. Dates
@@ -205,8 +233,17 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
-    protected $paymentDate = null;
-
+    protected null|FHIRDate $paymentDate = null;
+    /**
+     * An amount of economic utility in some recognized currency.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Total payment amount as indicated on the financial instrument.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
+     */
+    protected null|FHIRMoney $paymentAmount = null;
     /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
@@ -217,31 +254,27 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    protected $paymentIdentifier = null;
-
+    protected null|FHIRIdentifier $paymentIdentifier = null;
     /**
-     * A reference from one resource to another.
+     * This resource provides the details including amount of a payment and allocates
+     * the payment items being paid.
+     *
+     * Distribution of the payment amount for a previously acknowledged payable.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[]
+     */
+    protected null|array $detail = [];
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
-     * The party who generated the payment.
+     * A code for the form to be used for printing the content.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
-    protected $paymentIssuer = null;
-
-    /**
-     * A time period defined by a start and end date and optionally time.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The period of time for which payments have been gathered into this bulk payment
-     * for settlement.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
-     */
-    protected $period = null;
-
+    protected null|FHIRCodeableConcept $formCode = null;
     /**
      * This resource provides the details including amount of a payment and allocates
      * the payment items being paid.
@@ -250,268 +283,45 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote[]
      */
-    protected $processNote = [];
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Original request resource reference.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $request = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The practitioner who is responsible for the services rendered to the patient.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $requestor = null;
-
-    /**
-     * A code specifying the state of the resource instance.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The status of the resource instance.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
-     */
-    protected $status = null;
+    protected null|array $processNote = [];
 
     /**
      * Validation map for fields in type PaymentReconciliation
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRPaymentReconciliation Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRPaymentReconciliation::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CREATED]) || isset($data[self::FIELD_CREATED_EXT])) {
-            if (isset($data[self::FIELD_CREATED])) {
-                $value = $data[self::FIELD_CREATED];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CREATED_EXT]) && is_array($data[self::FIELD_CREATED_EXT])) {
-                $ext = $data[self::FIELD_CREATED_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setCreated($value);
-                } else if (is_array($value)) {
-                    $this->setCreated(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setCreated(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setCreated(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DETAIL])) {
-            if (is_array($data[self::FIELD_DETAIL])) {
-                foreach($data[self::FIELD_DETAIL] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRPaymentReconciliationDetail) {
-                        $this->addDetail($v);
-                    } else {
-                        $this->addDetail(new FHIRPaymentReconciliationDetail($v));
-                    }
-                }
-            } else if ($data[self::FIELD_DETAIL] instanceof FHIRPaymentReconciliationDetail) {
-                $this->addDetail($data[self::FIELD_DETAIL]);
-            } else {
-                $this->addDetail(new FHIRPaymentReconciliationDetail($data[self::FIELD_DETAIL]));
-            }
-        }
-        if (isset($data[self::FIELD_DISPOSITION]) || isset($data[self::FIELD_DISPOSITION_EXT])) {
-            if (isset($data[self::FIELD_DISPOSITION])) {
-                $value = $data[self::FIELD_DISPOSITION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DISPOSITION_EXT]) && is_array($data[self::FIELD_DISPOSITION_EXT])) {
-                $ext = $data[self::FIELD_DISPOSITION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDisposition($value);
-                } else if (is_array($value)) {
-                    $this->setDisposition(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDisposition(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDisposition(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_FORM_CODE])) {
-            if ($data[self::FIELD_FORM_CODE] instanceof FHIRCodeableConcept) {
-                $this->setFormCode($data[self::FIELD_FORM_CODE]);
-            } else {
-                $this->setFormCode(new FHIRCodeableConcept($data[self::FIELD_FORM_CODE]));
-            }
-        }
-        if (isset($data[self::FIELD_IDENTIFIER])) {
+        if (array_key_exists(self::FIELD_IDENTIFIER, $data)) {
             if (is_array($data[self::FIELD_IDENTIFIER])) {
                 foreach($data[self::FIELD_IDENTIFIER] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
                     if ($v instanceof FHIRIdentifier) {
                         $this->addIdentifier($v);
                     } else {
                         $this->addIdentifier(new FHIRIdentifier($v));
                     }
                 }
-            } else if ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
+            } elseif ($data[self::FIELD_IDENTIFIER] instanceof FHIRIdentifier) {
                 $this->addIdentifier($data[self::FIELD_IDENTIFIER]);
             } else {
                 $this->addIdentifier(new FHIRIdentifier($data[self::FIELD_IDENTIFIER]));
             }
         }
-        if (isset($data[self::FIELD_OUTCOME]) || isset($data[self::FIELD_OUTCOME_EXT])) {
-            if (isset($data[self::FIELD_OUTCOME])) {
-                $value = $data[self::FIELD_OUTCOME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT])) {
-                $ext = $data[self::FIELD_OUTCOME_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRRemittanceOutcome) {
-                    $this->setOutcome($value);
-                } else if (is_array($value)) {
-                    $this->setOutcome(new FHIRRemittanceOutcome(array_merge($ext, $value)));
-                } else {
-                    $this->setOutcome(new FHIRRemittanceOutcome([FHIRRemittanceOutcome::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setOutcome(new FHIRRemittanceOutcome($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PAYMENT_AMOUNT])) {
-            if ($data[self::FIELD_PAYMENT_AMOUNT] instanceof FHIRMoney) {
-                $this->setPaymentAmount($data[self::FIELD_PAYMENT_AMOUNT]);
-            } else {
-                $this->setPaymentAmount(new FHIRMoney($data[self::FIELD_PAYMENT_AMOUNT]));
-            }
-        }
-        if (isset($data[self::FIELD_PAYMENT_DATE]) || isset($data[self::FIELD_PAYMENT_DATE_EXT])) {
-            if (isset($data[self::FIELD_PAYMENT_DATE])) {
-                $value = $data[self::FIELD_PAYMENT_DATE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PAYMENT_DATE_EXT]) && is_array($data[self::FIELD_PAYMENT_DATE_EXT])) {
-                $ext = $data[self::FIELD_PAYMENT_DATE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDate) {
-                    $this->setPaymentDate($value);
-                } else if (is_array($value)) {
-                    $this->setPaymentDate(new FHIRDate(array_merge($ext, $value)));
-                } else {
-                    $this->setPaymentDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPaymentDate(new FHIRDate($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PAYMENT_IDENTIFIER])) {
-            if ($data[self::FIELD_PAYMENT_IDENTIFIER] instanceof FHIRIdentifier) {
-                $this->setPaymentIdentifier($data[self::FIELD_PAYMENT_IDENTIFIER]);
-            } else {
-                $this->setPaymentIdentifier(new FHIRIdentifier($data[self::FIELD_PAYMENT_IDENTIFIER]));
-            }
-        }
-        if (isset($data[self::FIELD_PAYMENT_ISSUER])) {
-            if ($data[self::FIELD_PAYMENT_ISSUER] instanceof FHIRReference) {
-                $this->setPaymentIssuer($data[self::FIELD_PAYMENT_ISSUER]);
-            } else {
-                $this->setPaymentIssuer(new FHIRReference($data[self::FIELD_PAYMENT_ISSUER]));
-            }
-        }
-        if (isset($data[self::FIELD_PERIOD])) {
-            if ($data[self::FIELD_PERIOD] instanceof FHIRPeriod) {
-                $this->setPeriod($data[self::FIELD_PERIOD]);
-            } else {
-                $this->setPeriod(new FHIRPeriod($data[self::FIELD_PERIOD]));
-            }
-        }
-        if (isset($data[self::FIELD_PROCESS_NOTE])) {
-            if (is_array($data[self::FIELD_PROCESS_NOTE])) {
-                foreach($data[self::FIELD_PROCESS_NOTE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRPaymentReconciliationProcessNote) {
-                        $this->addProcessNote($v);
-                    } else {
-                        $this->addProcessNote(new FHIRPaymentReconciliationProcessNote($v));
-                    }
-                }
-            } else if ($data[self::FIELD_PROCESS_NOTE] instanceof FHIRPaymentReconciliationProcessNote) {
-                $this->addProcessNote($data[self::FIELD_PROCESS_NOTE]);
-            } else {
-                $this->addProcessNote(new FHIRPaymentReconciliationProcessNote($data[self::FIELD_PROCESS_NOTE]));
-            }
-        }
-        if (isset($data[self::FIELD_REQUEST])) {
-            if ($data[self::FIELD_REQUEST] instanceof FHIRReference) {
-                $this->setRequest($data[self::FIELD_REQUEST]);
-            } else {
-                $this->setRequest(new FHIRReference($data[self::FIELD_REQUEST]));
-            }
-        }
-        if (isset($data[self::FIELD_REQUESTOR])) {
-            if ($data[self::FIELD_REQUESTOR] instanceof FHIRReference) {
-                $this->setRequestor($data[self::FIELD_REQUESTOR]);
-            } else {
-                $this->setRequestor(new FHIRReference($data[self::FIELD_REQUESTOR]));
-            }
-        }
-        if (isset($data[self::FIELD_STATUS]) || isset($data[self::FIELD_STATUS_EXT])) {
-            if (isset($data[self::FIELD_STATUS])) {
-                $value = $data[self::FIELD_STATUS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) {
-                $ext = $data[self::FIELD_STATUS_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_STATUS, $data) || array_key_exists(self::FIELD_STATUS_EXT, $data)) {
+            $value = $data[self::FIELD_STATUS] ?? null;
+            $ext = (isset($data[self::FIELD_STATUS_EXT]) && is_array($data[self::FIELD_STATUS_EXT])) ? $data[self::FIELD_STATUS_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRFinancialResourceStatusCodes) {
                     $this->setStatus($value);
@@ -520,8 +330,157 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 } else {
                     $this->setStatus(new FHIRFinancialResourceStatusCodes([FHIRFinancialResourceStatusCodes::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setStatus(new FHIRFinancialResourceStatusCodes($ext));
+            } else {
+                $this->setStatus(new FHIRFinancialResourceStatusCodes(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_PERIOD, $data)) {
+            if ($data[self::FIELD_PERIOD] instanceof FHIRPeriod) {
+                $this->setPeriod($data[self::FIELD_PERIOD]);
+            } else {
+                $this->setPeriod(new FHIRPeriod($data[self::FIELD_PERIOD]));
+            }
+        }
+        if (array_key_exists(self::FIELD_CREATED, $data) || array_key_exists(self::FIELD_CREATED_EXT, $data)) {
+            $value = $data[self::FIELD_CREATED] ?? null;
+            $ext = (isset($data[self::FIELD_CREATED_EXT]) && is_array($data[self::FIELD_CREATED_EXT])) ? $data[self::FIELD_CREATED_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setCreated($value);
+                } else if (is_array($value)) {
+                    $this->setCreated(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setCreated(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setCreated(new FHIRDateTime($ext));
+            } else {
+                $this->setCreated(new FHIRDateTime(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_PAYMENT_ISSUER, $data)) {
+            if ($data[self::FIELD_PAYMENT_ISSUER] instanceof FHIRReference) {
+                $this->setPaymentIssuer($data[self::FIELD_PAYMENT_ISSUER]);
+            } else {
+                $this->setPaymentIssuer(new FHIRReference($data[self::FIELD_PAYMENT_ISSUER]));
+            }
+        }
+        if (array_key_exists(self::FIELD_REQUEST, $data)) {
+            if ($data[self::FIELD_REQUEST] instanceof FHIRReference) {
+                $this->setRequest($data[self::FIELD_REQUEST]);
+            } else {
+                $this->setRequest(new FHIRReference($data[self::FIELD_REQUEST]));
+            }
+        }
+        if (array_key_exists(self::FIELD_REQUESTOR, $data)) {
+            if ($data[self::FIELD_REQUESTOR] instanceof FHIRReference) {
+                $this->setRequestor($data[self::FIELD_REQUESTOR]);
+            } else {
+                $this->setRequestor(new FHIRReference($data[self::FIELD_REQUESTOR]));
+            }
+        }
+        if (array_key_exists(self::FIELD_OUTCOME, $data) || array_key_exists(self::FIELD_OUTCOME_EXT, $data)) {
+            $value = $data[self::FIELD_OUTCOME] ?? null;
+            $ext = (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT])) ? $data[self::FIELD_OUTCOME_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRRemittanceOutcome) {
+                    $this->setOutcome($value);
+                } else if (is_array($value)) {
+                    $this->setOutcome(new FHIRRemittanceOutcome(array_merge($ext, $value)));
+                } else {
+                    $this->setOutcome(new FHIRRemittanceOutcome([FHIRRemittanceOutcome::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setOutcome(new FHIRRemittanceOutcome($ext));
+            } else {
+                $this->setOutcome(new FHIRRemittanceOutcome(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_DISPOSITION, $data) || array_key_exists(self::FIELD_DISPOSITION_EXT, $data)) {
+            $value = $data[self::FIELD_DISPOSITION] ?? null;
+            $ext = (isset($data[self::FIELD_DISPOSITION_EXT]) && is_array($data[self::FIELD_DISPOSITION_EXT])) ? $data[self::FIELD_DISPOSITION_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDisposition($value);
+                } else if (is_array($value)) {
+                    $this->setDisposition(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDisposition(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDisposition(new FHIRString($ext));
+            } else {
+                $this->setDisposition(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_PAYMENT_DATE, $data) || array_key_exists(self::FIELD_PAYMENT_DATE_EXT, $data)) {
+            $value = $data[self::FIELD_PAYMENT_DATE] ?? null;
+            $ext = (isset($data[self::FIELD_PAYMENT_DATE_EXT]) && is_array($data[self::FIELD_PAYMENT_DATE_EXT])) ? $data[self::FIELD_PAYMENT_DATE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDate) {
+                    $this->setPaymentDate($value);
+                } else if (is_array($value)) {
+                    $this->setPaymentDate(new FHIRDate(array_merge($ext, $value)));
+                } else {
+                    $this->setPaymentDate(new FHIRDate([FHIRDate::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPaymentDate(new FHIRDate($ext));
+            } else {
+                $this->setPaymentDate(new FHIRDate(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_PAYMENT_AMOUNT, $data)) {
+            if ($data[self::FIELD_PAYMENT_AMOUNT] instanceof FHIRMoney) {
+                $this->setPaymentAmount($data[self::FIELD_PAYMENT_AMOUNT]);
+            } else {
+                $this->setPaymentAmount(new FHIRMoney($data[self::FIELD_PAYMENT_AMOUNT]));
+            }
+        }
+        if (array_key_exists(self::FIELD_PAYMENT_IDENTIFIER, $data)) {
+            if ($data[self::FIELD_PAYMENT_IDENTIFIER] instanceof FHIRIdentifier) {
+                $this->setPaymentIdentifier($data[self::FIELD_PAYMENT_IDENTIFIER]);
+            } else {
+                $this->setPaymentIdentifier(new FHIRIdentifier($data[self::FIELD_PAYMENT_IDENTIFIER]));
+            }
+        }
+        if (array_key_exists(self::FIELD_DETAIL, $data)) {
+            if (is_array($data[self::FIELD_DETAIL])) {
+                foreach($data[self::FIELD_DETAIL] as $v) {
+                    if ($v instanceof FHIRPaymentReconciliationDetail) {
+                        $this->addDetail($v);
+                    } else {
+                        $this->addDetail(new FHIRPaymentReconciliationDetail($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_DETAIL] instanceof FHIRPaymentReconciliationDetail) {
+                $this->addDetail($data[self::FIELD_DETAIL]);
+            } else {
+                $this->addDetail(new FHIRPaymentReconciliationDetail($data[self::FIELD_DETAIL]));
+            }
+        }
+        if (array_key_exists(self::FIELD_FORM_CODE, $data)) {
+            if ($data[self::FIELD_FORM_CODE] instanceof FHIRCodeableConcept) {
+                $this->setFormCode($data[self::FIELD_FORM_CODE]);
+            } else {
+                $this->setFormCode(new FHIRCodeableConcept($data[self::FIELD_FORM_CODE]));
+            }
+        }
+        if (array_key_exists(self::FIELD_PROCESS_NOTE, $data)) {
+            if (is_array($data[self::FIELD_PROCESS_NOTE])) {
+                foreach($data[self::FIELD_PROCESS_NOTE] as $v) {
+                    if ($v instanceof FHIRPaymentReconciliationProcessNote) {
+                        $this->addProcessNote($v);
+                    } else {
+                        $this->addProcessNote(new FHIRPaymentReconciliationProcessNote($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_PROCESS_NOTE] instanceof FHIRPaymentReconciliationProcessNote) {
+                $this->addProcessNote($data[self::FIELD_PROCESS_NOTE]);
+            } else {
+                $this->addProcessNote(new FHIRPaymentReconciliationProcessNote($data[self::FIELD_PROCESS_NOTE]));
             }
         }
     }
@@ -529,7 +488,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
@@ -537,190 +496,9 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
     /**
      * @return string
      */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<PaymentReconciliation{$xmlns}></PaymentReconciliation>";
-    }
-    /**
-     * @return string
-     */
-    public function _getResourceType()
+    public function _getResourceType(): string
     {
         return static::FHIR_TYPE_NAME;
-    }
-
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The date when the resource was created.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
-     */
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The date when the resource was created.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $created
-     * @return static
-     */
-    public function setCreated($created = null)
-    {
-        if (null === $created) {
-            $this->created = null;
-            return $this;
-        }
-        if ($created instanceof FHIRDateTime) {
-            $this->created = $created;
-            return $this;
-        }
-        $this->created = new FHIRDateTime($created);
-        return $this;
-    }
-
-    /**
-     * This resource provides the details including amount of a payment and allocates
-     * the payment items being paid.
-     *
-     * Distribution of the payment amount for a previously acknowledged payable.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[]
-     */
-    public function getDetail()
-    {
-        return $this->detail;
-    }
-
-    /**
-     * This resource provides the details including amount of a payment and allocates
-     * the payment items being paid.
-     *
-     * Distribution of the payment amount for a previously acknowledged payable.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail $detail
-     * @return static
-     */
-    public function addDetail(FHIRPaymentReconciliationDetail $detail = null)
-    {
-        $this->detail[] = $detail;
-        return $this;
-    }
-
-    /**
-     * This resource provides the details including amount of a payment and allocates
-     * the payment items being paid.
-     *
-     * Distribution of the payment amount for a previously acknowledged payable.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[] $detail
-     * @return static
-     */
-    public function setDetail(array $detail = [])
-    {
-        $this->detail = [];
-        if ([] === $detail) {
-            return $this;
-        }
-        foreach($detail as $v) {
-            if ($v instanceof FHIRPaymentReconciliationDetail) {
-                $this->addDetail($v);
-            } else {
-                $this->addDetail(new FHIRPaymentReconciliationDetail($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A human readable description of the status of the request for the
-     * reconciliation.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getDisposition()
-    {
-        return $this->disposition;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A human readable description of the status of the request for the
-     * reconciliation.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $disposition
-     * @return static
-     */
-    public function setDisposition($disposition = null)
-    {
-        if (null === $disposition) {
-            $this->disposition = null;
-            return $this;
-        }
-        if ($disposition instanceof FHIRString) {
-            $this->disposition = $disposition;
-            return $this;
-        }
-        $this->disposition = new FHIRString($disposition);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code for the form to be used for printing the content.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
-     */
-    public function getFormCode()
-    {
-        return $this->formCode;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A code for the form to be used for printing the content.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $formCode
-     * @return static
-     */
-    public function setFormCode(FHIRCodeableConcept $formCode = null)
-    {
-        $this->formCode = $formCode;
-        return $this;
     }
 
     /**
@@ -733,7 +511,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
-    public function getIdentifier()
+    public function getIdentifier(): null|array
     {
         return $this->identifier;
     }
@@ -749,194 +527,45 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $identifier
      * @return static
      */
-    public function addIdentifier(FHIRIdentifier $identifier = null)
+    public function addIdentifier(null|FHIRIdentifier $identifier = null): self
     {
+        if (null === $identifier) {
+            $identifier = new FHIRIdentifier();
+        }
+        $this->_trackValueAdded();
         $this->identifier[] = $identifier;
         return $this;
     }
 
     /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A unique identifier assigned to this payment reconciliation.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[] $identifier
-     * @return static
-     */
-    public function setIdentifier(array $identifier = [])
-    {
-        $this->identifier = [];
-        if ([] === $identifier) {
-            return $this;
-        }
-        foreach($identifier as $v) {
-            if ($v instanceof FHIRIdentifier) {
-                $this->addIdentifier($v);
-            } else {
-                $this->addIdentifier(new FHIRIdentifier($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
+     * A code specifying the state of the resource instance.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The outcome of a request for a reconciliation.
+     * The status of the resource instance.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRemittanceOutcome
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
-    public function getOutcome()
+    public function getStatus(): null|FHIRFinancialResourceStatusCodes
     {
-        return $this->outcome;
+        return $this->status;
     }
 
     /**
+     * A code specifying the state of the resource instance.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The outcome of a request for a reconciliation.
+     * The status of the resource instance.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRemittanceOutcome $outcome
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
      * @return static
      */
-    public function setOutcome(FHIRRemittanceOutcome $outcome = null)
+    public function setStatus(null|FHIRFinancialResourceStatusCodes $status = null): self
     {
-        $this->outcome = $outcome;
-        return $this;
-    }
-
-    /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Total payment amount as indicated on the financial instrument.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
-     */
-    public function getPaymentAmount()
-    {
-        return $this->paymentAmount;
-    }
-
-    /**
-     * An amount of economic utility in some recognized currency.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Total payment amount as indicated on the financial instrument.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $paymentAmount
-     * @return static
-     */
-    public function setPaymentAmount(FHIRMoney $paymentAmount = null)
-    {
-        $this->paymentAmount = $paymentAmount;
-        return $this;
-    }
-
-    /**
-     * A date or partial date (e.g. just year or year + month). There is no time zone.
-     * The format is a union of the schema types gYear, gYearMonth and date. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The date of payment as indicated on the financial instrument.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
-     */
-    public function getPaymentDate()
-    {
-        return $this->paymentDate;
-    }
-
-    /**
-     * A date or partial date (e.g. just year or year + month). There is no time zone.
-     * The format is a union of the schema types gYear, gYearMonth and date. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The date of payment as indicated on the financial instrument.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $paymentDate
-     * @return static
-     */
-    public function setPaymentDate($paymentDate = null)
-    {
-        if (null === $paymentDate) {
-            $this->paymentDate = null;
-            return $this;
+        if (null === $status) {
+            $status = new FHIRFinancialResourceStatusCodes();
         }
-        if ($paymentDate instanceof FHIRDate) {
-            $this->paymentDate = $paymentDate;
-            return $this;
-        }
-        $this->paymentDate = new FHIRDate($paymentDate);
-        return $this;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Issuer's unique identifier for the payment instrument.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
-     */
-    public function getPaymentIdentifier()
-    {
-        return $this->paymentIdentifier;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Issuer's unique identifier for the payment instrument.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $paymentIdentifier
-     * @return static
-     */
-    public function setPaymentIdentifier(FHIRIdentifier $paymentIdentifier = null)
-    {
-        $this->paymentIdentifier = $paymentIdentifier;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The party who generated the payment.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    public function getPaymentIssuer()
-    {
-        return $this->paymentIssuer;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The party who generated the payment.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $paymentIssuer
-     * @return static
-     */
-    public function setPaymentIssuer(FHIRReference $paymentIssuer = null)
-    {
-        $this->paymentIssuer = $paymentIssuer;
+        $this->_trackValueSet($this->status, $status);
+        $this->status = $status;
         return $this;
     }
 
@@ -950,7 +579,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
-    public function getPeriod()
+    public function getPeriod(): null|FHIRPeriod
     {
         return $this->period;
     }
@@ -966,62 +595,92 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod $period
      * @return static
      */
-    public function setPeriod(FHIRPeriod $period = null)
+    public function setPeriod(null|FHIRPeriod $period = null): self
     {
+        if (null === $period) {
+            $period = new FHIRPeriod();
+        }
+        $this->_trackValueSet($this->period, $period);
         $this->period = $period;
         return $this;
     }
 
     /**
-     * This resource provides the details including amount of a payment and allocates
-     * the payment items being paid.
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A note that describes or explains the processing in a human readable form.
+     * The date when the resource was created.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote[]
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    public function getProcessNote()
+    public function getCreated(): null|FHIRDateTime
     {
-        return $this->processNote;
+        return $this->created;
     }
 
     /**
-     * This resource provides the details including amount of a payment and allocates
-     * the payment items being paid.
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A note that describes or explains the processing in a human readable form.
+     * The date when the resource was created.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote $processNote
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $created
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function addProcessNote(FHIRPaymentReconciliationProcessNote $processNote = null)
+    public function setCreated(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $created = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        $this->processNote[] = $processNote;
+        if (null !== $created && !($created instanceof FHIRDateTime)) {
+            $created = new FHIRDateTime($created);
+        }
+        $this->_trackValueSet($this->created, $created);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_CREATED])) {
+            $this->_primitiveXmlLocations[self::FIELD_CREATED] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_CREATED][0] = $xmlLocation;
+        $this->created = $created;
         return $this;
     }
 
     /**
-     * This resource provides the details including amount of a payment and allocates
-     * the payment items being paid.
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * A note that describes or explains the processing in a human readable form.
+     * The party who generated the payment.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote[] $processNote
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    public function getPaymentIssuer(): null|FHIRReference
+    {
+        return $this->paymentIssuer;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The party who generated the payment.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $paymentIssuer
      * @return static
      */
-    public function setProcessNote(array $processNote = [])
+    public function setPaymentIssuer(null|FHIRReference $paymentIssuer = null): self
     {
-        $this->processNote = [];
-        if ([] === $processNote) {
-            return $this;
+        if (null === $paymentIssuer) {
+            $paymentIssuer = new FHIRReference();
         }
-        foreach($processNote as $v) {
-            if ($v instanceof FHIRPaymentReconciliationProcessNote) {
-                $this->addProcessNote($v);
-            } else {
-                $this->addProcessNote(new FHIRPaymentReconciliationProcessNote($v));
-            }
-        }
+        $this->_trackValueSet($this->paymentIssuer, $paymentIssuer);
+        $this->paymentIssuer = $paymentIssuer;
         return $this;
     }
 
@@ -1034,7 +693,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getRequest()
+    public function getRequest(): null|FHIRReference
     {
         return $this->request;
     }
@@ -1049,8 +708,12 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $request
      * @return static
      */
-    public function setRequest(FHIRReference $request = null)
+    public function setRequest(null|FHIRReference $request = null): self
     {
+        if (null === $request) {
+            $request = new FHIRReference();
+        }
+        $this->_trackValueSet($this->request, $request);
         $this->request = $request;
         return $this;
     }
@@ -1064,7 +727,7 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getRequestor()
+    public function getRequestor(): null|FHIRReference
     {
         return $this->requestor;
     }
@@ -1079,37 +742,295 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $requestor
      * @return static
      */
-    public function setRequestor(FHIRReference $requestor = null)
+    public function setRequestor(null|FHIRReference $requestor = null): self
     {
+        if (null === $requestor) {
+            $requestor = new FHIRReference();
+        }
+        $this->_trackValueSet($this->requestor, $requestor);
         $this->requestor = $requestor;
         return $this;
     }
 
     /**
-     * A code specifying the state of the resource instance.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The status of the resource instance.
+     * The outcome of a request for a reconciliation.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRemittanceOutcome
      */
-    public function getStatus()
+    public function getOutcome(): null|FHIRRemittanceOutcome
     {
-        return $this->status;
+        return $this->outcome;
     }
 
     /**
-     * A code specifying the state of the resource instance.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * The status of the resource instance.
+     * The outcome of a request for a reconciliation.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes $status
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRemittanceOutcome $outcome
      * @return static
      */
-    public function setStatus(FHIRFinancialResourceStatusCodes $status = null)
+    public function setOutcome(null|FHIRRemittanceOutcome $outcome = null): self
     {
-        $this->status = $status;
+        if (null === $outcome) {
+            $outcome = new FHIRRemittanceOutcome();
+        }
+        $this->_trackValueSet($this->outcome, $outcome);
+        $this->outcome = $outcome;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A human readable description of the status of the request for the
+     * reconciliation.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getDisposition(): null|FHIRString
+    {
+        return $this->disposition;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A human readable description of the status of the request for the
+     * reconciliation.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $disposition
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setDisposition(null|string|FHIRStringPrimitive|FHIRString $disposition = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $disposition && !($disposition instanceof FHIRString)) {
+            $disposition = new FHIRString($disposition);
+        }
+        $this->_trackValueSet($this->disposition, $disposition);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DISPOSITION])) {
+            $this->_primitiveXmlLocations[self::FIELD_DISPOSITION] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_DISPOSITION][0] = $xmlLocation;
+        $this->disposition = $disposition;
+        return $this;
+    }
+
+    /**
+     * A date or partial date (e.g. just year or year + month). There is no time zone.
+     * The format is a union of the schema types gYear, gYearMonth and date. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The date of payment as indicated on the financial instrument.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
+     */
+    public function getPaymentDate(): null|FHIRDate
+    {
+        return $this->paymentDate;
+    }
+
+    /**
+     * A date or partial date (e.g. just year or year + month). There is no time zone.
+     * The format is a union of the schema types gYear, gYearMonth and date. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The date of payment as indicated on the financial instrument.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\R4\FHIRDatePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate $paymentDate
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setPaymentDate(null|string|\DateTimeInterface|FHIRDatePrimitive|FHIRDate $paymentDate = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $paymentDate && !($paymentDate instanceof FHIRDate)) {
+            $paymentDate = new FHIRDate($paymentDate);
+        }
+        $this->_trackValueSet($this->paymentDate, $paymentDate);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE])) {
+            $this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE][0] = $xmlLocation;
+        $this->paymentDate = $paymentDate;
+        return $this;
+    }
+
+    /**
+     * An amount of economic utility in some recognized currency.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Total payment amount as indicated on the financial instrument.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
+     */
+    public function getPaymentAmount(): null|FHIRMoney
+    {
+        return $this->paymentAmount;
+    }
+
+    /**
+     * An amount of economic utility in some recognized currency.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Total payment amount as indicated on the financial instrument.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney $paymentAmount
+     * @return static
+     */
+    public function setPaymentAmount(null|FHIRMoney $paymentAmount = null): self
+    {
+        if (null === $paymentAmount) {
+            $paymentAmount = new FHIRMoney();
+        }
+        $this->_trackValueSet($this->paymentAmount, $paymentAmount);
+        $this->paymentAmount = $paymentAmount;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Issuer's unique identifier for the payment instrument.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
+     */
+    public function getPaymentIdentifier(): null|FHIRIdentifier
+    {
+        return $this->paymentIdentifier;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Issuer's unique identifier for the payment instrument.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $paymentIdentifier
+     * @return static
+     */
+    public function setPaymentIdentifier(null|FHIRIdentifier $paymentIdentifier = null): self
+    {
+        if (null === $paymentIdentifier) {
+            $paymentIdentifier = new FHIRIdentifier();
+        }
+        $this->_trackValueSet($this->paymentIdentifier, $paymentIdentifier);
+        $this->paymentIdentifier = $paymentIdentifier;
+        return $this;
+    }
+
+    /**
+     * This resource provides the details including amount of a payment and allocates
+     * the payment items being paid.
+     *
+     * Distribution of the payment amount for a previously acknowledged payable.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[]
+     */
+    public function getDetail(): null|array
+    {
+        return $this->detail;
+    }
+
+    /**
+     * This resource provides the details including amount of a payment and allocates
+     * the payment items being paid.
+     *
+     * Distribution of the payment amount for a previously acknowledged payable.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail $detail
+     * @return static
+     */
+    public function addDetail(null|FHIRPaymentReconciliationDetail $detail = null): self
+    {
+        if (null === $detail) {
+            $detail = new FHIRPaymentReconciliationDetail();
+        }
+        $this->_trackValueAdded();
+        $this->detail[] = $detail;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code for the form to be used for printing the content.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
+     */
+    public function getFormCode(): null|FHIRCodeableConcept
+    {
+        return $this->formCode;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code for the form to be used for printing the content.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept $formCode
+     * @return static
+     */
+    public function setFormCode(null|FHIRCodeableConcept $formCode = null): self
+    {
+        if (null === $formCode) {
+            $formCode = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->formCode, $formCode);
+        $this->formCode = $formCode;
+        return $this;
+    }
+
+    /**
+     * This resource provides the details including amount of a payment and allocates
+     * the payment items being paid.
+     *
+     * A note that describes or explains the processing in a human readable form.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote[]
+     */
+    public function getProcessNote(): null|array
+    {
+        return $this->processNote;
+    }
+
+    /**
+     * This resource provides the details including amount of a payment and allocates
+     * the payment items being paid.
+     *
+     * A note that describes or explains the processing in a human readable form.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote $processNote
+     * @return static
+     */
+    public function addProcessNote(null|FHIRPaymentReconciliationProcessNote $processNote = null): self
+    {
+        if (null === $processNote) {
+            $processNote = new FHIRPaymentReconciliationProcessNote();
+        }
+        $this->_trackValueAdded();
+        $this->processNote[] = $processNote;
         return $this;
     }
 
@@ -1119,9 +1040,9 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -1130,32 +1051,10 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCreated())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CREATED] = $fieldErrs;
-            }
-        }
-        if ([] !== ($vs = $this->getDetail())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_DETAIL, $i)] = $fieldErrs;
-                }
-            }
-        }
-        if (null !== ($v = $this->getDisposition())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_DISPOSITION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getFormCode())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_FORM_CODE] = $fieldErrs;
-            }
-        }
         if ([] !== ($vs = $this->getIdentifier())) {
             foreach($vs as $i => $v) {
                 if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
@@ -1163,29 +1062,9 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 }
             }
         }
-        if (null !== ($v = $this->getOutcome())) {
+        if (null !== ($v = $this->getStatus())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_OUTCOME] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPaymentAmount())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PAYMENT_AMOUNT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPaymentDate())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PAYMENT_DATE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPaymentIdentifier())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PAYMENT_IDENTIFIER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPaymentIssuer())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PAYMENT_ISSUER] = $fieldErrs;
+                $errs[self::FIELD_STATUS] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getPeriod())) {
@@ -1193,11 +1072,14 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 $errs[self::FIELD_PERIOD] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getProcessNote())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_PROCESS_NOTE, $i)] = $fieldErrs;
-                }
+        if (null !== ($v = $this->getCreated())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CREATED] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPaymentIssuer())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PAYMENT_ISSUER] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getRequest())) {
@@ -1210,56 +1092,47 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 $errs[self::FIELD_REQUESTOR] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getStatus())) {
+        if (null !== ($v = $this->getOutcome())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_STATUS] = $fieldErrs;
+                $errs[self::FIELD_OUTCOME] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_CREATED])) {
-            $v = $this->getCreated();
-            foreach($validationRules[self::FIELD_CREATED] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_CREATED, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CREATED])) {
-                        $errs[self::FIELD_CREATED] = [];
-                    }
-                    $errs[self::FIELD_CREATED][$rule] = $err;
+        if (null !== ($v = $this->getDisposition())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_DISPOSITION] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPaymentDate())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PAYMENT_DATE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPaymentAmount())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PAYMENT_AMOUNT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getPaymentIdentifier())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_PAYMENT_IDENTIFIER] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getDetail())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_DETAIL, $i)] = $fieldErrs;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_DETAIL])) {
-            $v = $this->getDetail();
-            foreach($validationRules[self::FIELD_DETAIL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_DETAIL, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DETAIL])) {
-                        $errs[self::FIELD_DETAIL] = [];
-                    }
-                    $errs[self::FIELD_DETAIL][$rule] = $err;
-                }
+        if (null !== ($v = $this->getFormCode())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_FORM_CODE] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_DISPOSITION])) {
-            $v = $this->getDisposition();
-            foreach($validationRules[self::FIELD_DISPOSITION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_DISPOSITION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_DISPOSITION])) {
-                        $errs[self::FIELD_DISPOSITION] = [];
-                    }
-                    $errs[self::FIELD_DISPOSITION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_FORM_CODE])) {
-            $v = $this->getFormCode();
-            foreach($validationRules[self::FIELD_FORM_CODE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_FORM_CODE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_FORM_CODE])) {
-                        $errs[self::FIELD_FORM_CODE] = [];
-                    }
-                    $errs[self::FIELD_FORM_CODE][$rule] = $err;
+        if ([] !== ($vs = $this->getProcessNote())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_PROCESS_NOTE, $i)] = $fieldErrs;
                 }
             }
         }
@@ -1275,63 +1148,15 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_OUTCOME])) {
-            $v = $this->getOutcome();
-            foreach($validationRules[self::FIELD_OUTCOME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_OUTCOME, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_STATUS])) {
+            $v = $this->getStatus();
+            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_STATUS, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_OUTCOME])) {
-                        $errs[self::FIELD_OUTCOME] = [];
+                    if (!isset($errs[self::FIELD_STATUS])) {
+                        $errs[self::FIELD_STATUS] = [];
                     }
-                    $errs[self::FIELD_OUTCOME][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PAYMENT_AMOUNT])) {
-            $v = $this->getPaymentAmount();
-            foreach($validationRules[self::FIELD_PAYMENT_AMOUNT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_PAYMENT_AMOUNT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PAYMENT_AMOUNT])) {
-                        $errs[self::FIELD_PAYMENT_AMOUNT] = [];
-                    }
-                    $errs[self::FIELD_PAYMENT_AMOUNT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PAYMENT_DATE])) {
-            $v = $this->getPaymentDate();
-            foreach($validationRules[self::FIELD_PAYMENT_DATE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_PAYMENT_DATE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PAYMENT_DATE])) {
-                        $errs[self::FIELD_PAYMENT_DATE] = [];
-                    }
-                    $errs[self::FIELD_PAYMENT_DATE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PAYMENT_IDENTIFIER])) {
-            $v = $this->getPaymentIdentifier();
-            foreach($validationRules[self::FIELD_PAYMENT_IDENTIFIER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_PAYMENT_IDENTIFIER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PAYMENT_IDENTIFIER])) {
-                        $errs[self::FIELD_PAYMENT_IDENTIFIER] = [];
-                    }
-                    $errs[self::FIELD_PAYMENT_IDENTIFIER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PAYMENT_ISSUER])) {
-            $v = $this->getPaymentIssuer();
-            foreach($validationRules[self::FIELD_PAYMENT_ISSUER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_PAYMENT_ISSUER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PAYMENT_ISSUER])) {
-                        $errs[self::FIELD_PAYMENT_ISSUER] = [];
-                    }
-                    $errs[self::FIELD_PAYMENT_ISSUER][$rule] = $err;
+                    $errs[self::FIELD_STATUS][$rule] = $err;
                 }
             }
         }
@@ -1347,15 +1172,27 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_PROCESS_NOTE])) {
-            $v = $this->getProcessNote();
-            foreach($validationRules[self::FIELD_PROCESS_NOTE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_PROCESS_NOTE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CREATED])) {
+            $v = $this->getCreated();
+            foreach($validationRules[self::FIELD_CREATED] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_CREATED, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PROCESS_NOTE])) {
-                        $errs[self::FIELD_PROCESS_NOTE] = [];
+                    if (!isset($errs[self::FIELD_CREATED])) {
+                        $errs[self::FIELD_CREATED] = [];
                     }
-                    $errs[self::FIELD_PROCESS_NOTE][$rule] = $err;
+                    $errs[self::FIELD_CREATED][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PAYMENT_ISSUER])) {
+            $v = $this->getPaymentIssuer();
+            foreach($validationRules[self::FIELD_PAYMENT_ISSUER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_PAYMENT_ISSUER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PAYMENT_ISSUER])) {
+                        $errs[self::FIELD_PAYMENT_ISSUER] = [];
+                    }
+                    $errs[self::FIELD_PAYMENT_ISSUER][$rule] = $err;
                 }
             }
         }
@@ -1383,15 +1220,111 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_STATUS])) {
-            $v = $this->getStatus();
-            foreach($validationRules[self::FIELD_STATUS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_STATUS, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_OUTCOME])) {
+            $v = $this->getOutcome();
+            foreach($validationRules[self::FIELD_OUTCOME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_OUTCOME, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_STATUS])) {
-                        $errs[self::FIELD_STATUS] = [];
+                    if (!isset($errs[self::FIELD_OUTCOME])) {
+                        $errs[self::FIELD_OUTCOME] = [];
                     }
-                    $errs[self::FIELD_STATUS][$rule] = $err;
+                    $errs[self::FIELD_OUTCOME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DISPOSITION])) {
+            $v = $this->getDisposition();
+            foreach($validationRules[self::FIELD_DISPOSITION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_DISPOSITION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DISPOSITION])) {
+                        $errs[self::FIELD_DISPOSITION] = [];
+                    }
+                    $errs[self::FIELD_DISPOSITION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PAYMENT_DATE])) {
+            $v = $this->getPaymentDate();
+            foreach($validationRules[self::FIELD_PAYMENT_DATE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_PAYMENT_DATE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PAYMENT_DATE])) {
+                        $errs[self::FIELD_PAYMENT_DATE] = [];
+                    }
+                    $errs[self::FIELD_PAYMENT_DATE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PAYMENT_AMOUNT])) {
+            $v = $this->getPaymentAmount();
+            foreach($validationRules[self::FIELD_PAYMENT_AMOUNT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_PAYMENT_AMOUNT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PAYMENT_AMOUNT])) {
+                        $errs[self::FIELD_PAYMENT_AMOUNT] = [];
+                    }
+                    $errs[self::FIELD_PAYMENT_AMOUNT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PAYMENT_IDENTIFIER])) {
+            $v = $this->getPaymentIdentifier();
+            foreach($validationRules[self::FIELD_PAYMENT_IDENTIFIER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_PAYMENT_IDENTIFIER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PAYMENT_IDENTIFIER])) {
+                        $errs[self::FIELD_PAYMENT_IDENTIFIER] = [];
+                    }
+                    $errs[self::FIELD_PAYMENT_IDENTIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_DETAIL])) {
+            $v = $this->getDetail();
+            foreach($validationRules[self::FIELD_DETAIL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_DETAIL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_DETAIL])) {
+                        $errs[self::FIELD_DETAIL] = [];
+                    }
+                    $errs[self::FIELD_DETAIL][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_FORM_CODE])) {
+            $v = $this->getFormCode();
+            foreach($validationRules[self::FIELD_FORM_CODE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_FORM_CODE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_FORM_CODE])) {
+                        $errs[self::FIELD_FORM_CODE] = [];
+                    }
+                    $errs[self::FIELD_FORM_CODE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_PROCESS_NOTE])) {
+            $v = $this->getProcessNote();
+            foreach($validationRules[self::FIELD_PROCESS_NOTE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PAYMENT_RECONCILIATION, self::FIELD_PROCESS_NOTE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_PROCESS_NOTE])) {
+                        $errs[self::FIELD_PROCESS_NOTE] = [];
+                    }
+                    $errs[self::FIELD_PROCESS_NOTE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TEXT])) {
+            $v = $this->getText();
+            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TEXT])) {
+                        $errs[self::FIELD_TEXT] = [];
+                    }
+                    $errs[self::FIELD_TEXT][$rule] = $err;
                 }
             }
         }
@@ -1431,18 +1364,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TEXT])) {
-            $v = $this->getText();
-            foreach($validationRules[self::FIELD_TEXT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_DOMAIN_RESOURCE, self::FIELD_TEXT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TEXT])) {
-                        $errs[self::FIELD_TEXT] = [];
-                    }
-                    $errs[self::FIELD_TEXT][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_ID])) {
             $v = $this->getId();
             foreach($validationRules[self::FIELD_ID] as $rule => $constraint) {
@@ -1452,6 +1373,18 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                         $errs[self::FIELD_ID] = [];
                     }
                     $errs[self::FIELD_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_META])) {
+            $v = $this->getMeta();
+            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_META])) {
+                        $errs[self::FIELD_META] = [];
+                    }
+                    $errs[self::FIELD_META][$rule] = $err;
                 }
             }
         }
@@ -1479,323 +1412,376 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_META])) {
-            $v = $this->getMeta();
-            foreach($validationRules[self::FIELD_META] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_RESOURCE, self::FIELD_META, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_META])) {
-                        $errs[self::FIELD_META] = [];
-                    }
-                    $errs[self::FIELD_META][$rule] = $err;
-                }
-            }
-        }
         return $errs;
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRPaymentReconciliation::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRPaymentReconciliation::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRPaymentReconciliation;
-        } elseif (!is_object($type) || !($type instanceof FHIRPaymentReconciliation)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRPaymentReconciliation)) {
             throw new \RuntimeException(sprintf(
-                'FHIRPaymentReconciliation::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource\FHIRPaymentReconciliation or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRDomainResource::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_IDENTIFIER === $childName) {
+                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_STATUS === $childName) {
+                $type->setStatus(FHIRFinancialResourceStatusCodes::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PERIOD === $childName) {
+                $type->setPeriod(FHIRPeriod::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CREATED === $childName) {
+                $type->setCreated(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PAYMENT_ISSUER === $childName) {
+                $type->setPaymentIssuer(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_REQUEST === $childName) {
+                $type->setRequest(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_REQUESTOR === $childName) {
+                $type->setRequestor(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_OUTCOME === $childName) {
+                $type->setOutcome(FHIRRemittanceOutcome::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DISPOSITION === $childName) {
+                $type->setDisposition(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PAYMENT_DATE === $childName) {
+                $type->setPaymentDate(FHIRDate::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PAYMENT_AMOUNT === $childName) {
+                $type->setPaymentAmount(FHIRMoney::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PAYMENT_IDENTIFIER === $childName) {
+                $type->setPaymentIdentifier(FHIRIdentifier::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DETAIL === $childName) {
+                $type->addDetail(FHIRPaymentReconciliationDetail::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_FORM_CODE === $childName) {
+                $type->setFormCode(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_PROCESS_NOTE === $childName) {
+                $type->addProcessNote(FHIRPaymentReconciliationProcessNote::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_TEXT === $childName) {
+                $type->setText(FHIRNarrative::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CONTAINED === $childName) {
+                foreach ($n->children() as $nn) {
+                    $type->addContained(PHPFHIRTypeMap::getContainedTypeFromXML($nn, $config));
+                }
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRId::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_META === $childName) {
+                $type->setMeta(FHIRMeta::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_IMPLICIT_RULES === $childName) {
+                $type->setImplicitRules(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_LANGUAGE === $childName) {
+                $type->setLanguage(FHIRCode::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->created)) {
-            $type->setCreated(FHIRDateTime::xmlUnserialize($children->created));
-        }
-        if (isset($attributes->created)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_CREATED])) {
             $pt = $type->getCreated();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->created);
+                $pt->setValue((string)$attributes[self::FIELD_CREATED], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setCreated((string)$attributes->created);
+                $type->setCreated((string)$attributes[self::FIELD_CREATED], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->detail)) {
-            foreach($children->detail as $child) {
-                $type->addDetail(FHIRPaymentReconciliationDetail::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->disposition)) {
-            $type->setDisposition(FHIRString::xmlUnserialize($children->disposition));
-        }
-        if (isset($attributes->disposition)) {
+        if (isset($attributes[self::FIELD_DISPOSITION])) {
             $pt = $type->getDisposition();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->disposition);
+                $pt->setValue((string)$attributes[self::FIELD_DISPOSITION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setDisposition((string)$attributes->disposition);
+                $type->setDisposition((string)$attributes[self::FIELD_DISPOSITION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->formCode)) {
-            $type->setFormCode(FHIRCodeableConcept::xmlUnserialize($children->formCode));
-        }
-        if (isset($children->identifier)) {
-            foreach($children->identifier as $child) {
-                $type->addIdentifier(FHIRIdentifier::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->outcome)) {
-            $type->setOutcome(FHIRRemittanceOutcome::xmlUnserialize($children->outcome));
-        }
-        if (isset($children->paymentAmount)) {
-            $type->setPaymentAmount(FHIRMoney::xmlUnserialize($children->paymentAmount));
-        }
-        if (isset($children->paymentDate)) {
-            $type->setPaymentDate(FHIRDate::xmlUnserialize($children->paymentDate));
-        }
-        if (isset($attributes->paymentDate)) {
+        if (isset($attributes[self::FIELD_PAYMENT_DATE])) {
             $pt = $type->getPaymentDate();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->paymentDate);
+                $pt->setValue((string)$attributes[self::FIELD_PAYMENT_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setPaymentDate((string)$attributes->paymentDate);
+                $type->setPaymentDate((string)$attributes[self::FIELD_PAYMENT_DATE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->paymentIdentifier)) {
-            $type->setPaymentIdentifier(FHIRIdentifier::xmlUnserialize($children->paymentIdentifier));
-        }
-        if (isset($children->paymentIssuer)) {
-            $type->setPaymentIssuer(FHIRReference::xmlUnserialize($children->paymentIssuer));
-        }
-        if (isset($children->period)) {
-            $type->setPeriod(FHIRPeriod::xmlUnserialize($children->period));
-        }
-        if (isset($children->processNote)) {
-            foreach($children->processNote as $child) {
-                $type->addProcessNote(FHIRPaymentReconciliationProcessNote::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->request)) {
-            $type->setRequest(FHIRReference::xmlUnserialize($children->request));
+        if (isset($attributes[self::FIELD_IMPLICIT_RULES])) {
+            $pt = $type->getImplicitRules();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setImplicitRules((string)$attributes[self::FIELD_IMPLICIT_RULES], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($children->requestor)) {
-            $type->setRequestor(FHIRReference::xmlUnserialize($children->requestor));
-        }
-        if (isset($children->status)) {
-            $type->setStatus(FHIRFinancialResourceStatusCodes::xmlUnserialize($children->status));
+        if (isset($attributes[self::FIELD_LANGUAGE])) {
+            $pt = $type->getLanguage();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setLanguage((string)$attributes[self::FIELD_LANGUAGE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCreated())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CREATED, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if ([] !== ($vs = $this->getDetail())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_DETAIL, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getDisposition())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DISPOSITION, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getFormCode())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_FORM_CODE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'PaymentReconciliation', $this->_getSourceXmlns());
         }
-        if ([] !== ($vs = $this->getIdentifier())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CREATED] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCreated())) {
+            $xw->writeAttribute(self::FIELD_CREATED, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getOutcome())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DISPOSITION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDisposition())) {
+            $xw->writeAttribute(self::FIELD_DISPOSITION, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getPaymentAmount())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_AMOUNT, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPaymentDate())) {
+            $xw->writeAttribute(self::FIELD_PAYMENT_DATE, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getPaymentDate())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_DATE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPaymentIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPaymentIssuer())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PAYMENT_ISSUER, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PERIOD, null, $v->_getFHIRXMLNamespace()));
-        }
-        if ([] !== ($vs = $this->getProcessNote())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PROCESS_NOTE, null, $v->_getFHIRXMLNamespace()));
-            }
-        }
-        if (null !== ($v = $this->getRequest())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUEST, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getRequestor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REQUESTOR, null, $v->_getFHIRXMLNamespace()));
+        parent::xmlSerialize($xw, $config);
+        foreach ($this->getIdentifier() as $v) {
+            $xw->startElement(self::FIELD_IDENTIFIER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getStatus())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_STATUS, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_STATUS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (null !== ($v = $this->getPeriod())) {
+            $xw->startElement(self::FIELD_PERIOD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CREATED] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCreated())) {
+            $xw->startElement(self::FIELD_CREATED);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getPaymentIssuer())) {
+            $xw->startElement(self::FIELD_PAYMENT_ISSUER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getRequest())) {
+            $xw->startElement(self::FIELD_REQUEST);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getRequestor())) {
+            $xw->startElement(self::FIELD_REQUESTOR);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            $xw->startElement(self::FIELD_OUTCOME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DISPOSITION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDisposition())) {
+            $xw->startElement(self::FIELD_DISPOSITION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PAYMENT_DATE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPaymentDate())) {
+            $xw->startElement(self::FIELD_PAYMENT_DATE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getPaymentAmount())) {
+            $xw->startElement(self::FIELD_PAYMENT_AMOUNT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getPaymentIdentifier())) {
+            $xw->startElement(self::FIELD_PAYMENT_IDENTIFIER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getDetail() as $v) {
+            $xw->startElement(self::FIELD_DETAIL);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getFormCode())) {
+            $xw->startElement(self::FIELD_FORM_CODE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getProcessNote() as $v) {
+            $xw->startElement(self::FIELD_PROCESS_NOTE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCreated())) {
-            $a[self::FIELD_CREATED] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_CREATED_EXT] = $enc;
+        $out = parent::jsonSerialize();
+        if ([] !== ($vs = $this->getIdentifier())) {
+            $out->{self::FIELD_IDENTIFIER} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_IDENTIFIER}[] = $v;
             }
         }
-        if ([] !== ($vs = $this->getDetail())) {
-            $a[self::FIELD_DETAIL] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_DETAIL][] = $v;
+        if (null !== ($v = $this->getStatus())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_STATUS} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRFinancialResourceStatusCodes::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_STATUS_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getPeriod())) {
+            $out->{self::FIELD_PERIOD} = $v;
+        }
+        if (null !== ($v = $this->getCreated())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_CREATED} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_CREATED_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getPaymentIssuer())) {
+            $out->{self::FIELD_PAYMENT_ISSUER} = $v;
+        }
+        if (null !== ($v = $this->getRequest())) {
+            $out->{self::FIELD_REQUEST} = $v;
+        }
+        if (null !== ($v = $this->getRequestor())) {
+            $out->{self::FIELD_REQUESTOR} = $v;
+        }
+        if (null !== ($v = $this->getOutcome())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_OUTCOME} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRRemittanceOutcome::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_OUTCOME_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getDisposition())) {
-            $a[self::FIELD_DISPOSITION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DISPOSITION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DISPOSITION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DISPOSITION_EXT} = $ext;
             }
         }
-        if (null !== ($v = $this->getFormCode())) {
-            $a[self::FIELD_FORM_CODE] = $v;
-        }
-        if ([] !== ($vs = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_IDENTIFIER][] = $v;
+        if (null !== ($v = $this->getPaymentDate())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PAYMENT_DATE} = $val;
             }
-        }
-        if (null !== ($v = $this->getOutcome())) {
-            $a[self::FIELD_OUTCOME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRRemittanceOutcome::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRRemittanceOutcome::FIELD_VALUE]);
-                $a[self::FIELD_OUTCOME_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDate::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PAYMENT_DATE_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getPaymentAmount())) {
-            $a[self::FIELD_PAYMENT_AMOUNT] = $v;
-        }
-        if (null !== ($v = $this->getPaymentDate())) {
-            $a[self::FIELD_PAYMENT_DATE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDate::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDate::FIELD_VALUE]);
-                $a[self::FIELD_PAYMENT_DATE_EXT] = $enc;
-            }
+            $out->{self::FIELD_PAYMENT_AMOUNT} = $v;
         }
         if (null !== ($v = $this->getPaymentIdentifier())) {
-            $a[self::FIELD_PAYMENT_IDENTIFIER] = $v;
+            $out->{self::FIELD_PAYMENT_IDENTIFIER} = $v;
         }
-        if (null !== ($v = $this->getPaymentIssuer())) {
-            $a[self::FIELD_PAYMENT_ISSUER] = $v;
+        if ([] !== ($vs = $this->getDetail())) {
+            $out->{self::FIELD_DETAIL} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_DETAIL}[] = $v;
+            }
         }
-        if (null !== ($v = $this->getPeriod())) {
-            $a[self::FIELD_PERIOD] = $v;
+        if (null !== ($v = $this->getFormCode())) {
+            $out->{self::FIELD_FORM_CODE} = $v;
         }
         if ([] !== ($vs = $this->getProcessNote())) {
-            $a[self::FIELD_PROCESS_NOTE] = [];
+            $out->{self::FIELD_PROCESS_NOTE} = [];
             foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PROCESS_NOTE][] = $v;
+                $out->{self::FIELD_PROCESS_NOTE}[] = $v;
             }
         }
-        if (null !== ($v = $this->getRequest())) {
-            $a[self::FIELD_REQUEST] = $v;
-        }
-        if (null !== ($v = $this->getRequestor())) {
-            $a[self::FIELD_REQUESTOR] = $v;
-        }
-        if (null !== ($v = $this->getStatus())) {
-            $a[self::FIELD_STATUS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRFinancialResourceStatusCodes::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRFinancialResourceStatusCodes::FIELD_VALUE]);
-                $a[self::FIELD_STATUS_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return [PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE => $this->_getResourceType()] + $a;
-    }
 
+        $out->{PHPFHIRConstants::JSON_FIELD_RESOURCE_TYPE} = $this->_getResourceType();
+
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

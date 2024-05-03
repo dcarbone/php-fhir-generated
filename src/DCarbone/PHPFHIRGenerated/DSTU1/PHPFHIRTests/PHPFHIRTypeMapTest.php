@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTests;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -460,6 +460,7 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ValueSet.Include'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ValueSetStatus'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('ValueSetStatus-list'));
+        $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('Xhtml'));
         $this->assertNull(PHPFHIRTypeMap::getContainedTypeClassName('xmlIdRef'));
     }
 
@@ -2811,5 +2812,6 @@ class PHPFHIRTypeMapTest extends TestCase
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive\FHIRValueSetStatusList', PHPFHIRTypeMap::getTypeClass('ValueSetStatus-list'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRUriPrimitive', PHPFHIRTypeMap::getTypeClass('uri-primitive'));
         $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRUuidPrimitive', PHPFHIRTypeMap::getTypeClass('uuid-primitive'));
+        $this->assertEquals('\DCarbone\PHPFHIRGenerated\DSTU1\FHIRXhtml', PHPFHIRTypeMap::getTypeClass('Xhtml'));
     }
 }

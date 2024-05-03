@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,12 +62,20 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference;
+use DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * The CoverageEligibilityRequest provides patient and insurance coverage
@@ -83,37 +91,12 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_SUPPORTING_INFO;
-    const FIELD_APPLIES_TO_ALL = 'appliesToAll';
-    const FIELD_APPLIES_TO_ALL_EXT = '_appliesToAll';
-    const FIELD_INFORMATION = 'information';
+
     const FIELD_SEQUENCE = 'sequence';
     const FIELD_SEQUENCE_EXT = '_sequence';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The supporting materials are applicable for all detail items, product/servce
-     * categories and specific billing codes.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    protected $appliesToAll = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Additional data or information such as resources, documents, images etc.
-     * including references to the data or the actual inclusion of the data.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
-     */
-    protected $information = null;
+    const FIELD_INFORMATION = 'information';
+    const FIELD_APPLIES_TO_ALL = 'appliesToAll';
+    const FIELD_APPLIES_TO_ALL_EXT = '_appliesToAll';
 
     /**
      * An integer with a value that is positive (e.g. >0)
@@ -124,71 +107,51 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
-    protected $sequence = null;
+    protected null|FHIRPositiveInt $sequence = null;
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional data or information such as resources, documents, images etc.
+     * including references to the data or the actual inclusion of the data.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
+     */
+    protected null|FHIRReference $information = null;
+    /**
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The supporting materials are applicable for all detail items, product/servce
+     * categories and specific billing codes.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
+     */
+    protected null|FHIRBoolean $appliesToAll = null;
 
     /**
      * Validation map for fields in type CoverageEligibilityRequest.SupportingInfo
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRCoverageEligibilityRequestSupportingInfo Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRCoverageEligibilityRequestSupportingInfo::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_APPLIES_TO_ALL]) || isset($data[self::FIELD_APPLIES_TO_ALL_EXT])) {
-            if (isset($data[self::FIELD_APPLIES_TO_ALL])) {
-                $value = $data[self::FIELD_APPLIES_TO_ALL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_APPLIES_TO_ALL_EXT]) && is_array($data[self::FIELD_APPLIES_TO_ALL_EXT])) {
-                $ext = $data[self::FIELD_APPLIES_TO_ALL_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setAppliesToAll($value);
-                } else if (is_array($value)) {
-                    $this->setAppliesToAll(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setAppliesToAll(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setAppliesToAll(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_INFORMATION])) {
-            if ($data[self::FIELD_INFORMATION] instanceof FHIRReference) {
-                $this->setInformation($data[self::FIELD_INFORMATION]);
-            } else {
-                $this->setInformation(new FHIRReference($data[self::FIELD_INFORMATION]));
-            }
-        }
-        if (isset($data[self::FIELD_SEQUENCE]) || isset($data[self::FIELD_SEQUENCE_EXT])) {
-            if (isset($data[self::FIELD_SEQUENCE])) {
-                $value = $data[self::FIELD_SEQUENCE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) {
-                $ext = $data[self::FIELD_SEQUENCE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_SEQUENCE, $data) || array_key_exists(self::FIELD_SEQUENCE_EXT, $data)) {
+            $value = $data[self::FIELD_SEQUENCE] ?? null;
+            $ext = (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) ? $data[self::FIELD_SEQUENCE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRPositiveInt) {
                     $this->setSequence($value);
@@ -197,8 +160,34 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
                 } else {
                     $this->setSequence(new FHIRPositiveInt([FHIRPositiveInt::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSequence(new FHIRPositiveInt($ext));
+            } else {
+                $this->setSequence(new FHIRPositiveInt(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_INFORMATION, $data)) {
+            if ($data[self::FIELD_INFORMATION] instanceof FHIRReference) {
+                $this->setInformation($data[self::FIELD_INFORMATION]);
+            } else {
+                $this->setInformation(new FHIRReference($data[self::FIELD_INFORMATION]));
+            }
+        }
+        if (array_key_exists(self::FIELD_APPLIES_TO_ALL, $data) || array_key_exists(self::FIELD_APPLIES_TO_ALL_EXT, $data)) {
+            $value = $data[self::FIELD_APPLIES_TO_ALL] ?? null;
+            $ext = (isset($data[self::FIELD_APPLIES_TO_ALL_EXT]) && is_array($data[self::FIELD_APPLIES_TO_ALL_EXT])) ? $data[self::FIELD_APPLIES_TO_ALL_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setAppliesToAll($value);
+                } else if (is_array($value)) {
+                    $this->setAppliesToAll(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setAppliesToAll(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setAppliesToAll(new FHIRBoolean($ext));
+            } else {
+                $this->setAppliesToAll(new FHIRBoolean(null));
             }
         }
     }
@@ -206,58 +195,47 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
+     *
+     * A number to uniquely identify supporting information entries.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
-    public function _getFHIRXMLElementDefinition()
+    public function getSequence(): null|FHIRPositiveInt
     {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<CoverageEligibilityRequestSupportingInfo{$xmlns}></CoverageEligibilityRequestSupportingInfo>";
+        return $this->sequence;
     }
 
     /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * An integer with a value that is positive (e.g. >0)
+     * If the element is present, it must have either a \@value, an \@id referenced from
+     * the Narrative, or extensions
      *
-     * The supporting materials are applicable for all detail items, product/servce
-     * categories and specific billing codes.
+     * A number to uniquely identify supporting information entries.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
-     */
-    public function getAppliesToAll()
-    {
-        return $this->appliesToAll;
-    }
-
-    /**
-     * Value of "true" or "false"
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The supporting materials are applicable for all detail items, product/servce
-     * categories and specific billing codes.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $appliesToAll
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRPositiveIntPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $sequence
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setAppliesToAll($appliesToAll = null)
+    public function setSequence(null|string|int|float|FHIRPositiveIntPrimitive|FHIRPositiveInt $sequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $appliesToAll) {
-            $this->appliesToAll = null;
-            return $this;
+        if (null !== $sequence && !($sequence instanceof FHIRPositiveInt)) {
+            $sequence = new FHIRPositiveInt($sequence);
         }
-        if ($appliesToAll instanceof FHIRBoolean) {
-            $this->appliesToAll = $appliesToAll;
-            return $this;
+        $this->_trackValueSet($this->sequence, $sequence);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SEQUENCE])) {
+            $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] = [];
         }
-        $this->appliesToAll = new FHIRBoolean($appliesToAll);
+        $this->_primitiveXmlLocations[self::FIELD_SEQUENCE][0] = $xmlLocation;
+        $this->sequence = $sequence;
         return $this;
     }
 
@@ -271,7 +249,7 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
-    public function getInformation()
+    public function getInformation(): null|FHIRReference
     {
         return $this->information;
     }
@@ -287,47 +265,52 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference $information
      * @return static
      */
-    public function setInformation(FHIRReference $information = null)
+    public function setInformation(null|FHIRReference $information = null): self
     {
+        if (null === $information) {
+            $information = new FHIRReference();
+        }
+        $this->_trackValueSet($this->information, $information);
         $this->information = $information;
         return $this;
     }
 
     /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A number to uniquely identify supporting information entries.
+     * The supporting materials are applicable for all detail items, product/servce
+     * categories and specific billing codes.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
-    public function getSequence()
+    public function getAppliesToAll(): null|FHIRBoolean
     {
-        return $this->sequence;
+        return $this->appliesToAll;
     }
 
     /**
-     * An integer with a value that is positive (e.g. >0)
-     * If the element is present, it must have either a \@value, an \@id referenced from
-     * the Narrative, or extensions
+     * Value of "true" or "false"
+     * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A number to uniquely identify supporting information entries.
+     * The supporting materials are applicable for all detail items, product/servce
+     * categories and specific billing codes.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt $sequence
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\R4\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean $appliesToAll
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSequence($sequence = null)
+    public function setAppliesToAll(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $appliesToAll = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $sequence) {
-            $this->sequence = null;
-            return $this;
+        if (null !== $appliesToAll && !($appliesToAll instanceof FHIRBoolean)) {
+            $appliesToAll = new FHIRBoolean($appliesToAll);
         }
-        if ($sequence instanceof FHIRPositiveInt) {
-            $this->sequence = $sequence;
-            return $this;
+        $this->_trackValueSet($this->appliesToAll, $appliesToAll);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_APPLIES_TO_ALL])) {
+            $this->_primitiveXmlLocations[self::FIELD_APPLIES_TO_ALL] = [];
         }
-        $this->sequence = new FHIRPositiveInt($sequence);
+        $this->_primitiveXmlLocations[self::FIELD_APPLIES_TO_ALL][0] = $xmlLocation;
+        $this->appliesToAll = $appliesToAll;
         return $this;
     }
 
@@ -337,9 +320,9 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -348,13 +331,13 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAppliesToAll())) {
+        if (null !== ($v = $this->getSequence())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_APPLIES_TO_ALL] = $fieldErrs;
+                $errs[self::FIELD_SEQUENCE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getInformation())) {
@@ -362,20 +345,20 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
                 $errs[self::FIELD_INFORMATION] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getSequence())) {
+        if (null !== ($v = $this->getAppliesToAll())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SEQUENCE] = $fieldErrs;
+                $errs[self::FIELD_APPLIES_TO_ALL] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_APPLIES_TO_ALL])) {
-            $v = $this->getAppliesToAll();
-            foreach($validationRules[self::FIELD_APPLIES_TO_ALL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_SUPPORTING_INFO, self::FIELD_APPLIES_TO_ALL, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SEQUENCE])) {
+            $v = $this->getSequence();
+            foreach($validationRules[self::FIELD_SEQUENCE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_SUPPORTING_INFO, self::FIELD_SEQUENCE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_APPLIES_TO_ALL])) {
-                        $errs[self::FIELD_APPLIES_TO_ALL] = [];
+                    if (!isset($errs[self::FIELD_SEQUENCE])) {
+                        $errs[self::FIELD_SEQUENCE] = [];
                     }
-                    $errs[self::FIELD_APPLIES_TO_ALL][$rule] = $err;
+                    $errs[self::FIELD_SEQUENCE][$rule] = $err;
                 }
             }
         }
@@ -391,15 +374,15 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SEQUENCE])) {
-            $v = $this->getSequence();
-            foreach($validationRules[self::FIELD_SEQUENCE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_SUPPORTING_INFO, self::FIELD_SEQUENCE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_APPLIES_TO_ALL])) {
+            $v = $this->getAppliesToAll();
+            foreach($validationRules[self::FIELD_APPLIES_TO_ALL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_COVERAGE_ELIGIBILITY_REQUEST_DOT_SUPPORTING_INFO, self::FIELD_APPLIES_TO_ALL, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SEQUENCE])) {
-                        $errs[self::FIELD_SEQUENCE] = [];
+                    if (!isset($errs[self::FIELD_APPLIES_TO_ALL])) {
+                        $errs[self::FIELD_APPLIES_TO_ALL] = [];
                     }
-                    $errs[self::FIELD_SEQUENCE][$rule] = $err;
+                    $errs[self::FIELD_APPLIES_TO_ALL][$rule] = $err;
                 }
             }
         }
@@ -443,134 +426,179 @@ class FHIRCoverageEligibilityRequestSupportingInfo extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRCoverageEligibilityRequestSupportingInfo::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRCoverageEligibilityRequestSupportingInfo::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRCoverageEligibilityRequestSupportingInfo;
-        } elseif (!is_object($type) || !($type instanceof FHIRCoverageEligibilityRequestSupportingInfo)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRCoverageEligibilityRequestSupportingInfo)) {
             throw new \RuntimeException(sprintf(
-                'FHIRCoverageEligibilityRequestSupportingInfo::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_SEQUENCE === $childName) {
+                $type->setSequence(FHIRPositiveInt::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_INFORMATION === $childName) {
+                $type->setInformation(FHIRReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_APPLIES_TO_ALL === $childName) {
+                $type->setAppliesToAll(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->appliesToAll)) {
-            $type->setAppliesToAll(FHIRBoolean::xmlUnserialize($children->appliesToAll));
-        }
-        if (isset($attributes->appliesToAll)) {
-            $pt = $type->getAppliesToAll();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->appliesToAll);
-            } else {
-                $type->setAppliesToAll((string)$attributes->appliesToAll);
-            }
-        }
-        if (isset($children->information)) {
-            $type->setInformation(FHIRReference::xmlUnserialize($children->information));
-        }
-        if (isset($children->sequence)) {
-            $type->setSequence(FHIRPositiveInt::xmlUnserialize($children->sequence));
-        }
-        if (isset($attributes->sequence)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_SEQUENCE])) {
             $pt = $type->getSequence();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->sequence);
+                $pt->setValue((string)$attributes[self::FIELD_SEQUENCE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setSequence((string)$attributes->sequence);
+                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_APPLIES_TO_ALL])) {
+            $pt = $type->getAppliesToAll();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_APPLIES_TO_ALL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setAppliesToAll((string)$attributes[self::FIELD_APPLIES_TO_ALL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAppliesToAll())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_APPLIES_TO_ALL, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'CoverageEligibilityRequestSupportingInfo', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSequence())) {
+            $xw->writeAttribute(self::FIELD_SEQUENCE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_APPLIES_TO_ALL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAppliesToAll())) {
+            $xw->writeAttribute(self::FIELD_APPLIES_TO_ALL, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSequence())) {
+            $xw->startElement(self::FIELD_SEQUENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getInformation())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_INFORMATION, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_INFORMATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getSequence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_APPLIES_TO_ALL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAppliesToAll())) {
+            $xw->startElement(self::FIELD_APPLIES_TO_ALL);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAppliesToAll())) {
-            $a[self::FIELD_APPLIES_TO_ALL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_APPLIES_TO_ALL_EXT] = $enc;
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getSequence())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_SEQUENCE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRPositiveInt::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SEQUENCE_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getInformation())) {
-            $a[self::FIELD_INFORMATION] = $v;
+            $out->{self::FIELD_INFORMATION} = $v;
         }
-        if (null !== ($v = $this->getSequence())) {
-            $a[self::FIELD_SEQUENCE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRPositiveInt::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRPositiveInt::FIELD_VALUE]);
-                $a[self::FIELD_SEQUENCE_EXT] = $enc;
+        if (null !== ($v = $this->getAppliesToAll())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_APPLIES_TO_ALL} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_APPLIES_TO_ALL_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

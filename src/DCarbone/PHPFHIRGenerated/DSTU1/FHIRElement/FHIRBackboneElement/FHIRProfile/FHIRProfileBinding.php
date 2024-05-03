@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,14 +57,23 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRBooleanPrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBindingConformance;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter;
 
 /**
  * A Resource Profile - a statement of use of one or more FHIR Resources. It may
@@ -78,41 +87,29 @@ class FHIRProfileBinding extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_BINDING;
+
+    const FIELD_NAME = 'name';
+    const FIELD_NAME_EXT = '_name';
+    const FIELD_IS_EXTENSIBLE = 'isExtensible';
+    const FIELD_IS_EXTENSIBLE_EXT = '_isExtensible';
     const FIELD_CONFORMANCE = 'conformance';
     const FIELD_CONFORMANCE_EXT = '_conformance';
     const FIELD_DESCRIPTION = 'description';
     const FIELD_DESCRIPTION_EXT = '_description';
-    const FIELD_IS_EXTENSIBLE = 'isExtensible';
-    const FIELD_IS_EXTENSIBLE_EXT = '_isExtensible';
-    const FIELD_NAME = 'name';
-    const FIELD_NAME_EXT = '_name';
-    const FIELD_REFERENCE_RESOURCE = 'referenceResource';
     const FIELD_REFERENCE_URI = 'referenceUri';
     const FIELD_REFERENCE_URI_EXT = '_referenceUri';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Binding conformance for applications
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicates the degree of conformance expectations associated with this binding.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBindingConformance
-     */
-    protected $conformance = null;
+    const FIELD_REFERENCE_RESOURCE = 'referenceResource';
 
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Describes the intended use of this particular set of codes.
+     * A descriptive name for this - can be useful for generating implementation
+     * artifacts.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    protected $description = null;
-
+    protected null|FHIRString $name = null;
     /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -124,19 +121,35 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    protected $isExtensible = null;
-
+    protected null|FHIRBoolean $isExtensible = null;
+    /**
+     * Binding conformance for applications
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates the degree of conformance expectations associated with this binding.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBindingConformance
+     */
+    protected null|FHIRBindingConformance $conformance = null;
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A descriptive name for this - can be useful for generating implementation
-     * artifacts.
+     * Describes the intended use of this particular set of codes.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    protected $name = null;
-
+    protected null|FHIRString $description = null;
+    /**
+     * String of characters used to identify a name or a resource
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Points to the value set or external definition that identifies the set of codes
+     * to be used.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
+     */
+    protected null|FHIRUri $referenceUri = null;
     /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
@@ -147,121 +160,30 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    protected $referenceResource = null;
-
-    /**
-     * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Points to the value set or external definition that identifies the set of codes
-     * to be used.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
-     */
-    protected $referenceUri = null;
+    protected null|FHIRResourceReference $referenceResource = null;
 
     /**
      * Validation map for fields in type Profile.Binding
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRProfileBinding Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRProfileBinding::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CONFORMANCE]) || isset($data[self::FIELD_CONFORMANCE_EXT])) {
-            if (isset($data[self::FIELD_CONFORMANCE])) {
-                $value = $data[self::FIELD_CONFORMANCE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CONFORMANCE_EXT]) && is_array($data[self::FIELD_CONFORMANCE_EXT])) {
-                $ext = $data[self::FIELD_CONFORMANCE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBindingConformance) {
-                    $this->setConformance($value);
-                } else if (is_array($value)) {
-                    $this->setConformance(new FHIRBindingConformance(array_merge($ext, $value)));
-                } else {
-                    $this->setConformance(new FHIRBindingConformance([FHIRBindingConformance::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setConformance(new FHIRBindingConformance($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DESCRIPTION]) || isset($data[self::FIELD_DESCRIPTION_EXT])) {
-            if (isset($data[self::FIELD_DESCRIPTION])) {
-                $value = $data[self::FIELD_DESCRIPTION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) {
-                $ext = $data[self::FIELD_DESCRIPTION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setDescription($value);
-                } else if (is_array($value)) {
-                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDescription(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_IS_EXTENSIBLE]) || isset($data[self::FIELD_IS_EXTENSIBLE_EXT])) {
-            if (isset($data[self::FIELD_IS_EXTENSIBLE])) {
-                $value = $data[self::FIELD_IS_EXTENSIBLE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_IS_EXTENSIBLE_EXT]) && is_array($data[self::FIELD_IS_EXTENSIBLE_EXT])) {
-                $ext = $data[self::FIELD_IS_EXTENSIBLE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRBoolean) {
-                    $this->setIsExtensible($value);
-                } else if (is_array($value)) {
-                    $this->setIsExtensible(new FHIRBoolean(array_merge($ext, $value)));
-                } else {
-                    $this->setIsExtensible(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setIsExtensible(new FHIRBoolean($ext));
-            }
-        }
-        if (isset($data[self::FIELD_NAME]) || isset($data[self::FIELD_NAME_EXT])) {
-            if (isset($data[self::FIELD_NAME])) {
-                $value = $data[self::FIELD_NAME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) {
-                $ext = $data[self::FIELD_NAME_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_NAME, $data) || array_key_exists(self::FIELD_NAME_EXT, $data)) {
+            $value = $data[self::FIELD_NAME] ?? null;
+            $ext = (isset($data[self::FIELD_NAME_EXT]) && is_array($data[self::FIELD_NAME_EXT])) ? $data[self::FIELD_NAME_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setName($value);
@@ -270,28 +192,66 @@ class FHIRProfileBinding extends FHIRBackboneElement
                 } else {
                     $this->setName(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setName(new FHIRString($ext));
+            } else {
+                $this->setName(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_REFERENCE_RESOURCE])) {
-            if ($data[self::FIELD_REFERENCE_RESOURCE] instanceof FHIRResourceReference) {
-                $this->setReferenceResource($data[self::FIELD_REFERENCE_RESOURCE]);
+        if (array_key_exists(self::FIELD_IS_EXTENSIBLE, $data) || array_key_exists(self::FIELD_IS_EXTENSIBLE_EXT, $data)) {
+            $value = $data[self::FIELD_IS_EXTENSIBLE] ?? null;
+            $ext = (isset($data[self::FIELD_IS_EXTENSIBLE_EXT]) && is_array($data[self::FIELD_IS_EXTENSIBLE_EXT])) ? $data[self::FIELD_IS_EXTENSIBLE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBoolean) {
+                    $this->setIsExtensible($value);
+                } else if (is_array($value)) {
+                    $this->setIsExtensible(new FHIRBoolean(array_merge($ext, $value)));
+                } else {
+                    $this->setIsExtensible(new FHIRBoolean([FHIRBoolean::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setIsExtensible(new FHIRBoolean($ext));
             } else {
-                $this->setReferenceResource(new FHIRResourceReference($data[self::FIELD_REFERENCE_RESOURCE]));
+                $this->setIsExtensible(new FHIRBoolean(null));
             }
         }
-        if (isset($data[self::FIELD_REFERENCE_URI]) || isset($data[self::FIELD_REFERENCE_URI_EXT])) {
-            if (isset($data[self::FIELD_REFERENCE_URI])) {
-                $value = $data[self::FIELD_REFERENCE_URI];
+        if (array_key_exists(self::FIELD_CONFORMANCE, $data) || array_key_exists(self::FIELD_CONFORMANCE_EXT, $data)) {
+            $value = $data[self::FIELD_CONFORMANCE] ?? null;
+            $ext = (isset($data[self::FIELD_CONFORMANCE_EXT]) && is_array($data[self::FIELD_CONFORMANCE_EXT])) ? $data[self::FIELD_CONFORMANCE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRBindingConformance) {
+                    $this->setConformance($value);
+                } else if (is_array($value)) {
+                    $this->setConformance(new FHIRBindingConformance(array_merge($ext, $value)));
+                } else {
+                    $this->setConformance(new FHIRBindingConformance([FHIRBindingConformance::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setConformance(new FHIRBindingConformance($ext));
             } else {
-                $value = null;
+                $this->setConformance(new FHIRBindingConformance(null));
             }
-            if (isset($data[self::FIELD_REFERENCE_URI_EXT]) && is_array($data[self::FIELD_REFERENCE_URI_EXT])) {
-                $ext = $data[self::FIELD_REFERENCE_URI_EXT];
+        }
+        if (array_key_exists(self::FIELD_DESCRIPTION, $data) || array_key_exists(self::FIELD_DESCRIPTION_EXT, $data)) {
+            $value = $data[self::FIELD_DESCRIPTION] ?? null;
+            $ext = (isset($data[self::FIELD_DESCRIPTION_EXT]) && is_array($data[self::FIELD_DESCRIPTION_EXT])) ? $data[self::FIELD_DESCRIPTION_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setDescription($value);
+                } else if (is_array($value)) {
+                    $this->setDescription(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setDescription(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDescription(new FHIRString($ext));
             } else {
-                $ext = [];
+                $this->setDescription(new FHIRString(null));
             }
+        }
+        if (array_key_exists(self::FIELD_REFERENCE_URI, $data) || array_key_exists(self::FIELD_REFERENCE_URI_EXT, $data)) {
+            $value = $data[self::FIELD_REFERENCE_URI] ?? null;
+            $ext = (isset($data[self::FIELD_REFERENCE_URI_EXT]) && is_array($data[self::FIELD_REFERENCE_URI_EXT])) ? $data[self::FIELD_REFERENCE_URI_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->setReferenceUri($value);
@@ -300,8 +260,17 @@ class FHIRProfileBinding extends FHIRBackboneElement
                 } else {
                     $this->setReferenceUri(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setReferenceUri(new FHIRUri($ext));
+            } else {
+                $this->setReferenceUri(new FHIRUri(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_REFERENCE_RESOURCE, $data)) {
+            if ($data[self::FIELD_REFERENCE_RESOURCE] instanceof FHIRResourceReference) {
+                $this->setReferenceResource($data[self::FIELD_REFERENCE_RESOURCE]);
+            } else {
+                $this->setReferenceResource(new FHIRResourceReference($data[self::FIELD_REFERENCE_RESOURCE]));
             }
         }
     }
@@ -309,84 +278,47 @@ class FHIRProfileBinding extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ProfileBinding{$xmlns}></ProfileBinding>";
-    }
-
-    /**
-     * Binding conformance for applications
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicates the degree of conformance expectations associated with this binding.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBindingConformance
-     */
-    public function getConformance()
-    {
-        return $this->conformance;
-    }
-
-    /**
-     * Binding conformance for applications
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicates the degree of conformance expectations associated with this binding.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBindingConformance $conformance
-     * @return static
-     */
-    public function setConformance(FHIRBindingConformance $conformance = null)
-    {
-        $this->conformance = $conformance;
-        return $this;
-    }
-
-    /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Describes the intended use of this particular set of codes.
+     * A descriptive name for this - can be useful for generating implementation
+     * artifacts.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    public function getDescription()
+    public function getName(): null|FHIRString
     {
-        return $this->description;
+        return $this->name;
     }
 
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Describes the intended use of this particular set of codes.
+     * A descriptive name for this - can be useful for generating implementation
+     * artifacts.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $description
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $name
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setDescription($description = null)
+    public function setName(null|string|FHIRStringPrimitive|FHIRString $name = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $description) {
-            $this->description = null;
-            return $this;
+        if (null !== $name && !($name instanceof FHIRString)) {
+            $name = new FHIRString($name);
         }
-        if ($description instanceof FHIRString) {
-            $this->description = $description;
-            return $this;
+        $this->_trackValueSet($this->name, $name);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_NAME])) {
+            $this->_primitiveXmlLocations[self::FIELD_NAME] = [];
         }
-        $this->description = new FHIRString($description);
+        $this->_primitiveXmlLocations[self::FIELD_NAME][0] = $xmlLocation;
+        $this->name = $name;
         return $this;
     }
 
@@ -401,7 +333,7 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
-    public function getIsExtensible()
+    public function getIsExtensible(): null|FHIRBoolean
     {
         return $this->isExtensible;
     }
@@ -415,20 +347,53 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * identified in the binding. If false, then conformant systems are constrained to
      * the provided codes alone.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $isExtensible
+     * @param null|string|bool|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRBooleanPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean $isExtensible
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setIsExtensible($isExtensible = null)
+    public function setIsExtensible(null|string|bool|FHIRBooleanPrimitive|FHIRBoolean $isExtensible = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $isExtensible) {
-            $this->isExtensible = null;
-            return $this;
+        if (null !== $isExtensible && !($isExtensible instanceof FHIRBoolean)) {
+            $isExtensible = new FHIRBoolean($isExtensible);
         }
-        if ($isExtensible instanceof FHIRBoolean) {
-            $this->isExtensible = $isExtensible;
-            return $this;
+        $this->_trackValueSet($this->isExtensible, $isExtensible);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_IS_EXTENSIBLE])) {
+            $this->_primitiveXmlLocations[self::FIELD_IS_EXTENSIBLE] = [];
         }
-        $this->isExtensible = new FHIRBoolean($isExtensible);
+        $this->_primitiveXmlLocations[self::FIELD_IS_EXTENSIBLE][0] = $xmlLocation;
+        $this->isExtensible = $isExtensible;
+        return $this;
+    }
+
+    /**
+     * Binding conformance for applications
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates the degree of conformance expectations associated with this binding.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBindingConformance
+     */
+    public function getConformance(): null|FHIRBindingConformance
+    {
+        return $this->conformance;
+    }
+
+    /**
+     * Binding conformance for applications
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates the degree of conformance expectations associated with this binding.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBindingConformance $conformance
+     * @return static
+     */
+    public function setConformance(null|FHIRBindingConformance $conformance = null): self
+    {
+        if (null === $conformance) {
+            $conformance = new FHIRBindingConformance();
+        }
+        $this->_trackValueSet($this->conformance, $conformance);
+        $this->conformance = $conformance;
         return $this;
     }
 
@@ -436,37 +401,75 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A descriptive name for this - can be useful for generating implementation
-     * artifacts.
+     * Describes the intended use of this particular set of codes.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
-    public function getName()
+    public function getDescription(): null|FHIRString
     {
-        return $this->name;
+        return $this->description;
     }
 
     /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * A descriptive name for this - can be useful for generating implementation
-     * artifacts.
+     * Describes the intended use of this particular set of codes.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $name
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $description
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setName($name = null)
+    public function setDescription(null|string|FHIRStringPrimitive|FHIRString $description = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $name) {
-            $this->name = null;
-            return $this;
+        if (null !== $description && !($description instanceof FHIRString)) {
+            $description = new FHIRString($description);
         }
-        if ($name instanceof FHIRString) {
-            $this->name = $name;
-            return $this;
+        $this->_trackValueSet($this->description, $description);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DESCRIPTION])) {
+            $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] = [];
         }
-        $this->name = new FHIRString($name);
+        $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION][0] = $xmlLocation;
+        $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Points to the value set or external definition that identifies the set of codes
+     * to be used.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
+     */
+    public function getReferenceUri(): null|FHIRUri
+    {
+        return $this->referenceUri;
+    }
+
+    /**
+     * String of characters used to identify a name or a resource
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Points to the value set or external definition that identifies the set of codes
+     * to be used.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $referenceUri
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setReferenceUri(null|string|FHIRUriPrimitive|FHIRUri $referenceUri = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $referenceUri && !($referenceUri instanceof FHIRUri)) {
+            $referenceUri = new FHIRUri($referenceUri);
+        }
+        $this->_trackValueSet($this->referenceUri, $referenceUri);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_REFERENCE_URI])) {
+            $this->_primitiveXmlLocations[self::FIELD_REFERENCE_URI] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_REFERENCE_URI][0] = $xmlLocation;
+        $this->referenceUri = $referenceUri;
         return $this;
     }
 
@@ -480,7 +483,7 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    public function getReferenceResource()
+    public function getReferenceResource(): null|FHIRResourceReference
     {
         return $this->referenceResource;
     }
@@ -496,47 +499,13 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $referenceResource
      * @return static
      */
-    public function setReferenceResource(FHIRResourceReference $referenceResource = null)
+    public function setReferenceResource(null|FHIRResourceReference $referenceResource = null): self
     {
+        if (null === $referenceResource) {
+            $referenceResource = new FHIRResourceReference();
+        }
+        $this->_trackValueSet($this->referenceResource, $referenceResource);
         $this->referenceResource = $referenceResource;
-        return $this;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Points to the value set or external definition that identifies the set of codes
-     * to be used.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
-     */
-    public function getReferenceUri()
-    {
-        return $this->referenceUri;
-    }
-
-    /**
-     * String of characters used to identify a name or a resource
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Points to the value set or external definition that identifies the set of codes
-     * to be used.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri $referenceUri
-     * @return static
-     */
-    public function setReferenceUri($referenceUri = null)
-    {
-        if (null === $referenceUri) {
-            $this->referenceUri = null;
-            return $this;
-        }
-        if ($referenceUri instanceof FHIRUri) {
-            $this->referenceUri = $referenceUri;
-            return $this;
-        }
-        $this->referenceUri = new FHIRUri($referenceUri);
         return $this;
     }
 
@@ -546,9 +515,9 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -557,10 +526,20 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getName())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_NAME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getIsExtensible())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_IS_EXTENSIBLE] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getConformance())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_CONFORMANCE] = $fieldErrs;
@@ -571,14 +550,9 @@ class FHIRProfileBinding extends FHIRBackboneElement
                 $errs[self::FIELD_DESCRIPTION] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getIsExtensible())) {
+        if (null !== ($v = $this->getReferenceUri())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_IS_EXTENSIBLE] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getName())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_NAME] = $fieldErrs;
+                $errs[self::FIELD_REFERENCE_URI] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getReferenceResource())) {
@@ -586,9 +560,28 @@ class FHIRProfileBinding extends FHIRBackboneElement
                 $errs[self::FIELD_REFERENCE_RESOURCE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getReferenceUri())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_REFERENCE_URI] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_NAME])) {
+            $v = $this->getName();
+            foreach($validationRules[self::FIELD_NAME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_BINDING, self::FIELD_NAME, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_NAME])) {
+                        $errs[self::FIELD_NAME] = [];
+                    }
+                    $errs[self::FIELD_NAME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_IS_EXTENSIBLE])) {
+            $v = $this->getIsExtensible();
+            foreach($validationRules[self::FIELD_IS_EXTENSIBLE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_BINDING, self::FIELD_IS_EXTENSIBLE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_IS_EXTENSIBLE])) {
+                        $errs[self::FIELD_IS_EXTENSIBLE] = [];
+                    }
+                    $errs[self::FIELD_IS_EXTENSIBLE][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_CONFORMANCE])) {
@@ -615,27 +608,15 @@ class FHIRProfileBinding extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_IS_EXTENSIBLE])) {
-            $v = $this->getIsExtensible();
-            foreach($validationRules[self::FIELD_IS_EXTENSIBLE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_BINDING, self::FIELD_IS_EXTENSIBLE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_REFERENCE_URI])) {
+            $v = $this->getReferenceUri();
+            foreach($validationRules[self::FIELD_REFERENCE_URI] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_BINDING, self::FIELD_REFERENCE_URI, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_IS_EXTENSIBLE])) {
-                        $errs[self::FIELD_IS_EXTENSIBLE] = [];
+                    if (!isset($errs[self::FIELD_REFERENCE_URI])) {
+                        $errs[self::FIELD_REFERENCE_URI] = [];
                     }
-                    $errs[self::FIELD_IS_EXTENSIBLE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_NAME])) {
-            $v = $this->getName();
-            foreach($validationRules[self::FIELD_NAME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_BINDING, self::FIELD_NAME, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_NAME])) {
-                        $errs[self::FIELD_NAME] = [];
-                    }
-                    $errs[self::FIELD_NAME][$rule] = $err;
+                    $errs[self::FIELD_REFERENCE_URI][$rule] = $err;
                 }
             }
         }
@@ -648,18 +629,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
                         $errs[self::FIELD_REFERENCE_RESOURCE] = [];
                     }
                     $errs[self::FIELD_REFERENCE_RESOURCE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_REFERENCE_URI])) {
-            $v = $this->getReferenceUri();
-            foreach($validationRules[self::FIELD_REFERENCE_URI] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_PROFILE_DOT_BINDING, self::FIELD_REFERENCE_URI, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_REFERENCE_URI])) {
-                        $errs[self::FIELD_REFERENCE_URI] = [];
-                    }
-                    $errs[self::FIELD_REFERENCE_URI][$rule] = $err;
                 }
             }
         }
@@ -703,195 +672,256 @@ class FHIRProfileBinding extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileBinding $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileBinding
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRProfileBinding::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRProfileBinding::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRProfileBinding;
-        } elseif (!is_object($type) || !($type instanceof FHIRProfileBinding)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRProfileBinding)) {
             throw new \RuntimeException(sprintf(
-                'FHIRProfileBinding::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileBinding or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_NAME === $childName) {
+                $type->setName(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_IS_EXTENSIBLE === $childName) {
+                $type->setIsExtensible(FHIRBoolean::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CONFORMANCE === $childName) {
+                $type->setConformance(FHIRBindingConformance::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DESCRIPTION === $childName) {
+                $type->setDescription(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_REFERENCE_URI === $childName) {
+                $type->setReferenceUri(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_REFERENCE_RESOURCE === $childName) {
+                $type->setReferenceResource(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->conformance)) {
-            $type->setConformance(FHIRBindingConformance::xmlUnserialize($children->conformance));
-        }
-        if (isset($children->description)) {
-            $type->setDescription(FHIRString::xmlUnserialize($children->description));
-        }
-        if (isset($attributes->description)) {
-            $pt = $type->getDescription();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->description);
-            } else {
-                $type->setDescription((string)$attributes->description);
-            }
-        }
-        if (isset($children->isExtensible)) {
-            $type->setIsExtensible(FHIRBoolean::xmlUnserialize($children->isExtensible));
-        }
-        if (isset($attributes->isExtensible)) {
-            $pt = $type->getIsExtensible();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->isExtensible);
-            } else {
-                $type->setIsExtensible((string)$attributes->isExtensible);
-            }
-        }
-        if (isset($children->name)) {
-            $type->setName(FHIRString::xmlUnserialize($children->name));
-        }
-        if (isset($attributes->name)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_NAME])) {
             $pt = $type->getName();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->name);
+                $pt->setValue((string)$attributes[self::FIELD_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setName((string)$attributes->name);
+                $type->setName((string)$attributes[self::FIELD_NAME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->referenceResource)) {
-            $type->setReferenceResource(FHIRResourceReference::xmlUnserialize($children->referenceResource));
+        if (isset($attributes[self::FIELD_IS_EXTENSIBLE])) {
+            $pt = $type->getIsExtensible();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_IS_EXTENSIBLE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setIsExtensible((string)$attributes[self::FIELD_IS_EXTENSIBLE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($children->referenceUri)) {
-            $type->setReferenceUri(FHIRUri::xmlUnserialize($children->referenceUri));
+        if (isset($attributes[self::FIELD_DESCRIPTION])) {
+            $pt = $type->getDescription();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_DESCRIPTION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setDescription((string)$attributes[self::FIELD_DESCRIPTION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
         }
-        if (isset($attributes->referenceUri)) {
+        if (isset($attributes[self::FIELD_REFERENCE_URI])) {
             $pt = $type->getReferenceUri();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->referenceUri);
+                $pt->setValue((string)$attributes[self::FIELD_REFERENCE_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setReferenceUri((string)$attributes->referenceUri);
+                $type->setReferenceUri((string)$attributes[self::FIELD_REFERENCE_URI], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ProfileBinding', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getName())) {
+            $xw->writeAttribute(self::FIELD_NAME, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IS_EXTENSIBLE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getIsExtensible())) {
+            $xw->writeAttribute(self::FIELD_IS_EXTENSIBLE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDescription())) {
+            $xw->writeAttribute(self::FIELD_DESCRIPTION, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_REFERENCE_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getReferenceUri())) {
+            $xw->writeAttribute(self::FIELD_REFERENCE_URI, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_NAME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getName())) {
+            $xw->startElement(self::FIELD_NAME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IS_EXTENSIBLE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getIsExtensible())) {
+            $xw->startElement(self::FIELD_IS_EXTENSIBLE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
         if (null !== ($v = $this->getConformance())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CONFORMANCE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_CONFORMANCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getDescription())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DESCRIPTION, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DESCRIPTION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDescription())) {
+            $xw->startElement(self::FIELD_DESCRIPTION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getIsExtensible())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IS_EXTENSIBLE, null, $v->_getFHIRXMLNamespace()));
-        }
-        if (null !== ($v = $this->getName())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_NAME, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_REFERENCE_URI] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getReferenceUri())) {
+            $xw->startElement(self::FIELD_REFERENCE_URI);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getReferenceResource())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_RESOURCE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_REFERENCE_RESOURCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getReferenceUri())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_REFERENCE_URI, null, $v->_getFHIRXMLNamespace()));
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getConformance())) {
-            $a[self::FIELD_CONFORMANCE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBindingConformance::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBindingConformance::FIELD_VALUE]);
-                $a[self::FIELD_CONFORMANCE_EXT] = $enc;
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getName())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_NAME} = $val;
             }
-        }
-        if (null !== ($v = $this->getDescription())) {
-            $a[self::FIELD_DESCRIPTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_DESCRIPTION_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_NAME_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getIsExtensible())) {
-            $a[self::FIELD_IS_EXTENSIBLE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRBoolean::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRBoolean::FIELD_VALUE]);
-                $a[self::FIELD_IS_EXTENSIBLE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_IS_EXTENSIBLE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBoolean::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_IS_EXTENSIBLE_EXT} = $ext;
             }
         }
-        if (null !== ($v = $this->getName())) {
-            $a[self::FIELD_NAME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_NAME_EXT] = $enc;
+        if (null !== ($v = $this->getConformance())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_CONFORMANCE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRBindingConformance::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_CONFORMANCE_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDescription())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DESCRIPTION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DESCRIPTION_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getReferenceUri())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_REFERENCE_URI} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRUri::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_REFERENCE_URI_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getReferenceResource())) {
-            $a[self::FIELD_REFERENCE_RESOURCE] = $v;
+            $out->{self::FIELD_REFERENCE_RESOURCE} = $v;
         }
-        if (null !== ($v = $this->getReferenceUri())) {
-            $a[self::FIELD_REFERENCE_URI] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_REFERENCE_URI_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

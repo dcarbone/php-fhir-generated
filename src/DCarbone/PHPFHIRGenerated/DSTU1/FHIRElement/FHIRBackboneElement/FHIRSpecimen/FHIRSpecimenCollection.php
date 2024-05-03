@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSpecimen;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,15 +57,23 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSp
  *   Generated on Tue, Sep 30, 2014 18:08+1000 for FHIR v0.0.82
  */
 
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter;
 
 /**
  * Sample for analysis.
@@ -77,19 +85,37 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SPECIMEN_DOT_COLLECTION;
-    const FIELD_COLLECTED_DATE_TIME = 'collectedDateTime';
-    const FIELD_COLLECTED_DATE_TIME_EXT = '_collectedDateTime';
-    const FIELD_COLLECTED_PERIOD = 'collectedPeriod';
+
     const FIELD_COLLECTOR = 'collector';
     const FIELD_COMMENT = 'comment';
     const FIELD_COMMENT_EXT = '_comment';
-    const FIELD_METHOD = 'method';
+    const FIELD_COLLECTED_DATE_TIME = 'collectedDateTime';
+    const FIELD_COLLECTED_DATE_TIME_EXT = '_collectedDateTime';
+    const FIELD_COLLECTED_PERIOD = 'collectedPeriod';
     const FIELD_QUANTITY = 'quantity';
+    const FIELD_METHOD = 'method';
     const FIELD_SOURCE_SITE = 'sourceSite';
 
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Person who collected the specimen.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
+     */
+    protected null|FHIRResourceReference $collector = null;
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * To communicate any details or issues encountered during the specimen collection
+     * procedure.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString[]
+     */
+    protected null|array $comment = [];
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -102,8 +128,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    protected $collectedDateTime = null;
-
+    protected null|FHIRDateTime $collectedDateTime = null;
     /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
@@ -114,42 +139,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    protected $collectedPeriod = null;
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Person who collected the specimen.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    protected $collector = null;
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * To communicate any details or issues encountered during the specimen collection
-     * procedure.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString[]
-     */
-    protected $comment = [];
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A coded value specifying the technique that is used to perform the procedure.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
-     */
-    protected $method = null;
-
+    protected null|FHIRPeriod $collectedPeriod = null;
     /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
@@ -162,8 +152,18 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
-    protected $quantity = null;
-
+    protected null|FHIRQuantity $quantity = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A coded value specifying the technique that is used to perform the procedure.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
+     */
+    protected null|FHIRCodeableConcept $method = null;
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
@@ -175,78 +175,37 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    protected $sourceSite = null;
+    protected null|FHIRCodeableConcept $sourceSite = null;
 
     /**
      * Validation map for fields in type Specimen.Collection
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRSpecimenCollection Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRSpecimenCollection::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_COLLECTED_DATE_TIME]) || isset($data[self::FIELD_COLLECTED_DATE_TIME_EXT])) {
-            if (isset($data[self::FIELD_COLLECTED_DATE_TIME])) {
-                $value = $data[self::FIELD_COLLECTED_DATE_TIME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_COLLECTED_DATE_TIME_EXT]) && is_array($data[self::FIELD_COLLECTED_DATE_TIME_EXT])) {
-                $ext = $data[self::FIELD_COLLECTED_DATE_TIME_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDateTime) {
-                    $this->setCollectedDateTime($value);
-                } else if (is_array($value)) {
-                    $this->setCollectedDateTime(new FHIRDateTime(array_merge($ext, $value)));
-                } else {
-                    $this->setCollectedDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setCollectedDateTime(new FHIRDateTime($ext));
-            }
-        }
-        if (isset($data[self::FIELD_COLLECTED_PERIOD])) {
-            if ($data[self::FIELD_COLLECTED_PERIOD] instanceof FHIRPeriod) {
-                $this->setCollectedPeriod($data[self::FIELD_COLLECTED_PERIOD]);
-            } else {
-                $this->setCollectedPeriod(new FHIRPeriod($data[self::FIELD_COLLECTED_PERIOD]));
-            }
-        }
-        if (isset($data[self::FIELD_COLLECTOR])) {
+        if (array_key_exists(self::FIELD_COLLECTOR, $data)) {
             if ($data[self::FIELD_COLLECTOR] instanceof FHIRResourceReference) {
                 $this->setCollector($data[self::FIELD_COLLECTOR]);
             } else {
                 $this->setCollector(new FHIRResourceReference($data[self::FIELD_COLLECTOR]));
             }
         }
-        if (isset($data[self::FIELD_COMMENT]) || isset($data[self::FIELD_COMMENT_EXT])) {
-            if (isset($data[self::FIELD_COMMENT])) {
-                $value = $data[self::FIELD_COMMENT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_COMMENT_EXT]) && is_array($data[self::FIELD_COMMENT_EXT])) {
-                $ext = $data[self::FIELD_COMMENT_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_COMMENT, $data) || array_key_exists(self::FIELD_COMMENT_EXT, $data)) {
+            $value = $data[self::FIELD_COMMENT] ?? null;
+            $ext = (isset($data[self::FIELD_COMMENT_EXT]) && is_array($data[self::FIELD_COMMENT_EXT])) ? $data[self::FIELD_COMMENT_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->addComment($value);
@@ -268,27 +227,53 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
                 } else {
                     $this->addComment(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 foreach($ext as $iext) {
                     $this->addComment(new FHIRString($iext));
                 }
-            }
-        }
-        if (isset($data[self::FIELD_METHOD])) {
-            if ($data[self::FIELD_METHOD] instanceof FHIRCodeableConcept) {
-                $this->setMethod($data[self::FIELD_METHOD]);
             } else {
-                $this->setMethod(new FHIRCodeableConcept($data[self::FIELD_METHOD]));
+                $this->addComment(new FHIRString(null));
             }
         }
-        if (isset($data[self::FIELD_QUANTITY])) {
+        if (array_key_exists(self::FIELD_COLLECTED_DATE_TIME, $data) || array_key_exists(self::FIELD_COLLECTED_DATE_TIME_EXT, $data)) {
+            $value = $data[self::FIELD_COLLECTED_DATE_TIME] ?? null;
+            $ext = (isset($data[self::FIELD_COLLECTED_DATE_TIME_EXT]) && is_array($data[self::FIELD_COLLECTED_DATE_TIME_EXT])) ? $data[self::FIELD_COLLECTED_DATE_TIME_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDateTime) {
+                    $this->setCollectedDateTime($value);
+                } else if (is_array($value)) {
+                    $this->setCollectedDateTime(new FHIRDateTime(array_merge($ext, $value)));
+                } else {
+                    $this->setCollectedDateTime(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setCollectedDateTime(new FHIRDateTime($ext));
+            } else {
+                $this->setCollectedDateTime(new FHIRDateTime(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_COLLECTED_PERIOD, $data)) {
+            if ($data[self::FIELD_COLLECTED_PERIOD] instanceof FHIRPeriod) {
+                $this->setCollectedPeriod($data[self::FIELD_COLLECTED_PERIOD]);
+            } else {
+                $this->setCollectedPeriod(new FHIRPeriod($data[self::FIELD_COLLECTED_PERIOD]));
+            }
+        }
+        if (array_key_exists(self::FIELD_QUANTITY, $data)) {
             if ($data[self::FIELD_QUANTITY] instanceof FHIRQuantity) {
                 $this->setQuantity($data[self::FIELD_QUANTITY]);
             } else {
                 $this->setQuantity(new FHIRQuantity($data[self::FIELD_QUANTITY]));
             }
         }
-        if (isset($data[self::FIELD_SOURCE_SITE])) {
+        if (array_key_exists(self::FIELD_METHOD, $data)) {
+            if ($data[self::FIELD_METHOD] instanceof FHIRCodeableConcept) {
+                $this->setMethod($data[self::FIELD_METHOD]);
+            } else {
+                $this->setMethod(new FHIRCodeableConcept($data[self::FIELD_METHOD]));
+            }
+        }
+        if (array_key_exists(self::FIELD_SOURCE_SITE, $data)) {
             if ($data[self::FIELD_SOURCE_SITE] instanceof FHIRCodeableConcept) {
                 $this->setSourceSite($data[self::FIELD_SOURCE_SITE]);
             } else {
@@ -300,21 +285,113 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
     }
 
     /**
-     * @return string
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Person who collected the specimen.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
-    public function _getFHIRXMLElementDefinition()
+    public function getCollector(): null|FHIRResourceReference
     {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
+        return $this->collector;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Person who collected the specimen.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $collector
+     * @return static
+     */
+    public function setCollector(null|FHIRResourceReference $collector = null): self
+    {
+        if (null === $collector) {
+            $collector = new FHIRResourceReference();
         }
-        return "<SpecimenCollection{$xmlns}></SpecimenCollection>";
+        $this->_trackValueSet($this->collector, $collector);
+        $this->collector = $collector;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * To communicate any details or issues encountered during the specimen collection
+     * procedure.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString[]
+     */
+    public function getComment(): null|array
+    {
+        return $this->comment;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * To communicate any details or issues encountered during the specimen collection
+     * procedure.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $comment
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function addComment(null|string|FHIRStringPrimitive|FHIRString $comment = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $comment && !($comment instanceof FHIRString)) {
+            $comment = new FHIRString($comment);
+        }
+        $this->_trackValueAdded();
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_COMMENT])) {
+            $this->_primitiveXmlLocations[self::FIELD_COMMENT] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_COMMENT][] = $xmlLocation;
+        $this->comment[] = $comment;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * To communicate any details or issues encountered during the specimen collection
+     * procedure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString[] $comment
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setComment(array $comment = [], PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        unset($this->_primitiveXmlLocations[self::FIELD_COMMENT]);
+        if ([] !== $this->comment) {
+            $this->_trackValuesRemoved(count($this->comment));
+            $this->comment = [];
+        }
+        if ([] === $comment) {
+            return $this;
+        }
+        foreach($comment as $v) {
+            if ($v instanceof FHIRString) {
+                $this->addComment($v, $xmlLocation);
+            } else {
+                $this->addComment(new FHIRString($v), $xmlLocation);
+            }
+        }
+        return $this;
     }
 
     /**
@@ -329,7 +406,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
-    public function getCollectedDateTime()
+    public function getCollectedDateTime(): null|FHIRDateTime
     {
         return $this->collectedDateTime;
     }
@@ -344,20 +421,21 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * Time when specimen was collected from subject - the physiologically relevant
      * time.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $collectedDateTime
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime $collectedDateTime
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setCollectedDateTime($collectedDateTime = null)
+    public function setCollectedDateTime(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $collectedDateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $collectedDateTime) {
-            $this->collectedDateTime = null;
-            return $this;
+        if (null !== $collectedDateTime && !($collectedDateTime instanceof FHIRDateTime)) {
+            $collectedDateTime = new FHIRDateTime($collectedDateTime);
         }
-        if ($collectedDateTime instanceof FHIRDateTime) {
-            $this->collectedDateTime = $collectedDateTime;
-            return $this;
+        $this->_trackValueSet($this->collectedDateTime, $collectedDateTime);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_COLLECTED_DATE_TIME])) {
+            $this->_primitiveXmlLocations[self::FIELD_COLLECTED_DATE_TIME] = [];
         }
-        $this->collectedDateTime = new FHIRDateTime($collectedDateTime);
+        $this->_primitiveXmlLocations[self::FIELD_COLLECTED_DATE_TIME][0] = $xmlLocation;
+        $this->collectedDateTime = $collectedDateTime;
         return $this;
     }
 
@@ -371,7 +449,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
-    public function getCollectedPeriod()
+    public function getCollectedPeriod(): null|FHIRPeriod
     {
         return $this->collectedPeriod;
     }
@@ -387,135 +465,13 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod $collectedPeriod
      * @return static
      */
-    public function setCollectedPeriod(FHIRPeriod $collectedPeriod = null)
+    public function setCollectedPeriod(null|FHIRPeriod $collectedPeriod = null): self
     {
+        if (null === $collectedPeriod) {
+            $collectedPeriod = new FHIRPeriod();
+        }
+        $this->_trackValueSet($this->collectedPeriod, $collectedPeriod);
         $this->collectedPeriod = $collectedPeriod;
-        return $this;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Person who collected the specimen.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
-     */
-    public function getCollector()
-    {
-        return $this->collector;
-    }
-
-    /**
-     * A reference from one resource to another.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Person who collected the specimen.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference $collector
-     * @return static
-     */
-    public function setCollector(FHIRResourceReference $collector = null)
-    {
-        $this->collector = $collector;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * To communicate any details or issues encountered during the specimen collection
-     * procedure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString[]
-     */
-    public function getComment()
-    {
-        return $this->comment;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * To communicate any details or issues encountered during the specimen collection
-     * procedure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $comment
-     * @return static
-     */
-    public function addComment($comment = null)
-    {
-        if (null === $comment) {
-            $this->comment = [];
-            return $this;
-        }
-        if ($comment instanceof FHIRString) {
-            $this->comment[] = $comment;
-            return $this;
-        }
-        $this->comment[] = new FHIRString($comment);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * To communicate any details or issues encountered during the specimen collection
-     * procedure.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString[] $comment
-     * @return static
-     */
-    public function setComment(array $comment = [])
-    {
-        $this->comment = [];
-        if ([] === $comment) {
-            return $this;
-        }
-        foreach($comment as $v) {
-            if ($v instanceof FHIRString) {
-                $this->addComment($v);
-            } else {
-                $this->addComment(new FHIRString($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A coded value specifying the technique that is used to perform the procedure.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
-     */
-    public function getMethod()
-    {
-        return $this->method;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * A coded value specifying the technique that is used to perform the procedure.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $method
-     * @return static
-     */
-    public function setMethod(FHIRCodeableConcept $method = null)
-    {
-        $this->method = $method;
         return $this;
     }
 
@@ -531,7 +487,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
-    public function getQuantity()
+    public function getQuantity(): null|FHIRQuantity
     {
         return $this->quantity;
     }
@@ -549,9 +505,49 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity $quantity
      * @return static
      */
-    public function setQuantity(FHIRQuantity $quantity = null)
+    public function setQuantity(null|FHIRQuantity $quantity = null): self
     {
+        if (null === $quantity) {
+            $quantity = new FHIRQuantity();
+        }
+        $this->_trackValueSet($this->quantity, $quantity);
         $this->quantity = $quantity;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A coded value specifying the technique that is used to perform the procedure.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
+     */
+    public function getMethod(): null|FHIRCodeableConcept
+    {
+        return $this->method;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A coded value specifying the technique that is used to perform the procedure.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $method
+     * @return static
+     */
+    public function setMethod(null|FHIRCodeableConcept $method = null): self
+    {
+        if (null === $method) {
+            $method = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->method, $method);
+        $this->method = $method;
         return $this;
     }
 
@@ -566,7 +562,7 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    public function getSourceSite()
+    public function getSourceSite(): null|FHIRCodeableConcept
     {
         return $this->sourceSite;
     }
@@ -583,8 +579,12 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $sourceSite
      * @return static
      */
-    public function setSourceSite(FHIRCodeableConcept $sourceSite = null)
+    public function setSourceSite(null|FHIRCodeableConcept $sourceSite = null): self
     {
+        if (null === $sourceSite) {
+            $sourceSite = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->sourceSite, $sourceSite);
         $this->sourceSite = $sourceSite;
         return $this;
     }
@@ -595,9 +595,9 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -606,20 +606,10 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCollectedDateTime())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_COLLECTED_DATE_TIME] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getCollectedPeriod())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_COLLECTED_PERIOD] = $fieldErrs;
-            }
-        }
         if (null !== ($v = $this->getCollector())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_COLLECTOR] = $fieldErrs;
@@ -632,9 +622,14 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getMethod())) {
+        if (null !== ($v = $this->getCollectedDateTime())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_METHOD] = $fieldErrs;
+                $errs[self::FIELD_COLLECTED_DATE_TIME] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCollectedPeriod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_COLLECTED_PERIOD] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getQuantity())) {
@@ -642,33 +637,14 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
                 $errs[self::FIELD_QUANTITY] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getMethod())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_METHOD] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getSourceSite())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_SOURCE_SITE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_COLLECTED_DATE_TIME])) {
-            $v = $this->getCollectedDateTime();
-            foreach($validationRules[self::FIELD_COLLECTED_DATE_TIME] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN_DOT_COLLECTION, self::FIELD_COLLECTED_DATE_TIME, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COLLECTED_DATE_TIME])) {
-                        $errs[self::FIELD_COLLECTED_DATE_TIME] = [];
-                    }
-                    $errs[self::FIELD_COLLECTED_DATE_TIME][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_COLLECTED_PERIOD])) {
-            $v = $this->getCollectedPeriod();
-            foreach($validationRules[self::FIELD_COLLECTED_PERIOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN_DOT_COLLECTION, self::FIELD_COLLECTED_PERIOD, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COLLECTED_PERIOD])) {
-                        $errs[self::FIELD_COLLECTED_PERIOD] = [];
-                    }
-                    $errs[self::FIELD_COLLECTED_PERIOD][$rule] = $err;
-                }
             }
         }
         if (isset($validationRules[self::FIELD_COLLECTOR])) {
@@ -695,15 +671,27 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_METHOD])) {
-            $v = $this->getMethod();
-            foreach($validationRules[self::FIELD_METHOD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN_DOT_COLLECTION, self::FIELD_METHOD, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_COLLECTED_DATE_TIME])) {
+            $v = $this->getCollectedDateTime();
+            foreach($validationRules[self::FIELD_COLLECTED_DATE_TIME] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN_DOT_COLLECTION, self::FIELD_COLLECTED_DATE_TIME, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_METHOD])) {
-                        $errs[self::FIELD_METHOD] = [];
+                    if (!isset($errs[self::FIELD_COLLECTED_DATE_TIME])) {
+                        $errs[self::FIELD_COLLECTED_DATE_TIME] = [];
                     }
-                    $errs[self::FIELD_METHOD][$rule] = $err;
+                    $errs[self::FIELD_COLLECTED_DATE_TIME][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_COLLECTED_PERIOD])) {
+            $v = $this->getCollectedPeriod();
+            foreach($validationRules[self::FIELD_COLLECTED_PERIOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN_DOT_COLLECTION, self::FIELD_COLLECTED_PERIOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_COLLECTED_PERIOD])) {
+                        $errs[self::FIELD_COLLECTED_PERIOD] = [];
+                    }
+                    $errs[self::FIELD_COLLECTED_PERIOD][$rule] = $err;
                 }
             }
         }
@@ -716,6 +704,18 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
                         $errs[self::FIELD_QUANTITY] = [];
                     }
                     $errs[self::FIELD_QUANTITY][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_METHOD])) {
+            $v = $this->getMethod();
+            foreach($validationRules[self::FIELD_METHOD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SPECIMEN_DOT_COLLECTION, self::FIELD_METHOD, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_METHOD])) {
+                        $errs[self::FIELD_METHOD] = [];
+                    }
+                    $errs[self::FIELD_METHOD][$rule] = $err;
                 }
             }
         }
@@ -771,183 +771,234 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRSpecimenCollection::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSpecimenCollection::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRSpecimenCollection;
-        } elseif (!is_object($type) || !($type instanceof FHIRSpecimenCollection)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRSpecimenCollection)) {
             throw new \RuntimeException(sprintf(
-                'FHIRSpecimenCollection::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenCollection or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_COLLECTOR === $childName) {
+                $type->setCollector(FHIRResourceReference::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_COMMENT === $childName) {
+                $type->addComment(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_COLLECTED_DATE_TIME === $childName) {
+                $type->setCollectedDateTime(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_COLLECTED_PERIOD === $childName) {
+                $type->setCollectedPeriod(FHIRPeriod::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_QUANTITY === $childName) {
+                $type->setQuantity(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_METHOD === $childName) {
+                $type->setMethod(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_SOURCE_SITE === $childName) {
+                $type->setSourceSite(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->collectedDateTime)) {
-            $type->setCollectedDateTime(FHIRDateTime::xmlUnserialize($children->collectedDateTime));
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_COMMENT])) {
+            $type->addComment((string)$attributes[self::FIELD_COMMENT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
         }
-        if (isset($attributes->collectedDateTime)) {
+        if (isset($attributes[self::FIELD_COLLECTED_DATE_TIME])) {
             $pt = $type->getCollectedDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->collectedDateTime);
+                $pt->setValue((string)$attributes[self::FIELD_COLLECTED_DATE_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setCollectedDateTime((string)$attributes->collectedDateTime);
+                $type->setCollectedDateTime((string)$attributes[self::FIELD_COLLECTED_DATE_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->collectedPeriod)) {
-            $type->setCollectedPeriod(FHIRPeriod::xmlUnserialize($children->collectedPeriod));
-        }
-        if (isset($children->collector)) {
-            $type->setCollector(FHIRResourceReference::xmlUnserialize($children->collector));
-        }
-        if (isset($children->comment)) {
-            foreach($children->comment as $child) {
-                $type->addComment(FHIRString::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
-        }
-        if (isset($children->method)) {
-            $type->setMethod(FHIRCodeableConcept::xmlUnserialize($children->method));
-        }
-        if (isset($children->quantity)) {
-            $type->setQuantity(FHIRQuantity::xmlUnserialize($children->quantity));
-        }
-        if (isset($children->sourceSite)) {
-            $type->setSourceSite(FHIRCodeableConcept::xmlUnserialize($children->sourceSite));
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCollectedDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTED_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getCollectedPeriod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTED_PERIOD, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'SpecimenCollection', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_COMMENT] ?? [];
+        if ([] === $locs && [] !== ($vs = $this->getComment())) {
+            $xw->writeAttribute(self::FIELD_COMMENT, $vs[0]->getValue()?->getFormattedValue());
+        } else if (false !== ($idx = array_search(PHPFHIRXmlLocationEnum::ATTRIBUTE, $locs, true)) && [] !== ($vs = $this->getComment()) && isset($vs[$idx])) {
+            $xw->writeAttribute(self::FIELD_COMMENT, $vs[$idx]->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_COLLECTED_DATE_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCollectedDateTime())) {
+            $xw->writeAttribute(self::FIELD_COLLECTED_DATE_TIME, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
         if (null !== ($v = $this->getCollector())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COLLECTOR, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_COLLECTOR);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getComment())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_COMMENT] ?? [];
+        if (([] === $locs || in_array(PHPFHIRXmlLocationEnum::ELEMENT, $locs, true)) && [] !== ($vs = $this->getComment())) {
+            foreach($vs as $i => $v) {
+                if (!isset($locs[$i]) || PHPFHIRXmlLocationEnum::ELEMENT === $locs[$i]) {
+                    $xw->startElement(self::FIELD_COMMENT);
+                    $v->xmlSerialize($xw, $config);
+                    $xw->endElement();
                 }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_COMMENT, null, $v->_getFHIRXMLNamespace()));
             }
         }
-        if (null !== ($v = $this->getMethod())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_METHOD, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_COLLECTED_DATE_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCollectedDateTime())) {
+            $xw->startElement(self::FIELD_COLLECTED_DATE_TIME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getCollectedPeriod())) {
+            $xw->startElement(self::FIELD_COLLECTED_PERIOD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getQuantity())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_QUANTITY, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_QUANTITY);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getMethod())) {
+            $xw->startElement(self::FIELD_METHOD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getSourceSite())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SOURCE_SITE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_SOURCE_SITE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCollectedDateTime())) {
-            $a[self::FIELD_COLLECTED_DATE_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_COLLECTED_DATE_TIME_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getCollectedPeriod())) {
-            $a[self::FIELD_COLLECTED_PERIOD] = $v;
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getCollector())) {
-            $a[self::FIELD_COLLECTOR] = $v;
+            $out->{self::FIELD_COLLECTOR} = $v;
         }
         if ([] !== ($vs = $this->getComment())) {
-            $a[self::FIELD_COMMENT] = [];
-            $encs = [];
-            $encValued = false;
+            $vals = [];
+            $exts = [];
             foreach ($vs as $v) {
                 if (null === $v) {
                     continue;
                 }
-                $a[self::FIELD_COMMENT][] = $v->getValue();
-                $enc = $v->jsonSerialize();
-                $cnt = count($enc);
-                if (0 === $cnt || (1 === $cnt && (isset($enc[FHIRString::FIELD_VALUE]) || array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                    $encs[] = null;
-                } else {
-                    unset($enc[FHIRString::FIELD_VALUE]);
-                    $encs[] = $enc;
-                    $encValued = true;
+                $val = $v->getValue();
+                $ext = $v->jsonSerialize();
+                unset($ext->{FHIRString::FIELD_VALUE});
+                if (null !== $val) {
+                    $vals[] = $val;
+                }
+                if ([] !== $ext) {
+                    $exts[] = $ext;
                 }
             }
-            if ($encValued) {
-                $a[self::FIELD_COMMENT_EXT] = $encs;
+            if ([] !== $vals) {
+                $out->{self::FIELD_COMMENT} = $vals;
+            }
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_COMMENT_EXT} = $exts;
             }
         }
-        if (null !== ($v = $this->getMethod())) {
-            $a[self::FIELD_METHOD] = $v;
+        if (null !== ($v = $this->getCollectedDateTime())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_COLLECTED_DATE_TIME} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_COLLECTED_DATE_TIME_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getCollectedPeriod())) {
+            $out->{self::FIELD_COLLECTED_PERIOD} = $v;
         }
         if (null !== ($v = $this->getQuantity())) {
-            $a[self::FIELD_QUANTITY] = $v;
+            $out->{self::FIELD_QUANTITY} = $v;
+        }
+        if (null !== ($v = $this->getMethod())) {
+            $out->{self::FIELD_METHOD} = $v;
         }
         if (null !== ($v = $this->getSourceSite())) {
-            $a[self::FIELD_SOURCE_SITE] = $v;
+            $out->{self::FIELD_SOURCE_SITE} = $v;
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

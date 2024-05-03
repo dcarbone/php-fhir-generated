@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,12 +59,20 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSe
 
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventAction;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventOutcome;
 use DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRInstantPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter;
 
 /**
  * A record of an event made for purposes of maintaining a security log. Typical
@@ -78,6 +86,9 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SECURITY_EVENT_DOT_EVENT;
+
+    const FIELD_TYPE = 'type';
+    const FIELD_SUBTYPE = 'subtype';
     const FIELD_ACTION = 'action';
     const FIELD_ACTION_EXT = '_action';
     const FIELD_DATE_TIME = 'dateTime';
@@ -86,65 +97,6 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
     const FIELD_OUTCOME_EXT = '_outcome';
     const FIELD_OUTCOME_DESC = 'outcomeDesc';
     const FIELD_OUTCOME_DESC_EXT = '_outcomeDesc';
-    const FIELD_SUBTYPE = 'subtype';
-    const FIELD_TYPE = 'type';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * Indicator for type of action performed during the event that generated the
-     * audit.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicator for type of action performed during the event that generated the
-     * audit.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventAction
-     */
-    protected $action = null;
-
-    /**
-     * An instant in time - known at least to the second
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The time when the event occurred on the source.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
-     */
-    protected $dateTime = null;
-
-    /**
-     * Indicates whether the event succeeded or failed
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicates whether the event succeeded or failed.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventOutcome
-     */
-    protected $outcome = null;
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A free text description of the outcome of the event.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
-     */
-    protected $outcomeDesc = null;
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifier for the category of event.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
-     */
-    protected $subtype = [];
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -156,41 +108,101 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    protected $type = null;
+    protected null|FHIRCodeableConcept $type = null;
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifier for the category of event.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
+     */
+    protected null|array $subtype = [];
+    /**
+     * Indicator for type of action performed during the event that generated the
+     * audit.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicator for type of action performed during the event that generated the
+     * audit.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventAction
+     */
+    protected null|FHIRSecurityEventAction $action = null;
+    /**
+     * An instant in time - known at least to the second
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The time when the event occurred on the source.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
+     */
+    protected null|FHIRInstant $dateTime = null;
+    /**
+     * Indicates whether the event succeeded or failed
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates whether the event succeeded or failed.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventOutcome
+     */
+    protected null|FHIRSecurityEventOutcome $outcome = null;
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A free text description of the outcome of the event.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $outcomeDesc = null;
 
     /**
      * Validation map for fields in type SecurityEvent.Event
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRSecurityEventEvent Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRSecurityEventEvent::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ACTION]) || isset($data[self::FIELD_ACTION_EXT])) {
-            if (isset($data[self::FIELD_ACTION])) {
-                $value = $data[self::FIELD_ACTION];
+        if (array_key_exists(self::FIELD_TYPE, $data)) {
+            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
+                $this->setType($data[self::FIELD_TYPE]);
             } else {
-                $value = null;
+                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
             }
-            if (isset($data[self::FIELD_ACTION_EXT]) && is_array($data[self::FIELD_ACTION_EXT])) {
-                $ext = $data[self::FIELD_ACTION_EXT];
+        }
+        if (array_key_exists(self::FIELD_SUBTYPE, $data)) {
+            if (is_array($data[self::FIELD_SUBTYPE])) {
+                foreach($data[self::FIELD_SUBTYPE] as $v) {
+                    if ($v instanceof FHIRCodeableConcept) {
+                        $this->addSubtype($v);
+                    } else {
+                        $this->addSubtype(new FHIRCodeableConcept($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_SUBTYPE] instanceof FHIRCodeableConcept) {
+                $this->addSubtype($data[self::FIELD_SUBTYPE]);
             } else {
-                $ext = [];
+                $this->addSubtype(new FHIRCodeableConcept($data[self::FIELD_SUBTYPE]));
             }
+        }
+        if (array_key_exists(self::FIELD_ACTION, $data) || array_key_exists(self::FIELD_ACTION_EXT, $data)) {
+            $value = $data[self::FIELD_ACTION] ?? null;
+            $ext = (isset($data[self::FIELD_ACTION_EXT]) && is_array($data[self::FIELD_ACTION_EXT])) ? $data[self::FIELD_ACTION_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRSecurityEventAction) {
                     $this->setAction($value);
@@ -199,21 +211,15 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
                 } else {
                     $this->setAction(new FHIRSecurityEventAction([FHIRSecurityEventAction::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setAction(new FHIRSecurityEventAction($ext));
+            } else {
+                $this->setAction(new FHIRSecurityEventAction(null));
             }
         }
-        if (isset($data[self::FIELD_DATE_TIME]) || isset($data[self::FIELD_DATE_TIME_EXT])) {
-            if (isset($data[self::FIELD_DATE_TIME])) {
-                $value = $data[self::FIELD_DATE_TIME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DATE_TIME_EXT]) && is_array($data[self::FIELD_DATE_TIME_EXT])) {
-                $ext = $data[self::FIELD_DATE_TIME_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_DATE_TIME, $data) || array_key_exists(self::FIELD_DATE_TIME_EXT, $data)) {
+            $value = $data[self::FIELD_DATE_TIME] ?? null;
+            $ext = (isset($data[self::FIELD_DATE_TIME_EXT]) && is_array($data[self::FIELD_DATE_TIME_EXT])) ? $data[self::FIELD_DATE_TIME_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRInstant) {
                     $this->setDateTime($value);
@@ -222,21 +228,15 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
                 } else {
                     $this->setDateTime(new FHIRInstant([FHIRInstant::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setDateTime(new FHIRInstant($ext));
+            } else {
+                $this->setDateTime(new FHIRInstant(null));
             }
         }
-        if (isset($data[self::FIELD_OUTCOME]) || isset($data[self::FIELD_OUTCOME_EXT])) {
-            if (isset($data[self::FIELD_OUTCOME])) {
-                $value = $data[self::FIELD_OUTCOME];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT])) {
-                $ext = $data[self::FIELD_OUTCOME_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_OUTCOME, $data) || array_key_exists(self::FIELD_OUTCOME_EXT, $data)) {
+            $value = $data[self::FIELD_OUTCOME] ?? null;
+            $ext = (isset($data[self::FIELD_OUTCOME_EXT]) && is_array($data[self::FIELD_OUTCOME_EXT])) ? $data[self::FIELD_OUTCOME_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRSecurityEventOutcome) {
                     $this->setOutcome($value);
@@ -245,21 +245,15 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
                 } else {
                     $this->setOutcome(new FHIRSecurityEventOutcome([FHIRSecurityEventOutcome::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setOutcome(new FHIRSecurityEventOutcome($ext));
+            } else {
+                $this->setOutcome(new FHIRSecurityEventOutcome(null));
             }
         }
-        if (isset($data[self::FIELD_OUTCOME_DESC]) || isset($data[self::FIELD_OUTCOME_DESC_EXT])) {
-            if (isset($data[self::FIELD_OUTCOME_DESC])) {
-                $value = $data[self::FIELD_OUTCOME_DESC];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_OUTCOME_DESC_EXT]) && is_array($data[self::FIELD_OUTCOME_DESC_EXT])) {
-                $ext = $data[self::FIELD_OUTCOME_DESC_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_OUTCOME_DESC, $data) || array_key_exists(self::FIELD_OUTCOME_DESC_EXT, $data)) {
+            $value = $data[self::FIELD_OUTCOME_DESC] ?? null;
+            $ext = (isset($data[self::FIELD_OUTCOME_DESC_EXT]) && is_array($data[self::FIELD_OUTCOME_DESC_EXT])) ? $data[self::FIELD_OUTCOME_DESC_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRString) {
                     $this->setOutcomeDesc($value);
@@ -268,33 +262,10 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
                 } else {
                     $this->setOutcomeDesc(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setOutcomeDesc(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_SUBTYPE])) {
-            if (is_array($data[self::FIELD_SUBTYPE])) {
-                foreach($data[self::FIELD_SUBTYPE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRCodeableConcept) {
-                        $this->addSubtype($v);
-                    } else {
-                        $this->addSubtype(new FHIRCodeableConcept($v));
-                    }
-                }
-            } else if ($data[self::FIELD_SUBTYPE] instanceof FHIRCodeableConcept) {
-                $this->addSubtype($data[self::FIELD_SUBTYPE]);
             } else {
-                $this->addSubtype(new FHIRCodeableConcept($data[self::FIELD_SUBTYPE]));
-            }
-        }
-        if (isset($data[self::FIELD_TYPE])) {
-            if ($data[self::FIELD_TYPE] instanceof FHIRCodeableConcept) {
-                $this->setType($data[self::FIELD_TYPE]);
-            } else {
-                $this->setType(new FHIRCodeableConcept($data[self::FIELD_TYPE]));
+                $this->setOutcomeDesc(new FHIRString(null));
             }
         }
     }
@@ -302,212 +273,9 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<SecurityEventEvent{$xmlns}></SecurityEventEvent>";
-    }
-
-    /**
-     * Indicator for type of action performed during the event that generated the
-     * audit.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicator for type of action performed during the event that generated the
-     * audit.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventAction
-     */
-    public function getAction()
-    {
-        return $this->action;
-    }
-
-    /**
-     * Indicator for type of action performed during the event that generated the
-     * audit.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicator for type of action performed during the event that generated the
-     * audit.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventAction $action
-     * @return static
-     */
-    public function setAction(FHIRSecurityEventAction $action = null)
-    {
-        $this->action = $action;
-        return $this;
-    }
-
-    /**
-     * An instant in time - known at least to the second
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The time when the event occurred on the source.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
-     */
-    public function getDateTime()
-    {
-        return $this->dateTime;
-    }
-
-    /**
-     * An instant in time - known at least to the second
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The time when the event occurred on the source.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant $dateTime
-     * @return static
-     */
-    public function setDateTime($dateTime = null)
-    {
-        if (null === $dateTime) {
-            $this->dateTime = null;
-            return $this;
-        }
-        if ($dateTime instanceof FHIRInstant) {
-            $this->dateTime = $dateTime;
-            return $this;
-        }
-        $this->dateTime = new FHIRInstant($dateTime);
-        return $this;
-    }
-
-    /**
-     * Indicates whether the event succeeded or failed
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicates whether the event succeeded or failed.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventOutcome
-     */
-    public function getOutcome()
-    {
-        return $this->outcome;
-    }
-
-    /**
-     * Indicates whether the event succeeded or failed
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Indicates whether the event succeeded or failed.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventOutcome $outcome
-     * @return static
-     */
-    public function setOutcome(FHIRSecurityEventOutcome $outcome = null)
-    {
-        $this->outcome = $outcome;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A free text description of the outcome of the event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
-     */
-    public function getOutcomeDesc()
-    {
-        return $this->outcomeDesc;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * A free text description of the outcome of the event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $outcomeDesc
-     * @return static
-     */
-    public function setOutcomeDesc($outcomeDesc = null)
-    {
-        if (null === $outcomeDesc) {
-            $this->outcomeDesc = null;
-            return $this;
-        }
-        if ($outcomeDesc instanceof FHIRString) {
-            $this->outcomeDesc = $outcomeDesc;
-            return $this;
-        }
-        $this->outcomeDesc = new FHIRString($outcomeDesc);
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifier for the category of event.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
-     */
-    public function getSubtype()
-    {
-        return $this->subtype;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifier for the category of event.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $subtype
-     * @return static
-     */
-    public function addSubtype(FHIRCodeableConcept $subtype = null)
-    {
-        $this->subtype[] = $subtype;
-        return $this;
-    }
-
-    /**
-     * A concept that may be defined by a formal reference to a terminology or ontology
-     * or may be provided by text.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Identifier for the category of event.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[] $subtype
-     * @return static
-     */
-    public function setSubtype(array $subtype = [])
-    {
-        $this->subtype = [];
-        if ([] === $subtype) {
-            return $this;
-        }
-        foreach($subtype as $v) {
-            if ($v instanceof FHIRCodeableConcept) {
-                $this->addSubtype($v);
-            } else {
-                $this->addSubtype(new FHIRCodeableConcept($v));
-            }
-        }
-        return $this;
     }
 
     /**
@@ -520,7 +288,7 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
-    public function getType()
+    public function getType(): null|FHIRCodeableConcept
     {
         return $this->type;
     }
@@ -536,9 +304,191 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $type
      * @return static
      */
-    public function setType(FHIRCodeableConcept $type = null)
+    public function setType(null|FHIRCodeableConcept $type = null): self
     {
+        if (null === $type) {
+            $type = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->type, $type);
         $this->type = $type;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifier for the category of event.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
+     */
+    public function getSubtype(): null|array
+    {
+        return $this->subtype;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifier for the category of event.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept $subtype
+     * @return static
+     */
+    public function addSubtype(null|FHIRCodeableConcept $subtype = null): self
+    {
+        if (null === $subtype) {
+            $subtype = new FHIRCodeableConcept();
+        }
+        $this->_trackValueAdded();
+        $this->subtype[] = $subtype;
+        return $this;
+    }
+
+    /**
+     * Indicator for type of action performed during the event that generated the
+     * audit.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicator for type of action performed during the event that generated the
+     * audit.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventAction
+     */
+    public function getAction(): null|FHIRSecurityEventAction
+    {
+        return $this->action;
+    }
+
+    /**
+     * Indicator for type of action performed during the event that generated the
+     * audit.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicator for type of action performed during the event that generated the
+     * audit.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventAction $action
+     * @return static
+     */
+    public function setAction(null|FHIRSecurityEventAction $action = null): self
+    {
+        if (null === $action) {
+            $action = new FHIRSecurityEventAction();
+        }
+        $this->_trackValueSet($this->action, $action);
+        $this->action = $action;
+        return $this;
+    }
+
+    /**
+     * An instant in time - known at least to the second
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The time when the event occurred on the source.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
+     */
+    public function getDateTime(): null|FHIRInstant
+    {
+        return $this->dateTime;
+    }
+
+    /**
+     * An instant in time - known at least to the second
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The time when the event occurred on the source.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRInstantPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant $dateTime
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setDateTime(null|string|\DateTimeInterface|FHIRInstantPrimitive|FHIRInstant $dateTime = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $dateTime && !($dateTime instanceof FHIRInstant)) {
+            $dateTime = new FHIRInstant($dateTime);
+        }
+        $this->_trackValueSet($this->dateTime, $dateTime);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DATE_TIME])) {
+            $this->_primitiveXmlLocations[self::FIELD_DATE_TIME] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_DATE_TIME][0] = $xmlLocation;
+        $this->dateTime = $dateTime;
+        return $this;
+    }
+
+    /**
+     * Indicates whether the event succeeded or failed
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates whether the event succeeded or failed.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventOutcome
+     */
+    public function getOutcome(): null|FHIRSecurityEventOutcome
+    {
+        return $this->outcome;
+    }
+
+    /**
+     * Indicates whether the event succeeded or failed
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates whether the event succeeded or failed.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventOutcome $outcome
+     * @return static
+     */
+    public function setOutcome(null|FHIRSecurityEventOutcome $outcome = null): self
+    {
+        if (null === $outcome) {
+            $outcome = new FHIRSecurityEventOutcome();
+        }
+        $this->_trackValueSet($this->outcome, $outcome);
+        $this->outcome = $outcome;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A free text description of the outcome of the event.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
+     */
+    public function getOutcomeDesc(): null|FHIRString
+    {
+        return $this->outcomeDesc;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A free text description of the outcome of the event.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString $outcomeDesc
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setOutcomeDesc(null|string|FHIRStringPrimitive|FHIRString $outcomeDesc = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $outcomeDesc && !($outcomeDesc instanceof FHIRString)) {
+            $outcomeDesc = new FHIRString($outcomeDesc);
+        }
+        $this->_trackValueSet($this->outcomeDesc, $outcomeDesc);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_OUTCOME_DESC])) {
+            $this->_primitiveXmlLocations[self::FIELD_OUTCOME_DESC] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_OUTCOME_DESC][0] = $xmlLocation;
+        $this->outcomeDesc = $outcomeDesc;
         return $this;
     }
 
@@ -548,9 +498,9 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -559,10 +509,22 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
+        if (null !== ($v = $this->getType())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TYPE] = $fieldErrs;
+            }
+        }
+        if ([] !== ($vs = $this->getSubtype())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_SUBTYPE, $i)] = $fieldErrs;
+                }
+            }
+        }
         if (null !== ($v = $this->getAction())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_ACTION] = $fieldErrs;
@@ -583,16 +545,28 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
                 $errs[self::FIELD_OUTCOME_DESC] = $fieldErrs;
             }
         }
-        if ([] !== ($vs = $this->getSubtype())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_SUBTYPE, $i)] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_TYPE])) {
+            $v = $this->getType();
+            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SECURITY_EVENT_DOT_EVENT, self::FIELD_TYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TYPE])) {
+                        $errs[self::FIELD_TYPE] = [];
+                    }
+                    $errs[self::FIELD_TYPE][$rule] = $err;
                 }
             }
         }
-        if (null !== ($v = $this->getType())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TYPE] = $fieldErrs;
+        if (isset($validationRules[self::FIELD_SUBTYPE])) {
+            $v = $this->getSubtype();
+            foreach($validationRules[self::FIELD_SUBTYPE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SECURITY_EVENT_DOT_EVENT, self::FIELD_SUBTYPE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SUBTYPE])) {
+                        $errs[self::FIELD_SUBTYPE] = [];
+                    }
+                    $errs[self::FIELD_SUBTYPE][$rule] = $err;
+                }
             }
         }
         if (isset($validationRules[self::FIELD_ACTION])) {
@@ -643,30 +617,6 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SUBTYPE])) {
-            $v = $this->getSubtype();
-            foreach($validationRules[self::FIELD_SUBTYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SECURITY_EVENT_DOT_EVENT, self::FIELD_SUBTYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUBTYPE])) {
-                        $errs[self::FIELD_SUBTYPE] = [];
-                    }
-                    $errs[self::FIELD_SUBTYPE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TYPE])) {
-            $v = $this->getType();
-            foreach($validationRules[self::FIELD_TYPE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SECURITY_EVENT_DOT_EVENT, self::FIELD_TYPE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TYPE])) {
-                        $errs[self::FIELD_TYPE] = [];
-                    }
-                    $errs[self::FIELD_TYPE][$rule] = $err;
-                }
-            }
-        }
         if (isset($validationRules[self::FIELD_MODIFIER_EXTENSION])) {
             $v = $this->getModifierExtension();
             foreach($validationRules[self::FIELD_MODIFIER_EXTENSION] as $rule => $constraint) {
@@ -707,186 +657,226 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventEvent $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventEvent
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRSecurityEventEvent::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSecurityEventEvent::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRSecurityEventEvent;
-        } elseif (!is_object($type) || !($type instanceof FHIRSecurityEventEvent)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRSecurityEventEvent)) {
             throw new \RuntimeException(sprintf(
-                'FHIRSecurityEventEvent::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventEvent or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_TYPE === $childName) {
+                $type->setType(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_SUBTYPE === $childName) {
+                $type->addSubtype(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ACTION === $childName) {
+                $type->setAction(FHIRSecurityEventAction::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_DATE_TIME === $childName) {
+                $type->setDateTime(FHIRInstant::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_OUTCOME === $childName) {
+                $type->setOutcome(FHIRSecurityEventOutcome::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_OUTCOME_DESC === $childName) {
+                $type->setOutcomeDesc(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRIdPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->action)) {
-            $type->setAction(FHIRSecurityEventAction::xmlUnserialize($children->action));
-        }
-        if (isset($children->dateTime)) {
-            $type->setDateTime(FHIRInstant::xmlUnserialize($children->dateTime));
-        }
-        if (isset($attributes->dateTime)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_DATE_TIME])) {
             $pt = $type->getDateTime();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->dateTime);
+                $pt->setValue((string)$attributes[self::FIELD_DATE_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setDateTime((string)$attributes->dateTime);
+                $type->setDateTime((string)$attributes[self::FIELD_DATE_TIME], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->outcome)) {
-            $type->setOutcome(FHIRSecurityEventOutcome::xmlUnserialize($children->outcome));
-        }
-        if (isset($children->outcomeDesc)) {
-            $type->setOutcomeDesc(FHIRString::xmlUnserialize($children->outcomeDesc));
-        }
-        if (isset($attributes->outcomeDesc)) {
+        if (isset($attributes[self::FIELD_OUTCOME_DESC])) {
             $pt = $type->getOutcomeDesc();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->outcomeDesc);
+                $pt->setValue((string)$attributes[self::FIELD_OUTCOME_DESC], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setOutcomeDesc((string)$attributes->outcomeDesc);
+                $type->setOutcomeDesc((string)$attributes[self::FIELD_OUTCOME_DESC], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->subtype)) {
-            foreach($children->subtype as $child) {
-                $type->addSubtype(FHIRCodeableConcept::xmlUnserialize($child));
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
-        }
-        if (isset($children->type)) {
-            $type->setType(FHIRCodeableConcept::xmlUnserialize($children->type));
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU1\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
+        }
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
+        }
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
+        }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'SecurityEventEvent', $this->_getSourceXmlns());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDateTime())) {
+            $xw->writeAttribute(self::FIELD_DATE_TIME, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_OUTCOME_DESC] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOutcomeDesc())) {
+            $xw->writeAttribute(self::FIELD_OUTCOME_DESC, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getType())) {
+            $xw->startElement(self::FIELD_TYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getSubtype() as $v) {
+            $xw->startElement(self::FIELD_SUBTYPE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
         if (null !== ($v = $this->getAction())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ACTION, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_ACTION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getDateTime())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DATE_TIME, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DATE_TIME] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDateTime())) {
+            $xw->startElement(self::FIELD_DATE_TIME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getOutcome())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_OUTCOME);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getOutcomeDesc())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OUTCOME_DESC, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_OUTCOME_DESC] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOutcomeDesc())) {
+            $xw->startElement(self::FIELD_OUTCOME_DESC);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getSubtype())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_SUBTYPE, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getType())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TYPE, null, $v->_getFHIRXMLNamespace()));
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
         }
-        return $sxe;
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getType())) {
+            $out->{self::FIELD_TYPE} = $v;
+        }
+        if ([] !== ($vs = $this->getSubtype())) {
+            $out->{self::FIELD_SUBTYPE} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_SUBTYPE}[] = $v;
+            }
+        }
         if (null !== ($v = $this->getAction())) {
-            $a[self::FIELD_ACTION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRSecurityEventAction::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRSecurityEventAction::FIELD_VALUE]);
-                $a[self::FIELD_ACTION_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_ACTION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRSecurityEventAction::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_ACTION_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getDateTime())) {
-            $a[self::FIELD_DATE_TIME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInstant::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInstant::FIELD_VALUE]);
-                $a[self::FIELD_DATE_TIME_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DATE_TIME} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInstant::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DATE_TIME_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getOutcome())) {
-            $a[self::FIELD_OUTCOME] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRSecurityEventOutcome::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRSecurityEventOutcome::FIELD_VALUE]);
-                $a[self::FIELD_OUTCOME_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_OUTCOME} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRSecurityEventOutcome::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_OUTCOME_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getOutcomeDesc())) {
-            $a[self::FIELD_OUTCOME_DESC] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_OUTCOME_DESC_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_OUTCOME_DESC} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_OUTCOME_DESC_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->getSubtype())) {
-            $a[self::FIELD_SUBTYPE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_SUBTYPE][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getType())) {
-            $a[self::FIELD_TYPE] = $v;
-        }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
-        }
-        return $a;
-    }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

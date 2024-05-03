@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\DSTU2;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,67 +66,58 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * Interface PHPFHIRTypeInterface
  * @package \DCarbone\PHPFHIRGenerated\DSTU2
  */
-interface PHPFHIRTypeInterface extends \JsonSerializable {
-    /**
-     * @param array|null $data
-     */
-    public function __construct($data = null);
-
+interface PHPFHIRTypeInterface extends \JsonSerializable
+{
     /**
      * Returns the FHIR name represented by this Type
      * @return string
      */
-    public function _getFHIRTypeName();
+    public function _getFhirTypeName(): string;
 
     /**
-     * Returns the xml namespace to use for this type when serializing to XML, if applicable.
-     * @return string
+     * Returns the root Xmlns value found in the source.  Null indicates no "xmlns" was found.  Only defined when
+     * unserializing XML, and only used when serializing XML.
+     *
+     * @return null|string
      */
-    public function _getFHIRXMLNamespace();
-
-    /**
-     * Set the XML Namespace to be output when serializing this type to XML
-     * @param string $xmlNamespace
-     * @return static
-     */
-    public function _setFHIRXMLNamespace($xmlNamespace);
-
-    /**
-     * Returns the base xml element definition for this type
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition();
+    public function _getSourceXmlns(): null|string;
 
     /**
      * Must return an associative array in structure ["field" => ["rule" => {constraint}]] to be used during validation
      * @return array
      */
-    public function _getValidationRules();
+    public function _getValidationRules(): array;
 
     /**
      * Must return associative array where, if there are validation errors, the keys are the names of fields within the
      * type that failed validation.  The value must be a string message describing the manner of error
      * @return array
      */
-    public function _getValidationErrors();
+    public function _getValidationErrors(): array;
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * Must return true if any field on this type is set to a non-empty value
+     * @return bool
+     */
+    public function _isValued(): bool;
+
+    /**
+     * @param null|string|\SimpleXMLElement $element
      * @param null|static $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|static
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872);
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self;
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return string|\SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\DSTU2\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872);
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter;
 
     /**
      * @return string
      */
-    public function __toString();
+    public function __toString(): string;
 }

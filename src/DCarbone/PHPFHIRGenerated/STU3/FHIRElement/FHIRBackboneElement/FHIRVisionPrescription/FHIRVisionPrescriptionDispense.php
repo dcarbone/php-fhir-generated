@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRVis
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:43+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,17 +62,25 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRVis
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\STU3\FHIRDecimalPrimitive;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionBase;
 use DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionEyes;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRIntegerPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter;
 
 /**
  * An authorization for the supply of glasses and/or contact lenses to a patient.
@@ -84,186 +92,34 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE;
-    const FIELD_ADD = 'add';
-    const FIELD_ADD_EXT = '_add';
-    const FIELD_AXIS = 'axis';
-    const FIELD_AXIS_EXT = '_axis';
-    const FIELD_BACK_CURVE = 'backCurve';
-    const FIELD_BACK_CURVE_EXT = '_backCurve';
-    const FIELD_BASE = 'base';
-    const FIELD_BASE_EXT = '_base';
-    const FIELD_BRAND = 'brand';
-    const FIELD_BRAND_EXT = '_brand';
-    const FIELD_COLOR = 'color';
-    const FIELD_COLOR_EXT = '_color';
+
+    const FIELD_PRODUCT = 'product';
+    const FIELD_EYE = 'eye';
+    const FIELD_EYE_EXT = '_eye';
+    const FIELD_SPHERE = 'sphere';
+    const FIELD_SPHERE_EXT = '_sphere';
     const FIELD_CYLINDER = 'cylinder';
     const FIELD_CYLINDER_EXT = '_cylinder';
+    const FIELD_AXIS = 'axis';
+    const FIELD_AXIS_EXT = '_axis';
+    const FIELD_PRISM = 'prism';
+    const FIELD_PRISM_EXT = '_prism';
+    const FIELD_BASE = 'base';
+    const FIELD_BASE_EXT = '_base';
+    const FIELD_ADD = 'add';
+    const FIELD_ADD_EXT = '_add';
+    const FIELD_POWER = 'power';
+    const FIELD_POWER_EXT = '_power';
+    const FIELD_BACK_CURVE = 'backCurve';
+    const FIELD_BACK_CURVE_EXT = '_backCurve';
     const FIELD_DIAMETER = 'diameter';
     const FIELD_DIAMETER_EXT = '_diameter';
     const FIELD_DURATION = 'duration';
-    const FIELD_EYE = 'eye';
-    const FIELD_EYE_EXT = '_eye';
+    const FIELD_COLOR = 'color';
+    const FIELD_COLOR_EXT = '_color';
+    const FIELD_BRAND = 'brand';
+    const FIELD_BRAND_EXT = '_brand';
     const FIELD_NOTE = 'note';
-    const FIELD_POWER = 'power';
-    const FIELD_POWER_EXT = '_power';
-    const FIELD_PRISM = 'prism';
-    const FIELD_PRISM_EXT = '_prism';
-    const FIELD_PRODUCT = 'product';
-    const FIELD_SPHERE = 'sphere';
-    const FIELD_SPHERE_EXT = '_sphere';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Power adjustment for multifocal lenses measured in diopters (0.25 units).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    protected $add = null;
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Adjustment for astigmatism measured in integer degrees.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
-     */
-    protected $axis = null;
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Back curvature measured in millimeters.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    protected $backCurve = null;
-
-    /**
-     * A coded concept listing the base codes.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The relative base, or reference lens edge, for the prism.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionBase
-     */
-    protected $base = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Brand recommendations or restrictions.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $brand = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Special color or pattern.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    protected $color = null;
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Power adjustment for astigmatism measured in diopters (0.25 units).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    protected $cylinder = null;
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Contact lens diameter measured in millimeters.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    protected $diameter = null;
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The recommended maximum wear period for the lens.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
-     */
-    protected $duration = null;
-
-    /**
-     * A coded concept listing the eye codes.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The eye for which the lens applies.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionEyes
-     */
-    protected $eye = null;
-
-    /**
-     * A text note which also contains information about who made the statement and
-     * when.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Notes for special requirements such as coatings and lens materials.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
-     */
-    protected $note = [];
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Contact lens power measured in diopters (0.25 units).
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    protected $power = null;
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Amount of prism to compensate for eye alignment in fractional units.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    protected $prism = null;
 
     /**
      * A concept that may be defined by a formal reference to a terminology or ontology
@@ -276,8 +132,16 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    protected $product = null;
-
+    protected null|FHIRCodeableConcept $product = null;
+    /**
+     * A coded concept listing the eye codes.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The eye for which the lens applies.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionEyes
+     */
+    protected null|FHIRVisionEyes $eye = null;
     /**
      * A rational number with implicit precision
      * Do not use a IEEE type floating point type, instead use something that works
@@ -288,232 +152,165 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    protected $sphere = null;
+    protected null|FHIRDecimal $sphere = null;
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Power adjustment for astigmatism measured in diopters (0.25 units).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    protected null|FHIRDecimal $cylinder = null;
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Adjustment for astigmatism measured in integer degrees.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
+     */
+    protected null|FHIRInteger $axis = null;
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Amount of prism to compensate for eye alignment in fractional units.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    protected null|FHIRDecimal $prism = null;
+    /**
+     * A coded concept listing the base codes.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The relative base, or reference lens edge, for the prism.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionBase
+     */
+    protected null|FHIRVisionBase $base = null;
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Power adjustment for multifocal lenses measured in diopters (0.25 units).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    protected null|FHIRDecimal $add = null;
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Contact lens power measured in diopters (0.25 units).
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    protected null|FHIRDecimal $power = null;
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Back curvature measured in millimeters.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    protected null|FHIRDecimal $backCurve = null;
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Contact lens diameter measured in millimeters.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    protected null|FHIRDecimal $diameter = null;
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The recommended maximum wear period for the lens.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
+     */
+    protected null|FHIRQuantity $duration = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Special color or pattern.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $color = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Brand recommendations or restrictions.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $brand = null;
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Notes for special requirements such as coatings and lens materials.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
+     */
+    protected null|array $note = [];
 
     /**
      * Validation map for fields in type VisionPrescription.Dispense
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRVisionPrescriptionDispense Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRVisionPrescriptionDispense::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_ADD]) || isset($data[self::FIELD_ADD_EXT])) {
-            if (isset($data[self::FIELD_ADD])) {
-                $value = $data[self::FIELD_ADD];
+        if (array_key_exists(self::FIELD_PRODUCT, $data)) {
+            if ($data[self::FIELD_PRODUCT] instanceof FHIRCodeableConcept) {
+                $this->setProduct($data[self::FIELD_PRODUCT]);
             } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_ADD_EXT]) && is_array($data[self::FIELD_ADD_EXT])) {
-                $ext = $data[self::FIELD_ADD_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setAdd($value);
-                } else if (is_array($value)) {
-                    $this->setAdd(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setAdd(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setAdd(new FHIRDecimal($ext));
+                $this->setProduct(new FHIRCodeableConcept($data[self::FIELD_PRODUCT]));
             }
         }
-        if (isset($data[self::FIELD_AXIS]) || isset($data[self::FIELD_AXIS_EXT])) {
-            if (isset($data[self::FIELD_AXIS])) {
-                $value = $data[self::FIELD_AXIS];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_AXIS_EXT]) && is_array($data[self::FIELD_AXIS_EXT])) {
-                $ext = $data[self::FIELD_AXIS_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setAxis($value);
-                } else if (is_array($value)) {
-                    $this->setAxis(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setAxis(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setAxis(new FHIRInteger($ext));
-            }
-        }
-        if (isset($data[self::FIELD_BACK_CURVE]) || isset($data[self::FIELD_BACK_CURVE_EXT])) {
-            if (isset($data[self::FIELD_BACK_CURVE])) {
-                $value = $data[self::FIELD_BACK_CURVE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_BACK_CURVE_EXT]) && is_array($data[self::FIELD_BACK_CURVE_EXT])) {
-                $ext = $data[self::FIELD_BACK_CURVE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setBackCurve($value);
-                } else if (is_array($value)) {
-                    $this->setBackCurve(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setBackCurve(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setBackCurve(new FHIRDecimal($ext));
-            }
-        }
-        if (isset($data[self::FIELD_BASE]) || isset($data[self::FIELD_BASE_EXT])) {
-            if (isset($data[self::FIELD_BASE])) {
-                $value = $data[self::FIELD_BASE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_BASE_EXT]) && is_array($data[self::FIELD_BASE_EXT])) {
-                $ext = $data[self::FIELD_BASE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRVisionBase) {
-                    $this->setBase($value);
-                } else if (is_array($value)) {
-                    $this->setBase(new FHIRVisionBase(array_merge($ext, $value)));
-                } else {
-                    $this->setBase(new FHIRVisionBase([FHIRVisionBase::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setBase(new FHIRVisionBase($ext));
-            }
-        }
-        if (isset($data[self::FIELD_BRAND]) || isset($data[self::FIELD_BRAND_EXT])) {
-            if (isset($data[self::FIELD_BRAND])) {
-                $value = $data[self::FIELD_BRAND];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_BRAND_EXT]) && is_array($data[self::FIELD_BRAND_EXT])) {
-                $ext = $data[self::FIELD_BRAND_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setBrand($value);
-                } else if (is_array($value)) {
-                    $this->setBrand(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setBrand(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setBrand(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_COLOR]) || isset($data[self::FIELD_COLOR_EXT])) {
-            if (isset($data[self::FIELD_COLOR])) {
-                $value = $data[self::FIELD_COLOR];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_COLOR_EXT]) && is_array($data[self::FIELD_COLOR_EXT])) {
-                $ext = $data[self::FIELD_COLOR_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setColor($value);
-                } else if (is_array($value)) {
-                    $this->setColor(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setColor(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setColor(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_CYLINDER]) || isset($data[self::FIELD_CYLINDER_EXT])) {
-            if (isset($data[self::FIELD_CYLINDER])) {
-                $value = $data[self::FIELD_CYLINDER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_CYLINDER_EXT]) && is_array($data[self::FIELD_CYLINDER_EXT])) {
-                $ext = $data[self::FIELD_CYLINDER_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setCylinder($value);
-                } else if (is_array($value)) {
-                    $this->setCylinder(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setCylinder(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setCylinder(new FHIRDecimal($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DIAMETER]) || isset($data[self::FIELD_DIAMETER_EXT])) {
-            if (isset($data[self::FIELD_DIAMETER])) {
-                $value = $data[self::FIELD_DIAMETER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_DIAMETER_EXT]) && is_array($data[self::FIELD_DIAMETER_EXT])) {
-                $ext = $data[self::FIELD_DIAMETER_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setDiameter($value);
-                } else if (is_array($value)) {
-                    $this->setDiameter(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setDiameter(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setDiameter(new FHIRDecimal($ext));
-            }
-        }
-        if (isset($data[self::FIELD_DURATION])) {
-            if ($data[self::FIELD_DURATION] instanceof FHIRQuantity) {
-                $this->setDuration($data[self::FIELD_DURATION]);
-            } else {
-                $this->setDuration(new FHIRQuantity($data[self::FIELD_DURATION]));
-            }
-        }
-        if (isset($data[self::FIELD_EYE]) || isset($data[self::FIELD_EYE_EXT])) {
-            if (isset($data[self::FIELD_EYE])) {
-                $value = $data[self::FIELD_EYE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_EYE_EXT]) && is_array($data[self::FIELD_EYE_EXT])) {
-                $ext = $data[self::FIELD_EYE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_EYE, $data) || array_key_exists(self::FIELD_EYE_EXT, $data)) {
+            $value = $data[self::FIELD_EYE] ?? null;
+            $ext = (isset($data[self::FIELD_EYE_EXT]) && is_array($data[self::FIELD_EYE_EXT])) ? $data[self::FIELD_EYE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRVisionEyes) {
                     $this->setEye($value);
@@ -522,92 +319,15 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 } else {
                     $this->setEye(new FHIRVisionEyes([FHIRVisionEyes::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setEye(new FHIRVisionEyes($ext));
+            } else {
+                $this->setEye(new FHIRVisionEyes(null));
             }
         }
-        if (isset($data[self::FIELD_NOTE])) {
-            if (is_array($data[self::FIELD_NOTE])) {
-                foreach($data[self::FIELD_NOTE] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRAnnotation) {
-                        $this->addNote($v);
-                    } else {
-                        $this->addNote(new FHIRAnnotation($v));
-                    }
-                }
-            } else if ($data[self::FIELD_NOTE] instanceof FHIRAnnotation) {
-                $this->addNote($data[self::FIELD_NOTE]);
-            } else {
-                $this->addNote(new FHIRAnnotation($data[self::FIELD_NOTE]));
-            }
-        }
-        if (isset($data[self::FIELD_POWER]) || isset($data[self::FIELD_POWER_EXT])) {
-            if (isset($data[self::FIELD_POWER])) {
-                $value = $data[self::FIELD_POWER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_POWER_EXT]) && is_array($data[self::FIELD_POWER_EXT])) {
-                $ext = $data[self::FIELD_POWER_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setPower($value);
-                } else if (is_array($value)) {
-                    $this->setPower(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setPower(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPower(new FHIRDecimal($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PRISM]) || isset($data[self::FIELD_PRISM_EXT])) {
-            if (isset($data[self::FIELD_PRISM])) {
-                $value = $data[self::FIELD_PRISM];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_PRISM_EXT]) && is_array($data[self::FIELD_PRISM_EXT])) {
-                $ext = $data[self::FIELD_PRISM_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRDecimal) {
-                    $this->setPrism($value);
-                } else if (is_array($value)) {
-                    $this->setPrism(new FHIRDecimal(array_merge($ext, $value)));
-                } else {
-                    $this->setPrism(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setPrism(new FHIRDecimal($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PRODUCT])) {
-            if ($data[self::FIELD_PRODUCT] instanceof FHIRCodeableConcept) {
-                $this->setProduct($data[self::FIELD_PRODUCT]);
-            } else {
-                $this->setProduct(new FHIRCodeableConcept($data[self::FIELD_PRODUCT]));
-            }
-        }
-        if (isset($data[self::FIELD_SPHERE]) || isset($data[self::FIELD_SPHERE_EXT])) {
-            if (isset($data[self::FIELD_SPHERE])) {
-                $value = $data[self::FIELD_SPHERE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SPHERE_EXT]) && is_array($data[self::FIELD_SPHERE_EXT])) {
-                $ext = $data[self::FIELD_SPHERE_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_SPHERE, $data) || array_key_exists(self::FIELD_SPHERE_EXT, $data)) {
+            $value = $data[self::FIELD_SPHERE] ?? null;
+            $ext = (isset($data[self::FIELD_SPHERE_EXT]) && is_array($data[self::FIELD_SPHERE_EXT])) ? $data[self::FIELD_SPHERE_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDecimal) {
                     $this->setSphere($value);
@@ -616,8 +336,202 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 } else {
                     $this->setSphere(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setSphere(new FHIRDecimal($ext));
+            } else {
+                $this->setSphere(new FHIRDecimal(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_CYLINDER, $data) || array_key_exists(self::FIELD_CYLINDER_EXT, $data)) {
+            $value = $data[self::FIELD_CYLINDER] ?? null;
+            $ext = (isset($data[self::FIELD_CYLINDER_EXT]) && is_array($data[self::FIELD_CYLINDER_EXT])) ? $data[self::FIELD_CYLINDER_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setCylinder($value);
+                } else if (is_array($value)) {
+                    $this->setCylinder(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setCylinder(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setCylinder(new FHIRDecimal($ext));
+            } else {
+                $this->setCylinder(new FHIRDecimal(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_AXIS, $data) || array_key_exists(self::FIELD_AXIS_EXT, $data)) {
+            $value = $data[self::FIELD_AXIS] ?? null;
+            $ext = (isset($data[self::FIELD_AXIS_EXT]) && is_array($data[self::FIELD_AXIS_EXT])) ? $data[self::FIELD_AXIS_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setAxis($value);
+                } else if (is_array($value)) {
+                    $this->setAxis(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setAxis(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setAxis(new FHIRInteger($ext));
+            } else {
+                $this->setAxis(new FHIRInteger(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_PRISM, $data) || array_key_exists(self::FIELD_PRISM_EXT, $data)) {
+            $value = $data[self::FIELD_PRISM] ?? null;
+            $ext = (isset($data[self::FIELD_PRISM_EXT]) && is_array($data[self::FIELD_PRISM_EXT])) ? $data[self::FIELD_PRISM_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setPrism($value);
+                } else if (is_array($value)) {
+                    $this->setPrism(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setPrism(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPrism(new FHIRDecimal($ext));
+            } else {
+                $this->setPrism(new FHIRDecimal(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_BASE, $data) || array_key_exists(self::FIELD_BASE_EXT, $data)) {
+            $value = $data[self::FIELD_BASE] ?? null;
+            $ext = (isset($data[self::FIELD_BASE_EXT]) && is_array($data[self::FIELD_BASE_EXT])) ? $data[self::FIELD_BASE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRVisionBase) {
+                    $this->setBase($value);
+                } else if (is_array($value)) {
+                    $this->setBase(new FHIRVisionBase(array_merge($ext, $value)));
+                } else {
+                    $this->setBase(new FHIRVisionBase([FHIRVisionBase::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setBase(new FHIRVisionBase($ext));
+            } else {
+                $this->setBase(new FHIRVisionBase(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_ADD, $data) || array_key_exists(self::FIELD_ADD_EXT, $data)) {
+            $value = $data[self::FIELD_ADD] ?? null;
+            $ext = (isset($data[self::FIELD_ADD_EXT]) && is_array($data[self::FIELD_ADD_EXT])) ? $data[self::FIELD_ADD_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setAdd($value);
+                } else if (is_array($value)) {
+                    $this->setAdd(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setAdd(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setAdd(new FHIRDecimal($ext));
+            } else {
+                $this->setAdd(new FHIRDecimal(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_POWER, $data) || array_key_exists(self::FIELD_POWER_EXT, $data)) {
+            $value = $data[self::FIELD_POWER] ?? null;
+            $ext = (isset($data[self::FIELD_POWER_EXT]) && is_array($data[self::FIELD_POWER_EXT])) ? $data[self::FIELD_POWER_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setPower($value);
+                } else if (is_array($value)) {
+                    $this->setPower(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setPower(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setPower(new FHIRDecimal($ext));
+            } else {
+                $this->setPower(new FHIRDecimal(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_BACK_CURVE, $data) || array_key_exists(self::FIELD_BACK_CURVE_EXT, $data)) {
+            $value = $data[self::FIELD_BACK_CURVE] ?? null;
+            $ext = (isset($data[self::FIELD_BACK_CURVE_EXT]) && is_array($data[self::FIELD_BACK_CURVE_EXT])) ? $data[self::FIELD_BACK_CURVE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setBackCurve($value);
+                } else if (is_array($value)) {
+                    $this->setBackCurve(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setBackCurve(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setBackCurve(new FHIRDecimal($ext));
+            } else {
+                $this->setBackCurve(new FHIRDecimal(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_DIAMETER, $data) || array_key_exists(self::FIELD_DIAMETER_EXT, $data)) {
+            $value = $data[self::FIELD_DIAMETER] ?? null;
+            $ext = (isset($data[self::FIELD_DIAMETER_EXT]) && is_array($data[self::FIELD_DIAMETER_EXT])) ? $data[self::FIELD_DIAMETER_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRDecimal) {
+                    $this->setDiameter($value);
+                } else if (is_array($value)) {
+                    $this->setDiameter(new FHIRDecimal(array_merge($ext, $value)));
+                } else {
+                    $this->setDiameter(new FHIRDecimal([FHIRDecimal::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setDiameter(new FHIRDecimal($ext));
+            } else {
+                $this->setDiameter(new FHIRDecimal(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_DURATION, $data)) {
+            if ($data[self::FIELD_DURATION] instanceof FHIRQuantity) {
+                $this->setDuration($data[self::FIELD_DURATION]);
+            } else {
+                $this->setDuration(new FHIRQuantity($data[self::FIELD_DURATION]));
+            }
+        }
+        if (array_key_exists(self::FIELD_COLOR, $data) || array_key_exists(self::FIELD_COLOR_EXT, $data)) {
+            $value = $data[self::FIELD_COLOR] ?? null;
+            $ext = (isset($data[self::FIELD_COLOR_EXT]) && is_array($data[self::FIELD_COLOR_EXT])) ? $data[self::FIELD_COLOR_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setColor($value);
+                } else if (is_array($value)) {
+                    $this->setColor(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setColor(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setColor(new FHIRString($ext));
+            } else {
+                $this->setColor(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_BRAND, $data) || array_key_exists(self::FIELD_BRAND_EXT, $data)) {
+            $value = $data[self::FIELD_BRAND] ?? null;
+            $ext = (isset($data[self::FIELD_BRAND_EXT]) && is_array($data[self::FIELD_BRAND_EXT])) ? $data[self::FIELD_BRAND_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setBrand($value);
+                } else if (is_array($value)) {
+                    $this->setBrand(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setBrand(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setBrand(new FHIRString($ext));
+            } else {
+                $this->setBrand(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_NOTE, $data)) {
+            if (is_array($data[self::FIELD_NOTE])) {
+                foreach($data[self::FIELD_NOTE] as $v) {
+                    if ($v instanceof FHIRAnnotation) {
+                        $this->addNote($v);
+                    } else {
+                        $this->addNote(new FHIRAnnotation($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_NOTE] instanceof FHIRAnnotation) {
+                $this->addNote($data[self::FIELD_NOTE]);
+            } else {
+                $this->addNote(new FHIRAnnotation($data[self::FIELD_NOTE]));
             }
         }
     }
@@ -625,524 +539,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<VisionPrescriptionDispense{$xmlns}></VisionPrescriptionDispense>";
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Power adjustment for multifocal lenses measured in diopters (0.25 units).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    public function getAdd()
-    {
-        return $this->add;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Power adjustment for multifocal lenses measured in diopters (0.25 units).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $add
-     * @return static
-     */
-    public function setAdd($add = null)
-    {
-        if (null === $add) {
-            $this->add = null;
-            return $this;
-        }
-        if ($add instanceof FHIRDecimal) {
-            $this->add = $add;
-            return $this;
-        }
-        $this->add = new FHIRDecimal($add);
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Adjustment for astigmatism measured in integer degrees.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
-     */
-    public function getAxis()
-    {
-        return $this->axis;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Adjustment for astigmatism measured in integer degrees.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $axis
-     * @return static
-     */
-    public function setAxis($axis = null)
-    {
-        if (null === $axis) {
-            $this->axis = null;
-            return $this;
-        }
-        if ($axis instanceof FHIRInteger) {
-            $this->axis = $axis;
-            return $this;
-        }
-        $this->axis = new FHIRInteger($axis);
-        return $this;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Back curvature measured in millimeters.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    public function getBackCurve()
-    {
-        return $this->backCurve;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Back curvature measured in millimeters.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $backCurve
-     * @return static
-     */
-    public function setBackCurve($backCurve = null)
-    {
-        if (null === $backCurve) {
-            $this->backCurve = null;
-            return $this;
-        }
-        if ($backCurve instanceof FHIRDecimal) {
-            $this->backCurve = $backCurve;
-            return $this;
-        }
-        $this->backCurve = new FHIRDecimal($backCurve);
-        return $this;
-    }
-
-    /**
-     * A coded concept listing the base codes.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The relative base, or reference lens edge, for the prism.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionBase
-     */
-    public function getBase()
-    {
-        return $this->base;
-    }
-
-    /**
-     * A coded concept listing the base codes.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The relative base, or reference lens edge, for the prism.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionBase $base
-     * @return static
-     */
-    public function setBase(FHIRVisionBase $base = null)
-    {
-        $this->base = $base;
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Brand recommendations or restrictions.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getBrand()
-    {
-        return $this->brand;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Brand recommendations or restrictions.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $brand
-     * @return static
-     */
-    public function setBrand($brand = null)
-    {
-        if (null === $brand) {
-            $this->brand = null;
-            return $this;
-        }
-        if ($brand instanceof FHIRString) {
-            $this->brand = $brand;
-            return $this;
-        }
-        $this->brand = new FHIRString($brand);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Special color or pattern.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
-     */
-    public function getColor()
-    {
-        return $this->color;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings may not exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Special color or pattern.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $color
-     * @return static
-     */
-    public function setColor($color = null)
-    {
-        if (null === $color) {
-            $this->color = null;
-            return $this;
-        }
-        if ($color instanceof FHIRString) {
-            $this->color = $color;
-            return $this;
-        }
-        $this->color = new FHIRString($color);
-        return $this;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Power adjustment for astigmatism measured in diopters (0.25 units).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    public function getCylinder()
-    {
-        return $this->cylinder;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Power adjustment for astigmatism measured in diopters (0.25 units).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $cylinder
-     * @return static
-     */
-    public function setCylinder($cylinder = null)
-    {
-        if (null === $cylinder) {
-            $this->cylinder = null;
-            return $this;
-        }
-        if ($cylinder instanceof FHIRDecimal) {
-            $this->cylinder = $cylinder;
-            return $this;
-        }
-        $this->cylinder = new FHIRDecimal($cylinder);
-        return $this;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Contact lens diameter measured in millimeters.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    public function getDiameter()
-    {
-        return $this->diameter;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Contact lens diameter measured in millimeters.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $diameter
-     * @return static
-     */
-    public function setDiameter($diameter = null)
-    {
-        if (null === $diameter) {
-            $this->diameter = null;
-            return $this;
-        }
-        if ($diameter instanceof FHIRDecimal) {
-            $this->diameter = $diameter;
-            return $this;
-        }
-        $this->diameter = new FHIRDecimal($diameter);
-        return $this;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The recommended maximum wear period for the lens.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
-     */
-    public function getDuration()
-    {
-        return $this->duration;
-    }
-
-    /**
-     * A measured amount (or an amount that can potentially be measured). Note that
-     * measured amounts include amounts that are not precisely quantified, including
-     * amounts involving arbitrary units and floating currencies.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * The recommended maximum wear period for the lens.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $duration
-     * @return static
-     */
-    public function setDuration(FHIRQuantity $duration = null)
-    {
-        $this->duration = $duration;
-        return $this;
-    }
-
-    /**
-     * A coded concept listing the eye codes.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The eye for which the lens applies.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionEyes
-     */
-    public function getEye()
-    {
-        return $this->eye;
-    }
-
-    /**
-     * A coded concept listing the eye codes.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The eye for which the lens applies.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionEyes $eye
-     * @return static
-     */
-    public function setEye(FHIRVisionEyes $eye = null)
-    {
-        $this->eye = $eye;
-        return $this;
-    }
-
-    /**
-     * A text note which also contains information about who made the statement and
-     * when.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Notes for special requirements such as coatings and lens materials.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
-     */
-    public function getNote()
-    {
-        return $this->note;
-    }
-
-    /**
-     * A text note which also contains information about who made the statement and
-     * when.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Notes for special requirements such as coatings and lens materials.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation $note
-     * @return static
-     */
-    public function addNote(FHIRAnnotation $note = null)
-    {
-        $this->note[] = $note;
-        return $this;
-    }
-
-    /**
-     * A text note which also contains information about who made the statement and
-     * when.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Notes for special requirements such as coatings and lens materials.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[] $note
-     * @return static
-     */
-    public function setNote(array $note = [])
-    {
-        $this->note = [];
-        if ([] === $note) {
-            return $this;
-        }
-        foreach($note as $v) {
-            if ($v instanceof FHIRAnnotation) {
-                $this->addNote($v);
-            } else {
-                $this->addNote(new FHIRAnnotation($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Contact lens power measured in diopters (0.25 units).
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    public function getPower()
-    {
-        return $this->power;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Contact lens power measured in diopters (0.25 units).
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $power
-     * @return static
-     */
-    public function setPower($power = null)
-    {
-        if (null === $power) {
-            $this->power = null;
-            return $this;
-        }
-        if ($power instanceof FHIRDecimal) {
-            $this->power = $power;
-            return $this;
-        }
-        $this->power = new FHIRDecimal($power);
-        return $this;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Amount of prism to compensate for eye alignment in fractional units.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
-     */
-    public function getPrism()
-    {
-        return $this->prism;
-    }
-
-    /**
-     * A rational number with implicit precision
-     * Do not use a IEEE type floating point type, instead use something that works
-     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Amount of prism to compensate for eye alignment in fractional units.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $prism
-     * @return static
-     */
-    public function setPrism($prism = null)
-    {
-        if (null === $prism) {
-            $this->prism = null;
-            return $this;
-        }
-        if ($prism instanceof FHIRDecimal) {
-            $this->prism = $prism;
-            return $this;
-        }
-        $this->prism = new FHIRDecimal($prism);
-        return $this;
     }
 
     /**
@@ -1156,7 +555,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
-    public function getProduct()
+    public function getProduct(): null|FHIRCodeableConcept
     {
         return $this->product;
     }
@@ -1173,9 +572,45 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept $product
      * @return static
      */
-    public function setProduct(FHIRCodeableConcept $product = null)
+    public function setProduct(null|FHIRCodeableConcept $product = null): self
     {
+        if (null === $product) {
+            $product = new FHIRCodeableConcept();
+        }
+        $this->_trackValueSet($this->product, $product);
         $this->product = $product;
+        return $this;
+    }
+
+    /**
+     * A coded concept listing the eye codes.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The eye for which the lens applies.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionEyes
+     */
+    public function getEye(): null|FHIRVisionEyes
+    {
+        return $this->eye;
+    }
+
+    /**
+     * A coded concept listing the eye codes.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The eye for which the lens applies.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionEyes $eye
+     * @return static
+     */
+    public function setEye(null|FHIRVisionEyes $eye = null): self
+    {
+        if (null === $eye) {
+            $eye = new FHIRVisionEyes();
+        }
+        $this->_trackValueSet($this->eye, $eye);
+        $this->eye = $eye;
         return $this;
     }
 
@@ -1189,7 +624,7 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
-    public function getSphere()
+    public function getSphere(): null|FHIRDecimal
     {
         return $this->sphere;
     }
@@ -1202,20 +637,490 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      *
      * Lens power measured in diopters (0.25 units).
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $sphere
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\STU3\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $sphere
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSphere($sphere = null)
+    public function setSphere(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $sphere = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $sphere) {
-            $this->sphere = null;
-            return $this;
+        if (null !== $sphere && !($sphere instanceof FHIRDecimal)) {
+            $sphere = new FHIRDecimal($sphere);
         }
-        if ($sphere instanceof FHIRDecimal) {
-            $this->sphere = $sphere;
-            return $this;
+        $this->_trackValueSet($this->sphere, $sphere);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SPHERE])) {
+            $this->_primitiveXmlLocations[self::FIELD_SPHERE] = [];
         }
-        $this->sphere = new FHIRDecimal($sphere);
+        $this->_primitiveXmlLocations[self::FIELD_SPHERE][0] = $xmlLocation;
+        $this->sphere = $sphere;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Power adjustment for astigmatism measured in diopters (0.25 units).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    public function getCylinder(): null|FHIRDecimal
+    {
+        return $this->cylinder;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Power adjustment for astigmatism measured in diopters (0.25 units).
+     *
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\STU3\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $cylinder
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setCylinder(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $cylinder = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $cylinder && !($cylinder instanceof FHIRDecimal)) {
+            $cylinder = new FHIRDecimal($cylinder);
+        }
+        $this->_trackValueSet($this->cylinder, $cylinder);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_CYLINDER])) {
+            $this->_primitiveXmlLocations[self::FIELD_CYLINDER] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_CYLINDER][0] = $xmlLocation;
+        $this->cylinder = $cylinder;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Adjustment for astigmatism measured in integer degrees.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
+     */
+    public function getAxis(): null|FHIRInteger
+    {
+        return $this->axis;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Adjustment for astigmatism measured in integer degrees.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\STU3\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger $axis
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setAxis(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $axis = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $axis && !($axis instanceof FHIRInteger)) {
+            $axis = new FHIRInteger($axis);
+        }
+        $this->_trackValueSet($this->axis, $axis);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_AXIS])) {
+            $this->_primitiveXmlLocations[self::FIELD_AXIS] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_AXIS][0] = $xmlLocation;
+        $this->axis = $axis;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Amount of prism to compensate for eye alignment in fractional units.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    public function getPrism(): null|FHIRDecimal
+    {
+        return $this->prism;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Amount of prism to compensate for eye alignment in fractional units.
+     *
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\STU3\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $prism
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setPrism(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $prism = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $prism && !($prism instanceof FHIRDecimal)) {
+            $prism = new FHIRDecimal($prism);
+        }
+        $this->_trackValueSet($this->prism, $prism);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_PRISM])) {
+            $this->_primitiveXmlLocations[self::FIELD_PRISM] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_PRISM][0] = $xmlLocation;
+        $this->prism = $prism;
+        return $this;
+    }
+
+    /**
+     * A coded concept listing the base codes.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The relative base, or reference lens edge, for the prism.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionBase
+     */
+    public function getBase(): null|FHIRVisionBase
+    {
+        return $this->base;
+    }
+
+    /**
+     * A coded concept listing the base codes.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The relative base, or reference lens edge, for the prism.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRVisionBase $base
+     * @return static
+     */
+    public function setBase(null|FHIRVisionBase $base = null): self
+    {
+        if (null === $base) {
+            $base = new FHIRVisionBase();
+        }
+        $this->_trackValueSet($this->base, $base);
+        $this->base = $base;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Power adjustment for multifocal lenses measured in diopters (0.25 units).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    public function getAdd(): null|FHIRDecimal
+    {
+        return $this->add;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Power adjustment for multifocal lenses measured in diopters (0.25 units).
+     *
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\STU3\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $add
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setAdd(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $add = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $add && !($add instanceof FHIRDecimal)) {
+            $add = new FHIRDecimal($add);
+        }
+        $this->_trackValueSet($this->add, $add);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_ADD])) {
+            $this->_primitiveXmlLocations[self::FIELD_ADD] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_ADD][0] = $xmlLocation;
+        $this->add = $add;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Contact lens power measured in diopters (0.25 units).
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    public function getPower(): null|FHIRDecimal
+    {
+        return $this->power;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Contact lens power measured in diopters (0.25 units).
+     *
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\STU3\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $power
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setPower(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $power = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $power && !($power instanceof FHIRDecimal)) {
+            $power = new FHIRDecimal($power);
+        }
+        $this->_trackValueSet($this->power, $power);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_POWER])) {
+            $this->_primitiveXmlLocations[self::FIELD_POWER] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_POWER][0] = $xmlLocation;
+        $this->power = $power;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Back curvature measured in millimeters.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    public function getBackCurve(): null|FHIRDecimal
+    {
+        return $this->backCurve;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Back curvature measured in millimeters.
+     *
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\STU3\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $backCurve
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setBackCurve(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $backCurve = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $backCurve && !($backCurve instanceof FHIRDecimal)) {
+            $backCurve = new FHIRDecimal($backCurve);
+        }
+        $this->_trackValueSet($this->backCurve, $backCurve);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_BACK_CURVE])) {
+            $this->_primitiveXmlLocations[self::FIELD_BACK_CURVE] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_BACK_CURVE][0] = $xmlLocation;
+        $this->backCurve = $backCurve;
+        return $this;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Contact lens diameter measured in millimeters.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
+     */
+    public function getDiameter(): null|FHIRDecimal
+    {
+        return $this->diameter;
+    }
+
+    /**
+     * A rational number with implicit precision
+     * Do not use a IEEE type floating point type, instead use something that works
+     * like a true decimal, with inbuilt precision (e.g. Java BigInteger)
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Contact lens diameter measured in millimeters.
+     *
+     * @param null|string|float|int|\DCarbone\PHPFHIRGenerated\STU3\FHIRDecimalPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal $diameter
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setDiameter(null|string|float|int|FHIRDecimalPrimitive|FHIRDecimal $diameter = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $diameter && !($diameter instanceof FHIRDecimal)) {
+            $diameter = new FHIRDecimal($diameter);
+        }
+        $this->_trackValueSet($this->diameter, $diameter);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_DIAMETER])) {
+            $this->_primitiveXmlLocations[self::FIELD_DIAMETER] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_DIAMETER][0] = $xmlLocation;
+        $this->diameter = $diameter;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The recommended maximum wear period for the lens.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
+     */
+    public function getDuration(): null|FHIRQuantity
+    {
+        return $this->duration;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The recommended maximum wear period for the lens.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity $duration
+     * @return static
+     */
+    public function setDuration(null|FHIRQuantity $duration = null): self
+    {
+        if (null === $duration) {
+            $duration = new FHIRQuantity();
+        }
+        $this->_trackValueSet($this->duration, $duration);
+        $this->duration = $duration;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Special color or pattern.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getColor(): null|FHIRString
+    {
+        return $this->color;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Special color or pattern.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $color
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setColor(null|string|FHIRStringPrimitive|FHIRString $color = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $color && !($color instanceof FHIRString)) {
+            $color = new FHIRString($color);
+        }
+        $this->_trackValueSet($this->color, $color);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_COLOR])) {
+            $this->_primitiveXmlLocations[self::FIELD_COLOR] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_COLOR][0] = $xmlLocation;
+        $this->color = $color;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Brand recommendations or restrictions.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
+     */
+    public function getBrand(): null|FHIRString
+    {
+        return $this->brand;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings may not exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Brand recommendations or restrictions.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\STU3\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString $brand
+     * @param \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setBrand(null|string|FHIRStringPrimitive|FHIRString $brand = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $brand && !($brand instanceof FHIRString)) {
+            $brand = new FHIRString($brand);
+        }
+        $this->_trackValueSet($this->brand, $brand);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_BRAND])) {
+            $this->_primitiveXmlLocations[self::FIELD_BRAND] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_BRAND][0] = $xmlLocation;
+        $this->brand = $brand;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Notes for special requirements such as coatings and lens materials.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
+     */
+    public function getNote(): null|array
+    {
+        return $this->note;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Notes for special requirements such as coatings and lens materials.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation $note
+     * @return static
+     */
+    public function addNote(null|FHIRAnnotation $note = null): self
+    {
+        if (null === $note) {
+            $note = new FHIRAnnotation();
+        }
+        $this->_trackValueAdded();
+        $this->note[] = $note;
         return $this;
     }
 
@@ -1225,9 +1130,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -1236,13 +1141,28 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getAdd())) {
+        if (null !== ($v = $this->getProduct())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_ADD] = $fieldErrs;
+                $errs[self::FIELD_PRODUCT] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getEye())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_EYE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getSphere())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_SPHERE] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getCylinder())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_CYLINDER] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getAxis())) {
@@ -1250,9 +1170,9 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 $errs[self::FIELD_AXIS] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getBackCurve())) {
+        if (null !== ($v = $this->getPrism())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_BACK_CURVE] = $fieldErrs;
+                $errs[self::FIELD_PRISM] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getBase())) {
@@ -1260,19 +1180,19 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 $errs[self::FIELD_BASE] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getBrand())) {
+        if (null !== ($v = $this->getAdd())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_BRAND] = $fieldErrs;
+                $errs[self::FIELD_ADD] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getColor())) {
+        if (null !== ($v = $this->getPower())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_COLOR] = $fieldErrs;
+                $errs[self::FIELD_POWER] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getCylinder())) {
+        if (null !== ($v = $this->getBackCurve())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_CYLINDER] = $fieldErrs;
+                $errs[self::FIELD_BACK_CURVE] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getDiameter())) {
@@ -1285,9 +1205,14 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 $errs[self::FIELD_DURATION] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getEye())) {
+        if (null !== ($v = $this->getColor())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_EYE] = $fieldErrs;
+                $errs[self::FIELD_COLOR] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getBrand())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_BRAND] = $fieldErrs;
             }
         }
         if ([] !== ($vs = $this->getNote())) {
@@ -1297,35 +1222,51 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getPower())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_POWER] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getPrism())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PRISM] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getProduct())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_PRODUCT] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getSphere())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SPHERE] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_ADD])) {
-            $v = $this->getAdd();
-            foreach($validationRules[self::FIELD_ADD] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_ADD, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PRODUCT])) {
+            $v = $this->getProduct();
+            foreach($validationRules[self::FIELD_PRODUCT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_PRODUCT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_ADD])) {
-                        $errs[self::FIELD_ADD] = [];
+                    if (!isset($errs[self::FIELD_PRODUCT])) {
+                        $errs[self::FIELD_PRODUCT] = [];
                     }
-                    $errs[self::FIELD_ADD][$rule] = $err;
+                    $errs[self::FIELD_PRODUCT][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_EYE])) {
+            $v = $this->getEye();
+            foreach($validationRules[self::FIELD_EYE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_EYE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_EYE])) {
+                        $errs[self::FIELD_EYE] = [];
+                    }
+                    $errs[self::FIELD_EYE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_SPHERE])) {
+            $v = $this->getSphere();
+            foreach($validationRules[self::FIELD_SPHERE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_SPHERE, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_SPHERE])) {
+                        $errs[self::FIELD_SPHERE] = [];
+                    }
+                    $errs[self::FIELD_SPHERE][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_CYLINDER])) {
+            $v = $this->getCylinder();
+            foreach($validationRules[self::FIELD_CYLINDER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_CYLINDER, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_CYLINDER])) {
+                        $errs[self::FIELD_CYLINDER] = [];
+                    }
+                    $errs[self::FIELD_CYLINDER][$rule] = $err;
                 }
             }
         }
@@ -1341,15 +1282,15 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_BACK_CURVE])) {
-            $v = $this->getBackCurve();
-            foreach($validationRules[self::FIELD_BACK_CURVE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_BACK_CURVE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_PRISM])) {
+            $v = $this->getPrism();
+            foreach($validationRules[self::FIELD_PRISM] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_PRISM, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BACK_CURVE])) {
-                        $errs[self::FIELD_BACK_CURVE] = [];
+                    if (!isset($errs[self::FIELD_PRISM])) {
+                        $errs[self::FIELD_PRISM] = [];
                     }
-                    $errs[self::FIELD_BACK_CURVE][$rule] = $err;
+                    $errs[self::FIELD_PRISM][$rule] = $err;
                 }
             }
         }
@@ -1365,39 +1306,39 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_BRAND])) {
-            $v = $this->getBrand();
-            foreach($validationRules[self::FIELD_BRAND] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_BRAND, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_ADD])) {
+            $v = $this->getAdd();
+            foreach($validationRules[self::FIELD_ADD] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_ADD, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_BRAND])) {
-                        $errs[self::FIELD_BRAND] = [];
+                    if (!isset($errs[self::FIELD_ADD])) {
+                        $errs[self::FIELD_ADD] = [];
                     }
-                    $errs[self::FIELD_BRAND][$rule] = $err;
+                    $errs[self::FIELD_ADD][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_COLOR])) {
-            $v = $this->getColor();
-            foreach($validationRules[self::FIELD_COLOR] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_COLOR, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_POWER])) {
+            $v = $this->getPower();
+            foreach($validationRules[self::FIELD_POWER] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_POWER, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_COLOR])) {
-                        $errs[self::FIELD_COLOR] = [];
+                    if (!isset($errs[self::FIELD_POWER])) {
+                        $errs[self::FIELD_POWER] = [];
                     }
-                    $errs[self::FIELD_COLOR][$rule] = $err;
+                    $errs[self::FIELD_POWER][$rule] = $err;
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_CYLINDER])) {
-            $v = $this->getCylinder();
-            foreach($validationRules[self::FIELD_CYLINDER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_CYLINDER, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_BACK_CURVE])) {
+            $v = $this->getBackCurve();
+            foreach($validationRules[self::FIELD_BACK_CURVE] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_BACK_CURVE, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CYLINDER])) {
-                        $errs[self::FIELD_CYLINDER] = [];
+                    if (!isset($errs[self::FIELD_BACK_CURVE])) {
+                        $errs[self::FIELD_BACK_CURVE] = [];
                     }
-                    $errs[self::FIELD_CYLINDER][$rule] = $err;
+                    $errs[self::FIELD_BACK_CURVE][$rule] = $err;
                 }
             }
         }
@@ -1425,15 +1366,27 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_EYE])) {
-            $v = $this->getEye();
-            foreach($validationRules[self::FIELD_EYE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_EYE, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_COLOR])) {
+            $v = $this->getColor();
+            foreach($validationRules[self::FIELD_COLOR] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_COLOR, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_EYE])) {
-                        $errs[self::FIELD_EYE] = [];
+                    if (!isset($errs[self::FIELD_COLOR])) {
+                        $errs[self::FIELD_COLOR] = [];
                     }
-                    $errs[self::FIELD_EYE][$rule] = $err;
+                    $errs[self::FIELD_COLOR][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_BRAND])) {
+            $v = $this->getBrand();
+            foreach($validationRules[self::FIELD_BRAND] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_BRAND, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_BRAND])) {
+                        $errs[self::FIELD_BRAND] = [];
+                    }
+                    $errs[self::FIELD_BRAND][$rule] = $err;
                 }
             }
         }
@@ -1446,54 +1399,6 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
                         $errs[self::FIELD_NOTE] = [];
                     }
                     $errs[self::FIELD_NOTE][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_POWER])) {
-            $v = $this->getPower();
-            foreach($validationRules[self::FIELD_POWER] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_POWER, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_POWER])) {
-                        $errs[self::FIELD_POWER] = [];
-                    }
-                    $errs[self::FIELD_POWER][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PRISM])) {
-            $v = $this->getPrism();
-            foreach($validationRules[self::FIELD_PRISM] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_PRISM, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PRISM])) {
-                        $errs[self::FIELD_PRISM] = [];
-                    }
-                    $errs[self::FIELD_PRISM][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_PRODUCT])) {
-            $v = $this->getProduct();
-            foreach($validationRules[self::FIELD_PRODUCT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_PRODUCT, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_PRODUCT])) {
-                        $errs[self::FIELD_PRODUCT] = [];
-                    }
-                    $errs[self::FIELD_PRODUCT][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_SPHERE])) {
-            $v = $this->getSphere();
-            foreach($validationRules[self::FIELD_SPHERE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VISION_PRESCRIPTION_DOT_DISPENSE, self::FIELD_SPHERE, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SPHERE])) {
-                        $errs[self::FIELD_SPHERE] = [];
-                    }
-                    $errs[self::FIELD_SPHERE][$rule] = $err;
                 }
             }
         }
@@ -1537,379 +1442,476 @@ class FHIRVisionPrescriptionDispense extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRVisionPrescriptionDispense::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRVisionPrescriptionDispense::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRVisionPrescriptionDispense;
-        } elseif (!is_object($type) || !($type instanceof FHIRVisionPrescriptionDispense)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRVisionPrescriptionDispense)) {
             throw new \RuntimeException(sprintf(
-                'FHIRVisionPrescriptionDispense::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_PRODUCT === $childName) {
+                $type->setProduct(FHIRCodeableConcept::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EYE === $childName) {
+                $type->setEye(FHIRVisionEyes::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_SPHERE === $childName) {
+                $type->setSphere(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_CYLINDER === $childName) {
+                $type->setCylinder(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_AXIS === $childName) {
+                $type->setAxis(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PRISM === $childName) {
+                $type->setPrism(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_BASE === $childName) {
+                $type->setBase(FHIRVisionBase::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ADD === $childName) {
+                $type->setAdd(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_POWER === $childName) {
+                $type->setPower(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_BACK_CURVE === $childName) {
+                $type->setBackCurve(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_DIAMETER === $childName) {
+                $type->setDiameter(FHIRDecimal::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_DURATION === $childName) {
+                $type->setDuration(FHIRQuantity::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_COLOR === $childName) {
+                $type->setColor(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_BRAND === $childName) {
+                $type->setBrand(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_NOTE === $childName) {
+                $type->addNote(FHIRAnnotation::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->add)) {
-            $type->setAdd(FHIRDecimal::xmlUnserialize($children->add));
-        }
-        if (isset($attributes->add)) {
-            $pt = $type->getAdd();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->add);
-            } else {
-                $type->setAdd((string)$attributes->add);
-            }
-        }
-        if (isset($children->axis)) {
-            $type->setAxis(FHIRInteger::xmlUnserialize($children->axis));
-        }
-        if (isset($attributes->axis)) {
-            $pt = $type->getAxis();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->axis);
-            } else {
-                $type->setAxis((string)$attributes->axis);
-            }
-        }
-        if (isset($children->backCurve)) {
-            $type->setBackCurve(FHIRDecimal::xmlUnserialize($children->backCurve));
-        }
-        if (isset($attributes->backCurve)) {
-            $pt = $type->getBackCurve();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->backCurve);
-            } else {
-                $type->setBackCurve((string)$attributes->backCurve);
-            }
-        }
-        if (isset($children->base)) {
-            $type->setBase(FHIRVisionBase::xmlUnserialize($children->base));
-        }
-        if (isset($children->brand)) {
-            $type->setBrand(FHIRString::xmlUnserialize($children->brand));
-        }
-        if (isset($attributes->brand)) {
-            $pt = $type->getBrand();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->brand);
-            } else {
-                $type->setBrand((string)$attributes->brand);
-            }
-        }
-        if (isset($children->color)) {
-            $type->setColor(FHIRString::xmlUnserialize($children->color));
-        }
-        if (isset($attributes->color)) {
-            $pt = $type->getColor();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->color);
-            } else {
-                $type->setColor((string)$attributes->color);
-            }
-        }
-        if (isset($children->cylinder)) {
-            $type->setCylinder(FHIRDecimal::xmlUnserialize($children->cylinder));
-        }
-        if (isset($attributes->cylinder)) {
-            $pt = $type->getCylinder();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->cylinder);
-            } else {
-                $type->setCylinder((string)$attributes->cylinder);
-            }
-        }
-        if (isset($children->diameter)) {
-            $type->setDiameter(FHIRDecimal::xmlUnserialize($children->diameter));
-        }
-        if (isset($attributes->diameter)) {
-            $pt = $type->getDiameter();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->diameter);
-            } else {
-                $type->setDiameter((string)$attributes->diameter);
-            }
-        }
-        if (isset($children->duration)) {
-            $type->setDuration(FHIRQuantity::xmlUnserialize($children->duration));
-        }
-        if (isset($children->eye)) {
-            $type->setEye(FHIRVisionEyes::xmlUnserialize($children->eye));
-        }
-        if (isset($children->note)) {
-            foreach($children->note as $child) {
-                $type->addNote(FHIRAnnotation::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->power)) {
-            $type->setPower(FHIRDecimal::xmlUnserialize($children->power));
-        }
-        if (isset($attributes->power)) {
-            $pt = $type->getPower();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->power);
-            } else {
-                $type->setPower((string)$attributes->power);
-            }
-        }
-        if (isset($children->prism)) {
-            $type->setPrism(FHIRDecimal::xmlUnserialize($children->prism));
-        }
-        if (isset($attributes->prism)) {
-            $pt = $type->getPrism();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->prism);
-            } else {
-                $type->setPrism((string)$attributes->prism);
-            }
-        }
-        if (isset($children->product)) {
-            $type->setProduct(FHIRCodeableConcept::xmlUnserialize($children->product));
-        }
-        if (isset($children->sphere)) {
-            $type->setSphere(FHIRDecimal::xmlUnserialize($children->sphere));
-        }
-        if (isset($attributes->sphere)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_SPHERE])) {
             $pt = $type->getSphere();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->sphere);
+                $pt->setValue((string)$attributes[self::FIELD_SPHERE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setSphere((string)$attributes->sphere);
+                $type->setSphere((string)$attributes[self::FIELD_SPHERE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_CYLINDER])) {
+            $pt = $type->getCylinder();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_CYLINDER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setCylinder((string)$attributes[self::FIELD_CYLINDER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_AXIS])) {
+            $pt = $type->getAxis();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_AXIS], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setAxis((string)$attributes[self::FIELD_AXIS], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_PRISM])) {
+            $pt = $type->getPrism();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_PRISM], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setPrism((string)$attributes[self::FIELD_PRISM], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ADD])) {
+            $pt = $type->getAdd();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ADD], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setAdd((string)$attributes[self::FIELD_ADD], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_POWER])) {
+            $pt = $type->getPower();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_POWER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setPower((string)$attributes[self::FIELD_POWER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_BACK_CURVE])) {
+            $pt = $type->getBackCurve();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_BACK_CURVE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setBackCurve((string)$attributes[self::FIELD_BACK_CURVE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_DIAMETER])) {
+            $pt = $type->getDiameter();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_DIAMETER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setDiameter((string)$attributes[self::FIELD_DIAMETER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_COLOR])) {
+            $pt = $type->getColor();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_COLOR], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setColor((string)$attributes[self::FIELD_COLOR], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_BRAND])) {
+            $pt = $type->getBrand();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_BRAND], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setBrand((string)$attributes[self::FIELD_BRAND], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\STU3\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\STU3\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getAdd())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_ADD, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getAxis())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_AXIS, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getBackCurve())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BACK_CURVE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getBase())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BASE, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'VisionPrescriptionDispense', $this->_getSourceXmlns());
         }
-        if (null !== ($v = $this->getBrand())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_BRAND, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SPHERE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSphere())) {
+            $xw->writeAttribute(self::FIELD_SPHERE, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getColor())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_COLOR, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CYLINDER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCylinder())) {
+            $xw->writeAttribute(self::FIELD_CYLINDER, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getCylinder())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_CYLINDER, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_AXIS] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAxis())) {
+            $xw->writeAttribute(self::FIELD_AXIS, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getDiameter())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DIAMETER, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PRISM] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPrism())) {
+            $xw->writeAttribute(self::FIELD_PRISM, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getDuration())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_DURATION, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ADD] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getAdd())) {
+            $xw->writeAttribute(self::FIELD_ADD, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_POWER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getPower())) {
+            $xw->writeAttribute(self::FIELD_POWER, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BACK_CURVE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBackCurve())) {
+            $xw->writeAttribute(self::FIELD_BACK_CURVE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DIAMETER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getDiameter())) {
+            $xw->writeAttribute(self::FIELD_DIAMETER, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_COLOR] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getColor())) {
+            $xw->writeAttribute(self::FIELD_COLOR, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BRAND] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getBrand())) {
+            $xw->writeAttribute(self::FIELD_BRAND, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        if (null !== ($v = $this->getProduct())) {
+            $xw->startElement(self::FIELD_PRODUCT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getEye())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_EYE, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_EYE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if ([] !== ($vs = $this->getNote())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_NOTE, null, $v->_getFHIRXMLNamespace()));
-            }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SPHERE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSphere())) {
+            $xw->startElement(self::FIELD_SPHERE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getPower())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_POWER, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_CYLINDER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCylinder())) {
+            $xw->startElement(self::FIELD_CYLINDER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getPrism())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRISM, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_AXIS] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAxis())) {
+            $xw->startElement(self::FIELD_AXIS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getProduct())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_PRODUCT, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_PRISM] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPrism())) {
+            $xw->startElement(self::FIELD_PRISM);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getSphere())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SPHERE, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getBase())) {
+            $xw->startElement(self::FIELD_BASE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_ADD] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getAdd())) {
+            $xw->startElement(self::FIELD_ADD);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_POWER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getPower())) {
+            $xw->startElement(self::FIELD_POWER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BACK_CURVE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBackCurve())) {
+            $xw->startElement(self::FIELD_BACK_CURVE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_DIAMETER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getDiameter())) {
+            $xw->startElement(self::FIELD_DIAMETER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getDuration())) {
+            $xw->startElement(self::FIELD_DURATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_COLOR] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getColor())) {
+            $xw->startElement(self::FIELD_COLOR);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_BRAND] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getBrand())) {
+            $xw->startElement(self::FIELD_BRAND);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getNote() as $v) {
+            $xw->startElement(self::FIELD_NOTE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getAdd())) {
-            $a[self::FIELD_ADD] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_ADD_EXT] = $enc;
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getProduct())) {
+            $out->{self::FIELD_PRODUCT} = $v;
+        }
+        if (null !== ($v = $this->getEye())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_EYE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRVisionEyes::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_EYE_EXT} = $ext;
             }
         }
-        if (null !== ($v = $this->getAxis())) {
-            $a[self::FIELD_AXIS] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_AXIS_EXT] = $enc;
+        if (null !== ($v = $this->getSphere())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_SPHERE} = $val;
             }
-        }
-        if (null !== ($v = $this->getBackCurve())) {
-            $a[self::FIELD_BACK_CURVE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_BACK_CURVE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getBase())) {
-            $a[self::FIELD_BASE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRVisionBase::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRVisionBase::FIELD_VALUE]);
-                $a[self::FIELD_BASE_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getBrand())) {
-            $a[self::FIELD_BRAND] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_BRAND_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getColor())) {
-            $a[self::FIELD_COLOR] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_COLOR_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDecimal::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SPHERE_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getCylinder())) {
-            $a[self::FIELD_CYLINDER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_CYLINDER_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_CYLINDER} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDecimal::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_CYLINDER_EXT} = $ext;
             }
         }
-        if (null !== ($v = $this->getDiameter())) {
-            $a[self::FIELD_DIAMETER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_DIAMETER_EXT] = $enc;
+        if (null !== ($v = $this->getAxis())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_AXIS} = $val;
             }
-        }
-        if (null !== ($v = $this->getDuration())) {
-            $a[self::FIELD_DURATION] = $v;
-        }
-        if (null !== ($v = $this->getEye())) {
-            $a[self::FIELD_EYE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRVisionEyes::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRVisionEyes::FIELD_VALUE]);
-                $a[self::FIELD_EYE_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getNote())) {
-            $a[self::FIELD_NOTE] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_NOTE][] = $v;
-            }
-        }
-        if (null !== ($v = $this->getPower())) {
-            $a[self::FIELD_POWER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_POWER_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInteger::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_AXIS_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getPrism())) {
-            $a[self::FIELD_PRISM] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_PRISM_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_PRISM} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDecimal::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_PRISM_EXT} = $ext;
             }
         }
-        if (null !== ($v = $this->getProduct())) {
-            $a[self::FIELD_PRODUCT] = $v;
-        }
-        if (null !== ($v = $this->getSphere())) {
-            $a[self::FIELD_SPHERE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDecimal::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDecimal::FIELD_VALUE]);
-                $a[self::FIELD_SPHERE_EXT] = $enc;
+        if (null !== ($v = $this->getBase())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_BASE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRVisionBase::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_BASE_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getAdd())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_ADD} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDecimal::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_ADD_EXT} = $ext;
+            }
         }
-        return $a;
-    }
+        if (null !== ($v = $this->getPower())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_POWER} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDecimal::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_POWER_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getBackCurve())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_BACK_CURVE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDecimal::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_BACK_CURVE_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDiameter())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_DIAMETER} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDecimal::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_DIAMETER_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getDuration())) {
+            $out->{self::FIELD_DURATION} = $v;
+        }
+        if (null !== ($v = $this->getColor())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_COLOR} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_COLOR_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getBrand())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_BRAND} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_BRAND_EXT} = $ext;
+            }
+        }
+        if ([] !== ($vs = $this->getNote())) {
+            $out->{self::FIELD_NOTE} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_NOTE}[] = $v;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

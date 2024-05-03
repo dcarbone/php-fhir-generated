@@ -18,17 +18,17 @@
     "php-fhir"
   ],
   "require": {
-    "php": ">=5.4.0",
-    "ext-libxml": "*",
+    "php": "^8.1",
+    "ext-curl": "*",
+    "ext-dom": "*",
     "ext-json": "*",
-    "ext-simplexml": "*"
+    "ext-libxml": "*",
+    "ext-simplexml": "*",
+    "ext-xmlreader": "*",
+    "ext-xmlwriter": "*"
   },
   "require-dev": {
-    "ext-libxml": "*",
-    "ext-json": "*",
-    "ext-simplexml": "*",
-    "ext-curl": "*",
-    "phpunit/phpunit": "@stable"
+    "phpunit/phpunit": "^10.5 || ^11.0"
   },
   "autoload": {
     "psr-0": {

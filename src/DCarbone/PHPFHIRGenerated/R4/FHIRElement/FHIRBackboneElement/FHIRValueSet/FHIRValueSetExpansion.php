@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,12 +62,21 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
  * 
  */
 
+use DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri;
+use DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRUriPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * A ValueSet resource instance specifies a set of codes drawn from one or more
@@ -82,31 +91,17 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_EXPANSION;
-    const FIELD_CONTAINS = 'contains';
+
     const FIELD_IDENTIFIER = 'identifier';
     const FIELD_IDENTIFIER_EXT = '_identifier';
-    const FIELD_OFFSET = 'offset';
-    const FIELD_OFFSET_EXT = '_offset';
-    const FIELD_PARAMETER = 'parameter';
     const FIELD_TIMESTAMP = 'timestamp';
     const FIELD_TIMESTAMP_EXT = '_timestamp';
     const FIELD_TOTAL = 'total';
     const FIELD_TOTAL_EXT = '_total';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A ValueSet resource instance specifies a set of codes drawn from one or more
-     * code systems, intended for use in a particular context. Value sets link between
-     * [[[CodeSystem]]] definitions and their use in [coded
-     * elements](terminologies.html).
-     *
-     * The codes that are contained in the value set expansion.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
-     */
-    protected $contains = [];
+    const FIELD_OFFSET = 'offset';
+    const FIELD_OFFSET_EXT = '_offset';
+    const FIELD_PARAMETER = 'parameter';
+    const FIELD_CONTAINS = 'contains';
 
     /**
      * String of characters used to identify a name or a resource
@@ -121,35 +116,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    protected $identifier = null;
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * If paging is being used, the offset at which this resource starts. I.e. this
-     * resource is a partial view into the expansion. If paging is not being used, this
-     * element SHALL NOT be present.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
-     */
-    protected $offset = null;
-
-    /**
-     * A ValueSet resource instance specifies a set of codes drawn from one or more
-     * code systems, intended for use in a particular context. Value sets link between
-     * [[[CodeSystem]]] definitions and their use in [coded
-     * elements](terminologies.html).
-     *
-     * A parameter that controlled the expansion process. These parameters may be used
-     * by users of expanded value sets to check whether the expansion is suitable for a
-     * particular purpose, or to pick the correct expansion.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter[]
-     */
-    protected $parameter = [];
-
+    protected null|FHIRUri $identifier = null;
     /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
@@ -162,8 +129,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
-    protected $timestamp = null;
-
+    protected null|FHIRDateTime $timestamp = null;
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
@@ -175,59 +141,66 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    protected $total = null;
+    protected null|FHIRInteger $total = null;
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If paging is being used, the offset at which this resource starts. I.e. this
+     * resource is a partial view into the expansion. If paging is not being used, this
+     * element SHALL NOT be present.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    protected null|FHIRInteger $offset = null;
+    /**
+     * A ValueSet resource instance specifies a set of codes drawn from one or more
+     * code systems, intended for use in a particular context. Value sets link between
+     * [[[CodeSystem]]] definitions and their use in [coded
+     * elements](terminologies.html).
+     *
+     * A parameter that controlled the expansion process. These parameters may be used
+     * by users of expanded value sets to check whether the expansion is suitable for a
+     * particular purpose, or to pick the correct expansion.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter[]
+     */
+    protected null|array $parameter = [];
+    /**
+     * A ValueSet resource instance specifies a set of codes drawn from one or more
+     * code systems, intended for use in a particular context. Value sets link between
+     * [[[CodeSystem]]] definitions and their use in [coded
+     * elements](terminologies.html).
+     *
+     * The codes that are contained in the value set expansion.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
+     */
+    protected null|array $contains = [];
 
     /**
      * Validation map for fields in type ValueSet.Expansion
      * @var array
      */
-    private static $_validationRules = [    ];
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
 
     /**
      * FHIRValueSetExpansion Constructor
      * @param null|array $data
      */
-    public function __construct($data = null)
+    public function __construct(null|array $data = null)
     {
         if (null === $data || [] === $data) {
             return;
         }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRValueSetExpansion::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
         parent::__construct($data);
-        if (isset($data[self::FIELD_CONTAINS])) {
-            if (is_array($data[self::FIELD_CONTAINS])) {
-                foreach($data[self::FIELD_CONTAINS] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRValueSetContains) {
-                        $this->addContains($v);
-                    } else {
-                        $this->addContains(new FHIRValueSetContains($v));
-                    }
-                }
-            } else if ($data[self::FIELD_CONTAINS] instanceof FHIRValueSetContains) {
-                $this->addContains($data[self::FIELD_CONTAINS]);
-            } else {
-                $this->addContains(new FHIRValueSetContains($data[self::FIELD_CONTAINS]));
-            }
-        }
-        if (isset($data[self::FIELD_IDENTIFIER]) || isset($data[self::FIELD_IDENTIFIER_EXT])) {
-            if (isset($data[self::FIELD_IDENTIFIER])) {
-                $value = $data[self::FIELD_IDENTIFIER];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT])) {
-                $ext = $data[self::FIELD_IDENTIFIER_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_IDENTIFIER, $data) || array_key_exists(self::FIELD_IDENTIFIER_EXT, $data)) {
+            $value = $data[self::FIELD_IDENTIFIER] ?? null;
+            $ext = (isset($data[self::FIELD_IDENTIFIER_EXT]) && is_array($data[self::FIELD_IDENTIFIER_EXT])) ? $data[self::FIELD_IDENTIFIER_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRUri) {
                     $this->setIdentifier($value);
@@ -236,62 +209,15 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
                 } else {
                     $this->setIdentifier(new FHIRUri([FHIRUri::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setIdentifier(new FHIRUri($ext));
+            } else {
+                $this->setIdentifier(new FHIRUri(null));
             }
         }
-        if (isset($data[self::FIELD_OFFSET]) || isset($data[self::FIELD_OFFSET_EXT])) {
-            if (isset($data[self::FIELD_OFFSET])) {
-                $value = $data[self::FIELD_OFFSET];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_OFFSET_EXT]) && is_array($data[self::FIELD_OFFSET_EXT])) {
-                $ext = $data[self::FIELD_OFFSET_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setOffset($value);
-                } else if (is_array($value)) {
-                    $this->setOffset(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setOffset(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setOffset(new FHIRInteger($ext));
-            }
-        }
-        if (isset($data[self::FIELD_PARAMETER])) {
-            if (is_array($data[self::FIELD_PARAMETER])) {
-                foreach($data[self::FIELD_PARAMETER] as $v) {
-                    if (null === $v) {
-                        continue;
-                    }
-                    if ($v instanceof FHIRValueSetParameter) {
-                        $this->addParameter($v);
-                    } else {
-                        $this->addParameter(new FHIRValueSetParameter($v));
-                    }
-                }
-            } else if ($data[self::FIELD_PARAMETER] instanceof FHIRValueSetParameter) {
-                $this->addParameter($data[self::FIELD_PARAMETER]);
-            } else {
-                $this->addParameter(new FHIRValueSetParameter($data[self::FIELD_PARAMETER]));
-            }
-        }
-        if (isset($data[self::FIELD_TIMESTAMP]) || isset($data[self::FIELD_TIMESTAMP_EXT])) {
-            if (isset($data[self::FIELD_TIMESTAMP])) {
-                $value = $data[self::FIELD_TIMESTAMP];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TIMESTAMP_EXT]) && is_array($data[self::FIELD_TIMESTAMP_EXT])) {
-                $ext = $data[self::FIELD_TIMESTAMP_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_TIMESTAMP, $data) || array_key_exists(self::FIELD_TIMESTAMP_EXT, $data)) {
+            $value = $data[self::FIELD_TIMESTAMP] ?? null;
+            $ext = (isset($data[self::FIELD_TIMESTAMP_EXT]) && is_array($data[self::FIELD_TIMESTAMP_EXT])) ? $data[self::FIELD_TIMESTAMP_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRDateTime) {
                     $this->setTimestamp($value);
@@ -300,21 +226,15 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
                 } else {
                     $this->setTimestamp(new FHIRDateTime([FHIRDateTime::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setTimestamp(new FHIRDateTime($ext));
+            } else {
+                $this->setTimestamp(new FHIRDateTime(null));
             }
         }
-        if (isset($data[self::FIELD_TOTAL]) || isset($data[self::FIELD_TOTAL_EXT])) {
-            if (isset($data[self::FIELD_TOTAL])) {
-                $value = $data[self::FIELD_TOTAL];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_TOTAL_EXT]) && is_array($data[self::FIELD_TOTAL_EXT])) {
-                $ext = $data[self::FIELD_TOTAL_EXT];
-            } else {
-                $ext = [];
-            }
+        if (array_key_exists(self::FIELD_TOTAL, $data) || array_key_exists(self::FIELD_TOTAL_EXT, $data)) {
+            $value = $data[self::FIELD_TOTAL] ?? null;
+            $ext = (isset($data[self::FIELD_TOTAL_EXT]) && is_array($data[self::FIELD_TOTAL_EXT])) ? $data[self::FIELD_TOTAL_EXT] : [];
             if (null !== $value) {
                 if ($value instanceof FHIRInteger) {
                     $this->setTotal($value);
@@ -323,8 +243,57 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
                 } else {
                     $this->setTotal(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
                 }
-            } else if ([] !== $ext) {
+            } elseif ([] !== $ext) {
                 $this->setTotal(new FHIRInteger($ext));
+            } else {
+                $this->setTotal(new FHIRInteger(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_OFFSET, $data) || array_key_exists(self::FIELD_OFFSET_EXT, $data)) {
+            $value = $data[self::FIELD_OFFSET] ?? null;
+            $ext = (isset($data[self::FIELD_OFFSET_EXT]) && is_array($data[self::FIELD_OFFSET_EXT])) ? $data[self::FIELD_OFFSET_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setOffset($value);
+                } else if (is_array($value)) {
+                    $this->setOffset(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setOffset(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setOffset(new FHIRInteger($ext));
+            } else {
+                $this->setOffset(new FHIRInteger(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_PARAMETER, $data)) {
+            if (is_array($data[self::FIELD_PARAMETER])) {
+                foreach($data[self::FIELD_PARAMETER] as $v) {
+                    if ($v instanceof FHIRValueSetParameter) {
+                        $this->addParameter($v);
+                    } else {
+                        $this->addParameter(new FHIRValueSetParameter($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_PARAMETER] instanceof FHIRValueSetParameter) {
+                $this->addParameter($data[self::FIELD_PARAMETER]);
+            } else {
+                $this->addParameter(new FHIRValueSetParameter($data[self::FIELD_PARAMETER]));
+            }
+        }
+        if (array_key_exists(self::FIELD_CONTAINS, $data)) {
+            if (is_array($data[self::FIELD_CONTAINS])) {
+                foreach($data[self::FIELD_CONTAINS] as $v) {
+                    if ($v instanceof FHIRValueSetContains) {
+                        $this->addContains($v);
+                    } else {
+                        $this->addContains(new FHIRValueSetContains($v));
+                    }
+                }
+            } elseif ($data[self::FIELD_CONTAINS] instanceof FHIRValueSetContains) {
+                $this->addContains($data[self::FIELD_CONTAINS]);
+            } else {
+                $this->addContains(new FHIRValueSetContains($data[self::FIELD_CONTAINS]));
             }
         }
     }
@@ -332,80 +301,9 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     /**
      * @return string
      */
-    public function _getFHIRTypeName()
+    public function _getFhirTypeName(): string
     {
         return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<ValueSetExpansion{$xmlns}></ValueSetExpansion>";
-    }
-
-    /**
-     * A ValueSet resource instance specifies a set of codes drawn from one or more
-     * code systems, intended for use in a particular context. Value sets link between
-     * [[[CodeSystem]]] definitions and their use in [coded
-     * elements](terminologies.html).
-     *
-     * The codes that are contained in the value set expansion.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
-     */
-    public function getContains()
-    {
-        return $this->contains;
-    }
-
-    /**
-     * A ValueSet resource instance specifies a set of codes drawn from one or more
-     * code systems, intended for use in a particular context. Value sets link between
-     * [[[CodeSystem]]] definitions and their use in [coded
-     * elements](terminologies.html).
-     *
-     * The codes that are contained in the value set expansion.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains $contains
-     * @return static
-     */
-    public function addContains(FHIRValueSetContains $contains = null)
-    {
-        $this->contains[] = $contains;
-        return $this;
-    }
-
-    /**
-     * A ValueSet resource instance specifies a set of codes drawn from one or more
-     * code systems, intended for use in a particular context. Value sets link between
-     * [[[CodeSystem]]] definitions and their use in [coded
-     * elements](terminologies.html).
-     *
-     * The codes that are contained in the value set expansion.
-     *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[] $contains
-     * @return static
-     */
-    public function setContains(array $contains = [])
-    {
-        $this->contains = [];
-        if ([] === $contains) {
-            return $this;
-        }
-        foreach($contains as $v) {
-            if ($v instanceof FHIRValueSetContains) {
-                $this->addContains($v);
-            } else {
-                $this->addContains(new FHIRValueSetContains($v));
-            }
-        }
-        return $this;
     }
 
     /**
@@ -421,7 +319,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
-    public function getIdentifier()
+    public function getIdentifier(): null|FHIRUri
     {
         return $this->identifier;
     }
@@ -437,20 +335,109 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * identifier as long as those factors remain the same, and the expansion is the
      * same, but are not required to do so. This is a business identifier.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $identifier
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRUriPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri $identifier
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setIdentifier($identifier = null)
+    public function setIdentifier(null|string|FHIRUriPrimitive|FHIRUri $identifier = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $identifier) {
-            $this->identifier = null;
-            return $this;
+        if (null !== $identifier && !($identifier instanceof FHIRUri)) {
+            $identifier = new FHIRUri($identifier);
         }
-        if ($identifier instanceof FHIRUri) {
-            $this->identifier = $identifier;
-            return $this;
+        $this->_trackValueSet($this->identifier, $identifier);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_IDENTIFIER])) {
+            $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER] = [];
         }
-        $this->identifier = new FHIRUri($identifier);
+        $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER][0] = $xmlLocation;
+        $this->identifier = $identifier;
+        return $this;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The time at which the expansion was produced by the expanding system.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
+     */
+    public function getTimestamp(): null|FHIRDateTime
+    {
+        return $this->timestamp;
+    }
+
+    /**
+     * A date, date-time or partial date (e.g. just year or year + month). If hours and
+     * minutes are specified, a time zone SHALL be populated. The format is a union of
+     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
+     * due to schema type constraints but may be zero-filled and may be ignored. Dates
+     * SHALL be valid dates.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The time at which the expansion was produced by the expanding system.
+     *
+     * @param null|string|\DateTimeInterface|\DCarbone\PHPFHIRGenerated\R4\FHIRDateTimePrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $timestamp
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setTimestamp(null|string|\DateTimeInterface|FHIRDateTimePrimitive|FHIRDateTime $timestamp = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $timestamp && !($timestamp instanceof FHIRDateTime)) {
+            $timestamp = new FHIRDateTime($timestamp);
+        }
+        $this->_trackValueSet($this->timestamp, $timestamp);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_TIMESTAMP])) {
+            $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP][0] = $xmlLocation;
+        $this->timestamp = $timestamp;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The total number of concepts in the expansion. If the number of concept nodes in
+     * this resource is less than the stated number, then the server can return more
+     * using the offset parameter.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    public function getTotal(): null|FHIRInteger
+    {
+        return $this->total;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The total number of concepts in the expansion. If the number of concept nodes in
+     * this resource is less than the stated number, then the server can return more
+     * using the offset parameter.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $total
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setTotal(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $total = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $total && !($total instanceof FHIRInteger)) {
+            $total = new FHIRInteger($total);
+        }
+        $this->_trackValueSet($this->total, $total);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_TOTAL])) {
+            $this->_primitiveXmlLocations[self::FIELD_TOTAL] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_TOTAL][0] = $xmlLocation;
+        $this->total = $total;
         return $this;
     }
 
@@ -465,7 +452,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    public function getOffset()
+    public function getOffset(): null|FHIRInteger
     {
         return $this->offset;
     }
@@ -479,20 +466,21 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * resource is a partial view into the expansion. If paging is not being used, this
      * element SHALL NOT be present.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $offset
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $offset
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setOffset($offset = null)
+    public function setOffset(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $offset = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $offset) {
-            $this->offset = null;
-            return $this;
+        if (null !== $offset && !($offset instanceof FHIRInteger)) {
+            $offset = new FHIRInteger($offset);
         }
-        if ($offset instanceof FHIRInteger) {
-            $this->offset = $offset;
-            return $this;
+        $this->_trackValueSet($this->offset, $offset);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_OFFSET])) {
+            $this->_primitiveXmlLocations[self::FIELD_OFFSET] = [];
         }
-        $this->offset = new FHIRInteger($offset);
+        $this->_primitiveXmlLocations[self::FIELD_OFFSET][0] = $xmlLocation;
+        $this->offset = $offset;
         return $this;
     }
 
@@ -508,7 +496,7 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter[]
      */
-    public function getParameter()
+    public function getParameter(): null|array
     {
         return $this->parameter;
     }
@@ -526,8 +514,12 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter $parameter
      * @return static
      */
-    public function addParameter(FHIRValueSetParameter $parameter = null)
+    public function addParameter(null|FHIRValueSetParameter $parameter = null): self
     {
+        if (null === $parameter) {
+            $parameter = new FHIRValueSetParameter();
+        }
+        $this->_trackValueAdded();
         $this->parameter[] = $parameter;
         return $this;
     }
@@ -538,112 +530,33 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * [[[CodeSystem]]] definitions and their use in [coded
      * elements](terminologies.html).
      *
-     * A parameter that controlled the expansion process. These parameters may be used
-     * by users of expanded value sets to check whether the expansion is suitable for a
-     * particular purpose, or to pick the correct expansion.
+     * The codes that are contained in the value set expansion.
      *
-     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter[] $parameter
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
+     */
+    public function getContains(): null|array
+    {
+        return $this->contains;
+    }
+
+    /**
+     * A ValueSet resource instance specifies a set of codes drawn from one or more
+     * code systems, intended for use in a particular context. Value sets link between
+     * [[[CodeSystem]]] definitions and their use in [coded
+     * elements](terminologies.html).
+     *
+     * The codes that are contained in the value set expansion.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains $contains
      * @return static
      */
-    public function setParameter(array $parameter = [])
+    public function addContains(null|FHIRValueSetContains $contains = null): self
     {
-        $this->parameter = [];
-        if ([] === $parameter) {
-            return $this;
+        if (null === $contains) {
+            $contains = new FHIRValueSetContains();
         }
-        foreach($parameter as $v) {
-            if ($v instanceof FHIRValueSetParameter) {
-                $this->addParameter($v);
-            } else {
-                $this->addParameter(new FHIRValueSetParameter($v));
-            }
-        }
-        return $this;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The time at which the expansion was produced by the expanding system.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
-     */
-    public function getTimestamp()
-    {
-        return $this->timestamp;
-    }
-
-    /**
-     * A date, date-time or partial date (e.g. just year or year + month). If hours and
-     * minutes are specified, a time zone SHALL be populated. The format is a union of
-     * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
-     * due to schema type constraints but may be zero-filled and may be ignored. Dates
-     * SHALL be valid dates.
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The time at which the expansion was produced by the expanding system.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime $timestamp
-     * @return static
-     */
-    public function setTimestamp($timestamp = null)
-    {
-        if (null === $timestamp) {
-            $this->timestamp = null;
-            return $this;
-        }
-        if ($timestamp instanceof FHIRDateTime) {
-            $this->timestamp = $timestamp;
-            return $this;
-        }
-        $this->timestamp = new FHIRDateTime($timestamp);
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The total number of concepts in the expansion. If the number of concept nodes in
-     * this resource is less than the stated number, then the server can return more
-     * using the offset parameter.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
-     */
-    public function getTotal()
-    {
-        return $this->total;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The total number of concepts in the expansion. If the number of concept nodes in
-     * this resource is less than the stated number, then the server can return more
-     * using the offset parameter.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $total
-     * @return static
-     */
-    public function setTotal($total = null)
-    {
-        if (null === $total) {
-            $this->total = null;
-            return $this;
-        }
-        if ($total instanceof FHIRInteger) {
-            $this->total = $total;
-            return $this;
-        }
-        $this->total = new FHIRInteger($total);
+        $this->_trackValueAdded();
+        $this->contains[] = $contains;
         return $this;
     }
 
@@ -653,9 +566,9 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -664,20 +577,23 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if ([] !== ($vs = $this->getContains())) {
-            foreach($vs as $i => $v) {
-                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                    $errs[sprintf('%s.%d', self::FIELD_CONTAINS, $i)] = $fieldErrs;
-                }
-            }
-        }
         if (null !== ($v = $this->getIdentifier())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_IDENTIFIER] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getTimestamp())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TIMESTAMP] = $fieldErrs;
+            }
+        }
+        if (null !== ($v = $this->getTotal())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_TOTAL] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getOffset())) {
@@ -692,25 +608,10 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
                 }
             }
         }
-        if (null !== ($v = $this->getTimestamp())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TIMESTAMP] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getTotal())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_TOTAL] = $fieldErrs;
-            }
-        }
-        if (isset($validationRules[self::FIELD_CONTAINS])) {
-            $v = $this->getContains();
-            foreach($validationRules[self::FIELD_CONTAINS] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_EXPANSION, self::FIELD_CONTAINS, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_CONTAINS])) {
-                        $errs[self::FIELD_CONTAINS] = [];
-                    }
-                    $errs[self::FIELD_CONTAINS][$rule] = $err;
+        if ([] !== ($vs = $this->getContains())) {
+            foreach($vs as $i => $v) {
+                if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                    $errs[sprintf('%s.%d', self::FIELD_CONTAINS, $i)] = $fieldErrs;
                 }
             }
         }
@@ -723,6 +624,30 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
                         $errs[self::FIELD_IDENTIFIER] = [];
                     }
                     $errs[self::FIELD_IDENTIFIER][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TIMESTAMP])) {
+            $v = $this->getTimestamp();
+            foreach($validationRules[self::FIELD_TIMESTAMP] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_EXPANSION, self::FIELD_TIMESTAMP, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TIMESTAMP])) {
+                        $errs[self::FIELD_TIMESTAMP] = [];
+                    }
+                    $errs[self::FIELD_TIMESTAMP][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_TOTAL])) {
+            $v = $this->getTotal();
+            foreach($validationRules[self::FIELD_TOTAL] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_EXPANSION, self::FIELD_TOTAL, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_TOTAL])) {
+                        $errs[self::FIELD_TOTAL] = [];
+                    }
+                    $errs[self::FIELD_TOTAL][$rule] = $err;
                 }
             }
         }
@@ -750,27 +675,15 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_TIMESTAMP])) {
-            $v = $this->getTimestamp();
-            foreach($validationRules[self::FIELD_TIMESTAMP] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_EXPANSION, self::FIELD_TIMESTAMP, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_CONTAINS])) {
+            $v = $this->getContains();
+            foreach($validationRules[self::FIELD_CONTAINS] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_EXPANSION, self::FIELD_CONTAINS, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TIMESTAMP])) {
-                        $errs[self::FIELD_TIMESTAMP] = [];
+                    if (!isset($errs[self::FIELD_CONTAINS])) {
+                        $errs[self::FIELD_CONTAINS] = [];
                     }
-                    $errs[self::FIELD_TIMESTAMP][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_TOTAL])) {
-            $v = $this->getTotal();
-            foreach($validationRules[self::FIELD_TOTAL] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_VALUE_SET_DOT_EXPANSION, self::FIELD_TOTAL, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_TOTAL])) {
-                        $errs[self::FIELD_TOTAL] = [];
-                    }
-                    $errs[self::FIELD_TOTAL][$rule] = $err;
+                    $errs[self::FIELD_CONTAINS][$rule] = $err;
                 }
             }
         }
@@ -814,215 +727,255 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRValueSetExpansion::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRValueSetExpansion::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRValueSetExpansion;
-        } elseif (!is_object($type) || !($type instanceof FHIRValueSetExpansion)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRValueSetExpansion)) {
             throw new \RuntimeException(sprintf(
-                'FHIRValueSetExpansion::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_IDENTIFIER === $childName) {
+                $type->setIdentifier(FHIRUri::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_TIMESTAMP === $childName) {
+                $type->setTimestamp(FHIRDateTime::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_TOTAL === $childName) {
+                $type->setTotal(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_OFFSET === $childName) {
+                $type->setOffset(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_PARAMETER === $childName) {
+                $type->addParameter(FHIRValueSetParameter::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_CONTAINS === $childName) {
+                $type->addContains(FHIRValueSetContains::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->contains)) {
-            foreach($children->contains as $child) {
-                $type->addContains(FHIRValueSetContains::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->identifier)) {
-            $type->setIdentifier(FHIRUri::xmlUnserialize($children->identifier));
-        }
-        if (isset($attributes->identifier)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_IDENTIFIER])) {
             $pt = $type->getIdentifier();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->identifier);
+                $pt->setValue((string)$attributes[self::FIELD_IDENTIFIER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setIdentifier((string)$attributes->identifier);
+                $type->setIdentifier((string)$attributes[self::FIELD_IDENTIFIER], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->offset)) {
-            $type->setOffset(FHIRInteger::xmlUnserialize($children->offset));
-        }
-        if (isset($attributes->offset)) {
-            $pt = $type->getOffset();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->offset);
-            } else {
-                $type->setOffset((string)$attributes->offset);
-            }
-        }
-        if (isset($children->parameter)) {
-            foreach($children->parameter as $child) {
-                $type->addParameter(FHIRValueSetParameter::xmlUnserialize($child));
-            }
-        }
-        if (isset($children->timestamp)) {
-            $type->setTimestamp(FHIRDateTime::xmlUnserialize($children->timestamp));
-        }
-        if (isset($attributes->timestamp)) {
+        if (isset($attributes[self::FIELD_TIMESTAMP])) {
             $pt = $type->getTimestamp();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->timestamp);
+                $pt->setValue((string)$attributes[self::FIELD_TIMESTAMP], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setTimestamp((string)$attributes->timestamp);
+                $type->setTimestamp((string)$attributes[self::FIELD_TIMESTAMP], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
-        if (isset($children->total)) {
-            $type->setTotal(FHIRInteger::xmlUnserialize($children->total));
-        }
-        if (isset($attributes->total)) {
+        if (isset($attributes[self::FIELD_TOTAL])) {
             $pt = $type->getTotal();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->total);
+                $pt->setValue((string)$attributes[self::FIELD_TOTAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setTotal((string)$attributes->total);
+                $type->setTotal((string)$attributes[self::FIELD_TOTAL], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_OFFSET])) {
+            $pt = $type->getOffset();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_OFFSET], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setOffset((string)$attributes[self::FIELD_OFFSET], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if ([] !== ($vs = $this->getContains())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_CONTAINS, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getIdentifier())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_IDENTIFIER, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getOffset())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_OFFSET, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if ([] !== ($vs = $this->getParameter())) {
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $v->xmlSerialize($sxe->addChild(self::FIELD_PARAMETER, null, $v->_getFHIRXMLNamespace()));
-            }
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'ValueSetExpansion', $this->_getSourceXmlns());
         }
-        if (null !== ($v = $this->getTimestamp())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TIMESTAMP, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getIdentifier())) {
+            $xw->writeAttribute(self::FIELD_IDENTIFIER, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getTotal())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_TOTAL, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTimestamp())) {
+            $xw->writeAttribute(self::FIELD_TIMESTAMP, $v->getValue()?->getFormattedValue());
         }
-        return $sxe;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TOTAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getTotal())) {
+            $xw->writeAttribute(self::FIELD_TOTAL, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_OFFSET] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getOffset())) {
+            $xw->writeAttribute(self::FIELD_OFFSET, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_IDENTIFIER] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getIdentifier())) {
+            $xw->startElement(self::FIELD_IDENTIFIER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TIMESTAMP] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTimestamp())) {
+            $xw->startElement(self::FIELD_TIMESTAMP);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_TOTAL] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getTotal())) {
+            $xw->startElement(self::FIELD_TOTAL);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_OFFSET] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getOffset())) {
+            $xw->startElement(self::FIELD_OFFSET);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getParameter() as $v) {
+            $xw->startElement(self::FIELD_PARAMETER);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        foreach ($this->getContains() as $v) {
+            $xw->startElement(self::FIELD_CONTAINS);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if ([] !== ($vs = $this->getContains())) {
-            $a[self::FIELD_CONTAINS] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_CONTAINS][] = $v;
-            }
-        }
+        $out = parent::jsonSerialize();
         if (null !== ($v = $this->getIdentifier())) {
-            $a[self::FIELD_IDENTIFIER] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRUri::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRUri::FIELD_VALUE]);
-                $a[self::FIELD_IDENTIFIER_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_IDENTIFIER} = $val;
             }
-        }
-        if (null !== ($v = $this->getOffset())) {
-            $a[self::FIELD_OFFSET] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_OFFSET_EXT] = $enc;
-            }
-        }
-        if ([] !== ($vs = $this->getParameter())) {
-            $a[self::FIELD_PARAMETER] = [];
-            foreach($vs as $v) {
-                if (null === $v) {
-                    continue;
-                }
-                $a[self::FIELD_PARAMETER][] = $v;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRUri::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_IDENTIFIER_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getTimestamp())) {
-            $a[self::FIELD_TIMESTAMP] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRDateTime::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRDateTime::FIELD_VALUE]);
-                $a[self::FIELD_TIMESTAMP_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_TIMESTAMP} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRDateTime::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_TIMESTAMP_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getTotal())) {
-            $a[self::FIELD_TOTAL] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_TOTAL_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_TOTAL} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInteger::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_TOTAL_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getOffset())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_OFFSET} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInteger::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_OFFSET_EXT} = $ext;
+            }
         }
-        return $a;
-    }
+        if ([] !== ($vs = $this->getParameter())) {
+            $out->{self::FIELD_PARAMETER} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_PARAMETER}[] = $v;
+            }
+        }
+        if ([] !== ($vs = $this->getContains())) {
+            $out->{self::FIELD_CONTAINS} = [];
+            foreach($vs as $v) {
+                $out->{self::FIELD_CONTAINS}[] = $v;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }

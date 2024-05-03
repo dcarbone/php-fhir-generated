@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein;
 
@@ -6,11 +6,11 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: December 26th, 2019 15:44+0000
+ * Class creation date: May 3rd, 2024 22:35+0000
  * 
  * PHPFHIR Copyright:
  * 
- * Copyright 2016-2019 Daniel Carbone (daniel.p.carbone@gmail.com)
+ * Copyright 2016-2024 Daniel Carbone (daniel.p.carbone@gmail.com)
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,11 +64,18 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
 
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
+use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger;
 use DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString;
+use DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfigKeyEnum;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRConstants;
 use DCarbone\PHPFHIRGenerated\R4\PHPFHIRTypeInterface;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum;
+use DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter;
 
 /**
  * A SubstanceProtein is defined as a single unit of a linear amino acid sequence,
@@ -87,83 +94,34 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
 {
     // name of FHIR type this class describes
     const FHIR_TYPE_NAME = PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT;
-    const FIELD_C_TERMINAL_MODIFICATION = 'cTerminalModification';
-    const FIELD_C_TERMINAL_MODIFICATION_EXT = '_cTerminalModification';
-    const FIELD_C_TERMINAL_MODIFICATION_ID = 'cTerminalModificationId';
-    const FIELD_LENGTH = 'length';
-    const FIELD_LENGTH_EXT = '_length';
-    const FIELD_N_TERMINAL_MODIFICATION = 'nTerminalModification';
-    const FIELD_N_TERMINAL_MODIFICATION_EXT = '_nTerminalModification';
-    const FIELD_N_TERMINAL_MODIFICATION_ID = 'nTerminalModificationId';
-    const FIELD_SEQUENCE = 'sequence';
-    const FIELD_SEQUENCE_EXT = '_sequence';
-    const FIELD_SEQUENCE_ATTACHMENT = 'sequenceAttachment';
+
     const FIELD_SUBUNIT = 'subunit';
     const FIELD_SUBUNIT_EXT = '_subunit';
-
-    /** @var string */
-    private $_xmlns = 'http://hl7.org/fhir';
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The modification at the C-terminal shall be specified.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $cTerminalModification = null;
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Unique identifier for molecular fragment modification based on the ISO 11238
-     * Substance ID.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
-     */
-    protected $cTerminalModificationId = null;
+    const FIELD_SEQUENCE = 'sequence';
+    const FIELD_SEQUENCE_EXT = '_sequence';
+    const FIELD_LENGTH = 'length';
+    const FIELD_LENGTH_EXT = '_length';
+    const FIELD_SEQUENCE_ATTACHMENT = 'sequenceAttachment';
+    const FIELD_N_TERMINAL_MODIFICATION_ID = 'nTerminalModificationId';
+    const FIELD_N_TERMINAL_MODIFICATION = 'nTerminalModification';
+    const FIELD_N_TERMINAL_MODIFICATION_EXT = '_nTerminalModification';
+    const FIELD_C_TERMINAL_MODIFICATION_ID = 'cTerminalModificationId';
+    const FIELD_C_TERMINAL_MODIFICATION = 'cTerminalModification';
+    const FIELD_C_TERMINAL_MODIFICATION_EXT = '_cTerminalModification';
 
     /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Length of linear sequences of amino acids contained in the subunit.
+     * Index of primary sequences of amino acids linked through peptide bonds in order
+     * of decreasing length. Sequences of the same length will be ordered by molecular
+     * weight. Subunits that have identical sequences will be repeated and have
+     * sequential subscripts.
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    protected $length = null;
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the fragment modified at the N-terminal of the SubstanceProtein
-     * shall be specified.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    protected $nTerminalModification = null;
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Unique identifier for molecular fragment modification based on the ISO 11238
-     * Substance ID.
-     *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
-     */
-    protected $nTerminalModificationId = null;
-
+    protected null|FHIRInteger $subunit = null;
     /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
@@ -179,8 +137,17 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    protected $sequence = null;
-
+    protected null|FHIRString $sequence = null;
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Length of linear sequences of amino acids contained in the subunit.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    protected null|FHIRInteger $length = null;
     /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
@@ -196,7 +163,187 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
-    protected $sequenceAttachment = null;
+    protected null|FHIRAttachment $sequenceAttachment = null;
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique identifier for molecular fragment modification based on the ISO 11238
+     * Substance ID.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
+     */
+    protected null|FHIRIdentifier $nTerminalModificationId = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the fragment modified at the N-terminal of the SubstanceProtein
+     * shall be specified.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $nTerminalModification = null;
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique identifier for molecular fragment modification based on the ISO 11238
+     * Substance ID.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
+     */
+    protected null|FHIRIdentifier $cTerminalModificationId = null;
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The modification at the C-terminal shall be specified.
+     *
+     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    protected null|FHIRString $cTerminalModification = null;
+
+    /**
+     * Validation map for fields in type SubstanceProtein.Subunit
+     * @var array
+     */
+    private const _VALIDATION_RULES = [    ];
+
+    /** @var array */
+    private array $_primitiveXmlLocations = [];
+
+    /**
+     * FHIRSubstanceProteinSubunit Constructor
+     * @param null|array $data
+     */
+    public function __construct(null|array $data = null)
+    {
+        if (null === $data || [] === $data) {
+            return;
+        }
+        parent::__construct($data);
+        if (array_key_exists(self::FIELD_SUBUNIT, $data) || array_key_exists(self::FIELD_SUBUNIT_EXT, $data)) {
+            $value = $data[self::FIELD_SUBUNIT] ?? null;
+            $ext = (isset($data[self::FIELD_SUBUNIT_EXT]) && is_array($data[self::FIELD_SUBUNIT_EXT])) ? $data[self::FIELD_SUBUNIT_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setSubunit($value);
+                } else if (is_array($value)) {
+                    $this->setSubunit(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setSubunit(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setSubunit(new FHIRInteger($ext));
+            } else {
+                $this->setSubunit(new FHIRInteger(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_SEQUENCE, $data) || array_key_exists(self::FIELD_SEQUENCE_EXT, $data)) {
+            $value = $data[self::FIELD_SEQUENCE] ?? null;
+            $ext = (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) ? $data[self::FIELD_SEQUENCE_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setSequence($value);
+                } else if (is_array($value)) {
+                    $this->setSequence(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setSequence(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setSequence(new FHIRString($ext));
+            } else {
+                $this->setSequence(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_LENGTH, $data) || array_key_exists(self::FIELD_LENGTH_EXT, $data)) {
+            $value = $data[self::FIELD_LENGTH] ?? null;
+            $ext = (isset($data[self::FIELD_LENGTH_EXT]) && is_array($data[self::FIELD_LENGTH_EXT])) ? $data[self::FIELD_LENGTH_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRInteger) {
+                    $this->setLength($value);
+                } else if (is_array($value)) {
+                    $this->setLength(new FHIRInteger(array_merge($ext, $value)));
+                } else {
+                    $this->setLength(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setLength(new FHIRInteger($ext));
+            } else {
+                $this->setLength(new FHIRInteger(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_SEQUENCE_ATTACHMENT, $data)) {
+            if ($data[self::FIELD_SEQUENCE_ATTACHMENT] instanceof FHIRAttachment) {
+                $this->setSequenceAttachment($data[self::FIELD_SEQUENCE_ATTACHMENT]);
+            } else {
+                $this->setSequenceAttachment(new FHIRAttachment($data[self::FIELD_SEQUENCE_ATTACHMENT]));
+            }
+        }
+        if (array_key_exists(self::FIELD_N_TERMINAL_MODIFICATION_ID, $data)) {
+            if ($data[self::FIELD_N_TERMINAL_MODIFICATION_ID] instanceof FHIRIdentifier) {
+                $this->setNTerminalModificationId($data[self::FIELD_N_TERMINAL_MODIFICATION_ID]);
+            } else {
+                $this->setNTerminalModificationId(new FHIRIdentifier($data[self::FIELD_N_TERMINAL_MODIFICATION_ID]));
+            }
+        }
+        if (array_key_exists(self::FIELD_N_TERMINAL_MODIFICATION, $data) || array_key_exists(self::FIELD_N_TERMINAL_MODIFICATION_EXT, $data)) {
+            $value = $data[self::FIELD_N_TERMINAL_MODIFICATION] ?? null;
+            $ext = (isset($data[self::FIELD_N_TERMINAL_MODIFICATION_EXT]) && is_array($data[self::FIELD_N_TERMINAL_MODIFICATION_EXT])) ? $data[self::FIELD_N_TERMINAL_MODIFICATION_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setNTerminalModification($value);
+                } else if (is_array($value)) {
+                    $this->setNTerminalModification(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setNTerminalModification(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setNTerminalModification(new FHIRString($ext));
+            } else {
+                $this->setNTerminalModification(new FHIRString(null));
+            }
+        }
+        if (array_key_exists(self::FIELD_C_TERMINAL_MODIFICATION_ID, $data)) {
+            if ($data[self::FIELD_C_TERMINAL_MODIFICATION_ID] instanceof FHIRIdentifier) {
+                $this->setCTerminalModificationId($data[self::FIELD_C_TERMINAL_MODIFICATION_ID]);
+            } else {
+                $this->setCTerminalModificationId(new FHIRIdentifier($data[self::FIELD_C_TERMINAL_MODIFICATION_ID]));
+            }
+        }
+        if (array_key_exists(self::FIELD_C_TERMINAL_MODIFICATION, $data) || array_key_exists(self::FIELD_C_TERMINAL_MODIFICATION_EXT, $data)) {
+            $value = $data[self::FIELD_C_TERMINAL_MODIFICATION] ?? null;
+            $ext = (isset($data[self::FIELD_C_TERMINAL_MODIFICATION_EXT]) && is_array($data[self::FIELD_C_TERMINAL_MODIFICATION_EXT])) ? $data[self::FIELD_C_TERMINAL_MODIFICATION_EXT] : [];
+            if (null !== $value) {
+                if ($value instanceof FHIRString) {
+                    $this->setCTerminalModification($value);
+                } else if (is_array($value)) {
+                    $this->setCTerminalModification(new FHIRString(array_merge($ext, $value)));
+                } else {
+                    $this->setCTerminalModification(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
+                }
+            } elseif ([] !== $ext) {
+                $this->setCTerminalModification(new FHIRString($ext));
+            } else {
+                $this->setCTerminalModification(new FHIRString(null));
+            }
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function _getFhirTypeName(): string
+    {
+        return self::FHIR_TYPE_NAME;
+    }
 
     /**
      * A whole number
@@ -208,274 +355,11 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * weight. Subunits that have identical sequences will be repeated and have
      * sequential subscripts.
      *
-     * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
-     */
-    protected $subunit = null;
-
-    /**
-     * Validation map for fields in type SubstanceProtein.Subunit
-     * @var array
-     */
-    private static $_validationRules = [    ];
-
-    /**
-     * FHIRSubstanceProteinSubunit Constructor
-     * @param null|array $data
-     */
-    public function __construct($data = null)
-    {
-        if (null === $data || [] === $data) {
-            return;
-        }
-        if (!is_array($data)) {
-            throw new \InvalidArgumentException(sprintf(
-                'FHIRSubstanceProteinSubunit::_construct - $data expected to be null or array, %s seen',
-                gettype($data)
-            ));
-        }
-        parent::__construct($data);
-        if (isset($data[self::FIELD_C_TERMINAL_MODIFICATION]) || isset($data[self::FIELD_C_TERMINAL_MODIFICATION_EXT])) {
-            if (isset($data[self::FIELD_C_TERMINAL_MODIFICATION])) {
-                $value = $data[self::FIELD_C_TERMINAL_MODIFICATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_C_TERMINAL_MODIFICATION_EXT]) && is_array($data[self::FIELD_C_TERMINAL_MODIFICATION_EXT])) {
-                $ext = $data[self::FIELD_C_TERMINAL_MODIFICATION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setCTerminalModification($value);
-                } else if (is_array($value)) {
-                    $this->setCTerminalModification(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setCTerminalModification(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setCTerminalModification(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_C_TERMINAL_MODIFICATION_ID])) {
-            if ($data[self::FIELD_C_TERMINAL_MODIFICATION_ID] instanceof FHIRIdentifier) {
-                $this->setCTerminalModificationId($data[self::FIELD_C_TERMINAL_MODIFICATION_ID]);
-            } else {
-                $this->setCTerminalModificationId(new FHIRIdentifier($data[self::FIELD_C_TERMINAL_MODIFICATION_ID]));
-            }
-        }
-        if (isset($data[self::FIELD_LENGTH]) || isset($data[self::FIELD_LENGTH_EXT])) {
-            if (isset($data[self::FIELD_LENGTH])) {
-                $value = $data[self::FIELD_LENGTH];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_LENGTH_EXT]) && is_array($data[self::FIELD_LENGTH_EXT])) {
-                $ext = $data[self::FIELD_LENGTH_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setLength($value);
-                } else if (is_array($value)) {
-                    $this->setLength(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setLength(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setLength(new FHIRInteger($ext));
-            }
-        }
-        if (isset($data[self::FIELD_N_TERMINAL_MODIFICATION]) || isset($data[self::FIELD_N_TERMINAL_MODIFICATION_EXT])) {
-            if (isset($data[self::FIELD_N_TERMINAL_MODIFICATION])) {
-                $value = $data[self::FIELD_N_TERMINAL_MODIFICATION];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_N_TERMINAL_MODIFICATION_EXT]) && is_array($data[self::FIELD_N_TERMINAL_MODIFICATION_EXT])) {
-                $ext = $data[self::FIELD_N_TERMINAL_MODIFICATION_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setNTerminalModification($value);
-                } else if (is_array($value)) {
-                    $this->setNTerminalModification(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setNTerminalModification(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setNTerminalModification(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_N_TERMINAL_MODIFICATION_ID])) {
-            if ($data[self::FIELD_N_TERMINAL_MODIFICATION_ID] instanceof FHIRIdentifier) {
-                $this->setNTerminalModificationId($data[self::FIELD_N_TERMINAL_MODIFICATION_ID]);
-            } else {
-                $this->setNTerminalModificationId(new FHIRIdentifier($data[self::FIELD_N_TERMINAL_MODIFICATION_ID]));
-            }
-        }
-        if (isset($data[self::FIELD_SEQUENCE]) || isset($data[self::FIELD_SEQUENCE_EXT])) {
-            if (isset($data[self::FIELD_SEQUENCE])) {
-                $value = $data[self::FIELD_SEQUENCE];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SEQUENCE_EXT]) && is_array($data[self::FIELD_SEQUENCE_EXT])) {
-                $ext = $data[self::FIELD_SEQUENCE_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRString) {
-                    $this->setSequence($value);
-                } else if (is_array($value)) {
-                    $this->setSequence(new FHIRString(array_merge($ext, $value)));
-                } else {
-                    $this->setSequence(new FHIRString([FHIRString::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setSequence(new FHIRString($ext));
-            }
-        }
-        if (isset($data[self::FIELD_SEQUENCE_ATTACHMENT])) {
-            if ($data[self::FIELD_SEQUENCE_ATTACHMENT] instanceof FHIRAttachment) {
-                $this->setSequenceAttachment($data[self::FIELD_SEQUENCE_ATTACHMENT]);
-            } else {
-                $this->setSequenceAttachment(new FHIRAttachment($data[self::FIELD_SEQUENCE_ATTACHMENT]));
-            }
-        }
-        if (isset($data[self::FIELD_SUBUNIT]) || isset($data[self::FIELD_SUBUNIT_EXT])) {
-            if (isset($data[self::FIELD_SUBUNIT])) {
-                $value = $data[self::FIELD_SUBUNIT];
-            } else {
-                $value = null;
-            }
-            if (isset($data[self::FIELD_SUBUNIT_EXT]) && is_array($data[self::FIELD_SUBUNIT_EXT])) {
-                $ext = $data[self::FIELD_SUBUNIT_EXT];
-            } else {
-                $ext = [];
-            }
-            if (null !== $value) {
-                if ($value instanceof FHIRInteger) {
-                    $this->setSubunit($value);
-                } else if (is_array($value)) {
-                    $this->setSubunit(new FHIRInteger(array_merge($ext, $value)));
-                } else {
-                    $this->setSubunit(new FHIRInteger([FHIRInteger::FIELD_VALUE => $value] + $ext));
-                }
-            } else if ([] !== $ext) {
-                $this->setSubunit(new FHIRInteger($ext));
-            }
-        }
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRTypeName()
-    {
-        return self::FHIR_TYPE_NAME;
-    }
-
-    /**
-     * @return string
-     */
-    public function _getFHIRXMLElementDefinition()
-    {
-        $xmlns = $this->_getFHIRXMLNamespace();
-        if (null !== $xmlns) {
-            $xmlns = " xmlns=\"{$xmlns}\"";
-        }
-        return "<SubstanceProteinSubunit{$xmlns}></SubstanceProteinSubunit>";
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The modification at the C-terminal shall be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getCTerminalModification()
-    {
-        return $this->cTerminalModification;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The modification at the C-terminal shall be specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $cTerminalModification
-     * @return static
-     */
-    public function setCTerminalModification($cTerminalModification = null)
-    {
-        if (null === $cTerminalModification) {
-            $this->cTerminalModification = null;
-            return $this;
-        }
-        if ($cTerminalModification instanceof FHIRString) {
-            $this->cTerminalModification = $cTerminalModification;
-            return $this;
-        }
-        $this->cTerminalModification = new FHIRString($cTerminalModification);
-        return $this;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Unique identifier for molecular fragment modification based on the ISO 11238
-     * Substance ID.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
-     */
-    public function getCTerminalModificationId()
-    {
-        return $this->cTerminalModificationId;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Unique identifier for molecular fragment modification based on the ISO 11238
-     * Substance ID.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $cTerminalModificationId
-     * @return static
-     */
-    public function setCTerminalModificationId(FHIRIdentifier $cTerminalModificationId = null)
-    {
-        $this->cTerminalModificationId = $cTerminalModificationId;
-        return $this;
-    }
-
-    /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * Length of linear sequences of amino acids contained in the subunit.
-     *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
-    public function getLength()
+    public function getSubunit(): null|FHIRInteger
     {
-        return $this->length;
+        return $this->subunit;
     }
 
     /**
@@ -483,96 +367,26 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
-     * Length of linear sequences of amino acids contained in the subunit.
+     * Index of primary sequences of amino acids linked through peptide bonds in order
+     * of decreasing length. Sequences of the same length will be ordered by molecular
+     * weight. Subunits that have identical sequences will be repeated and have
+     * sequential subscripts.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $length
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $subunit
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setLength($length = null)
+    public function setSubunit(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $subunit = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $length) {
-            $this->length = null;
-            return $this;
+        if (null !== $subunit && !($subunit instanceof FHIRInteger)) {
+            $subunit = new FHIRInteger($subunit);
         }
-        if ($length instanceof FHIRInteger) {
-            $this->length = $length;
-            return $this;
+        $this->_trackValueSet($this->subunit, $subunit);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SUBUNIT])) {
+            $this->_primitiveXmlLocations[self::FIELD_SUBUNIT] = [];
         }
-        $this->length = new FHIRInteger($length);
-        return $this;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the fragment modified at the N-terminal of the SubstanceProtein
-     * shall be specified.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
-     */
-    public function getNTerminalModification()
-    {
-        return $this->nTerminalModification;
-    }
-
-    /**
-     * A sequence of Unicode characters
-     * Note that FHIR strings SHALL NOT exceed 1MB in size
-     * If the element is present, it must have either a \@value, an \@id, or extensions
-     *
-     * The name of the fragment modified at the N-terminal of the SubstanceProtein
-     * shall be specified.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $nTerminalModification
-     * @return static
-     */
-    public function setNTerminalModification($nTerminalModification = null)
-    {
-        if (null === $nTerminalModification) {
-            $this->nTerminalModification = null;
-            return $this;
-        }
-        if ($nTerminalModification instanceof FHIRString) {
-            $this->nTerminalModification = $nTerminalModification;
-            return $this;
-        }
-        $this->nTerminalModification = new FHIRString($nTerminalModification);
-        return $this;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Unique identifier for molecular fragment modification based on the ISO 11238
-     * Substance ID.
-     *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
-     */
-    public function getNTerminalModificationId()
-    {
-        return $this->nTerminalModificationId;
-    }
-
-    /**
-     * An identifier - identifies some entity uniquely and unambiguously. Typically
-     * this is used for business identifiers.
-     * If the element is present, it must have a value for at least one of the defined
-     * elements, an \@id referenced from the Narrative, or extensions
-     *
-     * Unique identifier for molecular fragment modification based on the ISO 11238
-     * Substance ID.
-     *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $nTerminalModificationId
-     * @return static
-     */
-    public function setNTerminalModificationId(FHIRIdentifier $nTerminalModificationId = null)
-    {
-        $this->nTerminalModificationId = $nTerminalModificationId;
+        $this->_primitiveXmlLocations[self::FIELD_SUBUNIT][0] = $xmlLocation;
+        $this->subunit = $subunit;
         return $this;
     }
 
@@ -591,7 +405,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
-    public function getSequence()
+    public function getSequence(): null|FHIRString
     {
         return $this->sequence;
     }
@@ -609,20 +423,60 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * letter code an X should be used within the sequence. The modified amino acids
      * will be distinguished by their position in the sequence.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $sequence
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $sequence
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
      * @return static
      */
-    public function setSequence($sequence = null)
+    public function setSequence(null|string|FHIRStringPrimitive|FHIRString $sequence = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
     {
-        if (null === $sequence) {
-            $this->sequence = null;
-            return $this;
+        if (null !== $sequence && !($sequence instanceof FHIRString)) {
+            $sequence = new FHIRString($sequence);
         }
-        if ($sequence instanceof FHIRString) {
-            $this->sequence = $sequence;
-            return $this;
+        $this->_trackValueSet($this->sequence, $sequence);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_SEQUENCE])) {
+            $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] = [];
         }
-        $this->sequence = new FHIRString($sequence);
+        $this->_primitiveXmlLocations[self::FIELD_SEQUENCE][0] = $xmlLocation;
+        $this->sequence = $sequence;
+        return $this;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Length of linear sequences of amino acids contained in the subunit.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     */
+    public function getLength(): null|FHIRInteger
+    {
+        return $this->length;
+    }
+
+    /**
+     * A whole number
+     * 32 bit number; for values larger than this, use decimal
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Length of linear sequences of amino acids contained in the subunit.
+     *
+     * @param null|string|int|float|\DCarbone\PHPFHIRGenerated\R4\FHIRIntegerPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $length
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setLength(null|string|int|float|FHIRIntegerPrimitive|FHIRInteger $length = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $length && !($length instanceof FHIRInteger)) {
+            $length = new FHIRInteger($length);
+        }
+        $this->_trackValueSet($this->length, $length);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_LENGTH])) {
+            $this->_primitiveXmlLocations[self::FIELD_LENGTH] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_LENGTH][0] = $xmlLocation;
+        $this->length = $length;
         return $this;
     }
 
@@ -641,7 +495,7 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
-    public function getSequenceAttachment()
+    public function getSequenceAttachment(): null|FHIRAttachment
     {
         return $this->sequenceAttachment;
     }
@@ -662,53 +516,169 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment $sequenceAttachment
      * @return static
      */
-    public function setSequenceAttachment(FHIRAttachment $sequenceAttachment = null)
+    public function setSequenceAttachment(null|FHIRAttachment $sequenceAttachment = null): self
     {
+        if (null === $sequenceAttachment) {
+            $sequenceAttachment = new FHIRAttachment();
+        }
+        $this->_trackValueSet($this->sequenceAttachment, $sequenceAttachment);
         $this->sequenceAttachment = $sequenceAttachment;
         return $this;
     }
 
     /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Index of primary sequences of amino acids linked through peptide bonds in order
-     * of decreasing length. Sequences of the same length will be ordered by molecular
-     * weight. Subunits that have identical sequences will be repeated and have
-     * sequential subscripts.
+     * Unique identifier for molecular fragment modification based on the ISO 11238
+     * Substance ID.
      *
-     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
-    public function getSubunit()
+    public function getNTerminalModificationId(): null|FHIRIdentifier
     {
-        return $this->subunit;
+        return $this->nTerminalModificationId;
     }
 
     /**
-     * A whole number
-     * 32 bit number; for values larger than this, use decimal
-     * If the element is present, it must have either a \@value, an \@id, or extensions
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
      *
-     * Index of primary sequences of amino acids linked through peptide bonds in order
-     * of decreasing length. Sequences of the same length will be ordered by molecular
-     * weight. Subunits that have identical sequences will be repeated and have
-     * sequential subscripts.
+     * Unique identifier for molecular fragment modification based on the ISO 11238
+     * Substance ID.
      *
-     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger $subunit
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $nTerminalModificationId
      * @return static
      */
-    public function setSubunit($subunit = null)
+    public function setNTerminalModificationId(null|FHIRIdentifier $nTerminalModificationId = null): self
     {
-        if (null === $subunit) {
-            $this->subunit = null;
-            return $this;
+        if (null === $nTerminalModificationId) {
+            $nTerminalModificationId = new FHIRIdentifier();
         }
-        if ($subunit instanceof FHIRInteger) {
-            $this->subunit = $subunit;
-            return $this;
+        $this->_trackValueSet($this->nTerminalModificationId, $nTerminalModificationId);
+        $this->nTerminalModificationId = $nTerminalModificationId;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the fragment modified at the N-terminal of the SubstanceProtein
+     * shall be specified.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getNTerminalModification(): null|FHIRString
+    {
+        return $this->nTerminalModification;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The name of the fragment modified at the N-terminal of the SubstanceProtein
+     * shall be specified.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $nTerminalModification
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setNTerminalModification(null|string|FHIRStringPrimitive|FHIRString $nTerminalModification = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $nTerminalModification && !($nTerminalModification instanceof FHIRString)) {
+            $nTerminalModification = new FHIRString($nTerminalModification);
         }
-        $this->subunit = new FHIRInteger($subunit);
+        $this->_trackValueSet($this->nTerminalModification, $nTerminalModification);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_N_TERMINAL_MODIFICATION])) {
+            $this->_primitiveXmlLocations[self::FIELD_N_TERMINAL_MODIFICATION] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_N_TERMINAL_MODIFICATION][0] = $xmlLocation;
+        $this->nTerminalModification = $nTerminalModification;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique identifier for molecular fragment modification based on the ISO 11238
+     * Substance ID.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
+     */
+    public function getCTerminalModificationId(): null|FHIRIdentifier
+    {
+        return $this->cTerminalModificationId;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique identifier for molecular fragment modification based on the ISO 11238
+     * Substance ID.
+     *
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier $cTerminalModificationId
+     * @return static
+     */
+    public function setCTerminalModificationId(null|FHIRIdentifier $cTerminalModificationId = null): self
+    {
+        if (null === $cTerminalModificationId) {
+            $cTerminalModificationId = new FHIRIdentifier();
+        }
+        $this->_trackValueSet($this->cTerminalModificationId, $cTerminalModificationId);
+        $this->cTerminalModificationId = $cTerminalModificationId;
+        return $this;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The modification at the C-terminal shall be specified.
+     *
+     * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
+     */
+    public function getCTerminalModification(): null|FHIRString
+    {
+        return $this->cTerminalModification;
+    }
+
+    /**
+     * A sequence of Unicode characters
+     * Note that FHIR strings SHALL NOT exceed 1MB in size
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The modification at the C-terminal shall be specified.
+     *
+     * @param null|string|\DCarbone\PHPFHIRGenerated\R4\FHIRStringPrimitive|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString $cTerminalModification
+     * @param \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlLocationEnum $xmlLocation
+     * @return static
+     */
+    public function setCTerminalModification(null|string|FHIRStringPrimitive|FHIRString $cTerminalModification = null, PHPFHIRXmlLocationEnum $xmlLocation = PHPFHIRXmlLocationEnum::ATTRIBUTE): self
+    {
+        if (null !== $cTerminalModification && !($cTerminalModification instanceof FHIRString)) {
+            $cTerminalModification = new FHIRString($cTerminalModification);
+        }
+        $this->_trackValueSet($this->cTerminalModification, $cTerminalModification);
+        if (!isset($this->_primitiveXmlLocations[self::FIELD_C_TERMINAL_MODIFICATION])) {
+            $this->_primitiveXmlLocations[self::FIELD_C_TERMINAL_MODIFICATION] = [];
+        }
+        $this->_primitiveXmlLocations[self::FIELD_C_TERMINAL_MODIFICATION][0] = $xmlLocation;
+        $this->cTerminalModification = $cTerminalModification;
         return $this;
     }
 
@@ -718,9 +688,9 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationRules()
+    public function _getValidationRules(): array
     {
-        return self::$_validationRules;
+        return self::_VALIDATION_RULES;
     }
 
     /**
@@ -729,33 +699,13 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * @return array
      */
-    public function _getValidationErrors()
+    public function _getValidationErrors(): array
     {
         $errs = parent::_getValidationErrors();
         $validationRules = $this->_getValidationRules();
-        if (null !== ($v = $this->getCTerminalModification())) {
+        if (null !== ($v = $this->getSubunit())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_C_TERMINAL_MODIFICATION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getCTerminalModificationId())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_C_TERMINAL_MODIFICATION_ID] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getLength())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_LENGTH] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getNTerminalModification())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_N_TERMINAL_MODIFICATION] = $fieldErrs;
-            }
-        }
-        if (null !== ($v = $this->getNTerminalModificationId())) {
-            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_N_TERMINAL_MODIFICATION_ID] = $fieldErrs;
+                $errs[self::FIELD_SUBUNIT] = $fieldErrs;
             }
         }
         if (null !== ($v = $this->getSequence())) {
@@ -763,73 +713,45 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
                 $errs[self::FIELD_SEQUENCE] = $fieldErrs;
             }
         }
+        if (null !== ($v = $this->getLength())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_LENGTH] = $fieldErrs;
+            }
+        }
         if (null !== ($v = $this->getSequenceAttachment())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
                 $errs[self::FIELD_SEQUENCE_ATTACHMENT] = $fieldErrs;
             }
         }
-        if (null !== ($v = $this->getSubunit())) {
+        if (null !== ($v = $this->getNTerminalModificationId())) {
             if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
-                $errs[self::FIELD_SUBUNIT] = $fieldErrs;
+                $errs[self::FIELD_N_TERMINAL_MODIFICATION_ID] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_C_TERMINAL_MODIFICATION])) {
-            $v = $this->getCTerminalModification();
-            foreach($validationRules[self::FIELD_C_TERMINAL_MODIFICATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_C_TERMINAL_MODIFICATION, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_C_TERMINAL_MODIFICATION])) {
-                        $errs[self::FIELD_C_TERMINAL_MODIFICATION] = [];
-                    }
-                    $errs[self::FIELD_C_TERMINAL_MODIFICATION][$rule] = $err;
-                }
+        if (null !== ($v = $this->getNTerminalModification())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_N_TERMINAL_MODIFICATION] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_C_TERMINAL_MODIFICATION_ID])) {
-            $v = $this->getCTerminalModificationId();
-            foreach($validationRules[self::FIELD_C_TERMINAL_MODIFICATION_ID] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_C_TERMINAL_MODIFICATION_ID, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_C_TERMINAL_MODIFICATION_ID])) {
-                        $errs[self::FIELD_C_TERMINAL_MODIFICATION_ID] = [];
-                    }
-                    $errs[self::FIELD_C_TERMINAL_MODIFICATION_ID][$rule] = $err;
-                }
+        if (null !== ($v = $this->getCTerminalModificationId())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_C_TERMINAL_MODIFICATION_ID] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_LENGTH])) {
-            $v = $this->getLength();
-            foreach($validationRules[self::FIELD_LENGTH] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_LENGTH, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_LENGTH])) {
-                        $errs[self::FIELD_LENGTH] = [];
-                    }
-                    $errs[self::FIELD_LENGTH][$rule] = $err;
-                }
+        if (null !== ($v = $this->getCTerminalModification())) {
+            if ([] !== ($fieldErrs = $v->_getValidationErrors())) {
+                $errs[self::FIELD_C_TERMINAL_MODIFICATION] = $fieldErrs;
             }
         }
-        if (isset($validationRules[self::FIELD_N_TERMINAL_MODIFICATION])) {
-            $v = $this->getNTerminalModification();
-            foreach($validationRules[self::FIELD_N_TERMINAL_MODIFICATION] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_N_TERMINAL_MODIFICATION, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_SUBUNIT])) {
+            $v = $this->getSubunit();
+            foreach($validationRules[self::FIELD_SUBUNIT] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_SUBUNIT, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_N_TERMINAL_MODIFICATION])) {
-                        $errs[self::FIELD_N_TERMINAL_MODIFICATION] = [];
+                    if (!isset($errs[self::FIELD_SUBUNIT])) {
+                        $errs[self::FIELD_SUBUNIT] = [];
                     }
-                    $errs[self::FIELD_N_TERMINAL_MODIFICATION][$rule] = $err;
-                }
-            }
-        }
-        if (isset($validationRules[self::FIELD_N_TERMINAL_MODIFICATION_ID])) {
-            $v = $this->getNTerminalModificationId();
-            foreach($validationRules[self::FIELD_N_TERMINAL_MODIFICATION_ID] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_N_TERMINAL_MODIFICATION_ID, $rule, $constraint, $v);
-                if (null !== $err) {
-                    if (!isset($errs[self::FIELD_N_TERMINAL_MODIFICATION_ID])) {
-                        $errs[self::FIELD_N_TERMINAL_MODIFICATION_ID] = [];
-                    }
-                    $errs[self::FIELD_N_TERMINAL_MODIFICATION_ID][$rule] = $err;
+                    $errs[self::FIELD_SUBUNIT][$rule] = $err;
                 }
             }
         }
@@ -845,6 +767,18 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
                 }
             }
         }
+        if (isset($validationRules[self::FIELD_LENGTH])) {
+            $v = $this->getLength();
+            foreach($validationRules[self::FIELD_LENGTH] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_LENGTH, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_LENGTH])) {
+                        $errs[self::FIELD_LENGTH] = [];
+                    }
+                    $errs[self::FIELD_LENGTH][$rule] = $err;
+                }
+            }
+        }
         if (isset($validationRules[self::FIELD_SEQUENCE_ATTACHMENT])) {
             $v = $this->getSequenceAttachment();
             foreach($validationRules[self::FIELD_SEQUENCE_ATTACHMENT] as $rule => $constraint) {
@@ -857,15 +791,51 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
                 }
             }
         }
-        if (isset($validationRules[self::FIELD_SUBUNIT])) {
-            $v = $this->getSubunit();
-            foreach($validationRules[self::FIELD_SUBUNIT] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_SUBUNIT, $rule, $constraint, $v);
+        if (isset($validationRules[self::FIELD_N_TERMINAL_MODIFICATION_ID])) {
+            $v = $this->getNTerminalModificationId();
+            foreach($validationRules[self::FIELD_N_TERMINAL_MODIFICATION_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_N_TERMINAL_MODIFICATION_ID, $rule, $constraint, $v);
                 if (null !== $err) {
-                    if (!isset($errs[self::FIELD_SUBUNIT])) {
-                        $errs[self::FIELD_SUBUNIT] = [];
+                    if (!isset($errs[self::FIELD_N_TERMINAL_MODIFICATION_ID])) {
+                        $errs[self::FIELD_N_TERMINAL_MODIFICATION_ID] = [];
                     }
-                    $errs[self::FIELD_SUBUNIT][$rule] = $err;
+                    $errs[self::FIELD_N_TERMINAL_MODIFICATION_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_N_TERMINAL_MODIFICATION])) {
+            $v = $this->getNTerminalModification();
+            foreach($validationRules[self::FIELD_N_TERMINAL_MODIFICATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_N_TERMINAL_MODIFICATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_N_TERMINAL_MODIFICATION])) {
+                        $errs[self::FIELD_N_TERMINAL_MODIFICATION] = [];
+                    }
+                    $errs[self::FIELD_N_TERMINAL_MODIFICATION][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_C_TERMINAL_MODIFICATION_ID])) {
+            $v = $this->getCTerminalModificationId();
+            foreach($validationRules[self::FIELD_C_TERMINAL_MODIFICATION_ID] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_C_TERMINAL_MODIFICATION_ID, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_C_TERMINAL_MODIFICATION_ID])) {
+                        $errs[self::FIELD_C_TERMINAL_MODIFICATION_ID] = [];
+                    }
+                    $errs[self::FIELD_C_TERMINAL_MODIFICATION_ID][$rule] = $err;
+                }
+            }
+        }
+        if (isset($validationRules[self::FIELD_C_TERMINAL_MODIFICATION])) {
+            $v = $this->getCTerminalModification();
+            foreach($validationRules[self::FIELD_C_TERMINAL_MODIFICATION] as $rule => $constraint) {
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_SUBSTANCE_PROTEIN_DOT_SUBUNIT, self::FIELD_C_TERMINAL_MODIFICATION, $rule, $constraint, $v);
+                if (null !== $err) {
+                    if (!isset($errs[self::FIELD_C_TERMINAL_MODIFICATION])) {
+                        $errs[self::FIELD_C_TERMINAL_MODIFICATION] = [];
+                    }
+                    $errs[self::FIELD_C_TERMINAL_MODIFICATION][$rule] = $err;
                 }
             }
         }
@@ -909,221 +879,289 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
     }
 
     /**
-     * @param \SimpleXMLElement|string|null $sxe
+     * @param null|string|\SimpleXMLElement $element
      * @param null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit $type
-     * @param null|int $libxmlOpts
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit
      */
-    public static function xmlUnserialize($sxe = null, PHPFHIRTypeInterface $type = null, $libxmlOpts = 591872)
+    public static function xmlUnserialize(null|string|\SimpleXMLElement $element, null|PHPFHIRTypeInterface $type = null, null|int|PHPFHIRConfig $config = null): null|self
     {
-        if (null === $sxe) {
+        if (null === $element) {
             return null;
         }
-        if (is_string($sxe)) {
-            libxml_use_internal_errors(true);
-            $sxe = new \SimpleXMLElement($sxe, $libxmlOpts, false);
-            if ($sxe === false) {
-                throw new \DomainException(sprintf('FHIRSubstanceProteinSubunit::xmlUnserialize - String provided is not parseable as XML: %s', implode(', ', array_map(function(\libXMLError $err) { return $err->message; }, libxml_get_errors()))));
-            }
-            libxml_use_internal_errors(false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        if (!($sxe instanceof \SimpleXMLElement)) {
-            throw new \InvalidArgumentException(sprintf('FHIRSubstanceProteinSubunit::xmlUnserialize - $sxe value must be null, \\SimpleXMLElement, or valid XML string, %s seen', gettype($sxe)));
+        if (is_string($element)) {
+            $element = new \SimpleXMLElement($element, $config->getLibxmlOpts());
         }
         if (null === $type) {
-            $type = new FHIRSubstanceProteinSubunit;
-        } elseif (!is_object($type) || !($type instanceof FHIRSubstanceProteinSubunit)) {
+            $type = new static(null);
+        } else if (!($type instanceof FHIRSubstanceProteinSubunit)) {
             throw new \RuntimeException(sprintf(
-                'FHIRSubstanceProteinSubunit::xmlUnserialize - $type must be instance of \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit or null, %s seen.',
-                is_object($type) ? get_class($type) : gettype($type)
+                '%s::xmlUnserialize - $type must be instance of \\%s or null, %s seen.',
+                ltrim(substr(__CLASS__, (int)strrpos(__CLASS__, '\\')), '\\'),
+                static::class,
+                get_class($type)
             ));
         }
-        FHIRBackboneElement::xmlUnserialize($sxe, $type);
-        $xmlNamespaces = $sxe->getDocNamespaces(false, false);
-        if ([] !== $xmlNamespaces) {
-            $ns = reset($xmlNamespaces);
-            if (false !== $ns && '' !== $ns) {
-                $type->_xmlns = $ns;
+        if (null !== ($ns = $element->getNamespaces()[''] ?? null)) {
+            $type->_setSourceXmlns((string)$ns);
+        }
+        foreach ($element->children() as $n) {
+            $childName = $n->getName();
+            if (self::FIELD_SUBUNIT === $childName) {
+                $type->setSubunit(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_SEQUENCE === $childName) {
+                $type->setSequence(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_LENGTH === $childName) {
+                $type->setLength(FHIRInteger::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_SEQUENCE_ATTACHMENT === $childName) {
+                $type->setSequenceAttachment(FHIRAttachment::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_N_TERMINAL_MODIFICATION_ID === $childName) {
+                $type->setNTerminalModificationId(FHIRIdentifier::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_N_TERMINAL_MODIFICATION === $childName) {
+                $type->setNTerminalModification(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_C_TERMINAL_MODIFICATION_ID === $childName) {
+                $type->setCTerminalModificationId(FHIRIdentifier::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_C_TERMINAL_MODIFICATION === $childName) {
+                $type->setCTerminalModification(FHIRString::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
+            } elseif (self::FIELD_MODIFIER_EXTENSION === $childName) {
+                $type->addModifierExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_EXTENSION === $childName) {
+                $type->addExtension(FHIRExtension::xmlUnserialize($n, null, $config));
+            } elseif (self::FIELD_ID === $childName) {
+                $type->setId(FHIRStringPrimitive::xmlUnserialize($n, null, $config), PHPFHIRXmlLocationEnum::ELEMENT);
             }
         }
-        $attributes = $sxe->attributes();
-        $children = $sxe->children();
-        if (isset($children->cTerminalModification)) {
-            $type->setCTerminalModification(FHIRString::xmlUnserialize($children->cTerminalModification));
-        }
-        if (isset($attributes->cTerminalModification)) {
-            $pt = $type->getCTerminalModification();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->cTerminalModification);
-            } else {
-                $type->setCTerminalModification((string)$attributes->cTerminalModification);
-            }
-        }
-        if (isset($children->cTerminalModificationId)) {
-            $type->setCTerminalModificationId(FHIRIdentifier::xmlUnserialize($children->cTerminalModificationId));
-        }
-        if (isset($children->length)) {
-            $type->setLength(FHIRInteger::xmlUnserialize($children->length));
-        }
-        if (isset($attributes->length)) {
-            $pt = $type->getLength();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->length);
-            } else {
-                $type->setLength((string)$attributes->length);
-            }
-        }
-        if (isset($children->nTerminalModification)) {
-            $type->setNTerminalModification(FHIRString::xmlUnserialize($children->nTerminalModification));
-        }
-        if (isset($attributes->nTerminalModification)) {
-            $pt = $type->getNTerminalModification();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->nTerminalModification);
-            } else {
-                $type->setNTerminalModification((string)$attributes->nTerminalModification);
-            }
-        }
-        if (isset($children->nTerminalModificationId)) {
-            $type->setNTerminalModificationId(FHIRIdentifier::xmlUnserialize($children->nTerminalModificationId));
-        }
-        if (isset($children->sequence)) {
-            $type->setSequence(FHIRString::xmlUnserialize($children->sequence));
-        }
-        if (isset($attributes->sequence)) {
-            $pt = $type->getSequence();
-            if (null !== $pt) {
-                $pt->setValue((string)$attributes->sequence);
-            } else {
-                $type->setSequence((string)$attributes->sequence);
-            }
-        }
-        if (isset($children->sequenceAttachment)) {
-            $type->setSequenceAttachment(FHIRAttachment::xmlUnserialize($children->sequenceAttachment));
-        }
-        if (isset($children->subunit)) {
-            $type->setSubunit(FHIRInteger::xmlUnserialize($children->subunit));
-        }
-        if (isset($attributes->subunit)) {
+        $attributes = $element->attributes();
+        if (isset($attributes[self::FIELD_SUBUNIT])) {
             $pt = $type->getSubunit();
             if (null !== $pt) {
-                $pt->setValue((string)$attributes->subunit);
+                $pt->setValue((string)$attributes[self::FIELD_SUBUNIT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             } else {
-                $type->setSubunit((string)$attributes->subunit);
+                $type->setSubunit((string)$attributes[self::FIELD_SUBUNIT], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_SEQUENCE])) {
+            $pt = $type->getSequence();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_SEQUENCE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setSequence((string)$attributes[self::FIELD_SEQUENCE], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_LENGTH])) {
+            $pt = $type->getLength();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_LENGTH], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setLength((string)$attributes[self::FIELD_LENGTH], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_N_TERMINAL_MODIFICATION])) {
+            $pt = $type->getNTerminalModification();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_N_TERMINAL_MODIFICATION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setNTerminalModification((string)$attributes[self::FIELD_N_TERMINAL_MODIFICATION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_C_TERMINAL_MODIFICATION])) {
+            $pt = $type->getCTerminalModification();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_C_TERMINAL_MODIFICATION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setCTerminalModification((string)$attributes[self::FIELD_C_TERMINAL_MODIFICATION], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            }
+        }
+        if (isset($attributes[self::FIELD_ID])) {
+            $pt = $type->getId();
+            if (null !== $pt) {
+                $pt->setValue((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
+            } else {
+                $type->setId((string)$attributes[self::FIELD_ID], PHPFHIRXmlLocationEnum::ATTRIBUTE);
             }
         }
         return $type;
     }
 
     /**
-     * @param null|\SimpleXMLElement $sxe
-     * @param null|int $libxmlOpts
-     * @return \SimpleXMLElement
+     * @param null|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter $xw
+     * @param null|int|\DCarbone\PHPFHIRGenerated\R4\PHPFHIRConfig $config PHP FHIR config.  Supports an integer value interpreted as libxml opts for backwards compatibility.
+     * @return \DCarbone\PHPFHIRGenerated\R4\PHPFHIRXmlWriter
      */
-    public function xmlSerialize(\SimpleXMLElement $sxe = null, $libxmlOpts = 591872)
+    public function xmlSerialize(null|PHPFHIRXmlWriter $xw = null, null|int|PHPFHIRConfig $config = null): PHPFHIRXmlWriter
     {
-        if (null === $sxe) {
-            $sxe = new \SimpleXMLElement($this->_getFHIRXMLElementDefinition(), $libxmlOpts, false);
+        if (is_int($config)) {
+            $config = new PHPFHIRConfig([PHPFHIRConfigKeyEnum::LIBXML_OPTS->value => $config]);
+        } else if (null === $config) {
+            $config = new PHPFHIRConfig();
         }
-        parent::xmlSerialize($sxe);
-        if (null !== ($v = $this->getCTerminalModification())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_C_TERMINAL_MODIFICATION, null, $v->_getFHIRXMLNamespace()));
+        if (null === $xw) {
+            $xw = new PHPFHIRXmlWriter();
         }
-        if (null !== ($v = $this->getCTerminalModificationId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_C_TERMINAL_MODIFICATION_ID, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isOpen()) {
+            $xw->openMemory();
         }
-        if (null !== ($v = $this->getLength())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_LENGTH, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isDocStarted()) {
+            $docStarted = true;
+            $xw->startDocument();
         }
-        if (null !== ($v = $this->getNTerminalModification())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_N_TERMINAL_MODIFICATION, null, $v->_getFHIRXMLNamespace()));
+        if (!$xw->isRootOpen()) {
+            $openedRoot = true;
+            $xw->openRootNode($config, 'SubstanceProteinSubunit', $this->_getSourceXmlns());
         }
-        if (null !== ($v = $this->getNTerminalModificationId())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_N_TERMINAL_MODIFICATION_ID, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SUBUNIT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSubunit())) {
+            $xw->writeAttribute(self::FIELD_SUBUNIT, $v->getValue()?->getFormattedValue());
         }
-        if (null !== ($v = $this->getSequence())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE, null, $v->_getFHIRXMLNamespace()));
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getSequence())) {
+            $xw->writeAttribute(self::FIELD_SEQUENCE, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_LENGTH] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getLength())) {
+            $xw->writeAttribute(self::FIELD_LENGTH, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_N_TERMINAL_MODIFICATION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getNTerminalModification())) {
+            $xw->writeAttribute(self::FIELD_N_TERMINAL_MODIFICATION, $v->getValue()?->getFormattedValue());
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_C_TERMINAL_MODIFICATION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ATTRIBUTE === $locs[0])) && null !== ($v = $this->getCTerminalModification())) {
+            $xw->writeAttribute(self::FIELD_C_TERMINAL_MODIFICATION, $v->getValue()?->getFormattedValue());
+        }
+        parent::xmlSerialize($xw, $config);
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SUBUNIT] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSubunit())) {
+            $xw->startElement(self::FIELD_SUBUNIT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_SEQUENCE] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getSequence())) {
+            $xw->startElement(self::FIELD_SEQUENCE);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_LENGTH] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getLength())) {
+            $xw->startElement(self::FIELD_LENGTH);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
         if (null !== ($v = $this->getSequenceAttachment())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SEQUENCE_ATTACHMENT, null, $v->_getFHIRXMLNamespace()));
+            $xw->startElement(self::FIELD_SEQUENCE_ATTACHMENT);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        if (null !== ($v = $this->getSubunit())) {
-            $v->xmlSerialize($sxe->addChild(self::FIELD_SUBUNIT, null, $v->_getFHIRXMLNamespace()));
+        if (null !== ($v = $this->getNTerminalModificationId())) {
+            $xw->startElement(self::FIELD_N_TERMINAL_MODIFICATION_ID);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
         }
-        return $sxe;
+        $locs = $this->_primitiveXmlLocations[self::FIELD_N_TERMINAL_MODIFICATION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getNTerminalModification())) {
+            $xw->startElement(self::FIELD_N_TERMINAL_MODIFICATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (null !== ($v = $this->getCTerminalModificationId())) {
+            $xw->startElement(self::FIELD_C_TERMINAL_MODIFICATION_ID);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        $locs = $this->_primitiveXmlLocations[self::FIELD_C_TERMINAL_MODIFICATION] ?? [];
+        if (([] === $locs || (isset($locs[0]) && PHPFHIRXmlLocationEnum::ELEMENT === $locs[0])) && null !== ($v = $this->getCTerminalModification())) {
+            $xw->startElement(self::FIELD_C_TERMINAL_MODIFICATION);
+            $v->xmlSerialize($xw, $config);
+            $xw->endElement();
+        }
+        if (isset($openedRoot) && $openedRoot) {
+            $xw->endElement();
+        }
+        if (isset($docStarted) && $docStarted) {
+            $xw->endDocument();
+        }
+        return $xw;
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
-        $a = parent::jsonSerialize();
-        if (null !== ($v = $this->getCTerminalModification())) {
-            $a[self::FIELD_C_TERMINAL_MODIFICATION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_C_TERMINAL_MODIFICATION_EXT] = $enc;
+        $out = parent::jsonSerialize();
+        if (null !== ($v = $this->getSubunit())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_SUBUNIT} = $val;
             }
-        }
-        if (null !== ($v = $this->getCTerminalModificationId())) {
-            $a[self::FIELD_C_TERMINAL_MODIFICATION_ID] = $v;
-        }
-        if (null !== ($v = $this->getLength())) {
-            $a[self::FIELD_LENGTH] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_LENGTH_EXT] = $enc;
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInteger::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SUBUNIT_EXT} = $ext;
             }
-        }
-        if (null !== ($v = $this->getNTerminalModification())) {
-            $a[self::FIELD_N_TERMINAL_MODIFICATION] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_N_TERMINAL_MODIFICATION_EXT] = $enc;
-            }
-        }
-        if (null !== ($v = $this->getNTerminalModificationId())) {
-            $a[self::FIELD_N_TERMINAL_MODIFICATION_ID] = $v;
         }
         if (null !== ($v = $this->getSequence())) {
-            $a[self::FIELD_SEQUENCE] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRString::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRString::FIELD_VALUE]);
-                $a[self::FIELD_SEQUENCE_EXT] = $enc;
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_SEQUENCE} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_SEQUENCE_EXT} = $ext;
+            }
+        }
+        if (null !== ($v = $this->getLength())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_LENGTH} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRInteger::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_LENGTH_EXT} = $ext;
             }
         }
         if (null !== ($v = $this->getSequenceAttachment())) {
-            $a[self::FIELD_SEQUENCE_ATTACHMENT] = $v;
+            $out->{self::FIELD_SEQUENCE_ATTACHMENT} = $v;
         }
-        if (null !== ($v = $this->getSubunit())) {
-            $a[self::FIELD_SUBUNIT] = $v->getValue();
-            $enc = $v->jsonSerialize();
-            $cnt = count($enc);
-            if (0 < $cnt && (1 !== $cnt || (1 === $cnt && !array_key_exists(FHIRInteger::FIELD_VALUE, $enc)))) {
-                unset($enc[FHIRInteger::FIELD_VALUE]);
-                $a[self::FIELD_SUBUNIT_EXT] = $enc;
+        if (null !== ($v = $this->getNTerminalModificationId())) {
+            $out->{self::FIELD_N_TERMINAL_MODIFICATION_ID} = $v;
+        }
+        if (null !== ($v = $this->getNTerminalModification())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_N_TERMINAL_MODIFICATION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_N_TERMINAL_MODIFICATION_EXT} = $ext;
             }
         }
-        if ([] !== ($vs = $this->_getFHIRComments())) {
-            $a[PHPFHIRConstants::JSON_FIELD_FHIR_COMMENTS] = $vs;
+        if (null !== ($v = $this->getCTerminalModificationId())) {
+            $out->{self::FIELD_C_TERMINAL_MODIFICATION_ID} = $v;
         }
-        return $a;
-    }
+        if (null !== ($v = $this->getCTerminalModification())) {
+            if (null !== ($val = $v->getValue())) {
+                $out->{self::FIELD_C_TERMINAL_MODIFICATION} = $val;
+            }
+            $ext = $v->jsonSerialize();
+            unset($ext->{FHIRString::FIELD_VALUE});
+            if (count((array)$ext) > 0) {
+                $out->{self::FIELD_C_TERMINAL_MODIFICATION_EXT} = $ext;
+            }
+        }
 
+        return $out;
+    }
 
     /**
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return self::FHIR_TYPE_NAME;
     }
