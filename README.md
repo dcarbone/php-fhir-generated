@@ -9,7 +9,7 @@ composer.json require entry:
 
 ```json
 {
-   "dcarbone/php-fhir-generated": "v2.0.*"
+   "dcarbone/php-fhir-generated": "v3.0.*"
 }
 ```
 
