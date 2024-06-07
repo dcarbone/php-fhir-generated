@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: May 3rd, 2024 22:35+0000
+ * Class creation date: June 7th, 2024 20:38+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -236,9 +236,9 @@ class PHPFHIRResponseParser
             return null;
         }
         $chr = $input[0];
-        if (in_array(self::XML_START, $chr, true)) {
+        if (in_array($chr, self::XML_START, true)) {
             return $this->parseXml($input);
-        } elseif (in_array(self::JSON_START, $chr, true)) {
+        } elseif (in_array($chr, self::JSON_START, true)) {
             return $this->parseJson($input);
         }
         throw new \UnexpectedValueException(sprintf(
