@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: June 7th, 2024 20:38+0000
+ * Class creation date: June 8th, 2024 03:16+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -68,7 +68,7 @@ final class PHPFHIRConstants
     public const SOURCE_GENERATION_DATE = 'Tue, Sep 30, 2014 18:08+1000';
 
     // PHPFHIR
-    public const CODE_GENERATION_DATE = 'June 7th, 2024 20:38+0000';
+    public const CODE_GENERATION_DATE = 'June 8th, 2024 03:16+0000';
 
     // Config Defaults
     public const DEFAULT_LIBXML_OPTS = LIBXML_NONET | LIBXML_BIGLINES | LIBXML_PARSEHUGE | LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD | LIBXML_NOXMLDECL;
