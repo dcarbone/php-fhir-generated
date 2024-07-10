@@ -31,8 +31,8 @@
     "phpunit/phpunit": "^10.5 || ^11.0"
   },
   "autoload": {
-    "psr-0": {
-      "DCarbone\\PHPFHIRGenerated\\": "./src"
+    "psr-4": {
+      "DCarbone\\PHPFHIRGenerated\\": "./src/DCarbone/PHPFHIRGenerated"
     }
   }
 }
