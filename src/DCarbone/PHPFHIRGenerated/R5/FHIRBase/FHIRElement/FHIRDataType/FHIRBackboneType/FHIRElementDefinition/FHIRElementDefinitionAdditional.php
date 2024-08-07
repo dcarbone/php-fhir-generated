@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBac
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The use of this additional binding.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $purpose = null;
@@ -145,7 +144,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * The valueSet that is being bound for the purpose.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $valueSet = null;
@@ -160,7 +158,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      *
      * Documentation of the purpose of use of the bindingproviding additional
      * information about how it is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $documentation = null;
@@ -170,7 +167,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Concise documentation - for summary tables.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $shortDoco = null;
@@ -187,7 +183,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * clinical domain etc. The information to decide whether a usege context applies
      * is usually outside the resource, determined by context, and this might present
      * challenges for validation tooling.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $usage = [];
@@ -197,7 +192,6 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      *
      * Whether the binding applies to all repeats, or just to any one of them. This is
      * only relevant for elements that can repeat.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $any = null;

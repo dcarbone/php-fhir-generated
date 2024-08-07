@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,6 @@ class FHIRCarePlanRelatedPlan extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the type of relationship this plan has to the target plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCarePlanRelationship
      */
     protected null|FHIRCarePlanRelationship $code = null;
@@ -106,7 +105,6 @@ class FHIRCarePlanRelatedPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the plan to which a relationship is asserted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $plan = null;

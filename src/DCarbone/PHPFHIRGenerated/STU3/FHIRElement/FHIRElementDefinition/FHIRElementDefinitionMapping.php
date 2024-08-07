@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRElementDefinitionMapping extends FHIRElement
      * the Narrative, or extensions
      *
      * An internal reference to the definition of a mapping.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
     protected null|FHIRId $identity = null;
@@ -119,7 +118,6 @@ class FHIRElementDefinitionMapping extends FHIRElement
      * the Narrative, or extensions
      *
      * Identifies the computable language in which mapping.map is expressed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $language = null;
@@ -129,7 +127,6 @@ class FHIRElementDefinitionMapping extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Expresses what part of the target specification corresponds to this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $map = null;
@@ -139,7 +136,6 @@ class FHIRElementDefinitionMapping extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comments that provide information about the mapping or its use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $comment = null;

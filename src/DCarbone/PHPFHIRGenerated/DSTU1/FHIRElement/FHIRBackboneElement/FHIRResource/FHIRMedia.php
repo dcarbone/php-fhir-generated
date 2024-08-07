@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRMedia extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * Whether the media is a photo (still image), an audio recording, or a video
      * recording.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMediaType
      */
     protected null|FHIRMediaType $type = null;
@@ -136,7 +135,6 @@ class FHIRMedia extends FHIRResource implements PHPFHIRContainedTypeInterface
      * Details of the type of the media - usually, how it was acquired (what type of
      * device). If images sourced from a DICOM system, are wrapped in a Media resource,
      * then this is the modality.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subtype = null;
@@ -148,7 +146,6 @@ class FHIRMedia extends FHIRResource implements PHPFHIRContainedTypeInterface
      * Identifiers associated with the image - these may include identifiers for the
      * image itself, identifiers for the context of its collection (e.g. series ids)
      * and context ids such as accession numbers or other workflow identifiers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -161,7 +158,6 @@ class FHIRMedia extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * When the media was originally recorded. For video and audio, if the length of
      * the recording is not insignificant, this is the end of the recording.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $dateTime = null;
@@ -171,7 +167,6 @@ class FHIRMedia extends FHIRResource implements PHPFHIRContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who/What this Media is a record of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $subject = null;
@@ -181,7 +176,6 @@ class FHIRMedia extends FHIRResource implements PHPFHIRContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who administered the collection of the image.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $operator = null;
@@ -192,7 +186,6 @@ class FHIRMedia extends FHIRResource implements PHPFHIRContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name of the imaging view e.g Lateral or Antero-posterior (AP).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $view = null;
@@ -202,7 +195,6 @@ class FHIRMedia extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * The name of the device / manufacturer of the device that was used to make the
      * recording.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $deviceName = null;
@@ -211,7 +203,6 @@ class FHIRMedia extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Height of the image in pixels(photo/video).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $height = null;
@@ -220,7 +211,6 @@ class FHIRMedia extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Width of the image in pixels (photo/video).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $width = null;
@@ -233,7 +223,6 @@ class FHIRMedia extends FHIRResource implements PHPFHIRContainedTypeInterface
      * animated gif. If there is more than one frame, this SHALL have a value in order
      * to alert interface software that a multi-frame capable rendering widget is
      * required.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $frames = null;
@@ -242,7 +231,6 @@ class FHIRMedia extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The length of the recording in seconds - for audio and video.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $length = null;
@@ -253,7 +241,6 @@ class FHIRMedia extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * The actual content of the media - inline or by direct reference to the media
      * source file.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $content = null;

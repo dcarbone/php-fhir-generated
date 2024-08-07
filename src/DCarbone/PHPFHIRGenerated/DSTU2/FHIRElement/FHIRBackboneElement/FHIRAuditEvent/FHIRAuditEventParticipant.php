@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      * Specification of the role(s) the user plays when performing the event. Usually
      * the codes used in this element are local codes defined by the role-based access
      * control security system used in the local context.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $role = [];
@@ -130,7 +129,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Direct reference to a resource that identifies the participant.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $reference = null;
@@ -140,7 +138,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the user actively participating in the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $userId = null;
@@ -152,7 +149,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      * Alternative Participant Identifier. For a human, this should be a user
      * identifier text string from authentication system. This identifier would be one
      * known to a common authentication system (e.g. single sign-on), if available.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $altId = null;
@@ -162,7 +158,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-meaningful name for the user.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -172,7 +167,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      *
      * Indicator that the user is or is not the requestor, or initiator, for the event
      * being audited.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $requestor = null;
@@ -182,7 +176,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the event occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -194,7 +187,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      * The policy or plan that authorized the activity being recorded. Typically, a
      * single activity may have multiple applicable policies, such as patient consent,
      * guarantor funding, etc. The policy would also indicate the security token used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[]
      */
     protected null|array $policy = [];
@@ -205,7 +197,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      *
      * Type of media involved. Used when the event is about exporting/importing onto
      * media.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $media = null;
@@ -216,7 +207,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      *
      * Logical network location for application activity, if the activity has a network
      * location.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventNetwork
      */
     protected null|FHIRAuditEventNetwork $network = null;
@@ -227,7 +217,6 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      *
      * The reason (purpose of use), specific to this participant, that was used during
      * the event being recorded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding[]
      */
     protected null|array $purposeOfUse = [];

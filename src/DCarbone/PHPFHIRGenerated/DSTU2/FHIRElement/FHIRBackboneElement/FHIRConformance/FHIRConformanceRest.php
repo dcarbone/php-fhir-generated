@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * Identifies whether this portion of the statement is describing ability to
      * initiate or receive restful operations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRestfulConformanceMode
      */
     protected null|FHIRRestfulConformanceMode $mode = null;
@@ -122,7 +121,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $documentation = null;
@@ -133,7 +131,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * Information about security implementation from an interface perspective - what a
      * client needs to know.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSecurity
      */
     protected null|FHIRConformanceSecurity $security = null;
@@ -144,7 +141,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * A specification of the restful capabilities of the solution for a specific
      * resource type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource[]
      */
     protected null|array $resource = [];
@@ -154,7 +150,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * desired server implementation.
      *
      * A specification of restful operations supported by the system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction1[]
      */
     protected null|array $interaction = [];
@@ -163,7 +158,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how transactions are supported.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTransactionMode
      */
     protected null|FHIRTransactionMode $transactionMode = null;
@@ -176,7 +170,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * implementations to support and/or make use of - either references to ones
      * defined in the specification, or additional ones defined for/by the
      * implementation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam[]
      */
     protected null|array $searchParam = [];
@@ -187,7 +180,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * Definition of an operation or a named query and with its parameters and their
      * meaning and type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation[]
      */
     protected null|array $operation = [];
@@ -198,7 +190,6 @@ class FHIRConformanceRest extends FHIRBackboneElement
      *
      * An absolute URI which is a reference to the definition of a compartment hosted
      * by the system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[]
      */
     protected null|array $compartment = [];

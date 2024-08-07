@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -85,13 +85,10 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An extension - additional local content. The extension URL defines it's meaning
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
      */
     protected null|array $extension = [];
-    /**
-     * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive
-     */
+    /** @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive */
     protected null|FHIRIdPrimitive $id = null;
 
     /**

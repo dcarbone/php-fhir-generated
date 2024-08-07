@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -180,7 +180,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * assigned by a manufacturer or regulator, and unique to a product (which, when
      * compared to a product instance being prescribed, is actually a product type).
      * See also MedicinalProductDefinition.code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -191,7 +190,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Regulatory type, e.g. Investigational or Authorized.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -202,7 +200,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this medicine applies to human or veterinary uses.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $domain = null;
@@ -213,7 +210,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      *
      * A business identifier relating to a specific version of the product, this is
      * commonly used to support revisions to an existing product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -226,7 +222,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * The status within the lifecycle of this product record. A high-level status,
      * this is not intended to duplicate details carried elsewhere such as legal
      * status, or authorization status.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $status = null;
@@ -240,7 +235,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the given status became applicable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $statusDate = null;
@@ -254,7 +248,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * the Narrative, or extensions
      *
      * General description of this product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -268,7 +261,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * product. This is one concept that describes all the components. It does not
      * represent the form with components physically mixed, if that might be necessary,
      * for which see (AdministrableProductDefinition.administrableDoseForm).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $combinedPharmaceuticalDoseForm = null;
@@ -283,7 +275,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * AdministrableProductDefinition resource. MedicinalProductDefinition.route is the
      * same concept as AdministrableProductDefinition.routeOfAdministration.code, and
      * they cannot be used together.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $route = [];
@@ -300,7 +291,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * are not required. In cases where structured indications are required, they are
      * captured using the ClinicalUseDefinition resource. An indication is a medical
      * situation for which using the product is appropriate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $indication = null;
@@ -312,7 +302,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      *
      * The legal status of supply of the medicinal product as classified by the
      * regulator.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $legalStatusOfSupply = null;
@@ -324,7 +313,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      *
      * Whether the Medicinal Product is subject to additional monitoring for regulatory
      * reasons, such as heightened reporting requirements.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $additionalMonitoringIndicator = null;
@@ -336,7 +324,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      *
      * Whether the Medicinal Product is subject to special measures for regulatory
      * reasons, such as a requirement to conduct post-authorization studies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $specialMeasures = [];
@@ -347,7 +334,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If authorised for use in children, or infants, neonates etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $pediatricUseIndicator = null;
@@ -358,7 +344,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows the product to be classified by various systems, commonly WHO ATC.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $classification = [];
@@ -371,7 +356,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * Marketing status of the medicinal product, in contrast to marketing
      * authorization. This refers to the product being actually 'on the market' as
      * opposed to being allowed to be on the market (which is an authorization).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus[]
      */
     protected null|array $marketingStatus = [];
@@ -382,7 +366,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Package type for the product. See also the PackagedProductDefinition resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $packagedMedicinalProduct = [];
@@ -395,7 +378,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * of, such as tablets, capsule, or syringes. Used as a direct link when the item's
      * packaging is not being recorded (see also
      * PackagedProductDefinition.package.containedItem.item).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $comprisedOf = [];
@@ -411,7 +393,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * AdministrableProductDefinition, PackagedProductDefinition or
      * ManufacturedItemDefinition references. In cases where those levels of detail are
      * not used, the ingredients may be specified directly here as codes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $ingredient = [];
@@ -425,7 +406,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * the drug substance, or an excipient in the drug product. This includes
      * process-related impurities and contaminants, product-related impurities
      * including degradation products.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $impurity = [];
@@ -435,7 +415,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information or supporting documentation about the medicinal product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $attachedDocument = [];
@@ -449,7 +428,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * to provide confidential detailed information about facilities, processes or
      * articles used in the manufacturing, processing, packaging and storing of drug
      * products.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $masterFile = [];
@@ -462,7 +440,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * use, or drug catalogs).
      *
      * A product specific contact, person (in a role), or an organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionContact[]
      */
     protected null|array $contact = [];
@@ -472,7 +449,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Clinical trials or studies that this product is involved in.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $clinicalTrial = [];
@@ -487,7 +463,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * development and within regulatory process. However when they are prescribed they
      * tend to be identified by codes. The same product may be have multiple codes,
      * applied to it by multiple organizations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding[]
      */
     protected null|array $code = [];
@@ -500,7 +475,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * use, or drug catalogs).
      *
      * The product's name, including full name and possibly coded parts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionName[]
      */
     protected null|array $name = [];
@@ -514,7 +488,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      *
      * Reference to another product, e.g. for linking authorised to investigational
      * product, or a virtual product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionCrossReference[]
      */
     protected null|array $crossReference = [];
@@ -528,7 +501,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      *
      * A manufacturing or administrative process or step associated with (or performed
      * on) the medicinal product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionOperation[]
      */
     protected null|array $operation = [];
@@ -542,7 +514,6 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      *
      * Allows the key product features to be recorded, such as "sugar free", "modified
      * release", "parallel import".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionCharacteristic[]
      */
     protected null|array $characteristic = [];

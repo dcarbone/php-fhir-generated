@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,6 @@ class FHIRCitationSummary1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used most commonly to express an author list or a contributorship statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -134,7 +133,6 @@ class FHIRCitationSummary1 extends FHIRBackboneElement
      *
      * The format for the display string, such as author last name with first letter
      * capitalized followed by forename initials.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $style = null;
@@ -145,7 +143,6 @@ class FHIRCitationSummary1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to code the producer or rule for creating the display string.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $source = null;
@@ -160,7 +157,6 @@ class FHIRCitationSummary1 extends FHIRBackboneElement
      *
      * The display string for the author list, contributor list, or contributorship
      * statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $value = null;

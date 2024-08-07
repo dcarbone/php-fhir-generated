@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -201,7 +201,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the parameter (reference to the operation definition).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -210,7 +209,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -220,7 +218,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $valueInteger = null;
@@ -231,7 +228,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $valueDecimal = null;
@@ -241,7 +237,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBase64Binary
      */
     protected null|FHIRBase64Binary $valueBase64Binary = null;
@@ -253,7 +248,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $valueInstant = null;
@@ -263,7 +257,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -273,7 +266,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $valueUri = null;
@@ -284,7 +276,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $valueDate = null;
@@ -297,7 +288,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $valueDateTime = null;
@@ -306,7 +296,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTime
      */
     protected null|FHIRTime $valueTime = null;
@@ -317,7 +306,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $valueCode = null;
@@ -328,7 +316,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid
      */
     protected null|FHIROid $valueOid = null;
@@ -339,7 +326,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUuid
      */
     protected null|FHIRUuid $valueUuid = null;
@@ -352,7 +338,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId
      */
     protected null|FHIRId $valueId = null;
@@ -362,7 +347,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $valueUnsignedInt = null;
@@ -372,7 +356,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $valuePositiveInt = null;
@@ -388,7 +371,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $valueMarkdown = null;
@@ -399,7 +381,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation
      */
     protected null|FHIRAnnotation $valueAnnotation = null;
@@ -409,7 +390,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $valueAttachment = null;
@@ -419,7 +399,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $valueIdentifier = null;
@@ -430,7 +409,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $valueCodeableConcept = null;
@@ -440,7 +418,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $valueCoding = null;
@@ -452,7 +429,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -462,7 +438,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $valueRange = null;
@@ -472,7 +447,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $valuePeriod = null;
@@ -483,7 +457,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $valueRatio = null;
@@ -493,7 +466,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $valueReference = null;
@@ -504,7 +476,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSampledData
      */
     protected null|FHIRSampledData $valueSampledData = null;
@@ -517,7 +488,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSignature
      */
     protected null|FHIRSignature $valueSignature = null;
@@ -527,7 +497,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName
      */
     protected null|FHIRHumanName $valueHumanName = null;
@@ -538,7 +507,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress
      */
     protected null|FHIRAddress $valueAddress = null;
@@ -549,7 +517,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint
      */
     protected null|FHIRContactPoint $valueContactPoint = null;
@@ -562,7 +529,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming
      */
     protected null|FHIRTiming $valueTiming = null;
@@ -574,7 +540,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMeta
      */
     protected null|FHIRMeta $valueMeta = null;
@@ -584,13 +549,11 @@ class FHIRParametersParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the parameter is a data type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition
      */
     protected null|FHIRElementDefinition $valueElementDefinition = null;
     /**
      * If the parameter is a whole resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\|PHPFHIRContainedTypeInterface
      */
     protected null|PHPFHIRContainedTypeInterface $resource = null;
@@ -601,7 +564,6 @@ class FHIRParametersParameter extends FHIRBackboneElement
      *
      * A named part of a parameter. In many implementation context, a set of named
      * parts is known as a "Tuple".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter[]
      */
     protected null|array $part = [];

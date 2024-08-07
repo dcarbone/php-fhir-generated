@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timezone of the recurring appointment occurrences.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $timezone = null;
@@ -144,7 +143,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the appointment series should recur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $recurrenceType = null;
@@ -155,7 +153,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Recurring appointments will not occur after this date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastOccurrenceDate = null;
@@ -165,7 +162,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * How many appointments are planned in the recurrence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $occurrenceCount = null;
@@ -176,7 +172,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The list of specific dates that will have appointments generated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate[]
      */
     protected null|array $occurrenceDate = [];
@@ -186,7 +181,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * more Encounter(s).
      *
      * Information about weekly recurring appointments.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentWeeklyTemplate
      */
     protected null|FHIRAppointmentWeeklyTemplate $weeklyTemplate = null;
@@ -196,7 +190,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * more Encounter(s).
      *
      * Information about monthly recurring appointments.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentMonthlyTemplate
      */
     protected null|FHIRAppointmentMonthlyTemplate $monthlyTemplate = null;
@@ -206,7 +199,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * more Encounter(s).
      *
      * Information about yearly recurring appointments.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentYearlyTemplate
      */
     protected null|FHIRAppointmentYearlyTemplate $yearlyTemplate = null;
@@ -217,7 +209,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any dates, such as holidays, that should be excluded from the recurrence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate[]
      */
     protected null|array $excludingDate = [];
@@ -227,7 +218,6 @@ class FHIRAppointmentRecurrenceTemplate extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Any dates, such as holidays, that should be excluded from the recurrence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $excludingRecurrenceId = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Textual description of certainty.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -141,7 +140,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnotes and/or explanatory notes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -152,7 +150,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Aspect of certainty being rated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -163,7 +160,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Assessment or judgement of the aspect.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $rating = null;
@@ -173,7 +169,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Individual or group who did the rating.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $rater = null;
@@ -184,7 +179,6 @@ class FHIREvidenceCertainty extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A domain or subdomain of certainty.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceCertainty[]
      */
     protected null|array $subcomponent = [];

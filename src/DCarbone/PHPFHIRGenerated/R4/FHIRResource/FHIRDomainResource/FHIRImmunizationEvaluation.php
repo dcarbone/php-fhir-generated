@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -136,7 +136,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this immunization evaluation record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -146,7 +145,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      *
      * Indicates the current status of the evaluation of the vaccination administration
      * event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRImmunizationEvaluationStatusCodes
      */
     protected null|FHIRImmunizationEvaluationStatusCodes $status = null;
@@ -156,7 +154,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual for whom the evaluation is being done.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -169,7 +166,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the evaluation of the vaccine administration event was performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -179,7 +175,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol (e.g. ACIP).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $authority = null;
@@ -190,7 +185,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine preventable disease the dose is being evaluated against.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $targetDisease = null;
@@ -200,7 +194,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The vaccine administration event being evaluated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $immunizationEvent = null;
@@ -212,7 +205,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      *
      * Indicates if the dose is valid or not valid with respect to the published
      * recommendations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $doseStatus = null;
@@ -224,7 +216,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      *
      * Provides an explanation as to why the vaccine administration event is valid or
      * not relative to the published recommendations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $doseStatusReason = [];
@@ -234,7 +225,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information about the evaluation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -245,7 +235,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $series = null;
@@ -255,7 +244,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * the Narrative, or extensions
      *
      * Nominal position in a series.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $doseNumberPositiveInt = null;
@@ -265,7 +253,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Nominal position in a series.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $doseNumberString = null;
@@ -275,7 +262,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * the Narrative, or extensions
      *
      * The recommended number of doses to achieve immunity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $seriesDosesPositiveInt = null;
@@ -285,7 +271,6 @@ class FHIRImmunizationEvaluation extends FHIRDomainResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The recommended number of doses to achieve immunity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $seriesDosesString = null;

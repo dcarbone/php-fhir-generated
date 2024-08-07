@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * versions, and only a few codes have changed), use a fixed code (a default code),
      * or alternatively, a reference to a different concept map can be provided (by
      * canonical URL).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRConceptMapGroupUnmappedMode
      */
     protected null|FHIRConceptMapGroupUnmappedMode $mode = null;
@@ -120,7 +119,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The fixed code to use when the mode = 'fixed' - all unmapped codes are mapped to
      * a single fixed code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -131,7 +129,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $display = null;
@@ -141,7 +138,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The canonical URL of the map to use if this map contains no mapping.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -91,7 +91,6 @@ class FHIROrderWhen extends FHIRBackboneElement
      *
      * Code specifies when request should be done. The code may simply be a priority
      * code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -102,7 +101,6 @@ class FHIROrderWhen extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A formal schedule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule
      */
     protected null|FHIRSchedule $schedule = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,6 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
      *
      * The type of the degree of polymerisation shall be described, e.g. SRU/Polymer
      * Ratio.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -132,7 +131,6 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An average amount of polymerisation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $average = null;
@@ -142,7 +140,6 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A low expected limit of the amount.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $low = null;
@@ -152,7 +149,6 @@ class FHIRSubstancePolymerDegreeOfPolymerisation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A high expected limit of the amount.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $high = null;

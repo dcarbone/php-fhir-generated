@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,6 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement
      *
      * Code that specifies the property such as a resolution or color being
      * represented.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -145,7 +144,6 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -156,7 +154,6 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $valueCodeableConcept = null;
@@ -166,7 +163,6 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -175,7 +171,6 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -185,7 +180,6 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $valueInteger = null;
@@ -195,7 +189,6 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $valueRange = null;
@@ -205,7 +198,6 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the property specified by the associated property.type code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
      */
     protected null|FHIRAttachment $valueAttachment = null;

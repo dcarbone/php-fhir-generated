@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCap
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement
      *
      * A list of the messaging transport protocol(s) identifiers, supported by this
      * endpoint.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $protocol = null;
@@ -110,7 +109,6 @@ class FHIRCapabilityStatementEndpoint extends FHIRBackboneElement
      *
      * The network address of the end-point. For solutions that do not use network
      * addresses for routing, it can be just an identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $address = null;

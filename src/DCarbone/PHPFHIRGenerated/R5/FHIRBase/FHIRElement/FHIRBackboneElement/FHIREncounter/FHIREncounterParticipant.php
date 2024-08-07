@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIREncounterParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -131,7 +130,6 @@ class FHIREncounterParticipant extends FHIRBackboneElement
      *
      * The period of time that the specified participant participated in the encounter.
      * These can overlap or be sub-sets of the overall encounter's period.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -144,7 +142,6 @@ class FHIREncounterParticipant extends FHIRBackboneElement
      * indicate that the patient was actually participating in the encounter. Not
      * including the patient here covers use cases such as a case meeting between
      * practitioners about a patient - non contact times.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $actor = null;

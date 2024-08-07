@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,7 +119,6 @@ class FHIROrderResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * Identifiers assigned to this order. The identifiers are usually assigned by the
      * system responding to the order, but they may be provided or added to by other
      * systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -129,7 +128,6 @@ class FHIROrderResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the order that this is in response to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $request = null;
@@ -142,7 +140,6 @@ class FHIROrderResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time at which this order response was made (created/posted).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -152,7 +149,6 @@ class FHIROrderResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization, or device credited with making the response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $who = null;
@@ -161,7 +157,6 @@ class FHIROrderResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * What this response says about the status of the original order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROrderStatus
      */
     protected null|FHIROrderStatus $orderStatus = null;
@@ -172,7 +167,6 @@ class FHIROrderResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Additional description about the response - e.g. a text description provided by
      * a human user when making decisions about the order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -184,7 +178,6 @@ class FHIROrderResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * Links to resources that provide details of the outcome of performing the order;
      * e.g. Diagnostic Reports in a response that is made to an order that referenced a
      * diagnostic order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $fulfillment = [];

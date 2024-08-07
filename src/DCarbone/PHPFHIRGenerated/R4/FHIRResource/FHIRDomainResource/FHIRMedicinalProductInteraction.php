@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements PHPF
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is a described interaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $subject = [];
@@ -124,7 +123,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements PHPF
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The interaction described.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -133,7 +131,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements PHPF
      * other forms of interactions.
      *
      * The specific medication, food or laboratory test that interacts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductInteraction\FHIRMedicinalProductInteractionInteractant[]
      */
     protected null|array $interactant = [];
@@ -145,7 +142,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements PHPF
      *
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction,
      * drug-lab test interaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -157,7 +153,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements PHPF
      *
      * The effect of the interaction, for example "reduced gastric absorption of
      * primary medication".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $effect = null;
@@ -168,7 +163,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements PHPF
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The incidence of the interaction, e.g. theoretical, observed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $incidence = null;
@@ -179,7 +173,6 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements PHPF
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions for managing the interaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $management = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,7 +131,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -142,7 +141,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * A protocol, guideline, orderset or other definition that is adhered to in whole
      * or in part by this request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $definition = [];
@@ -152,7 +150,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -162,7 +159,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $replaces = [];
@@ -174,7 +170,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A shared identifier common to all requests that were authorized more or less
      * simultaneously by a single author, representing the identifier of the
      * requisition, prescription or similar form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $groupIdentifier = null;
@@ -184,7 +179,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * The current state of the request. For request groups, the status reflects the
      * status of all the requests in the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestStatus
      */
     protected null|FHIRRequestStatus $status = null;
@@ -194,7 +188,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Indicates the level of authority/intentionality associated with the request and
      * where the request fits into the workflow chain.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestIntent
      */
     protected null|FHIRRequestIntent $intent = null;
@@ -204,7 +197,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Indicates how quickly the request should be addressed with respect to other
      * requests.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestPriority
      */
     protected null|FHIRRequestPriority $priority = null;
@@ -214,7 +206,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject for which the request group was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -224,7 +215,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the context of the request group, if any.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $context = null;
@@ -237,7 +227,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the request group was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authoredOn = null;
@@ -247,7 +236,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the author of the request group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $author = null;
@@ -261,7 +249,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * as a parameter to the evaluation and echoed by the service, although for some
      * use cases, such as subscription- or event-based scenarios, it may provide an
      * indication of the cause for the response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $reasonCodeableConcept = null;
@@ -274,7 +261,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * as a parameter to the evaluation and echoed by the service, although for some
      * use cases, such as subscription- or event-based scenarios, it may provide an
      * indication of the cause for the response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $reasonReference = null;
@@ -285,7 +271,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -294,7 +279,6 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * have inter-dependencies such as "give this medication after that one".
      *
      * The actions, if any, produced by the evaluation of the artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction[]
      */
     protected null|array $action = [];

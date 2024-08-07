@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -138,7 +138,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * business processed and/ or used to refer to it when a direct URL reference to
      * the resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -148,7 +147,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the patient who the condition record is associated with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $subject = null;
@@ -158,7 +156,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Encounter during which the condition was first asserted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $encounter = null;
@@ -169,7 +166,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * Person who takes responsibility for asserting the existence of the condition as
      * part of the electronic record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $asserter = null;
@@ -181,7 +177,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * Estimated or actual date the condition/problem/diagnosis was first
      * detected/suspected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $dateAsserted = null;
@@ -192,7 +187,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the condition, problem or diagnosis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -204,7 +198,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * A category assigned to the condition. E.g. complaint | symptom | finding |
      * diagnosis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -213,7 +206,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical status of the condition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRConditionStatus
      */
     protected null|FHIRConditionStatus $status = null;
@@ -224,7 +216,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The degree of confidence that this condition is correct.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $certainty = null;
@@ -236,7 +227,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * A subjective assessment of the severity of the condition as evaluated by the
      * clinician.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $severity = null;
@@ -247,13 +237,11 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated or actual date the condition began, in the opinion of the clinician.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $onsetDate = null;
     /**
      * Estimated or actual date the condition began, in the opinion of the clinician.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $onsetAge = null;
@@ -267,7 +255,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $abatementDate = null;
@@ -276,7 +263,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $abatementAge = null;
@@ -288,7 +274,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Conditions are never really
      * resolved, but they can abate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $abatementBoolean = null;
@@ -299,7 +284,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * Discharge Summary.
      *
      * Clinical stage or grade of a condition. May include formal severity assessments.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage
      */
     protected null|FHIRConditionStage $stage = null;
@@ -311,7 +295,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * Supporting Evidence / manifestations that are the basis on which this condition
      * is suspected or confirmed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionEvidence[]
      */
     protected null|array $evidence = [];
@@ -322,7 +305,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * Discharge Summary.
      *
      * The anatomical location where this condition manifests itself.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionLocation[]
      */
     protected null|array $location = [];
@@ -335,7 +317,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * Further conditions, problems, diagnoses, procedures or events that are related
      * in some way to this condition, or the substance that caused/triggered this
      * Condition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionRelatedItem[]
      */
     protected null|array $relatedItem = [];
@@ -345,7 +326,6 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * Additional information about the Condition. This is a general notes/comments
      * entry for description of the Condition, its diagnosis and prognosis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $notes = null;

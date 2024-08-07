@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this research study by the sponsor or other systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -131,7 +130,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the subject.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResearchSubjectStatus
      */
     protected null|FHIRResearchSubjectStatus $status = null;
@@ -141,7 +139,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The dates the subject began and ended their participation in the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -151,7 +148,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the study the subject is participating in.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $study = null;
@@ -161,7 +157,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The record of the person or animal who is involved in the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $individual = null;
@@ -172,7 +167,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      *
      * The name of the arm in the study the subject is expected to follow as part of
      * this study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $assignedArm = null;
@@ -183,7 +177,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      *
      * The name of the arm in the study the subject actually followed as part of this
      * study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $actualArm = null;
@@ -193,7 +186,6 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A record of the patient's informed agreement to participate in the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $consent = null;

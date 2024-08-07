@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -89,7 +89,6 @@ class FHIRSpecimenSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this relationship is to a parent or to a child.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHierarchicalRelationshipType
      */
     protected null|FHIRHierarchicalRelationshipType $relationship = null;
@@ -99,7 +98,6 @@ class FHIRSpecimenSource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen resource that is the target of this relationship.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $target = [];

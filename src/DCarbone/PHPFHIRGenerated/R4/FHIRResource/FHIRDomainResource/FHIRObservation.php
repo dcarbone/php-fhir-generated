@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -173,7 +173,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this observation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -185,7 +184,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
      * For example, a MedicationRequest may require a patient to have laboratory test
      * performed before it is dispensed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -196,7 +194,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * A larger event of which this particular Observation is a component or step. For
      * example, an observation as part of a procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $partOf = [];
@@ -205,7 +202,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the result value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRObservationStatus
      */
     protected null|FHIRObservationStatus $status = null;
@@ -216,7 +212,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation being made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -227,7 +222,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what was observed. Sometimes this is called the observation "name".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -241,7 +235,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * observation is different from the subject (or a sample of, part, or region of
      * the subject), the `focus` element or the `code` itself specifies the actual
      * focus of the observation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -259,7 +252,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * the Observation resource to capture whether the mother is trained to change her
      * child's tracheostomy tube. In this example, the child is the patient of record
      * and the mother is the focus.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $focus = [];
@@ -270,7 +262,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this observation is made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -287,7 +278,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
      * is not known, only the date/time itself.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $effectiveDateTime = null;
@@ -301,7 +291,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
      * is not known, only the date/time itself.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -319,7 +308,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
      * is not known, only the date/time itself.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     protected null|FHIRTiming $effectiveTiming = null;
@@ -336,7 +324,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * "physiologically relevant time". This is usually either the time of the
      * procedure or of specimen collection, but very often the source of the date/time
      * is not known, only the date/time itself.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $effectiveInstant = null;
@@ -350,7 +337,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The date and time this version of the observation was made available to
      * providers, typically after the results have been reviewed and verified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $issued = null;
@@ -360,7 +346,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who was responsible for asserting the observed value as "true".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $performer = [];
@@ -373,7 +358,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -385,7 +369,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $valueCodeableConcept = null;
@@ -396,7 +379,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -406,7 +388,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -417,7 +398,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $valueInteger = null;
@@ -428,7 +408,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $valueRange = null;
@@ -440,7 +419,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $valueRatio = null;
@@ -452,7 +430,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
     protected null|FHIRSampledData $valueSampledData = null;
@@ -462,7 +439,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
     protected null|FHIRTime $valueTime = null;
@@ -476,7 +452,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $valueDateTime = null;
@@ -487,7 +462,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The information determined as a result of making the observation, if the
      * information has a simple value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $valuePeriod = null;
@@ -499,7 +473,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * Provides a reason why the expected value in the element Observation.value[x] is
      * missing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $dataAbsentReason = null;
@@ -511,7 +484,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * A categorical assessment of an observation value. For example, high, low,
      * normal.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $interpretation = [];
@@ -522,7 +494,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments about the observation or the results.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -534,7 +505,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * Indicates the site on the subject's body where the observation was made (i.e.
      * the target site).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $bodySite = null;
@@ -545,7 +515,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the mechanism used to perform the observation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $method = null;
@@ -555,7 +524,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen that was used when this observation was made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $specimen = null;
@@ -565,7 +533,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device used to generate the observation data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $device = null;
@@ -577,7 +544,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * range. Multiple reference ranges are interpreted as an "OR". In other words, to
      * represent two distinct target populations, two `referenceRange` elements would
      * be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange[]
      */
     protected null|array $referenceRange = [];
@@ -588,7 +554,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * This observation is a group observation (e.g. a battery, a panel of tests, a set
      * of vital sign measurements) that includes the target as a member of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $hasMember = [];
@@ -600,7 +565,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * The target resource that represents a measurement from which this observation
      * value is derived. For example, a calculated anion gap or a fetal measurement
      * based on an ultrasound image.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $derivedFrom = [];
@@ -613,7 +577,6 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * attributes. Examples include systolic and diastolic component observations for
      * blood pressure measurement and multiple component observations for genetics
      * observations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent[]
      */
     protected null|array $component = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,7 +118,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * brand medication) or a composite substance that includes the identified
      * substance. It must be clinically safe to only process the
      * AllergyIntolerance.substance and ignore the AllergyIntolerance.event.substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $substance = null;
@@ -129,7 +128,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * Statement about the degree of clinical certainty that the specific substance was
      * the cause of the manifestation in this reaction event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceCertainty
      */
     protected null|FHIRAllergyIntoleranceCertainty $certainty = null;
@@ -141,7 +139,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * Clinical symptoms and/or signs that are observed or associated with the adverse
      * reaction event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $manifestation = [];
@@ -152,7 +149,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * Text description about the reaction as a whole, including details of the
      * manifestation if required.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -165,7 +161,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Record of the date and/or time of the onset of the Reaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $onset = null;
@@ -176,7 +171,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      *
      * Clinical assessment of the severity of the reaction event as a whole,
      * potentially considering multiple different manifestations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAllergyIntoleranceSeverity
      */
     protected null|FHIRAllergyIntoleranceSeverity $severity = null;
@@ -187,7 +181,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the route by which the subject was exposed to the substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $exposureRoute = null;
@@ -198,7 +191,6 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional text about the adverse reaction event not captured in other fields.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation
      */
     protected null|FHIRAnnotation $note = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -124,7 +124,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the issue indicates a variation from successful processing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRIssueSeverity
      */
     protected null|FHIRIssueSeverity $severity = null;
@@ -134,7 +133,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * Describes the type of the issue. The system that creates an OperationOutcome
      * SHALL choose the most applicable code from the IssueType value set, and may
      * additional provide its own code for the error in the details element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRIssueType
      */
     protected null|FHIRIssueType $code = null;
@@ -146,7 +144,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      *
      * Additional details about the error. This may be a text description of the error
      * or a system code that identifies the error.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $details = null;
@@ -156,7 +153,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional diagnostic information about the issue.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $diagnostics = null;
@@ -171,7 +167,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * repetition indicators and the default child accessor that identifies one of the
      * elements in the resource that caused this issue to be raised. For HTTP errors,
      * will be "http." + the parameter name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $location = [];
@@ -183,7 +178,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names,
      * repetition indicators and the default child accessor that identifies one of the
      * elements in the resource that caused this issue to be raised.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $expression = [];

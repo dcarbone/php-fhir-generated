@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements P
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the pharmaceutical medicinal product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -124,7 +123,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements P
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The administrable dose form, after necessary reconstitution.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $administrableDoseForm = null;
@@ -135,7 +133,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements P
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $unitOfPresentation = null;
@@ -145,7 +142,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements P
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $ingredient = [];
@@ -155,7 +151,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements P
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Accompanying device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $device = [];
@@ -163,7 +158,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements P
      * A pharmaceutical product described in terms of its composition and dose form.
      *
      * Characteristics e.g. a products onset of action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalCharacteristics[]
      */
     protected null|array $characteristics = [];
@@ -172,7 +166,6 @@ class FHIRMedicinalProductPharmaceutical extends FHIRDomainResource implements P
      *
      * The path by which the pharmaceutical product is taken into or makes contact with
      * the body.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPharmaceutical\FHIRMedicinalProductPharmaceuticalRouteOfAdministration[]
      */
     protected null|array $routeOfAdministration = [];

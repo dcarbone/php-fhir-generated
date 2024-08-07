@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -158,7 +158,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * This records identifiers associated with this appointment response concern that
      * are defined by business processes and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -168,7 +167,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Appointment that this response is replying to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $appointment = null;
@@ -179,7 +177,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * Indicates that the response is proposing a different time that was initially
      * requested. The new proposed time will be indicated in the start and end
      * properties.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $proposedNewTime = null;
@@ -192,7 +189,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place, or requested new start time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $start = null;
@@ -207,7 +203,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * This may be either the same as the appointment request to confirm the details of
      * the appointment, or alternately a new time to request a re-negotiation of the
      * end time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $end = null;
@@ -218,7 +213,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $participantType = [];
@@ -229,7 +223,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      *
      * A Person, Location, HealthcareService, or Device that is participating in the
      * appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $actor = null;
@@ -241,7 +234,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * times should be interpreted as a requested time change. When the status is
      * accepted, the times can either be the time of the appointment (as a confirmation
      * of the time) or can be empty.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRAppointmentResponseStatus
      */
     protected null|FHIRAppointmentResponseStatus $participantStatus = null;
@@ -255,7 +247,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * the Narrative, or extensions
      *
      * Additional comments about the appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $comment = null;
@@ -265,7 +256,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      *
      * Indicates that this AppointmentResponse applies to all occurrences in a
      * recurring request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $recurring = null;
@@ -278,7 +268,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * The original date within a recurring request. This could be used in place of the
      * recurrenceId to be more direct (or where the template is provided through the
      * simple list of dates in `Appointment.occurrenceDate`).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $occurrenceDate = null;
@@ -289,7 +278,6 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      *
      * The recurrence ID (sequence number) of the specific appointment when responding
      * to a recurring request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $recurrenceId = null;

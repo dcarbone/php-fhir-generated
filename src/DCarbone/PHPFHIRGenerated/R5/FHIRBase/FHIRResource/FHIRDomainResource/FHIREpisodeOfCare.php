@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -147,7 +147,6 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      * The EpisodeOfCare may be known by different identifiers for different contexts
      * of use, such as when an external agency is tracking the Episode for funding
      * purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -155,7 +154,6 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * planned | waitlist | active | onhold | finished | cancelled.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIREpisodeOfCareStatus
      */
     protected null|FHIREpisodeOfCareStatus $status = null;
@@ -166,7 +164,6 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The history of statuses that the EpisodeOfCare has been through (without
      * requiring processing the history of the resource).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareStatusHistory[]
      */
     protected null|array $statusHistory = [];
@@ -178,7 +175,6 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * A classification of the type of episode of care; e.g. specialist referral,
      * disease management, type of funded care.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -189,7 +185,6 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The list of medical reasons that are expected to be addressed during the episode
      * of care.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareReason[]
      */
     protected null|array $reason = [];
@@ -199,7 +194,6 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      * level of responsibility for the patient during this time.
      *
      * The list of medical conditions that were addressed during the episode of care.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREpisodeOfCare\FHIREpisodeOfCareDiagnosis[]
      */
     protected null|array $diagnosis = [];
@@ -209,7 +203,6 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the focus of this episode of care.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -220,7 +213,6 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The organization that has assumed the specific responsibilities for care
      * coordination, care delivery, or other services for the specified duration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $managingOrganization = null;
@@ -231,7 +223,6 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The interval during which the managing organization assumes the defined
      * responsibility.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -242,7 +233,6 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming
      * referrals.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $referralRequest = [];
@@ -252,7 +242,6 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that is the care manager/care coordinator for this patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $careManager = null;
@@ -263,7 +252,6 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The list of practitioners that may be facilitating this episode of care for
      * specific purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $careTeam = [];
@@ -273,7 +261,6 @@ class FHIREpisodeOfCare extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of accounts that may be used for billing for this EpisodeOfCare.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $account = [];

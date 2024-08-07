@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Descriptive name for this variable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -140,7 +139,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A default, hard-coded, or user-defined value for this variable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $defaultValue = null;
@@ -150,7 +148,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the variable and its purpose.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -162,7 +159,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      * The FHIRPath expression for a specific value to evaluate against the fixture
      * body. When variables are defined, only one of either expression, headerField or
      * path must be specified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $expression = null;
@@ -173,7 +169,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Will be used to grab the HTTP header field value from the headers that sourceId
      * is pointing to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $headerField = null;
@@ -184,7 +179,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Displayable text string with hint help information to the user when entering a
      * default value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $hint = null;
@@ -195,7 +189,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * XPath or JSONPath to evaluate against the fixture body. When variables are
      * defined, only one of either expression, headerField or path must be specified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $path = null;
@@ -209,7 +202,6 @@ class FHIRTestScriptVariable extends FHIRBackboneElement
      *
      * Fixture to evaluate the XPath/JSONPath expression or the headerField against
      * within this variable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $sourceId = null;

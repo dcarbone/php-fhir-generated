@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -143,7 +142,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     protected null|FHIRFinancialResourceStatusCodes $status = null;
@@ -154,7 +152,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Immediate (STAT), best effort (NORMAL), deferred (DEFER).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $priority = null;
@@ -164,7 +161,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient Resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -176,7 +172,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $servicedDate = null;
@@ -187,7 +182,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $servicedPeriod = null;
@@ -200,7 +194,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when this resource was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $created = null;
@@ -210,7 +203,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who created the invoice/claim/pre-determination or pre-authorization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $enterer = null;
@@ -220,7 +212,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $provider = null;
@@ -230,7 +221,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $organization = null;
@@ -240,7 +230,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who is target of the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $insurer = null;
@@ -250,7 +239,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services were provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $facility = null;
@@ -260,7 +248,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Financial instrument by which payment information for health care.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $coverage = null;
@@ -271,7 +258,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      *
      * The contract number of a business agreement which describes the terms and
      * conditions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $businessArrangement = null;
@@ -282,7 +268,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dental, Vision, Medical, Pharmacy, Rehab etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $benefitCategory = null;
@@ -293,7 +278,6 @@ class FHIREligibilityRequest extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dental: basic, major, ortho; Vision exam, glasses, contacts; etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $benefitSubCategory = null;

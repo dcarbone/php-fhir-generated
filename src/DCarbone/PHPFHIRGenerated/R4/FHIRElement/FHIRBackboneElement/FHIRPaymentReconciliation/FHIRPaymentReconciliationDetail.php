@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPayme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the current payment item for the referenced payable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -120,7 +119,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the prior payment item for the referenced payable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $predecessor = null;
@@ -131,7 +129,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code to indicate the nature of the payment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -141,7 +138,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource, such as a Claim, the evaluation of which could lead to payment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $request = null;
@@ -151,7 +147,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party which submitted the claim or financial transaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $submitter = null;
@@ -161,7 +156,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource, such as a ClaimResponse, which contains a commitment to payment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $response = null;
@@ -172,7 +166,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date from the response resource containing a commitment to pay.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $date = null;
@@ -183,7 +176,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      *
      * A reference to the individual who is responsible for inquiries regarding the
      * response and its payment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $responsible = null;
@@ -193,7 +185,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party which is receiving the payment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $payee = null;
@@ -203,7 +194,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The monetary amount allocated from the total payment to the payable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
     protected null|FHIRMoney $amount = null;

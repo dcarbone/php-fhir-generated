@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,7 +119,6 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      * the Narrative, or extensions
      *
      * The identifier of this message.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId
      */
     protected null|FHIRId $identifier = null;
@@ -128,7 +127,6 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time that the message was sent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $timestamp = null;
@@ -140,7 +138,6 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      * Code that identifies the event this message represents and connects it with it's
      * definition. Events defined as part of the FHIR specification have the system
      * value "http://hl7.org/fhir/message-type".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $event = null;
@@ -152,7 +149,6 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * Information about the message that this message is a response to. Only present
      * if this message is a response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderResponse
      */
     protected null|FHIRMessageHeaderResponse $response = null;
@@ -163,7 +159,6 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      * the MessageHeader resource instance is the first resource in the bundle.
      *
      * The source application from which this message originated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderSource
      */
     protected null|FHIRMessageHeaderSource $source = null;
@@ -174,7 +169,6 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      * the MessageHeader resource instance is the first resource in the bundle.
      *
      * The destination application which the message is intended for.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination[]
      */
     protected null|array $destination = [];
@@ -186,7 +180,6 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      * The person or device that performed the data entry leading to this message.
      * Where there is more than one candidate, pick the most proximal to the message.
      * Can provide other enterers in extensions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $enterer = null;
@@ -198,7 +191,6 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      * The logical author of the message - the person or device that decided the
      * described event should happen. Where there is more than one candidate, pick the
      * most proximal to the MessageHeader. Can provide other authors in extensions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $author = null;
@@ -209,7 +201,6 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * Allows data conveyed by a message to be addressed to a particular person or
      * department when routing to a specific application isn't sufficient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $receiver = null;
@@ -221,7 +212,6 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      * The person or organization that accepts overall responsibility for the contents
      * of the message. The implication is that the message event happened under the
      * policies of the responsible party.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $responsible = null;
@@ -233,7 +223,6 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * Coded indication of the cause for the event - indicates a reason for the
      * occurance of the event that is a focus of this message.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $reason = null;
@@ -244,7 +233,6 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * The actual data of the message - a reference to the root/focus class of the
      * event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $data = [];

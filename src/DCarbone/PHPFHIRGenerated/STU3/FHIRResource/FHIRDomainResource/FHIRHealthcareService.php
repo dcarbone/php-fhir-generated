@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -143,7 +143,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External identifiers for this item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -152,7 +151,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this healthcareservice record is in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $active = null;
@@ -162,7 +160,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that provides this healthcare service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $providedBy = null;
@@ -173,7 +170,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the broad category of service being performed or delivered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -184,7 +180,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific type of service that may be delivered or performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -196,7 +191,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * Collection of specialties handled by the service site. This is more of a medical
      * term.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $specialty = [];
@@ -206,7 +200,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) where this healthcare service may be provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $location = [];
@@ -217,7 +210,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * Further description of the service as it would be presented to a consumer while
      * searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -229,7 +221,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * Any additional description of the service and/or any specific issues not covered
      * by the other attributes, which can be displayed as further detail under the
      * serviceName.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $comment = null;
@@ -239,7 +230,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Extra details about the service that can't be placed in the other fields.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $extraDetails = null;
@@ -250,7 +240,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * If there is a photo/symbol associated with this HealthcareService, it may be
      * included here to facilitate quick identification of the service in a list.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $photo = null;
@@ -261,7 +250,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of contacts related to this specific healthcare service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint[]
      */
     protected null|array $telecom = [];
@@ -272,7 +260,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * The location(s) that this service is available to (not where the service is
      * provided).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $coverageArea = [];
@@ -284,7 +271,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * The code(s) that detail the conditions under which the healthcare service is
      * available/offered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $serviceProvisionCode = [];
@@ -296,7 +282,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * Does this service have specific eligibility requirements that need to be met in
      * order to use the service?
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $eligibility = null;
@@ -306,7 +291,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the eligibility conditions for the service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $eligibilityNote = null;
@@ -316,7 +300,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Program Names that can be used to categorize the service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
     protected null|array $programName = [];
@@ -327,7 +310,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of characteristics (attributes).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $characteristic = [];
@@ -339,7 +321,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * Ways that the service accepts referrals, if this is not provided then it is
      * implied that no referral is required.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $referralMethod = [];
@@ -350,7 +331,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * Indicates whether or not a prospective consumer will require an appointment for
      * a particular service at a site to be provided by the Organization. Indicates if
      * an appointment is required for access to this service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $appointmentRequired = null;
@@ -358,7 +338,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * The details of a healthcare service available at a location.
      *
      * A collection of times that the Service Site is available.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime[]
      */
     protected null|array $availableTime = [];
@@ -367,7 +346,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * The HealthcareService is not available during this period of time due to the
      * provided reason.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable[]
      */
     protected null|array $notAvailable = [];
@@ -379,7 +357,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * A description of site availability exceptions, e.g. public holiday availability.
      * Succinctly describing all possible exceptions to normal site availability as
      * details in the available Times and not available Times.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $availabilityExceptions = null;
@@ -390,7 +367,6 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      *
      * Technical endpoints providing access to services operated for the specific
      * healthcare services defined at this resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $endpoint = [];

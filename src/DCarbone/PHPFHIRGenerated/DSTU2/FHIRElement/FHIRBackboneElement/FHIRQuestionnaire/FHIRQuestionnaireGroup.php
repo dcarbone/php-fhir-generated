@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * An identifier that is unique within the Questionnaire allowing linkage to the
      * equivalent group in a QuestionnaireResponse resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $linkId = null;
@@ -121,7 +120,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human-readable name for this section of the questionnaire.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -132,7 +130,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Identifies a how this group of questions is known in a particular terminology
      * such as LOINC.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding[]
      */
     protected null|array $concept = [];
@@ -142,7 +139,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional text for the group, used for display purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -153,7 +149,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * If true, indicates that the group must be present and have required questions
      * within it answered. If false, the group may be skipped when answering the
      * questionnaire.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $required = null;
@@ -163,7 +158,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Whether the group may occur multiple times in the instance, containing multiple
      * sets of answers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $repeats = null;
@@ -174,7 +168,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * A sub-group within a group. The ordering of groups within this group is
      * relevant.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup[]
      */
     protected null|array $group = [];
@@ -185,7 +178,6 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      *
      * Set of questions within this group. The order of questions within the group is
      * relevant.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireQuestion[]
      */
     protected null|array $question = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * A logical group of resources. Logical groups can be used when building pages.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGrouping[]
      */
     protected null|array $grouping = [];
@@ -113,7 +112,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * (value set, structure definition, capability statements etc.) are obvious
      * candidates for inclusion, but any kind of resource can be included as an example
      * resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource[]
      */
     protected null|array $resource = [];
@@ -125,7 +123,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      *
      * A page / section in the implementation guide. The root page is the
      * implementation guide home page.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage
      */
     protected null|FHIRImplementationGuidePage $page = null;
@@ -136,7 +133,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Defines how IG is built by tools.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter[]
      */
     protected null|array $parameter = [];
@@ -147,7 +143,6 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * A template for building resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideTemplate[]
      */
     protected null|array $template = [];

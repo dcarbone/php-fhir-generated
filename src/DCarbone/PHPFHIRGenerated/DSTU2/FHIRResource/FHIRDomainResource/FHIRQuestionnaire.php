@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,7 +126,6 @@ class FHIRQuestionnaire extends FHIRDomainResource implements PHPFHIRContainedTy
      * business processes and/or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -137,7 +136,6 @@ class FHIRQuestionnaire extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The version number assigned by the publisher for business reasons. It may remain
      * the same when the resource is updated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -146,7 +144,6 @@ class FHIRQuestionnaire extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lifecycle status of the questionnaire as a whole.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuestionnaireStatus
      */
     protected null|FHIRQuestionnaireStatus $status = null;
@@ -159,7 +156,6 @@ class FHIRQuestionnaire extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that this questionnaire was last changed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -170,7 +166,6 @@ class FHIRQuestionnaire extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Organization or person responsible for developing and maintaining the
      * questionnaire.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -182,7 +177,6 @@ class FHIRQuestionnaire extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint[]
      */
     protected null|array $telecom = [];
@@ -193,7 +187,6 @@ class FHIRQuestionnaire extends FHIRDomainResource implements PHPFHIRContainedTy
      * the Narrative, or extensions
      *
      * Identifies the types of subjects that can be the subject of the questionnaire.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode[]
      */
     protected null|array $subjectType = [];
@@ -203,7 +196,6 @@ class FHIRQuestionnaire extends FHIRDomainResource implements PHPFHIRContainedTy
      * structure of the grouping of the underlying questions.
      *
      * A collection of related questions (or further groupings of questions).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup
      */
     protected null|FHIRQuestionnaireGroup $group = null;

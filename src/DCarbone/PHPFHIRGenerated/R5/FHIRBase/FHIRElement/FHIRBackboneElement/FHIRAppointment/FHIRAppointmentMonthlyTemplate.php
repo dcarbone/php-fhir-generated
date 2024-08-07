@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      *
      * Indicates that appointments in the series of recurring appointments should occur
      * on a specific day of the month.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $dayOfMonth = null;
@@ -133,7 +132,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      *
      * Indicates which week within a month the appointments in the series of recurring
      * appointments should occur on.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $nthWeekOfMonth = null;
@@ -144,7 +142,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      *
      * Indicates which day of the week the recurring appointments should occur each nth
      * week.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $dayOfWeek = null;
@@ -154,7 +151,6 @@ class FHIRAppointmentMonthlyTemplate extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates that recurring appointments should occur every nth month.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $monthInterval = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDetec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,6 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A manifestation that led to the recording of this detected issue.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $code = [];
@@ -108,7 +107,6 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement
      *
      * Links to resources that constitute evidence for the detected issue such as a
      * GuidanceResponse or MeasureReport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $detail = [];

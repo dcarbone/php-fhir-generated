@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -139,7 +138,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     protected null|FHIRFinancialResourceStatusCodes $status = null;
@@ -152,7 +150,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $created = null;
@@ -162,7 +159,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $requestProvider = null;
@@ -172,7 +168,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $requestOrganization = null;
@@ -182,7 +177,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource reference.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $request = null;
@@ -193,7 +187,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Transaction status: error, complete.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $outcome = null;
@@ -203,7 +196,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $disposition = null;
@@ -213,7 +205,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who produced this adjudicated response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $insurer = null;
@@ -223,7 +214,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements PHPFHIRConta
      *
      * Flag indicating if the coverage provided is inforce currently if no service
      * date(s) specified or for the whole duration of the service dates.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $inforce = null;
@@ -233,7 +223,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements PHPFHIRConta
      *
      * The insurer may provide both the details for the requested coverage as well as
      * details for additional coverages known to the insurer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseInsurance[]
      */
     protected null|array $insurance = [];
@@ -244,7 +233,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The form to be used for printing the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $form = null;
@@ -253,7 +241,6 @@ class FHIREligibilityResponse extends FHIRDomainResource implements PHPFHIRConta
      * Eligibility resource.
      *
      * Mutually exclusive with Services Provided (Item).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseError[]
      */
     protected null|array $error = [];

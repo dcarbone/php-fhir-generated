@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -158,7 +158,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Claim items which this service line is intended to replace.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $itemSequence = [];
@@ -169,7 +168,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      *
      * The sequence number of the details within the claim item which this line is
      * intended to replace.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $detailSequence = [];
@@ -180,7 +178,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      *
      * The sequence number of the sub-details woithin the details within the claim item
      * which this line is intended to replace.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $subDetailSequence = [];
@@ -192,7 +189,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      *
      * Trace number for tracking purposes. May be defined at the jurisdiction level or
      * between trading partners.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $traceNumber = [];
@@ -202,7 +198,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The providers who are authorized for the services rendered to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $provider = [];
@@ -213,7 +208,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of revenue or cost center providing the product and/or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $revenue = null;
@@ -228,7 +222,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * code for the item. This element may be the start of a range of .productOrService
      * codes used in conjunction with .productOrServiceEnd or it may be a solo element
      * where .productOrServiceEnd is not used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $productOrService = null;
@@ -243,7 +236,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * group code. This value may only be present when a .productOfService code has
      * been provided to convey the start of the range. Typically this value may be used
      * only with preauthorizations and not with claims.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $productOrServiceEnd = null;
@@ -253,7 +245,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Request or Referral for Goods or Service to be rendered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $request = [];
@@ -265,7 +256,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $modifier = [];
@@ -276,7 +266,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the program under which this may be recovered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $programCode = [];
@@ -288,7 +277,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      *
      * The date or dates when the service or product was supplied, performed or
      * completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $servicedDate = null;
@@ -299,7 +287,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      *
      * The date or dates when the service or product was supplied, performed or
      * completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $servicedPeriod = null;
@@ -310,7 +297,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $locationCodeableConcept = null;
@@ -325,7 +311,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
      */
     protected null|FHIRAddress $locationAddress = null;
@@ -335,7 +320,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $locationReference = null;
@@ -347,7 +331,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * The amount paid by the patient, in total at the claim claim level or
      * specifically for the item and detail level, to the provider for goods and
      * services.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     protected null|FHIRMoney $patientPaid = null;
@@ -359,7 +342,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of repetitions of a service or product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -370,7 +352,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      *
      * If the item is not a group then this is the fee for the product or service,
      * otherwise this is the total of the fees for the details of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     protected null|FHIRMoney $unitPrice = null;
@@ -383,7 +364,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $factor = null;
@@ -393,7 +373,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The total of taxes applicable for this product or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     protected null|FHIRMoney $tax = null;
@@ -404,7 +383,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      *
      * The total amount claimed for the group (if a grouper) or the addItem. Net = unit
      * price * quantity * factor.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     protected null|FHIRMoney $net = null;
@@ -414,7 +392,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * Physical location where the service is performed or applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBodySite1[]
      */
     protected null|array $bodySite = [];
@@ -425,7 +402,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $noteNumber = [];
@@ -435,7 +411,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * The high-level results of the adjudication if adjudication has been performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitReviewOutcome
      */
     protected null|FHIRExplanationOfBenefitReviewOutcome $reviewOutcome = null;
@@ -445,7 +420,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * The adjudication results.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication[]
      */
     protected null|array $adjudication = [];
@@ -455,7 +429,6 @@ class FHIRExplanationOfBenefitAddItem extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * The second-tier service adjudications for payor added services.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail1[]
      */
     protected null|array $detail = [];

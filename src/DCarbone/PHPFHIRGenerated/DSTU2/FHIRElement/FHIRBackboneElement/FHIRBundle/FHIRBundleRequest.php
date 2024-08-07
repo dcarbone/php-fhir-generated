@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * The HTTP verb for this entry in either a update history, or a transaction/
      * transaction response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHTTPVerb
      */
     protected null|FHIRHTTPVerb $method = null;
@@ -120,7 +119,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * The URL for this entry, relative to the root (the address to which the request
      * is posted).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -131,7 +129,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * If the ETag values match, return a 304 Not modified status. See the API
      * documentation for ["Conditional Read"](http.html#cread).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $ifNoneMatch = null;
@@ -144,7 +141,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * Only perform the operation if the last updated date matches. See the API
      * documentation for ["Conditional Read"](http.html#cread).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $ifModifiedSince = null;
@@ -155,7 +151,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      *
      * Only perform the operation if the Etag value matches. For more information, see
      * the API section ["Managing Resource Contention"](http.html#concurrency).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $ifMatch = null;
@@ -168,7 +163,6 @@ class FHIRBundleRequest extends FHIRBackboneElement
      * exists. For further information, see the API documentation for ["Conditional
      * Create"](http.html#ccreate). This is just the query portion of the URL - what
      * follows the "?" (not including the "?").
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $ifNoneExist = null;

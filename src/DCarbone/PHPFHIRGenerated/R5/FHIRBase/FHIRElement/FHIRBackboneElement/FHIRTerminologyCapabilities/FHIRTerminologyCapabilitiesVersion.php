@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      *
      * For version-less code systems, there should be a single version with no
      * identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $code = null;
@@ -139,7 +138,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is the default version for this code system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $isDefault = null;
@@ -148,7 +146,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the compositional grammar defined by the code system is supported.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $compositional = null;
@@ -157,7 +154,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Language Displays supported.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCommonLanguages[]
      */
     protected null|array $language = [];
@@ -167,7 +163,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * Filter Properties supported.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesFilter[]
      */
     protected null|array $filter = [];
@@ -178,7 +173,6 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Properties supported for $lookup.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode[]
      */
     protected null|array $property = [];

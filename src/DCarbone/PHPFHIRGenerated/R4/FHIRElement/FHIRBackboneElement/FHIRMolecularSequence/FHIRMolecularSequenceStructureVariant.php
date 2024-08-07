@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about chromosome structure variation DNA change type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $variantType = null;
@@ -112,7 +111,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used to indicate if the outer and inner start-end values have the same meaning.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $exact = null;
@@ -122,7 +120,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of the variant chromosome.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $length = null;
@@ -130,7 +127,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * Raw data describing a biological sequence.
      *
      * Structural variant outer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceOuter
      */
     protected null|FHIRMolecularSequenceOuter $outer = null;
@@ -138,7 +134,6 @@ class FHIRMolecularSequenceStructureVariant extends FHIRBackboneElement
      * Raw data describing a biological sequence.
      *
      * Structural variant inner.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceInner
      */
     protected null|FHIRMolecularSequenceInner $inner = null;

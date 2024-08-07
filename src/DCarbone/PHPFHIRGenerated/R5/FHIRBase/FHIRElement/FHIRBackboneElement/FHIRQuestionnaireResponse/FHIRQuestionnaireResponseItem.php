@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -124,7 +124,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * The item from the Questionnaire that corresponds to this item in the
      * QuestionnaireResponse resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $linkId = null;
@@ -135,7 +134,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * A reference to an [ElementDefinition](elementdefinition.html) that provides the
      * details for the item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $definition = null;
@@ -146,7 +144,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      *
      * Text that is displayed above the contents of the group or as the text of the
      * question being answered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -156,7 +153,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      * the questionnaire being responded to.
      *
      * The respondent's answer(s) to the question.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer[]
      */
     protected null|array $answer = [];
@@ -166,7 +162,6 @@ class FHIRQuestionnaireResponseItem extends FHIRBackboneElement
      * the questionnaire being responded to.
      *
      * Sub-questions, sub-groups or display items nested beneath a group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
     protected null|array $item = [];

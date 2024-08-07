@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,6 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that specifies the property DeviceDefinitionPropetyCode (Extensible).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -109,7 +108,6 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Property value as a quantity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity[]
      */
     protected null|array $valueQuantity = [];
@@ -120,7 +118,6 @@ class FHIRDeviceDefinitionProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Property value as a code, e.g., NTP4 (synced to NTP).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $valueCode = [];

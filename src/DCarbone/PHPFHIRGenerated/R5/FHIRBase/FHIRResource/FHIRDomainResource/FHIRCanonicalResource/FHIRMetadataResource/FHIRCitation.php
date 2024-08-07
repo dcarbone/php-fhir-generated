@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -205,7 +205,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * address at which an authoritative instance of this summary is (or will be)
      * published. This URL can be the target of a canonical reference. It SHALL remain
      * the same when the summary is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -218,7 +217,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * A formal identifier that is used to identify this citation record when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -233,7 +231,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -244,7 +241,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -255,7 +251,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -267,7 +262,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * A natural language name identifying the citation record. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -277,7 +271,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the citation record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -285,7 +278,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this summary. Enables tracking the life-cycle of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -296,7 +288,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * A Boolean value to indicate that this citation record is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -313,7 +304,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * changed. The date must change when the business version changes and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the citation record changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -323,7 +313,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the citation record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -334,7 +323,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -349,7 +337,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * A free text natural language description of the citation from a consumer's
      * perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -366,7 +353,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate citation record
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -378,7 +364,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * A legal or geographic region in which the citation record is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -393,7 +378,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * Explanation of why this citation is needed and why it has been designed as it
      * has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -408,7 +392,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * Use and/or publishing restrictions for the citation record, not for the cited
      * artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -420,7 +403,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -432,7 +414,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -444,7 +425,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -455,7 +435,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * The period during which the citation record content was or is planned to be in
      * active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -465,7 +444,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who authored or created the citation record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $author = [];
@@ -475,7 +453,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who edited or revised the citation record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $editor = [];
@@ -485,7 +462,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who reviewed the citation record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $reviewer = [];
@@ -495,7 +471,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who endorsed the citation record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $endorser = [];
@@ -506,7 +481,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * A human-readable display of key concepts to represent the citation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationSummary[]
      */
     protected null|array $summary = [];
@@ -517,7 +491,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The assignment to an organizing scheme.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationClassification[]
      */
     protected null|array $classification = [];
@@ -528,7 +501,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used for general notes and annotations not coded elsewhere.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -539,7 +511,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the citation record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $currentState = [];
@@ -551,7 +522,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * The state or status of the citation record paired with an effective date or
      * period for that state.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationStatusDate[]
      */
     protected null|array $statusDate = [];
@@ -562,7 +532,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Artifact related to the citation record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -573,7 +542,6 @@ class FHIRCitation extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The article or artifact being described.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationCitedArtifact
      */
     protected null|FHIRCitationCitedArtifact $citedArtifact = null;

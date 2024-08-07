@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,7 +131,6 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Human-readable summary of population sample size.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -142,7 +141,6 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnote or explanatory note about the sample size.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -152,7 +150,6 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Number of participants in the population.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $numberOfStudies = null;
@@ -162,7 +159,6 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the sample size.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $numberOfParticipants = null;
@@ -172,7 +168,6 @@ class FHIREvidenceSampleSize extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Number of participants with known results for measured variables.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $knownDataCount = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,6 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      * while the patient was off the ward might be made with a different system and
      * entered after the event. Particularly important if these records have to be
      * updated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -134,7 +133,6 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      * some long running administrations such as infusions it is possible for an
      * administration to be started but not completed or it may be paused while some
      * other process is under way.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationAdministrationStatus
      */
     protected null|FHIRMedicationAdministrationStatus $status = null;
@@ -144,7 +142,6 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or animal to whom the medication was given.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $patient = null;
@@ -154,7 +151,6 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual who was responsible for giving the medication to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $practitioner = null;
@@ -165,7 +161,6 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      *
      * The visit or admission the or other contact between patient and health care
      * provider the medication administration was performed as part of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $encounter = null;
@@ -175,7 +170,6 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The original request, instruction or authority to perform the administration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $prescription = null;
@@ -185,7 +179,6 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      *
      * Set this to true if the record is saying that the medication was NOT
      * administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $wasNotGiven = null;
@@ -196,7 +189,6 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the administration was not performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonNotGiven = [];
@@ -208,7 +200,6 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      * An interval of time during which the administration took place. For many
      * administrations, such as swallowing a tablet the lower and upper values of the
      * interval will be the same.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $whenGiven = null;
@@ -220,7 +211,6 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      * Identifies the medication that was administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $medication = null;
@@ -231,7 +221,6 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      *
      * The device used in administering the medication to the patient. E.g. a
      * particular infusion pump.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $device = [];
@@ -242,7 +231,6 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      * encounter between patient and health care practitioner.
      *
      * Provides details of how much of the medication was administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage[]
      */
     protected null|array $dosage = [];

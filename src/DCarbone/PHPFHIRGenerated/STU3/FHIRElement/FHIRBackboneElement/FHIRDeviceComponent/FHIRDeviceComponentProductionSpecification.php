@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDev
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,7 +100,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      *
      * The specification type, such as, serial number, part number, hardware revision,
      * software revision, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $specType = null;
@@ -112,7 +111,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      * The internal component unique identification. This is a provision for
      * manufacture specific standard components using a private OID. 11073-10101 has a
      * partition for private OID semantic that the manufacturer can make use of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $componentId = null;
@@ -122,7 +120,6 @@ class FHIRDeviceComponentProductionSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The printable string defining the component.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $productionSpec = null;

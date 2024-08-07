@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -150,7 +150,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of characteristic that is being defined.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $characteristicType = null;
@@ -160,7 +159,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -170,7 +168,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $valueInteger = null;
@@ -181,7 +178,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $valueDecimal = null;
@@ -190,7 +186,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -200,7 +195,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUrl
      */
     protected null|FHIRUrl $valueUrl = null;
@@ -214,7 +208,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $valueDateTime = null;
@@ -226,7 +219,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -236,7 +228,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $valueRange = null;
@@ -247,7 +238,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
     protected null|FHIRRatio $valueRatio = null;
@@ -258,7 +248,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation
      */
     protected null|FHIRAnnotation $valueAnnotation = null;
@@ -273,7 +262,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
      */
     protected null|FHIRAddress $valueAddress = null;
@@ -283,7 +271,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $valueDuration = null;
@@ -294,7 +281,6 @@ class FHIRInventoryItemCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $valueCodeableConcept = null;

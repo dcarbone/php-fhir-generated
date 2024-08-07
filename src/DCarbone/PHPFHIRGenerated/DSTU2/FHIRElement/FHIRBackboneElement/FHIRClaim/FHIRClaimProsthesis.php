@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,7 +100,6 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether this is the initial placement of a fixed prosthesis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $initial = null;
@@ -111,7 +110,6 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date of the initial placement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $priorDate = null;
@@ -121,7 +119,6 @@ class FHIRClaimProsthesis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Material of the prior denture or bridge prosthesis. (Oral).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $priorMaterial = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * An identifier that is unique within the questionnaire allowing linkage to the
      * equivalent group in a [[[QuestionnaireResponse]]] resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $linkId = null;
@@ -125,7 +124,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Identifies a how this question is known in a particular terminology such as
      * LOINC.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding[]
      */
     protected null|array $concept = [];
@@ -135,7 +133,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual question as shown to the user to prompt them for an answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -145,7 +142,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * The expected format of the answer, e.g. the type of input (string, integer) or
      * whether a (multiple) choice is expected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnswerFormat
      */
     protected null|FHIRAnswerFormat $type = null;
@@ -156,7 +152,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If true, indicates that the question must be answered and have required groups
      * within it also present. If false, the question and any contained groups may be
      * skipped when answering the questionnaire.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $required = null;
@@ -165,7 +160,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, the question may have more than one answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $repeats = null;
@@ -176,7 +170,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Reference to a value set containing a list of codes representing permitted
      * answers for the question.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $options = null;
@@ -187,7 +180,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * For a "choice" question, identifies one of the permitted answers for the
      * question.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding[]
      */
     protected null|array $option = [];
@@ -198,7 +190,6 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      *
      * Nested group, containing nested question for this question. The order of groups
      * within the question is relevant.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup[]
      */
     protected null|array $group = [];

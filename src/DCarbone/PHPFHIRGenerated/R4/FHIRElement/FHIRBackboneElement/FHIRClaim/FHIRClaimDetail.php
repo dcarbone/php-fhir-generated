@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify item entries.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $sequence = null;
@@ -125,7 +124,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of revenue or cost center providing the product and/or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $revenue = null;
@@ -137,7 +135,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -150,7 +147,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * When the value is a group code then this item collects a set of related claim
      * details, otherwise this contains the product, service, drug or other billing
      * code for the item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $productOrService = null;
@@ -162,7 +158,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $modifier = [];
@@ -173,7 +168,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the program under which this may be recovered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $programCode = [];
@@ -185,7 +179,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of repetitions of a service or product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -196,7 +189,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      *
      * If the item is not a group then this is the fee for the product or service,
      * otherwise this is the total of the fees for the details of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
     protected null|FHIRMoney $unitPrice = null;
@@ -209,7 +201,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $factor = null;
@@ -220,7 +211,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      *
      * The quantity times the unit price for an additional service or product or
      * charge.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
     protected null|FHIRMoney $net = null;
@@ -230,7 +220,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique Device Identifiers associated with this line item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $udi = [];
@@ -241,7 +230,6 @@ class FHIRClaimDetail extends FHIRBackboneElement
      *
      * A claim detail line. Either a simple (a product or service) or a 'group' of
      * sub-details which are simple items.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSubDetail[]
      */
     protected null|array $subDetail = [];

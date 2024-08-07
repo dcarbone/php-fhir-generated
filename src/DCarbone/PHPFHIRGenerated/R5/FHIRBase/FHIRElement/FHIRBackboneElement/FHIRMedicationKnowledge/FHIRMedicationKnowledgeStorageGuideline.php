@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,7 +119,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference to additional information about the storage guidelines.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $reference = null;
@@ -130,7 +129,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional notes about the storage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -141,7 +139,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      *
      * Duration that the medication remains stable if the environmentalSetting is
      * respected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $stabilityDuration = null;
@@ -151,7 +148,6 @@ class FHIRMedicationKnowledgeStorageGuideline extends FHIRBackboneElement
      * Describes a setting/value on the environment for the adequate storage of the
      * medication and other substances. Environment settings may involve temperature,
      * humidity, or exposure to light.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeEnvironmentalSetting[]
      */
     protected null|array $environmentalSetting = [];

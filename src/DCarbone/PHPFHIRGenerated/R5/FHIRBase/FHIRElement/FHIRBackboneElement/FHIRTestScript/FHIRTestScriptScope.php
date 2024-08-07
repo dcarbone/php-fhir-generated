@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIRTestScriptScope extends FHIRBackboneElement
      *
      * The specific conformance artifact being tested. The canonical reference can be
      * version-specific.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $artifact = null;
@@ -134,7 +133,6 @@ class FHIRTestScriptScope extends FHIRBackboneElement
      * conformant with the artifact: required - all tests are expected to pass,
      * optional - all test are expected to pass but non-pass status may be allowed,
      * strict - all tests are expected to pass and warnings are treated as a failure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $conformance = null;
@@ -147,7 +145,6 @@ class FHIRTestScriptScope extends FHIRBackboneElement
      * The phase of testing for this artifact: unit - development / implementation
      * phase, integration - internal system to system phase, production - live system
      * to system phase (Note, this may involve pii/phi data).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $phase = null;

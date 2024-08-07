@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -140,7 +140,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * A persistent identifier for the bundle that won't change as a bundle is copied
      * from server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -148,7 +147,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose of this bundle - how it is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBundleType
      */
     protected null|FHIRBundleType $type = null;
@@ -162,7 +160,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * The date/time that the bundle was assembled - i.e. when the resources were
      * placed in the bundle.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $timestamp = null;
@@ -175,7 +172,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * entries of type 'match' across all pages in the search. It does not include
      * search.mode = 'include' or 'outcome' entries and it does not provide a count of
      * the number of entries in the Bundle.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $total = null;
@@ -183,7 +179,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A container for a collection of resources.
      *
      * A series of links that provide context to this bundle.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[]
      */
     protected null|array $link = [];
@@ -192,7 +187,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * An entry in a bundle resource - will either contain a resource or information
      * about a resource (transactions and history only).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry[]
      */
     protected null|array $entry = [];
@@ -206,14 +200,12 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Digital Signature - base64 encoded. XML-DSig or a JWS.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature
      */
     protected null|FHIRSignature $signature = null;
     /**
      * Captures issues and warnings that relate to the construction of the Bundle and
      * the content within it.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\|PHPFHIRContainedTypeInterface
      */
     protected null|PHPFHIRContainedTypeInterface $issues = null;

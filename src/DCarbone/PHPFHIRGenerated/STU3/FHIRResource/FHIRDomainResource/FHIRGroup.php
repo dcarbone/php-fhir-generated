@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,7 +127,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique business identifier for this group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -137,7 +136,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * Indicates whether the record for the group is available for use or is merely
      * being retained for historical purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $active = null;
@@ -146,7 +144,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the broad classification of the kind of resources the group includes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRGroupType
      */
     protected null|FHIRGroupType $type = null;
@@ -156,7 +153,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * If true, indicates that the resource refers to a specific group of real
      * individuals. If false, the group defines a set of intended individuals.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $actual = null;
@@ -168,7 +164,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * Provides a specific type of resource the group includes; e.g. "cow", "syringe",
      * etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -178,7 +173,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A label assigned to the group for human identification and communication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -188,7 +182,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * the Narrative, or extensions
      *
      * A count of the number of resource instances that are part of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $quantity = null;
@@ -198,7 +191,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * or legally recognized; i.e. a collection of entities that isn't an Organization.
      *
      * Identifies the traits shared by members of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic[]
      */
     protected null|array $characteristic = [];
@@ -208,7 +200,6 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * or legally recognized; i.e. a collection of entities that isn't an Organization.
      *
      * Identifies the resource instances that are members of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupMember[]
      */
     protected null|array $member = [];

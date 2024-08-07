@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what will be observed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -129,7 +128,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      *
      * The data types allowed for the value element of the instance of this component
      * observations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRObservationDataType[]
      */
     protected null|array $permittedDataType = [];
@@ -140,7 +138,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      *
      * Units allowed for the valueQuantity element in the instance observations
      * conforming to this ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding[]
      */
     protected null|array $permittedUnit = [];
@@ -151,7 +148,6 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      * A set of qualified values associated with a context and a set of conditions -
      * provides a range for quantitative and ordinal observations and a collection of
      * value sets for qualitative observations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue[]
      */
     protected null|array $qualifiedValue = [];

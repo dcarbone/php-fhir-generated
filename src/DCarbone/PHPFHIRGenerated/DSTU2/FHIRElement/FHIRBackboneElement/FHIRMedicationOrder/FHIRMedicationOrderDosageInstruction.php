@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,6 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * administering the medication. It is expected that the text instructions will
      * always be populated. If the dosage.timing attribute is also populated, then the
      * dosage.text should reflect the same information as the timing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -137,7 +136,6 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      *
      * Additional instructions such as "Swallow with plenty of water" which may or may
      * not be coded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $additionalInstructions = null;
@@ -153,7 +151,6 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * type allows many different expressions. For example: "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming
      */
     protected null|FHIRTiming $timing = null;
@@ -164,7 +161,6 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
      * the Medication (CodeableConcept).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $asNeededBoolean = null;
@@ -177,7 +173,6 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
      * the Medication (CodeableConcept).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $asNeededCodeableConcept = null;
@@ -189,7 +184,6 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first enters the
      * body.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $siteCodeableConcept = null;
@@ -200,7 +194,6 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first enters the
      * body.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $siteReference = null;
@@ -212,7 +205,6 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      *
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto a patient's body.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $route = null;
@@ -225,7 +217,6 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * A coded value indicating the method by which the medication is introduced into
      * or onto the body. Most commonly used for injections. For examples, Slow Push;
      * Deep IV.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $method = null;
@@ -235,13 +226,11 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of therapeutic or other substance given at one administration event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $doseRange = null;
     /**
      * The amount of therapeutic or other substance given at one administration event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     protected null|FHIRSimpleQuantity $doseQuantity = null;
@@ -257,7 +246,6 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * Currently we do not specify a default of '1' in the denominator, but this is
      * being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8
      * hours.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $rateRatio = null;
@@ -272,7 +260,6 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      * Currently we do not specify a default of '1' in the denominator, but this is
      * being discussed. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8
      * hours.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $rateRange = null;
@@ -284,7 +271,6 @@ class FHIRMedicationOrderDosageInstruction extends FHIRBackboneElement
      *
      * The maximum total quantity of a therapeutic substance that may be administered
      * to a subject over the period of time. For example, 1000mg in 24 hours.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $maxDosePerPeriod = null;

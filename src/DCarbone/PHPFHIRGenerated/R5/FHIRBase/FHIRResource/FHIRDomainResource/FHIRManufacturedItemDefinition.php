@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -143,7 +143,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -151,7 +150,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this item. Enables tracking the life-cycle of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -161,7 +159,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A descriptive name applied to this item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -173,7 +170,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $manufacturedDoseForm = null;
@@ -185,7 +181,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
      *
      * The “real-world” units in which the quantity of the manufactured item is
      * described.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $unitOfPresentation = null;
@@ -195,7 +190,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of the item, one of several possible.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $manufacturer = [];
@@ -207,7 +201,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
      *
      * Allows specifying that an item is on the market for sale, or that it is not
      * available, and the dates and locations associated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus[]
      */
     protected null|array $marketingStatus = [];
@@ -220,7 +213,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
      * The ingredients of this manufactured item. This is only needed if the
      * ingredients are not specified by incoming references from the Ingredient
      * resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $ingredient = [];
@@ -229,7 +221,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
      * tablet or capsule, as contained in a packaged medicinal product.
      *
      * General characteristics of this item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionProperty[]
      */
     protected null|array $property = [];
@@ -239,7 +230,6 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
      *
      * Physical parts of the manufactured item, that it is intrisically made from. This
      * is distinct from the ingredients that are part of its chemical makeup.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent[]
      */
     protected null|array $component = [];

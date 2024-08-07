@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      *
      * Free text dosage instructions for cases where the instructions are too complex
      * to code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -125,7 +124,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      *
      * Additional instructions such as "Swallow with plenty of water" which may or may
      * not be coded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $additionalInstructions = null;
@@ -140,7 +138,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      * type allows many different expressions, for example. "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $timingDateTime = null;
@@ -153,7 +150,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      * type allows many different expressions, for example. "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $timingPeriod = null;
@@ -167,7 +163,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      * type allows many different expressions, for example. "Every 8 hours"; "Three
      * times a day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15
      * Oct 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule
      */
     protected null|FHIRSchedule $timingSchedule = null;
@@ -179,7 +174,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      * medication is only taken when needed within the specified schedule rather than
      * at every scheduled dose. If a CodeableConcept is present, it indicates the
      * pre-condition for taking the Medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $asNeededBoolean = null;
@@ -193,7 +187,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      * medication is only taken when needed within the specified schedule rather than
      * at every scheduled dose. If a CodeableConcept is present, it indicates the
      * pre-condition for taking the Medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $asNeededCodeableConcept = null;
@@ -205,7 +198,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first enters the
      * body.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $site = null;
@@ -217,7 +209,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      *
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto a patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $route = null;
@@ -231,7 +222,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      * or onto the body. Most commonly used for injections. Examples: Slow Push; Deep
      * IV. Terminologies used often pre-coordinate this term with the route and or form
      * of administration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $method = null;
@@ -243,7 +233,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of therapeutic or other substance given at one administration event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $doseQuantity = null;
@@ -255,7 +244,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      *
      * Identifies the speed with which the substance is introduced into the subject.
      * Typically the rate for an infusion. 200ml in 2 hours.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $rate = null;
@@ -267,7 +255,6 @@ class FHIRMedicationPrescriptionDosageInstruction extends FHIRBackboneElement
      *
      * The maximum total quantity of a therapeutic substance that may be administered
      * to a subject over the period of time. E.g. 1000mg in 24 hours.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $maxDosePerPeriod = null;

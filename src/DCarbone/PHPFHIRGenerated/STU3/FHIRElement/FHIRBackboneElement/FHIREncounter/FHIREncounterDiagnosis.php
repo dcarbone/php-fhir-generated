@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREnc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * resource. For admissions, this is the admission diagnosis. The indication will
      * typically be a Condition (with other resources referenced in the
      * evidence.detail), or a Procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $condition = null;
@@ -114,7 +113,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      *
      * Role that this diagnosis has within the encounter (e.g. admission, billing,
      * discharge …).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $role = null;
@@ -124,7 +122,6 @@ class FHIREncounterDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the diagnosis (for each role type).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $rank = null;

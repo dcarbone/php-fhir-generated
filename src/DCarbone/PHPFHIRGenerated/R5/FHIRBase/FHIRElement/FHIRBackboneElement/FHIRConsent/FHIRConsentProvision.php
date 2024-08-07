@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,7 +129,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Timeframe for this provision.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -141,7 +140,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * Who or what is controlled by this provision. Use group to identify a set of
      * actors by some property they share (e.g. 'admitting officers').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor[]
      */
     protected null|array $actor = [];
@@ -152,7 +150,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions controlled by this provision.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $action = [];
@@ -163,7 +160,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * A security label, comprised of 0..* security label fields (Privacy tags), which
      * define which resources are controlled by this exception.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding[]
      */
     protected null|array $securityLabel = [];
@@ -174,7 +170,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this provision.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding[]
      */
     protected null|array $purpose = [];
@@ -186,7 +181,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * The documentType(s) covered by this provision. The type can be a CDA document,
      * or some other type that indicates what sort of information the consent relates
      * to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding[]
      */
     protected null|array $documentType = [];
@@ -198,7 +192,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * The resourceType(s) covered by this provision. The type can be a FHIR resource
      * type or a profile on a type that indicates what information the consent relates
      * to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding[]
      */
     protected null|array $resourceType = [];
@@ -209,7 +202,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this code is found in an instance, then the provision applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $code = [];
@@ -220,7 +212,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this provision.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $dataPeriod = null;
@@ -231,7 +222,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * specific purposes and periods of time.
      *
      * The resources controlled by this provision if specific resources are referenced.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData[]
      */
     protected null|array $data = [];
@@ -244,7 +234,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * A computable (FHIRPath or other) definition of what is controlled by this
      * consent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     protected null|FHIRExpression $expression = null;
@@ -255,7 +244,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * specific purposes and periods of time.
      *
      * Provisions which provide exceptions to the base provision or subprovisions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision[]
      */
     protected null|array $provision = [];

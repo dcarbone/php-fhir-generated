@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,7 +100,6 @@ class FHIRMeasureReportPopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the population.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -110,7 +109,6 @@ class FHIRMeasureReportPopulation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of members of the population.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $count = null;
@@ -121,7 +119,6 @@ class FHIRMeasureReportPopulation extends FHIRBackboneElement
      *
      * This element refers to a List of subject level MeasureReport resources, one for
      * each subject in this population.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subjectResults = null;

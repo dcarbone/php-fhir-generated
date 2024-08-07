@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,7 +127,6 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where this resource is found.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $reference = null;
@@ -136,7 +135,6 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, indicates the resource is an example instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $isExample = null;
@@ -147,7 +145,6 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * If present, indicates profile(s) the instance is valid against.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $profile = [];
@@ -157,7 +154,6 @@ class FHIRImplementationGuideResource1 extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The relative path for primary page for this resource within the IG.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUrl
      */
     protected null|FHIRUrl $relativePath = null;

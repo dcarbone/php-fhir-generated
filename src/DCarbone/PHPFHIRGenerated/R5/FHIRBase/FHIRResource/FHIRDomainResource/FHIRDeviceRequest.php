@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -179,7 +179,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the orderer or by the receiver.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -191,7 +190,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this DeviceRequest.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $instantiatesCanonical = [];
@@ -202,7 +200,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this DeviceRequest.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri[]
      */
     protected null|array $instantiatesUri = [];
@@ -212,7 +209,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Plan/proposal/order fulfilled by this request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -223,7 +219,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The request takes the place of the referenced completed or terminated
      * request(s).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $replaces = [];
@@ -239,7 +234,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * may have business ramifications in terms of reporting of results, billing, etc.
      * E.g. a requisition number shared by a set of lab tests ordered together, or a
      * prescription number shared by all meds ordered at one time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $groupIdentifier = null;
@@ -247,7 +241,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRequestStatus
      */
     protected null|FHIRRequestStatus $status = null;
@@ -255,7 +248,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRequestIntent
      */
     protected null|FHIRRequestIntent $intent = null;
@@ -264,7 +256,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Indicates how quickly the request should be addressed with respect to other
      * requests.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     protected null|FHIRRequestPriority $priority = null;
@@ -276,7 +267,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * using or to not start using the specified device or category of devices. For
      * example, the patient has undergone surgery and the provider is indicating that
      * the patient should not wear contact lenses.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $doNotPerform = null;
@@ -287,7 +277,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the device to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $code = null;
@@ -297,7 +286,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of devices to be provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $quantity = null;
@@ -307,7 +295,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Specific parameters for the ordered item. For example, the prism value for
      * lenses.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceRequest\FHIRDeviceRequestParameter[]
      */
     protected null|array $parameter = [];
@@ -317,7 +304,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who will use the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -327,7 +313,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An encounter that provides additional context in which this request is made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -344,7 +329,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
      * Oct 2013 and 1 Nov 2013".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -357,7 +341,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
      * Oct 2013 and 1 Nov 2013".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $occurrencePeriod = null;
@@ -374,7 +357,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * many different expressions, for example. "Every 8 hours"; "Three times a day";
      * "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17
      * Oct 2013 and 1 Nov 2013".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     protected null|FHIRTiming $occurrenceTiming = null;
@@ -388,7 +370,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request transitioned to being actionable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authoredOn = null;
@@ -399,7 +380,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The individual or entity who initiated the request and has responsibility for
      * its activation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $requester = null;
@@ -411,7 +391,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The desired individual or entity to provide the device to the subject of the
      * request (e.g., patient, location).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $performer = null;
@@ -422,7 +401,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or justification for the use of this device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $reason = [];
@@ -432,7 +410,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * This status is to indicate whether the request is a PRN or may be given as
      * needed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $asNeeded = null;
@@ -443,7 +420,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason for using the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $asNeededFor = null;
@@ -454,7 +430,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Insurance plans, coverage extensions, pre-authorizations and/or
      * pre-determinations that may be required for delivering the requested service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $insurance = [];
@@ -466,7 +441,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * Additional clinical information about the patient that may influence the request
      * fulfilment. For example, this may include where on the subject's body the device
      * will be used (i.e. the target site).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $supportingInfo = [];
@@ -479,7 +453,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * Details about this request that were not represented at all or sufficiently in
      * one of the attributes provided in a class. These may include for example a
      * comment, an instruction, or a note associated with the statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -489,7 +462,6 @@ class FHIRDeviceRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Key events in the history of the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $relevantHistory = [];

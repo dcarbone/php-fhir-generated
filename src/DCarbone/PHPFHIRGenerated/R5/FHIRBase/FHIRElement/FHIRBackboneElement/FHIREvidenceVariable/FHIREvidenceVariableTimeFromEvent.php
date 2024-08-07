@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,6 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Human readable description.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -148,7 +147,6 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the timeFromEvent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -159,7 +157,6 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The event used as a base point (reference point) in time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $eventCodeableConcept = null;
@@ -169,7 +166,6 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The event used as a base point (reference point) in time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $eventReference = null;
@@ -183,7 +179,6 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The event used as a base point (reference point) in time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $eventDateTime = null;
@@ -196,7 +191,6 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The event used as a base point (reference point) in time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $eventId = null;
@@ -209,7 +203,6 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      *
      * Used to express the observation at a defined amount of time before or after the
      * event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -219,7 +212,6 @@ class FHIREvidenceVariableTimeFromEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to express the observation within a period before and/or after the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $range = null;

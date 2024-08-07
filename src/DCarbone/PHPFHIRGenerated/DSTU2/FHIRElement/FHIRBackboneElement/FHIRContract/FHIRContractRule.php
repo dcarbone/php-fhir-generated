@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,6 @@ class FHIRContractRule extends FHIRBackboneElement
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
      * SecPal).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $contentAttachment = null;
@@ -107,7 +106,6 @@ class FHIRContractRule extends FHIRBackboneElement
      *
      * Computable Contract conveyed using a policy rule language (e.g. XACML, DKAL,
      * SecPal).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $contentReference = null;

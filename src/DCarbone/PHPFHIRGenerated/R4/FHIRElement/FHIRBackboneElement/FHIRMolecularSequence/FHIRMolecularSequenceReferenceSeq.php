@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -116,7 +116,6 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * replication through the interaction of specific proteins at one or more origins
      * of replication
      * ([SO:0000340](http://www.sequenceontology.org/browser/current_svn/term/SO:0000340)).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $chromosome = null;
@@ -128,7 +127,6 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * The Genome Build used for reference, following GRCh build versions e.g. 'GRCh
      * 37'. Version number must be included if a versioned release of a primary build
      * was used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $genomeBuild = null;
@@ -139,7 +137,6 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * A relative reference to a DNA strand based on gene orientation. The strand that
      * contains the open reading frame of the gene is the "sense" strand, and the
      * opposite complementary strand is the "antisense" strand.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROrientationType
      */
     protected null|FHIROrientationType $orientation = null;
@@ -153,7 +150,6 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * type in the MolecularSequence.type field. For example, the prefix, “NG_”
      * identifies reference sequence for genes, “NM_” for messenger RNA
      * transcripts, and “NP_” for amino acid sequences.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $referenceSeqId = null;
@@ -163,7 +159,6 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A pointer to another MolecularSequence entity as reference sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $referenceSeqPointer = null;
@@ -173,7 +168,6 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A string like "ACGT".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $referenceSeqString = null;
@@ -184,7 +178,6 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end
      * is on the short arm of the chromosome, and the Crick strand as the one whose
      * 5'-end is on the long arm.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRStrandType
      */
     protected null|FHIRStrandType $strand = null;
@@ -195,7 +188,6 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      *
      * Start position of the window on the reference sequence. If the coordinate system
      * is either 0-based or 1-based, then start position is inclusive.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $windowStart = null;
@@ -208,7 +200,6 @@ class FHIRMolecularSequenceReferenceSeq extends FHIRBackboneElement
      * is 0-based then end is exclusive and does not include the last position. If the
      * coordinate system is 1-base, then end is inclusive and includes the last
      * position.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $windowEnd = null;

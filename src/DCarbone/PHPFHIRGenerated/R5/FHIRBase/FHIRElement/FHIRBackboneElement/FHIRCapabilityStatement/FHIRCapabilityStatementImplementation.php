@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,6 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement
      *
      * Information about the specific installation that this capability statement
      * relates to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -139,7 +138,6 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement
      *
      * An absolute base URL for the implementation. This forms the base for REST
      * interfaces as well as the mailbox and document interfaces.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUrl
      */
     protected null|FHIRUrl $url = null;
@@ -150,7 +148,6 @@ class FHIRCapabilityStatementImplementation extends FHIRBackboneElement
      *
      * The organization responsible for the management of the instance and oversight of
      * the data on the server at the specified URL.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $custodian = null;

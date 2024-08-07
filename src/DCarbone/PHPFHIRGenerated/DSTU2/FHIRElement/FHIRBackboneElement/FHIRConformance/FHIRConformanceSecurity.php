@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      *
      * Server adds CORS headers when responding to requests - this enables javascript
      * applications to use the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $cors = null;
@@ -114,7 +113,6 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Types of security services are supported/required by the system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $service = [];
@@ -124,7 +122,6 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * General description of how security works.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -134,7 +131,6 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      * desired server implementation.
      *
      * Certificates associated with security profiles.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceCertificate[]
      */
     protected null|array $certificate = [];

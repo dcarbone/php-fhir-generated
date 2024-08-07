@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -165,7 +165,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this substance is known.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -175,7 +174,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A business level version identifier of the substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -186,7 +184,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Status of substance within the catalogue e.g. active, retired.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $status = null;
@@ -199,7 +196,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * A high level categorization, e.g. polymer or nucleic acid, or food, chemical,
      * biological, or a lower level such as the general types of polymer (linear or
      * branch chain) or type of impurity (process related or contaminant).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $classification = [];
@@ -210,7 +206,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the substance applies to human or veterinary use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $domain = null;
@@ -222,7 +217,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * The quality standard, established benchmark, to which substance complies (e.g.
      * USP/NF, Ph. Eur, JP, BP, Company Standard).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $grade = [];
@@ -236,7 +230,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * the Narrative, or extensions
      *
      * Textual description of the substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -246,7 +239,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $informationSource = [];
@@ -257,7 +249,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Textual comment about the substance's catalogue or registry record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -268,7 +259,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * The entity that creates, makes, produces or fabricates the substance. This is a
      * set of potential manufacturers but is not necessarily comprehensive.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $manufacturer = [];
@@ -279,7 +269,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * An entity that is the source for the substance. It may be different from the
      * manufacturer. Supplier is synonymous to a distributor.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $supplier = [];
@@ -288,7 +277,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * used for prescribing.
      *
      * Moiety, for structural modifications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionMoiety[]
      */
     protected null|array $moiety = [];
@@ -297,7 +285,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * used for prescribing.
      *
      * General specifications for this substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionCharacterization[]
      */
     protected null|array $characterization = [];
@@ -306,7 +293,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * used for prescribing.
      *
      * General specifications for this substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionProperty[]
      */
     protected null|array $property = [];
@@ -316,7 +302,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * General information detailing this substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $referenceInformation = null;
@@ -326,7 +311,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * The average mass of a molecule of a compound compared to 1/12 the mass of carbon
      * 12 and calculated as the sum of the atomic weights of the constituent atoms.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionMolecularWeight[]
      */
     protected null|array $molecularWeight = [];
@@ -335,7 +319,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * used for prescribing.
      *
      * Structural information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionStructure
      */
     protected null|FHIRSubstanceDefinitionStructure $structure = null;
@@ -344,7 +327,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * used for prescribing.
      *
      * Codes associated with the substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionCode[]
      */
     protected null|array $code = [];
@@ -353,7 +335,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * used for prescribing.
      *
      * Names applicable to this substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionName[]
      */
     protected null|array $name = [];
@@ -362,7 +343,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * used for prescribing.
      *
      * A link between this substance and another, with details of the relationship.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRelationship[]
      */
     protected null|array $relationship = [];
@@ -372,7 +352,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to nucleic acids.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $nucleicAcid = null;
@@ -382,7 +361,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to polymers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $polymer = null;
@@ -392,7 +370,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to proteins.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $protein = null;
@@ -401,7 +378,6 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * used for prescribing.
      *
      * Material or taxonomic/anatomical source for the substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionSourceMaterial
      */
     protected null|FHIRSubstanceDefinitionSourceMaterial $sourceMaterial = null;

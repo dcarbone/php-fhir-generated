@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREli
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,6 @@ class FHIREligibilityResponseInsurance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A suite of updated or additional Coverages from the Insurer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $coverage = null;
@@ -105,7 +104,6 @@ class FHIREligibilityResponseInsurance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The contract resource which may provide more detailed information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $contract = null;
@@ -114,7 +112,6 @@ class FHIREligibilityResponseInsurance extends FHIRBackboneElement
      * Eligibility resource.
      *
      * Benefits and optionally current balances by Category.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseBenefitBalance[]
      */
     protected null|array $benefitBalance = [];

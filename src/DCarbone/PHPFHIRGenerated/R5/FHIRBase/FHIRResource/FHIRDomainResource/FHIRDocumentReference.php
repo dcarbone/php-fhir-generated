@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -174,7 +174,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * Other business identifiers associated with the document, including version
      * independent identifiers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -185,7 +184,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * An explicitly assigned identifer of a variation of the content in the
      * DocumentReference.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -195,7 +193,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A procedure that is fulfilled in whole or in part by the creation of this media.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -203,7 +200,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document reference.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDocumentReferenceStatus
      */
     protected null|FHIRDocumentReferenceStatus $status = null;
@@ -211,7 +207,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the underlying document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCompositionStatus
      */
     protected null|FHIRCompositionStatus $docStatus = null;
@@ -223,7 +218,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * Imaging modality used. This may include both acquisition and non-acquisition
      * modalities.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $modality = [];
@@ -236,7 +230,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * Specifies the particular kind of document referenced (e.g. History and Physical,
      * Discharge Summary, Progress Note). This usually equates to the purpose of making
      * the document referenced.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -249,7 +242,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * A categorization for the type of document referenced - helps for indexing and
      * searching. This may be implied by or derived from the code specified in the
      * DocumentReference.type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -262,7 +254,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * or healthcare practitioner), a device (e.g. a machine) or even a group of
      * subjects (such as a document about a herd of farm animals, or a set of patients
      * that share a common exposure).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -273,7 +264,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * Describes the clinical encounter or type of care that the document content is
      * associated with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $context = [];
@@ -287,7 +277,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * an appendectomy, being documented. In some cases, the event is inherent in the
      * type Code, such as a "History and Physical Report" in which the procedure being
      * documented is necessarily a "History and Physical" act.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $event = [];
@@ -298,7 +287,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomic structures included in the document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $bodySite = [];
@@ -309,7 +297,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of facility where the patient was seen.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $facilityType = null;
@@ -321,7 +308,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * This property may convey specifics about the practice setting where the content
      * was created, often reflecting the clinical specialty.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $practiceSetting = null;
@@ -332,7 +318,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * The time period over which the service that is described by the document was
      * provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -345,7 +330,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document reference was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $date = null;
@@ -355,7 +339,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $author = [];
@@ -371,7 +354,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * direct reference.
      *
      * A participant who has authenticated the accuracy of the document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceAttester[]
      */
     protected null|array $attester = [];
@@ -382,7 +364,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $custodian = null;
@@ -399,7 +380,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      *
      * Relationships that this document has with other document references that already
      * exist.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo[]
      */
     protected null|array $relatesTo = [];
@@ -413,7 +393,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * the Narrative, or extensions
      *
      * Human-readable description of the source document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -433,7 +412,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * sensitive as the document. For example: a psychotherapy episode may contain
      * highly sensitive information, while the metadata may simply indicate that some
      * episode happened.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $securityLabel = [];
@@ -451,7 +429,6 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * The document and format referenced. If there are multiple content element
      * repetitions, these must all represent the same document in different format, or
      * attachment metadata.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent[]
      */
     protected null|array $content = [];

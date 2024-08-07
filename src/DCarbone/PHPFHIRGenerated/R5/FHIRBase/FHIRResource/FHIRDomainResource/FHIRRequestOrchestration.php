@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -159,7 +159,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide a unique, business identifier for the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -171,7 +170,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      *
      * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $instantiatesCanonical = [];
@@ -182,7 +180,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      *
      * A URL referencing an externally defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri[]
      */
     protected null|array $instantiatesUri = [];
@@ -192,7 +189,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -202,7 +198,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $replaces = [];
@@ -218,7 +213,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      * may have business ramifications in terms of reporting of results, billing, etc.
      * E.g. a requisition number shared by a set of lab tests ordered together, or a
      * prescription number shared by all meds ordered at one time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $groupIdentifier = null;
@@ -227,7 +221,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      *
      * The current state of the request. For request orchestrations, the status
      * reflects the status of all the requests in the orchestration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRequestStatus
      */
     protected null|FHIRRequestStatus $status = null;
@@ -236,7 +229,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      *
      * Indicates the level of authority/intentionality associated with the request and
      * where the request fits into the workflow chain.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRequestIntent
      */
     protected null|FHIRRequestIntent $intent = null;
@@ -245,7 +237,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      *
      * Indicates how quickly the request should be addressed with respect to other
      * requests.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     protected null|FHIRRequestPriority $priority = null;
@@ -256,7 +247,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies what the overall request orchestration is.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -266,7 +256,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject for which the request orchestration was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -276,7 +265,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the context of the request orchestration, if any.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -290,7 +278,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the request orchestration was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authoredOn = null;
@@ -300,7 +287,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the author of the request orchestration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $author = null;
@@ -311,7 +297,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the reason for the request orchestration in coded or textual form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $reason = [];
@@ -322,7 +307,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      *
      * Goals that are intended to be achieved by following the requests in this
      * RequestOrchestration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $goal = [];
@@ -333,7 +317,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -342,7 +325,6 @@ class FHIRRequestOrchestration extends FHIRDomainResource implements PHPFHIRCont
      * have inter-dependencies such as "give this medication after that one".
      *
      * The actions, if any, produced by the evaluation of the artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationAction[]
      */
     protected null|array $action = [];

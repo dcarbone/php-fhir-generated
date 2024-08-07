@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -136,7 +136,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier(s) by which this encounter is known.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -145,7 +144,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIREncounterStatus
      */
     protected null|FHIREncounterStatus $status = null;
@@ -156,7 +154,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The status history permits the encounter resource to contain the status history
      * without needing to read through the historical versions of the resource, or even
      * have the server store them.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterStatusHistory[]
      */
     protected null|array $statusHistory = [];
@@ -166,7 +163,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * inpatient | outpatient | ambulatory | emergency +.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $class = null;
@@ -181,7 +177,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * any lab/diagnostic results can more easily follow the patient and not require
      * re-processing and not get lost or cancelled during a kindof discharge from
      * emergency to inpatient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterClassHistory[]
      */
     protected null|array $classHistory = [];
@@ -193,7 +188,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled
      * nursing, rehabilitation).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -204,7 +198,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the urgency of the encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $priority = null;
@@ -214,7 +207,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient ro group present at the encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -230,7 +222,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * association is recorded on the encounter as these are typically created after
      * the episode of care, and grouped on entry rather than editing the episode of
      * care to append another encounter to it (the episode of care could span years).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $episodeOfCare = [];
@@ -240,7 +231,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The referral request this encounter satisfies (incoming referral).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $incomingReferral = [];
@@ -249,7 +239,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * providing healthcare service(s) or assessing the health status of a patient.
      *
      * The list of people responsible for providing the service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterParticipant[]
      */
     protected null|array $participant = [];
@@ -259,7 +248,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The appointment that scheduled this encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $appointment = null;
@@ -269,7 +257,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The start and end time of the encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -280,7 +267,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Quantity of time the encounter lasted. This excludes the time during leaves of
      * absence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $length = null;
@@ -292,7 +278,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Reason the encounter takes place, expressed as a code. For admissions, this can
      * be used for a coded admission diagnosis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reason = [];
@@ -301,7 +286,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * providing healthcare service(s) or assessing the health status of a patient.
      *
      * The list of diagnosis relevant to this encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis[]
      */
     protected null|array $diagnosis = [];
@@ -311,7 +295,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of accounts that may be used for billing for this Encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $account = [];
@@ -320,7 +303,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * providing healthcare service(s) or assessing the health status of a patient.
      *
      * Details about the admission to a healthcare service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterHospitalization
      */
     protected null|FHIREncounterHospitalization $hospitalization = null;
@@ -329,7 +311,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * providing healthcare service(s) or assessing the health status of a patient.
      *
      * List of locations where the patient has been during this encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterLocation[]
      */
     protected null|array $location = [];
@@ -343,7 +324,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * etc.). This MAY be the same as the organization on the Patient record, however
      * it could be different. This MAY not be not the Service Delivery Location's
      * Organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $serviceProvider = null;
@@ -354,7 +334,6 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Another Encounter of which this encounter is a part of (administratively or in
      * time).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $partOf = null;

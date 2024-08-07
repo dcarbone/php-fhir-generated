@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -187,7 +187,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * defined by business processes and/or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -197,7 +196,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * The overall status of the Appointment. Each of the participants has their own
      * participation status which indicates their involvement in the process, however
      * this status indicates the shared status.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRAppointmentStatus
      */
     protected null|FHIRAppointmentStatus $status = null;
@@ -210,7 +208,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * The coded reason for the appointment being cancelled. This is often used in
      * reporting/billing/futher processing to determine if further actions are
      * required, or specific fees apply.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $cancellationReason = null;
@@ -223,7 +220,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * Concepts representing classification of patient encounter such as ambulatory
      * (outpatient), inpatient, emergency, home health or others due to local
      * variations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $class = [];
@@ -235,7 +231,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * A broad categorization of the service that is to be performed during this
      * appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $serviceCategory = [];
@@ -246,7 +241,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific service that is to be performed during this appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $serviceType = [];
@@ -258,7 +252,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $specialty = [];
@@ -270,7 +263,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The style of appointment or patient that has been booked in the slot (not
      * service type).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $appointmentType = null;
@@ -285,7 +277,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * another resource. When the patient arrives and the encounter begins it may be
      * used as the admission diagnosis. The indication will typically be a Condition
      * (with other resources referenced in the evidence.detail), or a Procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $reason = [];
@@ -298,7 +289,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * The priority of the appointment. Can be used to make informed decisions if
      * needing to re-prioritize appointments. (The iCal Standard specifies as
      * undefined, 1 as highest, 9 as lowest priority).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $priority = null;
@@ -310,7 +300,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * The brief description of the appointment as would be shown on a subject line in
      * a meeting request, or appointment list. Detailed or expanded information should
      * be put in the note field.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -322,7 +311,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * Appointment replaced by this Appointment in cases where there is a cancellation,
      * the details of the cancellation can be found in the cancellationReason property
      * (on the referenced resource).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $replaces = [];
@@ -332,7 +320,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Connection details of a virtual service (e.g. conference call).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail[]
      */
     protected null|array $virtualService = [];
@@ -343,7 +330,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * Additional information to support the appointment provided when making the
      * appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $supportingInformation = [];
@@ -353,7 +339,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The previous appointment in a series of related appointments.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $previousAppointment = null;
@@ -363,7 +348,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The originating appointment in a recurring set of related appointments.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $originatingAppointment = null;
@@ -376,7 +360,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to take place.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $start = null;
@@ -389,7 +372,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the appointment is to conclude.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $end = null;
@@ -404,7 +386,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * requested, but any time would work. Also, if there is, for example, a planned 15
      * minute break in the middle of a long appointment, the duration may be 15 minutes
      * less than the difference between the start and end.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $minutesDuration = null;
@@ -418,7 +399,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * be provided to indicate the length of the appointment to fill and populate the
      * start/end times for the actual allocated time. However, in other situations the
      * duration may be calculated by the scheduling system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod[]
      */
     protected null|array $requestedPeriod = [];
@@ -429,7 +409,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The slots from the participants' schedules that will be filled by the
      * appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $slot = [];
@@ -440,7 +419,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The set of accounts that is expected to be used for billing the activities that
      * result from this Appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $account = [];
@@ -457,7 +435,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * the meta.lastModified value on the initial entry, as this could have been before
      * the resource was created on the FHIR server, and should remain unchanged over
      * the lifespan of the appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $created = null;
@@ -471,7 +448,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time describing when the appointment was cancelled.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $cancellationDate = null;
@@ -482,7 +458,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional notes/comments about the appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -496,7 +471,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * Appointment.patientInstructions is used to capture patient facing information
      * about the Appointment (e.g. please bring your referral or fast from 8pm night
      * before).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $patientInstruction = [];
@@ -507,7 +481,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The request this appointment is allocated to assess (e.g. incoming referral or
      * procedure request).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -518,7 +491,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The patient or group associated with the appointment, if they are to be present
      * (usually) then they should also be included in the participant backbone element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -528,7 +500,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * more Encounter(s).
      *
      * List of participants involved in the appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant[]
      */
     protected null|array $participant = [];
@@ -539,7 +510,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The sequence number that identifies a specific appointment in a recurring
      * pattern.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $recurrenceId = null;
@@ -548,7 +518,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This appointment varies from the recurring pattern.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $occurrenceChanged = null;
@@ -559,7 +528,6 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The details of the recurrence pattern or template that is used to generate
      * recurring appointments.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentRecurrenceTemplate[]
      */
     protected null|array $recurrenceTemplate = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -158,7 +158,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this imaging selection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -168,7 +167,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * The current state of the ImagingSelection resource. This is not the status of
      * any ImagingStudy, ServiceRequest, or Task resources associated with the
      * ImagingSelection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRImagingSelectionStatus
      */
     protected null|FHIRImagingSelectionStatus $status = null;
@@ -180,7 +178,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * The patient, or group of patients, location, device, organization, procedure or
      * practitioner this imaging selection is about and into whose or what record the
      * imaging selection is placed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -193,7 +190,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this imaging selection was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $issued = null;
@@ -204,7 +200,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * Resource or transferring this information along with the ImagingStudy Resource.
      *
      * Selector of the instances – human or machine.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionPerformer[]
      */
     protected null|array $performer = [];
@@ -215,7 +210,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      *
      * A list of the diagnostic requests that resulted in this imaging selection being
      * performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -226,7 +220,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classifies the imaging selection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -237,7 +230,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for referencing the selected content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -250,7 +242,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * the Narrative, or extensions
      *
      * The Study Instance UID for the DICOM Study from which the images were selected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $studyUid = null;
@@ -260,7 +251,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The imaging study from which the imaging selection is made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $derivedFrom = [];
@@ -271,7 +261,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The network service providing retrieval access to the selected images, frames,
      * etc. See implementation notes for information about using DICOM endpoints.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $endpoint = [];
@@ -285,7 +274,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The Series Instance UID for the DICOM Series from which the images were
      * selected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $seriesUid = null;
@@ -295,7 +283,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * the Narrative, or extensions
      *
      * The Series Number for the DICOM Series from which the images were selected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $seriesNumber = null;
@@ -309,7 +296,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The Frame of Reference UID identifying the coordinate system that conveys
      * spatial and/or temporal information for the selected images or frames.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $frameOfReferenceUid = null;
@@ -322,7 +308,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * The anatomic structures examined. See DICOM Part 16 Annex L
      * (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html)
      * for DICOM to SNOMED-CT mappings.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $bodySite = null;
@@ -340,7 +325,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * the Observation resource to capture whether the mother is trained to change her
      * child's tracheostomy tube. In this example, the child is the patient of record
      * and the mother is the focus.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $focus = [];
@@ -351,7 +335,6 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * Resource or transferring this information along with the ImagingStudy Resource.
      *
      * Each imaging selection includes one or more selected DICOM SOP instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionInstance[]
      */
     protected null|array $instance = [];

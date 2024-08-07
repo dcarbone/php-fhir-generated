@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -202,7 +202,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the charge item definition is stored on different
      * servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -215,7 +214,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * A formal identifier that is used to identify this charge item definition when it
      * is represented in other formats, or referenced in a specification, model, design
      * or an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -234,7 +232,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * Major.Minor.Revision (e.g. 1.0.0). For more information on versioning knowledge
      * assets, refer to the Decision Support Service specification. Note that a version
      * is required for non-experimental active assets.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -245,7 +242,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -256,7 +252,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -268,7 +263,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * A natural language name identifying the ChargeItemDefinition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -278,7 +272,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the charge item definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -289,7 +282,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      *
      * The URL pointing to an externally-defined charge item definition that is adhered
      * to in whole or in part by this definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri[]
      */
     protected null|array $derivedFromUri = [];
@@ -300,7 +292,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * the Narrative, or extensions
      *
      * A larger definition of which this particular definition is a component or step.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $partOf = [];
@@ -312,7 +303,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      *
      * As new versions of a protocol or guideline are defined, allows identification of
      * what versions are replaced by a new instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $replaces = [];
@@ -320,7 +310,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ChargeItemDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -331,7 +320,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * A Boolean value to indicate that this charge item definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -348,7 +336,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the charge item definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -359,7 +346,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the charge item definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -370,7 +356,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -385,7 +370,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      *
      * A free text natural language description of the charge item definition from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -402,7 +386,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate charge item
      * definition instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -414,7 +397,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      *
      * A legal or geographic region in which the charge item definition is intended to
      * be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -429,7 +411,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      *
      * Explanation of why this charge item definition is needed and why it has been
      * designed as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -445,7 +426,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * A copyright statement relating to the charge item definition and/or its
      * contents. Copyright statements are generally legal restrictions on the use and
      * publishing of the charge item definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -457,7 +437,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -469,7 +448,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -481,7 +459,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -492,7 +469,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The defined billing details in this resource pertain to the given billing code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -503,7 +479,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      *
      * The defined billing details in this resource pertain to the given product
      * instance(s).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $instance = [];
@@ -514,7 +489,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * rough structure and requires profiling for each type of billing code system.
      *
      * Expressions that describe applicability criteria for the billing code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability[]
      */
     protected null|array $applicability = [];
@@ -527,7 +501,6 @@ class FHIRChargeItemDefinition extends FHIRMetadataResource implements PHPFHIRCo
      * Group of properties which are applicable under the same conditions. If no
      * applicability rules are established for the group, then all properties always
      * apply.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPropertyGroup[]
      */
     protected null|array $propertyGroup = [];

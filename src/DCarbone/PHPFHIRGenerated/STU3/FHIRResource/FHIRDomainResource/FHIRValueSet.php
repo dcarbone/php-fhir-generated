@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -151,7 +151,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * globally unique, and SHOULD be an address at which this value set is (or will
      * be) published. The URL SHOULD include the major version of the value set. For
      * more information see [Technical and Business Versions](resource.html#versions).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -163,7 +162,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A formal identifier that is used to identify this value set when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -178,7 +176,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not
      * available. There is also no expectation that versions can be placed in a
      * lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -190,7 +187,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A natural language name identifying the value set. This name should be usable as
      * an identifier for the module by machine processing applications such as code
      * generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -200,7 +196,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the value set.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -208,7 +203,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this value set. Enables tracking the life-cycle of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -219,7 +213,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A boolean value to indicate that this value set is authored for testing purposes
      * (or education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -235,7 +228,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * change if and when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * value set changes. (e.g. the 'content logical definition').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -245,7 +237,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the value set.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -256,7 +247,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -273,7 +263,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * A free text natural language description of the value set from a consumer's
      * perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -288,7 +277,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate value set instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -299,7 +287,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the value set is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -309,7 +296,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * If this is set to 'true', then no new versions of the content logical definition
      * can be created. Note: Other metadata might still change.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $immutable = null;
@@ -326,7 +312,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Explaination of why this value set is needed and why it has been designed as it
      * has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -344,7 +329,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A copyright statement relating to the value set and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * value set.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -353,7 +337,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is intended to be used with an extensible binding or not.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $extensible = null;
@@ -363,7 +346,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A set of criteria that define the content logical definition of the value set by
      * including or excluding codes from outside this value set. This I also known as
      * the "Content Logical Definition" (CLD).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
      */
     protected null|FHIRValueSetCompose $compose = null;
@@ -373,7 +355,6 @@ class FHIRValueSet extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A value set can also be "expanded", where the value set is turned into a simple
      * collection of enumerated codes. This element holds the expansion, if it has been
      * performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
      */
     protected null|FHIRValueSetExpansion $expansion = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely reference the claim detail entry.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $detailSequence = null;
@@ -110,7 +109,6 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $noteNumber = [];
@@ -119,7 +117,6 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * resource.
      *
      * The adjudication results.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     protected null|array $adjudication = [];
@@ -128,7 +125,6 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * resource.
      *
      * A sub-detail adjudication of a simple product or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail[]
      */
     protected null|array $subDetail = [];

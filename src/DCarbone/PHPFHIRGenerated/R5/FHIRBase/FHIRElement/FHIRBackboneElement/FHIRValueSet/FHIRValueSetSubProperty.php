@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -141,7 +141,6 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A code that is a reference to ValueSet.expansion.property.code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -152,7 +151,6 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of this subproperty.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $valueCode = null;
@@ -162,7 +160,6 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of this subproperty.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $valueCoding = null;
@@ -172,7 +169,6 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of this subproperty.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -182,7 +178,6 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of this subproperty.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $valueInteger = null;
@@ -191,7 +186,6 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of this subproperty.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -205,7 +199,6 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of this subproperty.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $valueDateTime = null;
@@ -216,7 +209,6 @@ class FHIRValueSetSubProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of this subproperty.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $valueDecimal = null;

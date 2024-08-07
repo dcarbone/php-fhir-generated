@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $class = null;
@@ -124,7 +123,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $geometry = null;
@@ -135,7 +133,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Todo.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $copolymerConnectivity = [];
@@ -145,7 +142,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Todo.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $modification = [];
@@ -153,7 +149,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * Todo.
      *
      * Todo.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet[]
      */
     protected null|array $monomerSet = [];
@@ -161,7 +156,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * Todo.
      *
      * Todo.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat[]
      */
     protected null|array $repeat = [];

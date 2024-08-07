@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A service line number.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $sequence = null;
@@ -133,7 +132,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of product or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $type = null;
@@ -143,7 +141,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $provider = null;
@@ -153,7 +150,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Diagnosis applicable for this service or product line.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $diagnosisLinkId = [];
@@ -164,7 +160,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * If a grouping item then 'GROUP' otherwise it is a node therefore a code to
      * indicate the Professional Service or Product supplied.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $service = null;
@@ -175,20 +170,17 @@ class FHIRClaimItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $serviceDate = null;
     /**
      * The number of repetitions of a service or product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     protected null|FHIRSimpleQuantity $quantity = null;
     /**
      * If the item is a node then this is the fee for the product or service, otherwise
      * this is the total of the fees for the children of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $unitPrice = null;
@@ -201,7 +193,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $factor = null;
@@ -215,7 +206,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      * resource intensiveness) associated with the good or service delivered. The
      * concept of Points allows for assignment of point values for services and/or
      * goods, such that a monetary amount can be assigned to each point.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $points = null;
@@ -224,7 +214,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
      * factor Number * points = net Amount. Quantity, factor and points are assumed to
      * be 1 if not supplied.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $net = null;
@@ -234,7 +223,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of Unique Device Identifiers associated with this line item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $udi = null;
@@ -244,7 +232,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical service site on the patient (limb, tooth, etc.).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $bodySite = null;
@@ -254,7 +241,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A region or surface of the site, e.g. limb region or tooth surface(s).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding[]
      */
     protected null|array $subSite = [];
@@ -265,7 +251,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes, e.g. for Oral whether the treatment is
      * cosmetic or associated with TMJ, or an appliance was lost or stolen.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding[]
      */
     protected null|array $modifier = [];
@@ -274,7 +259,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      * a patient which is provided to an insurer for payment recovery.
      *
      * Second tier of goods and services.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDetail[]
      */
     protected null|array $detail = [];
@@ -283,7 +267,6 @@ class FHIRClaimItem extends FHIRBackboneElement
      * a patient which is provided to an insurer for payment recovery.
      *
      * The materials and placement date of prior fixed prosthesis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimProsthesis
      */
     protected null|FHIRClaimProsthesis $prosthesis = null;

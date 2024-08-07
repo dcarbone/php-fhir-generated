@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * An absolute URI that identifies the Code System (if the source is a value set
      * that crosses more than one code system).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $source = null;
@@ -116,7 +115,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * The specific version of the code system, as determined by the code system
      * authority.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $sourceVersion = null;
@@ -127,7 +125,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * An absolute URI that identifies the code system of the target code (if the
      * target is a value set that cross code systems).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $target = null;
@@ -138,7 +135,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * The specific version of the code system, as determined by the code system
      * authority.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $targetVersion = null;
@@ -148,7 +144,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      *
      * Mappings for an individual concept in the source to one or more concepts in the
      * target.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement[]
      */
     protected null|array $element = [];
@@ -157,7 +152,6 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
      * concepts - either code systems or data elements, or classes in class models.
      *
      * What to do when there is no match in the mappings in the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapUnmapped
      */
     protected null|FHIRConceptMapUnmapped $unmapped = null;

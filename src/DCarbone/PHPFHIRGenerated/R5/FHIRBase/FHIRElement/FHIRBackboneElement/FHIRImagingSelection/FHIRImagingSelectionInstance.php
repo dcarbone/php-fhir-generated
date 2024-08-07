@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,7 +131,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The SOP Instance UID for the selected DICOM instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $uid = null;
@@ -141,7 +140,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The Instance Number for the selected DICOM instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $number = null;
@@ -151,7 +149,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The SOP Class UID for the selected DICOM instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $sopClass = null;
@@ -167,7 +164,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * document SOP Instance. - A list of segment numbers selected from a segmentation
      * SOP Instance. - A list of Region of Interest (ROI) numbers selected from a
      * radiotherapy structure set SOP Instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $subset = [];
@@ -181,7 +177,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * specified by a region type and a set of 2D coordinates. If the parent
      * imagingSelection.instance contains a subset element of type frame, the image
      * region applies to all frames in the subset list.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion2D[]
      */
     protected null|array $imageRegion2D = [];
@@ -193,7 +188,6 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      *
      * Each imaging selection might includes a 3D image region, specified by a region
      * type and a set of 3D coordinates.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion3D[]
      */
     protected null|array $imageRegion3D = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      * Identifiers assigned to this order. The identifiers are usually assigned by the
      * system responding to the order, but they may be provided or added to by other
      * systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -123,7 +122,6 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the order that this is in response to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $request = null;
@@ -135,7 +133,6 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time at which this order response was made (created/posted).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -145,7 +142,6 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization, or device credited with making the response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $who = null;
@@ -157,7 +153,6 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $authorityCodeableConcept = null;
@@ -168,7 +163,6 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * A reference to an authority policy that is the reason for the response. Usually
      * this is used when the order is rejected, to provide a reason for rejection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $authorityResource = null;
@@ -177,7 +171,6 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * What this response says about the status of the original order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIROrderOutcomeStatus
      */
     protected null|FHIROrderOutcomeStatus $code = null;
@@ -187,7 +180,6 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * Additional description about the response - e.g. a text description provided by
      * a human user when making decisions about the order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -199,7 +191,6 @@ class FHIROrderResponse extends FHIRResource implements PHPFHIRContainedTypeInte
      * Links to resources that provide details of the outcome of performing the order.
      * E.g. Diagnostic Reports in a response that is made to an order that referenced a
      * diagnostic order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $fulfillment = [];

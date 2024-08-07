@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRMeta extends FHIRElement
      *
      * The version specific identifier, as it appears in the version portion of the
      * URL. This values changes when the resource is created, updated, or deleted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
     protected null|FHIRId $versionId = null;
@@ -120,7 +119,6 @@ class FHIRMeta extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the resource last changed - e.g. when the version changed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $lastUpdated = null;
@@ -132,7 +130,6 @@ class FHIRMeta extends FHIRElement
      * A list of profiles (references to [[[StructureDefinition]]] resources) that this
      * resource claims to conform to. The URL is a reference to
      * [[[StructureDefinition.url]]].
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri[]
      */
     protected null|array $profile = [];
@@ -143,7 +140,6 @@ class FHIRMeta extends FHIRElement
      *
      * Security labels applied to this resource. These tags connect specific resources
      * to the overall security policy and infrastructure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
     protected null|array $security = [];
@@ -155,7 +151,6 @@ class FHIRMeta extends FHIRElement
      * Tags applied to this resource. Tags are intended to be used to identify and
      * relate resources to process and workflow, and applications are not required to
      * consider the tags when interpreting the meaning of a resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
     protected null|array $tag = [];

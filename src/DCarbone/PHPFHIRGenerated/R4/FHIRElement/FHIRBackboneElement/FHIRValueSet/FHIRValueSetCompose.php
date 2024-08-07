@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * The Locked Date is the effective date that is used to determine the version of
      * all referenced Code Systems and Value Set Definitions included in the compose
      * that are not already tied to a specific version.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lockedDate = null;
@@ -120,7 +119,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * expansion. If absent, the behavior is determined by the implementation, or by
      * the applicable $expand parameters (but generally, inactive codes would be
      * expected to be included).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $inactive = null;
@@ -131,7 +129,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      * elements](terminologies.html).
      *
      * Include one or more codes from a code system or other value set(s).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
      */
     protected null|array $include = [];
@@ -143,7 +140,6 @@ class FHIRValueSetCompose extends FHIRBackboneElement
      *
      * Exclude one or more codes from the value set based on code system filters and/or
      * other value sets.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude[]
      */
     protected null|array $exclude = [];

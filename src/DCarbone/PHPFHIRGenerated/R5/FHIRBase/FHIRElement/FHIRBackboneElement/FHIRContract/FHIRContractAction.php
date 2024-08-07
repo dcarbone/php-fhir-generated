@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -152,7 +152,6 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if the term prohibits the action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $doNotPerform = null;
@@ -164,7 +163,6 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Activity or service obligation to be done or not done, performed or not
      * performed, effectuated or not by this Contract term.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -173,7 +171,6 @@ class FHIRContractAction extends FHIRBackboneElement
      * policy or agreement.
      *
      * Entity of the action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSubject[]
      */
     protected null|array $subject = [];
@@ -184,7 +181,6 @@ class FHIRContractAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or purpose for the action stipulated by this Contract Provision.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $intent = null;
@@ -195,7 +191,6 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to this action in the
      * referenced form or QuestionnaireResponse.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $linkId = [];
@@ -206,7 +201,6 @@ class FHIRContractAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Current state of the term action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $status = null;
@@ -216,7 +210,6 @@ class FHIRContractAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Encounter or Episode with primary association to the specified term activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $context = null;
@@ -227,7 +220,6 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to the requester of
      * this action in the referenced form or QuestionnaireResponse.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $contextLinkId = [];
@@ -241,7 +233,6 @@ class FHIRContractAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When action happens.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -251,7 +242,6 @@ class FHIRContractAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When action happens.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $occurrencePeriod = null;
@@ -265,7 +255,6 @@ class FHIRContractAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When action happens.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     protected null|FHIRTiming $occurrenceTiming = null;
@@ -275,7 +264,6 @@ class FHIRContractAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who or what initiated the action and has responsibility for its activation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $requester = [];
@@ -286,7 +274,6 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to the requester of
      * this action in the referenced form or QuestionnaireResponse.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $requesterLinkId = [];
@@ -298,7 +285,6 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * The type of individual that is desired or required to perform or not perform the
      * action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $performerType = [];
@@ -310,7 +296,6 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * The type of role or competency of an individual desired or required to perform
      * or not perform the action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $performerRole = null;
@@ -320,7 +305,6 @@ class FHIRContractAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who or what is being asked to perform (or not perform) the ction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $performer = null;
@@ -331,7 +315,6 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to the reason type or
      * reference of this action in the referenced form or QuestionnaireResponse.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $performerLinkId = [];
@@ -344,7 +327,6 @@ class FHIRContractAction extends FHIRBackboneElement
      * Rationale for the action to be performed or not performed. Describes why the
      * action is permitted or prohibited. Either a coded concept, or another resource
      * whose existence justifies permitting or not permitting this action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $reason = [];
@@ -355,7 +337,6 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text related to the reason type or
      * reference of this action in the referenced form or QuestionnaireResponse.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $reasonLinkId = [];
@@ -367,7 +348,6 @@ class FHIRContractAction extends FHIRBackboneElement
      *
      * Comments made about the term action made by the requester, performer, subject or
      * other participants.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -377,7 +357,6 @@ class FHIRContractAction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Security labels that protects the action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt[]
      */
     protected null|array $securityLabelNumber = [];

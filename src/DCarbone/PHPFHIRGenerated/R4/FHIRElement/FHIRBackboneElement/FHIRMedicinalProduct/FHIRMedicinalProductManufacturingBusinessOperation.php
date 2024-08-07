@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of manufacturing operation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $operationType = null;
@@ -115,7 +114,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Regulatory authorization reference number.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $authorisationReferenceNumber = null;
@@ -128,7 +126,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Regulatory authorization date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $effectiveDate = null;
@@ -139,7 +136,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To indicate if this proces is commercially confidential.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $confidentialityIndicator = null;
@@ -149,7 +145,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The manufacturer or establishment associated with the process.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $manufacturer = [];
@@ -159,7 +154,6 @@ class FHIRMedicinalProductManufacturingBusinessOperation extends FHIRBackboneEle
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A regulator which oversees the operation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $regulator = null;

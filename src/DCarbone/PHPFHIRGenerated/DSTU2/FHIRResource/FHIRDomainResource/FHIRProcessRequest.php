@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -135,7 +135,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * The type of processing action being requested, for example Reversal,
      * Readjudication, StatusRequest,PendedRequest.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRActionList
      */
     protected null|FHIRActionList $action = null;
@@ -145,7 +144,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The ProcessRequest business identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -156,7 +154,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * The version of the style of resource contents. This should be mapped to the
      * allowable profiles for this and supporting resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $ruleset = null;
@@ -167,7 +164,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * The style (standard) and version of the original material which was converted
      * into this resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $originalRuleset = null;
@@ -180,7 +176,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when this resource was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $created = null;
@@ -190,7 +185,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is the target of the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $target = null;
@@ -200,7 +194,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the action specified in thise request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $provider = null;
@@ -211,7 +204,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * The organization which is responsible for the action speccified in thise
      * request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $organization = null;
@@ -221,7 +213,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference of resource which is the target or subject of this action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $request = null;
@@ -232,7 +223,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * Reference of a prior response to resource which is the target or subject of this
      * action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $response = null;
@@ -241,7 +231,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true remove all history excluding audit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $nullify = null;
@@ -251,7 +240,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A reference to supply which authenticates the process.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $reference = null;
@@ -261,7 +249,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * List of top level items to be re-adjudicated, if none specified then the entire
      * submission is re-adjudicated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRProcessRequest\FHIRProcessRequestItem[]
      */
     protected null|array $item = [];
@@ -271,7 +258,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Names of resource types to include.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
      */
     protected null|array $include = [];
@@ -281,7 +267,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Names of resource types to exclude.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
      */
     protected null|array $exclude = [];
@@ -291,7 +276,6 @@ class FHIRProcessRequest extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A period of time during which the fulfilling resources would have been created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;

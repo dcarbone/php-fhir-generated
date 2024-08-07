@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * Profile](fhirpath.html#simple) for full details). Note that the index must be an
      * integer constant. The path must resolve to an element of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $path = null;
@@ -125,7 +124,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * A date parameter that refers to a search parameter defined on the specified type
      * of the DataRequirement, and which searches on elements of type date, dateTime,
      * Period, Schedule, or Timing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $searchParam = null;
@@ -143,7 +141,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
      * Duration before now.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $valueDateTime = null;
@@ -158,7 +155,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
      * Duration before now.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $valuePeriod = null;
@@ -173,7 +169,6 @@ class FHIRDataRequirementDateFilter extends FHIRElement
      * those data items that are equal to the specified dateTime. If a Duration is
      * specified, the filter will return only those data items that fall within
      * Duration before now.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $valueDuration = null;

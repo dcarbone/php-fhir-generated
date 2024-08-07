@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,6 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
      *
      * A code that defines the specific type of packaging that the medication can be
      * found in (e.g. blister sleeve, tube, bottle).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -108,7 +107,6 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of product units the package would contain if fully loaded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;

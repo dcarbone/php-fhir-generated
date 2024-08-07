@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -121,7 +121,6 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of a resource supported by the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRResourceType
      */
     protected null|FHIRResourceType $code = null;
@@ -133,7 +132,6 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      * The name of a search parameter that represents the link to the compartment. More
      * than one may be listed because a resource may be linked to a compartment in more
      * than one way,.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $param = [];
@@ -143,7 +141,6 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional documentation about the resource and compartment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $documentation = null;
@@ -154,7 +151,6 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      *
      * Search Parameter for mapping requests made with $everything.start (e.g. on
      * [Patient.$everything](patient-operation-everything.html)).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $startParam = null;
@@ -165,7 +161,6 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      *
      * Search Parameter for mapping requests made with $everything.end (e.g. on
      * [Patient.$everything](patient-operation-everything.html)).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $endParam = null;

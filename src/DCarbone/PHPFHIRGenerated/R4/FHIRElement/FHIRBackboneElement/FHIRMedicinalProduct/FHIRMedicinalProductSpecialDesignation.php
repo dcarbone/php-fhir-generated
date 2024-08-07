@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the designation, or procedure number.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -117,7 +116,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of special designation, e.g. orphan drug, minor use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -128,7 +126,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended use of the product, e.g. prevention, treatment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $intendedUse = null;
@@ -139,7 +136,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the medicinal use applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $indicationCodeableConcept = null;
@@ -149,7 +145,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the medicinal use applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $indicationReference = null;
@@ -160,7 +155,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example granted, pending, expired or withdrawn.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $status = null;
@@ -173,7 +167,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date when the designation was granted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -184,7 +177,6 @@ class FHIRMedicinalProductSpecialDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Animal species for which this applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $species = null;

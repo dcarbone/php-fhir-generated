@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,7 +119,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $structure = null;
@@ -130,7 +129,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure laterality.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $laterality = null;
@@ -140,7 +138,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      *
      * Body locations in relation to a specific body landmark (tatoo, scar, other body
      * structure).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureBodyLandmarkOrientation[]
      */
     protected null|array $bodyLandmarkOrientation = [];
@@ -150,7 +147,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * XY or XYZ-coordinate orientation for structure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $spatialReference = [];
@@ -161,7 +157,6 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code that represents the included structure qualifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $qualifier = [];

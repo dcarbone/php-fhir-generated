@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRProfileType extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Name of Data type or Resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -110,7 +109,6 @@ class FHIRProfileType extends FHIRBackboneElement
      * Identifies a profile that SHALL hold for resources or datatypes referenced as
      * the type of this element. Can be a local reference - to another structure in
      * this profile, or a reference to a structure in another profile.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $profile = null;
@@ -121,7 +119,6 @@ class FHIRProfileType extends FHIRBackboneElement
      * If the type is a reference to another resource, how the resource is or can be
      * aggreated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAggregationMode[]
      */
     protected null|array $aggregation = [];

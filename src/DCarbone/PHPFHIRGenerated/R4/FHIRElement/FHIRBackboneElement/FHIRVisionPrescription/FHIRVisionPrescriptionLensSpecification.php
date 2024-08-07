@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisio
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,7 +126,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      *
      * Identifies the type of vision correction product which is required for the
      * patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $product = null;
@@ -135,7 +134,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The eye for which the lens specification applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRVisionEyes
      */
     protected null|FHIRVisionEyes $eye = null;
@@ -146,7 +144,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lens power measured in dioptres (0.25 units).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $sphere = null;
@@ -157,7 +154,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Power adjustment for astigmatism measured in dioptres (0.25 units).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $cylinder = null;
@@ -167,7 +163,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Adjustment for astigmatism measured in integer degrees.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $axis = null;
@@ -176,7 +171,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * patient.
      *
      * Allows for adjustment on two axis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionPrism[]
      */
     protected null|array $prism = [];
@@ -187,7 +181,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Power adjustment for multifocal lenses measured in dioptres (0.25 units).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $add = null;
@@ -198,7 +191,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contact lens power measured in dioptres (0.25 units).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $power = null;
@@ -209,7 +201,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Back curvature measured in millimetres.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $backCurve = null;
@@ -220,7 +211,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Contact lens diameter measured in millimetres.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $diameter = null;
@@ -232,7 +222,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The recommended maximum wear period for the lens.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $duration = null;
@@ -242,7 +231,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Special color or pattern.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $color = null;
@@ -252,7 +240,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Brand recommendations or restrictions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $brand = null;
@@ -263,7 +250,6 @@ class FHIRVisionPrescriptionLensSpecification extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Notes for special requirements such as coatings and lens materials.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];

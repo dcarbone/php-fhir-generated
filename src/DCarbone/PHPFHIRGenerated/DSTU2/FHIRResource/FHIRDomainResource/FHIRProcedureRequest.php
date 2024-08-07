@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -135,7 +135,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order or by the receiver.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -145,7 +144,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, animal or group that should receive the procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -157,7 +155,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The specific procedure that is ordered. Use text if the exact nature of the
      * procedure cannot be coded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -169,7 +166,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $bodySite = [];
@@ -181,7 +177,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $reasonCodeableConcept = null;
@@ -192,7 +187,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The reason why the procedure is being proposed or ordered. This procedure
      * request may be motivated by a Condition for instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $reasonReference = null;
@@ -208,7 +202,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $scheduledDateTime = null;
@@ -221,7 +214,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $scheduledPeriod = null;
@@ -237,7 +229,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * type allows many different expressions. E.g. "Every 8 hours"; "Three times a
      * day"; "1/2 an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct
      * 2013, 17 Oct 2013 and 1 Nov 2013".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming
      */
     protected null|FHIRTiming $scheduledTiming = null;
@@ -247,7 +238,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter within which the procedure proposal or request was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -257,7 +247,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example, the surgeon, anaethetist, endoscopist, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $performer = null;
@@ -266,7 +255,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRProcedureRequestStatus
      */
     protected null|FHIRProcedureRequestStatus $status = null;
@@ -278,7 +266,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Any other notes associated with this proposal or order - e.g. provider
      * instructions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $notes = [];
@@ -288,7 +275,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $asNeededBoolean = null;
@@ -300,7 +286,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $asNeededCodeableConcept = null;
@@ -313,7 +298,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the request was made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $orderedOn = null;
@@ -323,7 +307,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for proposing or ordering the procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $orderer = null;
@@ -332,7 +315,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRProcedureRequestPriority
      */
     protected null|FHIRProcedureRequestPriority $priority = null;

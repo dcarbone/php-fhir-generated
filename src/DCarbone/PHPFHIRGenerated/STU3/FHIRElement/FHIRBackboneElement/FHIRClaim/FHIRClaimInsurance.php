@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * Sequence of coverage which serves to provide a link and convey coordination of
      * benefit order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $sequence = null;
@@ -118,7 +117,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * A flag to indicate that this Coverage is the focus for adjudication. The
      * Coverage against which the claim is to be adjudicated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $focal = null;
@@ -128,7 +126,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the program or plan identification, underwriter or payor.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $coverage = null;
@@ -139,7 +136,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      *
      * The contract number of a business agreement which describes the terms and
      * conditions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $businessArrangement = null;
@@ -149,7 +145,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of references from the Insurer to which these services pertain.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
     protected null|array $preAuthRef = [];
@@ -159,7 +154,6 @@ class FHIRClaimInsurance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Coverages adjudication details.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $claimResponse = null;

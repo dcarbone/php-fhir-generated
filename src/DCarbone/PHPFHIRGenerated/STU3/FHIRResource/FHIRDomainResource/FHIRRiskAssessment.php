@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier assigned to the risk assessment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -143,7 +142,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the request that is fulfilled by this risk assessment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $basedOn = null;
@@ -154,7 +152,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * A reference to a resource that this risk assessment is part of, such as a
      * Procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $parent = null;
@@ -163,7 +160,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the RiskAssessment, using the same statuses as an Observation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRObservationStatus
      */
     protected null|FHIRObservationStatus $status = null;
@@ -174,7 +170,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The algorithm, process or mechanism used to evaluate the risk.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $method = null;
@@ -185,7 +180,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the risk assessment performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -195,7 +189,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group the risk assessment applies to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -205,7 +198,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter where the assessment was performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $context = null;
@@ -218,7 +210,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and possibly time) the risk assessment was performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -228,7 +219,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date (and possibly time) the risk assessment was performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $occurrencePeriod = null;
@@ -239,7 +229,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * For assessments or prognosis specific to a particular condition, indicates the
      * condition being assessed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $condition = null;
@@ -249,7 +238,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider or software application that performed the assessment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $performer = null;
@@ -260,7 +248,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason the risk assessment was performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $reasonCodeableConcept = null;
@@ -270,7 +257,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason the risk assessment was performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $reasonReference = null;
@@ -281,7 +267,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * Indicates the source data considered as part of the assessment (FamilyHistory,
      * Observations, Procedures, Conditions, etc.).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $basis = [];
@@ -290,7 +275,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * the likelihood of each outcome.
      *
      * Describes the expected outcome for the subject.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction[]
      */
     protected null|array $prediction = [];
@@ -300,7 +284,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the steps that might be taken to reduce the identified risk(s).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $mitigation = null;
@@ -310,7 +293,6 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional comments about the risk assessment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $comment = null;

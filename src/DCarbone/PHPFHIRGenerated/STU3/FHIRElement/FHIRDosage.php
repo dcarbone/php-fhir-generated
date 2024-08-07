@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -116,7 +116,6 @@ class FHIRDosage extends FHIRElement
      *
      * Indicates the order in which the dosage instructions should be applied or
      * interpreted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $sequence = null;
@@ -126,7 +125,6 @@ class FHIRDosage extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text dosage instructions e.g. SIG.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -137,7 +135,6 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supplemental instruction - e.g. "with meals".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $additionalInstruction = [];
@@ -147,7 +144,6 @@ class FHIRDosage extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Instructions in terms that are understood by the patient or consumer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $patientInstruction = null;
@@ -161,7 +157,6 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When medication should be administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
     protected null|FHIRTiming $timing = null;
@@ -172,7 +167,6 @@ class FHIRDosage extends FHIRElement
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
      * the Medication (CodeableConcept).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $asNeededBoolean = null;
@@ -185,7 +179,6 @@ class FHIRDosage extends FHIRElement
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option), or it indicates the precondition for taking
      * the Medication (CodeableConcept).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $asNeededCodeableConcept = null;
@@ -196,7 +189,6 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Body site to administer to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $site = null;
@@ -207,7 +199,6 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How drug should enter body.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $route = null;
@@ -218,7 +209,6 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technique for administering medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $method = null;
@@ -228,7 +218,6 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per dose.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $doseRange = null;
@@ -240,7 +229,6 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per dose.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $doseQuantity = null;
@@ -251,7 +239,6 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Upper limit on medication per unit of time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $maxDosePerPeriod = null;
@@ -263,7 +250,6 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Upper limit on medication per administration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $maxDosePerAdministration = null;
@@ -275,7 +261,6 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Upper limit on medication per lifetime of the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $maxDosePerLifetime = null;
@@ -286,7 +271,6 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $rateRatio = null;
@@ -296,7 +280,6 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $rateRange = null;
@@ -308,7 +291,6 @@ class FHIRDosage extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount of medication per unit of time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $rateQuantity = null;

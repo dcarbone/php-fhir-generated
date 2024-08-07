@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a family of the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -116,7 +115,6 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the category of event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $subtype = [];
@@ -127,7 +125,6 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventAction
      */
     protected null|FHIRSecurityEventAction $action = null;
@@ -136,7 +133,6 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event occurred on the source.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $dateTime = null;
@@ -145,7 +141,6 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the event succeeded or failed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventOutcome
      */
     protected null|FHIRSecurityEventOutcome $outcome = null;
@@ -154,7 +149,6 @@ class FHIRSecurityEventEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text description of the outcome of the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $outcomeDesc = null;

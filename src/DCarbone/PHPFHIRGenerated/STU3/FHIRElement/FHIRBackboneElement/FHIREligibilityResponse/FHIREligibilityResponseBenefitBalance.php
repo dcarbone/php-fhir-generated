@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREli
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dental, Vision, Medical, Pharmacy, Rehab etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -119,7 +118,6 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dental: basic, major, ortho; Vision exam, glasses, contacts; etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subCategory = null;
@@ -129,7 +127,6 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      *
      * True if the indicated class of service is excluded from the plan, missing or
      * False indicated the service is included in the coverage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $excluded = null;
@@ -139,7 +136,6 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short name or tag for the benefit, for example MED01, or DENT2.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -150,7 +146,6 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      *
      * A richer description of the benefit, for example 'DENT2 covers 100% of basic,
      * 50% of major but exclused Ortho, Implants and Costmetic services'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -161,7 +156,6 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Network designation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $network = null;
@@ -172,7 +166,6 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unit designation: individual or family.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $unit = null;
@@ -184,7 +177,6 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      *
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum
      * annual vistis'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $term = null;
@@ -193,7 +185,6 @@ class FHIREligibilityResponseBenefitBalance extends FHIRBackboneElement
      * Eligibility resource.
      *
      * Benefits Used to date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREligibilityResponse\FHIREligibilityResponseFinancial[]
      */
     protected null|array $financial = [];

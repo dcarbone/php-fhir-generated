@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRIdentifier extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifierUse
      */
     protected null|FHIRIdentifierUse $use = null;
@@ -113,7 +112,6 @@ class FHIRIdentifier extends FHIRElement
      *
      * A coded type for the identifier that can be used to determine which identifier
      * to use for a specific purpose.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -124,7 +122,6 @@ class FHIRIdentifier extends FHIRElement
      *
      * Establishes the namespace for the value - that is, a URL that describes a set
      * values that are unique.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $system = null;
@@ -135,7 +132,6 @@ class FHIRIdentifier extends FHIRElement
      *
      * The portion of the identifier typically relevant to the user and which is unique
      * within the context of the system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $value = null;
@@ -145,7 +141,6 @@ class FHIRIdentifier extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which identifier is/was valid for use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -155,7 +150,6 @@ class FHIRIdentifier extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that issued/manages the identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $assigner = null;

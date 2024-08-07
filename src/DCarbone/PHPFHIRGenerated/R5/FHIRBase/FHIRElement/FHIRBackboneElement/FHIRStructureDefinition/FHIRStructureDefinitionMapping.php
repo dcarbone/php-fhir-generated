@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,7 +129,6 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement
      *
      * An Internal id that is used to identify this mapping set when specific mappings
      * are made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $identity = null;
@@ -140,7 +139,6 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement
      *
      * An absolute URI that identifies the specification that this mapping is expressed
      * to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $uri = null;
@@ -150,7 +148,6 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name for the specification that is being mapped to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -161,7 +158,6 @@ class FHIRStructureDefinitionMapping extends FHIRBackboneElement
      *
      * Comments about this mapping, including version notes, issues, scope limitations,
      * and other important notes for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $comment = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,7 +126,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * The FHIR query based rules are applied to the previous resource state (e.g.,
      * state before an update).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $previous = null;
@@ -136,7 +135,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      * For `create` interactions, should the `previous` criteria count as an automatic
      * pass or an automatic fail. If not present, the testing behavior during `create`
      * interactions is unspecified (server discretion).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCriteriaNotExistsBehavior
      */
     protected null|FHIRCriteriaNotExistsBehavior $resultForCreate = null;
@@ -147,7 +145,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      *
      * The FHIR query based rules are applied to the current resource state (e.g.,
      * state after an update).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $current = null;
@@ -157,7 +154,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      * For 'delete' interactions, should the 'current' query criteria count as an
      * automatic pass or an automatic fail. If not present, the testing behavior during
      * `delete` interactions is unspecified (server discretion).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCriteriaNotExistsBehavior
      */
     protected null|FHIRCriteriaNotExistsBehavior $resultForDelete = null;
@@ -169,7 +165,6 @@ class FHIRSubscriptionTopicQueryCriteria extends FHIRBackboneElement
      * `true` to trigger a notification for this topic. If set to `false` or not
      * present, a notification for this topic will be triggered if either the `current`
      * or `previous` tests evaluate to `true`.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $requireBoth = null;

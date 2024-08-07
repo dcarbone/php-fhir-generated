@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely reference the claim item entries.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $itemSequence = null;
@@ -134,7 +133,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      *
      * Trace number for tracking purposes. May be defined at the jurisdiction level or
      * between trading partners.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $traceNumber = [];
@@ -145,7 +143,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $noteNumber = [];
@@ -154,7 +151,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * resource.
      *
      * The high-level results of the adjudication if adjudication has been performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseReviewOutcome
      */
     protected null|FHIRClaimResponseReviewOutcome $reviewOutcome = null;
@@ -165,7 +161,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      * If this item is a group then the values here are a summary of the adjudication
      * of the detail items. If this item is a simple product or service then this is
      * the result of the adjudication of this item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     protected null|array $adjudication = [];
@@ -175,7 +170,6 @@ class FHIRClaimResponseItem extends FHIRBackboneElement
      *
      * A claim detail. Either a simple (a product or service) or a 'group' of
      * sub-details which are simple items.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail[]
      */
     protected null|array $detail = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREncou
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,7 +100,6 @@ class FHIREncounterLocation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location where the encounter takes place.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -111,7 +110,6 @@ class FHIREncounterLocation extends FHIRBackboneElement
      * The status of the participants' presence at the specified location during the
      * period specified. If the participant is no longer at the location, then the
      * period will have an end date/time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIREncounterLocationStatus
      */
     protected null|FHIREncounterLocationStatus $status = null;
@@ -123,7 +121,6 @@ class FHIREncounterLocation extends FHIRBackboneElement
      *
      * This will be used to specify the required levels (bed/ward/room/etc.) desired to
      * be recorded to simplify either messaging or query.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $physicalType = null;
@@ -133,7 +130,6 @@ class FHIREncounterLocation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period during which the patient was present at the location.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -142,7 +142,6 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
      * The SubstanceProtein descriptive elements will only be used when a complete or
      * partial amino acid sequence is available or derivable from a nucleic acid
      * sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $sequenceType = null;
@@ -154,7 +153,6 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
      * Number of linear sequences of amino acids linked through peptide bonds. The
      * number of subunits constituting the SubstanceProtein shall be described. It is
      * possible that the number of subunits can be variable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $numberOfSubunits = null;
@@ -169,7 +167,6 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
      * number and position within subunit followed by the abbreviation of the amino
      * acids involved. The disulfide linkage positions shall actually contain the amino
      * acid Cysteine at the respective positions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $disulfideLinkage = [];
@@ -191,7 +188,6 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
      * decreasing length; sequences of the same length will be ordered by decreasing
      * molecular weight; subunits that have identical sequences will be repeated
      * multiple times.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit[]
      */
     protected null|array $subunit = [];

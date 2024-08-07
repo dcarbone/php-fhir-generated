@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -140,7 +140,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient being assessed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -150,7 +149,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clinician performing the assessment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $assessor = null;
@@ -159,7 +157,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the workflow status of the assessment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRClinicalImpressionStatus
      */
     protected null|FHIRClinicalImpressionStatus $status = null;
@@ -173,7 +170,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      *
      * The point in time at which the assessment was concluded (not when it was
      * recorded).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -184,7 +180,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      *
      * A summary of the context and/or cause of the assessment - why / where was it
      * peformed, and what patient events/sstatus prompted it.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -197,7 +192,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * Assessments are often/usually ongoing in nature; a care provider (practitioner
      * or team) will make new assessments on an ongoing basis as new data arises or the
      * patient's conditions changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $previous = null;
@@ -207,7 +201,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This a list of the general problems/conditions for a patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $problem = [];
@@ -219,7 +212,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      *
      * The request or event that necessitated this assessment. This may be a diagnosis,
      * a Care Plan, a Request Referral, or some other resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $triggerCodeableConcept = null;
@@ -230,7 +222,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      *
      * The request or event that necessitated this assessment. This may be a diagnosis,
      * a Care Plan, a Request Referral, or some other resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $triggerReference = null;
@@ -248,7 +239,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * assessment. These investigations may include data generated during the
      * assessment process, or data previously generated and recorded that is pertinent
      * to the outcomes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionInvestigations[]
      */
     protected null|array $investigations = [];
@@ -259,7 +249,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      *
      * Reference to a specific published clinical protocol that was followed during
      * this assessment, and/or that provides evidence in support of the diagnosis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $protocol = null;
@@ -269,7 +258,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A text summary of the investigations and the diagnosis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $summary = null;
@@ -284,7 +272,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      *
      * Specific findings or diagnoses that was considered likely or relevant to ongoing
      * treatment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding[]
      */
     protected null|array $finding = [];
@@ -295,7 +282,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Diagnoses/conditions resolved since the last assessment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $resolved = [];
@@ -309,7 +295,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * such as Apgar score.
      *
      * Diagnosis considered not possible.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionRuledOut[]
      */
     protected null|array $ruledOut = [];
@@ -319,7 +304,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimate of likely outcome.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $prognosis = null;
@@ -329,7 +313,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Plan of action after assessment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $plan = [];
@@ -339,7 +322,6 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions taken during assessment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $action = [];

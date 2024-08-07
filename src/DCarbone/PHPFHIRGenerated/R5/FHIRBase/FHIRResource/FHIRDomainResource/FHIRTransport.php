@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -180,7 +180,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Identifier for the transport event that is used to identify it across multiple
      * disparate systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -192,7 +191,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * The URL pointing to a *FHIR*-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this Transport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $instantiatesCanonical = null;
@@ -203,7 +201,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * The URL pointing to an *externally* maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this Transport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $instantiatesUri = null;
@@ -218,7 +215,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * seeking to fulfill. This latter resource is referenced by FocusOn. For example,
      * based on a ServiceRequest (= BasedOn), a transport is created to fulfill a
      * procedureRequest ( = FocusOn ) to transport a specimen to the lab.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -234,7 +230,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * may have business ramifications in terms of reporting of results, billing, etc.
      * E.g. a requisition number shared by a set of lab tests ordered together, or a
      * prescription number shared by all meds ordered at one time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $groupIdentifier = null;
@@ -244,7 +239,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component or step.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $partOf = [];
@@ -252,7 +246,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the transport event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRTransportStatus
      */
     protected null|FHIRTransportStatus $status = null;
@@ -263,7 +256,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An explanation as to why this transport is held, failed, was refused, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $statusReason = null;
@@ -273,7 +265,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Indicates the "level" of actionability associated with the Transport, i.e.
      * i+R[9]Cs this a proposed transport, a planned transport, an actionable
      * transport, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRTransportIntent
      */
     protected null|FHIRTransportIntent $intent = null;
@@ -282,7 +273,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Indicates how quickly the Transport should be addressed with respect to other
      * requests.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     protected null|FHIRRequestPriority $priority = null;
@@ -293,7 +283,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name or code (or both) briefly describing what the transport involves.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -303,7 +292,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free-text description of what is to be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -313,7 +301,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The request being actioned or the resource being manipulated by this transport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $focus = null;
@@ -324,7 +311,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * The entity who benefits from the performance of the service specified in the
      * transport (e.g., the patient).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $for = null;
@@ -335,7 +321,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this transport was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -349,7 +334,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the completion time of the event (the occurrence).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $completionTime = null;
@@ -363,7 +347,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this transport was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authoredOn = null;
@@ -377,7 +360,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time of last modification to this transport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $lastModified = null;
@@ -387,7 +369,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The creator of the transport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $requester = null;
@@ -398,7 +379,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of participant that should perform the transport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $performerType = [];
@@ -408,7 +388,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual organization or Device currently responsible for transport execution.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $owner = null;
@@ -418,7 +397,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Principal physical location where this transport is performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -429,7 +407,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Insurance plans, coverage extensions, pre-authorizations and/or
      * pre-determinations that may be relevant to the Transport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $insurance = [];
@@ -440,7 +417,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Free-text information captured about the transport as it progresses.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -452,7 +428,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Links to Provenance records for past versions of this Transport that identify
      * key state transitions or updates that are likely to be relevant to a user
      * looking at the current version of the transport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $relevantHistory = [];
@@ -463,7 +438,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * fulfillment (i.e. is asking for the request to be actioned), this element
      * identifies any limitations on what parts of the referenced request should be
      * actioned.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTransport\FHIRTransportRestriction
      */
     protected null|FHIRTransportRestriction $restriction = null;
@@ -471,7 +445,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Record of transport of item.
      *
      * Additional information that may be needed in the execution of the transport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTransport\FHIRTransportInput[]
      */
     protected null|array $input = [];
@@ -479,7 +452,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Record of transport of item.
      *
      * Outputs produced by the Transport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTransport\FHIRTransportOutput[]
      */
     protected null|array $output = [];
@@ -489,7 +461,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The desired or final location for the transport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $requestedLocation = null;
@@ -499,7 +470,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The current location for the entity to be transported.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $currentLocation = null;
@@ -510,7 +480,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource reference indicating why this transport needs to be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $reason = null;
@@ -520,7 +489,6 @@ class FHIRTransport extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The transport event prior to this one.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $history = null;

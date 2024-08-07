@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * The identifier that is used to identify this profile when it is referenced in a
      * specification, model, design or an instance (should be globally unique OID,
      * UUID, or URI).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $identifier = null;
@@ -146,7 +145,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * referenced in a specification, model, design or instance. This is an arbitrary
      * value managed by the profile author manually and the value should be a
      * timestamp.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -155,7 +153,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the Profile.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -165,7 +162,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * Details of the individual or organization who accepts responsibility for
      * publishing the profile.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -177,7 +173,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[]
      */
     protected null|array $telecom = [];
@@ -186,7 +181,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the profile and its use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -197,7 +191,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * A set of terms from external terminologies that may be used to assist with
      * indexing and searching of templates.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding[]
      */
     protected null|array $code = [];
@@ -206,7 +199,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the profile.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceProfileStatus
      */
     protected null|FHIRResourceProfileStatus $status = null;
@@ -217,7 +209,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * This profile was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -229,7 +220,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that this version of the profile was published.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -238,7 +228,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The Scope and Usage that this profile was created to meet.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $requirements = null;
@@ -250,7 +239,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * the Narrative, or extensions
      *
      * The version of the FHIR specification on which this profile is based.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId
      */
     protected null|FHIRId $fhirVersion = null;
@@ -260,7 +248,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * and Extension Definitions.
      *
      * An external specification that the content is mapped to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping[]
      */
     protected null|array $mapping = [];
@@ -270,7 +257,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * and Extension Definitions.
      *
      * A constraint statement about what contents a resource or data type may have.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileStructure[]
      */
     protected null|array $structure = [];
@@ -280,7 +266,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * and Extension Definitions.
      *
      * An extension defined as part of the profile.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileExtensionDefn[]
      */
     protected null|array $extensionDefn = [];
@@ -290,7 +275,6 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * and Extension Definitions.
      *
      * Definition of a named query and its parameters and their meaning.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileQuery[]
      */
     protected null|array $query = [];

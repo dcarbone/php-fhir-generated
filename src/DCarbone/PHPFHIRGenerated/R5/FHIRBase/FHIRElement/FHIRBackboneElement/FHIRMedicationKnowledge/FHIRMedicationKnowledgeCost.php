@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date range for which the cost information of the medication is effective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod[]
      */
     protected null|array $effectiveDate = [];
@@ -132,7 +131,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      *
      * The category of the cost information. For example, manufacturers' cost, patient
      * cost, claim reimbursement cost, actual acquisition cost.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -142,7 +140,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The source or owner that assigns the price to the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $source = null;
@@ -153,7 +150,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
      * of the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     protected null|FHIRMoney $costMoney = null;
@@ -165,7 +161,6 @@ class FHIRMedicationKnowledgeCost extends FHIRBackboneElement
      *
      * The price or representation of the cost (for example, Band A, Band B or $, $$)
      * of the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $costCodeableConcept = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -176,7 +176,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * which at which an authoritative instance of this library is (or will be)
      * published. This URL can be the target of a canonical reference. It SHALL remain
      * the same when the library is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -190,7 +189,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * in other formats, or referenced in a specification, model, design or an
      * instance. e.g. CMS or NQF identifiers for a measure artifact. Note that at least
      * one identifier is required for non-experimental active artifacts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -209,7 +207,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * For more information on versioning knowledge assets, refer to the Decision
      * Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -221,7 +218,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A natural language name identifying the library. This name should be usable as
      * an identifier for the module by machine processing applications such as code
      * generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -231,7 +227,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the library.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -242,7 +237,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * An explanatory or alternate title for the library giving additional information
      * about its content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $subtitle = null;
@@ -250,7 +244,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this library. Enables tracking the life-cycle of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -261,7 +254,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A Boolean value to indicate that this library is authored for testing purposes
      * (or education/evaluation/marketing) and is not intended to be used for genuine
      * usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -273,7 +265,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Identifies the type of library such as a Logic Library, Model Definition, Asset
      * Collection, or Module Definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -285,7 +276,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * A code or group definition that describes the intended subject of the contents
      * of the library.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subjectCodeableConcept = null;
@@ -296,7 +286,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * A code or group definition that describes the intended subject of the contents
      * of the library.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subjectReference = null;
@@ -312,7 +301,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * change when the business version changes and it must change if the status code
      * changes. In addition, it should change when the substantive content of the
      * library changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -322,7 +310,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the library.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -333,7 +320,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -348,7 +334,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * A free text natural language description of the library from a consumer's
      * perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -364,7 +349,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * that are listed. These contexts may be general categories (gender, age, ...) or
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate library instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -375,7 +359,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the library is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -390,7 +373,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Explanation of why this library is needed and why it has been designed as it
      * has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -400,7 +382,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the library is used from a clinical perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $usage = null;
@@ -416,7 +397,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A copyright statement relating to the library and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * library.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -428,7 +408,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -440,7 +419,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -451,7 +429,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The period during which the library content was or is planned to be in active
      * use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -464,7 +441,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Descriptive topics related to the content of the library. Topics provide a
      * high-level categorization of the library that can be useful for filtering and
      * searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $topic = [];
@@ -475,7 +451,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $author = [];
@@ -486,7 +461,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $editor = [];
@@ -497,7 +471,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $reviewer = [];
@@ -508,7 +481,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $endorser = [];
@@ -520,7 +492,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -532,7 +503,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The parameter element defines parameters used by the library.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition[]
      */
     protected null|array $parameter = [];
@@ -544,7 +514,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Describes a set of data that must be provided in order to be able to
      * successfully perform the computations defined by the library.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement[]
      */
     protected null|array $dataRequirement = [];
@@ -556,7 +525,6 @@ class FHIRLibrary extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The content of the library as an Attachment. The content may be a reference to a
      * url, or may be directly embedded as a base-64 string. Either way, the
      * contentType of the attachment determines how to interpret the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[]
      */
     protected null|array $content = [];

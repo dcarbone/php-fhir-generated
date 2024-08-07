@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,6 @@ class FHIRReference extends FHIRDataType
      * found. The reference may be version specific or not. If the reference is not to
      * a FHIR RESTful server, then it should be assumed to be version specific.
      * Internal fragment references (start with '#') refer to contained resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $reference = null;
@@ -150,7 +149,6 @@ class FHIRReference extends FHIRDataType
      * http://hl7.org/fhir/StructureDefinition/Patient. Absolute URLs are only allowed
      * for logical models (and can only be used in references in logical models, not
      * resources).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $type = null;
@@ -168,7 +166,6 @@ class FHIRReference extends FHIRDataType
      * actually exposed as a FHIR instance, but it SHALL point to a business concept
      * that would be expected to be exposed as a FHIR instance, and that instance would
      * need to be of a FHIR resource type allowed by the reference.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -179,7 +176,6 @@ class FHIRReference extends FHIRDataType
      *
      * Plain text narrative that identifies the resource in addition to the resource
      * reference.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $display = null;

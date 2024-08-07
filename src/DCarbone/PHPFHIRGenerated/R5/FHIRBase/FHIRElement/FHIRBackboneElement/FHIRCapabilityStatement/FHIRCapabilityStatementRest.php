@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Identifies whether this portion of the statement is describing the ability to
      * initiate or receive restful operations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRestfulCapabilityMode
      */
     protected null|FHIRRestfulCapabilityMode $mode = null;
@@ -143,7 +142,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Information about the system's restful capabilities that apply across all
      * applications, such as security.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $documentation = null;
@@ -155,7 +153,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Information about security implementation from an interface perspective - what a
      * client needs to know.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSecurity
      */
     protected null|FHIRCapabilityStatementSecurity $security = null;
@@ -167,7 +164,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * A specification of the restful capabilities of the solution for a specific
      * resource type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementResource[]
      */
     protected null|array $resource = [];
@@ -178,7 +174,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * server implementation.
      *
      * A specification of restful operations supported by the system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction1[]
      */
     protected null|array $interaction = [];
@@ -193,7 +188,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * defined in the specification, or additional ones defined for/by the
      * implementation. This is only for searches executed against the system-level
      * endpoint.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
     protected null|array $searchParam = [];
@@ -205,7 +199,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      *
      * Definition of an operation or a named query together with its parameters and
      * their meaning and type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
     protected null|array $operation = [];
@@ -218,7 +211,6 @@ class FHIRCapabilityStatementRest extends FHIRBackboneElement
      * An absolute URI which is a reference to the definition of a compartment that the
      * system supports. The reference is to a CompartmentDefinition resource by its
      * canonical URL .
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $compartment = [];

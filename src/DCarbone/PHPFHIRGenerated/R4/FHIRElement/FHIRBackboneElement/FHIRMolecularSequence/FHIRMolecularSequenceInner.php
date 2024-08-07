@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,6 @@ class FHIRMolecularSequenceInner extends FHIRBackboneElement
      *
      * Structural variant inner start. If the coordinate system is either 0-based or
      * 1-based, then start position is inclusive.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $start = null;
@@ -109,7 +108,6 @@ class FHIRMolecularSequenceInner extends FHIRBackboneElement
      * Structural variant inner end. If the coordinate system is 0-based then end is
      * exclusive and does not include the last position. If the coordinate system is
      * 1-base, then end is inclusive and includes the last position.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $end = null;

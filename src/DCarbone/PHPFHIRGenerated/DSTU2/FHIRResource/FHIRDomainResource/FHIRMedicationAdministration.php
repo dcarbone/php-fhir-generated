@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -142,7 +142,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * administration while the patient was off the ward might be made with a different
      * system and entered after the event. Particularly important if these records have
      * to be updated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -154,7 +153,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * some long running administrations such as infusions it is possible for an
      * administration to be started but not completed or it may be paused while some
      * other process is under way.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMedicationAdministrationStatus
      */
     protected null|FHIRMedicationAdministrationStatus $status = null;
@@ -164,7 +162,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or animal receiving the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -174,7 +171,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual who was responsible for giving the medication to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $practitioner = null;
@@ -185,7 +181,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      *
      * The visit, admission or other contact between patient and health care provider
      * the medication administration was performed as part of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -195,7 +190,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The original request, instruction or authority to perform the administration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $prescription = null;
@@ -205,7 +199,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      *
      * Set this to true if the record is saying that the medication was NOT
      * administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $wasNotGiven = null;
@@ -216,7 +209,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the administration was not performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonNotGiven = [];
@@ -227,7 +219,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the medication was given.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonGiven = [];
@@ -243,7 +234,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * place (or did not take place, when the 'notGiven' attribute is true). For many
      * administrations, such as swallowing a tablet the use of dateTime is more
      * appropriate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $effectiveTimeDateTime = null;
@@ -256,7 +246,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * place (or did not take place, when the 'notGiven' attribute is true). For many
      * administrations, such as swallowing a tablet the use of dateTime is more
      * appropriate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $effectiveTimePeriod = null;
@@ -269,7 +258,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * Identifies the medication that was administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $medicationCodeableConcept = null;
@@ -281,7 +269,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      * Identifies the medication that was administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $medicationReference = null;
@@ -292,7 +279,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      *
      * The device used in administering the medication to the patient. For example, a
      * particular infusion pump.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $device = [];
@@ -303,7 +289,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      *
      * Extra information about the medication administration that is not conveyed by
      * the other attributes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $note = null;
@@ -316,7 +301,6 @@ class FHIRMedicationAdministration extends FHIRDomainResource implements PHPFHIR
      *
      * Describes the medication dosage information details e.g. dose, rate, site,
      * route, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage
      */
     protected null|FHIRMedicationAdministrationDosage $dosage = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -116,7 +116,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * unit of measurement The unit of measurement shall be specified in accordance
      * with ISO 11240 and the resulting terminology The symbol and the symbol
      * identifier shall be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $height = null;
@@ -131,7 +130,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * unit of measurement The unit of measurement shall be specified in accordance
      * with ISO 11240 and the resulting terminology The symbol and the symbol
      * identifier shall be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $width = null;
@@ -146,7 +144,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * unit of measurement The unit of measurement shall be specified in accordance
      * with ISO 11240 and the resulting terminology The symbol and the symbol
      * identifier shall be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $depth = null;
@@ -161,7 +158,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * unit of measurement The unit of measurement shall be specified in accordance
      * with ISO 11240 and the resulting terminology The symbol and the symbol
      * identifier shall be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $weight = null;
@@ -176,7 +172,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * and its unit of measurement The unit of measurement shall be specified in
      * accordance with ISO 11240 and the resulting terminology The symbol and the
      * symbol identifier shall be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $nominalVolume = null;
@@ -191,7 +186,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * and its unit of measurement The unit of measurement shall be specified in
      * accordance with ISO 11240 and the resulting terminology The symbol and the
      * symbol identifier shall be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $externalDiameter = null;
@@ -202,7 +196,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * Where applicable, the shape can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $shape = null;
@@ -213,7 +206,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * Where applicable, the color can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $color = [];
@@ -223,7 +215,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where applicable, the imprint can be specified as text.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $imprint = [];
@@ -234,7 +225,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * Where applicable, the image can be provided The format of the image attachment
      * shall be specified by regional implementations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[]
      */
     protected null|array $image = [];
@@ -246,7 +236,6 @@ class FHIRProdCharacteristic extends FHIRBackboneElement
      *
      * Where applicable, the scoring can be specified An appropriate controlled
      * vocabulary shall be used The term and the term identifier shall be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $scoring = null;

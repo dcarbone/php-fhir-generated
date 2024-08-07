@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -136,7 +136,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * and the underlying system code system versions etc. Systems may re-use the same
      * identifier as long as those factors remain the same, and the expansion is the
      * same, but are not required to do so. This is a business identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $identifier = null;
@@ -147,7 +146,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * As per paging Search results, the next URLs are opaque to the client, have no
      * dictated structure, and only the server understands them.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $next = null;
@@ -161,7 +159,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the expansion was produced by the expanding system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $timestamp = null;
@@ -173,7 +170,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * The total number of concepts in the expansion. If the number of concept nodes in
      * this resource is less than the stated number, then the server can return more
      * using the offset parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $total = null;
@@ -185,7 +181,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * If paging is being used, the offset at which this resource starts. I.e. this
      * resource is a partial view into the expansion. If paging is not being used, this
      * element SHALL NOT be present.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $offset = null;
@@ -198,7 +193,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * A parameter that controlled the expansion process. These parameters may be used
      * by users of expanded value sets to check whether the expansion is suitable for a
      * particular purpose, or to pick the correct expansion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter[]
      */
     protected null|array $parameter = [];
@@ -210,7 +204,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      *
      * A property defines an additional slot through which additional information can
      * be provided about a concept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetProperty[]
      */
     protected null|array $property = [];
@@ -221,7 +214,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * elements](terminologies.html).
      *
      * The codes that are contained in the value set expansion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
      */
     protected null|array $contains = [];

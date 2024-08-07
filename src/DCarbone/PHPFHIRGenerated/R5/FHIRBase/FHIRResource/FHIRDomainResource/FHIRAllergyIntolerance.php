@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -164,7 +164,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * Business identifiers assigned to this AllergyIntolerance by the performer or
      * other systems which remain constant as the resource is updated and propagates
      * from server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -175,7 +174,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clinical status of the allergy or intolerance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $clinicalStatus = null;
@@ -189,7 +187,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * a reaction to the identified substance (including pharmaceutical product). The
      * verification status pertains to the allergy or intolerance, itself, not to any
      * specific AllergyIntolerance attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $verificationStatus = null;
@@ -200,7 +197,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the underlying physiological mechanism for the reaction risk.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -208,7 +204,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Category of the identified substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRAllergyIntoleranceCategory[]
      */
     protected null|array $category = [];
@@ -217,7 +212,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      *
      * Estimate of the potential clinical harm, or seriousness, of the reaction to the
      * identified substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRAllergyIntoleranceCriticality
      */
     protected null|FHIRAllergyIntoleranceCriticality $criticality = null;
@@ -242,7 +236,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * AllergyIntolerance.reaction.substance falls within the semantic scope of
      * AllergyIntolerance.code, then the receiving system should ignore
      * AllergyIntolerance.reaction.substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -252,7 +245,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who has the allergy or intolerance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -262,7 +254,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter when the allergy or intolerance was asserted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -277,7 +268,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $onsetDateTime = null;
@@ -288,7 +278,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $onsetAge = null;
@@ -299,7 +288,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $onsetPeriod = null;
@@ -310,7 +298,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $onsetRange = null;
@@ -321,7 +308,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      *
      * Estimated or actual date, date-time, or age when allergy or intolerance was
      * identified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $onsetString = null;
@@ -336,7 +322,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      *
      * The recordedDate represents when this particular AllergyIntolerance record was
      * created in the system, which is often a system-generated date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $recordedDate = null;
@@ -346,7 +331,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      *
      * Indicates who or what participated in the activities related to the allergy or
      * intolerance and how they were involved.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceParticipant[]
      */
     protected null|array $participant = [];
@@ -361,7 +345,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      *
      * Represents the date and/or time of the last known occurrence of a reaction
      * event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $lastOccurrence = null;
@@ -373,7 +356,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      *
      * Additional narrative about the propensity for the Adverse Reaction, not captured
      * in other fields.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -383,7 +365,6 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      *
      * Details about each adverse reaction event linked to exposure to the identified
      * substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction[]
      */
     protected null|array $reaction = [];

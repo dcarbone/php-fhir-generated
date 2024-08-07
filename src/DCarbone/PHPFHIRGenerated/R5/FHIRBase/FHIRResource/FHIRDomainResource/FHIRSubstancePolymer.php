@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -136,7 +136,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * A business idenfier for this polymer, but typically this is handled by a
      * SubstanceDefinition identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -147,7 +146,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Overall type of the polymer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $class = null;
@@ -158,7 +156,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Polymer geometry, e.g. linear, branched, cross-linked, network or dendritic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $geometry = null;
@@ -169,7 +166,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Descrtibes the copolymer sequence type (polymer connectivity).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $copolymerConnectivity = [];
@@ -180,7 +176,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Todo - this is intended to connect to a repeating full modification structure,
      * also used by Protein and Nucleic Acid . String is just a placeholder.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $modification = null;
@@ -188,7 +183,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * Properties of a substance specific to it being a polymer.
      *
      * Todo.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerMonomerSet[]
      */
     protected null|array $monomerSet = [];
@@ -196,7 +190,6 @@ class FHIRSubstancePolymer extends FHIRDomainResource implements PHPFHIRContaine
      * Properties of a substance specific to it being a polymer.
      *
      * Specifies and quantifies the repeated units and their configuration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerRepeat[]
      */
     protected null|array $repeat = [];

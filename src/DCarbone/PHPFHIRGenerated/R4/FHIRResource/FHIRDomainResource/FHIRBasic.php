@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,7 +115,6 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * Identifier assigned to the resource for business purposes, outside the context
      * of FHIR.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -127,7 +126,6 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * Identifies the 'type' of resource - equivalent to the resource name for other
      * resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -138,7 +136,6 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * Identifies the patient, practitioner, device or any other resource that is the
      * "focus" of this resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -149,7 +146,6 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies when the resource was first created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $created = null;
@@ -159,7 +155,6 @@ class FHIRBasic extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who was responsible for creating the resource instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $author = null;

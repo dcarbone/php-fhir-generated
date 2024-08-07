@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -145,7 +145,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business Identifiers that are specific to a role/location.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -156,7 +155,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * Whether this practitioner role record is in active use. Some systems may use
      * this property to mark non-active practitioners, such as those that are not
      * currently employed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $active = null;
@@ -167,7 +165,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The period during which the person is authorized to act as a practitioner in
      * these role(s) for the organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -177,7 +174,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Practitioner that is able to provide the defined services for the organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $practitioner = null;
@@ -187,7 +183,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization where the Practitioner performs the roles associated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $organization = null;
@@ -198,7 +193,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Roles which this practitioner is authorized to perform for the organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $code = [];
@@ -210,7 +204,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The specialty of a practitioner that describes the functional role they are
      * practicing at a given organization or location.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $specialty = [];
@@ -220,7 +213,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which this practitioner provides care.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $location = [];
@@ -231,7 +223,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The list of healthcare services that this worker provides for this role's
      * Organization/Location(s).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $healthcareService = [];
@@ -244,7 +235,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * The contact details of communication devices available relevant to the specific
      * PractitionerRole. This can include addresses, phone numbers, fax numbers, mobile
      * numbers, email addresses and web sites.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail[]
      */
     protected null|array $contact = [];
@@ -255,7 +245,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Collection of characteristics (attributes).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $characteristic = [];
@@ -269,7 +258,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * may know several languages (listed in practitioner.communication), however these
      * are the languages that could be advertised in a directory for a patient to
      * search.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $communication = [];
@@ -280,7 +268,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      *
      * A collection of times the practitioner is available or performing this role at
      * the location and/or healthcareservice.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability[]
      */
     protected null|array $availability = [];
@@ -292,7 +279,6 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * Technical endpoints providing access to services operated for the practitioner
      * with this role. Commonly used for locating scheduling services, or identifying
      * where to send referrals electronically.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $endpoint = [];

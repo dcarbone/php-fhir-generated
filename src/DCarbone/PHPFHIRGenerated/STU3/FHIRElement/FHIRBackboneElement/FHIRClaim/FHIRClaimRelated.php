@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,6 @@ class FHIRClaimRelated extends FHIRBackboneElement
      *
      * Other claims which are related to this claim such as prior claim versions or for
      * related services.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $claim = null;
@@ -109,7 +108,6 @@ class FHIRClaimRelated extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * For example prior or umbrella.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $relationship = null;
@@ -121,7 +119,6 @@ class FHIRClaimRelated extends FHIRBackboneElement
      * An alternate organizational reference to the case or file to which this
      * particular claim pertains - eg Property/Casualy insurer claim # or Workers
      * Compensation case # .
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $reference = null;

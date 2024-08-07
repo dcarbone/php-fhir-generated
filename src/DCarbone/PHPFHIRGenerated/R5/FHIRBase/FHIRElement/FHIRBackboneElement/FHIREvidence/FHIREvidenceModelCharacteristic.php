@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of a component of the method to generate the statistic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -133,7 +132,6 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
      *
      * Further specification of the quantified value of the component of the method to
      * generate the statistic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $value = null;
@@ -144,7 +142,6 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * A variable adjusted for in the adjusted analysis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceVariable[]
      */
     protected null|array $variable = [];
@@ -155,7 +152,6 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
      * variables), the statistics, and the certainty of this evidence.
      *
      * An attribute of the statistic used as a model characteristic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceAttributeEstimate[]
      */
     protected null|array $attributeEstimate = [];

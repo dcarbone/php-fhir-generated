@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIRBodyStructure extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for this instance of the anatomical structure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -129,7 +128,6 @@ class FHIRBodyStructure extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this body site is in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $active = null;
@@ -141,7 +139,6 @@ class FHIRBodyStructure extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The kind of structure being represented by the body structure at
      * `BodyStructure.location`. This can define both normal and abnormal morphologies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $morphology = null;
@@ -152,7 +149,6 @@ class FHIRBodyStructure extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomical location or region of the specimen, lesion, or body structure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $location = null;
@@ -164,7 +160,6 @@ class FHIRBodyStructure extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Qualifier to refine the anatomical location. These include qualifiers for
      * laterality, relative location, directionality, number, and plane.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $locationQualifier = [];
@@ -174,7 +169,6 @@ class FHIRBodyStructure extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A summary, characterization or explanation of the body structure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -184,7 +178,6 @@ class FHIRBodyStructure extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image or images used to identify a location.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment[]
      */
     protected null|array $image = [];
@@ -194,7 +187,6 @@ class FHIRBodyStructure extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person to which the body site belongs.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;

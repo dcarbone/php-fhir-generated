@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * A descriptive name for this - can be useful for generating implementation
      * artifacts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -118,7 +117,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * type permits) text alone to convey concepts not covered by the set of codes
      * identified in the binding. If false, then conformant systems are constrained to
      * the provided codes alone.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $isExtensible = null;
@@ -127,7 +125,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the degree of conformance expectations associated with this binding.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBindingConformance
      */
     protected null|FHIRBindingConformance $conformance = null;
@@ -136,7 +133,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the intended use of this particular set of codes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -146,7 +142,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition that identifies the set of codes
      * to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $referenceUri = null;
@@ -157,7 +152,6 @@ class FHIRProfileBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition that identifies the set of codes
      * to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $referenceResource = null;

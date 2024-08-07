@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code indicating: Co-Pay, deductable, elegible, benefit, tax, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -113,7 +112,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Adjudication reason such as limit reached.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $reason = null;
@@ -123,7 +121,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Monitory amount associated with the code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $amount = null;
@@ -135,7 +132,6 @@ class FHIRExplanationOfBenefitAdjudication extends FHIRBackboneElement
      *
      * A non-monetary value for example a percentage. Mutually exclusive to the amount
      * element above.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $value = null;

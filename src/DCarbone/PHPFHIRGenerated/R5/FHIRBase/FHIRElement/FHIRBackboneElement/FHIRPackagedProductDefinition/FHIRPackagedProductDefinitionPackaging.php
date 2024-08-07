@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,6 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * A business identifier that is specific to this particular part of the packaging,
      * often assigned by the manufacturer. Including possibly Data Carrier Identifier
      * (a GS1 barcode).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -145,7 +144,6 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The physical type of the container of the items.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -156,7 +154,6 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * Is this a part of the packaging (e.g. a cap or bottle stopper), rather than the
      * packaging itself (e.g. a bottle or vial). The latter type are designed be a
      * container, but the former are not.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $componentPart = null;
@@ -169,7 +166,6 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * does not relate to the number of contained items but relates solely to the
      * number of packaging items. When looking at the outermost layer it is always 1.
      * If there are two boxes within, at the next layer it would be 2.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $quantity = null;
@@ -180,7 +176,6 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Material type of the package item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $material = [];
@@ -193,7 +188,6 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * A possible alternate material for this part of the packaging, that is allowed to
      * be used instead of the usual material (e.g. different types of plastic for a
      * blister sleeve).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $alternateMaterial = [];
@@ -204,7 +198,6 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRProductShelfLife[]
      */
     protected null|array $shelfLifeStorage = [];
@@ -215,7 +208,6 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      *
      * Manufacturer of this packaging item. When there are multiple values each one is
      * a potential manufacturer of this packaging item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $manufacturer = [];
@@ -223,7 +215,6 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * A medically related item or items, in a container or package.
      *
      * General characteristics of this item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionProperty[]
      */
     protected null|array $property = [];
@@ -231,7 +222,6 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * A medically related item or items, in a container or package.
      *
      * The item(s) within the packaging.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionContainedItem[]
      */
     protected null|array $containedItem = [];
@@ -241,7 +231,6 @@ class FHIRPackagedProductDefinitionPackaging extends FHIRBackboneElement
      * Allows containers (and parts of containers) within containers, still as a part
      * of a single packaged product. See also
      * PackagedProductDefinition.packaging.containedItem.item(PackagedProductDefinition).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionPackaging[]
      */
     protected null|array $packaging = [];

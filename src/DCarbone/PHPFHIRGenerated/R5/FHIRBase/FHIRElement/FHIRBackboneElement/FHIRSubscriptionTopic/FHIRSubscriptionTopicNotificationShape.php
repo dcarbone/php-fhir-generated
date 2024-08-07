@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -124,7 +124,6 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * resource for this shape definition. It will be the same, a generality, or a
      * specificity of SubscriptionTopic.resourceTrigger.resource or
      * SubscriptionTopic.eventTrigger.resource when they are present.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $resource = null;
@@ -137,7 +136,6 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * SHOULD include resources listed here, if they exist and the user is authorized
      * to receive them. Clients SHOULD be prepared to receive these additional
      * resources, but SHALL function properly without them.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $include = [];
@@ -150,7 +148,6 @@ class FHIRSubscriptionTopicNotificationShape extends FHIRBackboneElement
      * Servers SHOULD include resources listed here, if they exist and the user is
      * authorized to receive them. Clients SHOULD be prepared to receive these
      * additional resources, but SHALL function properly without them.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $revInclude = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,7 +131,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      *
      * The device identifier (DI) is a mandatory, fixed portion of a UDI that
      * identifies the labeler and the specific version or model of a device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $deviceIdentifier = null;
@@ -147,7 +146,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * http://hl7.org/fhir/NamingSystem/iccbba-other-di # Informationsstelle für
      * Arzneispezialitäten (IFA GmbH) (EU only):
      * http://hl7.org/fhir/NamingSystem/ifa-gmbh-di.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $issuer = null;
@@ -162,7 +160,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * in the U.S. by the FDA, the value is http://hl7.org/fhir/NamingSystem/us-fda-udi
      * or in the European Union by the European Commission
      * http://hl7.org/fhir/NamingSystem/eu-ec-udi.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $jurisdiction = null;
@@ -176,7 +173,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * the device - e.g., a barcode or RFID. Because of limitations on character sets
      * in XML and the need to round-trip JSON data through XML, AIDC Formats *SHALL* be
      * base64 encoded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBase64Binary
      */
     protected null|FHIRBase64Binary $carrierAIDC = null;
@@ -187,7 +183,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      *
      * The full UDI carrier as the human readable form (HRF) representation of the
      * barcode string as printed on the packaging of the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $carrierHRF = null;
@@ -195,7 +190,6 @@ class FHIRDeviceUdiCarrier extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A coded entry to indicate how the data was entered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUDIEntryType
      */
     protected null|FHIRUDIEntryType $entryType = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClini
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement
      * something like "signs", "symptoms", "clinical", "diagnostic", but the list is
      * not constrained, and others such groups such as
      * (exposure|family|travel|nutritional) history may be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -114,7 +113,6 @@ class FHIRClinicalImpressionInvestigation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A record of a specific investigation that was undertaken.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $item = [];

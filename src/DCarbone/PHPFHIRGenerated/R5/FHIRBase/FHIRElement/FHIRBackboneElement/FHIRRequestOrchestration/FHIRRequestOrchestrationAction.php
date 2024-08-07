@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -184,7 +184,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * The linkId of the action from the PlanDefinition that corresponds to this action
      * in the RequestOrchestration resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $linkId = null;
@@ -195,7 +194,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * A user-visible prefix for the action. For example a section or item numbering
      * such as 1. or A.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $prefix = null;
@@ -205,7 +203,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The title of the action displayed to a user.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -220,7 +217,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * A short description of the action used to provide a summary to display to the
      * user.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -236,7 +232,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * A text equivalent of the action to be performed. This provides a
      * human-interpretable description of the action when the definition is consumed by
      * a system that might not be capable of interpreting it dynamically.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $textEquivalent = null;
@@ -245,7 +240,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * Indicates how quickly the action should be addressed with respect to other
      * actions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     protected null|FHIRRequestPriority $priority = null;
@@ -257,7 +251,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * A code that provides meaning for the action or action group. For example, a
      * section may have a LOINC code for a section of a documentation template.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $code = [];
@@ -270,7 +263,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * Didactic or other informational resources associated with the action that can be
      * provided to the CDS recipient. Information resources can include inline text
      * commentary and links to web resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[]
      */
     protected null|array $documentation = [];
@@ -280,7 +272,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Goals that are intended to be achieved by following the requests in this action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $goal = [];
@@ -290,7 +281,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * An expression that describes applicability criteria, or start/stop conditions
      * for the action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationCondition[]
      */
     protected null|array $condition = [];
@@ -299,7 +289,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * Defines input data requirements for the action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationInput[]
      */
     protected null|array $input = [];
@@ -308,7 +297,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * Defines the outputs of the action, if any.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationOutput[]
      */
     protected null|array $output = [];
@@ -318,7 +306,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * A relationship to another action such as "before" or "30-60 minutes after start
      * of".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationRelatedAction[]
      */
     protected null|array $relatedAction = [];
@@ -332,7 +319,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An optional value describing when the action should be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $timingDateTime = null;
@@ -342,7 +328,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $timingAge = null;
@@ -352,7 +337,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $timingPeriod = null;
@@ -362,7 +346,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $timingDuration = null;
@@ -372,7 +355,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $timingRange = null;
@@ -386,7 +368,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     protected null|FHIRTiming $timingTiming = null;
@@ -398,7 +379,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      *
      * Identifies the facility where the action will occur; e.g. home, hospital,
      * specific clinic, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $location = null;
@@ -407,7 +387,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * The participant that should perform or be responsible for this action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationParticipant[]
      */
     protected null|array $participant = [];
@@ -418,7 +397,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of action to perform (create, update, remove).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -426,7 +404,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the grouping behavior for the action and its children.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRActionGroupingBehavior
      */
     protected null|FHIRActionGroupingBehavior $groupingBehavior = null;
@@ -434,7 +411,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the selection behavior for the action and its children.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRActionSelectionBehavior
      */
     protected null|FHIRActionSelectionBehavior $selectionBehavior = null;
@@ -442,7 +418,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines expectations around whether an action is required.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRActionRequiredBehavior
      */
     protected null|FHIRActionRequiredBehavior $requiredBehavior = null;
@@ -450,7 +425,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action should usually be preselected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRActionPrecheckBehavior
      */
     protected null|FHIRActionPrecheckBehavior $precheckBehavior = null;
@@ -458,7 +432,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action can be selected multiple times.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRActionCardinalityBehavior
      */
     protected null|FHIRActionCardinalityBehavior $cardinalityBehavior = null;
@@ -468,7 +441,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resource that is the target of the action (e.g. CommunicationRequest).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $resource = null;
@@ -483,7 +455,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * Questionnaire that should be filled out, a SpecimenDefinition describing a
      * specimen to be collected, or an ObservationDefinition that specifies what
      * observation should be captured.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $definitionCanonical = null;
@@ -497,7 +468,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * Questionnaire that should be filled out, a SpecimenDefinition describing a
      * specimen to be collected, or an ObservationDefinition that specifies what
      * observation should be captured.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $definitionUri = null;
@@ -510,7 +480,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
      * the input.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $transform = null;
@@ -522,7 +491,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * example, if the dosage of a medication must be computed based on the patient's
      * weight, a customization would be used to specify an expression that calculated
      * the weight, and the path on the resource that would contain the result.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationDynamicValue[]
      */
     protected null|array $dynamicValue = [];
@@ -531,7 +499,6 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * Sub actions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationAction[]
      */
     protected null|array $action = [];

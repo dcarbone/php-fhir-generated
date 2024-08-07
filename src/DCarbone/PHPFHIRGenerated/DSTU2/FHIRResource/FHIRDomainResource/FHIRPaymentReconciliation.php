@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Response business identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -140,7 +139,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource reference.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $request = null;
@@ -151,7 +149,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * the Narrative, or extensions
      *
      * Transaction status: error, complete.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $outcome = null;
@@ -161,7 +158,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the status of the adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $disposition = null;
@@ -172,7 +168,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * The version of the style of resource contents. This should be mapped to the
      * allowable profiles for this and supporting resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $ruleset = null;
@@ -183,7 +178,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * The style (standard) and version of the original material which was converted
      * into this resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $originalRuleset = null;
@@ -196,7 +190,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the enclosed suite of services were performed or completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $created = null;
@@ -207,7 +200,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * The period of time for which payments have been gathered into this bulk payment
      * for settlement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -217,7 +209,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Insurer who produced this adjudicated response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $organization = null;
@@ -227,7 +218,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $requestProvider = null;
@@ -237,7 +227,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is responsible for the services rendered to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $requestOrganization = null;
@@ -246,7 +235,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * payment.
      *
      * List of individual settlement amounts and the corresponding transaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[]
      */
     protected null|array $detail = [];
@@ -256,13 +244,11 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The form to be used for printing the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $form = null;
     /**
      * Total payment amount.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $total = null;
@@ -271,7 +257,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * payment.
      *
      * Suite of notes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationNote[]
      */
     protected null|array $note = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCar
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,7 +100,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      *
      * Indicates specific responsibility of an individual within the care team, such as
      * "Primary care physician", "Trained social worker counselor", "Caregiver", etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $role = null;
@@ -111,7 +110,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      *
      * The specific person or organization who is participating/expected to participate
      * in the care team.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $member = null;
@@ -121,7 +119,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization of the practitioner.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $onBehalfOf = null;
@@ -132,7 +129,6 @@ class FHIRCareTeamParticipant extends FHIRBackboneElement
      *
      * Indicates when the specific member or organization did (or is intended to) come
      * into effect and end.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;

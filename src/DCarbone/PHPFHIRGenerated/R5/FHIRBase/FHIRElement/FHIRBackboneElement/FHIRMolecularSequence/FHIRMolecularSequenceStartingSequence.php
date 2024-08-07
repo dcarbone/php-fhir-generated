@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -132,7 +132,6 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The genome assembly used for starting sequence, e.g. GRCh38.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $genomeAssembly = null;
@@ -146,7 +145,6 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * replication through the interaction of specific proteins at one or more origins
      * of replication
      * ([SO:0000340](http://www.sequenceontology.org/browser/current_svn/term/SO:0000340)).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $chromosome = null;
@@ -157,7 +155,6 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference sequence that represents the starting sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $sequenceCodeableConcept = null;
@@ -167,7 +164,6 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The reference sequence that represents the starting sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $sequenceString = null;
@@ -177,7 +173,6 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference sequence that represents the starting sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $sequenceReference = null;
@@ -188,7 +183,6 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      *
      * Start position of the window on the starting sequence. This value should honor
      * the rules of the coordinateSystem.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $windowStart = null;
@@ -199,7 +193,6 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      *
      * End position of the window on the starting sequence. This value should honor the
      * rules of the coordinateSystem.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $windowEnd = null;
@@ -209,7 +202,6 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * A relative reference to a DNA strand based on gene orientation. The strand that
      * contains the open reading frame of the gene is the "sense" strand, and the
      * opposite complementary strand is the "antisense" strand.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIROrientationType
      */
     protected null|FHIROrientationType $orientation = null;
@@ -219,7 +211,6 @@ class FHIRMolecularSequenceStartingSequence extends FHIRBackboneElement
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end
      * is on the short arm of the chromosome, and the Crick strand as the one whose
      * 5'-end is on the long arm.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRStrandType
      */
     protected null|FHIRStrandType $strand = null;

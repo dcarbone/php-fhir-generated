@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Sequence of the information element which serves to provide a link.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $sequence = null;
@@ -126,7 +125,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * The general class of the information supplied: information; exception; accident,
      * employment; onset, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -139,7 +137,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * System and code pertaining to the specific information regarding special
      * conditions relating to the setting, treatment or patient for which care is
      * sought which may influence the adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -150,7 +147,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when or period to which this information refers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $timingDate = null;
@@ -160,7 +156,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date when or period to which this information refers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $timingPeriod = null;
@@ -171,7 +166,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -184,7 +178,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -195,7 +188,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $valueAttachment = null;
@@ -206,7 +198,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * Additional data or information such as resources, documents, images etc.
      * including references to the data or the actual inclusion of the data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $valueReference = null;
@@ -218,7 +209,6 @@ class FHIRClaimInformation extends FHIRBackboneElement
      *
      * For example, provides the reason for: the additional stay, or missing tooth or
      * any other situation where a reason code is required in addition to the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $reason = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNut
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * The kind of diet or dietary restriction such as fiber restricted diet or
      * diabetic diet.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -119,7 +118,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * The time period and frequency at which the diet should be given. The diet should
      * be given for the combination of all schedules if more than one schedule is
      * present.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming[]
      */
     protected null|array $schedule = [];
@@ -129,7 +127,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * Class that defines the quantity and type of nutrient modifications (for example
      * carbohydrate, fiber or sodium) required for the oral diet.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient[]
      */
     protected null|array $nutrient = [];
@@ -139,7 +136,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * Class that describes any texture modifications required for the patient to
      * safely consume various types of solid foods.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture[]
      */
     protected null|array $texture = [];
@@ -151,7 +147,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      *
      * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of
      * liquids or fluids served to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $fluidConsistencyType = [];
@@ -161,7 +156,6 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text or additional instructions or information pertaining to the oral diet.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $instruction = null;

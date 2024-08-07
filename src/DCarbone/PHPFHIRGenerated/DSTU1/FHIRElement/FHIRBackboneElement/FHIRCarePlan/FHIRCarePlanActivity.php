@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     /**
      * Internal reference that identifies the goals that this activity is intended to
      * contribute towards meeting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRIdPrimitive\FHIRXmlIdRef[]
      */
     protected null|array $goal = [];
@@ -110,7 +109,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies what progress is being made for the specific activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCarePlanActivityStatus
      */
     protected null|FHIRCarePlanActivityStatus $status = null;
@@ -120,7 +118,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * If true, indicates that the described activity is one that must NOT be engaged
      * in when following the plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $prohibited = null;
@@ -131,7 +128,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * Resources that describe follow-on actions resulting from the plan, such as drug
      * prescriptions, encounter records, appointments, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $actionResulting = [];
@@ -140,7 +136,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Notes about the execution of the activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $notes = null;
@@ -150,7 +145,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the proposed activity represented in a specific resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $detail = null;
@@ -161,7 +155,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      *
      * A simple summary of details suitable for a general care plan system (e.g. form
      * driven) that doesn't know about specific resources such as procedure etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanSimple
      */
     protected null|FHIRCarePlanSimple $simple = null;

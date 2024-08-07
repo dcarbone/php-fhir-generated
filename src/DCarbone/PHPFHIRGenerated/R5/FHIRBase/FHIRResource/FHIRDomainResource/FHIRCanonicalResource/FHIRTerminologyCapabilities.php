@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -202,7 +202,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the terminology capabilities is stored on different
      * servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -215,7 +214,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * A formal identifier that is used to identify this terminology capabilities when
      * it is represented in other formats, or referenced in a specification, model,
      * design or an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -230,7 +228,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * author and is not expected to be globally unique. For example, it might be a
      * timestamp (e.g. yyyymmdd) if a managed version is not available. There is also
      * no expectation that versions can be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -241,7 +238,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -252,7 +248,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -264,7 +259,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * A natural language name identifying the terminology capabilities. This name
      * should be usable as an identifier for the module by machine processing
      * applications such as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -274,7 +268,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the terminology capabilities.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -283,7 +276,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      *
      * The status of this terminology capabilities. Enables tracking the life-cycle of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -294,7 +286,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * A Boolean value to indicate that this terminology capabilities is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -311,7 +302,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the terminology capabilities changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -322,7 +312,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the terminology capabilities.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -333,7 +322,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -350,7 +338,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * consumer's perspective. Typically, this is used when the capability statement
      * describes a desired rather than an actual solution, for example as a formal
      * expression of requirements as part of an RFP.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -367,7 +354,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate terminology
      * capabilities instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -379,7 +365,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      *
      * A legal or geographic region in which the terminology capabilities is intended
      * to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -394,7 +379,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      *
      * Explanation of why this terminology capabilities is needed and why it has been
      * designed as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -410,7 +394,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * A copyright statement relating to the terminology capabilities and/or its
      * contents. Copyright statements are generally legal restrictions on the use and
      * publishing of the terminology capabilities.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -422,7 +405,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -432,7 +414,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind, not instance of
      * software) or a class of implementation (e.g. a desired purchase).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCapabilityStatementKind
      */
     protected null|FHIRCapabilityStatementKind $kind = null;
@@ -444,7 +425,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * Software that is covered by this terminology capability statement. It is used
      * when the statement describes the capabilities of a particular software version,
      * independent of an installation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesSoftware
      */
     protected null|FHIRTerminologyCapabilitiesSoftware $software = null;
@@ -456,7 +436,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * Identifies a specific implementation instance that is described by the
      * terminology capability statement - i.e. a particular installation, rather than
      * the capabilities of a software program.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesImplementation
      */
     protected null|FHIRTerminologyCapabilitiesImplementation $implementation = null;
@@ -465,7 +444,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server supports lockedDate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $lockedDate = null;
@@ -477,7 +455,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * Identifies a code system that is supported by the server. If there is a no code
      * system URL, then this declares the general assumptions a client can make about
      * support for any CodeSystem resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesCodeSystem[]
      */
     protected null|array $codeSystem = [];
@@ -488,7 +465,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      *
      * Information about the [ValueSet/$expand](valueset-operation-expand.html)
      * operation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesExpansion
      */
     protected null|FHIRTerminologyCapabilitiesExpansion $expansion = null;
@@ -497,7 +473,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      *
      * The degree to which the server supports the code search parameter on ValueSet,
      * if it is supported.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCodeSearchSupport
      */
     protected null|FHIRCodeSearchSupport $codeSearch = null;
@@ -508,7 +483,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      *
      * Information about the
      * [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesValidateCode
      */
     protected null|FHIRTerminologyCapabilitiesValidateCode $validateCode = null;
@@ -519,7 +493,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      *
      * Information about the
      * [ConceptMap/$translate](conceptmap-operation-translate.html) operation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesTranslation
      */
     protected null|FHIRTerminologyCapabilitiesTranslation $translation = null;
@@ -529,7 +502,6 @@ class FHIRTerminologyCapabilities extends FHIRCanonicalResource implements PHPFH
      * functionality or a statement of required or desired server implementation.
      *
      * Whether the $closure operation is supported.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesClosure
      */
     protected null|FHIRTerminologyCapabilitiesClosure $closure = null;

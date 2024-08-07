@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,6 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Information about why this link is of interest in this graph definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -144,7 +143,6 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Minimum occurrences for this link.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $min = null;
@@ -154,7 +152,6 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Maximum occurrences for this link.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $max = null;
@@ -167,7 +164,6 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The source node for this link.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $sourceId = null;
@@ -177,7 +173,6 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A FHIRPath expression that identifies one of FHIR References to other resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $path = null;
@@ -187,7 +182,6 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which slice (if profiled).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $sliceName = null;
@@ -200,7 +194,6 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The target node for this link.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $targetId = null;
@@ -210,7 +203,6 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A set of parameters to look up.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $params = null;
@@ -220,7 +212,6 @@ class FHIRGraphDefinitionLink extends FHIRBackboneElement
      * resource defines a set and makes rules about the set.
      *
      * Compartment Consistency Rules.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment[]
      */
     protected null|array $compartment = [];

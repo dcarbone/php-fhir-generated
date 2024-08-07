@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * URI for the Code System.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $uri = null;
@@ -112,7 +111,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * For the code system, a list of versions that are supported by the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesVersion[]
      */
     protected null|array $version = [];
@@ -121,7 +119,6 @@ class FHIRTerminologyCapabilitiesCodeSystem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if subsumption is supported for this version of the code system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $subsumption = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStruc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Name of the rule for internal references.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
     protected null|FHIRId $name = null;
@@ -112,7 +111,6 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * A Map of relationships between 2 structures that can be used to transform data.
      *
      * Source inputs to the mapping.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource[]
      */
     protected null|array $source = [];
@@ -120,7 +118,6 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * A Map of relationships between 2 structures that can be used to transform data.
      *
      * Content to create because of this mapping rule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget[]
      */
     protected null|array $target = [];
@@ -128,7 +125,6 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * A Map of relationships between 2 structures that can be used to transform data.
      *
      * Rules contained in this rule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[]
      */
     protected null|array $rule = [];
@@ -136,7 +132,6 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * A Map of relationships between 2 structures that can be used to transform data.
      *
      * Which other rules to apply in the context of this rule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent[]
      */
     protected null|array $dependent = [];
@@ -146,7 +141,6 @@ class FHIRStructureMapRule extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Documentation for this instance of data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $documentation = null;

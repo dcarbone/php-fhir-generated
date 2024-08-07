@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCod
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * A code - a text symbol - that uniquely identifies the concept within the code
      * system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -116,7 +115,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * A human readable string that is the recommended default way to present this
      * concept to a user.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $display = null;
@@ -129,7 +127,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * formal definitions required, because of the prevalence of legacy systems.
      * However, they are highly recommended, as without them there is no formal meaning
      * associated with the concept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $definition = null;
@@ -139,7 +136,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      *
      * Additional representations for the concept - other languages, aliases,
      * specialized purposes, used for particular purposes, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation[]
      */
     protected null|array $designation = [];
@@ -148,7 +144,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * systems.
      *
      * A property value for this concept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1[]
      */
     protected null|array $property = [];
@@ -159,7 +154,6 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * Defines children of a concept to produce a hierarchy of concepts. The nature of
      * the relationships is variable (is-a/contains/categorizes) - see
      * hierarchyMeaning.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept[]
      */
     protected null|array $concept = [];

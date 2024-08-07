@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -184,7 +184,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Business identifiers assigned to this adverse event by the performer or other
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -192,7 +191,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the adverse event or potential adverse event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRAdverseEventStatus
      */
     protected null|FHIRAdverseEventStatus $status = null;
@@ -201,7 +199,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Whether the event actually happened or was a near miss. Note that this is
      * independent of whether anyone was affected or harmed or how severely.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRAdverseEventActuality
      */
     protected null|FHIRAdverseEventActuality $actuality = null;
@@ -212,7 +209,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The overall type of event, intended for search and filtering purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -224,7 +220,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Specific event that occurred or that was averted, such as patient fall, wrong
      * organ removed, or wrong blood transfused.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -234,7 +229,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This subject or group impacted by the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -244,7 +238,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Encounter associated with the start of the AdverseEvent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -258,7 +251,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and perhaps time) when the adverse event occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -268,7 +260,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date (and perhaps time) when the adverse event occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $occurrencePeriod = null;
@@ -282,7 +273,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date (and perhaps time) when the adverse event occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     protected null|FHIRTiming $occurrenceTiming = null;
@@ -296,7 +286,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated or actual date the AdverseEvent began, in the opinion of the reporter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $detected = null;
@@ -310,7 +299,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date on which the existence of the AdverseEvent was first recorded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $recordedDate = null;
@@ -322,7 +310,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Information about the condition that occurred as a result of the adverse event,
      * such as hives due to the exposure to a substance (for example, a drug or a
      * chemical) or a broken leg as a result of the fall.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $resultingEffect = [];
@@ -332,7 +319,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The information about where the adverse event occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -343,7 +329,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Assessment whether this event, or averted event, was of clinical importance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $seriousness = null;
@@ -355,7 +340,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Describes the type of outcome from the adverse event, such as resolved,
      * recovering, ongoing, resolved-with-sequelae, or fatal.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $outcome = [];
@@ -366,7 +350,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Information on who recorded the adverse event. May be the patient or a
      * practitioner.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $recorder = null;
@@ -386,7 +369,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Indicates who or what participated in the adverse event and how they were
      * involved.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventParticipant[]
      */
     protected null|array $participant = [];
@@ -396,7 +378,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The research study that the subject is enrolled in.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $study = [];
@@ -407,7 +388,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Considered likely or probable or anticipated in the research study. Whether the
      * reported event matches any of the outcomes for the patient that are considered
      * by the study as known or likely.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $expectedInResearchStudy = null;
@@ -426,7 +406,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * implementation guides include specific extensions, value sets and constraints.
      *
      * Describes the entity that is suspected to have caused the adverse event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity[]
      */
     protected null|array $suspectEntity = [];
@@ -446,7 +425,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * The contributing factors suspected to have increased the probability or severity
      * of the adverse event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventContributingFactor[]
      */
     protected null|array $contributingFactor = [];
@@ -465,7 +443,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * implementation guides include specific extensions, value sets and constraints.
      *
      * Preventive actions that contributed to avoiding the adverse event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventPreventiveAction[]
      */
     protected null|array $preventiveAction = [];
@@ -485,7 +462,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * The ameliorating action taken after the adverse event occured in order to reduce
      * the extent of harm.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventMitigatingAction[]
      */
     protected null|array $mitigatingAction = [];
@@ -504,7 +480,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * implementation guides include specific extensions, value sets and constraints.
      *
      * Supporting information relevant to the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSupportingInfo[]
      */
     protected null|array $supportingInfo = [];
@@ -516,7 +491,6 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Comments made about the adverse event by the performer, subject or other
      * participants.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];

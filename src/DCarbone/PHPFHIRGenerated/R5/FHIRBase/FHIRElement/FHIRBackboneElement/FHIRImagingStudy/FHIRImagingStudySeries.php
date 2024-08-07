@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -144,7 +144,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The DICOM Series Instance UID for the series.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $uid = null;
@@ -154,7 +153,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The numeric identifier of this series in the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $number = null;
@@ -166,7 +164,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      *
      * The distinct modality for this series. This may include both acquisition and
      * non-acquisition modalities.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $modality = null;
@@ -176,7 +173,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the series.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -189,7 +185,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * number of instance elements this resource contains due to resource availability,
      * security, or other factors. This element should be present if any instance
      * elements are present.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $numberOfInstances = null;
@@ -202,7 +197,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * series. See implementation notes for information about using DICOM endpoints. A
      * series-level endpoint, if present, has precedence over a study-level endpoint
      * with the same Endpoint.connectionType.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $endpoint = [];
@@ -217,7 +211,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * for DICOM to SNOMED-CT mappings. The bodySite may indicate the laterality of
      * body part imaged; if so, it shall be consistent with any content of
      * ImagingStudy.series.laterality.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $bodySite = null;
@@ -230,7 +223,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * The laterality of the (possibly paired) anatomic structures examined. E.g., the
      * left knee, both lungs, or unpaired abdomen. If present, shall be consistent with
      * any laterality information indicated in ImagingStudy.series.bodySite.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $laterality = null;
@@ -240,7 +232,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen imaged, e.g., for whole slide imaging of a biopsy.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $specimen = [];
@@ -254,7 +245,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time the series was started.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $started = null;
@@ -266,7 +256,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * ultrasound), but a study may have multiple series of different modalities.
      *
      * Indicates who or what performed the series and how they were involved.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyPerformer[]
      */
     protected null|array $performer = [];
@@ -278,7 +267,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * ultrasound), but a study may have multiple series of different modalities.
      *
      * A single SOP instance within the series, e.g. an image, or presentation state.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance[]
      */
     protected null|array $instance = [];

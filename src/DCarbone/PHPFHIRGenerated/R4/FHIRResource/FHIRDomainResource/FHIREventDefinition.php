@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -169,7 +169,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      * address at which at which an authoritative instance of this event definition is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the event definition is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -182,7 +181,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      * A formal identifier that is used to identify this event definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -197,7 +195,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -209,7 +206,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      * A natural language name identifying the event definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -219,7 +215,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the event definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -230,7 +225,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * An explanatory or alternate title for the event definition giving additional
      * information about its content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $subtitle = null;
@@ -239,7 +233,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * The status of this event definition. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -250,7 +243,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      * A Boolean value to indicate that this event definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -262,7 +254,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * A code or group definition that describes the intended subject of the event
      * definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subjectCodeableConcept = null;
@@ -273,7 +264,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * A code or group definition that describes the intended subject of the event
      * definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subjectReference = null;
@@ -289,7 +279,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * event definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -299,7 +288,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the event definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -310,7 +298,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -325,7 +312,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * A free text natural language description of the event definition from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -342,7 +328,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate event definition
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -354,7 +339,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * A legal or geographic region in which the event definition is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -369,7 +353,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * Explanation of why this event definition is needed and why it has been designed
      * as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -380,7 +363,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * A detailed description of how the event definition is used from a clinical
      * perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $usage = null;
@@ -396,7 +378,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      * A copyright statement relating to the event definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the event definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -408,7 +389,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -420,7 +400,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -431,7 +410,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * The period during which the event definition content was or is planned to be in
      * active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -443,7 +421,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * Descriptive topics related to the module. Topics provide a high-level
      * categorization of the module that can be useful for filtering and searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $topic = [];
@@ -454,7 +431,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $author = [];
@@ -465,7 +441,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $editor = [];
@@ -476,7 +451,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $reviewer = [];
@@ -487,7 +461,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $endorser = [];
@@ -499,7 +472,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * Related resources such as additional documentation, justification, or
      * bibliographic references.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -512,7 +484,6 @@ class FHIREventDefinition extends FHIRDomainResource implements PHPFHIRContained
      * The trigger element defines when the event occurs. If more than one trigger
      * condition is specified, the event fires whenever any one of the trigger
      * conditions is met.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition[]
      */
     protected null|array $trigger = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Unique instance identifiers assigned to a device by the device or gateway
      * software, manufacturers, other organizations or owners. For example: handle ID.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -134,7 +133,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the type of the metric. For example: Heart Rate, PEEP Setting, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -146,7 +144,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Describes the unit that an observed value determined for this metric will have.
      * For example: Percent, Seconds, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $unit = null;
@@ -158,7 +155,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Describes the link to the Device that this DeviceMetric belongs to and that
      * contains administrative device information such as manufacturer, serial number,
      * etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $source = null;
@@ -173,7 +169,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Channel. This reference can be used by a client application to distinguish
      * DeviceMetrics that have the same type, but should be interpreted based on their
      * containment location.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $parent = null;
@@ -183,7 +178,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Indicates current operational state of the device. For example: On, Off,
      * Standby, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDeviceMetricOperationalStatus
      */
     protected null|FHIRDeviceMetricOperationalStatus $operationalStatus = null;
@@ -196,7 +190,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * a Patient Monitor that has ECG/HR and Pleth for example; the parameters are
      * displayed in different characteristic colors, such as HR-blue, BP-green, and PR
      * and SpO2- magenta.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDeviceMetricColor
      */
     protected null|FHIRDeviceMetricColor $color = null;
@@ -206,7 +199,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Indicates the category of the observation generation process. A DeviceMetric can
      * be for example a setting, measurement, or calculation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDeviceMetricCategory
      */
     protected null|FHIRDeviceMetricCategory $category = null;
@@ -227,7 +219,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * every hour. The update period may be different than the measurement repetition
      * time, if the device does not update the published observed value with the same
      * frequency as it was measured.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     protected null|FHIRTiming $measurementPeriod = null;
@@ -236,7 +227,6 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Describes the calibrations that have been performed or that are required to be
      * performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration[]
      */
     protected null|array $calibration = [];

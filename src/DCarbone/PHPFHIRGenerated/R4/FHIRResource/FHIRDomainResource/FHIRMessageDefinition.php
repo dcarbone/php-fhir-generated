@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -166,7 +166,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * The business identifier that is used to reference the MessageDefinition and *is*
      * expected to be consistent from server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -179,7 +178,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * A formal identifier that is used to identify this message definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -194,7 +192,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -206,7 +203,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * A natural language name identifying the message definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -216,7 +212,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the message definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -227,7 +222,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * the Narrative, or extensions
      *
      * A MessageDefinition that is superseded by this definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
     protected null|array $replaces = [];
@@ -236,7 +230,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * The status of this message definition. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -247,7 +240,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * A Boolean value to indicate that this message definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -263,7 +255,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the message definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -274,7 +265,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * The name of the organization or individual that published the message
      * definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -285,7 +275,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -300,7 +289,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * A free text natural language description of the message definition from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -317,7 +305,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate message definition
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -329,7 +316,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * A legal or geographic region in which the message definition is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -344,7 +330,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * Explanation of why this message definition is needed and why it has been
      * designed as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -360,7 +345,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * A copyright statement relating to the message definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the message definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -371,7 +355,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * the Narrative, or extensions
      *
      * The MessageDefinition that is the basis for the contents of this resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $base = null;
@@ -383,7 +366,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * Identifies a protocol or workflow that this MessageDefinition represents a step
      * in.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
     protected null|array $parent = [];
@@ -393,7 +375,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Event code or link to the EventDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $eventCoding = null;
@@ -403,7 +384,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Event code or link to the EventDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $eventUri = null;
@@ -412,7 +392,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The impact of the content of the message.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMessageSignificanceCategory
      */
     protected null|FHIRMessageSignificanceCategory $category = null;
@@ -424,7 +403,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * Identifies the resource (or resources) that are being addressed by the event.
      * For example, the Encounter for an admit message or two Account records for a
      * merge.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus[]
      */
     protected null|array $focus = [];
@@ -435,7 +413,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * Declare at a message definition level whether a response is required or only
      * upon error or success, or never.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMessageheaderResponseRequest
      */
     protected null|FHIRMessageheaderResponseRequest $responseRequired = null;
@@ -446,7 +423,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * Indicates what types of messages may be sent as an application-level response to
      * this message.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse[]
      */
     protected null|array $allowedResponse = [];
@@ -460,7 +436,6 @@ class FHIRMessageDefinition extends FHIRDomainResource implements PHPFHIRContain
      * canonical reference to a [[[GraphDefinition]]] that it controls what resources
      * are to be added to the bundle when building the document. The GraphDefinition
      * can also specify profiles that apply to the various resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
     protected null|array $graph = [];

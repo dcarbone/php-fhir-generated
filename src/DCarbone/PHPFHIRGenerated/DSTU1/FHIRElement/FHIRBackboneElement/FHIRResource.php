@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,6 @@ class FHIRResource extends FHIRBackboneElement
      *
      * The human language of the content. The value can be any valid value according to
      * BCP-47
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $language = null;
@@ -107,7 +106,6 @@ class FHIRResource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Text summary of resource content (for human interpretation)
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRNarrative
      */
     protected null|FHIRNarrative $text = null;
@@ -115,7 +113,6 @@ class FHIRResource extends FHIRBackboneElement
      * Contained, inline Resources. These resources do not have an independent
      * existence apart from the resource that contains them - they cannot be identified
      * independently, and nor can they have their own independent transaction scope
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\[]|PHPFHIRContainedTypeInterface[]
      */
     protected null|array $contained = [];

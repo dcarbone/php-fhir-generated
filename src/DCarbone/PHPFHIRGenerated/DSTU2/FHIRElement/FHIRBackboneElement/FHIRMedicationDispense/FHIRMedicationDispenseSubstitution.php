@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,7 +100,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      *
      * A code signifying whether a different drug was dispensed from what was
      * prescribed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -112,7 +111,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      *
      * Indicates the reason for the substitution of (or lack of substitution) from what
      * was prescribed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reason = [];
@@ -122,7 +120,6 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or organization that has primary responsibility for the substitution.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $responsibleParty = [];

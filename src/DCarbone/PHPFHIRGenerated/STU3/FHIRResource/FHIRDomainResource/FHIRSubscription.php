@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * The status of the subscription, which marks the server state for managing the
      * subscription.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSubscriptionStatus
      */
     protected null|FHIRSubscriptionStatus $status = null;
@@ -137,7 +136,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Contact details for a human to contact about the subscription. The primary use
      * of this for system administrator troubleshooting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint[]
      */
     protected null|array $contact = [];
@@ -149,7 +147,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time for the server to turn the subscription off.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $end = null;
@@ -159,7 +156,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of why this subscription is defined.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $reason = null;
@@ -170,7 +166,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * The rules that the server should use to determine when to generate notifications
      * for this subscription.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $criteria = null;
@@ -181,7 +176,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * A record of the last error that occurred when the server processed a
      * notification.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $error = null;
@@ -194,7 +188,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Details where to send notifications when resources are received that meet the
      * criteria.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionChannel
      */
     protected null|FHIRSubscriptionChannel $channel = null;
@@ -205,7 +198,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * A tag to add to any resource that matches the criteria, after the subscription
      * is processed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
     protected null|array $tag = [];

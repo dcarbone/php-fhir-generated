@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,7 +100,6 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization where the Practitioner performs the roles associated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $managingOrganization = null;
@@ -111,7 +110,6 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Roles which this practitioner is authorized to perform for the organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $role = null;
@@ -122,7 +120,6 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the practitioner.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $specialty = [];
@@ -133,7 +130,6 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      *
      * The period during which the person is authorized to act as a practitioner in
      * these role(s) for the organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -143,7 +139,6 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which this practitioner provides care.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $location = [];
@@ -154,7 +149,6 @@ class FHIRPractitionerPractitionerRole extends FHIRBackboneElement
      *
      * The list of healthcare services that this worker provides for this role's
      * Organization/Location(s).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $healthcareService = [];

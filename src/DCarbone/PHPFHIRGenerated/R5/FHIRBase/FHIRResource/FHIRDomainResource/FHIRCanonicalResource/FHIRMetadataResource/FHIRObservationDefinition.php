@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -214,7 +214,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * ObservationDefinition is (or will be) published. The URL SHOULD include the
      * major version of the ObservationDefinition. For more information see Technical
      * and Business Versions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -227,7 +226,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * Business identifiers assigned to this ObservationDefinition. by the performer
      * and/or other systems. These identifiers remain constant as the resource is
      * updated and propagates from server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -242,7 +240,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * and is not expected to be globally unique. For example, it might be a timestamp
      * (e.g. yyyymmdd) if a managed version is not available. There is also no
      * expectation that versions are orderable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -253,7 +250,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -264,7 +260,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -276,7 +271,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * A natural language name identifying the ObservationDefinition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -286,7 +280,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -294,7 +287,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -305,7 +297,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * A flag to indicate that this ObservationDefinition is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -322,7 +313,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the ObservationDefinition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -333,7 +323,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * Helps establish the "authority/credibility" of the ObservationDefinition. May
      * also allow for contact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -344,7 +333,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -359,7 +347,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * A free text natural language description of the ObservationDefinition from the
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -376,7 +363,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate
      * ObservationDefinition instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -387,7 +373,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A jurisdiction in which the ObservationDefinition is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -402,7 +387,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * Explains why this ObservationDefinition is needed and why it has been designed
      * as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -418,7 +402,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * Copyright statement relating to the ObservationDefinition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -430,7 +413,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -442,7 +424,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * The date on which the asset content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -454,7 +435,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * The date on which the asset content was last reviewed. Review happens
      * periodically after that, but doesn't change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -465,7 +445,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * The period during which the ObservationDefinition content was or is planned to
      * be effective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -477,7 +456,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * The canonical URL pointing to another FHIR-defined ObservationDefinition that is
      * adhered to in whole or in part by this definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $derivedFromCanonical = [];
@@ -488,7 +466,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * The URL pointing to an externally-defined observation definition, guideline or
      * other definition that is adhered to in whole or in part by this definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri[]
      */
     protected null|array $derivedFromUri = [];
@@ -500,7 +477,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * A code that describes the intended kind of subject of Observation instances
      * conforming to this ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $subject = [];
@@ -512,7 +488,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * The type of individual/organization/device that is expected to act upon
      * instances of this definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $performerType = null;
@@ -523,7 +498,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -535,7 +509,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * Describes what will be observed. Sometimes this is called the observation
      * "name".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -544,7 +517,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * The data types allowed for the value element of the instance observations
      * conforming to this ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRObservationDataType[]
      */
     protected null|array $permittedDataType = [];
@@ -554,7 +526,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * Multiple results allowed for observations conforming to this
      * ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $multipleResultsAllowed = null;
@@ -565,7 +536,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The site on the subject's body where the observation is to be made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $bodySite = null;
@@ -576,7 +546,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method or technique used to perform the observation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $method = null;
@@ -586,7 +555,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of specimen that this type of observation is produced on.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $specimen = [];
@@ -597,7 +565,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * The measurement model of device or actual device used to produce observations of
      * this type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $device = [];
@@ -608,7 +575,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * The preferred name to be used when reporting the results of observations
      * conforming to this ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $preferredReportName = null;
@@ -619,7 +585,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * Units allowed for the valueQuantity element in the instance observations
      * conforming to this ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding[]
      */
     protected null|array $permittedUnit = [];
@@ -630,7 +595,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * A set of qualified values associated with a context and a set of conditions -
      * provides a range for quantitative and ordinal observations and a collection of
      * value sets for qualitative observations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue[]
      */
     protected null|array $qualifiedValue = [];
@@ -642,7 +606,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * This ObservationDefinition defines a group observation (e.g. a battery, a panel
      * of tests, a set of vital sign measurements) that includes the target as a member
      * of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $hasMember = [];
@@ -652,7 +615,6 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      *
      * Some observations have multiple component observations, expressed as separate
      * code value pairs.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionComponent[]
      */
     protected null|array $component = [];

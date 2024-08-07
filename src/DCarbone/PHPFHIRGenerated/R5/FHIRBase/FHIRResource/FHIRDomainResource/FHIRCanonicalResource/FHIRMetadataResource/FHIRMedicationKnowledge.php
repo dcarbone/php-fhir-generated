@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -169,7 +169,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -183,7 +182,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * available. Usage note: This could be a standard medication code such as a code
      * from RxNorm, SNOMED CT, IDMP etc. It could also be a national or local formulary
      * code, optionally with translations to other code systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -194,7 +192,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * in active use within the drug database or inventory system. The status refers to
      * the validity about the information of the medication and not to its medicinal
      * properties.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMedicationKnowledgeStatusCodes
      */
     protected null|FHIRMedicationKnowledgeStatusCodes $status = null;
@@ -204,7 +201,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The creator or owner of the knowledge or information about the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $author = null;
@@ -215,7 +211,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Lists the jurisdictions that this medication knowledge was written for.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $intendedJurisdiction = [];
@@ -227,7 +222,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * All of the names for a medication, for example, the name(s) given to a
      * medication in different countries. For example, acetaminophen and paracetamol or
      * salbutamol and albuterol.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $name = [];
@@ -238,7 +232,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if
      * this is a generic medication (e.g. Rosuvastatin), this would link to a branded
      * product (e.g. Crestor.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge[]
      */
     protected null|array $relatedMedicationKnowledge = [];
@@ -249,7 +242,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      *
      * Links to associated medications that could be prescribed, dispensed or
      * administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $associatedMedication = [];
@@ -261,7 +253,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      *
      * Category of the medication or product (e.g. branded product, therapeutic moeity,
      * generic product, innovator product, etc.).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $productType = [];
@@ -269,7 +260,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * Information about a medication that is used to support knowledge.
      *
      * Associated documentation about the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph[]
      */
     protected null|array $monograph = [];
@@ -283,7 +273,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * the Narrative, or extensions
      *
      * The instructions for preparing the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $preparationInstruction = null;
@@ -291,7 +280,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * Information about a medication that is used to support knowledge.
      *
      * The price of the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost[]
      */
     protected null|array $cost = [];
@@ -299,7 +287,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * Information about a medication that is used to support knowledge.
      *
      * The program under which the medication is reviewed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram[]
      */
     protected null|array $monitoringProgram = [];
@@ -308,7 +295,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      *
      * Guidelines or protocols that are applicable for the administration of the
      * medication based on indication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIndicationGuideline[]
      */
     protected null|array $indicationGuideline = [];
@@ -316,7 +302,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * Information about a medication that is used to support knowledge.
      *
      * Categorization of the medication within a formulary or classification system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification[]
      */
     protected null|array $medicineClassification = [];
@@ -324,7 +309,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * Information about a medication that is used to support knowledge.
      *
      * Information that only applies to packages (not products).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgePackaging[]
      */
     protected null|array $packaging = [];
@@ -335,7 +319,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      *
      * Potential clinical issue with or between medication(s) (for example, drug-drug
      * interaction, drug-disease contraindication, drug-allergy interaction, etc.).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $clinicalUseIssue = [];
@@ -344,7 +327,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      *
      * Information on how the medication should be stored, for example, refrigeration
      * temperatures and length of stability at a given temperature.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeStorageGuideline[]
      */
     protected null|array $storageGuideline = [];
@@ -352,7 +334,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * Information about a medication that is used to support knowledge.
      *
      * Regulatory information about a medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory[]
      */
     protected null|array $regulatory = [];
@@ -362,7 +343,6 @@ class FHIRMedicationKnowledge extends FHIRMetadataResource implements PHPFHIRCon
      * Along with the link to a Medicinal Product Definition resource, this information
      * provides common definitional elements that are needed to understand the specific
      * medication that is being described.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDefinitional
      */
     protected null|FHIRMedicationKnowledgeDefinitional $definitional = null;

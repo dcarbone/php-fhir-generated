@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,6 @@ class FHIRInvoiceParticipant extends FHIRBackboneElement
      * Describes the type of involvement (e.g. transcriptionist, creator etc.). If the
      * invoice has been created automatically, the Participant may be a billing engine
      * or another kind of device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $role = null;
@@ -108,7 +107,6 @@ class FHIRInvoiceParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who performed or participated in the service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $actor = null;

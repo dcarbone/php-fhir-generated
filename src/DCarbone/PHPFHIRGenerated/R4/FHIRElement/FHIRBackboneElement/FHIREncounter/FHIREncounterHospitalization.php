@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREncou
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pre-admission identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $preAdmissionIdentifier = null;
@@ -114,7 +113,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location/organization from which the patient came before admission.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $origin = null;
@@ -125,7 +123,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * From where patient was admitted (physician referral, transfer).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $admitSource = null;
@@ -136,7 +133,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this hospitalization is a readmission and why if known.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $reAdmission = null;
@@ -147,7 +143,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Diet preferences reported by the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $dietPreference = [];
@@ -158,7 +153,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Special courtesies (VIP, board member).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $specialCourtesy = [];
@@ -170,7 +164,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      *
      * Any special requests that have been made for this hospitalization encounter,
      * such as the provision of specific equipment or other things.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $specialArrangement = [];
@@ -180,7 +173,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location/organization to which the patient is discharged.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $destination = null;
@@ -191,7 +183,6 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category or kind of location after discharge.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $dischargeDisposition = null;

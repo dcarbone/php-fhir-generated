@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCompa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,7 +100,6 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The name of a resource supported by the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -112,7 +111,6 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      * The name of a search parameter that represents the link to the compartment. More
      * than one may be listed because a resource may be linked to a compartment in more
      * than one way,.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $param = [];
@@ -122,7 +120,6 @@ class FHIRCompartmentDefinitionResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional documentation about the resource and compartment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $documentation = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -167,7 +167,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
      */
     protected null|FHIRBase64Binary $valueBase64Binary = null;
@@ -177,7 +176,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -189,7 +187,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $valueCode = null;
@@ -201,7 +198,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $valueDate = null;
@@ -215,7 +211,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $valueDateTime = null;
@@ -227,7 +222,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $valueDecimal = null;
@@ -241,7 +235,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
     protected null|FHIRId $valueId = null;
@@ -254,7 +247,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $valueInstant = null;
@@ -265,7 +257,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $valueInteger = null;
@@ -282,7 +273,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $valueMarkdown = null;
@@ -294,7 +284,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid
      */
     protected null|FHIROid $valueOid = null;
@@ -305,7 +294,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $valuePositiveInt = null;
@@ -316,7 +304,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -326,7 +313,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
     protected null|FHIRTime $valueTime = null;
@@ -337,7 +323,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $valueUnsignedInt = null;
@@ -348,7 +333,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $valueUri = null;
@@ -363,7 +347,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAddress
      */
     protected null|FHIRAddress $valueAddress = null;
@@ -374,7 +357,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $valueAge = null;
@@ -386,7 +368,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation
      */
     protected null|FHIRAnnotation $valueAnnotation = null;
@@ -397,7 +378,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $valueAttachment = null;
@@ -409,7 +389,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $valueCodeableConcept = null;
@@ -420,7 +399,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $valueCoding = null;
@@ -432,7 +410,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint
      */
     protected null|FHIRContactPoint $valueContactPoint = null;
@@ -445,7 +422,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRCount
      */
     protected null|FHIRCount $valueCount = null;
@@ -456,7 +432,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDistance
      */
     protected null|FHIRDistance $valueDistance = null;
@@ -467,7 +442,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $valueDuration = null;
@@ -478,7 +452,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRHumanName
      */
     protected null|FHIRHumanName $valueHumanName = null;
@@ -489,7 +462,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $valueIdentifier = null;
@@ -500,7 +472,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $valueMoney = null;
@@ -511,7 +482,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $valuePeriod = null;
@@ -524,7 +494,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -535,7 +504,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $valueRange = null;
@@ -547,7 +515,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $valueRatio = null;
@@ -558,7 +525,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $valueReference = null;
@@ -570,7 +536,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSampledData
      */
     protected null|FHIRSampledData $valueSampledData = null;
@@ -584,7 +549,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
      */
     protected null|FHIRSignature $valueSignature = null;
@@ -599,7 +563,6 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
     protected null|FHIRTiming $valueTiming = null;
@@ -612,13 +575,10 @@ class FHIRExtension extends FHIRElement
      *
      * Value of extension - may be a resource or one of a constrained set of the data
      * types (see Extensibility in the spec for list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
      */
     protected null|FHIRMeta $valueMeta = null;
-    /**
-     * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive
-     */
+    /** @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRUriPrimitive */
     protected null|FHIRUriPrimitive $url = null;
 
     /**

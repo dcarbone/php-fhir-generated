@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * An identifier that uniquely identifies this expansion of the valueset. Systems
      * may re-use the same identifier as long as the expansion and the definition
      * remain the same, but are not required to do so.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -103,7 +102,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time valueset expansion happened.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $timestamp = null;
@@ -111,7 +109,6 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Codes in the value set.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
      */
     protected null|array $contains = [];

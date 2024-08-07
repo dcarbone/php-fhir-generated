@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      * These are different ways of identifying nucleotides or amino acids within a
      * sequence. Different databases and file types may use different systems. For
      * detail definitions, see https://loinc.org/92822-6/ for more detail.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $coordinateSystem = null;
@@ -134,7 +133,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * Indicates the order in which the sequence should be considered when putting
      * multiple 'relative' elements together.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $ordinalPosition = null;
@@ -145,7 +143,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * Indicates the nucleotide range in the composed sequence when multiple 'relative'
      * elements are used together.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $sequenceRange = null;
@@ -154,7 +151,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      *
      * A sequence that is used as a starting sequence to describe variants that are
      * present in a sequence analyzed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStartingSequence
      */
     protected null|FHIRMolecularSequenceStartingSequence $startingSequence = null;
@@ -162,7 +158,6 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      * Representation of a molecular sequence.
      *
      * Changes in sequence from the starting sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceEdit[]
      */
     protected null|array $edit = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -124,7 +124,6 @@ class FHIRInventoryItemInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier for the physical instance, typically a serial number.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -134,7 +133,6 @@ class FHIRInventoryItemInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lot or batch number of the item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $lotNumber = null;
@@ -148,7 +146,6 @@ class FHIRInventoryItemInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The expiry date or date and time for the product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $expiry = null;
@@ -158,7 +155,6 @@ class FHIRInventoryItemInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject that the item is associated with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -168,7 +164,6 @@ class FHIRInventoryItemInstance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location that the item is associated with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $location = null;

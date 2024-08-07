@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExpla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,6 @@ class FHIRExplanationOfBenefitPayee extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of Party to be reimbursed: Subscriber, provider, other.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -107,7 +106,6 @@ class FHIRExplanationOfBenefitPayee extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the individual or organization to whom any payment will be made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $party = null;

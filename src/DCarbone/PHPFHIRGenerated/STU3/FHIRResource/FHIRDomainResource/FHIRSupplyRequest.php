@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,7 +131,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this supply request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -140,7 +139,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSupplyRequestStatus
      */
     protected null|FHIRSupplyRequestStatus $status = null;
@@ -152,7 +150,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -162,7 +159,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Indicates how quickly this SupplyRequest should be addressed with respect to
      * other requests.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestPriority
      */
     protected null|FHIRRequestPriority $priority = null;
@@ -171,7 +167,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * healthcare setting.
      *
      * The item being requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestOrderedItem
      */
     protected null|FHIRSupplyRequestOrderedItem $orderedItem = null;
@@ -184,7 +179,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request should be fulfilled.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -194,7 +188,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the request should be fulfilled.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $occurrencePeriod = null;
@@ -208,7 +201,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the request should be fulfilled.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
     protected null|FHIRTiming $occurrenceTiming = null;
@@ -221,7 +213,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request was made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authoredOn = null;
@@ -231,7 +222,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The individual who initiated the request and has responsibility for its
      * activation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestRequester
      */
     protected null|FHIRSupplyRequestRequester $requester = null;
@@ -241,7 +231,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who is intended to fulfill the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $supplier = [];
@@ -252,7 +241,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Why the supply item was requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $reasonCodeableConcept = null;
@@ -262,7 +250,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Why the supply item was requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $reasonReference = null;
@@ -272,7 +259,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the supply is expected to come from.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $deliverFrom = null;
@@ -282,7 +268,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the supply is destined to go.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $deliverTo = null;

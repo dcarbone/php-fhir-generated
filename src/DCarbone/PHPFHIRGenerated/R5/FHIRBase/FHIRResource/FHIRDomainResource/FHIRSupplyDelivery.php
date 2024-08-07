@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -146,7 +146,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * Identifier for the supply delivery event that is used to identify it across
      * multiple disparate systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -156,7 +155,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -166,7 +164,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component or step.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $partOf = [];
@@ -174,7 +171,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSupplyDeliveryStatus
      */
     protected null|FHIRSupplyDeliveryStatus $status = null;
@@ -184,7 +180,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the delivered item is for.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -196,7 +191,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * Indicates the type of supply being provided. Examples include: Medication,
      * Device, Biologically Derived Product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -204,7 +198,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements PHPFHIRContainedT
      * Record of delivery of what is supplied.
      *
      * The item that is being delivered or has been supplied.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSupplyDelivery\FHIRSupplyDeliverySuppliedItem[]
      */
     protected null|array $suppliedItem = [];
@@ -218,7 +211,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or time(s) the activity occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -228,7 +220,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or time(s) the activity occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $occurrencePeriod = null;
@@ -242,7 +233,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or time(s) the activity occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     protected null|FHIRTiming $occurrenceTiming = null;
@@ -252,7 +242,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization responsible for supplying the delivery.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $supplier = null;
@@ -262,7 +251,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the facility/location where the delivery was shipped to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $destination = null;
@@ -272,7 +260,6 @@ class FHIRSupplyDelivery extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the individual or organization that received the delivery.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $receiver = [];

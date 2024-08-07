@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -140,7 +140,6 @@ class FHIRConceptMapProperty1 extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A reference to a mapping property defined in ConceptMap.property.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -151,7 +150,6 @@ class FHIRConceptMapProperty1 extends FHIRBackboneElement
      *
      * The value of this property. If the type chosen for this element is 'code', then
      * the property SHALL be defined in a ConceptMap.property element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $valueCoding = null;
@@ -162,7 +160,6 @@ class FHIRConceptMapProperty1 extends FHIRBackboneElement
      *
      * The value of this property. If the type chosen for this element is 'code', then
      * the property SHALL be defined in a ConceptMap.property element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -173,7 +170,6 @@ class FHIRConceptMapProperty1 extends FHIRBackboneElement
      *
      * The value of this property. If the type chosen for this element is 'code', then
      * the property SHALL be defined in a ConceptMap.property element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $valueInteger = null;
@@ -183,7 +179,6 @@ class FHIRConceptMapProperty1 extends FHIRBackboneElement
      *
      * The value of this property. If the type chosen for this element is 'code', then
      * the property SHALL be defined in a ConceptMap.property element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -198,7 +193,6 @@ class FHIRConceptMapProperty1 extends FHIRBackboneElement
      *
      * The value of this property. If the type chosen for this element is 'code', then
      * the property SHALL be defined in a ConceptMap.property element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $valueDateTime = null;
@@ -210,7 +204,6 @@ class FHIRConceptMapProperty1 extends FHIRBackboneElement
      *
      * The value of this property. If the type chosen for this element is 'code', then
      * the property SHALL be defined in a ConceptMap.property element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $valueDecimal = null;
@@ -222,7 +215,6 @@ class FHIRConceptMapProperty1 extends FHIRBackboneElement
      *
      * The value of this property. If the type chosen for this element is 'code', then
      * the property SHALL be defined in a ConceptMap.property element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $valueCode = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * multiple-cardinality sub-elements. Note that the index must be an integer
      * constant. The path must resolve to an element of type code, Coding, or
      * CodeableConcept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $path = null;
@@ -126,7 +125,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * If valueSet is specified, the filter will return only those data items for which
      * the value of the code-valued element specified in the path is a member of the
      * specified valueset.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueSetString = null;
@@ -139,7 +137,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * If valueSet is specified, the filter will return only those data items for which
      * the value of the code-valued element specified in the path is a member of the
      * specified valueset.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $valueSetReference = null;
@@ -153,7 +150,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * valueCodeableConcept may be specified. If values are given, the filter will
      * return only those data items for which the code-valued attribute specified by
      * the path has a value that is one of the specified codes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode[]
      */
     protected null|array $valueCode = [];
@@ -166,7 +162,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * or valueCodeableConcept may be specified. If values are given, the filter will
      * return only those data items for which the code-valued attribute specified by
      * the path has a value that is one of the specified Codings.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
     protected null|array $valueCoding = [];
@@ -180,7 +175,6 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * valueConding, or valueCodeableConcept may be specified. If values are given, the
      * filter will return only those data items for which the code-valued attribute
      * specified by the path has a value that is one of the specified CodeableConcepts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $valueCodeableConcept = [];

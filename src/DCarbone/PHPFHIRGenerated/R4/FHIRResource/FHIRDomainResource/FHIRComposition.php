@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -142,7 +142,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * A version-independent identifier for the Composition. This identifier stays
      * constant as the composition is changed over time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -152,7 +151,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The workflow/clinical status of this composition. The status is a marker for the
      * clinical standing of the document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCompositionStatus
      */
     protected null|FHIRCompositionStatus $status = null;
@@ -165,7 +163,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      * Specifies the particular kind of composition (e.g. History and Physical,
      * Discharge Summary, Progress Note). This usually equates to the purpose of making
      * the composition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -178,7 +175,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      * A categorization for the type of the composition - helps for indexing and
      * searching. This may be implied by or derived from the code specified in the
      * Composition Type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -191,7 +187,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      * (patient or healthcare practitioner), a device (e.g. a machine) or even a group
      * of subjects (such as a document about a herd of livestock, or a set of patients
      * that share a common exposure).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -202,7 +197,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * Describes the clinical encounter or type of care this documentation is
      * associated with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -216,7 +210,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The composition editing time, when the composition was last logically changed by
      * the author.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -227,7 +220,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * Identifies who is responsible for the information in the composition, not
      * necessarily who typed it in.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $author = [];
@@ -237,7 +229,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Official human-readable label for the composition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -246,7 +237,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The code specifying the level of confidentiality of the Composition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRVConfidentialityClassification
      */
     protected null|FHIRVConfidentialityClassification $confidentiality = null;
@@ -262,7 +252,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      * Patient, Practitioner, Encounter, etc.).
      *
      * A participant who has attested to the accuracy of the composition/document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionAttester[]
      */
     protected null|array $attester = [];
@@ -273,7 +262,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the composition/document information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $custodian = null;
@@ -290,7 +278,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * Relationships that this composition has with other compositions or documents
      * that already exist.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionRelatesTo[]
      */
     protected null|array $relatesTo = [];
@@ -307,7 +294,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The clinical service, such as a colonoscopy or an appendectomy, being
      * documented.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionEvent[]
      */
     protected null|array $event = [];
@@ -323,7 +309,6 @@ class FHIRComposition extends FHIRDomainResource implements PHPFHIRContainedType
      * Patient, Practitioner, Encounter, etc.).
      *
      * The root of the sections that make up the composition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection[]
      */
     protected null|array $section = [];

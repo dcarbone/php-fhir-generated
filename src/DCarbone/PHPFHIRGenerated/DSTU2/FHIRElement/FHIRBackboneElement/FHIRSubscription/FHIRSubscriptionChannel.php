@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRSu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of channel to send notifications on.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSubscriptionChannelType
      */
     protected null|FHIRSubscriptionChannelType $type = null;
@@ -116,7 +115,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The uri that describes the actual end-point to send messages to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $endpoint = null;
@@ -128,7 +126,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * The mime type to send the payload in - either application/xml+fhir, or
      * application/json+fhir. If the mime type is blank, then there is no payload in
      * the notification, just a notification.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $payload = null;
@@ -138,7 +135,6 @@ class FHIRSubscriptionChannel extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional headers / information to send as part of the notification.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $header = null;

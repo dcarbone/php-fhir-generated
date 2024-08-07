@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -161,7 +161,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for the ImagingStudy such as DICOM Study Instance UID.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -170,7 +169,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * The current state of the ImagingStudy resource. This is not the status of any
      * ServiceRequest or Task resources associated with the ImagingStudy.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRImagingStudyStatus
      */
     protected null|FHIRImagingStudyStatus $status = null;
@@ -182,7 +180,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * A list of all the distinct values of series.modality. This may include both
      * acquisition and non-acquisition modalities.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $modality = [];
@@ -192,7 +189,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject, typically a patient, of the imaging study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -203,7 +199,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this ImagingStudy is made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -217,7 +212,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and time the study started.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $started = null;
@@ -228,7 +222,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * A list of the diagnostic requests that resulted in this imaging study being
      * performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -239,7 +232,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * A larger event of which this particular ImagingStudy is a component or step. For
      * example, an ImagingStudy as part of a procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $partOf = [];
@@ -249,7 +241,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The requesting/referring physician.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $referrer = null;
@@ -262,7 +253,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * study. See implementation notes for information about using DICOM endpoints. A
      * study-level endpoint applies to each series in the study, unless overridden by a
      * series-level endpoint with the same Endpoint.connectionType.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $endpoint = [];
@@ -275,7 +265,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * series elements this Resource contains due to resource availability, security,
      * or other factors. This element should be present if any series elements are
      * present.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $numberOfSeries = null;
@@ -288,7 +277,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * of instance elements this resource contains due to resource availability,
      * security, or other factors. This element should be present if any instance
      * elements are present.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $numberOfInstances = null;
@@ -300,7 +288,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * This field corresponds to the DICOM Procedure Code Sequence (0008,1032). This is
      * different from the FHIR Procedure resource that may include the ImagingStudy.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $procedure = [];
@@ -310,7 +297,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The principal physical location where the ImagingStudy was performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -322,7 +308,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Description of clinical condition indicating why the ImagingStudy was requested,
      * and/or Indicates another resource whose existence justifies this Study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $reason = [];
@@ -336,7 +321,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Description attribute (0008,1030). Observations or findings about the imaging
      * study should be recorded in another resource, e.g. Observation, and not in this
      * element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -347,7 +331,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * The Imaging Manager description of the study. Institution-generated description
      * or classification of the Study (component) performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -359,7 +342,6 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * ultrasound), but a study may have multiple series of different modalities.
      *
      * Each study has one or more series of images or other content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries[]
      */
     protected null|array $series = [];

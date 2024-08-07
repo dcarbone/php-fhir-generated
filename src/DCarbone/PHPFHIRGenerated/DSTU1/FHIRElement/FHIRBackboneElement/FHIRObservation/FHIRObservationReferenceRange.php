@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROb
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * The value of the low bound of the reference range. If this is omitted, the low
      * bound of the reference range is assumed to be meaningless. E.g. <2.3.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $low = null;
@@ -109,7 +108,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * The value of the high bound of the reference range. If this is omitted, the high
      * bound of the reference range is assumed to be meaningless. E.g. >5.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $high = null;
@@ -120,7 +118,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code for the meaning of the reference range.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $meaning = null;
@@ -131,7 +128,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * The age at which this reference range is applicable. This is a neonatal age
      * (e.g. number of weeks at term) if the meaning says so.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $age = null;

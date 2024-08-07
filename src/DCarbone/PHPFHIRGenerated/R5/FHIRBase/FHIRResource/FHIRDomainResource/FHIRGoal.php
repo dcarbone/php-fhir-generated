@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -160,7 +160,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * Business identifiers assigned to this goal by the performer or other systems
      * which remain constant as the resource is updated and propagates from server to
      * server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -168,7 +167,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The state of the goal throughout its lifecycle.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRGoalLifecycleStatus
      */
     protected null|FHIRGoalLifecycleStatus $lifecycleStatus = null;
@@ -179,7 +177,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the progression, or lack thereof, towards the goal against the target.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $achievementStatus = null;
@@ -190,7 +187,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a category the goal falls within.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -200,7 +196,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * After meeting the goal, ongoing activity is needed to sustain the goal
      * objective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $continuous = null;
@@ -212,7 +207,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * Identifies the mutually agreed level of importance associated with
      * reaching/sustaining the goal.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $priority = null;
@@ -225,7 +219,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * Human-readable and/or coded description of a specific desired objective of care,
      * such as "control blood pressure" or "negotiate an obstacle course" or "dance
      * with child at wedding".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $description = null;
@@ -236,7 +229,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * Identifies the patient, group or organization for whom the goal is being
      * established.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -247,7 +239,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or event after which the goal should begin being pursued.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $startDate = null;
@@ -258,7 +249,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date or event after which the goal should begin being pursued.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $startCodeableConcept = null;
@@ -268,7 +258,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * immunity via immunization, meeting a process improvement objective, etc.
      *
      * Indicates what should be done by when.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGoal\FHIRGoalTarget[]
      */
     protected null|array $target = [];
@@ -280,7 +269,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * Identifies when the current status. I.e. When initially created, when achieved,
      * when cancelled, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $statusDate = null;
@@ -290,7 +278,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Captures the reason for the current status.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $statusReason = null;
@@ -300,7 +287,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates whose goal this is - patient goal, practitioner goal, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $source = null;
@@ -311,7 +297,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * The identified conditions and other health record elements that are intended to
      * be addressed by the goal.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $addresses = [];
@@ -322,7 +307,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any comments related to the goal.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -334,7 +318,6 @@ class FHIRGoal extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * Identifies the change (or lack of change) at the point when the status of the
      * goal is assessed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $outcome = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDocum
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * Describes the clinical encounter or type of care that the document content is
      * associated with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $encounter = [];
@@ -119,7 +118,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * an appendectomy, being documented. In some cases, the event is inherent in the
      * type Code, such as a "History and Physical Report" in which the procedure being
      * documented is necessarily a "History and Physical" act.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $event = [];
@@ -130,7 +128,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * The time period over which the service that is described by the document was
      * provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -141,7 +138,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of facility where the patient was seen.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $facilityType = null;
@@ -153,7 +149,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * This property may convey specifics about the practice setting where the content
      * was created, often reflecting the clinical specialty.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $practiceSetting = null;
@@ -164,7 +159,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      *
      * The Patient Information as known when the document was published. May be a
      * reference to a version specific, or contained.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $sourcePatientInfo = null;
@@ -174,7 +168,6 @@ class FHIRDocumentReferenceContext extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Related identifiers or resources associated with the DocumentReference.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $related = [];

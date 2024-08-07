@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCap
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded identifier of a supported messaging event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $code = null;
@@ -117,7 +116,6 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The impact of the content of the message.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMessageSignificanceCategory
      */
     protected null|FHIRMessageSignificanceCategory $category = null;
@@ -127,7 +125,6 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement
      *
      * The mode of this event declaration - whether an application is a sender or
      * receiver.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIREventCapabilityMode
      */
     protected null|FHIREventCapabilityMode $mode = null;
@@ -137,7 +134,6 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement
      *
      * A resource associated with the event. This is the resource that defines the
      * event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType
      */
     protected null|FHIRResourceType $focus = null;
@@ -147,7 +143,6 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about the request for this event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $request = null;
@@ -157,7 +152,6 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Information about the response for this event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $response = null;
@@ -168,7 +162,6 @@ class FHIRCapabilityStatementEvent extends FHIRBackboneElement
      *
      * Guidance on how this event is handled, such as internal system trigger points,
      * business rules, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $documentation = null;

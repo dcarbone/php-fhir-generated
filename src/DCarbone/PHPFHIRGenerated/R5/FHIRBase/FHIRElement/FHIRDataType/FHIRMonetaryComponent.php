@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,7 +129,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      * the Narrative, or extensions
      *
      * base | surcharge | deduction | discount | tax | informational.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $type = null;
@@ -141,7 +140,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      *
      * Codes may be used to differentiate between kinds of taxes, surcharges, discounts
      * etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -152,7 +150,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Factor used for calculating this component.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $factor = null;
@@ -162,7 +159,6 @@ class FHIRMonetaryComponent extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Explicit value amount to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     protected null|FHIRMoney $amount = null;

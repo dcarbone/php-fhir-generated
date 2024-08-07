@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -146,7 +146,6 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * The identifier(s) of this Ingredient that are assigned by business processes
      * and/or used to refer to it when a direct URL reference to the resource itself is
      * not appropriate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -154,7 +153,6 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this ingredient. Enables tracking the life-cycle of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -164,7 +162,6 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product which this ingredient is a constituent part of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $for = [];
@@ -176,7 +173,6 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * A classification of the ingredient identifying its purpose within the product,
      * e.g. active, inactive.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $role = null;
@@ -189,7 +185,6 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A classification of the ingredient identifying its precise purpose(s) in the
      * drug product. This extends the Ingredient.role to add more detail. Example:
      * antioxidant, alkalizing agent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $function = [];
@@ -201,7 +196,6 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * A classification of the ingredient according to where in the physical item it
      * tends to be used, such the outer shell of a tablet, inner body or ink.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $group = null;
@@ -213,7 +207,6 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * of the substance, so if a reference to a SubstanceDefinition is used to decribe
      * that (rather than just a code), the allergen information should go there, not
      * here.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $allergenicIndicator = null;
@@ -228,7 +221,6 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * A place for providing any notes that are relevant to the component, e.g. removed
      * during process, adjusted for loss on drying.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $comment = null;
@@ -240,7 +232,6 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Manufacturer(s) currently being used 3) Set of organisations allowed to
      * manufacture this ingredient for this product Users must be clear on the
      * application of context relevant to their use case.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientManufacturer[]
      */
     protected null|array $manufacturer = [];
@@ -248,7 +239,6 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * The substance that comprises this ingredient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientSubstance
      */
     protected null|FHIRIngredientSubstance $substance = null;

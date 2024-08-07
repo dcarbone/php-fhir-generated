@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specified substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -107,7 +106,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The group of specified substance, e.g. group 1 to 4.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $group = null;
@@ -118,7 +116,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Confidentiality level of the specified substance as the ingredient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $confidentiality = null;
@@ -127,7 +124,6 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      *
      * Quantity of the substance or specified substance present in the manufactured
      * item or pharmaceutical product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength[]
      */
     protected null|array $strength = [];

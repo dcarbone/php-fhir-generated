@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,7 +129,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Business identifiers assigned to this health insurance product which remain
      * constant as the resource is updated and propagates from server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -137,7 +136,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the health insurance product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -148,7 +146,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of health insurance product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -158,7 +155,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Official name of the health insurance product as designated by the owner.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -169,7 +165,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * A list of alternate names that the product is known as, or was known as in the
      * past.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $alias = [];
@@ -179,7 +174,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period of time that the health insurance product is available.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -191,7 +185,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * The entity that is providing the health insurance product and underwriting the
      * risk. This is typically an insurance carriers, other third-party payers, or
      * health plan sponsors comonly referred to as 'payers'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $ownedBy = null;
@@ -203,7 +196,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * An organization which administer other services such as underwriting, customer
      * service and/or claims processing on behalf of the health insurance product
      * owner.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $administeredBy = null;
@@ -213,7 +205,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The geographic region in which a health insurance product's benefits apply.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $coverageArea = [];
@@ -221,7 +212,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * The contact for the health insurance product for a certain purpose.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanContact[]
      */
     protected null|array $contact = [];
@@ -232,7 +222,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The technical endpoints providing access to services operated for the health
      * insurance product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $endpoint = [];
@@ -242,7 +231,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the network included in the health insurance product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $network = [];
@@ -250,7 +238,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Details about the coverage offered by the insurance product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanCoverage[]
      */
     protected null|array $coverage = [];
@@ -258,7 +245,6 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Details about an insurance plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanPlan[]
      */
     protected null|array $plan = [];

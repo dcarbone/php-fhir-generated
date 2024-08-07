@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item that the map refers to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -117,7 +116,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $display = null;
@@ -127,7 +125,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * The equivalence between the source and target concepts (counting for the
      * dependencies and products). The equivalence is read from target to source (e.g.
      * the target is 'wider' than the source).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRConceptMapEquivalence
      */
     protected null|FHIRConceptMapEquivalence $equivalence = null;
@@ -138,7 +135,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      *
      * A description of status/issues in mapping that conveys additional information
      * not represented in the structured data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $comment = null;
@@ -149,7 +145,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * A set of additional dependencies for this mapping to hold. This mapping is only
      * applicable if the specified element can be resolved, and it has the specified
      * value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
     protected null|array $dependsOn = [];
@@ -161,7 +156,6 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * execute this mapping, the specified element must be mapped to some data element
      * or source that is in context. The mapping may still be useful without a place
      * for the additional data elements, but the equivalence cannot be relied on.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
     protected null|array $product = [];

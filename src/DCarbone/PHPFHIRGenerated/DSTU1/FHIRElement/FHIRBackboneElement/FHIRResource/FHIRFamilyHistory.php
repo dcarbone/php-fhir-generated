@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRFamilyHistory extends FHIRResource implements PHPFHIRContainedTypeInte
      * defined by business processes and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -115,7 +114,6 @@ class FHIRFamilyHistory extends FHIRResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this history concerns.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $subject = null;
@@ -124,7 +122,6 @@ class FHIRFamilyHistory extends FHIRResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Conveys information about family history not specific to individual relations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $note = null;
@@ -134,7 +131,6 @@ class FHIRFamilyHistory extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * The related person. Each FamilyHistory resource contains the entire family
      * history for a single person.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryRelation[]
      */
     protected null|array $relation = [];

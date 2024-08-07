@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -140,7 +140,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this coverage eligiblity request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -149,7 +148,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     protected null|FHIRFinancialResourceStatusCodes $status = null;
@@ -162,7 +160,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * discovered; discovery and return of coverages for the patient; and/or validation
      * that the specified coverage is in-force at the date/period specified or 'now' if
      * not specified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIREligibilityResponsePurpose[]
      */
     protected null|array $purpose = [];
@@ -173,7 +170,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      *
      * The party who is the beneficiary of the supplied coverage and for whom
      * eligibility is sought.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -185,7 +181,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $servicedDate = null;
@@ -196,7 +191,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $servicedPeriod = null;
@@ -209,7 +203,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this resource was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $created = null;
@@ -219,7 +212,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider which is responsible for the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $requestor = null;
@@ -229,7 +221,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the original request resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $request = null;
@@ -237,7 +228,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The outcome of the request processing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRemittanceOutcome
      */
     protected null|FHIRRemittanceOutcome $outcome = null;
@@ -247,7 +237,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human readable description of the status of the adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $disposition = null;
@@ -258,7 +247,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      *
      * The Insurer who issued the coverage in question and is the author of the
      * response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $insurer = null;
@@ -268,7 +256,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      *
      * Financial instruments for reimbursement for the health care products and
      * services.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseInsurance[]
      */
     protected null|array $insurance = [];
@@ -279,7 +266,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      *
      * A reference from the Insurer to which these services pertain to be used on
      * further communication and as proof that the request occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $preAuthRef = null;
@@ -290,7 +276,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code for the form to be used for printing the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $form = null;
@@ -299,7 +284,6 @@ class FHIRCoverageEligibilityResponse extends FHIRDomainResource implements PHPF
      * CoverageEligibilityRequest resource.
      *
      * Errors encountered during the processing of the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseError[]
      */
     protected null|array $error = [];

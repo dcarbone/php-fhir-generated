@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTas
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,7 +93,6 @@ class FHIRTaskRequester extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who initiated the task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $agent = null;
@@ -104,7 +103,6 @@ class FHIRTaskRequester extends FHIRBackboneElement
      *
      * The organization the device or practitioner was acting on behalf of when they
      * initiated the task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $onBehalfOf = null;

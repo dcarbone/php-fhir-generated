@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the aspect of the subject's journey that the state refers to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -134,7 +133,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The current state of the subject.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subjectState = null;
@@ -145,7 +143,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The milestones the subject has passed through.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $milestone = null;
@@ -157,7 +154,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      *
      * The reason for the state change. If coded it should follow the formal subject
      * state model.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $reason = null;
@@ -171,7 +167,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the new status started.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $startDate = null;
@@ -185,7 +180,6 @@ class FHIRResearchSubjectProgress extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the state ended.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $endDate = null;

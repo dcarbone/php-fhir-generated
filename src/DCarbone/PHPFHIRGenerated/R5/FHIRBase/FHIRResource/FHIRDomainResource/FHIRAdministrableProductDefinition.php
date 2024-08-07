@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -144,7 +144,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for the administrable product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -153,7 +152,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
      *
      * The status of this administrable product. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -169,7 +167,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
      * possibly also a cream. This is distinct from the 'producedFrom' which refers to
      * the specific components of the product that are used in this preparation, rather
      * than the product as a whole.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $formOf = [];
@@ -184,7 +181,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
      * manufactured form was 'powder for solution for injection', the administrable
      * dose form could be 'solution for injection' (once mixed with another item having
      * manufactured form 'solvent for solution for injection').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $administrableDoseForm = null;
@@ -197,7 +193,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
      * The presentation type in which this item is given to a patient. e.g. for a spray
      * - 'puff' (as in 'contains 100 mcg per puff'), or for a liquid - 'vial' (as in
      * 'contains 5 ml per vial').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $unitOfPresentation = null;
@@ -214,7 +209,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
      * example, an administrable form might involve combining a liquid and a powder
      * available as part of an overall product, but not involve applying the also
      * supplied cream.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $producedFrom = [];
@@ -230,7 +224,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
      * used to make this, or using by incoming references from the Ingredient resource,
      * to state in detail which substances exist within this. This element allows a
      * basic coded ingredient to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $ingredient = [];
@@ -242,7 +235,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
      * A device that is integral to the medicinal product, in effect being considered
      * as an "ingredient" of the medicinal product. This is not intended for devices
      * that are just co-packaged.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $device = null;
@@ -260,7 +252,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
      * used when the other structured properties of this resource are insufficient or
      * cannot be supported. It is not intended to duplicate information already carried
      * elswehere.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -270,7 +261,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
      * performed).
      *
      * Characteristics e.g. a product's onset of action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionProperty[]
      */
     protected null|array $property = [];
@@ -283,7 +273,6 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
      * some regions this is referred to as the licenced or approved route.
      * RouteOfAdministration cannot be used when the 'formOf' product already uses
      * MedicinalProductDefinition.route (and vice versa).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionRouteOfAdministration[]
      */
     protected null|array $routeOfAdministration = [];

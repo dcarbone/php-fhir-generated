@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRGr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies the kind of trait being asserted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -113,7 +112,6 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
      * of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $valueCodeableConcept = null;
@@ -123,7 +121,6 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
      * of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -136,7 +133,6 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
      * of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -147,7 +143,6 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * The value of the trait that holds (or does not hold - see 'exclude') for members
      * of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $valueRange = null;
@@ -157,7 +152,6 @@ class FHIRGroupCharacteristic extends FHIRBackboneElement
      *
      * If true, indicates the characteristic is one that is NOT held by members of the
      * group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $exclude = null;

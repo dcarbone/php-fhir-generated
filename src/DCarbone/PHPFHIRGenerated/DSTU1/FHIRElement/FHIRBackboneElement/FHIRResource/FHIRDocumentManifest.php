@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,7 +119,6 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      *
      * A single identifier that uniquely identifies this manifest. Principally used to
      * refer to the manifest in non-FHIR contexts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $masterIdentifier = null;
@@ -130,7 +129,6 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      *
      * Other identifiers associated with the document, including version independent,
      * source record and workflow related identifiers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -144,7 +142,6 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * subjects (such as a document about a herd of farm animals, or a set of patients
      * that share a common exposure). If the documents cross more than one subject,
      * then more than one subject is allowed here (unusual use case).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $subject = [];
@@ -155,7 +152,6 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      *
      * A patient, practitioner, or organization for which this set of documents is
      * intended.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $recipient = [];
@@ -169,7 +165,6 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * Summary, Prescription, etc.). The type of a set of documents may be the same as
      * one of the documents in it - especially if there is only one - but it may be
      * wider.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -179,7 +174,6 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $author = [];
@@ -193,7 +187,6 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * When the document manifest was created for submission to the server (not
      * necessarily the same thing as the actual resource last modified time, since it
      * may be modified, replicated etc).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $created = null;
@@ -203,7 +196,6 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      *
      * Identifies the source system, application, or software that produced the
      * document manifest.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $source = null;
@@ -211,7 +203,6 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document manifest.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDocumentReferenceStatus
      */
     protected null|FHIRDocumentReferenceStatus $status = null;
@@ -221,7 +212,6 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this document manifest replaces another.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $supercedes = null;
@@ -231,7 +221,6 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      *
      * Human-readable description of the source document. This is sometimes known as
      * the "title".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -242,7 +231,6 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code specifying the level of confidentiality of this set of Documents.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $confidentiality = null;
@@ -254,7 +242,6 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * The list of resources that describe the parts of this document reference.
      * Usually, these would be document references, but direct references to binary
      * attachments and images are also allowed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $content = [];

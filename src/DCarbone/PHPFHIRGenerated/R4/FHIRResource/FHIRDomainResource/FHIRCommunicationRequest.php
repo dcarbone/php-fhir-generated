@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -145,7 +145,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * Business identifiers assigned to this communication request by the performer or
      * other systems which remain constant as the resource is updated and propagates
      * from server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -155,7 +154,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan or proposal that is fulfilled in whole or in part by this request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -165,7 +163,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $replaces = [];
@@ -178,7 +175,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * A shared identifier common to all requests that were authorized more or less
      * simultaneously by a single author, representing the identifier of the
      * requisition, prescription or similar form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $groupIdentifier = null;
@@ -188,7 +184,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the proposal or order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestStatus
      */
     protected null|FHIRRequestStatus $status = null;
@@ -199,7 +194,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures the reason for the current state of the CommunicationRequest.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $statusReason = null;
@@ -211,7 +205,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * The type of message to be sent such as alert, notification, reminder,
      * instruction, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -221,7 +214,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * Characterizes how quickly the proposed act must be initiated. Includes concepts
      * such as stat, urgent, routine.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestPriority
      */
     protected null|FHIRRequestPriority $priority = null;
@@ -231,7 +223,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * If true indicates that the CommunicationRequest is asking for the specified
      * action to *not* occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $doNotPerform = null;
@@ -242,7 +233,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A channel that was used for this communication (e.g. email, fax).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $medium = [];
@@ -252,7 +242,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group that is the focus of this communication request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -263,7 +252,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * Other resources that pertain to this communication request and to which this
      * communication request should be associated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $about = [];
@@ -274,7 +262,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * The Encounter during which this CommunicationRequest was created or to which the
      * creation of this record is tightly associated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -284,7 +271,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * agency be notified about a reportable condition.
      *
      * Text, attachment(s), or resource(s) to be communicated to the recipient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCommunicationRequest\FHIRCommunicationRequestPayload[]
      */
     protected null|array $payload = [];
@@ -297,7 +283,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when this communication is to occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -307,7 +292,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time when this communication is to occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $occurrencePeriod = null;
@@ -321,7 +305,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * For draft requests, indicates the date of initial creation. For requests with
      * other statuses, indicates the date of activation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authoredOn = null;
@@ -332,7 +315,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * The device, individual, or organization who initiated the request and has
      * responsibility for its activation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $requester = null;
@@ -343,7 +325,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * The entity (e.g. person, organization, clinical information system, device,
      * group, or care team) which is the intended target of the communication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $recipient = [];
@@ -354,7 +335,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * The entity (e.g. person, organization, clinical information system, or device)
      * which is to be the source of the communication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $sender = null;
@@ -365,7 +345,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the request is being made in coded or textual form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonCode = [];
@@ -375,7 +354,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $reasonReference = [];
@@ -387,7 +365,6 @@ class FHIRCommunicationRequest extends FHIRDomainResource implements PHPFHIRCont
      *
      * Comments made about the request by the requester, sender, recipient, subject or
      * other participants.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];

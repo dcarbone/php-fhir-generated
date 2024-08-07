@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date and Time the study took place.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $dateTime = null;
@@ -147,7 +146,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who the images are of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $subject = null;
@@ -157,7 +155,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * the Narrative, or extensions
      *
      * Formal identifier for the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIROid
      */
     protected null|FHIROid $uid = null;
@@ -167,7 +164,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Accession Number.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $accessionNo = null;
@@ -177,7 +173,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other identifiers for the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -188,7 +183,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      *
      * A list of the diagnostic orders that resulted in this imaging study being
      * performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $order = [];
@@ -199,7 +193,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * A list of all the Series.ImageModality values that are actual acquisition
      * modalities, i.e. those in the DICOM Context Group 29 (value set OID
      * 1.2.840.10008.6.1.19).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRImagingModality[]
      */
     protected null|array $modality = [];
@@ -209,7 +202,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The requesting/referring physician.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $referrer = null;
@@ -218,7 +210,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Availability of study (online, offline or nearline).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstanceAvailability
      */
     protected null|FHIRInstanceAvailability $availability = null;
@@ -227,7 +218,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * WADO-RS URI where Study is available.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -236,7 +226,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Number of Series in Study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $numberOfSeries = null;
@@ -245,7 +234,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Number of SOP Instances in Study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $numberOfInstances = null;
@@ -254,7 +242,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Diagnoses etc provided with request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $clinicalInformation = null;
@@ -264,7 +251,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of procedure performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding[]
      */
     protected null|array $procedure = [];
@@ -274,7 +260,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who read study and interpreted the images.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $interpreter = null;
@@ -284,7 +269,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      *
      * Institution-generated description or classification of the Study (component)
      * performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -294,7 +278,6 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * key images.
      *
      * Each study has one or more series of image instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries[]
      */
     protected null|array $series = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      *
      * Identifies a specific instance of the entity. The reference should be version
      * specific. This is allowed to be a Parameters resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $what = null;
@@ -134,7 +133,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code representing the role the entity played in the event being audited.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $role = null;
@@ -145,7 +143,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Security labels for the identified entity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $securityLabel = [];
@@ -155,7 +152,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The query parameters for a query-type entities.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBase64Binary
      */
     protected null|FHIRBase64Binary $query = null;
@@ -164,7 +160,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * security, maintenance, and performance analysis.
      *
      * Tagged value pairs for conveying additional information about the entity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail[]
      */
     protected null|array $detail = [];
@@ -177,7 +172,6 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * media (the entity) are used by an agent. For example when importing data from a
      * device, the device would be described in an entity, and the user importing data
      * from that media would be indicated as the entity.agent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent[]
      */
     protected null|array $agent = [];

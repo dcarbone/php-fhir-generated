@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The category of patient centric costs associated with treatment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -135,7 +134,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -147,7 +145,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * Is a flag to indicate whether the benefits refer to in-network providers or
      * out-of-network providers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $network = null;
@@ -158,7 +155,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the benefits apply to an individual or to the family.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $unit = null;
@@ -170,7 +166,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum
      * annual visits'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $term = null;
@@ -182,7 +177,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount due from the patient for the cost category.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -192,7 +186,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount due from the patient for the cost category.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     protected null|FHIRMoney $valueMoney = null;
@@ -202,7 +195,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * A suite of codes indicating exceptions or reductions to patient costs and their
      * effective periods.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException[]
      */
     protected null|array $exception = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,6 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this particular recommendation record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -143,7 +142,6 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient the recommendation(s) are for.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -157,7 +155,6 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the immunization recommendation(s) were created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -167,7 +164,6 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the authority who published the protocol (e.g. ACIP).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $authority = null;
@@ -176,7 +172,6 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements PHPFH
      * a published schedule with optional supporting justification.
      *
      * Vaccine administration recommendations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation[]
      */
     protected null|array $recommendation = [];

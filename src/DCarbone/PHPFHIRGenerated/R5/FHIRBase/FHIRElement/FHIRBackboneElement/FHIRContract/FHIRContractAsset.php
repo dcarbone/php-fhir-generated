@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -138,7 +138,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Differentiates the kind of the asset .
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $scope = null;
@@ -149,7 +148,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Target entity type about which the term may be concerned.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -159,7 +157,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Associated entities.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $typeReference = [];
@@ -170,7 +167,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * May be a subtype or part of an offered asset.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $subtype = [];
@@ -182,7 +178,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      * Specifies the applicability of the term to an asset resource instance, and
      * instances it refers to or instances that refer to it, and/or are owned by the
      * offeree.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $relationship = null;
@@ -191,7 +186,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      * policy or agreement.
      *
      * Circumstance of the asset.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContext[]
      */
     protected null|array $context = [];
@@ -202,7 +196,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Description of the quality and completeness of the asset that may be a factor in
      * its valuation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $condition = null;
@@ -213,7 +206,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of Asset availability for use or ownership.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $periodType = [];
@@ -223,7 +215,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Asset relevant contractual time period.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod[]
      */
     protected null|array $period = [];
@@ -233,7 +224,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period of asset use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod[]
      */
     protected null|array $usePeriod = [];
@@ -244,7 +234,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Clause or question text (Prose Object) concerning the asset in a linked form,
      * such as a QuestionnaireResponse used in the formation of the contract.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -255,7 +244,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      *
      * Id [identifier??] of the clause or question text about the asset in the
      * referenced form or QuestionnaireResponse.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $linkId = [];
@@ -264,7 +252,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      * policy or agreement.
      *
      * Response to assets.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer[]
      */
     protected null|array $answer = [];
@@ -274,7 +261,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Security labels that protects the asset.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt[]
      */
     protected null|array $securityLabelNumber = [];
@@ -283,7 +269,6 @@ class FHIRContractAsset extends FHIRBackboneElement
      * policy or agreement.
      *
      * Contract Valued Item List.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem[]
      */
     protected null|array $valuedItem = [];

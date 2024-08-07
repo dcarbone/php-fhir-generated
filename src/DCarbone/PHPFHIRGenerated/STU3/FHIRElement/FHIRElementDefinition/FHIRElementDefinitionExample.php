@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -201,7 +201,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the purpose of this example amoung the set of examples.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $label = null;
@@ -212,7 +211,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBase64Binary
      */
     protected null|FHIRBase64Binary $valueBase64Binary = null;
@@ -222,7 +220,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -234,7 +231,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $valueCode = null;
@@ -246,7 +242,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $valueDate = null;
@@ -260,7 +255,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $valueDateTime = null;
@@ -272,7 +266,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $valueDecimal = null;
@@ -286,7 +279,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
     protected null|FHIRId $valueId = null;
@@ -299,7 +291,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $valueInstant = null;
@@ -310,7 +301,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $valueInteger = null;
@@ -327,7 +317,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $valueMarkdown = null;
@@ -339,7 +328,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid
      */
     protected null|FHIROid $valueOid = null;
@@ -350,7 +338,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $valuePositiveInt = null;
@@ -361,7 +348,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -371,7 +357,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTime
      */
     protected null|FHIRTime $valueTime = null;
@@ -382,7 +367,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $valueUnsignedInt = null;
@@ -393,7 +377,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $valueUri = null;
@@ -408,7 +391,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAddress
      */
     protected null|FHIRAddress $valueAddress = null;
@@ -419,7 +401,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $valueAge = null;
@@ -431,7 +412,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation
      */
     protected null|FHIRAnnotation $valueAnnotation = null;
@@ -442,7 +422,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $valueAttachment = null;
@@ -454,7 +433,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $valueCodeableConcept = null;
@@ -465,7 +443,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $valueCoding = null;
@@ -477,7 +454,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint
      */
     protected null|FHIRContactPoint $valueContactPoint = null;
@@ -490,7 +466,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRCount
      */
     protected null|FHIRCount $valueCount = null;
@@ -501,7 +476,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDistance
      */
     protected null|FHIRDistance $valueDistance = null;
@@ -512,7 +486,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $valueDuration = null;
@@ -523,7 +496,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRHumanName
      */
     protected null|FHIRHumanName $valueHumanName = null;
@@ -534,7 +506,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $valueIdentifier = null;
@@ -545,7 +516,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $valueMoney = null;
@@ -556,7 +526,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $valuePeriod = null;
@@ -569,7 +538,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -580,7 +548,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $valueRange = null;
@@ -592,7 +559,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $valueRatio = null;
@@ -603,7 +569,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $valueReference = null;
@@ -615,7 +580,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSampledData
      */
     protected null|FHIRSampledData $valueSampledData = null;
@@ -629,7 +593,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSignature
      */
     protected null|FHIRSignature $valueSignature = null;
@@ -644,7 +607,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
     protected null|FHIRTiming $valueTiming = null;
@@ -657,7 +619,6 @@ class FHIRElementDefinitionExample extends FHIRElement
      *
      * The actual value for the element, which must be one of the types allowed for
      * this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeta
      */
     protected null|FHIRMeta $valueMeta = null;

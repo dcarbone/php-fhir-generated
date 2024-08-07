@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,7 +110,6 @@ class FHIRClaimSubDetail extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A service line number.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $sequence = null;
@@ -120,7 +119,6 @@ class FHIRClaimSubDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of product or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $type = null;
@@ -130,19 +128,16 @@ class FHIRClaimSubDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The fee for an additional service or product or charge.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $service = null;
     /**
      * The number of repetitions of a service or product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     protected null|FHIRSimpleQuantity $quantity = null;
     /**
      * The fee for an additional service or product or charge.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $unitPrice = null;
@@ -155,7 +150,6 @@ class FHIRClaimSubDetail extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $factor = null;
@@ -169,7 +163,6 @@ class FHIRClaimSubDetail extends FHIRBackboneElement
      * resource intensiveness) associated with the good or service delivered. The
      * concept of Points allows for assignment of point values for services and/or
      * goods, such that a monetary amount can be assigned to each point.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $points = null;
@@ -178,7 +171,6 @@ class FHIRClaimSubDetail extends FHIRBackboneElement
      * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
      * factor Number * points = net Amount. Quantity, factor and points are assumed to
      * be 1 if not supplied.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $net = null;
@@ -188,7 +180,6 @@ class FHIRClaimSubDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of Unique Device Identifiers associated with this line item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $udi = null;

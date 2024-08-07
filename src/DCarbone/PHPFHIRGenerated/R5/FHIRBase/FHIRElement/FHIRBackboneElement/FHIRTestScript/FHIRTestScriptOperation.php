@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -156,7 +156,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Server interaction or operation type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $type = null;
@@ -167,7 +166,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      *
      * The type of the FHIR resource. See the [resource list](resourcelist.html). Data
      * type of uri is needed when non-HL7 artifacts are identified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $resource = null;
@@ -177,7 +175,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The label would be used for tracking/logging purposes by test engines.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $label = null;
@@ -188,7 +185,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      *
      * The description would be used by test engines for tracking and reporting
      * purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -199,7 +195,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The mime-type to use for RESTful operation in the 'Accept' header.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $accept = null;
@@ -210,7 +205,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The mime-type to use for RESTful operation in the 'Content-Type' header.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $contentType = null;
@@ -221,7 +215,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      *
      * The server where the request message is destined for. Must be one of the server
      * numbers listed in TestScript.destination section.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $destination = null;
@@ -232,7 +225,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * Whether or not to implicitly send the request url in encoded format. The default
      * is true to match the standard RESTful client behavior. Set to false when
      * communicating with a server that does not support encoded url paths.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $encodeRequestUrl = null;
@@ -241,7 +233,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      *
      * The HTTP method the test engine MUST use for this operation regardless of any
      * other operation details.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRTestScriptRequestMethodCode
      */
     protected null|FHIRTestScriptRequestMethodCode $method = null;
@@ -252,7 +243,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      *
      * The server where the request message originates from. Must be one of the server
      * numbers listed in TestScript.origin section.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $origin = null;
@@ -263,7 +253,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      *
      * Path plus parameters after [type]. Used to set parts of the request URL
      * explicitly.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $params = null;
@@ -272,7 +261,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * determine compliance against the FHIR specification.
      *
      * Header elements would be used to set HTTP headers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRequestHeader[]
      */
     protected null|array $requestHeader = [];
@@ -285,7 +273,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The fixture id (maybe new) to map to the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $requestId = null;
@@ -298,7 +285,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The fixture id (maybe new) to map to the response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $responseId = null;
@@ -311,7 +297,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The id of the fixture used as the body of a PUT or POST request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $sourceId = null;
@@ -324,7 +309,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Id of fixture used for extracting the [id], [type], and [vid] for GET requests.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $targetId = null;
@@ -334,7 +318,6 @@ class FHIRTestScriptOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Complete request URL.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $url = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The result of the claim, predetermination, or preauthorization adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $decision = null;
@@ -132,7 +131,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      *
      * The reasons for the result of the claim, predetermination, or preauthorization
      * adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $reason = [];
@@ -143,7 +141,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      *
      * Reference from the Insurer which is used in later communications which refers to
      * this adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $preAuthRef = null;
@@ -153,7 +150,6 @@ class FHIRClaimResponseReviewOutcome extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time frame during which this authorization is effective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $preAuthPeriod = null;

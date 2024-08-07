@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -145,7 +145,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * Business identifier that uniquely identifies the referral/care transfer request
      * instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -156,7 +155,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * A protocol, guideline, orderset or other definition that is adhered to in whole
      * or in part by this request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $definition = [];
@@ -167,7 +165,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * Indicates any plans, proposals or orders that this request is intended to
      * satisfy - in whole or in part.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -177,7 +174,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Completed or terminated request(s) whose function is taken by this new request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $replaces = [];
@@ -188,7 +184,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * The business identifier of the logical "grouping" request/order that this
      * referral is a part of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $groupIdentifier = null;
@@ -198,7 +193,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * The status of the authorization/intention reflected by the referral request
      * record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestStatus
      */
     protected null|FHIRRequestStatus $status = null;
@@ -207,7 +201,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Distinguishes the "level" of authorization/demand implicit in this request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestIntent
      */
     protected null|FHIRRequestIntent $intent = null;
@@ -219,7 +212,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * An indication of the type of referral (or where applicable the type of transfer
      * of care) request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -229,7 +221,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * An indication of the urgency of referral (or where applicable the type of
      * transfer of care) request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestPriority
      */
     protected null|FHIRRequestPriority $priority = null;
@@ -241,7 +232,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * The service(s) that is/are requested to be provided to the patient. For example:
      * cardiac pacemaker insertion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $serviceRequested = [];
@@ -251,7 +241,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who is the subject of a referral or transfer of care request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -262,7 +251,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * The encounter at which the request for referral or transfer of care is
      * initiated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $context = null;
@@ -276,7 +264,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * The period of time within which the services identified in the referral/transfer
      * of care is specified or required to occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -287,7 +274,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * The period of time within which the services identified in the referral/transfer
      * of care is specified or required to occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $occurrencePeriod = null;
@@ -301,7 +287,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * Date/DateTime of creation for draft requests and date of activation for active
      * requests.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authoredOn = null;
@@ -311,7 +296,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * The individual who initiated the request and has responsibility for its
      * activation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRReferralRequest\FHIRReferralRequestRequester
      */
     protected null|FHIRReferralRequestRequester $requester = null;
@@ -324,7 +308,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * Indication of the clinical domain or discipline to which the referral or
      * transfer of care request is sent. For example: Cardiology Gastroenterology
      * Diabetology.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $specialty = null;
@@ -335,7 +318,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * The healthcare provider(s) or provider organization(s) who/which is to receive
      * the referral/transfer of care request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $recipient = [];
@@ -348,7 +330,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * Description of clinical condition indicating why referral/transfer of care is
      * requested. For example: Pathological Anomalies, Disabled (physical or mental),
      * Behavioral Management.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonCode = [];
@@ -358,7 +339,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $reasonReference = [];
@@ -369,7 +349,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      *
      * The reason element gives a short description of why the referral is being made,
      * the description expands on this to support a more complete clinical summary.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -383,7 +362,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * problems/chief complaints Medical History Family History Alerts
      * Allergy/Intolerance and Adverse Reactions Medications Observations/Assessments
      * (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $supportingInfo = [];
@@ -394,7 +372,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the referral request by any of the participants.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -407,7 +384,6 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * request or event resources that identify key state transitions or updates that
      * are likely to be relevant to a user looking at the current version of the
      * resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $relevantHistory = [];

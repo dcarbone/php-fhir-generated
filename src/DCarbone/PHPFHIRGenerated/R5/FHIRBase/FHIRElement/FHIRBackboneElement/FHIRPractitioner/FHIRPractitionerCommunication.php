@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -121,7 +121,6 @@ class FHIRPractitionerCommunication extends FHIRBackboneElement
      * by a hyphen and the ISO-3166-1 alpha 2 code for the region in upper case; e.g.
      * "en" for English, or "en-US" for American English versus "en-AU" for Australian
      * English.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $language = null;
@@ -131,7 +130,6 @@ class FHIRPractitionerCommunication extends FHIRBackboneElement
      *
      * Indicates whether or not the person prefers this language (over other languages
      * he masters up a certain level).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $preferred = null;

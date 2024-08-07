@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuest
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,7 +115,6 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A potential answer that's allowed as the answer to this question.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $valueInteger = null;
@@ -126,7 +125,6 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A potential answer that's allowed as the answer to this question.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $valueDate = null;
@@ -135,7 +133,6 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A potential answer that's allowed as the answer to this question.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
     protected null|FHIRTime $valueTime = null;
@@ -145,7 +142,6 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A potential answer that's allowed as the answer to this question.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -155,7 +151,6 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A potential answer that's allowed as the answer to this question.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $valueCoding = null;
@@ -165,7 +160,6 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A potential answer that's allowed as the answer to this question.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $valueReference = null;
@@ -175,7 +169,6 @@ class FHIRQuestionnaireAnswerOption extends FHIRBackboneElement
      *
      * Indicates whether the answer value is selected when the list of possible answers
      * is initially shown.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $initialSelected = null;

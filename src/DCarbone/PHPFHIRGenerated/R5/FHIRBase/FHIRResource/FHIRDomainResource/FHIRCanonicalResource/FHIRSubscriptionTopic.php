@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -199,7 +199,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the subscription topic is stored on different
      * servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -212,7 +211,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * Business identifiers assigned to this subscription topic by the performer and/or
      * other systems. These identifiers remain constant as the resource is updated and
      * propagates from server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -227,7 +225,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * unique. For example, it might be a timestamp (e.g. yyyymmdd) if a managed
      * version is not available. There is also no expectation that versions are
      * orderable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -238,7 +235,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -249,7 +245,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -261,7 +256,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * A natural language name identifying the subscription topic This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -272,7 +266,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      *
      * A short, descriptive, user-friendly title for the subscription topic. For
      * example, "admission".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -284,7 +277,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      *
      * The canonical URL pointing to another FHIR-defined SubscriptionTopic that is
      * adhered to in whole or in part by this SubscriptionTopic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $derivedFrom = [];
@@ -292,7 +284,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the SubscriptionTopic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -303,7 +294,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * A flag to indicate that this TopSubscriptionTopicic is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -320,7 +310,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the subscription topic changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -331,7 +320,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      *
      * Helps establish the "authority/credibility" of the SubscriptionTopic. May also
      * allow for contact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -342,7 +330,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -357,7 +344,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      *
      * A free text natural language description of the Topic from the consumer's
      * perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -372,7 +358,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of code system definitions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -383,7 +368,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A jurisdiction in which the Topic is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -397,7 +381,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * the Narrative, or extensions
      *
      * Explains why this Topic is needed and why it has been designed as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -413,7 +396,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * A copyright statement relating to the SubscriptionTopic and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the SubscriptionTopic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -425,7 +407,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -437,7 +418,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      *
      * The date on which the asset content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -449,7 +429,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      *
      * The date on which the asset content was last reviewed. Review happens
      * periodically after that, but doesn't change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -460,7 +439,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      *
      * The period during which the SubscriptionTopic content was or is planned to be
      * effective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -473,7 +451,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * a full FHIR search string or FHIRPath expression. Multiple triggers are
      * considered OR joined (e.g., a resource update matching ANY of the definitions
      * will trigger a notification).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicResourceTrigger[]
      */
     protected null|array $resourceTrigger = [];
@@ -482,7 +459,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * useful to filter projections from this topic.
      *
      * Event definition which can be used to trigger the SubscriptionTopic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicEventTrigger[]
      */
     protected null|array $eventTrigger = [];
@@ -493,7 +469,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      * List of properties by which Subscriptions on the SubscriptionTopic can be
      * filtered. May be defined Search Parameters (e.g., Encounter.patient) or
      * parameters defined within this SubscriptionTopic context (e.g., hub.event).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicCanFilterBy[]
      */
     protected null|array $canFilterBy = [];
@@ -503,7 +478,6 @@ class FHIRSubscriptionTopic extends FHIRCanonicalResource implements PHPFHIRCont
      *
      * List of properties to describe the shape (e.g., resources) included in
      * notifications from this Subscription Topic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicNotificationShape[]
      */
     protected null|array $notificationShape = [];

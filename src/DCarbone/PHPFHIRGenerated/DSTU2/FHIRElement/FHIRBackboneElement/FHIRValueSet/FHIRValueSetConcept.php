@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      *
      * A code - a text symbol - that uniquely identifies the concept within the code
      * system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -117,7 +116,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this code is not for use as a real concept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $abstract = null;
@@ -128,7 +126,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      *
      * A human readable string that is the recommended default way to present this
      * concept to a user.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $display = null;
@@ -141,7 +138,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * formal definitions required, because of the prevalence of legacy systems.
      * However, they are highly recommended, as without them there is no formal meaning
      * associated with the concept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $definition = null;
@@ -150,7 +146,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      *
      * Additional representations for the concept - other languages, aliases,
      * specialized purposes, used for particular purposes, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation[]
      */
     protected null|array $designation = [];
@@ -160,7 +155,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * Defines children of a concept to produce a hierarchy of concepts. The nature of
      * the relationships is variable (is-a/contains/categorizes) and can only be
      * determined by examining the definitions of the concepts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[]
      */
     protected null|array $concept = [];

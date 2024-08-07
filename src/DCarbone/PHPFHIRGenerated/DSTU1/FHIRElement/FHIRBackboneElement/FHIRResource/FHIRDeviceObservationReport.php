@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point in time that the values are reported.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $instant = null;
@@ -112,7 +111,6 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
      *
      * An identifier assigned to this observation bu the source device that made the
      * observation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -122,7 +120,6 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification information for the device that is the source of the data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $source = null;
@@ -132,7 +129,6 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The subject of the measurement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $subject = null;
@@ -140,7 +136,6 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
      * Describes the data produced by a device at a point in time.
      *
      * A medical-related subsystem of a medical device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDeviceObservationReport\FHIRDeviceObservationReportVirtualDevice[]
      */
     protected null|array $virtualDevice = [];

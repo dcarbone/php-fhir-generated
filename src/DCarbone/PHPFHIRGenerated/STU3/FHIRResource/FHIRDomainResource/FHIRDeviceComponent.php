@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -121,7 +121,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      *
      * The locally assigned unique identification by the software. For example: handle
      * ID.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -133,7 +132,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      *
      * The component type as defined in the object-oriented or metric nomenclature
      * partition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -146,7 +144,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      *
      * The timestamp for the most recent system change which includes device
      * configuration or setting change.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $lastSystemChange = null;
@@ -157,7 +154,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      *
      * The link to the source Device that contains administrative device information
      * such as manufacture, serial number, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $source = null;
@@ -168,7 +164,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      *
      * The link to the parent resource. For example: Channel is linked to its VMD
      * parent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $parent = null;
@@ -180,7 +175,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      *
      * The current operational status of the device. For example: On, Off, Standby,
      * etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $operationalStatus = [];
@@ -192,7 +186,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      *
      * The parameter group supported by the current device component that is based on
      * some nomenclature, e.g. cardiovascular.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $parameterGroup = null;
@@ -202,7 +195,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      *
      * The physical principle of the measurement. For example: thermal, chemical,
      * acoustical, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMeasmntPrinciple
      */
     protected null|FHIRMeasmntPrinciple $measurementPrinciple = null;
@@ -211,7 +203,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      * component of a medical device.
      *
      * The production specification such as component revision, serial number, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification[]
      */
     protected null|array $productionSpecification = [];
@@ -223,7 +214,6 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      *
      * The language code for the human-readable text string produced by the device.
      * This language code will follow the IETF language tag. Example: en-US.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $languageCode = null;

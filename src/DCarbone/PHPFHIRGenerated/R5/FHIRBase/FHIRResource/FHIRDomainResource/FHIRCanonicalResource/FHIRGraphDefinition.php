@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -185,7 +185,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * address at which an authoritative instance of this graph definition is (or will
      * be) published. This URL can be the target of a canonical reference. It SHALL
      * remain the same when the graph definition is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -198,7 +197,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * A formal identifier that is used to identify this GraphDefinition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -213,7 +211,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -224,7 +221,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -235,7 +231,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -247,7 +242,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * A natural language name identifying the graph definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -257,7 +251,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the capability statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -266,7 +259,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * The status of this graph definition. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -277,7 +269,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * A Boolean value to indicate that this graph definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -294,7 +285,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * changed. The date must change when the business version changes and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the graph definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -305,7 +295,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the graph definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -316,7 +305,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -331,7 +319,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * A free text natural language description of the graph definition from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -348,7 +335,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate graph definition
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -360,7 +346,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * A legal or geographic region in which the graph definition is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -375,7 +360,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * Explanation of why this graph definition is needed and why it has been designed
      * as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -391,7 +375,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * A copyright statement relating to the graph definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the graph definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -403,7 +386,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -417,7 +399,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * The Node at which instances of this graph start. If there is no nominated start,
      * the graph can start at any of the nodes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $start = null;
@@ -427,7 +408,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * resource defines a set and makes rules about the set.
      *
      * Potential target for the link.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionNode[]
      */
     protected null|array $node = [];
@@ -437,7 +417,6 @@ class FHIRGraphDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * resource defines a set and makes rules about the set.
      *
      * Links this graph makes rules about.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
      */
     protected null|array $link = [];

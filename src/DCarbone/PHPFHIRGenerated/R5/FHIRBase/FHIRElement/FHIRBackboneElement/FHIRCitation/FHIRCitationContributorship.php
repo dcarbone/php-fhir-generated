@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,7 +118,6 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the list includes all authors and/or contributors.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $complete = null;
@@ -130,7 +129,6 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      *
      * An individual entity named as a contributor, for example in the author list or
      * contributor list.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry[]
      */
     protected null|array $entry = [];
@@ -142,7 +140,6 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      *
      * Used to record a display of the author/contributor list without separate data
      * element for each list member.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationSummary1[]
      */
     protected null|array $summary = [];

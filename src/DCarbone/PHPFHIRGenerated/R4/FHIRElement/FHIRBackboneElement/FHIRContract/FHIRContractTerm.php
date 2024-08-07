@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this particular Contract Provision.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -127,7 +126,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Contract Provision was issued.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $issued = null;
@@ -137,7 +135,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant time or time-period when this Contract Provision is applicable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $applies = null;
@@ -148,7 +145,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity that the term applies to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $topicCodeableConcept = null;
@@ -158,7 +154,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity that the term applies to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $topicReference = null;
@@ -172,7 +167,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * both parties to perform a particular requirement by some specified time or
      * prevents one or both parties from performing a particular requirement by some
      * specified time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -183,7 +177,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A specialized legal clause or condition based on overarching contract type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subType = null;
@@ -193,7 +186,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Statement of a provision in a policy or a contract.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -203,7 +195,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      *
      * Security labels that protect the handling of information about the term and its
      * elements, which may be specifically identified..
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel[]
      */
     protected null|array $securityLabel = [];
@@ -212,7 +203,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * The matter of concern in the context of this provision of the agrement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractOffer
      */
     protected null|FHIRContractOffer $offer = null;
@@ -221,7 +211,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * Contract Term Asset List.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAsset[]
      */
     protected null|array $asset = [];
@@ -231,7 +220,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      *
      * An actor taking a role in an activity for which it can be assigned some degree
      * of responsibility for the activity taking place.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAction[]
      */
     protected null|array $action = [];
@@ -240,7 +228,6 @@ class FHIRContractTerm extends FHIRBackboneElement
      * policy or agreement.
      *
      * Nested group of Contract Provisions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm[]
      */
     protected null|array $group = [];

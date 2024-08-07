@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -147,7 +147,6 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Encounter associated with this set of historic values.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -158,7 +157,6 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier(s) by which this encounter is known.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -167,7 +165,6 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      *
      * planned | in-progress | on-hold | discharged | completed | cancelled |
      * discontinued | entered-in-error | unknown.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIREncounterStatus
      */
     protected null|FHIREncounterStatus $status = null;
@@ -180,7 +177,6 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      * Concepts representing classification of patient encounter such as ambulatory
      * (outpatient), inpatient, emergency, home health or others due to local
      * variations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $class = null;
@@ -192,7 +188,6 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled
      * nursing, rehabilitation).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -203,7 +198,6 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Broad categorization of the service that is to be provided (e.g. cardiology).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $serviceType = [];
@@ -215,7 +209,6 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      * The patient or group related to this encounter. In some use-cases the patient
      * MAY not be present, such as a case meeting about a patient between several
      * practitioners or a careteam.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -228,7 +221,6 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      * The subjectStatus value can be used to track the patient's status within the
      * encounter. It details whether the patient has arrived or departed, has been
      * triaged or is currently in a waiting status.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subjectStatus = null;
@@ -239,7 +231,6 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The start and end time associated with this set of values associated with the
      * encounter, may be different to the planned times for various reasons.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $actualPeriod = null;
@@ -253,7 +244,6 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The planned start date/time (or admission date) of the encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $plannedStartDate = null;
@@ -267,7 +257,6 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The planned end date/time (or discharge date) of the encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $plannedEndDate = null;
@@ -279,7 +268,6 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      * Actual quantity of time the encounter lasted. This excludes the time during
      * leaves of absence. When missing it is the time in between the start and end
      * values.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $length = null;
@@ -290,7 +278,6 @@ class FHIREncounterHistory extends FHIRDomainResource implements PHPFHIRContaine
      * The location of the patient at this point in the encounter, the multiple
      * cardinality permits de-normalizing the levels of the location hierarchy, such as
      * site/ward/room/bed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREncounterHistory\FHIREncounterHistoryLocation[]
      */
     protected null|array $location = [];

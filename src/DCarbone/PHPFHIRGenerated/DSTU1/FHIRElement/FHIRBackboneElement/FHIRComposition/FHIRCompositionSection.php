@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * The heading for this particular section. This will be part of the rendered
      * content for the document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -109,7 +108,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code identifying the kind of content contained within the section.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -119,7 +117,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the primary subject of the section.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $subject = null;
@@ -129,7 +126,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the discrete data that provides the content for the section.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $content = null;
@@ -140,7 +136,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * is making the statement.
      *
      * A nested sub-section within this section.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection[]
      */
     protected null|array $section = [];

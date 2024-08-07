@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,7 +115,6 @@ class FHIRServiceRequestOrderDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the context of the order details by reference.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $parameterFocus = null;
@@ -124,7 +123,6 @@ class FHIRServiceRequestOrderDetail extends FHIRBackboneElement
      * or operations to be performed.
      *
      * The parameter details for the service being requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRServiceRequest\FHIRServiceRequestParameter[]
      */
     protected null|array $parameter = [];

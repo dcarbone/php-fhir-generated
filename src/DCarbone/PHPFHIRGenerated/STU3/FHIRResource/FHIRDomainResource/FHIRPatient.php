@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -147,7 +147,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier for this patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -156,7 +155,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this patient record is in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $active = null;
@@ -166,7 +164,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the individual.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRHumanName[]
      */
     protected null|array $name = [];
@@ -178,7 +175,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * A contact detail (e.g. a telephone number or an email address) by which the
      * individual may be contacted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint[]
      */
     protected null|array $telecom = [];
@@ -187,7 +183,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Administrative Gender - the gender that the patient is considered to have for
      * administration and record keeping purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAdministrativeGender
      */
     protected null|FHIRAdministrativeGender $gender = null;
@@ -198,7 +193,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of birth for the individual.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $birthDate = null;
@@ -207,7 +201,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $deceasedBoolean = null;
@@ -220,7 +213,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the individual is deceased or not.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $deceasedDateTime = null;
@@ -234,7 +226,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Addresses for the individual.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAddress[]
      */
     protected null|array $address = [];
@@ -245,7 +236,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This field contains a patient's most recent marital (civil) status.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $maritalStatus = null;
@@ -255,7 +245,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Indicates whether the patient is part of a multiple (bool) or indicates the
      * actual birth order (integer).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $multipleBirthBoolean = null;
@@ -266,7 +255,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Indicates whether the patient is part of a multiple (bool) or indicates the
      * actual birth order (integer).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $multipleBirthInteger = null;
@@ -276,7 +264,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment[]
      */
     protected null|array $photo = [];
@@ -285,7 +272,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * receiving care or other health-related services.
      *
      * A contact party (e.g. guardian, partner, friend) for the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact[]
      */
     protected null|array $contact = [];
@@ -294,7 +280,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * receiving care or other health-related services.
      *
      * This patient is known to be an animal.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientAnimal
      */
     protected null|FHIRPatientAnimal $animal = null;
@@ -304,7 +289,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Languages which may be used to communicate with the patient about his or her
      * health.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientCommunication[]
      */
     protected null|array $communication = [];
@@ -314,7 +298,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Patient's nominated care provider.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $generalPractitioner = [];
@@ -324,7 +307,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization that is the custodian of the patient record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $managingOrganization = null;
@@ -333,7 +315,6 @@ class FHIRPatient extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * receiving care or other health-related services.
      *
      * Link to another patient resource that concerns the same actual patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink[]
      */
     protected null|array $link = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * only a few codes have changed), use a fixed code (a default code), or
      * alternatively, a reference to a different concept map can be provided (by
      * canonical URL).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRConceptMapGroupUnmappedMode
      */
     protected null|FHIRConceptMapGroupUnmappedMode $mode = null;
@@ -146,7 +145,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The fixed code to use when the mode = 'fixed' - all unmapped codes are mapped to
      * a single fixed code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -157,7 +155,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The display for the code. The display is only provided to help editors when
      * editing the concept map.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $display = null;
@@ -169,7 +166,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The set of fixed codes to use when the mode = 'fixed' - all unmapped codes are
      * mapped to each of the fixed codes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $valueSet = null;
@@ -178,7 +174,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      *
      * The default relationship value to apply between the source and target concepts
      * when the source code is unmapped and the mode is 'fixed' or 'use-source-code'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRConceptMapRelationship
      */
     protected null|FHIRConceptMapRelationship $relationship = null;
@@ -191,7 +186,6 @@ class FHIRConceptMapUnmapped extends FHIRBackboneElement
      * The canonical reference to an additional ConceptMap resource instance to use for
      * mapping if this ConceptMap resource contains no matching mapping for the source
      * concept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $otherMap = null;

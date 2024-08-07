@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,7 +119,6 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the last corrective action known for this device was a recall.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $recall = null;
@@ -129,7 +128,6 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
      * The scope of the corrective action - whether the action targeted all units of a
      * given device model, or only a specific set of batches identified by lot numbers,
      * or individually identified devices identified by the serial name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDeviceCorrectiveActionScope
      */
     protected null|FHIRDeviceCorrectiveActionScope $scope = null;
@@ -139,7 +137,6 @@ class FHIRDeviceDefinitionCorrectiveAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Start and end dates of the corrective action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -149,7 +149,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * referenced in a specification, model, design or an instance. This SHALL be a
      * URL, SHOULD be globally unique, and SHOULD be an address at which this operation
      * definition is (or will be) published.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -162,7 +161,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * referenced in a specification, model, design or instance. This is an arbitrary
      * value managed by the profile author manually and the value should be a
      * timestamp.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -172,7 +170,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the operation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -183,7 +180,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * the Narrative, or extensions
      *
      * The status of the profile.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $status = null;
@@ -192,7 +188,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is an operation or a named query.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROperationKind
      */
     protected null|FHIROperationKind $kind = null;
@@ -203,7 +198,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * This profile was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -214,7 +208,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * The name of the individual or organization that published the operation
      * definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -223,7 +216,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * named query (using the search interaction).
      *
      * Contacts to assist a user in finding and communicating with the publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionContact[]
      */
     protected null|array $contact = [];
@@ -239,7 +231,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * change when the business version changes, if it does, and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the Operation Definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -249,7 +240,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the profile and its use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -260,7 +250,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * Explains why this operation definition is needed and why it's been constrained
      * as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $requirements = null;
@@ -271,7 +260,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * Operations that are idempotent (see [HTTP specification definition of
      * idempotent](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)) may be
      * invoked by performing an HTTP GET operation instead of a POST.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $idempotent = null;
@@ -282,7 +270,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * the Narrative, or extensions
      *
      * The name used to invoke the operation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -292,7 +279,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional information about how to use this operation or named query.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $notes = null;
@@ -302,7 +288,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates that this operation definition is a constraining profile on the base.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $base = null;
@@ -312,7 +297,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * Indicates whether this operation or named query can be invoked at the system
      * level (e.g. without needing to choose a resource type for the context).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $system = null;
@@ -325,7 +309,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * Indicates whether this operation or named query can be invoked at the resource
      * type level for any given resource type level (e.g. without needing to choose a
      * resource type for the context).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode[]
      */
     protected null|array $type = [];
@@ -335,7 +318,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * Indicates whether this operation can be invoked on a particular instance of one
      * of the given types.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $instance = null;
@@ -344,7 +326,6 @@ class FHIROperationDefinition extends FHIRDomainResource implements PHPFHIRConta
      * named query (using the search interaction).
      *
      * The parameters for the operation/query.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
     protected null|array $parameter = [];

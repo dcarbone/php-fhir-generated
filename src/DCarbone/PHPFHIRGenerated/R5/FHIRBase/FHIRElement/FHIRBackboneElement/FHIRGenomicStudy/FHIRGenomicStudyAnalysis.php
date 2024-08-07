@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -145,7 +145,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for the analysis event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -157,7 +156,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Type of the methods used in the analysis, e.g., Fluorescence in situ
      * hybridization (FISH), Karyotyping, or Microsatellite instability testing (MSI).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $methodType = [];
@@ -169,7 +167,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Type of the genomic changes studied in the analysis, e.g., DNA, RNA, or amino
      * acid change.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $changeType = [];
@@ -180,7 +177,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference genome build that is used in this analysis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $genomeBuild = null;
@@ -191,7 +187,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The defined protocol that describes the analysis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $instantiatesCanonical = null;
@@ -202,7 +197,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * The URL pointing to an externally maintained protocol that describes the
      * analysis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $instantiatesUri = null;
@@ -212,7 +206,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the analysis event (human friendly).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -226,7 +219,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * parent, child, or sibling. For example, in trio testing, the
      * GenomicStudy.subject would be the child (proband) and the
      * GenomicStudy.analysis.focus of a specific analysis would be the parent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $focus = [];
@@ -236,7 +228,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specimen used in the analysis event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $specimen = [];
@@ -250,7 +241,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of the analysis event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -261,7 +251,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any notes capture with the analysis event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -271,7 +260,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The protocol that was performed for the analysis event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $protocolPerformed = null;
@@ -281,7 +269,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The genomic regions to be studied in the analysis (BED file).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $regionsStudied = [];
@@ -291,7 +278,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Genomic regions actually called in the analysis event (BED file).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $regionsCalled = [];
@@ -300,7 +286,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Inputs for the analysis event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyInput[]
      */
     protected null|array $input = [];
@@ -309,7 +294,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Outputs for the analysis event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyOutput[]
      */
     protected null|array $output = [];
@@ -318,7 +302,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * data.
      *
      * Performer for the analysis event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyPerformer[]
      */
     protected null|array $performer = [];
@@ -328,7 +311,6 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      *
      * Devices used for the analysis (e.g., instruments, software), with settings and
      * parameters.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyDevice[]
      */
     protected null|array $device = [];

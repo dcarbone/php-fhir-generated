@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,7 +118,6 @@ class FHIRTestPlanTestData extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of test data description, e.g. 'synthea'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $type = null;
@@ -128,7 +127,6 @@ class FHIRTestPlanTestData extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual test resources when they exist.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $content = null;
@@ -139,7 +137,6 @@ class FHIRTestPlanTestData extends FHIRBackboneElement
      *
      * Pointer to a definition of test resources - narrative or structured e.g.
      * synthetic data generation, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $sourceString = null;
@@ -150,7 +147,6 @@ class FHIRTestPlanTestData extends FHIRBackboneElement
      *
      * Pointer to a definition of test resources - narrative or structured e.g.
      * synthetic data generation, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $sourceReference = null;

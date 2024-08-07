@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -121,7 +121,6 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      *
      * The measurable amount of the substance, expressable in different ways (e.g. by
      * mass or volume).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity[]
      */
     protected null|array $amount = [];
@@ -135,7 +134,6 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      * Example – if the component is the bead in the capsule, then the location would
      * be where the ingredient resides within the product part – intragranular,
      * extra-granular, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $location = [];
@@ -146,7 +144,6 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The function of this constituent within the component e.g. binder.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $function = [];
@@ -157,7 +154,6 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The ingredient that is the constituent of the given component.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $hasIngredient = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,6 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A service line item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $sequence = null;
@@ -121,7 +120,6 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      *
      * The instance number of the Coverage which is the focus for adjudication. The
      * Coverage against which the claim is to be adjudicated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $focal = null;
@@ -131,7 +129,6 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the program or plan identification, underwriter or payor.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $coverage = null;
@@ -142,7 +139,6 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      *
      * The contract number of a business agreement which describes the terms and
      * conditions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $businessArrangement = null;
@@ -152,7 +148,6 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The relationship of the patient to the subscriber.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $relationship = null;
@@ -162,7 +157,6 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of references from the Insurer to which these services pertain.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
      */
     protected null|array $preAuthRef = [];
@@ -172,7 +166,6 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Coverages adjudication details.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $claimResponse = null;
@@ -183,7 +176,6 @@ class FHIRClaimResponseCoverage extends FHIRBackboneElement
      *
      * The style (standard) and version of the original material which was converted
      * into this resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $originalRuleset = null;

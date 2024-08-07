@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -148,7 +148,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Broad category of this product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $productCategory = null;
@@ -161,7 +160,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * A codified value that systematically supports characterization and
      * classification of medical products of human origin inclusive of processing
      * conditions such as additives, volumes and handling conditions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $productCode = null;
@@ -171,7 +169,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parent product (if any) for this biologically-derived product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $parent = [];
@@ -181,7 +178,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Request to obtain and/or infuse this biologically derived product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $request = [];
@@ -193,7 +189,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      *
      * Unique instance identifiers assigned to a biologically derived product. Note:
      * This is a business identifier, not a resource identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -205,7 +200,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      *
      * An identifier that supports traceability to the event during which material in
      * this product from one or more biological entities was obtained or pooled.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $biologicalSourceEvent = null;
@@ -216,7 +210,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      *
      * Processing facilities responsible for the labeling and distribution of this
      * biologically derived product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $processingFacility = [];
@@ -228,7 +221,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * A unique identifier for an aliquot of a product. Used to distinguish individual
      * aliquots of a product carrying the same biologicalSource and productCode
      * identifiers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $division = null;
@@ -238,7 +230,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether the product is currently available.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $productStatus = null;
@@ -252,7 +243,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date, and where relevant time, of expiration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $expirationDate = null;
@@ -262,7 +252,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * infused into another (possibly the same) biological entity.
      *
      * How this product was collected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
      */
     protected null|FHIRBiologicallyDerivedProductCollection $collection = null;
@@ -272,7 +261,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The temperature requirements for storage of the biologically-derived product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $storageTempRequirements = null;
@@ -282,7 +270,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * infused into another (possibly the same) biological entity.
      *
      * A property that is specific to this BiologicallyDerviedProduct instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProperty[]
      */
     protected null|array $property = [];

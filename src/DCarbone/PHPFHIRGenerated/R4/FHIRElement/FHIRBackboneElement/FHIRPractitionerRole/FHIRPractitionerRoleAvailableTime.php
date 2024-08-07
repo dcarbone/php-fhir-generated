@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPract
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates which days of the week are available between the start and end Times.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDaysOfWeek[]
      */
     protected null|array $daysOfWeek = [];
@@ -112,7 +111,6 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $allDay = null;
@@ -122,7 +120,6 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
      *
      * The opening time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
     protected null|FHIRTime $availableStartTime = null;
@@ -132,7 +129,6 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
      *
      * The closing time of day. Note: If the AllDay flag is set, then this time is
      * ignored.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
     protected null|FHIRTime $availableEndTime = null;

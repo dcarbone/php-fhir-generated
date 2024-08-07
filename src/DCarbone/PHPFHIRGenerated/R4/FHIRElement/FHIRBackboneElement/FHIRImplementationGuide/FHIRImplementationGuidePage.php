@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The source address for the page.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
     protected null|FHIRUrl $nameUrl = null;
@@ -116,7 +115,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source address for the page.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $nameReference = null;
@@ -127,7 +125,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      *
      * A short title used to represent this page in navigational structures such as
      * table of contents, bread crumbs, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -136,7 +133,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the page is generated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidePageGeneration
      */
     protected null|FHIRGuidePageGeneration $generation = null;
@@ -147,7 +143,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Nested Pages/Sections under this page.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage[]
      */
     protected null|array $page = [];

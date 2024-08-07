@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,6 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of material of the container.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $material = null;
@@ -139,7 +138,6 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of container used to contain this kind of specimen.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -150,7 +148,6 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Color of container cap.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $cap = null;
@@ -164,7 +161,6 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The textual description of the kind of container.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -176,7 +172,6 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The capacity (volume or other measure) of this kind of container.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $capacity = null;
@@ -188,7 +183,6 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The minimum volume to be conditioned in the container.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $minimumVolumeQuantity = null;
@@ -198,7 +192,6 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The minimum volume to be conditioned in the container.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $minimumVolumeString = null;
@@ -207,7 +200,6 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      *
      * Substance introduced in the kind of container to preserve, maintain or enhance
      * the specimen. Examples: Formalin, Citrate, EDTA.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive[]
      */
     protected null|array $additive = [];
@@ -222,7 +214,6 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      *
      * Special processing that should be applied to the container for this kind of
      * specimen.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $preparation = null;

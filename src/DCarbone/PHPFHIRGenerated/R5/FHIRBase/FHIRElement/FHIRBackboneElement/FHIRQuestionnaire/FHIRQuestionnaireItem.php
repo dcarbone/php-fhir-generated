@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -158,7 +158,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * An identifier that is unique within the Questionnaire allowing linkage to the
      * equivalent item in a QuestionnaireResponse resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $linkId = null;
@@ -174,7 +173,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * instance of the Questionnaire resource. A detailed description of the
      * construction of the URI is shown in [Comments](questionnaire.html#definition),
      * below.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $definition = null;
@@ -185,7 +183,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A terminology code that corresponds to this group or question (e.g. a code from
      * LOINC, which defines many questions and answers).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding[]
      */
     protected null|array $code = [];
@@ -196,7 +193,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A short label for a particular group, question or set of display text within the
      * questionnaire used for reference by the individual completing the questionnaire.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $prefix = null;
@@ -207,7 +203,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The name of a section, the text of a question or text content for a display
      * item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -217,7 +212,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * The type of questionnaire item this is - whether text for display, a grouping of
      * other items or a particular type of data to be captured (string, integer,
      * Coding, etc.).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRQuestionnaireItemType
      */
     protected null|FHIRQuestionnaireItemType $type = null;
@@ -228,7 +222,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A constraint indicating that this item should only be enabled (displayed/allow
      * answers to be captured) when the specified condition is true.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen[]
      */
     protected null|array $enableWhen = [];
@@ -237,7 +230,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * Controls how multiple enableWhen values are interpreted - whether all or any
      * must be true.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIREnableWhenBehavior
      */
     protected null|FHIREnableWhenBehavior $enableBehavior = null;
@@ -246,7 +238,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * Indicates if and how items that are disabled (because enableWhen evaluates to
      * 'false') should be displayed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRQuestionnaireItemDisabledDisplay
      */
     protected null|FHIRQuestionnaireItemDisabledDisplay $disabledDisplay = null;
@@ -257,7 +248,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * An indication, if true, that the item must be present in a "completed"
      * QuestionnaireResponse. If false, the item may be skipped when answering the
      * questionnaire.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $required = null;
@@ -268,7 +258,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * An indication, if true, that a QuestionnaireResponse for this item may include
      * multiple answers associated with a single instance of this item (for
      * question-type items) or multiple repetitions of the item (for group-type items).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $repeats = null;
@@ -278,7 +267,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * An indication, when true, that the value cannot be changed by a human respondent
      * to the Questionnaire.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $readOnly = null;
@@ -289,7 +277,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * The maximum number of characters that are permitted in the answer to be
      * considered a "valid" QuestionnaireResponse.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $maxLength = null;
@@ -299,7 +286,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * For items that have a defined set of allowed answers (via answerOption or
      * answerValueSet), indicates whether values *other* than those specified can be
      * selected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRQuestionnaireAnswerConstraint
      */
     protected null|FHIRQuestionnaireAnswerConstraint $answerConstraint = null;
@@ -311,7 +297,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * A reference to a value set containing a list of values representing permitted
      * answers for a question.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $answerValueSet = null;
@@ -321,7 +306,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * phraseology and grouping to allow coherent, consistent data collection.
      *
      * One of the permitted answers for the question.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption[]
      */
     protected null|array $answerOption = [];
@@ -332,7 +316,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      *
      * One or more values that should be pre-populated in the answer when initially
      * rendering the questionnaire for user input.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireInitial[]
      */
     protected null|array $initial = [];
@@ -342,7 +325,6 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * phraseology and grouping to allow coherent, consistent data collection.
      *
      * Text, questions and other groups to be nested beneath a question or group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[]
      */
     protected null|array $item = [];

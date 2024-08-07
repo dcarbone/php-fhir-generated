@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,7 +110,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * Precusory content structure and use, i.e., a boilerplate, template, application
      * for a contract such as an insurance policy or benefits under a program, e.g.,
      * workers compensation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -121,7 +120,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Detailed Precusory content type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subType = null;
@@ -131,7 +129,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization that published the Contract precursor content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $publisher = null;
@@ -147,7 +144,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * change when the business version changes and it must change if the status code
      * changes. In addition, it should change when the substantive content of the
      * contract changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $publicationDate = null;
@@ -158,7 +154,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * amended | appended | cancelled | disputed | entered-in-error | executable |
      * executed | negotiable | offered | policy | rejected | renewed | revoked |
      * resolved | terminated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContractResourcePublicationStatusCodes
      */
     protected null|FHIRContractResourcePublicationStatusCodes $publicationStatus = null;
@@ -174,7 +169,6 @@ class FHIRContractContentDefinition extends FHIRBackboneElement
      * A copyright statement relating to Contract precursor content. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * Contract precursor content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapab
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,6 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the search parameter used in the interface.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -122,7 +121,6 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement
      * parameter (a reference to [[[SearchParameter.url]]]). This element SHALL be
      * populated if the search parameter refers to a SearchParameter defined by the
      * FHIR core specification or externally defined IGs.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $definition = null;
@@ -131,7 +129,6 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement
      *
      * The type of value a search parameter refers to, and how the content is
      * interpreted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSearchParamType
      */
     protected null|FHIRSearchParamType $type = null;
@@ -146,7 +143,6 @@ class FHIRCapabilityStatementSearchParam extends FHIRBackboneElement
      *
      * This allows documentation of any distinct behaviors about how the search
      * parameter is used. For example, text matching algorithms.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $documentation = null;

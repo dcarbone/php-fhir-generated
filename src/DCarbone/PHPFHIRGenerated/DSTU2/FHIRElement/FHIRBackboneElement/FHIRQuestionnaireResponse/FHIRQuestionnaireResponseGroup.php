@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      *
      * Identifies the group from the Questionnaire that corresponds to this group in
      * the QuestionnaireResponse resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $linkId = null;
@@ -115,7 +114,6 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that is displayed above the contents of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -125,7 +123,6 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional text for the group, used for display purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -136,7 +133,6 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      *
      * More specific subject this section's answers are about, details the subject
      * given in QuestionnaireResponse.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -147,7 +143,6 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      *
      * A sub-group within a group. The ordering of groups within this group is
      * relevant.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup[]
      */
     protected null|array $group = [];
@@ -158,7 +153,6 @@ class FHIRQuestionnaireResponseGroup extends FHIRBackboneElement
      *
      * Set of questions within this group. The order of questions within the group is
      * relevant.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseQuestion[]
      */
     protected null|array $question = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * The method used to elucidate the characterization of the drug substance.
      * Example: HPLC.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $technique = null;
@@ -134,7 +133,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * Describes the nature of the chemical entity and explains, for instance, whether
      * this is a base or a salt form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $form = null;
@@ -149,7 +147,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      *
      * The description or justification in support of the interpretation of the data
      * file.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -161,7 +158,6 @@ class FHIRSubstanceDefinitionCharacterization extends FHIRBackboneElement
      * The data produced by the analytical instrument or a pictorial representation of
      * that data. Examples: a JCAMP, JDX, or ADX file, or a chromatogram or spectrum
      * analysis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment[]
      */
     protected null|array $file = [];

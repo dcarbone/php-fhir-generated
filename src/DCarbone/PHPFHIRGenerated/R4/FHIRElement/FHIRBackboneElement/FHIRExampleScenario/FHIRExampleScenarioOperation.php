@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sequential number of the interaction, e.g. 1.2.5.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $number = null;
@@ -123,7 +122,6 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of operation - CRUD.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $type = null;
@@ -133,7 +131,6 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human-friendly name of the interaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -143,7 +140,6 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Who starts the transaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $initiator = null;
@@ -153,7 +149,6 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Who receives the transaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $receiver = null;
@@ -167,7 +162,6 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A comment to be inserted in the diagram.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -176,7 +170,6 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the initiator is deactivated right after the transaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $initiatorActive = null;
@@ -185,7 +178,6 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the receiver is deactivated right after the transaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $receiverActive = null;
@@ -193,7 +185,6 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Each resource instance used by the initiator.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance
      */
     protected null|FHIRExampleScenarioContainedInstance $request = null;
@@ -201,7 +192,6 @@ class FHIRExampleScenarioOperation extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Each resource instance used by the responder.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance
      */
     protected null|FHIRExampleScenarioContainedInstance $response = null;

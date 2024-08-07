@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,6 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      *
      * Indicates what a category of item that was consumed: e.g., food, fluid, enteral,
      * etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -148,7 +147,6 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * link to a resource representing the details of the food product (TBD) or a
      * simple attribute carrying a code that identifies the food from a known list of
      * foods.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $nutritionProduct = null;
@@ -162,7 +160,6 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Scheduled frequency of consumption.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     protected null|FHIRTiming $schedule = null;
@@ -174,7 +171,6 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantity of the specified food.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $amount = null;
@@ -186,7 +182,6 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Rate at which enteral feeding was administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $rate = null;
@@ -198,7 +193,6 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      * not consumed, such as it was refused, held (as in tube feedings), or otherwise
      * not provided. If a consumption is being recorded from an app, such as
      * MyFitnessPal, this indicator will likely not be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $notConsumed = null;
@@ -210,7 +204,6 @@ class FHIRNutritionIntakeConsumedItem extends FHIRBackboneElement
      *
      * Document the reason the food or fluid was not consumed, such as refused, held,
      * etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $notConsumedReason = null;

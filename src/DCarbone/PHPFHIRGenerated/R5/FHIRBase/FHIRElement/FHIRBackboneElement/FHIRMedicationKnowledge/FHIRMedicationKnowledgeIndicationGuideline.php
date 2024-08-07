@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,7 +115,6 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
      *
      * Indication or reason for use of the medication that applies to the specific
      * administration guideline.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $indication = [];
@@ -123,7 +122,6 @@ class FHIRMedicationKnowledgeIndicationGuideline extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * The guidelines for the dosage of the medication for the indication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDosingGuideline[]
      */
     protected null|array $dosingGuideline = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      *
      * Dose form as manufactured and before any transformation into the pharmaceutical
      * product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $manufacturedDoseForm = null;
@@ -125,7 +124,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      *
      * The “real world” units in which the quantity of the manufactured item is
      * described.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $unitOfPresentation = null;
@@ -137,7 +135,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity or "count number" of the manufactured item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -148,7 +145,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      *
      * Manufacturer of the item (Note that this should be named "manufacturer" but it
      * currently causes technical issues).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $manufacturer = [];
@@ -158,7 +154,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $ingredient = [];
@@ -169,7 +164,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
      */
     protected null|FHIRProdCharacteristic $physicalCharacteristics = null;
@@ -180,7 +174,6 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $otherCharacteristics = [];

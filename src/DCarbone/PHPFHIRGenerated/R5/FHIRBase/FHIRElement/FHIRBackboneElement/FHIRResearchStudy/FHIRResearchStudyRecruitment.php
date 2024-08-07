@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Estimated total number of participants to be enrolled.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $targetNumber = null;
@@ -133,7 +132,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Actual total number of participants enrolled in study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $actualNumber = null;
@@ -143,7 +141,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Inclusion and exclusion criteria.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $eligibility = null;
@@ -153,7 +150,6 @@ class FHIRResearchStudyRecruitment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Group of participants who were enrolled in study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $actualGroup = null;

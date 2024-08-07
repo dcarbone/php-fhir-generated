@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * patient, but diagnostic tests can also be requested on animals, groups of humans
      * or animals, devices such as dialysis machines, or even locations (typically for
      * environmental scans).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -135,7 +134,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner that holds legal responsibility for ordering the investigation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $orderer = null;
@@ -146,7 +144,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      *
      * Identifiers assigned to this order instance by the orderer and/or the receiver
      * and/or order fulfiller.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -157,7 +154,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      *
      * An encounter that provides additional information about the healthcare context
      * in which this request is made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -170,7 +166,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * An explanation or justification for why this diagnostic investigation is being
      * requested. This is often for billing purposes. May relate to the resources
      * referred to in supportingInformation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reason = [];
@@ -183,7 +178,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * test interpretations. This includes observations explicitly requested by the
      * producer(filler) to provide context or supporting information needed to complete
      * the order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $supportingInformation = [];
@@ -193,7 +187,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the diagnostic investigation is about.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $specimen = [];
@@ -202,7 +195,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDiagnosticOrderStatus
      */
     protected null|FHIRDiagnosticOrderStatus $status = null;
@@ -211,7 +203,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The clinical priority associated with this order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDiagnosticOrderPriority
      */
     protected null|FHIRDiagnosticOrderPriority $priority = null;
@@ -221,7 +212,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * A summary of the events of interest that have occurred as the request is
      * processed; e.g. when the order was made, various processing steps (specimens
      * received), when it was completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent[]
      */
     protected null|array $event = [];
@@ -231,7 +221,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      * The specific diagnostic investigations that are requested as part of this
      * request. Sometimes, there can only be one item per request, but in most
      * contexts, more than one investigation can be requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem[]
      */
     protected null|array $item = [];
@@ -243,7 +232,6 @@ class FHIRDiagnosticOrder extends FHIRDomainResource implements PHPFHIRContained
      *
      * Any other notes associated with this patient, specimen or order (e.g. "patient
      * hates needles").
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];

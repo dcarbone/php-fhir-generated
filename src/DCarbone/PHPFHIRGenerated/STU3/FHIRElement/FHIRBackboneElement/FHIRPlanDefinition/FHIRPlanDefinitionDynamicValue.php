@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement
      *
      * A brief, natural language description of the intended semantics of the dynamic
      * value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -114,7 +113,6 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement
      *
      * The path to the element to be customized. This is the path on the resource that
      * will hold the result of the calculation defined by the expression.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $path = null;
@@ -124,7 +122,6 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The media type of the language for the expression.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $language = null;
@@ -134,7 +131,6 @@ class FHIRPlanDefinitionDynamicValue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression specifying the value of the customized element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $expression = null;

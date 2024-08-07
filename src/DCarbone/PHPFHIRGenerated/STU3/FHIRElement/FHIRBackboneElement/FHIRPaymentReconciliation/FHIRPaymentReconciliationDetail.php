@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPay
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code to indicate the nature of the payment, adjustment, funds advance, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -115,7 +114,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The claim or financial resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $request = null;
@@ -125,7 +123,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The claim response resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $response = null;
@@ -135,7 +132,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Organization which submitted the claim or financial transaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $submitter = null;
@@ -145,7 +141,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization which is receiving the payment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $payee = null;
@@ -156,7 +151,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of the invoice or financial resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $date = null;
@@ -166,7 +160,6 @@ class FHIRPaymentReconciliationDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Amount paid for this detail.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $amount = null;

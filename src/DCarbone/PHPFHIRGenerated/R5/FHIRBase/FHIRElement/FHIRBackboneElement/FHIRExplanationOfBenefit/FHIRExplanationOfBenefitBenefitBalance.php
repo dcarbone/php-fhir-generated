@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,7 +129,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -139,7 +138,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      *
      * True if the indicated class of service is excluded from the plan, missing or
      * False indicates the product or service is included in the coverage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $excluded = null;
@@ -149,7 +147,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short name or tag for the benefit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -159,7 +156,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A richer description of the benefit or services covered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -171,7 +167,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      *
      * Is a flag to indicate whether the benefits refer to in-network providers or
      * out-of-network providers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $network = null;
@@ -182,7 +177,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates if the benefits apply to an individual or to the family.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $unit = null;
@@ -194,7 +188,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      *
      * The term or period of the values such as 'maximum lifetime benefit' or 'maximum
      * annual visits'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $term = null;
@@ -204,7 +197,6 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * Benefits Used to date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial[]
      */
     protected null|array $financial = [];

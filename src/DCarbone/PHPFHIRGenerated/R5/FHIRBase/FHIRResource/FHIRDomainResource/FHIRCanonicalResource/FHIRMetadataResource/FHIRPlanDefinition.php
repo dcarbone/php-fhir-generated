@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -219,7 +219,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * address at which an authoritative instance of this plan definition is (or will
      * be) published. This URL can be the target of a canonical reference. It SHALL
      * remain the same when the plan definition is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -232,7 +231,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * A formal identifier that is used to identify this plan definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -251,7 +249,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -262,7 +259,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -273,7 +269,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -285,7 +280,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * A natural language name identifying the plan definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -295,7 +289,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the plan definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -306,7 +299,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * An explanatory or alternate title for the plan definition giving additional
      * information about its content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $subtitle = null;
@@ -318,7 +310,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * A high-level category for the plan definition that distinguishes the kinds of
      * systems that would be interested in the plan definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -327,7 +318,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * The status of this plan definition. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -338,7 +328,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * A Boolean value to indicate that this plan definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -354,7 +343,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
      * or PackagedProductDefinition resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subjectCodeableConcept = null;
@@ -369,7 +357,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
      * or PackagedProductDefinition resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subjectReference = null;
@@ -385,7 +372,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
      * or PackagedProductDefinition resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $subjectCanonical = null;
@@ -402,7 +388,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * changed. The date must change when the business version changes and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the plan definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -413,7 +398,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the plan definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -424,7 +408,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -439,7 +422,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * A free text natural language description of the plan definition from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -456,7 +438,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate plan definition
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -468,7 +449,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * A legal or geographic region in which the plan definition is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -483,7 +463,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * Explanation of why this plan definition is needed and why it has been designed
      * as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -498,7 +477,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * A detailed description of how the plan definition is used from a clinical
      * perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $usage = null;
@@ -514,7 +492,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * A copyright statement relating to the plan definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the plan definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -526,7 +503,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -538,7 +514,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -550,7 +525,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -561,7 +535,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * The period during which the plan definition content was or is planned to be in
      * active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -574,7 +547,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * Descriptive topics related to the content of the plan definition. Topics provide
      * a high-level categorization of the definition that can be useful for filtering
      * and searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $topic = [];
@@ -585,7 +557,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $author = [];
@@ -596,7 +567,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $editor = [];
@@ -607,7 +577,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * An individual or organization asserted by the publisher to be primarily
      * responsible for review of some aspect of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $reviewer = [];
@@ -618,7 +587,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * An individual or organization asserted by the publisher to be responsible for
      * officially endorsing the content for use in some setting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $endorser = [];
@@ -630,7 +598,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -642,7 +609,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * A reference to a Library resource containing any formal logic used by the plan
      * definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $library = [];
@@ -658,7 +624,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * living, obtaining herd immunity via immunization, meeting a process improvement
      * objective, meeting the acceptance criteria for a test as specified by a quality
      * specification, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionGoal[]
      */
     protected null|array $goal = [];
@@ -671,7 +636,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * Actors represent the individuals or groups involved in the execution of the
      * defined set of activities.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionActor[]
      */
     protected null|array $actor = [];
@@ -687,7 +651,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      * medication, or perform a particular test as appropriate. In pharmaceutical
      * quality, an action would be the test that needs to be performed on a drug
      * product as defined in the quality specification.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction[]
      */
     protected null|array $action = [];
@@ -697,7 +660,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the service. For example "pain", "on flare-up", etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $asNeededBoolean = null;
@@ -709,7 +671,6 @@ class FHIRPlanDefinition extends FHIRMetadataResource implements PHPFHIRContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the service. For example "pain", "on flare-up", etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $asNeededCodeableConcept = null;

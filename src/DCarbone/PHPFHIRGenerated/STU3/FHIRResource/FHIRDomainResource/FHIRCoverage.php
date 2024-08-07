@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -136,7 +136,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * a Member Id, Certificate number, Personal Health Number or Case ID. May be
      * constructed as the concatination of the Coverage.SubscriberID and the
      * Coverage.dependant.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -145,7 +144,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     protected null|FHIRFinancialResourceStatusCodes $status = null;
@@ -157,7 +155,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * The type of coverage: social program, medical plan, accident coverage (workers
      * compensation, auto), group health or payment by an individual or organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -168,7 +165,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * The party who 'owns' the insurance policy, may be an individual, corporation or
      * the subscriber's employer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $policyHolder = null;
@@ -180,7 +176,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * The party who has signed-up for or 'owns' the contractual relationship to the
      * policy or to whom the benefit of the policy for services rendered to them or
      * their family is due.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subscriber = null;
@@ -190,7 +185,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The insurer assigned ID for the Subscriber.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $subscriberId = null;
@@ -201,7 +195,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * The party who benefits from the insurance coverage., the patient when services
      * are provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $beneficiary = null;
@@ -212,7 +205,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The relationship of beneficiary (patient) to the subscriber.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $relationship = null;
@@ -224,7 +216,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Time period during which the coverage is in force. A missing start date
      * indicates the start date isn't known, a missing end date means the coverage is
      * continuing to be in force.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -237,7 +228,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * non-insurance agreements, such as patient-pay agreements. May provide multiple
      * identifiers such as insurance company identifier or business identifier (BIN
      * number).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $payor = [];
@@ -247,7 +237,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * A suite of underwrite specific classifiers, for example may be used to identify
      * a class of coverage or employer group, Policy, Plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageGrouping
      */
     protected null|FHIRCoverageGrouping $grouping = null;
@@ -257,7 +246,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A unique identifier for a dependent under the coverage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $dependent = null;
@@ -268,7 +256,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * An optional counter for a particular instance of the identified coverage which
      * increments upon each renewal.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $sequence = null;
@@ -281,7 +268,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * are currently inforce. Note, there may be gaps in the numbering and this does
      * not imply primary, secondard etc. as the specific positioning of coverages
      * depends upon the episode of care.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $order = null;
@@ -293,7 +279,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * The insurer-specific identifier for the insurer-defined network of providers to
      * which the beneficiary may seek treatment which will be covered at the
      * 'in-network' rate, otherwise 'out of network' terms and conditions apply.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $network = null;
@@ -303,7 +288,6 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The policy(s) which constitute this insurance coverage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $contract = [];

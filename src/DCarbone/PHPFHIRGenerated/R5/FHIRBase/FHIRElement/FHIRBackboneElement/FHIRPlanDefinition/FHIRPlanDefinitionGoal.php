@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -124,7 +124,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a category the goal falls within.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -137,7 +136,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * Human-readable and/or coded description of a specific desired objective of care,
      * such as "control blood pressure" or "negotiate an obstacle course" or "dance
      * with child at wedding".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $description = null;
@@ -149,7 +147,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      *
      * Identifies the expected level of importance associated with reaching/sustaining
      * the defined goal.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $priority = null;
@@ -160,7 +157,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The event after which the goal should begin being pursued.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $start = null;
@@ -172,7 +168,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      *
      * Identifies problems, conditions, issues, or concerns the goal is intended to
      * address.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $addresses = [];
@@ -185,7 +180,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * Didactic or other informational resources associated with the goal that provide
      * further supporting information about the goal. Information resources can include
      * inline text commentary and links to web resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[]
      */
     protected null|array $documentation = [];
@@ -197,7 +191,6 @@ class FHIRPlanDefinitionGoal extends FHIRBackboneElement
      * specifications.
      *
      * Indicates what should be done and within what timeframe.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionTarget[]
      */
     protected null|array $target = [];

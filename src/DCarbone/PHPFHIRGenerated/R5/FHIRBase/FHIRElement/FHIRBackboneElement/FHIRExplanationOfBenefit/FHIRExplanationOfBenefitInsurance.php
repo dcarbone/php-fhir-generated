@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -121,7 +121,6 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
      *
      * A flag to indicate that this Coverage is to be used for adjudication of this
      * claim when set to true.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $focal = null;
@@ -133,7 +132,6 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
      * Reference to the insurance card level information contained in the Coverage
      * resource. The coverage issuing insurer will use these details to locate the
      * patient's actual coverage within the insurer's information system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $coverage = null;
@@ -145,7 +143,6 @@ class FHIRExplanationOfBenefitInsurance extends FHIRBackboneElement
      * Reference numbers previously provided by the insurer to the provider to be
      * quoted on subsequent claims containing services or products related to the prior
      * authorization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $preAuthRef = [];

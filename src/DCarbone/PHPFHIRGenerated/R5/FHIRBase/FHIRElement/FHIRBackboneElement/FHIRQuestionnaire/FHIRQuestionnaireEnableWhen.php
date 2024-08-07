@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -151,7 +151,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      *
      * The linkId for the question whose answer (or lack of answer) governs whether
      * this item is enabled.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $question = null;
@@ -159,7 +158,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specifies the criteria by which the question is enabled.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRQuestionnaireItemOperator
      */
     protected null|FHIRQuestionnaireItemOperator $operator = null;
@@ -171,7 +169,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $answerBoolean = null;
@@ -185,7 +182,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $answerDecimal = null;
@@ -198,7 +194,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $answerInteger = null;
@@ -212,7 +207,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $answerDate = null;
@@ -229,7 +223,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $answerDateTime = null;
@@ -241,7 +234,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRTime
      */
     protected null|FHIRTime $answerTime = null;
@@ -254,7 +246,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $answerString = null;
@@ -267,7 +258,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $answerCoding = null;
@@ -282,7 +272,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $answerQuantity = null;
@@ -295,7 +284,6 @@ class FHIRQuestionnaireEnableWhen extends FHIRBackboneElement
      * order for the item to be enabled. If there are multiple answers, a match on any
      * of the answers suffices. If different behavior is desired (all must match, at
      * least 2 must match, etc.), consider using the enableWhenExpression extension.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $answerReference = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,6 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned to the flag for external use (outside the FHIR environment).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -124,7 +123,6 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Supports basic workflow.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRFlagStatus
      */
     protected null|FHIRFlagStatus $status = null;
@@ -137,7 +135,6 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * Allows an flag to be divided into different categories like clinical,
      * administrative etc. Intended to be used as a means of filtering which flags are
      * displayed to particular user or in a given context.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -148,7 +145,6 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The coded value or textual component of the flag to display to the user.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -159,7 +155,6 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * The patient, location, group , organization , or practitioner, etc. this is
      * about record this flag is associated with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -170,7 +165,6 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * The period of time from the activation of the flag to inactivation of the flag.
      * If the flag is active, the end of the period should be unspecified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -180,7 +174,6 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This alert is only relevant during the encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -190,7 +183,6 @@ class FHIRFlag extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, organization or device that created the flag.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $author = null;

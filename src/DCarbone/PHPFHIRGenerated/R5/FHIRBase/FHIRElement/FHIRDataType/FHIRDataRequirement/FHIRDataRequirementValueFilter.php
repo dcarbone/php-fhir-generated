@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRDat
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -144,7 +144,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * Profile](fhirpath.html#simple) for full details). Note that the index must be an
      * integer constant. The path must resolve to an element of a type that is
      * comparable to the valueFilter.value[x] element for the filter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $path = null;
@@ -156,7 +155,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * A search parameter defined on the specified type of the DataRequirement, and
      * which searches on elements of a type compatible with the type of the
      * valueFilter.value[x] for the filter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $searchParam = null;
@@ -167,7 +165,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * the Narrative, or extensions
      *
      * The comparator to be used to determine whether the value is matching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $comparator = null;
@@ -181,7 +178,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the filter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $valueDateTime = null;
@@ -191,7 +187,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the filter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $valuePeriod = null;
@@ -201,7 +196,6 @@ class FHIRDataRequirementValueFilter extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the filter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $valueDuration = null;

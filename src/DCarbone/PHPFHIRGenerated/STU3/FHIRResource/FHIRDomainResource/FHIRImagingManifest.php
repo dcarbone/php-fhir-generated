@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -117,7 +117,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      *
      * Unique identifier of the DICOM Key Object Selection (KOS) that this resource
      * represents.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -128,7 +127,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      *
      * A patient resource reference which is the patient subject of all DICOM SOP
      * Instances in this ImagingManifest.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -144,7 +142,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      * (typically) different from the creation date of the selection resource, and from
      * dates associated with the referenced instances (e.g. capture time of the
      * referenced image).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authoringTime = null;
@@ -158,7 +155,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      * set of imaging SOP instances to attach in a diagnostic report, and a CAD
      * application may author a selection to describe SOP instances it used to generate
      * a detection conclusion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $author = null;
@@ -173,7 +169,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      * the DICOM Key Object Selection object, several of which are not supported by
      * ImagingManifest. Specifically, there is no expected behavior associated with
      * descriptions that suggest referenced images be removed or not used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -183,7 +178,6 @@ class FHIRImagingManifest extends FHIRDomainResource implements PHPFHIRContained
      *
      * Study identity and locating information of the DICOM SOP instances in the
      * selection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestStudy[]
      */
     protected null|array $study = [];

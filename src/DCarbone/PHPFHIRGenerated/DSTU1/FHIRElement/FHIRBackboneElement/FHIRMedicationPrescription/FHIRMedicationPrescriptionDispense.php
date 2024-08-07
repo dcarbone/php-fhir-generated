@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      * a link to a resource representing the details of the medication or a simple
      * attribute carrying a code that identifies the medication from a known list of
      * medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $medication = null;
@@ -119,7 +118,6 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      * is not specified then the Prescription is open-ended or will default to a
      * stale-date based on regulations. Rationale: Indicates when the Prescription
      * becomes valid, and when it ceases to be a dispensable Prescription.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $validityPeriod = null;
@@ -130,7 +128,6 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      * An integer indicating the number of repeats of the Dispense. UsageNotes: For
      * example, the number of times the prescribed quantity is to be supplied including
      * the initial standard fill.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $numberOfRepeatsAllowed = null;
@@ -142,7 +139,6 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is to be dispensed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -155,7 +151,6 @@ class FHIRMedicationPrescriptionDispense extends FHIRBackboneElement
      * When possible, it is always better to specify quantity, as this tends to be more
      * precise. expectedSupplyDuration will always be an estimate that can be
      * influenced by external factors.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $expectedSupplyDuration = null;

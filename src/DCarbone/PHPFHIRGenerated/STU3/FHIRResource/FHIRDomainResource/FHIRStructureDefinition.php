@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -175,7 +175,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * definition is (or will be) published. The URL SHOULD include the major version
      * of the structure definition. For more information see [Technical and Business
      * Versions](resource.html#versions).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -187,7 +186,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * A formal identifier that is used to identify this structure definition when it
      * is represented in other formats, or referenced in a specification, model, design
      * or an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -202,7 +200,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -214,7 +211,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * A natural language name identifying the structure definition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -224,7 +220,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the structure definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -233,7 +228,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * The status of this structure definition. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -244,7 +238,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * A boolean value to indicate that this structure definition is authored for
      * testing purposes (or education/evaluation/marketing), and is not intended to be
      * used for genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -260,7 +253,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * date must change if and when the business version changes and it must change if
      * the status code changes. In addition, it should change when the substantive
      * content of the structure definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -271,7 +263,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * The name of the individual or organization that published the structure
      * definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -282,7 +273,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -299,7 +289,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * A free text natural language description of the structure definition from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -314,7 +303,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate structure definition instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -326,7 +314,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * A legal or geographic region in which the structure definition is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -343,7 +330,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * Explaination of why this structure definition is needed and why it has been
      * designed as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -361,7 +347,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * A copyright statement relating to the structure definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the structure definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -372,7 +357,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * A set of key words or terms from external terminologies that may be used to
      * assist with indexing and searching of templates.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
     protected null|array $keyword = [];
@@ -387,7 +371,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * The version of the FHIR specification on which this StructureDefinition is based
      * - this is the formal version of the specification, without the revision number,
      * e.g. [publication].[major].[minor], which is 3.0.1 for this version.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
     protected null|FHIRId $fhirVersion = null;
@@ -397,7 +380,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * extensions and constraints on resources and data types.
      *
      * An external specification that the content is mapped to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping[]
      */
     protected null|array $mapping = [];
@@ -406,7 +388,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the kind of structure that this definition is describing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRStructureDefinitionKind
      */
     protected null|FHIRStructureDefinitionKind $kind = null;
@@ -417,7 +398,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * Whether structure this definition describes is abstract or not - that is,
      * whether the structure is not intended to be instantiated. For Resources and Data
      * types, abstract types will never be exchanged between systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $abstract = null;
@@ -427,7 +407,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * If this is an extension, Identifies the context within FHIR resources where the
      * extension can be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRExtensionContext
      */
     protected null|FHIRExtensionContext $contextType = null;
@@ -438,7 +417,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * Identifies the types of resource or data type elements to which the extension
      * can be applied.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
     protected null|array $context = [];
@@ -449,7 +427,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * A set of rules as Fluent Invariants about when the extension can be used (e.g.
      * co-occurrence variants for the extension).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
     protected null|array $contextInvariant = [];
@@ -464,7 +441,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * (a data type, an extension, a resource, including abstract ones). Otherwise the
      * structure definition is a constraint on the stated type (and in this case, the
      * type cannot be an abstract type).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $type = null;
@@ -475,7 +451,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * An absolute URI that is the base structure from which this type is derived,
      * either by specialization or constraint.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $baseDefinition = null;
@@ -484,7 +459,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the type relates to the baseDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTypeDerivationRule
      */
     protected null|FHIRTypeDerivationRule $derivation = null;
@@ -495,7 +469,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * A snapshot view is expressed in a stand alone form that can be used and
      * interpreted without considering the base StructureDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionSnapshot
      */
     protected null|FHIRStructureDefinitionSnapshot $snapshot = null;
@@ -506,7 +479,6 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * A differential view is expressed relative to the base StructureDefinition - a
      * statement of differences that it applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionDifferential
      */
     protected null|FHIRStructureDefinitionDifferential $differential = null;

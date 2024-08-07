@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -184,7 +184,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      *
      * Unique instance identifiers assigned to a device by manufacturers other
      * organizations or owners.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -196,7 +195,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * The name used to display by default when the device is referenced. Based on
      * intent of use by the resource creator, this may reflect one of the names in
      * Device.name, or may be another simple name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $displayName = null;
@@ -207,7 +205,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference to the definition for the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $definition = null;
@@ -220,7 +217,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * the Device may include multiple udiCarriers as it either may include just the
      * udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it
      * could have been sold.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceUdiCarrier[]
      */
     protected null|array $udiCarrier = [];
@@ -229,7 +225,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      *
      * The Device record status. This is not the status of the device like
      * availability.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRFHIRDeviceStatus
      */
     protected null|FHIRFHIRDeviceStatus $status = null;
@@ -240,7 +235,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The availability of the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $availabilityStatus = null;
@@ -252,7 +246,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      *
      * An identifier that supports traceability to the event during which material in
      * this product from one or more biological entities was obtained or pooled.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $biologicalSourceEvent = null;
@@ -262,7 +255,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name of the manufacturer or entity legally responsible for the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $manufacturer = null;
@@ -276,7 +268,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time when the device was manufactured.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $manufactureDate = null;
@@ -291,7 +282,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      *
      * The date and time beyond which this device is no longer valid or should not be
      * used (if applicable).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $expirationDate = null;
@@ -301,7 +291,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lot number assigned by the manufacturer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $lotNumber = null;
@@ -311,7 +300,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The serial number assigned by the organization when the device was manufactured.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $serialNumber = null;
@@ -324,7 +312,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * from a UDI label, or by a person describing the Device. This typically would be
      * used when a person provides the name(s) or when the device represents one of the
      * names available from DeviceDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceName[]
      */
     protected null|array $name = [];
@@ -334,7 +321,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The manufacturer's model number for the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $modelNumber = null;
@@ -344,7 +330,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The part number or catalog number of the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $partNumber = null;
@@ -355,7 +340,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Devices may be associated with one or more categories.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -368,7 +352,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * The kind or type of device. A device instance may have more than one type - in
      * which case those are the types that apply to the specific instance of the
      * device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -378,7 +361,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * medical or non-medical device.
      *
      * The actual design of the device or software version running on the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceVersion[]
      */
     protected null|array $version = [];
@@ -391,7 +373,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * capabilities supported by the device. The device may be certified as conformant
      * to these specifications e.g., communication, performance, process, measurement,
      * or specialization standards.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceConformsTo[]
      */
     protected null|array $conformsTo = [];
@@ -404,7 +385,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * time or timing attributes, resolution, accuracy, intended use or instructions
      * for use, and physical attributes) that are not otherwise captured in more
      * specific attributes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDevice\FHIRDeviceProperty[]
      */
     protected null|array $property = [];
@@ -415,7 +395,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The designated condition for performing a task with the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $mode = null;
@@ -427,7 +406,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The series of occurrences that repeats during the operation of the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount
      */
     protected null|FHIRCount $cycle = null;
@@ -438,7 +416,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      *
      * A measurement of time during the device's operation (e.g., days, hours, mins,
      * etc.).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $duration = null;
@@ -449,7 +426,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      *
      * An organization that is responsible for the provision and ongoing maintenance of
      * the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $owner = null;
@@ -461,7 +437,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      *
      * Contact details for an organization or a particular human that is responsible
      * for the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint[]
      */
     protected null|array $contact = [];
@@ -471,7 +446,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The place where the device can be found.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -481,7 +455,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A network address on which the device may be contacted directly.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -492,7 +465,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      *
      * Technical endpoints providing access to services provided by the device defined
      * at this resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $endpoint = [];
@@ -505,7 +477,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * The linked device acting as a communication controller, data collector,
      * translator, or concentrator for the current device (e.g., mobile phone
      * application that relays a blood pressure device's data).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $gateway = [];
@@ -517,7 +488,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      *
      * Descriptive information, usage information or implantation information that is
      * not captured in an existing element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -529,7 +499,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      *
      * Provides additional safety characteristics about a medical device. For example
      * devices containing latex.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $safety = [];
@@ -539,7 +508,6 @@ class FHIRDevice extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The higher level or encompassing device that this device is a logical part of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $parent = null;

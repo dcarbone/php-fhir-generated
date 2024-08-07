@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,7 +127,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      *
      * Indicates the site on the subject's body where the device was used ( i.e. the
      * target site).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $bodySiteCodeableConcept = null;
@@ -138,7 +137,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      *
      * Indicates the site on the subject's body where the device was used ( i.e. the
      * target site).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $bodySiteReference = null;
@@ -148,7 +146,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time period over which the device was used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $whenUsed = null;
@@ -158,7 +155,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the device used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $device = null;
@@ -168,7 +164,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An external identifier for this statement such as an IRI.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -179,7 +174,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or justification for the use of the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $indication = [];
@@ -191,7 +185,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      * Details about the device statement that were not represented at all or
      * sufficiently in one of the attributes provided in a class. These may include for
      * example a comment, an instruction, or a note associated with the statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
      */
     protected null|array $notes = [];
@@ -204,7 +197,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the statement was made/recorded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $recordedOn = null;
@@ -214,7 +206,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who used the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -227,7 +218,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the device was used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming
      */
     protected null|FHIRTiming $timingTiming = null;
@@ -237,7 +227,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How often the device was used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $timingPeriod = null;
@@ -250,7 +239,6 @@ class FHIRDeviceUseStatement extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How often the device was used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $timingDateTime = null;

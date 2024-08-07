@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -157,7 +157,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this copy of the Consent Statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -165,7 +164,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of this Consent resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRConsentState
      */
     protected null|FHIRConsentState $status = null;
@@ -177,7 +175,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * A classification of the type of consents found in the statement. This element
      * supports indexing and retrieval of consent statements.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -188,7 +185,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The patient/healthcare practitioner or group of persons to whom this consent
      * applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -199,7 +195,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date the consent instance was agreed to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $date = null;
@@ -210,7 +205,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Effective period for this Consent Resource and all provisions unless specified
      * in that provision.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -220,7 +214,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity responsible for granting the rights listed in a Consent Directive.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $grantor = [];
@@ -231,7 +224,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The entity responsible for complying with the Consent Directive, including any
      * obligations or limitations on authorizations and enforcement of prohibitions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $grantee = [];
@@ -241,7 +233,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actor that manages the consent through its lifecycle.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $manager = [];
@@ -251,7 +242,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actor that controls/enforces the access according to the consent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $controller = [];
@@ -262,7 +252,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The source on which this consent statement is based. The source might be a
      * scanned original paper form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment[]
      */
     protected null|array $sourceAttachment = [];
@@ -273,7 +262,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * A reference to a consent that links back to such a source, a reference to a
      * document repository (e.g. XDS) that stores the original consent document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $sourceReference = [];
@@ -285,7 +273,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * A set of codes that indicate the regulatory basis (if any) that this consent
      * supports.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $regulatoryBasis = [];
@@ -299,7 +286,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * enforce for this Consent. This Reference or URL should be specific to the
      * version of the policy and should be dereferencable to a computable policy of
      * some form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentPolicyBasis
      */
     protected null|FHIRConsentPolicyBasis $policyBasis = null;
@@ -309,7 +295,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Reference to the human readable policy explaining the basis for the Consent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $policyText = [];
@@ -321,7 +306,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Whether a treatment instruction (e.g. artificial respiration: yes or no) was
      * verified with the patient, his/her family or another authorized person.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification[]
      */
     protected null|array $verification = [];
@@ -329,7 +313,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Action to take - permit or deny - as default.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRConsentProvisionType
      */
     protected null|FHIRConsentProvisionType $decision = null;
@@ -341,7 +324,6 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * An exception to the base policy of this consent. An exception can be an addition
      * or removal of access permissions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision[]
      */
     protected null|array $provision = [];

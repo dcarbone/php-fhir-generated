@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,7 +127,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      * The identifier that is used to identify this value set when it is referenced in
      * a specification, model, design or an instance (should be globally unique OID,
      * UUID, or URI).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $identifier = null;
@@ -139,7 +138,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      * referenced in a specification, model, design or instance. This is an arbitrary
      * value managed by the profile author manually and the value should be a
      * timestamp.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -148,7 +146,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name describing the value set.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -157,7 +154,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the value set.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -169,7 +165,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * Contacts of the publisher to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[]
      */
     protected null|array $telecom = [];
@@ -179,7 +174,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * A free text natural language description of the use of the value set - reason
      * for definition, conditions of use, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -188,7 +182,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A copyright statement relating to the value set and/or its contents.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyright = null;
@@ -196,7 +189,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the value set.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRValueSetStatus
      */
     protected null|FHIRValueSetStatus $status = null;
@@ -207,7 +199,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      * This valueset was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -216,7 +207,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is intended to be used with an extensible binding or not.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $extensible = null;
@@ -228,7 +218,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the value set status was last changed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -236,7 +225,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * When value set defines its own codes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDefine
      */
     protected null|FHIRValueSetDefine $define = null;
@@ -244,7 +232,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * When value set includes codes from elsewhere.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
      */
     protected null|FHIRValueSetCompose $compose = null;
@@ -252,7 +239,6 @@ class FHIRValueSet extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * When value set is an expansion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
      */
     protected null|FHIRValueSetExpansion $expansion = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -132,7 +132,6 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      *
      * Exceptions, special conditions and supporting information applicable for this
      * service or product line.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $supportingInfoSequence = [];
@@ -144,7 +143,6 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      *
      * Code to identify the general type of benefits under which products and services
      * are provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -155,7 +153,6 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This contains the product, service, drug or other billing code for the item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $productOrService = null;
@@ -167,7 +164,6 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $modifier = [];
@@ -178,7 +174,6 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      *
      * The practitioner who is responsible for the product or service to be rendered to
      * the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $provider = null;
@@ -190,7 +185,6 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of repetitions of a service or product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -200,7 +194,6 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount charged to the patient by the provider for a single unit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     protected null|FHIRMoney $unitPrice = null;
@@ -210,7 +203,6 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services will be provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $facility = null;
@@ -222,7 +214,6 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * of the policy.
      *
      * Patient diagnosis for which care is sought.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis[]
      */
     protected null|array $diagnosis = [];
@@ -232,7 +223,6 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The plan/proposal/order describing the proposed service in detail.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $detail = [];

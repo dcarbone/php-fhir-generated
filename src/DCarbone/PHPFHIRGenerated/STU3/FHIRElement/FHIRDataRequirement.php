@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The type of the required data, specified as the type name of a resource. For
      * profiles, this value is set to the type of the base resource of the profile.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $type = null;
@@ -117,7 +116,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The profile of the required data, specified as the uri of the profile
      * definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri[]
      */
     protected null|array $profile = [];
@@ -133,7 +131,6 @@ class FHIRDataRequirement extends FHIRElement
      * values for it if they are available. Note that the value for this element can be
      * a path to allow references to nested elements. In that case, all the elements
      * along the path must be supported.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
     protected null|array $mustSupport = [];
@@ -145,7 +142,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * Code filters specify additional constraints on the data, specifying the value
      * set of interest for a particular element of the data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter[]
      */
     protected null|array $codeFilter = [];
@@ -157,7 +153,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * Date filters specify additional constraints on the data in terms of the
      * applicable date range for specific elements.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter[]
      */
     protected null|array $dateFilter = [];

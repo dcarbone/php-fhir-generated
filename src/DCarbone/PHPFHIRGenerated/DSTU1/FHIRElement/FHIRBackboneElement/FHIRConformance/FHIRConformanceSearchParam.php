@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the search parameter used in the interface.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -115,7 +114,6 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      *
      * A formal reference to where this parameter was first defined, so that a client
      * can be confident of the meaning of the search parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $definition = null;
@@ -124,7 +122,6 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      *
      * The type of value a search parameter refers to, and how the content is
      * interpreted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSearchParamType
      */
     protected null|FHIRSearchParamType $type = null;
@@ -134,7 +131,6 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      *
      * This allows documentation of any distinct behaviors about how the search
      * parameter is used. For example, text matching algorithms.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $documentation = null;
@@ -145,7 +141,6 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Types of resource (if a resource is referenced).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode[]
      */
     protected null|array $target = [];
@@ -154,7 +149,6 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Chained names supported.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString[]
      */
     protected null|array $chain = [];

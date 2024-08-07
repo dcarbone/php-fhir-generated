@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,7 +115,6 @@ class FHIRSubstancePolymerMonomerSet extends FHIRBackboneElement
      *
      * Captures the type of ratio to the entire polymer, e.g. Monomer/Polymer ratio,
      * SRU/Polymer Ratio.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $ratioType = null;
@@ -123,7 +122,6 @@ class FHIRSubstancePolymerMonomerSet extends FHIRBackboneElement
      * Properties of a substance specific to it being a polymer.
      *
      * The starting materials - monomer(s) used in the synthesis of the polymer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStartingMaterial[]
      */
     protected null|array $startingMaterial = [];

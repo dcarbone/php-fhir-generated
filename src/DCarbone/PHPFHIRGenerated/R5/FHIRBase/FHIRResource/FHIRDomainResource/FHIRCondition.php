@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -167,7 +167,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Business identifiers assigned to this condition by the performer or other
      * systems which remain constant as the resource is updated and propagates from
      * server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -178,7 +177,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The clinical status of the condition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $clinicalStatus = null;
@@ -191,7 +189,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The verification status to support the clinical status of the condition. The
      * verification status pertains to the condition, itself, not to any specific
      * condition attribute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $verificationStatus = null;
@@ -202,7 +199,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A category assigned to the condition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -214,7 +210,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * A subjective assessment of the severity of the condition as evaluated by the
      * clinician.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $severity = null;
@@ -225,7 +220,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identification of the condition, problem or diagnosis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -236,7 +230,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The anatomical location where this condition manifests itself.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $bodySite = [];
@@ -246,7 +239,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the patient or group who the condition record is associated with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -257,7 +249,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * The Encounter during which this Condition was created or to which the creation
      * of this record is tightly associated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -272,7 +263,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $onsetDateTime = null;
@@ -283,7 +273,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $onsetAge = null;
@@ -294,7 +283,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $onsetPeriod = null;
@@ -305,7 +293,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $onsetRange = null;
@@ -316,7 +303,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Estimated or actual date or date-time the condition began, in the opinion of the
      * clinician.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $onsetString = null;
@@ -333,7 +319,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Some conditions, such as chronic
      * conditions, are never really resolved, but they can abate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $abatementDateTime = null;
@@ -346,7 +331,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Some conditions, such as chronic
      * conditions, are never really resolved, but they can abate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $abatementAge = null;
@@ -359,7 +343,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Some conditions, such as chronic
      * conditions, are never really resolved, but they can abate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $abatementPeriod = null;
@@ -372,7 +355,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Some conditions, such as chronic
      * conditions, are never really resolved, but they can abate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $abatementRange = null;
@@ -385,7 +367,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * This is called "abatement" because of the many overloaded connotations
      * associated with "remission" or "resolution" - Some conditions, such as chronic
      * conditions, are never really resolved, but they can abate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $abatementString = null;
@@ -400,7 +381,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * The recordedDate represents when this particular Condition record was created in
      * the system, which is often a system-generated date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $recordedDate = null;
@@ -410,7 +390,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Indicates who or what participated in the activities related to the condition
      * and how they were involved.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionParticipant[]
      */
     protected null|array $participant = [];
@@ -421,7 +400,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * A simple summary of the stage such as "Stage 3" or "Early Onset". The
      * determination of the stage is disease-specific, such as cancer, retinopathy of
      * prematurity, kidney diseases, Alzheimer's, or Parkinson disease.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionStage[]
      */
     protected null|array $stage = [];
@@ -433,7 +411,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Supporting evidence / manifestations that are the basis of the Condition's
      * verification status, such as evidence that confirmed or refuted the condition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $evidence = [];
@@ -445,7 +422,6 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Additional information about the Condition. This is a general notes/comments
      * entry for description of the Condition, its diagnosis and prognosis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];

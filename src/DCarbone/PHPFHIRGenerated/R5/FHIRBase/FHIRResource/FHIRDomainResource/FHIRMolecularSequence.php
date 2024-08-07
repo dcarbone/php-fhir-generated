@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -140,7 +140,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier for this particular sequence instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -148,7 +147,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSequenceType
      */
     protected null|FHIRSequenceType $type = null;
@@ -158,7 +156,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the subject this sequence is associated too.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -171,7 +168,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * representing something or someone associated with the patient such as a spouse,
      * parent, child, or sibling. For example, in trio testing, the subject would be
      * the child (proband) and the focus would be the parent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $focus = [];
@@ -181,7 +177,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specimen used for sequencing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $specimen = null;
@@ -191,7 +186,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method for sequencing, for example, chip information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $device = null;
@@ -201,7 +195,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization or lab that should be responsible for this result.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $performer = null;
@@ -211,7 +204,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Sequence that was observed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $literal = null;
@@ -222,7 +214,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      *
      * Sequence that was observed as file content. Can be an actual file contents, or
      * referenced by a URL to an external system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment[]
      */
     protected null|array $formatted = [];
@@ -230,7 +221,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * Representation of a molecular sequence.
      *
      * A sequence defined relative to another sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRelative[]
      */
     protected null|array $relative = [];

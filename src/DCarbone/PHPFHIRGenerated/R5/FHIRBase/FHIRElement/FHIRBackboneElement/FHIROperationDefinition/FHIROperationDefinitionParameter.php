@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -148,7 +148,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The name of used to identify the parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $name = null;
@@ -156,7 +155,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is an input or an output parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIROperationParameterUse
      */
     protected null|FHIROperationParameterUse $use = null;
@@ -165,7 +163,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * If present, indicates that the parameter applies when the operation is being
      * invoked at the specified level.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIROperationParameterScope[]
      */
     protected null|array $scope = [];
@@ -176,7 +173,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * The minimum number of times this parameter SHALL appear in the request or
      * response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $min = null;
@@ -187,7 +183,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * The maximum number of times this element is permitted to appear in the request
      * or response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $max = null;
@@ -201,7 +196,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Describes the meaning or use of this parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $documentation = null;
@@ -209,7 +203,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type for this parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRFHIRTypes
      */
     protected null|FHIRFHIRTypes $type = null;
@@ -218,7 +211,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * Support for polymorphic types. If the parameter type is abstract, this element
      * lists allowed sub-types for the parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRFHIRTypes[]
      */
     protected null|array $allowedType = [];
@@ -236,7 +228,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * Implementation Guide by a canonical URL. When an implementation guide is
      * specified, the target resource SHALL conform to at least one profile defined in
      * the implementation guide.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $targetProfile = [];
@@ -245,7 +236,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * How the parameter is understood if/when it used as search parameter. This is
      * only used if the parameter is a string.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSearchParamType
      */
     protected null|FHIRSearchParamType $searchType = null;
@@ -254,7 +244,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * named query (using the search interaction).
      *
      * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding
      */
     protected null|FHIROperationDefinitionBinding $binding = null;
@@ -264,7 +253,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * Identifies other resource parameters within the operation invocation that are
      * expected to resolve to this resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom[]
      */
     protected null|array $referencedFrom = [];
@@ -273,7 +261,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * named query (using the search interaction).
      *
      * The parts of a nested Parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
     protected null|array $part = [];

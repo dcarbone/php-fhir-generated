@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -147,7 +147,6 @@ class FHIRSubstance extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Unique identifier for the substance. For an instance, an identifier associated
      * with the package/container (usually a label affixed directly).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -157,7 +156,6 @@ class FHIRSubstance extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * A boolean to indicate if this an instance of a substance or a kind of one (a
      * definition).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $instance = null;
@@ -165,7 +163,6 @@ class FHIRSubstance extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate if the substance is actively used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRFHIRSubstanceStatus
      */
     protected null|FHIRFHIRSubstanceStatus $status = null;
@@ -177,7 +174,6 @@ class FHIRSubstance extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * A code that classifies the general type of substance. This is used for
      * searching, sorting and display purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -188,7 +184,6 @@ class FHIRSubstance extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code (or set of codes) that identify this substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $code = null;
@@ -203,7 +198,6 @@ class FHIRSubstance extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * A description of the substance - its appearance, handling requirements, and
      * other usage notes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -218,7 +212,6 @@ class FHIRSubstance extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * When the substance is no longer valid to use. For some substances, a single
      * arbitrary date is used for expiry.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $expiry = null;
@@ -230,7 +223,6 @@ class FHIRSubstance extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of the substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -238,7 +230,6 @@ class FHIRSubstance extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * A homogeneous material with a definite composition.
      *
      * A substance can be composed of other substances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceIngredient[]
      */
     protected null|array $ingredient = [];

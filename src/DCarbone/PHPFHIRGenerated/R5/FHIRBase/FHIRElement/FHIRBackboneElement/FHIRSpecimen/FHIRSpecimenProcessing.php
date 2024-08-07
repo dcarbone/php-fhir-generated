@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -134,7 +133,6 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded value specifying the method used to process the specimen.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $method = null;
@@ -144,7 +142,6 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Material used in the processing step.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $additive = [];
@@ -160,7 +157,6 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
      * formalin.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $timeDateTime = null;
@@ -172,7 +168,6 @@ class FHIRSpecimenProcessing extends FHIRBackboneElement
      * A record of the time or period when the specimen processing occurred. For
      * example the time of sample fixation or the period of time the sample was in
      * formalin.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $timePeriod = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRProfileConstraint extends FHIRBackboneElement
      * Allows identification of which elements have their cardinalities impacted by the
      * constraint. Will not be referenced for constraints that do not affect
      * cardinality.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRId
      */
     protected null|FHIRId $key = null;
@@ -115,7 +114,6 @@ class FHIRProfileConstraint extends FHIRBackboneElement
      *
      * Used to label the constraint in OCL or in short displays incapable of displaying
      * the full human description.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -125,7 +123,6 @@ class FHIRProfileConstraint extends FHIRBackboneElement
      *
      * Identifies the impact constraint violation has on the conformance of the
      * instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRConstraintSeverity
      */
     protected null|FHIRConstraintSeverity $severity = null;
@@ -135,7 +132,6 @@ class FHIRProfileConstraint extends FHIRBackboneElement
      *
      * Text that can be used to describe the constraint in messages identifying that
      * the constraint has been violated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $human = null;
@@ -144,7 +140,6 @@ class FHIRProfileConstraint extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * XPath expression of constraint.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $xpath = null;

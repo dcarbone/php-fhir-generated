@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMea
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -93,7 +93,6 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identifier of this stratifier, as defined in the measure definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -103,7 +102,6 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * This element contains the results for a single stratum within the stratifier.
      * For example, when stratifying on administrative gender, there will be four
      * strata, one for each possible gender value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum[]
      */
     protected null|array $stratum = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The assigned number for the marketing authorization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -110,7 +109,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Country of authorization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $country = null;
@@ -121,7 +119,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Jurisdiction within a country.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -132,7 +129,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The legal status of supply in a jurisdiction or region.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $legalStatusOfSupply = null;
@@ -142,7 +138,6 @@ class FHIRMedicinalProductAuthorizationJurisdictionalAuthorization extends FHIRB
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The start and expected end date of the authorization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $validityPeriod = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -132,7 +132,6 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -146,7 +145,6 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $valueDecimal = null;
@@ -159,7 +157,6 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $valueInteger = null;
@@ -173,7 +170,6 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $valueDate = null;
@@ -189,7 +185,6 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $valueDateTime = null;
@@ -201,7 +196,6 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
     protected null|FHIRTime $valueTime = null;
@@ -214,7 +208,6 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -227,7 +220,6 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $valueUri = null;
@@ -240,7 +232,6 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $valueAttachment = null;
@@ -253,7 +244,6 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $valueCoding = null;
@@ -268,7 +258,6 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -281,7 +270,6 @@ class FHIRContractAnswer extends FHIRBackboneElement
      * to be agreed to, e.g., the period of participation, the date of occupancy of a
      * rental, warrently duration, or whether biospecimen may be used for further
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $valueReference = null;

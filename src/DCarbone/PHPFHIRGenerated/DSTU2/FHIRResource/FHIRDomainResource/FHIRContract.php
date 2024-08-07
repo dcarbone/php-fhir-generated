@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -135,7 +135,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this Contract.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -148,7 +147,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When this Contract was issued.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $issued = null;
@@ -158,7 +156,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Relevant time or time-period when this Contract is applicable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $applies = null;
@@ -169,7 +166,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Who and/or what this Contract is about: typically a Patient, Organization, or
      * valued items such as goods and services.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $subject = [];
@@ -182,7 +178,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * organizations, or jurisdictions formed for the purpose of achieving some form of
      * collective action such as the promulgation, administration and enforcement of
      * contracts and policies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $authority = [];
@@ -195,7 +190,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * in accordance with specified principles, policies, processes or procedures for
      * managing rights, actions, or behaviors of parties or principals relative to
      * resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $domain = [];
@@ -207,7 +201,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Type of Contract such as an insurance policy, real estate contract, a will,
      * power of attorny, Privacy or Security policy , trust framework agreement, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -220,7 +213,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * More specific type or specialization of an overarching or more general contract
      * such as auto insurance, home owner insurance, prenupial agreement,
      * Advanced-Directive, or privacy consent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $subType = [];
@@ -231,7 +223,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Action stipulated by this Contract.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $action = [];
@@ -242,7 +233,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for action stipulated by this Contract.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $actionReason = [];
@@ -251,7 +241,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * of information or other matters.
      *
      * List of Contract actors.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractActor[]
      */
     protected null|array $actor = [];
@@ -260,7 +249,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * of information or other matters.
      *
      * Contract Valued Item List.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem[]
      */
     protected null|array $valuedItem = [];
@@ -269,7 +257,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * of information or other matters.
      *
      * Party signing this Contract.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSigner[]
      */
     protected null|array $signer = [];
@@ -279,7 +266,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * One or more Contract Provisions, which may be related and conveyed as a group,
      * and may contain nested groups.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm[]
      */
     protected null|array $term = [];
@@ -292,7 +278,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
      * Contract.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $bindingAttachment = null;
@@ -305,7 +290,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * representation of the Contract, which is considered the "source of truth" and
      * which would be the basis for legal action related to enforcement of this
      * Contract.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $bindingReference = null;
@@ -319,7 +303,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * a layperson in accordance with best practices for communication styles that
      * ensure that those agreeing to or signing the Contract understand the roles,
      * actions, obligations, responsibilities, and implication of the agreement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractFriendly[]
      */
     protected null|array $friendly = [];
@@ -328,7 +311,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * of information or other matters.
      *
      * List of Legal expressions or representations of this Contract.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractLegal[]
      */
     protected null|array $legal = [];
@@ -337,7 +319,6 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * of information or other matters.
      *
      * List of Computable Policy Rule Language Representations of this Contract.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule[]
      */
     protected null|array $rule = [];

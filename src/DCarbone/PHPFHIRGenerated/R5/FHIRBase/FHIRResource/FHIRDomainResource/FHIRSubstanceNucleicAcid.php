@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the sequence shall be specified based on a controlled vocabulary.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $sequenceType = null;
@@ -150,7 +149,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
      * bonds shall be described. Subunits would be strands of nucleic acids that are
      * tightly associated typically through Watson-Crick base pairing. NOTE: If not
      * specified in the reference source, the assumption is that there is 1 subunit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $numberOfSubunits = null;
@@ -163,7 +161,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
      * RNA or DNA. The number associated with the subunit followed by the number
      * associated to the residue shall be specified in increasing order. The underscore
      * “” shall be used as separator as follows: “Subunitnumber Residue”.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $areaOfHybridisation = null;
@@ -174,7 +171,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * (TBC).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $oligoNucleotideType = null;
@@ -187,7 +183,6 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
      * Subunits are listed in order of decreasing length; sequences of the same length
      * will be ordered by molecular weight; subunits that have identical sequences will
      * be repeated multiple times.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit[]
      */
     protected null|array $subunit = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -117,7 +117,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A service line number.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $sequence = null;
@@ -128,7 +127,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of product or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -139,7 +137,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of reveneu or cost center providing the product and/or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $revenue = null;
@@ -151,7 +148,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      *
      * Health Care Service Type Codes to identify the classification of service or
      * benefits.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -163,7 +159,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      *
      * A code to indicate the Professional Service or Product supplied (eg. CTP,
      * HCPCS,USCLS,ICD10, NCPDP,DIN,ACHI,CCI).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $service = null;
@@ -176,7 +171,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * Item typification or modifiers codes, eg for Oral whether the treatment is
      * cosmetic or associated with TMJ, or for medical whether the treatment was
      * outside the clinic or out of office hours.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $modifier = [];
@@ -188,7 +182,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      *
      * For programs which require reson codes for the inclusion, covering, of this
      * billed item under the program or sub-program.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $programCode = [];
@@ -200,7 +193,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of repetitions of a service or product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -210,7 +202,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The fee for an addittional service or product or charge.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $unitPrice = null;
@@ -223,7 +214,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $factor = null;
@@ -236,7 +226,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * charge. For example, the formula: unit Quantity * unit Price (Cost per Point) *
      * factor Number * points = net Amount. Quantity, factor and points are assumed to
      * be 1 if not supplied.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $net = null;
@@ -246,7 +235,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * List of Unique Device Identifiers associated with this line item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $udi = [];
@@ -256,7 +244,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A list of note references to the notes provided below.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $noteNumber = [];
@@ -266,7 +253,6 @@ class FHIRExplanationOfBenefitSubDetail extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * The adjudications results.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication[]
      */
     protected null|array $adjudication = [];

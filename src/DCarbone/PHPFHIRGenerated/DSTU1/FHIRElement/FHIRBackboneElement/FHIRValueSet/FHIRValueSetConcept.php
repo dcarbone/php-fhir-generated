@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Code that identifies concept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -110,7 +109,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this code is not for use as a real concept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $abstract = null;
@@ -119,7 +117,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text to Display to the user.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $display = null;
@@ -131,7 +128,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * because of the prevalence of legacy systems without them, but they are highly
      * recommended, as without them there is no formal meaning associated with the
      * concept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $definition = null;
@@ -139,7 +135,6 @@ class FHIRValueSetConcept extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Child Concepts (is-a / contains).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[]
      */
     protected null|array $concept = [];

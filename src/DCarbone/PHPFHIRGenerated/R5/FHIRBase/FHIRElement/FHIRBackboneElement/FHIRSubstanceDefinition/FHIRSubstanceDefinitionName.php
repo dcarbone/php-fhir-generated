@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,7 +129,6 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -140,7 +139,6 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Name type, for example 'systematic', 'scientific, 'brand'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -151,7 +149,6 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the name, for example 'current', 'proposed'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $status = null;
@@ -160,7 +157,6 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If this is the preferred name for this substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $preferred = null;
@@ -171,7 +167,6 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Human language that the name is written in.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $language = [];
@@ -183,7 +178,6 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      *
      * The use context of this name for example if there is a different name a drug
      * active ingredient as opposed to a food colour additive.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $domain = [];
@@ -194,7 +188,6 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The jurisdiction where this name applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -203,7 +196,6 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * used for prescribing.
      *
      * A synonym of this particular name, by which the substance is also known.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionName[]
      */
     protected null|array $synonym = [];
@@ -212,7 +204,6 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * used for prescribing.
      *
      * A translation for this name into another human language.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionName[]
      */
     protected null|array $translation = [];
@@ -221,7 +212,6 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * used for prescribing.
      *
      * Details of the official nature of this name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionOfficial[]
      */
     protected null|array $official = [];
@@ -231,7 +221,6 @@ class FHIRSubstanceDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $source = [];

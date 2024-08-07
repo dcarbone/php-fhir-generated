@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this represents partial or complete payment of the claim.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -115,7 +114,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      *
      * Adjustment to the payment of this transaction which is not related to
      * adjudication of this transaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $adjustment = null;
@@ -126,7 +124,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason for the payment adjustment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $adjustmentReason = null;
@@ -137,7 +134,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Estimated payment data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $date = null;
@@ -147,7 +143,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payable less any payment adjustment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $amount = null;
@@ -157,7 +152,6 @@ class FHIRClaimResponsePayment extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Payment identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -116,7 +116,6 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      *
      * Identifier for the organization that is used to identify the organization across
      * multiple disparate systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -125,7 +124,6 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A name associated with the organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -136,7 +134,6 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of organization that this is.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -147,7 +144,6 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[]
      */
     protected null|array $telecom = [];
@@ -158,7 +154,6 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An address for the organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAddress[]
      */
     protected null|array $address = [];
@@ -168,7 +163,6 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization of which this organization forms a part.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $partOf = null;
@@ -179,7 +173,6 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * groups, etc.
      *
      * Contact for the organization for a certain purpose.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact[]
      */
     protected null|array $contact = [];
@@ -189,7 +182,6 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Location(s) the organization uses to provide services.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $location = [];
@@ -198,7 +190,6 @@ class FHIROrganization extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the organization's record is still in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $active = null;

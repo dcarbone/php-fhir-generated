@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -177,7 +177,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * itself is not appropriate. They are business identifiers assigned to this
      * resource by the performer or other systems and remain constant as the resource
      * is updated and propagates from server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -188,7 +187,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * the Narrative, or extensions
      *
      * Instantiates FHIR protocol or definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $instantiatesCanonical = [];
@@ -198,7 +196,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Instantiates external protocol or definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri[]
      */
     protected null|array $instantiatesUri = [];
@@ -208,7 +205,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -218,7 +214,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component or step.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $partOf = [];
@@ -228,7 +223,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * A code representing the patient or other source's judgment about the state of
      * the intake that this assertion is about. Generally, this will be active or
      * completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIREventStatus
      */
     protected null|FHIREventStatus $status = null;
@@ -239,7 +233,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures the reason for the current state of the NutritionIntake.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $statusReason = [];
@@ -250,7 +243,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Overall type of nutrition intake.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -260,7 +252,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, animal or group who is/was consuming the food or fluid.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -270,7 +261,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that establishes the context for this NutritionIntake.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -285,7 +275,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      *
      * The interval of time during which it is being asserted that the patient is/was
      * consuming the food or fluid.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -296,7 +285,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      *
      * The interval of time during which it is being asserted that the patient is/was
      * consuming the food or fluid.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $occurrencePeriod = null;
@@ -310,7 +298,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the Nutrition Intake was asserted by the information source.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $recorded = null;
@@ -321,7 +308,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
      * from other resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $reportedBoolean = null;
@@ -333,7 +319,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * The person or organization that provided the information about the consumption
      * of this food or fluid. Note: Use derivedFrom when a NutritionIntake is derived
      * from other resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $reportedReference = null;
@@ -349,7 +334,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * clinician documenting observed intake.
      *
      * What food or fluid product or item was consumed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionIntake\FHIRNutritionIntakeConsumedItem[]
      */
     protected null|array $consumedItem = [];
@@ -365,7 +349,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * clinician documenting observed intake.
      *
      * Total nutrient amounts for the whole meal, product, serving, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionIntake\FHIRNutritionIntakeIngredientLabel[]
      */
     protected null|array $ingredientLabel = [];
@@ -381,7 +364,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * clinician documenting observed intake.
      *
      * Who performed the intake and how they were involved.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionIntake\FHIRNutritionIntakePerformer[]
      */
     protected null|array $performer = [];
@@ -391,7 +373,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the intake occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -403,7 +384,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * Allows linking the NutritionIntake to the underlying NutritionOrder, or to other
      * information, such as AllergyIntolerance, that supports or is used to derive the
      * NutritionIntake.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $derivedFrom = [];
@@ -414,7 +394,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reason, Condition or observation for why the food or fluid is /was consumed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $reason = [];
@@ -426,7 +405,6 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      *
      * Provides extra information about the Nutrition Intake that is not conveyed by
      * the other attributes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      *
      * The actual ingredient - either a substance (simple ingredient) or another
      * medication of a medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $itemCodeableConcept = null;
@@ -115,7 +114,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      *
      * The actual ingredient - either a substance (simple ingredient) or another
      * medication of a medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $itemReference = null;
@@ -125,7 +123,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      *
      * Indication of whether this ingredient affects the therapeutic action of the
      * drug.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $isActive = null;
@@ -138,7 +135,6 @@ class FHIRMedicationIngredient extends FHIRBackboneElement
      * Specifies how many (or how much) of the items there are in this Medication. For
      * example, 250 mg per tablet. This is expressed as a ratio where the numerator is
      * 250mg and the denominator is 1 tablet.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $strength = null;

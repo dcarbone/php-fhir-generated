@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -132,7 +132,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates the URL or the actual content to provide for the page.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUrl
      */
     protected null|FHIRUrl $sourceUrl = null;
@@ -142,7 +141,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the URL or the actual content to provide for the page.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $sourceString = null;
@@ -156,7 +154,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates the URL or the actual content to provide for the page.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $sourceMarkdown = null;
@@ -166,7 +163,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The url by which the page should be known when published.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUrl
      */
     protected null|FHIRUrl $name = null;
@@ -177,7 +173,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      *
      * A short title used to represent this page in navigational structures such as
      * table of contents, bread crumbs, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -185,7 +180,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the page is generated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRGuidePageGeneration
      */
     protected null|FHIRGuidePageGeneration $generation = null;
@@ -196,7 +190,6 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Nested Pages/Sections under this page.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage[]
      */
     protected null|array $page = [];

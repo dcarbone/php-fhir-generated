@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -147,7 +147,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The collection the cited article or artifact is published in.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublishedIn
      */
     protected null|FHIRCitationPublishedIn $publishedIn = null;
@@ -166,7 +165,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * release as commonly done for journals) AND is published separately from the
      * issue (as commonly done with early online publication), to represent specific
      * identification of the publication form not associated with the issue.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $citedMedium = null;
@@ -176,7 +174,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Volume number of journal or other collection in which the article is published.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $volume = null;
@@ -187,7 +184,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * Issue, part or supplement of journal or other collection in which the article is
      * published.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $issue = null;
@@ -202,7 +198,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * The date the article was added to the database, or the date the article was
      * released.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $articleDate = null;
@@ -213,7 +208,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * Text representation of the date on which the issue of the cited artifact was
      * published.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publicationDateText = null;
@@ -223,7 +217,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Spring, Summer, Fall/Autumn, Winter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publicationDateSeason = null;
@@ -237,7 +230,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date the article was last revised or updated in the database.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $lastRevisionDate = null;
@@ -248,7 +240,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The language or languages in which this form of the article is published.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $language = [];
@@ -258,7 +249,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Entry number or identifier for inclusion in a database.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $accessionNumber = null;
@@ -268,7 +258,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for full display of pagination.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $pageString = null;
@@ -278,7 +267,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for isolated representation of first page.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $firstPage = null;
@@ -288,7 +276,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Used for isolated representation of last page.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $lastPage = null;
@@ -299,7 +286,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      *
      * Actual or approximate number of pages or screens. Distinct from reporting the
      * page numbers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $pageCount = null;
@@ -313,7 +299,6 @@ class FHIRCitationPublicationForm extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Copyright notice for the full article or artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;

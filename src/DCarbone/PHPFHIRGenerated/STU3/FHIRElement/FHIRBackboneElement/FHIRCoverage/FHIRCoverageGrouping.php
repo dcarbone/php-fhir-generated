@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCov
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,7 +118,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a style or collective of coverage issued by the underwriter, for
      * example may be used to identify an employer group. May also be referred to as a
      * Policy or Group ID.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $group = null;
@@ -128,7 +127,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $groupDisplay = null;
@@ -139,7 +137,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      *
      * Identifies a style or collective of coverage issued by the underwriter, for
      * example may be used to identify a subset of an employer group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $subGroup = null;
@@ -149,7 +146,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the subgroup.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $subGroupDisplay = null;
@@ -161,7 +157,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a style or collective of coverage issued by the underwriter, for
      * example may be used to identify a collection of benefits provided to employees.
      * May be referred to as a Section or Division ID.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $plan = null;
@@ -171,7 +166,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $planDisplay = null;
@@ -183,7 +177,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a sub-style or sub-collective of coverage issued by the underwriter,
      * for example may be used to identify a subset of a collection of benefits
      * provided to employees.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $subPlan = null;
@@ -193,7 +186,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the subplan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $subPlanDisplay = null;
@@ -205,7 +197,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a style or collective of coverage issues by the underwriter, for
      * example may be used to identify a class of coverage such as a level of
      * deductables or co-payment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $class = null;
@@ -215,7 +206,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the class.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $classDisplay = null;
@@ -227,7 +217,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * Identifies a sub-style or sub-collective of coverage issues by the underwriter,
      * for example may be used to identify a subclass of coverage such as a sub-level
      * of deductables or co-payment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $subClass = null;
@@ -237,7 +226,6 @@ class FHIRCoverageGrouping extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short description for the subclass.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $subClassDisplay = null;

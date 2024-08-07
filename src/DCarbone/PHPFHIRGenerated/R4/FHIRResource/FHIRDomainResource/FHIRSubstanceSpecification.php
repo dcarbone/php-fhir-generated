@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -135,7 +135,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this substance is known.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -146,7 +145,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * High level categorization, e.g. polymer or nucleic acid.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -157,7 +155,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Status of substance within the catalogue e.g. approved.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $status = null;
@@ -168,7 +165,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the substance applies to only human or veterinary use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $domain = null;
@@ -178,7 +174,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of the substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -188,7 +183,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $source = [];
@@ -198,7 +192,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual comment about this record of a substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $comment = null;
@@ -207,7 +200,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * used for prescribing.
      *
      * Moiety, for structural modifications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMoiety[]
      */
     protected null|array $moiety = [];
@@ -217,7 +209,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      *
      * General specifications for this substance, including how it is related to other
      * substances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty[]
      */
     protected null|array $property = [];
@@ -227,7 +218,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * General information detailing this substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $referenceInformation = null;
@@ -236,7 +226,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * used for prescribing.
      *
      * Structural information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationStructure
      */
     protected null|FHIRSubstanceSpecificationStructure $structure = null;
@@ -245,7 +234,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * used for prescribing.
      *
      * Codes associated with the substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationCode[]
      */
     protected null|array $code = [];
@@ -254,7 +242,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * used for prescribing.
      *
      * Names applicable to this substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
      */
     protected null|array $name = [];
@@ -263,7 +250,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * used for prescribing.
      *
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight[]
      */
     protected null|array $molecularWeight = [];
@@ -272,7 +258,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * used for prescribing.
      *
      * A link between this substance and another, with details of the relationship.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship[]
      */
     protected null|array $relationship = [];
@@ -282,7 +267,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to nucleic acids.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $nucleicAcid = null;
@@ -292,7 +276,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to polymers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $polymer = null;
@@ -302,7 +285,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data items specific to proteins.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $protein = null;
@@ -312,7 +294,6 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Material or taxonomic/anatomical source for the substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $sourceMaterial = null;

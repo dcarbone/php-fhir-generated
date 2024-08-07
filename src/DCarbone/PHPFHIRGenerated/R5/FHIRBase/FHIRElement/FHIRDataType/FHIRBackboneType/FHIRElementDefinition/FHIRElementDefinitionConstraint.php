@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBac
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -141,7 +141,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      * Allows identification of which elements have their cardinalities impacted by the
      * constraint. Will not be referenced for constraints that do not affect
      * cardinality.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $key = null;
@@ -155,7 +154,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * Description of why this constraint is necessary or appropriate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $requirements = null;
@@ -165,7 +163,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      *
      * Identifies the impact constraint violation has on the conformance of the
      * instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRConstraintSeverity
      */
     protected null|FHIRConstraintSeverity $severity = null;
@@ -175,7 +172,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      *
      * If true, indicates that the warning or best practice guideline should be
      * suppressed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $suppress = null;
@@ -186,7 +182,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      *
      * Text that can be used to describe the constraint in messages identifying that
      * the constraint has been violated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $human = null;
@@ -197,7 +192,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      *
      * A [FHIRPath](fhirpath.html) expression of constraint that can be executed to see
      * if this constraint is met.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $expression = null;
@@ -208,7 +202,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneType
      * the Narrative, or extensions
      *
      * A reference to the original source of the constraint, for traceability purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $source = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,6 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify care team entries.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $sequence = null;
@@ -135,7 +134,6 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Member of the team who provided the product or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $provider = null;
@@ -145,7 +143,6 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
      *
      * The party who is billing and/or responsible for the claimed products or
      * services.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $responsible = null;
@@ -157,7 +154,6 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
      *
      * The lead, assisting or supervising practitioner and their discipline if a
      * multidisciplinary team.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $role = null;
@@ -169,7 +165,6 @@ class FHIRExplanationOfBenefitCareTeam extends FHIRBackboneElement
      *
      * The specialization of the practitioner or provider which is applicable for this
      * service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $specialty = null;

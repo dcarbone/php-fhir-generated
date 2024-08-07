@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -144,7 +144,6 @@ class FHIRSchedule extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External Ids for this item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -154,7 +153,6 @@ class FHIRSchedule extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Whether this schedule record is in active use or should not be used (such as was
      * entered in error).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $active = null;
@@ -166,7 +164,6 @@ class FHIRSchedule extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * A broad categorization of the service that is to be performed during this
      * appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $serviceCategory = [];
@@ -177,7 +174,6 @@ class FHIRSchedule extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific service that is to be performed during this appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $serviceType = [];
@@ -189,7 +185,6 @@ class FHIRSchedule extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * The specialty of a practitioner that would be required to perform the service
      * requested in this appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $specialty = [];
@@ -200,7 +195,6 @@ class FHIRSchedule extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Further description of the schedule as it would be presented to a consumer while
      * searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -211,7 +205,6 @@ class FHIRSchedule extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Slots that reference this schedule resource provide the availability details to
      * these referenced resource(s).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $actor = [];
@@ -225,7 +218,6 @@ class FHIRSchedule extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * planning horizon; the interval for which they are currently accepting
      * appointments. This does not define a "template" for planning outside these
      * dates.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $planningHorizon = null;
@@ -240,7 +232,6 @@ class FHIRSchedule extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Comments on the availability to describe any extended information. Such as
      * custom constraints on the slots that may be associated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $comment = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROpe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,7 +118,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The name of used to identify the parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $name = null;
@@ -127,7 +126,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is an input or an output parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROperationParameterUse
      */
     protected null|FHIROperationParameterUse $use = null;
@@ -138,7 +136,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * The minimum number of times this parameter SHALL appear in the request or
      * response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $min = null;
@@ -149,7 +146,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * The maximum number of times this element is permitted to appear in the request
      * or response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $max = null;
@@ -159,7 +155,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Describes the meaning or use of this parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $documentation = null;
@@ -167,7 +162,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type for this parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRFHIRAllTypes
      */
     protected null|FHIRFHIRAllTypes $type = null;
@@ -176,7 +170,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      *
      * How the parameter is understood as a search parameter. This is only used if the
      * parameter type is 'string'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSearchParamType
      */
     protected null|FHIRSearchParamType $searchType = null;
@@ -186,7 +179,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A profile the specifies the rules that this parameter must conform to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $profile = null;
@@ -195,7 +187,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * named query (using the search interaction).
      *
      * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionBinding
      */
     protected null|FHIROperationDefinitionBinding $binding = null;
@@ -204,7 +195,6 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * named query (using the search interaction).
      *
      * The parts of a nested Parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
     protected null|array $part = [];

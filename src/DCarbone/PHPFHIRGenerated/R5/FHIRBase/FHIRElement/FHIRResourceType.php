@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,9 +105,7 @@ class FHIRResourceType extends FHIRElement
 
     const FIELD_VALUE = 'value';
 
-    /**
-     * @var null|string
-     */
+    /** @var null|string */
     protected null|string $value = null;
 
     /**
@@ -341,13 +339,8 @@ class FHIRResourceType extends FHIRElement
             $openedRoot = true;
             $xw->openRootNode($config, 'ResourceType', $this->_getSourceXmlns());
         }
-        if (($this->_primitiveXmlLocations[self::FIELD_VALUE] ?? PHPFHIRXmlLocationEnum::ATTRIBUTE) === PHPFHIRXmlLocationEnum::ATTRIBUTE) {
-            $xw->writeAttribute(self::FIELD_VALUE, $this->getFormattedValue());
-        }
+        $xw->writeAttribute(self::FIELD_VALUE, $this->getFormattedValue());
         parent::xmlSerialize($xw, $config);
-        if (($this->_primitiveXmlLocations[self::FIELD_VALUE] ?? PHPFHIRXmlLocationEnum::ATTRIBUTE) === PHPFHIRXmlLocationEnum::ELEMENT) {
-            $xw->writeSimpleElement(self::FIELD_VALUE, $this->getFormattedValue());
-        }
         if (isset($openedRoot) && $openedRoot) {
             $xw->endElement();
         }

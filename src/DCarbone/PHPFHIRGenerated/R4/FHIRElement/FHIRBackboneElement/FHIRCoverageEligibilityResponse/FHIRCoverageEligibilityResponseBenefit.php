@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of benefit being provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -118,7 +117,6 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $allowedUnsignedInt = null;
@@ -128,7 +126,6 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $allowedString = null;
@@ -138,7 +135,6 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the benefit which is permitted under the coverage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
     protected null|FHIRMoney $allowedMoney = null;
@@ -148,7 +144,6 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The quantity of the benefit which have been consumed to date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $usedUnsignedInt = null;
@@ -158,7 +153,6 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The quantity of the benefit which have been consumed to date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $usedString = null;
@@ -168,7 +162,6 @@ class FHIRCoverageEligibilityResponseBenefit extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of the benefit which have been consumed to date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
     protected null|FHIRMoney $usedMoney = null;

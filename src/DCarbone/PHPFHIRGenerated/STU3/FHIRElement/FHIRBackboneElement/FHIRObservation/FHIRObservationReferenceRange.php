@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRObs
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the low bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is <=2.3).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $low = null;
@@ -122,7 +121,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * reference range endpoint is inclusive of the value (e.g. reference range is >=5
      * - <=9). If the high bound is omitted, it is assumed to be meaningless (e.g.
      * reference range is >= 2.3).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $high = null;
@@ -134,7 +132,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * Codes to indicate the what part of the targeted reference population it applies
      * to. For example, the normal or therapeutic range.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -147,7 +144,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * Codes to indicate the target population this reference range applies to. For
      * example, a reference range may be based on the normal population or a particular
      * sex or race.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $appliesTo = [];
@@ -158,7 +154,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      *
      * The age at which this reference range is applicable. This is a neonatal age
      * (e.g. number of weeks at term) if the meaning says so.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $age = null;
@@ -170,7 +165,6 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * Text based reference range in an observation which may be used when a
      * quantitative range is not appropriate for an observation. An example would be a
      * reference value of "Negative" or a list or table of 'normals'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;

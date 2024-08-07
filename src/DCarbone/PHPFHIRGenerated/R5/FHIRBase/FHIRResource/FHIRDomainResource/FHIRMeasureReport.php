@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -158,7 +158,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * A formal identifier that is used to identify this MeasureReport when it is
      * represented in other formats or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -168,7 +167,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The MeasureReport status. No data will be available until the MeasureReport
      * status is complete.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMeasureReportStatus
      */
     protected null|FHIRMeasureReportStatus $status = null;
@@ -182,7 +180,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * criteria in the measure; a summary report, which returns a population count for
      * each of the criteria in the measure; or a data-collection, which enables the
      * MeasureReport to be used to exchange the data-of-interest for a quality measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMeasureReportType
      */
     protected null|FHIRMeasureReportType $type = null;
@@ -194,7 +191,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * submitted data for the receiver, whereas an incremental update represents only
      * updated and/or changed data and should be applied as a differential update to
      * the existing submitted data for the receiver.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSubmitDataUpdateType
      */
     protected null|FHIRSubmitDataUpdateType $dataUpdateType = null;
@@ -205,7 +201,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * the Narrative, or extensions
      *
      * A reference to the Measure that was calculated to produce this report.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $measure = null;
@@ -215,7 +210,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optional subject identifying the individual or individuals the report is for.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -229,7 +223,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this measure was calculated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -239,7 +232,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or organization that is reporting the data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $reporter = null;
@@ -253,7 +245,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * submitting entity when it is not the same as the reporting entity. This
      * extension is used when the Receiver is interested in getting vendor information
      * in the report.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $reportingVendor = null;
@@ -263,7 +254,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the location for which the data is being reported.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -273,7 +263,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reporting period for which the report was calculated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -285,7 +274,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * A reference to a Parameters resource (typically represented using a contained
      * resource) that represents any input parameters that were provided to the
      * operation that generated the report.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $inputParameters = null;
@@ -299,7 +287,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * proportion, ratio, continuous-variable, and cohort. The value set is extensible,
      * allowing additional measure scoring types to be represented. It is expected to
      * be the same as the scoring element on the referenced Measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $scoring = null;
@@ -311,7 +298,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Whether improvement in the measure is noted by an increase or decrease in the
      * measure score.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $improvementNotation = null;
@@ -320,7 +306,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * and optionally a reference to the resources involved in that calculation.
      *
      * The results of the calculation, one for each population group in the measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup[]
      */
     protected null|array $group = [];
@@ -334,7 +319,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * evaluating the supplementalData expression for this case in the measure results
      * in a value that is not a FHIR Resource), it is reported as a reference to a
      * contained Observation resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $supplementalData = [];
@@ -346,7 +330,6 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * Evaluated resources are used to capture what data was involved in the
      * calculation of a measure. This usage is only allowed for individual reports to
      * ensure that the size of the MeasureReport resource is bounded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $evaluatedResource = [];

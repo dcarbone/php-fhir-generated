@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -200,7 +200,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * which an authoritative instance of this test script is (or will be) published.
      * This URL can be the target of a canonical reference. It SHALL remain the same
      * when the test script is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -213,7 +212,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * A formal identifier that is used to identify this test script when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -228,7 +226,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -239,7 +236,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -250,7 +246,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -262,7 +257,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * A natural language name identifying the test script. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -272,7 +266,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the test script.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -280,7 +273,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this test script. Enables tracking the life-cycle of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -291,7 +283,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * A Boolean value to indicate that this test script is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -308,7 +299,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * changed. The date must change when the business version changes and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the test script changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -319,7 +309,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the test script.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -330,7 +319,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -345,7 +333,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      *
      * A free text natural language description of the test script from a consumer's
      * perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -362,7 +349,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate test script
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -373,7 +359,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the test script is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -388,7 +373,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      *
      * Explanation of why this test script is needed and why it has been designed as it
      * has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -404,7 +388,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * A copyright statement relating to the test script and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * test script.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -416,7 +399,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -426,7 +408,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      *
      * An abstract server used in operations within this test script in the origin
      * element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOrigin[]
      */
     protected null|array $origin = [];
@@ -436,7 +417,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      *
      * An abstract server used in operations within this test script in the destination
      * element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptDestination[]
      */
     protected null|array $destination = [];
@@ -446,7 +426,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      *
      * The required capability must exist and are assumed to function correctly on the
      * FHIR server being tested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata
      */
     protected null|FHIRTestScriptMetadata $metadata = null;
@@ -457,7 +436,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * The scope indicates a conformance artifact that is tested by the test(s) within
      * this test case and the expectation of the test outcome(s) as well as the
      * intended test phase inclusion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptScope[]
      */
     protected null|array $scope = [];
@@ -467,7 +445,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      *
      * Fixture in the test script - by reference (uri). All fixtures are required for
      * the test script to execute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture[]
      */
     protected null|array $fixture = [];
@@ -478,7 +455,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * the Narrative, or extensions
      *
      * Reference to the profile to be used for validation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $profile = [];
@@ -488,7 +464,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      *
      * Variable is set based either on element value in response body or on header
      * field value in the response headers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable[]
      */
     protected null|array $variable = [];
@@ -497,7 +472,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * determine compliance against the FHIR specification.
      *
      * A series of required setup operations before tests are executed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup
      */
     protected null|FHIRTestScriptSetup $setup = null;
@@ -506,7 +480,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      * determine compliance against the FHIR specification.
      *
      * A test in this script.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTest[]
      */
     protected null|array $test = [];
@@ -516,7 +489,6 @@ class FHIRTestScript extends FHIRCanonicalResource implements PHPFHIRContainedTy
      *
      * A series of operations required to clean up after all the tests are executed
      * (successfully or otherwise).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTeardown
      */
     protected null|FHIRTestScriptTeardown $teardown = null;

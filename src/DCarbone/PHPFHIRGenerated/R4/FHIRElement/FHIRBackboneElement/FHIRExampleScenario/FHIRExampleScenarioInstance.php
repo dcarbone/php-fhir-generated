@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The id of the resource for referencing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $resourceId = null;
@@ -112,7 +111,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResourceType
      */
     protected null|FHIRResourceType $resourceType = null;
@@ -122,7 +120,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short name for the resource instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -136,7 +133,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Human-friendly description of the resource instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -144,7 +140,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * A specific version of the resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioVersion[]
      */
     protected null|array $version = [];
@@ -153,7 +148,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * Resources contained in the instance (e.g. the observations contained in a
      * bundle).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance[]
      */
     protected null|array $containedInstance = [];

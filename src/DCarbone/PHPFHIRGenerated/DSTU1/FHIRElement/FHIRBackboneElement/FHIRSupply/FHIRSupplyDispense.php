@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIRSupplyDispense extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier assigned by the dispensing facility when the dispense occurs.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -111,7 +110,6 @@ class FHIRSupplyDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSupplyDispenseStatus
      */
     protected null|FHIRSupplyDispenseStatus $status = null;
@@ -123,7 +121,6 @@ class FHIRSupplyDispense extends FHIRBackboneElement
      *
      * Indicates the type of dispensing event that is performed. Examples include:
      * Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -135,7 +132,6 @@ class FHIRSupplyDispense extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of supply that has been dispensed. Includes unit of measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -148,7 +144,6 @@ class FHIRSupplyDispense extends FHIRBackboneElement
      * a resource representing the details of the medication or substance or a simple
      * attribute carrying a code that identifies the medication from a known list of
      * medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $suppliedItem = null;
@@ -158,7 +153,6 @@ class FHIRSupplyDispense extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual responsible for dispensing the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $supplier = null;
@@ -168,7 +162,6 @@ class FHIRSupplyDispense extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time the dispense event occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $whenPrepared = null;
@@ -178,7 +171,6 @@ class FHIRSupplyDispense extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time the dispensed item was sent or handed to the patient (or agent).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $whenHandedOver = null;
@@ -189,7 +181,6 @@ class FHIRSupplyDispense extends FHIRBackboneElement
      *
      * Identification of the facility/location where the Supply was shipped to, as part
      * of the dispense event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $destination = null;
@@ -199,7 +190,6 @@ class FHIRSupplyDispense extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the person who picked up the Supply.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $receiver = [];

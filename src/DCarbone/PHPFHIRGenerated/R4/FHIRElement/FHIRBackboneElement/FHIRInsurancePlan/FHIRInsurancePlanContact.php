@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates a purpose for which the contact can be reached.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $purpose = null;
@@ -109,7 +108,6 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the contact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
      */
     protected null|FHIRHumanName $name = null;
@@ -121,7 +119,6 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
      *
      * A contact detail (e.g. a telephone number or an email address) by which the
      * party may be contacted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint[]
      */
     protected null|array $telecom = [];
@@ -135,7 +132,6 @@ class FHIRInsurancePlanContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Visiting or postal addresses for the contact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
     protected null|FHIRAddress $address = null;

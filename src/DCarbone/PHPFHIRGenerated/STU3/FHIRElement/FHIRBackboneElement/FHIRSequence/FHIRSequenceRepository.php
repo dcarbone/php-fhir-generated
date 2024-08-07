@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSeq
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRSequenceRepository extends FHIRBackboneElement
      *
      * Click and see / RESTful API / Need login to see / RESTful API with
      * authentication / Other ways to see resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRepositoryType
      */
     protected null|FHIRRepositoryType $type = null;
@@ -117,7 +116,6 @@ class FHIRSequenceRepository extends FHIRBackboneElement
      *
      * URI of an external repository which contains further details about the genetics
      * data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -128,7 +126,6 @@ class FHIRSequenceRepository extends FHIRBackboneElement
      *
      * URI of an external repository which contains further details about the genetics
      * data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -139,7 +136,6 @@ class FHIRSequenceRepository extends FHIRBackboneElement
      *
      * Id of the variant in this external repository. The server will understand how to
      * use this id to call for more info about datasets in external repository.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $datasetId = null;
@@ -150,7 +146,6 @@ class FHIRSequenceRepository extends FHIRBackboneElement
      *
      * Id of the variantset in this external repository. The server will understand how
      * to use this id to call for more info about variantsets in external repository.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $variantsetId = null;
@@ -160,7 +155,6 @@ class FHIRSequenceRepository extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Id of the read in this external repository.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $readsetId = null;

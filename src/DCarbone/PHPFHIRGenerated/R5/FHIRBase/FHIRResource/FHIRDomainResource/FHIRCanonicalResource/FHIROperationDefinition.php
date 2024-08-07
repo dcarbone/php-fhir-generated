@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -209,7 +209,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the operation definition is stored on different
      * servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -222,7 +221,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * A formal identifier that is used to identify this implementation guide when it
      * is represented in other formats, or referenced in a specification, model, design
      * or an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -237,7 +235,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -248,7 +245,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -259,7 +255,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -271,7 +266,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * A natural language name identifying the operation definition. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -281,7 +275,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the operation definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -289,7 +282,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of this operation definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -297,7 +289,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this is an operation or a named query.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIROperationKind
      */
     protected null|FHIROperationKind $kind = null;
@@ -308,7 +299,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * A Boolean value to indicate that this operation definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -325,7 +315,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the operation definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -336,7 +325,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the operation definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -347,7 +335,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -362,7 +349,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * A free text natural language description of the operation definition from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -379,7 +365,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate operation
      * definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -391,7 +376,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * A legal or geographic region in which the operation definition is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -406,7 +390,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * Explanation of why this operation definition is needed and why it has been
      * designed as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -422,7 +405,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * A copyright statement relating to the operation definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the operation definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -434,7 +416,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -444,7 +425,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * Whether the operation affects state. Side effects such as producing audit trail
      * entries do not count as 'affecting state'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $affectsState = null;
@@ -458,7 +438,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * cases, servers may need to use a different CapabilityStatement operation.name to
      * differentiate between multiple SearchParameters that happen to have the same
      * code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -472,7 +451,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * the Narrative, or extensions
      *
      * Additional information about how to use this operation or named query.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $comment = null;
@@ -483,7 +461,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * the Narrative, or extensions
      *
      * Indicates that this operation definition is a constraining profile on the base.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $base = null;
@@ -491,7 +468,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The types on which this operation can be executed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRVersionIndependentResourceTypesAll[]
      */
     protected null|array $resource = [];
@@ -501,7 +477,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * Indicates whether this operation or named query can be invoked at the system
      * level (e.g. without needing to choose a resource type for the context).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $system = null;
@@ -512,7 +487,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * Indicates whether this operation or named query can be invoked at the resource
      * type level for any given resource type level (e.g. without needing to choose a
      * specific resource id for the context).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $type = null;
@@ -522,7 +496,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * Indicates whether this operation can be invoked on a particular instance of one
      * of the given types.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $instance = null;
@@ -535,7 +508,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * Additional validation information for the in parameters - a single profile that
      * covers all the parameters. The profile is a constraint on the parameters
      * resource as a whole.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $inputProfile = null;
@@ -548,7 +520,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * Additional validation information for the out parameters - a single profile that
      * covers all the parameters. The profile is a constraint on the parameters
      * resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $outputProfile = null;
@@ -557,7 +528,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * named query (using the search interaction).
      *
      * The parameters for the operation/query.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[]
      */
     protected null|array $parameter = [];
@@ -568,7 +538,6 @@ class FHIROperationDefinition extends FHIRCanonicalResource implements PHPFHIRCo
      * Defines an appropriate combination of parameters to use when invoking this
      * operation, to help code generators when generating overloaded parameter sets for
      * this operation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionOverload[]
      */
     protected null|array $overload = [];

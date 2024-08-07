@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRBun
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * The status code returned by processing this entry. The status SHALL start with a
      * 3 digit HTTP code (e.g. 404) and may contain the standard HTTP description
      * associated with the status code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $status = null;
@@ -118,7 +117,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The location header created by processing this operation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $location = null;
@@ -130,7 +128,6 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * The etag for the resource, it the operation for the entry produced a versioned
      * resource (see [Resource Metadata and Versioning](http.html#versioning) and
      * [Managing Resource Contention](http.html#concurrency)).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $etag = null;
@@ -142,14 +139,12 @@ class FHIRBundleResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time that the resource was modified on the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $lastModified = null;
     /**
      * An OperationOutcome containing hints and warnings produced as part of processing
      * this entry in a batch or transaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\|PHPFHIRContainedTypeInterface
      */
     protected null|PHPFHIRContainedTypeInterface $outcome = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNut
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      *
      * The kind of nutritional supplement product required such as a high protein or
      * pediatric clear liquid supplement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -115,7 +114,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      *
      * The product or brand name of the nutritional supplement such as "Acme Protein
      * Shake".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $productName = null;
@@ -131,7 +129,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      * The time period and frequency at which the supplement(s) should be given. The
      * supplement should be given for the combination of all schedules if more than one
      * schedule is present.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming[]
      */
     protected null|array $schedule = [];
@@ -143,7 +140,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of the nutritional supplement to be given.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -154,7 +150,6 @@ class FHIRNutritionOrderSupplement extends FHIRBackboneElement
      *
      * Free text or additional instructions or information pertaining to the oral
      * supplement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $instruction = null;

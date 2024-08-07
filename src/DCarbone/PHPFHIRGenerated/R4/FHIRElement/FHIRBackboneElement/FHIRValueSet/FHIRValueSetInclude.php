@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,6 @@ class FHIRValueSetInclude extends FHIRBackboneElement
      *
      * An absolute URI which is the code system from which the selected codes come
      * from.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $system = null;
@@ -118,7 +117,6 @@ class FHIRValueSetInclude extends FHIRBackboneElement
      *
      * The version of the code system that the codes are selected from, or the special
      * version '*' for all versions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -129,7 +127,6 @@ class FHIRValueSetInclude extends FHIRBackboneElement
      * elements](terminologies.html).
      *
      * Specifies a concept to be included or excluded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[]
      */
     protected null|array $concept = [];
@@ -142,7 +139,6 @@ class FHIRValueSetInclude extends FHIRBackboneElement
      * Select concepts by specify a matching criterion based on the properties
      * (including relationships) defined by the system, or on filters defined by the
      * system. If multiple filters are specified, they SHALL all be true.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter[]
      */
     protected null|array $filter = [];
@@ -156,7 +152,6 @@ class FHIRValueSetInclude extends FHIRBackboneElement
      * definition). This is an absolute URI that is a reference to ValueSet.url. If
      * multiple value sets are specified this includes the union of the contents of all
      * of the referenced value sets.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
     protected null|array $valueSet = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -117,7 +117,6 @@ class FHIRSubstanceDefinitionMolecularWeight extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method by which the molecular weight was determined.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $method = null;
@@ -129,7 +128,6 @@ class FHIRSubstanceDefinitionMolecularWeight extends FHIRBackboneElement
      *
      * Type of molecular weight such as exact, average (also known as. number average),
      * weight average.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -143,7 +141,6 @@ class FHIRSubstanceDefinitionMolecularWeight extends FHIRBackboneElement
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
      * value for a given element is given, it would be captured in this field.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $amount = null;

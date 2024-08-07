@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -201,7 +201,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * SpecimenDefinition is (or will be) published. The URL SHOULD include the major
      * version of the SpecimenDefinition. For more information see Technical and
      * Business Versions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -212,7 +211,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A business identifier assigned to this SpecimenDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -225,7 +223,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * when it is referenced in a specification, model, design or instance. This is an
      * arbitrary value managed by the SpecimenDefinition author and is not expected to
      * be globally unique.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -236,7 +233,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -247,7 +243,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -259,7 +254,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * A natural language name identifying the {{title}}. This name should be usable as
      * an identifier for the module by machine processing applications such as code
      * generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -269,7 +263,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the SpecimenDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -281,7 +274,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * The canonical URL pointing to another FHIR-defined SpecimenDefinition that is
      * adhered to in whole or in part by this definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $derivedFromCanonical = [];
@@ -292,7 +284,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * The URL pointing to an externally-defined type of specimen, guideline or other
      * definition that is adhered to in whole or in part by this definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri[]
      */
     protected null|array $derivedFromUri = [];
@@ -300,7 +291,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of theSpecimenDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -310,7 +300,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * A flag to indicate that this SpecimenDefinition is not authored for genuine
      * usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -322,7 +311,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * A code or group definition that describes the intended subject from which this
      * kind of specimen is to be collected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subjectCodeableConcept = null;
@@ -333,7 +321,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * A code or group definition that describes the intended subject from which this
      * kind of specimen is to be collected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subjectReference = null;
@@ -349,7 +336,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * For draft definitions, indicates the date of initial creation. For active
      * definitions, represents the date of activation. For withdrawn definitions,
      * indicates the date of withdrawal.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -360,7 +346,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Helps establish the "authority/credibility" of the SpecimenDefinition. May also
      * allow for contact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -371,7 +356,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -386,7 +370,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * A free text natural language description of the SpecimenDefinition from the
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -401,7 +384,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of specimen definitions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -412,7 +394,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A jurisdiction in which the SpecimenDefinition is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -427,7 +408,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Explains why this SpecimeDefinition is needed and why it has been designed as it
      * has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -443,7 +423,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * Copyright statement relating to the SpecimenDefinition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the SpecimenDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -455,7 +434,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -467,7 +445,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * The date on which the asset content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -479,7 +456,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * The date on which the asset content was last reviewed. Review happens
      * periodically after that, but doesn't change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -490,7 +466,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * The period during which the SpecimenDefinition content was or is planned to be
      * effective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -501,7 +476,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of material to be collected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $typeCollected = null;
@@ -512,7 +486,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Preparation of the patient for specimen collection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $patientPreparation = [];
@@ -522,7 +495,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Time aspect of specimen collection (duration or offset).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $timeAspect = null;
@@ -533,7 +505,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The action to be performed for collecting the specimen.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $collection = [];
@@ -541,7 +512,6 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * A kind of specimen with associated set of requirements.
      *
      * Specimen conditioned in a container as expected by the testing laboratory.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested[]
      */
     protected null|array $typeTested = [];

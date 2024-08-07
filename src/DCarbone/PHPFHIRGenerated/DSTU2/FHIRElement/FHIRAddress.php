@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The purpose of this address.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddressUse
      */
     protected null|FHIRAddressUse $use = null;
@@ -121,7 +120,6 @@ class FHIRAddress extends FHIRElement
      *
      * Distinguishes between physical addresses (those you can visit) and mailing
      * addresses (e.g. PO Boxes and care-of addresses). Most addresses are both.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddressType
      */
     protected null|FHIRAddressType $type = null;
@@ -131,7 +129,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A full text representation of the address.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -142,7 +139,6 @@ class FHIRAddress extends FHIRElement
      *
      * This component contains the house number, apartment number, street name, street
      * direction, P.O. Box number, delivery hints, and similar address information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
      */
     protected null|array $line = [];
@@ -152,7 +148,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the city, town, village or other community or delivery center.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $city = null;
@@ -162,7 +157,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the administrative area (county).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $district = null;
@@ -173,7 +167,6 @@ class FHIRAddress extends FHIRElement
      *
      * Sub-unit of a country with limited sovereignty in a federally organized country.
      * A code may be used if codes are in common use (i.e. US 2 letter state codes).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $state = null;
@@ -183,7 +176,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A postal code designating a region defined by the postal service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $postalCode = null;
@@ -193,7 +185,6 @@ class FHIRAddress extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Country - a nation as commonly understood or generally accepted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $country = null;
@@ -203,7 +194,6 @@ class FHIRAddress extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Time period when address was/is in use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;

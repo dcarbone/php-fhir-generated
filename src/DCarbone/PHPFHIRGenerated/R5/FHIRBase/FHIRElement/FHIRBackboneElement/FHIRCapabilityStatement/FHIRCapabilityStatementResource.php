@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -155,7 +155,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A type of resource exposed via the restful interface.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRResourceType
      */
     protected null|FHIRResourceType $type = null;
@@ -170,7 +169,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * is the "superset" of capabilities for laboratory *and* vitals *and* other
      * domains. See further discussion in [Using
      * Profiles](profiling.html#profile-uses).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $profile = null;
@@ -188,7 +186,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * profiles, systems provide a way to determine whether individual resources are
      * conformant. See further discussion in [Using
      * Profiles](profiling.html#profile-uses).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $supportedProfile = [];
@@ -202,7 +199,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Additional information about the resource type used by the system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $documentation = null;
@@ -213,7 +209,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * server implementation.
      *
      * Identifies a restful operation supported by the solution.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction[]
      */
     protected null|array $interaction = [];
@@ -226,7 +221,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * meta-property on resources. If the value is 'versioned-update', then the server
      * supports all the versioning features, including using e-tags for version
      * integrity in the API.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRResourceVersionPolicy
      */
     protected null|FHIRResourceVersionPolicy $versioning = null;
@@ -236,7 +230,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      *
      * A flag for whether the server is able to return past versions as part of the
      * vRead operation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $readHistory = null;
@@ -248,7 +241,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * new identities on the server (that is, the client PUTs to a location where there
      * is no existing resource). Allowing this operation means that the server allows
      * the client to create new identities on the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $updateCreate = null;
@@ -257,7 +249,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional create.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $conditionalCreate = null;
@@ -265,7 +256,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the server supports conditional read.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRConditionalReadStatus
      */
     protected null|FHIRConditionalReadStatus $conditionalRead = null;
@@ -274,7 +264,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional update.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $conditionalUpdate = null;
@@ -283,7 +272,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional patch.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $conditionalPatch = null;
@@ -291,7 +279,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the server supports conditional delete.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRConditionalDeleteStatus
      */
     protected null|FHIRConditionalDeleteStatus $conditionalDelete = null;
@@ -299,7 +286,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A set of flags that defines how references are supported.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRReferenceHandlingPolicy[]
      */
     protected null|array $referencePolicy = [];
@@ -309,7 +295,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $searchInclude = [];
@@ -319,7 +304,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _revinclude (reverse include) values supported by the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $searchRevInclude = [];
@@ -332,7 +316,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * Search parameters for implementations to support and/or make use of - either
      * references to ones defined in the specification, or additional ones defined
      * for/by the implementation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam[]
      */
     protected null|array $searchParam = [];
@@ -345,7 +328,6 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      * Definition of an operation or a named query together with its parameters and
      * their meaning and type. Consult the definition of the operation for details
      * about how to invoke the operation, and the parameters.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementOperation[]
      */
     protected null|array $operation = [];

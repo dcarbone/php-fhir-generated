@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,7 +126,6 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for a person within a particular scope.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -136,7 +135,6 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRHumanName[]
      */
     protected null|array $name = [];
@@ -147,7 +145,6 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint[]
      */
     protected null|array $telecom = [];
@@ -155,7 +152,6 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Administrative Gender.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAdministrativeGender
      */
     protected null|FHIRAdministrativeGender $gender = null;
@@ -166,7 +162,6 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The birth date for the person.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $birthDate = null;
@@ -180,7 +175,6 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more addresses for the person.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAddress[]
      */
     protected null|array $address = [];
@@ -191,7 +185,6 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      *
      * An image that can be displayed as a thumbnail of the person to enhance the
      * identification of the individual.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $photo = null;
@@ -201,7 +194,6 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that is the custodian of the person record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $managingOrganization = null;
@@ -210,7 +202,6 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this person's record is in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $active = null;
@@ -219,7 +210,6 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * specific health-related context.
      *
      * Link to a resource that concerns the same actual person.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPerson\FHIRPersonLink[]
      */
     protected null|array $link = [];

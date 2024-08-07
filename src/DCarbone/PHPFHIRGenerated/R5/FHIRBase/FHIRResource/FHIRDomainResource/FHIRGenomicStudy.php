@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -155,7 +155,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers for this genomic study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -163,7 +162,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the genomic study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRGenomicStudyStatus
      */
     protected null|FHIRGenomicStudyStatus $status = null;
@@ -175,7 +173,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * The type of the study, e.g., Familial variant segregation, Functional variation
      * detection, or Gene expression profiling.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -185,7 +182,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The primary subject of the genomic study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -195,7 +191,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare event with which this genomics study is associated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -209,7 +204,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the genomic study was started.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $startDate = null;
@@ -219,7 +213,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Event resources that the genomic study is based on.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -229,7 +222,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare professional who requested or referred the genomic study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $referrer = null;
@@ -239,7 +231,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare professionals who interpreted the genomic study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $interpreter = [];
@@ -250,7 +241,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Why the genomic study was performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $reason = [];
@@ -261,7 +251,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * the Narrative, or extensions
      *
      * The defined protocol that describes the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $instantiatesCanonical = null;
@@ -271,7 +260,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The URL pointing to an externally maintained protocol that describes the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $instantiatesUri = null;
@@ -282,7 +270,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments related to the genomic study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -296,7 +283,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * the Narrative, or extensions
      *
      * Description of the genomic study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -305,7 +291,6 @@ class FHIRGenomicStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * data.
      *
      * The details about a specific analysis that was performed in this GenomicStudy.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyAnalysis[]
      */
     protected null|array $analysis = [];

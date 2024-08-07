@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
      * A human-readable label for the data requirement used to label data flows in BPMN
      * or similar diagrams. Also provides a human readable label when rendering the
      * data requirement that conveys its purpose to human readers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -131,7 +130,6 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Defines the data that results as output from the action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
      */
     protected null|FHIRDataRequirement $requirement = null;
@@ -142,7 +140,6 @@ class FHIRRequestOrchestrationOutput extends FHIRBackboneElement
      *
      * Points to an existing input or output element that is results as output from the
      * action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $relatedData = null;

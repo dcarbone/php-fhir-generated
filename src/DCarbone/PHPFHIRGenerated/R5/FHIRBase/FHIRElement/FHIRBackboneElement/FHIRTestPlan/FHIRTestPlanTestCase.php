@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -121,7 +121,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * Sequence of test case - an ordinal number that indicates the order for the
      * present test case in the test plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $sequence = null;
@@ -132,7 +131,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The scope or artifact covered by the case, when the individual test case is
      * associated with a testable artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $scope = [];
@@ -141,7 +139,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The required criteria to execute the test case - e.g. preconditions, previous
      * tests.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanDependency1[]
      */
     protected null|array $dependency = [];
@@ -149,7 +146,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      * A plan for executing testing on an artifact or specifications.
      *
      * The actual test to be executed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestRun[]
      */
     protected null|array $testRun = [];
@@ -157,7 +153,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      * A plan for executing testing on an artifact or specifications.
      *
      * The test data used in the test case.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestData[]
      */
     protected null|array $testData = [];
@@ -166,7 +161,6 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      *
      * The test assertions - the expectations of test results from the execution of the
      * test case.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanAssertion[]
      */
     protected null|array $assertion = [];

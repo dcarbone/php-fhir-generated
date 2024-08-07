@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
      * medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $medicationCodeableConcept = null;
@@ -124,7 +123,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
      * medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $medicationReference = null;
@@ -135,7 +133,6 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      *
      * This indicates the validity period of a prescription (stale dating the
      * Prescription).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $validityPeriod = null;
@@ -149,20 +146,17 @@ class FHIRMedicationOrderDispenseRequest extends FHIRBackboneElement
      * does NOT include the original order dispense. This means that if an order
      * indicates dispense 30 tablets plus "3 repeats", then the order can be dispensed
      * a total of 4 times and the patient can receive a total of 120 tablets.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $numberOfRepeatsAllowed = null;
     /**
      * The amount that is to be dispensed for one fill.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     protected null|FHIRSimpleQuantity $quantity = null;
     /**
      * Identifies the period time over which the supplied product is expected to be
      * used, or the length of time the dispense is expected to last.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $expectedSupplyDuration = null;

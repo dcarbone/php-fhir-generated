@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -124,7 +124,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description of the variable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $variableDefinition = null;
@@ -132,7 +131,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the variable is classified for use in adjusted analysis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIREvidenceVariableHandling
      */
     protected null|FHIREvidenceVariableHandling $handling = null;
@@ -143,7 +141,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Description for grouping of ordinal or polychotomous variables.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $valueCategory = [];
@@ -155,7 +152,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Discrete value for grouping of ordinal or polychotomous variables.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity[]
      */
     protected null|array $valueQuantity = [];
@@ -165,7 +161,6 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Range of values for grouping of ordinal or polychotomous variables.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange[]
      */
     protected null|array $valueRange = [];

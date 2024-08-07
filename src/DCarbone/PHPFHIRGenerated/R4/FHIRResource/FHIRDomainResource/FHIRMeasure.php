@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -192,7 +192,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * which at which an authoritative instance of this measure is (or will be)
      * published. This URL can be the target of a canonical reference. It SHALL remain
      * the same when the measure is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -205,7 +204,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A formal identifier that is used to identify this measure when it is represented
      * in other formats, or referenced in a specification, model, design or an
      * instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -224,7 +222,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * For more information on versioning knowledge assets, refer to the Decision
      * Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -236,7 +233,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A natural language name identifying the measure. This name should be usable as
      * an identifier for the module by machine processing applications such as code
      * generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -246,7 +242,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -257,7 +252,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * An explanatory or alternate title for the measure giving additional information
      * about its content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $subtitle = null;
@@ -265,7 +259,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this measure. Enables tracking the life-cycle of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -276,7 +269,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A Boolean value to indicate that this measure is authored for testing purposes
      * (or education/evaluation/marketing) and is not intended to be used for genuine
      * usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -288,7 +280,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subjectCodeableConcept = null;
@@ -299,7 +290,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subjectReference = null;
@@ -315,7 +305,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * change when the business version changes and it must change if the status code
      * changes. In addition, it should change when the substantive content of the
      * measure changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -325,7 +314,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -336,7 +324,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -351,7 +338,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * A free text natural language description of the measure from a consumer's
      * perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -367,7 +353,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * that are listed. These contexts may be general categories (gender, age, ...) or
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate measure instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -378,7 +363,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the measure is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -393,7 +377,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Explanation of why this measure is needed and why it has been designed as it
      * has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -403,7 +386,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description, from a clinical perspective, of how the measure is used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $usage = null;
@@ -419,7 +401,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A copyright statement relating to the measure and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -431,7 +412,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -443,7 +423,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -454,7 +433,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The period during which the measure content was or is planned to be in active
      * use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -467,7 +445,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Descriptive topics related to the content of the measure. Topics provide a
      * high-level categorization grouping types of measures that can be useful for
      * filtering and searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $topic = [];
@@ -478,7 +455,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $author = [];
@@ -489,7 +465,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $editor = [];
@@ -500,7 +475,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $reviewer = [];
@@ -511,7 +485,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $endorser = [];
@@ -523,7 +496,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -535,7 +507,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * A reference to a Library resource containing the formal logic used by the
      * measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
     protected null|array $library = [];
@@ -550,7 +521,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Notices and disclaimers regarding the use of the measure or related to
      * intellectual property (such as code systems) referenced by the measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $disclaimer = null;
@@ -563,7 +533,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Indicates how the calculation is performed for the measure, including
      * proportion, ratio, continuous-variable, and cohort. The value set is extensible,
      * allowing additional measure scoring types to be represented.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $scoring = null;
@@ -575,7 +544,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * If this is a composite measure, the scoring method used to combine the component
      * measures to determine the composite score.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $compositeScoring = null;
@@ -587,7 +555,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Indicates whether the measure is used to examine a process, an outcome over
      * time, a patient-reported outcome, or a structure measure such as utilization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -599,7 +566,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * A description of the risk adjustment factors that may impact the resulting score
      * for the measure and how they may be accounted for when computing and reporting
      * measure results.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $riskAdjustment = null;
@@ -610,7 +576,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Describes how to combine the information calculated, based on logic in each of
      * several populations, into one summarized result.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $rateAggregation = null;
@@ -626,7 +591,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Provides a succinct statement of the need for the measure. Usually includes
      * statements pertaining to importance criterion: impact, gap in care, and
      * evidence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $rationale = null;
@@ -641,7 +605,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Provides a summary of relevant clinical guidelines or other clinical
      * recommendations supporting the measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $clinicalRecommendationStatement = null;
@@ -654,7 +617,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Information on whether an increase or decrease in score is the preferred result
      * (e.g., a higher score indicates better quality OR a lower score indicates better
      * quality OR quality is within a range).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $improvementNotation = null;
@@ -668,7 +630,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * the Narrative, or extensions
      *
      * Provides a description of an individual term used within the measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown[]
      */
     protected null|array $definition = [];
@@ -683,7 +644,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Additional guidance for the measure including how it can be used in a clinical
      * context, and the intent of the measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $guidance = null;
@@ -691,7 +651,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The Measure resource provides the definition of a quality measure.
      *
      * A group of population criteria for the measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureGroup[]
      */
     protected null|array $group = [];
@@ -701,7 +660,6 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * The supplemental data criteria for the measure report, specified as either the
      * name of a valid CQL expression within a referenced library, or a valid FHIR
      * Resource Path.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData[]
      */
     protected null|array $supplementalData = [];

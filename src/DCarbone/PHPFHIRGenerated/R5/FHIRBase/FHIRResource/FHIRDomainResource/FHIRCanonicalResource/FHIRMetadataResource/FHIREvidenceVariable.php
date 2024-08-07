@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -203,7 +203,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * address at which an authoritative instance of this evidence variable is (or will
      * be) published. This URL can be the target of a canonical reference. It SHALL
      * remain the same when the evidence variable is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -216,7 +215,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * A formal identifier that is used to identify this evidence variable when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -235,7 +233,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -246,7 +243,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -257,7 +253,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -269,7 +264,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * A natural language name identifying the evidence variable. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -279,7 +273,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the evidence variable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -290,7 +283,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * The short title provides an alternate title for use in informal descriptive
      * contexts where the full, formal title is not necessary.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $shortTitle = null;
@@ -299,7 +291,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * The status of this evidence variable. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -310,7 +301,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * A Boolean value to indicate that this resource is authored for testing purposes
      * (or education/evaluation/marketing) and is not intended to be used for genuine
      * usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -327,7 +317,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * changed. The date must change when the business version changes and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the evidence variable changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -338,7 +327,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the evidence variable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -349,7 +337,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -364,7 +351,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * A free text natural language description of the evidence variable from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -375,7 +361,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -392,7 +377,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate evidence variable
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -407,7 +391,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * Explanation of why this EvidenceVariable is needed and why it has been designed
      * as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -423,7 +406,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * A copyright statement relating to the resource and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -435,7 +417,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -449,7 +430,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * happens once when the content is officially approved for usage. See guidance
      * around (not) making local changes to elements
      * [here](canonicalresource.html#localization).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -461,7 +441,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -472,7 +451,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * The period during which the resource content was or is planned to be in active
      * use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -483,7 +461,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $author = [];
@@ -494,7 +471,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $editor = [];
@@ -505,7 +481,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * An individual or organization asserted by the publisher to be primarily
      * responsible for review of some aspect of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $reviewer = [];
@@ -516,7 +491,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * An individual or organization asserted by the publisher to be responsible for
      * officially endorsing the content for use in some setting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $endorser = [];
@@ -528,7 +502,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -538,7 +511,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * True if the actual variable measured, false if a conceptual representation of
      * the intended variable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $actual = null;
@@ -548,7 +520,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      *
      * A defining factor of the EvidenceVariable. Multiple characteristics are applied
      * with "and" semantics.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic[]
      */
     protected null|array $characteristic = [];
@@ -556,7 +527,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The method of handling in statistical analysis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIREvidenceVariableHandling
      */
     protected null|FHIREvidenceVariableHandling $handling = null;
@@ -565,7 +535,6 @@ class FHIREvidenceVariable extends FHIRMetadataResource implements PHPFHIRContai
      * about.
      *
      * A grouping for ordinal or polychotomous variables.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCategory[]
      */
     protected null|array $category = [];

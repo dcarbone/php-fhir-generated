@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Vaccine(s) or vaccine group that pertain to the recommendation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $vaccineCode = [];
@@ -144,7 +143,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The targeted disease for the recommendation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $targetDisease = [];
@@ -155,7 +153,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Vaccine(s) which should not be used to fulfill the recommendation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $contraindicatedVaccineCode = [];
@@ -167,7 +164,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Indicates the patient status with respect to the path to immunity for the target
      * disease.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $forecastStatus = null;
@@ -178,7 +174,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason for the assigned forecast status.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $forecastReason = [];
@@ -188,7 +183,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Vaccine date recommendations. For example, earliest date to administer, latest
      * date to administer, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion[]
      */
     protected null|array $dateCriterion = [];
@@ -203,7 +197,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Contains the description about the protocol under which the vaccine was
      * administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -214,7 +207,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * One possible path to achieve presumed immunity against a disease - within the
      * context of an authority.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $series = null;
@@ -225,7 +217,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Nominal position of the recommended dose in a series as determined by the
      * evaluation and forecasting process (e.g. dose 2 is the next recommended dose).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $doseNumber = null;
@@ -236,7 +227,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * The recommended number of doses to achieve immunity as determined by the
      * evaluation and forecasting process.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $seriesDoses = null;
@@ -247,7 +237,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Immunization event history and/or evaluation that supports the status and
      * recommendation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $supportingImmunization = [];
@@ -258,7 +247,6 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      *
      * Patient Information that supports the status and recommendation. This includes
      * patient observations, adverse reactions and allergy/intolerance information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $supportingPatientInformation = [];

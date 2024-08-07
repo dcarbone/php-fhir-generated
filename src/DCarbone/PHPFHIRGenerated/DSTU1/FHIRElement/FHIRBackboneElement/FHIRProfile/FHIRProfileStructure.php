@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The Resource or Data type being described.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $type = null;
@@ -114,7 +113,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      *
      * The name of this resource constraint statement (to refer to it from other
      * resource constraints - from Profile.structure.element.definition.type.profile).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -125,7 +123,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * This definition of a profile on a structure is published as a formal statement.
      * Some structural definitions might be defined purely for internal use within the
      * profile, and not intended to be used outside that context.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $publish = null;
@@ -134,7 +131,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human summary: why describe this resource?.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $purpose = null;
@@ -144,7 +140,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Captures constraints on each element within the resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement[]
      */
     protected null|array $element = [];
@@ -154,7 +149,6 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Additional search parameters for implementations to support and/or make use of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSearchParam[]
      */
     protected null|array $searchParam = [];

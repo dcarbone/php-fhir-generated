@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * A formal identifier that is used to identify the cited artifact when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -149,7 +148,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * A formal identifier that is used to identify things closely related to the cited
      * artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $relatedIdentifier = [];
@@ -163,7 +161,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the cited artifact was accessed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $dateAccessed = null;
@@ -174,7 +171,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The defined version of the cited artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationVersion
      */
     protected null|FHIRCitationVersion $version = null;
@@ -185,7 +181,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the cited artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $currentState = [];
@@ -197,7 +192,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * An effective date or period, historical or future, actual or expected, for a
      * status of the cited artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationStatusDate1[]
      */
     protected null|array $statusDate = [];
@@ -208,7 +202,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The title details of the article or artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationTitle[]
      */
     protected null|array $title = [];
@@ -220,7 +213,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * The abstract may be used to convey article-contained abstracts,
      * externally-created abstracts, or other descriptive summaries.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAbstract[]
      */
     protected null|array $abstract = [];
@@ -231,7 +223,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The component of the article or artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPart
      */
     protected null|FHIRCitationPart $part = null;
@@ -242,7 +233,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The artifact related to the cited artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationRelatesTo[]
      */
     protected null|array $relatesTo = [];
@@ -254,7 +244,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * If multiple, used to represent alternative forms of the article that are not
      * separate citations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublicationForm[]
      */
     protected null|array $publicationForm = [];
@@ -265,7 +254,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Used for any URL for the article or artifact cited.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationWebLocation[]
      */
     protected null|array $webLocation = [];
@@ -276,7 +264,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * The assignment to an organizing scheme.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationClassification1[]
      */
     protected null|array $classification = [];
@@ -288,7 +275,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      *
      * This element is used to list authors and other contributors, their contact
      * information, specific contributions, and summary statements.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributorship
      */
     protected null|FHIRCitationContributorship $contributorship = null;
@@ -299,7 +285,6 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any additional information or content for the article or artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];

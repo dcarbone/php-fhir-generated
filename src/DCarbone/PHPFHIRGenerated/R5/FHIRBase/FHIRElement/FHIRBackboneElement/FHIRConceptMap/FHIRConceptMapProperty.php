@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,6 @@ class FHIRConceptMapProperty extends FHIRBackboneElement
      * A code that is used to identify the property. The code is used internally (in
      * ConceptMap.group.element.target.property.code) and also in the $translate
      * operation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -143,7 +142,6 @@ class FHIRConceptMapProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Reference to the formal meaning of the property.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $uri = null;
@@ -154,7 +152,6 @@ class FHIRConceptMapProperty extends FHIRBackboneElement
      *
      * A description of the property - why it is defined, and how its value might be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -162,7 +159,6 @@ class FHIRConceptMapProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the property value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRConceptMapPropertyType
      */
     protected null|FHIRConceptMapPropertyType $type = null;
@@ -174,7 +170,6 @@ class FHIRConceptMapProperty extends FHIRBackboneElement
      *
      * The CodeSystem that defines the codes from which values of type ```code``` in
      * property values.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $system = null;

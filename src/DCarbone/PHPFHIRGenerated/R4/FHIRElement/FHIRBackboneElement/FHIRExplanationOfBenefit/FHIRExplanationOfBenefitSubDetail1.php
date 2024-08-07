@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExpla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,7 +112,6 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      * When the value is a group code then this item collects a set of related claim
      * details, otherwise this contains the product, service, drug or other billing
      * code for the item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $productOrService = null;
@@ -124,7 +123,6 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $modifier = [];
@@ -136,7 +134,6 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of repetitions of a service or product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -147,7 +144,6 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      *
      * If the item is not a group then this is the fee for the product or service,
      * otherwise this is the total of the fees for the details of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
     protected null|FHIRMoney $unitPrice = null;
@@ -160,7 +156,6 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $factor = null;
@@ -171,7 +166,6 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      *
      * The quantity times the unit price for an additional service or product or
      * charge.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
     protected null|FHIRMoney $net = null;
@@ -182,7 +176,6 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $noteNumber = [];
@@ -192,7 +185,6 @@ class FHIRExplanationOfBenefitSubDetail1 extends FHIRBackboneElement
      * the subscriber of the benefits provided.
      *
      * The adjudication results.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication[]
      */
     protected null|array $adjudication = [];

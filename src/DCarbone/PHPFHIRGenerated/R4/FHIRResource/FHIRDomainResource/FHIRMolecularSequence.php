@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -135,7 +135,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      *
      * A unique identifier for this particular sequence instance. This is a
      * FHIR-defined id.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -144,7 +143,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSequenceType
      */
     protected null|FHIRSequenceType $type = null;
@@ -156,7 +154,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * Whether the sequence is numbered starting at (0-based numbering or coordinates,
      * inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive
      * start and inclusive end).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $coordinateSystem = null;
@@ -166,7 +163,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient whose sequencing results are described by this resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -176,7 +172,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specimen used for sequencing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $specimen = null;
@@ -186,7 +181,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method for sequencing, for example, chip information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $device = null;
@@ -196,7 +190,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization or lab that should be responsible for this result.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $performer = null;
@@ -208,7 +201,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of copies of the sequence of interest. (RNASeq).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -217,7 +209,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      *
      * A sequence that is used as a reference to describe variants that are present in
      * a sequence analyzed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceReferenceSeq
      */
     protected null|FHIRMolecularSequenceReferenceSeq $referenceSeq = null;
@@ -229,7 +220,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * This element can represent amino acid or nucleic sequence change(including
      * insertion,deletion,SNP,etc.) It can represent some complex mutation or segment
      * variation with the assist of CIGAR string.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceVariant[]
      */
     protected null|array $variant = [];
@@ -241,7 +231,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * Sequence that was observed. It is the result marked by referenceSeq along with
      * variant records on referenceSeq. This shall start from referenceSeq.windowStart
      * and end by referenceSeq.windowEnd.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $observedSeq = null;
@@ -251,7 +240,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * An experimental feature attribute that defines the quality of the feature in a
      * quantitative way, such as a phred quality score
      * ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceQuality[]
      */
     protected null|array $quality = [];
@@ -262,7 +250,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      *
      * Coverage (read depth or depth) is the average number of reads representing a
      * given nucleotide in the reconstructed sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $readCoverage = null;
@@ -271,7 +258,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      *
      * Configurations of the external repository. The repository shall store target's
      * observedSeq or records related with target's observedSeq.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRepository[]
      */
     protected null|array $repository = [];
@@ -281,7 +267,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Pointer to next atomic sequence which at most contains one variant.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $pointer = [];
@@ -289,7 +274,6 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * Raw data describing a biological sequence.
      *
      * Information about chromosome structure variation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceStructureVariant[]
      */
     protected null|array $structureVariant = [];

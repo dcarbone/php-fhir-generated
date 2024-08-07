@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,6 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role that the moiety is playing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $role = null;
@@ -139,7 +138,6 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier by which this moiety substance is known.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -149,7 +147,6 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual name for this moiety substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -160,7 +157,6 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Stereochemistry type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $stereochemistry = null;
@@ -171,7 +167,6 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optical activity type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $opticalActivity = null;
@@ -182,7 +177,6 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      *
      * Molecular formula for this moiety of this substance, typically using the Hill
      * system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $molecularFormula = null;
@@ -194,7 +188,6 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantitative value for this moiety.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $amountQuantity = null;
@@ -204,7 +197,6 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Quantitative value for this moiety.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $amountString = null;
@@ -217,7 +209,6 @@ class FHIRSubstanceDefinitionMoiety extends FHIRBackboneElement
      * The measurement type of the quantitative value. In capturing the actual relative
      * amounts of substances or molecular fragments it may be necessary to indicate
      * whether the amount refers to, for example, a mole ratio or weight ratio.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $measurementType = null;

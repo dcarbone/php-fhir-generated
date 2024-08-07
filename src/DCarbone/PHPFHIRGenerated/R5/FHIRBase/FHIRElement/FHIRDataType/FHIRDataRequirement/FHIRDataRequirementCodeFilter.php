@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRDat
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -138,7 +138,6 @@ class FHIRDataRequirementCodeFilter extends FHIRDataType
      * Profile](fhirpath.html#simple) for full details). Note that the index must be an
      * integer constant. The path must resolve to an element of type code, Coding, or
      * CodeableConcept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $path = null;
@@ -150,7 +149,6 @@ class FHIRDataRequirementCodeFilter extends FHIRDataType
      * A token parameter that refers to a search parameter defined on the specified
      * type of the DataRequirement, and which searches on elements of type code,
      * Coding, or CodeableConcept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $searchParam = null;
@@ -164,7 +162,6 @@ class FHIRDataRequirementCodeFilter extends FHIRDataType
      * If valueSet is specified, the filter will return only those data items for which
      * the value of the code-valued element specified in the path is a member of the
      * specified valueset.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $valueSet = null;
@@ -178,7 +175,6 @@ class FHIRDataRequirementCodeFilter extends FHIRDataType
      * value that is one of the specified codes. If codes are specified in addition to
      * a value set, the filter returns items matching a code in the value set or one of
      * the specified codes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding[]
      */
     protected null|array $code = [];

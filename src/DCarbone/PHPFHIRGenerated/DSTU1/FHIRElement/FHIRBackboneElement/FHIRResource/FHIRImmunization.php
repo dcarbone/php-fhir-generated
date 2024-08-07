@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,7 +129,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this adverse reaction record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -141,7 +140,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date vaccine administered or was to be administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -152,7 +150,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Vaccine that was administered or was to be administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $vaccineType = null;
@@ -162,7 +159,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient to whom the vaccine was to be administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $subject = null;
@@ -171,7 +167,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates if the vaccination was refused.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $refusedIndicator = null;
@@ -180,7 +175,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True if this administration was reported rather than directly administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $reported = null;
@@ -190,7 +184,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Clinician who administered the vaccine.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $performer = null;
@@ -200,7 +193,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Clinician who ordered the vaccination.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $requester = null;
@@ -210,7 +202,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Name of vaccine manufacturer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $manufacturer = null;
@@ -220,7 +211,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The service delivery location where the vaccine administration occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $location = null;
@@ -229,7 +219,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Lot number of the vaccine product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $lotNumber = null;
@@ -240,7 +229,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date vaccine batch expires.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $expirationDate = null;
@@ -251,7 +239,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Body site where vaccine was administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $site = null;
@@ -262,7 +249,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The path by which the vaccine product is taken into the body.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $route = null;
@@ -274,7 +260,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The quantity of vaccine product that was administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $doseQuantity = null;
@@ -282,7 +267,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * Immunization event information.
      *
      * Reasons why a vaccine was administered or refused.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationExplanation
      */
     protected null|FHIRImmunizationExplanation $explanation = null;
@@ -291,7 +275,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      *
      * Categorical data indicating that an adverse event is associated in time to an
      * immunization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction[]
      */
     protected null|array $reaction = [];
@@ -300,7 +283,6 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      *
      * Contains information about the protocol(s) under which the vaccine was
      * administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol[]
      */
     protected null|array $vaccinationProtocol = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTimin
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -143,7 +143,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $boundsDuration = null;
@@ -154,7 +153,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $boundsRange = null;
@@ -165,7 +163,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * Either a duration for the length of the timing schedule, a range of possible
      * length, or outer bounds for start and/or end limits of the timing schedule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $boundsPeriod = null;
@@ -177,7 +174,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * A total count of the desired number of repetitions across the duration of the
      * entire timing specification. If countMax is present, this element indicates the
      * lower bound of the allowed range of count values.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $count = null;
@@ -188,7 +184,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the count is a range - so to perform the action
      * between [count] and [countMax] times.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $countMax = null;
@@ -200,7 +195,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * How long this thing happens for when it happens. If durationMax is present, this
      * element indicates the lower bound of the allowed range of the duration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $duration = null;
@@ -212,7 +206,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the duration is a range - so to perform the action
      * between [duration] and [durationMax] time length.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $durationMax = null;
@@ -221,7 +214,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration, in UCUM units.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnitsOfTime
      */
     protected null|FHIRUnitsOfTime $durationUnit = null;
@@ -233,7 +225,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * The number of times to repeat the action within the specified period. If
      * frequencyMax is present, this element indicates the lower bound of the allowed
      * range of the frequency.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $frequency = null;
@@ -244,7 +235,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the frequency is a range - so to repeat between
      * [frequency] and [frequencyMax] times within the period or period range.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $frequencyMax = null;
@@ -258,7 +248,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * express "3 times per day", 3 would be the frequency and "1 day" would be the
      * period. If periodMax is present, this element indicates the lower bound of the
      * allowed range of the period length.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $period = null;
@@ -270,7 +259,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If present, indicates that the period is a range from [period] to [periodMax],
      * allowing expressing concepts such as "do this once every 3-5 days.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $periodMax = null;
@@ -279,7 +267,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the period in UCUM units.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnitsOfTime
      */
     protected null|FHIRUnitsOfTime $periodUnit = null;
@@ -291,7 +278,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * If one or more days of week is provided, then the action happens only on the
      * specified day(s).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode[]
      */
     protected null|array $dayOfWeek = [];
@@ -300,7 +286,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specified time of day for action to take place.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime[]
      */
     protected null|array $timeOfDay = [];
@@ -310,7 +295,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      *
      * An approximate time period during the day, potentially linked to an event of
      * daily living that indicates when the action should occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIREventTiming[]
      */
     protected null|array $when = [];
@@ -322,7 +306,6 @@ class FHIRTimingRepeat extends FHIRBackboneElement
      * The number of minutes from the event. If the event code does not indicate
      * whether the minutes is before or after the event, then the offset is assumed to
      * be after the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $offset = null;

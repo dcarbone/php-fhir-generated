@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -151,7 +151,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * An absolute URL that is used to identify this Test Script. This SHALL be a URL,
      * SHOULD be globally unique, and SHOULD be an address at which this Test Script is
      * (or will be) published.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -162,7 +161,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * The identifier that is used to identify this version of the TestScript. This is
      * an arbitrary value managed by the TestScript author manually.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -172,7 +170,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the TestScript.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -183,7 +180,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * the Narrative, or extensions
      *
      * The status of the TestScript.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $status = null;
@@ -194,7 +190,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Identifier for the TestScript assigned for external purposes outside the context
      * of FHIR.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -205,7 +200,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * This TestScript was authored for testing purposes (or
      * education/evaluation/marketing), and is not intended to be used for genuine
      * usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -215,7 +209,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the Test Script.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -224,7 +217,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * implementation to determine compliance against the FHIR specification.
      *
      * Contacts to assist a user in finding and communicating with the publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptContact[]
      */
     protected null|array $contact = [];
@@ -240,7 +232,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * when the business version changes, if it does, and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * test cases change.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -250,7 +241,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language description of the TestScript and its use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -263,7 +253,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * of Test Scripts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $useContext = [];
@@ -273,7 +262,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Explains why this Test Script is needed and why it's been constrained as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $requirements = null;
@@ -285,7 +273,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A copyright statement relating to the Test Script and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * details of the constraints and mappings.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyright = null;
@@ -295,7 +282,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * The required capability must exist and are assumed to function correctly on the
      * FHIR server being tested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata
      */
     protected null|FHIRTestScriptMetadata $metadata = null;
@@ -306,7 +292,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the tests apply to more than one FHIR server (e.g. cross-server
      * interoperability tests) then multiserver=true. Defaults to false if value is
      * unspecified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $multiserver = null;
@@ -316,7 +301,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Fixture in the test script - by reference (uri). All fixtures are required for
      * the test script to execute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture[]
      */
     protected null|array $fixture = [];
@@ -326,7 +310,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the profile to be used for validation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $profile = [];
@@ -336,7 +319,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Variable is set based either on element value in response body or on header
      * field value in the response headers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable[]
      */
     protected null|array $variable = [];
@@ -345,7 +327,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * implementation to determine compliance against the FHIR specification.
      *
      * A series of required setup operations before tests are executed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptSetup
      */
     protected null|FHIRTestScriptSetup $setup = null;
@@ -354,7 +335,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * implementation to determine compliance against the FHIR specification.
      *
      * A test in this script.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTest[]
      */
     protected null|array $test = [];
@@ -364,7 +344,6 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * A series of operations required to clean up after the all the tests are executed
      * (successfully or otherwise).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTeardown
      */
     protected null|FHIRTestScriptTeardown $teardown = null;

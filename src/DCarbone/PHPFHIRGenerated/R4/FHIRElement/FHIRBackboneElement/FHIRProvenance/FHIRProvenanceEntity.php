@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProve
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How the entity was used during the activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRProvenanceEntityRole
      */
     protected null|FHIRProvenanceEntityRole $role = null;
@@ -114,7 +113,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      *
      * Identity of the Entity used. May be a logical or physical uri and maybe absolute
      * or relative.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $what = null;
@@ -133,7 +131,6 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * that entity, possibly along with other agents. This description can be
      * understood as shorthand for saying that the agent was responsible for the
      * activity which generated the entity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[]
      */
     protected null|array $agent = [];

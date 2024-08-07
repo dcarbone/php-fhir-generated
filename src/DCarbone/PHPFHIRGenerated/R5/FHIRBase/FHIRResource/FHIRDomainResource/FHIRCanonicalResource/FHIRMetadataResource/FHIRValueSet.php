@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -203,7 +203,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * which an authoritative instance of this value set is (or will be) published.
      * This URL can be the target of a canonical reference. It SHALL remain the same
      * when the value set is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -216,7 +215,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * A formal identifier that is used to identify this value set when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -231,7 +229,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * For example, it might be a timestamp (e.g. yyyymmdd) if a managed version is not
      * available. There is also no expectation that versions can be placed in a
      * lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -242,7 +239,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * Indicates the mechanism used to compare versions to determine which ValueSet is
      * more current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -253,7 +249,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * Indicates the mechanism used to compare versions to determine which ValueSet is
      * more current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -265,7 +260,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * A natural language name identifying the value set. This name should be usable as
      * an identifier for the module by machine processing applications such as code
      * generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -275,7 +269,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the value set.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -286,7 +279,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * The status of the value set applies to the value set definition
      * (ValueSet.compose) and the associated ValueSet metadata. Expansions do not have
      * a state.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -297,7 +289,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * A Boolean value to indicate that this value set is authored for testing purposes
      * (or education/evaluation/marketing) and is not intended to be used for genuine
      * usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -312,7 +303,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * The date (and optionally time) when the value set metadata or content logical
      * definition (.compose) was created or revised.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -323,7 +313,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the value set.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -334,7 +323,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -351,7 +339,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * perspective. The textual description specifies the span of meanings for concepts
      * to be included within the Value Set Expansion, and also may specify the intended
      * use and limitations of the Value Set.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -368,7 +355,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate value set
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -379,7 +365,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the value set is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -389,7 +374,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * If this is set to 'true', then no new versions of the content logical definition
      * can be created. Note: Other metadata might still change.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $immutable = null;
@@ -404,7 +388,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * Explanation of why this value set is needed and why it has been designed as it
      * has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -420,7 +403,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * A copyright statement relating to the value set and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * value set.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -432,7 +414,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -444,7 +425,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -456,7 +436,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -467,7 +446,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * The period during which the ValueSet content was or is planned to be in active
      * use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -480,7 +458,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * Descriptions related to the content of the ValueSet. Topics provide a high-level
      * categorization as well as keywords for the ValueSet that can be useful for
      * filtering and searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $topic = [];
@@ -491,7 +468,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the ValueSet.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $author = [];
@@ -502,7 +478,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * An individual or organization primarily responsible for internal coherence of
      * the ValueSet.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $editor = [];
@@ -513,7 +488,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * An individual or organization asserted by the publisher to be primarily
      * responsible for review of some aspect of the ValueSet.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $reviewer = [];
@@ -524,7 +498,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * An individual or organization asserted by the publisher to be responsible for
      * officially endorsing the ValueSet for use in some setting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $endorser = [];
@@ -536,7 +509,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * Related artifacts such as additional documentation, justification, dependencies,
      * bibliographic references, and predecessor and successor artifacts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -549,7 +521,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * A set of criteria that define the contents of the value set by including or
      * excluding codes selected from the specified code system(s) that the value set
      * draws from. This is also known as the Content Logical Definition (CLD).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetCompose
      */
     protected null|FHIRValueSetCompose $compose = null;
@@ -562,7 +533,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * A value set can also be "expanded", where the value set is turned into a simple
      * collection of enumerated codes. This element holds the expansion, if it has been
      * performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetExpansion
      */
     protected null|FHIRValueSetExpansion $expansion = null;
@@ -574,7 +544,6 @@ class FHIRValueSet extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      *
      * Description of the semantic space the Value Set Expansion is intended to cover
      * and should further clarify the text in ValueSet.description.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetScope
      */
     protected null|FHIRValueSetScope $scope = null;

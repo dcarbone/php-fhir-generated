@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -154,7 +154,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classification of the type of event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -165,7 +164,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes what happened. The most specific code for the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -176,7 +174,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Indicator for type of action performed during the event that generated the
      * audit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRAuditEventAction
      */
     protected null|FHIRAuditEventAction $action = null;
@@ -186,7 +183,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Indicates and enables segmentation of various severity including debugging from
      * critical.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRAuditEventSeverity
      */
     protected null|FHIRAuditEventSeverity $severity = null;
@@ -196,7 +192,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time or period during which the activity occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $occurredPeriod = null;
@@ -210,7 +205,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time or period during which the activity occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurredDateTime = null;
@@ -223,7 +217,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the event was recorded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $recorded = null;
@@ -233,7 +226,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Indicates whether the event succeeded or failed. A free text descripiton can be
      * given in outcome.text.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventOutcome
      */
     protected null|FHIRAuditEventOutcome $outcome = null;
@@ -245,7 +237,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * The authorization (e.g., PurposeOfUse) that was used during the event being
      * recorded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $authorization = [];
@@ -256,7 +247,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Allows tracing of authorizatino for the events and tracking whether
      * proposals/recommendations were acted upon.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -267,7 +257,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * The patient element is available to enable deterministic tracking of activities
      * that involve the patient as the subject of the data used in an activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -279,7 +268,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * This will typically be the encounter the event occurred, but some events may be
      * initiated prior to or after the official completion of an encounter but still be
      * tied to the context of the encounter (e.g. pre-admission lab tests).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -288,7 +276,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * An actor taking an active role in the event or activity that is logged.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent[]
      */
     protected null|array $agent = [];
@@ -297,7 +284,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * The actor that is reporting the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource
      */
     protected null|FHIRAuditEventSource $source = null;
@@ -306,7 +292,6 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * security, maintenance, and performance analysis.
      *
      * Specific instances of data or objects that have been accessed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity[]
      */
     protected null|array $entity = [];

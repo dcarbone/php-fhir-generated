@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,7 +119,6 @@ class FHIRConditionStage extends FHIRBackboneElement
      * A simple summary of the stage such as "Stage 3" or "Early Onset". The
      * determination of the stage is disease-specific, such as cancer, retinopathy of
      * prematurity, kidney diseases, Alzheimer's, or Parkinson disease.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $summary = null;
@@ -130,7 +129,6 @@ class FHIRConditionStage extends FHIRBackboneElement
      *
      * Reference to a formal record of the evidence on which the staging assessment is
      * based.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $assessment = [];
@@ -141,7 +139,6 @@ class FHIRConditionStage extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of staging, such as pathological or clinical staging.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;

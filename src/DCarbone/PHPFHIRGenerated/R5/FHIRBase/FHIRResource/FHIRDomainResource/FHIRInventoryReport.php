@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -144,7 +144,6 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for the InventoryReport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -153,7 +152,6 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
      *
      * The status of the inventory check or notification - whether this is draft (e.g.
      * the report is still pending some updates) or active.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInventoryReportStatus
      */
     protected null|FHIRInventoryReportStatus $status = null;
@@ -162,7 +160,6 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
      *
      * Whether the report is about the current inventory count (snapshot) or a
      * differential change in inventory (change).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInventoryCountType
      */
     protected null|FHIRInventoryCountType $countType = null;
@@ -173,7 +170,6 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * What type of operation is being performed - addition or subtraction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $operationType = null;
@@ -184,7 +180,6 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason for this count - regular count, ad-hoc count, new arrivals, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $operationTypeReason = null;
@@ -198,7 +193,6 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the report has been submitted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $reportedDateTime = null;
@@ -208,7 +202,6 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who submits the report.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $reporter = null;
@@ -218,7 +211,6 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period the report refers to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $reportingPeriod = null;
@@ -226,7 +218,6 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
      * A report of inventory or stock items.
      *
      * An inventory listing section (grouped by any of the attributes).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryReport\FHIRInventoryReportInventoryListing[]
      */
     protected null|array $inventoryListing = [];
@@ -237,7 +228,6 @@ class FHIRInventoryReport extends FHIRDomainResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A note associated with the InventoryReport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];

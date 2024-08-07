@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -152,7 +152,6 @@ class FHIRSampledData extends FHIRDataType
      *
      * The base quantity that a measured value of zero represents. In addition, this
      * provides the units of the entire measurement series.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $origin = null;
@@ -164,7 +163,6 @@ class FHIRSampledData extends FHIRDataType
      *
      * Amount of intervalUnits between samples, e.g. milliseconds for time-based
      * sampling.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $interval = null;
@@ -175,7 +173,6 @@ class FHIRSampledData extends FHIRDataType
      * the Narrative, or extensions
      *
      * The measurement unit in which the sample interval is expressed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $intervalUnit = null;
@@ -187,7 +184,6 @@ class FHIRSampledData extends FHIRDataType
      *
      * A correction factor that is applied to the sampled data points before they are
      * added to the origin.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $factor = null;
@@ -199,7 +195,6 @@ class FHIRSampledData extends FHIRDataType
      *
      * The lower limit of detection of the measured points. This is needed if any of
      * the data points have the value "L" (lower than detection limit).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $lowerLimit = null;
@@ -211,7 +206,6 @@ class FHIRSampledData extends FHIRDataType
      *
      * The upper limit of detection of the measured points. This is needed if any of
      * the data points have the value "U" (higher than detection limit).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $upperLimit = null;
@@ -223,7 +217,6 @@ class FHIRSampledData extends FHIRDataType
      * The number of sample points at each time point. If this value is greater than
      * one, then the dimensions will be interlaced - all the sample points for a point
      * in time will be recorded at once.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $dimensions = null;
@@ -234,7 +227,6 @@ class FHIRSampledData extends FHIRDataType
      * the Narrative, or extensions
      *
      * Reference to ConceptMap that defines the codes used in the data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $codeMap = null;
@@ -248,7 +240,6 @@ class FHIRSampledData extends FHIRDataType
      * intervalUnit. The absolute point at which the measurements begin SHALL be
      * conveyed outside the scope of this datatype, e.g. Observation.effectiveDateTime
      * for a timing offset.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $offsets = null;
@@ -257,7 +248,6 @@ class FHIRSampledData extends FHIRDataType
      * space (character u20). The special codes "E" (error), "L" (below detection
      * limit) and "U" (above detection limit) are also defined for used in place of
      * decimal values.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSampledDataDataType
      */
     protected null|FHIRSampledDataDataType $data = null;

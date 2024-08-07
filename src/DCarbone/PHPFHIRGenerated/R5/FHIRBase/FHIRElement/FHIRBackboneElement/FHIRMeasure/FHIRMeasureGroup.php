@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -138,7 +138,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * An identifier that is unique within the Measure allowing linkage to the
      * equivalent item in a MeasureReport resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $linkId = null;
@@ -151,7 +150,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * Indicates a meaning for the group. This can be as simple as a unique identifier,
      * or it can establish meaning in a broader context by drawing from a terminology,
      * allowing groups to be correlated across measures.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -165,7 +163,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The human readable description of this population group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -177,7 +174,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * Indicates whether the measure is used to examine a process, an outcome over
      * time, a patient-reported outcome, or a structure measure such as utilization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -189,7 +185,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subjectCodeableConcept = null;
@@ -200,7 +195,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * The intended subjects for the measure. If this element is not provided, a
      * Patient subject is assumed, but the subject of the measure can be anything.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subjectReference = null;
@@ -215,7 +209,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * basis. For example, an encounter-based measure has a subject of Patient and a
      * population basis of Encounter, and the population criteria all return lists of
      * Encounters.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRFHIRTypes
      */
     protected null|FHIRFHIRTypes $basis = null;
@@ -228,7 +221,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * Indicates how the calculation is performed for the measure, including
      * proportion, ratio, continuous-variable, and cohort. The value set is extensible,
      * allowing additional measure scoring types to be represented.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $scoring = null;
@@ -240,7 +232,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * Defines the expected units of measure for the measure score. This element SHOULD
      * be specified as a UCUM unit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $scoringUnit = null;
@@ -255,7 +246,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * Describes how to combine the information calculated, based on logic in each of
      * several populations, into one summarized result.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $rateAggregation = null;
@@ -268,7 +258,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * Information on whether an increase or decrease in score is the preferred result
      * (e.g., a higher score indicates better quality OR a lower score indicates better
      * quality OR quality is within a range).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $improvementNotation = null;
@@ -280,7 +269,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * A reference to a Library resource containing the formal logic used by the
      * measure group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $library = [];
@@ -288,7 +276,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * The Measure resource provides the definition of a quality measure.
      *
      * A population criteria for the measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasurePopulation[]
      */
     protected null|array $population = [];
@@ -298,7 +285,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * The stratifier criteria for the measure report, specified as either the name of
      * a valid CQL expression defined within a referenced library or a valid FHIR
      * Resource Path.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier[]
      */
     protected null|array $stratifier = [];

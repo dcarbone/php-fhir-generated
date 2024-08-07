@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -159,7 +159,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * administration while the patient was off the ward might be made with a different
      * system and entered after the event. Particularly important if these records have
      * to be updated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -169,7 +168,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -179,7 +177,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component or step.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $partOf = [];
@@ -190,7 +187,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * The encounter or episode of care that establishes the context for this
      * MedicationStatement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $context = null;
@@ -201,7 +197,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * A code representing the patient or other source's judgment about the state of
      * the medication used that this statement is about. Generally this will be active
      * or completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMedicationStatementStatus
      */
     protected null|FHIRMedicationStatementStatus $status = null;
@@ -213,7 +208,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * Indicates where type of medication statement and where the medication is
      * expected to be consumed or administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -226,7 +220,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $medicationCodeableConcept = null;
@@ -238,7 +231,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $medicationReference = null;
@@ -252,7 +244,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * The interval of time during which it is being asserted that the patient was
      * taking the medication (or was not taking, when the wasNotGiven element is true).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $effectiveDateTime = null;
@@ -263,7 +254,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * The interval of time during which it is being asserted that the patient was
      * taking the medication (or was not taking, when the wasNotGiven element is true).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -276,7 +266,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the medication statement was asserted by the information source.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $dateAsserted = null;
@@ -288,7 +277,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * The person or organization that provided the information about the taking of
      * this medication. Note: Use derivedFrom when a MedicationStatement is derived
      * from other resources, e.g Claim or MedicationRequest.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $informationSource = null;
@@ -298,7 +286,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person, animal or group who is/was taking the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -309,7 +296,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * Allows linking the MedicationStatement to the underlying MedicationRequest, or
      * to other information that supports or is used to derive the MedicationStatement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $derivedFrom = [];
@@ -319,7 +305,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicator of the certainty of whether the medication was taken by the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMedicationStatementTaken
      */
     protected null|FHIRMedicationStatementTaken $taken = null;
@@ -330,7 +315,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating why the medication was not taken.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonNotTaken = [];
@@ -341,7 +325,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reason for why the medication is being/was taken.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonCode = [];
@@ -351,7 +334,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition or observation that supports why the medication is being/was taken.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $reasonReference = [];
@@ -363,7 +345,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      *
      * Provides extra information about the medication statement that is not conveyed
      * by the other attributes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -373,7 +354,6 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates how the medication is/was or should be taken by the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDosage[]
      */
     protected null|array $dosage = [];

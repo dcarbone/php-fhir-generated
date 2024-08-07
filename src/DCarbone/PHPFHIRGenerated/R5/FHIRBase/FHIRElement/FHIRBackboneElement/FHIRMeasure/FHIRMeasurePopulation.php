@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,7 +127,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      *
      * An identifier that is unique within the Measure allowing linkage to the
      * equivalent population in a MeasureReport resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $linkId = null;
@@ -138,7 +137,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of population criteria.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -152,7 +150,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The human readable description of this population criteria.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -165,7 +162,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      *
      * An expression that specifies the criteria for the population, typically the name
      * of an expression in a library.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     protected null|FHIRExpression $criteria = null;
@@ -175,7 +171,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A Group resource that defines this population as a set of characteristics.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $groupDefinition = null;
@@ -191,7 +186,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * and must be resolved explicitly. For example in a ratio measure with multiple
      * initial populations, the denominator must specify which population should be
      * used as the starting point.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $inputPopulationId = null;
@@ -205,7 +199,6 @@ class FHIRMeasurePopulation extends FHIRBackboneElement
      * For most scoring types, this is implied by scoring (e.g. a proportion measure
      * counts members of the populations). For continuous variables, however, this
      * information must be specified to ensure correct calculation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $aggregateMethod = null;

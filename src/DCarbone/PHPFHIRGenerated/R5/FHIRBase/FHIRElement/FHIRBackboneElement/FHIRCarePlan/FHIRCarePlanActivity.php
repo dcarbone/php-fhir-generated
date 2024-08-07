@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -124,7 +124,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * activity that was performed. The requested activity can be conveyed using the
      * CarePlan.activity.plannedActivityReference (a reference to a “request”
      * resource).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $performedActivity = [];
@@ -135,7 +134,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Notes about the adherence/status/progress of the activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $progress = [];
@@ -145,7 +143,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the proposed activity represented in a specific resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $plannedActivityReference = null;

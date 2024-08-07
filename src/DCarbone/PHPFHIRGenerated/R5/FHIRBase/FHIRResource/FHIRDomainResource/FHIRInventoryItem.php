@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -148,7 +148,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for the inventory item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -157,7 +156,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the item entry.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInventoryItemStatusCodes
      */
     protected null|FHIRInventoryItemStatusCodes $status = null;
@@ -168,7 +166,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Category or class of the item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -179,7 +176,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Code designating the specific type of item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $code = [];
@@ -189,7 +185,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The item name(s) - the brand name, or common name, functional name, generic
      * name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemName[]
      */
     protected null|array $name = [];
@@ -198,7 +193,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * supply-related workflows.
      *
      * Organization(s) responsible for the product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemResponsibleOrganization[]
      */
     protected null|array $responsibleOrganization = [];
@@ -207,7 +201,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * supply-related workflows.
      *
      * The descriptive characteristics of the inventory item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemDescription
      */
     protected null|FHIRInventoryItemDescription $description = null;
@@ -219,7 +212,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The usage status e.g. recalled, in use, discarded... This can be used to
      * indicate that the items have been taken out of inventory, or are in use, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $inventoryStatus = [];
@@ -230,7 +222,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The base unit of measure - the unit in which the product is used or counted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $baseUnit = null;
@@ -242,7 +233,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Net content or amount present in the item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $netContent = null;
@@ -251,7 +241,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * supply-related workflows.
      *
      * Association with other items or products.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemAssociation[]
      */
     protected null|array $association = [];
@@ -260,7 +249,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * supply-related workflows.
      *
      * The descriptive or identifying characteristics of the item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemCharacteristic[]
      */
     protected null|array $characteristic = [];
@@ -269,7 +257,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * supply-related workflows.
      *
      * Instances or occurrences of the product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemInstance
      */
     protected null|FHIRInventoryItemInstance $instance = null;
@@ -279,7 +266,6 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Link to a product resource used in clinical workflows.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $productReference = null;

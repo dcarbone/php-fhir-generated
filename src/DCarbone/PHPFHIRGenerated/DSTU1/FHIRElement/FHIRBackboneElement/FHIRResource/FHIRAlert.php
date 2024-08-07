@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * Identifier assigned to the alert for external use (outside the FHIR
      * environment).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -118,7 +117,6 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * Allows an alert to be divided into different categories like clinical,
      * administrative etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -128,7 +126,6 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Supports basic workflow.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAlertStatus
      */
     protected null|FHIRAlertStatus $status = null;
@@ -138,7 +135,6 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this alert concerns.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $subject = null;
@@ -148,7 +144,6 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or device that created the alert.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $author = null;
@@ -157,7 +152,6 @@ class FHIRAlert extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The textual component of the alert to display to the user.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $note = null;

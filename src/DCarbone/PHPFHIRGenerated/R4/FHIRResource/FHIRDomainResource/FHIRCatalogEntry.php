@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,7 +129,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Used in supporting different identifiers for the same product, e.g. manufacturer
      * code and retailer code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -140,7 +139,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of item - medication, device, service, protocol or other.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -149,7 +147,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the entry represents an orderable item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $orderable = null;
@@ -159,7 +156,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item in a catalog or definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $referencedItem = null;
@@ -170,7 +166,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used in supporting related concepts, e.g. NDC to RxNorm.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $additionalIdentifier = [];
@@ -181,7 +176,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Classes of devices, or ATC for medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $classification = [];
@@ -190,7 +184,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Used to support catalog exchange even for unsupported products, e.g. getting
      * list of medications even if not prescribable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -200,7 +193,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time period in which this catalog entry is expected to be active.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $validityPeriod = null;
@@ -213,7 +205,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date until which this catalog entry is expected to be active.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $validTo = null;
@@ -227,7 +218,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Typically date of issue is different from the beginning of the validity. This
      * can be used to see when an item was last updated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $lastUpdated = null;
@@ -238,7 +228,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used for examplefor Out of Formulary, or any specifics.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $additionalCharacteristic = [];
@@ -249,7 +238,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * User for example for ATC classification, or.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $additionalClassification = [];
@@ -258,7 +246,6 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Used for example, to point to a substance, or to a device used to administer a
      * medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry[]
      */
     protected null|array $relatedEntry = [];

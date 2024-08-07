@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -117,7 +117,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Associated definitions for this medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $definition = [];
@@ -128,7 +127,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $doseForm = null;
@@ -139,7 +137,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended or approved route of administration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $intendedRoute = [];
@@ -147,7 +144,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * Identifies a particular constituent of interest in the product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient[]
      */
     protected null|array $ingredient = [];
@@ -156,7 +152,6 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      *
      * Specifies descriptive properties of the medicine, such as color, shape,
      * imprints, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic[]
      */
     protected null|array $drugCharacteristic = [];

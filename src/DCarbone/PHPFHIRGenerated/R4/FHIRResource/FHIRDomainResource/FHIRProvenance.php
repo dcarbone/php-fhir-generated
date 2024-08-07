@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * The Reference(s) that were generated or updated by the activity described in
      * this resource. A provenance can point to more than one target if multiple
      * resources were created/updated by the same activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $target = [];
@@ -144,7 +143,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period during which the activity occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $occurredPeriod = null;
@@ -157,7 +155,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The period during which the activity occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurredDateTime = null;
@@ -170,7 +167,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The instant of time at which the activity was recorded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $recorded = null;
@@ -182,7 +178,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Policy or plan the activity was defined by. Typically, a single activity may
      * have multiple applicable policy documents, such as patient consent, guarantor
      * funding, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri[]
      */
     protected null|array $policy = [];
@@ -192,7 +187,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the activity occurred, if relevant.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -203,7 +197,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason that the activity was taking place.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reason = [];
@@ -216,7 +209,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * An activity is something that occurs over a period of time and acts upon or with
      * entities; it may include consuming, processing, transforming, modifying,
      * relocating, using, or generating entities.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $activity = null;
@@ -233,7 +225,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * An actor taking a role in an activity for which it can be assigned some degree
      * of responsibility for the activity taking place.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent[]
      */
     protected null|array $agent = [];
@@ -249,7 +240,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * authenticated), all of which may impact security, privacy, and trust policies.
      *
      * An entity used in this activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity[]
      */
     protected null|array $entity = [];
@@ -264,7 +254,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * A digital signature on the target Reference(s). The signer should match a
      * Provenance.agent. The purpose of the signature is indicated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature[]
      */
     protected null|array $signature = [];

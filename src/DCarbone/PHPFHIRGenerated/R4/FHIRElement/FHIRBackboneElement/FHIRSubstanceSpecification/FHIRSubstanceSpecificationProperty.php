@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A category for this property, e.g. Physical, Chemical, Enzymatic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -116,7 +115,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Property type e.g. viscosity, pH, isoelectric point.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -127,7 +125,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      *
      * Parameters that were used in the measurement of a property (e.g. for viscosity:
      * measured at 20C with a pH of 7.1).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $parameters = null;
@@ -138,7 +135,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      *
      * A substance upon which a defining property depends (e.g. for solubility: in
      * water, in alcohol).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $definingSubstanceReference = null;
@@ -150,7 +146,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      *
      * A substance upon which a defining property depends (e.g. for solubility: in
      * water, in alcohol).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $definingSubstanceCodeableConcept = null;
@@ -162,7 +157,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Quantitative value for this property.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $amountQuantity = null;
@@ -172,7 +166,6 @@ class FHIRSubstanceSpecificationProperty extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Quantitative value for this property.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $amountString = null;

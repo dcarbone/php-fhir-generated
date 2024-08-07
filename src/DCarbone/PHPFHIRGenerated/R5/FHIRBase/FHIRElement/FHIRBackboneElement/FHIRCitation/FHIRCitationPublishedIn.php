@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,6 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Kind of container (e.g. Periodical, database, or book).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -137,7 +136,6 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
      *
      * Journal identifiers include ISSN, ISO Abbreviation and NLMuniqueID; Book
      * identifiers include ISBN.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -147,7 +145,6 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the database or title of the book or journal.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -157,7 +154,6 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Name of or resource describing the publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $publisher = null;
@@ -167,7 +163,6 @@ class FHIRCitationPublishedIn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Geographic location of the publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisherLocation = null;

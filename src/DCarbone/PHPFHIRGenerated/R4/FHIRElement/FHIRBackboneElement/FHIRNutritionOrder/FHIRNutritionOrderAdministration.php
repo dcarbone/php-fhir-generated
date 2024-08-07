@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutri
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The time period and frequency at which the enteral formula should be delivered
      * to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     protected null|FHIRTiming $schedule = null;
@@ -116,7 +115,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The volume of formula to provide to the patient per the specified administration
      * schedule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -129,7 +127,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $rateQuantity = null;
@@ -141,7 +138,6 @@ class FHIRNutritionOrderAdministration extends FHIRBackboneElement
      *
      * The rate of administration of formula via a feeding pump, e.g. 60 mL per hour,
      * according to the specified schedule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $rateRatio = null;

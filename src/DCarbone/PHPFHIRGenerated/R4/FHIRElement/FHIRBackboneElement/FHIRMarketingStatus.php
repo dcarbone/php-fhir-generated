@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      *
      * The country in which the marketing authorisation has been granted shall be
      * specified It should be specified using the ISO 3166 ‑ 1 alpha-2 code elements.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $country = null;
@@ -119,7 +118,6 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * which specific provisions within a jurisdiction apply, the jurisdiction can be
      * specified using an appropriate controlled terminology The controlled term and
      * the controlled term identifier shall be specified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $jurisdiction = null;
@@ -131,7 +129,6 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      *
      * This attribute provides information on the status of the marketing of the
      * medicinal product See ISO/TS 20443 for more information and examples.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $status = null;
@@ -146,7 +143,6 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * month and year shall be specified using the ISO 8601 date format NOTE “Placed
      * on the market” refers to the release of the Medicinal Product into the
      * distribution chain.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $dateRange = null;
@@ -164,7 +160,6 @@ class FHIRMarketingStatus extends FHIRBackboneElement
      * month and year shall be specified using the ISO 8601 date format NOTE “Placed
      * on the market” refers to the release of the Medicinal Product into the
      * distribution chain.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $restoreDate = null;

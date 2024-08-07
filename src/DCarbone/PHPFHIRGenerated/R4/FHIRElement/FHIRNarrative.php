@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,6 @@ class FHIRNarrative extends FHIRElement
      * The status of the narrative - whether it's entirely generated (from just the
      * defined data or the extensions too), or whether a human authored it and it may
      * contain additional data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNarrativeStatus
      */
     protected null|FHIRNarrativeStatus $status = null;
@@ -105,7 +104,6 @@ class FHIRNarrative extends FHIRElement
      * XHTML type used in special cases
      *
      * The actual narrative content, a stripped down version of XHTML.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRXhtml
      */
     protected null|FHIRXhtml $div = null;

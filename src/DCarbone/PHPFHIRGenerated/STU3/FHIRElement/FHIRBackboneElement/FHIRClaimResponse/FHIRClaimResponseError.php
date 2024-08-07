@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      *
      * The sequence number of the line item submitted which contains the error. This
      * value is omitted when the error is elsewhere.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $sequenceLinkId = null;
@@ -114,7 +113,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * The sequence number of the addition within the line item submitted which
      * contains the error. This value is omitted when the error is not related to an
      * Addition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $detailSequenceLinkId = null;
@@ -126,7 +124,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * The sequence number of the addition within the line item submitted which
      * contains the error. This value is omitted when the error is not related to an
      * Addition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $subdetailSequenceLinkId = null;
@@ -138,7 +135,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      *
      * An error code,from a specified code system, which details why the claim could
      * not be adjudicated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;

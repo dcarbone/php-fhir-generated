@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * Allows the comparisonGroup for the study and the comparisonGroup for the subject
      * to be linked easily.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $linkId = null;
@@ -144,7 +143,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Unique, human-readable label for this comparisonGroup of the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -156,7 +154,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * Categorization of study comparisonGroup, e.g. experimental, active comparator,
      * placebo comparater.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -171,7 +168,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      *
      * A succinct description of the path through the study that would be followed by a
      * subject adhering to this comparisonGroup.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -181,7 +177,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Interventions or exposures in this comparisonGroup or cohort.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $intendedExposure = [];
@@ -191,7 +186,6 @@ class FHIRResearchStudyComparisonGroup extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Group of participants who were enrolled in study comparisonGroup.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $observedGroup = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -141,7 +141,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * Identifiers associated with the image - these may include identifiers for the
      * image itself, identifiers for the context of its collection (e.g. series ids)
      * and context ids such as accession numbers or other workflow identifiers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -151,7 +150,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A procedure that is fulfilled in whole or in part by the creation of this media.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -161,7 +159,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * Whether the media is a photo (still image), an audio recording, or a video
      * recording.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDigitalMediaType
      */
     protected null|FHIRDigitalMediaType $type = null;
@@ -174,7 +171,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * Details of the type of the media - usually, how it was acquired (what type of
      * device). If images sourced from a DICOM system, are wrapped in a Media resource,
      * then this is the modality.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subtype = null;
@@ -185,7 +181,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name of the imaging view e.g. Lateral or Antero-posterior (AP).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $view = null;
@@ -195,7 +190,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who/What this Media is a record of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -205,7 +199,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter or episode of care that establishes the context for this media.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $context = null;
@@ -218,7 +211,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time(s) at which the media was collected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -228,7 +220,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date and time(s) at which the media was collected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $occurrencePeriod = null;
@@ -238,7 +229,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who administered the collection of the image.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $operator = null;
@@ -249,7 +239,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the event occurred in coded or textual form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonCode = [];
@@ -261,7 +250,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * Indicates the site on the subject's body where the media was collected (i.e. the
      * target site).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $bodySite = null;
@@ -271,7 +259,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device used to collect the media.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $device = null;
@@ -281,7 +268,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * the Narrative, or extensions
      *
      * Height of the image in pixels (photo/video).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $height = null;
@@ -291,7 +277,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * the Narrative, or extensions
      *
      * Width of the image in pixels (photo/video).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $width = null;
@@ -305,7 +290,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * animated gif. If there is more than one frame, this SHALL have a value in order
      * to alert interface software that a multi-frame capable rendering widget is
      * required.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $frames = null;
@@ -315,7 +299,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * the Narrative, or extensions
      *
      * The duration of the recording in seconds - for audio and video.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $duration = null;
@@ -326,7 +309,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      *
      * The actual content of the media - inline or by direct reference to the media
      * source file.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $content = null;
@@ -337,7 +319,6 @@ class FHIRMedia extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the media by the performer, subject or other participants.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];

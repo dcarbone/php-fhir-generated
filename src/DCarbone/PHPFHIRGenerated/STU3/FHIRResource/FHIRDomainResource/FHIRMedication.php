@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * if no code is available. Usage note: This could be a standard medication code
      * such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or
      * local formulary code, optionally with translations to other code systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -134,7 +133,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate if the medication is in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMedicationStatus
      */
     protected null|FHIRMedicationStatus $status = null;
@@ -143,7 +141,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set to true if the item is attributable to a specific manufacturer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $isBrand = null;
@@ -153,7 +150,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Set to true if the medication can be obtained without an order from a
      * prescriber.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $isOverTheCounter = null;
@@ -164,7 +160,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Describes the details of the manufacturer of the medication product. This is not
      * intended to represent the distributor of a medication product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $manufacturer = null;
@@ -175,7 +170,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $form = null;
@@ -184,7 +178,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * medication. It covers the ingredients and the packaging for a medication.
      *
      * Identifies a particular constituent of interest in the product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient[]
      */
     protected null|array $ingredient = [];
@@ -193,7 +186,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * medication. It covers the ingredients and the packaging for a medication.
      *
      * Information that only applies to packages (not products).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationPackage
      */
     protected null|FHIRMedicationPackage $package = null;
@@ -203,7 +195,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Photo(s) or graphic representation(s) of the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment[]
      */
     protected null|array $image = [];

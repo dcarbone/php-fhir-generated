@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -155,7 +155,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this claim response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -164,7 +163,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     protected null|FHIRFinancialResourceStatusCodes $status = null;
@@ -176,7 +174,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * A finer grained suite of claim type codes which may convey additional
      * information such as Inpatient vs Outpatient and/or a specialty service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -188,7 +185,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * A finer grained suite of claim type codes which may convey additional
      * information such as Inpatient vs Outpatient and/or a specialty service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subType = null;
@@ -201,7 +197,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * adjudication for provision in the future; or requesting the non-binding
      * adjudication of the listed products and services which could be provided in the
      * future.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse
      */
     protected null|FHIRUse $use = null;
@@ -212,7 +207,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The party to whom the professional services and/or products have been supplied
      * or are being considered and for whom actual for facast reimbursement is sought.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -225,7 +219,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this resource was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $created = null;
@@ -235,7 +228,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party responsible for authorization, adjudication and reimbursement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $insurer = null;
@@ -246,7 +238,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The provider which is responsible for the claim, predetermination or
      * preauthorization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $requestor = null;
@@ -256,7 +247,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource reference.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $request = null;
@@ -265,7 +255,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The outcome of the claim, predetermination, or preauthorization processing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRClaimProcessingCodes
      */
     protected null|FHIRClaimProcessingCodes $outcome = null;
@@ -275,7 +264,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human readable description of the status of the adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $disposition = null;
@@ -286,7 +274,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Reference from the Insurer which is used in later communications which refers to
      * this adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $preAuthRef = null;
@@ -296,7 +283,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The time frame during which this authorization is effective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $preAuthPeriod = null;
@@ -307,7 +293,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of Party to be reimbursed: subscriber, provider, other.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $payeeType = null;
@@ -317,7 +302,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * A claim line. Either a simple (a product or service) or a 'group' of details
      * which can also be a simple items or groups of sub-details.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem[]
      */
     protected null|array $item = [];
@@ -326,7 +310,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * resource.
      *
      * The first-tier service adjudications for payor added product or service lines.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem[]
      */
     protected null|array $addItem = [];
@@ -336,7 +319,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The adjudication results which are presented at the header level rather than at
      * the line-item or add-item levels.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     protected null|array $adjudication = [];
@@ -345,7 +327,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * resource.
      *
      * Categorized monetary totals for the adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseTotal[]
      */
     protected null|array $total = [];
@@ -354,7 +335,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * resource.
      *
      * Payment details for the adjudication of the claim.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponsePayment
      */
     protected null|FHIRClaimResponsePayment $payment = null;
@@ -366,7 +346,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * A code, used only on a response to a preauthorization, to indicate whether the
      * benefits payable have been reserved and for whom.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $fundsReserve = null;
@@ -377,7 +356,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code for the form to be used for printing the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $formCode = null;
@@ -387,7 +365,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual form, by reference or inclusion, for printing the content or an EOB.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $form = null;
@@ -396,7 +373,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * resource.
      *
      * A note that describes or explains adjudication results in a human readable form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseProcessNote[]
      */
     protected null|array $processNote = [];
@@ -406,7 +382,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Request for additional supporting or authorizing information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $communicationRequest = [];
@@ -416,7 +391,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Financial instruments for reimbursement for the health care products and
      * services specified on the claim.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseInsurance[]
      */
     protected null|array $insurance = [];
@@ -425,7 +399,6 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * resource.
      *
      * Errors encountered during the processing of the adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError[]
      */
     protected null|array $error = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -145,7 +145,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * Document identifier as assigned by the source of the document. This identifier
      * is specific to this version of the document. This unique identifier may be used
      * elsewhere to identify this version of the document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $masterIdentifier = null;
@@ -156,7 +155,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      *
      * Other identifiers associated with the document, including version independent,
      * source record and workflow related identifiers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -169,7 +167,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * or healthcare practitioner), a device (I.e. machine) or even a group of subjects
      * (such as a document about a herd of farm animals, or a set of patients that
      * share a common exposure).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $subject = null;
@@ -181,7 +178,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      *
      * Specifies the particular kind of document (e.g. Patient Summary, Discharge
      * Summary, Prescription, etc.).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -193,7 +189,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      *
      * A categorization for the type of the document. This may be implied by or derived
      * from the code specified in the Document Type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $class = null;
@@ -203,7 +198,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies who is responsible for adding the information to the document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $author = [];
@@ -214,7 +208,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      *
      * Identifies the organization or group who is responsible for ongoing maintenance
      * of and access to the document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $custodian = null;
@@ -224,7 +217,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      *
      * A reference to a domain or server that manages policies under which the document
      * is accessed and/or made available.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $policyManager = null;
@@ -234,7 +226,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which person or organization authenticates that this document is valid.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $authenticator = null;
@@ -246,7 +237,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $created = null;
@@ -255,7 +245,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the document reference was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $indexed = null;
@@ -263,7 +252,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document reference.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDocumentReferenceStatus
      */
     protected null|FHIRDocumentReferenceStatus $status = null;
@@ -274,7 +262,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the underlying document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $docStatus = null;
@@ -283,7 +270,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      *
      * Relationships that this document has with other document references that already
      * exist.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo[]
      */
     protected null|array $relatesTo = [];
@@ -293,7 +279,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      *
      * Human-readable description of the source document. This is sometimes known as
      * the "title".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -304,7 +289,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code specifying the level of confidentiality of the XDS Document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $confidentiality = [];
@@ -315,7 +299,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * the Narrative, or extensions
      *
      * The primary language in which the source document is written.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $primaryLanguage = null;
@@ -326,7 +309,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * the Narrative, or extensions
      *
      * The mime type of the source document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $mimeType = null;
@@ -336,7 +318,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      *
      * An identifier that identifies that the format and content of the document
      * conforms to additional rules beyond the base format indicated in the mimeType.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri[]
      */
     protected null|array $format = [];
@@ -345,7 +326,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The size of the source document this reference refers to in bytes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $size = null;
@@ -354,7 +334,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A hash of the source document to ensure that changes have not occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $hash = null;
@@ -363,7 +342,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A url at which the document can be accessed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $location = null;
@@ -371,7 +349,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * A reference to a document.
      *
      * A description of a service call that can be used to retrieve the document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceService
      */
     protected null|FHIRDocumentReferenceService $service = null;
@@ -379,7 +356,6 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      * A reference to a document.
      *
      * The clinical context in which the document was prepared.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContext
      */
     protected null|FHIRDocumentReferenceContext $context = null;

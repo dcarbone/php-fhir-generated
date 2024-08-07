@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this coverage eligiblity request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -146,7 +145,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     protected null|FHIRFinancialResourceStatusCodes $status = null;
@@ -157,7 +155,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the requestor expects the processor to complete processing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $priority = null;
@@ -170,7 +167,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * discovered; discovery and return of coverages for the patient; and/or validation
      * that the specified coverage is in-force at the date/period specified or 'now' if
      * not specified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIREligibilityRequestPurpose[]
      */
     protected null|array $purpose = [];
@@ -181,7 +177,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      *
      * The party who is the beneficiary of the supplied coverage and for whom
      * eligibility is sought.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -193,7 +188,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $servicedDate = null;
@@ -204,7 +198,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      *
      * The date or dates when the enclosed suite of services were performed or
      * completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $servicedPeriod = null;
@@ -217,7 +210,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when this resource was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $created = null;
@@ -227,7 +219,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who created the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $enterer = null;
@@ -237,7 +228,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The provider which is responsible for the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $provider = null;
@@ -248,7 +238,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      *
      * The Insurer who issued the coverage in question and is the recipient of the
      * request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $insurer = null;
@@ -258,7 +247,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services are intended to be provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $facility = null;
@@ -271,7 +259,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      *
      * Additional information codes regarding exceptions, special considerations, the
      * condition, situation, prior or concurrent issues.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo[]
      */
     protected null|array $supportingInfo = [];
@@ -284,7 +271,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      *
      * Financial instruments for reimbursement for the health care products and
      * services.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance[]
      */
     protected null|array $insurance = [];
@@ -297,7 +283,6 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      *
      * Service categories or billable services for which benefit details and/or an
      * authorization prior to service delivery may be required by the payor.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem[]
      */
     protected null|array $item = [];

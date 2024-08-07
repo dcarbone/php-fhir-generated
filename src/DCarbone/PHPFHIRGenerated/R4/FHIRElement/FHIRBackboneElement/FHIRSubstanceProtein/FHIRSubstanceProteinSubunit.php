@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,7 +118,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * of decreasing length. Sequences of the same length will be ordered by molecular
      * weight. Subunits that have identical sequences will be repeated and have
      * sequential subscripts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $subunit = null;
@@ -134,7 +133,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * synthetic peptide containing amino acids that are not represented with a single
      * letter code an X should be used within the sequence. The modified amino acids
      * will be distinguished by their position in the sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $sequence = null;
@@ -144,7 +142,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Length of linear sequences of amino acids contained in the subunit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $length = null;
@@ -160,7 +157,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * synthetic peptide containing amino acids that are not represented with a single
      * letter code an X should be used within the sequence. The modified amino acids
      * will be distinguished by their position in the sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $sequenceAttachment = null;
@@ -172,7 +168,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $nTerminalModificationId = null;
@@ -183,7 +178,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * The name of the fragment modified at the N-terminal of the SubstanceProtein
      * shall be specified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $nTerminalModification = null;
@@ -195,7 +189,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      *
      * Unique identifier for molecular fragment modification based on the ISO 11238
      * Substance ID.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $cTerminalModificationId = null;
@@ -205,7 +198,6 @@ class FHIRSubstanceProteinSubunit extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The modification at the C-terminal shall be specified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $cTerminalModification = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,7 +115,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where this resource is found.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $reference = null;
@@ -125,7 +124,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * Indicates the FHIR Version(s) this artifact is intended to apply to. If no
      * versions are specified, the resource is assumed to apply to all the versions
      * stated in ImplementationGuide.fhirVersion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFHIRVersion[]
      */
     protected null|array $fhirVersion = [];
@@ -136,7 +134,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A human assigned name for the resource. All resources SHOULD have a name, but
      * the name may be extracted from the resource (e.g. ValueSet.name).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -147,7 +144,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A description of the reason that a resource has been included in the
      * implementation guide.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -158,7 +154,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
      * profile.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $exampleBoolean = null;
@@ -171,7 +166,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * If true or a reference, indicates the resource is an example instance. If a
      * reference is present, indicates that the example is an example of the specified
      * profile.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $exampleCanonical = null;
@@ -184,7 +178,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Reference to the id of the grouping this resource appears in.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
     protected null|FHIRId $groupingId = null;

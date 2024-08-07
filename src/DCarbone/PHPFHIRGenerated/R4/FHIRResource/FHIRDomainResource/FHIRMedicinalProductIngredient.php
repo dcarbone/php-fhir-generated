@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -117,7 +117,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * The identifier(s) of this Ingredient that are assigned by business processes
      * and/or used to refer to it when a direct URL reference to the resource itself is
      * not appropriate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -128,7 +127,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ingredient role e.g. Active ingredient, excipient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $role = null;
@@ -137,7 +135,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If the ingredient is a known or suspected allergen.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $allergenicIndicator = null;
@@ -147,7 +144,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Ingredient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $manufacturer = [];
@@ -155,7 +151,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * A specified substance that comprises this ingredient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSpecifiedSubstance[]
      */
     protected null|array $specifiedSubstance = [];
@@ -163,7 +158,6 @@ class FHIRMedicinalProductIngredient extends FHIRDomainResource implements PHPFH
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * The ingredient substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientSubstance
      */
     protected null|FHIRMedicinalProductIngredientSubstance $substance = null;

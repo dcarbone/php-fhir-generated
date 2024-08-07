@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -124,7 +123,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $reference = null;
@@ -134,7 +132,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the object that was involved in this audit event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $type = null;
@@ -145,7 +142,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * Code representing the functional application role of Participant Object being
      * audited.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $role = null;
@@ -155,7 +151,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifier for the data life-cycle stage for the participant object.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $lifecycle = null;
@@ -165,7 +160,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Denotes security labels for the identified object.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding[]
      */
     protected null|array $securityLabel = [];
@@ -176,7 +170,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      *
      * An instance-specific descriptor of the Participant Object ID audited, such as a
      * person's name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -186,7 +179,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that describes the object in more detail.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -196,7 +188,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual query for a query-type participant object.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBase64Binary
      */
     protected null|FHIRBase64Binary $query = null;
@@ -206,7 +197,6 @@ class FHIRAuditEventObject extends FHIRBackboneElement
      * usage.
      *
      * Additional Information about the Object.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail[]
      */
     protected null|array $detail = [];

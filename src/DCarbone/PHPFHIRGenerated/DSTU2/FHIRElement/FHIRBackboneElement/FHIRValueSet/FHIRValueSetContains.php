@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,7 +110,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      *
      * An absolute URI which is the code system in which the code for this item in the
      * expansion is defined.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $system = null;
@@ -120,7 +119,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      *
      * If true, this entry is included in the expansion for navigational purposes, and
      * the user cannot select the code directly as a proper value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $abstract = null;
@@ -131,7 +129,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      *
      * The version of this code system that defined this code and/or display. This
      * should only be used with code systems that do not enforce concept permanence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -144,7 +141,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * The code for this item in the expansion hierarchy. If this code is missing the
      * entry in the hierarchy is a place holder (abstract) and does not represent a
      * valid code in the value set.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -154,7 +150,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The recommended display for this item in the expansion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $display = null;
@@ -162,7 +157,6 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Other codes and entries contained under this entry in the hierarchy.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
      */
     protected null|array $contains = [];

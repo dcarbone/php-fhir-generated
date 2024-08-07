@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,6 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * System that defines the concept being mapped.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $system = null;
@@ -106,7 +105,6 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identifies concept being mapped.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -117,7 +115,6 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * A set of additional dependencies for this mapping to hold. This mapping is only
      * applicable if the specified concept can be resolved, and it has the specified
      * value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
     protected null|array $dependsOn = [];
@@ -126,7 +123,6 @@ class FHIRConceptMapConcept extends FHIRBackboneElement
      * concept systems.
      *
      * A concept from the target value set that this concept maps to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapMap[]
      */
     protected null|array $map = [];

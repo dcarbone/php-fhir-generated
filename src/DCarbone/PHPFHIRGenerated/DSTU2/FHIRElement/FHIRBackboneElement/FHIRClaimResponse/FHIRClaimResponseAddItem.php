@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * List of input service items which this service line is intended to replace.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $sequenceLinkId = [];
@@ -113,13 +112,11 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code to indicate the Professional Service or Product supplied.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $service = null;
     /**
      * The fee charged for the professional service or product..
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $fee = null;
@@ -129,7 +126,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A list of note references to the notes provided below.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $noteNumberLinkId = [];
@@ -138,7 +134,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * resource.
      *
      * The adjudications results.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication3[]
      */
     protected null|array $adjudication = [];
@@ -147,7 +142,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * resource.
      *
      * The second tier service adjudications for payor added services.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail1[]
      */
     protected null|array $detail = [];

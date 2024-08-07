@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,7 +131,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The identity of the individual contributor.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $contributor = null;
@@ -141,7 +140,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For citation styles that use initials.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $forenameInitials = null;
@@ -151,7 +149,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization affiliated with the contributor.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $affiliation = [];
@@ -163,7 +160,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * This element identifies the specific nature of an individual’s contribution
      * with respect to the cited work.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $contributionType = [];
@@ -174,7 +170,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role of the contributor (e.g. author, editor, reviewer, funder).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $role = null;
@@ -185,7 +180,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * expressing complex contributorship roles, and referencing computable resources.
      *
      * Contributions with accounting for time or number.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance[]
      */
     protected null|array $contributionInstance = [];
@@ -194,7 +188,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the contributor is the corresponding contributor for the role.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $correspondingContact = null;
@@ -205,7 +198,6 @@ class FHIRCitationEntry extends FHIRBackboneElement
      *
      * Provides a numerical ranking to represent the degree of contributorship relative
      * to other contributors, such as 1 for first author and 2 for second author.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $rankingOrder = null;

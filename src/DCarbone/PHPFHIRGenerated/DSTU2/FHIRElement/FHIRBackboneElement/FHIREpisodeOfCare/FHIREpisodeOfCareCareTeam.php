@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIREp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The role this team member is taking within this episode of care.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $role = [];
@@ -110,7 +109,6 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
      *
      * The period of time this practitioner is performing some role within the episode
      * of care.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -120,7 +118,6 @@ class FHIREpisodeOfCareCareTeam extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner (or Organization) within the team.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $member = null;

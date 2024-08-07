@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -190,7 +190,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * which an authoritative instance of this Requirements is (or will be) published.
      * This URL can be the target of a canonical reference. It SHALL remain the same
      * when the Requirements is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -203,7 +202,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * A formal identifier that is used to identify this Requirements when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -218,7 +216,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -229,7 +226,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -240,7 +236,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -252,7 +247,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * A natural language name identifying the Requirements. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -262,7 +256,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the Requirements.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -270,7 +263,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this Requirements. Enables tracking the life-cycle of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -281,7 +273,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * A Boolean value to indicate that this Requirements is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -298,7 +289,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * Requirements changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -309,7 +299,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the Requirements.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -320,7 +309,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -334,7 +322,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * the Narrative, or extensions
      *
      * A free text natural language description of the requirements.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -351,7 +338,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate Requirements
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -362,7 +348,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the Requirements is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -377,7 +362,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * Explanation of why this Requirements is needed and why it has been designed as
      * it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -393,7 +377,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * A copyright statement relating to the Requirements and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the Requirements.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -405,7 +388,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -416,7 +398,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * the Narrative, or extensions
      *
      * Another set of Requirements that this set of Requirements builds on and updates.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $derivedFrom = [];
@@ -428,7 +409,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * A reference to another artifact that created this set of requirements. This
      * could be a Profile, etc., or external regulation, or business requirements
      * expressed elsewhere.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUrl[]
      */
     protected null|array $reference = [];
@@ -439,7 +419,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * the Narrative, or extensions
      *
      * An actor these requirements are in regard to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $actor = [];
@@ -448,7 +427,6 @@ class FHIRRequirements extends FHIRCanonicalResource implements PHPFHIRContained
      * are necessary to achieve organizational or regulatory goals.
      *
      * The actual statement of requirement, in markdown format.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequirements\FHIRRequirementsStatement[]
      */
     protected null|array $statement = [];

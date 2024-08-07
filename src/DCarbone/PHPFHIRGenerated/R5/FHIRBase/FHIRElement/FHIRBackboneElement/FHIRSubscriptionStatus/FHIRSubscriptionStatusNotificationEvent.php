@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      *
      * Either the sequential number of this event in this subscription context or a
      * relative event number for this notification.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger64
      */
     protected null|FHIRInteger64 $eventNumber = null;
@@ -136,7 +135,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual time this event occurred on the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $timestamp = null;
@@ -147,7 +145,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      *
      * The focus of this event. While this will usually be a reference to the focus
      * resource of the event, it MAY contain a reference to a non-FHIR object.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $focus = null;
@@ -159,7 +156,6 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      * Additional context information for this event. Generally, this will contain
      * references to additional resources included with the event (e.g., the Patient
      * relevant to an Encounter), however it MAY refer to non-FHIR objects.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $additionalContext = [];

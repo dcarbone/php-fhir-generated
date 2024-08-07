@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIRRelatedArtifact extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship to the related artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifactType
      */
     protected null|FHIRRelatedArtifactType $type = null;
@@ -113,7 +112,6 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * A brief description of the document or knowledge resource being referenced,
      * suitable for display to a consumer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $display = null;
@@ -124,7 +122,6 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * A bibliographic citation for the related artifact. This text SHOULD be formatted
      * according to an accepted citation format.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $citation = null;
@@ -134,7 +131,6 @@ class FHIRRelatedArtifact extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A url for the artifact that can be followed to access the actual content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -145,7 +141,6 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * The document being referenced, represented as an attachment. This is exclusive
      * with the resource element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $document = null;
@@ -156,7 +151,6 @@ class FHIRRelatedArtifact extends FHIRElement
      *
      * The related resource, such as a library, value set, profile, or other knowledge
      * resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $resource = null;

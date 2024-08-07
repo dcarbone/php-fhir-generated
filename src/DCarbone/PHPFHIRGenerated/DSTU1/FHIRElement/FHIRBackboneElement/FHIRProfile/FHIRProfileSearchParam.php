@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the standard or custom search parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -110,7 +109,6 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
      *
      * The type of value a search parameter refers to, and how the content is
      * interpreted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSearchParamType
      */
     protected null|FHIRSearchParamType $type = null;
@@ -121,7 +119,6 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
      * A specification for search parameters. For standard parameters, provides
      * additional information on how the parameter is used in this solution. For custom
      * parameters, provides a description of what the parameter does.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $documentation = null;
@@ -130,7 +127,6 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An XPath expression that returns a set of elements for the search parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $xpath = null;
@@ -141,7 +137,6 @@ class FHIRProfileSearchParam extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Types of resource (if a resource is referenced).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode[]
      */
     protected null|array $target = [];

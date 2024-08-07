@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,6 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; carton.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $form = null;
@@ -105,7 +104,6 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      * medication. It covers the ingredients and the packaging for a medication.
      *
      * Identifies a particular constituent of interest in the product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient[]
      */
     protected null|array $ingredient = [];
@@ -115,7 +113,6 @@ class FHIRMedicationProduct extends FHIRBackboneElement
      *
      * Information about a group of medication produced or packaged from one production
      * run.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch[]
      */
     protected null|array $batch = [];

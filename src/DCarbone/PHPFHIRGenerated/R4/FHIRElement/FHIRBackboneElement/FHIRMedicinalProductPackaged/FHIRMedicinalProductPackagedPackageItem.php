@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Including possibly Data Carrier Identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -120,7 +119,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The physical type of the container of the medicine.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -133,7 +131,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      *
      * The quantity of this package in the medicinal product, at the current level of
      * packaging. The outermost is always 1.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -144,7 +141,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Material type of the package item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $material = [];
@@ -155,7 +151,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A possible alternate material for the packaging.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $alternateMaterial = [];
@@ -165,7 +160,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A device accompanying a medicinal product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $device = [];
@@ -175,7 +169,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The manufactured item as contained in the packaged medicinal product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $manufacturedItem = [];
@@ -183,7 +176,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * A medicinal product in a container or package.
      *
      * Allows containers within containers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem[]
      */
     protected null|array $packageItem = [];
@@ -194,7 +186,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Dimensions, color etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProdCharacteristic
      */
     protected null|FHIRProdCharacteristic $physicalCharacteristics = null;
@@ -205,7 +196,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Other codeable characteristics.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $otherCharacteristics = [];
@@ -216,7 +206,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Shelf Life and storage information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRProductShelfLife[]
      */
     protected null|array $shelfLifeStorage = [];
@@ -226,7 +215,6 @@ class FHIRMedicinalProductPackagedPackageItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Package Item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $manufacturer = [];

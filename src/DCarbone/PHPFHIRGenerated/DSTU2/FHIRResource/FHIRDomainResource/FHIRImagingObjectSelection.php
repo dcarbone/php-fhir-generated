@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,7 +129,6 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      * the Narrative, or extensions
      *
      * Instance UID of the DICOM KOS SOP Instances represented in this resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid
      */
     protected null|FHIROid $uid = null;
@@ -140,7 +139,6 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      *
      * A patient resource reference which is the patient subject of all DICOM SOP
      * Instances in this ImagingObjectSelection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -152,7 +150,6 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      *
      * The reason for, or significance of, the selection of objects referenced in the
      * resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $title = null;
@@ -165,7 +162,6 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      * ImagingObjectSelection. This should be aligned with the content of the title
      * element, and can provide further explanation of the SOP instances in the
      * selection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -179,7 +175,6 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      * selected a set of imaging SOP instances to attach in a diagnostic report, and a
      * CAD application may author a selection to describe SOP instances it used to
      * generate a detection conclusion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $author = null;
@@ -195,7 +190,6 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      * (typically) different from the creation date of the selection resource, and from
      * dates associated with the referenced instances (e.g. capture time of the
      * referenced image).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authoringTime = null;
@@ -213,7 +207,6 @@ class FHIRImagingObjectSelection extends FHIRDomainResource implements PHPFHIRCo
      *
      * Study identity and locating information of the DICOM SOP instances in the
      * selection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionStudy[]
      */
     protected null|array $study = [];

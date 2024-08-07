@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -170,7 +170,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * synthesis is (or will be) published. This URL can be the target of a canonical
      * reference. It SHALL remain the same when the risk evidence synthesis is stored
      * on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -183,7 +182,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * A formal identifier that is used to identify this risk evidence synthesis when
      * it is represented in other formats, or referenced in a specification, model,
      * design or an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -198,7 +196,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * not expected to be globally unique. For example, it might be a timestamp (e.g.
      * yyyymmdd) if a managed version is not available. There is also no expectation
      * that versions can be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -210,7 +207,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * A natural language name identifying the risk evidence synthesis. This name
      * should be usable as an identifier for the module by machine processing
      * applications such as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -220,7 +216,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the risk evidence synthesis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -229,7 +224,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * The status of this risk evidence synthesis. Enables tracking the life-cycle of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -245,7 +239,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * The date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the risk evidence synthesis changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -256,7 +249,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * The name of the organization or individual that published the risk evidence
      * synthesis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -267,7 +259,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -282,7 +273,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * A free text natural language description of the risk evidence synthesis from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -293,7 +283,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -310,7 +299,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate risk evidence
      * synthesis instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -322,7 +310,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * A legal or geographic region in which the risk evidence synthesis is intended to
      * be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -338,7 +325,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * A copyright statement relating to the risk evidence synthesis and/or its
      * contents. Copyright statements are generally legal restrictions on the use and
      * publishing of the risk evidence synthesis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -350,7 +336,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -362,7 +347,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -373,7 +357,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * The period during which the risk evidence synthesis content was or is planned to
      * be in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -386,7 +369,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * Descriptive topics related to the content of the RiskEvidenceSynthesis. Topics
      * provide a high-level categorization grouping types of EffectEvidenceSynthesiss
      * that can be useful for filtering and searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $topic = [];
@@ -397,7 +379,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $author = [];
@@ -408,7 +389,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $editor = [];
@@ -419,7 +399,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $reviewer = [];
@@ -430,7 +409,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $endorser = [];
@@ -442,7 +420,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -453,7 +430,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of synthesis eg meta-analysis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $synthesisType = null;
@@ -464,7 +440,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of study eg randomized trial.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $studyType = null;
@@ -475,7 +450,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * A reference to a EvidenceVariable resource that defines the population for the
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $population = null;
@@ -486,7 +460,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * A reference to a EvidenceVariable resource that defines the exposure for the
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $exposure = null;
@@ -497,7 +470,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      *
      * A reference to a EvidenceVariable resomece that defines the outcome for the
      * research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $outcome = null;
@@ -507,7 +479,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * combination of research studies.
      *
      * A description of the size of the sample involved in the synthesis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisSampleSize
      */
     protected null|FHIRRiskEvidenceSynthesisSampleSize $sampleSize = null;
@@ -517,7 +488,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * combination of research studies.
      *
      * The estimated risk of the outcome.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisRiskEstimate
      */
     protected null|FHIRRiskEvidenceSynthesisRiskEstimate $riskEstimate = null;
@@ -527,7 +497,6 @@ class FHIRRiskEvidenceSynthesis extends FHIRDomainResource implements PHPFHIRCon
      * combination of research studies.
      *
      * A description of the certainty of the risk estimate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisCertainty[]
      */
     protected null|array $certainty = [];

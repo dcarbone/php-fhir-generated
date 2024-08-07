@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      * payable under the plan, amounts that: the patient is responsible for in
      * aggregate or pertaining to this item; amounts paid by other coverages; and, the
      * benefit payable for this item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -135,7 +134,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      *
      * A code supporting the understanding of the adjudication result and explaining
      * variance from expected amount.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $reason = null;
@@ -145,7 +143,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Monetary amount associated with the category.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     protected null|FHIRMoney $amount = null;
@@ -158,7 +155,6 @@ class FHIRClaimResponseAdjudication extends FHIRBackboneElement
      *
      * A non-monetary value associated with the category. Mutually exclusive to the
      * amount element above.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;

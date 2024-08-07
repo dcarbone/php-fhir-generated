@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * A code that identifies a particular diagnostic investigation, or panel of
      * investigations, that have been requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -106,7 +105,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the item is related to a specific speciment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $specimen = [];
@@ -117,7 +115,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Anatomical location where the request test should be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $bodySite = null;
@@ -126,7 +123,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this individual item within the order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDiagnosticOrderStatus
      */
     protected null|FHIRDiagnosticOrderStatus $status = null;
@@ -135,7 +131,6 @@ class FHIRDiagnosticOrderItem extends FHIRBackboneElement
      *
      * A summary of the events of interest that have occurred as this item of the
      * request is processed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent[]
      */
     protected null|array $event = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Why the resource is included in the guide.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRGuideResourcePurpose
      */
     protected null|FHIRGuideResourcePurpose $purpose = null;
@@ -120,7 +119,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A human assigned name for the resource. All resources SHOULD have a name, but
      * the name may be extracted from the resource (e.g. ValueSet.name).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -131,7 +129,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A description of the reason that a resource has been included in the
      * implementation guide.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -142,7 +139,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * A short code that may be used to identify the resource throughout the
      * implementation guide.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $acronym = null;
@@ -152,7 +148,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Where this resource is found.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $sourceUri = null;
@@ -162,7 +157,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where this resource is found.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $sourceReference = null;
@@ -173,7 +167,6 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      *
      * Another resource that this resource is an example for. This is mostly used for
      * resources that are included as examples of StructureDefinitions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $exampleFor = null;

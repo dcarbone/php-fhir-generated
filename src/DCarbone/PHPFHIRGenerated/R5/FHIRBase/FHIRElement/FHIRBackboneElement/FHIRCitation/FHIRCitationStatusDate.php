@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRCitationStatusDate extends FHIRBackboneElement
      *
      * The state or status of the citation record (that will be paired with the
      * period).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $activity = null;
@@ -133,7 +132,6 @@ class FHIRCitationStatusDate extends FHIRBackboneElement
      *
      * Whether the status date is actual (has occurred) or expected (estimated or
      * anticipated).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $actual = null;
@@ -143,7 +141,6 @@ class FHIRCitationStatusDate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the status started and/or ended.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;

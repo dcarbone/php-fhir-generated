@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,6 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * an appendectomy, being documented. In some cases, the event is inherent in the
      * typeCode, such as a "History and Physical Report" in which the procedure being
      * documented is necessarily a "History and Physical" act.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $code = [];
@@ -110,7 +109,6 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * The period of time covered by the documentation. There is no assertion that the
      * documentation is a complete representation for this period, only that it
      * documents events during this time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -120,7 +118,6 @@ class FHIRCompositionEvent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Full details for the event(s) the composition/documentation consents.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $detail = [];

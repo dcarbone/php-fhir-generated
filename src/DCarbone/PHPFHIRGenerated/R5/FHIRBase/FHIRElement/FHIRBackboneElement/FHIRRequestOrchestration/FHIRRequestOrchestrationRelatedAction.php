@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,7 +127,6 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The element id of the target related action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $targetId = null;
@@ -135,7 +134,6 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of this action to the related action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRActionRelationshipType
      */
     protected null|FHIRActionRelationshipType $relationship = null;
@@ -143,7 +141,6 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of the end of this action to the related action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRActionRelationshipType
      */
     protected null|FHIRActionRelationshipType $endRelationship = null;
@@ -154,7 +151,6 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $offsetDuration = null;
@@ -165,7 +161,6 @@ class FHIRRequestOrchestrationRelatedAction extends FHIRBackboneElement
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $offsetRange = null;

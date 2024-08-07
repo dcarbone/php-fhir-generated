@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -172,7 +172,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * A formal identifier that is used to identify this code system when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -182,7 +181,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A natural language name identifying the subscription.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -191,7 +189,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * The status of the subscription, which marks the server state for managing the
      * subscription.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSubscriptionStatusCodes
      */
     protected null|FHIRSubscriptionStatusCodes $status = null;
@@ -202,7 +199,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * the Narrative, or extensions
      *
      * The reference to the subscription topic to be notified about.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $topic = null;
@@ -214,7 +210,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Contact details for a human to contact about the subscription. The primary use
      * of this for system administrator troubleshooting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint[]
      */
     protected null|array $contact = [];
@@ -227,7 +222,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time for the server to turn the subscription off.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $end = null;
@@ -238,7 +232,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Entity with authorization to make subsequent revisions to the Subscription and
      * also determines what data the subscription is authorized to disclose.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $managingEntity = null;
@@ -248,7 +241,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of why this subscription is defined.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $reason = null;
@@ -260,7 +252,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * When multiple filters are applied, evaluates to true if all the conditions
      * applicable to that resource are met; otherwise it returns false (i.e., logical
      * AND).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionFilterBy[]
      */
     protected null|array $filterBy = [];
@@ -270,7 +261,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of channel to send notifications on.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $channelType = null;
@@ -280,7 +270,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * the Narrative, or extensions
      *
      * The url that describes the actual end-point to send notifications to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUrl
      */
     protected null|FHIRUrl $endpoint = null;
@@ -290,7 +279,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * Channel-dependent information to send as part of the notification (e.g., HTTP
      * Headers).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscription\FHIRSubscriptionParameter[]
      */
     protected null|array $parameter = [];
@@ -302,7 +290,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If present, a 'heartbeat' notification (keep-alive) is sent via this channel
      * with an interval period equal to this elements integer value in seconds. If not
      * present, a heartbeat notification is not sent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $heartbeatPeriod = null;
@@ -313,7 +300,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      *
      * If present, the maximum amount of time a server will allow before failing a
      * notification attempt.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $timeout = null;
@@ -329,7 +315,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Parameter](http.html#version-parameter) - e.g., `application/fhir+json;
      * fhirVersion=4.0`. * additional MIME types can be allowed by channels - e.g.,
      * `text/plain` and `text/html` are defined by the Email channel.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $contentType = null;
@@ -339,7 +324,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * How much of the resource content to deliver in the notification payload. The
      * choices are an empty payload, only the resource id, or the full resource
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSubscriptionPayloadContent
      */
     protected null|FHIRSubscriptionPayloadContent $content = null;
@@ -351,7 +335,6 @@ class FHIRSubscription extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If present, the maximum number of events that will be included in a notification
      * bundle. Note that this is not a strict limit on the number of entries in a
      * bundle, as dependent resources can be included.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $maxCount = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -181,7 +181,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * is (or will be) published. This URL can be the target of a canonical reference.
      * It SHALL remain the same when the research definition is stored on different
      * servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -194,7 +193,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A formal identifier that is used to identify this research definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -213,7 +211,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active artifacts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -225,7 +222,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A natural language name identifying the research definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -235,7 +231,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the research definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -246,7 +241,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * The short title provides an alternate title for use in informal descriptive
      * contexts where the full, formal title is not necessary.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $shortTitle = null;
@@ -257,7 +251,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * An explanatory or alternate title for the ResearchDefinition giving additional
      * information about its content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $subtitle = null;
@@ -266,7 +259,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * The status of this research definition. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -277,7 +269,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A Boolean value to indicate that this research definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -290,7 +281,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * The intended subjects for the ResearchDefinition. If this element is not
      * provided, a Patient subject is assumed, but the subject of the
      * ResearchDefinition can be anything.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subjectCodeableConcept = null;
@@ -302,7 +292,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * The intended subjects for the ResearchDefinition. If this element is not
      * provided, a Patient subject is assumed, but the subject of the
      * ResearchDefinition can be anything.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subjectReference = null;
@@ -318,7 +307,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the research definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -329,7 +317,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * The name of the organization or individual that published the research
      * definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -340,7 +327,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -355,7 +341,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * A free text natural language description of the research definition from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -365,7 +350,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $comment = [];
@@ -382,7 +366,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate research
      * definition instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -394,7 +377,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * A legal or geographic region in which the research definition is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -409,7 +391,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * Explanation of why this research definition is needed and why it has been
      * designed as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -420,7 +401,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * A detailed description, from a clinical perspective, of how the
      * ResearchDefinition is used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $usage = null;
@@ -436,7 +416,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A copyright statement relating to the research definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the research definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -448,7 +427,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -460,7 +438,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -471,7 +448,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * The period during which the research definition content was or is planned to be
      * in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -484,7 +460,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Descriptive topics related to the content of the ResearchDefinition. Topics
      * provide a high-level categorization grouping types of ResearchDefinitions that
      * can be useful for filtering and searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $topic = [];
@@ -495,7 +470,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $author = [];
@@ -506,7 +480,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $editor = [];
@@ -517,7 +490,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $reviewer = [];
@@ -528,7 +500,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $endorser = [];
@@ -540,7 +511,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -552,7 +522,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * A reference to a Library resource containing the formal logic used by the
      * ResearchDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
     protected null|array $library = [];
@@ -563,7 +532,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * A reference to a ResearchElementDefinition resource that defines the population
      * for the research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $population = null;
@@ -574,7 +542,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * A reference to a ResearchElementDefinition resource that defines the exposure
      * for the research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $exposure = null;
@@ -585,7 +552,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * A reference to a ResearchElementDefinition resource that defines the
      * exposureAlternative for the research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $exposureAlternative = null;
@@ -596,7 +562,6 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * A reference to a ResearchElementDefinition resomece that defines the outcome for
      * the research.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $outcome = null;

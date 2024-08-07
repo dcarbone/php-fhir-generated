@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The language this designation is defined for.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $language = null;
@@ -113,7 +112,6 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that represents types of uses of designations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $use = null;
@@ -123,7 +121,6 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The text value for this designation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $value = null;

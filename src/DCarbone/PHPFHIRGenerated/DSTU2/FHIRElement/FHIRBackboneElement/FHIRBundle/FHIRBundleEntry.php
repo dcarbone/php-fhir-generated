@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * A container for a collection of resources.
      *
      * A series of links that provide context to this entry.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[]
      */
     protected null|array $link = [];
@@ -111,13 +110,11 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * The Absolute URL for the resource. This must be provided for all resources. The
      * fullUrl SHALL not disagree with the id in the resource. The fullUrl is a version
      * independent reference to the resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $fullUrl = null;
     /**
      * The Resources for the entry.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\|PHPFHIRContainedTypeInterface
      */
     protected null|PHPFHIRContainedTypeInterface $resource = null;
@@ -125,7 +122,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      * A container for a collection of resources.
      *
      * Information about the search process that lead to the creation of this entry.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleSearch
      */
     protected null|FHIRBundleSearch $search = null;
@@ -134,7 +130,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      *
      * Additional information about how this entry should be processed as part of a
      * transaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleRequest
      */
     protected null|FHIRBundleRequest $request = null;
@@ -143,7 +138,6 @@ class FHIRBundleEntry extends FHIRBackboneElement
      *
      * Additional information about how this entry should be processed as part of a
      * transaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleResponse
      */
     protected null|FHIRBundleResponse $response = null;

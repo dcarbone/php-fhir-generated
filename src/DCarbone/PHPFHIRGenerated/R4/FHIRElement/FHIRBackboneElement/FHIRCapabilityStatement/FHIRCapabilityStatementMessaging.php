@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapab
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * An endpoint (network accessible address) to which messages and/or replies are to
      * be sent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint[]
      */
     protected null|array $endpoint = [];
@@ -116,7 +115,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      *
      * Length if the receiver's reliable messaging cache in minutes (if a receiver) or
      * how long the cache length on the receiver should be (if a sender).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $reliableCache = null;
@@ -132,7 +130,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * Documentation about the system's messaging capabilities for this endpoint not
      * otherwise documented by the capability statement. For example, the process for
      * becoming an authorized messaging exchange partner.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $documentation = null;
@@ -143,7 +140,6 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * implementation.
      *
      * References to message definitions for messages this system can send or receive.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage[]
      */
     protected null|array $supportedMessage = [];

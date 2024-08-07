@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,6 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the diagnosis (for each type).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $sequence = null;
@@ -139,7 +138,6 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The diagnosis relevant to the account.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $condition = null;
@@ -153,7 +151,6 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Ranking of the diagnosis (for each type).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $dateOfDiagnosis = null;
@@ -165,7 +162,6 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      *
      * Type that this diagnosis has relevant to the account (e.g. admission, billing,
      * discharge …).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -174,7 +170,6 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Was the Diagnosis present on Admission in the related Encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $onAdmission = null;
@@ -186,7 +181,6 @@ class FHIRAccountDiagnosis extends FHIRBackboneElement
      *
      * The package code can be used to group diagnoses that may be priced or delivered
      * as a single product. Such as DRGs.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $packageCode = [];

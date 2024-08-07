@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -121,7 +121,6 @@ class FHIREndpointPayload extends FHIRBackboneElement
      *
      * The payload type describes the acceptable content that can be communicated on
      * the endpoint.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -134,7 +133,6 @@ class FHIREndpointPayload extends FHIRBackboneElement
      * The mime type to send the payload in - e.g. application/fhir+xml,
      * application/fhir+json. If the mime type is not specified, then the sender could
      * send any content (including no content depending on the connectionType).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode[]
      */
     protected null|array $mimeType = [];

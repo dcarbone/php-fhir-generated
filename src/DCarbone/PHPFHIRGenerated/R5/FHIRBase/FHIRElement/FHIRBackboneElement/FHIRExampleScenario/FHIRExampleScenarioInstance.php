@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -135,7 +135,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A unique string within the scenario that is used to reference the instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $key = null;
@@ -146,7 +145,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * A code indicating the kind of data structure (FHIR resource or some other
      * standard) this is an instance of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $structureType = null;
@@ -157,7 +155,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * Conveys the version of the data structure instantiated. I.e. what release of
      * FHIR, X12, OpenEHR, etc. is instance compliant with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $structureVersion = null;
@@ -168,7 +165,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Refers to a profile, template or other ruleset the instance adheres to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $structureProfileCanonical = null;
@@ -178,7 +174,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Refers to a profile, template or other ruleset the instance adheres to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $structureProfileUri = null;
@@ -188,7 +183,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short descriptive label the instance to be used in tables or diagrams.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -202,7 +196,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An explanation of what the instance contains and what it's for.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -213,7 +206,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * Points to an instance (typically an example) that shows the data that would
      * corespond to this instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $content = null;
@@ -221,7 +213,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Represents the instance as it was at a specific time-point.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioVersion[]
      */
     protected null|array $version = [];
@@ -230,7 +221,6 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      *
      * References to other instances that can be found within this instance (e.g. the
      * observations contained in a bundle).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance[]
      */
     protected null|array $containedInstance = [];

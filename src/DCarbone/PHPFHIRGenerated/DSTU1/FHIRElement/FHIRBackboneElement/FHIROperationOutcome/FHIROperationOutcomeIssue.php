@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the issue indicates a variation from successful processing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIssueSeverity
      */
     protected null|FHIRIssueSeverity $severity = null;
@@ -106,7 +105,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code indicating the type of error, warning or information message.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $type = null;
@@ -115,7 +113,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional description of the issue.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $details = null;
@@ -126,7 +123,6 @@ class FHIROperationOutcomeIssue extends FHIRBackboneElement
      * A simple XPath limited to element names, repetition indicators and the default
      * child access that identifies one of the elements in the resource that caused
      * this issue to be raised.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString[]
      */
     protected null|array $location = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,6 @@ class FHIRAdverseEventSupportingInfo extends FHIRBackboneElement
      * For example, a clinical note, staff list, or material safety data sheet (MSDS).
      * Supporting information is not a contributing factor, preventive action, or
      * mitigating action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $itemReference = null;
@@ -152,7 +151,6 @@ class FHIRAdverseEventSupportingInfo extends FHIRBackboneElement
      * For example, a clinical note, staff list, or material safety data sheet (MSDS).
      * Supporting information is not a contributing factor, preventive action, or
      * mitigating action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $itemCodeableConcept = null;

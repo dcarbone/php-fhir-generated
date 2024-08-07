@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -140,7 +140,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements PHPFHIRContai
      *
      * The status of the subscription, which marks the server state for managing the
      * subscription.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSubscriptionStatusCodes
      */
     protected null|FHIRSubscriptionStatusCodes $status = null;
@@ -148,7 +147,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of event being conveyed with this notification.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSubscriptionNotificationType
      */
     protected null|FHIRSubscriptionNotificationType $type = null;
@@ -161,7 +159,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements PHPFHIRContai
      * Subscription was created (inclusive of this notification) - regardless of how
      * many have been successfully communicated. This number is NOT incremented for
      * handshake and heartbeat notifications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger64
      */
     protected null|FHIRInteger64 $eventsSinceSubscriptionStart = null;
@@ -170,7 +167,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements PHPFHIRContai
      * notifications.
      *
      * Detailed information about events relevant to this subscription notification.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionStatus\FHIRSubscriptionStatusNotificationEvent[]
      */
     protected null|array $notificationEvent = [];
@@ -180,7 +176,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reference to the Subscription which generated this notification.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subscription = null;
@@ -192,7 +187,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements PHPFHIRContai
      *
      * The reference to the SubscriptionTopic for the Subscription which generated this
      * notification.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $topic = null;
@@ -203,7 +197,6 @@ class FHIRSubscriptionStatus extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A record of errors that occurred when the server processed a notification.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $error = [];

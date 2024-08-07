@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Primary of secondary specimen.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $isDerived = null;
@@ -141,7 +140,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of specimen conditioned for testing expected by lab.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -149,7 +147,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The preference for this type of conditioned specimen.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSpecimenContainedPreference
      */
     protected null|FHIRSpecimenContainedPreference $preference = null;
@@ -157,7 +154,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * A kind of specimen with associated set of requirements.
      *
      * The specimen's container.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionContainer
      */
     protected null|FHIRSpecimenDefinitionContainer $container = null;
@@ -172,7 +168,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * Requirements for delivery and special handling of this kind of conditioned
      * specimen.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $requirement = null;
@@ -183,7 +178,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * The usual time that a specimen of this kind is retained after the ordered tests
      * are completed, for the purpose of additional testing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $retentionTime = null;
@@ -192,7 +186,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specimen can be used by only one test or panel if the value is "true".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $singleUse = null;
@@ -203,7 +196,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Criterion for rejection of the specimen in its container by the laboratory.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $rejectionCriterion = [];
@@ -212,7 +204,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * Set of instructions for preservation/transport of the specimen at a defined
      * temperature interval, prior the testing process.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling[]
      */
     protected null|array $handling = [];
@@ -224,7 +215,6 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      *
      * Where the specimen will be tested: e.g., lab, sector, device or any combination
      * of these.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $testingDestination = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Role of participant in the appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -114,7 +113,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      *
      * A Person, Location/HealthcareService or Device that is participating in the
      * appointment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $actor = null;
@@ -125,7 +123,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * Is this participant required to be present at the meeting. This covers a
      * use-case where 2 doctors need to meet to discuss the results for a specific
      * patient, and the patient is not required to be present.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRParticipantRequired
      */
     protected null|FHIRParticipantRequired $required = null;
@@ -134,7 +131,6 @@ class FHIRAppointmentParticipant extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Participation status of the Patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRParticipationStatus
      */
     protected null|FHIRParticipationStatus $status = null;

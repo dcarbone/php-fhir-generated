@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -155,7 +155,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * referenced in a specification, model, design or an instance. This SHALL be a
      * URL, SHOULD be globally unique, and SHOULD be an address at which this
      * conformance statement is (or will be) published.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -168,7 +167,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * statement when it is referenced in a specification, model, design or instance.
      * This is an arbitrary value managed by the profile author manually and the value
      * should be a timestamp.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -178,7 +176,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the conformance statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -189,7 +186,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * the Narrative, or extensions
      *
      * The status of this conformance statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $status = null;
@@ -200,7 +196,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * A flag to indicate that this conformance statement is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -210,7 +205,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the conformance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -220,7 +214,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * desired server implementation.
      *
      * Contacts to assist a user in finding and communicating with the publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceContact[]
      */
     protected null|array $contact = [];
@@ -236,7 +229,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * date must change when the business version changes, if it does, and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the conformance statement changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -249,7 +241,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * use. Typically, this is used when the conformance statement describes a desired
      * rather than an actual solution, for example as a formal expression of
      * requirements as part of an RFP.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -260,7 +251,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * Explains why this conformance statement is needed and why it's been constrained
      * as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $requirements = null;
@@ -272,7 +262,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * A copyright statement relating to the conformance statement and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the details of the system described by the conformance statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyright = null;
@@ -283,7 +272,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind not instance of
      * software) or a class of implementation (e.g. a desired purchase).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConformanceStatementKind
      */
     protected null|FHIRConformanceStatementKind $kind = null;
@@ -295,7 +283,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * Software that is covered by this conformance statement. It is used when the
      * conformance statement describes the capabilities of a particular software
      * version, independent of an installation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSoftware
      */
     protected null|FHIRConformanceSoftware $software = null;
@@ -307,7 +294,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * Identifies a specific implementation instance that is described by the
      * conformance statement - i.e. a particular installation, rather than the
      * capabilities of a software program.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceImplementation
      */
     protected null|FHIRConformanceImplementation $implementation = null;
@@ -321,7 +307,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * The version of the FHIR specification on which this conformance statement is
      * based.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId
      */
     protected null|FHIRId $fhirVersion = null;
@@ -332,7 +317,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * A code that indicates whether the application accepts unknown elements or
      * extensions when reading resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnknownContentCode
      */
     protected null|FHIRUnknownContentCode $acceptUnknown = null;
@@ -344,7 +328,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * A list of the formats supported by this implementation using their content
      * types.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode[]
      */
     protected null|array $format = [];
@@ -360,7 +343,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * a client, it means the system will search by this profile and process data
      * according to the guidance implicit in the profile. See further discussion in
      * [Using Profiles]{profiling.html#profile-uses}.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $profile = [];
@@ -370,7 +352,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * desired server implementation.
      *
      * A definition of the restful capabilities of the solution, if any.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceRest[]
      */
     protected null|array $rest = [];
@@ -380,7 +361,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * desired server implementation.
      *
      * A description of the messaging capabilities of the solution.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceMessaging[]
      */
     protected null|array $messaging = [];
@@ -390,7 +370,6 @@ class FHIRConformance extends FHIRDomainResource implements PHPFHIRContainedType
      * desired server implementation.
      *
      * A document definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceDocument[]
      */
     protected null|array $document = [];

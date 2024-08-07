@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,6 @@ class FHIRNutritionOrderSchedule extends FHIRBackboneElement
      * The time period and frequency at which the diet should be given. The diet should
      * be given for the combination of all schedules if more than one schedule is
      * present.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming[]
      */
     protected null|array $timing = [];
@@ -135,7 +134,6 @@ class FHIRNutritionOrderSchedule extends FHIRBackboneElement
      *
      * Indicates whether the product is only taken when needed within a specific dosing
      * schedule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $asNeeded = null;
@@ -147,7 +145,6 @@ class FHIRNutritionOrderSchedule extends FHIRBackboneElement
      *
      * Indicates whether the product is only taken based on a precondition for taking
      * the product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $asNeededFor = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,6 @@ class FHIRTestScriptRuleset extends FHIRBackboneElement
      *
      * Reference to the resource (containing the contents of the ruleset needed for
      * assertions).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $resource = null;
@@ -104,7 +103,6 @@ class FHIRTestScriptRuleset extends FHIRBackboneElement
      * compliance against the FHIR specification.
      *
      * The referenced rule within the external ruleset template.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule1[]
      */
     protected null|array $rule = [];

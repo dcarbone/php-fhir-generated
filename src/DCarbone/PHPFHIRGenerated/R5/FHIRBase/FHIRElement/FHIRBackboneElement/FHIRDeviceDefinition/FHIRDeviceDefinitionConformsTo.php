@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the type of the standard, specification, or formal guidance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -133,7 +132,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * Code that identifies the specific standard, specification, protocol, formal
      * guidance, regulation, legislation, or certification scheme to which the device
      * adheres.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $specification = null;
@@ -145,7 +143,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      * Identifies the specific form or variant of the standard, specification, or
      * formal guidance. This may be a 'version number', release, document edition,
      * publication year, or other label.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $version = [];
@@ -157,7 +154,6 @@ class FHIRDeviceDefinitionConformsTo extends FHIRBackboneElement
      *
      * Standard, regulation, certification, or guidance website, document, or other
      * publication, or similar, supporting the conformance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[]
      */
     protected null|array $source = [];

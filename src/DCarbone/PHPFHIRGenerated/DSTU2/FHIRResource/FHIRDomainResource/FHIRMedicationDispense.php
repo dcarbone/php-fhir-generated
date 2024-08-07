@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -136,7 +136,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      *
      * Identifier assigned by the dispensing facility - this is an identifier assigned
      * outside FHIR.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -145,7 +144,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the set of dispense events.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRMedicationDispenseStatus
      */
     protected null|FHIRMedicationDispenseStatus $status = null;
@@ -156,7 +154,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      *
      * A link to a resource representing the person to whom the medication will be
      * given.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -166,7 +163,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual responsible for dispensing the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $dispenser = null;
@@ -176,7 +172,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the medication order that is being dispensed against.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $authorizingPrescription = [];
@@ -188,19 +183,16 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      *
      * Indicates the type of dispensing event that is performed. For example, Trial
      * Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
     /**
      * The amount of medication that has been dispensed. Includes unit of measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     protected null|FHIRSimpleQuantity $quantity = null;
     /**
      * The amount of medication expressed as a timing amount.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     protected null|FHIRSimpleQuantity $daysSupply = null;
@@ -213,7 +205,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $medicationCodeableConcept = null;
@@ -225,7 +216,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $medicationReference = null;
@@ -238,7 +228,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the dispensed product was packaged and reviewed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $whenPrepared = null;
@@ -252,7 +241,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      *
      * The time the dispensed product was provided to the patient or their
      * representative.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $whenHandedOver = null;
@@ -263,7 +251,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      *
      * Identification of the facility/location where the medication was shipped to, as
      * part of the dispense event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $destination = null;
@@ -275,7 +262,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * Identifies the person who picked up the medication. This will usually be a
      * patient or their caregiver, but some cases exist where it can be a healthcare
      * professional.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $receiver = [];
@@ -286,7 +272,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      *
      * Extra information about the dispense that could not be conveyed in the other
      * attributes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $note = null;
@@ -297,7 +282,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * dispense is the result of a pharmacy system responding to a medication order.
      *
      * Indicates how the medication is to be used by the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDosageInstruction[]
      */
     protected null|array $dosageInstruction = [];
@@ -311,7 +295,6 @@ class FHIRMedicationDispense extends FHIRDomainResource implements PHPFHIRContai
      * cases substitution will be expected but does not happen, in other cases
      * substitution is not expected but does happen. This block explains what
      * substitution did or did not happen and why.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseSubstitution
      */
     protected null|FHIRMedicationDispenseSubstitution $substitution = null;

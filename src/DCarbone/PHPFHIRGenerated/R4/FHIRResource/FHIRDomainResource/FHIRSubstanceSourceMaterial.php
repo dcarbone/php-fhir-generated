@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      *
      * General high level classification of the source material specific to the origin
      * of the material.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $sourceMaterialClass = null;
@@ -150,7 +149,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * The type of the source material shall be specified based on a controlled
      * vocabulary. For vaccines, this subclause refers to the class of infectious
      * agent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $sourceMaterialType = null;
@@ -161,7 +159,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The state of the source material when extracted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $sourceMaterialState = null;
@@ -173,7 +170,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      *
      * The unique identifier associated with the source material parent organism shall
      * be specified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $organismId = null;
@@ -184,7 +180,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      *
      * The organism accepted Scientific name shall be provided based on the organism
      * taxonomy.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $organismName = null;
@@ -196,7 +191,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      *
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
      * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $parentSubstanceId = [];
@@ -206,7 +200,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The parent substance of the Herbal Drug, or Herbal preparation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $parentSubstanceName = [];
@@ -221,7 +214,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * For “Plasma-derived substances” the attribute country of origin provides
      * information about the countries used for the manufacturing of the Cryopoor plama
      * or Crioprecipitate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $countryOfOrigin = [];
@@ -232,7 +224,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      *
      * The place/region where the plant is harvested or the places/regions where the
      * animal source material has its habitat.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $geographicalLocation = [];
@@ -245,7 +236,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * Stage of life for animals, plants, insects and microorganisms. This information
      * shall be provided only when the substance is significantly different in these
      * stages (e.g. foetal bovine serum).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $developmentStage = null;
@@ -272,7 +262,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * composition, will be captured at the Specified Substance Group 1 information
      * level. For plasma-derived products fraction information will be captured at the
      * Substance and the Specified Substance Group 1 levels.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription[]
      */
     protected null|array $fractionDescription = [];
@@ -295,7 +284,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * vaccines, the parent organism shall be specified based on these subclause
      * elements. As an example, full taxonomy will be described for the Substance Name:
      * ., Leaf.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialOrganism
      */
     protected null|FHIRSubstanceSourceMaterialOrganism $organism = null;
@@ -315,7 +303,6 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
      * To do.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription[]
      */
     protected null|array $partDescription = [];

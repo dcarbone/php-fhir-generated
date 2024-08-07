@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -204,7 +204,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      * address at which an authoritative instance of this naming system is (or will be)
      * published. This URL can be the target of a canonical reference. It SHALL remain
      * the same when the naming system is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -217,7 +216,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      * A formal identifier that is used to identify this naming system when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -232,7 +230,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -243,7 +240,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * Indicates the mechanism used to compare versions to determine which NamingSystem
      * is more current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -254,7 +250,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * Indicates the mechanism used to compare versions to determine which NamingSystem
      * is more current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -266,7 +261,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      * A natural language name identifying the naming system. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -276,7 +270,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the naming system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -285,7 +278,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * The status of this naming system. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -294,7 +286,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * Indicates the purpose for the naming system - what kinds of things does it make
      * unique?
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRNamingSystemType
      */
     protected null|FHIRNamingSystemType $kind = null;
@@ -305,7 +296,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      * A Boolean value to indicate that this naming system is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -322,7 +312,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      * changed. The date must change when the business version changes and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the naming system changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -333,7 +322,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the naming system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -344,7 +332,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -355,7 +342,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * The name of the organization that is responsible for issuing identifiers or
      * codes for this namespace and ensuring their non-collision.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $responsible = null;
@@ -367,7 +353,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * Categorizes a naming system for easier search by grouping related naming
      * systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -383,7 +368,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      * A free text natural language description of the naming system from a consumer's
      * perspective. Details about what the namespace identifies including scope,
      * granularity, version labeling, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -400,7 +384,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate naming system
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -411,7 +394,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the naming system is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -426,7 +408,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * Explanation of why this naming system is needed and why it has been designed as
      * it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -442,7 +423,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      * A copyright statement relating to the naming system and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the naming system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -454,7 +434,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -466,7 +445,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -478,7 +456,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -489,7 +466,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * The period during which the NamingSystem content was or is planned to be in
      * active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -502,7 +478,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      * Descriptions related to the content of the NamingSystem. Topics provide a
      * high-level categorization as well as keywords for the NamingSystem that can be
      * useful for filtering and searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $topic = [];
@@ -513,7 +488,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the NamingSystem.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $author = [];
@@ -524,7 +498,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * An individual or organization primarily responsible for internal coherence of
      * the NamingSystem.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $editor = [];
@@ -535,7 +508,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * An individual or organization asserted by the publisher to be primarily
      * responsible for review of some aspect of the NamingSystem.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $reviewer = [];
@@ -546,7 +518,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * An individual or organization asserted by the publisher to be responsible for
      * officially endorsing the NamingSystem for use in some setting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $endorser = [];
@@ -558,7 +529,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * Related artifacts such as additional documentation, justification, dependencies,
      * bibliographic references, and predecessor and successor artifacts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -569,7 +539,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * Provides guidance on the use of the namespace, including the handling of
      * formatting characters, use of upper vs. lower case, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $usage = null;
@@ -580,7 +549,6 @@ class FHIRNamingSystem extends FHIRMetadataResource implements PHPFHIRContainedT
      *
      * Indicates how the system may be identified when referenced in electronic
      * exchange.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNamingSystem\FHIRNamingSystemUniqueId[]
      */
     protected null|array $uniqueId = [];

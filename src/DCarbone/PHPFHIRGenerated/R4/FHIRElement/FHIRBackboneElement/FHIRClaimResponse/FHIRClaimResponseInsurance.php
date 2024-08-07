@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
      *
      * A number to uniquely identify insurance entries and provide a sequence of
      * coverages to convey coordination of benefit order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $sequence = null;
@@ -116,7 +115,6 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
      *
      * A flag to indicate that this Coverage is to be used for adjudication of this
      * claim when set to true.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $focal = null;
@@ -128,7 +126,6 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
      * Reference to the insurance card level information contained in the Coverage
      * resource. The coverage issuing insurer will use these details to locate the
      * patient's actual coverage within the insurer's information system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $coverage = null;
@@ -139,7 +136,6 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
      *
      * A business agreement number established between the provider and the insurer for
      * special business processing purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $businessArrangement = null;
@@ -150,7 +146,6 @@ class FHIRClaimResponseInsurance extends FHIRBackboneElement
      *
      * The result of the adjudication of the line items for the Coverage specified in
      * this insurance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $claimResponse = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAccou
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity who is responsible.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $party = null;
@@ -109,7 +108,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      *
      * A guarantor may be placed on credit hold or otherwise have their role
      * temporarily suspended.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $onHold = null;
@@ -119,7 +117,6 @@ class FHIRAccountGuarantor extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timeframe during which the guarantor accepts responsibility for the account.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;

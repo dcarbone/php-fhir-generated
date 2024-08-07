@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -253,7 +253,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the activity definition is stored on different
      * servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -266,7 +265,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * A formal identifier that is used to identify this activity definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -285,7 +283,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active assets.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -296,7 +293,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -307,7 +303,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -319,7 +314,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * A natural language name identifying the activity definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -329,7 +323,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the activity definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -340,7 +333,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * An explanatory or alternate title for the activity definition giving additional
      * information about its content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $subtitle = null;
@@ -349,7 +341,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * The status of this activity definition. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -360,7 +351,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * A Boolean value to indicate that this activity definition is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -376,7 +366,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
      * or PackagedProductDefinition resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subjectCodeableConcept = null;
@@ -391,7 +380,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
      * or PackagedProductDefinition resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subjectReference = null;
@@ -407,7 +395,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * specifications, and is allowed to reference a MedicinalProductDefinition,
      * SubstanceDefinition, AdministrableProductDefinition, ManufacturedItemDefinition,
      * or PackagedProductDefinition resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $subjectCanonical = null;
@@ -424,7 +411,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the activity definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -435,7 +421,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the activity definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -446,7 +431,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -461,7 +445,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * A free text natural language description of the activity definition from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -478,7 +461,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate activity
      * definition instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -490,7 +472,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * A legal or geographic region in which the activity definition is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -505,7 +486,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Explanation of why this activity definition is needed and why it has been
      * designed as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -520,7 +500,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * A detailed description of how the activity definition is used from a clinical
      * perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $usage = null;
@@ -536,7 +515,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * A copyright statement relating to the activity definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the activity definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -548,7 +526,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -560,7 +537,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -572,7 +548,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -583,7 +558,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * The period during which the activity definition content was or is planned to be
      * in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -596,7 +570,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * Descriptive topics related to the content of the activity. Topics provide a
      * high-level categorization of the activity that can be useful for filtering and
      * searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $topic = [];
@@ -607,7 +580,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $author = [];
@@ -618,7 +590,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $editor = [];
@@ -629,7 +600,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * An individual or organization asserted by the publisher to be primarily
      * responsible for review of some aspect of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $reviewer = [];
@@ -640,7 +610,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * An individual or organization asserted by the publisher to be responsible for
      * officially endorsing the content for use in some setting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $endorser = [];
@@ -652,7 +621,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -664,7 +632,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * A reference to a Library resource containing any formal logic used by the
      * activity definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $library = [];
@@ -673,7 +640,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * A description of the kind of resource the activity definition is representing.
      * For example, a MedicationRequest, a ServiceRequest, or a CommunicationRequest.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRequestResourceTypes
      */
     protected null|FHIRRequestResourceTypes $kind = null;
@@ -684,7 +650,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * the Narrative, or extensions
      *
      * A profile to which the target of the activity definition is expected to conform.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $profile = null;
@@ -696,7 +661,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Detailed description of the type of activity; e.g. What lab test, what
      * procedure, what kind of encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -705,7 +669,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Indicates the level of authority/intentionality associated with the activity and
      * where the request should fit into the workflow chain.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRequestIntent
      */
     protected null|FHIRRequestIntent $intent = null;
@@ -714,7 +677,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Indicates how quickly the activity should be addressed with respect to other
      * requests.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     protected null|FHIRRequestPriority $priority = null;
@@ -726,7 +688,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * should NOT be performed. If true, this element should be interpreted to
      * reinforce a negative coding. For example NPO as a code with a doNotPerform of
      * true would still indicate to NOT perform the action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $doNotPerform = null;
@@ -740,7 +701,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing or frequency upon which the described activity is to occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     protected null|FHIRTiming $timingTiming = null;
@@ -750,7 +710,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing or frequency upon which the described activity is to occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $timingAge = null;
@@ -760,7 +719,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing or frequency upon which the described activity is to occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $timingRange = null;
@@ -770,7 +728,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing or frequency upon which the described activity is to occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $timingDuration = null;
@@ -780,7 +737,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the service. For example "pain", "on flare-up", etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $asNeededBoolean = null;
@@ -792,7 +748,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the service. For example "pain", "on flare-up", etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $asNeededCodeableConcept = null;
@@ -804,7 +759,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Identifies the facility where the activity will occur; e.g. home, hospital,
      * specific clinic, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $location = null;
@@ -813,7 +767,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * independent of a particular patient, practitioner, or other performance context.
      *
      * Indicates who should participate in performing the action described.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionParticipant[]
      */
     protected null|array $participant = [];
@@ -824,7 +777,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $productReference = null;
@@ -836,7 +788,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $productCodeableConcept = null;
@@ -849,7 +800,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Identifies the quantity expected to be consumed at once (per dose, per meal,
      * etc.).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -860,7 +810,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Provides detailed dosage instructions in the same way that they are described
      * for MedicationRequest resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage[]
      */
     protected null|array $dosage = [];
@@ -872,7 +821,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $bodySite = [];
@@ -884,7 +832,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Defines specimen requirements for the action to be performed, such as required
      * specimens for a lab test.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $specimenRequirement = [];
@@ -896,7 +843,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      *
      * Defines observation requirements for the action to be performed, such as body
      * weight or surface area.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $observationRequirement = [];
@@ -907,7 +853,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * the Narrative, or extensions
      *
      * Defines the observations that are expected to be produced by the action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $observationResultRequirement = [];
@@ -920,7 +865,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
      * the input.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $transform = null;
@@ -933,7 +877,6 @@ class FHIRActivityDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * based on the patient's weight, a dynamic value would be used to specify an
      * expression that calculated the weight, and the path on the request resource that
      * would contain the result.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue[]
      */
     protected null|array $dynamicValue = [];

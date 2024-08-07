@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -182,7 +182,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this explanation of benefit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -191,7 +190,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExplanationOfBenefitStatus
      */
     protected null|FHIRExplanationOfBenefitStatus $status = null;
@@ -202,7 +200,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The category of claim, e.g. oral, pharmacy, vision, institutional, professional.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -214,7 +211,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * A finer grained suite of claim type codes which may convey additional
      * information such as Inpatient vs Outpatient and/or a specialty service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subType = null;
@@ -227,7 +223,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * adjudication for provision in the future; or requesting the non-binding
      * adjudication of the listed products and services which could be provided in the
      * future.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUse
      */
     protected null|FHIRUse $use = null;
@@ -239,7 +234,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * The party to whom the professional services and/or products have been supplied
      * or are being considered and for whom actual for forecast reimbursement is
      * sought.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -249,7 +243,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period for which charges are being submitted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $billablePeriod = null;
@@ -262,7 +255,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date this resource was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $created = null;
@@ -272,7 +264,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who created the claim, predetermination or preauthorization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $enterer = null;
@@ -282,7 +273,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party responsible for authorization, adjudication and reimbursement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $insurer = null;
@@ -293,7 +283,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * The provider which is responsible for the claim, predetermination or
      * preauthorization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $provider = null;
@@ -305,7 +294,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * The provider-required urgency of processing the request. Typical values include:
      * stat, routine deferred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $priority = null;
@@ -317,7 +305,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * A code to indicate whether and for whom funds are to be reserved for future
      * claims.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $fundsReserveRequested = null;
@@ -329,7 +316,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * A code, used only on a response to a preauthorization, to indicate whether the
      * benefits payable have been reserved and for whom.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $fundsReserve = null;
@@ -340,7 +326,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * Other claims which are related to this claim such as prior submissions or claims
      * for related services or for the same event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitRelated[]
      */
     protected null|array $related = [];
@@ -350,7 +335,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Prescription to support the dispensing of pharmacy, device or vision products.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $prescription = null;
@@ -361,7 +345,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * Original prescription which has been superseded by this prescription to support
      * the dispensing of pharmacy services, medications or products.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $originalPrescription = null;
@@ -372,7 +355,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * The party to be reimbursed for cost of the products and services according to
      * the terms of the policy.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitPayee
      */
     protected null|FHIRExplanationOfBenefitPayee $payee = null;
@@ -382,7 +364,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a referral resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $referral = null;
@@ -392,7 +373,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Facility where the services were provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $facility = null;
@@ -403,7 +383,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * The business identifier for the instance of the adjudication request: claim
      * predetermination or preauthorization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $claim = null;
@@ -414,7 +393,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * The business identifier for the instance of the adjudication response: claim,
      * predetermination or preauthorization response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $claimResponse = null;
@@ -423,7 +401,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The outcome of the claim, predetermination, or preauthorization processing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRClaimProcessingCodes
      */
     protected null|FHIRClaimProcessingCodes $outcome = null;
@@ -433,7 +410,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human readable description of the status of the adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $disposition = null;
@@ -444,7 +420,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * Reference from the Insurer which is used in later communications which refers to
      * this adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $preAuthRef = [];
@@ -455,7 +430,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * The timeframe during which the supplied preauthorization reference may be quoted
      * on claims to obtain the adjudication as provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod[]
      */
     protected null|array $preAuthRefPeriod = [];
@@ -465,7 +439,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * the subscriber of the benefits provided.
      *
      * The members of the team who provided the products and services.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitCareTeam[]
      */
     protected null|array $careTeam = [];
@@ -476,7 +449,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * Additional information codes regarding exceptions, special considerations, the
      * condition, situation, prior or concurrent issues.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitSupportingInfo[]
      */
     protected null|array $supportingInfo = [];
@@ -486,7 +458,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * the subscriber of the benefits provided.
      *
      * Information about diagnoses relevant to the claim items.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDiagnosis[]
      */
     protected null|array $diagnosis = [];
@@ -497,7 +468,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * Procedures performed on the patient relevant to the billing items with the
      * claim.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcedure[]
      */
     protected null|array $procedure = [];
@@ -508,7 +478,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * This indicates the relative order of a series of EOBs related to different
      * coverages for the same suite of services.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $precedence = null;
@@ -519,7 +488,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * Financial instruments for reimbursement for the health care products and
      * services specified on the claim.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInsurance[]
      */
     protected null|array $insurance = [];
@@ -530,7 +498,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * Details of a accident which resulted in injuries which required the products and
      * services listed in the claim.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAccident
      */
     protected null|FHIRExplanationOfBenefitAccident $accident = null;
@@ -541,7 +508,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * A claim line. Either a simple (a product or service) or a 'group' of details
      * which can also be a simple items or groups of sub-details.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem[]
      */
     protected null|array $item = [];
@@ -551,7 +517,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * the subscriber of the benefits provided.
      *
      * The first-tier service adjudications for payor added product or service lines.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAddItem[]
      */
     protected null|array $addItem = [];
@@ -562,7 +527,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      *
      * The adjudication results which are presented at the header level rather than at
      * the line-item or add-item levels.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication[]
      */
     protected null|array $adjudication = [];
@@ -572,7 +536,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * the subscriber of the benefits provided.
      *
      * Categorized monetary totals for the adjudication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitTotal[]
      */
     protected null|array $total = [];
@@ -582,7 +545,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * the subscriber of the benefits provided.
      *
      * Payment details for the adjudication of the claim.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitPayment
      */
     protected null|FHIRExplanationOfBenefitPayment $payment = null;
@@ -593,7 +555,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code for the form to be used for printing the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $formCode = null;
@@ -603,7 +564,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual form, by reference or inclusion, for printing the content or an EOB.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $form = null;
@@ -613,7 +573,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * the subscriber of the benefits provided.
      *
      * A note that describes or explains adjudication results in a human readable form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcessNote[]
      */
     protected null|array $processNote = [];
@@ -623,7 +582,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The term of the benefits documented in this response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $benefitPeriod = null;
@@ -633,7 +591,6 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * the subscriber of the benefits provided.
      *
      * Balance by Benefit Category.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance[]
      */
     protected null|array $benefitBalance = [];

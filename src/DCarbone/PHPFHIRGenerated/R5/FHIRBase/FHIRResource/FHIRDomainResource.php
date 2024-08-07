@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,7 +129,6 @@ class FHIRDomainResource extends FHIRResource
      * make it "clinically safe" for a human to just read the narrative. Resource
      * definitions may define what content should be represented in the narrative to
      * ensure clinical safety.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative
      */
     protected null|FHIRNarrative $text = null;
@@ -139,7 +138,6 @@ class FHIRDomainResource extends FHIRResource
      * their own independent transaction scope. This is allowed to be a Parameters
      * resource if and only if it is referenced by a resource that provides
      * context/meaning.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\[]|PHPFHIRContainedTypeInterface[]
      */
     protected null|array $contained = [];
@@ -153,7 +151,6 @@ class FHIRDomainResource extends FHIRResource
      * there is a strict set of governance applied to the definition and use of
      * extensions. Though any implementer can define an extension, there is a set of
      * requirements that SHALL be met as part of the definition of the extension.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[]
      */
     protected null|array $extension = [];
@@ -174,7 +171,6 @@ class FHIRDomainResource extends FHIRResource
      * extensions SHALL NOT change the meaning of any elements on Resource or
      * DomainResource (including cannot change the meaning of modifierExtension
      * itself).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[]
      */
     protected null|array $modifierExtension = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Links response to source query.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $identifier = null;
@@ -111,7 +110,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Outcome of processing the query.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQueryOutcome
      */
     protected null|FHIRQueryOutcome $outcome = null;
@@ -120,7 +118,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Total number of matching records.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $total = null;
@@ -130,7 +127,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parameters server used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
      */
     protected null|array $parameter = [];
@@ -140,7 +136,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get first page (if paged).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
      */
     protected null|array $first = [];
@@ -150,7 +145,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get previous page (if paged).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
      */
     protected null|array $previous = [];
@@ -160,7 +154,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get next page (if paged).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
      */
     protected null|array $next = [];
@@ -170,7 +163,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * To get last page (if paged).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
      */
     protected null|array $last = [];
@@ -180,7 +172,6 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Resources that are the results of the search.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $reference = [];

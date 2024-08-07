@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * Indicates a meaning for the stratifier. This can be as simple as a unique
      * identifier, or it can establish meaning in a broader context by drawing from a
      * terminology, allowing stratifiers to be correlated across measures.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -111,7 +110,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human readable description of this stratifier criteria.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -125,7 +123,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * An expression that specifies the criteria for the stratifier. This is typically
      * the name of an expression defined within a referenced library, but it may also
      * be a path to a stratifier element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
     protected null|FHIRExpression $criteria = null;
@@ -135,7 +132,6 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * A component of the stratifier criteria for the measure report, specified as
      * either the name of a valid CQL expression defined within a referenced library or
      * a valid FHIR Resource Path.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureComponent[]
      */
     protected null|array $component = [];

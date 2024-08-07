@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -142,7 +142,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifiers that are specific to this role.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -151,7 +150,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether this organization affiliation record is in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $active = null;
@@ -162,7 +160,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      *
      * The period during which the participatingOrganization is affiliated with the
      * primary organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -172,7 +169,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Organization where the role is available (primary organization/has members).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $organization = null;
@@ -183,7 +179,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      *
      * The Participating Organization provides/performs the role(s) defined by the code
      * to the Primary Organization (e.g. providing services or is a member of).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $participatingOrganization = null;
@@ -194,7 +189,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      *
      * The network in which the participatingOrganization provides the role's services
      * (if defined) at the indicated locations (if defined).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $network = [];
@@ -205,7 +199,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Definition of the role the participatingOrganization plays in the association.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $code = [];
@@ -216,7 +209,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the participatingOrganization in the context of the role.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $specialty = [];
@@ -226,7 +218,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which the role occurs.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $location = [];
@@ -236,7 +227,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Healthcare services provided through the role.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $healthcareService = [];
@@ -248,7 +238,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      *
      * The contact details of communication devices available at the
      * participatingOrganization relevant to this Affiliation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail[]
      */
     protected null|array $contact = [];
@@ -258,7 +247,6 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technical endpoints providing access to services operated for this role.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $endpoint = [];

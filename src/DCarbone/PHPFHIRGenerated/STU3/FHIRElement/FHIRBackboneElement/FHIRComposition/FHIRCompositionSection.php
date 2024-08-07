@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCom
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * The label for this particular section. This will be part of the rendered content
      * for the document, and is often used to build a table of contents.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -123,7 +122,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * A code identifying the kind of content contained within the section. This must
      * be consistent with the section title.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -136,7 +134,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * used to represent the content of the resource to a human. The narrative need not
      * encode all the structured data, but is required to contain sufficient detail to
      * make it "clinically safe" for a human to just read the narrative.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRNarrative
      */
     protected null|FHIRNarrative $text = null;
@@ -148,7 +145,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * for being maintained on an ongoing basis, or if it represents a snapshot of a
      * list of items from another source, or whether it is a prepared list where items
      * may be marked as added, modified or deleted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRListMode
      */
     protected null|FHIRListMode $mode = null;
@@ -159,7 +155,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order applied to the items in the section entries.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $orderedBy = null;
@@ -170,7 +165,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * A reference to the actual resource from which the narrative in the section is
      * derived.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $entry = [];
@@ -182,7 +176,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * If the section is empty, why the list is empty. An empty section typically has
      * some text explaining the empty reason.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $emptyReason = null;
@@ -195,7 +188,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * in a Bundle, of which the Composition is the first resource contained.
      *
      * A nested sub-section within this section.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection[]
      */
     protected null|array $section = [];

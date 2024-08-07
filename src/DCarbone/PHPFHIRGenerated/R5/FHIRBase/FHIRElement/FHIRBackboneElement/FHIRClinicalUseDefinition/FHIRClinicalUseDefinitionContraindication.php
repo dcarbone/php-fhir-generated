@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -121,7 +121,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The situation that is being documented as contraindicating against this item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $diseaseSymptomProcedure = null;
@@ -133,7 +132,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      *
      * The status of the disease or symptom for the contraindication, for example
      * "chronic" or "metastatic".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $diseaseStatus = null;
@@ -144,7 +142,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A comorbidity (concurrent condition) or coinfection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $comorbidity = [];
@@ -154,7 +151,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The indication which this is a contraidication for.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $indication = [];
@@ -167,7 +163,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      *
      * An expression that returns true or false, indicating whether the indication is
      * applicable or not, after having applied its other elements.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     protected null|FHIRExpression $applicability = null;
@@ -177,7 +172,6 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      *
      * Information about the use of the medicinal product in relation to other
      * therapies described as part of the contraindication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionOtherTherapy[]
      */
     protected null|array $otherTherapy = [];

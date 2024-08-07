@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -189,7 +189,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Business identifiers assigned to this procedure by the performer or other
      * systems which remain constant as the resource is updated and is propagated from
      * server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -201,7 +200,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * The URL pointing to a FHIR-defined protocol, guideline, order set or other
      * definition that is adhered to in whole or in part by this Procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $instantiatesCanonical = [];
@@ -212,7 +210,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * The URL pointing to an externally maintained protocol, guideline, order set or
      * other definition that is adhered to in whole or in part by this Procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri[]
      */
     protected null|array $instantiatesUri = [];
@@ -223,7 +220,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * A reference to a resource that contains details of the request for this
      * procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -233,7 +229,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular procedure is a component or step.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $partOf = [];
@@ -242,7 +237,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * A code specifying the state of the procedure. Generally, this will be the
      * in-progress or completed state.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIREventStatus
      */
     protected null|FHIREventStatus $status = null;
@@ -253,7 +247,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures the reason for the current state of the procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $statusReason = null;
@@ -265,7 +258,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * A code that classifies the procedure for searching, sorting and display purposes
      * (e.g. "Surgical Procedure").
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -277,7 +269,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * The specific procedure that is performed. Use text if the exact nature of the
      * procedure cannot be coded (e.g. "Laparoscopic Appendectomy").
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -292,7 +283,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * inspections or regulatory authorizations). If the actual focus of the procedure
      * is different from the subject, the focus element specifies the actual focus of
      * the procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -310,7 +300,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * procedure record is associated with the subject (e.g. patient). For example, use
      * focus when recording the target of the education, training, or counseling is the
      * parent or relative of a patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $focus = null;
@@ -321,7 +310,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * The Encounter during which this Procedure was created or performed or to which
      * the creation of this record is tightly associated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -337,7 +325,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -349,7 +336,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $occurrencePeriod = null;
@@ -361,7 +347,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $occurrenceString = null;
@@ -373,7 +358,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $occurrenceAge = null;
@@ -385,7 +369,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $occurrenceRange = null;
@@ -401,7 +384,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Estimated or actual date, date-time, period, or age when the procedure did occur
      * or is occurring. Allows a period to support complex procedures that span more
      * than one date, and also allows for the length of the procedure to be captured.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     protected null|FHIRTiming $occurrenceTiming = null;
@@ -416,7 +398,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * The date the occurrence of the procedure was first captured in the record
      * regardless of Procedure.status (potentially after the occurrence of the event).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $recorded = null;
@@ -426,7 +407,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual who recorded the record and takes responsibility for its content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $recorder = null;
@@ -437,7 +417,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
      * source of the report.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $reportedBoolean = null;
@@ -449,7 +428,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
      * source of the report.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $reportedReference = null;
@@ -462,7 +440,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * practitioner for licensing.
      *
      * Indicates who or what performed the procedure and how they were involved.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer[]
      */
     protected null|array $performer = [];
@@ -473,7 +450,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * The location where the procedure actually happened. E.g. a newborn at home, a
      * tracheostomy at a restaurant.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -486,7 +462,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The coded reason or reference why the procedure was performed. This may be a
      * coded entity of some type, be present as text, or be a reference to one of
      * several resources that justify the procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $reason = [];
@@ -498,7 +473,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Detailed and structured anatomical location information. Multiple locations are
      * allowed - e.g. multiple punch biopsies of a lesion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $bodySite = [];
@@ -510,7 +484,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * The outcome of the procedure - did it resolve the reasons for the procedure
      * being performed?
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $outcome = null;
@@ -520,7 +493,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This could be a histology result, pathology report, surgical report, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $report = [];
@@ -534,7 +506,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * post-performance period. These are generally tracked separately from the notes,
      * which will typically describe the procedure itself rather than any 'post
      * procedure' issues.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $complication = [];
@@ -547,7 +518,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the procedure required specific follow up - e.g. removal of sutures. The
      * follow up may be represented as a simple note or could potentially be more
      * complex, in which case the CarePlan resource can be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $followUp = [];
@@ -558,7 +528,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any other notes and comments about the procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -573,7 +542,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * A device that is implanted, removed or otherwise manipulated (calibration,
      * battery replacement, fitting a prosthesis, attaching a wound-vac, etc.) as a
      * focal portion of the Procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureFocalDevice[]
      */
     protected null|array $focalDevice = [];
@@ -585,7 +553,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      *
      * Identifies medications, devices and any other substance used as part of the
      * procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $used = [];
@@ -598,7 +565,6 @@ class FHIRProcedure extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * The information from these resources was either used to create the instance or
      * is provided to help with its interpretation. This extension should not be used
      * if more specific inline elements or extensions are available.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $supportingInfo = [];

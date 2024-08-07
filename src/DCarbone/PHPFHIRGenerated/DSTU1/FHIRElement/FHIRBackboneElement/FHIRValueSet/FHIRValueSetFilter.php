@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A code that identifies a property defined in the code system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $property = null;
@@ -104,7 +103,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The kind of operation to perform as a part of the filter criteria.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRFilterOperator
      */
     protected null|FHIRFilterOperator $op = null;
@@ -116,7 +114,6 @@ class FHIRValueSetFilter extends FHIRBackboneElement
      *
      * The match value may be either a code defined by the system, or a string value
      * which is used a regex match on the literal string of the property value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $value = null;

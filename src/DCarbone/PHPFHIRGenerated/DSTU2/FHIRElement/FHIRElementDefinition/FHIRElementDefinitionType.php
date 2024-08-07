@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIRElementDefinitionType extends FHIRElement
      * the Narrative, or extensions
      *
      * Name of Data type or Resource that is a(or the) type used for this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -119,7 +118,6 @@ class FHIRElementDefinitionType extends FHIRElement
      * in another profile. When more than one profile is specified, the content must
      * conform to all of them. When an implementation guide is specified, the resource
      * SHALL conform to at least one profile defined in the implementation guide.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri[]
      */
     protected null|array $profile = [];
@@ -130,7 +128,6 @@ class FHIRElementDefinitionType extends FHIRElement
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAggregationMode[]
      */
     protected null|array $aggregation = [];

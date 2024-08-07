@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,7 +112,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The name of the parameter used to allow access to the value of the parameter in
      * evaluation contexts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $name = null;
@@ -123,7 +122,6 @@ class FHIRParameterDefinition extends FHIRElement
      * the Narrative, or extensions
      *
      * Whether the parameter is input or output for the module.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $use = null;
@@ -134,7 +132,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The minimum number of times this parameter SHALL appear in the request or
      * response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $min = null;
@@ -145,7 +142,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * The maximum number of times this element is permitted to appear in the request
      * or response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $max = null;
@@ -156,7 +152,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * A brief discussion of what the parameter is for and how it is used by the
      * module.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $documentation = null;
@@ -167,7 +162,6 @@ class FHIRParameterDefinition extends FHIRElement
      * the Narrative, or extensions
      *
      * The type of the parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $type = null;
@@ -179,7 +173,6 @@ class FHIRParameterDefinition extends FHIRElement
      *
      * If specified, this indicates a profile that the input data must conform to, or
      * that the output data will conform to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $profile = null;

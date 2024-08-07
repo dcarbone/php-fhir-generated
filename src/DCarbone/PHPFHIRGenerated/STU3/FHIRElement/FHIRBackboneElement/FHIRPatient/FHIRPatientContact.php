@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPat
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The nature of the relationship between the patient and the contact person.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $relationship = [];
@@ -117,7 +116,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the contact person.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRHumanName
      */
     protected null|FHIRHumanName $name = null;
@@ -128,7 +126,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A contact detail for the person, e.g. a telephone number or an email address.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint[]
      */
     protected null|array $telecom = [];
@@ -142,7 +139,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Address for the contact person.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAddress
      */
     protected null|FHIRAddress $address = null;
@@ -151,7 +147,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      *
      * Administrative Gender - the gender that the contact person is considered to have
      * for administration and record keeping purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAdministrativeGender
      */
     protected null|FHIRAdministrativeGender $gender = null;
@@ -162,7 +157,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      *
      * Organization on behalf of which the contact is acting or for which the contact
      * is working.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $organization = null;
@@ -173,7 +167,6 @@ class FHIRPatientContact extends FHIRBackboneElement
      *
      * The period during which this contact person or organization is valid to be
      * contacted relating to this patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;

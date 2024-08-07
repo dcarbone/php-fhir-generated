@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -152,7 +152,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Identifiers assigned to this order instance by the orderer and/or the receiver
      * and/or order fulfiller.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -162,7 +161,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Protocol or definition followed by this request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $definition = [];
@@ -172,7 +170,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Plan/proposal/order fulfilled by this request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -183,7 +180,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The request takes the place of the referenced completed or terminated
      * request(s).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $replaces = [];
@@ -195,7 +191,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * A shared identifier common to all procedure or diagnostic requests that were
      * authorized more or less simultaneously by a single author, representing the
      * composite or group identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $requisition = null;
@@ -204,7 +199,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestStatus
      */
     protected null|FHIRRequestStatus $status = null;
@@ -213,7 +207,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the request is a proposal, plan, an original order or a reflex order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestIntent
      */
     protected null|FHIRRequestIntent $intent = null;
@@ -223,7 +216,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Indicates how quickly the ProcedureRequest should be addressed with respect to
      * other requests.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRequestPriority
      */
     protected null|FHIRRequestPriority $priority = null;
@@ -233,7 +225,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Set this to true if the record is saying that the procedure should NOT be
      * performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $doNotPerform = null;
@@ -245,7 +236,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * A code that classifies the procedure for searching, sorting and display purposes
      * (e.g. "Surgical Procedure").
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -257,7 +247,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * A code that identifies a particular procedure, diagnostic investigation, or
      * panel of investigations, that have been requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -270,7 +259,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * a human patient, but can also be requested on animals, groups of humans or
      * animals, devices such as dialysis machines, or even locations (typically for
      * environmental scans).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -281,7 +269,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * An encounter or episode of care that provides additional information about the
      * healthcare context in which this request is made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $context = null;
@@ -294,7 +281,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time at which the diagnostic testing should occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -304,7 +290,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date/time at which the diagnostic testing should occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $occurrencePeriod = null;
@@ -318,7 +303,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date/time at which the diagnostic testing should occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
     protected null|FHIRTiming $occurrenceTiming = null;
@@ -328,7 +312,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure. For example "pain", "on flare-up", etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $asNeededBoolean = null;
@@ -340,7 +323,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * If a CodeableConcept is present, it indicates the pre-condition for performing
      * the procedure. For example "pain", "on flare-up", etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $asNeededCodeableConcept = null;
@@ -353,7 +335,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request transitioned to being actionable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authoredOn = null;
@@ -363,7 +344,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The individual who initiated the request and has responsibility for its
      * activation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProcedureRequest\FHIRProcedureRequestRequester
      */
     protected null|FHIRProcedureRequestRequester $requester = null;
@@ -374,7 +354,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Desired type of performer for doing the diagnostic testing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $performerType = null;
@@ -385,7 +364,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The desired perfomer for doing the diagnostic testing. For example, the surgeon,
      * dermatopathologist, endoscopist, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $performer = null;
@@ -398,7 +376,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * An explanation or justification for why this diagnostic investigation is being
      * requested in coded or textual form. This is often for billing purposes. May
      * relate to the resources referred to in supportingInformation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonCode = [];
@@ -410,7 +387,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * Indicates another resource that provides a justification for why this diagnostic
      * investigation is being requested. May relate to the resources referred to in
      * supportingInformation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $reasonReference = [];
@@ -426,7 +402,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * includes observations explicitly requested by the producer (filler) to provide
      * context or supporting information needed to complete the order. For example,
      * reporting the amount of inspired oxygen for blood gas measurements.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $supportingInfo = [];
@@ -436,7 +411,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * One or more specimens that the laboratory procedure will use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $specimen = [];
@@ -448,7 +422,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Anatomic location where the procedure should be performed. This is the target
      * site.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $bodySite = [];
@@ -461,7 +434,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * Any other notes and comments made about the service request. For example,
      * letting provider know that "patient hates needles" or other provider
      * instructions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -471,7 +443,6 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Key events in the history of the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $relevantHistory = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,6 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of cost (copay; individual cap; family cap; coinsurance; deductible).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -109,7 +108,6 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
      *
      * Whether the cost applies to in-network or out-of-network providers (in-network;
      * out-of-network; other).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $applicability = null;
@@ -121,7 +119,6 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
      *
      * Additional information about the cost, such as information about funding sources
      * (e.g. HSA, HRA, FSA, RRA).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $qualifiers = [];
@@ -134,7 +131,6 @@ class FHIRInsurancePlanCost extends FHIRBackboneElement
      *
      * The actual cost value. (some of the costs may be represented as percentages
      * rather than currency, e.g. 10% coinsurance).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $value = null;

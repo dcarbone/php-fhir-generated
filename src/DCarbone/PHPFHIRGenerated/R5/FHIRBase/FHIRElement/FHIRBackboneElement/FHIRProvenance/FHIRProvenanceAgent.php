@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The Functional Role of the agent with respect to the activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -137,7 +136,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * The structural roles of the agent indicating the agent's competency. The
      * security role enabling the agent with respect to the activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $role = [];
@@ -147,7 +145,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates who or what performed in the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $who = null;
@@ -158,7 +155,6 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      *
      * The agent that delegated authority to perform the activity performed by the
      * agent.who element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $onBehalfOf = null;

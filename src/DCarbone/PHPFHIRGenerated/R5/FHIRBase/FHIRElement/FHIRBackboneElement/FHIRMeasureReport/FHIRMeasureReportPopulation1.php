@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * The population from the Measure that corresponds to this population in the
      * MeasureReport resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $linkId = null;
@@ -136,7 +135,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of the population.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -146,7 +144,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of members of the population in this stratum.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $count = null;
@@ -157,7 +154,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * This element refers to a List of individual level MeasureReport resources, one
      * for each subject in this population in this stratum.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subjectResults = null;
@@ -168,7 +164,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      *
      * A reference to an individual level MeasureReport resource for a member of the
      * population.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $subjectReport = [];
@@ -178,7 +173,6 @@ class FHIRMeasureReportPopulation1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optional Group identifying the individuals that make up the population.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subjects = null;

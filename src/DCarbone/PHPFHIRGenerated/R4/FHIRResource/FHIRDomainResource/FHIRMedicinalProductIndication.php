@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The medication for which this is an indication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $subject = [];
@@ -125,7 +124,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The disease, symptom or procedure that is the indication for treatment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $diseaseSymptomProcedure = null;
@@ -136,7 +134,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The status of the disease or symptom for which the indication applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $diseaseStatus = null;
@@ -147,7 +144,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $comorbidity = [];
@@ -158,7 +154,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended effect, aim or strategy to be achieved by the indication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $intendedEffect = null;
@@ -170,7 +165,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Timing or duration information as part of the indication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $duration = null;
@@ -179,7 +173,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      *
      * Information about the use of the medicinal product in relation to other
      * therapies described as part of the indication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIndication\FHIRMedicinalProductIndicationOtherTherapy[]
      */
     protected null|array $otherTherapy = [];
@@ -189,7 +182,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describe the undesirable effects of the medicinal product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $undesirableEffect = [];
@@ -199,7 +191,6 @@ class FHIRMedicinalProductIndication extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPopulation[]
      */
     protected null|array $population = [];

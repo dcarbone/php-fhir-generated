@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * business processed and/ or used to refer to it when a direct URL reference to
      * the resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -130,7 +129,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person on whom the procedure was performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $subject = null;
@@ -142,7 +140,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * The specific procedure that is performed. Use text if the exact nature of the
      * procedure can't be coded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -154,7 +151,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * Detailed and structured anatomical location information. Multiple locations are
      * allowed - e.g. multiple punch biopsies of a lesion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $bodySite = [];
@@ -166,7 +162,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * The reason why the procedure was performed. This may be due to a Condition, may
      * be coded entity of some type, or may simply be present as text.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $indication = [];
@@ -175,7 +170,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * operation, or less invasive like counseling or hypnotherapy.
      *
      * Limited to 'real' people rather than equipment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedurePerformer[]
      */
     protected null|array $performer = [];
@@ -187,7 +181,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * The dates over which the procedure was performed. Allows a period to support
      * complex procedures that span more that one date, and also allows for the length
      * of the procedure to be captured.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $date = null;
@@ -197,7 +190,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter during which the procedure was performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $encounter = null;
@@ -207,7 +199,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * What was the outcome of the procedure - did it resolve reasons why the procedure
      * was performed?.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $outcome = null;
@@ -218,7 +209,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * This could be a histology result. There could potentially be multiple reports -
      * e.g. if this was a procedure that made multiple biopsies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $report = [];
@@ -232,7 +222,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * post-operative period. These are generally tracked separately from the notes,
      * which typically will describe the procedure itself rather than any 'post
      * procedure' issues.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $complication = [];
@@ -243,7 +232,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * If the procedure required specific follow up - e.g. removal of sutures. The
      * followup may be represented as a simple note, or potentially could be more
      * complex in which case the CarePlan resource can be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $followUp = null;
@@ -253,7 +241,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * Procedures may be related to other items such as procedures or medications. For
      * example treating wound dehiscence following a previous procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProcedure\FHIRProcedureRelatedItem[]
      */
     protected null|array $relatedItem = [];
@@ -262,7 +249,6 @@ class FHIRProcedure extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any other notes about the procedure - e.g. the operative notes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $notes = null;

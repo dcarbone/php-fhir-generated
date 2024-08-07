@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPlanD
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      *
      * The parameter whose value is to be tracked, e.g. body weight, blood pressure, or
      * hemoglobin A1c level.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $measure = null;
@@ -121,7 +120,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * is achieved at any value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any value at or
      * above the low value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $detailQuantity = null;
@@ -136,7 +134,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * is achieved at any value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any value at or
      * above the low value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $detailRange = null;
@@ -152,7 +149,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      * is achieved at any value at or below the high value. Similarly, if the high
      * value is missing, it indicates that the goal is achieved at any value at or
      * above the low value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $detailCodeableConcept = null;
@@ -163,7 +159,6 @@ class FHIRPlanDefinitionTarget extends FHIRBackboneElement
      *
      * Indicates the timeframe after the start of the goal in which the goal should be
      * met.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $due = null;

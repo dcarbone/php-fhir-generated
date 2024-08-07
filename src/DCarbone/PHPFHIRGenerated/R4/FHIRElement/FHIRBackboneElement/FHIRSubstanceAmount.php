@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,6 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
      * value for a given element is given, it would be captured in this field.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $amountQuantity = null;
@@ -126,7 +125,6 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
      * value for a given element is given, it would be captured in this field.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $amountRange = null;
@@ -138,7 +136,6 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * Used to capture quantitative values for a variety of elements. If only limits
      * are given, the arithmetic mean would be the average. If only a single definite
      * value for a given element is given, it would be captured in this field.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $amountString = null;
@@ -155,7 +152,6 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * the amount refers to a mole ratio or weight ratio. For any given element an
      * effort should be made to use same the amount type for all related definitional
      * elements.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $amountType = null;
@@ -165,7 +161,6 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A textual comment on a numeric value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $amountText = null;
@@ -180,7 +175,6 @@ class FHIRSubstanceAmount extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference range of possible or expected values.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceAmount\FHIRSubstanceAmountReferenceRange
      */
     protected null|FHIRSubstanceAmountReferenceRange $referenceRange = null;

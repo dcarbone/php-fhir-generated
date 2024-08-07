@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,6 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The full product name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $productName = null;
@@ -133,7 +132,6 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of product name, such as rINN, BAN, Proprietary, Non-Proprietary.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -146,7 +144,6 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
      * use, or drug catalogs).
      *
      * Coding words or phrases of the name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionPart[]
      */
     protected null|array $part = [];
@@ -159,7 +156,6 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
      * use, or drug catalogs).
      *
      * Country and jurisdiction where the name applies, and associated language.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionUsage[]
      */
     protected null|array $usage = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,6 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique code or number identifying the location to its users.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -137,7 +136,6 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * active | suspended | inactive.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRLocationStatus
      */
     protected null|FHIRLocationStatus $status = null;
@@ -147,7 +145,6 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the location as used by humans. Does not need to be unique.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -157,7 +154,6 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of the Location, which helps in finding or referencing the place.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -168,7 +164,6 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Indicates whether a resource instance represents a specific location or a class
      * of locations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRLocationMode
      */
     protected null|FHIRLocationMode $mode = null;
@@ -179,7 +174,6 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of function performed at the location.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -192,7 +186,6 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * The contact details of communication devices available at the location. This can
      * include phone numbers, fax numbers, mobile numbers, email addresses and web
      * sites.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint[]
      */
     protected null|array $telecom = [];
@@ -203,7 +196,6 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical location.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress
      */
     protected null|FHIRAddress $address = null;
@@ -214,7 +206,6 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical form of the location, e.g. building, room, vehicle, road.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $physicalType = null;
@@ -225,7 +216,6 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * The absolute geographic location of the Location, expressed using the WGS84
      * datum (This is the same co-ordinate system used in KML).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRLocation\FHIRLocationPosition
      */
     protected null|FHIRLocationPosition $position = null;
@@ -235,7 +225,6 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization responsible for the provisioning and upkeep of the location.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $managingOrganization = null;
@@ -245,7 +234,6 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Another Location which this Location is physically part of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $partOf = null;

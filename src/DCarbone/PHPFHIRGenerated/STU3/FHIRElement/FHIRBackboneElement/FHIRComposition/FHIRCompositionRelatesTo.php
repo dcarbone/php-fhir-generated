@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCom
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
      *
      * The type of relationship that this composition has with anther composition or
      * document.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDocumentRelationshipType
      */
     protected null|FHIRDocumentRelationshipType $code = null;
@@ -112,7 +111,6 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target composition/document of this relationship.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $targetIdentifier = null;
@@ -122,7 +120,6 @@ class FHIRCompositionRelatesTo extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The target composition/document of this relationship.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $targetReference = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -140,7 +140,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this report by the performer or other systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -150,7 +149,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details concerning a test or procedure requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -159,7 +157,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the diagnostic report as a whole.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDiagnosticReportStatus
      */
     protected null|FHIRDiagnosticReportStatus $status = null;
@@ -172,7 +169,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * A code that classifies the clinical discipline, department or diagnostic service
      * that created the report (e.g. cardiology, biochemistry, hematology, MRI). This
      * is used for searching, sorting and display purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -183,7 +179,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code or name that describes this diagnostic report.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -195,7 +190,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * The subject of the report. Usually, but not always, this is a patient. However
      * diagnostic services also perform analyses on specimens collected from a variety
      * of other sources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -206,7 +200,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) which
      * this DiagnosticReport per is about.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $context = null;
@@ -222,7 +215,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * the report is a patient, this is usually either the time of the procedure or of
      * specimen collection(s), but very often the source of the date/time is not known,
      * only the date/time itself.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $effectiveDateTime = null;
@@ -235,7 +227,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * the report is a patient, this is usually either the time of the procedure or of
      * specimen collection(s), but very often the source of the date/time is not known,
      * only the date/time itself.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -248,7 +239,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The date and time that this version of the report was released from the source
      * diagnostic service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $issued = null;
@@ -260,7 +250,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * interpretations, and formatted representation of diagnostic reports.
      *
      * Indicates who or what participated in producing the report.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportPerformer[]
      */
     protected null|array $performer = [];
@@ -270,7 +259,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Details about the specimens on which this diagnostic report is based.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $specimen = [];
@@ -282,7 +270,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * Observations that are part of this diagnostic report. Observations can be simple
      * name/value pairs (e.g. "atomic" results), or they can be grouping observations
      * that include references to other members of the group (e.g. "panels").
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $result = [];
@@ -295,7 +282,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * investigation. Typically, this is imaging performed by DICOM enabled modalities,
      * but this is not required. A fully enabled PACS viewer can use this information
      * to provide views of the source images.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $imagingStudy = [];
@@ -309,7 +295,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * A list of key images associated with this report. The images are generally
      * created during the diagnostic process, and may be directly of the patient, or of
      * treated specimens (i.e. slides of interest).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportImage[]
      */
     protected null|array $image = [];
@@ -320,7 +305,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Concise and clinically contextualized impression / summary of the diagnostic
      * report.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $conclusion = null;
@@ -331,7 +315,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Codes for the conclusion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $codedDiagnosis = [];
@@ -342,7 +325,6 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Rich text representation of the entire result as issued by the diagnostic
      * service. Multiple formats are allowed but they SHALL be semantically equivalent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAttachment[]
      */
     protected null|array $presentedForm = [];

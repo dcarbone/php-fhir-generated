@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -142,7 +142,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The code assigned to the product, for example a USDA NDB number, a USDA FDC ID
      * number, or a Langual code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -150,7 +149,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRNutritionProductStatus
      */
     protected null|FHIRNutritionProductStatus $status = null;
@@ -162,7 +160,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Nutrition products can have different classifications - according to its
      * nutritional properties, preparation methods, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -173,7 +170,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The organisation (manufacturer, representative or legal authorization holder)
      * that is responsible for the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $manufacturer = [];
@@ -181,7 +177,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
      * A food or supplement that is consumed by patients.
      *
      * The product's nutritional information expressed by the nutrients.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductNutrient[]
      */
     protected null|array $nutrient = [];
@@ -189,7 +184,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
      * A food or supplement that is consumed by patients.
      *
      * Ingredients contained in this product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductIngredient[]
      */
     protected null|array $ingredient = [];
@@ -200,7 +194,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allergens that are known or suspected to be a part of this nutrition product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $knownAllergen = [];
@@ -208,7 +201,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
      * A food or supplement that is consumed by patients.
      *
      * Specifies descriptive properties of the nutrition product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductCharacteristic[]
      */
     protected null|array $characteristic = [];
@@ -217,7 +209,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Conveys instance-level information about this product item. One or several
      * physical, countable instances or occurrences of the product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance[]
      */
     protected null|array $instance = [];
@@ -228,7 +219,6 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];

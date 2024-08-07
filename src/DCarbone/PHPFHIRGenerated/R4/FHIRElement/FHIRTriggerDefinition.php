@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of triggering event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerType
      */
     protected null|FHIRTriggerType $type = null;
@@ -118,7 +117,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * A formal name for the event. This may be an absolute URI that identifies the
      * event formally (e.g. from a trigger registry), or a simple relative URI that
      * identifies the event in a local context.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -132,7 +130,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing of the event (if this is a periodic trigger).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     protected null|FHIRTiming $timingTiming = null;
@@ -142,7 +139,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing of the event (if this is a periodic trigger).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $timingReference = null;
@@ -153,7 +149,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing of the event (if this is a periodic trigger).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $timingDate = null;
@@ -166,7 +161,6 @@ class FHIRTriggerDefinition extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing of the event (if this is a periodic trigger).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $timingDateTime = null;
@@ -178,7 +172,6 @@ class FHIRTriggerDefinition extends FHIRElement
      *
      * The triggering data of the event (if this is a data trigger). If more than one
      * data is requirement is specified, then all the data requirements must be true.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement[]
      */
     protected null|array $data = [];
@@ -191,7 +184,6 @@ class FHIRTriggerDefinition extends FHIRElement
      *
      * A boolean-valued expression that is evaluated in the context of the container of
      * the trigger definition and returns whether or not the trigger fires.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
     protected null|FHIRExpression $condition = null;

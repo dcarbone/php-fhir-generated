@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,13 +125,10 @@ class FHIRElement extends FHIRBase
      * there is a strict set of governance applied to the definition and use of
      * extensions. Though any implementer can define an extension, there is a set of
      * requirements that SHALL be met as part of the definition of the extension.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension[]
      */
     protected null|array $extension = [];
-    /**
-     * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRStringPrimitive
-     */
+    /** @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRStringPrimitive */
     protected null|FHIRStringPrimitive $id = null;
 
     /**

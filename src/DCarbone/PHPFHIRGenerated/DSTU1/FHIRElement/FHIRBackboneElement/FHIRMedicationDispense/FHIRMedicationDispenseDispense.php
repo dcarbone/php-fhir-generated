@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Identifier assigned by the dispensing facility. This is an identifier assigned
      * outside FHIR.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -116,7 +115,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationDispenseStatus
      */
     protected null|FHIRMedicationDispenseStatus $status = null;
@@ -128,7 +126,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Indicates the type of dispensing event that is performed. Examples include:
      * Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -140,7 +137,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount of medication that has been dispensed. Includes unit of measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -152,7 +148,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $medication = null;
@@ -164,7 +159,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the dispensed product was packaged and reviewed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $whenPrepared = null;
@@ -177,7 +171,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * The time the dispensed product was provided to the patient or their
      * representative.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $whenHandedOver = null;
@@ -188,7 +181,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      *
      * Identification of the facility/location where the medication was shipped to, as
      * part of the dispense event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $destination = null;
@@ -200,7 +192,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * Identifies the person who picked up the medication. This will usually be a
      * patient or their carer, but some cases exist where it can be a healthcare
      * professional.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $receiver = [];
@@ -209,7 +200,6 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * supply provided and the instructions for administering the medication.
      *
      * Indicates how the medication is to be used by the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDosage[]
      */
     protected null|array $dosage = [];

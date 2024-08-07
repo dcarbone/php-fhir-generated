@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server can return nested value sets.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $hierarchical = null;
@@ -113,7 +112,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the server supports paging on expansion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $paging = null;
@@ -122,7 +120,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Allow request for incomplete expansions?
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $incomplete = null;
@@ -132,7 +129,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * functionality or a statement of required or desired server implementation.
      *
      * Supported expansion parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesParameter[]
      */
     protected null|array $parameter = [];
@@ -146,7 +142,6 @@ class FHIRTerminologyCapabilitiesExpansion extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Documentation about text searching works.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $textFilter = null;

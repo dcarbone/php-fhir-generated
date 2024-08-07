@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,6 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Stereochemistry type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $stereochemistry = null;
@@ -136,7 +135,6 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optical activity type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $opticalActivity = null;
@@ -147,7 +145,6 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * An expression which states the number and type of atoms present in a molecule of
      * a substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $molecularFormula = null;
@@ -158,7 +155,6 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * Specified per moiety according to the Hill system, i.e. first C, then H, then
      * alphabetical, each moiety separated by a dot.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $molecularFormulaByMoiety = null;
@@ -167,7 +163,6 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * used for prescribing.
      *
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionMolecularWeight
      */
     protected null|FHIRSubstanceDefinitionMolecularWeight $molecularWeight = null;
@@ -179,7 +174,6 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      *
      * The method used to elucidate the structure of the drug substance. Examples:
      * X-ray, NMR, Peptide mapping, Ligand binding assay.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $technique = [];
@@ -189,7 +183,6 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source of information about the structure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $sourceDocument = [];
@@ -198,7 +191,6 @@ class FHIRSubstanceDefinitionStructure extends FHIRBackboneElement
      * used for prescribing.
      *
      * A depiction of the structure of the substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRepresentation[]
      */
     protected null|array $representation = [];

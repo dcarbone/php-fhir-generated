@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -164,7 +164,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      * A formal identifier that is used to identify this artifact assessment when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -174,7 +173,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short title for the assessment for use in displaying and selecting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -185,7 +183,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      *
      * Display of or reference to the bibliographic citation of the comment,
      * classifier, or rating.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $citeAsReference = null;
@@ -200,7 +197,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      *
      * Display of or reference to the bibliographic citation of the comment,
      * classifier, or rating.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $citeAsMarkdown = null;
@@ -217,7 +213,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      * date must change when the disposition changes and it must change if the workflow
      * status code changes. In addition, it should change when the substantive content
      * of the artifact assessment changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -233,7 +228,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      * A copyright statement relating to the artifact assessment and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the artifact assessment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -245,7 +239,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -257,7 +250,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -268,7 +260,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      *
      * A reference to a resource, canonical resource, or non-FHIR resource which the
      * comment or assessment is about.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $artifactReference = null;
@@ -280,7 +271,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      *
      * A reference to a resource, canonical resource, or non-FHIR resource which the
      * comment or assessment is about.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $artifactCanonical = null;
@@ -291,7 +281,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      *
      * A reference to a resource, canonical resource, or non-FHIR resource which the
      * comment or assessment is about.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $artifactUri = null;
@@ -301,7 +290,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      * content.
      *
      * A component comment, classifier, or rating of the artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRArtifactAssessment\FHIRArtifactAssessmentContent[]
      */
     protected null|array $content = [];
@@ -309,7 +297,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the workflow status of the comment or change request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRArtifactAssessmentWorkflowStatus
      */
     protected null|FHIRArtifactAssessmentWorkflowStatus $workflowStatus = null;
@@ -318,7 +305,6 @@ class FHIRArtifactAssessment extends FHIRDomainResource implements PHPFHIRContai
      *
      * Indicates the disposition of the responsible party to the comment or change
      * request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRArtifactAssessmentDisposition
      */
     protected null|FHIRArtifactAssessmentDisposition $disposition = null;

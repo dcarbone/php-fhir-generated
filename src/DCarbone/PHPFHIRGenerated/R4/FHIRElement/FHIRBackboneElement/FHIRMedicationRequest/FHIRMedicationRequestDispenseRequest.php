@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,7 +110,6 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      * plans, etc., and to harmonize with workflow patterns.
      *
      * Indicates the quantity or duration for the first dispense of the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestInitialFill
      */
     protected null|FHIRMedicationRequestInitialFill $initialFill = null;
@@ -120,7 +119,6 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The minimum period of time that must occur between dispenses of the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $dispenseInterval = null;
@@ -131,7 +129,6 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      *
      * This indicates the validity period of a prescription (stale dating the
      * Prescription).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $validityPeriod = null;
@@ -147,7 +144,6 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      * order can be dispensed a total of 4 times and the patient can receive a total of
      * 120 tablets. A prescriber may explicitly say that zero refills are permitted
      * after the initial dispense.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $numberOfRepeatsAllowed = null;
@@ -159,7 +155,6 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is to be dispensed for one fill.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -170,7 +165,6 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      *
      * Identifies the period time over which the supplied product is expected to be
      * used, or the length of time the dispense is expected to last.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $expectedSupplyDuration = null;
@@ -180,7 +174,6 @@ class FHIRMedicationRequestDispenseRequest extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the intended dispensing Organization specified by the prescriber.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $performer = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRSlot extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * External Ids for this item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -137,7 +136,6 @@ class FHIRSlot extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * be an identifiable service - which is at a location, rather than the location
      * itself). If provided then this overrides the value provided on the availability
      * resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -147,7 +145,6 @@ class FHIRSlot extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The schedule resource that this slot defines an interval of status information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $schedule = null;
@@ -156,7 +153,6 @@ class FHIRSlot extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * busy | free | busy-unavailable | busy-tentative.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSlotStatus
      */
     protected null|FHIRSlotStatus $freeBusyType = null;
@@ -168,7 +164,6 @@ class FHIRSlot extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the slot is to begin.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $start = null;
@@ -180,7 +175,6 @@ class FHIRSlot extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Date/Time that the slot is to conclude.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $end = null;
@@ -190,7 +184,6 @@ class FHIRSlot extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * This slot has already been overbooked, appointments are unlikely to be accepted
      * for this time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $overbooked = null;
@@ -201,7 +194,6 @@ class FHIRSlot extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * Comments on the slot to describe any extended information. Such as custom
      * constraints on the slot.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $comment = null;

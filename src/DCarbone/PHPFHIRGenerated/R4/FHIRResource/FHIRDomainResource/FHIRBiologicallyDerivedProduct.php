@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * instance that are defined by business processes and/or used to refer to it when
      * a direct URL reference to the resource itself is not appropriate (e.g. in CDA
      * documents, or in written / printed documentation).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -139,7 +138,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Broad category of this product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductCategory
      */
     protected null|FHIRBiologicallyDerivedProductCategory $productCategory = null;
@@ -151,7 +149,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      *
      * A code that identifies the kind of this biologically derived product (SNOMED
      * Ctcode).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $productCode = null;
@@ -160,7 +157,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the product is currently available.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBiologicallyDerivedProductStatus
      */
     protected null|FHIRBiologicallyDerivedProductStatus $status = null;
@@ -170,7 +166,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Procedure request to obtain this biologically derived product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $request = [];
@@ -180,7 +175,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Number of discrete units within this product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $quantity = null;
@@ -190,7 +184,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Parent product (if any).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $parent = [];
@@ -199,7 +192,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * transplanted or infused into another (possibly the same) biological entity.
      *
      * How this product was collected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductCollection
      */
     protected null|FHIRBiologicallyDerivedProductCollection $collection = null;
@@ -210,7 +202,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * Any processing of the product during collection that does not change the
      * fundamental nature of the product. For example adding anti-coagulants during the
      * collection of Peripheral Blood Stem Cells.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProcessing[]
      */
     protected null|array $processing = [];
@@ -221,7 +212,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * Any manipulation of product post-collection that is intended to alter the
      * product. For example a buffy-coat enrichment or CD8 reduction of Peripheral
      * Blood Stem Cells to make it more suitable for infusion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductManipulation
      */
     protected null|FHIRBiologicallyDerivedProductManipulation $manipulation = null;
@@ -230,7 +220,6 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * transplanted or infused into another (possibly the same) biological entity.
      *
      * Product storage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductStorage[]
      */
     protected null|array $storage = [];

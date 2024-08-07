@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * business processes and/or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -147,7 +146,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient or group whose intended care is described by the plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -158,7 +156,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Indicates whether the plan is currently being acted upon, represents future
      * intentions or is now a historical record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCarePlanStatus
      */
     protected null|FHIRCarePlanStatus $status = null;
@@ -168,7 +165,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the context in which this particular CarePlan is defined.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $context = null;
@@ -178,7 +174,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the plan did (or is intended to) come into effect and end.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -189,7 +184,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Identifies the individual(s) or ogranization who is responsible for the content
      * of the care plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $author = [];
@@ -202,7 +196,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the most recent date on which the plan has been revised.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $modified = null;
@@ -215,7 +208,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Identifies what "kind" of plan this is to support differentiation between
      * multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma",
      * "disease management", "wellness plan", etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -225,7 +217,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the scope and nature of the plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -236,7 +227,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
      * and/or mitigation are handled by this plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $addresses = [];
@@ -248,7 +238,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Identifies portions of the patient's record that specifically influenced the
      * formation of the plan. These might include co-morbidities, recent procedures,
      * limitations, recent assessments, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $support = [];
@@ -258,7 +247,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * limited to care for a specific condition or set of conditions.
      *
      * Identifies CarePlans with some sort of formal relationship to the current plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanRelatedPlan[]
      */
     protected null|array $relatedPlan = [];
@@ -269,7 +257,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Identifies all people and organizations who are expected to be involved in the
      * care envisioned by this plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanParticipant[]
      */
     protected null|array $participant = [];
@@ -279,7 +266,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the intended objective(s) of carrying out the care plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference[]
      */
     protected null|array $goal = [];
@@ -290,7 +276,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Identifies a planned action to occur as part of the plan. For example, a
      * medication to be used, lab tests to perform, self-monitoring, education, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity[]
      */
     protected null|array $activity = [];
@@ -301,7 +286,6 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * General notes about the care plan not covered elsewhere.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation
      */
     protected null|FHIRAnnotation $note = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      * Allows identification of which elements have their cardinalities impacted by the
      * constraint. Will not be referenced for constraints that do not affect
      * cardinality.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRId
      */
     protected null|FHIRId $key = null;
@@ -121,7 +120,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of why this constraint is necessary or appropriate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $requirements = null;
@@ -131,7 +129,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * Identifies the impact constraint violation has on the conformance of the
      * instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConstraintSeverity
      */
     protected null|FHIRConstraintSeverity $severity = null;
@@ -142,7 +139,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * Text that can be used to describe the constraint in messages identifying that
      * the constraint has been violated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $human = null;
@@ -153,7 +149,6 @@ class FHIRElementDefinitionConstraint extends FHIRElement
      *
      * An XPath expression of constraint that can be executed to see if this constraint
      * is met.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $xpath = null;

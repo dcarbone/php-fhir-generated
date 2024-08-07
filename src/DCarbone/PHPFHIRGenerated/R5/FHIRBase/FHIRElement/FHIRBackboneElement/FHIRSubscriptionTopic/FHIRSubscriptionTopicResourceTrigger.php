@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,7 +131,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The human readable description of this resource trigger for the
      * SubscriptionTopic - for example, "An Encounter enters the 'in-progress' state".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -146,7 +145,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      * maps to http://hl7.org/fhir/StructureDefinition/Patient. For more information,
      * see <a
      * href="elementdefinition-definitions.html#ElementDefinition.type.code">ElementDefinition.type.code</a>.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $resource = null;
@@ -156,7 +154,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      * The FHIR RESTful interaction which can be used to trigger a notification for the
      * SubscriptionTopic. Multiple values are considered OR joined (e.g., CREATE or
      * UPDATE). If not present, all supported interactions are assumed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteractionTrigger[]
      */
     protected null|array $supportedInteraction = [];
@@ -166,7 +163,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The FHIR query based rules that the server should use to determine when to
      * trigger a notification for this subscription topic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubscriptionTopic\FHIRSubscriptionTopicQueryCriteria
      */
     protected null|FHIRSubscriptionTopicQueryCriteria $queryCriteria = null;
@@ -177,7 +173,6 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      *
      * The FHIRPath based rules that the server should use to determine when to trigger
      * a notification for this topic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $fhirPathCriteria = null;

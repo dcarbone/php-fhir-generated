@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -188,7 +188,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * itself is not appropriate. They are business identifiers assigned to this
      * resource by the performer or other systems and remain constant as the resource
      * is updated and propagates from server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -199,7 +198,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * A plan or request that is fulfilled in whole or in part by this medication
      * request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -210,7 +208,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * Reference to an order/prescription that is being replaced by this
      * MedicationRequest.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $priorPrescription = null;
@@ -226,7 +223,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * may have business ramifications in terms of reporting of results, billing, etc.
      * E.g. a requisition number shared by a set of lab tests ordered together, or a
      * prescription number shared by all meds ordered at one time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $groupIdentifier = null;
@@ -235,7 +231,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * A code specifying the current state of the order. Generally, this will be active
      * or completed state.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMedicationrequestStatus
      */
     protected null|FHIRMedicationrequestStatus $status = null;
@@ -246,7 +241,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Captures the reason for the current state of the MedicationRequest.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $statusReason = null;
@@ -260,7 +254,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and perhaps time) when the status was changed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $statusChanged = null;
@@ -268,7 +261,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the request is a proposal, plan, or an original order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMedicationRequestIntent
      */
     protected null|FHIRMedicationRequestIntent $intent = null;
@@ -281,7 +273,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * An arbitrary categorization or grouping of the medication request. It could be
      * used for indicating where meds are intended to be administered, eg. in an
      * inpatient setting or in a patient's home, or a legal category of the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -290,7 +281,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * Indicates how quickly the Medication Request should be addressed with respect to
      * other requests.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRequestPriority
      */
     protected null|FHIRRequestPriority $priority = null;
@@ -303,7 +293,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * is taking an existing medication and the provider is changing their medication.
      * They want to create two seperate requests: one to stop using the current
      * medication and another to start the new medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $doNotPerform = null;
@@ -317,7 +306,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * represents the medication which may be the details of the medication or simply
      * an attribute carrying a code that identifies the medication from a known list of
      * medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $medication = null;
@@ -327,7 +315,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The individual or group for whom the medication has been requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -339,7 +326,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * The person or organization who provided the information about this request, if
      * the source is someone other than the requestor. This is often used when the
      * MedicationRequest is reported by another person.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $informationSource = [];
@@ -350,7 +336,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * The Encounter during which this [x] was created or to which the creation of this
      * record is tightly associated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -362,7 +347,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * Information to support fulfilling (i.e. dispensing or administering) of the
      * medication, for example, patient height and weight, a MedicationStatement for
      * the patient).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $supportingInformation = [];
@@ -377,7 +361,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * The date (and perhaps time) when the prescription was initially written or
      * authored on.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authoredOn = null;
@@ -388,7 +371,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * The individual, organization, or device that initiated the request and has
      * responsibility for its activation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $requester = null;
@@ -399,7 +381,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * Indicates if this record was captured as a secondary 'reported' record rather
      * than as an original primary source-of-truth record. It may also indicate the
      * source of the report.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $reported = null;
@@ -410,7 +391,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of performer of the administration of the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $performerType = null;
@@ -425,7 +405,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * example of a device that is performing the administration. Both the IV Pump and
      * the practitioner that set the rate or bolus on the pump can be listed as
      * performers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $performer = [];
@@ -437,7 +416,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * The intended type of device that is to be used for the administration of the
      * medication (for example, PCA Pump).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $device = [];
@@ -448,7 +426,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * The person who entered the order on behalf of another individual for example in
      * the case of a verbal or a telephone order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $recorder = null;
@@ -459,7 +436,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason or the indication for ordering or not ordering the medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $reason = [];
@@ -471,7 +447,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * The description of the overall pattern of the administration of the medication
      * to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $courseOfTherapyType = null;
@@ -482,7 +457,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * Insurance plans, coverage extensions, pre-authorizations and/or
      * pre-determinations that may be required for delivering the requested service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $insurance = [];
@@ -494,7 +468,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      *
      * Extra information about the prescription that could not be conveyed by the other
      * attributes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -510,7 +483,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * The full representation of the dose of the medication included in all dosage
      * instructions. To be used when multiple dosage instructions are included to
      * represent complex dosing such as increasing or tapering doses.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $renderedDosageInstruction = null;
@@ -522,7 +494,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * The period over which the medication is to be taken. Where there are multiple
      * dosageInstruction lines (for example, tapering doses), this is the earliest date
      * and the latest end date of the dosageInstructions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $effectiveDosePeriod = null;
@@ -532,7 +503,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific instructions for how the medication is to be used by the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage[]
      */
     protected null|array $dosageInstruction = [];
@@ -548,7 +518,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * Order). Note that this information is not always sent with the order. There may
      * be in some settings (e.g. hospitals) institutional or system support for
      * completing the dispense details in the pharmacy department.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestDispenseRequest
      */
     protected null|FHIRMedicationRequestDispenseRequest $dispenseRequest = null;
@@ -563,7 +532,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * some cases, substitution must happen, in other cases substitution must not
      * happen. This block explains the prescriber's intent. If nothing is specified
      * substitution may be done.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationRequest\FHIRMedicationRequestSubstitution
      */
     protected null|FHIRMedicationRequestSubstitution $substitution = null;
@@ -576,7 +544,6 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * request or event resources that identify key state transitions or updates that
      * are likely to be relevant to a user looking at the current version of the
      * resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $eventHistory = [];

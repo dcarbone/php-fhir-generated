@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -169,7 +169,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * be) published. The URL SHOULD include the major version of the code system. For
      * more information see [Technical and Business Versions](resource.html#versions).
      * This is used in [Coding]{datatypes.html#Coding}.system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -181,7 +180,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A formal identifier that is used to identify this code system when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -197,7 +195,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence. This is used in
      * [Coding]{datatypes.html#Coding}.version.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -209,7 +206,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A natural language name identifying the code system. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -219,7 +215,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the code system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -227,7 +222,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this code system. Enables tracking the life-cycle of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -238,7 +232,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A boolean value to indicate that this code system is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -254,7 +247,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * change if and when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * code system changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -264,7 +256,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the code system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -275,7 +266,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -292,7 +282,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * A free text natural language description of the code system from a consumer's
      * perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -307,7 +296,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate code system instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -318,7 +306,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the code system is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -335,7 +322,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Explaination of why this code system is needed and why it has been designed as
      * it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -353,7 +339,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A copyright statement relating to the code system and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * code system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -363,7 +348,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $caseSensitive = null;
@@ -373,7 +357,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Canonical URL of value set that contains the entire code system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $valueSet = null;
@@ -382,7 +365,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The meaning of the hierarchy of concepts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeSystemHierarchyMeaning
      */
     protected null|FHIRCodeSystemHierarchyMeaning $hierarchyMeaning = null;
@@ -391,7 +373,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * True If code system defines a post-composition grammar.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $compositional = null;
@@ -402,7 +383,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * This flag is used to signify that the code system has not (or does not) maintain
      * the definitions, and a version must be specified when referencing this code
      * system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $versionNeeded = null;
@@ -413,7 +393,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * How much of the content of the code system - the concepts and codes it defines -
      * are represented in this resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeSystemContentMode
      */
     protected null|FHIRCodeSystemContentMode $content = null;
@@ -425,7 +404,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * The total number of concepts defined by the code system. Where the code system
      * has a compositional grammar, the count refers to the number of base (primitive)
      * concepts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $count = null;
@@ -435,7 +413,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * A filter that can be used in a value set compose statement when selecting
      * concepts using a filter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter[]
      */
     protected null|array $filter = [];
@@ -445,7 +422,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * A property defines an additional slot through which additional information can
      * be provided about a concept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty[]
      */
     protected null|array $property = [];
@@ -456,7 +432,6 @@ class FHIRCodeSystem extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Concepts that are in the code system. The concept definitions are inherently
      * hierarchical, but the definitions must be consulted to determine what the
      * meaning of the hierarchical relationships are.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept[]
      */
     protected null|array $concept = [];

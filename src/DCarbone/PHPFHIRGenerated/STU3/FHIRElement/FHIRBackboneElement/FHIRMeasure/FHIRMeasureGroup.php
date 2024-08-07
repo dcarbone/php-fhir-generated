@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMea
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,7 +100,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      *
      * A unique identifier for the group. This identifier will used to report data for
      * the group in the measure report.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -110,7 +109,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Optional name or short description of this group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -120,7 +118,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human readable description of this population group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -128,7 +125,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * The Measure resource provides the definition of a quality measure.
      *
      * A population criteria for the measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasurePopulation[]
      */
     protected null|array $population = [];
@@ -138,7 +134,6 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * The stratifier criteria for the measure report, specified as either the name of
      * a valid CQL expression defined within a referenced library, or a valid FHIR
      * Resource Path.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier[]
      */
     protected null|array $stratifier = [];

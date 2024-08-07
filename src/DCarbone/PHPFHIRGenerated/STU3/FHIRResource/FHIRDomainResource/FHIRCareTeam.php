@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,7 +126,6 @@ class FHIRCareTeam extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * This records identifiers associated with this care team that are defined by
      * business processes and/or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -135,7 +134,6 @@ class FHIRCareTeam extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the current state of the care team.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCareTeamStatus
      */
     protected null|FHIRCareTeamStatus $status = null;
@@ -148,7 +146,6 @@ class FHIRCareTeam extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Identifies what kind of team. This is to support differentiation between
      * multiple co-existing teams, such as care plan team, episode of care team,
      * longitudinal care team.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -159,7 +156,6 @@ class FHIRCareTeam extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * A label for human use intended to distinguish like teams. E.g. the "red" vs.
      * "green" trauma teams.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -169,7 +165,6 @@ class FHIRCareTeam extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the patient or group whose intended care is handled by the team.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -180,7 +175,6 @@ class FHIRCareTeam extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * The encounter or episode of care that establishes the context for this care
      * team.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $context = null;
@@ -190,7 +184,6 @@ class FHIRCareTeam extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates when the team did (or is intended to) come into effect and end.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -200,7 +193,6 @@ class FHIRCareTeam extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Identifies all people and organizations who are expected to be involved in the
      * care team.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCareTeam\FHIRCareTeamParticipant[]
      */
     protected null|array $participant = [];
@@ -211,7 +203,6 @@ class FHIRCareTeam extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the care team exists.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonCode = [];
@@ -221,7 +212,6 @@ class FHIRCareTeam extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition(s) that this care team addresses.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $reasonReference = [];
@@ -231,7 +221,6 @@ class FHIRCareTeam extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization responsible for the care team.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $managingOrganization = [];
@@ -242,7 +231,6 @@ class FHIRCareTeam extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the CareTeam.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];

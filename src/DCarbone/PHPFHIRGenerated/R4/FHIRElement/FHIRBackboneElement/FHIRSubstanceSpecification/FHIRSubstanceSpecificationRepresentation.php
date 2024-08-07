@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of structure (e.g. Full, Partial, Representative).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -110,7 +109,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
      *
      * The structural representation as text string in a format e.g. InChI, SMILES,
      * MOLFILE, CDX.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $representation = null;
@@ -120,7 +118,6 @@ class FHIRSubstanceSpecificationRepresentation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An attached file with the structural representation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $attachment = null;

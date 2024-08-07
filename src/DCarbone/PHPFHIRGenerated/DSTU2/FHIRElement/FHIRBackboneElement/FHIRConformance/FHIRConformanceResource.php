@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A type of resource exposed via the restful interface.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $type = null;
@@ -136,7 +135,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the resource, including any constraints on cardinality, bindings, lengths or
      * other limitations. See further discussion in [Using
      * Profiles]{profiling.html#profile-uses}.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $profile = null;
@@ -146,7 +144,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * desired server implementation.
      *
      * Identifies a restful operation supported by the solution.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction[]
      */
     protected null|array $interaction = [];
@@ -160,7 +157,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * meta-property on resources. If the value is 'versioned-update', then the server
      * supports all the versioning features, including using e-tags for version
      * integrity in the API.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRResourceVersionPolicy
      */
     protected null|FHIRResourceVersionPolicy $versioning = null;
@@ -170,7 +166,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      *
      * A flag for whether the server is able to return past versions as part of the
      * vRead operation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $readHistory = null;
@@ -182,7 +177,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * new identities on the server (e.g. that is, the client PUTs to a location where
      * there is no existing resource). Allowing this operation means that the server
      * allows the client to create new identities on the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $updateCreate = null;
@@ -191,7 +185,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional create.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $conditionalCreate = null;
@@ -200,7 +193,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A flag that indicates that the server supports conditional update.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $conditionalUpdate = null;
@@ -209,7 +201,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code that indicates how the server supports conditional delete.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRConditionalDeleteStatus
      */
     protected null|FHIRConditionalDeleteStatus $conditionalDelete = null;
@@ -219,7 +210,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
      */
     protected null|array $searchInclude = [];
@@ -229,7 +219,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _revinclude (reverse include) values supported by the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
      */
     protected null|array $searchRevInclude = [];
@@ -241,7 +230,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * Search parameters for implementations to support and/or make use of - either
      * references to ones defined in the specification, or additional ones defined
      * for/by the implementation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam[]
      */
     protected null|array $searchParam = [];

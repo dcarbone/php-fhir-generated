@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -160,7 +160,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * is (or will be) published. This URL can be the target of a canonical reference.
      * It SHALL remain the same when the implementation guide is stored on different
      * servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -175,7 +174,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -187,7 +185,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * A natural language name identifying the implementation guide. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -197,7 +194,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the implementation guide.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -206,7 +202,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * The status of this implementation guide. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -217,7 +212,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * A Boolean value to indicate that this implementation guide is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -233,7 +227,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * date must change when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the implementation guide changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -244,7 +237,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * The name of the organization or individual that published the implementation
      * guide.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -255,7 +247,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -270,7 +261,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * A free text natural language description of the implementation guide from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -287,7 +277,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate implementation
      * guide instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -299,7 +288,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * A legal or geographic region in which the implementation guide is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -315,7 +303,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * A copyright statement relating to the implementation guide and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the implementation guide.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -331,7 +318,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * distribution, which is the primary mechanism by which FHIR based tooling manages
      * IG dependencies. This value must be globally unique, and should be assigned with
      * care.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
     protected null|FHIRId $packageId = null;
@@ -343,7 +329,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * The license that applies to this Implementation Guide, using an SPDX license
      * code, or 'not-open-source'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSPDXLicense
      */
     protected null|FHIRSPDXLicense $license = null;
@@ -354,7 +339,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * e.g. describes how to use. The value of this element is the formal version of
      * the specification, without the revision number, e.g.
      * [publication].[major].[minor], which is 4.0.1. for this version.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFHIRVersion[]
      */
     protected null|array $fhirVersion = [];
@@ -367,7 +351,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * Another implementation guide that this implementation depends on. Typically, an
      * implementation guide uses value sets, profiles etc.defined in other
      * implementation guides.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn[]
      */
     protected null|array $dependsOn = [];
@@ -379,7 +362,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * A set of profiles that all resources covered by this implementation guide must
      * conform to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal[]
      */
     protected null|array $global = [];
@@ -391,7 +373,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * The information needed by an IG publisher tool to publish the whole
      * implementation guide.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDefinition
      */
     protected null|FHIRImplementationGuideDefinition $definition = null;
@@ -403,7 +384,6 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      *
      * Information about an assembled implementation guide, created by the publication
      * tooling.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideManifest
      */
     protected null|FHIRImplementationGuideManifest $manifest = null;

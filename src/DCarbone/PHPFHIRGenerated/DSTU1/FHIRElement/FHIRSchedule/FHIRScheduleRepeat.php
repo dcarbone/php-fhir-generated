@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSchedule;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates how often the event should occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $frequency = null;
@@ -116,7 +115,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the occurrence of daily life that determines timing.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIREventTiming
      */
     protected null|FHIREventTiming $when = null;
@@ -125,7 +123,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * How long each repetition should last.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $duration = null;
@@ -134,7 +131,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The units of time for the duration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUnitsOfTime
      */
     protected null|FHIRUnitsOfTime $units = null;
@@ -143,7 +139,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A total count of the desired number of repetitions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $count = null;
@@ -155,7 +150,6 @@ class FHIRScheduleRepeat extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When to stop repeating the schedule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $end = null;

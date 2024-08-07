@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * The label for this particular section. This will be part of the rendered content
      * for the document, and is often used to build a table of contents.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -145,7 +144,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * A code identifying the kind of content contained within the section. This must
      * be consistent with the section title.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -156,7 +154,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * Identifies who is responsible for the information in this section, not
      * necessarily who typed it in.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $author = [];
@@ -173,7 +170,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * a focus SHALL only include resources where the logical subject (patient,
      * subject, focus, etc.) matches the section focus, or the resources have no
      * logical subject (few resources).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $focus = null;
@@ -187,7 +183,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * used to represent the content of the resource to a human. The narrative need not
      * encode all the structured data, but is required to contain sufficient detail to
      * make it "clinically safe" for a human to just read the narrative.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRNarrative
      */
     protected null|FHIRNarrative $text = null;
@@ -198,7 +193,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order applied to the items in the section entries.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $orderedBy = null;
@@ -209,7 +203,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * A reference to the actual resource from which the narrative in the section is
      * derived.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $entry = [];
@@ -221,7 +214,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      *
      * If the section is empty, why the list is empty. An empty section typically has
      * some text explaining the empty reason.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $emptyReason = null;
@@ -237,7 +229,6 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * Patient, Practitioner, Encounter, etc.).
      *
      * A nested sub-section within this section.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection[]
      */
     protected null|array $section = [];

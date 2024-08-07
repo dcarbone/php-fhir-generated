@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,7 +118,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An identifier that applies to this person in this role.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -128,7 +127,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name associated with the person.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHumanName
      */
     protected null|FHIRHumanName $name = null;
@@ -140,7 +138,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      *
      * A contact detail for the practitioner, e.g. a telephone number or an email
      * address.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact[]
      */
     protected null|array $telecom = [];
@@ -152,7 +149,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      *
      * The postal address where the practitioner can be found or visited or to which
      * mail can be delivered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAddress
      */
     protected null|FHIRAddress $address = null;
@@ -164,7 +160,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      *
      * Administrative Gender - the gender that the person is considered to have for
      * administration and record keeping purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $gender = null;
@@ -176,7 +171,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time of birth for the practitioner.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $birthDate = null;
@@ -186,7 +180,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Image of the person.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAttachment[]
      */
     protected null|array $photo = [];
@@ -196,7 +189,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The organization that the practitioner represents.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $organization = null;
@@ -207,7 +199,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Roles which this practitioner is authorized to perform for the organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $role = [];
@@ -218,7 +209,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specific specialty of the practitioner.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $specialty = [];
@@ -229,7 +219,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      *
      * The period during which the person is authorized to act as a practitioner in
      * these role(s) for the organization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -239,7 +228,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The location(s) at which this practitioner provides care.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference[]
      */
     protected null|array $location = [];
@@ -248,7 +236,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      * healthcare.
      *
      * Qualifications obtained by training and certification.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification[]
      */
     protected null|array $qualification = [];
@@ -259,7 +246,6 @@ class FHIRPractitioner extends FHIRResource implements PHPFHIRContainedTypeInter
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A language the practitioner is able to use in patient communication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $communication = [];

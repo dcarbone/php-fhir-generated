@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,6 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -125,7 +124,6 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * Identifies a specific instance of the participant object. The reference should
      * always be version specific.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $reference = null;
@@ -134,7 +132,6 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Object type being audited.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventObjectType
      */
     protected null|FHIRSecurityEventObjectType $type = null;
@@ -145,7 +142,6 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * Code representing the functional application role of Participant Object being
      * audited.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventObjectRole
      */
     protected null|FHIRSecurityEventObjectRole $role = null;
@@ -154,7 +150,6 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifier for the data life-cycle stage for the participant object.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSecurityEventObjectLifecycle
      */
     protected null|FHIRSecurityEventObjectLifecycle $lifecycle = null;
@@ -166,7 +161,6 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * Denotes policy-defined sensitivity for the Participant Object ID such as VIP,
      * HIV status, mental health status or similar topics.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $sensitivity = null;
@@ -176,7 +170,6 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      *
      * An instance-specific descriptor of the Participant Object ID audited, such as a
      * person's name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -185,7 +178,6 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text that describes the object in more detail.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -194,7 +186,6 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual query for a query-type participant object.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBase64Binary
      */
     protected null|FHIRBase64Binary $query = null;
@@ -204,7 +195,6 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * usage.
      *
      * Additional Information about the Object.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventDetail[]
      */
     protected null|array $detail = [];

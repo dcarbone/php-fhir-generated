@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,6 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * The type of enteral or infant formula such as an adult standard formula with
      * fiber or a soy-based infant formula.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $baseFormulaType = null;
@@ -120,7 +119,6 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * The product or brand name of the enteral or infant formula product such as "ACME
      * Adult Standard Formula".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $baseFormulaProductName = null;
@@ -132,7 +130,6 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * Indicates the type of modular component such as protein, carbohydrate, fat or
      * fiber to be provided in addition to or mixed with the base formula.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $additiveType = null;
@@ -143,7 +140,6 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * The product or brand name of the type of modular component to be added to the
      * formula.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $additiveProductName = null;
@@ -152,7 +148,6 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * volume, typically per mL or fluid oz. For example, an infant may require a
      * formula that provides 24 Calories per fluid ounce or an adult may require an
      * enteral formula that provides 1.5 Calorie/mL.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     protected null|FHIRSimpleQuantity $caloricDensity = null;
@@ -165,7 +160,6 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * The route or physiological path of administration into the patient's
      * gastrointestinal tract for purposes of providing the formula feeding, e.g.
      * nasogastric tube.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $routeofAdministration = null;
@@ -177,14 +171,12 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * allows for changing the administration rate or volume over time for both bolus
      * and continuous feeding. An example of this would be an instruction to increase
      * the rate of continuous feeding every 2 hours.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration[]
      */
     protected null|array $administration = [];
     /**
      * The maximum total quantity of formula that may be administered to a subject over
      * the period of time, e.g. 1440 mL over 24 hours.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRSimpleQuantity
      */
     protected null|FHIRSimpleQuantity $maxVolumeToDeliver = null;
@@ -195,7 +187,6 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      *
      * Free text formula administration, feeding instructions or additional
      * instructions or information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $administrationInstruction = null;

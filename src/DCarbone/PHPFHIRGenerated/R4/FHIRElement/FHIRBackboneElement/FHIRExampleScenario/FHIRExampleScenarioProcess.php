@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The diagram title of the group of operations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -116,7 +115,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A longer description of the group of operations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -130,7 +128,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Description of initial status before the process starts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $preConditions = null;
@@ -144,7 +141,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Description of final status after the process ends.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $postConditions = null;
@@ -152,7 +148,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Each step of the process.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep[]
      */
     protected null|array $step = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,9 +106,7 @@ class FHIRGoalLifecycleStatus extends FHIRElement
 
     const FIELD_VALUE = 'value';
 
-    /**
-     * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRCodePrimitive\FHIRGoalLifecycleStatusEnum
-     */
+    /** @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRCodePrimitive\FHIRGoalLifecycleStatusEnum */
     protected null|FHIRGoalLifecycleStatusEnum $value = null;
 
     /**

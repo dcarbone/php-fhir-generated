@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Description of how this filtering parameter is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -147,7 +146,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * the topic (or one of them if there are more than one). It will be the same, a
      * generality, or a specificity of SubscriptionTopic.resourceTrigger.resource or
      * SubscriptionTopic.eventTrigger.resource when they are present.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $resource = null;
@@ -159,7 +157,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * Either the canonical URL to a search parameter (like
      * "http://hl7.org/fhir/SearchParameter/encounter-patient") or topic-defined
      * parameter (like "hub.event") which is a label for the filter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $filterParameter = null;
@@ -172,7 +169,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * "http://hl7.org/fhir/SearchParameter/encounter-patient") or the
      * officially-defined URI for a shared filter concept (like
      * "http://example.org/concepts/shared-common-event").
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $filterDefinition = null;
@@ -180,7 +176,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparators allowed for the filter parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSearchComparator[]
      */
     protected null|array $comparator = [];
@@ -188,7 +183,6 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Modifiers allowed for the filter parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSearchModifierCode[]
      */
     protected null|array $modifier = [];

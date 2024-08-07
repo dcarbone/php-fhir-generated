@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Claim items which this service line is intended to replace.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $itemSequence = [];
@@ -141,7 +140,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      *
      * The sequence number of the details within the claim item which this line is
      * intended to replace.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $detailSequence = [];
@@ -152,7 +150,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      *
      * The sequence number of the sub-details within the details within the claim item
      * which this line is intended to replace.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $subdetailSequence = [];
@@ -162,7 +159,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The providers who are authorized for the services rendered to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $provider = [];
@@ -175,7 +171,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * When the value is a group code then this item collects a set of related claim
      * details, otherwise this contains the product, service, drug or other billing
      * code for the item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $productOrService = null;
@@ -187,7 +182,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      *
      * Item typification or modifiers codes to convey additional context for the
      * product or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $modifier = [];
@@ -198,7 +192,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the program under which this may be recovered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $programCode = [];
@@ -210,7 +203,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      *
      * The date or dates when the service or product was supplied, performed or
      * completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $servicedDate = null;
@@ -221,7 +213,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      *
      * The date or dates when the service or product was supplied, performed or
      * completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $servicedPeriod = null;
@@ -232,7 +223,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $locationCodeableConcept = null;
@@ -246,7 +236,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
     protected null|FHIRAddress $locationAddress = null;
@@ -256,7 +245,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the product or service was provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $locationReference = null;
@@ -268,7 +256,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of repetitions of a service or product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -279,7 +266,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      *
      * If the item is not a group then this is the fee for the product or service,
      * otherwise this is the total of the fees for the details of the group.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
     protected null|FHIRMoney $unitPrice = null;
@@ -292,7 +278,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * A real number that represents a multiplier used in determining the overall value
      * of services delivered and/or goods received. The concept of a Factor allows for
      * a discount or surcharge multiplier to be applied to a monetary amount.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $factor = null;
@@ -303,7 +288,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      *
      * The quantity times the unit price for an additional service or product or
      * charge.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
     protected null|FHIRMoney $net = null;
@@ -314,7 +298,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Physical service site on the patient (limb, tooth, etc.).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $bodySite = null;
@@ -325,7 +308,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $subSite = [];
@@ -336,7 +318,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      *
      * The numbers associated with notes below which apply to the adjudication of this
      * item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt[]
      */
     protected null|array $noteNumber = [];
@@ -345,7 +326,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * resource.
      *
      * The adjudication results.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication[]
      */
     protected null|array $adjudication = [];
@@ -354,7 +334,6 @@ class FHIRClaimResponseAddItem extends FHIRBackboneElement
      * resource.
      *
      * The second-tier service adjudications for payor added services.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseDetail1[]
      */
     protected null|array $detail = [];

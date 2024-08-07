@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIRElementDefinitionBase extends FHIRElement
      * ElementDefinition.path for that element. Across FHIR, there is only one base
      * definition of any element - that is, an element definition on a
      * [[[StructureDefinition]]] without a StructureDefinition.base.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $path = null;
@@ -114,7 +113,6 @@ class FHIRElementDefinitionBase extends FHIRElement
      * the Narrative, or extensions
      *
      * Minimum cardinality of the base element identified by the path.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $min = null;
@@ -124,7 +122,6 @@ class FHIRElementDefinitionBase extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Maximum cardinality of the base element identified by the path.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $max = null;

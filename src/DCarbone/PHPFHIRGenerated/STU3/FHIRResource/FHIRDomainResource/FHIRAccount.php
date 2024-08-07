@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -127,7 +127,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Unique identifier used to reference the account. May or may not be intended for
      * human use (e.g. credit card number).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -136,7 +135,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the account is presently used/usable or not.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAccountStatus
      */
     protected null|FHIRAccountStatus $status = null;
@@ -147,7 +145,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes the account for reporting and searching purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -157,7 +154,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name used for the account when displaying it to humans in reports, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -168,7 +164,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Identifies the patient, device, practitioner, location or other object the
      * account is associated with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -179,7 +174,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Identifies the period of time the account applies to; e.g. accounts created per
      * fiscal year, quarter, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -191,7 +185,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Indicates the period of time over which the account is allowed to have
      * transactions posted to it. This period may be different to the coveragePeriod
      * which is the duration of time that services may occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $active = null;
@@ -202,7 +195,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Represents the sum of all credits less all debits associated with the account.
      * Might be positive, zero or negative.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $balance = null;
@@ -212,7 +204,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The party(s) that are responsible for covering the payment of this account, and
      * what order should they be applied to the account.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage[]
      */
     protected null|array $coverage = [];
@@ -223,7 +214,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Indicates the organization, department, etc. with responsibility for the
      * account.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $owner = null;
@@ -234,7 +224,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Provides additional information about what the account tracks and how it is
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -243,7 +232,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * healthcare field, used to track charges for a patient, cost centers, etc.
      *
      * Parties financially responsible for the account.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor[]
      */
     protected null|array $guarantor = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,6 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      * Reference to the insurance card level information contained in the Coverage
      * resource. The coverage issuing insurer will use these details to locate the
      * patient's actual coverage within the insurer's information system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $coverage = null;
@@ -132,7 +131,6 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      *
      * Flag indicating if the coverage provided is inforce currently if no service
      * date(s) specified or for the whole duration of the service dates.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $inforce = null;
@@ -142,7 +140,6 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The term of the benefits documented in this response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $benefitPeriod = null;
@@ -152,7 +149,6 @@ class FHIRCoverageEligibilityResponseInsurance extends FHIRBackboneElement
      *
      * Benefits and optionally current balances, and authorization details by category
      * or service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseItem[]
      */
     protected null|array $item = [];

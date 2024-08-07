@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -157,7 +157,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The business identifier for this task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -169,7 +168,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * The URL pointing to a *FHIR*-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this Task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $instantiatesCanonical = null;
@@ -180,7 +178,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * The URL pointing to an *externally* maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this Task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $instantiatesUri = null;
@@ -196,7 +193,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * referenced by FocusOn. For example, based on a ServiceRequest (= BasedOn), a
      * task is created to fulfill a procedureRequest ( = FocusOn ) to collect a
      * specimen from a patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -208,7 +204,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * An identifier that links together multiple tasks and other requests that were
      * created in the same context.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $groupIdentifier = null;
@@ -218,7 +213,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Task that this particular task is part of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $partOf = [];
@@ -227,7 +221,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current status of the task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTaskStatus
      */
     protected null|FHIRTaskStatus $status = null;
@@ -238,7 +231,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An explanation as to why this task is held, failed, was refused, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $statusReason = null;
@@ -249,7 +241,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Contains business-specific nuances of the business state.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $businessStatus = null;
@@ -259,7 +250,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * Indicates the "level" of actionability associated with the Task, i.e. i+R[9]Cs
      * this a proposed task, a planned task, an actionable task, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTaskIntent
      */
     protected null|FHIRTaskIntent $intent = null;
@@ -269,7 +259,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * Indicates how quickly the Task should be addressed with respect to other
      * requests.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestPriority
      */
     protected null|FHIRRequestPriority $priority = null;
@@ -280,7 +269,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A name or code (or both) briefly describing what the task involves.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -290,7 +278,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free-text description of what is to be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -300,7 +287,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The request being actioned or the resource being manipulated by this task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $focus = null;
@@ -311,7 +297,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * The entity who benefits from the performance of the service specified in the
      * task (e.g., the patient).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $for = null;
@@ -322,7 +307,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * The healthcare event (e.g. a patient and healthcare provider interaction) during
      * which this task was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -334,7 +318,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * Identifies the time action was first taken against the task (start) and/or the
      * time final action was taken against the task prior to marking it as completed
      * (end).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $executionPeriod = null;
@@ -347,7 +330,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time this task was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authoredOn = null;
@@ -360,7 +342,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time of last modification to this task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $lastModified = null;
@@ -370,7 +351,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The creator of the task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $requester = null;
@@ -381,7 +361,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The kind of participant that should perform the task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $performerType = [];
@@ -391,7 +370,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Individual organization or Device currently responsible for task execution.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $owner = null;
@@ -401,7 +379,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Principal physical location where the this task is performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -412,7 +389,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description or code indicating why this task needs to be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $reasonCode = null;
@@ -422,7 +398,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource reference indicating why this task needs to be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $reasonReference = null;
@@ -433,7 +408,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      *
      * Insurance plans, coverage extensions, pre-authorizations and/or
      * pre-determinations that may be relevant to the Task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $insurance = [];
@@ -444,7 +418,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Free-text information captured about the task as it progresses.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -456,7 +429,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * Links to Provenance records for past versions of this Task that identify key
      * state transitions or updates that are likely to be relevant to a user looking at
      * the current version of the task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $relevantHistory = [];
@@ -466,7 +438,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * If the Task.focus is a request resource and the task is seeking fulfillment
      * (i.e. is asking for the request to be actioned), this element identifies any
      * limitations on what parts of the referenced request should be actioned.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskRestriction
      */
     protected null|FHIRTaskRestriction $restriction = null;
@@ -474,7 +445,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A task to be performed.
      *
      * Additional information that may be needed in the execution of the task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskInput[]
      */
     protected null|array $input = [];
@@ -482,7 +452,6 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * A task to be performed.
      *
      * Outputs produced by the Task.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput[]
      */
     protected null|array $output = [];

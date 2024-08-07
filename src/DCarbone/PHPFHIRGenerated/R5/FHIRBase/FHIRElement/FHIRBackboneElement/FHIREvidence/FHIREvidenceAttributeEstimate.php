@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,6 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Human-readable summary of the estimate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -145,7 +144,6 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Footnote or explanatory note about the estimate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -156,7 +154,6 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of attribute estimate, e.g., confidence interval or p value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -169,7 +166,6 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      *
      * The singular quantity of the attribute estimate, for attribute estimates
      * represented as single values; also used to report unit of measure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -180,7 +176,6 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Use 95 for a 95% confidence interval.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $level = null;
@@ -190,7 +185,6 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Lower bound of confidence interval.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $range = null;
@@ -202,7 +196,6 @@ class FHIREvidenceAttributeEstimate extends FHIRBackboneElement
      *
      * A nested attribute estimate; which is the attribute estimate of an attribute
      * estimate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceAttributeEstimate[]
      */
     protected null|array $attributeEstimate = [];

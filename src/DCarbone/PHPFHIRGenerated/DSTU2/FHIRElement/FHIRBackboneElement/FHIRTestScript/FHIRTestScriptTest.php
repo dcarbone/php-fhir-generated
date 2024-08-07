@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRTestScriptTest extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of this test used for tracking/logging purposes by test engines.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -110,7 +109,6 @@ class FHIRTestScriptTest extends FHIRBackboneElement
      *
      * A short description of the test used by test engines for tracking and reporting
      * purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -120,7 +118,6 @@ class FHIRTestScriptTest extends FHIRBackboneElement
      *
      * Capabilities that must exist and are assumed to function correctly on the FHIR
      * server being tested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptMetadata
      */
     protected null|FHIRTestScriptMetadata $metadata = null;
@@ -129,7 +126,6 @@ class FHIRTestScriptTest extends FHIRBackboneElement
      * implementation to determine compliance against the FHIR specification.
      *
      * Action would contain either an operation or an assertion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction1[]
      */
     protected null|array $action = [];

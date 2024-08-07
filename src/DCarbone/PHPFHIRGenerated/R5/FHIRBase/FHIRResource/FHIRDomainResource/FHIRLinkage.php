@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,6 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the asserted set of linkages are considered to be "in effect".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $active = null;
@@ -140,7 +139,6 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Identifies the user or organization responsible for asserting the linkages as
      * well as the user or organization who establishes the context in which the nature
      * of each linkage is evaluated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $author = null;
@@ -151,7 +149,6 @@ class FHIRLinkage extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Identifies which record considered as the reference to the same real-world
      * occurrence as well as how the items should be evaluated within the collection of
      * linked items.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRLinkage\FHIRLinkageItem[]
      */
     protected null|array $item = [];

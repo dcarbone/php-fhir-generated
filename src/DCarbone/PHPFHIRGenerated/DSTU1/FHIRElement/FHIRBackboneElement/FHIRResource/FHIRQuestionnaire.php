@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,6 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lifecycle status of the questionnaire as a whole.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuestionnaireStatus
      */
     protected null|FHIRQuestionnaireStatus $status = null;
@@ -123,7 +122,6 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and/or time that this version of the questionnaire was authored.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authored = null;
@@ -134,7 +132,6 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * The subject of the questionnaires: this is the patient that the answers apply
      * to, but this person is not necessarily the source of information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $subject = null;
@@ -145,7 +142,6 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * Person who received the answers to the questions in the Questionnaire and
      * recorded them in the system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $author = null;
@@ -156,7 +152,6 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * The person who answered the questions about the subject. Only used when this is
      * not the subject him/herself.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $source = null;
@@ -168,7 +163,6 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * Structured name for a predefined list of questions this questionnaire is
      * responding to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $name = null;
@@ -181,7 +175,6 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
      * defined by business processed and/ or used to refer to it when a direct URL
      * reference to the resource itself is not appropriate (e.g. in CDA documents, or
      * in written / printed documentation).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -193,7 +186,6 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
      * Encounter during which this questionnaire answers were collected. When there
      * were multiple encounters, this is the one considered most relevant to the
      * context of the answers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $encounter = null;
@@ -205,7 +197,6 @@ class FHIRQuestionnaire extends FHIRResource implements PHPFHIRContainedTypeInte
      *
      * A group of questions to a possibly similarly grouped set of questions in the
      * questionnaire.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup
      */
     protected null|FHIRQuestionnaireGroup $group = null;

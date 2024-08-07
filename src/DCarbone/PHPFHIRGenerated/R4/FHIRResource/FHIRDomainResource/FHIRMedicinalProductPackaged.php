@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,7 +119,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -129,7 +128,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product with this is a pack for.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $subject = [];
@@ -139,7 +137,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -151,7 +148,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
      *
      * The legal status of supply of the medicinal product as classified by the
      * regulator.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $legalStatusOfSupply = null;
@@ -162,7 +158,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Marketing information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus[]
      */
     protected null|array $marketingStatus = [];
@@ -172,7 +167,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Package Item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $marketingAuthorization = null;
@@ -182,7 +176,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Manufacturer of this Package Item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $manufacturer = [];
@@ -190,7 +183,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
      * A medicinal product in a container or package.
      *
      * Batch numbering.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier[]
      */
     protected null|array $batchIdentifier = [];
@@ -199,7 +191,6 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
      *
      * A packaging item, as a contained for medicine, possibly with other packaging
      * items within.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem[]
      */
     protected null|array $packageItem = [];

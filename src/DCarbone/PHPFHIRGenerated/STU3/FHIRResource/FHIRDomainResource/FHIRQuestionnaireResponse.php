@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * A business identifier assigned to a particular completed (or partially
      * completed) questionnaire.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -135,7 +134,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * QuestionnaireResponse. For example, a ProcedureRequest seeking an intake
      * assessment or a decision support recommendation to assess for post-partum
      * depression.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -146,7 +144,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * A procedure or observation that this questionnaire was performed as part of the
      * execution of. For example, the surgery a checklist was executed as part of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $parent = [];
@@ -157,7 +154,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * The Questionnaire that defines and organizes the questions for which answers are
      * being provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $questionnaire = null;
@@ -166,7 +162,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The position of the questionnaire response within its overall lifecycle.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuestionnaireResponseStatus
      */
     protected null|FHIRQuestionnaireResponseStatus $status = null;
@@ -178,7 +173,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * The subject of the questionnaire response. This could be a patient,
      * organization, practitioner, device, etc. This is who/what the answers apply to,
      * but is not necessarily the source of information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -189,7 +183,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * The encounter or episode of care with primary association to the questionnaire
      * response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $context = null;
@@ -202,7 +195,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and/or time that this set of answers were last changed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authored = null;
@@ -213,7 +205,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * Person who received the answers to the questions in the QuestionnaireResponse
      * and recorded them in the system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $author = null;
@@ -223,7 +214,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who answered the questions about the subject.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $source = null;
@@ -234,7 +224,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * A group or question item from the original questionnaire for which answers are
      * provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseItem[]
      */
     protected null|array $item = [];

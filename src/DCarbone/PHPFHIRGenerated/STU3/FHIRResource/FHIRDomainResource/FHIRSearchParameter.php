@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -166,7 +166,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * parameter is (or will be) published. The URL SHOULD include the major version of
      * the search parameter. For more information see [Technical and Business
      * Versions](resource.html#versions).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -181,7 +180,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -193,7 +191,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * A natural language name identifying the search parameter. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -202,7 +199,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * The status of this search parameter. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -213,7 +209,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * A boolean value to indicate that this search parameter is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -229,7 +224,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * must change if and when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the search parameter changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -239,7 +233,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the search parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -250,7 +243,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -265,7 +257,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate search parameter instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -277,7 +268,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * A legal or geographic region in which the search parameter is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -294,7 +284,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * Explaination of why this search parameter is needed and why it has been designed
      * as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -306,7 +295,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * The code used in the URL or the parameter name in a parameters resource for this
      * search parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -315,7 +303,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The base resource type(s) that this search parameter can be used against.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[]
      */
     protected null|array $base = [];
@@ -324,7 +311,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * The type of value a search parameter refers to, and how the content is
      * interpreted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSearchParamType
      */
     protected null|FHIRSearchParamType $type = null;
@@ -338,7 +324,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * from which it is defined. I.e. the parameter should have the same meaning, and
      * (usually) the functionality should be a proper subset of the underlying search
      * parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $derivedFrom = null;
@@ -355,7 +340,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * A free text natural language description of the search parameter from a
      * consumer's perspective. and how it used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -365,7 +349,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A FHIRPath expression that returns a set of elements for the search parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $expression = null;
@@ -375,7 +358,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An XPath expression that returns a set of elements for the search parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $xpath = null;
@@ -386,7 +368,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      *
      * How the search parameter relates to the set of elements returned by evaluating
      * the xpath query.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRXPathUsageType
      */
     protected null|FHIRXPathUsageType $xpathUsage = null;
@@ -395,7 +376,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Types of resource (if a resource is referenced).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType[]
      */
     protected null|array $target = [];
@@ -404,7 +384,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Comparators supported for the search parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSearchComparator[]
      */
     protected null|array $comparator = [];
@@ -413,7 +392,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A modifier supported for the search parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSearchModifierCode[]
      */
     protected null|array $modifier = [];
@@ -428,7 +406,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * if they contain a reference to a resource which matches the chained parameter
      * value. Values for this field should be drawn from SearchParameter.code for a
      * parameter on the target resource type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
     protected null|array $chain = [];
@@ -437,7 +414,6 @@ class FHIRSearchParameter extends FHIRDomainResource implements PHPFHIRContained
      * search/filter on a resource.
      *
      * Used to define the parts of a composite search parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSearchParameter\FHIRSearchParameterComponent[]
      */
     protected null|array $component = [];

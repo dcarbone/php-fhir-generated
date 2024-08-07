@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this payment reconciliation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -146,7 +145,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFinancialResourceStatusCodes
      */
     protected null|FHIRFinancialResourceStatusCodes $status = null;
@@ -157,7 +155,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * The period of time for which payments have been gathered into this bulk payment
      * for settlement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -170,7 +167,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when the resource was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $created = null;
@@ -180,7 +176,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The party who generated the payment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $paymentIssuer = null;
@@ -190,7 +185,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Original request resource reference.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $request = null;
@@ -200,7 +194,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The practitioner who is responsible for the services rendered to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $requestor = null;
@@ -208,7 +201,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The outcome of a request for a reconciliation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRemittanceOutcome
      */
     protected null|FHIRRemittanceOutcome $outcome = null;
@@ -219,7 +211,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      *
      * A human readable description of the status of the request for the
      * reconciliation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $disposition = null;
@@ -230,7 +221,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of payment as indicated on the financial instrument.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $paymentDate = null;
@@ -240,7 +230,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Total payment amount as indicated on the financial instrument.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
     protected null|FHIRMoney $paymentAmount = null;
@@ -251,7 +240,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Issuer's unique identifier for the payment instrument.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $paymentIdentifier = null;
@@ -260,7 +248,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * the payment items being paid.
      *
      * Distribution of the payment amount for a previously acknowledged payable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationDetail[]
      */
     protected null|array $detail = [];
@@ -271,7 +258,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code for the form to be used for printing the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $formCode = null;
@@ -280,7 +266,6 @@ class FHIRPaymentReconciliation extends FHIRDomainResource implements PHPFHIRCon
      * the payment items being paid.
      *
      * A note that describes or explains the processing in a human readable form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPaymentReconciliation\FHIRPaymentReconciliationProcessNote[]
      */
     protected null|array $processNote = [];

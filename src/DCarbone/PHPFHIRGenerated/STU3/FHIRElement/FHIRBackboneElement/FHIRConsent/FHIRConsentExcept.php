@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Action to take - permit or deny - when the exception conditions are met.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRConsentExceptType
      */
     protected null|FHIRConsentExceptType $type = null;
@@ -117,7 +116,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timeframe in this exception is valid.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -128,7 +126,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      *
      * Who or what is controlled by this Exception. Use group to identify a set of
      * actors by some property they share (e.g. 'admitting officers').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor1[]
      */
     protected null|array $actor = [];
@@ -139,7 +136,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions controlled by this Exception.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $action = [];
@@ -151,7 +147,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * A set of security labels that define which resources are controlled by this
      * exception. If more than one label is specified, all resources must have all the
      * specified labels.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
     protected null|array $securityLabel = [];
@@ -162,7 +157,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      *
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this exception.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
     protected null|array $purpose = [];
@@ -174,7 +168,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * The class of information covered by this exception. The type can be a FHIR
      * resource type, a profile on a type, or a CDA document, or some other type that
      * indicates what sort of information the consent relates to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
     protected null|array $class = [];
@@ -184,7 +177,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this code is found in an instance, then the exception applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
      */
     protected null|array $code = [];
@@ -195,7 +187,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this exception.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $dataPeriod = null;
@@ -206,7 +197,6 @@ class FHIRConsentExcept extends FHIRBackboneElement
      *
      * The resources controlled by this exception, if specific resources are
      * referenced.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData1[]
      */
     protected null|array $data = [];

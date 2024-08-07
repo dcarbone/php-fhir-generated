@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
      * the Narrative, or extensions
      *
      * MimeType of the binary content represented as a standard MimeType (BCP 13).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $contentType = null;
@@ -126,7 +125,6 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
      * DocumentReference), or may be some non-related Resource purely as a security
      * proxy. E.g. to identify that the binary resource relates to a patient, and
      * access should only be granted to applications that have access to the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $securityContext = null;
@@ -136,7 +134,6 @@ class FHIRBinary extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual content, base64 encoded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
     protected null|FHIRBase64Binary $data = null;

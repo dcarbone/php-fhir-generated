@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * An absolute URI that is used to reference this code system, including in
      * [Coding]{datatypes.html#Coding}.system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $system = null;
@@ -118,7 +117,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      * and therefore the version does not need to be maintained. However many code
      * systems are not well maintained, and the version needs to be defined and
      * tracked.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -128,7 +126,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $caseSensitive = null;
@@ -138,7 +135,6 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      * Concepts that are in the code system. The concept definitions are inherently
      * hierarchical, but the definitions must be consulted to determine what the
      * meaning of the hierarchical relationships are.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[]
      */
     protected null|array $concept = [];

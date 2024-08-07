@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -142,7 +142,6 @@ class FHIRTriggerDefinition extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of triggering event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRTriggerType
      */
     protected null|FHIRTriggerType $type = null;
@@ -154,7 +153,6 @@ class FHIRTriggerDefinition extends FHIRDataType
      * A formal name for the event. This may be an absolute URI that identifies the
      * event formally (e.g. from a trigger registry), or a simple relative URI that
      * identifies the event in a local context.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -165,7 +163,6 @@ class FHIRTriggerDefinition extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that identifies the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -178,7 +175,6 @@ class FHIRTriggerDefinition extends FHIRDataType
      * A reference to a SubscriptionTopic resource that defines the event. If this
      * element is provided, no other information about the trigger definition may be
      * supplied.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $subscriptionTopic = null;
@@ -192,7 +188,6 @@ class FHIRTriggerDefinition extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing of the event (if this is a periodic trigger).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     protected null|FHIRTiming $timingTiming = null;
@@ -202,7 +197,6 @@ class FHIRTriggerDefinition extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timing of the event (if this is a periodic trigger).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $timingReference = null;
@@ -213,7 +207,6 @@ class FHIRTriggerDefinition extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing of the event (if this is a periodic trigger).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $timingDate = null;
@@ -227,7 +220,6 @@ class FHIRTriggerDefinition extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The timing of the event (if this is a periodic trigger).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $timingDateTime = null;
@@ -239,7 +231,6 @@ class FHIRTriggerDefinition extends FHIRDataType
      *
      * The triggering data of the event (if this is a data trigger). If more than one
      * data is requirement is specified, then all the data requirements must be true.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement[]
      */
     protected null|array $data = [];
@@ -252,7 +243,6 @@ class FHIRTriggerDefinition extends FHIRDataType
      *
      * A boolean-valued expression that is evaluated in the context of the container of
      * the trigger definition and returns whether or not the trigger fires.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     protected null|FHIRExpression $condition = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,6 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier associated with the detected issue record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -137,7 +136,6 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the status of the detected issue.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRObservationStatus
      */
     protected null|FHIRObservationStatus $status = null;
@@ -148,7 +146,6 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifies the general type of issue identified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -158,7 +155,6 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Indicates the degree of importance associated with the identified issue based on
      * the potential impact on the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDetectedIssueSeverity
      */
     protected null|FHIRDetectedIssueSeverity $severity = null;
@@ -168,7 +164,6 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the patient whose record the detected issue is associated with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -181,7 +176,6 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date or date-time when the detected issue was initially identified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -192,7 +186,6 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Individual or device responsible for the issue being raised. For example, a
      * decision support application or a pharmacist conducting a medication review.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $author = null;
@@ -203,7 +196,6 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Indicates the resource representing the current activity or proposed activity
      * that is potentially problematic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $implicated = [];
@@ -213,7 +205,6 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A textual explanation of the detected issue.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $detail = null;
@@ -224,7 +215,6 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The literature, knowledge-base or similar reference that describes the
      * propensity for the detected issue identified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $reference = null;
@@ -237,7 +227,6 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * eliminate the likelihood of the risk identified by the detected issue from
      * manifesting. Can also reflect an observation of known mitigating factors that
      * may reduce/eliminate the need for any action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDetectedIssue\FHIRDetectedIssueMitigation[]
      */
     protected null|array $mitigation = [];

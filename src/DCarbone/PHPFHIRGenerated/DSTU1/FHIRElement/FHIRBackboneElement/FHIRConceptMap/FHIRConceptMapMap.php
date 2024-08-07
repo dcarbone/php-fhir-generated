@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRConceptMapMap extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * System of the target.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $system = null;
@@ -112,7 +111,6 @@ class FHIRConceptMapMap extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Code that identifies the target concept.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -122,7 +120,6 @@ class FHIRConceptMapMap extends FHIRBackboneElement
      *
      * equal | equivalent | wider | subsumes | narrower | specialises | inexact |
      * unmatched | disjoint.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRConceptMapEquivalence
      */
     protected null|FHIRConceptMapEquivalence $equivalence = null;
@@ -131,7 +128,6 @@ class FHIRConceptMapMap extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of status/issues in mapping.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $comments = null;
@@ -143,7 +139,6 @@ class FHIRConceptMapMap extends FHIRBackboneElement
      * execute this mapping, the specified value set must be mapped to some data
      * element or source that is in context. The mapping may still be useful without a
      * place for the additional data elements, but the equivalence cannot be relied on.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn[]
      */
     protected null|array $product = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short descriptive label the process to be used in tables or diagrams.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -136,7 +135,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An explanation of what the process represents and what it does.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -151,7 +149,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      *
      * Description of the initial state of the actors, environment and data before the
      * process starts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $preConditions = null;
@@ -166,7 +163,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      *
      * Description of the final state of the actors, environment and data after the
      * process has been successfully completed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $postConditions = null;
@@ -174,7 +170,6 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * A significant action that occurs as part of the process.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep[]
      */
     protected null|array $step = [];

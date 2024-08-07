@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,6 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * The cost of the packaged medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost[]
      */
     protected null|array $cost = [];
@@ -122,7 +121,6 @@ class FHIRMedicationKnowledgePackaging extends FHIRBackboneElement
      *
      * A reference to a PackagedProductDefinition that provides the details of the
      * product that is in the packaging and is being priced.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $packagedProduct = null;

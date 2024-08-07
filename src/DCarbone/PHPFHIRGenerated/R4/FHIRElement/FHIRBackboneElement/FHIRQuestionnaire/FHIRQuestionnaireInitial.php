@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuest
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -141,7 +140,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $valueDecimal = null;
@@ -151,7 +149,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $valueInteger = null;
@@ -162,7 +159,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $valueDate = null;
@@ -175,7 +171,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $valueDateTime = null;
@@ -184,7 +179,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
     protected null|FHIRTime $valueTime = null;
@@ -194,7 +188,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -204,7 +197,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual value to for an initial answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $valueUri = null;
@@ -214,7 +206,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $valueAttachment = null;
@@ -224,7 +215,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $valueCoding = null;
@@ -236,7 +226,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -246,7 +235,6 @@ class FHIRQuestionnaireInitial extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual value to for an initial answer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $valueReference = null;

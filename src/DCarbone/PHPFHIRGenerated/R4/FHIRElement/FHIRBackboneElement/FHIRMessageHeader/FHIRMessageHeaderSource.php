@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMessa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable name for the source system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -116,7 +115,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * May include configuration or other information useful in debugging.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $software = null;
@@ -127,7 +125,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      *
      * Can convey versions of multiple systems in situations where a message passes
      * through multiple hands.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -139,7 +136,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      *
      * An e-mail, phone, website or other contact point to use to resolve issues with
      * message communications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint
      */
     protected null|FHIRContactPoint $contact = null;
@@ -149,7 +145,6 @@ class FHIRMessageHeaderSource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identifies the routing target to send acknowledgements to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
     protected null|FHIRUrl $endpoint = null;

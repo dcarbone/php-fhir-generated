@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -167,7 +167,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * definition is (or will be) published. The URL SHOULD include the major version
      * of the service definition. For more information see [Technical and Business
      * Versions](resource.html#versions).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -181,7 +180,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * an instance. This is used for CMS or NQF identifiers for a measure artifact.
      * Note that at least one identifier is required for non-experimental active
      * artifacts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -196,7 +194,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -208,7 +205,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * A natural language name identifying the service definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -218,7 +214,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the service definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -227,7 +222,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * The status of this service definition. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -238,7 +232,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * A boolean value to indicate that this service definition is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -254,7 +247,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * date must change if and when the business version changes and it must change if
      * the status code changes. In addition, it should change when the substantive
      * content of the service definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -265,7 +257,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * The name of the individual or organization that published the service
      * definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -282,7 +273,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * A free text natural language description of the service definition from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -299,7 +289,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * Explaination of why this service definition is needed and why it has been
      * designed as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -309,7 +298,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the module is used from a clinical perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $usage = null;
@@ -321,7 +309,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -333,7 +320,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -344,7 +330,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * The period during which the service definition content was or is planned to be
      * in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -359,7 +344,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate service definition instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -371,7 +355,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * A legal or geographic region in which the service definition is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -383,7 +366,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * Descriptive topics related to the module. Topics provide a high-level
      * categorization of the module that can be useful for filtering and searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $topic = [];
@@ -395,7 +377,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * A contributor to the content of the module, including authors, editors,
      * reviewers, and endorsers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContributor[]
      */
     protected null|array $contributor = [];
@@ -406,7 +387,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -424,7 +404,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * A copyright statement relating to the service definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the service definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -436,7 +415,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * Related resources such as additional documentation, justification, or
      * bibliographic references.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -448,7 +426,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * The trigger element defines when the rule should be invoked. This information is
      * used by consumers of the rule to determine how to integrate the rule into a
      * specific workflow.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition[]
      */
     protected null|array $trigger = [];
@@ -460,7 +437,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      *
      * Data requirements are a machine processable description of the data required by
      * the module in order to perform a successful evaluation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement[]
      */
     protected null|array $dataRequirement = [];
@@ -470,7 +446,6 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to the operation that is used to invoke this service.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $operationDefinition = null;

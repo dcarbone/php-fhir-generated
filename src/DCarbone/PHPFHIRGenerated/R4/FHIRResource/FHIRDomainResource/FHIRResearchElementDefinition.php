@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -184,7 +184,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * definition is (or will be) published. This URL can be the target of a canonical
      * reference. It SHALL remain the same when the research element definition is
      * stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -197,7 +196,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * A formal identifier that is used to identify this research element definition
      * when it is represented in other formats, or referenced in a specification,
      * model, design or an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -217,7 +215,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * versioning knowledge assets, refer to the Decision Support Service
      * specification. Note that a version is required for non-experimental active
      * artifacts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -229,7 +226,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * A natural language name identifying the research element definition. This name
      * should be usable as an identifier for the module by machine processing
      * applications such as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -239,7 +235,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the research element definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -250,7 +245,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * The short title provides an alternate title for use in informal descriptive
      * contexts where the full, formal title is not necessary.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $shortTitle = null;
@@ -261,7 +255,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * An explanatory or alternate title for the ResearchElementDefinition giving
      * additional information about its content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $subtitle = null;
@@ -270,7 +263,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * The status of this research element definition. Enables tracking the life-cycle
      * of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -281,7 +273,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * A Boolean value to indicate that this research element definition is authored
      * for testing purposes (or education/evaluation/marketing) and is not intended to
      * be used for genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -294,7 +285,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * The intended subjects for the ResearchElementDefinition. If this element is not
      * provided, a Patient subject is assumed, but the subject of the
      * ResearchElementDefinition can be anything.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subjectCodeableConcept = null;
@@ -306,7 +296,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * The intended subjects for the ResearchElementDefinition. If this element is not
      * provided, a Patient subject is assumed, but the subject of the
      * ResearchElementDefinition can be anything.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subjectReference = null;
@@ -322,7 +311,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * published. The date must change when the business version changes and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the research element definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -333,7 +321,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * The name of the organization or individual that published the research element
      * definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -344,7 +331,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -359,7 +345,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * A free text natural language description of the research element definition from
      * a consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -369,7 +354,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable string to clarify or explain concepts about the resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $comment = [];
@@ -386,7 +370,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate research element
      * definition instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -398,7 +381,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * A legal or geographic region in which the research element definition is
      * intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -413,7 +395,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * Explanation of why this research element definition is needed and why it has
      * been designed as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -424,7 +405,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * A detailed description, from a clinical perspective, of how the
      * ResearchElementDefinition is used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $usage = null;
@@ -440,7 +420,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * A copyright statement relating to the research element definition and/or its
      * contents. Copyright statements are generally legal restrictions on the use and
      * publishing of the research element definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -452,7 +431,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -464,7 +442,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval but does not change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -475,7 +452,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * The period during which the research element definition content was or is
      * planned to be in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -488,7 +464,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * Descriptive topics related to the content of the ResearchElementDefinition.
      * Topics provide a high-level categorization grouping types of
      * ResearchElementDefinitions that can be useful for filtering and searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $topic = [];
@@ -499,7 +474,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * An individiual or organization primarily involved in the creation and
      * maintenance of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $author = [];
@@ -510,7 +484,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * An individual or organization primarily responsible for internal coherence of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $editor = [];
@@ -521,7 +494,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $reviewer = [];
@@ -532,7 +504,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * An individual or organization responsible for officially endorsing the content
      * for use in some setting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $endorser = [];
@@ -544,7 +515,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -556,7 +526,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * A reference to a Library resource containing the formal logic used by the
      * ResearchElementDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
     protected null|array $library = [];
@@ -565,7 +534,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of research element, a population, an exposure, or an outcome.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRResearchElementType
      */
     protected null|FHIRResearchElementType $type = null;
@@ -575,7 +543,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of the outcome (e.g. Dichotomous, Continuous, or Descriptive).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRVariableType
      */
     protected null|FHIRVariableType $variableType = null;
@@ -585,7 +552,6 @@ class FHIRResearchElementDefinition extends FHIRDomainResource implements PHPFHI
      *
      * A characteristic that defines the members of the research element. Multiple
      * characteristics are applied with "and" semantics.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRResearchElementDefinition\FHIRResearchElementDefinitionCharacteristic[]
      */
     protected null|array $characteristic = [];

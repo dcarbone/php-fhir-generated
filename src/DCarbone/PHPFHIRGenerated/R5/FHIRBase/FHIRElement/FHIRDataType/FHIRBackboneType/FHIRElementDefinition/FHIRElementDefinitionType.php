@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBac
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,7 +131,6 @@ class FHIRElementDefinitionType extends FHIRBackboneType
      * References are URLs that are relative to http://hl7.org/fhir/StructureDefinition
      * e.g. "string" is a reference to http://hl7.org/fhir/StructureDefinition/string.
      * Absolute URLs are only allowed in logical models.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $code = null;
@@ -148,7 +147,6 @@ class FHIRElementDefinitionType extends FHIRBackboneType
      * Implementation Guide by a canonical URL. When an implementation guide is
      * specified, the type SHALL conform to at least one profile defined in the
      * implementation guide.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $profile = [];
@@ -166,7 +164,6 @@ class FHIRElementDefinitionType extends FHIRBackboneType
      * Implementation Guide by a canonical URL. When an implementation guide is
      * specified, the target resource SHALL conform to at least one profile defined in
      * the implementation guide.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $targetProfile = [];
@@ -177,7 +174,6 @@ class FHIRElementDefinitionType extends FHIRBackboneType
      * If the type is a reference to another resource, how the resource is or can be
      * aggregated - is it a contained resource, or a reference, and if the context is a
      * bundle, is it included in the bundle.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRAggregationMode[]
      */
     protected null|array $aggregation = [];
@@ -188,7 +184,6 @@ class FHIRElementDefinitionType extends FHIRBackboneType
      *
      * Whether this reference needs to be version specific or version independent, or
      * whether either can be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRReferenceVersionRules
      */
     protected null|FHIRReferenceVersionRules $versioning = null;

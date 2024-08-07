@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * It qualifies the interval of temperature, which characterizes an occurrence of
      * handling. Conditions that are not related to temperature may be handled in the
      * instruction element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $temperatureQualifier = null;
@@ -133,7 +132,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The temperature interval for this set of handling instructions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $temperatureRange = null;
@@ -143,7 +141,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The maximum time interval of preservation of the specimen with these conditions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $maxDuration = null;
@@ -158,7 +155,6 @@ class FHIRSpecimenDefinitionHandling extends FHIRBackboneElement
      *
      * Additional textual instructions for the preservation or transport of the
      * specimen. For instance, 'Protect from light exposure'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $instruction = null;

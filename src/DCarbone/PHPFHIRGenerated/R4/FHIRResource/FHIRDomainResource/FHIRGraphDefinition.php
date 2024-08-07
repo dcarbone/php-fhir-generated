@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -148,7 +148,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * address at which at which an authoritative instance of this graph definition is
      * (or will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the graph definition is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -163,7 +162,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -175,7 +173,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * A natural language name identifying the graph definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -184,7 +181,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * The status of this graph definition. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -195,7 +191,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * A Boolean value to indicate that this graph definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -211,7 +206,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * must change when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * graph definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -221,7 +215,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the organization or individual that published the graph definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -232,7 +225,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -247,7 +239,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * A free text natural language description of the graph definition from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -264,7 +255,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate graph definition
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -276,7 +266,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * A legal or geographic region in which the graph definition is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -291,7 +280,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      *
      * Explanation of why this graph definition is needed and why it has been designed
      * as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -302,7 +290,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * the Narrative, or extensions
      *
      * The type of FHIR resource at which instances of this graph start.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $start = null;
@@ -313,7 +300,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * the Narrative, or extensions
      *
      * The profile that describes the use of the base resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $profile = null;
@@ -323,7 +309,6 @@ class FHIRGraphDefinition extends FHIRDomainResource implements PHPFHIRContained
      * resource defines a set and makes rules about the set.
      *
      * Links this graph makes rules about.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
      */
     protected null|array $link = [];

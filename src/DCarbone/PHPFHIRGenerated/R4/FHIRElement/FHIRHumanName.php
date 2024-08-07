@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRHumanName extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the purpose for this name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRNameUse
      */
     protected null|FHIRNameUse $use = null;
@@ -114,7 +113,6 @@ class FHIRHumanName extends FHIRElement
      *
      * Specifies the entire name as it should be displayed e.g. on an application UI.
      * This may be provided instead of or as well as the specific parts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -125,7 +123,6 @@ class FHIRHumanName extends FHIRElement
      *
      * The part of a name that links to the genealogy. In some cultures (e.g. Eritrea)
      * the family name of a son is the first name of his father.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $family = null;
@@ -135,7 +132,6 @@ class FHIRHumanName extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Given name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $given = [];
@@ -146,7 +142,6 @@ class FHIRHumanName extends FHIRElement
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the start of the name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $prefix = [];
@@ -157,7 +152,6 @@ class FHIRHumanName extends FHIRElement
      *
      * Part of the name that is acquired as a title due to academic, legal, employment
      * or nobility status, etc. and that appears at the end of the name.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $suffix = [];
@@ -167,7 +161,6 @@ class FHIRHumanName extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the period of time when this name was valid for the named person.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;

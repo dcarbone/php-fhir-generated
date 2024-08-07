@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -98,7 +98,6 @@ class FHIRConformanceQuery extends FHIRBackboneElement
      *
      * The name of a query, which is used in the _query parameter when the query is
      * called.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -107,7 +106,6 @@ class FHIRConformanceQuery extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the custom query, defined either in FHIR core or another profile.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $definition = null;
@@ -117,7 +115,6 @@ class FHIRConformanceQuery extends FHIRBackboneElement
      *
      * Additional information about how the query functions in this particular
      * implementation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $documentation = null;
@@ -127,7 +124,6 @@ class FHIRConformanceQuery extends FHIRBackboneElement
      * particular implementation.
      *
      * Identifies which of the parameters for the named query are supported.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam[]
      */
     protected null|array $parameter = [];

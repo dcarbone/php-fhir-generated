@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      *
      * The sequence number of the line item submitted which contains the error. This
      * value is omitted when the error occurs outside of the item structure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $itemSequence = null;
@@ -137,7 +136,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * The sequence number of the detail within the line item submitted which contains
      * the error. This value is omitted when the error occurs outside of the item
      * structure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $detailSequence = null;
@@ -149,7 +147,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * The sequence number of the sub-detail within the detail within the line item
      * submitted which contains the error. This value is omitted when the error occurs
      * outside of the item structure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $subDetailSequence = null;
@@ -161,7 +158,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      *
      * An error code, from a specified code system, which details why the claim could
      * not be adjudicated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -173,7 +169,6 @@ class FHIRClaimResponseError extends FHIRBackboneElement
      * A [simple subset of FHIRPath](fhirpath.html#simple) limited to element names,
      * repetition indicators and the default child accessor that identifies one of the
      * elements in the resource that caused this issue to be raised.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $expression = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,6 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Identifier for the organization that is used to identify the endpoint across
      * multiple disparate systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -137,7 +136,6 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * active | suspended | error | off | test.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIREndpointStatus
      */
     protected null|FHIREndpointStatus $status = null;
@@ -149,7 +147,6 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A coded value that represents the technical details of the usage of this
      * endpoint, such as what WSDLs should be used in what way. (e.g.
      * XDS.b/DICOM/cds-hook).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $connectionType = null;
@@ -159,7 +156,6 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A friendly name that this endpoint can be referred to with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -171,7 +167,6 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * The organization that manages this endpoint (even if technically another
      * organisation is hosting this in the cloud, it is the organisation associated
      * with the data).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $managingOrganization = null;
@@ -183,7 +178,6 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * Contact details for a human to contact about the subscription. The primary use
      * of this for system administrator troubleshooting.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactPoint[]
      */
     protected null|array $contact = [];
@@ -193,7 +187,6 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The interval during which the endpoint is expected to be operational.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -205,7 +198,6 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      *
      * The payload type describes the acceptable content that can be communicated on
      * the endpoint.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $payloadType = [];
@@ -218,7 +210,6 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * The mime type to send the payload in - e.g. application/fhir+xml,
      * application/fhir+json. If the mime type is not specified, then the sender could
      * send any content (including no content depending on the connectionType).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCode[]
      */
     protected null|array $payloadMimeType = [];
@@ -228,7 +219,6 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The uri that describes the actual end-point to connect to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $address = null;
@@ -238,7 +228,6 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Additional headers / information to send as part of the notification.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString[]
      */
     protected null|array $header = [];

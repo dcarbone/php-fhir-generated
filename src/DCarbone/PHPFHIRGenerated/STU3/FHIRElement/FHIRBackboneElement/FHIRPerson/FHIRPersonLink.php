@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPer
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,6 @@ class FHIRPersonLink extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resource to which this actual person is associated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $target = null;
@@ -107,7 +106,6 @@ class FHIRPersonLink extends FHIRBackboneElement
      *
      * Level of assurance that this link is actually associated with the target
      * resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentityAssuranceLevel
      */
     protected null|FHIRIdentityAssuranceLevel $assurance = null;

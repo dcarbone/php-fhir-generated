@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the purpose of this bundle- how it was intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBundleType
      */
     protected null|FHIRBundleType $type = null;
@@ -120,7 +119,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * If a set of search matches, this is the total number of matches for the search
      * (as opposed to the number of results in this bundle).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $total = null;
@@ -128,7 +126,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A container for a collection of resources.
      *
      * A series of links that provide context to this bundle.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink[]
      */
     protected null|array $link = [];
@@ -137,7 +134,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * An entry in a bundle resource - will either contain a resource, or information
      * about a resource (transactions and history only).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry[]
      */
     protected null|array $entry = [];
@@ -150,7 +146,6 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Digital Signature - base64 encoded. XML DigSIg or a JWT.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSignature
      */
     protected null|FHIRSignature $signature = null;

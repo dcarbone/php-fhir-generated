@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code (or set of codes) that identify this substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -112,7 +111,6 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * A description of the substance - its appearance, handling requirements, and
      * other usage notes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -121,7 +119,6 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
      *
      * Substance may be used to describe a kind of substance, or a specific
      * package/container of the substance: an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceInstance
      */
     protected null|FHIRSubstanceInstance $instance = null;
@@ -129,7 +126,6 @@ class FHIRSubstance extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * A homogeneous material with a definite composition.
      *
      * A substance can be composed of other substances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSubstance\FHIRSubstanceIngredient[]
      */
     protected null|array $ingredient = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A type of resource exposed via the restful interface.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $type = null;
@@ -118,7 +117,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * A specification of the profile that describes the solution's support for the
      * resource, including any constraints on cardinality, bindings, lengths or other
      * limitations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $profile = null;
@@ -128,7 +126,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * particular implementation.
      *
      * Identifies a restful operation supported by the solution.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation[]
      */
     protected null|array $operation = [];
@@ -138,7 +135,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      *
      * A flag for whether the server is able to return past versions as part of the
      * vRead operation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $readHistory = null;
@@ -150,7 +146,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * the server. If the update operation is used (client) or allowed (server) to a
      * new location where a resource doesn't already exist. This means that the server
      * allows the client to create new identities on the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $updateCreate = null;
@@ -159,7 +154,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A list of _include values supported by the server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString[]
      */
     protected null|array $searchInclude = [];
@@ -169,7 +163,6 @@ class FHIRConformanceResource extends FHIRBackboneElement
      * particular implementation.
      *
      * Additional search parameters for implementations to support and/or make use of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam[]
      */
     protected null|array $searchParam = [];

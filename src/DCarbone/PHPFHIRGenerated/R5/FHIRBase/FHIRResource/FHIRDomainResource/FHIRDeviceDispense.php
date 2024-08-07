@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -159,7 +159,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this dispensation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -169,7 +168,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The order or request that this dispense is fulfilling.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -179,7 +177,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The bigger event that this dispense is a part of.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $partOf = [];
@@ -188,7 +185,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the set of dispense events.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDeviceDispenseStatusCodes
      */
     protected null|FHIRDeviceDispenseStatusCodes $status = null;
@@ -199,7 +195,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the reason why a dispense was or was not performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $statusReason = null;
@@ -210,7 +205,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of device dispense.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -223,7 +217,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * Identifies the device being dispensed. This is either a link to a resource
      * representing the details of the device or a simple attribute carrying a code
      * that identifies the device from a known list of devices.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $device = null;
@@ -233,7 +226,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person to whom the device is intended.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -245,7 +237,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * Identifies the person who picked up the device or the person or location where
      * the device was delivered. This may be a patient or their caregiver, but some
      * cases exist where it can be a healthcare professional or a location.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $receiver = null;
@@ -255,7 +246,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter that establishes the context for this event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -265,7 +255,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information that supports the device being dispensed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $supportingInformation = [];
@@ -274,7 +263,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * to a professional for their use.
      *
      * Indicates who or what performed the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDispense\FHIRDeviceDispensePerformer[]
      */
     protected null|array $performer = [];
@@ -284,7 +272,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The principal physical location where the dispense was performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -295,7 +282,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of dispensing event that is performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -307,7 +293,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The number of devices that have been dispensed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -321,7 +306,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the dispensed product was packaged and reviewed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $preparedDate = null;
@@ -336,7 +320,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * The time the dispensed product was made available to the patient or their
      * representative.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $whenHandedOver = null;
@@ -347,7 +330,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * Identification of the facility/location where the device was /should be shipped
      * to, as part of the dispense process.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $destination = null;
@@ -359,7 +341,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * Extra information about the dispense that could not be conveyed in the other
      * attributes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -373,7 +354,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      * the Narrative, or extensions
      *
      * The full representation of the instructions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $usageInstruction = null;
@@ -384,7 +364,6 @@ class FHIRDeviceDispense extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * A summary of the events of interest that have occurred, such as when the
      * dispense was verified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $eventHistory = [];

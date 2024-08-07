@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRPopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the specific population.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $ageRange = null;
@@ -110,7 +109,6 @@ class FHIRPopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the specific population.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $ageCodeableConcept = null;
@@ -121,7 +119,6 @@ class FHIRPopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The gender of the specific population.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $gender = null;
@@ -132,7 +129,6 @@ class FHIRPopulation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Race of the specific population.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $race = null;
@@ -144,7 +140,6 @@ class FHIRPopulation extends FHIRBackboneElement
      *
      * The existing physiological conditions of the specific population to which this
      * applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $physiologicalCondition = null;

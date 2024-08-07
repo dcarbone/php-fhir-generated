@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRRatioRange extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the low limit numerator.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $lowNumerator = null;
@@ -135,7 +134,6 @@ class FHIRRatioRange extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the high limit numerator.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $highNumerator = null;
@@ -147,7 +145,6 @@ class FHIRRatioRange extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the denominator.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $denominator = null;

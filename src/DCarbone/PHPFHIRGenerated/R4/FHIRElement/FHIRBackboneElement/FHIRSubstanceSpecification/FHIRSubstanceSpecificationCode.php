@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -104,7 +104,6 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The specific code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -115,7 +114,6 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Status of the code assignment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $status = null;
@@ -129,7 +127,6 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
      *
      * The date at which the code status is changed as part of the terminology
      * maintenance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $statusDate = null;
@@ -139,7 +136,6 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Any comment can be provided in this field, if necessary.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $comment = null;
@@ -149,7 +145,6 @@ class FHIRSubstanceSpecificationCode extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $source = [];

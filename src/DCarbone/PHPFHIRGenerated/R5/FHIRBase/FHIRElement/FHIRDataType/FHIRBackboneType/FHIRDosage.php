@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBac
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -140,7 +140,6 @@ class FHIRDosage extends FHIRBackboneType
      *
      * Indicates the order in which the dosage instructions should be applied or
      * interpreted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $sequence = null;
@@ -150,7 +149,6 @@ class FHIRDosage extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Free text dosage instructions e.g. SIG.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -164,7 +162,6 @@ class FHIRDosage extends FHIRBackboneType
      * "with meals" or"take half to one hour before food") or warnings for the patient
      * about the medication (e.g. "may cause drowsiness" or "avoid exposure of skin to
      * direct sunlight or sunlamps").
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $additionalInstruction = [];
@@ -174,7 +171,6 @@ class FHIRDosage extends FHIRBackboneType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Instructions in terms that are understood by the patient or consumer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $patientInstruction = null;
@@ -188,7 +184,6 @@ class FHIRDosage extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When medication should be administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     protected null|FHIRTiming $timing = null;
@@ -198,7 +193,6 @@ class FHIRDosage extends FHIRBackboneType
      *
      * Indicates whether the Medication is only taken when needed within a specific
      * dosing schedule (Boolean option).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $asNeeded = null;
@@ -210,7 +204,6 @@ class FHIRDosage extends FHIRBackboneType
      *
      * Indicates whether the Medication is only taken based on a precondition for
      * taking the Medication (CodeableConcept).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $asNeededFor = [];
@@ -221,7 +214,6 @@ class FHIRDosage extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Body site to administer to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $site = null;
@@ -232,7 +224,6 @@ class FHIRDosage extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How drug should enter body.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $route = null;
@@ -243,7 +234,6 @@ class FHIRDosage extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Technique for administering medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $method = null;
@@ -254,7 +244,6 @@ class FHIRDosage extends FHIRBackboneType
      *
      * Depending on the resource,this is the amount of medication administered, to be
      * administered or typical amount to be administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage\FHIRDosageDoseAndRate[]
      */
     protected null|array $doseAndRate = [];
@@ -265,7 +254,6 @@ class FHIRDosage extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Upper limit on medication per unit of time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio[]
      */
     protected null|array $maxDosePerPeriod = [];
@@ -277,7 +265,6 @@ class FHIRDosage extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Upper limit on medication per administration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $maxDosePerAdministration = null;
@@ -289,7 +276,6 @@ class FHIRDosage extends FHIRBackboneType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Upper limit on medication per lifetime of the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $maxDosePerLifetime = null;

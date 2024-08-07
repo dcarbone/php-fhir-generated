@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIRList extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * Identifier for the List assigned for business purposes outside the context of
      * FHIR.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -124,7 +123,6 @@ class FHIRList extends FHIRResource implements PHPFHIRContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * This code defines the purpose of the list - why it was created.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -135,7 +133,6 @@ class FHIRList extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * The common subject (or patient) of the resources that are in the list, if there
      * is one.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $subject = null;
@@ -145,7 +142,6 @@ class FHIRList extends FHIRResource implements PHPFHIRContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The entity responsible for deciding what the contents of the list were.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $source = null;
@@ -157,7 +153,6 @@ class FHIRList extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that the list was prepared.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -166,7 +161,6 @@ class FHIRList extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether items in the list have a meaningful order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $ordered = null;
@@ -178,7 +172,6 @@ class FHIRList extends FHIRResource implements PHPFHIRContainedTypeInterface
      * being maintained on an ongoing basis, or if it represents a snapshot of a list
      * of items from another source, or whether it is a prepared list where items may
      * be marked as added, modified or deleted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRListMode
      */
     protected null|FHIRListMode $mode = null;
@@ -186,7 +179,6 @@ class FHIRList extends FHIRResource implements PHPFHIRContainedTypeInterface
      * A set of information summarized from a list of other resources.
      *
      * Entries in this list.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRList\FHIRListEntry[]
      */
     protected null|array $entry = [];
@@ -197,7 +189,6 @@ class FHIRList extends FHIRResource implements PHPFHIRContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If the list is empty, why the list is empty.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $emptyReason = null;

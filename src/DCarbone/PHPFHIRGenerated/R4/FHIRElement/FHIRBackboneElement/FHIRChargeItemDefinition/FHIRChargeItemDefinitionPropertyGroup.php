@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCharg
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,7 +96,6 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      * rough structure and requires profiling for each type of billing code system.
      *
      * Expressions that describe applicability criteria for the priceComponent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability[]
      */
     protected null|array $applicability = [];
@@ -112,7 +111,6 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      * code is currently under development. The priceComponent element can be used to
      * offer transparency to the recipient of the Invoice of how the prices have been
      * calculated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionPriceComponent[]
      */
     protected null|array $priceComponent = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $kind = null;
@@ -115,7 +114,6 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this supply request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -124,7 +122,6 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRSupplyStatus
      */
     protected null|FHIRSupplyStatus $status = null;
@@ -134,7 +131,6 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The item that is requested to be supplied.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $orderedItem = null;
@@ -144,7 +140,6 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the person whom the ordered item is for.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $patient = null;
@@ -153,7 +148,6 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
      *
      * Indicates the details of the dispense event such as the days supply and quantity
      * of a supply dispensed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSupply\FHIRSupplyDispense[]
      */
     protected null|array $dispense = [];

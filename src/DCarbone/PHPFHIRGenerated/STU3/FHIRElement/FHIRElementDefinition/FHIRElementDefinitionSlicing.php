@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,6 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      * the child elements in the instance data SHALL completely distinguish which slice
      * the element in the resource matches based on the allowed values for those
      * elements in each of the slices.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionDiscriminator[]
      */
     protected null|array $discriminator = [];
@@ -119,7 +118,6 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      * A human-readable text description of how the slicing works. If there is no
      * discriminator, this is required to be present to provide whatever information is
      * possible about how the slices can be differentiated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -129,7 +127,6 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      *
      * If the matching elements have to occur in the same order as defined in the
      * profile.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $ordered = null;
@@ -139,7 +136,6 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      *
      * Whether additional slices are allowed or not. When the slices are ordered,
      * profile authors can also say that additional slices are only allowed at the end.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRSlicingRules
      */
     protected null|FHIRSlicingRules $rules = null;

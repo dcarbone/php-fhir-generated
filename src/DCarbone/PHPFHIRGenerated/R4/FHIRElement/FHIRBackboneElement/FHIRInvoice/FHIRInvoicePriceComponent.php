@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * This code identifies the type of the component.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInvoicePriceComponentType
      */
     protected null|FHIRInvoicePriceComponentType $type = null;
@@ -113,7 +112,6 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
      *
      * A code that identifies the component. Codes may be used to differentiate between
      * kinds of taxes, surcharges, discounts etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -125,7 +123,6 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
      *
      * The factor that has been applied on the base price for calculating this
      * component.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $factor = null;
@@ -135,7 +132,6 @@ class FHIRInvoicePriceComponent extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount calculated for this component.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
     protected null|FHIRMoney $amount = null;

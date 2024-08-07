@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,7 +126,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the unique identifier scheme used for this particular identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRNamingSystemIdentifierType
      */
     protected null|FHIRNamingSystemIdentifierType $type = null;
@@ -137,7 +136,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      *
      * The string that should be sent over the wire to identify the code system or
      * identifier system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $value = null;
@@ -146,7 +144,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether this identifier is the "preferred" identifier of this type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $preferred = null;
@@ -156,7 +153,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Notes about the past or intended usage of this identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $comment = null;
@@ -168,7 +164,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      * Identifies the period of time over which this identifier is considered
      * appropriate to refer to the naming system. Outside of this window, the
      * identifier might be non-deterministic.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -178,7 +173,6 @@ class FHIRNamingSystemUniqueId extends FHIRBackboneElement
      *
      * Indicates whether this identifier ie endorsed by the official owner of the
      * associated naming system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $authoritative = null;

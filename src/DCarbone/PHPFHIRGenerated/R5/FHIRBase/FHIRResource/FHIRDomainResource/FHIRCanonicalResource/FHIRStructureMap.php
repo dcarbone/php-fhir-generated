@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -187,7 +187,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      * address at which an authoritative instance of this structure map is (or will be)
      * published. This URL can be the target of a canonical reference. It SHALL remain
      * the same when the structure map is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -200,7 +199,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      * A formal identifier that is used to identify this structure map when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -215,7 +213,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -226,7 +223,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -237,7 +233,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -249,7 +244,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      * A natural language name identifying the structure map. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -259,7 +253,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the structure map.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -268,7 +261,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * The status of this structure map. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -279,7 +271,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      * A Boolean value to indicate that this structure map is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -296,7 +287,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      * changed. The date must change when the business version changes and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the structure map changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -307,7 +297,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the structure map.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -318,7 +307,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -333,7 +321,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * A free text natural language description of the structure map from a consumer's
      * perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -350,7 +337,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate structure map
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -361,7 +347,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the structure map is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -376,7 +361,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * Explanation of why this structure map is needed and why it has been designed as
      * it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -392,7 +376,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      * A copyright statement relating to the structure map and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the structure map.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -404,7 +387,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -413,7 +395,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * A structure definition used by this map. The structure definition may describe
      * instances that are converted, or the instances that are produced.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapStructure[]
      */
     protected null|array $structure = [];
@@ -424,7 +405,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      * the Narrative, or extensions
      *
      * Other maps used by this map (canonical URLs).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $import = [];
@@ -432,7 +412,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      * A Map of relationships between 2 structures that can be used to transform data.
      *
      * Definition of a constant value used in the map rules.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapConst[]
      */
     protected null|array $const = [];
@@ -441,7 +420,6 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      *
      * Organizes the mapping into managable chunks for human review/ease of
      * maintenance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup[]
      */
     protected null|array $group = [];

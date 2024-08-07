@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREleme
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -117,7 +117,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement
      * Allows identification of which elements have their cardinalities impacted by the
      * constraint. Will not be referenced for constraints that do not affect
      * cardinality.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
     protected null|FHIRId $key = null;
@@ -127,7 +126,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Description of why this constraint is necessary or appropriate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $requirements = null;
@@ -137,7 +135,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement
      *
      * Identifies the impact constraint violation has on the conformance of the
      * instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConstraintSeverity
      */
     protected null|FHIRConstraintSeverity $severity = null;
@@ -148,7 +145,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement
      *
      * Text that can be used to describe the constraint in messages identifying that
      * the constraint has been violated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $human = null;
@@ -159,7 +155,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement
      *
      * A [FHIRPath](fhirpath.html) expression of constraint that can be executed to see
      * if this constraint is met.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $expression = null;
@@ -170,7 +165,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement
      *
      * An XPath expression of constraint that can be executed to see if this constraint
      * is met.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $xpath = null;
@@ -181,7 +175,6 @@ class FHIRElementDefinitionConstraint extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A reference to the original source of the constraint, for traceability purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $source = null;

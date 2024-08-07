@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRReq
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -139,7 +139,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A user-visible label for the action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $label = null;
@@ -149,7 +148,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The title of the action displayed to a user.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -160,7 +158,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * A short description of the action used to provide a summary to display to the
      * user.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -172,7 +169,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * A text equivalent of the action to be performed. This provides a
      * human-interpretable description of the action when the definition is consumed by
      * a system that may not be capable of interpreting it dynamically.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $textEquivalent = null;
@@ -184,7 +180,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * A code that provides meaning for the action or action group. For example, a
      * section may have a LOINC code for a the section of a documentation template.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $code = [];
@@ -197,7 +192,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * Didactic or other informational resources associated with the action that can be
      * provided to the CDS recipient. Information resources can include inline text
      * commentary and links to web resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[]
      */
     protected null|array $documentation = [];
@@ -207,7 +201,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * An expression that describes applicability criteria, or start/stop conditions
      * for the action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupCondition[]
      */
     protected null|array $condition = [];
@@ -217,7 +210,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      *
      * A relationship to another action such as "before" or "30-60 minutes after start
      * of".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupRelatedAction[]
      */
     protected null|array $relatedAction = [];
@@ -230,7 +222,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An optional value describing when the action should be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $timingDateTime = null;
@@ -240,7 +231,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $timingPeriod = null;
@@ -250,7 +240,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $timingDuration = null;
@@ -260,7 +249,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $timingRange = null;
@@ -274,7 +262,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An optional value describing when the action should be performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
     protected null|FHIRTiming $timingTiming = null;
@@ -284,7 +271,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The participant that should perform or be responsible for this action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $participant = [];
@@ -294,7 +280,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of action to perform (create, update, remove).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $type = null;
@@ -303,7 +288,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the grouping behavior for the action and its children.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionGroupingBehavior
      */
     protected null|FHIRActionGroupingBehavior $groupingBehavior = null;
@@ -312,7 +296,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the selection behavior for the action and its children.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionSelectionBehavior
      */
     protected null|FHIRActionSelectionBehavior $selectionBehavior = null;
@@ -321,7 +304,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines the requiredness behavior for the action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionRequiredBehavior
      */
     protected null|FHIRActionRequiredBehavior $requiredBehavior = null;
@@ -330,7 +312,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action should usually be preselected.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionPrecheckBehavior
      */
     protected null|FHIRActionPrecheckBehavior $precheckBehavior = null;
@@ -340,7 +321,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines whether the action can be selected multiple times.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionCardinalityBehavior
      */
     protected null|FHIRActionCardinalityBehavior $cardinalityBehavior = null;
@@ -350,7 +330,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The resource that is the target of the action (e.g. CommunicationRequest).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $resource = null;
@@ -359,7 +338,6 @@ class FHIRRequestGroupAction extends FHIRBackboneElement
      * have inter-dependencies such as "give this medication after that one".
      *
      * Sub actions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction[]
      */
     protected null|array $action = [];

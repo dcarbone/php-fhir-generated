@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable summary of results by exposure state.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -112,7 +111,6 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether these results are for the exposure state or alternative exposure state.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExposureState
      */
     protected null|FHIRExposureState $exposureState = null;
@@ -123,7 +121,6 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used to define variant exposure states such as low-risk state.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $variantState = null;
@@ -133,7 +130,6 @@ class FHIREffectEvidenceSynthesisResultsByExposure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to a RiskEvidenceSynthesis resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $riskEvidenceSynthesis = null;

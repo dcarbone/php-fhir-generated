@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -211,7 +211,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * will be) published. This URL can be the target of a canonical reference. It
      * SHALL remain the same when the capability statement is stored on different
      * servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -224,7 +223,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * A formal identifier that is used to identify this CapabilityStatement when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -239,7 +237,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * to be globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -250,7 +247,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -261,7 +257,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -273,7 +268,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * A natural language name identifying the capability statement. This name should
      * be usable as an identifier for the module by machine processing applications
      * such as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -283,7 +277,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the capability statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -292,7 +285,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * The status of this capability statement. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -303,7 +295,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * A Boolean value to indicate that this capability statement is authored for
      * testing purposes (or education/evaluation/marketing) and is not intended to be
      * used for genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -320,7 +311,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the capability statement changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -331,7 +321,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the capability statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -342,7 +331,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -359,7 +347,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * consumer's perspective. Typically, this is used when the capability statement
      * describes a desired rather than an actual solution, for example as a formal
      * expression of requirements as part of an RFP.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -376,7 +363,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate capability
      * statement instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -388,7 +374,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * A legal or geographic region in which the capability statement is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -403,7 +388,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * Explanation of why this capability statement is needed and why it has been
      * designed as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -419,7 +403,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * A copyright statement relating to the capability statement and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the capability statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -431,7 +414,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -441,7 +423,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * The way that this statement is intended to be used, to describe an actual
      * running instance of software, a particular product (kind, not instance of
      * software) or a class of implementation (e.g. a desired purchase).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCapabilityStatementKind
      */
     protected null|FHIRCapabilityStatementKind $kind = null;
@@ -456,7 +437,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * corresponds to a business service. The server may actually implement a subset of
      * the capability statement it claims to implement, so the capability statement
      * must specify the full capability details.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $instantiates = [];
@@ -470,7 +450,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * adds to. The capability statement automatically includes everything in the other
      * statement, and it is not duplicated, though the server may repeat the same
      * resources, interactions and operations to add additional details to them.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $imports = [];
@@ -483,7 +462,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * Software that is covered by this capability statement. It is used when the
      * capability statement describes the capabilities of a particular software
      * version, independent of an installation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSoftware
      */
     protected null|FHIRCapabilityStatementSoftware $software = null;
@@ -496,7 +474,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * Identifies a specific implementation instance that is described by the
      * capability statement - i.e. a particular installation, rather than the
      * capabilities of a software program.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementImplementation
      */
     protected null|FHIRCapabilityStatementImplementation $implementation = null;
@@ -506,7 +483,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * The version of the FHIR specification that this CapabilityStatement describes
      * (which SHALL be the same as the FHIR version of the CapabilityStatement itself).
      * There is no default value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRFHIRVersion
      */
     protected null|FHIRFHIRVersion $fhirVersion = null;
@@ -518,7 +494,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * A list of the formats supported by this implementation using their content
      * types.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode[]
      */
     protected null|array $format = [];
@@ -530,7 +505,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * A list of the patch formats supported by this implementation using their content
      * types.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode[]
      */
     protected null|array $patchFormat = [];
@@ -542,7 +516,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * A list of the languages supported by this implementation that are usefully
      * supported in the ```Accept-Language``` header.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode[]
      */
     protected null|array $acceptLanguage = [];
@@ -554,7 +527,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      *
      * A list of implementation guides that the server does (or should) support in
      * their entirety.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $implementationGuide = [];
@@ -565,7 +537,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * server implementation.
      *
      * A definition of the restful capabilities of the solution, if any.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest[]
      */
     protected null|array $rest = [];
@@ -576,7 +547,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * server implementation.
      *
      * A description of the messaging capabilities of the solution.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging[]
      */
     protected null|array $messaging = [];
@@ -587,7 +557,6 @@ class FHIRCapabilityStatement extends FHIRCanonicalResource implements PHPFHIRCo
      * server implementation.
      *
      * A document definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[]
      */
     protected null|array $document = [];

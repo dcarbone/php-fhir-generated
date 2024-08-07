@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
      * This attribute defined the type of association when establishing associations or
      * relations between items, e.g. 'packaged within' or 'used with' or 'to be mixed
      * with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $associationType = null;
@@ -130,7 +129,6 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The related item or product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $relatedItem = null;
@@ -145,7 +143,6 @@ class FHIRInventoryItemAssociation extends FHIRBackboneElement
      * example a value of 20 means that this product contains 20 units of the related
      * product; a value of 1:20 means the inverse - that the contained product contains
      * 20 units of the present product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
     protected null|FHIRRatio $quantity = null;

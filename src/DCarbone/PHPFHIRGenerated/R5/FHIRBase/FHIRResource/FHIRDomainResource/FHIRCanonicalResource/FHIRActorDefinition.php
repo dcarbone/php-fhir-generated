@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -194,7 +194,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * address at which an authoritative instance of this actor definition is (or will
      * be) published. This URL can be the target of a canonical reference. It SHALL
      * remain the same when the actor definition is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -207,7 +206,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * A formal identifier that is used to identify this actor definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -222,7 +220,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -233,7 +230,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -244,7 +240,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -256,7 +251,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * A natural language name identifying the actor definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -266,7 +260,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the actor definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -275,7 +268,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * The status of this actor definition. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -286,7 +278,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * A Boolean value to indicate that this actor definition is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -303,7 +294,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * changed. The date must change when the business version changes and it must
      * change if the status code changes. In addition, it should change when the
      * substantive content of the actor definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -314,7 +304,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the actor definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -325,7 +314,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -339,7 +327,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * the Narrative, or extensions
      *
      * A free text natural language description of the actor.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -356,7 +343,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate actor definition
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -368,7 +354,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * A legal or geographic region in which the actor definition is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -383,7 +368,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * Explanation of why this actor definition is needed and why it has been designed
      * as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -399,7 +383,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * A copyright statement relating to the actor definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the actor definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -411,7 +394,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -419,7 +401,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Whether the actor represents a human or an appliction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRExampleScenarioActorType
      */
     protected null|FHIRExampleScenarioActorType $type = null;
@@ -433,7 +414,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * the Narrative, or extensions
      *
      * Documentation about the functionality of the actor.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $documentation = null;
@@ -444,7 +424,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * A reference to additional documentation about the actor, but description and
      * documentation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUrl[]
      */
     protected null|array $reference = [];
@@ -455,7 +434,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * the Narrative, or extensions
      *
      * The capability statement for the actor (if the concept is applicable).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $capabilities = null;
@@ -468,7 +446,6 @@ class FHIRActorDefinition extends FHIRCanonicalResource implements PHPFHIRContai
      * A url that identifies the definition of this actor in another IG (which IG must
      * be listed in the dependencies). This actor inherits all the obligations etc. as
      * defined in the other IG.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $derivedFrom = [];

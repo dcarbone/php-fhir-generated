@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The category of patient centric costs associated with treatment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -111,7 +110,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount due from the patient for the cost category.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -121,7 +119,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount due from the patient for the cost category.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
     protected null|FHIRMoney $valueMoney = null;
@@ -131,7 +128,6 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      *
      * A suite of codes indicating exceptions or reductions to patient costs and their
      * effective periods.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException[]
      */
     protected null|array $exception = [];

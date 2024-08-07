@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -152,7 +152,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      *
      * Business identifier for the authorization, typically assigned by the authorizing
      * body.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -162,7 +161,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The product type, treatment, facility or activity that is being authorized.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $subject = [];
@@ -174,7 +172,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      *
      * Overall type of this authorization, for example drug marketing approval, orphan
      * drug designation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -188,7 +185,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      * the Narrative, or extensions
      *
      * General textual supporting information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -200,7 +196,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      *
      * The territory (e.g., country, jurisdiction etc.) in which the authorization has
      * been granted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $region = [];
@@ -212,7 +207,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      *
      * The status that is authorised e.g. approved. Intermediate states and actions can
      * be tracked with cases and applications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $status = null;
@@ -226,7 +220,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the current status was assigned.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $statusDate = null;
@@ -238,7 +231,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      * The time period in which the regulatory approval, clearance or licencing is in
      * effect. As an example, a Marketing Authorization includes the date of
      * authorization and/or an expiration date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $validityPeriod = null;
@@ -249,7 +241,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Condition for which the use of the regulated product applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $indication = [];
@@ -260,7 +251,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The intended use of the product, e.g. prevention, treatment, diagnosis.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $intendedUse = null;
@@ -272,7 +262,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      *
      * The legal or regulatory framework against which this authorization is granted,
      * or other reasons for it.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $basis = [];
@@ -283,7 +272,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      *
      * The organization that has been granted this authorization, by some authoritative
      * body (the 'regulator').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $holder = null;
@@ -295,7 +283,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      * The regulatory authority or authorizing body granting the authorization. For
      * example, European Medicines Agency (EMA), Food and Drug Administration (FDA),
      * Health Canada (HC), etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $regulator = null;
@@ -305,7 +292,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information or supporting documentation about the authorization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $attachedDocument = [];
@@ -322,7 +308,6 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      * and assesses them. Note: This area is subject to ongoing review and the
      * workgroup is seeking implementer feedback on its use (see link at bottom of
      * page).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRegulatedAuthorization\FHIRRegulatedAuthorizationCase
      */
     protected null|FHIRRegulatedAuthorizationCase $case = null;

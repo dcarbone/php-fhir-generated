@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConse
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * Action to take - permit or deny - when the rule conditions are met. Not
      * permitted in root rule, required in all nested rules.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRConsentProvisionType
      */
     protected null|FHIRConsentProvisionType $type = null;
@@ -119,7 +118,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The timeframe in this rule is valid.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -130,7 +128,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * Who or what is controlled by this rule. Use group to identify a set of actors by
      * some property they share (e.g. 'admitting officers').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor[]
      */
     protected null|array $actor = [];
@@ -141,7 +138,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Actions controlled by this Rule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $action = [];
@@ -152,7 +148,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * A security label, comprised of 0..* security label fields (Privacy tags), which
      * define which resources are controlled by this exception.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
      */
     protected null|array $securityLabel = [];
@@ -163,7 +158,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this rule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
      */
     protected null|array $purpose = [];
@@ -175,7 +169,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * The class of information covered by this rule. The type can be a FHIR resource
      * type, a profile on a type, or a CDA document, or some other type that indicates
      * what sort of information the consent relates to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding[]
      */
     protected null|array $class = [];
@@ -186,7 +179,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * If this code is found in an instance, then the rule applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $code = [];
@@ -197,7 +189,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this rule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $dataPeriod = null;
@@ -207,7 +198,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * within a given policy context, for specific purposes and periods of time.
      *
      * The resources controlled by this rule if specific resources are referenced.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData[]
      */
     protected null|array $data = [];
@@ -217,7 +207,6 @@ class FHIRConsentProvision extends FHIRBackboneElement
      * within a given policy context, for specific purposes and periods of time.
      *
      * Rules which provide exceptions to the base rule or subrules.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentProvision[]
      */
     protected null|array $provision = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A unique code (within the profile) used to identify the extension.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -112,7 +111,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      *
      * Defined so that applications can use this name when displaying the value of the
      * extension to the user.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $display = null;
@@ -121,7 +119,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies the type of context to which the extension applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtensionContext
      */
     protected null|FHIRExtensionContext $contextType = null;
@@ -131,7 +128,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      *
      * Identifies the types of resource or data type elements to which the extension
      * can be applied.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString[]
      */
     protected null|array $context = [];
@@ -141,7 +137,6 @@ class FHIRProfileExtensionDefn extends FHIRBackboneElement
      * and Extension Definitions.
      *
      * Definition of the extension and its content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileDefinition
      */
     protected null|FHIRProfileDefinition $definition = null;

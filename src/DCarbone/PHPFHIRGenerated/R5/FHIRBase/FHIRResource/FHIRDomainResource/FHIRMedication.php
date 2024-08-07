@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -141,7 +141,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -155,7 +154,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * if no code is available. Usage note: This could be a standard medication code
      * such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or
      * local formulary code, optionally with translations to other code systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -163,7 +161,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code to indicate if the medication is in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMedicationStatusCodes
      */
     protected null|FHIRMedicationStatusCodes $status = null;
@@ -177,7 +174,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Typically abbreviated MAH.Note: The MAH may manufacture the product and may also
      * contract the manufacturing of the product to one or more companies
      * (organizations).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $marketingAuthorizationHolder = null;
@@ -188,7 +184,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the form of the item. Powder; tablets; capsule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $doseForm = null;
@@ -204,7 +199,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * that has the same strength (For example, Insulin glargine 100 unit per mL
      * solution for injection), this attribute provides additional clarification of the
      * package amount (For example, 3 mL, 10mL, etc.).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $totalVolume = null;
@@ -215,7 +209,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * use.
      *
      * Identifies a particular constituent of interest in the product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationIngredient[]
      */
     protected null|array $ingredient = [];
@@ -226,7 +219,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * use.
      *
      * Information that only applies to packages (not products).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationBatch
      */
     protected null|FHIRMedicationBatch $batch = null;
@@ -237,7 +229,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * A reference to a knowledge resource that provides more information about this
      * medication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $definition = null;

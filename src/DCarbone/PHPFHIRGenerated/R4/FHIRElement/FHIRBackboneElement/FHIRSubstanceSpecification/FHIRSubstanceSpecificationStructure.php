@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Stereochemistry type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $stereochemistry = null;
@@ -116,7 +115,6 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Optical activity type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $opticalActivity = null;
@@ -126,7 +124,6 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Molecular formula.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $molecularFormula = null;
@@ -137,7 +134,6 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      *
      * Specified per moiety according to the Hill system, i.e. first C, then H, then
      * alphabetical, each moiety separated by a dot.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $molecularFormulaByMoiety = null;
@@ -147,7 +143,6 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      *
      * Applicable for single substances that contain a radionuclide or a non-natural
      * isotopic ratio.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope[]
      */
     protected null|array $isotope = [];
@@ -156,7 +151,6 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * used for prescribing.
      *
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
      */
     protected null|FHIRSubstanceSpecificationMolecularWeight $molecularWeight = null;
@@ -166,7 +160,6 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Supporting literature.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $source = [];
@@ -175,7 +168,6 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * used for prescribing.
      *
      * Molecular structural representation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRepresentation[]
      */
     protected null|array $representation = [];

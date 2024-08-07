@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -156,7 +156,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Identifier for the TestReport assigned for external purposes outside the context
      * of FHIR.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -166,7 +165,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A free text natural language name identifying the executed TestReport.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -175,7 +173,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of this test report.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRTestReportStatus
      */
     protected null|FHIRTestReportStatus $status = null;
@@ -187,7 +184,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Ideally this is an absolute URL that is used to identify the version-specific
      * TestScript that was executed, matching the `TestScript.url`.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $testScript = null;
@@ -196,7 +192,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The overall result from the execution of the TestScript.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRTestReportResult
      */
     protected null|FHIRTestReportResult $result = null;
@@ -208,7 +203,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * The final score (percentage of tests passed) resulting from the execution of the
      * TestScript.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $score = null;
@@ -218,7 +212,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name of the tester producing this report (Organization or individual).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $tester = null;
@@ -232,7 +225,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the TestScript was executed and this TestReport was generated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $issued = null;
@@ -241,7 +233,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * A participant in the test execution, either the execution engine, a client, or a
      * server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportParticipant[]
      */
     protected null|array $participant = [];
@@ -250,7 +241,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * The results of the series of required setup operations before the tests were
      * executed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportSetup
      */
     protected null|FHIRTestReportSetup $setup = null;
@@ -258,7 +248,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A summary of information based on the results of executing a TestScript.
      *
      * A test executed from the test script.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTest[]
      */
     protected null|array $test = [];
@@ -267,7 +256,6 @@ class FHIRTestReport extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * The results of the series of operations required to clean up after all the tests
      * were executed (successfully or otherwise).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportTeardown
      */
     protected null|FHIRTestReportTeardown $teardown = null;

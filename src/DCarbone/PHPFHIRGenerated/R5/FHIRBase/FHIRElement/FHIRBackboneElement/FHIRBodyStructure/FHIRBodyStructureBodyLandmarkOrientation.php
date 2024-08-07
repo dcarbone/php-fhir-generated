@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -118,7 +118,6 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      *
      * A description of a landmark on the body used as a reference to locate something
      * else.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $landmarkDescription = [];
@@ -130,7 +129,6 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      *
      * An description of the direction away from a landmark something is located based
      * on a radial clock dial.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $clockFacePosition = [];
@@ -139,7 +137,6 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      * coded concept does not provide the necessary detail needed for the use case.
      *
      * The distance in centimeters a certain observation is made from a body landmark.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureDistanceFromLandmark[]
      */
     protected null|array $distanceFromLandmark = [];
@@ -150,7 +147,6 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The surface area a body location is in relation to a landmark.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $surfaceOrientation = [];

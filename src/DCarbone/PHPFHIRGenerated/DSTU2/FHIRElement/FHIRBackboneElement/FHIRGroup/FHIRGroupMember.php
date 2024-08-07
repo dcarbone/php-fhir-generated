@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRGr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRGroupMember extends FHIRBackboneElement
      *
      * A reference to the entity that is a member of the group. Must be consistent with
      * Group.type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $entity = null;
@@ -111,7 +110,6 @@ class FHIRGroupMember extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period that the member was in the group, if known.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -121,7 +119,6 @@ class FHIRGroupMember extends FHIRBackboneElement
      *
      * A flag to indicate that the member is no longer in the group, but previously may
      * have been a member.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $inactive = null;

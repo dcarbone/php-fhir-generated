@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The element id of the related action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRId
      */
     protected null|FHIRId $actionId = null;
@@ -116,7 +115,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The relationship of this action to the related action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRActionRelationshipType
      */
     protected null|FHIRActionRelationshipType $relationship = null;
@@ -127,7 +125,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $offsetDuration = null;
@@ -138,7 +135,6 @@ class FHIRPlanDefinitionRelatedAction extends FHIRBackboneElement
      *
      * A duration or range of durations to apply to the relationship. For example,
      * 30-60 minutes before.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $offsetRange = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -153,7 +153,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A resource that was validated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $target = [];
@@ -163,7 +162,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The fhirpath location(s) within the resource that was validated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString[]
      */
     protected null|array $targetLocation = [];
@@ -174,7 +172,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The frequency with which the target must be validated (none; initial; periodic).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $need = null;
@@ -183,7 +180,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      *
      * The validation status of the target (attested; validated; in process; requires
      * revalidation; validation failed; revalidation failed).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRVerificationResultStatus
      */
     protected null|FHIRVerificationResultStatus $status = null;
@@ -197,7 +193,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the validation status was updated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $statusDate = null;
@@ -209,7 +204,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      *
      * What the target is validated against (nothing; primary source; multiple
      * sources).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $validationType = null;
@@ -221,7 +215,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      *
      * The primary process by which the target is validated (edit check; value set;
      * primary source; multiple sources; standalone; in context).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $validationProcess = [];
@@ -235,7 +228,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Frequency of revalidation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     protected null|FHIRTiming $frequency = null;
@@ -249,7 +241,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date/time validation was last completed (including failed validations).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $lastPerformed = null;
@@ -260,7 +251,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date when target is next validated, if appropriate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $nextScheduled = null;
@@ -271,7 +261,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The result if validation fails (fatal; warning; record only; none).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $failureAction = null;
@@ -280,7 +269,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * elements.
      *
      * Information about the primary source(s) involved in validation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource[]
      */
     protected null|array $primarySource = [];
@@ -289,7 +277,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * elements.
      *
      * Information about the entity attesting to information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
      */
     protected null|FHIRVerificationResultAttestation $attestation = null;
@@ -298,7 +285,6 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * elements.
      *
      * Information about the entity validating information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultValidator[]
      */
     protected null|array $validator = [];

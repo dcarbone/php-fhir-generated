@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -186,7 +186,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Canonical identifier for this study resource, represented as a globally unique
      * URI.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -197,7 +196,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this research study by the sponsor or other systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -207,7 +205,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The business version for the study record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -217,7 +214,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name for this study (computer friendly).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -227,7 +223,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The human readable name of the research study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -239,7 +234,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * groups of people by looking at data collected in the past or future.
      *
      * Additional names for the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyLabel[]
      */
     protected null|array $label = [];
@@ -249,7 +243,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The set of steps expected to be performed as part of the execution of the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $protocol = [];
@@ -259,7 +252,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger research study of which this particular study is a component or step.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $partOf = [];
@@ -274,7 +266,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * of "documentation" or "supported-with" and the URL value will often be in
      * relatedArtifact.document.url but another possible location is
      * relatedArtifact.resource when it is a canonical URL.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -291,7 +282,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * significantly changed. The date must change when the business version changes
      * and it must change if the status code changes. In addition, it should change
      * when the substantive content of the ResearchStudy Resource changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -299,7 +289,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The publication state of the resource (not of the study).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -311,7 +300,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The type of study based upon the intent of the study activities. A
      * classification of the intent of the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $primaryPurposeType = null;
@@ -323,7 +311,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The stage in the progression of a therapy from initial experimental use in
      * humans in clinical trials to post-market evaluation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $phase = null;
@@ -335,7 +322,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Codes categorizing the type of study such as investigational vs. observational,
      * type of blinding, type of randomization, safety vs. efficacy, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $studyDesign = [];
@@ -347,7 +333,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The medication(s), food(s), therapy(ies), device(s) or other concerns or
      * interventions that the study is seeking to gain more information about.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
      */
     protected null|array $focus = [];
@@ -360,7 +345,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * The condition that is the focus of the study. For example, In a study to examine
      * risk factors for Lupus, might have as an inclusion criterion "healthy
      * volunteer", but the target condition code would be a Lupus SNOMED code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $condition = [];
@@ -371,7 +355,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Key terms to aid in searching for or filtering the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $keyword = [];
@@ -383,7 +366,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * A country, state or other area where the study is taking place rather than its
      * precise geographic location or address.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $region = [];
@@ -397,7 +379,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * the Narrative, or extensions
      *
      * A brief text for explaining the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $descriptionSummary = null;
@@ -411,7 +392,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * the Narrative, or extensions
      *
      * A detailed and human-readable narrative of the study. E.g., study abstract.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -422,7 +402,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Identifies the start date and the expected (or actual, depending on status) end
      * date for the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $period = null;
@@ -432,7 +411,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A facility in which study activities are conducted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $site = [];
@@ -443,7 +421,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Comments made about the study by the performer, subject or other participants.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -458,7 +435,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * requirement), IRB-exempt, etc. Implementation Note: do not use the classifier
      * element to support existing semantics that are already supported thru explicit
      * elements in the resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $classifier = [];
@@ -470,7 +446,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * groups of people by looking at data collected in the past or future.
      *
      * Sponsors, collaborators, and other parties.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyAssociatedParty[]
      */
     protected null|array $associatedParty = [];
@@ -482,7 +457,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * groups of people by looking at data collected in the past or future.
      *
      * Status of study with time for that status.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyProgressStatus[]
      */
     protected null|array $progressStatus = [];
@@ -493,7 +467,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A description and/or code explaining the premature termination of the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $whyStopped = null;
@@ -505,7 +478,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * groups of people by looking at data collected in the past or future.
      *
      * Target or actual group of participants enrolled in study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyRecruitment
      */
     protected null|FHIRResearchStudyRecruitment $recruitment = null;
@@ -520,7 +492,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * study. E.g. for a living subject: exposure to drug A, wash-out, exposure to drug
      * B, wash-out, follow-up. E.g. for a stability study: {store sample from lot A at
      * 25 degrees for 1 month}, {store sample from lot A at 40 degrees for 1 month}.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyComparisonGroup[]
      */
     protected null|array $comparisonGroup = [];
@@ -533,7 +504,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * A goal that the study is aiming to achieve in terms of a scientific question to
      * be answered by the analysis of data collected during the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyObjective[]
      */
     protected null|array $objective = [];
@@ -549,7 +519,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * variables on the participants in a study, or for observational studies, to
      * describe patterns of diseases or traits or associations with exposures, risk
      * factors or treatment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyOutcomeMeasure[]
      */
     protected null|array $outcomeMeasure = [];
@@ -560,7 +529,6 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Link to one or more sets of results generated by the study. Could also link to a
      * research registry holding the results such as ClinicalTrials.gov.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $result = [];

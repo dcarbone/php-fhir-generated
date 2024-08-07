@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIROpe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      * Indicates the degree of conformance expectations associated with this binding -
      * that is, the degree to which the provided value set must be adhered to in the
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBindingStrength
      */
     protected null|FHIRBindingStrength $strength = null;
@@ -112,7 +111,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition (e.g. implicit value set) that
      * identifies the set of codes to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $valueSetUri = null;
@@ -123,7 +121,6 @@ class FHIROperationDefinitionBinding extends FHIRBackboneElement
      *
      * Points to the value set or external definition (e.g. implicit value set) that
      * identifies the set of codes to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $valueSetReference = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The authority that is specifying the regulations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $regulatoryAuthority = null;
@@ -104,7 +103,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      *
      * Specifies if changes are allowed when dispensing a medication from a regulatory
      * perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSubstitution[]
      */
     protected null|array $substitution = [];
@@ -112,7 +110,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * Specifies the schedule of a medication in jurisdiction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeSchedule[]
      */
     protected null|array $schedule = [];
@@ -120,7 +117,6 @@ class FHIRMedicationKnowledgeRegulatory extends FHIRBackboneElement
      * Information about a medication that is used to support knowledge.
      *
      * The maximum number of units of the medication that can be dispensed in a period.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMaxDispense
      */
     protected null|FHIRMedicationKnowledgeMaxDispense $maxDispense = null;

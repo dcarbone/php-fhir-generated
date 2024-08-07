@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      *
      * The quantity of substance in the unit of presentation, or in the volume (or
      * mass) of the single pharmaceutical product or manufactured item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $presentation = null;
@@ -116,7 +115,6 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * A lower limit for the quantity of substance in the unit of presentation. For use
      * when there is a range of strengths, this is the lower limit, with the
      * presentation attribute becoming the upper limit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $presentationLowLimit = null;
@@ -127,7 +125,6 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $concentration = null;
@@ -139,7 +136,6 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      *
      * A lower limit for the strength per unitary volume (or mass), for when there is a
      * range. The concentration attribute then becomes the upper limit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $concentrationLowLimit = null;
@@ -149,7 +145,6 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * For when strength is measured at a particular point or distance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $measurementPoint = null;
@@ -160,7 +155,6 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $country = [];
@@ -168,7 +162,6 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * Strength expressed in terms of a reference substance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength[]
      */
     protected null|array $referenceStrength = [];

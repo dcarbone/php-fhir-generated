@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -100,7 +100,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * Id for container. There may be multiple; a manufacturer's bar code, lab assigned
      * identifier, etc. The container ID may differ from the specimen id in some
      * circumstances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -109,7 +108,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Textual description of the container.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -120,7 +118,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The type of container associated with the specimen (e.g. slide, aliquot, etc).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -132,7 +129,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The capacity (volume or other measure) the container may contain.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $capacity = null;
@@ -145,7 +141,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      *
      * The quantity of specimen in the container; may be volume, dimensions, or other
      * appropriate measurements, depending on the specimen type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $specimenQuantity = null;
@@ -155,7 +150,6 @@ class FHIRSpecimenContainer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additive associated with the container.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $additive = null;

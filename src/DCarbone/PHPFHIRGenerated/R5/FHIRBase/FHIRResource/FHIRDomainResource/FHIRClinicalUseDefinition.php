@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -147,7 +147,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Business identifier for this issue.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -155,7 +154,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * indication | contraindication | interaction | undesirable-effect | warning.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRClinicalUseDefinitionType
      */
     protected null|FHIRClinicalUseDefinitionType $type = null;
@@ -168,7 +166,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      * A categorisation of the issue, primarily for dividing warnings into subject
      * heading areas such as "Pregnancy and Lactation", "Overdose", "Effects on Ability
      * to Drive and Use Machines".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -179,7 +176,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      *
      * The medication, product, substance, device, procedure etc. for which this is an
      * indication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $subject = [];
@@ -190,7 +186,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Whether this is a current issue or one that has been retired etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $status = null;
@@ -199,7 +194,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is a contraindication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionContraindication
      */
     protected null|FHIRClinicalUseDefinitionContraindication $contraindication = null;
@@ -208,7 +202,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is an indication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionIndication
      */
     protected null|FHIRClinicalUseDefinitionIndication $indication = null;
@@ -217,7 +210,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      * undesirable effect for a medicinal product, medication, device or procedure.
      *
      * Specifics for when this is an interaction.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionInteraction
      */
     protected null|FHIRClinicalUseDefinitionInteraction $interaction = null;
@@ -227,7 +219,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The population group to which this applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $population = [];
@@ -238,7 +229,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      * the Narrative, or extensions
      *
      * Logic used by the clinical use definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical[]
      */
     protected null|array $library = [];
@@ -248,7 +238,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      *
      * Describe the possible undesirable effects (negative outcomes) from the use of
      * the medicinal product as treatment.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionUndesirableEffect
      */
     protected null|FHIRClinicalUseDefinitionUndesirableEffect $undesirableEffect = null;
@@ -260,7 +249,6 @@ class FHIRClinicalUseDefinition extends FHIRDomainResource implements PHPFHIRCon
      * hazards that serve as caution to the user. For example 'Do not operate heavy
      * machinery', 'May cause drowsiness', or 'Get medical advice/attention if you feel
      * unwell'.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionWarning
      */
     protected null|FHIRClinicalUseDefinitionWarning $warning = null;

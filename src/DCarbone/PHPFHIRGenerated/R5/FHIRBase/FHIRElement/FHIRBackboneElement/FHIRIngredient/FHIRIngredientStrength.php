@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
      * normalized as a unitary unit, which would be 'per mg').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
     protected null|FHIRRatio $presentationRatio = null;
@@ -151,7 +150,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
      * normalized as a unitary unit, which would be 'per mg').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
      */
     protected null|FHIRRatioRange $presentationRatioRange = null;
@@ -166,7 +164,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
      * normalized as a unitary unit, which would be 'per mg').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $presentationCodeableConcept = null;
@@ -182,7 +179,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * presentation refers to the quantity that the item occurs in e.g. a strength per
      * tablet size, perhaps 'per 20mg' (the size of the tablet). It is not generally
      * normalized as a unitary unit, which would be 'per mg').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $presentationQuantity = null;
@@ -193,7 +189,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * A textual represention of either the whole of the presentation strength or a
      * part of it - with the rest being in Strength.presentation as a ratio.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $textPresentation = null;
@@ -204,7 +199,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
     protected null|FHIRRatio $concentrationRatio = null;
@@ -214,7 +208,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
      */
     protected null|FHIRRatioRange $concentrationRatioRange = null;
@@ -225,7 +218,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $concentrationCodeableConcept = null;
@@ -237,7 +229,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The strength per unitary volume (or mass).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $concentrationQuantity = null;
@@ -248,7 +239,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * A textual represention of either the whole of the concentration strength or a
      * part of it - with the rest being in Strength.concentration as a ratio.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $textConcentration = null;
@@ -260,7 +250,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      *
      * A code that indicates if the strength is, for example, based on the ingredient
      * substance as stated or on the substance base (when the ingredient is a salt).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $basis = null;
@@ -273,7 +262,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * products where strength is measured at a particular point. For example, the
      * strength of the ingredient in some inhalers is measured at a particular position
      * relative to the point of aerosolization.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $measurementPoint = null;
@@ -284,7 +272,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The country or countries for which the strength range applies.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $country = [];
@@ -297,7 +284,6 @@ class FHIRIngredientStrength extends FHIRBackboneElement
      * the strength (quantitative composition) of the active moiety of the active
      * substance. There are situations when the active substance and active moiety are
      * different, therefore both a strength and a reference strength are needed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientReferenceStrength[]
      */
     protected null|array $referenceStrength = [];

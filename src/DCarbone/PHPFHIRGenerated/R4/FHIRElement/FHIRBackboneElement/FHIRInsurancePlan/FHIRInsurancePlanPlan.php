@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      *
      * Business identifiers assigned to this health insurance plan which remain
      * constant as the resource is updated and propagates from server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -112,7 +111,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Type of plan. For example, "Platinum" or "High Deductable".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -122,7 +120,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The geographic region in which a health insurance plan's benefits apply.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $coverageArea = [];
@@ -132,7 +129,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the network that providing the type of coverage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $network = [];
@@ -140,7 +136,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Overall costs associated with the plan.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanGeneralCost[]
      */
     protected null|array $generalCost = [];
@@ -148,7 +143,6 @@ class FHIRInsurancePlanPlan extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Costs associated with the coverage provided by the product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanSpecificCost[]
      */
     protected null|array $specificCost = [];

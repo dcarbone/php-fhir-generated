@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -119,7 +119,6 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
      * that is created. This is particularly important where FHIR only provides part of
      * an erntire workflow process where records have to be tracked through an entire
      * system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -131,7 +130,6 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and perhaps time) when the prescription was written.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $dateWritten = null;
@@ -142,7 +140,6 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
      *
      * A code specifying the state of the order. Generally this will be active or
      * completed state.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRMedicationPrescriptionStatus
      */
     protected null|FHIRMedicationPrescriptionStatus $status = null;
@@ -153,7 +150,6 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
      *
      * A link to a resource representing the person to whom the medication will be
      * given.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $patient = null;
@@ -163,7 +159,6 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for authorizing the prescription.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $prescriber = null;
@@ -174,7 +169,6 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
      *
      * A link to a resource that identifies the particular occurrence of contact
      * between patient and health care provider.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $encounter = null;
@@ -185,7 +179,6 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Can be the reason or the indication for writing the prescription.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $reasonCodeableConcept = null;
@@ -195,7 +188,6 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Can be the reason or the indication for writing the prescription.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $reasonResource = null;
@@ -207,7 +199,6 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
      * Identifies the medication being administered. This is either a link to a
      * resource representing the details of the medication or a simple attribute
      * carrying a code that identifies the medication from a known list of medications.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference
      */
     protected null|FHIRResourceReference $medication = null;
@@ -216,7 +207,6 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
      * administration of the medicine to a patient.
      *
      * Indicates how the medication is to be used by the patient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDosageInstruction[]
      */
     protected null|array $dosageInstruction = [];
@@ -225,7 +215,6 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
      * administration of the medicine to a patient.
      *
      * Deals with details of the dispense part of the order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionDispense
      */
     protected null|FHIRMedicationPrescriptionDispense $dispense = null;
@@ -237,7 +226,6 @@ class FHIRMedicationPrescription extends FHIRResource implements PHPFHIRContaine
      * some cases substitution must happen, in other cases substitution must not
      * happen, and in others it does not matter. This block explains the prescriber's
      * intent. If nothing is specified substitution may be done.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationPrescription\FHIRMedicationPrescriptionSubstitution
      */
     protected null|FHIRMedicationPrescriptionSubstitution $substitution = null;

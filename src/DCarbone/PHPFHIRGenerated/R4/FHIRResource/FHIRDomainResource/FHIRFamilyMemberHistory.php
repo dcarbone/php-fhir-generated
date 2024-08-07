@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -161,7 +161,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * Business identifiers assigned to this family member history by the performer or
      * other systems which remain constant as the resource is updated and propagates
      * from server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -173,7 +172,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this FamilyMemberHistory.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
     protected null|array $instantiatesCanonical = [];
@@ -185,7 +183,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this
      * FamilyMemberHistory.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri[]
      */
     protected null|array $instantiatesUri = [];
@@ -195,7 +192,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * A code specifying the status of the record of the family history of a specific
      * family member.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFamilyHistoryStatus
      */
     protected null|FHIRFamilyHistoryStatus $status = null;
@@ -206,7 +202,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the family member's history is not available.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $dataAbsentReason = null;
@@ -216,7 +211,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who this history concerns.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -230,7 +224,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * The date (and possibly time) when the family member history was recorded or last
      * updated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -241,7 +234,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with
      * the red hair".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -253,7 +245,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * The type of relationship this person has to the patient (father, mother, brother
      * etc.).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $relationship = null;
@@ -264,7 +255,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The birth sex of the family member.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $sex = null;
@@ -274,7 +264,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actual or approximate date of birth of the relative.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $bornPeriod = null;
@@ -285,7 +274,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $bornDate = null;
@@ -295,7 +283,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The actual or approximate date of birth of the relative.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $bornString = null;
@@ -305,7 +292,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $ageAge = null;
@@ -315,7 +301,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $ageRange = null;
@@ -325,7 +310,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The age of the relative at the time the family member history is recorded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $ageString = null;
@@ -334,7 +318,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * If true, indicates that the age value specified is an estimated value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $estimatedAge = null;
@@ -344,7 +327,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $deceasedBoolean = null;
@@ -355,7 +337,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $deceasedAge = null;
@@ -366,7 +347,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $deceasedRange = null;
@@ -378,7 +358,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $deceasedDate = null;
@@ -389,7 +368,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * Deceased flag or the actual or approximate age of the relative at the time of
      * death for the family member history record.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $deceasedString = null;
@@ -400,7 +378,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes why the family member history occurred in coded or textual form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonCode = [];
@@ -411,7 +388,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      *
      * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse
      * that justifies this family member history event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $reasonReference = [];
@@ -424,7 +400,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * This property allows a non condition-specific note to the made about the related
      * person. Ideally, the note would be in the condition property, but this is not
      * always possible.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -436,7 +411,6 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * repeating section to allow a system to represent more than one condition per
      * resource, though there is nothing stopping multiple resources - one per
      * condition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition[]
      */
     protected null|array $condition = [];

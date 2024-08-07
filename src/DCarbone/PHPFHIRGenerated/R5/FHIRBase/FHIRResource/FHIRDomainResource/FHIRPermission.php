@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -136,7 +136,6 @@ class FHIRPermission extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPermissionStatus
      */
     protected null|FHIRPermissionStatus $status = null;
@@ -146,7 +145,6 @@ class FHIRPermission extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person or entity that asserts the permission.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $asserter = null;
@@ -160,7 +158,6 @@ class FHIRPermission extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date that permission was asserted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime[]
      */
     protected null|array $date = [];
@@ -170,7 +167,6 @@ class FHIRPermission extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period in which the permission is active.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $validity = null;
@@ -178,7 +174,6 @@ class FHIRPermission extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Permission resource holds access rules for a given data and context.
      *
      * The asserted justification for using the data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionJustification
      */
     protected null|FHIRPermissionJustification $justification = null;
@@ -186,7 +181,6 @@ class FHIRPermission extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Defines a procedure for arriving at an access decision given the set of rules.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPermissionRuleCombining
      */
     protected null|FHIRPermissionRuleCombining $combining = null;
@@ -194,7 +188,6 @@ class FHIRPermission extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Permission resource holds access rules for a given data and context.
      *
      * A set of rules.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionRule[]
      */
     protected null|array $rule = [];

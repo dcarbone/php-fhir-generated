@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,6 @@ class FHIRExpression extends FHIRElement
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -120,7 +119,6 @@ class FHIRExpression extends FHIRElement
      *
      * A short name assigned to the expression to allow for multiple reuse of the
      * expression in the context where it is defined.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
     protected null|FHIRId $name = null;
@@ -129,7 +127,6 @@ class FHIRExpression extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The media type of the language for the expression.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpressionLanguage
      */
     protected null|FHIRExpressionLanguage $language = null;
@@ -139,7 +136,6 @@ class FHIRExpression extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * An expression in the specified language that returns a value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $expression = null;
@@ -149,7 +145,6 @@ class FHIRExpression extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A URI that defines where the expression is found.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $reference = null;

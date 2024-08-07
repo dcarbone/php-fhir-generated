@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,6 @@ class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
      *
      * General category of benefit (Medical; Dental; Vision; Drug; Mental Health;
      * Substance Abuse; Hospice, Home Health).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -103,7 +102,6 @@ class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * List of the specific benefits under this category of benefit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanBenefit1[]
      */
     protected null|array $benefit = [];

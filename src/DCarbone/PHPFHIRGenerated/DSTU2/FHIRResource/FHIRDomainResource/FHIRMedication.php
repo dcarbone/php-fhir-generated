@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -117,7 +117,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * if no code is available. Usage note: This could be a standard medication code
      * such as a code from RxNorm, SNOMED CT, IDMP etc. It could also be a national or
      * local formulary code, optionally with translations to other code systems.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -126,7 +125,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Set to true if the item is attributable to a specific manufacturer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $isBrand = null;
@@ -136,7 +134,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the details of the manufacturer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $manufacturer = null;
@@ -145,7 +142,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * medication. It covers the ingredients and the packaging for a medication.
      *
      * Information that only applies to products (not packages).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationProduct
      */
     protected null|FHIRMedicationProduct $product = null;
@@ -154,7 +150,6 @@ class FHIRMedication extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * medication. It covers the ingredients and the packaging for a medication.
      *
      * Information that only applies to packages (not products).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationPackage
      */
     protected null|FHIRMedicationPackage $package = null;

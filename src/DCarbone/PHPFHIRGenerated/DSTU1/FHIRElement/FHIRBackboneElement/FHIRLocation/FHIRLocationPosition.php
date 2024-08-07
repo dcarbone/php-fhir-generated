@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRLo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,6 @@ class FHIRLocationPosition extends FHIRBackboneElement
      *
      * Longitude. The value domain and the interpretation are the same as for the text
      * of the longitude element in KML (see notes below).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $longitude = null;
@@ -105,7 +104,6 @@ class FHIRLocationPosition extends FHIRBackboneElement
      *
      * Latitude. The value domain and the interpretation are the same as for the text
      * of the latitude element in KML (see notes below).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $latitude = null;
@@ -115,7 +113,6 @@ class FHIRLocationPosition extends FHIRBackboneElement
      *
      * Altitude. The value domain and the interpretation are the same as for the text
      * of the altitude element in KML (see notes below).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $altitude = null;

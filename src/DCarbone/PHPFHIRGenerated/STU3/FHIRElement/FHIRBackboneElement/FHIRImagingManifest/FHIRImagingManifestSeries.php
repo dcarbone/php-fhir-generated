@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRIma
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -99,7 +99,6 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Series instance UID of the SOP instances in the selection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIROid
      */
     protected null|FHIROid $uid = null;
@@ -112,7 +111,6 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
      * series. See implementation notes for information about using DICOM endpoints. A
      * series-level endpoint, if present, has precedence over a study-level endpoint
      * with the same Endpoint.type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $endpoint = [];
@@ -121,7 +119,6 @@ class FHIRImagingManifestSeries extends FHIRBackboneElement
      * or the reason for, or significance of, the selection.
      *
      * Identity and locating information of the selected DICOM SOP instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestInstance[]
      */
     protected null|array $instance = [];

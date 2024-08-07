@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRFam
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * The actual condition specified. Could be a coded condition (like MI or Diabetes)
      * or a less specific string like 'cancer' depending on how much is known about the
      * condition and the capabilities of the creating system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -120,7 +119,6 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      *
      * Indicates what happened as a result of this condition. If the condition resulted
      * in death, deceased date is captured on the relation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $outcome = null;
@@ -132,7 +130,6 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
      * known occurrence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $onsetAge = null;
@@ -144,7 +141,6 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
      * known occurrence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $onsetRange = null;
@@ -156,7 +152,6 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
      * known occurrence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $onsetPeriod = null;
@@ -168,7 +163,6 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * Either the age of onset, range of approximate age or descriptive string can be
      * recorded. For conditions with multiple occurrences, this describes the first
      * known occurrence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $onsetString = null;
@@ -179,7 +173,6 @@ class FHIRFamilyMemberHistoryCondition extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An area where general notes can be placed about this specific condition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];

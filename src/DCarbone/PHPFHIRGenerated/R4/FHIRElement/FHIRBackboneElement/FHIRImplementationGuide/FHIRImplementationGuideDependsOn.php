@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A canonical reference to the Implementation guide for the dependency.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $uri = null;
@@ -118,7 +117,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The NPM package name for the Implementation Guide that this IG depends on.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
     protected null|FHIRId $packageId = null;
@@ -129,7 +127,6 @@ class FHIRImplementationGuideDependsOn extends FHIRBackboneElement
      *
      * The version of the IG that is depended on, when the correct version is required
      * to understand the IG correctly.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -158,7 +158,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      * A unique identifier for this package as whole - not the the content of the
      * package. Unique instance identifiers assigned to a package by manufacturers,
      * regulators, drug catalogue custodians or other organizations.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -169,7 +168,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      *
      * A name for this package. Typically what it would be listed as in a drug
      * formulary or catalogue, inventory etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -181,7 +179,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      *
      * A high level category e.g. medicinal product, raw material, shipping/transport
      * container, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -192,7 +189,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      *
      * The product this package model relates to, not the contents of the package (for
      * which see package.containedItem).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $packageFor = [];
@@ -205,7 +201,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      * The status within the lifecycle of this item. A high level status, this is not
      * intended to duplicate details carried elsewhere such as legal status, or
      * authorization or marketing status.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $status = null;
@@ -219,7 +214,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date at which the given status became applicable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $statusDate = null;
@@ -242,7 +236,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      * allow different counts of similar items (e.g. not '2 tubes and 3 tubes').
      * Repeats are not to be used to represent different pack sizes (e.g. 20 pack vs.
      * 50 pack) - which would be different instances of this resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity[]
      */
     protected null|array $containedItemQuantity = [];
@@ -256,7 +249,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      * the Narrative, or extensions
      *
      * Textual description. Note that this is not the name of the package or product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -264,7 +256,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      * A medically related item or items, in a container or package.
      *
      * The legal status of supply of the packaged item as classified by the regulator.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionLegalStatusOfSupply[]
      */
     protected null|array $legalStatusOfSupply = [];
@@ -276,7 +267,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      *
      * Allows specifying that an item is on the market for sale, or that it is not
      * available, and the dates and locations associated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus[]
      */
     protected null|array $marketingStatus = [];
@@ -286,7 +276,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      *
      * Identifies if the package contains different items, such as when a drug product
      * is supplied with another item e.g. a diluent or adjuvant.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $copackagedIndicator = null;
@@ -297,7 +286,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      *
      * Manufacturer of this package type. When there are multiple it means these are
      * all possible manufacturers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $manufacturer = [];
@@ -307,7 +295,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional information or supporting documentation about the packaged product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $attachedDocument = [];
@@ -317,7 +304,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      * A packaging item, as a container for medically related items, possibly with
      * other packaging items within, or a packaging component, such as bottle cap
      * (which is not a device or a medication manufactured item).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionPackaging
      */
     protected null|FHIRPackagedProductDefinitionPackaging $packaging = null;
@@ -326,7 +312,6 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      *
      * Allows the key features to be recorded, such as "hospital pack", "nurse
      * prescribable", "calendar pack".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionProperty[]
      */
     protected null|array $characteristic = [];

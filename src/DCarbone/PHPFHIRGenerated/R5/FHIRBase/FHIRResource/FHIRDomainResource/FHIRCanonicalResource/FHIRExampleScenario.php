@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -183,7 +183,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * address at which an authoritative instance of this example scenario is (or will
      * be) published. This URL can be the target of a canonical reference. It SHALL
      * remain the same when the example scenario is stored on different servers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -196,7 +195,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * A formal identifier that is used to identify this example scenario when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -211,7 +209,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -222,7 +219,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $versionAlgorithmString = null;
@@ -233,7 +229,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * Indicates the mechanism used to compare versions to determine which is more
      * current.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $versionAlgorithmCoding = null;
@@ -243,7 +238,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Temporarily retained for tooling purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -253,7 +247,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the ExampleScenario.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -262,7 +255,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * The status of this example scenario. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -273,7 +265,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * A Boolean value to indicate that this example scenario is authored for testing
      * purposes (or education/evaluation/marketing) and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -291,7 +282,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * change if the status code changes. In addition, it should change when the
      * substantive content of the example scenario changes. (e.g. the 'content logical
      * definition').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -302,7 +292,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * The name of the organization or individual responsible for the release and
      * ongoing maintenance of the example scenario.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -313,7 +302,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -328,7 +316,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * A free text natural language description of the ExampleScenario from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -345,7 +332,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * may be references to specific programs (insurance plans, studies, ...) and may
      * be used to assist with indexing and searching for appropriate example scenario
      * instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -357,7 +343,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      *
      * A legal or geographic region in which the example scenario is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -373,7 +358,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * What the example scenario resource is created for. This should not be used to
      * show the business purpose of the scenario itself, but the purpose of documenting
      * a scenario.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -389,7 +373,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * A copyright statement relating to the example scenario and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the example scenario.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -401,7 +384,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * A short string (<50 characters), suitable for inclusion in a page footer that
      * identifies the copyright holder, effective period, and optionally whether rights
      * are resctricted. (e.g. 'All rights reserved', 'Some rights reserved').
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $copyrightLabel = null;
@@ -409,7 +391,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * Example of workflow instance.
      *
      * A system or person who shares or receives an instance within the scenario.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioActor[]
      */
     protected null|array $actor = [];
@@ -417,7 +398,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * Example of workflow instance.
      *
      * A single data collection that is shared as part of the scenario.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioInstance[]
      */
     protected null|array $instance = [];
@@ -425,7 +405,6 @@ class FHIRExampleScenario extends FHIRCanonicalResource implements PHPFHIRContai
      * Example of workflow instance.
      *
      * A group of operations that represents a significant step within a scenario.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess[]
      */
     protected null|array $process = [];

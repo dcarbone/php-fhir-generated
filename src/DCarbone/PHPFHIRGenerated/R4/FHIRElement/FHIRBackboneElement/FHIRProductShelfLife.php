@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for the packaged Medicinal Product.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -117,7 +116,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * bottle, etc. The shelf life type shall be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -132,7 +130,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * period of time and its unit of time measurement The unit of measurement shall be
      * specified in accordance with ISO 11240 and the resulting terminology The symbol
      * and the symbol identifier shall be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $period = null;
@@ -145,7 +142,6 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * Special precautions for storage, if any, can be specified using an appropriate
      * controlled vocabulary The controlled term and the controlled term identifier
      * shall be specified.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $specialPrecautionsForStorage = [];

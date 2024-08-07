@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,7 +129,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * complex to code. When coded dosage is present, the free text dosage may still be
      * present for display to humans. The dosage instructions should reflect the dosage
      * of the medication that was administered.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -141,7 +140,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      *
      * A coded specification of the anatomic site where the medication first entered
      * the body. For example, "left arm".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $site = null;
@@ -154,7 +152,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * A code specifying the route or physiological path of administration of a
      * therapeutic agent into or onto the patient. For example, topical, intravenous,
      * etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $route = null;
@@ -168,7 +165,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * was introduced into or on the body. This attribute will most often NOT be
      * populated. It is most commonly used for injections. For example, Slow Push, Deep
      * IV.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $method = null;
@@ -182,7 +178,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * The amount of the medication given at one administration event. Use this value
      * when the administration is essentially an instantaneous event such as a
      * swallowing a tablet or giving an injection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $dose = null;
@@ -196,7 +191,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
      * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
     protected null|FHIRRatio $rateRatio = null;
@@ -211,7 +205,6 @@ class FHIRMedicationAdministrationDosage extends FHIRBackboneElement
      * the patient. Typically, the rate for an infusion e.g. 100 ml per 1 hour or 100
      * ml/hr. May also be expressed as a rate per unit of time, e.g. 500 ml per 2
      * hours. Other examples: 200 mcg/min or 200 mcg/1 minute; 1 liter/8 hours.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $rateQuantity = null;

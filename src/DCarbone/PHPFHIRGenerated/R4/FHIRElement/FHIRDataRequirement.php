@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The type of the required data, specified as the type name of a resource. For
      * profiles, this value is set to the type of the base resource of the profile.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $type = null;
@@ -125,7 +124,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The profile of the required data, specified as the uri of the profile
      * definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
     protected null|array $profile = [];
@@ -137,7 +135,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $subjectCodeableConcept = null;
@@ -148,7 +145,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * The intended subjects of the data requirement. If this element is not provided,
      * a Patient subject is assumed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subjectReference = null;
@@ -165,7 +161,6 @@ class FHIRDataRequirement extends FHIRElement
      * FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist
      * only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath
      * Profile](fhirpath.html#simple) for full details).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $mustSupport = [];
@@ -178,7 +173,6 @@ class FHIRDataRequirement extends FHIRElement
      * Code filters specify additional constraints on the data, specifying the value
      * set of interest for a particular element of the data. Each code filter defines
      * an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementCodeFilter[]
      */
     protected null|array $codeFilter = [];
@@ -191,7 +185,6 @@ class FHIRDataRequirement extends FHIRElement
      * Date filters specify additional constraints on the data in terms of the
      * applicable date range for specific elements. Each date filter specifies an
      * additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementDateFilter[]
      */
     protected null|array $dateFilter = [];
@@ -202,7 +195,6 @@ class FHIRDataRequirement extends FHIRElement
      *
      * Specifies a maximum number of results that are required (uses the _count search
      * parameter).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $limit = null;
@@ -213,7 +205,6 @@ class FHIRDataRequirement extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the order of the results to be returned.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement\FHIRDataRequirementSort[]
      */
     protected null|array $sort = [];

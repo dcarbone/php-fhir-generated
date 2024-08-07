@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -136,7 +136,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Indicates the site on the subject's body where the device should be used ( i.e.
      * the target site).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $bodySiteCodeableConcept = null;
@@ -147,7 +146,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Indicates the site on the subject's body where the device should be used ( i.e.
      * the target site).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $bodySiteReference = null;
@@ -156,7 +154,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDeviceUseRequestStatus
      */
     protected null|FHIRDeviceUseRequestStatus $status = null;
@@ -166,7 +163,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the device to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $device = null;
@@ -176,7 +172,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An encounter that provides additional context in which this request is made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -186,7 +181,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the orderer or by the receiver.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -197,7 +191,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reason or justification for the use of this device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $indication = [];
@@ -209,7 +202,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      * Details about this request that were not represented at all or sufficiently in
      * one of the attributes provided in a class. These may include for example a
      * comment, an instruction, or a note associated with the statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
      */
     protected null|array $notes = [];
@@ -221,7 +213,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The proposed act must be performed if the indicated conditions occur, e.g..,
      * shortness of breath, SpO2 less than x%.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $prnReason = [];
@@ -234,7 +225,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when the request was made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $orderedOn = null;
@@ -247,7 +237,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time at which the request was made/recorded.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $recordedOn = null;
@@ -257,7 +246,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient who will use the device.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -273,7 +261,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      * different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2
      * an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct
      * 2013 and 1 Nov 2013".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming
      */
     protected null|FHIRTiming $timingTiming = null;
@@ -286,7 +273,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      * different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2
      * an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct
      * 2013 and 1 Nov 2013".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $timingPeriod = null;
@@ -302,7 +288,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      * different expressions, for example. "Every 8 hours"; "Three times a day"; "1/2
      * an hour before breakfast for 10 days from 23-Dec 2011:"; "15 Oct 2013, 17 Oct
      * 2013 and 1 Nov 2013".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $timingDateTime = null;
@@ -312,7 +297,6 @@ class FHIRDeviceUseRequest extends FHIRDomainResource implements PHPFHIRContaine
      *
      * Characterizes how quickly the use of device must be initiated. Includes concepts
      * such as stat, urgent, routine.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDeviceUseRequestPriority
      */
     protected null|FHIRDeviceUseRequestPriority $priority = null;

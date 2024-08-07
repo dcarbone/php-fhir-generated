@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -153,7 +153,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * globally unique, and SHOULD be an address at which this concept map is (or will
      * be) published. The URL SHOULD include the major version of the concept map. For
      * more information see [Technical and Business Versions](resource.html#versions).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -165,7 +164,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A formal identifier that is used to identify this concept map when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -180,7 +178,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -192,7 +189,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A natural language name identifying the concept map. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -202,7 +198,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the concept map.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -210,7 +205,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this concept map. Enables tracking the life-cycle of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -221,7 +215,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A boolean value to indicate that this concept map is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -237,7 +230,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * change if and when the business version changes and it must change if the status
      * code changes. In addition, it should change when the substantive content of the
      * concept map changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -247,7 +239,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the concept map.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -258,7 +249,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -275,7 +265,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * A free text natural language description of the concept map from a consumer's
      * perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -290,7 +279,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate concept map instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -301,7 +289,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the concept map is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -318,7 +305,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      *
      * Explaination of why this concept map is needed and why it has been designed as
      * it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -336,7 +322,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A copyright statement relating to the concept map and/or its contents. Copyright
      * statements are generally legal restrictions on the use and publishing of the
      * concept map.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -346,7 +331,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The source value set that specifies the concepts that are being mapped.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $sourceUri = null;
@@ -356,7 +340,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The source value set that specifies the concepts that are being mapped.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $sourceReference = null;
@@ -368,7 +351,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * The target value set provides context to the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
      * important context about how the concept mapping choices are made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $targetUri = null;
@@ -380,7 +362,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * The target value set provides context to the mappings. Note that the mapping is
      * made between concepts, not between value sets, but the value set provides
      * important context about how the concept mapping choices are made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $targetReference = null;
@@ -389,7 +370,6 @@ class FHIRConceptMap extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * concepts - either code systems or data elements, or classes in class models.
      *
      * A group of mappings that all have the same source and target system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapGroup[]
      */
     protected null|array $group = [];

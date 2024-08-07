@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,7 +115,6 @@ class FHIRPermissionData extends FHIRBackboneElement
      * Permission resource holds access rules for a given data and context.
      *
      * Explicit FHIR Resource references.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionResource[]
      */
     protected null|array $resource = [];
@@ -126,7 +125,6 @@ class FHIRPermissionData extends FHIRBackboneElement
      *
      * The data in scope are those with the given codes present in that data
      * .meta.security element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding[]
      */
     protected null|array $security = [];
@@ -137,7 +135,6 @@ class FHIRPermissionData extends FHIRBackboneElement
      *
      * Clinical or Operational Relevant period of time that bounds the data controlled
      * by this rule.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod[]
      */
     protected null|array $period = [];
@@ -149,7 +146,6 @@ class FHIRPermissionData extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Used when other data selection elements are insufficient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     protected null|FHIRExpression $expression = null;

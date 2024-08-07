@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -147,7 +147,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      * globally unique, and SHOULD be an address at which this data element is (or will
      * be) published. The URL SHOULD include the major version of the data element. For
      * more information see [Technical and Business Versions](resource.html#versions).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -159,7 +158,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      * A formal identifier that is used to identify this data element when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -174,7 +172,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      * globally unique. For example, it might be a timestamp (e.g. yyyymmdd) if a
      * managed version is not available. There is also no expectation that versions can
      * be placed in a lexicographical sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -182,7 +179,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this data element. Enables tracking the life-cycle of the content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -193,7 +189,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      * A boolean value to indicate that this data element is authored for testing
      * purposes (or education/evaluation/marketing), and is not intended to be used for
      * genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -209,7 +204,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      * must change if and when the business version changes and it must change if the
      * status code changes. In addition, it should change when the substantive content
      * of the data element changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -219,7 +213,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the individual or organization that published the data element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -231,7 +224,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      * A natural language name identifying the data element. This name should be usable
      * as an identifier for the module by machine processing applications such as code
      * generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -241,7 +233,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the data element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -252,7 +243,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -267,7 +257,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate data element instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -278,7 +267,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A legal or geographic region in which the data element is intended to be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -296,7 +284,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      * A copyright statement relating to the data element and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the data element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -305,7 +292,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies how precise the data element is in its definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataElementStringency
      */
     protected null|FHIRDataElementStringency $stringency = null;
@@ -315,7 +301,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * Identifies a specification (other than a terminology) that the elements which
      * make up the DataElement have some correspondence with.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDataElement\FHIRDataElementMapping[]
      */
     protected null|array $mapping = [];
@@ -326,7 +311,6 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      *
      * Defines the structure, type, allowed values and other constraining
      * characteristics of the data element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition[]
      */
     protected null|array $element = [];

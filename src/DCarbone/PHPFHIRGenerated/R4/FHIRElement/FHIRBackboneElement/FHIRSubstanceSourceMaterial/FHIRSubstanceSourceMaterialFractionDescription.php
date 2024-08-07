@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -108,7 +108,6 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
      *
      * This element is capturing information about the fraction of a plant part, or
      * human plasma for fractionation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $fraction = null;
@@ -121,7 +120,6 @@ class FHIRSubstanceSourceMaterialFractionDescription extends FHIRBackboneElement
      * The specific type of the material constituting the component. For Herbal
      * preparations the particulars of the extracts (liquid/dry) is described in
      * Specified Substance Group 1.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $materialType = null;

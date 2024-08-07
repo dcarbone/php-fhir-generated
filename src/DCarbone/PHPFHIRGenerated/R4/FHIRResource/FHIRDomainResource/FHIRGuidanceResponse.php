@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -136,7 +136,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * The identifier of the request associated with this response. If an identifier
      * was given as part of the request, it will be reproduced here to enable the
      * requester to more easily identify the response in a multi-request scenario.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $requestIdentifier = null;
@@ -147,7 +146,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Allows a service to provide unique, business identifiers for the response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -158,7 +156,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
      * requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $moduleUri = null;
@@ -170,7 +167,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
      * requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $moduleCanonical = null;
@@ -182,7 +178,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      *
      * An identifier, CodeableConcept or canonical reference to the guidance that was
      * requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $moduleCodeableConcept = null;
@@ -198,7 +193,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * determines that a potentially more accurate response could be provided if more
      * data was available, the status will be data-requested, and the response will
      * contain a description of the additional requested information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRGuidanceResponseStatus
      */
     protected null|FHIRGuidanceResponseStatus $status = null;
@@ -208,7 +202,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient for which the request was processed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -219,7 +212,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      *
      * The encounter during which this response was created or to which the creation of
      * this record is tightly associated.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -232,7 +224,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the guidance response was processed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -242,7 +233,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a reference to the device that performed the guidance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $performer = null;
@@ -253,7 +243,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Describes the reason for the guidance response in coded or textual form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonCode = [];
@@ -266,7 +255,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * parameter to the evaluation and echoed by the service, although for some use
      * cases, such as subscription- or event-based scenarios, it may provide an
      * indication of the cause for the response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $reasonReference = [];
@@ -277,7 +265,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides a mechanism to communicate additional information about the response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -289,7 +276,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * Messages resulting from the evaluation of the artifact or artifacts. As part of
      * evaluating the request, the engine may produce informational or warning
      * messages. These messages will be provided by this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $evaluationMessage = [];
@@ -303,7 +289,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * are returned as part of the operation result. However, modules may define
      * specific outputs that would be returned as the result of the evaluation, and
      * these would be returned in this element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $outputParameters = null;
@@ -313,7 +298,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The actions, if any, produced by the evaluation of the artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $result = null;
@@ -327,7 +311,6 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * additional information would potentially result in a more accurate response,
      * this element will a description of the data required in order to proceed with
      * the evaluation. A subsequent request to the service should include this data.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement[]
      */
     protected null|array $dataRequirement = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -145,7 +145,6 @@ class FHIRRelatedArtifact extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The type of relationship to the related artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRRelatedArtifactType
      */
     protected null|FHIRRelatedArtifactType $type = null;
@@ -156,7 +155,6 @@ class FHIRRelatedArtifact extends FHIRDataType
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Provides additional classifiers of the related artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $classifier = [];
@@ -167,7 +165,6 @@ class FHIRRelatedArtifact extends FHIRDataType
      *
      * A short label that can be used to reference the citation from elsewhere in the
      * containing artifact, such as a footnote index.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $label = null;
@@ -178,7 +175,6 @@ class FHIRRelatedArtifact extends FHIRDataType
      *
      * A brief description of the document or knowledge resource being referenced,
      * suitable for display to a consumer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $display = null;
@@ -193,7 +189,6 @@ class FHIRRelatedArtifact extends FHIRDataType
      *
      * A bibliographic citation for the related artifact. This text SHOULD be formatted
      * according to an accepted citation format.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $citation = null;
@@ -204,7 +199,6 @@ class FHIRRelatedArtifact extends FHIRDataType
      *
      * The document being referenced, represented as an attachment. This is exclusive
      * with the resource element.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
      */
     protected null|FHIRAttachment $document = null;
@@ -216,7 +210,6 @@ class FHIRRelatedArtifact extends FHIRDataType
      *
      * The related artifact, such as a library, value set, profile, or other knowledge
      * resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $resource = null;
@@ -227,7 +220,6 @@ class FHIRRelatedArtifact extends FHIRDataType
      *
      * The related artifact, if the artifact is not a canonical resource, or a resource
      * reference to a canonical resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $resourceReference = null;
@@ -238,7 +230,6 @@ class FHIRRelatedArtifact extends FHIRDataType
      * the Narrative, or extensions
      *
      * The publication status of the artifact being referred to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $publicationStatus = null;
@@ -249,7 +240,6 @@ class FHIRRelatedArtifact extends FHIRDataType
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date of publication of the artifact being referred to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $publicationDate = null;

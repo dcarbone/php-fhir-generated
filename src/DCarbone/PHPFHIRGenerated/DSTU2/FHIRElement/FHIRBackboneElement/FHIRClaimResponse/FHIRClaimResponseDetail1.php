@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -96,13 +96,11 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code to indicate the Professional Service or Product supplied.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $service = null;
     /**
      * The fee charged for the professional service or product..
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuantity\FHIRMoney
      */
     protected null|FHIRMoney $fee = null;
@@ -111,7 +109,6 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      * resource.
      *
      * The adjudications results.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication4[]
      */
     protected null|array $adjudication = [];

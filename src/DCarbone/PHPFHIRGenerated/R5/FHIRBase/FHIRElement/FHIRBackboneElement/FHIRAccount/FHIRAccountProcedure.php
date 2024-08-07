@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,7 +126,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Ranking of the procedure (for each type).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $sequence = null;
@@ -137,7 +136,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The procedure relevant to the account.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $code = null;
@@ -152,7 +150,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * Date of the procedure when using a coded procedure. If using a reference to a
      * procedure, then the date on the procedure should be used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $dateOfService = null;
@@ -163,7 +160,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How this procedure value should be used in charging the account.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -175,7 +171,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      *
      * The package code can be used to group procedures that may be priced or delivered
      * as a single product. Such as DRGs.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $packageCode = [];
@@ -185,7 +180,6 @@ class FHIRAccountProcedure extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Any devices that were associated with the procedure relevant to the account.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $device = [];

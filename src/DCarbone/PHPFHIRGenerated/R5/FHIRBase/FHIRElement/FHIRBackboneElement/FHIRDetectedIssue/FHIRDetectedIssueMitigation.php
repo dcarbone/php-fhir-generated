@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -125,7 +125,6 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement
      *
      * Describes the action that was taken or the observation that was made that
      * reduces/eliminates the risk associated with the identified issue.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $action = null;
@@ -139,7 +138,6 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates when the mitigating action was documented.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -150,7 +148,6 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement
      *
      * Identifies the practitioner who determined the mitigation and takes
      * responsibility for the mitigation step occurring.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $author = null;
@@ -163,7 +160,6 @@ class FHIRDetectedIssueMitigation extends FHIRBackboneElement
      * Clinicians may add additional notes or justifications about the mitigation
      * action. For example, patient can have this drug because they have had it before
      * without any issues. Multiple justifications may be provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];

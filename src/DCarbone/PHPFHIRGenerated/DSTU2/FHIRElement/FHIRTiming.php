@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRTiming extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Identifies specific times when the event occurs.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime[]
      */
     protected null|array $event = [];
@@ -116,7 +115,6 @@ class FHIRTiming extends FHIRElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A set of rules that describe when the event should occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRTiming\FHIRTimingRepeat
      */
     protected null|FHIRTimingRepeat $repeat = null;
@@ -128,7 +126,6 @@ class FHIRTiming extends FHIRElement
      *
      * A code for the timing pattern. Some codes such as BID are ubiquitous, but many
      * institutions define their own additional codes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;

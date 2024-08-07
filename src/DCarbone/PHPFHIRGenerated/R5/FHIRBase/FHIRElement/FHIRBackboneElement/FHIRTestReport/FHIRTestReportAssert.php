@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIRTestReportAssert extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The result of this assertion.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRTestReportActionResult
      */
     protected null|FHIRTestReportActionResult $result = null;
@@ -134,7 +133,6 @@ class FHIRTestReportAssert extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * An explanatory message associated with the result.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $message = null;
@@ -144,7 +142,6 @@ class FHIRTestReportAssert extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A link to further details on the result.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $detail = null;
@@ -153,7 +150,6 @@ class FHIRTestReportAssert extends FHIRBackboneElement
      *
      * Links or references providing traceability to the testing requirements for this
      * assert.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestReport\FHIRTestReportRequirement[]
      */
     protected null|array $requirement = [];

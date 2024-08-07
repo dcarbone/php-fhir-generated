@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A reference to the additional attribute that holds a value the map depends on.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $attribute = null;
@@ -145,7 +144,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Data element value that the map depends on / produces.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $valueCode = null;
@@ -155,7 +153,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data element value that the map depends on / produces.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $valueCoding = null;
@@ -165,7 +162,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Data element value that the map depends on / produces.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -174,7 +170,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Data element value that the map depends on / produces.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -186,7 +181,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Data element value that the map depends on / produces.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -197,7 +191,6 @@ class FHIRConceptMapDependsOn extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * This mapping applies if the data element value is a code from this value set.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $valueSet = null;

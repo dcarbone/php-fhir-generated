@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -124,7 +124,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sequential number of the step, e.g. 1.2.5.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $number = null;
@@ -132,7 +131,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * Indicates that the step is a complex sub-process with its own steps.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess
      */
     protected null|FHIRExampleScenarioProcess $process = null;
@@ -143,7 +141,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Indicates that the step is defined by a seaparate scenario instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $workflow = null;
@@ -151,7 +148,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Example of workflow instance.
      *
      * The step represents a single operation invoked on receiver by sender.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioOperation
      */
     protected null|FHIRExampleScenarioOperation $operation = null;
@@ -161,7 +157,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Indicates an alternative step that can be taken instead of the sub-process,
      * scenario or operation. E.g. to represent non-happy-path/exceptional/atypical
      * circumstances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative[]
      */
     protected null|array $alternative = [];
@@ -171,7 +166,6 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      *
      * If true, indicates that, following this step, there is a pause in the flow and
      * the subsequent step will occur at some later time (triggered by some event).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $pause = null;

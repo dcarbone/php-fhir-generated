@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -102,7 +102,6 @@ class FHIRQuantity extends FHIRElement
      *
      * The value of the measured amount. The value includes an implicit precision in
      * the presentation of the value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $value = null;
@@ -113,7 +112,6 @@ class FHIRQuantity extends FHIRElement
      * How the value should be understood and represented - whether the actual value is
      * greater or less than the stated value due to measurement issues. E.g. if the
      * comparator is "<" , then the real value is < stated value.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRQuantityCompararator
      */
     protected null|FHIRQuantityCompararator $comparator = null;
@@ -122,7 +120,6 @@ class FHIRQuantity extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A human-readable form of the units.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $units = null;
@@ -131,7 +128,6 @@ class FHIRQuantity extends FHIRElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The identification of the system that provides the coded form of the unit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $system = null;
@@ -142,7 +138,6 @@ class FHIRQuantity extends FHIRElement
      * the Narrative, or extensions
      *
      * A computer processable form of the units in some unit representation system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;

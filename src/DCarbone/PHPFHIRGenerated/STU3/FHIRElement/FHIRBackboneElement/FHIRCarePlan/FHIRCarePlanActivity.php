@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCar
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * Identifies the outcome at the point when the status of the activity is assessed.
      * For example, the outcome of an education activity could be patient understands
      * (or not).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $outcomeCodeableConcept = [];
@@ -117,7 +116,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * result/outcome of the activity itself. The activity can be conveyed using
      * CarePlan.activity.detail OR using the CarePlan.activity.reference (a reference
      * to a “request” resource).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $outcomeReference = [];
@@ -128,7 +126,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Notes about the adherence/status/progress of the activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $progress = [];
@@ -138,7 +135,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The details of the proposed activity represented in a specific resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $reference = null;
@@ -150,7 +146,6 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * A simple summary of a planned activity suitable for a general care plan system
      * (e.g. form driven) that doesn't know about specific resources such as procedure
      * etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanDetail
      */
     protected null|FHIRCarePlanDetail $detail = null;

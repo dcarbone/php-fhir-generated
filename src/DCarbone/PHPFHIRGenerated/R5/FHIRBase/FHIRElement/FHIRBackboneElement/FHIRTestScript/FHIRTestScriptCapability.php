@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Whether or not the test execution will require the given capabilities of the
      * server in order for this test script to execute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $required = null;
@@ -144,7 +143,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Whether or not the test execution will validate the given capabilities of the
      * server in order for this test script to execute.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $validated = null;
@@ -155,7 +153,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Description of the capabilities that this test script is requiring the server to
      * support.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -165,7 +162,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which origin server these requirements apply to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger[]
      */
     protected null|array $origin = [];
@@ -175,7 +171,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Which server these requirements apply to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $destination = null;
@@ -186,7 +181,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      *
      * Links to the FHIR specification that describes this interaction and the
      * resources involved in more detail.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri[]
      */
     protected null|array $link = [];
@@ -199,7 +193,6 @@ class FHIRTestScriptCapability extends FHIRBackboneElement
      * Minimum capabilities required of server for test script to execute successfully.
      * If server does not meet at a minimum the referenced capability statement, then
      * all tests in this script are skipped.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $capabilities = null;

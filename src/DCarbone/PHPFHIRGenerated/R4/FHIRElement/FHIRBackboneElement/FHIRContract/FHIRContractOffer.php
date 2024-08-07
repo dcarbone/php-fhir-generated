@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Unique identifier for this particular Contract Provision.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -120,7 +119,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * policy or agreement.
      *
      * Offer Recipient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractParty[]
      */
     protected null|array $party = [];
@@ -132,7 +130,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * The owner of an asset has the residual control rights over the asset: the right
      * to decide all usages of the asset in any way not inconsistent with a prior
      * contract, custom, or law (Hart, 1995, p. 30).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $topic = null;
@@ -144,7 +141,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * Type of Contract Provision such as specific requirements, purposes for actions,
      * obligations, prohibitions, e.g. life time maximum benefit.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -156,7 +152,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * Type of choice made by accepting party with respect to an offer made by an
      * offeror/ grantee.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $decision = null;
@@ -167,7 +162,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * How the decision about a Contract was conveyed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $decisionMode = [];
@@ -176,7 +170,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * policy or agreement.
      *
      * Response to offer text.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer[]
      */
     protected null|array $answer = [];
@@ -186,7 +179,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human readable form of this Contract Offer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $text = null;
@@ -197,7 +189,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      *
      * The id of the clause or question text of the offer in the referenced
      * questionnaire/response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $linkId = [];
@@ -207,7 +198,6 @@ class FHIRContractOffer extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Security labels that protects the offer.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt[]
      */
     protected null|array $securityLabelNumber = [];

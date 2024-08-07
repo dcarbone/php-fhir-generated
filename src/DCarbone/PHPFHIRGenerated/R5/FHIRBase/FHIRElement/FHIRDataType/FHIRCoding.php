@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -136,7 +136,6 @@ class FHIRCoding extends FHIRDataType
      *
      * The identification of the code system that defines the meaning of the symbol in
      * the code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $system = null;
@@ -150,7 +149,6 @@ class FHIRCoding extends FHIRDataType
      * meaning of codes is consistent across versions. However this cannot consistently
      * be assured, and when the meaning is not guaranteed to be consistent, the version
      * SHOULD be exchanged.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -162,7 +160,6 @@ class FHIRCoding extends FHIRDataType
      *
      * A symbol in syntax defined by the system. The symbol may be a predefined code or
      * an expression in a syntax defined by the coding system (e.g. post-coordination).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -173,7 +170,6 @@ class FHIRCoding extends FHIRDataType
      *
      * A representation of the meaning of the code in the system, following the rules
      * of the system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $display = null;
@@ -183,7 +179,6 @@ class FHIRCoding extends FHIRDataType
      *
      * Indicates that this coding was chosen by a user directly - e.g. off a pick list
      * of available items (codes or displays).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $userSelected = null;

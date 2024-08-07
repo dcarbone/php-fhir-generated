@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -229,7 +229,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The name of the Output parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -239,7 +238,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBase64Binary
      */
     protected null|FHIRBase64Binary $valueBase64Binary = null;
@@ -248,7 +246,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -259,7 +256,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $valueCanonical = null;
@@ -270,7 +266,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $valueCode = null;
@@ -281,7 +276,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $valueDate = null;
@@ -294,7 +288,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $valueDateTime = null;
@@ -305,7 +298,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $valueDecimal = null;
@@ -318,7 +310,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRId
      */
     protected null|FHIRId $valueId = null;
@@ -331,7 +322,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $valueInstant = null;
@@ -341,7 +331,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $valueInteger = null;
@@ -355,7 +344,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $valueMarkdown = null;
@@ -366,7 +354,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIROid
      */
     protected null|FHIROid $valueOid = null;
@@ -376,7 +363,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $valuePositiveInt = null;
@@ -386,7 +372,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -395,7 +380,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTime
      */
     protected null|FHIRTime $valueTime = null;
@@ -405,7 +389,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $valueUnsignedInt = null;
@@ -415,7 +398,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $valueUri = null;
@@ -425,7 +407,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
     protected null|FHIRUrl $valueUrl = null;
@@ -436,7 +417,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUuid
      */
     protected null|FHIRUuid $valueUuid = null;
@@ -450,7 +430,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress
      */
     protected null|FHIRAddress $valueAddress = null;
@@ -460,7 +439,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $valueAge = null;
@@ -471,7 +449,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation
      */
     protected null|FHIRAnnotation $valueAnnotation = null;
@@ -481,7 +458,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAttachment
      */
     protected null|FHIRAttachment $valueAttachment = null;
@@ -492,7 +468,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $valueCodeableConcept = null;
@@ -502,7 +477,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $valueCoding = null;
@@ -513,7 +487,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint
      */
     protected null|FHIRContactPoint $valueContactPoint = null;
@@ -525,7 +498,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRCount
      */
     protected null|FHIRCount $valueCount = null;
@@ -535,7 +507,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDistance
      */
     protected null|FHIRDistance $valueDistance = null;
@@ -545,7 +516,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $valueDuration = null;
@@ -555,7 +525,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRHumanName
      */
     protected null|FHIRHumanName $valueHumanName = null;
@@ -566,7 +535,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $valueIdentifier = null;
@@ -576,7 +544,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMoney
      */
     protected null|FHIRMoney $valueMoney = null;
@@ -586,7 +553,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $valuePeriod = null;
@@ -598,7 +564,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -608,7 +573,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $valueRange = null;
@@ -619,7 +583,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRatio
      */
     protected null|FHIRRatio $valueRatio = null;
@@ -629,7 +592,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $valueReference = null;
@@ -640,7 +602,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSampledData
      */
     protected null|FHIRSampledData $valueSampledData = null;
@@ -654,7 +615,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSignature
      */
     protected null|FHIRSignature $valueSignature = null;
@@ -668,7 +628,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     protected null|FHIRTiming $valueTiming = null;
@@ -678,7 +637,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail
      */
     protected null|FHIRContactDetail $valueContactDetail = null;
@@ -689,7 +647,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContributor
      */
     protected null|FHIRContributor $valueContributor = null;
@@ -700,7 +657,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDataRequirement
      */
     protected null|FHIRDataRequirement $valueDataRequirement = null;
@@ -712,7 +668,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExpression
      */
     protected null|FHIRExpression $valueExpression = null;
@@ -724,7 +679,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRParameterDefinition
      */
     protected null|FHIRParameterDefinition $valueParameterDefinition = null;
@@ -735,7 +689,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact
      */
     protected null|FHIRRelatedArtifact $valueRelatedArtifact = null;
@@ -746,7 +699,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRTriggerDefinition
      */
     protected null|FHIRTriggerDefinition $valueTriggerDefinition = null;
@@ -759,7 +711,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext
      */
     protected null|FHIRUsageContext $valueUsageContext = null;
@@ -769,7 +720,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage
      */
     protected null|FHIRDosage $valueDosage = null;
@@ -781,7 +731,6 @@ class FHIRTaskOutput extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The value of the Output parameter as a basic type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRMeta
      */
     protected null|FHIRMeta $valueMeta = null;

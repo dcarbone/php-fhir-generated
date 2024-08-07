@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,7 +122,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * INDEL / SNP / Undefined variant.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQualityType
      */
     protected null|FHIRQualityType $type = null;
@@ -133,7 +132,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Gold standard sequence used for comparing against.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $standardSequence = null;
@@ -144,7 +142,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      *
      * Start position of the sequence. If the coordinate system is either 0-based or
      * 1-based, then start position is inclusive.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $start = null;
@@ -156,7 +153,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * End position of the sequence. If the coordinate system is 0-based then end is
      * exclusive and does not include the last position. If the coordinate system is
      * 1-base, then end is inclusive and includes the last position.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $end = null;
@@ -169,7 +165,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      *
      * The score of an experimentally derived feature such as a p-value
      * ([SO:0001685](http://www.sequenceontology.org/browser/current_svn/term/SO:0001685)).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $score = null;
@@ -180,7 +175,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Which method is used to get sequence quality.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $method = null;
@@ -194,7 +188,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * in the Truth Call Set for which there are paths through the Query Call Set that
      * are consistent with all of the alleles at this site, and for which there is an
      * accurate genotype call for the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $truthTP = null;
@@ -208,7 +201,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * in the Query Call Set for which there are paths through the Truth Call Set that
      * are consistent with all of the alleles at this site, and for which there is an
      * accurate genotype call for the event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $queryTP = null;
@@ -222,7 +214,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * is no path through the Query Call Set that is consistent with all of the alleles
      * at this site, or sites for which there is an inaccurate genotype call for the
      * event. Sites with correct variant but incorrect genotype are counted here.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $truthFN = null;
@@ -235,7 +226,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * False positives, i.e. the number of sites in the Query Call Set for which there
      * is no path through the Truth Call Set that is consistent with this site. Sites
      * with correct variant but incorrect genotype are counted here.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $queryFP = null;
@@ -248,7 +238,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * The number of false positives where the non-REF alleles in the Truth and Query
      * Call Sets match (i.e. cases where the truth is 1/1 and the query is 0/1 or
      * similar).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $gtFP = null;
@@ -259,7 +248,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * QUERY.TP / (QUERY.TP + QUERY.FP).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $precision = null;
@@ -270,7 +258,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * TRUTH.TP / (TRUTH.TP + TRUTH.FN).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $recall = null;
@@ -282,7 +269,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      *
      * Harmonic mean of Recall and Precision, computed as: 2 * precision * recall /
      * (precision + recall).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $fScore = null;
@@ -291,7 +277,6 @@ class FHIRMolecularSequenceQuality extends FHIRBackboneElement
      *
      * Receiver Operator Characteristic (ROC) Curve to give sensitivity/specificity
      * tradeoff.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRoc
      */
     protected null|FHIRMolecularSequenceRoc $roc = null;

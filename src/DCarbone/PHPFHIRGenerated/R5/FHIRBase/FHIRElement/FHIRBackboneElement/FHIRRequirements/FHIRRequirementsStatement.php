@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -144,7 +144,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Key that identifies this statement (unique within this resource).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $key = null;
@@ -154,7 +153,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short human usable label for this statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $label = null;
@@ -162,7 +160,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short human usable label for this statement.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRConformanceExpectation[]
      */
     protected null|array $conformance = [];
@@ -173,7 +170,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * This boolean flag is set to true of the text of the requirement is conditional
      * on something e.g. it includes lanauage like 'if x then y'. This conditionality
      * flag is introduced for purposes of filtering and colour highlighting etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $conditionality = null;
@@ -187,7 +183,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The actual requirement for human consumption.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $requirement = null;
@@ -198,7 +193,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      *
      * Another statement on one of the requirements that this requirement clarifies or
      * restricts.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $derivedFrom = null;
@@ -208,7 +202,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A larger requirement that this requirement helps to refine and enable.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $parent = null;
@@ -220,7 +213,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * A reference to another artifact that satisfies this requirement. This could be a
      * Profile, extension, or an element in one of those, or a CapabilityStatement,
      * OperationDefinition, SearchParameter, CodeSystem(/code), ValueSet, Libary etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUrl[]
      */
     protected null|array $satisfiedBy = [];
@@ -232,7 +224,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      * A reference to another artifact that created this requirement. This could be a
      * Profile, etc., or external regulation, or business requirements expressed
      * elsewhere.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUrl[]
      */
     protected null|array $reference = [];
@@ -243,7 +234,6 @@ class FHIRRequirementsStatement extends FHIRBackboneElement
      *
      * Who asked for this statement to be a requirement. By default, it's assumed that
      * the publisher knows who it is if it matters.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $source = [];

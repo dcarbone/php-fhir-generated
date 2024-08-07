@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -107,7 +107,6 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * The category of interval of values for continuous or ordinal observations
      * conforming to this ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRObservationRangeCategory
      */
     protected null|FHIRObservationRangeCategory $category = null;
@@ -118,7 +117,6 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * The low and high values determining the interval. There may be only one of the
      * two.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $range = null;
@@ -130,7 +128,6 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * Codes to indicate the health context the range applies to. For example, the
      * normal or therapeutic range.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $context = null;
@@ -141,7 +138,6 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Codes to indicate the target population this reference range applies to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $appliesTo = [];
@@ -149,7 +145,6 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Sex of the population the range applies to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAdministrativeGender
      */
     protected null|FHIRAdministrativeGender $gender = null;
@@ -160,7 +155,6 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * The age at which this reference range is applicable. This is a neonatal age
      * (e.g. number of weeks at term) if the meaning says so.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $age = null;
@@ -171,7 +165,6 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      *
      * The gestational age to which this reference range is applicable, in the context
      * of pregnancy.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $gestationalAge = null;
@@ -181,7 +174,6 @@ class FHIRObservationDefinitionQualifiedInterval extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Text based condition for which the reference range is valid.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $condition = null;

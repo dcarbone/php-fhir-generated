@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -116,7 +116,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements PHPFHIRContai
      *
      * Business identifier which may be used by other parties to reference or identify
      * the prescription.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -129,7 +128,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date (and perhaps time) when the prescription was written.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $dateWritten = null;
@@ -140,7 +138,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements PHPFHIRContai
      *
      * A link to a resource representing the person to whom the vision products will be
      * supplied.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -150,7 +147,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The healthcare professional responsible for authorizing the prescription.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $prescriber = null;
@@ -161,7 +157,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements PHPFHIRContai
      *
      * A link to a resource that identifies the particular occurrence of contact
      * between patient and health care provider.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -172,7 +167,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Can be the reason or the indication for writing the prescription.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $reasonCodeableConcept = null;
@@ -182,7 +176,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Can be the reason or the indication for writing the prescription.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $reasonReference = null;
@@ -190,7 +183,6 @@ class FHIRVisionPrescription extends FHIRDomainResource implements PHPFHIRContai
      * An authorization for the supply of glasses and/or contact lenses to a patient.
      *
      * Deals with details of the dispense part of the supply specification.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVisionPrescription\FHIRVisionPrescriptionDispense[]
      */
     protected null|array $dispense = [];

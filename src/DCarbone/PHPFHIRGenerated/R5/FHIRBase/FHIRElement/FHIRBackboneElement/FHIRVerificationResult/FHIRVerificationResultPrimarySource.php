@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,7 +123,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to the primary source.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $who = null;
@@ -136,7 +135,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * Type of primary source (License Board; Primary Education; Continuing Education;
      * Postal Service; Relationship owner; Registration Authority; legal source;
      * issuing source; authoritative source).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -147,7 +145,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Method for communicating with the primary source (manual; API; Push).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $communicationMethod = [];
@@ -159,7 +156,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * Status of the validation of the target against the primary source (successful;
      * failed; unknown).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $validationStatus = null;
@@ -173,7 +169,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the target was validated against the primary source.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $validationDate = null;
@@ -184,7 +179,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Ability of the primary source to push updates/alerts (yes; no; undetermined).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $canPushUpdates = null;
@@ -196,7 +190,6 @@ class FHIRVerificationResultPrimarySource extends FHIRBackboneElement
      *
      * Type of alerts/updates the primary source can send (specific requested changes;
      * any changes; as defined by source).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
      */
     protected null|array $pushTypeAvailable = [];

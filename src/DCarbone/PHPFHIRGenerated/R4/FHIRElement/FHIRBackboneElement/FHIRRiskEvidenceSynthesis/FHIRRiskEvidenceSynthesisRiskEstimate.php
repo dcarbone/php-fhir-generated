@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskE
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Human-readable summary of risk estimate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -120,7 +119,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Examples include proportion and mean.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -131,7 +129,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The point estimate of the risk estimate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $value = null;
@@ -142,7 +139,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Specifies the UCUM unit for the outcome.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $unitOfMeasure = null;
@@ -152,7 +148,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The sample size for the group that was measured for this risk estimate.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $denominatorCount = null;
@@ -162,7 +157,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The number of group members with the outcome of interest.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $numeratorCount = null;
@@ -172,7 +166,6 @@ class FHIRRiskEvidenceSynthesisRiskEstimate extends FHIRBackboneElement
      * combination of research studies.
      *
      * A description of the precision of the estimate for the effect.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRiskEvidenceSynthesis\FHIRRiskEvidenceSynthesisPrecisionEstimate[]
      */
     protected null|array $precisionEstimate = [];

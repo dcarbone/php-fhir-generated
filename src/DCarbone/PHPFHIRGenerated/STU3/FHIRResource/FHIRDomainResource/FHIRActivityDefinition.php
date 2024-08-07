@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -185,7 +185,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * definition is (or will be) published. The URL SHOULD include the major version
      * of the activity definition. For more information see [Technical and Business
      * Versions](resource.html#versions).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -197,7 +196,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A formal identifier that is used to identify this activity definition when it is
      * represented in other formats, or referenced in a specification, model, design or
      * an instance.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -216,7 +214,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * (e.g. 1.0.0). For more information on versioning knowledge assets, refer to the
      * Decision Support Service specification. Note that a version is required for
      * non-experimental active assets.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -228,7 +225,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A natural language name identifying the activity definition. This name should be
      * usable as an identifier for the module by machine processing applications such
      * as code generation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -238,7 +234,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A short, descriptive, user-friendly title for the activity definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $title = null;
@@ -247,7 +242,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * The status of this activity definition. Enables tracking the life-cycle of the
      * content.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPublicationStatus
      */
     protected null|FHIRPublicationStatus $status = null;
@@ -258,7 +252,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A boolean value to indicate that this activity definition is authored for
      * testing purposes (or education/evaluation/marketing), and is not intended to be
      * used for genuine usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $experimental = null;
@@ -274,7 +267,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * date must change if and when the business version changes and it must change if
      * the status code changes. In addition, it should change when the substantive
      * content of the activity definition changes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $date = null;
@@ -285,7 +277,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * The name of the individual or organization that published the activity
      * definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $publisher = null;
@@ -302,7 +293,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * A free text natural language description of the activity definition from a
      * consumer's perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $description = null;
@@ -319,7 +309,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * Explaination of why this activity definition is needed and why it has been
      * designed as it has.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $purpose = null;
@@ -329,7 +318,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A detailed description of how the asset is used from a clinical perspective.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRString
      */
     protected null|FHIRString $usage = null;
@@ -341,7 +329,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * The date on which the resource content was approved by the publisher. Approval
      * happens once when the content is officially approved for usage.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $approvalDate = null;
@@ -353,7 +340,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * The date on which the resource content was last reviewed. Review happens
      * periodically after approval, but doesn't change the original approval date.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $lastReviewDate = null;
@@ -364,7 +350,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * The period during which the activity definition content was or is planned to be
      * in active use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $effectivePeriod = null;
@@ -379,7 +364,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * The content was developed with a focus and intent of supporting the contexts
      * that are listed. These terms may be used to assist with indexing and searching
      * for appropriate activity definition instances.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext[]
      */
     protected null|array $useContext = [];
@@ -391,7 +375,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * A legal or geographic region in which the activity definition is intended to be
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $jurisdiction = [];
@@ -404,7 +387,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Descriptive topics related to the content of the activity. Topics provide a
      * high-level categorization of the activity that can be useful for filtering and
      * searching.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $topic = [];
@@ -416,7 +398,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * A contributor to the content of the asset, including authors, editors,
      * reviewers, and endorsers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContributor[]
      */
     protected null|array $contributor = [];
@@ -427,7 +408,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * Contact details to assist a user in finding and communicating with the
      * publisher.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail[]
      */
     protected null|array $contact = [];
@@ -445,7 +425,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A copyright statement relating to the activity definition and/or its contents.
      * Copyright statements are generally legal restrictions on the use and publishing
      * of the activity definition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $copyright = null;
@@ -457,7 +436,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact[]
      */
     protected null|array $relatedArtifact = [];
@@ -467,7 +445,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A reference to a Library resource containing any formal logic used by the asset.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $library = [];
@@ -478,7 +455,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A description of the kind of resource the activity definition is representing.
      * For example, a MedicationRequest, a ProcedureRequest, or a CommunicationRequest.
      * Typically, but not always, this is a Request resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRResourceType
      */
     protected null|FHIRResourceType $kind = null;
@@ -490,7 +466,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * Detailed description of the type of activity; e.g. What lab test, what
      * procedure, what kind of encounter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -504,7 +479,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTiming
      */
     protected null|FHIRTiming $timingTiming = null;
@@ -517,7 +491,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $timingDateTime = null;
@@ -527,7 +500,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $timingPeriod = null;
@@ -537,7 +509,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The period, timing or frequency upon which the described activity is to occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRange
      */
     protected null|FHIRRange $timingRange = null;
@@ -548,7 +519,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * Identifies the facility where the activity will occur; e.g. home, hospital,
      * specific clinic, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -557,7 +527,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * independent of a particular patient, practitioner, or other performance context.
      *
      * Indicates who should participate in performing the action described.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionParticipant[]
      */
     protected null|array $participant = [];
@@ -568,7 +537,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $productReference = null;
@@ -580,7 +548,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * Identifies the food, drug or other product being consumed or supplied in the
      * activity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $productCodeableConcept = null;
@@ -593,7 +560,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * Identifies the quantity expected to be consumed at once (per dose, per meal,
      * etc.).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -604,7 +570,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * Provides detailed dosage instructions in the same way that they are described
      * for MedicationRequest resources.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDosage[]
      */
     protected null|array $dosage = [];
@@ -616,7 +581,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      *
      * Indicates the sites on the subject's body where the procedure should be
      * performed (I.e. the target sites).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $bodySite = [];
@@ -628,7 +592,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * A reference to a StructureMap resource that defines a transform that can be
      * executed to produce the intent resource using the ActivityDefinition instance as
      * the input.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $transform = null;
@@ -641,7 +604,6 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * based on the patient's weight, a dynamic value would be used to specify an
      * expression that calculated the weight, and the path on the intent resource that
      * would contain the result.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue[]
      */
     protected null|array $dynamicValue = [];

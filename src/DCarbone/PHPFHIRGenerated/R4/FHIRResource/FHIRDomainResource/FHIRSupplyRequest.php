@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * Business identifiers assigned to this SupplyRequest by the author and/or other
      * systems. These identifiers remain constant as the resource is updated and
      * propagates from server to server.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -146,7 +145,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Status of the supply request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRSupplyRequestStatus
      */
     protected null|FHIRSupplyRequestStatus $status = null;
@@ -158,7 +156,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Category of supply, e.g. central, non-stock, etc. This is used to support work
      * flows associated with the supply process.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $category = null;
@@ -168,7 +165,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Indicates how quickly this SupplyRequest should be addressed with respect to
      * other requests.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestPriority
      */
     protected null|FHIRRequestPriority $priority = null;
@@ -181,7 +177,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * The item that is requested to be supplied. This is either a link to a resource
      * representing the details of the item or a code that identifies the item from a
      * known list.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $itemCodeableConcept = null;
@@ -193,7 +188,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * The item that is requested to be supplied. This is either a link to a resource
      * representing the details of the item or a code that identifies the item from a
      * known list.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $itemReference = null;
@@ -205,7 +199,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The amount that is being ordered of the indicated item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -215,7 +208,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Specific parameters for the ordered item. For example, the size of the indicated
      * item.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSupplyRequest\FHIRSupplyRequestParameter[]
      */
     protected null|array $parameter = [];
@@ -228,7 +220,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request should be fulfilled.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $occurrenceDateTime = null;
@@ -238,7 +229,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the request should be fulfilled.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $occurrencePeriod = null;
@@ -252,7 +242,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the request should be fulfilled.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming
      */
     protected null|FHIRTiming $occurrenceTiming = null;
@@ -265,7 +254,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the request was made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authoredOn = null;
@@ -275,7 +263,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The device, practitioner, etc. who initiated the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $requester = null;
@@ -285,7 +272,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Who is intended to fulfill the request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $supplier = [];
@@ -296,7 +282,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the supply item was requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonCode = [];
@@ -306,7 +291,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason why the supply item was requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $reasonReference = [];
@@ -316,7 +300,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the supply is expected to come from.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $deliverFrom = null;
@@ -326,7 +309,6 @@ class FHIRSupplyRequest extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Where the supply is destined to go.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $deliverTo = null;

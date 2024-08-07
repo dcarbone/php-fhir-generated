@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -156,7 +156,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * Unique instance identifiers assigned to a biologically derived product dispense.
      * Note: This is a business identifier, not a resource identifier.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -167,7 +166,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * The order or request that the dispense is fulfilling. This is a reference to a
      * ServiceRequest resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -177,7 +175,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A larger event of which this particular event is a component.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
      */
     protected null|array $partOf = [];
@@ -186,7 +183,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A code specifying the state of the dispense event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBiologicallyDerivedProductDispenseCodes
      */
     protected null|FHIRBiologicallyDerivedProductDispenseCodes $status = null;
@@ -198,7 +194,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * Indicates the relationship between the donor of the biologically derived product
      * and the intended recipient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $originRelationshipType = null;
@@ -209,7 +204,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * A link to a resource identifying the biologically derived product that is being
      * dispensed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $product = null;
@@ -219,7 +213,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A link to a resource representing the patient that the product is dispensed for.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -230,7 +223,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates the type of matching associated with the dispense.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $matchStatus = null;
@@ -241,7 +233,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * clinical team responsible for clinical application.
      *
      * Indicates who or what performed an action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProductDispense\FHIRBiologicallyDerivedProductDispensePerformer[]
      */
     protected null|array $performer = [];
@@ -251,7 +242,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The physical location where the dispense was performed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $location = null;
@@ -264,7 +254,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * The amount of product in the dispense. Quantity will depend on the product being
      * dispensed. Examples are: volume; cell count; concentration.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -278,7 +267,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the product was selected/ matched.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $preparedDate = null;
@@ -292,7 +280,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * When the product was dispatched for clinical use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $whenHandedOver = null;
@@ -303,7 +290,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      *
      * Link to a resource identifying the physical location that the product was
      * dispatched to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $destination = null;
@@ -314,7 +300,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Additional notes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation[]
      */
     protected null|array $note = [];
@@ -324,7 +309,6 @@ class FHIRBiologicallyDerivedProductDispense extends FHIRDomainResource implemen
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Specific instructions for use.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $usageInstruction = null;

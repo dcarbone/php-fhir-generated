@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRSecurityEvent extends FHIRResource implements PHPFHIRContainedTypeInte
      * usage.
      *
      * Identifies the name, action type, time, and disposition of the audited event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventEvent
      */
     protected null|FHIRSecurityEventEvent $event = null;
@@ -111,7 +110,6 @@ class FHIRSecurityEvent extends FHIRResource implements PHPFHIRContainedTypeInte
      * usage.
      *
      * A person, a hardware device or software process.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventParticipant[]
      */
     protected null|array $participant = [];
@@ -121,7 +119,6 @@ class FHIRSecurityEvent extends FHIRResource implements PHPFHIRContainedTypeInte
      * usage.
      *
      * Application systems and processes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventSource
      */
     protected null|FHIRSecurityEventSource $source = null;
@@ -131,7 +128,6 @@ class FHIRSecurityEvent extends FHIRResource implements PHPFHIRContainedTypeInte
      * usage.
      *
      * Specific instances of data or objects that have been accessed.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventObject[]
      */
     protected null|array $object = [];

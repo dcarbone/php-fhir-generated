@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Person who collected the specimen.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $collector = null;
@@ -145,7 +144,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Time when specimen was collected from subject - the physiologically relevant
      * time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $collectedDateTime = null;
@@ -156,7 +154,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Time when specimen was collected from subject - the physiologically relevant
      * time.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $collectedPeriod = null;
@@ -166,7 +163,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The span of time over which the collection of a specimen occurred.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $duration = null;
@@ -179,7 +175,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * The quantity of specimen collected; for instance the volume of a blood sample,
      * or the physical measurement of an anatomic pathology sample.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $quantity = null;
@@ -190,7 +185,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded value specifying the technique that is used to perform the procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $method = null;
@@ -201,7 +195,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A coded value specifying the technique that is used to perform the procedure.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $device = null;
@@ -212,7 +205,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * The procedure event during which the specimen was collected (e.g. the surgery
      * leading to the collection of a pathology sample).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $procedure = null;
@@ -225,7 +217,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      * Anatomical location from which the specimen was collected (if subject is a
      * patient). This is the target site. This element is not used for environmental
      * specimens.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $bodySite = null;
@@ -237,7 +228,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
      * time prior to sample collection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $fastingStatusCodeableConcept = null;
@@ -248,7 +238,6 @@ class FHIRSpecimenCollection extends FHIRBackboneElement
      *
      * Abstinence or reduction from some or all food, drink, or both, for a period of
      * time prior to sample collection.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $fastingStatusDuration = null;

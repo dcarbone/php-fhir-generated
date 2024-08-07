@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExpla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * A number to uniquely identify diagnosis entries.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $sequence = null;
@@ -115,7 +114,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $diagnosisCodeableConcept = null;
@@ -126,7 +124,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      *
      * The nature of illness or problem in a coded form or as a reference to an
      * external defined Condition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $diagnosisReference = null;
@@ -137,7 +134,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * When the condition was observed or the relative ranking.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $type = [];
@@ -148,7 +144,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indication of whether the diagnosis was present on admission to a facility.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $onAdmission = null;
@@ -161,7 +156,6 @@ class FHIRExplanationOfBenefitDiagnosis extends FHIRBackboneElement
      * A package billing code or bundle code used to group products and services to a
      * particular health condition (such as heart attack) which is based on a
      * predetermined grouping code system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $packageCode = null;

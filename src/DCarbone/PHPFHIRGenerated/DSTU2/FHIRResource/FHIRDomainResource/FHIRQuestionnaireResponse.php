@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * A business identifier assigned to a particular completed (or partially
      * completed) questionnaire.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier
      */
     protected null|FHIRIdentifier $identifier = null;
@@ -131,7 +130,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * Indicates the Questionnaire resource that defines the form for which answers are
      * being provided.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $questionnaire = null;
@@ -140,7 +138,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The lifecycle status of the questionnaire response as a whole.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRQuestionnaireResponseStatus
      */
     protected null|FHIRQuestionnaireResponseStatus $status = null;
@@ -152,7 +149,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * The subject of the questionnaire response. This could be a patient,
      * organization, practitioner, device, etc. This is who/what the answers apply to,
      * but is not necessarily the source of information.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -163,7 +159,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * Person who received the answers to the questions in the QuestionnaireResponse
      * and recorded them in the system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $author = null;
@@ -177,7 +172,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * The date and/or time that this version of the questionnaire response was
      * authored.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $authored = null;
@@ -187,7 +181,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The person who answered the questions about the subject.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $source = null;
@@ -199,7 +192,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      * Encounter during which this set of questionnaire response were collected. When
      * there were multiple encounters, this is the one considered most relevant to the
      * context of the answers.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -210,7 +202,6 @@ class FHIRQuestionnaireResponse extends FHIRDomainResource implements PHPFHIRCon
      *
      * A group of questions to a possibly similarly grouped set of questions in the
      * questionnaire response.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseGroup
      */
     protected null|FHIRQuestionnaireResponseGroup $group = null;

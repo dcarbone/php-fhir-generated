@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,7 +126,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Unique identifier used to reference the account. Might or might not be intended
      * for human use (e.g. credit card number).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -135,7 +134,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates whether the account is presently used/usable or not.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAccountStatus
      */
     protected null|FHIRAccountStatus $status = null;
@@ -146,7 +144,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Categorizes the account for reporting and searching purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $type = null;
@@ -156,7 +153,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Name used for the account when displaying it to humans in reports, etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -168,7 +164,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Identifies the entity which incurs the expenses. While the immediate recipients
      * of services or goods might be entities related to the subject, the expenses were
      * ultimately incurred by the subject of the Account.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $subject = [];
@@ -178,7 +173,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The date range of services associated with this account.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod
      */
     protected null|FHIRPeriod $servicePeriod = null;
@@ -188,7 +182,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The party(s) that are responsible for covering the payment of this account, and
      * what order should they be applied to the account.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage[]
      */
     protected null|array $coverage = [];
@@ -199,7 +192,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Indicates the service area, hospital, department, etc. with responsibility for
      * managing the Account.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $owner = null;
@@ -210,7 +202,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * Provides additional information about what the account tracks and how it is
      * used.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -220,7 +211,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      *
      * The parties responsible for balancing the account if other payment options fall
      * short.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor[]
      */
     protected null|array $guarantor = [];
@@ -230,7 +220,6 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Reference to a parent Account.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $partOf = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -105,7 +105,6 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      *
      * A pointer to official web page, PDF or other rendering of the implementation
      * guide.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUrl
      */
     protected null|FHIRUrl $rendering = null;
@@ -119,7 +118,6 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * (value set, structure definition, capability statements etc.) are obvious
      * candidates for inclusion, but any kind of resource can be included as an example
      * resource.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1[]
      */
     protected null|array $resource = [];
@@ -130,7 +128,6 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * publish a computable definition of all the parts.
      *
      * Information about a page within the IG.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage1[]
      */
     protected null|array $page = [];
@@ -140,7 +137,6 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates a relative path to an image that exists within the IG.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $image = [];
@@ -152,7 +148,6 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * Indicates the relative path of an additional non-page, non-image file that is
      * part of the IG - e.g. zip, jar and similar files that could be the target of a
      * hyperlink in a derived IG.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString[]
      */
     protected null|array $other = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -97,7 +97,6 @@ class FHIRValueSetDefine extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * URI to identify the code system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $system = null;
@@ -110,7 +109,6 @@ class FHIRValueSetDefine extends FHIRBackboneElement
      * and therefore the version does not need to be maintained. However many code
      * systems are not well maintained, and the version needs to be defined and
      * tracked.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRString
      */
     protected null|FHIRString $version = null;
@@ -120,7 +118,6 @@ class FHIRValueSetDefine extends FHIRBackboneElement
      *
      * If code comparison is case sensitive when codes within this system are compared
      * to each other.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $caseSensitive = null;
@@ -128,7 +125,6 @@ class FHIRValueSetDefine extends FHIRBackboneElement
      * A value set specifies a set of codes drawn from one or more code systems.
      *
      * Concepts in the code system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept[]
      */
     protected null|array $concept = [];

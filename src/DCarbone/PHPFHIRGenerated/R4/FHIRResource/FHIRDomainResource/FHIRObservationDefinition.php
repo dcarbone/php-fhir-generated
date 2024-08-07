@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A code that classifies the general type of observation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -140,7 +139,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      *
      * Describes what will be observed. Sometimes this is called the observation
      * "name".
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $code = null;
@@ -151,7 +149,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A unique identifier assigned to this ObservationDefinition artifact.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -161,7 +158,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      *
      * The data types allowed for the value element of the instance observations
      * conforming to this ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRObservationDataType[]
      */
     protected null|array $permittedDataType = [];
@@ -171,7 +167,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      *
      * Multiple results allowed for observations conforming to this
      * ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $multipleResultsAllowed = null;
@@ -182,7 +177,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The method or technique used to perform the observation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $method = null;
@@ -193,7 +187,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      *
      * The preferred name to be used when reporting the results of observations
      * conforming to this ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $preferredReportName = null;
@@ -202,7 +195,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * produced or consumed by an orderable health care service.
      *
      * Characteristics for quantitative results of this observation.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQuantitativeDetails
      */
     protected null|FHIRObservationDefinitionQuantitativeDetails $quantitativeDetails = null;
@@ -212,7 +204,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      *
      * Multiple ranges of results qualified by different contexts for ordinal or
      * continuous observations conforming to this ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval[]
      */
     protected null|array $qualifiedInterval = [];
@@ -223,7 +214,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      *
      * The set of valid coded results for the observations conforming to this
      * ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $validCodedValueSet = null;
@@ -234,7 +224,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      *
      * The set of normal coded results for the observations conforming to this
      * ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $normalCodedValueSet = null;
@@ -245,7 +234,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      *
      * The set of abnormal coded results for the observation conforming to this
      * ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $abnormalCodedValueSet = null;
@@ -256,7 +244,6 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      *
      * The set of critical coded results for the observation conforming to this
      * ObservationDefinition.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $criticalCodedValueSet = null;

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,6 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The name of the search parameter used in the interface.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $name = null;
@@ -125,7 +124,6 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * An absolute URI that is a formal reference to where this parameter was first
      * defined, so that a client can be confident of the meaning of the search
      * parameter (a reference to [[[SearchParameter.url]]]).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $definition = null;
@@ -137,7 +135,6 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      *
      * The type of value a search parameter refers to, and how the content is
      * interpreted.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $type = null;
@@ -148,7 +145,6 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      *
      * This allows documentation of any distinct behaviors about how the search
      * parameter is used. For example, text matching algorithms.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $documentation = null;
@@ -159,7 +155,6 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Types of resource (if a resource is referenced).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode[]
      */
     protected null|array $target = [];
@@ -168,7 +163,6 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A modifier supported for the search parameter.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRSearchModifierCode[]
      */
     protected null|array $modifier = [];
@@ -183,7 +177,6 @@ class FHIRConformanceSearchParam extends FHIRBackboneElement
      * if they contain a reference to a resource which matches the chained parameter
      * value. Values for this field should be drawn from
      * Conformance.rest.resource.searchParam.name on the target resource type.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString[]
      */
     protected null|array $chain = [];

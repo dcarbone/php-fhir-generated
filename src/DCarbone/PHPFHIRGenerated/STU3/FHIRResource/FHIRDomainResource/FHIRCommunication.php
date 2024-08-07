@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -139,7 +139,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * processes and/ or used to refer to it when a direct URL reference to the
      * resource itself is not appropriate (e.g. in CDA documents, or in written /
      * printed documentation).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -150,7 +149,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * A protocol, guideline, or other definition that was adhered to in whole or in
      * part by this communication event.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $definition = [];
@@ -160,7 +158,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * An order, proposal or plan fulfilled in whole or in part by this Communication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $basedOn = [];
@@ -170,7 +167,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Part of this action.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $partOf = [];
@@ -179,7 +175,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the transmission.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIREventStatus
      */
     protected null|FHIREventStatus $status = null;
@@ -189,7 +184,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * If true, indicates that the described communication event did not actually
      * occur.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $notDone = null;
@@ -201,7 +195,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Describes why the communication event did not occur in coded and/or textual
      * form.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $notDoneReason = null;
@@ -213,7 +206,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The type of message conveyed such as alert, notification, reminder, instruction,
      * etc.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $category = [];
@@ -224,7 +216,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * A channel that was used for this communication (e.g. email, fax).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $medium = [];
@@ -234,7 +225,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The patient or group that was the focus of this communication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $subject = null;
@@ -249,7 +239,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * recipient.  Multiple recipient communications are intended where either a
      * receipt(s) is not tracked (e.g. a mass mail-out) or is captured in aggregate
      * (all emails confirmed received by a particular time).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $recipient = [];
@@ -260,7 +249,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The resources which were responsible for or related to producing this
      * communication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $topic = [];
@@ -270,7 +258,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The encounter within which the communication was sent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $context = null;
@@ -283,7 +270,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when this communication was sent.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $sent = null;
@@ -296,7 +282,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The time when this communication arrived at the destination.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $received = null;
@@ -307,7 +292,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * The entity (e.g. person, organization, clinical information system, or device)
      * which was the source of the communication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $sender = null;
@@ -318,7 +302,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The reason or justification for the communication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $reasonCode = [];
@@ -328,7 +311,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Indicates another resource whose existence justifies this communication.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
      */
     protected null|array $reasonReference = [];
@@ -338,7 +320,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * condition.
      *
      * Text, attachment(s), or resource(s) that was communicated to the recipient.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload[]
      */
     protected null|array $payload = [];
@@ -350,7 +331,6 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      *
      * Additional notes or commentary about the communication by the sender, receiver
      * or other interested parties.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];

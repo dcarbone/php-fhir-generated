@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -103,7 +103,6 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
      *
      * A flag to indicate that this Coverage is to be used for evaluation of this
      * request when set to true.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $focal = null;
@@ -115,7 +114,6 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
      * Reference to the insurance card level information contained in the Coverage
      * resource. The coverage issuing insurer will use these details to locate the
      * patient's actual coverage within the insurer's information system.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $coverage = null;
@@ -126,7 +124,6 @@ class FHIRCoverageEligibilityRequestInsurance extends FHIRBackboneElement
      *
      * A business agreement number established between the provider and the insurer for
      * special business processing purposes.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $businessArrangement = null;

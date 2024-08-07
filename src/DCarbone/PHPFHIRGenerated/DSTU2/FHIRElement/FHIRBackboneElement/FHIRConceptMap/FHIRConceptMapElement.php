@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      *
      * An absolute URI that identifies the Code System (if the source is a value set
      * that crosses more than one code system).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $codeSystem = null;
@@ -112,7 +111,6 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Identity (code or path) or the element/item being mapped.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $code = null;
@@ -121,7 +119,6 @@ class FHIRConceptMapElement extends FHIRBackboneElement
      * concepts - either code systems or data elements, or classes in class models.
      *
      * A concept from the target value set that this concept maps to.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapTarget[]
      */
     protected null|array $target = [];

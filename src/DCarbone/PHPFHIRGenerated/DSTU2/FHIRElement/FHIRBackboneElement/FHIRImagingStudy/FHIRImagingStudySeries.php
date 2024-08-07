@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -124,7 +124,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * The Numeric identifier of this series in the study.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $number = null;
@@ -134,7 +133,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * The modality of this series sequence.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $modality = null;
@@ -145,7 +143,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Formal identifier for this series.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIROid
      */
     protected null|FHIROid $uid = null;
@@ -155,7 +152,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * A description of the series.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -165,7 +161,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * the Narrative, or extensions
      *
      * Number of SOP Instances in Series.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $numberOfInstances = null;
@@ -174,7 +169,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Availability of series (online, offline or nearline).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRInstanceAvailability
      */
     protected null|FHIRInstanceAvailability $availability = null;
@@ -184,7 +178,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * URI/URL specifying the location of the referenced series using WADO-RS.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $url = null;
@@ -195,7 +188,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      *
      * Body part examined. See DICOM Part 16 Annex L for the mapping from DICOM to
      * Snomed CT.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $bodySite = null;
@@ -206,7 +198,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      *
      * Laterality if body site is paired anatomic structure and laterality is not
      * pre-coordinated in body site code.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding
      */
     protected null|FHIRCoding $laterality = null;
@@ -219,7 +210,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time the series was started.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $started = null;
@@ -231,7 +221,6 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * ultrasound), but a study may have multiple series of different modalities.
      *
      * A single SOP Instance within the series, e.g. an image, or presentation state.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance[]
      */
     protected null|array $instance = [];

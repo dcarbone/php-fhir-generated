@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCharg
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -101,7 +101,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      *
      * A brief, natural language description of the condition that effectively
      * communicates the intended semantics.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $description = null;
@@ -112,7 +111,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      *
      * The media type of the language for the expression, e.g. "text/cql" for Clinical
      * Query Language expressions or "text/fhirpath" for FHIRPath expressions.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $language = null;
@@ -125,7 +123,6 @@ class FHIRChargeItemDefinitionApplicability extends FHIRBackboneElement
      * satisfied. When using FHIRPath expressions, the %context environment variable
      * must be replaced at runtime with the ChargeItem resource to which this
      * definition is applied.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRString
      */
     protected null|FHIRString $expression = null;

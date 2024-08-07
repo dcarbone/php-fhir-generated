@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:07+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -138,7 +138,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * elements, an \@id referenced from the Narrative, or extensions
      *
      * Identifiers assigned to this order by the order sender or by the order receiver.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier[]
      */
     protected null|array $identifier = [];
@@ -150,7 +149,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other
      * definition that is adhered to in whole or in part by this NutritionOrder.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCanonical[]
      */
     protected null|array $instantiatesCanonical = [];
@@ -161,7 +159,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * The URL pointing to an externally maintained protocol, guideline, orderset or
      * other definition that is adhered to in whole or in part by this NutritionOrder.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri[]
      */
     protected null|array $instantiatesUri = [];
@@ -172,7 +169,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * The URL pointing to a protocol, guideline, orderset or other definition that is
      * adhered to in whole or in part by this NutritionOrder.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUri[]
      */
     protected null|array $instantiates = [];
@@ -182,7 +178,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The workflow status of the nutrition order/request.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestStatus
      */
     protected null|FHIRRequestStatus $status = null;
@@ -193,7 +188,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * Indicates the level of authority/intentionality associated with the NutrionOrder
      * and where the request fits into the workflow chain.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRequestIntent
      */
     protected null|FHIRRequestIntent $intent = null;
@@ -204,7 +198,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * The person (patient) who needs the nutrition order for an oral diet, nutritional
      * supplement and/or enteral or formula feeding.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $patient = null;
@@ -215,7 +208,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * An encounter that provides additional information about the healthcare context
      * in which this request is made.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $encounter = null;
@@ -228,7 +220,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The date and time that this nutrition order was requested.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $dateTime = null;
@@ -239,7 +230,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * The practitioner that holds legal responsibility for ordering the diet,
      * nutritional supplement, or formula feedings.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference
      */
     protected null|FHIRReference $orderer = null;
@@ -250,7 +240,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * A link to a record of allergies or intolerances which should be included in the
      * nutrition order.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
      */
     protected null|array $allergyIntolerance = [];
@@ -265,7 +254,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * or preferences such as Halal, Vegan or Kosher. This modifier applies to the
      * entire nutrition order inclusive of the oral diet, nutritional supplements and
      * enteral formula feedings.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $foodPreferenceModifier = [];
@@ -284,7 +272,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * specificity related to foods that should be eliminated from the patient’s diet
      * for any reason. This modifier applies to the entire nutrition order inclusive of
      * the oral diet, nutritional supplements and enteral formula feedings.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
      */
     protected null|array $excludeFoodModifier = [];
@@ -293,7 +280,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * supplement to a patient/resident.
      *
      * Diet given orally in contrast to enteral (tube) feeding.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderOralDiet
      */
     protected null|FHIRNutritionOrderOralDiet $oralDiet = null;
@@ -303,7 +289,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * Oral nutritional products given in order to add further nutritional value to the
      * patient's diet.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement[]
      */
     protected null|array $supplement = [];
@@ -313,7 +298,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * Feeding provided through the gastrointestinal tract via a tube, catheter, or
      * stoma that delivers nutrition distal to the oral cavity.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderEnteralFormula
      */
     protected null|FHIRNutritionOrderEnteralFormula $enteralFormula = null;
@@ -325,7 +309,6 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      *
      * Comments made about the {{title}} by the requester, performer, subject or other
      * participants.
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation[]
      */
     protected null|array $note = [];

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: July 10th, 2024 03:24+0000
+ * Class creation date: August 7th, 2024 02:08+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -239,7 +239,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBase64Binary
      */
     protected null|FHIRBase64Binary $valueBase64Binary = null;
@@ -249,7 +248,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBoolean
      */
     protected null|FHIRBoolean $valueBoolean = null;
@@ -261,7 +259,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCanonical
      */
     protected null|FHIRCanonical $valueCanonical = null;
@@ -273,7 +270,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRCode
      */
     protected null|FHIRCode $valueCode = null;
@@ -285,7 +281,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDate
      */
     protected null|FHIRDate $valueDate = null;
@@ -300,7 +295,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDateTime
      */
     protected null|FHIRDateTime $valueDateTime = null;
@@ -312,7 +306,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDecimal
      */
     protected null|FHIRDecimal $valueDecimal = null;
@@ -326,7 +319,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRId
      */
     protected null|FHIRId $valueId = null;
@@ -340,7 +332,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInstant
      */
     protected null|FHIRInstant $valueInstant = null;
@@ -351,7 +342,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger
      */
     protected null|FHIRInteger $valueInteger = null;
@@ -362,7 +352,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteger64
      */
     protected null|FHIRInteger64 $valueInteger64 = null;
@@ -377,7 +366,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRMarkdown
      */
     protected null|FHIRMarkdown $valueMarkdown = null;
@@ -389,7 +377,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIROid
      */
     protected null|FHIROid $valueOid = null;
@@ -400,7 +387,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRPositiveInt
      */
     protected null|FHIRPositiveInt $valuePositiveInt = null;
@@ -411,7 +397,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRString
      */
     protected null|FHIRString $valueString = null;
@@ -421,7 +406,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRTime
      */
     protected null|FHIRTime $valueTime = null;
@@ -432,7 +416,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUnsignedInt
      */
     protected null|FHIRUnsignedInt $valueUnsignedInt = null;
@@ -443,7 +426,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUri
      */
     protected null|FHIRUri $valueUri = null;
@@ -454,7 +436,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUrl
      */
     protected null|FHIRUrl $valueUrl = null;
@@ -466,7 +447,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRUuid
      */
     protected null|FHIRUuid $valueUuid = null;
@@ -482,7 +462,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAddress
      */
     protected null|FHIRAddress $valueAddress = null;
@@ -493,7 +472,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRAge
      */
     protected null|FHIRAge $valueAge = null;
@@ -505,7 +483,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation
      */
     protected null|FHIRAnnotation $valueAnnotation = null;
@@ -516,7 +493,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment
      */
     protected null|FHIRAttachment $valueAttachment = null;
@@ -528,7 +504,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
      */
     protected null|FHIRCodeableConcept $valueCodeableConcept = null;
@@ -540,7 +515,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
      */
     protected null|FHIRCodeableReference $valueCodeableReference = null;
@@ -551,7 +525,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding
      */
     protected null|FHIRCoding $valueCoding = null;
@@ -563,7 +536,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint
      */
     protected null|FHIRContactPoint $valueContactPoint = null;
@@ -576,7 +548,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRCount
      */
     protected null|FHIRCount $valueCount = null;
@@ -587,7 +558,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDistance
      */
     protected null|FHIRDistance $valueDistance = null;
@@ -598,7 +568,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity\FHIRDuration
      */
     protected null|FHIRDuration $valueDuration = null;
@@ -611,7 +580,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRHumanName
      */
     protected null|FHIRHumanName $valueHumanName = null;
@@ -623,7 +591,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier
      */
     protected null|FHIRIdentifier $valueIdentifier = null;
@@ -634,7 +601,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRMoney
      */
     protected null|FHIRMoney $valueMoney = null;
@@ -645,7 +611,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod
      */
     protected null|FHIRPeriod $valuePeriod = null;
@@ -658,7 +623,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity
      */
     protected null|FHIRQuantity $valueQuantity = null;
@@ -669,7 +633,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange
      */
     protected null|FHIRRange $valueRange = null;
@@ -681,7 +644,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio
      */
     protected null|FHIRRatio $valueRatio = null;
@@ -692,7 +654,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRatioRange
      */
     protected null|FHIRRatioRange $valueRatioRange = null;
@@ -703,7 +664,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference
      */
     protected null|FHIRReference $valueReference = null;
@@ -715,7 +675,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRSampledData
      */
     protected null|FHIRSampledData $valueSampledData = null;
@@ -730,7 +689,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature
      */
     protected null|FHIRSignature $valueSignature = null;
@@ -745,7 +703,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming
      */
     protected null|FHIRTiming $valueTiming = null;
@@ -756,7 +713,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail
      */
     protected null|FHIRContactDetail $valueContactDetail = null;
@@ -768,7 +724,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement
      */
     protected null|FHIRDataRequirement $valueDataRequirement = null;
@@ -781,7 +736,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExpression
      */
     protected null|FHIRExpression $valueExpression = null;
@@ -794,7 +748,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRParameterDefinition
      */
     protected null|FHIRParameterDefinition $valueParameterDefinition = null;
@@ -806,7 +759,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact
      */
     protected null|FHIRRelatedArtifact $valueRelatedArtifact = null;
@@ -818,7 +770,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition
      */
     protected null|FHIRTriggerDefinition $valueTriggerDefinition = null;
@@ -832,7 +783,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext
      */
     protected null|FHIRUsageContext $valueUsageContext = null;
@@ -843,7 +793,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability
      */
     protected null|FHIRAvailability $valueAvailability = null;
@@ -855,7 +804,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail
      */
     protected null|FHIRExtendedContactDetail $valueExtendedContactDetail = null;
@@ -866,7 +814,6 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage
      */
     protected null|FHIRDosage $valueDosage = null;
@@ -879,13 +826,10 @@ class FHIRExtension extends FHIRDataType
      *
      * Value of extension - must be one of a constrained set of the data types (see
      * [Extensibility](extensibility.html) for a list).
-     *
      * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRMeta
      */
     protected null|FHIRMeta $valueMeta = null;
-    /**
-     * @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRUriPrimitive
-     */
+    /** @var null|\DCarbone\PHPFHIRGenerated\R5\FHIRUriPrimitive */
     protected null|FHIRUriPrimitive $url = null;
 
     /**
