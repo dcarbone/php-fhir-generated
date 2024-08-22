@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -557,7 +557,7 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
      * Validation map for fields in type Questionnaire.Question
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1473,6 +1473,31 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->choice[] = $choice;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Selections made by the user from the list of options.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding ...$choice
+     * @return static
+     */
+    public function setChoice(FHIRCoding ...$choice): self
+    {
+        if ([] !== $this->choice) {
+            $this->_trackValuesRemoved(count($this->choice));
+            $this->choice = [];
+        }
+        if ([] === $choice) {
+            return $this;
+        }
+        foreach($choice as $v) {
+            $this->addChoice($v);
+        }
         return $this;
     }
 
@@ -2583,6 +2608,33 @@ class FHIRQuestionnaireQuestion extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->group[] = $group;
+        return $this;
+    }
+
+    /**
+     * A structured set of questions and their answers. The Questionnaire may contain
+     * questions, answers or both. The questions are ordered and grouped into coherent
+     * subsets, corresponding to the structure of the grouping of the underlying
+     * questions.
+     *
+     * Nested group, containing nested question for this question. The order of groups
+     * within the question is relevant.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup ...$group
+     * @return static
+     */
+    public function setGroup(FHIRQuestionnaireGroup ...$group): self
+    {
+        if ([] !== $this->group) {
+            $this->_trackValuesRemoved(count($this->group));
+            $this->group = [];
+        }
+        if ([] === $group) {
+            return $this;
+        }
+        foreach($group as $v) {
+            $this->addGroup($v);
+        }
         return $this;
     }
 

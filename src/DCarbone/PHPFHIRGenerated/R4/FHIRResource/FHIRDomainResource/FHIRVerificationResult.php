@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -272,7 +272,11 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * Validation map for fields in type VerificationResult
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -531,6 +535,31 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->target[] = $target;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A resource that was validated.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$target
+     * @return static
+     */
+    public function setTarget(FHIRReference ...$target): self
+    {
+        if ([] !== $this->target) {
+            $this->_trackValuesRemoved(count($this->target));
+            $this->target = [];
+        }
+        if ([] === $target) {
+            return $this;
+        }
+        foreach($target as $v) {
+            $this->addTarget($v);
+        }
         return $this;
     }
 
@@ -796,6 +825,33 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The primary process by which the target is validated (edit check; value set;
+     * primary source; multiple sources; standalone; in context).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$validationProcess
+     * @return static
+     */
+    public function setValidationProcess(FHIRCodeableConcept ...$validationProcess): self
+    {
+        if ([] !== $this->validationProcess) {
+            $this->_trackValuesRemoved(count($this->validationProcess));
+            $this->validationProcess = [];
+        }
+        if ([] === $validationProcess) {
+            return $this;
+        }
+        foreach($validationProcess as $v) {
+            $this->addValidationProcess($v);
+        }
+        return $this;
+    }
+
+    /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
      * usage is in dosage instructions for medications. They are also used when
@@ -995,6 +1051,30 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
      * Describes validation requirements, source(s), status and dates for one or more
      * elements.
      *
+     * Information about the primary source(s) involved in validation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultPrimarySource ...$primarySource
+     * @return static
+     */
+    public function setPrimarySource(FHIRVerificationResultPrimarySource ...$primarySource): self
+    {
+        if ([] !== $this->primarySource) {
+            $this->_trackValuesRemoved(count($this->primarySource));
+            $this->primarySource = [];
+        }
+        if ([] === $primarySource) {
+            return $this;
+        }
+        foreach($primarySource as $v) {
+            $this->addPrimarySource($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Describes validation requirements, source(s), status and dates for one or more
+     * elements.
+     *
      * Information about the entity attesting to information.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultAttestation
@@ -1052,6 +1132,30 @@ class FHIRVerificationResult extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->validator[] = $validator;
+        return $this;
+    }
+
+    /**
+     * Describes validation requirements, source(s), status and dates for one or more
+     * elements.
+     *
+     * Information about the entity validating information.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRVerificationResult\FHIRVerificationResultValidator ...$validator
+     * @return static
+     */
+    public function setValidator(FHIRVerificationResultValidator ...$validator): self
+    {
+        if ([] !== $this->validator) {
+            $this->_trackValuesRemoved(count($this->validator));
+            $this->validator = [];
+        }
+        if ([] === $validator) {
+            return $this;
+        }
+        foreach($validator as $v) {
+            $this->addValidator($v);
+        }
         return $this;
     }
 

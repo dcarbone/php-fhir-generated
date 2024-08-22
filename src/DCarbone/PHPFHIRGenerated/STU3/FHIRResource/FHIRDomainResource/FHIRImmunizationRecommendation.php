@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -135,6 +135,9 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements PHPFH
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_PATIENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_RECOMMENDATION => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
@@ -243,6 +246,31 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier assigned to this particular recommendation record.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -307,6 +335,31 @@ class FHIRImmunizationRecommendation extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->recommendation[] = $recommendation;
+        return $this;
+    }
+
+    /**
+     * A patient's point-in-time immunization and recommendation (i.e. forecasting a
+     * patient's immunization eligibility according to a published schedule) with
+     * optional supporting justification.
+     *
+     * Vaccine administration recommendations.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationRecommendation ...$recommendation
+     * @return static
+     */
+    public function setRecommendation(FHIRImmunizationRecommendationRecommendation ...$recommendation): self
+    {
+        if ([] !== $this->recommendation) {
+            $this->_trackValuesRemoved(count($this->recommendation));
+            $this->recommendation = [];
+        }
+        if ([] === $recommendation) {
+            return $this;
+        }
+        foreach($recommendation as $v) {
+            $this->addRecommendation($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -520,7 +520,11 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
      * Validation map for fields in type SpecimenDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1731,6 +1735,32 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
     }
 
     /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
@@ -1824,6 +1854,36 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
     }
 
     /**
+     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These terms may be used to assist with indexing and searching
+     * of specimen definitions.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1856,6 +1916,32 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
         }
         $this->_trackValueAdded();
         $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A jurisdiction in which the SpecimenDefinition is intended to be used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
+    {
+        if ([] !== $this->jurisdiction) {
+            $this->_trackValuesRemoved(count($this->jurisdiction));
+            $this->jurisdiction = [];
+        }
+        if ([] === $jurisdiction) {
+            return $this;
+        }
+        foreach($jurisdiction as $v) {
+            $this->addJurisdiction($v);
+        }
         return $this;
     }
 
@@ -2197,6 +2283,32 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Preparation of the patient for specimen collection.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$patientPreparation
+     * @return static
+     */
+    public function setPatientPreparation(FHIRCodeableConcept ...$patientPreparation): self
+    {
+        if ([] !== $this->patientPreparation) {
+            $this->_trackValuesRemoved(count($this->patientPreparation));
+            $this->patientPreparation = [];
+        }
+        if ([] === $patientPreparation) {
+            return $this;
+        }
+        foreach($patientPreparation as $v) {
+            $this->addPatientPreparation($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -2272,6 +2384,32 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The action to be performed for collecting the specimen.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$collection
+     * @return static
+     */
+    public function setCollection(FHIRCodeableConcept ...$collection): self
+    {
+        if ([] !== $this->collection) {
+            $this->_trackValuesRemoved(count($this->collection));
+            $this->collection = [];
+        }
+        if ([] === $collection) {
+            return $this;
+        }
+        foreach($collection as $v) {
+            $this->addCollection($v);
+        }
+        return $this;
+    }
+
+    /**
      * A kind of specimen with associated set of requirements.
      *
      * Specimen conditioned in a container as expected by the testing laboratory.
@@ -2298,6 +2436,29 @@ class FHIRSpecimenDefinition extends FHIRMetadataResource implements PHPFHIRCont
         }
         $this->_trackValueAdded();
         $this->typeTested[] = $typeTested;
+        return $this;
+    }
+
+    /**
+     * A kind of specimen with associated set of requirements.
+     *
+     * Specimen conditioned in a container as expected by the testing laboratory.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested ...$typeTested
+     * @return static
+     */
+    public function setTypeTested(FHIRSpecimenDefinitionTypeTested ...$typeTested): self
+    {
+        if ([] !== $this->typeTested) {
+            $this->_trackValuesRemoved(count($this->typeTested));
+            $this->typeTested = [];
+        }
+        if ([] === $typeTested) {
+            return $this;
+        }
+        foreach($typeTested as $v) {
+            $this->addTypeTested($v);
+        }
         return $this;
     }
 

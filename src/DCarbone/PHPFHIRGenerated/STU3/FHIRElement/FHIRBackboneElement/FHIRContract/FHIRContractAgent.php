@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,11 @@ class FHIRContractAgent extends FHIRBackboneElement
      * Validation map for fields in type Contract.Agent
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_ACTOR => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -227,6 +231,32 @@ class FHIRContractAgent extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->role[] = $role;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Role type of agent assigned roles in this Contract.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$role
+     * @return static
+     */
+    public function setRole(FHIRCodeableConcept ...$role): self
+    {
+        if ([] !== $this->role) {
+            $this->_trackValuesRemoved(count($this->role));
+            $this->role = [];
+        }
+        if ([] === $role) {
+            return $this;
+        }
+        foreach($role as $v) {
+            $this->addRole($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -289,6 +289,32 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * gather all the parts of an implementation guide into a logical whole and to
      * publish a computable definition of all the parts.
      *
+     * A logical group of resources. Logical groups can be used when building pages.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGrouping ...$grouping
+     * @return static
+     */
+    public function setGrouping(FHIRImplementationGuideGrouping ...$grouping): self
+    {
+        if ([] !== $this->grouping) {
+            $this->_trackValuesRemoved(count($this->grouping));
+            $this->grouping = [];
+        }
+        if ([] === $grouping) {
+            return $this;
+        }
+        foreach($grouping as $v) {
+            $this->addGrouping($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A set of rules of how a particular interoperability or standards problem is
+     * solved - typically through the use of FHIR resources. This resource is used to
+     * gather all the parts of an implementation guide into a logical whole and to
+     * publish a computable definition of all the parts.
+     *
      * A resource that is part of the implementation guide. Conformance resources
      * (value set, structure definition, capability statements etc.) are obvious
      * candidates for inclusion, but any kind of resource can be included as an example
@@ -322,6 +348,35 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->resource[] = $resource;
+        return $this;
+    }
+
+    /**
+     * A set of rules of how a particular interoperability or standards problem is
+     * solved - typically through the use of FHIR resources. This resource is used to
+     * gather all the parts of an implementation guide into a logical whole and to
+     * publish a computable definition of all the parts.
+     *
+     * A resource that is part of the implementation guide. Conformance resources
+     * (value set, structure definition, capability statements etc.) are obvious
+     * candidates for inclusion, but any kind of resource can be included as an example
+     * resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource ...$resource
+     * @return static
+     */
+    public function setResource(FHIRImplementationGuideResource ...$resource): self
+    {
+        if ([] !== $this->resource) {
+            $this->_trackValuesRemoved(count($this->resource));
+            $this->resource = [];
+        }
+        if ([] === $resource) {
+            return $this;
+        }
+        foreach($resource as $v) {
+            $this->addResource($v);
+        }
         return $this;
     }
 
@@ -405,6 +460,32 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
      * gather all the parts of an implementation guide into a logical whole and to
      * publish a computable definition of all the parts.
      *
+     * Defines how IG is built by tools.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideParameter ...$parameter
+     * @return static
+     */
+    public function setParameter(FHIRImplementationGuideParameter ...$parameter): self
+    {
+        if ([] !== $this->parameter) {
+            $this->_trackValuesRemoved(count($this->parameter));
+            $this->parameter = [];
+        }
+        if ([] === $parameter) {
+            return $this;
+        }
+        foreach($parameter as $v) {
+            $this->addParameter($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A set of rules of how a particular interoperability or standards problem is
+     * solved - typically through the use of FHIR resources. This resource is used to
+     * gather all the parts of an implementation guide into a logical whole and to
+     * publish a computable definition of all the parts.
+     *
      * A template for building resources.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideTemplate[]
@@ -432,6 +513,32 @@ class FHIRImplementationGuideDefinition extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->template[] = $template;
+        return $this;
+    }
+
+    /**
+     * A set of rules of how a particular interoperability or standards problem is
+     * solved - typically through the use of FHIR resources. This resource is used to
+     * gather all the parts of an implementation guide into a logical whole and to
+     * publish a computable definition of all the parts.
+     *
+     * A template for building resources.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideTemplate ...$template
+     * @return static
+     */
+    public function setTemplate(FHIRImplementationGuideTemplate ...$template): self
+    {
+        if ([] !== $this->template) {
+            $this->_trackValuesRemoved(count($this->template));
+            $this->template = [];
+        }
+        if ([] === $template) {
+            return $this;
+        }
+        foreach($template as $v) {
+            $this->addTemplate($v);
+        }
         return $this;
     }
 

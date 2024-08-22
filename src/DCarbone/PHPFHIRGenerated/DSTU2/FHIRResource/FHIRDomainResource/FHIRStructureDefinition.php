@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -421,7 +421,23 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
      * Validation map for fields in type StructureDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_ABSTRACT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_KIND => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_URL => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -950,6 +966,34 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Formal identifier that is used to identify this StructureDefinition when it is
+     * represented in other formats, or referenced in a specification, model, design or
+     * an instance (should be globally unique OID, UUID, or URI), (if it's not possible
+     * to use the literal URI).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1230,6 +1274,31 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A definition of a FHIR structure. This resource is used to describe the
+     * underlying resources, data types defined in FHIR, and also for describing
+     * extensions, and constraints on resources and data types.
+     *
+     * Contacts to assist a user in finding and communicating with the publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionContact ...$contact
+     * @return static
+     */
+    public function setContact(FHIRStructureDefinitionContact ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
@@ -1360,6 +1429,34 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These terms may be used to assist with indexing and searching
+     * of structure definitions.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRCodeableConcept ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1480,6 +1577,32 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A set of terms from external terminologies that may be used to assist with
+     * indexing and searching of templates.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding ...$code
+     * @return static
+     */
+    public function setCode(FHIRCoding ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
+        return $this;
+    }
+
+    /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
@@ -1559,6 +1682,31 @@ class FHIRStructureDefinition extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->mapping[] = $mapping;
+        return $this;
+    }
+
+    /**
+     * A definition of a FHIR structure. This resource is used to describe the
+     * underlying resources, data types defined in FHIR, and also for describing
+     * extensions, and constraints on resources and data types.
+     *
+     * An external specification that the content is mapped to.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRStructureDefinition\FHIRStructureDefinitionMapping ...$mapping
+     * @return static
+     */
+    public function setMapping(FHIRStructureDefinitionMapping ...$mapping): self
+    {
+        if ([] !== $this->mapping) {
+            $this->_trackValuesRemoved(count($this->mapping));
+            $this->mapping = [];
+        }
+        if ([] === $mapping) {
+            return $this;
+        }
+        foreach($mapping as $v) {
+            $this->addMapping($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -507,7 +507,20 @@ class FHIRMessageDefinition extends FHIRCanonicalResource implements PHPFHIRCont
      * Validation map for fields in type MessageDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_DATE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_EVENT_CODING => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_EVENT_URI => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1096,6 +1109,34 @@ class FHIRMessageDefinition extends FHIRCanonicalResource implements PHPFHIRCont
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A formal identifier that is used to identify this message definition when it is
+     * represented in other formats, or referenced in a specification, model, design or
+     * an instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1580,6 +1621,32 @@ class FHIRMessageDefinition extends FHIRCanonicalResource implements PHPFHIRCont
     }
 
     /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
@@ -1677,6 +1744,38 @@ class FHIRMessageDefinition extends FHIRCanonicalResource implements PHPFHIRCont
     }
 
     /**
+     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These contexts may be general categories (gender, age, ...) or
+     * may be references to specific programs (insurance plans, studies, ...) and may
+     * be used to assist with indexing and searching for appropriate message definition
+     * instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1711,6 +1810,33 @@ class FHIRMessageDefinition extends FHIRCanonicalResource implements PHPFHIRCont
         }
         $this->_trackValueAdded();
         $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A legal or geographic region in which the message definition is intended to be
+     * used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
+    {
+        if ([] !== $this->jurisdiction) {
+            $this->_trackValuesRemoved(count($this->jurisdiction));
+            $this->jurisdiction = [];
+        }
+        if ([] === $jurisdiction) {
+            return $this;
+        }
+        foreach($jurisdiction as $v) {
+            $this->addJurisdiction($v);
+        }
         return $this;
     }
 
@@ -2116,6 +2242,33 @@ class FHIRMessageDefinition extends FHIRCanonicalResource implements PHPFHIRCont
     }
 
     /**
+     * Defines the characteristics of a message that can be shared between systems,
+     * including the type of event that initiates the message, the content to be
+     * transmitted and what response(s), if any, are permitted.
+     *
+     * Identifies the resource (or resources) that are being addressed by the event.
+     * For example, the Encounter for an admit message or two Account records for a
+     * merge.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionFocus ...$focus
+     * @return static
+     */
+    public function setFocus(FHIRMessageDefinitionFocus ...$focus): self
+    {
+        if ([] !== $this->focus) {
+            $this->_trackValuesRemoved(count($this->focus));
+            $this->focus = [];
+        }
+        if ([] === $focus) {
+            return $this;
+        }
+        foreach($focus as $v) {
+            $this->addFocus($v);
+        }
+        return $this;
+    }
+
+    /**
      * HL7-defined table of codes which identify conditions under which acknowledgments
      * are required to be returned in response to a message.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -2184,6 +2337,32 @@ class FHIRMessageDefinition extends FHIRCanonicalResource implements PHPFHIRCont
         }
         $this->_trackValueAdded();
         $this->allowedResponse[] = $allowedResponse;
+        return $this;
+    }
+
+    /**
+     * Defines the characteristics of a message that can be shared between systems,
+     * including the type of event that initiates the message, the content to be
+     * transmitted and what response(s), if any, are permitted.
+     *
+     * Indicates what types of messages may be sent as an application-level response to
+     * this message.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMessageDefinition\FHIRMessageDefinitionAllowedResponse ...$allowedResponse
+     * @return static
+     */
+    public function setAllowedResponse(FHIRMessageDefinitionAllowedResponse ...$allowedResponse): self
+    {
+        if ([] !== $this->allowedResponse) {
+            $this->_trackValuesRemoved(count($this->allowedResponse));
+            $this->allowedResponse = [];
+        }
+        if ([] === $allowedResponse) {
+            return $this;
+        }
+        foreach($allowedResponse as $v) {
+            $this->addAllowedResponse($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -200,7 +200,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * Validation map for fields in type Composition.Section
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -556,6 +556,32 @@ class FHIRCompositionSection extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to the actual resource from which the narrative in the section is
+     * derived.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference ...$entry
+     * @return static
+     */
+    public function setEntry(FHIRReference ...$entry): self
+    {
+        if ([] !== $this->entry) {
+            $this->_trackValuesRemoved(count($this->entry));
+            $this->entry = [];
+        }
+        if ([] === $entry) {
+            return $this;
+        }
+        foreach($entry as $v) {
+            $this->addEntry($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -630,6 +656,34 @@ class FHIRCompositionSection extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->section[] = $section;
+        return $this;
+    }
+
+    /**
+     * A set of healthcare-related information that is assembled together into a single
+     * logical document that provides a single coherent statement of meaning,
+     * establishes its own context and that has clinical attestation with regard to who
+     * is making the statement. While a Composition defines the structure, it does not
+     * actually contain the content: rather the full content of a document is contained
+     * in a Bundle, of which the Composition is the first resource contained.
+     *
+     * A nested sub-section within this section.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection ...$section
+     * @return static
+     */
+    public function setSection(FHIRCompositionSection ...$section): self
+    {
+        if ([] !== $this->section) {
+            $this->_trackValuesRemoved(count($this->section));
+            $this->section = [];
+        }
+        if ([] === $section) {
+            return $this;
+        }
+        foreach($section as $v) {
+            $this->addSection($v);
+        }
         return $this;
     }
 

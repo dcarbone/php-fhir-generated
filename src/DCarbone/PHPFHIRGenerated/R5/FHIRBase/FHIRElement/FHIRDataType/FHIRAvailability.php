@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -139,7 +139,7 @@ class FHIRAvailability extends FHIRDataType
      * Validation map for fields in type Availability
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -233,6 +233,31 @@ class FHIRAvailability extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Times the {item} is available.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability\FHIRAvailabilityAvailableTime ...$availableTime
+     * @return static
+     */
+    public function setAvailableTime(FHIRAvailabilityAvailableTime ...$availableTime): self
+    {
+        if ([] !== $this->availableTime) {
+            $this->_trackValuesRemoved(count($this->availableTime));
+            $this->availableTime = [];
+        }
+        if ([] === $availableTime) {
+            return $this;
+        }
+        foreach($availableTime as $v) {
+            $this->addAvailableTime($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Availability data for an {item}.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Not available during this time due to provided reason.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability\FHIRAvailabilityNotAvailableTime[]
@@ -259,6 +284,31 @@ class FHIRAvailability extends FHIRDataType
         }
         $this->_trackValueAdded();
         $this->notAvailableTime[] = $notAvailableTime;
+        return $this;
+    }
+
+    /**
+     * Availability data for an {item}.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Not available during this time due to provided reason.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability\FHIRAvailabilityNotAvailableTime ...$notAvailableTime
+     * @return static
+     */
+    public function setNotAvailableTime(FHIRAvailabilityNotAvailableTime ...$notAvailableTime): self
+    {
+        if ([] !== $this->notAvailableTime) {
+            $this->_trackValuesRemoved(count($this->notAvailableTime));
+            $this->notAvailableTime = [];
+        }
+        if ([] === $notAvailableTime) {
+            return $this;
+        }
+        foreach($notAvailableTime as $v) {
+            $this->addNotAvailableTime($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -203,7 +203,7 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
      * Validation map for fields in type SecurityEvent.Object
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -720,6 +720,31 @@ class FHIRSecurityEventObject extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->detail[] = $detail;
+        return $this;
+    }
+
+    /**
+     * A record of an event made for purposes of maintaining a security log. Typical
+     * uses include detection of intrusion attempts and monitoring for inappropriate
+     * usage.
+     *
+     * Additional Information about the Object.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSecurityEvent\FHIRSecurityEventDetail ...$detail
+     * @return static
+     */
+    public function setDetail(FHIRSecurityEventDetail ...$detail): self
+    {
+        if ([] !== $this->detail) {
+            $this->_trackValuesRemoved(count($this->detail));
+            $this->detail = [];
+        }
+        if ([] === $detail) {
+            return $this;
+        }
+        foreach($detail as $v) {
+            $this->addDetail($v);
+        }
         return $this;
     }
 

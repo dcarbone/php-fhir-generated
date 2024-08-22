@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -335,7 +335,14 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Validation map for fields in type ImagingStudy
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PATIENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_UID => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -741,6 +748,31 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Other identifiers for the study.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * Availability of the resource
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -807,6 +839,33 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->modalityList[] = $modalityList;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A list of all the Series.ImageModality values that are actual acquisition
+     * modalities, i.e. those in the DICOM Context Group 29 (value set OID
+     * 1.2.840.10008.6.1.19).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding ...$modalityList
+     * @return static
+     */
+    public function setModalityList(FHIRCoding ...$modalityList): self
+    {
+        if ([] !== $this->modalityList) {
+            $this->_trackValuesRemoved(count($this->modalityList));
+            $this->modalityList = [];
+        }
+        if ([] === $modalityList) {
+            return $this;
+        }
+        foreach($modalityList as $v) {
+            $this->addModalityList($v);
+        }
         return $this;
     }
 
@@ -964,6 +1023,32 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A list of the diagnostic requests that resulted in this imaging study being
+     * performed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The requesting/referring physician.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
@@ -1032,6 +1117,31 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Who read the study and interpreted the images or other content.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$interpreter
+     * @return static
+     */
+    public function setInterpreter(FHIRReference ...$interpreter): self
+    {
+        if ([] !== $this->interpreter) {
+            $this->_trackValuesRemoved(count($this->interpreter));
+            $this->interpreter = [];
+        }
+        if ([] === $interpreter) {
+            return $this;
+        }
+        foreach($interpreter as $v) {
+            $this->addInterpreter($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The network service providing access (e.g., query, view, or retrieval) for the
      * study. See implementation notes for information about using DICOM endpoints. A
      * study-level endpoint applies to each series in the study, unless overridden by a
@@ -1064,6 +1174,34 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->endpoint[] = $endpoint;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The network service providing access (e.g., query, view, or retrieval) for the
+     * study. See implementation notes for information about using DICOM endpoints. A
+     * study-level endpoint applies to each series in the study, unless overridden by a
+     * series-level endpoint with the same Endpoint.type.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$endpoint
+     * @return static
+     */
+    public function setEndpoint(FHIRReference ...$endpoint): self
+    {
+        if ([] !== $this->endpoint) {
+            $this->_trackValuesRemoved(count($this->endpoint));
+            $this->endpoint = [];
+        }
+        if ([] === $endpoint) {
+            return $this;
+        }
+        foreach($endpoint as $v) {
+            $this->addEndpoint($v);
+        }
         return $this;
     }
 
@@ -1192,6 +1330,31 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to the performed Procedure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$procedureReference
+     * @return static
+     */
+    public function setProcedureReference(FHIRReference ...$procedureReference): self
+    {
+        if ([] !== $this->procedureReference) {
+            $this->_trackValuesRemoved(count($this->procedureReference));
+            $this->procedureReference = [];
+        }
+        if ([] === $procedureReference) {
+            return $this;
+        }
+        foreach($procedureReference as $v) {
+            $this->addProcedureReference($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1224,6 +1387,32 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->procedureCode[] = $procedureCode;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The code for the performed procedure type.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$procedureCode
+     * @return static
+     */
+    public function setProcedureCode(FHIRCodeableConcept ...$procedureCode): self
+    {
+        if ([] !== $this->procedureCode) {
+            $this->_trackValuesRemoved(count($this->procedureCode));
+            $this->procedureCode = [];
+        }
+        if ([] === $procedureCode) {
+            return $this;
+        }
+        foreach($procedureCode as $v) {
+            $this->addProcedureCode($v);
+        }
         return $this;
     }
 
@@ -1337,6 +1526,33 @@ class FHIRImagingStudy extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->series[] = $series;
+        return $this;
+    }
+
+    /**
+     * Representation of the content produced in a DICOM imaging study. A study
+     * comprises a set of series, each of which includes a set of Service-Object Pair
+     * Instances (SOP Instances - images or other data) acquired or produced in a
+     * common context. A series is of only one modality (e.g. X-ray, CT, MR,
+     * ultrasound), but a study may have multiple series of different modalities.
+     *
+     * Each study has one or more series of images or other content.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries ...$series
+     * @return static
+     */
+    public function setSeries(FHIRImagingStudySeries ...$series): self
+    {
+        if ([] !== $this->series) {
+            $this->_trackValuesRemoved(count($this->series));
+            $this->series = [];
+        }
+        if ([] === $series) {
+            return $this;
+        }
+        foreach($series as $v) {
+            $this->addSeries($v);
+        }
         return $this;
     }
 

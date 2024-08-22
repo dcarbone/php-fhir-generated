@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -247,7 +247,17 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Validation map for fields in type Ingredient
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_ROLE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SUBSTANCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -509,6 +519,31 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The product which this ingredient is a constituent part of.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$for
+     * @return static
+     */
+    public function setFor(FHIRReference ...$for): self
+    {
+        if ([] !== $this->for) {
+            $this->_trackValuesRemoved(count($this->for));
+            $this->for = [];
+        }
+        if ([] === $for) {
+            return $this;
+        }
+        foreach($for as $v) {
+            $this->addFor($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -583,6 +618,34 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->function[] = $function;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A classification of the ingredient identifying its precise purpose(s) in the
+     * drug product. This extends the Ingredient.role to add more detail. Example:
+     * antioxidant, alkalizing agent.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$function
+     * @return static
+     */
+    public function setFunction(FHIRCodeableConcept ...$function): self
+    {
+        if ([] !== $this->function) {
+            $this->_trackValuesRemoved(count($this->function));
+            $this->function = [];
+        }
+        if ([] === $function) {
+            return $this;
+        }
+        foreach($function as $v) {
+            $this->addFunction($v);
+        }
         return $this;
     }
 
@@ -751,6 +814,33 @@ class FHIRIngredient extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->manufacturer[] = $manufacturer;
+        return $this;
+    }
+
+    /**
+     * An ingredient of a manufactured item or pharmaceutical product.
+     *
+     * The organization(s) that manufacture this ingredient. Can be used to indicate:
+     * 1) Organizations we are aware of that manufacture this ingredient 2) Specific
+     * Manufacturer(s) currently being used 3) Set of organisations allowed to
+     * manufacture this ingredient for this product Users must be clear on the
+     * application of context relevant to their use case.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientManufacturer ...$manufacturer
+     * @return static
+     */
+    public function setManufacturer(FHIRIngredientManufacturer ...$manufacturer): self
+    {
+        if ([] !== $this->manufacturer) {
+            $this->_trackValuesRemoved(count($this->manufacturer));
+            $this->manufacturer = [];
+        }
+        if ([] === $manufacturer) {
+            return $this;
+        }
+        foreach($manufacturer as $v) {
+            $this->addManufacturer($v);
+        }
         return $this;
     }
 

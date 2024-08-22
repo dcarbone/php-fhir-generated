@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -226,7 +226,7 @@ class FHIRContractOffer extends FHIRBackboneElement
      * Validation map for fields in type Contract.Offer
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -450,6 +450,32 @@ class FHIRContractOffer extends FHIRBackboneElement
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique identifier for this particular Contract Provision.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
      * policy or agreement.
      *
@@ -478,6 +504,30 @@ class FHIRContractOffer extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->party[] = $party;
+        return $this;
+    }
+
+    /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
+     * Offer Recipient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractParty ...$party
+     * @return static
+     */
+    public function setParty(FHIRContractParty ...$party): self
+    {
+        if ([] !== $this->party) {
+            $this->_trackValuesRemoved(count($this->party));
+            $this->party = [];
+        }
+        if ([] === $party) {
+            return $this;
+        }
+        foreach($party as $v) {
+            $this->addParty($v);
+        }
         return $this;
     }
 
@@ -632,6 +682,32 @@ class FHIRContractOffer extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * How the decision about a Contract was conveyed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$decisionMode
+     * @return static
+     */
+    public function setDecisionMode(FHIRCodeableConcept ...$decisionMode): self
+    {
+        if ([] !== $this->decisionMode) {
+            $this->_trackValuesRemoved(count($this->decisionMode));
+            $this->decisionMode = [];
+        }
+        if ([] === $decisionMode) {
+            return $this;
+        }
+        foreach($decisionMode as $v) {
+            $this->addDecisionMode($v);
+        }
+        return $this;
+    }
+
+    /**
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
      * policy or agreement.
      *
@@ -660,6 +736,30 @@ class FHIRContractOffer extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->answer[] = $answer;
+        return $this;
+    }
+
+    /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
+     * Response to offer text.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer ...$answer
+     * @return static
+     */
+    public function setAnswer(FHIRContractAnswer ...$answer): self
+    {
+        if ([] !== $this->answer) {
+            $this->_trackValuesRemoved(count($this->answer));
+            $this->answer = [];
+        }
+        if ([] === $answer) {
+            return $this;
+        }
+        foreach($answer as $v) {
+            $this->addAnswer($v);
+        }
         return $this;
     }
 

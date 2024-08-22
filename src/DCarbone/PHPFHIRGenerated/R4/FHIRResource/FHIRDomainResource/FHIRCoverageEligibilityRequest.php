@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -292,7 +292,19 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_CREATED => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_INSURER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_PATIENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_PURPOSE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -557,6 +569,32 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier assigned to this coverage eligiblity request.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A code specifying the state of the resource instance.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -661,6 +699,34 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->purpose[] = $purpose;
+        return $this;
+    }
+
+    /**
+     * A code specifying the types of information being requested.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Code to specify whether requesting: prior authorization requirements for some
+     * service categories or billing codes; benefits for coverages specified or
+     * discovered; discovery and return of coverages for the patient; and/or validation
+     * that the specified coverage is in-force at the date/period specified or 'now' if
+     * not specified.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIREligibilityRequestPurpose ...$purpose
+     * @return static
+     */
+    public function setPurpose(FHIREligibilityRequestPurpose ...$purpose): self
+    {
+        if ([] !== $this->purpose) {
+            $this->_trackValuesRemoved(count($this->purpose));
+            $this->purpose = [];
+        }
+        if ([] === $purpose) {
+            return $this;
+        }
+        foreach($purpose as $v) {
+            $this->addPurpose($v);
+        }
         return $this;
     }
 
@@ -1009,6 +1075,34 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * coverage is valid and in-force and optionally to provide the insurance details
      * of the policy.
      *
+     * Additional information codes regarding exceptions, special considerations, the
+     * condition, situation, prior or concurrent issues.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestSupportingInfo ...$supportingInfo
+     * @return static
+     */
+    public function setSupportingInfo(FHIRCoverageEligibilityRequestSupportingInfo ...$supportingInfo): self
+    {
+        if ([] !== $this->supportingInfo) {
+            $this->_trackValuesRemoved(count($this->supportingInfo));
+            $this->supportingInfo = [];
+        }
+        if ([] === $supportingInfo) {
+            return $this;
+        }
+        foreach($supportingInfo as $v) {
+            $this->addSupportingInfo($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The CoverageEligibilityRequest provides patient and insurance coverage
+     * information to an insurer for them to respond, in the form of an
+     * CoverageEligibilityResponse, with information regarding whether the stated
+     * coverage is valid and in-force and optionally to provide the insurance details
+     * of the policy.
+     *
      * Financial instruments for reimbursement for the health care products and
      * services.
      *
@@ -1049,6 +1143,34 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
      * coverage is valid and in-force and optionally to provide the insurance details
      * of the policy.
      *
+     * Financial instruments for reimbursement for the health care products and
+     * services.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestInsurance ...$insurance
+     * @return static
+     */
+    public function setInsurance(FHIRCoverageEligibilityRequestInsurance ...$insurance): self
+    {
+        if ([] !== $this->insurance) {
+            $this->_trackValuesRemoved(count($this->insurance));
+            $this->insurance = [];
+        }
+        if ([] === $insurance) {
+            return $this;
+        }
+        foreach($insurance as $v) {
+            $this->addInsurance($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The CoverageEligibilityRequest provides patient and insurance coverage
+     * information to an insurer for them to respond, in the form of an
+     * CoverageEligibilityResponse, with information regarding whether the stated
+     * coverage is valid and in-force and optionally to provide the insurance details
+     * of the policy.
+     *
      * Service categories or billable services for which benefit details and/or an
      * authorization prior to service delivery may be required by the payor.
      *
@@ -1079,6 +1201,34 @@ class FHIRCoverageEligibilityRequest extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->item[] = $item;
+        return $this;
+    }
+
+    /**
+     * The CoverageEligibilityRequest provides patient and insurance coverage
+     * information to an insurer for them to respond, in the form of an
+     * CoverageEligibilityResponse, with information regarding whether the stated
+     * coverage is valid and in-force and optionally to provide the insurance details
+     * of the policy.
+     *
+     * Service categories or billable services for which benefit details and/or an
+     * authorization prior to service delivery may be required by the payor.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestItem ...$item
+     * @return static
+     */
+    public function setItem(FHIRCoverageEligibilityRequestItem ...$item): self
+    {
+        if ([] !== $this->item) {
+            $this->_trackValuesRemoved(count($this->item));
+            $this->item = [];
+        }
+        if ([] === $item) {
+            return $this;
+        }
+        foreach($item as $v) {
+            $this->addItem($v);
+        }
         return $this;
     }
 

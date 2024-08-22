@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -312,7 +312,14 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Validation map for fields in type RequestGroup
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_INTENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -654,6 +661,32 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Allows a service to provide a unique, business identifier for the request.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -841,6 +874,31 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A plan, proposal or order that is fulfilled in whole or in part by this request.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Completed or terminated request(s) whose function is taken by this new request.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
@@ -867,6 +925,31 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->replaces[] = $replaces;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Completed or terminated request(s) whose function is taken by this new request.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$replaces
+     * @return static
+     */
+    public function setReplaces(FHIRReference ...$replaces): self
+    {
+        if ([] !== $this->replaces) {
+            $this->_trackValuesRemoved(count($this->replaces));
+            $this->replaces = [];
+        }
+        if ([] === $replaces) {
+            return $this;
+        }
+        foreach($replaces as $v) {
+            $this->addReplaces($v);
+        }
         return $this;
     }
 
@@ -1236,6 +1319,32 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Describes the reason for the request group in coded or textual form.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$reasonCode
+     * @return static
+     */
+    public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
+    {
+        if ([] !== $this->reasonCode) {
+            $this->_trackValuesRemoved(count($this->reasonCode));
+            $this->reasonCode = [];
+        }
+        if ([] === $reasonCode) {
+            return $this;
+        }
+        foreach($reasonCode as $v) {
+            $this->addReasonCode($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1266,6 +1375,31 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->reasonReference[] = $reasonReference;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates another resource whose existence justifies this request group.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$reasonReference
+     * @return static
+     */
+    public function setReasonReference(FHIRReference ...$reasonReference): self
+    {
+        if ([] !== $this->reasonReference) {
+            $this->_trackValuesRemoved(count($this->reasonReference));
+            $this->reasonReference = [];
+        }
+        if ([] === $reasonReference) {
+            return $this;
+        }
+        foreach($reasonReference as $v) {
+            $this->addReasonReference($v);
+        }
         return $this;
     }
 
@@ -1306,6 +1440,32 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Provides a mechanism to communicate additional information about the response.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
+        return $this;
+    }
+
+    /**
      * A group of related requests that can be used to capture intended activities that
      * have inter-dependencies such as "give this medication after that one".
      *
@@ -1334,6 +1494,30 @@ class FHIRRequestGroup extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->action[] = $action;
+        return $this;
+    }
+
+    /**
+     * A group of related requests that can be used to capture intended activities that
+     * have inter-dependencies such as "give this medication after that one".
+     *
+     * The actions, if any, produced by the evaluation of the artifact.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRRequestGroup\FHIRRequestGroupAction ...$action
+     * @return static
+     */
+    public function setAction(FHIRRequestGroupAction ...$action): self
+    {
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
+        if ([] === $action) {
+            return $this;
+        }
+        foreach($action as $v) {
+            $this->addAction($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -430,6 +430,15 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
      */
     private const _VALIDATION_RULES = [
         self::FIELD_GROUP => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_URL => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -920,6 +929,34 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A formal identifier that is used to identify this structure map when it is
+     * represented in other formats, or referenced in a specification, model, design or
+     * an instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1331,6 +1368,32 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
     }
 
     /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
@@ -1428,6 +1491,38 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
     }
 
     /**
+     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These contexts may be general categories (gender, age, ...) or
+     * may be references to specific programs (insurance plans, studies, ...) and may
+     * be used to assist with indexing and searching for appropriate structure map
+     * instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1460,6 +1555,32 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
         }
         $this->_trackValueAdded();
         $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A legal or geographic region in which the structure map is intended to be used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
+    {
+        if ([] !== $this->jurisdiction) {
+            $this->_trackValuesRemoved(count($this->jurisdiction));
+            $this->jurisdiction = [];
+        }
+        if ([] === $jurisdiction) {
+            return $this;
+        }
+        foreach($jurisdiction as $v) {
+            $this->addJurisdiction($v);
+        }
         return $this;
     }
 
@@ -1639,6 +1760,30 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
     }
 
     /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
+     * A structure definition used by this map. The structure definition may describe
+     * instances that are converted, or the instances that are produced.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapStructure ...$structure
+     * @return static
+     */
+    public function setStructure(FHIRStructureMapStructure ...$structure): self
+    {
+        if ([] !== $this->structure) {
+            $this->_trackValuesRemoved(count($this->structure));
+            $this->structure = [];
+        }
+        if ([] === $structure) {
+            return $this;
+        }
+        foreach($structure as $v) {
+            $this->addStructure($v);
+        }
+        return $this;
+    }
+
+    /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -1744,6 +1889,29 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
     /**
      * A Map of relationships between 2 structures that can be used to transform data.
      *
+     * Definition of a constant value used in the map rules.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapConst ...$const
+     * @return static
+     */
+    public function setConst(FHIRStructureMapConst ...$const): self
+    {
+        if ([] !== $this->const) {
+            $this->_trackValuesRemoved(count($this->const));
+            $this->const = [];
+        }
+        if ([] === $const) {
+            return $this;
+        }
+        foreach($const as $v) {
+            $this->addConst($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
      * Organizes the mapping into managable chunks for human review/ease of
      * maintenance.
      *
@@ -1770,6 +1938,30 @@ class FHIRStructureMap extends FHIRCanonicalResource implements PHPFHIRContained
         }
         $this->_trackValueAdded();
         $this->group[] = $group;
+        return $this;
+    }
+
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
+     * Organizes the mapping into managable chunks for human review/ease of
+     * maintenance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapGroup ...$group
+     * @return static
+     */
+    public function setGroup(FHIRStructureMapGroup ...$group): self
+    {
+        if ([] !== $this->group) {
+            $this->_trackValuesRemoved(count($this->group));
+            $this->group = [];
+        }
+        if ([] === $group) {
+            return $this;
+        }
+        foreach($group as $v) {
+            $this->addGroup($v);
+        }
         return $this;
     }
 

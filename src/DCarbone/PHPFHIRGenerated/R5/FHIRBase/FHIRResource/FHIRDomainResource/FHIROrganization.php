@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -252,7 +252,7 @@ class FHIROrganization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Validation map for fields in type Organization
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -489,6 +489,33 @@ class FHIROrganization extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifier for the organization that is used to identify the organization across
+     * multiple disparate systems.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -558,6 +585,32 @@ class FHIROrganization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->type[] = $type;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kind(s) of organization that this is.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept ...$type): self
+    {
+        if ([] !== $this->type) {
+            $this->_trackValuesRemoved(count($this->type));
+            $this->type = [];
+        }
+        if ([] === $type) {
+            return $this;
+        }
+        foreach($type as $v) {
+            $this->addType($v);
+        }
         return $this;
     }
 
@@ -763,6 +816,34 @@ class FHIROrganization extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * Specifies contact information for a specific purpose over a period of time,
+     * might be handled/monitored by a specific named person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The contact details of communication devices available relevant to the specific
+     * Organization. This can include addresses, phone numbers, fax numbers, mobile
+     * numbers, email addresses and web sites.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRExtendedContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -831,6 +912,31 @@ class FHIROrganization extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Technical endpoints providing access to services operated for the organization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$endpoint
+     * @return static
+     */
+    public function setEndpoint(FHIRReference ...$endpoint): self
+    {
+        if ([] !== $this->endpoint) {
+            $this->_trackValuesRemoved(count($this->endpoint));
+            $this->endpoint = [];
+        }
+        if ([] === $endpoint) {
+            return $this;
+        }
+        foreach($endpoint as $v) {
+            $this->addEndpoint($v);
+        }
+        return $this;
+    }
+
+    /**
      * A formally or informally recognized grouping of people or organizations formed
      * for the purpose of achieving some form of collective action. Includes companies,
      * institutions, corporations, departments, community groups, healthcare practice
@@ -869,6 +975,35 @@ class FHIROrganization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->qualification[] = $qualification;
+        return $this;
+    }
+
+    /**
+     * A formally or informally recognized grouping of people or organizations formed
+     * for the purpose of achieving some form of collective action. Includes companies,
+     * institutions, corporations, departments, community groups, healthcare practice
+     * groups, payer/insurer, etc.
+     *
+     * The official certifications, accreditations, training, designations and licenses
+     * that authorize and/or otherwise endorse the provision of care by the
+     * organization. For example, an approval to provide a type of services issued by a
+     * certifying body (such as the US Joint Commission) to an organization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationQualification ...$qualification
+     * @return static
+     */
+    public function setQualification(FHIROrganizationQualification ...$qualification): self
+    {
+        if ([] !== $this->qualification) {
+            $this->_trackValuesRemoved(count($this->qualification));
+            $this->qualification = [];
+        }
+        if ([] === $qualification) {
+            return $this;
+        }
+        foreach($qualification as $v) {
+            $this->addQualification($v);
+        }
         return $this;
     }
 

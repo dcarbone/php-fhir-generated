@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -443,7 +443,23 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Validation map for fields in type Immunization
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_OCCURRENCE_DATE_TIME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_OCCURRENCE_STRING => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_PATIENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VACCINE_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -872,6 +888,32 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier assigned to this immunization record.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -1550,6 +1592,30 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * Describes the event of a patient being administered a vaccine or a record of an
+     * immunization as reported by a patient, a clinician or another party.
+     *
+     * Indicates who performed the immunization event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationPerformer ...$performer
+     * @return static
+     */
+    public function setPerformer(FHIRImmunizationPerformer ...$performer): self
+    {
+        if ([] !== $this->performer) {
+            $this->_trackValuesRemoved(count($this->performer));
+            $this->performer = [];
+        }
+        if ([] === $performer) {
+            return $this;
+        }
+        foreach($performer as $v) {
+            $this->addPerformer($v);
+        }
+        return $this;
+    }
+
+    /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
@@ -1584,6 +1650,33 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Extra information about the immunization that is not conveyed by the other
+     * attributes.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 
@@ -1624,6 +1717,32 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reasons why the vaccine was administered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$reasonCode
+     * @return static
+     */
+    public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
+    {
+        if ([] !== $this->reasonCode) {
+            $this->_trackValuesRemoved(count($this->reasonCode));
+            $this->reasonCode = [];
+        }
+        if ([] === $reasonCode) {
+            return $this;
+        }
+        foreach($reasonCode as $v) {
+            $this->addReasonCode($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1656,6 +1775,32 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->reasonReference[] = $reasonReference;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Condition, Observation or DiagnosticReport that supports why the immunization
+     * was administered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$reasonReference
+     * @return static
+     */
+    public function setReasonReference(FHIRReference ...$reasonReference): self
+    {
+        if ([] !== $this->reasonReference) {
+            $this->_trackValuesRemoved(count($this->reasonReference));
+            $this->reasonReference = [];
+        }
+        if ([] === $reasonReference) {
+            return $this;
+        }
+        foreach($reasonReference as $v) {
+            $this->addReasonReference($v);
+        }
         return $this;
     }
 
@@ -1735,6 +1880,32 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reason why a dose is considered to be subpotent.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$subpotentReason
+     * @return static
+     */
+    public function setSubpotentReason(FHIRCodeableConcept ...$subpotentReason): self
+    {
+        if ([] !== $this->subpotentReason) {
+            $this->_trackValuesRemoved(count($this->subpotentReason));
+            $this->subpotentReason = [];
+        }
+        if ([] === $subpotentReason) {
+            return $this;
+        }
+        foreach($subpotentReason as $v) {
+            $this->addSubpotentReason($v);
+        }
+        return $this;
+    }
+
+    /**
      * Describes the event of a patient being administered a vaccine or a record of an
      * immunization as reported by a patient, a clinician or another party.
      *
@@ -1765,6 +1936,31 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->education[] = $education;
+        return $this;
+    }
+
+    /**
+     * Describes the event of a patient being administered a vaccine or a record of an
+     * immunization as reported by a patient, a clinician or another party.
+     *
+     * Educational material presented to the patient (or guardian) at the time of
+     * vaccine administration.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationEducation ...$education
+     * @return static
+     */
+    public function setEducation(FHIRImmunizationEducation ...$education): self
+    {
+        if ([] !== $this->education) {
+            $this->_trackValuesRemoved(count($this->education));
+            $this->education = [];
+        }
+        if ([] === $education) {
+            return $this;
+        }
+        foreach($education as $v) {
+            $this->addEducation($v);
+        }
         return $this;
     }
 
@@ -1801,6 +1997,32 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->programEligibility[] = $programEligibility;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates a patient's eligibility for a funding program.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$programEligibility
+     * @return static
+     */
+    public function setProgramEligibility(FHIRCodeableConcept ...$programEligibility): self
+    {
+        if ([] !== $this->programEligibility) {
+            $this->_trackValuesRemoved(count($this->programEligibility));
+            $this->programEligibility = [];
+        }
+        if ([] === $programEligibility) {
+            return $this;
+        }
+        foreach($programEligibility as $v) {
+            $this->addProgramEligibility($v);
+        }
         return $this;
     }
 
@@ -1884,6 +2106,31 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Describes the event of a patient being administered a vaccine or a record of an
      * immunization as reported by a patient, a clinician or another party.
      *
+     * Categorical data indicating that an adverse event is associated in time to an
+     * immunization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction ...$reaction
+     * @return static
+     */
+    public function setReaction(FHIRImmunizationReaction ...$reaction): self
+    {
+        if ([] !== $this->reaction) {
+            $this->_trackValuesRemoved(count($this->reaction));
+            $this->reaction = [];
+        }
+        if ([] === $reaction) {
+            return $this;
+        }
+        foreach($reaction as $v) {
+            $this->addReaction($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Describes the event of a patient being administered a vaccine or a record of an
+     * immunization as reported by a patient, a clinician or another party.
+     *
      * The protocol (set of recommendations) being followed by the provider who
      * administered the dose.
      *
@@ -1911,6 +2158,31 @@ class FHIRImmunization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->protocolApplied[] = $protocolApplied;
+        return $this;
+    }
+
+    /**
+     * Describes the event of a patient being administered a vaccine or a record of an
+     * immunization as reported by a patient, a clinician or another party.
+     *
+     * The protocol (set of recommendations) being followed by the provider who
+     * administered the dose.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationProtocolApplied ...$protocolApplied
+     * @return static
+     */
+    public function setProtocolApplied(FHIRImmunizationProtocolApplied ...$protocolApplied): self
+    {
+        if ([] !== $this->protocolApplied) {
+            $this->_trackValuesRemoved(count($this->protocolApplied));
+            $this->protocolApplied = [];
+        }
+        if ([] === $protocolApplied) {
+            return $this;
+        }
+        foreach($protocolApplied as $v) {
+            $this->addProtocolApplied($v);
+        }
         return $this;
     }
 

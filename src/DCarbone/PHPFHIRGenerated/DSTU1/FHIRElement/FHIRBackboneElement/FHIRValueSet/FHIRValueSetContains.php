@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -130,7 +130,7 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * Validation map for fields in type ValueSet.Contains
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -363,6 +363,29 @@ class FHIRValueSetContains extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->contains[] = $contains;
+        return $this;
+    }
+
+    /**
+     * A value set specifies a set of codes drawn from one or more code systems.
+     *
+     * Codes contained in this concept.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains ...$contains
+     * @return static
+     */
+    public function setContains(FHIRValueSetContains ...$contains): self
+    {
+        if ([] !== $this->contains) {
+            $this->_trackValuesRemoved(count($this->contains));
+            $this->contains = [];
+        }
+        if ([] === $contains) {
+            return $this;
+        }
+        foreach($contains as $v) {
+            $this->addContains($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -229,7 +229,17 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * Validation map for fields in type ImagingStudy.Series
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_MODALITY => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_NUMBER_OF_INSTANCES => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_UID => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -824,6 +834,33 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->instance[] = $instance;
+        return $this;
+    }
+
+    /**
+     * Representation of the content produced in a DICOM imaging study. A study
+     * comprises a set of series, each of which includes a set of Service-Object Pair
+     * Instances (SOP Instances - images or other data) acquired or produced in a
+     * common context. A series is of only one modality (e.g. X-ray, CT, MR,
+     * ultrasound), but a study may have multiple series of different modalities.
+     *
+     * A single SOP Instance within the series, e.g. an image, or presentation state.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance ...$instance
+     * @return static
+     */
+    public function setInstance(FHIRImagingStudyInstance ...$instance): self
+    {
+        if ([] !== $this->instance) {
+            $this->_trackValuesRemoved(count($this->instance));
+            $this->instance = [];
+        }
+        if ([] === $instance) {
+            return $this;
+        }
+        foreach($instance as $v) {
+            $this->addInstance($v);
+        }
         return $this;
     }
 

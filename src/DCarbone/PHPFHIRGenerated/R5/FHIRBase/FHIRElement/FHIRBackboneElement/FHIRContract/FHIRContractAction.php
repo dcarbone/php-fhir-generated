@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -365,7 +365,17 @@ class FHIRContractAction extends FHIRBackboneElement
      * Validation map for fields in type Contract.Action
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_INTENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -855,6 +865,30 @@ class FHIRContractAction extends FHIRBackboneElement
     }
 
     /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
+     * Entity of the action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSubject ...$subject
+     * @return static
+     */
+    public function setSubject(FHIRContractSubject ...$subject): self
+    {
+        if ([] !== $this->subject) {
+            $this->_trackValuesRemoved(count($this->subject));
+            $this->subject = [];
+        }
+        if ([] === $subject) {
+            return $this;
+        }
+        foreach($subject as $v) {
+            $this->addSubject($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1264,6 +1298,31 @@ class FHIRContractAction extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who or what initiated the action and has responsibility for its activation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$requester
+     * @return static
+     */
+    public function setRequester(FHIRReference ...$requester): self
+    {
+        if ([] !== $this->requester) {
+            $this->_trackValuesRemoved(count($this->requester));
+            $this->requester = [];
+        }
+        if ([] === $requester) {
+            return $this;
+        }
+        foreach($requester as $v) {
+            $this->addRequester($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1371,6 +1430,33 @@ class FHIRContractAction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->performerType[] = $performerType;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of individual that is desired or required to perform or not perform the
+     * action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$performerType
+     * @return static
+     */
+    public function setPerformerType(FHIRCodeableConcept ...$performerType): self
+    {
+        if ([] !== $this->performerType) {
+            $this->_trackValuesRemoved(count($this->performerType));
+            $this->performerType = [];
+        }
+        if ([] === $performerType) {
+            return $this;
+        }
+        foreach($performerType as $v) {
+            $this->addPerformerType($v);
+        }
         return $this;
     }
 
@@ -1560,6 +1646,34 @@ class FHIRContractAction extends FHIRBackboneElement
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Rationale for the action to be performed or not performed. Describes why the
+     * action is permitted or prohibited. Either a coded concept, or another resource
+     * whose existence justifies permitting or not permitting this action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$reason
+     * @return static
+     */
+    public function setReason(FHIRCodeableReference ...$reason): self
+    {
+        if ([] !== $this->reason) {
+            $this->_trackValuesRemoved(count($this->reason));
+            $this->reason = [];
+        }
+        if ([] === $reason) {
+            return $this;
+        }
+        foreach($reason as $v) {
+            $this->addReason($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1667,6 +1781,33 @@ class FHIRContractAction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Comments made about the term action made by the requester, performer, subject or
+     * other participants.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 

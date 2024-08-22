@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -451,7 +451,20 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * Validation map for fields in type ProcedureRequest
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_INTENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SUBJECT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -890,6 +903,32 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifiers assigned to this order instance by the orderer and/or the receiver
+     * and/or order fulfiller.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -920,6 +959,31 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->definition[] = $definition;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Protocol or definition followed by this request.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$definition
+     * @return static
+     */
+    public function setDefinition(FHIRReference ...$definition): self
+    {
+        if ([] !== $this->definition) {
+            $this->_trackValuesRemoved(count($this->definition));
+            $this->definition = [];
+        }
+        if ([] === $definition) {
+            return $this;
+        }
+        foreach($definition as $v) {
+            $this->addDefinition($v);
+        }
         return $this;
     }
 
@@ -962,6 +1026,31 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Plan/proposal/order fulfilled by this request.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The request takes the place of the referenced completed or terminated
      * request(s).
      *
@@ -990,6 +1079,32 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->replaces[] = $replaces;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The request takes the place of the referenced completed or terminated
+     * request(s).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$replaces
+     * @return static
+     */
+    public function setReplaces(FHIRReference ...$replaces): self
+    {
+        if ([] !== $this->replaces) {
+            $this->_trackValuesRemoved(count($this->replaces));
+            $this->replaces = [];
+        }
+        if ([] === $replaces) {
+            return $this;
+        }
+        foreach($replaces as $v) {
+            $this->addReplaces($v);
+        }
         return $this;
     }
 
@@ -1203,6 +1318,33 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->category[] = $category;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code that classifies the procedure for searching, sorting and display purposes
+     * (e.g. "Surgical Procedure").
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
         return $this;
     }
 
@@ -1710,6 +1852,34 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An explanation or justification for why this diagnostic investigation is being
+     * requested in coded or textual form. This is often for billing purposes. May
+     * relate to the resources referred to in supportingInformation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$reasonCode
+     * @return static
+     */
+    public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
+    {
+        if ([] !== $this->reasonCode) {
+            $this->_trackValuesRemoved(count($this->reasonCode));
+            $this->reasonCode = [];
+        }
+        if ([] === $reasonCode) {
+            return $this;
+        }
+        foreach($reasonCode as $v) {
+            $this->addReasonCode($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1744,6 +1914,33 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->reasonReference[] = $reasonReference;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates another resource that provides a justification for why this diagnostic
+     * investigation is being requested. May relate to the resources referred to in
+     * supportingInformation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$reasonReference
+     * @return static
+     */
+    public function setReasonReference(FHIRReference ...$reasonReference): self
+    {
+        if ([] !== $this->reasonReference) {
+            $this->_trackValuesRemoved(count($this->reasonReference));
+            $this->reasonReference = [];
+        }
+        if ([] === $reasonReference) {
+            return $this;
+        }
+        foreach($reasonReference as $v) {
+            $this->addReasonReference($v);
+        }
         return $this;
     }
 
@@ -1798,6 +1995,37 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Additional clinical information about the patient or specimen that may influence
+     * the procedure or diagnostics or their interpretations. This information includes
+     * diagnosis, clinical findings and other observations. In laboratory ordering
+     * these are typically referred to as "ask at order entry questions (AOEs)". This
+     * includes observations explicitly requested by the producer (filler) to provide
+     * context or supporting information needed to complete the order. For example,
+     * reporting the amount of inspired oxygen for blood gas measurements.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$supportingInfo
+     * @return static
+     */
+    public function setSupportingInfo(FHIRReference ...$supportingInfo): self
+    {
+        if ([] !== $this->supportingInfo) {
+            $this->_trackValuesRemoved(count($this->supportingInfo));
+            $this->supportingInfo = [];
+        }
+        if ([] === $supportingInfo) {
+            return $this;
+        }
+        foreach($supportingInfo as $v) {
+            $this->addSupportingInfo($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * One or more specimens that the laboratory procedure will use.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
@@ -1824,6 +2052,31 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->specimen[] = $specimen;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * One or more specimens that the laboratory procedure will use.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$specimen
+     * @return static
+     */
+    public function setSpecimen(FHIRReference ...$specimen): self
+    {
+        if ([] !== $this->specimen) {
+            $this->_trackValuesRemoved(count($this->specimen));
+            $this->specimen = [];
+        }
+        if ([] === $specimen) {
+            return $this;
+        }
+        foreach($specimen as $v) {
+            $this->addSpecimen($v);
+        }
         return $this;
     }
 
@@ -1862,6 +2115,33 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->bodySite[] = $bodySite;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Anatomic location where the procedure should be performed. This is the target
+     * site.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$bodySite
+     * @return static
+     */
+    public function setBodySite(FHIRCodeableConcept ...$bodySite): self
+    {
+        if ([] !== $this->bodySite) {
+            $this->_trackValuesRemoved(count($this->bodySite));
+            $this->bodySite = [];
+        }
+        if ([] === $bodySite) {
+            return $this;
+        }
+        foreach($bodySite as $v) {
+            $this->addBodySite($v);
+        }
         return $this;
     }
 
@@ -1906,6 +2186,34 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Any other notes and comments made about the service request. For example,
+     * letting provider know that "patient hates needles" or other provider
+     * instructions.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1936,6 +2244,31 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->relevantHistory[] = $relevantHistory;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Key events in the history of the request.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$relevantHistory
+     * @return static
+     */
+    public function setRelevantHistory(FHIRReference ...$relevantHistory): self
+    {
+        if ([] !== $this->relevantHistory) {
+            $this->_trackValuesRemoved(count($this->relevantHistory));
+            $this->relevantHistory = [];
+        }
+        if ([] === $relevantHistory) {
+            return $this;
+        }
+        foreach($relevantHistory as $v) {
+            $this->addRelevantHistory($v);
+        }
         return $this;
     }
 

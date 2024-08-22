@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -146,7 +146,13 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_EVENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_PARTICIPANT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SOURCE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -299,6 +305,31 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * uses include detection of intrusion attempts and monitoring for inappropriate
      * usage.
      *
+     * A person, a hardware device or software process.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventParticipant ...$participant
+     * @return static
+     */
+    public function setParticipant(FHIRAuditEventParticipant ...$participant): self
+    {
+        if ([] !== $this->participant) {
+            $this->_trackValuesRemoved(count($this->participant));
+            $this->participant = [];
+        }
+        if ([] === $participant) {
+            return $this;
+        }
+        foreach($participant as $v) {
+            $this->addParticipant($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A record of an event made for purposes of maintaining a security log. Typical
+     * uses include detection of intrusion attempts and monitoring for inappropriate
+     * usage.
+     *
      * Application systems and processes.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventSource
@@ -359,6 +390,31 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->object[] = $object;
+        return $this;
+    }
+
+    /**
+     * A record of an event made for purposes of maintaining a security log. Typical
+     * uses include detection of intrusion attempts and monitoring for inappropriate
+     * usage.
+     *
+     * Specific instances of data or objects that have been accessed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventObject ...$object
+     * @return static
+     */
+    public function setObject(FHIRAuditEventObject ...$object): self
+    {
+        if ([] !== $this->object) {
+            $this->_trackValuesRemoved(count($this->object));
+            $this->object = [];
+        }
+        if ([] === $object) {
+            return $this;
+        }
+        foreach($object as $v) {
+            $this->addObject($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -149,7 +149,7 @@ class FHIRPermissionRule extends FHIRBackboneElement
      * Validation map for fields in type Permission.Rule
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -304,6 +304,30 @@ class FHIRPermissionRule extends FHIRBackboneElement
      * A description or definition of which activities are allowed to be done on the
      * data.
      *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionData ...$data
+     * @return static
+     */
+    public function setData(FHIRPermissionData ...$data): self
+    {
+        if ([] !== $this->data) {
+            $this->_trackValuesRemoved(count($this->data));
+            $this->data = [];
+        }
+        if ([] === $data) {
+            return $this;
+        }
+        foreach($data as $v) {
+            $this->addData($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Permission resource holds access rules for a given data and context.
+     *
+     * A description or definition of which activities are allowed to be done on the
+     * data.
+     *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionActivity[]
      */
     public function getActivity(): null|array
@@ -327,6 +351,30 @@ class FHIRPermissionRule extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->activity[] = $activity;
+        return $this;
+    }
+
+    /**
+     * Permission resource holds access rules for a given data and context.
+     *
+     * A description or definition of which activities are allowed to be done on the
+     * data.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionActivity ...$activity
+     * @return static
+     */
+    public function setActivity(FHIRPermissionActivity ...$activity): self
+    {
+        if ([] !== $this->activity) {
+            $this->_trackValuesRemoved(count($this->activity));
+            $this->activity = [];
+        }
+        if ([] === $activity) {
+            return $this;
+        }
+        foreach($activity as $v) {
+            $this->addActivity($v);
+        }
         return $this;
     }
 
@@ -363,6 +411,32 @@ class FHIRPermissionRule extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->limit[] = $limit;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * What limits apply to the use of the data.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$limit
+     * @return static
+     */
+    public function setLimit(FHIRCodeableConcept ...$limit): self
+    {
+        if ([] !== $this->limit) {
+            $this->_trackValuesRemoved(count($this->limit));
+            $this->limit = [];
+        }
+        if ([] === $limit) {
+            return $this;
+        }
+        foreach($limit as $v) {
+            $this->addLimit($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -144,6 +144,9 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
      */
     private const _VALIDATION_RULES = [
         self::FIELD_CHARACTERISTIC => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_CODE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -318,6 +321,30 @@ class FHIREvidenceVariableDefinitionByCombination extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->characteristic[] = $characteristic;
+        return $this;
+    }
+
+    /**
+     * The EvidenceVariable resource describes an element that knowledge (Evidence) is
+     * about.
+     *
+     * A defining factor of the characteristic.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceVariable\FHIREvidenceVariableCharacteristic ...$characteristic
+     * @return static
+     */
+    public function setCharacteristic(FHIREvidenceVariableCharacteristic ...$characteristic): self
+    {
+        if ([] !== $this->characteristic) {
+            $this->_trackValuesRemoved(count($this->characteristic));
+            $this->characteristic = [];
+        }
+        if ([] === $characteristic) {
+            return $this;
+        }
+        foreach($characteristic as $v) {
+            $this->addCharacteristic($v);
+        }
         return $this;
     }
 

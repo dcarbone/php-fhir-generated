@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -258,7 +258,11 @@ class FHIRDataRequirement extends FHIRDataType
      * Validation map for fields in type DataRequirement
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -785,6 +789,34 @@ class FHIRDataRequirement extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Code filters specify additional constraints on the data, specifying the value
+     * set of interest for a particular element of the data. Each code filter defines
+     * an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementCodeFilter ...$codeFilter
+     * @return static
+     */
+    public function setCodeFilter(FHIRDataRequirementCodeFilter ...$codeFilter): self
+    {
+        if ([] !== $this->codeFilter) {
+            $this->_trackValuesRemoved(count($this->codeFilter));
+            $this->codeFilter = [];
+        }
+        if ([] === $codeFilter) {
+            return $this;
+        }
+        foreach($codeFilter as $v) {
+            $this->addCodeFilter($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Describes a required data item for evaluation in terms of the type of data, and
+     * optional code or date-based filters of the data.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Date filters specify additional constraints on the data in terms of the
      * applicable date range for specific elements. Each date filter specifies an
      * additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
@@ -825,6 +857,34 @@ class FHIRDataRequirement extends FHIRDataType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Date filters specify additional constraints on the data in terms of the
+     * applicable date range for specific elements. Each date filter specifies an
+     * additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementDateFilter ...$dateFilter
+     * @return static
+     */
+    public function setDateFilter(FHIRDataRequirementDateFilter ...$dateFilter): self
+    {
+        if ([] !== $this->dateFilter) {
+            $this->_trackValuesRemoved(count($this->dateFilter));
+            $this->dateFilter = [];
+        }
+        if ([] === $dateFilter) {
+            return $this;
+        }
+        foreach($dateFilter as $v) {
+            $this->addDateFilter($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Describes a required data item for evaluation in terms of the type of data, and
+     * optional code or date-based filters of the data.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Value filters specify additional constraints on the data for elements other than
      * code-valued or date-valued. Each value filter specifies an additional constraint
      * on the data (i.e. valueFilters are AND'ed, not OR'ed).
@@ -856,6 +916,34 @@ class FHIRDataRequirement extends FHIRDataType
         }
         $this->_trackValueAdded();
         $this->valueFilter[] = $valueFilter;
+        return $this;
+    }
+
+    /**
+     * Describes a required data item for evaluation in terms of the type of data, and
+     * optional code or date-based filters of the data.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Value filters specify additional constraints on the data for elements other than
+     * code-valued or date-valued. Each value filter specifies an additional constraint
+     * on the data (i.e. valueFilters are AND'ed, not OR'ed).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementValueFilter ...$valueFilter
+     * @return static
+     */
+    public function setValueFilter(FHIRDataRequirementValueFilter ...$valueFilter): self
+    {
+        if ([] !== $this->valueFilter) {
+            $this->_trackValuesRemoved(count($this->valueFilter));
+            $this->valueFilter = [];
+        }
+        if ([] === $valueFilter) {
+            return $this;
+        }
+        foreach($valueFilter as $v) {
+            $this->addValueFilter($v);
+        }
         return $this;
     }
 
@@ -933,6 +1021,32 @@ class FHIRDataRequirement extends FHIRDataType
         }
         $this->_trackValueAdded();
         $this->sort[] = $sort;
+        return $this;
+    }
+
+    /**
+     * Describes a required data item for evaluation in terms of the type of data, and
+     * optional code or date-based filters of the data.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specifies the order of the results to be returned.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRDataRequirement\FHIRDataRequirementSort ...$sort
+     * @return static
+     */
+    public function setSort(FHIRDataRequirementSort ...$sort): self
+    {
+        if ([] !== $this->sort) {
+            $this->_trackValuesRemoved(count($this->sort));
+            $this->sort = [];
+        }
+        if ([] === $sort) {
+            return $this;
+        }
+        foreach($sort as $v) {
+            $this->addSort($v);
+        }
         return $this;
     }
 

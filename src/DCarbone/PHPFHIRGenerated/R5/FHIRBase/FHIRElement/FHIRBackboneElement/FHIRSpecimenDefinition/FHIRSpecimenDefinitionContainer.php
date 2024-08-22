@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -222,7 +222,7 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
      * Validation map for fields in type SpecimenDefinition.Container
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -647,6 +647,30 @@ class FHIRSpecimenDefinitionContainer extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->additive[] = $additive;
+        return $this;
+    }
+
+    /**
+     * A kind of specimen with associated set of requirements.
+     *
+     * Substance introduced in the kind of container to preserve, maintain or enhance
+     * the specimen. Examples: Formalin, Citrate, EDTA.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionAdditive ...$additive
+     * @return static
+     */
+    public function setAdditive(FHIRSpecimenDefinitionAdditive ...$additive): self
+    {
+        if ([] !== $this->additive) {
+            $this->_trackValuesRemoved(count($this->additive));
+            $this->additive = [];
+        }
+        if ([] === $additive) {
+            return $this;
+        }
+        foreach($additive as $v) {
+            $this->addAdditive($v);
+        }
         return $this;
     }
 

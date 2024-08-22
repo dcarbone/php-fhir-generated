@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -376,7 +376,17 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Validation map for fields in type CarePlan
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_INTENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SUBJECT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -807,6 +817,34 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Business identifiers assigned to this care plan by the performer or other
+     * systems which remain constant as the resource is updated and propagates from
+     * server to server.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -994,6 +1032,31 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A care plan that is fulfilled in whole or in part by this care plan.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Completed or terminated care plan whose function is taken by this new care plan.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
@@ -1028,6 +1091,31 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Completed or terminated care plan whose function is taken by this new care plan.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$replaces
+     * @return static
+     */
+    public function setReplaces(FHIRReference ...$replaces): self
+    {
+        if ([] !== $this->replaces) {
+            $this->_trackValuesRemoved(count($this->replaces));
+            $this->replaces = [];
+        }
+        if ([] === $replaces) {
+            return $this;
+        }
+        foreach($replaces as $v) {
+            $this->addReplaces($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * A larger care plan of which this particular care plan is a component or step.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
@@ -1054,6 +1142,31 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->partOf[] = $partOf;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A larger care plan of which this particular care plan is a component or step.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$partOf
+     * @return static
+     */
+    public function setPartOf(FHIRReference ...$partOf): self
+    {
+        if ([] !== $this->partOf) {
+            $this->_trackValuesRemoved(count($this->partOf));
+            $this->partOf = [];
+        }
+        if ([] === $partOf) {
+            return $this;
+        }
+        foreach($partOf as $v) {
+            $this->addPartOf($v);
+        }
         return $this;
     }
 
@@ -1166,6 +1279,34 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->category[] = $category;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies what "kind" of plan this is to support differentiation between
+     * multiple co-existing plans; e.g. "Home health", "psychiatric", "asthma",
+     * "disease management", "wellness plan", etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
         return $this;
     }
 
@@ -1475,6 +1616,32 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Identifies the individual(s) or organization who provided the contents of the
+     * care plan.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$contributor
+     * @return static
+     */
+    public function setContributor(FHIRReference ...$contributor): self
+    {
+        if ([] !== $this->contributor) {
+            $this->_trackValuesRemoved(count($this->contributor));
+            $this->contributor = [];
+        }
+        if ([] === $contributor) {
+            return $this;
+        }
+        foreach($contributor as $v) {
+            $this->addContributor($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Identifies all people and organizations who are expected to be involved in the
      * care envisioned by this plan.
      *
@@ -1511,6 +1678,32 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Identifies all people and organizations who are expected to be involved in the
+     * care envisioned by this plan.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$careTeam
+     * @return static
+     */
+    public function setCareTeam(FHIRReference ...$careTeam): self
+    {
+        if ([] !== $this->careTeam) {
+            $this->_trackValuesRemoved(count($this->careTeam));
+            $this->careTeam = [];
+        }
+        if ([] === $careTeam) {
+            return $this;
+        }
+        foreach($careTeam as $v) {
+            $this->addCareTeam($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
      * and/or mitigation are handled by this plan.
      *
@@ -1539,6 +1732,32 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->addresses[] = $addresses;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
+     * and/or mitigation are handled by this plan.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$addresses
+     * @return static
+     */
+    public function setAddresses(FHIRReference ...$addresses): self
+    {
+        if ([] !== $this->addresses) {
+            $this->_trackValuesRemoved(count($this->addresses));
+            $this->addresses = [];
+        }
+        if ([] === $addresses) {
+            return $this;
+        }
+        foreach($addresses as $v) {
+            $this->addAddresses($v);
+        }
         return $this;
     }
 
@@ -1585,6 +1804,33 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Identifies portions of the patient's record that specifically influenced the
+     * formation of the plan. These might include comorbidities, recent procedures,
+     * limitations, recent assessments, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$supportingInfo
+     * @return static
+     */
+    public function setSupportingInfo(FHIRReference ...$supportingInfo): self
+    {
+        if ([] !== $this->supportingInfo) {
+            $this->_trackValuesRemoved(count($this->supportingInfo));
+            $this->supportingInfo = [];
+        }
+        if ([] === $supportingInfo) {
+            return $this;
+        }
+        foreach($supportingInfo as $v) {
+            $this->addSupportingInfo($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Describes the intended objective(s) of carrying out the care plan.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
@@ -1611,6 +1857,31 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->goal[] = $goal;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Describes the intended objective(s) of carrying out the care plan.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$goal
+     * @return static
+     */
+    public function setGoal(FHIRReference ...$goal): self
+    {
+        if ([] !== $this->goal) {
+            $this->_trackValuesRemoved(count($this->goal));
+            $this->goal = [];
+        }
+        if ([] === $goal) {
+            return $this;
+        }
+        foreach($goal as $v) {
+            $this->addGoal($v);
+        }
         return $this;
     }
 
@@ -1651,6 +1922,32 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * Describes the intention of how one or more practitioners intend to deliver care
+     * for a particular patient, group or community for a period of time, possibly
+     * limited to care for a specific condition or set of conditions.
+     *
+     * Identifies a planned action to occur as part of the plan. For example, a
+     * medication to be used, lab tests to perform, self-monitoring, education, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity ...$activity
+     * @return static
+     */
+    public function setActivity(FHIRCarePlanActivity ...$activity): self
+    {
+        if ([] !== $this->activity) {
+            $this->_trackValuesRemoved(count($this->activity));
+            $this->activity = [];
+        }
+        if ([] === $activity) {
+            return $this;
+        }
+        foreach($activity as $v) {
+            $this->addActivity($v);
+        }
+        return $this;
+    }
+
+    /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
@@ -1683,6 +1980,32 @@ class FHIRCarePlan extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * General notes about the care plan not covered elsewhere.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 

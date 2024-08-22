@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -180,7 +180,14 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * Validation map for fields in type Query.Response
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_IDENTIFIER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_OUTCOME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -491,6 +498,31 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Parameters server used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension ...$parameter
+     * @return static
+     */
+    public function setParameter(FHIRExtension ...$parameter): self
+    {
+        if ([] !== $this->parameter) {
+            $this->_trackValuesRemoved(count($this->parameter));
+            $this->parameter = [];
+        }
+        if ([] === $parameter) {
+            return $this;
+        }
+        foreach($parameter as $v) {
+            $this->addParameter($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * To get first page (if paged).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
@@ -517,6 +549,31 @@ class FHIRQueryResponse extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->first[] = $first;
+        return $this;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get first page (if paged).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension ...$first
+     * @return static
+     */
+    public function setFirst(FHIRExtension ...$first): self
+    {
+        if ([] !== $this->first) {
+            $this->_trackValuesRemoved(count($this->first));
+            $this->first = [];
+        }
+        if ([] === $first) {
+            return $this;
+        }
+        foreach($first as $v) {
+            $this->addFirst($v);
+        }
         return $this;
     }
 
@@ -559,6 +616,31 @@ class FHIRQueryResponse extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * To get previous page (if paged).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension ...$previous
+     * @return static
+     */
+    public function setPrevious(FHIRExtension ...$previous): self
+    {
+        if ([] !== $this->previous) {
+            $this->_trackValuesRemoved(count($this->previous));
+            $this->previous = [];
+        }
+        if ([] === $previous) {
+            return $this;
+        }
+        foreach($previous as $v) {
+            $this->addPrevious($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * To get next page (if paged).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension[]
@@ -585,6 +667,31 @@ class FHIRQueryResponse extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->next[] = $next;
+        return $this;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get next page (if paged).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension ...$next
+     * @return static
+     */
+    public function setNext(FHIRExtension ...$next): self
+    {
+        if ([] !== $this->next) {
+            $this->_trackValuesRemoved(count($this->next));
+            $this->next = [];
+        }
+        if ([] === $next) {
+            return $this;
+        }
+        foreach($next as $v) {
+            $this->addNext($v);
+        }
         return $this;
     }
 
@@ -623,6 +730,31 @@ class FHIRQueryResponse extends FHIRBackboneElement
     }
 
     /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To get last page (if paged).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension ...$last
+     * @return static
+     */
+    public function setLast(FHIRExtension ...$last): self
+    {
+        if ([] !== $this->last) {
+            $this->_trackValuesRemoved(count($this->last));
+            $this->last = [];
+        }
+        if ([] === $last) {
+            return $this;
+        }
+        foreach($last as $v) {
+            $this->addLast($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -653,6 +785,31 @@ class FHIRQueryResponse extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->reference[] = $reference;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Resources that are the results of the search.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$reference
+     * @return static
+     */
+    public function setReference(FHIRResourceReference ...$reference): self
+    {
+        if ([] !== $this->reference) {
+            $this->_trackValuesRemoved(count($this->reference));
+            $this->reference = [];
+        }
+        if ([] === $reference) {
+            return $this;
+        }
+        foreach($reference as $v) {
+            $this->addReference($v);
+        }
         return $this;
     }
 

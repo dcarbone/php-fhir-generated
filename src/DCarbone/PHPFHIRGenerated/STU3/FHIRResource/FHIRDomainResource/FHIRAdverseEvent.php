@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -291,7 +291,7 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Validation map for fields in type AdverseEvent
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -738,6 +738,32 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Includes information about the reaction that occurred as a result of exposure to
+     * a substance (for example, a drug or a chemical).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$reaction
+     * @return static
+     */
+    public function setReaction(FHIRReference ...$reaction): self
+    {
+        if ([] !== $this->reaction) {
+            $this->_trackValuesRemoved(count($this->reaction));
+            $this->reaction = [];
+        }
+        if ([] === $reaction) {
+            return $this;
+        }
+        foreach($reaction as $v) {
+            $this->addReaction($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The information about where the adverse event occurred.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
@@ -993,6 +1019,32 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * Actual or potential/avoided event causing unintended physical injury resulting
+     * from or contributed to by medical care, a research study or other healthcare
+     * setting factors that requires additional monitoring, treatment, or
+     * hospitalization, or that results in death.
+     *
+     * Describes the entity that is suspected to have caused the adverse event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAdverseEvent\FHIRAdverseEventSuspectEntity ...$suspectEntity
+     * @return static
+     */
+    public function setSuspectEntity(FHIRAdverseEventSuspectEntity ...$suspectEntity): self
+    {
+        if ([] !== $this->suspectEntity) {
+            $this->_trackValuesRemoved(count($this->suspectEntity));
+            $this->suspectEntity = [];
+        }
+        if ([] === $suspectEntity) {
+            return $this;
+        }
+        foreach($suspectEntity as $v) {
+            $this->addSuspectEntity($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1023,6 +1075,31 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->subjectMedicalHistory[] = $subjectMedicalHistory;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * AdverseEvent.subjectMedicalHistory.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$subjectMedicalHistory
+     * @return static
+     */
+    public function setSubjectMedicalHistory(FHIRReference ...$subjectMedicalHistory): self
+    {
+        if ([] !== $this->subjectMedicalHistory) {
+            $this->_trackValuesRemoved(count($this->subjectMedicalHistory));
+            $this->subjectMedicalHistory = [];
+        }
+        if ([] === $subjectMedicalHistory) {
+            return $this;
+        }
+        foreach($subjectMedicalHistory as $v) {
+            $this->addSubjectMedicalHistory($v);
+        }
         return $this;
     }
 
@@ -1065,6 +1142,31 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * AdverseEvent.referenceDocument.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$referenceDocument
+     * @return static
+     */
+    public function setReferenceDocument(FHIRReference ...$referenceDocument): self
+    {
+        if ([] !== $this->referenceDocument) {
+            $this->_trackValuesRemoved(count($this->referenceDocument));
+            $this->referenceDocument = [];
+        }
+        if ([] === $referenceDocument) {
+            return $this;
+        }
+        foreach($referenceDocument as $v) {
+            $this->addReferenceDocument($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * AdverseEvent.study.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
@@ -1091,6 +1193,31 @@ class FHIRAdverseEvent extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->study[] = $study;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * AdverseEvent.study.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$study
+     * @return static
+     */
+    public function setStudy(FHIRReference ...$study): self
+    {
+        if ([] !== $this->study) {
+            $this->_trackValuesRemoved(count($this->study));
+            $this->study = [];
+        }
+        if ([] === $study) {
+            return $this;
+        }
+        foreach($study as $v) {
+            $this->addStudy($v);
+        }
         return $this;
     }
 

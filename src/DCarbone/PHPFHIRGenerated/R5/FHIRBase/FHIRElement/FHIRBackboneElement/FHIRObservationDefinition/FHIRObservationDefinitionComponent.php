@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -156,7 +156,11 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
      * Validation map for fields in type ObservationDefinition.Component
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -319,6 +323,30 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
     }
 
     /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The data types allowed for the value element of the instance of this component
+     * observations.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRObservationDataType ...$permittedDataType
+     * @return static
+     */
+    public function setPermittedDataType(FHIRObservationDataType ...$permittedDataType): self
+    {
+        if ([] !== $this->permittedDataType) {
+            $this->_trackValuesRemoved(count($this->permittedDataType));
+            $this->permittedDataType = [];
+        }
+        if ([] === $permittedDataType) {
+            return $this;
+        }
+        foreach($permittedDataType as $v) {
+            $this->addPermittedDataType($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -355,6 +383,32 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Units allowed for the valueQuantity element in the instance observations
+     * conforming to this ObservationDefinition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding ...$permittedUnit
+     * @return static
+     */
+    public function setPermittedUnit(FHIRCoding ...$permittedUnit): self
+    {
+        if ([] !== $this->permittedUnit) {
+            $this->_trackValuesRemoved(count($this->permittedUnit));
+            $this->permittedUnit = [];
+        }
+        if ([] === $permittedUnit) {
+            return $this;
+        }
+        foreach($permittedUnit as $v) {
+            $this->addPermittedUnit($v);
+        }
+        return $this;
+    }
+
+    /**
      * Set of definitional characteristics for a kind of observation or measurement
      * produced or consumed by an orderable health care service.
      *
@@ -387,6 +441,32 @@ class FHIRObservationDefinitionComponent extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->qualifiedValue[] = $qualifiedValue;
+        return $this;
+    }
+
+    /**
+     * Set of definitional characteristics for a kind of observation or measurement
+     * produced or consumed by an orderable health care service.
+     *
+     * A set of qualified values associated with a context and a set of conditions -
+     * provides a range for quantitative and ordinal observations and a collection of
+     * value sets for qualitative observations.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue ...$qualifiedValue
+     * @return static
+     */
+    public function setQualifiedValue(FHIRObservationDefinitionQualifiedValue ...$qualifiedValue): self
+    {
+        if ([] !== $this->qualifiedValue) {
+            $this->_trackValuesRemoved(count($this->qualifiedValue));
+            $this->qualifiedValue = [];
+        }
+        if ([] === $qualifiedValue) {
+            return $this;
+        }
+        foreach($qualifiedValue as $v) {
+            $this->addQualifiedValue($v);
+        }
         return $this;
     }
 

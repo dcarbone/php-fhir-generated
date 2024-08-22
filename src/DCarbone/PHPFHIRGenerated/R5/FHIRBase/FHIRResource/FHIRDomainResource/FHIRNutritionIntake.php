@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -417,6 +417,12 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
         self::FIELD_CONSUMED_ITEM => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SUBJECT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
     ];
 
     /** @var array */
@@ -819,6 +825,36 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifiers associated with this Nutrition Intake that are defined by business
+     * processes and/or used to refer to it when a direct URL reference to the resource
+     * itself is not appropriate. They are business identifiers assigned to this
+     * resource by the performer or other systems and remain constant as the resource
+     * is updated and propagates from server to server.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -1000,6 +1036,31 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A plan, proposal or order that is fulfilled in whole or in part by this event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * A larger event of which this particular event is a component or step.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
@@ -1026,6 +1087,31 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
         }
         $this->_trackValueAdded();
         $this->partOf[] = $partOf;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A larger event of which this particular event is a component or step.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$partOf
+     * @return static
+     */
+    public function setPartOf(FHIRReference ...$partOf): self
+    {
+        if ([] !== $this->partOf) {
+            $this->_trackValuesRemoved(count($this->partOf));
+            $this->partOf = [];
+        }
+        if ([] === $partOf) {
+            return $this;
+        }
+        foreach($partOf as $v) {
+            $this->addPartOf($v);
+        }
         return $this;
     }
 
@@ -1096,6 +1182,32 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
         }
         $this->_trackValueAdded();
         $this->statusReason[] = $statusReason;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Captures the reason for the current state of the NutritionIntake.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$statusReason
+     * @return static
+     */
+    public function setStatusReason(FHIRCodeableConcept ...$statusReason): self
+    {
+        if ([] !== $this->statusReason) {
+            $this->_trackValuesRemoved(count($this->statusReason));
+            $this->statusReason = [];
+        }
+        if ([] === $statusReason) {
+            return $this;
+        }
+        foreach($statusReason as $v) {
+            $this->addStatusReason($v);
+        }
         return $this;
     }
 
@@ -1471,6 +1583,37 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * sources such as the patient's memory, from a nutrition label, or from a
      * clinician documenting observed intake.
      *
+     * What food or fluid product or item was consumed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionIntake\FHIRNutritionIntakeConsumedItem ...$consumedItem
+     * @return static
+     */
+    public function setConsumedItem(FHIRNutritionIntakeConsumedItem ...$consumedItem): self
+    {
+        if ([] !== $this->consumedItem) {
+            $this->_trackValuesRemoved(count($this->consumedItem));
+            $this->consumedItem = [];
+        }
+        if ([] === $consumedItem) {
+            return $this;
+        }
+        foreach($consumedItem as $v) {
+            $this->addConsumedItem($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A record of food or fluid that is being consumed by a patient. A NutritionIntake
+     * may indicate that the patient may be consuming the food or fluid now or has
+     * consumed the food or fluid in the past. The source of this information can be
+     * the patient, significant other (such as a family member or spouse), or a
+     * clinician. A common scenario where this information is captured is during the
+     * history taking process during a patient visit or stay or through an app that
+     * tracks food or fluids consumed. The consumption information may come from
+     * sources such as the patient's memory, from a nutrition label, or from a
+     * clinician documenting observed intake.
+     *
      * Total nutrient amounts for the whole meal, product, serving, etc.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionIntake\FHIRNutritionIntakeIngredientLabel[]
@@ -1517,6 +1660,37 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
      * sources such as the patient's memory, from a nutrition label, or from a
      * clinician documenting observed intake.
      *
+     * Total nutrient amounts for the whole meal, product, serving, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionIntake\FHIRNutritionIntakeIngredientLabel ...$ingredientLabel
+     * @return static
+     */
+    public function setIngredientLabel(FHIRNutritionIntakeIngredientLabel ...$ingredientLabel): self
+    {
+        if ([] !== $this->ingredientLabel) {
+            $this->_trackValuesRemoved(count($this->ingredientLabel));
+            $this->ingredientLabel = [];
+        }
+        if ([] === $ingredientLabel) {
+            return $this;
+        }
+        foreach($ingredientLabel as $v) {
+            $this->addIngredientLabel($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A record of food or fluid that is being consumed by a patient. A NutritionIntake
+     * may indicate that the patient may be consuming the food or fluid now or has
+     * consumed the food or fluid in the past. The source of this information can be
+     * the patient, significant other (such as a family member or spouse), or a
+     * clinician. A common scenario where this information is captured is during the
+     * history taking process during a patient visit or stay or through an app that
+     * tracks food or fluids consumed. The consumption information may come from
+     * sources such as the patient's memory, from a nutrition label, or from a
+     * clinician documenting observed intake.
+     *
      * Who performed the intake and how they were involved.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionIntake\FHIRNutritionIntakePerformer[]
@@ -1549,6 +1723,37 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
         }
         $this->_trackValueAdded();
         $this->performer[] = $performer;
+        return $this;
+    }
+
+    /**
+     * A record of food or fluid that is being consumed by a patient. A NutritionIntake
+     * may indicate that the patient may be consuming the food or fluid now or has
+     * consumed the food or fluid in the past. The source of this information can be
+     * the patient, significant other (such as a family member or spouse), or a
+     * clinician. A common scenario where this information is captured is during the
+     * history taking process during a patient visit or stay or through an app that
+     * tracks food or fluids consumed. The consumption information may come from
+     * sources such as the patient's memory, from a nutrition label, or from a
+     * clinician documenting observed intake.
+     *
+     * Who performed the intake and how they were involved.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionIntake\FHIRNutritionIntakePerformer ...$performer
+     * @return static
+     */
+    public function setPerformer(FHIRNutritionIntakePerformer ...$performer): self
+    {
+        if ([] !== $this->performer) {
+            $this->_trackValuesRemoved(count($this->performer));
+            $this->performer = [];
+        }
+        if ([] === $performer) {
+            return $this;
+        }
+        foreach($performer as $v) {
+            $this->addPerformer($v);
+        }
         return $this;
     }
 
@@ -1625,6 +1830,33 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Allows linking the NutritionIntake to the underlying NutritionOrder, or to other
+     * information, such as AllergyIntolerance, that supports or is used to derive the
+     * NutritionIntake.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$derivedFrom
+     * @return static
+     */
+    public function setDerivedFrom(FHIRReference ...$derivedFrom): self
+    {
+        if ([] !== $this->derivedFrom) {
+            $this->_trackValuesRemoved(count($this->derivedFrom));
+            $this->derivedFrom = [];
+        }
+        if ([] === $derivedFrom) {
+            return $this;
+        }
+        foreach($derivedFrom as $v) {
+            $this->addDerivedFrom($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
      * If the element is present, it must have a value for at least one of the defined
@@ -1657,6 +1889,32 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
         }
         $this->_trackValueAdded();
         $this->reason[] = $reason;
+        return $this;
+    }
+
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reason, Condition or observation for why the food or fluid is /was consumed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$reason
+     * @return static
+     */
+    public function setReason(FHIRCodeableReference ...$reason): self
+    {
+        if ([] !== $this->reason) {
+            $this->_trackValuesRemoved(count($this->reason));
+            $this->reason = [];
+        }
+        if ([] === $reason) {
+            return $this;
+        }
+        foreach($reason as $v) {
+            $this->addReason($v);
+        }
         return $this;
     }
 
@@ -1695,6 +1953,33 @@ class FHIRNutritionIntake extends FHIRDomainResource implements PHPFHIRContained
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Provides extra information about the Nutrition Intake that is not conveyed by
+     * the other attributes.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 

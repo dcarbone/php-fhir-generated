@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -273,7 +273,11 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Validation map for fields in type Sequence
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_COORDINATE_SYSTEM => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -524,6 +528,32 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier for this particular sequence instance. This is a
+     * FHIR-defined id.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -856,6 +886,33 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * Raw data describing a biological sequence.
+     *
+     * The definition of variant here originates from Sequence ontology
+     * ([variant_of](http://www.sequenceontology.org/browser/current_svn/term/variant_of)).
+     * This element can represent amino acid or nucleic sequence change(including
+     * insertion,deletion,SNP,etc.) It can represent some complex mutation or segment
+     * variation with the assist of CIGAR string.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceVariant ...$variant
+     * @return static
+     */
+    public function setVariant(FHIRSequenceVariant ...$variant): self
+    {
+        if ([] !== $this->variant) {
+            $this->_trackValuesRemoved(count($this->variant));
+            $this->variant = [];
+        }
+        if ([] === $variant) {
+            return $this;
+        }
+        foreach($variant as $v) {
+            $this->addVariant($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -933,6 +990,31 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * Raw data describing a biological sequence.
+     *
+     * An experimental feature attribute that defines the quality of the feature in a
+     * quantitative way, such as a phred quality score
+     * ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceQuality ...$quality
+     * @return static
+     */
+    public function setQuality(FHIRSequenceQuality ...$quality): self
+    {
+        if ([] !== $this->quality) {
+            $this->_trackValuesRemoved(count($this->quality));
+            $this->quality = [];
+        }
+        if ([] === $quality) {
+            return $this;
+        }
+        foreach($quality as $v) {
+            $this->addQuality($v);
+        }
+        return $this;
+    }
+
+    /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1006,6 +1088,30 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * Raw data describing a biological sequence.
+     *
+     * Configurations of the external repository. The repository shall store target's
+     * observedSeq or records related with target's observedSeq.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRSequence\FHIRSequenceRepository ...$repository
+     * @return static
+     */
+    public function setRepository(FHIRSequenceRepository ...$repository): self
+    {
+        if ([] !== $this->repository) {
+            $this->_trackValuesRemoved(count($this->repository));
+            $this->repository = [];
+        }
+        if ([] === $repository) {
+            return $this;
+        }
+        foreach($repository as $v) {
+            $this->addRepository($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1036,6 +1142,31 @@ class FHIRSequence extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->pointer[] = $pointer;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Pointer to next atomic sequence which at most contains one variant.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$pointer
+     * @return static
+     */
+    public function setPointer(FHIRReference ...$pointer): self
+    {
+        if ([] !== $this->pointer) {
+            $this->_trackValuesRemoved(count($this->pointer));
+            $this->pointer = [];
+        }
+        if ([] === $pointer) {
+            return $this;
+        }
+        foreach($pointer as $v) {
+            $this->addPointer($v);
+        }
         return $this;
     }
 

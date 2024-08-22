@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -157,7 +157,11 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      * Validation map for fields in type Contract.SecurityLabel
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CLASSIFICATION => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -398,6 +402,32 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Security label privacy tag that specifies the applicable privacy and security
+     * policies governing this term and/or term elements.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCoding ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Security label privacy tag that specifies the manner in which term and/or term
      * elements are to be protected.
      *
@@ -426,6 +456,32 @@ class FHIRContractSecurityLabel extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->control[] = $control;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Security label privacy tag that specifies the manner in which term and/or term
+     * elements are to be protected.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding ...$control
+     * @return static
+     */
+    public function setControl(FHIRCoding ...$control): self
+    {
+        if ([] !== $this->control) {
+            $this->_trackValuesRemoved(count($this->control));
+            $this->control = [];
+        }
+        if ([] === $control) {
+            return $this;
+        }
+        foreach($control as $v) {
+            $this->addControl($v);
+        }
         return $this;
     }
 

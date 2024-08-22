@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -238,7 +238,14 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
      * Validation map for fields in type ManufacturedItemDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_MANUFACTURED_DOSE_FORM => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -446,6 +453,32 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique identifier.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this item. Enables tracking the life-cycle of the content.
@@ -625,6 +658,31 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Manufacturer of the item, one of several possible.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$manufacturer
+     * @return static
+     */
+    public function setManufacturer(FHIRReference ...$manufacturer): self
+    {
+        if ([] !== $this->manufacturer) {
+            $this->_trackValuesRemoved(count($this->manufacturer));
+            $this->manufacturer = [];
+        }
+        if ([] === $manufacturer) {
+            return $this;
+        }
+        foreach($manufacturer as $v) {
+            $this->addManufacturer($v);
+        }
+        return $this;
+    }
+
+    /**
      * The marketing status describes the date when a medicinal product is actually put
      * on the market or the date as of which it is no longer available.
      * If the element is present, it must have a value for at least one of the defined
@@ -659,6 +717,33 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->marketingStatus[] = $marketingStatus;
+        return $this;
+    }
+
+    /**
+     * The marketing status describes the date when a medicinal product is actually put
+     * on the market or the date as of which it is no longer available.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Allows specifying that an item is on the market for sale, or that it is not
+     * available, and the dates and locations associated.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus ...$marketingStatus
+     * @return static
+     */
+    public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
+    {
+        if ([] !== $this->marketingStatus) {
+            $this->_trackValuesRemoved(count($this->marketingStatus));
+            $this->marketingStatus = [];
+        }
+        if ([] === $marketingStatus) {
+            return $this;
+        }
+        foreach($marketingStatus as $v) {
+            $this->addMarketingStatus($v);
+        }
         return $this;
     }
 
@@ -703,6 +788,34 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The ingredients of this manufactured item. This is only needed if the
+     * ingredients are not specified by incoming references from the Ingredient
+     * resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$ingredient
+     * @return static
+     */
+    public function setIngredient(FHIRCodeableConcept ...$ingredient): self
+    {
+        if ([] !== $this->ingredient) {
+            $this->_trackValuesRemoved(count($this->ingredient));
+            $this->ingredient = [];
+        }
+        if ([] === $ingredient) {
+            return $this;
+        }
+        foreach($ingredient as $v) {
+            $this->addIngredient($v);
+        }
+        return $this;
+    }
+
+    /**
      * The definition and characteristics of a medicinal manufactured item, such as a
      * tablet or capsule, as contained in a packaged medicinal product.
      *
@@ -738,6 +851,30 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
      * The definition and characteristics of a medicinal manufactured item, such as a
      * tablet or capsule, as contained in a packaged medicinal product.
      *
+     * General characteristics of this item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionProperty ...$property
+     * @return static
+     */
+    public function setProperty(FHIRManufacturedItemDefinitionProperty ...$property): self
+    {
+        if ([] !== $this->property) {
+            $this->_trackValuesRemoved(count($this->property));
+            $this->property = [];
+        }
+        if ([] === $property) {
+            return $this;
+        }
+        foreach($property as $v) {
+            $this->addProperty($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The definition and characteristics of a medicinal manufactured item, such as a
+     * tablet or capsule, as contained in a packaged medicinal product.
+     *
      * Physical parts of the manufactured item, that it is intrisically made from. This
      * is distinct from the ingredients that are part of its chemical makeup.
      *
@@ -765,6 +902,31 @@ class FHIRManufacturedItemDefinition extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->component[] = $component;
+        return $this;
+    }
+
+    /**
+     * The definition and characteristics of a medicinal manufactured item, such as a
+     * tablet or capsule, as contained in a packaged medicinal product.
+     *
+     * Physical parts of the manufactured item, that it is intrisically made from. This
+     * is distinct from the ingredients that are part of its chemical makeup.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent ...$component
+     * @return static
+     */
+    public function setComponent(FHIRManufacturedItemDefinitionComponent ...$component): self
+    {
+        if ([] !== $this->component) {
+            $this->_trackValuesRemoved(count($this->component));
+            $this->component = [];
+        }
+        if ([] === $component) {
+            return $this;
+        }
+        foreach($component as $v) {
+            $this->addComponent($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -302,7 +302,11 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * Validation map for fields in type ReferralRequest
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -588,6 +592,32 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Business identifier that uniquely identifies the referral/care transfer request
+     * instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
@@ -861,6 +891,32 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The healthcare provider(s) or provider organization(s) who/which is to receive
+     * the referral/transfer of care request.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference ...$recipient
+     * @return static
+     */
+    public function setRecipient(FHIRReference ...$recipient): self
+    {
+        if ([] !== $this->recipient) {
+            $this->_trackValuesRemoved(count($this->recipient));
+            $this->recipient = [];
+        }
+        if ([] === $recipient) {
+            return $this;
+        }
+        foreach($recipient as $v) {
+            $this->addRecipient($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The encounter at which the request for referral or transfer of care is
      * initiated.
      *
@@ -1059,6 +1115,33 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The service(s) that is/are requested to be provided to the patient. For example:
+     * cardiac pacemaker insertion.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$serviceRequested
+     * @return static
+     */
+    public function setServiceRequested(FHIRCodeableConcept ...$serviceRequested): self
+    {
+        if ([] !== $this->serviceRequested) {
+            $this->_trackValuesRemoved(count($this->serviceRequested));
+            $this->serviceRequested = [];
+        }
+        if ([] === $serviceRequested) {
+            return $this;
+        }
+        foreach($serviceRequested as $v) {
+            $this->addServiceRequested($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1097,6 +1180,35 @@ class FHIRReferralRequest extends FHIRDomainResource implements PHPFHIRContained
         }
         $this->_trackValueAdded();
         $this->supportingInformation[] = $supportingInformation;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Any additional (administrative, financial or clinical) information required to
+     * support request for referral or transfer of care. For example: Presenting
+     * problems/chief complaints Medical History Family History Alerts
+     * Allergy/Intolerance and Adverse Reactions Medications Observations/Assessments
+     * (may include cognitive and fundtional assessments) Diagnostic Reports Care Plan.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference ...$supportingInformation
+     * @return static
+     */
+    public function setSupportingInformation(FHIRReference ...$supportingInformation): self
+    {
+        if ([] !== $this->supportingInformation) {
+            $this->_trackValuesRemoved(count($this->supportingInformation));
+            $this->supportingInformation = [];
+        }
+        if ([] === $supportingInformation) {
+            return $this;
+        }
+        foreach($supportingInformation as $v) {
+            $this->addSupportingInformation($v);
+        }
         return $this;
     }
 

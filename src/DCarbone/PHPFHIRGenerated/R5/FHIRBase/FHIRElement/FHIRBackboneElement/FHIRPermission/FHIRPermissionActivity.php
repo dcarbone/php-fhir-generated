@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -143,7 +143,7 @@ class FHIRPermissionActivity extends FHIRBackboneElement
      * Validation map for fields in type Permission.Activity
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -248,6 +248,31 @@ class FHIRPermissionActivity extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The actor(s) authorized for the defined activity.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$actor
+     * @return static
+     */
+    public function setActor(FHIRReference ...$actor): self
+    {
+        if ([] !== $this->actor) {
+            $this->_trackValuesRemoved(count($this->actor));
+            $this->actor = [];
+        }
+        if ([] === $actor) {
+            return $this;
+        }
+        foreach($actor as $v) {
+            $this->addActor($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -289,6 +314,32 @@ class FHIRPermissionActivity extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Actions controlled by this Rule.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$action
+     * @return static
+     */
+    public function setAction(FHIRCodeableConcept ...$action): self
+    {
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
+        if ([] === $action) {
+            return $this;
+        }
+        foreach($action as $v) {
+            $this->addAction($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The purpose for which the permission is given.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
@@ -316,6 +367,32 @@ class FHIRPermissionActivity extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->purpose[] = $purpose;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The purpose for which the permission is given.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$purpose
+     * @return static
+     */
+    public function setPurpose(FHIRCodeableConcept ...$purpose): self
+    {
+        if ([] !== $this->purpose) {
+            $this->_trackValuesRemoved(count($this->purpose));
+            $this->purpose = [];
+        }
+        if ([] === $purpose) {
+            return $this;
+        }
+        foreach($purpose as $v) {
+            $this->addPurpose($v);
+        }
         return $this;
     }
 

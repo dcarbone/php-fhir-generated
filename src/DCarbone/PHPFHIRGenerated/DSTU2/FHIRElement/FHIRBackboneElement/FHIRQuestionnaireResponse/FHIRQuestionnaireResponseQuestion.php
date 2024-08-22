@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,7 +126,7 @@ class FHIRQuestionnaireResponseQuestion extends FHIRBackboneElement
      * Validation map for fields in type QuestionnaireResponse.Question
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -311,6 +311,31 @@ class FHIRQuestionnaireResponseQuestion extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->answer[] = $answer;
+        return $this;
+    }
+
+    /**
+     * A structured set of questions and their answers. The questions are ordered and
+     * grouped into coherent subsets, corresponding to the structure of the grouping of
+     * the underlying questions.
+     *
+     * The respondent's answer(s) to the question.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQuestionnaireResponse\FHIRQuestionnaireResponseAnswer ...$answer
+     * @return static
+     */
+    public function setAnswer(FHIRQuestionnaireResponseAnswer ...$answer): self
+    {
+        if ([] !== $this->answer) {
+            $this->_trackValuesRemoved(count($this->answer));
+            $this->answer = [];
+        }
+        if ([] === $answer) {
+            return $this;
+        }
+        foreach($answer as $v) {
+            $this->addAnswer($v);
+        }
         return $this;
     }
 

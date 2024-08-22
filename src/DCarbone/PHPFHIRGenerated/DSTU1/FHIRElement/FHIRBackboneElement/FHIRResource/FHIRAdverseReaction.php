@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -174,7 +174,14 @@ class FHIRAdverseReaction extends FHIRResource implements PHPFHIRContainedTypeIn
      * Validation map for fields in type AdverseReaction
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_DID_NOT_OCCUR_FLAG => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SUBJECT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -337,6 +344,34 @@ class FHIRAdverseReaction extends FHIRResource implements PHPFHIRContainedTypeIn
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This records identifiers associated with this reaction that are defined by
+     * business processed and/ or used to refer to it when a direct URL reference to
+     * the resource itself is not appropriate (e.g. in CDA documents, or in written /
+     * printed documentation).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -526,6 +561,30 @@ class FHIRAdverseReaction extends FHIRResource implements PHPFHIRContainedTypeIn
      * Records an unexpected reaction suspected to be related to the exposure of the
      * reaction subject to a substance.
      *
+     * The signs and symptoms that were observed as part of the reaction.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionSymptom ...$symptom
+     * @return static
+     */
+    public function setSymptom(FHIRAdverseReactionSymptom ...$symptom): self
+    {
+        if ([] !== $this->symptom) {
+            $this->_trackValuesRemoved(count($this->symptom));
+            $this->symptom = [];
+        }
+        if ([] === $symptom) {
+            return $this;
+        }
+        foreach($symptom as $v) {
+            $this->addSymptom($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Records an unexpected reaction suspected to be related to the exposure of the
+     * reaction subject to a substance.
+     *
      * An exposure to a substance that preceded a reaction occurrence.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionExposure[]
@@ -551,6 +610,30 @@ class FHIRAdverseReaction extends FHIRResource implements PHPFHIRContainedTypeIn
         }
         $this->_trackValueAdded();
         $this->exposure[] = $exposure;
+        return $this;
+    }
+
+    /**
+     * Records an unexpected reaction suspected to be related to the exposure of the
+     * reaction subject to a substance.
+     *
+     * An exposure to a substance that preceded a reaction occurrence.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRAdverseReaction\FHIRAdverseReactionExposure ...$exposure
+     * @return static
+     */
+    public function setExposure(FHIRAdverseReactionExposure ...$exposure): self
+    {
+        if ([] !== $this->exposure) {
+            $this->_trackValuesRemoved(count($this->exposure));
+            $this->exposure = [];
+        }
+        if ([] === $exposure) {
+            return $this;
+        }
+        foreach($exposure as $v) {
+            $this->addExposure($v);
+        }
         return $this;
     }
 

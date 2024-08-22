@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -222,7 +222,11 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * Validation map for fields in type ValueSet.Expansion
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_TIMESTAMP => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -644,6 +648,34 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * [CodeSystem](codesystem.html) definitions and their use in [coded
      * elements](terminologies.html).
      *
+     * A parameter that controlled the expansion process. These parameters may be used
+     * by users of expanded value sets to check whether the expansion is suitable for a
+     * particular purpose, or to pick the correct expansion.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetParameter ...$parameter
+     * @return static
+     */
+    public function setParameter(FHIRValueSetParameter ...$parameter): self
+    {
+        if ([] !== $this->parameter) {
+            $this->_trackValuesRemoved(count($this->parameter));
+            $this->parameter = [];
+        }
+        if ([] === $parameter) {
+            return $this;
+        }
+        foreach($parameter as $v) {
+            $this->addParameter($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A ValueSet resource instance specifies a set of codes drawn from one or more
+     * code systems, intended for use in a particular context. Value sets link between
+     * [CodeSystem](codesystem.html) definitions and their use in [coded
+     * elements](terminologies.html).
+     *
      * A property defines an additional slot through which additional information can
      * be provided about a concept.
      *
@@ -682,6 +714,33 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
      * [CodeSystem](codesystem.html) definitions and their use in [coded
      * elements](terminologies.html).
      *
+     * A property defines an additional slot through which additional information can
+     * be provided about a concept.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetProperty ...$property
+     * @return static
+     */
+    public function setProperty(FHIRValueSetProperty ...$property): self
+    {
+        if ([] !== $this->property) {
+            $this->_trackValuesRemoved(count($this->property));
+            $this->property = [];
+        }
+        if ([] === $property) {
+            return $this;
+        }
+        foreach($property as $v) {
+            $this->addProperty($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A ValueSet resource instance specifies a set of codes drawn from one or more
+     * code systems, intended for use in a particular context. Value sets link between
+     * [CodeSystem](codesystem.html) definitions and their use in [coded
+     * elements](terminologies.html).
+     *
      * The codes that are contained in the value set expansion.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
@@ -709,6 +768,32 @@ class FHIRValueSetExpansion extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->contains[] = $contains;
+        return $this;
+    }
+
+    /**
+     * A ValueSet resource instance specifies a set of codes drawn from one or more
+     * code systems, intended for use in a particular context. Value sets link between
+     * [CodeSystem](codesystem.html) definitions and their use in [coded
+     * elements](terminologies.html).
+     *
+     * The codes that are contained in the value set expansion.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains ...$contains
+     * @return static
+     */
+    public function setContains(FHIRValueSetContains ...$contains): self
+    {
+        if ([] !== $this->contains) {
+            $this->_trackValuesRemoved(count($this->contains));
+            $this->contains = [];
+        }
+        if ([] === $contains) {
+            return $this;
+        }
+        foreach($contains as $v) {
+            $this->addContains($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -420,7 +420,14 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * Validation map for fields in type Claim
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PATIENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -843,6 +850,32 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The business identifier for the instance: invoice number, claim number,
+     * pre-determination or pre-authorization number.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -1412,6 +1445,30 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     }
 
     /**
+     * A provider issued list of services and products provided, or to be provided, to
+     * a patient which is provided to an insurer for payment recovery.
+     *
+     * Ordered list of patient diagnosis for which care is sought.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimDiagnosis ...$diagnosis
+     * @return static
+     */
+    public function setDiagnosis(FHIRClaimDiagnosis ...$diagnosis): self
+    {
+        if ([] !== $this->diagnosis) {
+            $this->_trackValuesRemoved(count($this->diagnosis));
+            $this->diagnosis = [];
+        }
+        if ([] === $diagnosis) {
+            return $this;
+        }
+        foreach($diagnosis as $v) {
+            $this->addDiagnosis($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1442,6 +1499,31 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         $this->_trackValueAdded();
         $this->condition[] = $condition;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * List of patient conditions for which care is sought.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding ...$condition
+     * @return static
+     */
+    public function setCondition(FHIRCoding ...$condition): self
+    {
+        if ([] !== $this->condition) {
+            $this->_trackValuesRemoved(count($this->condition));
+            $this->condition = [];
+        }
+        if ([] === $condition) {
+            return $this;
+        }
+        foreach($condition as $v) {
+            $this->addCondition($v);
+        }
         return $this;
     }
 
@@ -1512,6 +1594,30 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     }
 
     /**
+     * A provider issued list of services and products provided, or to be provided, to
+     * a patient which is provided to an insurer for payment recovery.
+     *
+     * Financial instrument by which payment information for health care.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimCoverage ...$coverage
+     * @return static
+     */
+    public function setCoverage(FHIRClaimCoverage ...$coverage): self
+    {
+        if ([] !== $this->coverage) {
+            $this->_trackValuesRemoved(count($this->coverage));
+            $this->coverage = [];
+        }
+        if ([] === $coverage) {
+            return $this;
+        }
+        foreach($coverage as $v) {
+            $this->addCoverage($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1542,6 +1648,31 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         $this->_trackValueAdded();
         $this->exception[] = $exception;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Factors which may influence the applicability of coverage.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding ...$exception
+     * @return static
+     */
+    public function setException(FHIRCoding ...$exception): self
+    {
+        if ([] !== $this->exception) {
+            $this->_trackValuesRemoved(count($this->exception));
+            $this->exception = [];
+        }
+        if ([] === $exception) {
+            return $this;
+        }
+        foreach($exception as $v) {
+            $this->addException($v);
+        }
         return $this;
     }
 
@@ -1696,6 +1827,32 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A list of intervention and exception codes which may influence the adjudication
+     * of the claim.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding ...$interventionException
+     * @return static
+     */
+    public function setInterventionException(FHIRCoding ...$interventionException): self
+    {
+        if ([] !== $this->interventionException) {
+            $this->_trackValuesRemoved(count($this->interventionException));
+            $this->interventionException = [];
+        }
+        if ([] === $interventionException) {
+            return $this;
+        }
+        foreach($interventionException as $v) {
+            $this->addInterventionException($v);
+        }
+        return $this;
+    }
+
+    /**
      * A provider issued list of services and products provided, or to be provided, to
      * a patient which is provided to an insurer for payment recovery.
      *
@@ -1724,6 +1881,30 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         $this->_trackValueAdded();
         $this->item[] = $item;
+        return $this;
+    }
+
+    /**
+     * A provider issued list of services and products provided, or to be provided, to
+     * a patient which is provided to an insurer for payment recovery.
+     *
+     * First tier of goods and services.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimItem ...$item
+     * @return static
+     */
+    public function setItem(FHIRClaimItem ...$item): self
+    {
+        if ([] !== $this->item) {
+            $this->_trackValuesRemoved(count($this->item));
+            $this->item = [];
+        }
+        if ([] === $item) {
+            return $this;
+        }
+        foreach($item as $v) {
+            $this->addItem($v);
+        }
         return $this;
     }
 
@@ -1764,6 +1945,32 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Code to indicate that Xrays, images, emails, documents, models or attachments
+     * are being sent in support of this submission.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding ...$additionalMaterials
+     * @return static
+     */
+    public function setAdditionalMaterials(FHIRCoding ...$additionalMaterials): self
+    {
+        if ([] !== $this->additionalMaterials) {
+            $this->_trackValuesRemoved(count($this->additionalMaterials));
+            $this->additionalMaterials = [];
+        }
+        if ([] === $additionalMaterials) {
+            return $this;
+        }
+        foreach($additionalMaterials as $v) {
+            $this->addAdditionalMaterials($v);
+        }
+        return $this;
+    }
+
+    /**
      * A provider issued list of services and products provided, or to be provided, to
      * a patient which is provided to an insurer for payment recovery.
      *
@@ -1794,6 +2001,31 @@ class FHIRClaim extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         $this->_trackValueAdded();
         $this->missingTeeth[] = $missingTeeth;
+        return $this;
+    }
+
+    /**
+     * A provider issued list of services and products provided, or to be provided, to
+     * a patient which is provided to an insurer for payment recovery.
+     *
+     * A list of teeth which would be expected but are not found due to having been
+     * previously extracted or for other reasons.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimMissingTeeth ...$missingTeeth
+     * @return static
+     */
+    public function setMissingTeeth(FHIRClaimMissingTeeth ...$missingTeeth): self
+    {
+        if ([] !== $this->missingTeeth) {
+            $this->_trackValuesRemoved(count($this->missingTeeth));
+            $this->missingTeeth = [];
+        }
+        if ([] === $missingTeeth) {
+            return $this;
+        }
+        foreach($missingTeeth as $v) {
+            $this->addMissingTeeth($v);
+        }
         return $this;
     }
 

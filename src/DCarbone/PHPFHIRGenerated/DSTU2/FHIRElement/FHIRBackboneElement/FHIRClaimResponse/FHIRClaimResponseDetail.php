@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -121,7 +121,11 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * Validation map for fields in type ClaimResponse.Detail
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_SEQUENCE_LINK_ID => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -268,6 +272,30 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
      *
+     * The adjudications results.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication1 ...$adjudication
+     * @return static
+     */
+    public function setAdjudication(FHIRClaimResponseAdjudication1 ...$adjudication): self
+    {
+        if ([] !== $this->adjudication) {
+            $this->_trackValuesRemoved(count($this->adjudication));
+            $this->adjudication = [];
+        }
+        if ([] === $adjudication) {
+            return $this;
+        }
+        foreach($adjudication as $v) {
+            $this->addAdjudication($v);
+        }
+        return $this;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
      * The third tier service adjudications for submitted services.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail[]
@@ -293,6 +321,30 @@ class FHIRClaimResponseDetail extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->subDetail[] = $subDetail;
+        return $this;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
+     * The third tier service adjudications for submitted services.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail ...$subDetail
+     * @return static
+     */
+    public function setSubDetail(FHIRClaimResponseSubDetail ...$subDetail): self
+    {
+        if ([] !== $this->subDetail) {
+            $this->_trackValuesRemoved(count($this->subDetail));
+            $this->subDetail = [];
+        }
+        if ([] === $subDetail) {
+            return $this;
+        }
+        foreach($subDetail as $v) {
+            $this->addSubDetail($v);
+        }
         return $this;
     }
 

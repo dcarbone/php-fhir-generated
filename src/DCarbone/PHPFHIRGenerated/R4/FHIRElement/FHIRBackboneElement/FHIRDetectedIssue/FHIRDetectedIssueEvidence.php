@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDetec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,7 +115,7 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement
      * Validation map for fields in type DetectedIssue.Evidence
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -207,6 +207,32 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A manifestation that led to the recording of this detected issue.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$code
+     * @return static
+     */
+    public function setCode(FHIRCodeableConcept ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -239,6 +265,32 @@ class FHIRDetectedIssueEvidence extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->detail[] = $detail;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Links to resources that constitute evidence for the detected issue such as a
+     * GuidanceResponse or MeasureReport.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$detail
+     * @return static
+     */
+    public function setDetail(FHIRReference ...$detail): self
+    {
+        if ([] !== $this->detail) {
+            $this->_trackValuesRemoved(count($this->detail));
+            $this->detail = [];
+        }
+        if ([] === $detail) {
+            return $this;
+        }
+        foreach($detail as $v) {
+            $this->addDetail($v);
+        }
         return $this;
     }
 

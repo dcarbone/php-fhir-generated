@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -3225,7 +3225,11 @@ class FHIRElementDefinition extends FHIRElement
      * Validation map for fields in type ElementDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PATH => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -6206,6 +6210,31 @@ class FHIRElementDefinition extends FHIRElement
     }
 
     /**
+     * How a property is represented on the wire.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Codes that define how this element is represented in instances, when the
+     * deviation varies from the normal case.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRPropertyRepresentation ...$representation
+     * @return static
+     */
+    public function setRepresentation(FHIRPropertyRepresentation ...$representation): self
+    {
+        if ([] !== $this->representation) {
+            $this->_trackValuesRemoved(count($this->representation));
+            $this->representation = [];
+        }
+        if ([] === $representation) {
+            return $this;
+        }
+        foreach($representation as $v) {
+            $this->addRepresentation($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -6324,6 +6353,32 @@ class FHIRElementDefinition extends FHIRElement
         }
         $this->_trackValueAdded();
         $this->code[] = $code;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code that provides the meaning for the element according to a particular
+     * terminology.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding ...$code
+     * @return static
+     */
+    public function setCode(FHIRCoding ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
         return $this;
     }
 
@@ -6802,6 +6857,31 @@ class FHIRElementDefinition extends FHIRElement
         }
         $this->_trackValueAdded();
         $this->type[] = $type;
+        return $this;
+    }
+
+    /**
+     * Captures constraints on each element within the resource, profile, or extension.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The data type or resource that the value of this element is permitted to be.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionType ...$type
+     * @return static
+     */
+    public function setType(FHIRElementDefinitionType ...$type): self
+    {
+        if ([] !== $this->type) {
+            $this->_trackValuesRemoved(count($this->type));
+            $this->type = [];
+        }
+        if ([] === $type) {
+            return $this;
+        }
+        foreach($type as $v) {
+            $this->addType($v);
+        }
         return $this;
     }
 
@@ -15787,6 +15867,32 @@ class FHIRElementDefinition extends FHIRElement
     }
 
     /**
+     * Captures constraints on each element within the resource, profile, or extension.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Formal constraints such as co-occurrence and other constraints that can be
+     * computationally evaluated within the context of the instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionConstraint ...$constraint
+     * @return static
+     */
+    public function setConstraint(FHIRElementDefinitionConstraint ...$constraint): self
+    {
+        if ([] !== $this->constraint) {
+            $this->_trackValuesRemoved(count($this->constraint));
+            $this->constraint = [];
+        }
+        if ([] === $constraint) {
+            return $this;
+        }
+        foreach($constraint as $v) {
+            $this->addConstraint($v);
+        }
+        return $this;
+    }
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -15980,6 +16086,32 @@ class FHIRElementDefinition extends FHIRElement
         }
         $this->_trackValueAdded();
         $this->mapping[] = $mapping;
+        return $this;
+    }
+
+    /**
+     * Captures constraints on each element within the resource, profile, or extension.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies a concept from an external specification that roughly corresponds to
+     * this element.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionMapping ...$mapping
+     * @return static
+     */
+    public function setMapping(FHIRElementDefinitionMapping ...$mapping): self
+    {
+        if ([] !== $this->mapping) {
+            $this->_trackValuesRemoved(count($this->mapping));
+            $this->mapping = [];
+        }
+        if ([] === $mapping) {
+            return $this;
+        }
+        foreach($mapping as $v) {
+            $this->addMapping($v);
+        }
         return $this;
     }
 

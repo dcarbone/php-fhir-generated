@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,7 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
      * Validation map for fields in type SubstanceReferenceInformation.Classification
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -312,6 +312,32 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Todo.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$subtype
+     * @return static
+     */
+    public function setSubtype(FHIRCodeableConcept ...$subtype): self
+    {
+        if ([] !== $this->subtype) {
+            $this->_trackValuesRemoved(count($this->subtype));
+            $this->subtype = [];
+        }
+        if ([] === $subtype) {
+            return $this;
+        }
+        foreach($subtype as $v) {
+            $this->addSubtype($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -342,6 +368,31 @@ class FHIRSubstanceReferenceInformationClassification extends FHIRBackboneElemen
         }
         $this->_trackValueAdded();
         $this->source[] = $source;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Todo.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$source
+     * @return static
+     */
+    public function setSource(FHIRReference ...$source): self
+    {
+        if ([] !== $this->source) {
+            $this->_trackValuesRemoved(count($this->source));
+            $this->source = [];
+        }
+        if ([] === $source) {
+            return $this;
+        }
+        foreach($source as $v) {
+            $this->addSource($v);
+        }
         return $this;
     }
 

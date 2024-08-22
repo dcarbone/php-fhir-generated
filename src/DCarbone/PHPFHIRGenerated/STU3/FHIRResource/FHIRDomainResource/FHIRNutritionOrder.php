@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -251,7 +251,14 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
      * Validation map for fields in type NutritionOrder
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_DATE_TIME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_PATIENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -459,6 +466,31 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifiers assigned to this order by the order sender or by the order receiver.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -686,6 +718,32 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A link to a record of allergies or intolerances which should be included in the
+     * nutrition order.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$allergyIntolerance
+     * @return static
+     */
+    public function setAllergyIntolerance(FHIRReference ...$allergyIntolerance): self
+    {
+        if ([] !== $this->allergyIntolerance) {
+            $this->_trackValuesRemoved(count($this->allergyIntolerance));
+            $this->allergyIntolerance = [];
+        }
+        if ([] === $allergyIntolerance) {
+            return $this;
+        }
+        foreach($allergyIntolerance as $v) {
+            $this->addAllergyIntolerance($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -726,6 +784,36 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
         }
         $this->_trackValueAdded();
         $this->foodPreferenceModifier[] = $foodPreferenceModifier;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This modifier is used to convey order-specific modifiers about the type of food
+     * that should be given. These can be derived from patient allergies, intolerances,
+     * or preferences such as Halal, Vegan or Kosher. This modifier applies to the
+     * entire nutrition order inclusive of the oral diet, nutritional supplements and
+     * enteral formula feedings.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$foodPreferenceModifier
+     * @return static
+     */
+    public function setFoodPreferenceModifier(FHIRCodeableConcept ...$foodPreferenceModifier): self
+    {
+        if ([] !== $this->foodPreferenceModifier) {
+            $this->_trackValuesRemoved(count($this->foodPreferenceModifier));
+            $this->foodPreferenceModifier = [];
+        }
+        if ([] === $foodPreferenceModifier) {
+            return $this;
+        }
+        foreach($foodPreferenceModifier as $v) {
+            $this->addFoodPreferenceModifier($v);
+        }
         return $this;
     }
 
@@ -778,6 +866,40 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
         }
         $this->_trackValueAdded();
         $this->excludeFoodModifier[] = $excludeFoodModifier;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This modifier is used to convey order-specific modifiers about the type of food
+     * that should NOT be given. These can be derived from patient allergies,
+     * intolerances, or preferences such as No Red Meat, No Soy or No Wheat or
+     * Gluten-Free. While it should not be necessary to repeat allergy or intolerance
+     * information captured in the referenced AllergyIntolerance resource in the
+     * excludeFoodModifier, this element may be used to convey additional specificity
+     * related to foods that should be eliminated from the patient’s diet for any
+     * reason. This modifier applies to the entire nutrition order inclusive of the
+     * oral diet, nutritional supplements and enteral formula feedings.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$excludeFoodModifier
+     * @return static
+     */
+    public function setExcludeFoodModifier(FHIRCodeableConcept ...$excludeFoodModifier): self
+    {
+        if ([] !== $this->excludeFoodModifier) {
+            $this->_trackValuesRemoved(count($this->excludeFoodModifier));
+            $this->excludeFoodModifier = [];
+        }
+        if ([] === $excludeFoodModifier) {
+            return $this;
+        }
+        foreach($excludeFoodModifier as $v) {
+            $this->addExcludeFoodModifier($v);
+        }
         return $this;
     }
 
@@ -844,6 +966,31 @@ class FHIRNutritionOrder extends FHIRDomainResource implements PHPFHIRContainedT
         }
         $this->_trackValueAdded();
         $this->supplement[] = $supplement;
+        return $this;
+    }
+
+    /**
+     * A request to supply a diet, formula feeding (enteral) or oral nutritional
+     * supplement to a patient/resident.
+     *
+     * Oral nutritional products given in order to add further nutritional value to the
+     * patient's diet.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderSupplement ...$supplement
+     * @return static
+     */
+    public function setSupplement(FHIRNutritionOrderSupplement ...$supplement): self
+    {
+        if ([] !== $this->supplement) {
+            $this->_trackValuesRemoved(count($this->supplement));
+            $this->supplement = [];
+        }
+        if ([] === $supplement) {
+            return $this;
+        }
+        foreach($supplement as $v) {
+            $this->addSupplement($v);
+        }
         return $this;
     }
 

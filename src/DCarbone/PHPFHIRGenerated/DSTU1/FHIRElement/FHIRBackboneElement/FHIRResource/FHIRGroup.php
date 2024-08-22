@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -186,7 +186,14 @@ class FHIRGroup extends FHIRResource implements PHPFHIRContainedTypeInterface
      * Validation map for fields in type Group
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_ACTUAL => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -583,6 +590,31 @@ class FHIRGroup extends FHIRResource implements PHPFHIRContainedTypeInterface
     }
 
     /**
+     * Represents a defined collection of entities that may be discussed or acted upon
+     * collectively but which are not expected to act collectively and are not formally
+     * or legally recognized. I.e. A collection of entities that isn't an Organization.
+     *
+     * Identifies the traits shared by members of the group.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic ...$characteristic
+     * @return static
+     */
+    public function setCharacteristic(FHIRGroupCharacteristic ...$characteristic): self
+    {
+        if ([] !== $this->characteristic) {
+            $this->_trackValuesRemoved(count($this->characteristic));
+            $this->characteristic = [];
+        }
+        if ([] === $characteristic) {
+            return $this;
+        }
+        foreach($characteristic as $v) {
+            $this->addCharacteristic($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -613,6 +645,31 @@ class FHIRGroup extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->member[] = $member;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the resource instances that are members of the group.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$member
+     * @return static
+     */
+    public function setMember(FHIRResourceReference ...$member): self
+    {
+        if ([] !== $this->member) {
+            $this->_trackValuesRemoved(count($this->member));
+            $this->member = [];
+        }
+        if ([] === $member) {
+            return $this;
+        }
+        foreach($member as $v) {
+            $this->addMember($v);
+        }
         return $this;
     }
 

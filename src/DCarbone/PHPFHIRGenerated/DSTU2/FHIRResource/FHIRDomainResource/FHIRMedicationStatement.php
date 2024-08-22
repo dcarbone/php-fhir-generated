@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -335,7 +335,20 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
      * Validation map for fields in type MedicationStatement
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_MEDICATION_CODEABLE_CONCEPT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_MEDICATION_REFERENCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_PATIENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -609,6 +622,37 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * External identifier - FHIR will generate its own internal identifiers (probably
+     * URLs) which do not need to be explicitly managed by the resource. The identifier
+     * here is one that would be used by another non-FHIR system - for example an
+     * automated medication pump would provide a record each time it operated; an
+     * administration while the patient was off the ward might be made with a different
+     * system and entered after the event. Particularly important if these records have
+     * to be updated.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -827,6 +871,32 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->reasonNotTaken[] = $reasonNotTaken;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code indicating why the medication was not taken.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$reasonNotTaken
+     * @return static
+     */
+    public function setReasonNotTaken(FHIRCodeableConcept ...$reasonNotTaken): self
+    {
+        if ([] !== $this->reasonNotTaken) {
+            $this->_trackValuesRemoved(count($this->reasonNotTaken));
+            $this->reasonNotTaken = [];
+        }
+        if ([] === $reasonNotTaken) {
+            return $this;
+        }
+        foreach($reasonNotTaken as $v) {
+            $this->addReasonNotTaken($v);
+        }
         return $this;
     }
 
@@ -1061,6 +1131,32 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Allows linking the MedicationStatement to the underlying MedicationOrder, or to
+     * other information that supports the MedicationStatement.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference ...$supportingInformation
+     * @return static
+     */
+    public function setSupportingInformation(FHIRReference ...$supportingInformation): self
+    {
+        if ([] !== $this->supportingInformation) {
+            $this->_trackValuesRemoved(count($this->supportingInformation));
+            $this->supportingInformation = [];
+        }
+        if ([] === $supportingInformation) {
+            return $this;
+        }
+        foreach($supportingInformation as $v) {
+            $this->addSupportingInformation($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1203,6 +1299,48 @@ class FHIRMedicationStatement extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->dosage[] = $dosage;
+        return $this;
+    }
+
+    /**
+     * A record of a medication that is being consumed by a patient. A
+     * MedicationStatement may indicate that the patient may be taking the medication
+     * now, or has taken the medication in the past or will be taking the medication in
+     * the future. The source of this information can be the patient, significant other
+     * (such as a family member or spouse), or a clinician. A common scenario where
+     * this information is captured is during the history taking process during a
+     * patient visit or stay. The medication information may come from e.g. the
+     * patient's memory, from a prescription bottle, or from a list of medications the
+     * patient, clinician or other party maintains The primary difference between a
+     * medication statement and a medication administration is that the medication
+     * administration has complete administration information and is based on actual
+     * administration information from the person who administered the medication. A
+     * medication statement is often, if not always, less specific. There is no
+     * required date/time when the medication was administered, in fact we only know
+     * that a source has reported the patient is taking this medication, where details
+     * such as time, quantity, or rate or even medication product may be incomplete or
+     * missing or less precise. As stated earlier, the medication statement information
+     * may come from the patient's memory, from a prescription bottle or from a list of
+     * medications the patient, clinician or other party maintains. Medication
+     * administration is more formal and is not missing detailed information.
+     *
+     * Indicates how the medication is/was used by the patient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedicationStatement\FHIRMedicationStatementDosage ...$dosage
+     * @return static
+     */
+    public function setDosage(FHIRMedicationStatementDosage ...$dosage): self
+    {
+        if ([] !== $this->dosage) {
+            $this->_trackValuesRemoved(count($this->dosage));
+            $this->dosage = [];
+        }
+        if ([] === $dosage) {
+            return $this;
+        }
+        foreach($dosage as $v) {
+            $this->addDosage($v);
+        }
         return $this;
     }
 

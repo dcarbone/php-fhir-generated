@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -331,7 +331,7 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * Validation map for fields in type SubstanceSourceMaterial
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -779,6 +779,33 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the
+     * substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$parentSubstanceId
+     * @return static
+     */
+    public function setParentSubstanceId(FHIRIdentifier ...$parentSubstanceId): self
+    {
+        if ([] !== $this->parentSubstanceId) {
+            $this->_trackValuesRemoved(count($this->parentSubstanceId));
+            $this->parentSubstanceId = [];
+        }
+        if ([] === $parentSubstanceId) {
+            return $this;
+        }
+        foreach($parentSubstanceId as $v) {
+            $this->addParentSubstanceId($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -889,6 +916,36 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
         }
         $this->_trackValueAdded();
         $this->countryOfOrigin[] = $countryOfOrigin;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The country where the plant material is harvested or the countries where the
+     * plasma is sourced from as laid down in accordance with the Plasma Master File.
+     * For “Plasma-derived substances” the attribute country of origin provides
+     * information about the countries used for the manufacturing of the Cryopoor plama
+     * or Crioprecipitate.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$countryOfOrigin
+     * @return static
+     */
+    public function setCountryOfOrigin(FHIRCodeableConcept ...$countryOfOrigin): self
+    {
+        if ([] !== $this->countryOfOrigin) {
+            $this->_trackValuesRemoved(count($this->countryOfOrigin));
+            $this->countryOfOrigin = [];
+        }
+        if ([] === $countryOfOrigin) {
+            return $this;
+        }
+        foreach($countryOfOrigin as $v) {
+            $this->addCountryOfOrigin($v);
+        }
         return $this;
     }
 
@@ -1088,6 +1145,48 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
      * captured at the Specified Substance Group 1 information level. See for further
      * explanation the Substance Class: Structurally Diverse and the herbal annex.
      *
+     * Many complex materials are fractions of parts of plants, animals, or minerals.
+     * Fraction elements are often necessary to define both Substances and Specified
+     * Group 1 Substances. For substances derived from Plants, fraction information
+     * will be captured at the Substance information level ( . Oils, Juices and
+     * Exudates). Additional information for Extracts, such as extraction solvent
+     * composition, will be captured at the Specified Substance Group 1 information
+     * level. For plasma-derived products fraction information will be captured at the
+     * Substance and the Specified Substance Group 1 levels.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialFractionDescription ...$fractionDescription
+     * @return static
+     */
+    public function setFractionDescription(FHIRSubstanceSourceMaterialFractionDescription ...$fractionDescription): self
+    {
+        if ([] !== $this->fractionDescription) {
+            $this->_trackValuesRemoved(count($this->fractionDescription));
+            $this->fractionDescription = [];
+        }
+        if ([] === $fractionDescription) {
+            return $this;
+        }
+        foreach($fractionDescription as $v) {
+            $this->addFractionDescription($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Source material shall capture information on the taxonomic and anatomical
+     * origins as well as the fraction of a material that can result in or can be
+     * modified to form a substance. This set of data elements shall be used to define
+     * polymer substances isolated from biological matrices. Taxonomic and anatomical
+     * origins shall be described using a controlled vocabulary as required. This
+     * information is captured for naturally derived polymers ( . starch) and
+     * structurally diverse substances. For Organisms belonging to the Kingdom Plantae
+     * the Substance level defines the fresh material of a single species or
+     * infraspecies, the Herbal Drug and the Herbal preparation. For Herbal
+     * preparations, the fraction information will be captured at the Substance
+     * information level and additional information for herbal extracts will be
+     * captured at the Specified Substance Group 1 information level. See for further
+     * explanation the Substance Class: Structurally Diverse and the herbal annex.
+     *
      * This subclause describes the organism which the substance is derived from. For
      * vaccines, the parent organism shall be specified based on these subclause
      * elements. As an example, full taxonomy will be described for the Substance Name:
@@ -1184,6 +1283,41 @@ class FHIRSubstanceSourceMaterial extends FHIRDomainResource implements PHPFHIRC
         }
         $this->_trackValueAdded();
         $this->partDescription[] = $partDescription;
+        return $this;
+    }
+
+    /**
+     * Source material shall capture information on the taxonomic and anatomical
+     * origins as well as the fraction of a material that can result in or can be
+     * modified to form a substance. This set of data elements shall be used to define
+     * polymer substances isolated from biological matrices. Taxonomic and anatomical
+     * origins shall be described using a controlled vocabulary as required. This
+     * information is captured for naturally derived polymers ( . starch) and
+     * structurally diverse substances. For Organisms belonging to the Kingdom Plantae
+     * the Substance level defines the fresh material of a single species or
+     * infraspecies, the Herbal Drug and the Herbal preparation. For Herbal
+     * preparations, the fraction information will be captured at the Substance
+     * information level and additional information for herbal extracts will be
+     * captured at the Specified Substance Group 1 information level. See for further
+     * explanation the Substance Class: Structurally Diverse and the herbal annex.
+     *
+     * To do.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialPartDescription ...$partDescription
+     * @return static
+     */
+    public function setPartDescription(FHIRSubstanceSourceMaterialPartDescription ...$partDescription): self
+    {
+        if ([] !== $this->partDescription) {
+            $this->_trackValuesRemoved(count($this->partDescription));
+            $this->partDescription = [];
+        }
+        if ([] === $partDescription) {
+            return $this;
+        }
+        foreach($partDescription as $v) {
+            $this->addPartDescription($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -222,6 +222,15 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
      */
     private const _VALIDATION_RULES = [
         self::FIELD_AGENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_RECORDED => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SOURCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -472,6 +481,31 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifier for the category of event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding ...$subtype
+     * @return static
+     */
+    public function setSubtype(FHIRCoding ...$subtype): self
+    {
+        if ([] !== $this->subtype) {
+            $this->_trackValuesRemoved(count($this->subtype));
+            $this->subtype = [];
+        }
+        if ([] === $subtype) {
+            return $this;
+        }
+        foreach($subtype as $v) {
+            $this->addSubtype($v);
+        }
+        return $this;
+    }
+
+    /**
      * Indicator for type of action performed during the event that generated the event
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -656,6 +690,32 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The purposeOfUse (reason) that was used during the event being recorded.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$purposeOfEvent
+     * @return static
+     */
+    public function setPurposeOfEvent(FHIRCodeableConcept ...$purposeOfEvent): self
+    {
+        if ([] !== $this->purposeOfEvent) {
+            $this->_trackValuesRemoved(count($this->purposeOfEvent));
+            $this->purposeOfEvent = [];
+        }
+        if ([] === $purposeOfEvent) {
+            return $this;
+        }
+        foreach($purposeOfEvent as $v) {
+            $this->addPurposeOfEvent($v);
+        }
+        return $this;
+    }
+
+    /**
      * A record of an event made for purposes of maintaining a security log. Typical
      * uses include detection of intrusion attempts and monitoring for inappropriate
      * usage.
@@ -686,6 +746,31 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->agent[] = $agent;
+        return $this;
+    }
+
+    /**
+     * A record of an event made for purposes of maintaining a security log. Typical
+     * uses include detection of intrusion attempts and monitoring for inappropriate
+     * usage.
+     *
+     * An actor taking an active role in the event or activity that is logged.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent ...$agent
+     * @return static
+     */
+    public function setAgent(FHIRAuditEventAgent ...$agent): self
+    {
+        if ([] !== $this->agent) {
+            $this->_trackValuesRemoved(count($this->agent));
+            $this->agent = [];
+        }
+        if ([] === $agent) {
+            return $this;
+        }
+        foreach($agent as $v) {
+            $this->addAgent($v);
+        }
         return $this;
     }
 
@@ -754,6 +839,31 @@ class FHIRAuditEvent extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->entity[] = $entity;
+        return $this;
+    }
+
+    /**
+     * A record of an event made for purposes of maintaining a security log. Typical
+     * uses include detection of intrusion attempts and monitoring for inappropriate
+     * usage.
+     *
+     * Specific instances of data or objects that have been accessed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventEntity ...$entity
+     * @return static
+     */
+    public function setEntity(FHIRAuditEventEntity ...$entity): self
+    {
+        if ([] !== $this->entity) {
+            $this->_trackValuesRemoved(count($this->entity));
+            $this->entity = [];
+        }
+        if ([] === $entity) {
+            return $this;
+        }
+        foreach($entity as $v) {
+            $this->addEntity($v);
+        }
         return $this;
     }
 

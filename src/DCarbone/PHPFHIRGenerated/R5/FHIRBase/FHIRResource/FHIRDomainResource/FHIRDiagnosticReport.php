@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -414,7 +414,14 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * Validation map for fields in type DiagnosticReport
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -782,6 +789,32 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifiers assigned to this report by the performer or other systems.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -812,6 +845,31 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->basedOn[] = $basedOn;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Details concerning a service requested.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
         return $this;
     }
 
@@ -882,6 +940,34 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->category[] = $category;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code that classifies the clinical discipline, department or diagnostic service
+     * that created the report (e.g. cardiology, biochemistry, hematology, MRI). This
+     * is used for searching, sorting and display purposes.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
         return $this;
     }
 
@@ -1174,6 +1260,31 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The diagnostic service that is responsible for issuing the report.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$performer
+     * @return static
+     */
+    public function setPerformer(FHIRReference ...$performer): self
+    {
+        if ([] !== $this->performer) {
+            $this->_trackValuesRemoved(count($this->performer));
+            $this->performer = [];
+        }
+        if ([] === $performer) {
+            return $this;
+        }
+        foreach($performer as $v) {
+            $this->addPerformer($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The practitioner or organization that is responsible for the report's
      * conclusions and interpretations.
      *
@@ -1202,6 +1313,32 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->resultsInterpreter[] = $resultsInterpreter;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The practitioner or organization that is responsible for the report's
+     * conclusions and interpretations.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$resultsInterpreter
+     * @return static
+     */
+    public function setResultsInterpreter(FHIRReference ...$resultsInterpreter): self
+    {
+        if ([] !== $this->resultsInterpreter) {
+            $this->_trackValuesRemoved(count($this->resultsInterpreter));
+            $this->resultsInterpreter = [];
+        }
+        if ([] === $resultsInterpreter) {
+            return $this;
+        }
+        foreach($resultsInterpreter as $v) {
+            $this->addResultsInterpreter($v);
+        }
         return $this;
     }
 
@@ -1244,6 +1381,31 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Details about the specimens on which this diagnostic report is based.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$specimen
+     * @return static
+     */
+    public function setSpecimen(FHIRReference ...$specimen): self
+    {
+        if ([] !== $this->specimen) {
+            $this->_trackValuesRemoved(count($this->specimen));
+            $this->specimen = [];
+        }
+        if ([] === $specimen) {
+            return $this;
+        }
+        foreach($specimen as $v) {
+            $this->addSpecimen($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * [Observations](observation.html) that are part of this diagnostic report.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
@@ -1270,6 +1432,31 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->result[] = $result;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * [Observations](observation.html) that are part of this diagnostic report.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$result
+     * @return static
+     */
+    public function setResult(FHIRReference ...$result): self
+    {
+        if ([] !== $this->result) {
+            $this->_trackValuesRemoved(count($this->result));
+            $this->result = [];
+        }
+        if ([] === $result) {
+            return $this;
+        }
+        foreach($result as $v) {
+            $this->addResult($v);
+        }
         return $this;
     }
 
@@ -1306,6 +1493,32 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Comments about the diagnostic report.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 
@@ -1354,6 +1567,38 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->study[] = $study;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * One or more links to full details of any study performed during the diagnostic
+     * investigation. An ImagingStudy might comprise a set of radiologic images
+     * obtained via a procedure that are analyzed as a group. Typically, this is
+     * imaging performed by DICOM enabled modalities, but this is not required. A fully
+     * enabled PACS viewer can use this information to provide views of the source
+     * images. A GenomicStudy might comprise one or more analyses, each serving a
+     * specific purpose. These analyses may vary in method (e.g., karyotyping, CNV, or
+     * SNV detection), performer, software, devices used, or regions targeted.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$study
+     * @return static
+     */
+    public function setStudy(FHIRReference ...$study): self
+    {
+        if ([] !== $this->study) {
+            $this->_trackValuesRemoved(count($this->study));
+            $this->study = [];
+        }
+        if ([] === $study) {
+            return $this;
+        }
+        foreach($study as $v) {
+            $this->addStudy($v);
+        }
         return $this;
     }
 
@@ -1412,6 +1657,37 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
      * The report also includes non-clinical context such as batch analysis and
      * stability reporting of products and substances.
      *
+     * This backbone element contains supporting information that was used in the
+     * creation of the report not included in the results already included in the
+     * report.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportSupportingInfo ...$supportingInfo
+     * @return static
+     */
+    public function setSupportingInfo(FHIRDiagnosticReportSupportingInfo ...$supportingInfo): self
+    {
+        if ([] !== $this->supportingInfo) {
+            $this->_trackValuesRemoved(count($this->supportingInfo));
+            $this->supportingInfo = [];
+        }
+        if ([] === $supportingInfo) {
+            return $this;
+        }
+        foreach($supportingInfo as $v) {
+            $this->addSupportingInfo($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The findings and interpretation of diagnostic tests performed on patients,
+     * groups of patients, products, substances, devices, and locations, and/or
+     * specimens derived from these. The report includes clinical context such as
+     * requesting provider information, and some mix of atomic results, images, textual
+     * and coded interpretations, and formatted representation of diagnostic reports.
+     * The report also includes non-clinical context such as batch analysis and
+     * stability reporting of products and substances.
+     *
      * A list of key images or data associated with this report. The images or data are
      * generally created during the diagnostic process, and may be directly of the
      * patient, or of treated specimens (i.e. slides of interest).
@@ -1446,6 +1722,37 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->media[] = $media;
+        return $this;
+    }
+
+    /**
+     * The findings and interpretation of diagnostic tests performed on patients,
+     * groups of patients, products, substances, devices, and locations, and/or
+     * specimens derived from these. The report includes clinical context such as
+     * requesting provider information, and some mix of atomic results, images, textual
+     * and coded interpretations, and formatted representation of diagnostic reports.
+     * The report also includes non-clinical context such as batch analysis and
+     * stability reporting of products and substances.
+     *
+     * A list of key images or data associated with this report. The images or data are
+     * generally created during the diagnostic process, and may be directly of the
+     * patient, or of treated specimens (i.e. slides of interest).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDiagnosticReport\FHIRDiagnosticReportMedia ...$media
+     * @return static
+     */
+    public function setMedia(FHIRDiagnosticReportMedia ...$media): self
+    {
+        if ([] !== $this->media) {
+            $this->_trackValuesRemoved(count($this->media));
+            $this->media = [];
+        }
+        if ([] === $media) {
+            return $this;
+        }
+        foreach($media as $v) {
+            $this->addMedia($v);
+        }
         return $this;
     }
 
@@ -1573,6 +1880,33 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * One or more codes that represent the summary conclusion
+     * (interpretation/impression) of the diagnostic report.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$conclusionCode
+     * @return static
+     */
+    public function setConclusionCode(FHIRCodeableConcept ...$conclusionCode): self
+    {
+        if ([] !== $this->conclusionCode) {
+            $this->_trackValuesRemoved(count($this->conclusionCode));
+            $this->conclusionCode = [];
+        }
+        if ([] === $conclusionCode) {
+            return $this;
+        }
+        foreach($conclusionCode as $v) {
+            $this->addConclusionCode($v);
+        }
+        return $this;
+    }
+
+    /**
      * For referring to data content defined in other formats.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1605,6 +1939,32 @@ class FHIRDiagnosticReport extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->presentedForm[] = $presentedForm;
+        return $this;
+    }
+
+    /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Rich text representation of the entire result as issued by the diagnostic
+     * service. Multiple formats are allowed but they SHALL be semantically equivalent.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment ...$presentedForm
+     * @return static
+     */
+    public function setPresentedForm(FHIRAttachment ...$presentedForm): self
+    {
+        if ([] !== $this->presentedForm) {
+            $this->_trackValuesRemoved(count($this->presentedForm));
+            $this->presentedForm = [];
+        }
+        if ([] === $presentedForm) {
+            return $this;
+        }
+        foreach($presentedForm as $v) {
+            $this->addPresentedForm($v);
+        }
         return $this;
     }
 

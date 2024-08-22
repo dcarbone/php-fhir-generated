@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -182,6 +182,30 @@ class FHIROperationOutcome extends FHIRResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->issue[] = $issue;
+        return $this;
+    }
+
+    /**
+     * A collection of error, warning or information messages that result from a system
+     * action.
+     *
+     * An error, warning or information message that results from a system action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIROperationOutcome\FHIROperationOutcomeIssue ...$issue
+     * @return static
+     */
+    public function setIssue(FHIROperationOutcomeIssue ...$issue): self
+    {
+        if ([] !== $this->issue) {
+            $this->_trackValuesRemoved(count($this->issue));
+            $this->issue = [];
+        }
+        if ([] === $issue) {
+            return $this;
+        }
+        foreach($issue as $v) {
+            $this->addIssue($v);
+        }
         return $this;
     }
 

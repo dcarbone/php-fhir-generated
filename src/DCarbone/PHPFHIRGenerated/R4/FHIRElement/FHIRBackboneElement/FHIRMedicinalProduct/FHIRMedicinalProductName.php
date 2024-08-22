@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -120,7 +120,11 @@ class FHIRMedicinalProductName extends FHIRBackboneElement
      * Validation map for fields in type MedicinalProduct.Name
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PRODUCT_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -267,6 +271,30 @@ class FHIRMedicinalProductName extends FHIRBackboneElement
      * Detailed definition of a medicinal product, typically for uses other than direct
      * patient care (e.g. regulatory use).
      *
+     * Coding words or phrases of the name.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductNamePart ...$namePart
+     * @return static
+     */
+    public function setNamePart(FHIRMedicinalProductNamePart ...$namePart): self
+    {
+        if ([] !== $this->namePart) {
+            $this->_trackValuesRemoved(count($this->namePart));
+            $this->namePart = [];
+        }
+        if ([] === $namePart) {
+            return $this;
+        }
+        foreach($namePart as $v) {
+            $this->addNamePart($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Detailed definition of a medicinal product, typically for uses other than direct
+     * patient care (e.g. regulatory use).
+     *
      * Country where the name applies.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductCountryLanguage[]
@@ -292,6 +320,30 @@ class FHIRMedicinalProductName extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->countryLanguage[] = $countryLanguage;
+        return $this;
+    }
+
+    /**
+     * Detailed definition of a medicinal product, typically for uses other than direct
+     * patient care (e.g. regulatory use).
+     *
+     * Country where the name applies.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProduct\FHIRMedicinalProductCountryLanguage ...$countryLanguage
+     * @return static
+     */
+    public function setCountryLanguage(FHIRMedicinalProductCountryLanguage ...$countryLanguage): self
+    {
+        if ([] !== $this->countryLanguage) {
+            $this->_trackValuesRemoved(count($this->countryLanguage));
+            $this->countryLanguage = [];
+        }
+        if ([] === $countryLanguage) {
+            return $this;
+        }
+        foreach($countryLanguage as $v) {
+            $this->addCountryLanguage($v);
+        }
         return $this;
     }
 

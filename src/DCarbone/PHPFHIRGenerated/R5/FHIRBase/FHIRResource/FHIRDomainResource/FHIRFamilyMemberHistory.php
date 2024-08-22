@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -455,7 +455,17 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * Validation map for fields in type FamilyMemberHistory
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PATIENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_RELATIONSHIP => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -916,6 +926,34 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Business identifiers assigned to this family member history by the performer or
+     * other systems which remain constant as the resource is updated and propagates
+     * from server to server.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -1249,6 +1287,31 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->participant[] = $participant;
+        return $this;
+    }
+
+    /**
+     * Significant health conditions for a person related to the patient relevant in
+     * the context of care for the patient.
+     *
+     * Indicates who or what participated in the activities related to the family
+     * member history and how they were involved.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryParticipant ...$participant
+     * @return static
+     */
+    public function setParticipant(FHIRFamilyMemberHistoryParticipant ...$participant): self
+    {
+        if ([] !== $this->participant) {
+            $this->_trackValuesRemoved(count($this->participant));
+            $this->participant = [];
+        }
+        if ([] === $participant) {
+            return $this;
+        }
+        foreach($participant as $v) {
+            $this->addParticipant($v);
+        }
         return $this;
     }
 
@@ -1861,6 +1924,34 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Describes why the family member history occurred in coded or textual form, or
+     * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse
+     * that justifies this family member history event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$reason
+     * @return static
+     */
+    public function setReason(FHIRCodeableReference ...$reason): self
+    {
+        if ([] !== $this->reason) {
+            $this->_trackValuesRemoved(count($this->reason));
+            $this->reason = [];
+        }
+        if ([] === $reason) {
+            return $this;
+        }
+        foreach($reason as $v) {
+            $this->addReason($v);
+        }
+        return $this;
+    }
+
+    /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
@@ -1897,6 +1988,34 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This property allows a non condition-specific note to the made about the related
+     * person. Ideally, the note would be in the condition property, but this is not
+     * always possible.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 
@@ -1942,6 +2061,33 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
      * Significant health conditions for a person related to the patient relevant in
      * the context of care for the patient.
      *
+     * The significant Conditions (or condition) that the family member had. This is a
+     * repeating section to allow a system to represent more than one condition per
+     * resource, though there is nothing stopping multiple resources - one per
+     * condition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryCondition ...$condition
+     * @return static
+     */
+    public function setCondition(FHIRFamilyMemberHistoryCondition ...$condition): self
+    {
+        if ([] !== $this->condition) {
+            $this->_trackValuesRemoved(count($this->condition));
+            $this->condition = [];
+        }
+        if ([] === $condition) {
+            return $this;
+        }
+        foreach($condition as $v) {
+            $this->addCondition($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Significant health conditions for a person related to the patient relevant in
+     * the context of care for the patient.
+     *
      * The significant Procedures (or procedure) that the family member had. This is a
      * repeating section to allow a system to represent more than one procedure per
      * resource, though there is nothing stopping multiple resources - one per
@@ -1973,6 +2119,33 @@ class FHIRFamilyMemberHistory extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->procedure[] = $procedure;
+        return $this;
+    }
+
+    /**
+     * Significant health conditions for a person related to the patient relevant in
+     * the context of care for the patient.
+     *
+     * The significant Procedures (or procedure) that the family member had. This is a
+     * repeating section to allow a system to represent more than one procedure per
+     * resource, though there is nothing stopping multiple resources - one per
+     * procedure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRFamilyMemberHistory\FHIRFamilyMemberHistoryProcedure ...$procedure
+     * @return static
+     */
+    public function setProcedure(FHIRFamilyMemberHistoryProcedure ...$procedure): self
+    {
+        if ([] !== $this->procedure) {
+            $this->_trackValuesRemoved(count($this->procedure));
+            $this->procedure = [];
+        }
+        if ([] === $procedure) {
+            return $this;
+        }
+        foreach($procedure as $v) {
+            $this->addProcedure($v);
+        }
         return $this;
     }
 

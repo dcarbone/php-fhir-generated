@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -412,7 +412,17 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Validation map for fields in type Condition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_PATIENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VERIFICATION_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -771,6 +781,34 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This records identifiers associated with this condition that are defined by
+     * business processes and/or used to refer to it when a direct URL reference to the
+     * resource itself is not appropriate (e.g. in CDA documents, or in written /
+     * printed documentation).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -1616,6 +1654,33 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
     }
 
     /**
+     * Use to record detailed information about conditions, problems or diagnoses
+     * recognized by a clinician. There are many uses including: recording a diagnosis
+     * during an encounter; populating a problem list or a summary statement, such as a
+     * discharge summary.
+     *
+     * Supporting Evidence / manifestations that are the basis on which this condition
+     * is suspected or confirmed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionEvidence ...$evidence
+     * @return static
+     */
+    public function setEvidence(FHIRConditionEvidence ...$evidence): self
+    {
+        if ([] !== $this->evidence) {
+            $this->_trackValuesRemoved(count($this->evidence));
+            $this->evidence = [];
+        }
+        if ([] === $evidence) {
+            return $this;
+        }
+        foreach($evidence as $v) {
+            $this->addEvidence($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1648,6 +1713,32 @@ class FHIRCondition extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         $this->_trackValueAdded();
         $this->bodySite[] = $bodySite;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The anatomical location where this condition manifests itself.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$bodySite
+     * @return static
+     */
+    public function setBodySite(FHIRCodeableConcept ...$bodySite): self
+    {
+        if ([] !== $this->bodySite) {
+            $this->_trackValuesRemoved(count($this->bodySite));
+            $this->bodySite = [];
+        }
+        if ([] === $bodySite) {
+            return $this;
+        }
+        foreach($bodySite as $v) {
+            $this->addBodySite($v);
+        }
         return $this;
     }
 

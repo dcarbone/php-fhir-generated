@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,11 @@ class FHIRValueSetInclude extends FHIRBackboneElement
      * Validation map for fields in type ValueSet.Include
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_SYSTEM => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -420,6 +424,31 @@ class FHIRValueSetInclude extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->filter[] = $filter;
+        return $this;
+    }
+
+    /**
+     * A value set specifies a set of codes drawn from one or more code systems.
+     *
+     * Select concepts by specify a matching criteria based on the properties
+     * (including relationships) defined by the system. If multiple filters are
+     * specified, they SHALL all be true.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetFilter ...$filter
+     * @return static
+     */
+    public function setFilter(FHIRValueSetFilter ...$filter): self
+    {
+        if ([] !== $this->filter) {
+            $this->_trackValuesRemoved(count($this->filter));
+            $this->filter = [];
+        }
+        if ([] === $filter) {
+            return $this;
+        }
+        foreach($filter as $v) {
+            $this->addFilter($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCap
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -276,6 +276,9 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
      */
     private const _VALIDATION_RULES = [
         self::FIELD_INTERACTION => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -742,6 +745,31 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
     }
 
     /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server that may be used as a statement of actual server functionality or a
+     * statement of required or desired server implementation.
+     *
+     * Identifies a restful operation supported by the solution.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementInteraction ...$interaction
+     * @return static
+     */
+    public function setInteraction(FHIRCapabilityStatementInteraction ...$interaction): self
+    {
+        if ([] !== $this->interaction) {
+            $this->_trackValuesRemoved(count($this->interaction));
+            $this->interaction = [];
+        }
+        if ([] === $interaction) {
+            return $this;
+        }
+        foreach($interaction as $v) {
+            $this->addInteraction($v);
+        }
+        return $this;
+    }
+
+    /**
      * How the system supports versioning for a resource.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -1036,6 +1064,30 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
     }
 
     /**
+     * A set of flags that defines how references are supported.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A set of flags that defines how references are supported.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReferenceHandlingPolicy ...$referencePolicy
+     * @return static
+     */
+    public function setReferencePolicy(FHIRReferenceHandlingPolicy ...$referencePolicy): self
+    {
+        if ([] !== $this->referencePolicy) {
+            $this->_trackValuesRemoved(count($this->referencePolicy));
+            $this->referencePolicy = [];
+        }
+        if ([] === $referencePolicy) {
+            return $this;
+        }
+        foreach($referencePolicy as $v) {
+            $this->addReferencePolicy($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1210,6 +1262,33 @@ class FHIRCapabilityStatementResource extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->searchParam[] = $searchParam;
+        return $this;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server that may be used as a statement of actual server functionality or a
+     * statement of required or desired server implementation.
+     *
+     * Search parameters for implementations to support and/or make use of - either
+     * references to ones defined in the specification, or additional ones defined
+     * for/by the implementation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSearchParam ...$searchParam
+     * @return static
+     */
+    public function setSearchParam(FHIRCapabilityStatementSearchParam ...$searchParam): self
+    {
+        if ([] !== $this->searchParam) {
+            $this->_trackValuesRemoved(count($this->searchParam));
+            $this->searchParam = [];
+        }
+        if ([] === $searchParam) {
+            return $this;
+        }
+        foreach($searchParam as $v) {
+            $this->addSearchParam($v);
+        }
         return $this;
     }
 

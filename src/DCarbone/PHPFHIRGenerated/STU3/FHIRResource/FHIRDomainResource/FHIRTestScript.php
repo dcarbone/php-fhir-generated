@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -439,7 +439,17 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * Validation map for fields in type TestScript
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_URL => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1266,6 +1276,32 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
      * Systems are not required to have markdown support, and there is considerable
@@ -1363,6 +1399,36 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * Specifies clinical/business/etc metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These terms may be used to assist with indexing and searching
+     * for appropriate test script instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1395,6 +1461,32 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A legal or geographic region in which the test script is intended to be used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
+    {
+        if ([] !== $this->jurisdiction) {
+            $this->_trackValuesRemoved(count($this->jurisdiction));
+            $this->jurisdiction = [];
+        }
+        if ([] === $jurisdiction) {
+            return $this;
+        }
+        foreach($jurisdiction as $v) {
+            $this->addJurisdiction($v);
+        }
         return $this;
     }
 
@@ -1544,6 +1636,31 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A structured set of tests against a FHIR server implementation to determine
      * compliance against the FHIR specification.
      *
+     * An abstract server used in operations within this test script in the origin
+     * element.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptOrigin ...$origin
+     * @return static
+     */
+    public function setOrigin(FHIRTestScriptOrigin ...$origin): self
+    {
+        if ([] !== $this->origin) {
+            $this->_trackValuesRemoved(count($this->origin));
+            $this->origin = [];
+        }
+        if ([] === $origin) {
+            return $this;
+        }
+        foreach($origin as $v) {
+            $this->addOrigin($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
      * An abstract server used in operations within this test script in the destination
      * element.
      *
@@ -1571,6 +1688,31 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->destination[] = $destination;
+        return $this;
+    }
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * An abstract server used in operations within this test script in the destination
+     * element.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptDestination ...$destination
+     * @return static
+     */
+    public function setDestination(FHIRTestScriptDestination ...$destination): self
+    {
+        if ([] !== $this->destination) {
+            $this->_trackValuesRemoved(count($this->destination));
+            $this->destination = [];
+        }
+        if ([] === $destination) {
+            return $this;
+        }
+        foreach($destination as $v) {
+            $this->addDestination($v);
+        }
         return $this;
     }
 
@@ -1643,6 +1785,31 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * Fixture in the test script - by reference (uri). All fixtures are required for
+     * the test script to execute.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptFixture ...$fixture
+     * @return static
+     */
+    public function setFixture(FHIRTestScriptFixture ...$fixture): self
+    {
+        if ([] !== $this->fixture) {
+            $this->_trackValuesRemoved(count($this->fixture));
+            $this->fixture = [];
+        }
+        if ([] === $fixture) {
+            return $this;
+        }
+        foreach($fixture as $v) {
+            $this->addFixture($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1673,6 +1840,31 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->profile[] = $profile;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference to the profile to be used for validation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$profile
+     * @return static
+     */
+    public function setProfile(FHIRReference ...$profile): self
+    {
+        if ([] !== $this->profile) {
+            $this->_trackValuesRemoved(count($this->profile));
+            $this->profile = [];
+        }
+        if ([] === $profile) {
+            return $this;
+        }
+        foreach($profile as $v) {
+            $this->addProfile($v);
+        }
         return $this;
     }
 
@@ -1714,6 +1906,31 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * A structured set of tests against a FHIR server implementation to determine
      * compliance against the FHIR specification.
      *
+     * Variable is set based either on element value in response body or on header
+     * field value in the response headers.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptVariable ...$variable
+     * @return static
+     */
+    public function setVariable(FHIRTestScriptVariable ...$variable): self
+    {
+        if ([] !== $this->variable) {
+            $this->_trackValuesRemoved(count($this->variable));
+            $this->variable = [];
+        }
+        if ([] === $variable) {
+            return $this;
+        }
+        foreach($variable as $v) {
+            $this->addVariable($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
      * Assert rule to be used in one or more asserts within the test script.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule[]
@@ -1739,6 +1956,30 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->rule[] = $rule;
+        return $this;
+    }
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * Assert rule to be used in one or more asserts within the test script.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule ...$rule
+     * @return static
+     */
+    public function setRule(FHIRTestScriptRule ...$rule): self
+    {
+        if ([] !== $this->rule) {
+            $this->_trackValuesRemoved(count($this->rule));
+            $this->rule = [];
+        }
+        if ([] === $rule) {
+            return $this;
+        }
+        foreach($rule as $v) {
+            $this->addRule($v);
+        }
         return $this;
     }
 
@@ -1773,6 +2014,31 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->ruleset[] = $ruleset;
+        return $this;
+    }
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * Contains one or more rules. Offers a way to group rules so assertions could
+     * reference the group of rules and have them all applied.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRuleset ...$ruleset
+     * @return static
+     */
+    public function setRuleset(FHIRTestScriptRuleset ...$ruleset): self
+    {
+        if ([] !== $this->ruleset) {
+            $this->_trackValuesRemoved(count($this->ruleset));
+            $this->ruleset = [];
+        }
+        if ([] === $ruleset) {
+            return $this;
+        }
+        foreach($ruleset as $v) {
+            $this->addRuleset($v);
+        }
         return $this;
     }
 
@@ -1837,6 +2103,30 @@ class FHIRTestScript extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->test[] = $test;
+        return $this;
+    }
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * A test in this script.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptTest ...$test
+     * @return static
+     */
+    public function setTest(FHIRTestScriptTest ...$test): self
+    {
+        if ([] !== $this->test) {
+            $this->_trackValuesRemoved(count($this->test));
+            $this->test = [];
+        }
+        if ([] === $test) {
+            return $this;
+        }
+        foreach($test as $v) {
+            $this->addTest($v);
+        }
         return $this;
     }
 

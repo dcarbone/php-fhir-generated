@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -214,7 +214,11 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * Validation map for fields in type CarePlan
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -428,6 +432,34 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This records identifiers associated with this care plan that are defined by
+     * business processed and/ or used to refer to it when a direct URL reference to
+     * the resource itself is not appropriate (e.g. in CDA documents, or in written /
+     * printed documentation).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -611,6 +643,32 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the conditions/problems/concerns/diagnoses/etc. whose management
+     * and/or mitigation are handled by this plan.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$concern
+     * @return static
+     */
+    public function setConcern(FHIRResourceReference ...$concern): self
+    {
+        if ([] !== $this->concern) {
+            $this->_trackValuesRemoved(count($this->concern));
+            $this->concern = [];
+        }
+        if ([] === $concern) {
+            return $this;
+        }
+        foreach($concern as $v) {
+            $this->addConcern($v);
+        }
+        return $this;
+    }
+
+    /**
      * Describes the intention of how one or more practitioners intend to deliver care
      * for a particular patient for a period of time, possibly limited to care for a
      * specific condition or set of conditions.
@@ -643,6 +701,32 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->participant[] = $participant;
+        return $this;
+    }
+
+    /**
+     * Describes the intention of how one or more practitioners intend to deliver care
+     * for a particular patient for a period of time, possibly limited to care for a
+     * specific condition or set of conditions.
+     *
+     * Identifies all people and organizations who are expected to be involved in the
+     * care envisioned by this plan.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanParticipant ...$participant
+     * @return static
+     */
+    public function setParticipant(FHIRCarePlanParticipant ...$participant): self
+    {
+        if ([] !== $this->participant) {
+            $this->_trackValuesRemoved(count($this->participant));
+            $this->participant = [];
+        }
+        if ([] === $participant) {
+            return $this;
+        }
+        foreach($participant as $v) {
+            $this->addParticipant($v);
+        }
         return $this;
     }
 
@@ -685,6 +769,31 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
      * for a particular patient for a period of time, possibly limited to care for a
      * specific condition or set of conditions.
      *
+     * Describes the intended objective(s) of carrying out the Care Plan.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanGoal ...$goal
+     * @return static
+     */
+    public function setGoal(FHIRCarePlanGoal ...$goal): self
+    {
+        if ([] !== $this->goal) {
+            $this->_trackValuesRemoved(count($this->goal));
+            $this->goal = [];
+        }
+        if ([] === $goal) {
+            return $this;
+        }
+        foreach($goal as $v) {
+            $this->addGoal($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Describes the intention of how one or more practitioners intend to deliver care
+     * for a particular patient for a period of time, possibly limited to care for a
+     * specific condition or set of conditions.
+     *
      * Identifies a planned action to occur as part of the plan. For example, a
      * medication to be used, lab tests to perform, self-monitoring, education, etc.
      *
@@ -713,6 +822,32 @@ class FHIRCarePlan extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->activity[] = $activity;
+        return $this;
+    }
+
+    /**
+     * Describes the intention of how one or more practitioners intend to deliver care
+     * for a particular patient for a period of time, possibly limited to care for a
+     * specific condition or set of conditions.
+     *
+     * Identifies a planned action to occur as part of the plan. For example, a
+     * medication to be used, lab tests to perform, self-monitoring, education, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCarePlan\FHIRCarePlanActivity ...$activity
+     * @return static
+     */
+    public function setActivity(FHIRCarePlanActivity ...$activity): self
+    {
+        if ([] !== $this->activity) {
+            $this->_trackValuesRemoved(count($this->activity));
+            $this->activity = [];
+        }
+        if ([] === $activity) {
+            return $this;
+        }
+        foreach($activity as $v) {
+            $this->addActivity($v);
+        }
         return $this;
     }
 

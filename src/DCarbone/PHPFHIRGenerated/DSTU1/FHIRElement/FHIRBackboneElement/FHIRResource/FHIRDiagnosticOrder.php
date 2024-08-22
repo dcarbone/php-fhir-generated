@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -203,7 +203,11 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
      * Validation map for fields in type DiagnosticOrder
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_SUBJECT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -477,6 +481,31 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifiers assigned to this order by the order or by the receiver.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -586,6 +615,31 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * One or more specimens that the diagnostic investigation is about.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$specimen
+     * @return static
+     */
+    public function setSpecimen(FHIRResourceReference ...$specimen): self
+    {
+        if ([] !== $this->specimen) {
+            $this->_trackValuesRemoved(count($this->specimen));
+            $this->specimen = [];
+        }
+        if ([] === $specimen) {
+            return $this;
+        }
+        foreach($specimen as $v) {
+            $this->addSpecimen($v);
+        }
+        return $this;
+    }
+
+    /**
      * The status of a diagnostic order
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -686,6 +740,31 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
     /**
      * A request for a diagnostic investigation service to be performed.
      *
+     * A summary of the events of interest that have occurred as the request is
+     * processed. E.g. when the order was made, various processing steps (specimens
+     * received), when it was completed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderEvent ...$event
+     * @return static
+     */
+    public function setEvent(FHIRDiagnosticOrderEvent ...$event): self
+    {
+        if ([] !== $this->event) {
+            $this->_trackValuesRemoved(count($this->event));
+            $this->event = [];
+        }
+        if ([] === $event) {
+            return $this;
+        }
+        foreach($event as $v) {
+            $this->addEvent($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A request for a diagnostic investigation service to be performed.
+     *
      * The specific diagnostic investigations that are requested as part of this
      * request. Sometimes, there can only be one item per request, but in most
      * contexts, more than one investigation can be requested.
@@ -714,6 +793,31 @@ class FHIRDiagnosticOrder extends FHIRResource implements PHPFHIRContainedTypeIn
         }
         $this->_trackValueAdded();
         $this->item[] = $item;
+        return $this;
+    }
+
+    /**
+     * A request for a diagnostic investigation service to be performed.
+     *
+     * The specific diagnostic investigations that are requested as part of this
+     * request. Sometimes, there can only be one item per request, but in most
+     * contexts, more than one investigation can be requested.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDiagnosticOrder\FHIRDiagnosticOrderItem ...$item
+     * @return static
+     */
+    public function setItem(FHIRDiagnosticOrderItem ...$item): self
+    {
+        if ([] !== $this->item) {
+            $this->_trackValuesRemoved(count($this->item));
+            $this->item = [];
+        }
+        if ([] === $item) {
+            return $this;
+        }
+        foreach($item as $v) {
+            $this->addItem($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -323,7 +323,14 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
      * Validation map for fields in type ProcedureRequest
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SUBJECT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -591,6 +598,31 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifiers assigned to this order by the order or by the receiver.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -697,6 +729,33 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->bodySite[] = $bodySite;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the sites on the subject's body where the procedure should be
+     * performed (I.e. the target sites).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$bodySite
+     * @return static
+     */
+    public function setBodySite(FHIRCodeableConcept ...$bodySite): self
+    {
+        if ([] !== $this->bodySite) {
+            $this->_trackValuesRemoved(count($this->bodySite));
+            $this->bodySite = [];
+        }
+        if ([] === $bodySite) {
+            return $this;
+        }
+        foreach($bodySite as $v) {
+            $this->addBodySite($v);
+        }
         return $this;
     }
 
@@ -1046,6 +1105,33 @@ class FHIRProcedureRequest extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->notes[] = $notes;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Any other notes associated with this proposal or order - e.g. provider
+     * instructions.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAnnotation ...$notes
+     * @return static
+     */
+    public function setNotes(FHIRAnnotation ...$notes): self
+    {
+        if ([] !== $this->notes) {
+            $this->_trackValuesRemoved(count($this->notes));
+            $this->notes = [];
+        }
+        if ([] === $notes) {
+            return $this;
+        }
+        foreach($notes as $v) {
+            $this->addNotes($v);
+        }
         return $this;
     }
 

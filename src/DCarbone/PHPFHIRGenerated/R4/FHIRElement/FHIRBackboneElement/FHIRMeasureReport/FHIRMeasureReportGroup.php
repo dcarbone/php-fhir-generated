@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,7 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
      * Validation map for fields in type MeasureReport.Group
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -277,6 +277,31 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
     }
 
     /**
+     * The MeasureReport resource contains the results of the calculation of a measure;
+     * and optionally a reference to the resources involved in that calculation.
+     *
+     * The populations that make up the population group, one for each type of
+     * population appropriate for the measure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation ...$population
+     * @return static
+     */
+    public function setPopulation(FHIRMeasureReportPopulation ...$population): self
+    {
+        if ([] !== $this->population) {
+            $this->_trackValuesRemoved(count($this->population));
+            $this->population = [];
+        }
+        if ([] === $population) {
+            return $this;
+        }
+        foreach($population as $v) {
+            $this->addPopulation($v);
+        }
+        return $this;
+    }
+
+    /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
@@ -349,6 +374,31 @@ class FHIRMeasureReportGroup extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->stratifier[] = $stratifier;
+        return $this;
+    }
+
+    /**
+     * The MeasureReport resource contains the results of the calculation of a measure;
+     * and optionally a reference to the resources involved in that calculation.
+     *
+     * When a measure includes multiple stratifiers, there will be a stratifier group
+     * for each stratifier defined by the measure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratifier ...$stratifier
+     * @return static
+     */
+    public function setStratifier(FHIRMeasureReportStratifier ...$stratifier): self
+    {
+        if ([] !== $this->stratifier) {
+            $this->_trackValuesRemoved(count($this->stratifier));
+            $this->stratifier = [];
+        }
+        if ([] === $stratifier) {
+            return $this;
+        }
+        foreach($stratifier as $v) {
+            $this->addStratifier($v);
+        }
         return $this;
     }
 

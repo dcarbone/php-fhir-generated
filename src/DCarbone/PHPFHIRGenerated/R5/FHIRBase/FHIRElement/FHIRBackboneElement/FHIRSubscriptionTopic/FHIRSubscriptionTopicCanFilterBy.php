@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -191,7 +191,11 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
      * Validation map for fields in type SubscriptionTopic.CanFilterBy
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_FILTER_PARAMETER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -561,6 +565,29 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
     /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
+     * Comparators allowed for the filter parameter.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSearchComparator ...$comparator
+     * @return static
+     */
+    public function setComparator(FHIRSearchComparator ...$comparator): self
+    {
+        if ([] !== $this->comparator) {
+            $this->_trackValuesRemoved(count($this->comparator));
+            $this->comparator = [];
+        }
+        if ([] === $comparator) {
+            return $this;
+        }
+        foreach($comparator as $v) {
+            $this->addComparator($v);
+        }
+        return $this;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
      * Modifiers allowed for the filter parameter.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSearchModifierCode[]
@@ -585,6 +612,29 @@ class FHIRSubscriptionTopicCanFilterBy extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->modifier[] = $modifier;
+        return $this;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Modifiers allowed for the filter parameter.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRSearchModifierCode ...$modifier
+     * @return static
+     */
+    public function setModifier(FHIRSearchModifierCode ...$modifier): self
+    {
+        if ([] !== $this->modifier) {
+            $this->_trackValuesRemoved(count($this->modifier));
+            $this->modifier = [];
+        }
+        if ([] === $modifier) {
+            return $this;
+        }
+        foreach($modifier as $v) {
+            $this->addModifier($v);
+        }
         return $this;
     }
 

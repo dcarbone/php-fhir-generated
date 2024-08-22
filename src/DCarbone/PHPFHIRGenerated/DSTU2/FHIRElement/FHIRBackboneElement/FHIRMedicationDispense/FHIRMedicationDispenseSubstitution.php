@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -128,7 +128,11 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
      * Validation map for fields in type MedicationDispense.Substitution
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -267,6 +271,33 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the reason for the substitution of (or lack of substitution) from what
+     * was prescribed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$reason
+     * @return static
+     */
+    public function setReason(FHIRCodeableConcept ...$reason): self
+    {
+        if ([] !== $this->reason) {
+            $this->_trackValuesRemoved(count($this->reason));
+            $this->reason = [];
+        }
+        if ([] === $reason) {
+            return $this;
+        }
+        foreach($reason as $v) {
+            $this->addReason($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -297,6 +328,31 @@ class FHIRMedicationDispenseSubstitution extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->responsibleParty[] = $responsibleParty;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The person or organization that has primary responsibility for the substitution.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference ...$responsibleParty
+     * @return static
+     */
+    public function setResponsibleParty(FHIRReference ...$responsibleParty): self
+    {
+        if ([] !== $this->responsibleParty) {
+            $this->_trackValuesRemoved(count($this->responsibleParty));
+            $this->responsibleParty = [];
+        }
+        if ([] === $responsibleParty) {
+            return $this;
+        }
+        foreach($responsibleParty as $v) {
+            $this->addResponsibleParty($v);
+        }
         return $this;
     }
 

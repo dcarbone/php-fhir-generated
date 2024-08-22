@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -205,7 +205,11 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * Validation map for fields in type Consent.Except
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -471,6 +475,32 @@ class FHIRConsentExcept extends FHIRBackboneElement
     }
 
     /**
+     * A record of a healthcare consumer’s policy choices, which permits or denies
+     * identified recipient(s) or recipient role(s) to perform one or more actions
+     * within a given policy context, for specific purposes and periods of time.
+     *
+     * Who or what is controlled by this Exception. Use group to identify a set of
+     * actors by some property they share (e.g. 'admitting officers').
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor1 ...$actor
+     * @return static
+     */
+    public function setActor(FHIRConsentActor1 ...$actor): self
+    {
+        if ([] !== $this->actor) {
+            $this->_trackValuesRemoved(count($this->actor));
+            $this->actor = [];
+        }
+        if ([] === $actor) {
+            return $this;
+        }
+        foreach($actor as $v) {
+            $this->addActor($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -503,6 +533,32 @@ class FHIRConsentExcept extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->action[] = $action;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Actions controlled by this Exception.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$action
+     * @return static
+     */
+    public function setAction(FHIRCodeableConcept ...$action): self
+    {
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
+        if ([] === $action) {
+            return $this;
+        }
+        foreach($action as $v) {
+            $this->addAction($v);
+        }
         return $this;
     }
 
@@ -549,6 +605,33 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A set of security labels that define which resources are controlled by this
+     * exception. If more than one label is specified, all resources must have all the
+     * specified labels.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding ...$securityLabel
+     * @return static
+     */
+    public function setSecurityLabel(FHIRCoding ...$securityLabel): self
+    {
+        if ([] !== $this->securityLabel) {
+            $this->_trackValuesRemoved(count($this->securityLabel));
+            $this->securityLabel = [];
+        }
+        if ([] === $securityLabel) {
+            return $this;
+        }
+        foreach($securityLabel as $v) {
+            $this->addSecurityLabel($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this exception.
      *
@@ -577,6 +660,32 @@ class FHIRConsentExcept extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->purpose[] = $purpose;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The context of the activities a user is taking - why the user is accessing the
+     * data - that are controlled by this exception.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding ...$purpose
+     * @return static
+     */
+    public function setPurpose(FHIRCoding ...$purpose): self
+    {
+        if ([] !== $this->purpose) {
+            $this->_trackValuesRemoved(count($this->purpose));
+            $this->purpose = [];
+        }
+        if ([] === $purpose) {
+            return $this;
+        }
+        foreach($purpose as $v) {
+            $this->addPurpose($v);
+        }
         return $this;
     }
 
@@ -623,6 +732,33 @@ class FHIRConsentExcept extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The class of information covered by this exception. The type can be a FHIR
+     * resource type, a profile on a type, or a CDA document, or some other type that
+     * indicates what sort of information the consent relates to.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding ...$class
+     * @return static
+     */
+    public function setClass(FHIRCoding ...$class): self
+    {
+        if ([] !== $this->class) {
+            $this->_trackValuesRemoved(count($this->class));
+            $this->class = [];
+        }
+        if ([] === $class) {
+            return $this;
+        }
+        foreach($class as $v) {
+            $this->addClass($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * If this code is found in an instance, then the exception applies.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding[]
@@ -649,6 +785,31 @@ class FHIRConsentExcept extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->code[] = $code;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If this code is found in an instance, then the exception applies.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding ...$code
+     * @return static
+     */
+    public function setCode(FHIRCoding ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
         return $this;
     }
 
@@ -721,6 +882,32 @@ class FHIRConsentExcept extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->data[] = $data;
+        return $this;
+    }
+
+    /**
+     * A record of a healthcare consumer’s policy choices, which permits or denies
+     * identified recipient(s) or recipient role(s) to perform one or more actions
+     * within a given policy context, for specific purposes and periods of time.
+     *
+     * The resources controlled by this exception, if specific resources are
+     * referenced.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData1 ...$data
+     * @return static
+     */
+    public function setData(FHIRConsentData1 ...$data): self
+    {
+        if ([] !== $this->data) {
+            $this->_trackValuesRemoved(count($this->data));
+            $this->data = [];
+        }
+        if ([] === $data) {
+            return $this;
+        }
+        foreach($data as $v) {
+            $this->addData($v);
+        }
         return $this;
     }
 

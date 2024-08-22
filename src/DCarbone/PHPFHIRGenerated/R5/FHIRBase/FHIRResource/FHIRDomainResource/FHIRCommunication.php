@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -385,7 +385,11 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * Validation map for fields in type Communication
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -791,6 +795,34 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Business identifiers assigned to this communication by the performer or other
+     * systems which remain constant as the resource is updated and propagates from
+     * server to server.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -978,6 +1010,31 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * An order, proposal or plan fulfilled in whole or in part by this Communication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * A larger event (e.g. Communication, Procedure) of which this particular
      * communication is a component or step.
      *
@@ -1014,6 +1071,32 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A larger event (e.g. Communication, Procedure) of which this particular
+     * communication is a component or step.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$partOf
+     * @return static
+     */
+    public function setPartOf(FHIRReference ...$partOf): self
+    {
+        if ([] !== $this->partOf) {
+            $this->_trackValuesRemoved(count($this->partOf));
+            $this->partOf = [];
+        }
+        if ([] === $partOf) {
+            return $this;
+        }
+        foreach($partOf as $v) {
+            $this->addPartOf($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Prior communication that this communication is in response to.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
@@ -1040,6 +1123,31 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->inResponseTo[] = $inResponseTo;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Prior communication that this communication is in response to.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$inResponseTo
+     * @return static
+     */
+    public function setInResponseTo(FHIRReference ...$inResponseTo): self
+    {
+        if ([] !== $this->inResponseTo) {
+            $this->_trackValuesRemoved(count($this->inResponseTo));
+            $this->inResponseTo = [];
+        }
+        if ([] === $inResponseTo) {
+            return $this;
+        }
+        foreach($inResponseTo as $v) {
+            $this->addInResponseTo($v);
+        }
         return $this;
     }
 
@@ -1148,6 +1256,33 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of message conveyed such as alert, notification, reminder, instruction,
+     * etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
+        return $this;
+    }
+
+    /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Characterizes how quickly the planned or in progress communication must be
@@ -1212,6 +1347,32 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->medium[] = $medium;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A channel that was used for this communication (e.g. email, fax).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$medium
+     * @return static
+     */
+    public function setMedium(FHIRCodeableConcept ...$medium): self
+    {
+        if ([] !== $this->medium) {
+            $this->_trackValuesRemoved(count($this->medium));
+            $this->medium = [];
+        }
+        if ([] === $medium) {
+            return $this;
+        }
+        foreach($medium as $v) {
+            $this->addMedium($v);
+        }
         return $this;
     }
 
@@ -1318,6 +1479,32 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->about[] = $about;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Other resources that pertain to this communication and to which this
+     * communication should be associated.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$about
+     * @return static
+     */
+    public function setAbout(FHIRReference ...$about): self
+    {
+        if ([] !== $this->about) {
+            $this->_trackValuesRemoved(count($this->about));
+            $this->about = [];
+        }
+        if ([] === $about) {
+            return $this;
+        }
+        foreach($about as $v) {
+            $this->addAbout($v);
+        }
         return $this;
     }
 
@@ -1492,6 +1679,32 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The entity (e.g. person, organization, clinical information system, care team or
+     * device) which is the target of the communication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$recipient
+     * @return static
+     */
+    public function setRecipient(FHIRReference ...$recipient): self
+    {
+        if ([] !== $this->recipient) {
+            $this->_trackValuesRemoved(count($this->recipient));
+            $this->recipient = [];
+        }
+        if ([] === $recipient) {
+            return $this;
+        }
+        foreach($recipient as $v) {
+            $this->addRecipient($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The entity (e.g. person, organization, clinical information system, or device)
      * which is the source of the communication.
      *
@@ -1560,6 +1773,32 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The reason or justification for the communication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$reason
+     * @return static
+     */
+    public function setReason(FHIRCodeableReference ...$reason): self
+    {
+        if ([] !== $this->reason) {
+            $this->_trackValuesRemoved(count($this->reason));
+            $this->reason = [];
+        }
+        if ([] === $reason) {
+            return $this;
+        }
+        foreach($reason as $v) {
+            $this->addReason($v);
+        }
+        return $this;
+    }
+
+    /**
      * A clinical or business level record of information being transmitted or shared;
      * e.g. an alert that was sent to a responsible provider, a public health agency
      * communication to a provider/reporter in response to a case report for a
@@ -1592,6 +1831,32 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->payload[] = $payload;
+        return $this;
+    }
+
+    /**
+     * A clinical or business level record of information being transmitted or shared;
+     * e.g. an alert that was sent to a responsible provider, a public health agency
+     * communication to a provider/reporter in response to a case report for a
+     * reportable condition.
+     *
+     * Text, attachment(s), or resource(s) that was communicated to the recipient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCommunication\FHIRCommunicationPayload ...$payload
+     * @return static
+     */
+    public function setPayload(FHIRCommunicationPayload ...$payload): self
+    {
+        if ([] !== $this->payload) {
+            $this->_trackValuesRemoved(count($this->payload));
+            $this->payload = [];
+        }
+        if ([] === $payload) {
+            return $this;
+        }
+        foreach($payload as $v) {
+            $this->addPayload($v);
+        }
         return $this;
     }
 
@@ -1630,6 +1895,33 @@ class FHIRCommunication extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional notes or commentary about the communication by the sender, receiver
+     * or other interested parties.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 

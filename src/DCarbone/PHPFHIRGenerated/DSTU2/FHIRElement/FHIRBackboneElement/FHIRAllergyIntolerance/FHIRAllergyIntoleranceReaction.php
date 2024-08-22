@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAl
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -451,6 +451,33 @@ class FHIRAllergyIntoleranceReaction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->manifestation[] = $manifestation;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Clinical symptoms and/or signs that are observed or associated with the adverse
+     * reaction event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$manifestation
+     * @return static
+     */
+    public function setManifestation(FHIRCodeableConcept ...$manifestation): self
+    {
+        if ([] !== $this->manifestation) {
+            $this->_trackValuesRemoved(count($this->manifestation));
+            $this->manifestation = [];
+        }
+        if ([] === $manifestation) {
+            return $this;
+        }
+        foreach($manifestation as $v) {
+            $this->addManifestation($v);
+        }
         return $this;
     }
 

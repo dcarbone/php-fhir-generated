@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -257,7 +257,7 @@ class FHIRContractAsset extends FHIRBackboneElement
      * Validation map for fields in type Contract.Asset
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -602,6 +602,32 @@ class FHIRContractAsset extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Target entity type about which the term may be concerned.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept ...$type): self
+    {
+        if ([] !== $this->type) {
+            $this->_trackValuesRemoved(count($this->type));
+            $this->type = [];
+        }
+        if ([] === $type) {
+            return $this;
+        }
+        foreach($type as $v) {
+            $this->addType($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -632,6 +658,31 @@ class FHIRContractAsset extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->typeReference[] = $typeReference;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Associated entities.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$typeReference
+     * @return static
+     */
+    public function setTypeReference(FHIRReference ...$typeReference): self
+    {
+        if ([] !== $this->typeReference) {
+            $this->_trackValuesRemoved(count($this->typeReference));
+            $this->typeReference = [];
+        }
+        if ([] === $typeReference) {
+            return $this;
+        }
+        foreach($typeReference as $v) {
+            $this->addTypeReference($v);
+        }
         return $this;
     }
 
@@ -668,6 +719,32 @@ class FHIRContractAsset extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->subtype[] = $subtype;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * May be a subtype or part of an offered asset.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$subtype
+     * @return static
+     */
+    public function setSubtype(FHIRCodeableConcept ...$subtype): self
+    {
+        if ([] !== $this->subtype) {
+            $this->_trackValuesRemoved(count($this->subtype));
+            $this->subtype = [];
+        }
+        if ([] === $subtype) {
+            return $this;
+        }
+        foreach($subtype as $v) {
+            $this->addSubtype($v);
+        }
         return $this;
     }
 
@@ -738,6 +815,30 @@ class FHIRContractAsset extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->context[] = $context;
+        return $this;
+    }
+
+    /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
+     * Circumstance of the asset.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractContext ...$context
+     * @return static
+     */
+    public function setContext(FHIRContractContext ...$context): self
+    {
+        if ([] !== $this->context) {
+            $this->_trackValuesRemoved(count($this->context));
+            $this->context = [];
+        }
+        if ([] === $context) {
+            return $this;
+        }
+        foreach($context as $v) {
+            $this->addContext($v);
+        }
         return $this;
     }
 
@@ -819,6 +920,32 @@ class FHIRContractAsset extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of Asset availability for use or ownership.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$periodType
+     * @return static
+     */
+    public function setPeriodType(FHIRCodeableConcept ...$periodType): self
+    {
+        if ([] !== $this->periodType) {
+            $this->_trackValuesRemoved(count($this->periodType));
+            $this->periodType = [];
+        }
+        if ([] === $periodType) {
+            return $this;
+        }
+        foreach($periodType as $v) {
+            $this->addPeriodType($v);
+        }
+        return $this;
+    }
+
+    /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -857,6 +984,31 @@ class FHIRContractAsset extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Asset relevant contractual time period.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod ...$period
+     * @return static
+     */
+    public function setPeriod(FHIRPeriod ...$period): self
+    {
+        if ([] !== $this->period) {
+            $this->_trackValuesRemoved(count($this->period));
+            $this->period = [];
+        }
+        if ([] === $period) {
+            return $this;
+        }
+        foreach($period as $v) {
+            $this->addPeriod($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Time period of asset use.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod[]
@@ -883,6 +1035,31 @@ class FHIRContractAsset extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->usePeriod[] = $usePeriod;
+        return $this;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Time period of asset use.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRPeriod ...$usePeriod
+     * @return static
+     */
+    public function setUsePeriod(FHIRPeriod ...$usePeriod): self
+    {
+        if ([] !== $this->usePeriod) {
+            $this->_trackValuesRemoved(count($this->usePeriod));
+            $this->usePeriod = [];
+        }
+        if ([] === $usePeriod) {
+            return $this;
+        }
+        foreach($usePeriod as $v) {
+            $this->addUsePeriod($v);
+        }
         return $this;
     }
 
@@ -1033,6 +1210,30 @@ class FHIRContractAsset extends FHIRBackboneElement
     }
 
     /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
+     * Response to assets.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAnswer ...$answer
+     * @return static
+     */
+    public function setAnswer(FHIRContractAnswer ...$answer): self
+    {
+        if ([] !== $this->answer) {
+            $this->_trackValuesRemoved(count($this->answer));
+            $this->answer = [];
+        }
+        if ([] === $answer) {
+            return $this;
+        }
+        foreach($answer as $v) {
+            $this->addAnswer($v);
+        }
+        return $this;
+    }
+
+    /**
      * An integer with a value that is not negative (e.g. >= 0)
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
@@ -1131,6 +1332,30 @@ class FHIRContractAsset extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->valuedItem[] = $valuedItem;
+        return $this;
+    }
+
+    /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
+     * Contract Valued Item List.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem ...$valuedItem
+     * @return static
+     */
+    public function setValuedItem(FHIRContractValuedItem ...$valuedItem): self
+    {
+        if ([] !== $this->valuedItem) {
+            $this->_trackValuesRemoved(count($this->valuedItem));
+            $this->valuedItem = [];
+        }
+        if ([] === $valuedItem) {
+            return $this;
+        }
+        foreach($valuedItem as $v) {
+            $this->addValuedItem($v);
+        }
         return $this;
     }
 

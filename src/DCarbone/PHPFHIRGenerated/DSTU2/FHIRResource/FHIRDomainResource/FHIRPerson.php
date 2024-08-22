@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -217,7 +217,7 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
      * Validation map for fields in type Person
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -425,6 +425,31 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifier for a person within a particular scope.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -455,6 +480,31 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
         }
         $this->_trackValueAdded();
         $this->name[] = $name;
+        return $this;
+    }
+
+    /**
+     * A human's name with the ability to identify parts and usage.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A name associated with the person.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRHumanName ...$name
+     * @return static
+     */
+    public function setName(FHIRHumanName ...$name): self
+    {
+        if ([] !== $this->name) {
+            $this->_trackValuesRemoved(count($this->name));
+            $this->name = [];
+        }
+        if ([] === $name) {
+            return $this;
+        }
+        foreach($name as $v) {
+            $this->addName($v);
+        }
         return $this;
     }
 
@@ -491,6 +541,32 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
         }
         $this->_trackValueAdded();
         $this->telecom[] = $telecom;
+        return $this;
+    }
+
+    /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A contact detail for the person, e.g. a telephone number or an email address.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint ...$telecom
+     * @return static
+     */
+    public function setTelecom(FHIRContactPoint ...$telecom): self
+    {
+        if ([] !== $this->telecom) {
+            $this->_trackValuesRemoved(count($this->telecom));
+            $this->telecom = [];
+        }
+        if ([] === $telecom) {
+            return $this;
+        }
+        foreach($telecom as $v) {
+            $this->addTelecom($v);
+        }
         return $this;
     }
 
@@ -609,6 +685,32 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
         }
         $this->_trackValueAdded();
         $this->address[] = $address;
+        return $this;
+    }
+
+    /**
+     * There is a variety of postal address formats defined around the world. This
+     * format defines a superset that is the basis for all addresses around the world.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * One or more addresses for the person.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress ...$address
+     * @return static
+     */
+    public function setAddress(FHIRAddress ...$address): self
+    {
+        if ([] !== $this->address) {
+            $this->_trackValuesRemoved(count($this->address));
+            $this->address = [];
+        }
+        if ([] === $address) {
+            return $this;
+        }
+        foreach($address as $v) {
+            $this->addAddress($v);
+        }
         return $this;
     }
 
@@ -748,6 +850,30 @@ class FHIRPerson extends FHIRDomainResource implements PHPFHIRContainedTypeInter
         }
         $this->_trackValueAdded();
         $this->link[] = $link;
+        return $this;
+    }
+
+    /**
+     * Demographics and administrative information about a person independent of a
+     * specific health-related context.
+     *
+     * Link to a resource that concerns the same actual person.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPerson\FHIRPersonLink ...$link
+     * @return static
+     */
+    public function setLink(FHIRPersonLink ...$link): self
+    {
+        if ([] !== $this->link) {
+            $this->_trackValuesRemoved(count($this->link));
+            $this->link = [];
+        }
+        if ([] === $link) {
+            return $this;
+        }
+        foreach($link as $v) {
+            $this->addLink($v);
+        }
         return $this;
     }
 

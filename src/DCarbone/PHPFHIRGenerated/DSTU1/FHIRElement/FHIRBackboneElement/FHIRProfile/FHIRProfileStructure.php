@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -157,7 +157,11 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * Validation map for fields in type Profile.Structure
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -477,6 +481,31 @@ class FHIRProfileStructure extends FHIRBackboneElement
      * include constraints on Resources and Data Types, Terminology Binding Statements
      * and Extension Definitions.
      *
+     * Captures constraints on each element within the resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileElement ...$element
+     * @return static
+     */
+    public function setElement(FHIRProfileElement ...$element): self
+    {
+        if ([] !== $this->element) {
+            $this->_trackValuesRemoved(count($this->element));
+            $this->element = [];
+        }
+        if ([] === $element) {
+            return $this;
+        }
+        foreach($element as $v) {
+            $this->addElement($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
+     * include constraints on Resources and Data Types, Terminology Binding Statements
+     * and Extension Definitions.
+     *
      * Additional search parameters for implementations to support and/or make use of.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSearchParam[]
@@ -503,6 +532,31 @@ class FHIRProfileStructure extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->searchParam[] = $searchParam;
+        return $this;
+    }
+
+    /**
+     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
+     * include constraints on Resources and Data Types, Terminology Binding Statements
+     * and Extension Definitions.
+     *
+     * Additional search parameters for implementations to support and/or make use of.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileSearchParam ...$searchParam
+     * @return static
+     */
+    public function setSearchParam(FHIRProfileSearchParam ...$searchParam): self
+    {
+        if ([] !== $this->searchParam) {
+            $this->_trackValuesRemoved(count($this->searchParam));
+            $this->searchParam = [];
+        }
+        if ([] === $searchParam) {
+            return $this;
+        }
+        foreach($searchParam as $v) {
+            $this->addSearchParam($v);
+        }
         return $this;
     }
 

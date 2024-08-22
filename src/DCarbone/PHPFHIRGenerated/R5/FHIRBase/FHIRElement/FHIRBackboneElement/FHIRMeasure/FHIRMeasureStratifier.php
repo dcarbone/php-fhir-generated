@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -189,7 +189,7 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
      * Validation map for fields in type Measure.Stratifier
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -519,6 +519,31 @@ class FHIRMeasureStratifier extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->component[] = $component;
+        return $this;
+    }
+
+    /**
+     * The Measure resource provides the definition of a quality measure.
+     *
+     * A component of the stratifier criteria for the measure report, specified as
+     * either the name of a valid CQL expression defined within a referenced library or
+     * a valid FHIR Resource Path.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureComponent ...$component
+     * @return static
+     */
+    public function setComponent(FHIRMeasureComponent ...$component): self
+    {
+        if ([] !== $this->component) {
+            $this->_trackValuesRemoved(count($this->component));
+            $this->component = [];
+        }
+        if ([] === $component) {
+            return $this;
+        }
+        foreach($component as $v) {
+            $this->addComponent($v);
+        }
         return $this;
     }
 

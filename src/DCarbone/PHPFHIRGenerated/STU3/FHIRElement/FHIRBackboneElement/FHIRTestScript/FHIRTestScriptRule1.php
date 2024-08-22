@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -115,7 +115,11 @@ class FHIRTestScriptRule1 extends FHIRBackboneElement
      * Validation map for fields in type TestScript.Rule1
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_RULE_ID => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -246,6 +250,30 @@ class FHIRTestScriptRule1 extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->param[] = $param;
+        return $this;
+    }
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * Each rule template can take one or more parameters for rule evaluation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptParam1 ...$param
+     * @return static
+     */
+    public function setParam(FHIRTestScriptParam1 ...$param): self
+    {
+        if ([] !== $this->param) {
+            $this->_trackValuesRemoved(count($this->param));
+            $this->param = [];
+        }
+        if ([] === $param) {
+            return $this;
+        }
+        foreach($param as $v) {
+            $this->addParam($v);
+        }
         return $this;
     }
 

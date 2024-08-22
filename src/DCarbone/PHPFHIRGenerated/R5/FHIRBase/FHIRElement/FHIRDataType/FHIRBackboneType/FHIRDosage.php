@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBac
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -284,7 +284,7 @@ class FHIRDosage extends FHIRBackboneType
      * Validation map for fields in type Dosage
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -602,6 +602,35 @@ class FHIRDosage extends FHIRBackboneType
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Supplemental instructions to the patient on how to take the medication (e.g.
+     * "with meals" or"take half to one hour before food") or warnings for the patient
+     * about the medication (e.g. "may cause drowsiness" or "avoid exposure of skin to
+     * direct sunlight or sunlamps").
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$additionalInstruction
+     * @return static
+     */
+    public function setAdditionalInstruction(FHIRCodeableConcept ...$additionalInstruction): self
+    {
+        if ([] !== $this->additionalInstruction) {
+            $this->_trackValuesRemoved(count($this->additionalInstruction));
+            $this->additionalInstruction = [];
+        }
+        if ([] === $additionalInstruction) {
+            return $this;
+        }
+        foreach($additionalInstruction as $v) {
+            $this->addAdditionalInstruction($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -765,6 +794,33 @@ class FHIRDosage extends FHIRBackboneType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Indicates whether the Medication is only taken based on a precondition for
+     * taking the Medication (CodeableConcept).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$asNeededFor
+     * @return static
+     */
+    public function setAsNeededFor(FHIRCodeableConcept ...$asNeededFor): self
+    {
+        if ([] !== $this->asNeededFor) {
+            $this->_trackValuesRemoved(count($this->asNeededFor));
+            $this->asNeededFor = [];
+        }
+        if ([] === $asNeededFor) {
+            return $this;
+        }
+        foreach($asNeededFor as $v) {
+            $this->addAsNeededFor($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Body site to administer to.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
@@ -904,6 +960,32 @@ class FHIRDosage extends FHIRBackboneType
     }
 
     /**
+     * Indicates how the medication is/was taken or should be taken by the patient.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Depending on the resource,this is the amount of medication administered, to be
+     * administered or typical amount to be administered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRDosage\FHIRDosageDoseAndRate ...$doseAndRate
+     * @return static
+     */
+    public function setDoseAndRate(FHIRDosageDoseAndRate ...$doseAndRate): self
+    {
+        if ([] !== $this->doseAndRate) {
+            $this->_trackValuesRemoved(count($this->doseAndRate));
+            $this->doseAndRate = [];
+        }
+        if ([] === $doseAndRate) {
+            return $this;
+        }
+        foreach($doseAndRate as $v) {
+            $this->addDoseAndRate($v);
+        }
+        return $this;
+    }
+
+    /**
      * A relationship of two Quantity values - expressed as a numerator and a
      * denominator.
      * If the element is present, it must have a value for at least one of the defined
@@ -936,6 +1018,32 @@ class FHIRDosage extends FHIRBackboneType
         }
         $this->_trackValueAdded();
         $this->maxDosePerPeriod[] = $maxDosePerPeriod;
+        return $this;
+    }
+
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Upper limit on medication per unit of time.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio ...$maxDosePerPeriod
+     * @return static
+     */
+    public function setMaxDosePerPeriod(FHIRRatio ...$maxDosePerPeriod): self
+    {
+        if ([] !== $this->maxDosePerPeriod) {
+            $this->_trackValuesRemoved(count($this->maxDosePerPeriod));
+            $this->maxDosePerPeriod = [];
+        }
+        if ([] === $maxDosePerPeriod) {
+            return $this;
+        }
+        foreach($maxDosePerPeriod as $v) {
+            $this->addMaxDosePerPeriod($v);
+        }
         return $this;
     }
 

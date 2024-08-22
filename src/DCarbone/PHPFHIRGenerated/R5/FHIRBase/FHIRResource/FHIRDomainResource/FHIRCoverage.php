@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -356,7 +356,17 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Validation map for fields in type Coverage
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_BENEFICIARY => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_KIND => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -674,6 +684,32 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The identifier of the coverage as issued by the insurer.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of the resource instance.
@@ -764,6 +800,31 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->paymentBy[] = $paymentBy;
+        return $this;
+    }
+
+    /**
+     * Financial instrument which may be used to reimburse or pay for health care
+     * products and services. Includes both insurance and self-payment.
+     *
+     * Link to the paying party and optionally what specifically they will be
+     * responsible to pay.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoveragePaymentBy ...$paymentBy
+     * @return static
+     */
+    public function setPaymentBy(FHIRCoveragePaymentBy ...$paymentBy): self
+    {
+        if ([] !== $this->paymentBy) {
+            $this->_trackValuesRemoved(count($this->paymentBy));
+            $this->paymentBy = [];
+        }
+        if ([] === $paymentBy) {
+            return $this;
+        }
+        foreach($paymentBy as $v) {
+            $this->addPaymentBy($v);
+        }
         return $this;
     }
 
@@ -910,6 +971,32 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->subscriberId[] = $subscriberId;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The insurer assigned ID for the Subscriber.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$subscriberId
+     * @return static
+     */
+    public function setSubscriberId(FHIRIdentifier ...$subscriberId): self
+    {
+        if ([] !== $this->subscriberId) {
+            $this->_trackValuesRemoved(count($this->subscriberId));
+            $this->subscriberId = [];
+        }
+        if ([] === $subscriberId) {
+            return $this;
+        }
+        foreach($subscriberId as $v) {
+            $this->addSubscriberId($v);
+        }
         return $this;
     }
 
@@ -1129,6 +1216,30 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * Financial instrument which may be used to reimburse or pay for health care
+     * products and services. Includes both insurance and self-payment.
+     *
+     * A suite of underwriter specific classifiers.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageClass ...$class
+     * @return static
+     */
+    public function setClass(FHIRCoverageClass ...$class): self
+    {
+        if ([] !== $this->class) {
+            $this->_trackValuesRemoved(count($this->class));
+            $this->class = [];
+        }
+        if ([] === $class) {
+            return $this;
+        }
+        foreach($class as $v) {
+            $this->addClass($v);
+        }
+        return $this;
+    }
+
+    /**
      * An integer with a value that is positive (e.g. >0)
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
@@ -1259,6 +1370,31 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * Financial instrument which may be used to reimburse or pay for health care
+     * products and services. Includes both insurance and self-payment.
+     *
+     * A suite of codes indicating the cost category and associated amount which have
+     * been detailed in the policy and may have been included on the health card.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageCostToBeneficiary ...$costToBeneficiary
+     * @return static
+     */
+    public function setCostToBeneficiary(FHIRCoverageCostToBeneficiary ...$costToBeneficiary): self
+    {
+        if ([] !== $this->costToBeneficiary) {
+            $this->_trackValuesRemoved(count($this->costToBeneficiary));
+            $this->costToBeneficiary = [];
+        }
+        if ([] === $costToBeneficiary) {
+            return $this;
+        }
+        foreach($costToBeneficiary as $v) {
+            $this->addCostToBeneficiary($v);
+        }
+        return $this;
+    }
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -1328,6 +1464,31 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->contract[] = $contract;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The policy(s) which constitute this insurance coverage.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$contract
+     * @return static
+     */
+    public function setContract(FHIRReference ...$contract): self
+    {
+        if ([] !== $this->contract) {
+            $this->_trackValuesRemoved(count($this->contract));
+            $this->contract = [];
+        }
+        if ([] === $contract) {
+            return $this;
+        }
+        foreach($contract as $v) {
+            $this->addContract($v);
+        }
         return $this;
     }
 

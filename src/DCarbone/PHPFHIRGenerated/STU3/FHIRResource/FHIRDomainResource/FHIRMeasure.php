@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -622,7 +622,11 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Validation map for fields in type Measure
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1333,6 +1337,33 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A formal identifier that is used to identify this measure when it is represented
+     * in other formats, or referenced in a specification, model, design or an
+     * instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1944,6 +1975,36 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * Specifies clinical/business/etc metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These terms may be used to assist with indexing and searching
+     * for appropriate measure instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1976,6 +2037,32 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A legal or geographic region in which the measure is intended to be used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
+    {
+        if ([] !== $this->jurisdiction) {
+            $this->_trackValuesRemoved(count($this->jurisdiction));
+            $this->jurisdiction = [];
+        }
+        if ([] === $jurisdiction) {
+            return $this;
+        }
+        foreach($jurisdiction as $v) {
+            $this->addJurisdiction($v);
+        }
         return $this;
     }
 
@@ -2020,6 +2107,34 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Descriptive topics related to the content of the measure. Topics provide a
+     * high-level categorization of the type of the measure that can be useful for
+     * filtering and searching.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$topic
+     * @return static
+     */
+    public function setTopic(FHIRCodeableConcept ...$topic): self
+    {
+        if ([] !== $this->topic) {
+            $this->_trackValuesRemoved(count($this->topic));
+            $this->topic = [];
+        }
+        if ([] === $topic) {
+            return $this;
+        }
+        foreach($topic as $v) {
+            $this->addTopic($v);
+        }
+        return $this;
+    }
+
+    /**
      * A contributor to the content of a knowledge asset, including authors, editors,
      * reviewers, and endorsers.
      * If the element is present, it must have a value for at least one of the defined
@@ -2058,6 +2173,33 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * A contributor to the content of a knowledge asset, including authors, editors,
+     * reviewers, and endorsers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A contributor to the content of the measure, including authors, editors,
+     * reviewers, and endorsers.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContributor ...$contributor
+     * @return static
+     */
+    public function setContributor(FHIRContributor ...$contributor): self
+    {
+        if ([] !== $this->contributor) {
+            $this->_trackValuesRemoved(count($this->contributor));
+            $this->contributor = [];
+        }
+        if ([] === $contributor) {
+            return $this;
+        }
+        foreach($contributor as $v) {
+            $this->addContributor($v);
+        }
+        return $this;
+    }
+
+    /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -2090,6 +2232,32 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->contact[] = $contact;
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
         return $this;
     }
 
@@ -2187,6 +2355,33 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact ...$relatedArtifact
+     * @return static
+     */
+    public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
+    {
+        if ([] !== $this->relatedArtifact) {
+            $this->_trackValuesRemoved(count($this->relatedArtifact));
+            $this->relatedArtifact = [];
+        }
+        if ([] === $relatedArtifact) {
+            return $this;
+        }
+        foreach($relatedArtifact as $v) {
+            $this->addRelatedArtifact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -2219,6 +2414,32 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->library[] = $library;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to a Library resource containing the formal logic used by the
+     * measure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$library
+     * @return static
+     */
+    public function setLibrary(FHIRReference ...$library): self
+    {
+        if ([] !== $this->library) {
+            $this->_trackValuesRemoved(count($this->library));
+            $this->library = [];
+        }
+        if ([] === $library) {
+            return $this;
+        }
+        foreach($library as $v) {
+            $this->addLibrary($v);
+        }
         return $this;
     }
 
@@ -2388,6 +2609,33 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->type[] = $type;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates whether the measure is used to examine a process, an outcome over
+     * time, a patient-reported outcome, or a structure measure such as utilization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept ...$type): self
+    {
+        if ([] !== $this->type) {
+            $this->_trackValuesRemoved(count($this->type));
+            $this->type = [];
+        }
+        if ([] === $type) {
+            return $this;
+        }
+        foreach($type as $v) {
+            $this->addType($v);
+        }
         return $this;
     }
 
@@ -2839,6 +3087,29 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     /**
      * The Measure resource provides the definition of a quality measure.
      *
+     * A group of population criteria for the measure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureGroup ...$group
+     * @return static
+     */
+    public function setGroup(FHIRMeasureGroup ...$group): self
+    {
+        if ([] !== $this->group) {
+            $this->_trackValuesRemoved(count($this->group));
+            $this->group = [];
+        }
+        if ([] === $group) {
+            return $this;
+        }
+        foreach($group as $v) {
+            $this->addGroup($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The Measure resource provides the definition of a quality measure.
+     *
      * The supplemental data criteria for the measure report, specified as either the
      * name of a valid CQL expression within a referenced library, or a valid FHIR
      * Resource Path.
@@ -2867,6 +3138,31 @@ class FHIRMeasure extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->supplementalData[] = $supplementalData;
+        return $this;
+    }
+
+    /**
+     * The Measure resource provides the definition of a quality measure.
+     *
+     * The supplemental data criteria for the measure report, specified as either the
+     * name of a valid CQL expression within a referenced library, or a valid FHIR
+     * Resource Path.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureSupplementalData ...$supplementalData
+     * @return static
+     */
+    public function setSupplementalData(FHIRMeasureSupplementalData ...$supplementalData): self
+    {
+        if ([] !== $this->supplementalData) {
+            $this->_trackValuesRemoved(count($this->supplementalData));
+            $this->supplementalData = [];
+        }
+        if ([] === $supplementalData) {
+            return $this;
+        }
+        foreach($supplementalData as $v) {
+            $this->addSupplementalData($v);
+        }
         return $this;
     }
 

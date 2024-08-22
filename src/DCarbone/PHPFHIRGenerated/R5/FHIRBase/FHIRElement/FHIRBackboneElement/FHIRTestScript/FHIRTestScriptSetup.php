@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -192,6 +192,30 @@ class FHIRTestScriptSetup extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->action[] = $action;
+        return $this;
+    }
+
+    /**
+     * A structured set of tests against a FHIR server or client implementation to
+     * determine compliance against the FHIR specification.
+     *
+     * Action would contain either an operation or an assertion.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptAction ...$action
+     * @return static
+     */
+    public function setAction(FHIRTestScriptAction ...$action): self
+    {
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
+        if ([] === $action) {
+            return $this;
+        }
+        foreach($action as $v) {
+            $this->addAction($v);
+        }
         return $this;
     }
 

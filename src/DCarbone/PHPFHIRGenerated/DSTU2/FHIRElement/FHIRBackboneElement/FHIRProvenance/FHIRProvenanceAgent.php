@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -149,7 +149,11 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
      * Validation map for fields in type Provenance.Agent
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_ROLE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -361,6 +365,40 @@ class FHIRProvenanceAgent extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->relatedAgent[] = $relatedAgent;
+        return $this;
+    }
+
+    /**
+     * Provenance of a resource is a record that describes entities and processes
+     * involved in producing and delivering or otherwise influencing that resource.
+     * Provenance provides a critical foundation for assessing authenticity, enabling
+     * trust, and allowing reproducibility. Provenance assertions are a form of
+     * contextual metadata and can themselves become important records with their own
+     * provenance. Provenance statement indicates clinical significance in terms of
+     * confidence in authenticity, reliability, and trustworthiness, integrity, and
+     * stage in lifecycle (e.g. Document Completion - has the artifact been legally
+     * authenticated), all of which may impact security, privacy, and trust policies.
+     *
+     * A relationship between two the agents referenced in this resource. This is
+     * defined to allow for explicit description of the delegation between agents. For
+     * example, this human author used this device, or one person acted on another's
+     * behest.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceRelatedAgent ...$relatedAgent
+     * @return static
+     */
+    public function setRelatedAgent(FHIRProvenanceRelatedAgent ...$relatedAgent): self
+    {
+        if ([] !== $this->relatedAgent) {
+            $this->_trackValuesRemoved(count($this->relatedAgent));
+            $this->relatedAgent = [];
+        }
+        if ([] === $relatedAgent) {
+            return $this;
+        }
+        foreach($relatedAgent as $v) {
+            $this->addRelatedAgent($v);
+        }
         return $this;
     }
 

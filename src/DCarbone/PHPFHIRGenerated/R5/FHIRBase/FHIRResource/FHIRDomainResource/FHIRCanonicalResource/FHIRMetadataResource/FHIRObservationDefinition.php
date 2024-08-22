@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -623,7 +623,14 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * Validation map for fields in type ObservationDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1754,6 +1761,32 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
     }
 
     /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
@@ -1851,6 +1884,38 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
     }
 
     /**
+     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These contexts may be general categories (gender, age, ...) or
+     * may be references to specific programs (insurance plans, studies, ...) and may
+     * be used to assist with indexing and searching for appropriate
+     * ObservationDefinition instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1883,6 +1948,32 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
         }
         $this->_trackValueAdded();
         $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A jurisdiction in which the ObservationDefinition is intended to be used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
+    {
+        if ([] !== $this->jurisdiction) {
+            $this->_trackValuesRemoved(count($this->jurisdiction));
+            $this->jurisdiction = [];
+        }
+        if ([] === $jurisdiction) {
+            return $this;
+        }
+        foreach($jurisdiction as $v) {
+            $this->addJurisdiction($v);
+        }
         return $this;
     }
 
@@ -2344,6 +2435,33 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A code that describes the intended kind of subject of Observation instances
+     * conforming to this ObservationDefinition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$subject
+     * @return static
+     */
+    public function setSubject(FHIRCodeableConcept ...$subject): self
+    {
+        if ([] !== $this->subject) {
+            $this->_trackValuesRemoved(count($this->subject));
+            $this->subject = [];
+        }
+        if ([] === $subject) {
+            return $this;
+        }
+        foreach($subject as $v) {
+            $this->addSubject($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The type of individual/organization/device that is expected to act upon
      * instances of this definition.
      *
@@ -2418,6 +2536,32 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A code that classifies the general type of observation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Describes what will be observed. Sometimes this is called the observation
      * "name".
      *
@@ -2479,6 +2623,30 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
         }
         $this->_trackValueAdded();
         $this->permittedDataType[] = $permittedDataType;
+        return $this;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The data types allowed for the value element of the instance observations
+     * conforming to this ObservationDefinition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRObservationDataType ...$permittedDataType
+     * @return static
+     */
+    public function setPermittedDataType(FHIRObservationDataType ...$permittedDataType): self
+    {
+        if ([] !== $this->permittedDataType) {
+            $this->_trackValuesRemoved(count($this->permittedDataType));
+            $this->permittedDataType = [];
+        }
+        if ([] === $permittedDataType) {
+            return $this;
+        }
+        foreach($permittedDataType as $v) {
+            $this->addPermittedDataType($v);
+        }
         return $this;
     }
 
@@ -2632,6 +2800,31 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The kind of specimen that this type of observation is produced on.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$specimen
+     * @return static
+     */
+    public function setSpecimen(FHIRReference ...$specimen): self
+    {
+        if ([] !== $this->specimen) {
+            $this->_trackValuesRemoved(count($this->specimen));
+            $this->specimen = [];
+        }
+        if ([] === $specimen) {
+            return $this;
+        }
+        foreach($specimen as $v) {
+            $this->addSpecimen($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The measurement model of device or actual device used to produce observations of
      * this type.
      *
@@ -2660,6 +2853,32 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
         }
         $this->_trackValueAdded();
         $this->device[] = $device;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The measurement model of device or actual device used to produce observations of
+     * this type.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$device
+     * @return static
+     */
+    public function setDevice(FHIRReference ...$device): self
+    {
+        if ([] !== $this->device) {
+            $this->_trackValuesRemoved(count($this->device));
+            $this->device = [];
+        }
+        if ([] === $device) {
+            return $this;
+        }
+        foreach($device as $v) {
+            $this->addDevice($v);
+        }
         return $this;
     }
 
@@ -2741,6 +2960,32 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Units allowed for the valueQuantity element in the instance observations
+     * conforming to this ObservationDefinition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding ...$permittedUnit
+     * @return static
+     */
+    public function setPermittedUnit(FHIRCoding ...$permittedUnit): self
+    {
+        if ([] !== $this->permittedUnit) {
+            $this->_trackValuesRemoved(count($this->permittedUnit));
+            $this->permittedUnit = [];
+        }
+        if ([] === $permittedUnit) {
+            return $this;
+        }
+        foreach($permittedUnit as $v) {
+            $this->addPermittedUnit($v);
+        }
+        return $this;
+    }
+
+    /**
      * Set of definitional characteristics for a kind of observation or measurement
      * produced or consumed by an orderable health care service.
      *
@@ -2773,6 +3018,32 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
         }
         $this->_trackValueAdded();
         $this->qualifiedValue[] = $qualifiedValue;
+        return $this;
+    }
+
+    /**
+     * Set of definitional characteristics for a kind of observation or measurement
+     * produced or consumed by an orderable health care service.
+     *
+     * A set of qualified values associated with a context and a set of conditions -
+     * provides a range for quantitative and ordinal observations and a collection of
+     * value sets for qualitative observations.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedValue ...$qualifiedValue
+     * @return static
+     */
+    public function setQualifiedValue(FHIRObservationDefinitionQualifiedValue ...$qualifiedValue): self
+    {
+        if ([] !== $this->qualifiedValue) {
+            $this->_trackValuesRemoved(count($this->qualifiedValue));
+            $this->qualifiedValue = [];
+        }
+        if ([] === $qualifiedValue) {
+            return $this;
+        }
+        foreach($qualifiedValue as $v) {
+            $this->addQualifiedValue($v);
+        }
         return $this;
     }
 
@@ -2815,6 +3086,33 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This ObservationDefinition defines a group observation (e.g. a battery, a panel
+     * of tests, a set of vital sign measurements) that includes the target as a member
+     * of the group.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$hasMember
+     * @return static
+     */
+    public function setHasMember(FHIRReference ...$hasMember): self
+    {
+        if ([] !== $this->hasMember) {
+            $this->_trackValuesRemoved(count($this->hasMember));
+            $this->hasMember = [];
+        }
+        if ([] === $hasMember) {
+            return $this;
+        }
+        foreach($hasMember as $v) {
+            $this->addHasMember($v);
+        }
+        return $this;
+    }
+
+    /**
      * Set of definitional characteristics for a kind of observation or measurement
      * produced or consumed by an orderable health care service.
      *
@@ -2845,6 +3143,31 @@ class FHIRObservationDefinition extends FHIRMetadataResource implements PHPFHIRC
         }
         $this->_trackValueAdded();
         $this->component[] = $component;
+        return $this;
+    }
+
+    /**
+     * Set of definitional characteristics for a kind of observation or measurement
+     * produced or consumed by an orderable health care service.
+     *
+     * Some observations have multiple component observations, expressed as separate
+     * code value pairs.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionComponent ...$component
+     * @return static
+     */
+    public function setComponent(FHIRObservationDefinitionComponent ...$component): self
+    {
+        if ([] !== $this->component) {
+            $this->_trackValuesRemoved(count($this->component));
+            $this->component = [];
+        }
+        if ([] === $component) {
+            return $this;
+        }
+        foreach($component as $v) {
+            $this->addComponent($v);
+        }
         return $this;
     }
 

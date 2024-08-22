@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCod
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -162,7 +162,11 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * Validation map for fields in type CodeSystem.Concept
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -450,6 +454,31 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * A code system resource specifies a set of codes drawn from one or more code
      * systems.
      *
+     * Additional representations for the concept - other languages, aliases,
+     * specialized purposes, used for particular purposes, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation ...$designation
+     * @return static
+     */
+    public function setDesignation(FHIRCodeSystemDesignation ...$designation): self
+    {
+        if ([] !== $this->designation) {
+            $this->_trackValuesRemoved(count($this->designation));
+            $this->designation = [];
+        }
+        if ([] === $designation) {
+            return $this;
+        }
+        foreach($designation as $v) {
+            $this->addDesignation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A code system resource specifies a set of codes drawn from one or more code
+     * systems.
+     *
      * A property value for this concept.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1[]
@@ -475,6 +504,30 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->property[] = $property;
+        return $this;
+    }
+
+    /**
+     * A code system resource specifies a set of codes drawn from one or more code
+     * systems.
+     *
+     * A property value for this concept.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1 ...$property
+     * @return static
+     */
+    public function setProperty(FHIRCodeSystemProperty1 ...$property): self
+    {
+        if ([] !== $this->property) {
+            $this->_trackValuesRemoved(count($this->property));
+            $this->property = [];
+        }
+        if ([] === $property) {
+            return $this;
+        }
+        foreach($property as $v) {
+            $this->addProperty($v);
+        }
         return $this;
     }
 
@@ -511,6 +564,32 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->concept[] = $concept;
+        return $this;
+    }
+
+    /**
+     * A code system resource specifies a set of codes drawn from one or more code
+     * systems.
+     *
+     * Defines children of a concept to produce a hierarchy of concepts. The nature of
+     * the relationships is variable (is-a/contains/categorizes) - see
+     * hierarchyMeaning.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept ...$concept
+     * @return static
+     */
+    public function setConcept(FHIRCodeSystemConcept ...$concept): self
+    {
+        if ([] !== $this->concept) {
+            $this->_trackValuesRemoved(count($this->concept));
+            $this->concept = [];
+        }
+        if ([] === $concept) {
+            return $this;
+        }
+        foreach($concept as $v) {
+            $this->addConcept($v);
+        }
         return $this;
     }
 

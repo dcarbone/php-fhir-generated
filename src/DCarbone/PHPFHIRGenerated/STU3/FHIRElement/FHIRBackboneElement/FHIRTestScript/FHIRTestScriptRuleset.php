@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTes
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -112,6 +112,9 @@ class FHIRTestScriptRuleset extends FHIRBackboneElement
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_RESOURCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_RULE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
@@ -227,6 +230,30 @@ class FHIRTestScriptRuleset extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->rule[] = $rule;
+        return $this;
+    }
+
+    /**
+     * A structured set of tests against a FHIR server implementation to determine
+     * compliance against the FHIR specification.
+     *
+     * The referenced rule within the external ruleset template.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRTestScript\FHIRTestScriptRule1 ...$rule
+     * @return static
+     */
+    public function setRule(FHIRTestScriptRule1 ...$rule): self
+    {
+        if ([] !== $this->rule) {
+            $this->_trackValuesRemoved(count($this->rule));
+            $this->rule = [];
+        }
+        if ([] === $rule) {
+            return $this;
+        }
+        foreach($rule as $v) {
+            $this->addRule($v);
+        }
         return $this;
     }
 

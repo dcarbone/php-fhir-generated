@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -122,6 +122,9 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_IDENTIFIER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_PARAMETER => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
@@ -265,6 +268,31 @@ class FHIRQuery extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->parameter[] = $parameter;
+        return $this;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Set of query parameters with values.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension ...$parameter
+     * @return static
+     */
+    public function setParameter(FHIRExtension ...$parameter): self
+    {
+        if ([] !== $this->parameter) {
+            $this->_trackValuesRemoved(count($this->parameter));
+            $this->parameter = [];
+        }
+        if ([] === $parameter) {
+            return $this;
+        }
+        foreach($parameter as $v) {
+            $this->addParameter($v);
+        }
         return $this;
     }
 

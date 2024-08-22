@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -278,6 +278,12 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         self::FIELD_CATEGORY => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
+        self::FIELD_SCOPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
     ];
 
     /** @var array */
@@ -514,6 +520,32 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique identifier for this copy of the Consent Statement.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * Indicates the state of the consent.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -618,6 +650,33 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->category[] = $category;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A classification of the type of consents found in the statement. This element
+     * supports indexing and retrieval of consent statements.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
         return $this;
     }
 
@@ -745,6 +804,34 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Either the Grantor, which is the entity responsible for granting the rights
+     * listed in a Consent Directive or the Grantee, which is the entity responsible
+     * for complying with the Consent Directive, including any obligations or
+     * limitations on authorizations and enforcement of prohibitions.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$performer
+     * @return static
+     */
+    public function setPerformer(FHIRReference ...$performer): self
+    {
+        if ([] !== $this->performer) {
+            $this->_trackValuesRemoved(count($this->performer));
+            $this->performer = [];
+        }
+        if ([] === $performer) {
+            return $this;
+        }
+        foreach($performer as $v) {
+            $this->addPerformer($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The organization that manages the consent, and the framework within which it is
      * executed.
      *
@@ -773,6 +860,32 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->organization[] = $organization;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The organization that manages the consent, and the framework within which it is
+     * executed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$organization
+     * @return static
+     */
+    public function setOrganization(FHIRReference ...$organization): self
+    {
+        if ([] !== $this->organization) {
+            $this->_trackValuesRemoved(count($this->organization));
+            $this->organization = [];
+        }
+        if ([] === $organization) {
+            return $this;
+        }
+        foreach($organization as $v) {
+            $this->addOrganization($v);
+        }
         return $this;
     }
 
@@ -893,6 +1006,32 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * A record of a healthcare consumer’s choices, which permits or denies
+     * identified recipient(s) or recipient role(s) to perform one or more actions
+     * within a given policy context, for specific purposes and periods of time.
+     *
+     * The references to the policies that are included in this consent scope. Policies
+     * may be organizational, but are often defined jurisdictionally, or in law.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentPolicy ...$policy
+     * @return static
+     */
+    public function setPolicy(FHIRConsentPolicy ...$policy): self
+    {
+        if ([] !== $this->policy) {
+            $this->_trackValuesRemoved(count($this->policy));
+            $this->policy = [];
+        }
+        if ([] === $policy) {
+            return $this;
+        }
+        foreach($policy as $v) {
+            $this->addPolicy($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -961,6 +1100,32 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->verification[] = $verification;
+        return $this;
+    }
+
+    /**
+     * A record of a healthcare consumer’s choices, which permits or denies
+     * identified recipient(s) or recipient role(s) to perform one or more actions
+     * within a given policy context, for specific purposes and periods of time.
+     *
+     * Whether a treatment instruction (e.g. artificial respiration yes or no) was
+     * verified with the patient, his/her family or another authorized person.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentVerification ...$verification
+     * @return static
+     */
+    public function setVerification(FHIRConsentVerification ...$verification): self
+    {
+        if ([] !== $this->verification) {
+            $this->_trackValuesRemoved(count($this->verification));
+            $this->verification = [];
+        }
+        if ([] === $verification) {
+            return $this;
+        }
+        foreach($verification as $v) {
+            $this->addVerification($v);
+        }
         return $this;
     }
 

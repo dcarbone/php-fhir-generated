@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -224,7 +224,7 @@ class FHIROrganization extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Validation map for fields in type Organization
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -459,6 +459,33 @@ class FHIROrganization extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifier for the organization that is used to identify the organization across
+     * multiple disparate systems.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -528,6 +555,32 @@ class FHIROrganization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->type[] = $type;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kind(s) of organization that this is.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept ...$type): self
+    {
+        if ([] !== $this->type) {
+            $this->_trackValuesRemoved(count($this->type));
+            $this->type = [];
+        }
+        if ([] === $type) {
+            return $this;
+        }
+        foreach($type as $v) {
+            $this->addType($v);
+        }
         return $this;
     }
 
@@ -680,6 +733,32 @@ class FHIROrganization extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A contact detail for the organization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint ...$telecom
+     * @return static
+     */
+    public function setTelecom(FHIRContactPoint ...$telecom): self
+    {
+        if ([] !== $this->telecom) {
+            $this->_trackValuesRemoved(count($this->telecom));
+            $this->telecom = [];
+        }
+        if ([] === $telecom) {
+            return $this;
+        }
+        foreach($telecom as $v) {
+            $this->addTelecom($v);
+        }
+        return $this;
+    }
+
+    /**
      * An address expressed using postal conventions (as opposed to GPS or other
      * location definition formats). This data type may be used to convey addresses for
      * use in delivering mail as well as for visiting locations which might not be
@@ -718,6 +797,35 @@ class FHIROrganization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->address[] = $address;
+        return $this;
+    }
+
+    /**
+     * An address expressed using postal conventions (as opposed to GPS or other
+     * location definition formats). This data type may be used to convey addresses for
+     * use in delivering mail as well as for visiting locations which might not be
+     * valid for mail delivery. There are a variety of postal address formats defined
+     * around the world.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An address for the organization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAddress ...$address
+     * @return static
+     */
+    public function setAddress(FHIRAddress ...$address): self
+    {
+        if ([] !== $this->address) {
+            $this->_trackValuesRemoved(count($this->address));
+            $this->address = [];
+        }
+        if ([] === $address) {
+            return $this;
+        }
+        foreach($address as $v) {
+            $this->addAddress($v);
+        }
         return $this;
     }
 
@@ -792,6 +900,32 @@ class FHIROrganization extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * A formally or informally recognized grouping of people or organizations formed
+     * for the purpose of achieving some form of collective action. Includes companies,
+     * institutions, corporations, departments, community groups, healthcare practice
+     * groups, payer/insurer, etc.
+     *
+     * Contact for the organization for a certain purpose.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIROrganization\FHIROrganizationContact ...$contact
+     * @return static
+     */
+    public function setContact(FHIROrganizationContact ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -822,6 +956,31 @@ class FHIROrganization extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->endpoint[] = $endpoint;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Technical endpoints providing access to services operated for the organization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$endpoint
+     * @return static
+     */
+    public function setEndpoint(FHIRReference ...$endpoint): self
+    {
+        if ([] !== $this->endpoint) {
+            $this->_trackValuesRemoved(count($this->endpoint));
+            $this->endpoint = [];
+        }
+        if ([] === $endpoint) {
+            return $this;
+        }
+        foreach($endpoint as $v) {
+            $this->addEndpoint($v);
+        }
         return $this;
     }
 

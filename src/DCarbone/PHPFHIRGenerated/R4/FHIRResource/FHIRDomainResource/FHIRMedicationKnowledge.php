@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -347,7 +347,7 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
      * Validation map for fields in type MedicationKnowledge
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1001,6 +1001,29 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * Information about a medication that is used to support knowledge.
+     *
+     * Associated or related knowledge about a medication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRelatedMedicationKnowledge ...$relatedMedicationKnowledge
+     * @return static
+     */
+    public function setRelatedMedicationKnowledge(FHIRMedicationKnowledgeRelatedMedicationKnowledge ...$relatedMedicationKnowledge): self
+    {
+        if ([] !== $this->relatedMedicationKnowledge) {
+            $this->_trackValuesRemoved(count($this->relatedMedicationKnowledge));
+            $this->relatedMedicationKnowledge = [];
+        }
+        if ([] === $relatedMedicationKnowledge) {
+            return $this;
+        }
+        foreach($relatedMedicationKnowledge as $v) {
+            $this->addRelatedMedicationKnowledge($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1037,6 +1060,34 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->associatedMedication[] = $associatedMedication;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Associated or related medications. For example, if the medication is a branded
+     * product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if
+     * this is a generic medication (e.g. Rosuvastatin), this would link to a branded
+     * product (e.g. Crestor).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$associatedMedication
+     * @return static
+     */
+    public function setAssociatedMedication(FHIRReference ...$associatedMedication): self
+    {
+        if ([] !== $this->associatedMedication) {
+            $this->_trackValuesRemoved(count($this->associatedMedication));
+            $this->associatedMedication = [];
+        }
+        if ([] === $associatedMedication) {
+            return $this;
+        }
+        foreach($associatedMedication as $v) {
+            $this->addAssociatedMedication($v);
+        }
         return $this;
     }
 
@@ -1079,6 +1130,33 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Category of the medication or product (e.g. branded product, therapeutic moeity,
+     * generic product, innovator product, etc.).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$productType
+     * @return static
+     */
+    public function setProductType(FHIRCodeableConcept ...$productType): self
+    {
+        if ([] !== $this->productType) {
+            $this->_trackValuesRemoved(count($this->productType));
+            $this->productType = [];
+        }
+        if ([] === $productType) {
+            return $this;
+        }
+        foreach($productType as $v) {
+            $this->addProductType($v);
+        }
+        return $this;
+    }
+
+    /**
      * Information about a medication that is used to support knowledge.
      *
      * Associated documentation about the medication.
@@ -1111,6 +1189,29 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * Information about a medication that is used to support knowledge.
      *
+     * Associated documentation about the medication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonograph ...$monograph
+     * @return static
+     */
+    public function setMonograph(FHIRMedicationKnowledgeMonograph ...$monograph): self
+    {
+        if ([] !== $this->monograph) {
+            $this->_trackValuesRemoved(count($this->monograph));
+            $this->monograph = [];
+        }
+        if ([] === $monograph) {
+            return $this;
+        }
+        foreach($monograph as $v) {
+            $this->addMonograph($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
      * Identifies a particular constituent of interest in the product.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient[]
@@ -1135,6 +1236,29 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->ingredient[] = $ingredient;
+        return $this;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
+     * Identifies a particular constituent of interest in the product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient ...$ingredient
+     * @return static
+     */
+    public function setIngredient(FHIRMedicationKnowledgeIngredient ...$ingredient): self
+    {
+        if ([] !== $this->ingredient) {
+            $this->_trackValuesRemoved(count($this->ingredient));
+            $this->ingredient = [];
+        }
+        if ([] === $ingredient) {
+            return $this;
+        }
+        foreach($ingredient as $v) {
+            $this->addIngredient($v);
+        }
         return $this;
     }
 
@@ -1222,6 +1346,32 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The intended or approved route of administration.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$intendedRoute
+     * @return static
+     */
+    public function setIntendedRoute(FHIRCodeableConcept ...$intendedRoute): self
+    {
+        if ([] !== $this->intendedRoute) {
+            $this->_trackValuesRemoved(count($this->intendedRoute));
+            $this->intendedRoute = [];
+        }
+        if ([] === $intendedRoute) {
+            return $this;
+        }
+        foreach($intendedRoute as $v) {
+            $this->addIntendedRoute($v);
+        }
+        return $this;
+    }
+
+    /**
      * Information about a medication that is used to support knowledge.
      *
      * The price of the medication.
@@ -1248,6 +1398,29 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->cost[] = $cost;
+        return $this;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
+     * The price of the medication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeCost ...$cost
+     * @return static
+     */
+    public function setCost(FHIRMedicationKnowledgeCost ...$cost): self
+    {
+        if ([] !== $this->cost) {
+            $this->_trackValuesRemoved(count($this->cost));
+            $this->cost = [];
+        }
+        if ([] === $cost) {
+            return $this;
+        }
+        foreach($cost as $v) {
+            $this->addCost($v);
+        }
         return $this;
     }
 
@@ -1284,6 +1457,29 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * Information about a medication that is used to support knowledge.
      *
+     * The program under which the medication is reviewed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMonitoringProgram ...$monitoringProgram
+     * @return static
+     */
+    public function setMonitoringProgram(FHIRMedicationKnowledgeMonitoringProgram ...$monitoringProgram): self
+    {
+        if ([] !== $this->monitoringProgram) {
+            $this->_trackValuesRemoved(count($this->monitoringProgram));
+            $this->monitoringProgram = [];
+        }
+        if ([] === $monitoringProgram) {
+            return $this;
+        }
+        foreach($monitoringProgram as $v) {
+            $this->addMonitoringProgram($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
      * Guidelines for the administration of the medication.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines[]
@@ -1314,6 +1510,29 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * Information about a medication that is used to support knowledge.
      *
+     * Guidelines for the administration of the medication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeAdministrationGuidelines ...$administrationGuidelines
+     * @return static
+     */
+    public function setAdministrationGuidelines(FHIRMedicationKnowledgeAdministrationGuidelines ...$administrationGuidelines): self
+    {
+        if ([] !== $this->administrationGuidelines) {
+            $this->_trackValuesRemoved(count($this->administrationGuidelines));
+            $this->administrationGuidelines = [];
+        }
+        if ([] === $administrationGuidelines) {
+            return $this;
+        }
+        foreach($administrationGuidelines as $v) {
+            $this->addAdministrationGuidelines($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
      * Categorization of the medication within a formulary or classification system.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification[]
@@ -1338,6 +1557,29 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->medicineClassification[] = $medicineClassification;
+        return $this;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
+     * Categorization of the medication within a formulary or classification system.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeMedicineClassification ...$medicineClassification
+     * @return static
+     */
+    public function setMedicineClassification(FHIRMedicationKnowledgeMedicineClassification ...$medicineClassification): self
+    {
+        if ([] !== $this->medicineClassification) {
+            $this->_trackValuesRemoved(count($this->medicineClassification));
+            $this->medicineClassification = [];
+        }
+        if ([] === $medicineClassification) {
+            return $this;
+        }
+        foreach($medicineClassification as $v) {
+            $this->addMedicineClassification($v);
+        }
         return $this;
     }
 
@@ -1404,6 +1646,30 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * Information about a medication that is used to support knowledge.
+     *
+     * Specifies descriptive properties of the medicine, such as color, shape,
+     * imprints, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic ...$drugCharacteristic
+     * @return static
+     */
+    public function setDrugCharacteristic(FHIRMedicationKnowledgeDrugCharacteristic ...$drugCharacteristic): self
+    {
+        if ([] !== $this->drugCharacteristic) {
+            $this->_trackValuesRemoved(count($this->drugCharacteristic));
+            $this->drugCharacteristic = [];
+        }
+        if ([] === $drugCharacteristic) {
+            return $this;
+        }
+        foreach($drugCharacteristic as $v) {
+            $this->addDrugCharacteristic($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1440,6 +1706,32 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Potential clinical issue with or between medication(s) (for example, drug-drug
+     * interaction, drug-disease contraindication, drug-allergy interaction, etc.).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$contraindication
+     * @return static
+     */
+    public function setContraindication(FHIRReference ...$contraindication): self
+    {
+        if ([] !== $this->contraindication) {
+            $this->_trackValuesRemoved(count($this->contraindication));
+            $this->contraindication = [];
+        }
+        if ([] === $contraindication) {
+            return $this;
+        }
+        foreach($contraindication as $v) {
+            $this->addContraindication($v);
+        }
+        return $this;
+    }
+
+    /**
      * Information about a medication that is used to support knowledge.
      *
      * Regulatory information about a medication.
@@ -1472,6 +1764,29 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
     /**
      * Information about a medication that is used to support knowledge.
      *
+     * Regulatory information about a medication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeRegulatory ...$regulatory
+     * @return static
+     */
+    public function setRegulatory(FHIRMedicationKnowledgeRegulatory ...$regulatory): self
+    {
+        if ([] !== $this->regulatory) {
+            $this->_trackValuesRemoved(count($this->regulatory));
+            $this->regulatory = [];
+        }
+        if ([] === $regulatory) {
+            return $this;
+        }
+        foreach($regulatory as $v) {
+            $this->addRegulatory($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
      * The time course of drug absorption, distribution, metabolism and excretion of a
      * medication from the body.
      *
@@ -1498,6 +1813,30 @@ class FHIRMedicationKnowledge extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->kinetics[] = $kinetics;
+        return $this;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
+     * The time course of drug absorption, distribution, metabolism and excretion of a
+     * medication from the body.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeKinetics ...$kinetics
+     * @return static
+     */
+    public function setKinetics(FHIRMedicationKnowledgeKinetics ...$kinetics): self
+    {
+        if ([] !== $this->kinetics) {
+            $this->_trackValuesRemoved(count($this->kinetics));
+            $this->kinetics = [];
+        }
+        if ([] === $kinetics) {
+            return $this;
+        }
+        foreach($kinetics as $v) {
+            $this->addKinetics($v);
+        }
         return $this;
     }
 

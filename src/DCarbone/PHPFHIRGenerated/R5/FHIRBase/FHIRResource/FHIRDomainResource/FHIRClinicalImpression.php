@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -370,7 +370,14 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * Validation map for fields in type ClinicalImpression
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SUBJECT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -711,6 +718,34 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Business identifiers assigned to this clinical impression by the performer or
+     * other systems which remain constant as the resource is updated and propagates
+     * from server to server.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -1128,6 +1163,31 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A list of the relevant problems/conditions for a patient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$problem
+     * @return static
+     */
+    public function setProblem(FHIRReference ...$problem): self
+    {
+        if ([] !== $this->problem) {
+            $this->_trackValuesRemoved(count($this->problem));
+            $this->problem = [];
+        }
+        if ([] === $problem) {
+            return $this;
+        }
+        foreach($problem as $v) {
+            $this->addProblem($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1324,6 +1384,36 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * A record of a clinical assessment performed to determine what problem(s) may
+     * affect the patient and before planning the treatments or management strategies
+     * that are best to manage a patient's condition. Assessments are often 1:1 with a
+     * clinical consultation / encounter, but this varies greatly depending on the
+     * clinical workflow. This resource is called "ClinicalImpression" rather than
+     * "ClinicalAssessment" to avoid confusion with the recording of assessment tools
+     * such as Apgar score.
+     *
+     * Specific findings or diagnoses that were considered likely or relevant to
+     * ongoing treatment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalImpression\FHIRClinicalImpressionFinding ...$finding
+     * @return static
+     */
+    public function setFinding(FHIRClinicalImpressionFinding ...$finding): self
+    {
+        if ([] !== $this->finding) {
+            $this->_trackValuesRemoved(count($this->finding));
+            $this->finding = [];
+        }
+        if ([] === $finding) {
+            return $this;
+        }
+        foreach($finding as $v) {
+            $this->addFinding($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1356,6 +1446,32 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->prognosisCodeableConcept[] = $prognosisCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Estimate of likely outcome.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$prognosisCodeableConcept
+     * @return static
+     */
+    public function setPrognosisCodeableConcept(FHIRCodeableConcept ...$prognosisCodeableConcept): self
+    {
+        if ([] !== $this->prognosisCodeableConcept) {
+            $this->_trackValuesRemoved(count($this->prognosisCodeableConcept));
+            $this->prognosisCodeableConcept = [];
+        }
+        if ([] === $prognosisCodeableConcept) {
+            return $this;
+        }
+        foreach($prognosisCodeableConcept as $v) {
+            $this->addPrognosisCodeableConcept($v);
+        }
         return $this;
     }
 
@@ -1398,6 +1514,31 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * RiskAssessment expressing likely outcome.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$prognosisReference
+     * @return static
+     */
+    public function setPrognosisReference(FHIRReference ...$prognosisReference): self
+    {
+        if ([] !== $this->prognosisReference) {
+            $this->_trackValuesRemoved(count($this->prognosisReference));
+            $this->prognosisReference = [];
+        }
+        if ([] === $prognosisReference) {
+            return $this;
+        }
+        foreach($prognosisReference as $v) {
+            $this->addPrognosisReference($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Information supporting the clinical impression, which can contain investigation
      * results.
      *
@@ -1426,6 +1567,32 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->supportingInfo[] = $supportingInfo;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Information supporting the clinical impression, which can contain investigation
+     * results.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$supportingInfo
+     * @return static
+     */
+    public function setSupportingInfo(FHIRReference ...$supportingInfo): self
+    {
+        if ([] !== $this->supportingInfo) {
+            $this->_trackValuesRemoved(count($this->supportingInfo));
+            $this->supportingInfo = [];
+        }
+        if ([] === $supportingInfo) {
+            return $this;
+        }
+        foreach($supportingInfo as $v) {
+            $this->addSupportingInfo($v);
+        }
         return $this;
     }
 
@@ -1464,6 +1631,33 @@ class FHIRClinicalImpression extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Commentary about the impression, typically recorded after the impression itself
+     * was made, though supplemental notes by the original author could also appear.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 

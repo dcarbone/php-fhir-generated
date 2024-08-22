@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValue
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -199,7 +199,7 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * Validation map for fields in type ValueSet.Contains
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -656,6 +656,34 @@ class FHIRValueSetContains extends FHIRBackboneElement
      * [[[CodeSystem]]] definitions and their use in [coded
      * elements](terminologies.html).
      *
+     * Additional representations for this item - other languages, aliases, specialized
+     * purposes, used for particular purposes, etc. These are relevant when the
+     * conditions of the expansion do not fix to a single correct representation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetDesignation ...$designation
+     * @return static
+     */
+    public function setDesignation(FHIRValueSetDesignation ...$designation): self
+    {
+        if ([] !== $this->designation) {
+            $this->_trackValuesRemoved(count($this->designation));
+            $this->designation = [];
+        }
+        if ([] === $designation) {
+            return $this;
+        }
+        foreach($designation as $v) {
+            $this->addDesignation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A ValueSet resource instance specifies a set of codes drawn from one or more
+     * code systems, intended for use in a particular context. Value sets link between
+     * [[[CodeSystem]]] definitions and their use in [coded
+     * elements](terminologies.html).
+     *
      * Other codes and entries contained under this entry in the hierarchy.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains[]
@@ -683,6 +711,32 @@ class FHIRValueSetContains extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->contains[] = $contains;
+        return $this;
+    }
+
+    /**
+     * A ValueSet resource instance specifies a set of codes drawn from one or more
+     * code systems, intended for use in a particular context. Value sets link between
+     * [[[CodeSystem]]] definitions and their use in [coded
+     * elements](terminologies.html).
+     *
+     * Other codes and entries contained under this entry in the hierarchy.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetContains ...$contains
+     * @return static
+     */
+    public function setContains(FHIRValueSetContains ...$contains): self
+    {
+        if ([] !== $this->contains) {
+            $this->_trackValuesRemoved(count($this->contains));
+            $this->contains = [];
+        }
+        if ([] === $contains) {
+            return $this;
+        }
+        foreach($contains as $v) {
+            $this->addContains($v);
+        }
         return $this;
     }
 

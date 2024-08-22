@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -94,7 +94,7 @@ class FHIRBackboneElement extends FHIRElement
      * Validation map for fields in type BackboneElement
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -167,6 +167,32 @@ class FHIRBackboneElement extends FHIRElement
         }
         $this->_trackValueAdded();
         $this->modifierExtension[] = $modifierExtension;
+        return $this;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An extension that modifies the meaning of the element that contains it -
+     * additional local content. The extension URL defines it's meaning
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension ...$modifierExtension
+     * @return static
+     */
+    public function setModifierExtension(FHIRExtension ...$modifierExtension): self
+    {
+        if ([] !== $this->modifierExtension) {
+            $this->_trackValuesRemoved(count($this->modifierExtension));
+            $this->modifierExtension = [];
+        }
+        if ([] === $modifierExtension) {
+            return $this;
+        }
+        foreach($modifierExtension as $v) {
+            $this->addModifierExtension($v);
+        }
         return $this;
     }
 

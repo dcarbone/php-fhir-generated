@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -144,7 +144,11 @@ class FHIRElementDefinitionSlicing extends FHIRElement
      * Validation map for fields in type ElementDefinition.Slicing
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_RULES => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -274,6 +278,35 @@ class FHIRElementDefinitionSlicing extends FHIRElement
         }
         $this->_trackValueAdded();
         $this->discriminator[] = $discriminator;
+        return $this;
+    }
+
+    /**
+     * Captures constraints on each element within the resource, profile, or extension.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Designates which child elements are used to discriminate between the slices when
+     * processing an instance. If one or more discriminators are provided, the value of
+     * the child elements in the instance data SHALL completely distinguish which slice
+     * the element in the resource matches based on the allowed values for those
+     * elements in each of the slices.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRElementDefinition\FHIRElementDefinitionDiscriminator ...$discriminator
+     * @return static
+     */
+    public function setDiscriminator(FHIRElementDefinitionDiscriminator ...$discriminator): self
+    {
+        if ([] !== $this->discriminator) {
+            $this->_trackValuesRemoved(count($this->discriminator));
+            $this->discriminator = [];
+        }
+        if ([] === $discriminator) {
+            return $this;
+        }
+        foreach($discriminator as $v) {
+            $this->addDiscriminator($v);
+        }
         return $this;
     }
 

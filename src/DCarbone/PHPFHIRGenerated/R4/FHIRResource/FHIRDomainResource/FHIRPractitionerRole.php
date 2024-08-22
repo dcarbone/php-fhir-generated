@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -261,7 +261,7 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * Validation map for fields in type PractitionerRole
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -521,6 +521,32 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Business Identifiers that are specific to a role/location.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -703,6 +729,32 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Roles which this practitioner is authorized to perform for the organization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$code
+     * @return static
+     */
+    public function setCode(FHIRCodeableConcept ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Specific specialty of the practitioner.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
@@ -730,6 +782,32 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->specialty[] = $specialty;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specific specialty of the practitioner.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$specialty
+     * @return static
+     */
+    public function setSpecialty(FHIRCodeableConcept ...$specialty): self
+    {
+        if ([] !== $this->specialty) {
+            $this->_trackValuesRemoved(count($this->specialty));
+            $this->specialty = [];
+        }
+        if ([] === $specialty) {
+            return $this;
+        }
+        foreach($specialty as $v) {
+            $this->addSpecialty($v);
+        }
         return $this;
     }
 
@@ -772,6 +850,31 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The location(s) at which this practitioner provides care.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$location
+     * @return static
+     */
+    public function setLocation(FHIRReference ...$location): self
+    {
+        if ([] !== $this->location) {
+            $this->_trackValuesRemoved(count($this->location));
+            $this->location = [];
+        }
+        if ([] === $location) {
+            return $this;
+        }
+        foreach($location as $v) {
+            $this->addLocation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The list of healthcare services that this worker provides for this role's
      * Organization/Location(s).
      *
@@ -800,6 +903,32 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->healthcareService[] = $healthcareService;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The list of healthcare services that this worker provides for this role's
+     * Organization/Location(s).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$healthcareService
+     * @return static
+     */
+    public function setHealthcareService(FHIRReference ...$healthcareService): self
+    {
+        if ([] !== $this->healthcareService) {
+            $this->_trackValuesRemoved(count($this->healthcareService));
+            $this->healthcareService = [];
+        }
+        if ([] === $healthcareService) {
+            return $this;
+        }
+        foreach($healthcareService as $v) {
+            $this->addHealthcareService($v);
+        }
         return $this;
     }
 
@@ -836,6 +965,32 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->telecom[] = $telecom;
+        return $this;
+    }
+
+    /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details that are specific to the role/location/service.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactPoint ...$telecom
+     * @return static
+     */
+    public function setTelecom(FHIRContactPoint ...$telecom): self
+    {
+        if ([] !== $this->telecom) {
+            $this->_trackValuesRemoved(count($this->telecom));
+            $this->telecom = [];
+        }
+        if ([] === $telecom) {
+            return $this;
+        }
+        foreach($telecom as $v) {
+            $this->addTelecom($v);
+        }
         return $this;
     }
 
@@ -877,6 +1032,31 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
      * A specific set of Roles/Locations/specialties/services that a practitioner may
      * perform at an organization for a period of time.
      *
+     * A collection of times the practitioner is available or performing this role at
+     * the location and/or healthcareservice.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleAvailableTime ...$availableTime
+     * @return static
+     */
+    public function setAvailableTime(FHIRPractitionerRoleAvailableTime ...$availableTime): self
+    {
+        if ([] !== $this->availableTime) {
+            $this->_trackValuesRemoved(count($this->availableTime));
+            $this->availableTime = [];
+        }
+        if ([] === $availableTime) {
+            return $this;
+        }
+        foreach($availableTime as $v) {
+            $this->addAvailableTime($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A specific set of Roles/Locations/specialties/services that a practitioner may
+     * perform at an organization for a period of time.
+     *
      * The practitioner is not available or performing this role during this period of
      * time due to the provided reason.
      *
@@ -904,6 +1084,31 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->notAvailable[] = $notAvailable;
+        return $this;
+    }
+
+    /**
+     * A specific set of Roles/Locations/specialties/services that a practitioner may
+     * perform at an organization for a period of time.
+     *
+     * The practitioner is not available or performing this role during this period of
+     * time due to the provided reason.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRPractitionerRole\FHIRPractitionerRoleNotAvailable ...$notAvailable
+     * @return static
+     */
+    public function setNotAvailable(FHIRPractitionerRoleNotAvailable ...$notAvailable): self
+    {
+        if ([] !== $this->notAvailable) {
+            $this->_trackValuesRemoved(count($this->notAvailable));
+            $this->notAvailable = [];
+        }
+        if ([] === $notAvailable) {
+            return $this;
+        }
+        foreach($notAvailable as $v) {
+            $this->addNotAvailable($v);
+        }
         return $this;
     }
 
@@ -983,6 +1188,32 @@ class FHIRPractitionerRole extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->endpoint[] = $endpoint;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Technical endpoints providing access to services operated for the practitioner
+     * with this role.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$endpoint
+     * @return static
+     */
+    public function setEndpoint(FHIRReference ...$endpoint): self
+    {
+        if ([] !== $this->endpoint) {
+            $this->_trackValuesRemoved(count($this->endpoint));
+            $this->endpoint = [];
+        }
+        if ([] === $endpoint) {
+            return $this;
+        }
+        foreach($endpoint as $v) {
+            $this->addEndpoint($v);
+        }
         return $this;
     }
 

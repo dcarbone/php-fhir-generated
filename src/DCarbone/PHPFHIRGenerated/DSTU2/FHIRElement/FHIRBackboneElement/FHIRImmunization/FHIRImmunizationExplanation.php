@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,7 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement
      * Validation map for fields in type Immunization.Explanation
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -211,6 +211,32 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Reasons why a vaccine was administered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$reason
+     * @return static
+     */
+    public function setReason(FHIRCodeableConcept ...$reason): self
+    {
+        if ([] !== $this->reason) {
+            $this->_trackValuesRemoved(count($this->reason));
+            $this->reason = [];
+        }
+        if ([] === $reason) {
+            return $this;
+        }
+        foreach($reason as $v) {
+            $this->addReason($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Reason why a vaccine was not administered.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
@@ -238,6 +264,32 @@ class FHIRImmunizationExplanation extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->reasonNotGiven[] = $reasonNotGiven;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reason why a vaccine was not administered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$reasonNotGiven
+     * @return static
+     */
+    public function setReasonNotGiven(FHIRCodeableConcept ...$reasonNotGiven): self
+    {
+        if ([] !== $this->reasonNotGiven) {
+            $this->_trackValuesRemoved(count($this->reasonNotGiven));
+            $this->reasonNotGiven = [];
+        }
+        if ([] === $reasonNotGiven) {
+            return $this;
+        }
+        foreach($reasonNotGiven as $v) {
+            $this->addReasonNotGiven($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -190,7 +190,7 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
      * Validation map for fields in type RegulatedAuthorization.Case
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -505,6 +505,36 @@ class FHIRRegulatedAuthorizationCase extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->application[] = $application;
+        return $this;
+    }
+
+    /**
+     * Regulatory approval, clearance or licencing related to a regulated product,
+     * treatment, facility or activity that is cited in a guidance, regulation, rule or
+     * legislative act. An example is Market Authorization relating to a Medicinal
+     * Product.
+     *
+     * A regulatory submission from an organization to a regulator, as part of an
+     * assessing case. Multiple applications may occur over time, with more or
+     * different information to support or modify the submission or the authorization.
+     * The applications can be considered as steps within the longer running case or
+     * procedure for this authorization process.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRegulatedAuthorization\FHIRRegulatedAuthorizationCase ...$application
+     * @return static
+     */
+    public function setApplication(FHIRRegulatedAuthorizationCase ...$application): self
+    {
+        if ([] !== $this->application) {
+            $this->_trackValuesRemoved(count($this->application));
+            $this->application = [];
+        }
+        if ([] === $application) {
+            return $this;
+        }
+        foreach($application as $v) {
+            $this->addApplication($v);
+        }
         return $this;
     }
 

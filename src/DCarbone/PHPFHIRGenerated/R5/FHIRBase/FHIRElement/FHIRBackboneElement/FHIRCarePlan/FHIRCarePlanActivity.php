@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -151,7 +151,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * Validation map for fields in type CarePlan.Activity
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -260,6 +260,37 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the activity that was performed. For example, an activity could be
+     * patient education, exercise, or a medication administration. The reference to an
+     * "event" resource, such as Procedure or Encounter or Observation, represents the
+     * activity that was performed. The requested activity can be conveyed using the
+     * CarePlan.activity.plannedActivityReference (a reference to a “request”
+     * resource).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$performedActivity
+     * @return static
+     */
+    public function setPerformedActivity(FHIRCodeableReference ...$performedActivity): self
+    {
+        if ([] !== $this->performedActivity) {
+            $this->_trackValuesRemoved(count($this->performedActivity));
+            $this->performedActivity = [];
+        }
+        if ([] === $performedActivity) {
+            return $this;
+        }
+        foreach($performedActivity as $v) {
+            $this->addPerformedActivity($v);
+        }
+        return $this;
+    }
+
+    /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
@@ -292,6 +323,32 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->progress[] = $progress;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Notes about the adherence/status/progress of the activity.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$progress
+     * @return static
+     */
+    public function setProgress(FHIRAnnotation ...$progress): self
+    {
+        if ([] !== $this->progress) {
+            $this->_trackValuesRemoved(count($this->progress));
+            $this->progress = [];
+        }
+        if ([] === $progress) {
+            return $this;
+        }
+        foreach($progress as $v) {
+            $this->addProgress($v);
+        }
         return $this;
     }
 

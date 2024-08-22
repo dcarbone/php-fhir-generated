@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -343,7 +343,14 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
      * Validation map for fields in type AllergyIntolerance
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PATIENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VERIFICATION_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -679,6 +686,34 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This records identifiers associated with this allergy/intolerance concern that
+     * are defined by business processes and/or used to refer to it when a direct URL
+     * reference to the resource itself is not appropriate (e.g. in CDA documents, or
+     * in written / printed documentation).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * The clinical status of the allergy or intolerance.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -807,6 +842,30 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->category[] = $category;
+        return $this;
+    }
+
+    /**
+     * Category of an identified substance.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Category of the identified substance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAllergyIntoleranceCategory ...$category
+     * @return static
+     */
+    public function setCategory(FHIRAllergyIntoleranceCategory ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
         return $this;
     }
 
@@ -1325,6 +1384,33 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional narrative about the propensity for the Adverse Reaction, not captured
+     * in other fields.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
+        return $this;
+    }
+
+    /**
      * Risk of harmful or undesirable, physiological response which is unique to an
      * individual and associated with exposure to a substance.
      *
@@ -1355,6 +1441,31 @@ class FHIRAllergyIntolerance extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->reaction[] = $reaction;
+        return $this;
+    }
+
+    /**
+     * Risk of harmful or undesirable, physiological response which is unique to an
+     * individual and associated with exposure to a substance.
+     *
+     * Details about each adverse reaction event linked to exposure to the identified
+     * substance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAllergyIntolerance\FHIRAllergyIntoleranceReaction ...$reaction
+     * @return static
+     */
+    public function setReaction(FHIRAllergyIntoleranceReaction ...$reaction): self
+    {
+        if ([] !== $this->reaction) {
+            $this->_trackValuesRemoved(count($this->reaction));
+            $this->reaction = [];
+        }
+        if ([] === $reaction) {
+            return $this;
+        }
+        foreach($reaction as $v) {
+            $this->addReaction($v);
+        }
         return $this;
     }
 

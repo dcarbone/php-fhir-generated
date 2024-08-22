@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -155,7 +155,7 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      * Validation map for fields in type BodyStructure.BodyLandmarkOrientation
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -284,6 +284,33 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A description of a landmark on the body used as a reference to locate something
+     * else.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$landmarkDescription
+     * @return static
+     */
+    public function setLandmarkDescription(FHIRCodeableConcept ...$landmarkDescription): self
+    {
+        if ([] !== $this->landmarkDescription) {
+            $this->_trackValuesRemoved(count($this->landmarkDescription));
+            $this->landmarkDescription = [];
+        }
+        if ([] === $landmarkDescription) {
+            return $this;
+        }
+        foreach($landmarkDescription as $v) {
+            $this->addLandmarkDescription($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * An description of the direction away from a landmark something is located based
      * on a radial clock dial.
      *
@@ -313,6 +340,33 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->clockFacePosition[] = $clockFacePosition;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An description of the direction away from a landmark something is located based
+     * on a radial clock dial.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$clockFacePosition
+     * @return static
+     */
+    public function setClockFacePosition(FHIRCodeableConcept ...$clockFacePosition): self
+    {
+        if ([] !== $this->clockFacePosition) {
+            $this->_trackValuesRemoved(count($this->clockFacePosition));
+            $this->clockFacePosition = [];
+        }
+        if ([] === $clockFacePosition) {
+            return $this;
+        }
+        foreach($clockFacePosition as $v) {
+            $this->addClockFacePosition($v);
+        }
         return $this;
     }
 
@@ -349,6 +403,30 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
     }
 
     /**
+     * Record details about an anatomical structure. This resource may be used when a
+     * coded concept does not provide the necessary detail needed for the use case.
+     *
+     * The distance in centimeters a certain observation is made from a body landmark.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureDistanceFromLandmark ...$distanceFromLandmark
+     * @return static
+     */
+    public function setDistanceFromLandmark(FHIRBodyStructureDistanceFromLandmark ...$distanceFromLandmark): self
+    {
+        if ([] !== $this->distanceFromLandmark) {
+            $this->_trackValuesRemoved(count($this->distanceFromLandmark));
+            $this->distanceFromLandmark = [];
+        }
+        if ([] === $distanceFromLandmark) {
+            return $this;
+        }
+        foreach($distanceFromLandmark as $v) {
+            $this->addDistanceFromLandmark($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -381,6 +459,32 @@ class FHIRBodyStructureBodyLandmarkOrientation extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->surfaceOrientation[] = $surfaceOrientation;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The surface area a body location is in relation to a landmark.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$surfaceOrientation
+     * @return static
+     */
+    public function setSurfaceOrientation(FHIRCodeableConcept ...$surfaceOrientation): self
+    {
+        if ([] !== $this->surfaceOrientation) {
+            $this->_trackValuesRemoved(count($this->surfaceOrientation));
+            $this->surfaceOrientation = [];
+        }
+        if ([] === $surfaceOrientation) {
+            return $this;
+        }
+        foreach($surfaceOrientation as $v) {
+            $this->addSurfaceOrientation($v);
+        }
         return $this;
     }
 

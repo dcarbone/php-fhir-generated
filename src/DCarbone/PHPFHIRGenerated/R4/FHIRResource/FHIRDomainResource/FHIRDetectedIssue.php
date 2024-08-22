@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -259,7 +259,11 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
      * Validation map for fields in type DetectedIssue
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -498,6 +502,32 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Business identifier associated with the detected issue record.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -789,6 +819,32 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the resource representing the current activity or proposed activity
+     * that is potentially problematic.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$implicated
+     * @return static
+     */
+    public function setImplicated(FHIRReference ...$implicated): self
+    {
+        if ([] !== $this->implicated) {
+            $this->_trackValuesRemoved(count($this->implicated));
+            $this->implicated = [];
+        }
+        if ([] === $implicated) {
+            return $this;
+        }
+        foreach($implicated as $v) {
+            $this->addImplicated($v);
+        }
+        return $this;
+    }
+
+    /**
      * Indicates an actual or potential clinical issue with or between one or more
      * active or proposed clinical actions for a patient; e.g. Drug-drug interaction,
      * Ineffective treatment frequency, Procedure-condition conflict, etc.
@@ -821,6 +877,32 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->evidence[] = $evidence;
+        return $this;
+    }
+
+    /**
+     * Indicates an actual or potential clinical issue with or between one or more
+     * active or proposed clinical actions for a patient; e.g. Drug-drug interaction,
+     * Ineffective treatment frequency, Procedure-condition conflict, etc.
+     *
+     * Supporting evidence or manifestations that provide the basis for identifying the
+     * detected issue such as a GuidanceResponse or MeasureReport.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDetectedIssue\FHIRDetectedIssueEvidence ...$evidence
+     * @return static
+     */
+    public function setEvidence(FHIRDetectedIssueEvidence ...$evidence): self
+    {
+        if ([] !== $this->evidence) {
+            $this->_trackValuesRemoved(count($this->evidence));
+            $this->evidence = [];
+        }
+        if ([] === $evidence) {
+            return $this;
+        }
+        foreach($evidence as $v) {
+            $this->addEvidence($v);
+        }
         return $this;
     }
 
@@ -941,6 +1023,34 @@ class FHIRDetectedIssue extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->mitigation[] = $mitigation;
+        return $this;
+    }
+
+    /**
+     * Indicates an actual or potential clinical issue with or between one or more
+     * active or proposed clinical actions for a patient; e.g. Drug-drug interaction,
+     * Ineffective treatment frequency, Procedure-condition conflict, etc.
+     *
+     * Indicates an action that has been taken or is committed to reduce or eliminate
+     * the likelihood of the risk identified by the detected issue from manifesting.
+     * Can also reflect an observation of known mitigating factors that may
+     * reduce/eliminate the need for any action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDetectedIssue\FHIRDetectedIssueMitigation ...$mitigation
+     * @return static
+     */
+    public function setMitigation(FHIRDetectedIssueMitigation ...$mitigation): self
+    {
+        if ([] !== $this->mitigation) {
+            $this->_trackValuesRemoved(count($this->mitigation));
+            $this->mitigation = [];
+        }
+        if ([] === $mitigation) {
+            return $this;
+        }
+        foreach($mitigation as $v) {
+            $this->addMitigation($v);
+        }
         return $this;
     }
 

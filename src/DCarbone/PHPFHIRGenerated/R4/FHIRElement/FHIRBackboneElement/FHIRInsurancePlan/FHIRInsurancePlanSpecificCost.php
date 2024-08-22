@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -110,7 +110,11 @@ class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
      * Validation map for fields in type InsurancePlan.SpecificCost
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CATEGORY => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -222,6 +226,29 @@ class FHIRInsurancePlanSpecificCost extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->benefit[] = $benefit;
+        return $this;
+    }
+
+    /**
+     * Details of a Health Insurance product/plan provided by an organization.
+     *
+     * List of the specific benefits under this category of benefit.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanBenefit1 ...$benefit
+     * @return static
+     */
+    public function setBenefit(FHIRInsurancePlanBenefit1 ...$benefit): self
+    {
+        if ([] !== $this->benefit) {
+            $this->_trackValuesRemoved(count($this->benefit));
+            $this->benefit = [];
+        }
+        if ([] === $benefit) {
+            return $this;
+        }
+        foreach($benefit as $v) {
+            $this->addBenefit($v);
+        }
         return $this;
     }
 

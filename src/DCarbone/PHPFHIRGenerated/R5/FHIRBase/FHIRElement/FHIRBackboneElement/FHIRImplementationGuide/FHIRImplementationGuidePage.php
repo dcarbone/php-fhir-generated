@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -198,7 +198,17 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * Validation map for fields in type ImplementationGuide.Page
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_GENERATION => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TITLE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -608,6 +618,32 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->page[] = $page;
+        return $this;
+    }
+
+    /**
+     * A set of rules of how a particular interoperability or standards problem is
+     * solved - typically through the use of FHIR resources. This resource is used to
+     * gather all the parts of an implementation guide into a logical whole and to
+     * publish a computable definition of all the parts.
+     *
+     * Nested Pages/Sections under this page.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage ...$page
+     * @return static
+     */
+    public function setPage(FHIRImplementationGuidePage ...$page): self
+    {
+        if ([] !== $this->page) {
+            $this->_trackValuesRemoved(count($this->page));
+            $this->page = [];
+        }
+        if ([] === $page) {
+            return $this;
+        }
+        foreach($page as $v) {
+            $this->addPage($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -181,7 +181,11 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
      * Validation map for fields in type SubscriptionTopic.ResourceTrigger
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_RESOURCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -425,6 +429,31 @@ class FHIRSubscriptionTopicResourceTrigger extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->supportedInteraction[] = $supportedInteraction;
+        return $this;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The FHIR RESTful interaction which can be used to trigger a notification for the
+     * SubscriptionTopic. Multiple values are considered OR joined (e.g., CREATE or
+     * UPDATE). If not present, all supported interactions are assumed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRInteractionTrigger ...$supportedInteraction
+     * @return static
+     */
+    public function setSupportedInteraction(FHIRInteractionTrigger ...$supportedInteraction): self
+    {
+        if ([] !== $this->supportedInteraction) {
+            $this->_trackValuesRemoved(count($this->supportedInteraction));
+            $this->supportedInteraction = [];
+        }
+        if ([] === $supportedInteraction) {
+            return $this;
+        }
+        foreach($supportedInteraction as $v) {
+            $this->addSupportedInteraction($v);
+        }
         return $this;
     }
 

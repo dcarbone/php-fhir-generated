@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTermi
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -162,7 +162,7 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
      * Validation map for fields in type TerminologyCapabilities.Version
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -536,6 +536,31 @@ class FHIRTerminologyCapabilitiesVersion extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->filter[] = $filter;
+        return $this;
+    }
+
+    /**
+     * A TerminologyCapabilities resource documents a set of capabilities (behaviors)
+     * of a FHIR Terminology Server that may be used as a statement of actual server
+     * functionality or a statement of required or desired server implementation.
+     *
+     * Filter Properties supported.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTerminologyCapabilities\FHIRTerminologyCapabilitiesFilter ...$filter
+     * @return static
+     */
+    public function setFilter(FHIRTerminologyCapabilitiesFilter ...$filter): self
+    {
+        if ([] !== $this->filter) {
+            $this->_trackValuesRemoved(count($this->filter));
+            $this->filter = [];
+        }
+        if ([] === $filter) {
+            return $this;
+        }
+        foreach($filter as $v) {
+            $this->addFilter($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -237,7 +237,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * Validation map for fields in type Composition.Section
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -479,6 +479,32 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Identifies who is responsible for the information in this section, not
+     * necessarily who typed it in.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$author
+     * @return static
+     */
+    public function setAuthor(FHIRReference ...$author): self
+    {
+        if ([] !== $this->author) {
+            $this->_trackValuesRemoved(count($this->author));
+            $this->author = [];
+        }
+        if ([] === $author) {
+            return $this;
+        }
+        foreach($author as $v) {
+            $this->addAuthor($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The actual focus of the section when it is not the subject of the composition,
      * but instead represents something or someone associated with the subject such as
      * (for a patient subject) a spouse, parent, fetus, or donor. If not focus is
@@ -637,6 +663,32 @@ class FHIRCompositionSection extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to the actual resource from which the narrative in the section is
+     * derived.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$entry
+     * @return static
+     */
+    public function setEntry(FHIRReference ...$entry): self
+    {
+        if ([] !== $this->entry) {
+            $this->_trackValuesRemoved(count($this->entry));
+            $this->entry = [];
+        }
+        if ([] === $entry) {
+            return $this;
+        }
+        foreach($entry as $v) {
+            $this->addEntry($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -717,6 +769,37 @@ class FHIRCompositionSection extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->section[] = $section;
+        return $this;
+    }
+
+    /**
+     * A set of healthcare-related information that is assembled together into a single
+     * logical package that provides a single coherent statement of meaning,
+     * establishes its own context and that has clinical attestation with regard to who
+     * is making the statement. A Composition defines the structure and narrative
+     * content necessary for a document. However, a Composition alone does not
+     * constitute a document. Rather, the Composition must be the first entry in a
+     * Bundle where Bundle.type=document, and any other resources referenced from
+     * Composition must be included as subsequent entries in the Bundle (for example
+     * Patient, Practitioner, Encounter, etc.).
+     *
+     * A nested sub-section within this section.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection ...$section
+     * @return static
+     */
+    public function setSection(FHIRCompositionSection ...$section): self
+    {
+        if ([] !== $this->section) {
+            $this->_trackValuesRemoved(count($this->section));
+            $this->section = [];
+        }
+        if ([] === $section) {
+            return $this;
+        }
+        foreach($section as $v) {
+            $this->addSection($v);
+        }
         return $this;
     }
 

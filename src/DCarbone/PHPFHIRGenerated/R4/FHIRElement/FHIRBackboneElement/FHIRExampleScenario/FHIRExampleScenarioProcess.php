@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -156,7 +156,11 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
      * Validation map for fields in type ExampleScenario.Process
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_TITLE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -471,6 +475,29 @@ class FHIRExampleScenarioProcess extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->step[] = $step;
+        return $this;
+    }
+
+    /**
+     * Example of workflow instance.
+     *
+     * Each step of the process.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioStep ...$step
+     * @return static
+     */
+    public function setStep(FHIRExampleScenarioStep ...$step): self
+    {
+        if ([] !== $this->step) {
+            $this->_trackValuesRemoved(count($this->step));
+            $this->step = [];
+        }
+        if ([] === $step) {
+            return $this;
+        }
+        foreach($step as $v) {
+            $this->addStep($v);
+        }
         return $this;
     }
 

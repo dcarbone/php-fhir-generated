@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -231,7 +231,7 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
      * Validation map for fields in type CoverageEligibilityRequest.Item
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -561,6 +561,33 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Item typification or modifiers codes to convey additional context for the
+     * product or service.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$modifier
+     * @return static
+     */
+    public function setModifier(FHIRCodeableConcept ...$modifier): self
+    {
+        if ([] !== $this->modifier) {
+            $this->_trackValuesRemoved(count($this->modifier));
+            $this->modifier = [];
+        }
+        if ([] === $modifier) {
+            return $this;
+        }
+        foreach($modifier as $v) {
+            $this->addModifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -741,6 +768,33 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
     }
 
     /**
+     * The CoverageEligibilityRequest provides patient and insurance coverage
+     * information to an insurer for them to respond, in the form of an
+     * CoverageEligibilityResponse, with information regarding whether the stated
+     * coverage is valid and in-force and optionally to provide the insurance details
+     * of the policy.
+     *
+     * Patient diagnosis for which care is sought.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityRequest\FHIRCoverageEligibilityRequestDiagnosis ...$diagnosis
+     * @return static
+     */
+    public function setDiagnosis(FHIRCoverageEligibilityRequestDiagnosis ...$diagnosis): self
+    {
+        if ([] !== $this->diagnosis) {
+            $this->_trackValuesRemoved(count($this->diagnosis));
+            $this->diagnosis = [];
+        }
+        if ([] === $diagnosis) {
+            return $this;
+        }
+        foreach($diagnosis as $v) {
+            $this->addDiagnosis($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -771,6 +825,31 @@ class FHIRCoverageEligibilityRequestItem extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->detail[] = $detail;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The plan/proposal/order describing the proposed service in detail.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$detail
+     * @return static
+     */
+    public function setDetail(FHIRReference ...$detail): self
+    {
+        if ([] !== $this->detail) {
+            $this->_trackValuesRemoved(count($this->detail));
+            $this->detail = [];
+        }
+        if ([] === $detail) {
+            return $this;
+        }
+        foreach($detail as $v) {
+            $this->addDetail($v);
+        }
         return $this;
     }
 

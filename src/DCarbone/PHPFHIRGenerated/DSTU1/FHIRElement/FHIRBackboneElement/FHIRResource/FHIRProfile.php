@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -283,7 +283,14 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * Validation map for fields in type Profile
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -775,6 +782,33 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
     }
 
     /**
+     * All kinds of technology mediated contact details for a person or organization,
+     * including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact ...$telecom
+     * @return static
+     */
+    public function setTelecom(FHIRContact ...$telecom): self
+    {
+        if ([] !== $this->telecom) {
+            $this->_trackValuesRemoved(count($this->telecom));
+            $this->telecom = [];
+        }
+        if ([] === $telecom) {
+            return $this;
+        }
+        foreach($telecom as $v) {
+            $this->addTelecom($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -844,6 +878,32 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->code[] = $code;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A set of terms from external terminologies that may be used to assist with
+     * indexing and searching of templates.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding ...$code
+     * @return static
+     */
+    public function setCode(FHIRCoding ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
         return $this;
     }
 
@@ -1082,6 +1142,31 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * include constraints on Resources and Data Types, Terminology Binding Statements
      * and Extension Definitions.
      *
+     * An external specification that the content is mapped to.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping ...$mapping
+     * @return static
+     */
+    public function setMapping(FHIRProfileMapping ...$mapping): self
+    {
+        if ([] !== $this->mapping) {
+            $this->_trackValuesRemoved(count($this->mapping));
+            $this->mapping = [];
+        }
+        if ([] === $mapping) {
+            return $this;
+        }
+        foreach($mapping as $v) {
+            $this->addMapping($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
+     * include constraints on Resources and Data Types, Terminology Binding Statements
+     * and Extension Definitions.
+     *
      * A constraint statement about what contents a resource or data type may have.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileStructure[]
@@ -1108,6 +1193,31 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->structure[] = $structure;
+        return $this;
+    }
+
+    /**
+     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
+     * include constraints on Resources and Data Types, Terminology Binding Statements
+     * and Extension Definitions.
+     *
+     * A constraint statement about what contents a resource or data type may have.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileStructure ...$structure
+     * @return static
+     */
+    public function setStructure(FHIRProfileStructure ...$structure): self
+    {
+        if ([] !== $this->structure) {
+            $this->_trackValuesRemoved(count($this->structure));
+            $this->structure = [];
+        }
+        if ([] === $structure) {
+            return $this;
+        }
+        foreach($structure as $v) {
+            $this->addStructure($v);
+        }
         return $this;
     }
 
@@ -1150,6 +1260,31 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
      * include constraints on Resources and Data Types, Terminology Binding Statements
      * and Extension Definitions.
      *
+     * An extension defined as part of the profile.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileExtensionDefn ...$extensionDefn
+     * @return static
+     */
+    public function setExtensionDefn(FHIRProfileExtensionDefn ...$extensionDefn): self
+    {
+        if ([] !== $this->extensionDefn) {
+            $this->_trackValuesRemoved(count($this->extensionDefn));
+            $this->extensionDefn = [];
+        }
+        if ([] === $extensionDefn) {
+            return $this;
+        }
+        foreach($extensionDefn as $v) {
+            $this->addExtensionDefn($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
+     * include constraints on Resources and Data Types, Terminology Binding Statements
+     * and Extension Definitions.
+     *
      * Definition of a named query and its parameters and their meaning.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileQuery[]
@@ -1176,6 +1311,31 @@ class FHIRProfile extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->query[] = $query;
+        return $this;
+    }
+
+    /**
+     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
+     * include constraints on Resources and Data Types, Terminology Binding Statements
+     * and Extension Definitions.
+     *
+     * Definition of a named query and its parameters and their meaning.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileQuery ...$query
+     * @return static
+     */
+    public function setQuery(FHIRProfileQuery ...$query): self
+    {
+        if ([] !== $this->query) {
+            $this->_trackValuesRemoved(count($this->query));
+            $this->query = [];
+        }
+        if ([] === $query) {
+            return $this;
+        }
+        foreach($query as $v) {
+            $this->addQuery($v);
+        }
         return $this;
     }
 

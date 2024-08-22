@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -612,7 +612,11 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Validation map for fields in type ActivityDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1245,6 +1249,33 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A formal identifier that is used to identify this activity definition when it is
+     * represented in other formats, or referenced in a specification, model, design or
+     * an instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1860,6 +1891,36 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * Specifies clinical/business/etc metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These terms may be used to assist with indexing and searching
+     * for appropriate activity definition instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1894,6 +1955,33 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A legal or geographic region in which the activity definition is intended to be
+     * used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
+    {
+        if ([] !== $this->jurisdiction) {
+            $this->_trackValuesRemoved(count($this->jurisdiction));
+            $this->jurisdiction = [];
+        }
+        if ([] === $jurisdiction) {
+            return $this;
+        }
+        foreach($jurisdiction as $v) {
+            $this->addJurisdiction($v);
+        }
         return $this;
     }
 
@@ -1938,6 +2026,34 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Descriptive topics related to the content of the activity. Topics provide a
+     * high-level categorization of the activity that can be useful for filtering and
+     * searching.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$topic
+     * @return static
+     */
+    public function setTopic(FHIRCodeableConcept ...$topic): self
+    {
+        if ([] !== $this->topic) {
+            $this->_trackValuesRemoved(count($this->topic));
+            $this->topic = [];
+        }
+        if ([] === $topic) {
+            return $this;
+        }
+        foreach($topic as $v) {
+            $this->addTopic($v);
+        }
+        return $this;
+    }
+
+    /**
      * A contributor to the content of a knowledge asset, including authors, editors,
      * reviewers, and endorsers.
      * If the element is present, it must have a value for at least one of the defined
@@ -1976,6 +2092,33 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * A contributor to the content of a knowledge asset, including authors, editors,
+     * reviewers, and endorsers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A contributor to the content of the asset, including authors, editors,
+     * reviewers, and endorsers.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContributor ...$contributor
+     * @return static
+     */
+    public function setContributor(FHIRContributor ...$contributor): self
+    {
+        if ([] !== $this->contributor) {
+            $this->_trackValuesRemoved(count($this->contributor));
+            $this->contributor = [];
+        }
+        if ([] === $contributor) {
+            return $this;
+        }
+        foreach($contributor as $v) {
+            $this->addContributor($v);
+        }
+        return $this;
+    }
+
+    /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -2008,6 +2151,32 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->contact[] = $contact;
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
         return $this;
     }
 
@@ -2105,6 +2274,33 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact ...$relatedArtifact
+     * @return static
+     */
+    public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
+    {
+        if ([] !== $this->relatedArtifact) {
+            $this->_trackValuesRemoved(count($this->relatedArtifact));
+            $this->relatedArtifact = [];
+        }
+        if ([] === $relatedArtifact) {
+            return $this;
+        }
+        foreach($relatedArtifact as $v) {
+            $this->addRelatedArtifact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -2135,6 +2331,31 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->library[] = $library;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to a Library resource containing any formal logic used by the asset.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$library
+     * @return static
+     */
+    public function setLibrary(FHIRReference ...$library): self
+    {
+        if ([] !== $this->library) {
+            $this->_trackValuesRemoved(count($this->library));
+            $this->library = [];
+        }
+        if ([] === $library) {
+            return $this;
+        }
+        foreach($library as $v) {
+            $this->addLibrary($v);
+        }
         return $this;
     }
 
@@ -2441,6 +2662,30 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * This resource allows for the definition of some activity to be performed,
+     * independent of a particular patient, practitioner, or other performance context.
+     *
+     * Indicates who should participate in performing the action described.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionParticipant ...$participant
+     * @return static
+     */
+    public function setParticipant(FHIRActivityDefinitionParticipant ...$participant): self
+    {
+        if ([] !== $this->participant) {
+            $this->_trackValuesRemoved(count($this->participant));
+            $this->participant = [];
+        }
+        if ([] === $participant) {
+            return $this;
+        }
+        foreach($participant as $v) {
+            $this->addParticipant($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -2591,6 +2836,32 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * Indicates how the medication is/was taken or should be taken by the patient.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Provides detailed dosage instructions in the same way that they are described
+     * for MedicationRequest resources.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDosage ...$dosage
+     * @return static
+     */
+    public function setDosage(FHIRDosage ...$dosage): self
+    {
+        if ([] !== $this->dosage) {
+            $this->_trackValuesRemoved(count($this->dosage));
+            $this->dosage = [];
+        }
+        if ([] === $dosage) {
+            return $this;
+        }
+        foreach($dosage as $v) {
+            $this->addDosage($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -2625,6 +2896,33 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->bodySite[] = $bodySite;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the sites on the subject's body where the procedure should be
+     * performed (I.e. the target sites).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$bodySite
+     * @return static
+     */
+    public function setBodySite(FHIRCodeableConcept ...$bodySite): self
+    {
+        if ([] !== $this->bodySite) {
+            $this->_trackValuesRemoved(count($this->bodySite));
+            $this->bodySite = [];
+        }
+        if ([] === $bodySite) {
+            return $this;
+        }
+        foreach($bodySite as $v) {
+            $this->addBodySite($v);
+        }
         return $this;
     }
 
@@ -2703,6 +3001,34 @@ class FHIRActivityDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->dynamicValue[] = $dynamicValue;
+        return $this;
+    }
+
+    /**
+     * This resource allows for the definition of some activity to be performed,
+     * independent of a particular patient, practitioner, or other performance context.
+     *
+     * Dynamic values that will be evaluated to produce values for elements of the
+     * resulting resource. For example, if the dosage of a medication must be computed
+     * based on the patient's weight, a dynamic value would be used to specify an
+     * expression that calculated the weight, and the path on the intent resource that
+     * would contain the result.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRActivityDefinition\FHIRActivityDefinitionDynamicValue ...$dynamicValue
+     * @return static
+     */
+    public function setDynamicValue(FHIRActivityDefinitionDynamicValue ...$dynamicValue): self
+    {
+        if ([] !== $this->dynamicValue) {
+            $this->_trackValuesRemoved(count($this->dynamicValue));
+            $this->dynamicValue = [];
+        }
+        if ([] === $dynamicValue) {
+            return $this;
+        }
+        foreach($dynamicValue as $v) {
+            $this->addDynamicValue($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAud
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -202,7 +202,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * Validation map for fields in type AuditEvent.Entity
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -552,6 +552,31 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Security labels for the identified entity.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding ...$securityLabel
+     * @return static
+     */
+    public function setSecurityLabel(FHIRCoding ...$securityLabel): self
+    {
+        if ([] !== $this->securityLabel) {
+            $this->_trackValuesRemoved(count($this->securityLabel));
+            $this->securityLabel = [];
+        }
+        if ([] === $securityLabel) {
+            return $this;
+        }
+        foreach($securityLabel as $v) {
+            $this->addSecurityLabel($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -699,6 +724,31 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->detail[] = $detail;
+        return $this;
+    }
+
+    /**
+     * A record of an event made for purposes of maintaining a security log. Typical
+     * uses include detection of intrusion attempts and monitoring for inappropriate
+     * usage.
+     *
+     * Tagged value pairs for conveying additional information about the entity.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail ...$detail
+     * @return static
+     */
+    public function setDetail(FHIRAuditEventDetail ...$detail): self
+    {
+        if ([] !== $this->detail) {
+            $this->_trackValuesRemoved(count($this->detail));
+            $this->detail = [];
+        }
+        if ([] === $detail) {
+            return $this;
+        }
+        foreach($detail as $v) {
+            $this->addDetail($v);
+        }
         return $this;
     }
 

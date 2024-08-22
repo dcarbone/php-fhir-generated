@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,7 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * Validation map for fields in type MeasureReport.Stratum
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -282,6 +282,30 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
      * The MeasureReport resource contains the results of the calculation of a measure;
      * and optionally a reference to the resources involved in that calculation.
      *
+     * A stratifier component value.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportComponent ...$component
+     * @return static
+     */
+    public function setComponent(FHIRMeasureReportComponent ...$component): self
+    {
+        if ([] !== $this->component) {
+            $this->_trackValuesRemoved(count($this->component));
+            $this->component = [];
+        }
+        if ([] === $component) {
+            return $this;
+        }
+        foreach($component as $v) {
+            $this->addComponent($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The MeasureReport resource contains the results of the calculation of a measure;
+     * and optionally a reference to the resources involved in that calculation.
+     *
      * The populations that make up the stratum, one for each type of population
      * appropriate to the measure.
      *
@@ -309,6 +333,31 @@ class FHIRMeasureReportStratum extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->population[] = $population;
+        return $this;
+    }
+
+    /**
+     * The MeasureReport resource contains the results of the calculation of a measure;
+     * and optionally a reference to the resources involved in that calculation.
+     *
+     * The populations that make up the stratum, one for each type of population
+     * appropriate to the measure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportPopulation1 ...$population
+     * @return static
+     */
+    public function setPopulation(FHIRMeasureReportPopulation1 ...$population): self
+    {
+        if ([] !== $this->population) {
+            $this->_trackValuesRemoved(count($this->population));
+            $this->population = [];
+        }
+        if ([] === $population) {
+            return $this;
+        }
+        foreach($population as $v) {
+            $this->addPopulation($v);
+        }
         return $this;
     }
 

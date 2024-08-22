@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -293,7 +293,7 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * Validation map for fields in type Citation.CitedArtifact
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -567,6 +567,34 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A formal identifier that is used to identify the cited artifact when it is
+     * represented in other formats, or referenced in a specification, model, design or
+     * an instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * A formal identifier that is used to identify things closely related to the cited
      * artifact.
      *
@@ -596,6 +624,33 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->relatedIdentifier[] = $relatedIdentifier;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A formal identifier that is used to identify things closely related to the cited
+     * artifact.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$relatedIdentifier
+     * @return static
+     */
+    public function setRelatedIdentifier(FHIRIdentifier ...$relatedIdentifier): self
+    {
+        if ([] !== $this->relatedIdentifier) {
+            $this->_trackValuesRemoved(count($this->relatedIdentifier));
+            $this->relatedIdentifier = [];
+        }
+        if ([] === $relatedIdentifier) {
+            return $this;
+        }
+        foreach($relatedIdentifier as $v) {
+            $this->addRelatedIdentifier($v);
+        }
         return $this;
     }
 
@@ -719,6 +774,32 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The status of the cited artifact.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$currentState
+     * @return static
+     */
+    public function setCurrentState(FHIRCodeableConcept ...$currentState): self
+    {
+        if ([] !== $this->currentState) {
+            $this->_trackValuesRemoved(count($this->currentState));
+            $this->currentState = [];
+        }
+        if ([] === $currentState) {
+            return $this;
+        }
+        foreach($currentState as $v) {
+            $this->addCurrentState($v);
+        }
+        return $this;
+    }
+
+    /**
      * The Citation Resource enables reference to any knowledge artifact for purposes
      * of identification and attribution. The Citation Resource supports existing
      * reference structures and developing publication practices such as versioning,
@@ -753,6 +834,33 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->statusDate[] = $statusDate;
+        return $this;
+    }
+
+    /**
+     * The Citation Resource enables reference to any knowledge artifact for purposes
+     * of identification and attribution. The Citation Resource supports existing
+     * reference structures and developing publication practices such as versioning,
+     * expressing complex contributorship roles, and referencing computable resources.
+     *
+     * An effective date or period, historical or future, actual or expected, for a
+     * status of the cited artifact.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationStatusDate1 ...$statusDate
+     * @return static
+     */
+    public function setStatusDate(FHIRCitationStatusDate1 ...$statusDate): self
+    {
+        if ([] !== $this->statusDate) {
+            $this->_trackValuesRemoved(count($this->statusDate));
+            $this->statusDate = [];
+        }
+        if ([] === $statusDate) {
+            return $this;
+        }
+        foreach($statusDate as $v) {
+            $this->addStatusDate($v);
+        }
         return $this;
     }
 
@@ -798,6 +906,32 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * reference structures and developing publication practices such as versioning,
      * expressing complex contributorship roles, and referencing computable resources.
      *
+     * The title details of the article or artifact.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationTitle ...$title
+     * @return static
+     */
+    public function setTitle(FHIRCitationTitle ...$title): self
+    {
+        if ([] !== $this->title) {
+            $this->_trackValuesRemoved(count($this->title));
+            $this->title = [];
+        }
+        if ([] === $title) {
+            return $this;
+        }
+        foreach($title as $v) {
+            $this->addTitle($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The Citation Resource enables reference to any knowledge artifact for purposes
+     * of identification and attribution. The Citation Resource supports existing
+     * reference structures and developing publication practices such as versioning,
+     * expressing complex contributorship roles, and referencing computable resources.
+     *
      * The abstract may be used to convey article-contained abstracts,
      * externally-created abstracts, or other descriptive summaries.
      *
@@ -827,6 +961,33 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->abstract[] = $abstract;
+        return $this;
+    }
+
+    /**
+     * The Citation Resource enables reference to any knowledge artifact for purposes
+     * of identification and attribution. The Citation Resource supports existing
+     * reference structures and developing publication practices such as versioning,
+     * expressing complex contributorship roles, and referencing computable resources.
+     *
+     * The abstract may be used to convey article-contained abstracts,
+     * externally-created abstracts, or other descriptive summaries.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationAbstract ...$abstract
+     * @return static
+     */
+    public function setAbstract(FHIRCitationAbstract ...$abstract): self
+    {
+        if ([] !== $this->abstract) {
+            $this->_trackValuesRemoved(count($this->abstract));
+            $this->abstract = [];
+        }
+        if ([] === $abstract) {
+            return $this;
+        }
+        foreach($abstract as $v) {
+            $this->addAbstract($v);
+        }
         return $this;
     }
 
@@ -908,6 +1069,32 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * reference structures and developing publication practices such as versioning,
      * expressing complex contributorship roles, and referencing computable resources.
      *
+     * The artifact related to the cited artifact.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationRelatesTo ...$relatesTo
+     * @return static
+     */
+    public function setRelatesTo(FHIRCitationRelatesTo ...$relatesTo): self
+    {
+        if ([] !== $this->relatesTo) {
+            $this->_trackValuesRemoved(count($this->relatesTo));
+            $this->relatesTo = [];
+        }
+        if ([] === $relatesTo) {
+            return $this;
+        }
+        foreach($relatesTo as $v) {
+            $this->addRelatesTo($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The Citation Resource enables reference to any knowledge artifact for purposes
+     * of identification and attribution. The Citation Resource supports existing
+     * reference structures and developing publication practices such as versioning,
+     * expressing complex contributorship roles, and referencing computable resources.
+     *
      * If multiple, used to represent alternative forms of the article that are not
      * separate citations.
      *
@@ -937,6 +1124,33 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->publicationForm[] = $publicationForm;
+        return $this;
+    }
+
+    /**
+     * The Citation Resource enables reference to any knowledge artifact for purposes
+     * of identification and attribution. The Citation Resource supports existing
+     * reference structures and developing publication practices such as versioning,
+     * expressing complex contributorship roles, and referencing computable resources.
+     *
+     * If multiple, used to represent alternative forms of the article that are not
+     * separate citations.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationPublicationForm ...$publicationForm
+     * @return static
+     */
+    public function setPublicationForm(FHIRCitationPublicationForm ...$publicationForm): self
+    {
+        if ([] !== $this->publicationForm) {
+            $this->_trackValuesRemoved(count($this->publicationForm));
+            $this->publicationForm = [];
+        }
+        if ([] === $publicationForm) {
+            return $this;
+        }
+        foreach($publicationForm as $v) {
+            $this->addPublicationForm($v);
+        }
         return $this;
     }
 
@@ -982,6 +1196,32 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
      * reference structures and developing publication practices such as versioning,
      * expressing complex contributorship roles, and referencing computable resources.
      *
+     * Used for any URL for the article or artifact cited.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationWebLocation ...$webLocation
+     * @return static
+     */
+    public function setWebLocation(FHIRCitationWebLocation ...$webLocation): self
+    {
+        if ([] !== $this->webLocation) {
+            $this->_trackValuesRemoved(count($this->webLocation));
+            $this->webLocation = [];
+        }
+        if ([] === $webLocation) {
+            return $this;
+        }
+        foreach($webLocation as $v) {
+            $this->addWebLocation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The Citation Resource enables reference to any knowledge artifact for purposes
+     * of identification and attribution. The Citation Resource supports existing
+     * reference structures and developing publication practices such as versioning,
+     * expressing complex contributorship roles, and referencing computable resources.
+     *
      * The assignment to an organizing scheme.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationClassification1[]
@@ -1009,6 +1249,32 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->classification[] = $classification;
+        return $this;
+    }
+
+    /**
+     * The Citation Resource enables reference to any knowledge artifact for purposes
+     * of identification and attribution. The Citation Resource supports existing
+     * reference structures and developing publication practices such as versioning,
+     * expressing complex contributorship roles, and referencing computable resources.
+     *
+     * The assignment to an organizing scheme.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationClassification1 ...$classification
+     * @return static
+     */
+    public function setClassification(FHIRCitationClassification1 ...$classification): self
+    {
+        if ([] !== $this->classification) {
+            $this->_trackValuesRemoved(count($this->classification));
+            $this->classification = [];
+        }
+        if ([] === $classification) {
+            return $this;
+        }
+        foreach($classification as $v) {
+            $this->addClassification($v);
+        }
         return $this;
     }
 
@@ -1083,6 +1349,32 @@ class FHIRCitationCitedArtifact extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Any additional information or content for the article or artifact.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 

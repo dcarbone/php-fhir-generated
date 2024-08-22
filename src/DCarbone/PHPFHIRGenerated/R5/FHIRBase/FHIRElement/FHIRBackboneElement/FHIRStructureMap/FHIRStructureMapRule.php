@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -370,6 +370,29 @@ class FHIRStructureMapRule extends FHIRBackboneElement
     /**
      * A Map of relationships between 2 structures that can be used to transform data.
      *
+     * Source inputs to the mapping.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapSource ...$source
+     * @return static
+     */
+    public function setSource(FHIRStructureMapSource ...$source): self
+    {
+        if ([] !== $this->source) {
+            $this->_trackValuesRemoved(count($this->source));
+            $this->source = [];
+        }
+        if ([] === $source) {
+            return $this;
+        }
+        foreach($source as $v) {
+            $this->addSource($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
      * Content to create because of this mapping rule.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget[]
@@ -394,6 +417,29 @@ class FHIRStructureMapRule extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->target[] = $target;
+        return $this;
+    }
+
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
+     * Content to create because of this mapping rule.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapTarget ...$target
+     * @return static
+     */
+    public function setTarget(FHIRStructureMapTarget ...$target): self
+    {
+        if ([] !== $this->target) {
+            $this->_trackValuesRemoved(count($this->target));
+            $this->target = [];
+        }
+        if ([] === $target) {
+            return $this;
+        }
+        foreach($target as $v) {
+            $this->addTarget($v);
+        }
         return $this;
     }
 
@@ -430,6 +476,29 @@ class FHIRStructureMapRule extends FHIRBackboneElement
     /**
      * A Map of relationships between 2 structures that can be used to transform data.
      *
+     * Rules contained in this rule.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule ...$rule
+     * @return static
+     */
+    public function setRule(FHIRStructureMapRule ...$rule): self
+    {
+        if ([] !== $this->rule) {
+            $this->_trackValuesRemoved(count($this->rule));
+            $this->rule = [];
+        }
+        if ([] === $rule) {
+            return $this;
+        }
+        foreach($rule as $v) {
+            $this->addRule($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
      * Which other rules to apply in the context of this rule.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent[]
@@ -454,6 +523,29 @@ class FHIRStructureMapRule extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->dependent[] = $dependent;
+        return $this;
+    }
+
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
+     * Which other rules to apply in the context of this rule.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapDependent ...$dependent
+     * @return static
+     */
+    public function setDependent(FHIRStructureMapDependent ...$dependent): self
+    {
+        if ([] !== $this->dependent) {
+            $this->_trackValuesRemoved(count($this->dependent));
+            $this->dependent = [];
+        }
+        if ([] === $dependent) {
+            return $this;
+        }
+        foreach($dependent as $v) {
+            $this->addDependent($v);
+        }
         return $this;
     }
 

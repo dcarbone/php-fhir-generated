@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -441,6 +441,9 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
         self::FIELD_CONTENT => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
     ];
 
     /** @var array */
@@ -820,6 +823,33 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Other business identifiers associated with the document, including version
+     * independent identifiers.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -891,6 +921,31 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->basedOn[] = $basedOn;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A procedure that is fulfilled in whole or in part by the creation of this media.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
         return $this;
     }
 
@@ -998,6 +1053,33 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Imaging modality used. This may include both acquisition and non-acquisition
+     * modalities.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$modality
+     * @return static
+     */
+    public function setModality(FHIRCodeableConcept ...$modality): self
+    {
+        if ([] !== $this->modality) {
+            $this->_trackValuesRemoved(count($this->modality));
+            $this->modality = [];
+        }
+        if ([] === $modality) {
+            return $this;
+        }
+        foreach($modality as $v) {
+            $this->addModality($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Specifies the particular kind of document referenced (e.g. History and Physical,
      * Discharge Summary, Progress Note). This usually equates to the purpose of making
      * the document referenced.
@@ -1069,6 +1151,34 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->category[] = $category;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A categorization for the type of document referenced - helps for indexing and
+     * searching. This may be implied by or derived from the code specified in the
+     * DocumentReference.type.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
         return $this;
     }
 
@@ -1149,6 +1259,32 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Describes the clinical encounter or type of care that the document content is
+     * associated with.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$context
+     * @return static
+     */
+    public function setContext(FHIRReference ...$context): self
+    {
+        if ([] !== $this->context) {
+            $this->_trackValuesRemoved(count($this->context));
+            $this->context = [];
+        }
+        if ([] === $context) {
+            return $this;
+        }
+        foreach($context as $v) {
+            $this->addContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
      * If the element is present, it must have a value for at least one of the defined
@@ -1196,6 +1332,35 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * This list of codes represents the main clinical acts, such as a colonoscopy or
+     * an appendectomy, being documented. In some cases, the event is inherent in the
+     * type Code, such as a "History and Physical Report" in which the procedure being
+     * documented is necessarily a "History and Physical" act.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$event
+     * @return static
+     */
+    public function setEvent(FHIRCodeableReference ...$event): self
+    {
+        if ([] !== $this->event) {
+            $this->_trackValuesRemoved(count($this->event));
+            $this->event = [];
+        }
+        if ([] === $event) {
+            return $this;
+        }
+        foreach($event as $v) {
+            $this->addEvent($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The anatomic structures included in the document.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
@@ -1223,6 +1388,32 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->bodySite[] = $bodySite;
+        return $this;
+    }
+
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The anatomic structures included in the document.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$bodySite
+     * @return static
+     */
+    public function setBodySite(FHIRCodeableReference ...$bodySite): self
+    {
+        if ([] !== $this->bodySite) {
+            $this->_trackValuesRemoved(count($this->bodySite));
+            $this->bodySite = [];
+        }
+        if ([] === $bodySite) {
+            return $this;
+        }
+        foreach($bodySite as $v) {
+            $this->addBodySite($v);
+        }
         return $this;
     }
 
@@ -1416,6 +1607,31 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies who is responsible for adding the information to the document.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$author
+     * @return static
+     */
+    public function setAuthor(FHIRReference ...$author): self
+    {
+        if ([] !== $this->author) {
+            $this->_trackValuesRemoved(count($this->author));
+            $this->author = [];
+        }
+        if ([] === $author) {
+            return $this;
+        }
+        foreach($author as $v) {
+            $this->addAuthor($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a document of any kind for any purpose. While the term
      * “document” implies a more narrow focus, for this resource this "document"
      * encompasses *any* serialized object with a mime-type, it includes formal
@@ -1458,6 +1674,37 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->attester[] = $attester;
+        return $this;
+    }
+
+    /**
+     * A reference to a document of any kind for any purpose. While the term
+     * “document” implies a more narrow focus, for this resource this "document"
+     * encompasses *any* serialized object with a mime-type, it includes formal
+     * patient-centric documents (CDA), clinical notes, scanned paper, non-patient
+     * specific documents like policy text, as well as a photo, video, or audio
+     * recording acquired or used in healthcare. The DocumentReference resource
+     * provides metadata about the document so that the document can be discovered and
+     * managed. The actual content may be inline base64 encoded data or provided by
+     * direct reference.
+     *
+     * A participant who has authenticated the accuracy of the document.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceAttester ...$attester
+     * @return static
+     */
+    public function setAttester(FHIRDocumentReferenceAttester ...$attester): self
+    {
+        if ([] !== $this->attester) {
+            $this->_trackValuesRemoved(count($this->attester));
+            $this->attester = [];
+        }
+        if ([] === $attester) {
+            return $this;
+        }
+        foreach($attester as $v) {
+            $this->addAttester($v);
+        }
         return $this;
     }
 
@@ -1542,6 +1789,38 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->relatesTo[] = $relatesTo;
+        return $this;
+    }
+
+    /**
+     * A reference to a document of any kind for any purpose. While the term
+     * “document” implies a more narrow focus, for this resource this "document"
+     * encompasses *any* serialized object with a mime-type, it includes formal
+     * patient-centric documents (CDA), clinical notes, scanned paper, non-patient
+     * specific documents like policy text, as well as a photo, video, or audio
+     * recording acquired or used in healthcare. The DocumentReference resource
+     * provides metadata about the document so that the document can be discovered and
+     * managed. The actual content may be inline base64 encoded data or provided by
+     * direct reference.
+     *
+     * Relationships that this document has with other document references that already
+     * exist.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo ...$relatesTo
+     * @return static
+     */
+    public function setRelatesTo(FHIRDocumentReferenceRelatesTo ...$relatesTo): self
+    {
+        if ([] !== $this->relatesTo) {
+            $this->_trackValuesRemoved(count($this->relatesTo));
+            $this->relatesTo = [];
+        }
+        if ([] === $relatesTo) {
+            return $this;
+        }
+        foreach($relatesTo as $v) {
+            $this->addRelatesTo($v);
+        }
         return $this;
     }
 
@@ -1647,6 +1926,41 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A set of Security-Tag codes specifying the level of privacy/security of the
+     * Document found at DocumentReference.content.attachment.url. Note that
+     * DocumentReference.meta.security contains the security labels of the data
+     * elements in DocumentReference, while DocumentReference.securityLabel contains
+     * the security labels for the document the reference refers to. The distinction
+     * recognizes that the document may contain sensitive information, while the
+     * DocumentReference is metadata about the document and thus might not be as
+     * sensitive as the document. For example: a psychotherapy episode may contain
+     * highly sensitive information, while the metadata may simply indicate that some
+     * episode happened.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$securityLabel
+     * @return static
+     */
+    public function setSecurityLabel(FHIRCodeableConcept ...$securityLabel): self
+    {
+        if ([] !== $this->securityLabel) {
+            $this->_trackValuesRemoved(count($this->securityLabel));
+            $this->securityLabel = [];
+        }
+        if ([] === $securityLabel) {
+            return $this;
+        }
+        foreach($securityLabel as $v) {
+            $this->addSecurityLabel($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a document of any kind for any purpose. While the term
      * “document” implies a more narrow focus, for this resource this "document"
      * encompasses *any* serialized object with a mime-type, it includes formal
@@ -1693,6 +2007,39 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->content[] = $content;
+        return $this;
+    }
+
+    /**
+     * A reference to a document of any kind for any purpose. While the term
+     * “document” implies a more narrow focus, for this resource this "document"
+     * encompasses *any* serialized object with a mime-type, it includes formal
+     * patient-centric documents (CDA), clinical notes, scanned paper, non-patient
+     * specific documents like policy text, as well as a photo, video, or audio
+     * recording acquired or used in healthcare. The DocumentReference resource
+     * provides metadata about the document so that the document can be discovered and
+     * managed. The actual content may be inline base64 encoded data or provided by
+     * direct reference.
+     *
+     * The document and format referenced. If there are multiple content element
+     * repetitions, these must all represent the same document in different format, or
+     * attachment metadata.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent ...$content
+     * @return static
+     */
+    public function setContent(FHIRDocumentReferenceContent ...$content): self
+    {
+        if ([] !== $this->content) {
+            $this->_trackValuesRemoved(count($this->content));
+            $this->content = [];
+        }
+        if ([] === $content) {
+            return $this;
+        }
+        foreach($content as $v) {
+            $this->addContent($v);
+        }
         return $this;
     }
 

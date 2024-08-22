@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -370,7 +370,17 @@ class FHIRObservation extends FHIRResource implements PHPFHIRContainedTypeInterf
      * Validation map for fields in type Observation
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_RELIABILITY => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1433,6 +1443,31 @@ class FHIRObservation extends FHIRResource implements PHPFHIRContainedTypeInterf
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who was responsible for asserting the observed value as "true".
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$performer
+     * @return static
+     */
+    public function setPerformer(FHIRResourceReference ...$performer): self
+    {
+        if ([] !== $this->performer) {
+            $this->_trackValuesRemoved(count($this->performer));
+            $this->performer = [];
+        }
+        if ([] === $performer) {
+            return $this;
+        }
+        foreach($performer as $v) {
+            $this->addPerformer($v);
+        }
+        return $this;
+    }
+
+    /**
      * Measurements and simple assertions made about a patient, device or other
      * subject.
      *
@@ -1470,6 +1505,31 @@ class FHIRObservation extends FHIRResource implements PHPFHIRContainedTypeInterf
      * Measurements and simple assertions made about a patient, device or other
      * subject.
      *
+     * Guidance on how to interpret the value by comparison to a normal or recommended
+     * range.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange ...$referenceRange
+     * @return static
+     */
+    public function setReferenceRange(FHIRObservationReferenceRange ...$referenceRange): self
+    {
+        if ([] !== $this->referenceRange) {
+            $this->_trackValuesRemoved(count($this->referenceRange));
+            $this->referenceRange = [];
+        }
+        if ([] === $referenceRange) {
+            return $this;
+        }
+        foreach($referenceRange as $v) {
+            $this->addReferenceRange($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Measurements and simple assertions made about a patient, device or other
+     * subject.
+     *
      * Related observations - either components, or previous observations, or
      * statements of derivation.
      *
@@ -1497,6 +1557,31 @@ class FHIRObservation extends FHIRResource implements PHPFHIRContainedTypeInterf
         }
         $this->_trackValueAdded();
         $this->related[] = $related;
+        return $this;
+    }
+
+    /**
+     * Measurements and simple assertions made about a patient, device or other
+     * subject.
+     *
+     * Related observations - either components, or previous observations, or
+     * statements of derivation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationRelated ...$related
+     * @return static
+     */
+    public function setRelated(FHIRObservationRelated ...$related): self
+    {
+        if ([] !== $this->related) {
+            $this->_trackValuesRemoved(count($this->related));
+            $this->related = [];
+        }
+        if ([] === $related) {
+            return $this;
+        }
+        foreach($related as $v) {
+            $this->addRelated($v);
+        }
         return $this;
     }
 

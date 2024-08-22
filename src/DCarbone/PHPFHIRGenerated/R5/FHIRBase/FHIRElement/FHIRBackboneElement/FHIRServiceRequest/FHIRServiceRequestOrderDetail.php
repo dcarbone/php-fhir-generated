@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -247,6 +247,30 @@ class FHIRServiceRequestOrderDetail extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->parameter[] = $parameter;
+        return $this;
+    }
+
+    /**
+     * A record of a request for service such as diagnostic investigations, treatments,
+     * or operations to be performed.
+     *
+     * The parameter details for the service being requested.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRServiceRequest\FHIRServiceRequestParameter ...$parameter
+     * @return static
+     */
+    public function setParameter(FHIRServiceRequestParameter ...$parameter): self
+    {
+        if ([] !== $this->parameter) {
+            $this->_trackValuesRemoved(count($this->parameter));
+            $this->parameter = [];
+        }
+        if ([] === $parameter) {
+            return $this;
+        }
+        foreach($parameter as $v) {
+            $this->addParameter($v);
+        }
         return $this;
     }
 

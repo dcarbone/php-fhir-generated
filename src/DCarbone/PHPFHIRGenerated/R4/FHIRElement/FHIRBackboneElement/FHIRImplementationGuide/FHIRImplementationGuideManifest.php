@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -385,6 +385,35 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
      * gather all the parts of an implementation guide into a logical whole and to
      * publish a computable definition of all the parts.
      *
+     * A resource that is part of the implementation guide. Conformance resources
+     * (value set, structure definition, capability statements etc.) are obvious
+     * candidates for inclusion, but any kind of resource can be included as an example
+     * resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource1 ...$resource
+     * @return static
+     */
+    public function setResource(FHIRImplementationGuideResource1 ...$resource): self
+    {
+        if ([] !== $this->resource) {
+            $this->_trackValuesRemoved(count($this->resource));
+            $this->resource = [];
+        }
+        if ([] === $resource) {
+            return $this;
+        }
+        foreach($resource as $v) {
+            $this->addResource($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A set of rules of how a particular interoperability or standards problem is
+     * solved - typically through the use of FHIR resources. This resource is used to
+     * gather all the parts of an implementation guide into a logical whole and to
+     * publish a computable definition of all the parts.
+     *
      * Information about a page within the IG.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage1[]
@@ -412,6 +441,32 @@ class FHIRImplementationGuideManifest extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->page[] = $page;
+        return $this;
+    }
+
+    /**
+     * A set of rules of how a particular interoperability or standards problem is
+     * solved - typically through the use of FHIR resources. This resource is used to
+     * gather all the parts of an implementation guide into a logical whole and to
+     * publish a computable definition of all the parts.
+     *
+     * Information about a page within the IG.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage1 ...$page
+     * @return static
+     */
+    public function setPage(FHIRImplementationGuidePage1 ...$page): self
+    {
+        if ([] !== $this->page) {
+            $this->_trackValuesRemoved(count($this->page));
+            $this->page = [];
+        }
+        if ([] === $page) {
+            return $this;
+        }
+        foreach($page as $v) {
+            $this->addPage($v);
+        }
         return $this;
     }
 

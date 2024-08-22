@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -201,7 +201,7 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * Validation map for fields in type DeviceDefinition.Guideline
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -376,6 +376,34 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
     }
 
     /**
+     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The circumstances that form the setting for using the device.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
@@ -459,6 +487,32 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
     }
 
     /**
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A source of information or reference for this guideline.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact ...$relatedArtifact
+     * @return static
+     */
+    public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
+    {
+        if ([] !== $this->relatedArtifact) {
+            $this->_trackValuesRemoved(count($this->relatedArtifact));
+            $this->relatedArtifact = [];
+        }
+        if ([] === $relatedArtifact) {
+            return $this;
+        }
+        foreach($relatedArtifact as $v) {
+            $this->addRelatedArtifact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -491,6 +545,32 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->indication[] = $indication;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A clinical condition for which the device was designed to be used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$indication
+     * @return static
+     */
+    public function setIndication(FHIRCodeableConcept ...$indication): self
+    {
+        if ([] !== $this->indication) {
+            $this->_trackValuesRemoved(count($this->indication));
+            $this->indication = [];
+        }
+        if ([] === $indication) {
+            return $this;
+        }
+        foreach($indication as $v) {
+            $this->addIndication($v);
+        }
         return $this;
     }
 
@@ -536,6 +616,32 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A specific situation when a device should not be used because it may cause harm.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$contraindication
+     * @return static
+     */
+    public function setContraindication(FHIRCodeableConcept ...$contraindication): self
+    {
+        if ([] !== $this->contraindication) {
+            $this->_trackValuesRemoved(count($this->contraindication));
+            $this->contraindication = [];
+        }
+        if ([] === $contraindication) {
+            return $this;
+        }
+        foreach($contraindication as $v) {
+            $this->addContraindication($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Specific hazard alert information that a user needs to know before using the
      * device.
      *
@@ -565,6 +671,33 @@ class FHIRDeviceDefinitionGuideline extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->warning[] = $warning;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specific hazard alert information that a user needs to know before using the
+     * device.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$warning
+     * @return static
+     */
+    public function setWarning(FHIRCodeableConcept ...$warning): self
+    {
+        if ([] !== $this->warning) {
+            $this->_trackValuesRemoved(count($this->warning));
+            $this->warning = [];
+        }
+        if ([] === $warning) {
+            return $this;
+        }
+        foreach($warning as $v) {
+            $this->addWarning($v);
+        }
         return $this;
     }
 

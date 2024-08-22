@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -291,7 +291,23 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
      * Validation map for fields in type Immunization
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_DATE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_REFUSED_INDICATOR => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_REPORTED => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SUBJECT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VACCINE_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -555,6 +571,31 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier assigned to this adverse reaction record.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -1134,6 +1175,30 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
     /**
      * Immunization event information.
      *
+     * Categorical data indicating that an adverse event is associated in time to an
+     * immunization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationReaction ...$reaction
+     * @return static
+     */
+    public function setReaction(FHIRImmunizationReaction ...$reaction): self
+    {
+        if ([] !== $this->reaction) {
+            $this->_trackValuesRemoved(count($this->reaction));
+            $this->reaction = [];
+        }
+        if ([] === $reaction) {
+            return $this;
+        }
+        foreach($reaction as $v) {
+            $this->addReaction($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Immunization event information.
+     *
      * Contains information about the protocol(s) under which the vaccine was
      * administered.
      *
@@ -1160,6 +1225,30 @@ class FHIRImmunization extends FHIRResource implements PHPFHIRContainedTypeInter
         }
         $this->_trackValueAdded();
         $this->vaccinationProtocol[] = $vaccinationProtocol;
+        return $this;
+    }
+
+    /**
+     * Immunization event information.
+     *
+     * Contains information about the protocol(s) under which the vaccine was
+     * administered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImmunization\FHIRImmunizationVaccinationProtocol ...$vaccinationProtocol
+     * @return static
+     */
+    public function setVaccinationProtocol(FHIRImmunizationVaccinationProtocol ...$vaccinationProtocol): self
+    {
+        if ([] !== $this->vaccinationProtocol) {
+            $this->_trackValuesRemoved(count($this->vaccinationProtocol));
+            $this->vaccinationProtocol = [];
+        }
+        if ([] === $vaccinationProtocol) {
+            return $this;
+        }
+        foreach($vaccinationProtocol as $v) {
+            $this->addVaccinationProtocol($v);
+        }
         return $this;
     }
 

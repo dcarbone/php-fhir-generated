@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRVa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -145,6 +145,9 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
      */
     private const _VALIDATION_RULES = [
         self::FIELD_CONCEPT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SYSTEM => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -396,6 +399,31 @@ class FHIRValueSetCodeSystem extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->concept[] = $concept;
+        return $this;
+    }
+
+    /**
+     * A value set specifies a set of codes drawn from one or more code systems.
+     *
+     * Concepts that are in the code system. The concept definitions are inherently
+     * hierarchical, but the definitions must be consulted to determine what the
+     * meaning of the hierarchical relationships are.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetConcept ...$concept
+     * @return static
+     */
+    public function setConcept(FHIRValueSetConcept ...$concept): self
+    {
+        if ([] !== $this->concept) {
+            $this->_trackValuesRemoved(count($this->concept));
+            $this->concept = [];
+        }
+        if ([] === $concept) {
+            return $this;
+        }
+        foreach($concept as $v) {
+            $this->addConcept($v);
+        }
         return $this;
     }
 

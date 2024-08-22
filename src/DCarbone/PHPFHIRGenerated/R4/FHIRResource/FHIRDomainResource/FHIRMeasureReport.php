@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -238,7 +238,20 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
      * Validation map for fields in type MeasureReport
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_MEASURE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_PERIOD => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -449,6 +462,34 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A formal identifier that is used to identify this MeasureReport when it is
+     * represented in other formats or referenced in a specification, model, design or
+     * an instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -787,6 +828,30 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * The MeasureReport resource contains the results of the calculation of a measure;
+     * and optionally a reference to the resources involved in that calculation.
+     *
+     * The results of the calculation, one for each population group in the measure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportGroup ...$group
+     * @return static
+     */
+    public function setGroup(FHIRMeasureReportGroup ...$group): self
+    {
+        if ([] !== $this->group) {
+            $this->_trackValuesRemoved(count($this->group));
+            $this->group = [];
+        }
+        if ([] === $group) {
+            return $this;
+        }
+        foreach($group as $v) {
+            $this->addGroup($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -819,6 +884,32 @@ class FHIRMeasureReport extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->evaluatedResource[] = $evaluatedResource;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to a Bundle containing the Resources that were used in the
+     * calculation of this measure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$evaluatedResource
+     * @return static
+     */
+    public function setEvaluatedResource(FHIRReference ...$evaluatedResource): self
+    {
+        if ([] !== $this->evaluatedResource) {
+            $this->_trackValuesRemoved(count($this->evaluatedResource));
+            $this->evaluatedResource = [];
+        }
+        if ([] === $evaluatedResource) {
+            return $this;
+        }
+        foreach($evaluatedResource as $v) {
+            $this->addEvaluatedResource($v);
+        }
         return $this;
     }
 

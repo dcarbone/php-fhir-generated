@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -238,7 +238,14 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * Validation map for fields in type Claim.Detail
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PRODUCT_OR_SERVICE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SEQUENCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -596,6 +603,33 @@ class FHIRClaimDetail extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Item typification or modifiers codes to convey additional context for the
+     * product or service.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$modifier
+     * @return static
+     */
+    public function setModifier(FHIRCodeableConcept ...$modifier): self
+    {
+        if ([] !== $this->modifier) {
+            $this->_trackValuesRemoved(count($this->modifier));
+            $this->modifier = [];
+        }
+        if ([] === $modifier) {
+            return $this;
+        }
+        foreach($modifier as $v) {
+            $this->addModifier($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Identifies the program under which this may be recovered.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
@@ -623,6 +657,32 @@ class FHIRClaimDetail extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->programCode[] = $programCode;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the program under which this may be recovered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$programCode
+     * @return static
+     */
+    public function setProgramCode(FHIRCodeableConcept ...$programCode): self
+    {
+        if ([] !== $this->programCode) {
+            $this->_trackValuesRemoved(count($this->programCode));
+            $this->programCode = [];
+        }
+        if ([] === $programCode) {
+            return $this;
+        }
+        foreach($programCode as $v) {
+            $this->addProgramCode($v);
+        }
         return $this;
     }
 
@@ -816,6 +876,31 @@ class FHIRClaimDetail extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique Device Identifiers associated with this line item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$udi
+     * @return static
+     */
+    public function setUdi(FHIRReference ...$udi): self
+    {
+        if ([] !== $this->udi) {
+            $this->_trackValuesRemoved(count($this->udi));
+            $this->udi = [];
+        }
+        if ([] === $udi) {
+            return $this;
+        }
+        foreach($udi as $v) {
+            $this->addUdi($v);
+        }
+        return $this;
+    }
+
+    /**
      * A provider issued list of professional services and products which have been
      * provided, or are to be provided, to a patient which is sent to an insurer for
      * reimbursement.
@@ -848,6 +933,32 @@ class FHIRClaimDetail extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->subDetail[] = $subDetail;
+        return $this;
+    }
+
+    /**
+     * A provider issued list of professional services and products which have been
+     * provided, or are to be provided, to a patient which is sent to an insurer for
+     * reimbursement.
+     *
+     * A claim detail line. Either a simple (a product or service) or a 'group' of
+     * sub-details which are simple items.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRClaim\FHIRClaimSubDetail ...$subDetail
+     * @return static
+     */
+    public function setSubDetail(FHIRClaimSubDetail ...$subDetail): self
+    {
+        if ([] !== $this->subDetail) {
+            $this->_trackValuesRemoved(count($this->subDetail));
+            $this->subDetail = [];
+        }
+        if ([] === $subDetail) {
+            return $this;
+        }
+        foreach($subDetail as $v) {
+            $this->addSubDetail($v);
+        }
         return $this;
     }
 

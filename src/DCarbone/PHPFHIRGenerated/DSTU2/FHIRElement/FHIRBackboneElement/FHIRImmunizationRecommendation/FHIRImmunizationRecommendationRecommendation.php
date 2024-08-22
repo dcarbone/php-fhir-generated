@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -188,7 +188,17 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * Validation map for fields in type ImmunizationRecommendation.Recommendation
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_DATE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_FORECAST_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VACCINE_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -512,6 +522,32 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * patient's immunization eligibility according to a published schedule) with
      * optional supporting justification.
      *
+     * Vaccine date recommendations. For example, earliest date to administer, latest
+     * date to administer, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImmunizationRecommendation\FHIRImmunizationRecommendationDateCriterion ...$dateCriterion
+     * @return static
+     */
+    public function setDateCriterion(FHIRImmunizationRecommendationDateCriterion ...$dateCriterion): self
+    {
+        if ([] !== $this->dateCriterion) {
+            $this->_trackValuesRemoved(count($this->dateCriterion));
+            $this->dateCriterion = [];
+        }
+        if ([] === $dateCriterion) {
+            return $this;
+        }
+        foreach($dateCriterion as $v) {
+            $this->addDateCriterion($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A patient's point-in-time immunization and recommendation (i.e. forecasting a
+     * patient's immunization eligibility according to a published schedule) with
+     * optional supporting justification.
+     *
      * Contains information about the protocol under which the vaccine was
      * administered.
      *
@@ -582,6 +618,31 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Immunization event history that supports the status and recommendation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference ...$supportingImmunization
+     * @return static
+     */
+    public function setSupportingImmunization(FHIRReference ...$supportingImmunization): self
+    {
+        if ([] !== $this->supportingImmunization) {
+            $this->_trackValuesRemoved(count($this->supportingImmunization));
+            $this->supportingImmunization = [];
+        }
+        if ([] === $supportingImmunization) {
+            return $this;
+        }
+        foreach($supportingImmunization as $v) {
+            $this->addSupportingImmunization($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Patient Information that supports the status and recommendation. This includes
      * patient observations, adverse reactions and allergy/intolerance information.
      *
@@ -610,6 +671,32 @@ class FHIRImmunizationRecommendationRecommendation extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->supportingPatientInformation[] = $supportingPatientInformation;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Patient Information that supports the status and recommendation. This includes
+     * patient observations, adverse reactions and allergy/intolerance information.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference ...$supportingPatientInformation
+     * @return static
+     */
+    public function setSupportingPatientInformation(FHIRReference ...$supportingPatientInformation): self
+    {
+        if ([] !== $this->supportingPatientInformation) {
+            $this->_trackValuesRemoved(count($this->supportingPatientInformation));
+            $this->supportingPatientInformation = [];
+        }
+        if ([] === $supportingPatientInformation) {
+            return $this;
+        }
+        foreach($supportingPatientInformation as $v) {
+            $this->addSupportingPatientInformation($v);
+        }
         return $this;
     }
 

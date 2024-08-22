@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -170,7 +170,7 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
      * Validation map for fields in type MedicationDispense
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -451,6 +451,31 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the medication order that is being dispensed against.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$authorizingPrescription
+     * @return static
+     */
+    public function setAuthorizingPrescription(FHIRResourceReference ...$authorizingPrescription): self
+    {
+        if ([] !== $this->authorizingPrescription) {
+            $this->_trackValuesRemoved(count($this->authorizingPrescription));
+            $this->authorizingPrescription = [];
+        }
+        if ([] === $authorizingPrescription) {
+            return $this;
+        }
+        foreach($authorizingPrescription as $v) {
+            $this->addAuthorizingPrescription($v);
+        }
+        return $this;
+    }
+
+    /**
      * Dispensing a medication to a named patient. This includes a description of the
      * supply provided and the instructions for administering the medication.
      *
@@ -481,6 +506,31 @@ class FHIRMedicationDispense extends FHIRResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->dispense[] = $dispense;
+        return $this;
+    }
+
+    /**
+     * Dispensing a medication to a named patient. This includes a description of the
+     * supply provided and the instructions for administering the medication.
+     *
+     * Indicates the details of the dispense event such as the days supply and quantity
+     * of medication dispensed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDispense ...$dispense
+     * @return static
+     */
+    public function setDispense(FHIRMedicationDispenseDispense ...$dispense): self
+    {
+        if ([] !== $this->dispense) {
+            $this->_trackValuesRemoved(count($this->dispense));
+            $this->dispense = [];
+        }
+        if ([] === $dispense) {
+            return $this;
+        }
+        foreach($dispense as $v) {
+            $this->addDispense($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,6 +134,9 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_PARAMETER => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
@@ -266,6 +269,29 @@ class FHIRStructureMapDependent extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->parameter[] = $parameter;
+        return $this;
+    }
+
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
+     * Parameter to pass to the rule or group.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter ...$parameter
+     * @return static
+     */
+    public function setParameter(FHIRStructureMapParameter ...$parameter): self
+    {
+        if ([] !== $this->parameter) {
+            $this->_trackValuesRemoved(count($this->parameter));
+            $this->parameter = [];
+        }
+        if ([] === $parameter) {
+            return $this;
+        }
+        foreach($parameter as $v) {
+            $this->addParameter($v);
+        }
         return $this;
     }
 

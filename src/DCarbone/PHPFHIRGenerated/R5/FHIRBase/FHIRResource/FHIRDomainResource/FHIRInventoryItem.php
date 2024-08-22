@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -274,7 +274,11 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * Validation map for fields in type InventoryItem
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -516,6 +520,32 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Business identifier for the inventory item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A coded concept specifying the status of the inventory item.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -589,6 +619,32 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Category or class of the item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Code designating the specific type of item.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
@@ -616,6 +672,32 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->code[] = $code;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Code designating the specific type of item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$code
+     * @return static
+     */
+    public function setCode(FHIRCodeableConcept ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
         return $this;
     }
 
@@ -657,6 +739,31 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * A functional description of an inventory item used in inventory and
      * supply-related workflows.
      *
+     * The item name(s) - the brand name, or common name, functional name, generic
+     * name.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemName ...$name
+     * @return static
+     */
+    public function setName(FHIRInventoryItemName ...$name): self
+    {
+        if ([] !== $this->name) {
+            $this->_trackValuesRemoved(count($this->name));
+            $this->name = [];
+        }
+        if ([] === $name) {
+            return $this;
+        }
+        foreach($name as $v) {
+            $this->addName($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A functional description of an inventory item used in inventory and
+     * supply-related workflows.
+     *
      * Organization(s) responsible for the product.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemResponsibleOrganization[]
@@ -682,6 +789,30 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->responsibleOrganization[] = $responsibleOrganization;
+        return $this;
+    }
+
+    /**
+     * A functional description of an inventory item used in inventory and
+     * supply-related workflows.
+     *
+     * Organization(s) responsible for the product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemResponsibleOrganization ...$responsibleOrganization
+     * @return static
+     */
+    public function setResponsibleOrganization(FHIRInventoryItemResponsibleOrganization ...$responsibleOrganization): self
+    {
+        if ([] !== $this->responsibleOrganization) {
+            $this->_trackValuesRemoved(count($this->responsibleOrganization));
+            $this->responsibleOrganization = [];
+        }
+        if ([] === $responsibleOrganization) {
+            return $this;
+        }
+        foreach($responsibleOrganization as $v) {
+            $this->addResponsibleOrganization($v);
+        }
         return $this;
     }
 
@@ -752,6 +883,33 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->inventoryStatus[] = $inventoryStatus;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The usage status e.g. recalled, in use, discarded... This can be used to
+     * indicate that the items have been taken out of inventory, or are in use, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$inventoryStatus
+     * @return static
+     */
+    public function setInventoryStatus(FHIRCodeableConcept ...$inventoryStatus): self
+    {
+        if ([] !== $this->inventoryStatus) {
+            $this->_trackValuesRemoved(count($this->inventoryStatus));
+            $this->inventoryStatus = [];
+        }
+        if ([] === $inventoryStatus) {
+            return $this;
+        }
+        foreach($inventoryStatus as $v) {
+            $this->addInventoryStatus($v);
+        }
         return $this;
     }
 
@@ -865,6 +1023,30 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
      * A functional description of an inventory item used in inventory and
      * supply-related workflows.
      *
+     * Association with other items or products.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemAssociation ...$association
+     * @return static
+     */
+    public function setAssociation(FHIRInventoryItemAssociation ...$association): self
+    {
+        if ([] !== $this->association) {
+            $this->_trackValuesRemoved(count($this->association));
+            $this->association = [];
+        }
+        if ([] === $association) {
+            return $this;
+        }
+        foreach($association as $v) {
+            $this->addAssociation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A functional description of an inventory item used in inventory and
+     * supply-related workflows.
+     *
      * The descriptive or identifying characteristics of the item.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemCharacteristic[]
@@ -890,6 +1072,30 @@ class FHIRInventoryItem extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->characteristic[] = $characteristic;
+        return $this;
+    }
+
+    /**
+     * A functional description of an inventory item used in inventory and
+     * supply-related workflows.
+     *
+     * The descriptive or identifying characteristics of the item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRInventoryItem\FHIRInventoryItemCharacteristic ...$characteristic
+     * @return static
+     */
+    public function setCharacteristic(FHIRInventoryItemCharacteristic ...$characteristic): self
+    {
+        if ([] !== $this->characteristic) {
+            $this->_trackValuesRemoved(count($this->characteristic));
+            $this->characteristic = [];
+        }
+        if ([] === $characteristic) {
+            return $this;
+        }
+        foreach($characteristic as $v) {
+            $this->addCharacteristic($v);
+        }
         return $this;
     }
 

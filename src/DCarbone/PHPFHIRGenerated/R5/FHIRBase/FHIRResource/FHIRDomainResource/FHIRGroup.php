@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -268,7 +268,14 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * Validation map for fields in type Group
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_MEMBERSHIP => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -499,6 +506,34 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Business identifiers assigned to this participant by one of the applications
+     * involved. These identifiers remain constant as the resource is updated and
+     * propagates from server to server.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -856,6 +891,32 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
      * formally or legally recognized; i.e. a collection of entities that isn't an
      * Organization.
      *
+     * Identifies traits whose presence r absence is shared by members of the group.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupCharacteristic ...$characteristic
+     * @return static
+     */
+    public function setCharacteristic(FHIRGroupCharacteristic ...$characteristic): self
+    {
+        if ([] !== $this->characteristic) {
+            $this->_trackValuesRemoved(count($this->characteristic));
+            $this->characteristic = [];
+        }
+        if ([] === $characteristic) {
+            return $this;
+        }
+        foreach($characteristic as $v) {
+            $this->addCharacteristic($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Represents a defined collection of entities that may be discussed or acted upon
+     * collectively but which are not expected to act collectively, and are not
+     * formally or legally recognized; i.e. a collection of entities that isn't an
+     * Organization.
+     *
      * Identifies the resource instances that are members of the group.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupMember[]
@@ -883,6 +944,32 @@ class FHIRGroup extends FHIRDomainResource implements PHPFHIRContainedTypeInterf
         }
         $this->_trackValueAdded();
         $this->member[] = $member;
+        return $this;
+    }
+
+    /**
+     * Represents a defined collection of entities that may be discussed or acted upon
+     * collectively but which are not expected to act collectively, and are not
+     * formally or legally recognized; i.e. a collection of entities that isn't an
+     * Organization.
+     *
+     * Identifies the resource instances that are members of the group.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGroup\FHIRGroupMember ...$member
+     * @return static
+     */
+    public function setMember(FHIRGroupMember ...$member): self
+    {
+        if ([] !== $this->member) {
+            $this->_trackValuesRemoved(count($this->member));
+            $this->member = [];
+        }
+        if ([] === $member) {
+            return $this;
+        }
+        foreach($member as $v) {
+            $this->addMember($v);
+        }
         return $this;
     }
 

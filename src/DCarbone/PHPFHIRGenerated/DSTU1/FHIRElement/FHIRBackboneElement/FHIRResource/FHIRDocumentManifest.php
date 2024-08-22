@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -254,7 +254,12 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
         self::FIELD_CONTENT => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
-
+        self::FIELD_MASTER_IDENTIFIER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_SUBJECT => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
@@ -535,6 +540,32 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Other identifiers associated with the document, including version independent,
+     * source record and workflow related identifiers.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -581,6 +612,35 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Who or what the set of documents is about. The documents can be about a person,
+     * (patient or healthcare practitioner), a device (i.e. machine) or even a group of
+     * subjects (such as a document about a herd of farm animals, or a set of patients
+     * that share a common exposure). If the documents cross more than one subject,
+     * then more than one subject is allowed here (unusual use case).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$subject
+     * @return static
+     */
+    public function setSubject(FHIRResourceReference ...$subject): self
+    {
+        if ([] !== $this->subject) {
+            $this->_trackValuesRemoved(count($this->subject));
+            $this->subject = [];
+        }
+        if ([] === $subject) {
+            return $this;
+        }
+        foreach($subject as $v) {
+            $this->addSubject($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * A patient, practitioner, or organization for which this set of documents is
      * intended.
      *
@@ -609,6 +669,32 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->recipient[] = $recipient;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A patient, practitioner, or organization for which this set of documents is
+     * intended.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$recipient
+     * @return static
+     */
+    public function setRecipient(FHIRResourceReference ...$recipient): self
+    {
+        if ([] !== $this->recipient) {
+            $this->_trackValuesRemoved(count($this->recipient));
+            $this->recipient = [];
+        }
+        if ([] === $recipient) {
+            return $this;
+        }
+        foreach($recipient as $v) {
+            $this->addRecipient($v);
+        }
         return $this;
     }
 
@@ -685,6 +771,31 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->author[] = $author;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies who is responsible for adding the information to the document.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$author
+     * @return static
+     */
+    public function setAuthor(FHIRResourceReference ...$author): self
+    {
+        if ([] !== $this->author) {
+            $this->_trackValuesRemoved(count($this->author));
+            $this->author = [];
+        }
+        if ([] === $author) {
+            return $this;
+        }
+        foreach($author as $v) {
+            $this->addAuthor($v);
+        }
         return $this;
     }
 
@@ -948,6 +1059,33 @@ class FHIRDocumentManifest extends FHIRResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->content[] = $content;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The list of resources that describe the parts of this document reference.
+     * Usually, these would be document references, but direct references to binary
+     * attachments and images are also allowed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$content
+     * @return static
+     */
+    public function setContent(FHIRResourceReference ...$content): self
+    {
+        if ([] !== $this->content) {
+            $this->_trackValuesRemoved(count($this->content));
+            $this->content = [];
+        }
+        if ([] === $content) {
+            return $this;
+        }
+        foreach($content as $v) {
+            $this->addContent($v);
+        }
         return $this;
     }
 

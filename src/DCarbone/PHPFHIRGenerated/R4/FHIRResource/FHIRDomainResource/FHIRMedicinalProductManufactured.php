@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -182,7 +182,14 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * Validation map for fields in type MedicinalProductManufactured
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_MANUFACTURED_DOSE_FORM => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_QUANTITY => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -443,6 +450,32 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Manufacturer of the item (Note that this should be named "manufacturer" but it
+     * currently causes technical issues).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$manufacturer
+     * @return static
+     */
+    public function setManufacturer(FHIRReference ...$manufacturer): self
+    {
+        if ([] !== $this->manufacturer) {
+            $this->_trackValuesRemoved(count($this->manufacturer));
+            $this->manufacturer = [];
+        }
+        if ([] === $manufacturer) {
+            return $this;
+        }
+        foreach($manufacturer as $v) {
+            $this->addManufacturer($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Ingredient.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
@@ -469,6 +502,31 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
         }
         $this->_trackValueAdded();
         $this->ingredient[] = $ingredient;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Ingredient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$ingredient
+     * @return static
+     */
+    public function setIngredient(FHIRReference ...$ingredient): self
+    {
+        if ([] !== $this->ingredient) {
+            $this->_trackValuesRemoved(count($this->ingredient));
+            $this->ingredient = [];
+        }
+        if ([] === $ingredient) {
+            return $this;
+        }
+        foreach($ingredient as $v) {
+            $this->addIngredient($v);
+        }
         return $this;
     }
 
@@ -541,6 +599,32 @@ class FHIRMedicinalProductManufactured extends FHIRDomainResource implements PHP
         }
         $this->_trackValueAdded();
         $this->otherCharacteristics[] = $otherCharacteristics;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Other codeable characteristics.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$otherCharacteristics
+     * @return static
+     */
+    public function setOtherCharacteristics(FHIRCodeableConcept ...$otherCharacteristics): self
+    {
+        if ([] !== $this->otherCharacteristics) {
+            $this->_trackValuesRemoved(count($this->otherCharacteristics));
+            $this->otherCharacteristics = [];
+        }
+        if ([] === $otherCharacteristics) {
+            return $this;
+        }
+        foreach($otherCharacteristics as $v) {
+            $this->addOtherCharacteristics($v);
+        }
         return $this;
     }
 

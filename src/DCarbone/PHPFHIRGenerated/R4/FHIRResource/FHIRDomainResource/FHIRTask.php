@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -460,7 +460,14 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
      * Validation map for fields in type Task
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_INTENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -899,6 +906,32 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The business identifier for this task.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -1029,6 +1062,37 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * BasedOn refers to a higher-level authorization that triggered the creation of
+     * the task. It references a "request" resource such as a ServiceRequest,
+     * MedicationRequest, ServiceRequest, CarePlan, etc. which is distinct from the
+     * "request" resource the task is seeking to fulfill. This latter resource is
+     * referenced by FocusOn. For example, based on a ServiceRequest (= BasedOn), a
+     * task is created to fulfill a procedureRequest ( = FocusOn ) to collect a
+     * specimen from a patient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
+        return $this;
+    }
+
+    /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
@@ -1097,6 +1161,31 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
         }
         $this->_trackValueAdded();
         $this->partOf[] = $partOf;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Task that this particular task is part of.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$partOf
+     * @return static
+     */
+    public function setPartOf(FHIRReference ...$partOf): self
+    {
+        if ([] !== $this->partOf) {
+            $this->_trackValuesRemoved(count($this->partOf));
+            $this->partOf = [];
+        }
+        if ([] === $partOf) {
+            return $this;
+        }
+        foreach($partOf as $v) {
+            $this->addPartOf($v);
+        }
         return $this;
     }
 
@@ -1652,6 +1741,32 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kind of participant that should perform the task.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$performerType
+     * @return static
+     */
+    public function setPerformerType(FHIRCodeableConcept ...$performerType): self
+    {
+        if ([] !== $this->performerType) {
+            $this->_trackValuesRemoved(count($this->performerType));
+            $this->performerType = [];
+        }
+        if ([] === $performerType) {
+            return $this;
+        }
+        foreach($performerType as $v) {
+            $this->addPerformerType($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1826,6 +1941,32 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Insurance plans, coverage extensions, pre-authorizations and/or
+     * pre-determinations that may be relevant to the Task.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$insurance
+     * @return static
+     */
+    public function setInsurance(FHIRReference ...$insurance): self
+    {
+        if ([] !== $this->insurance) {
+            $this->_trackValuesRemoved(count($this->insurance));
+            $this->insurance = [];
+        }
+        if ([] === $insurance) {
+            return $this;
+        }
+        foreach($insurance as $v) {
+            $this->addInsurance($v);
+        }
+        return $this;
+    }
+
+    /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
@@ -1858,6 +1999,32 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Free-text information captured about the task as it progresses.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 
@@ -1896,6 +2063,33 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
         }
         $this->_trackValueAdded();
         $this->relevantHistory[] = $relevantHistory;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Links to Provenance records for past versions of this Task that identify key
+     * state transitions or updates that are likely to be relevant to a user looking at
+     * the current version of the task.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$relevantHistory
+     * @return static
+     */
+    public function setRelevantHistory(FHIRReference ...$relevantHistory): self
+    {
+        if ([] !== $this->relevantHistory) {
+            $this->_trackValuesRemoved(count($this->relevantHistory));
+            $this->relevantHistory = [];
+        }
+        if ([] === $relevantHistory) {
+            return $this;
+        }
+        foreach($relevantHistory as $v) {
+            $this->addRelevantHistory($v);
+        }
         return $this;
     }
 
@@ -1966,6 +2160,29 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
     /**
      * A task to be performed.
      *
+     * Additional information that may be needed in the execution of the task.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskInput ...$input
+     * @return static
+     */
+    public function setInput(FHIRTaskInput ...$input): self
+    {
+        if ([] !== $this->input) {
+            $this->_trackValuesRemoved(count($this->input));
+            $this->input = [];
+        }
+        if ([] === $input) {
+            return $this;
+        }
+        foreach($input as $v) {
+            $this->addInput($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A task to be performed.
+     *
      * Outputs produced by the Task.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput[]
@@ -1990,6 +2207,29 @@ class FHIRTask extends FHIRDomainResource implements PHPFHIRContainedTypeInterfa
         }
         $this->_trackValueAdded();
         $this->output[] = $output;
+        return $this;
+    }
+
+    /**
+     * A task to be performed.
+     *
+     * Outputs produced by the Task.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTask\FHIRTaskOutput ...$output
+     * @return static
+     */
+    public function setOutput(FHIRTaskOutput ...$output): self
+    {
+        if ([] !== $this->output) {
+            $this->_trackValuesRemoved(count($this->output));
+            $this->output = [];
+        }
+        if ([] === $output) {
+            return $this;
+        }
+        foreach($output as $v) {
+            $this->addOutput($v);
+        }
         return $this;
     }
 

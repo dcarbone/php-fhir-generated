@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -428,7 +428,7 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * Validation map for fields in type DeviceDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -936,6 +936,37 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique instance identifiers assigned to a device by the software, manufacturers,
+     * other organizations or owners. For example: handle ID. The identifier is
+     * typically valued if the udiDeviceIdentifier, partNumber or modelNumber is not
+     * valued and represents a different type of identifier. However, it is permissible
+     * to still include those identifiers in DeviceDefinition.identifier with the
+     * appropriate identifier.type.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
      *
@@ -977,6 +1008,33 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
      *
+     * Unique device identifier (UDI) assigned to device label or package. Note that
+     * the Device may include multiple udiCarriers as it either may include just the
+     * udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it
+     * could have been sold.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier ...$udiDeviceIdentifier
+     * @return static
+     */
+    public function setUdiDeviceIdentifier(FHIRDeviceDefinitionUdiDeviceIdentifier ...$udiDeviceIdentifier): self
+    {
+        if ([] !== $this->udiDeviceIdentifier) {
+            $this->_trackValuesRemoved(count($this->udiDeviceIdentifier));
+            $this->udiDeviceIdentifier = [];
+        }
+        if ([] === $udiDeviceIdentifier) {
+            return $this;
+        }
+        foreach($udiDeviceIdentifier as $v) {
+            $this->addUdiDeviceIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
      * Identifier associated with the regulatory documentation (certificates, technical
      * documentation, post-market surveillance documentation and reports) of a set of
      * device models sharing the same intended purpose, risk class and essential design
@@ -1008,6 +1066,33 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->regulatoryIdentifier[] = $regulatoryIdentifier;
+        return $this;
+    }
+
+    /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
+     * Identifier associated with the regulatory documentation (certificates, technical
+     * documentation, post-market surveillance documentation and reports) of a set of
+     * device models sharing the same intended purpose, risk class and essential design
+     * and manufacturing characteristics. One example is the Basic UDI-DI in Europe.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionRegulatoryIdentifier ...$regulatoryIdentifier
+     * @return static
+     */
+    public function setRegulatoryIdentifier(FHIRDeviceDefinitionRegulatoryIdentifier ...$regulatoryIdentifier): self
+    {
+        if ([] !== $this->regulatoryIdentifier) {
+            $this->_trackValuesRemoved(count($this->regulatoryIdentifier));
+            $this->regulatoryIdentifier = [];
+        }
+        if ([] === $regulatoryIdentifier) {
+            return $this;
+        }
+        foreach($regulatoryIdentifier as $v) {
+            $this->addRegulatoryIdentifier($v);
+        }
         return $this;
     }
 
@@ -1121,6 +1206,30 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
+     * The name or names of the device as given by the manufacturer.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionDeviceName ...$deviceName
+     * @return static
+     */
+    public function setDeviceName(FHIRDeviceDefinitionDeviceName ...$deviceName): self
+    {
+        if ([] !== $this->deviceName) {
+            $this->_trackValuesRemoved(count($this->deviceName));
+            $this->deviceName = [];
+        }
+        if ([] === $deviceName) {
+            return $this;
+        }
+        foreach($deviceName as $v) {
+            $this->addDeviceName($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1197,6 +1306,30 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
      *
+     * What kind of device or device system this is.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionClassification ...$classification
+     * @return static
+     */
+    public function setClassification(FHIRDeviceDefinitionClassification ...$classification): self
+    {
+        if ([] !== $this->classification) {
+            $this->_trackValuesRemoved(count($this->classification));
+            $this->classification = [];
+        }
+        if ([] === $classification) {
+            return $this;
+        }
+        foreach($classification as $v) {
+            $this->addClassification($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
      * Identifies the standards, specifications, or formal guidances for the
      * capabilities supported by the device. The device may be certified as conformant
      * to these specifications e.g., communication, performance, process, measurement,
@@ -1228,6 +1361,33 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->conformsTo[] = $conformsTo;
+        return $this;
+    }
+
+    /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
+     * Identifies the standards, specifications, or formal guidances for the
+     * capabilities supported by the device. The device may be certified as conformant
+     * to these specifications e.g., communication, performance, process, measurement,
+     * or specialization standards.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionConformsTo ...$conformsTo
+     * @return static
+     */
+    public function setConformsTo(FHIRDeviceDefinitionConformsTo ...$conformsTo): self
+    {
+        if ([] !== $this->conformsTo) {
+            $this->_trackValuesRemoved(count($this->conformsTo));
+            $this->conformsTo = [];
+        }
+        if ([] === $conformsTo) {
+            return $this;
+        }
+        foreach($conformsTo as $v) {
+            $this->addConformsTo($v);
+        }
         return $this;
     }
 
@@ -1267,6 +1427,30 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
      *
+     * A device that is part (for example a component) of the present device.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionHasPart ...$hasPart
+     * @return static
+     */
+    public function setHasPart(FHIRDeviceDefinitionHasPart ...$hasPart): self
+    {
+        if ([] !== $this->hasPart) {
+            $this->_trackValuesRemoved(count($this->hasPart));
+            $this->hasPart = [];
+        }
+        if ([] === $hasPart) {
+            return $this;
+        }
+        foreach($hasPart as $v) {
+            $this->addHasPart($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
      * Information about the packaging of the device, i.e. how the device is packaged.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionPackaging[]
@@ -1299,6 +1483,30 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
      *
+     * Information about the packaging of the device, i.e. how the device is packaged.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionPackaging ...$packaging
+     * @return static
+     */
+    public function setPackaging(FHIRDeviceDefinitionPackaging ...$packaging): self
+    {
+        if ([] !== $this->packaging) {
+            $this->_trackValuesRemoved(count($this->packaging));
+            $this->packaging = [];
+        }
+        if ([] === $packaging) {
+            return $this;
+        }
+        foreach($packaging as $v) {
+            $this->addPackaging($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
      * The version of the device or software.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionVersion[]
@@ -1324,6 +1532,30 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->version[] = $version;
+        return $this;
+    }
+
+    /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
+     * The version of the device or software.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionVersion ...$version
+     * @return static
+     */
+    public function setVersion(FHIRDeviceDefinitionVersion ...$version): self
+    {
+        if ([] !== $this->version) {
+            $this->_trackValuesRemoved(count($this->version));
+            $this->version = [];
+        }
+        if ([] === $version) {
+            return $this;
+        }
+        foreach($version as $v) {
+            $this->addVersion($v);
+        }
         return $this;
     }
 
@@ -1364,6 +1596,32 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Safety characteristics of the device.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$safety
+     * @return static
+     */
+    public function setSafety(FHIRCodeableConcept ...$safety): self
+    {
+        if ([] !== $this->safety) {
+            $this->_trackValuesRemoved(count($this->safety));
+            $this->safety = [];
+        }
+        if ([] === $safety) {
+            return $this;
+        }
+        foreach($safety as $v) {
+            $this->addSafety($v);
+        }
+        return $this;
+    }
+
+    /**
      * The shelf-life and storage information for a medicinal product item or container
      * can be described using this class.
      * If the element is present, it must have a value for at least one of the defined
@@ -1396,6 +1654,32 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->shelfLifeStorage[] = $shelfLifeStorage;
+        return $this;
+    }
+
+    /**
+     * The shelf-life and storage information for a medicinal product item or container
+     * can be described using this class.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Shelf Life and storage information.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRProductShelfLife ...$shelfLifeStorage
+     * @return static
+     */
+    public function setShelfLifeStorage(FHIRProductShelfLife ...$shelfLifeStorage): self
+    {
+        if ([] !== $this->shelfLifeStorage) {
+            $this->_trackValuesRemoved(count($this->shelfLifeStorage));
+            $this->shelfLifeStorage = [];
+        }
+        if ([] === $shelfLifeStorage) {
+            return $this;
+        }
+        foreach($shelfLifeStorage as $v) {
+            $this->addShelfLifeStorage($v);
+        }
         return $this;
     }
 
@@ -1438,6 +1722,33 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Language code for the human-readable text strings produced by the device (all
+     * supported).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$languageCode
+     * @return static
+     */
+    public function setLanguageCode(FHIRCodeableConcept ...$languageCode): self
+    {
+        if ([] !== $this->languageCode) {
+            $this->_trackValuesRemoved(count($this->languageCode));
+            $this->languageCode = [];
+        }
+        if ([] === $languageCode) {
+            return $this;
+        }
+        foreach($languageCode as $v) {
+            $this->addLanguageCode($v);
+        }
+        return $this;
+    }
+
+    /**
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
      *
@@ -1470,6 +1781,32 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->property[] = $property;
+        return $this;
+    }
+
+    /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
+     * Static or essentially fixed characteristics or features of this kind of device
+     * that are otherwise not captured in more specific attributes, e.g., time or
+     * timing attributes, resolution, accuracy, and physical attributes.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionProperty ...$property
+     * @return static
+     */
+    public function setProperty(FHIRDeviceDefinitionProperty ...$property): self
+    {
+        if ([] !== $this->property) {
+            $this->_trackValuesRemoved(count($this->property));
+            $this->property = [];
+        }
+        if ([] === $property) {
+            return $this;
+        }
+        foreach($property as $v) {
+            $this->addProperty($v);
+        }
         return $this;
     }
 
@@ -1548,6 +1885,33 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details for an organization or a particular human that is responsible
+     * for the device.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactPoint ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
      *
@@ -1578,6 +1942,31 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->link[] = $link;
+        return $this;
+    }
+
+    /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
+     * An associated device, attached to, used with, communicating with or linking a
+     * previous or new device model to the focal device.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionLink ...$link
+     * @return static
+     */
+    public function setLink(FHIRDeviceDefinitionLink ...$link): self
+    {
+        if ([] !== $this->link) {
+            $this->_trackValuesRemoved(count($this->link));
+            $this->link = [];
+        }
+        if ([] === $link) {
+            return $this;
+        }
+        foreach($link as $v) {
+            $this->addLink($v);
+        }
         return $this;
     }
 
@@ -1620,6 +2009,33 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Descriptive information, usage information or implantation information that is
+     * not captured in an existing element.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
+        return $this;
+    }
+
+    /**
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
      *
@@ -1652,6 +2068,30 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
+     * A substance used to create the material(s) of which the device is made.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionMaterial ...$material
+     * @return static
+     */
+    public function setMaterial(FHIRDeviceDefinitionMaterial ...$material): self
+    {
+        if ([] !== $this->material) {
+            $this->_trackValuesRemoved(count($this->material));
+            $this->material = [];
+        }
+        if ([] === $material) {
+            return $this;
+        }
+        foreach($material as $v) {
+            $this->addMaterial($v);
+        }
+        return $this;
+    }
+
+    /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Indicates the production identifier(s) that are expected to appear in the UDI
@@ -1680,6 +2120,30 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->productionIdentifierInUDI[] = $productionIdentifierInUDI;
+        return $this;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates the production identifier(s) that are expected to appear in the UDI
+     * carrier on the device label.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDeviceProductionIdentifierInUDI ...$productionIdentifierInUDI
+     * @return static
+     */
+    public function setProductionIdentifierInUDI(FHIRDeviceProductionIdentifierInUDI ...$productionIdentifierInUDI): self
+    {
+        if ([] !== $this->productionIdentifierInUDI) {
+            $this->_trackValuesRemoved(count($this->productionIdentifierInUDI));
+            $this->productionIdentifierInUDI = [];
+        }
+        if ([] === $productionIdentifierInUDI) {
+            return $this;
+        }
+        foreach($productionIdentifierInUDI as $v) {
+            $this->addProductionIdentifierInUDI($v);
+        }
         return $this;
     }
 
@@ -1776,6 +2240,30 @@ class FHIRDeviceDefinition extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->chargeItem[] = $chargeItem;
+        return $this;
+    }
+
+    /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
+     * Billing code or reference associated with the device.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionChargeItem ...$chargeItem
+     * @return static
+     */
+    public function setChargeItem(FHIRDeviceDefinitionChargeItem ...$chargeItem): self
+    {
+        if ([] !== $this->chargeItem) {
+            $this->_trackValuesRemoved(count($this->chargeItem));
+            $this->chargeItem = [];
+        }
+        if ([] === $chargeItem) {
+            return $this;
+        }
+        foreach($chargeItem as $v) {
+            $this->addChargeItem($v);
+        }
         return $this;
     }
 

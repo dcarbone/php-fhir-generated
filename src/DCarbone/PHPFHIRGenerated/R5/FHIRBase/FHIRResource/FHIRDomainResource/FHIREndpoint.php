@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -269,7 +269,13 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_ADDRESS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_CONNECTION_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -533,6 +539,33 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifier for the organization that is used to identify the endpoint across
+     * multiple disparate systems.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The endpoint status represents the general expected availability of an endpoint.
@@ -599,6 +632,34 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->connectionType[] = $connectionType;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A coded value that represents the technical details of the usage of this
+     * endpoint, such as what WSDLs should be used in what way. (e.g.
+     * XDS.b/DICOM/cds-hook).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$connectionType
+     * @return static
+     */
+    public function setConnectionType(FHIRCodeableConcept ...$connectionType): self
+    {
+        if ([] !== $this->connectionType) {
+            $this->_trackValuesRemoved(count($this->connectionType));
+            $this->connectionType = [];
+        }
+        if ([] === $connectionType) {
+            return $this;
+        }
+        foreach($connectionType as $v) {
+            $this->addConnectionType($v);
+        }
         return $this;
     }
 
@@ -719,6 +780,32 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The type of environment(s) exposed at this endpoint (dev, prod, test, etc.).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$environmentType
+     * @return static
+     */
+    public function setEnvironmentType(FHIRCodeableConcept ...$environmentType): self
+    {
+        if ([] !== $this->environmentType) {
+            $this->_trackValuesRemoved(count($this->environmentType));
+            $this->environmentType = [];
+        }
+        if ([] === $environmentType) {
+            return $this;
+        }
+        foreach($environmentType as $v) {
+            $this->addEnvironmentType($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -795,6 +882,33 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details for a human to contact about the endpoint. The primary use of
+     * this for system administrator troubleshooting.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactPoint ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -861,6 +975,32 @@ class FHIREndpoint extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->payload[] = $payload;
+        return $this;
+    }
+
+    /**
+     * The technical details of an endpoint that can be used for electronic services,
+     * such as for web services providing XDS.b, a REST endpoint for another FHIR
+     * server, or a s/Mime email address. This may include any security context
+     * information.
+     *
+     * The set of payloads that are provided/available at this endpoint.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREndpoint\FHIREndpointPayload ...$payload
+     * @return static
+     */
+    public function setPayload(FHIREndpointPayload ...$payload): self
+    {
+        if ([] !== $this->payload) {
+            $this->_trackValuesRemoved(count($this->payload));
+            $this->payload = [];
+        }
+        if ([] === $payload) {
+            return $this;
+        }
+        foreach($payload as $v) {
+            $this->addPayload($v);
+        }
         return $this;
     }
 

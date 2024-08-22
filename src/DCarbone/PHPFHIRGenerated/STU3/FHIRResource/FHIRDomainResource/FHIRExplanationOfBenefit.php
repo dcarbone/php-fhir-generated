@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -544,7 +544,7 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * Validation map for fields in type ExplanationOfBenefit
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1013,6 +1013,31 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The EOB Business Identifier.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A code specifying the state of the resource instance.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -1115,6 +1140,33 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
         }
         $this->_trackValueAdded();
         $this->subType[] = $subType;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A finer grained suite of claim subtype codes which may convey Inpatient vs
+     * Outpatient and/or a specialty service. In the US the BillType.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$subType
+     * @return static
+     */
+    public function setSubType(FHIRCodeableConcept ...$subType): self
+    {
+        if ([] !== $this->subType) {
+            $this->_trackValuesRemoved(count($this->subType));
+            $this->subType = [];
+        }
+        if ([] === $subType) {
+            return $this;
+        }
+        foreach($subType as $v) {
+            $this->addSubType($v);
+        }
         return $this;
     }
 
@@ -1621,6 +1673,32 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
     }
 
     /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
+     * Other claims which are related to this claim such as prior claim versions or for
+     * related services.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitRelated ...$related
+     * @return static
+     */
+    public function setRelated(FHIRExplanationOfBenefitRelated ...$related): self
+    {
+        if ([] !== $this->related) {
+            $this->_trackValuesRemoved(count($this->related));
+            $this->related = [];
+        }
+        if ([] === $related) {
+            return $this;
+        }
+        foreach($related as $v) {
+            $this->addRelated($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1777,6 +1855,33 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * processing of a Claim; and optionally account balance information, for informing
      * the subscriber of the benefits provided.
      *
+     * Additional information codes regarding exceptions, special considerations, the
+     * condition, situation, prior or concurrent issues. Often there are mutiple
+     * jurisdiction specific valuesets which are required.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitInformation ...$information
+     * @return static
+     */
+    public function setInformation(FHIRExplanationOfBenefitInformation ...$information): self
+    {
+        if ([] !== $this->information) {
+            $this->_trackValuesRemoved(count($this->information));
+            $this->information = [];
+        }
+        if ([] === $information) {
+            return $this;
+        }
+        foreach($information as $v) {
+            $this->addInformation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
      * The members of the team who provided the overall service as well as their role
      * and whether responsible and qualifications.
      *
@@ -1805,6 +1910,32 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
         }
         $this->_trackValueAdded();
         $this->careTeam[] = $careTeam;
+        return $this;
+    }
+
+    /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
+     * The members of the team who provided the overall service as well as their role
+     * and whether responsible and qualifications.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitCareTeam ...$careTeam
+     * @return static
+     */
+    public function setCareTeam(FHIRExplanationOfBenefitCareTeam ...$careTeam): self
+    {
+        if ([] !== $this->careTeam) {
+            $this->_trackValuesRemoved(count($this->careTeam));
+            $this->careTeam = [];
+        }
+        if ([] === $careTeam) {
+            return $this;
+        }
+        foreach($careTeam as $v) {
+            $this->addCareTeam($v);
+        }
         return $this;
     }
 
@@ -1847,6 +1978,31 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * processing of a Claim; and optionally account balance information, for informing
      * the subscriber of the benefits provided.
      *
+     * Ordered list of patient diagnosis for which care is sought.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDiagnosis ...$diagnosis
+     * @return static
+     */
+    public function setDiagnosis(FHIRExplanationOfBenefitDiagnosis ...$diagnosis): self
+    {
+        if ([] !== $this->diagnosis) {
+            $this->_trackValuesRemoved(count($this->diagnosis));
+            $this->diagnosis = [];
+        }
+        if ([] === $diagnosis) {
+            return $this;
+        }
+        foreach($diagnosis as $v) {
+            $this->addDiagnosis($v);
+        }
+        return $this;
+    }
+
+    /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
      * Ordered list of patient procedures performed to support the adjudication.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcedure[]
@@ -1873,6 +2029,31 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
         }
         $this->_trackValueAdded();
         $this->procedure[] = $procedure;
+        return $this;
+    }
+
+    /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
+     * Ordered list of patient procedures performed to support the adjudication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcedure ...$procedure
+     * @return static
+     */
+    public function setProcedure(FHIRExplanationOfBenefitProcedure ...$procedure): self
+    {
+        if ([] !== $this->procedure) {
+            $this->_trackValuesRemoved(count($this->procedure));
+            $this->procedure = [];
+        }
+        if ([] === $procedure) {
+            return $this;
+        }
+        foreach($procedure as $v) {
+            $this->addProcedure($v);
+        }
         return $this;
     }
 
@@ -2094,6 +2275,31 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * processing of a Claim; and optionally account balance information, for informing
      * the subscriber of the benefits provided.
      *
+     * First tier of goods and services.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitItem ...$item
+     * @return static
+     */
+    public function setItem(FHIRExplanationOfBenefitItem ...$item): self
+    {
+        if ([] !== $this->item) {
+            $this->_trackValuesRemoved(count($this->item));
+            $this->item = [];
+        }
+        if ([] === $item) {
+            return $this;
+        }
+        foreach($item as $v) {
+            $this->addItem($v);
+        }
+        return $this;
+    }
+
+    /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
      * The first tier service adjudications for payor added services.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAddItem[]
@@ -2120,6 +2326,31 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
         }
         $this->_trackValueAdded();
         $this->addItem[] = $addItem;
+        return $this;
+    }
+
+    /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
+     * The first tier service adjudications for payor added services.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAddItem ...$addItem
+     * @return static
+     */
+    public function setAddItem(FHIRExplanationOfBenefitAddItem ...$addItem): self
+    {
+        if ([] !== $this->addItem) {
+            $this->_trackValuesRemoved(count($this->addItem));
+            $this->addItem = [];
+        }
+        if ([] === $addItem) {
+            return $this;
+        }
+        foreach($addItem as $v) {
+            $this->addAddItem($v);
+        }
         return $this;
     }
 
@@ -2338,6 +2569,31 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
      * processing of a Claim; and optionally account balance information, for informing
      * the subscriber of the benefits provided.
      *
+     * Note text.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitProcessNote ...$processNote
+     * @return static
+     */
+    public function setProcessNote(FHIRExplanationOfBenefitProcessNote ...$processNote): self
+    {
+        if ([] !== $this->processNote) {
+            $this->_trackValuesRemoved(count($this->processNote));
+            $this->processNote = [];
+        }
+        if ([] === $processNote) {
+            return $this;
+        }
+        foreach($processNote as $v) {
+            $this->addProcessNote($v);
+        }
+        return $this;
+    }
+
+    /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
      * Balance by Benefit Category.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance[]
@@ -2364,6 +2620,31 @@ class FHIRExplanationOfBenefit extends FHIRDomainResource implements PHPFHIRCont
         }
         $this->_trackValueAdded();
         $this->benefitBalance[] = $benefitBalance;
+        return $this;
+    }
+
+    /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
+     * Balance by Benefit Category.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBenefitBalance ...$benefitBalance
+     * @return static
+     */
+    public function setBenefitBalance(FHIRExplanationOfBenefitBenefitBalance ...$benefitBalance): self
+    {
+        if ([] !== $this->benefitBalance) {
+            $this->_trackValuesRemoved(count($this->benefitBalance));
+            $this->benefitBalance = [];
+        }
+        if ([] === $benefitBalance) {
+            return $this;
+        }
+        foreach($benefitBalance as $v) {
+            $this->addBenefitBalance($v);
+        }
         return $this;
     }
 

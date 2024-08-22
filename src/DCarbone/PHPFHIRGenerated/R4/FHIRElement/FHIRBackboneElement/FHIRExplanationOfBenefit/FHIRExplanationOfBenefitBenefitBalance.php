@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExpla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -185,7 +185,11 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
      * Validation map for fields in type ExplanationOfBenefit.BenefitBalance
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CATEGORY => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -602,6 +606,31 @@ class FHIRExplanationOfBenefitBenefitBalance extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->financial[] = $financial;
+        return $this;
+    }
+
+    /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
+     * Benefits Used to date.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitFinancial ...$financial
+     * @return static
+     */
+    public function setFinancial(FHIRExplanationOfBenefitFinancial ...$financial): self
+    {
+        if ([] !== $this->financial) {
+            $this->_trackValuesRemoved(count($this->financial));
+            $this->financial = [];
+        }
+        if ([] === $financial) {
+            return $this;
+        }
+        foreach($financial as $v) {
+            $this->addFinancial($v);
+        }
         return $this;
     }
 

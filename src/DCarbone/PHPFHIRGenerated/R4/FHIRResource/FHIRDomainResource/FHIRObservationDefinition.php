@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -252,7 +252,11 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * Validation map for fields in type ObservationDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -487,6 +491,32 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A code that classifies the general type of observation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Describes what will be observed. Sometimes this is called the observation
      * "name".
      *
@@ -556,6 +586,32 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier assigned to this ObservationDefinition artifact.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * Permitted data type for observation value.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -586,6 +642,31 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
         }
         $this->_trackValueAdded();
         $this->permittedDataType[] = $permittedDataType;
+        return $this;
+    }
+
+    /**
+     * Permitted data type for observation value.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The data types allowed for the value element of the instance observations
+     * conforming to this ObservationDefinition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRObservationDataType ...$permittedDataType
+     * @return static
+     */
+    public function setPermittedDataType(FHIRObservationDataType ...$permittedDataType): self
+    {
+        if ([] !== $this->permittedDataType) {
+            $this->_trackValuesRemoved(count($this->permittedDataType));
+            $this->permittedDataType = [];
+        }
+        if ([] === $permittedDataType) {
+            return $this;
+        }
+        foreach($permittedDataType as $v) {
+            $this->addPermittedDataType($v);
+        }
         return $this;
     }
 
@@ -768,6 +849,31 @@ class FHIRObservationDefinition extends FHIRDomainResource implements PHPFHIRCon
         }
         $this->_trackValueAdded();
         $this->qualifiedInterval[] = $qualifiedInterval;
+        return $this;
+    }
+
+    /**
+     * Set of definitional characteristics for a kind of observation or measurement
+     * produced or consumed by an orderable health care service.
+     *
+     * Multiple ranges of results qualified by different contexts for ordinal or
+     * continuous observations conforming to this ObservationDefinition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObservationDefinition\FHIRObservationDefinitionQualifiedInterval ...$qualifiedInterval
+     * @return static
+     */
+    public function setQualifiedInterval(FHIRObservationDefinitionQualifiedInterval ...$qualifiedInterval): self
+    {
+        if ([] !== $this->qualifiedInterval) {
+            $this->_trackValuesRemoved(count($this->qualifiedInterval));
+            $this->qualifiedInterval = [];
+        }
+        if ([] === $qualifiedInterval) {
+            return $this;
+        }
+        foreach($qualifiedInterval as $v) {
+            $this->addQualifiedInterval($v);
+        }
         return $this;
     }
 

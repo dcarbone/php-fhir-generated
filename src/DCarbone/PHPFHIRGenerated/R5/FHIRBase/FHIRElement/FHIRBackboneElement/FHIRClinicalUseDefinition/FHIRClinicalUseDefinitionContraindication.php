@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -180,7 +180,7 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
      * Validation map for fields in type ClinicalUseDefinition.Contraindication
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -382,6 +382,32 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A comorbidity (concurrent condition) or coinfection.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$comorbidity
+     * @return static
+     */
+    public function setComorbidity(FHIRCodeableReference ...$comorbidity): self
+    {
+        if ([] !== $this->comorbidity) {
+            $this->_trackValuesRemoved(count($this->comorbidity));
+            $this->comorbidity = [];
+        }
+        if ([] === $comorbidity) {
+            return $this;
+        }
+        foreach($comorbidity as $v) {
+            $this->addComorbidity($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -412,6 +438,31 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->indication[] = $indication;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The indication which this is a contraidication for.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$indication
+     * @return static
+     */
+    public function setIndication(FHIRReference ...$indication): self
+    {
+        if ([] !== $this->indication) {
+            $this->_trackValuesRemoved(count($this->indication));
+            $this->indication = [];
+        }
+        if ([] === $indication) {
+            return $this;
+        }
+        foreach($indication as $v) {
+            $this->addIndication($v);
+        }
         return $this;
     }
 
@@ -486,6 +537,31 @@ class FHIRClinicalUseDefinitionContraindication extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->otherTherapy[] = $otherTherapy;
+        return $this;
+    }
+
+    /**
+     * A single issue - either an indication, contraindication, interaction or an
+     * undesirable effect for a medicinal product, medication, device or procedure.
+     *
+     * Information about the use of the medicinal product in relation to other
+     * therapies described as part of the contraindication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionOtherTherapy ...$otherTherapy
+     * @return static
+     */
+    public function setOtherTherapy(FHIRClinicalUseDefinitionOtherTherapy ...$otherTherapy): self
+    {
+        if ([] !== $this->otherTherapy) {
+            $this->_trackValuesRemoved(count($this->otherTherapy));
+            $this->otherTherapy = [];
+        }
+        if ([] === $otherTherapy) {
+            return $this;
+        }
+        foreach($otherTherapy as $v) {
+            $this->addOtherTherapy($v);
+        }
         return $this;
     }
 

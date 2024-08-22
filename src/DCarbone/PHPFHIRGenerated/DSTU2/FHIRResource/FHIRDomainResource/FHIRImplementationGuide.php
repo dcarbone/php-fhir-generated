@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -325,7 +325,19 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_PACKAGE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_PAGE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_URL => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -930,6 +942,31 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A set of rules or how FHIR is used to solve a particular problem. This resource
+     * is used to gather all the parts of an implementation guide into a logical whole,
+     * and to publish a computable definition of all the parts.
+     *
+     * Contacts to assist a user in finding and communicating with the publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideContact ...$contact
+     * @return static
+     */
+    public function setContact(FHIRImplementationGuideContact ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
@@ -1060,6 +1097,35 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->useContext[] = $useContext;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These terms may be used to assist with indexing and searching
+     * of implementation guides. The most common use of this element is to represent
+     * the country / jurisdiction for which this implementation guide was defined.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRCodeableConcept ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
         return $this;
     }
 
@@ -1198,6 +1264,33 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
      * is used to gather all the parts of an implementation guide into a logical whole,
      * and to publish a computable definition of all the parts.
      *
+     * Another implementation guide that this implementation depends on. Typically, an
+     * implementation guide uses value sets, profiles etc.defined in other
+     * implementation guides.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependency ...$dependency
+     * @return static
+     */
+    public function setDependency(FHIRImplementationGuideDependency ...$dependency): self
+    {
+        if ([] !== $this->dependency) {
+            $this->_trackValuesRemoved(count($this->dependency));
+            $this->dependency = [];
+        }
+        if ([] === $dependency) {
+            return $this;
+        }
+        foreach($dependency as $v) {
+            $this->addDependency($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A set of rules or how FHIR is used to solve a particular problem. This resource
+     * is used to gather all the parts of an implementation guide into a logical whole,
+     * and to publish a computable definition of all the parts.
+     *
      * A logical group of resources. Logical groups can be used when building pages.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePackage[]
@@ -1224,6 +1317,31 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->package[] = $package;
+        return $this;
+    }
+
+    /**
+     * A set of rules or how FHIR is used to solve a particular problem. This resource
+     * is used to gather all the parts of an implementation guide into a logical whole,
+     * and to publish a computable definition of all the parts.
+     *
+     * A logical group of resources. Logical groups can be used when building pages.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePackage ...$package
+     * @return static
+     */
+    public function setPackage(FHIRImplementationGuidePackage ...$package): self
+    {
+        if ([] !== $this->package) {
+            $this->_trackValuesRemoved(count($this->package));
+            $this->package = [];
+        }
+        if ([] === $package) {
+            return $this;
+        }
+        foreach($package as $v) {
+            $this->addPackage($v);
+        }
         return $this;
     }
 
@@ -1260,6 +1378,32 @@ class FHIRImplementationGuide extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->global[] = $global;
+        return $this;
+    }
+
+    /**
+     * A set of rules or how FHIR is used to solve a particular problem. This resource
+     * is used to gather all the parts of an implementation guide into a logical whole,
+     * and to publish a computable definition of all the parts.
+     *
+     * A set of profiles that all resources covered by this implementation guide must
+     * conform to.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal ...$global
+     * @return static
+     */
+    public function setGlobal(FHIRImplementationGuideGlobal ...$global): self
+    {
+        if ([] !== $this->global) {
+            $this->_trackValuesRemoved(count($this->global));
+            $this->global = [];
+        }
+        if ([] === $global) {
+            return $this;
+        }
+        foreach($global as $v) {
+            $this->addGlobal($v);
+        }
         return $this;
     }
 

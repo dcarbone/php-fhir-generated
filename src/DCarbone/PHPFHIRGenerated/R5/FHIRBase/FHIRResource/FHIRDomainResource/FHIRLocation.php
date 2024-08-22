@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -341,7 +341,7 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Validation map for fields in type Location
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -658,6 +658,32 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique code or number identifying the location to its users.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status property covers the general availability of the resource, not the
@@ -959,6 +985,32 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the type of function performed at the location.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept ...$type): self
+    {
+        if ([] !== $this->type) {
+            $this->_trackValuesRemoved(count($this->type));
+            $this->type = [];
+        }
+        if ([] === $type) {
+            return $this;
+        }
+        foreach($type as $v) {
+            $this->addType($v);
+        }
+        return $this;
+    }
+
+    /**
      * Specifies contact information for a specific purpose over a period of time,
      * might be handled/monitored by a specific named person or organization.
      * If the element is present, it must have a value for at least one of the defined
@@ -995,6 +1047,34 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->contact[] = $contact;
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a specific purpose over a period of time,
+     * might be handled/monitored by a specific named person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The contact details of communication devices available at the location. This can
+     * include addresses, phone numbers, fax numbers, mobile numbers, email addresses
+     * and web sites.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRExtendedContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
         return $this;
     }
 
@@ -1217,6 +1297,32 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Collection of characteristics (attributes).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$characteristic
+     * @return static
+     */
+    public function setCharacteristic(FHIRCodeableConcept ...$characteristic): self
+    {
+        if ([] !== $this->characteristic) {
+            $this->_trackValuesRemoved(count($this->characteristic));
+            $this->characteristic = [];
+        }
+        if ([] === $characteristic) {
+            return $this;
+        }
+        foreach($characteristic as $v) {
+            $this->addCharacteristic($v);
+        }
+        return $this;
+    }
+
+    /**
      * Availability data for an {item}.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1249,6 +1355,32 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->hoursOfOperation[] = $hoursOfOperation;
+        return $this;
+    }
+
+    /**
+     * Availability data for an {item}.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * What days/times during a week is this location usually open, and any exceptions
+     * where the location is not available.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAvailability ...$hoursOfOperation
+     * @return static
+     */
+    public function setHoursOfOperation(FHIRAvailability ...$hoursOfOperation): self
+    {
+        if ([] !== $this->hoursOfOperation) {
+            $this->_trackValuesRemoved(count($this->hoursOfOperation));
+            $this->hoursOfOperation = [];
+        }
+        if ([] === $hoursOfOperation) {
+            return $this;
+        }
+        foreach($hoursOfOperation as $v) {
+            $this->addHoursOfOperation($v);
+        }
         return $this;
     }
 
@@ -1289,6 +1421,32 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * Virtual Service Contact Details.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Connection details of a virtual service (e.g. shared conference call facility
+     * with dedicated number/details).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail ...$virtualService
+     * @return static
+     */
+    public function setVirtualService(FHIRVirtualServiceDetail ...$virtualService): self
+    {
+        if ([] !== $this->virtualService) {
+            $this->_trackValuesRemoved(count($this->virtualService));
+            $this->virtualService = [];
+        }
+        if ([] === $virtualService) {
+            return $this;
+        }
+        foreach($virtualService as $v) {
+            $this->addVirtualService($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1319,6 +1477,31 @@ class FHIRLocation extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->endpoint[] = $endpoint;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Technical endpoints providing access to services operated for the location.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$endpoint
+     * @return static
+     */
+    public function setEndpoint(FHIRReference ...$endpoint): self
+    {
+        if ([] !== $this->endpoint) {
+            $this->_trackValuesRemoved(count($this->endpoint));
+            $this->endpoint = [];
+        }
+        if ([] === $endpoint) {
+            return $this;
+        }
+        foreach($endpoint as $v) {
+            $this->addEndpoint($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -73,7 +73,7 @@ final class PHPFHIRConstants
     public const SOURCE_GENERATION_DATE = 'Fri, Nov 1, 2019 09:29+1100';
 
     // PHPFHIR
-    public const CODE_GENERATION_DATE = 'August 7th, 2024 02:07+0000';
+    public const CODE_GENERATION_DATE = 'August 22nd, 2024 02:47+0000';
 
     // Config Defaults
     public const DEFAULT_LIBXML_OPTS = LIBXML_NONET | LIBXML_BIGLINES | LIBXML_PARSEHUGE | LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD | LIBXML_NOXMLDECL;
@@ -89,8 +89,8 @@ final class PHPFHIRConstants
     public const DATE_FORMAT_YEAR = 'Y';
     public const DATE_FORMAT_YEAR_MONTH = 'Y-m';
     public const DATE_FORMAT_YEAR_MONTH_DAY = 'Y-m-d';
-    public const DATE_FORMAT_YEAR_MONTH_DAY_TIME = 'Y-m-d\\TH:i:s\\.uP';
-    public const DATE_FORMAT_INSTANT = 'Y-m-d\\TH:i:s\\.uP';
+    public const DATE_FORMAT_YEAR_MONTH_DAY_TIME = 'Y-m-d\TH:i:s\.uP';
+    public const DATE_FORMAT_INSTANT = 'Y-m-d\TH:i:s\.uP';
     public const TIME_FORMAT = 'H:i:s';
 
     public const UNLIMITED = -1;

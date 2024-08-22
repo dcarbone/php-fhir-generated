@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCap
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -150,7 +150,7 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * Validation map for fields in type CapabilityStatement.Messaging
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -291,6 +291,32 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
     }
 
     /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server that may be used as a statement of actual server functionality or a
+     * statement of required or desired server implementation.
+     *
+     * An endpoint (network accessible address) to which messages and/or replies are to
+     * be sent.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEndpoint ...$endpoint
+     * @return static
+     */
+    public function setEndpoint(FHIRCapabilityStatementEndpoint ...$endpoint): self
+    {
+        if ([] !== $this->endpoint) {
+            $this->_trackValuesRemoved(count($this->endpoint));
+            $this->endpoint = [];
+        }
+        if ([] === $endpoint) {
+            return $this;
+        }
+        foreach($endpoint as $v) {
+            $this->addEndpoint($v);
+        }
+        return $this;
+    }
+
+    /**
      * An integer with a value that is not negative (e.g. >= 0)
      * If the element is present, it must have either a \@value, an \@id referenced from
      * the Narrative, or extensions
@@ -413,6 +439,31 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
      * Server that may be used as a statement of actual server functionality or a
      * statement of required or desired server implementation.
      *
+     * References to message definitions for messages this system can send or receive.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementSupportedMessage ...$supportedMessage
+     * @return static
+     */
+    public function setSupportedMessage(FHIRCapabilityStatementSupportedMessage ...$supportedMessage): self
+    {
+        if ([] !== $this->supportedMessage) {
+            $this->_trackValuesRemoved(count($this->supportedMessage));
+            $this->supportedMessage = [];
+        }
+        if ([] === $supportedMessage) {
+            return $this;
+        }
+        foreach($supportedMessage as $v) {
+            $this->addSupportedMessage($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server that may be used as a statement of actual server functionality or a
+     * statement of required or desired server implementation.
+     *
      * A description of the solution's support for an event at this end-point.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEvent[]
@@ -439,6 +490,31 @@ class FHIRCapabilityStatementMessaging extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->event[] = $event;
+        return $this;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server that may be used as a statement of actual server functionality or a
+     * statement of required or desired server implementation.
+     *
+     * A description of the solution's support for an event at this end-point.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementEvent ...$event
+     * @return static
+     */
+    public function setEvent(FHIRCapabilityStatementEvent ...$event): self
+    {
+        if ([] !== $this->event) {
+            $this->_trackValuesRemoved(count($this->event));
+            $this->event = [];
+        }
+        if ([] === $event) {
+            return $this;
+        }
+        foreach($event as $v) {
+            $this->addEvent($v);
+        }
         return $this;
     }
 

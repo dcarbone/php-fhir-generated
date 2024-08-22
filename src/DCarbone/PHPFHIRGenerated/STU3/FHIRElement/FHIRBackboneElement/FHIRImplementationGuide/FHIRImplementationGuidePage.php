@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -176,7 +176,17 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
      * Validation map for fields in type ImplementationGuide.Page
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_KIND => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SOURCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TITLE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -658,6 +668,31 @@ class FHIRImplementationGuidePage extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->page[] = $page;
+        return $this;
+    }
+
+    /**
+     * A set of rules of how FHIR is used to solve a particular problem. This resource
+     * is used to gather all the parts of an implementation guide into a logical whole
+     * and to publish a computable definition of all the parts.
+     *
+     * Nested Pages/Sections under this page.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuidePage ...$page
+     * @return static
+     */
+    public function setPage(FHIRImplementationGuidePage ...$page): self
+    {
+        if ([] !== $this->page) {
+            $this->_trackValuesRemoved(count($this->page));
+            $this->page = [];
+        }
+        if ([] === $page) {
+            return $this;
+        }
+        foreach($page as $v) {
+            $this->addPage($v);
+        }
         return $this;
     }
 

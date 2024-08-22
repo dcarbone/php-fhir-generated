@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -109,7 +109,7 @@ class FHIRParameters extends FHIRResource implements PHPFHIRContainedTypeInterfa
      * Validation map for fields in type Parameters
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -188,6 +188,31 @@ class FHIRParameters extends FHIRResource implements PHPFHIRContainedTypeInterfa
         }
         $this->_trackValueAdded();
         $this->parameter[] = $parameter;
+        return $this;
+    }
+
+    /**
+     * This resource is a non-persisted resource used to pass information into and back
+     * from an [operation](operations.html). It has no other use, and there is no
+     * RESTful endpoint associated with it.
+     *
+     * A parameter passed to or received from the operation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRParameters\FHIRParametersParameter ...$parameter
+     * @return static
+     */
+    public function setParameter(FHIRParametersParameter ...$parameter): self
+    {
+        if ([] !== $this->parameter) {
+            $this->_trackValuesRemoved(count($this->parameter));
+            $this->parameter = [];
+        }
+        if ([] === $parameter) {
+            return $this;
+        }
+        foreach($parameter as $v) {
+            $this->addParameter($v);
+        }
         return $this;
     }
 

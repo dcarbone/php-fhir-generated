@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -884,7 +884,23 @@ class FHIRProfileDefinition extends FHIRBackboneElement
      * Validation map for fields in type Profile.Definition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_FORMAL => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_IS_MODIFIER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_MAX => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_MIN => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SHORT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -2159,6 +2175,31 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->type[] = $type;
+        return $this;
+    }
+
+    /**
+     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
+     * include constraints on Resources and Data Types, Terminology Binding Statements
+     * and Extension Definitions.
+     *
+     * The data type or resource that the value of this element is permitted to be.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileType ...$type
+     * @return static
+     */
+    public function setType(FHIRProfileType ...$type): self
+    {
+        if ([] !== $this->type) {
+            $this->_trackValuesRemoved(count($this->type));
+            $this->type = [];
+        }
+        if ([] === $type) {
+            return $this;
+        }
+        foreach($type as $v) {
+            $this->addType($v);
+        }
         return $this;
     }
 
@@ -4350,6 +4391,32 @@ class FHIRProfileDefinition extends FHIRBackboneElement
     }
 
     /**
+     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
+     * include constraints on Resources and Data Types, Terminology Binding Statements
+     * and Extension Definitions.
+     *
+     * Formal constraints such as co-occurrence and other constraints that can be
+     * computationally evaluated within the context of the instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileConstraint ...$constraint
+     * @return static
+     */
+    public function setConstraint(FHIRProfileConstraint ...$constraint): self
+    {
+        if ([] !== $this->constraint) {
+            $this->_trackValuesRemoved(count($this->constraint));
+            $this->constraint = [];
+        }
+        if ([] === $constraint) {
+            return $this;
+        }
+        foreach($constraint as $v) {
+            $this->addConstraint($v);
+        }
+        return $this;
+    }
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -4506,6 +4573,32 @@ class FHIRProfileDefinition extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->mapping[] = $mapping;
+        return $this;
+    }
+
+    /**
+     * A Resource Profile - a statement of use of one or more FHIR Resources. It may
+     * include constraints on Resources and Data Types, Terminology Binding Statements
+     * and Extension Definitions.
+     *
+     * Identifies a concept from an external specification that roughly corresponds to
+     * this element.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRProfile\FHIRProfileMapping1 ...$mapping
+     * @return static
+     */
+    public function setMapping(FHIRProfileMapping1 ...$mapping): self
+    {
+        if ([] !== $this->mapping) {
+            $this->_trackValuesRemoved(count($this->mapping));
+            $this->mapping = [];
+        }
+        if ([] === $mapping) {
+            return $this;
+        }
+        foreach($mapping as $v) {
+            $this->addMapping($v);
+        }
         return $this;
     }
 

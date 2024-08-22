@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -278,7 +278,7 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * Validation map for fields in type BiologicallyDerivedProduct
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -575,6 +575,31 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Parent product (if any) for this biologically-derived product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$parent
+     * @return static
+     */
+    public function setParent(FHIRReference ...$parent): self
+    {
+        if ([] !== $this->parent) {
+            $this->_trackValuesRemoved(count($this->parent));
+            $this->parent = [];
+        }
+        if ([] === $parent) {
+            return $this;
+        }
+        foreach($parent as $v) {
+            $this->addParent($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Request to obtain and/or infuse this biologically derived product.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
@@ -601,6 +626,31 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->request[] = $request;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Request to obtain and/or infuse this biologically derived product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$request
+     * @return static
+     */
+    public function setRequest(FHIRReference ...$request): self
+    {
+        if ([] !== $this->request) {
+            $this->_trackValuesRemoved(count($this->request));
+            $this->request = [];
+        }
+        if ([] === $request) {
+            return $this;
+        }
+        foreach($request as $v) {
+            $this->addRequest($v);
+        }
         return $this;
     }
 
@@ -639,6 +689,33 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique instance identifiers assigned to a biologically derived product. Note:
+     * This is a business identifier, not a resource identifier.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -713,6 +790,32 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->processingFacility[] = $processingFacility;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Processing facilities responsible for the labeling and distribution of this
+     * biologically derived product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$processingFacility
+     * @return static
+     */
+    public function setProcessingFacility(FHIRReference ...$processingFacility): self
+    {
+        if ([] !== $this->processingFacility) {
+            $this->_trackValuesRemoved(count($this->processingFacility));
+            $this->processingFacility = [];
+        }
+        if ([] === $processingFacility) {
+            return $this;
+        }
+        foreach($processingFacility as $v) {
+            $this->addProcessingFacility($v);
+        }
         return $this;
     }
 
@@ -939,6 +1042,31 @@ class FHIRBiologicallyDerivedProduct extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->property[] = $property;
+        return $this;
+    }
+
+    /**
+     * This resource reflects an instance of a biologically derived product. A material
+     * substance originating from a biological entity intended to be transplanted or
+     * infused into another (possibly the same) biological entity.
+     *
+     * A property that is specific to this BiologicallyDerviedProduct instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBiologicallyDerivedProduct\FHIRBiologicallyDerivedProductProperty ...$property
+     * @return static
+     */
+    public function setProperty(FHIRBiologicallyDerivedProductProperty ...$property): self
+    {
+        if ([] !== $this->property) {
+            $this->_trackValuesRemoved(count($this->property));
+            $this->property = [];
+        }
+        if ([] === $property) {
+            return $this;
+        }
+        foreach($property as $v) {
+            $this->addProperty($v);
+        }
         return $this;
     }
 

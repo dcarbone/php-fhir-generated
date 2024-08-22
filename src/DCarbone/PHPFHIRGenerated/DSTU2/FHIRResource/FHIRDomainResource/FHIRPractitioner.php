@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -230,7 +230,7 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Validation map for fields in type Practitioner
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -461,6 +461,31 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An identifier that applies to this person in this role.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -570,6 +595,33 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A contact detail for the practitioner, e.g. a telephone number or an email
+     * address.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint ...$telecom
+     * @return static
+     */
+    public function setTelecom(FHIRContactPoint ...$telecom): self
+    {
+        if ([] !== $this->telecom) {
+            $this->_trackValuesRemoved(count($this->telecom));
+            $this->telecom = [];
+        }
+        if ([] === $telecom) {
+            return $this;
+        }
+        foreach($telecom as $v) {
+            $this->addTelecom($v);
+        }
+        return $this;
+    }
+
+    /**
      * There is a variety of postal address formats defined around the world. This
      * format defines a superset that is the basis for all addresses around the world.
      * If the element is present, it must have a value for at least one of the defined
@@ -604,6 +656,33 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->address[] = $address;
+        return $this;
+    }
+
+    /**
+     * There is a variety of postal address formats defined around the world. This
+     * format defines a superset that is the basis for all addresses around the world.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The postal address where the practitioner can be found or visited or to which
+     * mail can be delivered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAddress ...$address
+     * @return static
+     */
+    public function setAddress(FHIRAddress ...$address): self
+    {
+        if ([] !== $this->address) {
+            $this->_trackValuesRemoved(count($this->address));
+            $this->address = [];
+        }
+        if ([] === $address) {
+            return $this;
+        }
+        foreach($address as $v) {
+            $this->addAddress($v);
+        }
         return $this;
     }
 
@@ -726,6 +805,31 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Image of the person.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment ...$photo
+     * @return static
+     */
+    public function setPhoto(FHIRAttachment ...$photo): self
+    {
+        if ([] !== $this->photo) {
+            $this->_trackValuesRemoved(count($this->photo));
+            $this->photo = [];
+        }
+        if ([] === $photo) {
+            return $this;
+        }
+        foreach($photo as $v) {
+            $this->addPhoto($v);
+        }
+        return $this;
+    }
+
+    /**
      * A person who is directly or indirectly involved in the provisioning of
      * healthcare.
      *
@@ -754,6 +858,30 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->practitionerRole[] = $practitionerRole;
+        return $this;
+    }
+
+    /**
+     * A person who is directly or indirectly involved in the provisioning of
+     * healthcare.
+     *
+     * The list of roles/organizations that the practitioner is associated with.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerPractitionerRole ...$practitionerRole
+     * @return static
+     */
+    public function setPractitionerRole(FHIRPractitionerPractitionerRole ...$practitionerRole): self
+    {
+        if ([] !== $this->practitionerRole) {
+            $this->_trackValuesRemoved(count($this->practitionerRole));
+            $this->practitionerRole = [];
+        }
+        if ([] === $practitionerRole) {
+            return $this;
+        }
+        foreach($practitionerRole as $v) {
+            $this->addPractitionerRole($v);
+        }
         return $this;
     }
 
@@ -790,6 +918,30 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * A person who is directly or indirectly involved in the provisioning of
+     * healthcare.
+     *
+     * Qualifications obtained by training and certification.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRPractitioner\FHIRPractitionerQualification ...$qualification
+     * @return static
+     */
+    public function setQualification(FHIRPractitionerQualification ...$qualification): self
+    {
+        if ([] !== $this->qualification) {
+            $this->_trackValuesRemoved(count($this->qualification));
+            $this->qualification = [];
+        }
+        if ([] === $qualification) {
+            return $this;
+        }
+        foreach($qualification as $v) {
+            $this->addQualification($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -822,6 +974,32 @@ class FHIRPractitioner extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->communication[] = $communication;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A language the practitioner is able to use in patient communication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$communication
+     * @return static
+     */
+    public function setCommunication(FHIRCodeableConcept ...$communication): self
+    {
+        if ([] !== $this->communication) {
+            $this->_trackValuesRemoved(count($this->communication));
+            $this->communication = [];
+        }
+        if ([] === $communication) {
+            return $this;
+        }
+        foreach($communication as $v) {
+            $this->addCommunication($v);
+        }
         return $this;
     }
 

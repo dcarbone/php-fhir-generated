@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -236,7 +236,17 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Validation map for fields in type DeviceMetric
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CATEGORY => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_IDENTIFIER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -766,6 +776,30 @@ class FHIRDeviceMetric extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->calibration[] = $calibration;
+        return $this;
+    }
+
+    /**
+     * Describes a measurement, calculation or setting capability of a medical device.
+     *
+     * Describes the calibrations that have been performed or that are required to be
+     * performed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDeviceMetric\FHIRDeviceMetricCalibration ...$calibration
+     * @return static
+     */
+    public function setCalibration(FHIRDeviceMetricCalibration ...$calibration): self
+    {
+        if ([] !== $this->calibration) {
+            $this->_trackValuesRemoved(count($this->calibration));
+            $this->calibration = [];
+        }
+        if ([] === $calibration) {
+            return $this;
+        }
+        foreach($calibration as $v) {
+            $this->addCalibration($v);
+        }
         return $this;
     }
 

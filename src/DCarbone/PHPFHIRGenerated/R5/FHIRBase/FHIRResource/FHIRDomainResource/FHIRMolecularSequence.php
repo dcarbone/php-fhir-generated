@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -229,7 +229,7 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
      * Validation map for fields in type MolecularSequence
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -421,6 +421,32 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier for this particular sequence instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
@@ -521,6 +547,34 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->focus[] = $focus;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The actual focus of a molecular sequence when it is not the patient of record
+     * representing something or someone associated with the patient such as a spouse,
+     * parent, child, or sibling. For example, in trio testing, the subject would be
+     * the child (proband) and the focus would be the parent.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$focus
+     * @return static
+     */
+    public function setFocus(FHIRReference ...$focus): self
+    {
+        if ([] !== $this->focus) {
+            $this->_trackValuesRemoved(count($this->focus));
+            $this->focus = [];
+        }
+        if ([] === $focus) {
+            return $this;
+        }
+        foreach($focus as $v) {
+            $this->addFocus($v);
+        }
         return $this;
     }
 
@@ -702,6 +756,32 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Sequence that was observed as file content. Can be an actual file contents, or
+     * referenced by a URL to an external system.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment ...$formatted
+     * @return static
+     */
+    public function setFormatted(FHIRAttachment ...$formatted): self
+    {
+        if ([] !== $this->formatted) {
+            $this->_trackValuesRemoved(count($this->formatted));
+            $this->formatted = [];
+        }
+        if ([] === $formatted) {
+            return $this;
+        }
+        foreach($formatted as $v) {
+            $this->addFormatted($v);
+        }
+        return $this;
+    }
+
+    /**
      * Representation of a molecular sequence.
      *
      * A sequence defined relative to another sequence.
@@ -728,6 +808,29 @@ class FHIRMolecularSequence extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->relative[] = $relative;
+        return $this;
+    }
+
+    /**
+     * Representation of a molecular sequence.
+     *
+     * A sequence defined relative to another sequence.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceRelative ...$relative
+     * @return static
+     */
+    public function setRelative(FHIRMolecularSequenceRelative ...$relative): self
+    {
+        if ([] !== $this->relative) {
+            $this->_trackValuesRemoved(count($this->relative));
+            $this->relative = [];
+        }
+        if ([] === $relative) {
+            return $this;
+        }
+        foreach($relative as $v) {
+            $this->addRelative($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -223,7 +223,17 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      * Validation map for fields in type DeviceComponent
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_IDENTIFIER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_LAST_SYSTEM_CHANGE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -597,6 +607,33 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Indicates current operational status of the device. For example: On, Off,
+     * Standby, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$operationalStatus
+     * @return static
+     */
+    public function setOperationalStatus(FHIRCodeableConcept ...$operationalStatus): self
+    {
+        if ([] !== $this->operationalStatus) {
+            $this->_trackValuesRemoved(count($this->operationalStatus));
+            $this->operationalStatus = [];
+        }
+        if ([] === $operationalStatus) {
+            return $this;
+        }
+        foreach($operationalStatus as $v) {
+            $this->addOperationalStatus($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Describes the parameter group supported by the current device component that is
      * based on some nomenclature, e.g. cardiovascular.
      *
@@ -694,6 +731,31 @@ class FHIRDeviceComponent extends FHIRDomainResource implements PHPFHIRContained
         }
         $this->_trackValueAdded();
         $this->productionSpecification[] = $productionSpecification;
+        return $this;
+    }
+
+    /**
+     * Describes the characteristics, operational status and capabilities of a
+     * medical-related component of a medical device.
+     *
+     * Describes the production specification such as component revision, serial
+     * number, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDeviceComponent\FHIRDeviceComponentProductionSpecification ...$productionSpecification
+     * @return static
+     */
+    public function setProductionSpecification(FHIRDeviceComponentProductionSpecification ...$productionSpecification): self
+    {
+        if ([] !== $this->productionSpecification) {
+            $this->_trackValuesRemoved(count($this->productionSpecification));
+            $this->productionSpecification = [];
+        }
+        if ([] === $productionSpecification) {
+            return $this;
+        }
+        foreach($productionSpecification as $v) {
+            $this->addProductionSpecification($v);
+        }
         return $this;
     }
 

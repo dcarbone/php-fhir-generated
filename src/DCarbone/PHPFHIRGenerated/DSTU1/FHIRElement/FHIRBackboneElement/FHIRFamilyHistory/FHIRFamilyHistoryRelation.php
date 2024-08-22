@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -242,7 +242,11 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
      * Validation map for fields in type FamilyHistory.Relation
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_RELATIONSHIP => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -909,6 +913,33 @@ class FHIRFamilyHistoryRelation extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->condition[] = $condition;
+        return $this;
+    }
+
+    /**
+     * Significant health events and conditions for people related to the subject
+     * relevant in the context of care for the subject.
+     *
+     * The significant Conditions (or condition) that the family member had. This is a
+     * repeating section to allow a system to represent more than one condition per
+     * resource, though there is nothing stopping multiple resources - one per
+     * condition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRFamilyHistory\FHIRFamilyHistoryCondition ...$condition
+     * @return static
+     */
+    public function setCondition(FHIRFamilyHistoryCondition ...$condition): self
+    {
+        if ([] !== $this->condition) {
+            $this->_trackValuesRemoved(count($this->condition));
+            $this->condition = [];
+        }
+        if ([] === $condition) {
+            return $this;
+        }
+        foreach($condition as $v) {
+            $this->addCondition($v);
+        }
         return $this;
     }
 

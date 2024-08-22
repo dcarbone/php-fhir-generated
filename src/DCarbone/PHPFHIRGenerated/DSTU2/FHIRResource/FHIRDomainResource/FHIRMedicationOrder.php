@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -321,7 +321,14 @@ class FHIRMedicationOrder extends FHIRDomainResource implements PHPFHIRContained
      * Validation map for fields in type MedicationOrder
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_MEDICATION_CODEABLE_CONCEPT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_MEDICATION_REFERENCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -568,6 +575,35 @@ class FHIRMedicationOrder extends FHIRDomainResource implements PHPFHIRContained
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * External identifier - one that would be used by another non-FHIR system - for
+     * example a re-imbursement system might issue its own id for each prescription
+     * that is created. This is particularly important where FHIR only provides part of
+     * an entire workflow process where records have to be tracked through an entire
+     * system.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -1065,6 +1101,32 @@ class FHIRMedicationOrder extends FHIRDomainResource implements PHPFHIRContained
         }
         $this->_trackValueAdded();
         $this->dosageInstruction[] = $dosageInstruction;
+        return $this;
+    }
+
+    /**
+     * An order for both supply of the medication and the instructions for
+     * administration of the medication to a patient. The resource is called
+     * "MedicationOrder" rather than "MedicationPrescription" to generalize the use
+     * across inpatient and outpatient settings as well as for care plans, etc.
+     *
+     * Indicates how the medication is to be used by the patient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRMedicationOrder\FHIRMedicationOrderDosageInstruction ...$dosageInstruction
+     * @return static
+     */
+    public function setDosageInstruction(FHIRMedicationOrderDosageInstruction ...$dosageInstruction): self
+    {
+        if ([] !== $this->dosageInstruction) {
+            $this->_trackValuesRemoved(count($this->dosageInstruction));
+            $this->dosageInstruction = [];
+        }
+        if ([] === $dosageInstruction) {
+            return $this;
+        }
+        foreach($dosageInstruction as $v) {
+            $this->addDosageInstruction($v);
+        }
         return $this;
     }
 

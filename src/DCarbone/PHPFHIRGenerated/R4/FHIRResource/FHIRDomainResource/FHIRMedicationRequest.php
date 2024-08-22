@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -527,7 +527,23 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * Validation map for fields in type MedicationRequest
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_INTENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_MEDICATION_CODEABLE_CONCEPT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_MEDICATION_REFERENCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SUBJECT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1041,6 +1057,36 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifiers associated with this medication request that are defined by business
+     * processes and/or used to refer to it when a direct URL reference to the resource
+     * itself is not appropriate. They are business identifiers assigned to this
+     * resource by the performer or other systems and remain constant as the resource
+     * is updated and propagates from server to server.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A coded concept specifying the state of the prescribing event. Describes the
      * lifecycle of the prescription.
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1179,6 +1225,33 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->category[] = $category;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the type of medication request (for example, where the medication is
+     * expected to be consumed or administered (i.e. inpatient or outpatient)).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
         return $this;
     }
 
@@ -1525,6 +1598,32 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Include additional information (for example, patient height and weight) that
+     * supports the ordering of the medication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$supportingInformation
+     * @return static
+     */
+    public function setSupportingInformation(FHIRReference ...$supportingInformation): self
+    {
+        if ([] !== $this->supportingInformation) {
+            $this->_trackValuesRemoved(count($this->supportingInformation));
+            $this->supportingInformation = [];
+        }
+        if ([] === $supportingInformation) {
+            return $this;
+        }
+        foreach($supportingInformation as $v) {
+            $this->addSupportingInformation($v);
+        }
+        return $this;
+    }
+
+    /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
@@ -1752,6 +1851,32 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The reason or the indication for ordering or not ordering the medication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$reasonCode
+     * @return static
+     */
+    public function setReasonCode(FHIRCodeableConcept ...$reasonCode): self
+    {
+        if ([] !== $this->reasonCode) {
+            $this->_trackValuesRemoved(count($this->reasonCode));
+            $this->reasonCode = [];
+        }
+        if ([] === $reasonCode) {
+            return $this;
+        }
+        foreach($reasonCode as $v) {
+            $this->addReasonCode($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1782,6 +1907,31 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->reasonReference[] = $reasonReference;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Condition or observation that supports why the medication was ordered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$reasonReference
+     * @return static
+     */
+    public function setReasonReference(FHIRReference ...$reasonReference): self
+    {
+        if ([] !== $this->reasonReference) {
+            $this->_trackValuesRemoved(count($this->reasonReference));
+            $this->reasonReference = [];
+        }
+        if ([] === $reasonReference) {
+            return $this;
+        }
+        foreach($reasonReference as $v) {
+            $this->addReasonReference($v);
+        }
         return $this;
     }
 
@@ -1974,6 +2124,32 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A plan or request that is fulfilled in whole or in part by this medication
+     * request.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
+        return $this;
+    }
+
+    /**
      * An identifier - identifies some entity uniquely and unambiguously. Typically
      * this is used for business identifiers.
      * If the element is present, it must have a value for at least one of the defined
@@ -2088,6 +2264,32 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Insurance plans, coverage extensions, pre-authorizations and/or
+     * pre-determinations that may be required for delivering the requested service.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$insurance
+     * @return static
+     */
+    public function setInsurance(FHIRReference ...$insurance): self
+    {
+        if ([] !== $this->insurance) {
+            $this->_trackValuesRemoved(count($this->insurance));
+            $this->insurance = [];
+        }
+        if ([] === $insurance) {
+            return $this;
+        }
+        foreach($insurance as $v) {
+            $this->addInsurance($v);
+        }
+        return $this;
+    }
+
+    /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
@@ -2126,6 +2328,33 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Extra information about the prescription that could not be conveyed by the other
+     * attributes.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
+        return $this;
+    }
+
+    /**
      * Indicates how the medication is/was taken or should be taken by the patient.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -2156,6 +2385,31 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->dosageInstruction[] = $dosageInstruction;
+        return $this;
+    }
+
+    /**
+     * Indicates how the medication is/was taken or should be taken by the patient.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates how the medication is to be used by the patient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage ...$dosageInstruction
+     * @return static
+     */
+    public function setDosageInstruction(FHIRDosage ...$dosageInstruction): self
+    {
+        if ([] !== $this->dosageInstruction) {
+            $this->_trackValuesRemoved(count($this->dosageInstruction));
+            $this->dosageInstruction = [];
+        }
+        if ([] === $dosageInstruction) {
+            return $this;
+        }
+        foreach($dosageInstruction as $v) {
+            $this->addDosageInstruction($v);
+        }
         return $this;
     }
 
@@ -2328,6 +2582,33 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Indicates an actual or potential clinical issue with or between one or more
+     * active or proposed clinical actions for a patient; e.g. Drug-drug interaction,
+     * duplicate therapy, dosage alert etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$detectedIssue
+     * @return static
+     */
+    public function setDetectedIssue(FHIRReference ...$detectedIssue): self
+    {
+        if ([] !== $this->detectedIssue) {
+            $this->_trackValuesRemoved(count($this->detectedIssue));
+            $this->detectedIssue = [];
+        }
+        if ([] === $detectedIssue) {
+            return $this;
+        }
+        foreach($detectedIssue as $v) {
+            $this->addDetectedIssue($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Links to Provenance records for past versions of this resource or fulfilling
      * request or event resources that identify key state transitions or updates that
      * are likely to be relevant to a user looking at the current version of the
@@ -2360,6 +2641,34 @@ class FHIRMedicationRequest extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->eventHistory[] = $eventHistory;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Links to Provenance records for past versions of this resource or fulfilling
+     * request or event resources that identify key state transitions or updates that
+     * are likely to be relevant to a user looking at the current version of the
+     * resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$eventHistory
+     * @return static
+     */
+    public function setEventHistory(FHIRReference ...$eventHistory): self
+    {
+        if ([] !== $this->eventHistory) {
+            $this->_trackValuesRemoved(count($this->eventHistory));
+            $this->eventHistory = [];
+        }
+        if ([] === $eventHistory) {
+            return $this;
+        }
+        foreach($eventHistory as $v) {
+            $this->addEventHistory($v);
+        }
         return $this;
     }
 

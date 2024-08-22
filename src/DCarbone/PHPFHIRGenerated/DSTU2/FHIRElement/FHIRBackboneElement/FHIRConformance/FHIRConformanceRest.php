@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -199,6 +199,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_MODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_RESOURCE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
@@ -529,6 +532,32 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * used as a statement of actual server functionality or a statement of required or
      * desired server implementation.
      *
+     * A specification of the restful capabilities of the solution for a specific
+     * resource type.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource ...$resource
+     * @return static
+     */
+    public function setResource(FHIRConformanceResource ...$resource): self
+    {
+        if ([] !== $this->resource) {
+            $this->_trackValuesRemoved(count($this->resource));
+            $this->resource = [];
+        }
+        if ([] === $resource) {
+            return $this;
+        }
+        foreach($resource as $v) {
+            $this->addResource($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of capabilities of a FHIR Server that may be
+     * used as a statement of actual server functionality or a statement of required or
+     * desired server implementation.
+     *
      * A specification of restful operations supported by the system.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction1[]
@@ -555,6 +584,31 @@ class FHIRConformanceRest extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->interaction[] = $interaction;
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of capabilities of a FHIR Server that may be
+     * used as a statement of actual server functionality or a statement of required or
+     * desired server implementation.
+     *
+     * A specification of restful operations supported by the system.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceInteraction1 ...$interaction
+     * @return static
+     */
+    public function setInteraction(FHIRConformanceInteraction1 ...$interaction): self
+    {
+        if ([] !== $this->interaction) {
+            $this->_trackValuesRemoved(count($this->interaction));
+            $this->interaction = [];
+        }
+        if ([] === $interaction) {
+            return $this;
+        }
+        foreach($interaction as $v) {
+            $this->addInteraction($v);
+        }
         return $this;
     }
 
@@ -635,6 +689,34 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * used as a statement of actual server functionality or a statement of required or
      * desired server implementation.
      *
+     * Search parameters that are supported for searching all resources for
+     * implementations to support and/or make use of - either references to ones
+     * defined in the specification, or additional ones defined for/by the
+     * implementation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceSearchParam ...$searchParam
+     * @return static
+     */
+    public function setSearchParam(FHIRConformanceSearchParam ...$searchParam): self
+    {
+        if ([] !== $this->searchParam) {
+            $this->_trackValuesRemoved(count($this->searchParam));
+            $this->searchParam = [];
+        }
+        if ([] === $searchParam) {
+            return $this;
+        }
+        foreach($searchParam as $v) {
+            $this->addSearchParam($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of capabilities of a FHIR Server that may be
+     * used as a statement of actual server functionality or a statement of required or
+     * desired server implementation.
+     *
      * Definition of an operation or a named query and with its parameters and their
      * meaning and type.
      *
@@ -663,6 +745,32 @@ class FHIRConformanceRest extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->operation[] = $operation;
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of capabilities of a FHIR Server that may be
+     * used as a statement of actual server functionality or a statement of required or
+     * desired server implementation.
+     *
+     * Definition of an operation or a named query and with its parameters and their
+     * meaning and type.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation ...$operation
+     * @return static
+     */
+    public function setOperation(FHIRConformanceOperation ...$operation): self
+    {
+        if ([] !== $this->operation) {
+            $this->_trackValuesRemoved(count($this->operation));
+            $this->operation = [];
+        }
+        if ([] === $operation) {
+            return $this;
+        }
+        foreach($operation as $v) {
+            $this->addOperation($v);
+        }
         return $this;
     }
 

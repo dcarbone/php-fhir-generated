@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -320,7 +320,7 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      * Validation map for fields in type PackagedProductDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -603,6 +603,34 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier for this package as whole - not the the content of the
+     * package. Unique instance identifiers assigned to a package by manufacturers,
+     * regulators, drug catalogue custodians or other organizations.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -714,6 +742,32 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
         }
         $this->_trackValueAdded();
         $this->packageFor[] = $packageFor;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The product this package model relates to, not the contents of the package (for
+     * which see package.containedItem).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$packageFor
+     * @return static
+     */
+    public function setPackageFor(FHIRReference ...$packageFor): self
+    {
+        if ([] !== $this->packageFor) {
+            $this->_trackValuesRemoved(count($this->packageFor));
+            $this->packageFor = [];
+        }
+        if ([] === $packageFor) {
+            return $this;
+        }
+        foreach($packageFor as $v) {
+            $this->addPackageFor($v);
+        }
         return $this;
     }
 
@@ -865,6 +919,44 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
     }
 
     /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A total of the complete count of contained items of a particular type/form,
+     * independent of sub-packaging or organization. This can be considered as the pack
+     * size. This attribute differs from containedItem.amount in that it can give a
+     * single aggregated count of all tablet types in a pack, even when these are
+     * different manufactured items. For example a pill pack of 21 tablets plus 7 sugar
+     * tablets, can be denoted here as '28 tablets'. This attribute is repeatable so
+     * that the different item types in one pack type can be counted (e.g. a count of
+     * vials and count of syringes). Each repeat must have different units, so that it
+     * is clear what the different sets of counted items are, and it is not intended to
+     * allow different counts of similar items (e.g. not '2 tubes and 3 tubes').
+     * Repeats are not to be used to represent different pack sizes (e.g. 20 pack vs.
+     * 50 pack) - which would be different instances of this resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity ...$containedItemQuantity
+     * @return static
+     */
+    public function setContainedItemQuantity(FHIRQuantity ...$containedItemQuantity): self
+    {
+        if ([] !== $this->containedItemQuantity) {
+            $this->_trackValuesRemoved(count($this->containedItemQuantity));
+            $this->containedItemQuantity = [];
+        }
+        if ([] === $containedItemQuantity) {
+            return $this;
+        }
+        foreach($containedItemQuantity as $v) {
+            $this->addContainedItemQuantity($v);
+        }
+        return $this;
+    }
+
+    /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
@@ -942,6 +1034,29 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
     }
 
     /**
+     * A medically related item or items, in a container or package.
+     *
+     * The legal status of supply of the packaged item as classified by the regulator.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionLegalStatusOfSupply ...$legalStatusOfSupply
+     * @return static
+     */
+    public function setLegalStatusOfSupply(FHIRPackagedProductDefinitionLegalStatusOfSupply ...$legalStatusOfSupply): self
+    {
+        if ([] !== $this->legalStatusOfSupply) {
+            $this->_trackValuesRemoved(count($this->legalStatusOfSupply));
+            $this->legalStatusOfSupply = [];
+        }
+        if ([] === $legalStatusOfSupply) {
+            return $this;
+        }
+        foreach($legalStatusOfSupply as $v) {
+            $this->addLegalStatusOfSupply($v);
+        }
+        return $this;
+    }
+
+    /**
      * The marketing status describes the date when a medicinal product is actually put
      * on the market or the date as of which it is no longer available.
      * If the element is present, it must have a value for at least one of the defined
@@ -976,6 +1091,33 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
         }
         $this->_trackValueAdded();
         $this->marketingStatus[] = $marketingStatus;
+        return $this;
+    }
+
+    /**
+     * The marketing status describes the date when a medicinal product is actually put
+     * on the market or the date as of which it is no longer available.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Allows specifying that an item is on the market for sale, or that it is not
+     * available, and the dates and locations associated.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus ...$marketingStatus
+     * @return static
+     */
+    public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
+    {
+        if ([] !== $this->marketingStatus) {
+            $this->_trackValuesRemoved(count($this->marketingStatus));
+            $this->marketingStatus = [];
+        }
+        if ([] === $marketingStatus) {
+            return $this;
+        }
+        foreach($marketingStatus as $v) {
+            $this->addMarketingStatus($v);
+        }
         return $this;
     }
 
@@ -1059,6 +1201,32 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Manufacturer of this package type. When there are multiple it means these are
+     * all possible manufacturers.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$manufacturer
+     * @return static
+     */
+    public function setManufacturer(FHIRReference ...$manufacturer): self
+    {
+        if ([] !== $this->manufacturer) {
+            $this->_trackValuesRemoved(count($this->manufacturer));
+            $this->manufacturer = [];
+        }
+        if ([] === $manufacturer) {
+            return $this;
+        }
+        foreach($manufacturer as $v) {
+            $this->addManufacturer($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Additional information or supporting documentation about the packaged product.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
@@ -1085,6 +1253,31 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
         }
         $this->_trackValueAdded();
         $this->attachedDocument[] = $attachedDocument;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional information or supporting documentation about the packaged product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$attachedDocument
+     * @return static
+     */
+    public function setAttachedDocument(FHIRReference ...$attachedDocument): self
+    {
+        if ([] !== $this->attachedDocument) {
+            $this->_trackValuesRemoved(count($this->attachedDocument));
+            $this->attachedDocument = [];
+        }
+        if ([] === $attachedDocument) {
+            return $this;
+        }
+        foreach($attachedDocument as $v) {
+            $this->addAttachedDocument($v);
+        }
         return $this;
     }
 
@@ -1151,6 +1344,30 @@ class FHIRPackagedProductDefinition extends FHIRDomainResource implements PHPFHI
         }
         $this->_trackValueAdded();
         $this->characteristic[] = $characteristic;
+        return $this;
+    }
+
+    /**
+     * A medically related item or items, in a container or package.
+     *
+     * Allows the key features to be recorded, such as "hospital pack", "nurse
+     * prescribable", "calendar pack".
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPackagedProductDefinition\FHIRPackagedProductDefinitionProperty ...$characteristic
+     * @return static
+     */
+    public function setCharacteristic(FHIRPackagedProductDefinitionProperty ...$characteristic): self
+    {
+        if ([] !== $this->characteristic) {
+            $this->_trackValuesRemoved(count($this->characteristic));
+            $this->characteristic = [];
+        }
+        if ([] === $characteristic) {
+            return $this;
+        }
+        foreach($characteristic as $v) {
+            $this->addCharacteristic($v);
+        }
         return $this;
     }
 

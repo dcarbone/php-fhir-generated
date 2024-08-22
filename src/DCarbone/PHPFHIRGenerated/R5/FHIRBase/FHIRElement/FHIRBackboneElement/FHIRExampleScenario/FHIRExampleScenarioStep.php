@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -174,7 +174,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Validation map for fields in type ExampleScenario.Step
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -450,6 +450,31 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->alternative[] = $alternative;
+        return $this;
+    }
+
+    /**
+     * Example of workflow instance.
+     *
+     * Indicates an alternative step that can be taken instead of the sub-process,
+     * scenario or operation. E.g. to represent non-happy-path/exceptional/atypical
+     * circumstances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative ...$alternative
+     * @return static
+     */
+    public function setAlternative(FHIRExampleScenarioAlternative ...$alternative): self
+    {
+        if ([] !== $this->alternative) {
+            $this->_trackValuesRemoved(count($this->alternative));
+            $this->alternative = [];
+        }
+        if ([] === $alternative) {
+            return $this;
+        }
+        foreach($alternative as $v) {
+            $this->addAlternative($v);
+        }
         return $this;
     }
 

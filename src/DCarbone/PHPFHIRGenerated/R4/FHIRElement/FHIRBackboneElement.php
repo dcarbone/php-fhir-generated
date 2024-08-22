@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -111,7 +111,7 @@ class FHIRBackboneElement extends FHIRElement
      * Validation map for fields in type BackboneElement
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -202,6 +202,41 @@ class FHIRBackboneElement extends FHIRElement
         }
         $this->_trackValueAdded();
         $this->modifierExtension[] = $modifierExtension;
+        return $this;
+    }
+
+    /**
+     * Optional Extension Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * May be used to represent additional information that is not part of the basic
+     * definition of the element and that modifies the understanding of the element in
+     * which it is contained and/or the understanding of the containing element's
+     * descendants. Usually modifier elements provide negation or qualification. To
+     * make the use of extensions safe and manageable, there is a strict set of
+     * governance applied to the definition and use of extensions. Though any
+     * implementer can define an extension, there is a set of requirements that SHALL
+     * be met as part of the definition of the extension. Applications processing a
+     * resource are required to check for modifier extensions. Modifier extensions
+     * SHALL NOT change the meaning of any elements on Resource or DomainResource
+     * (including cannot change the meaning of modifierExtension itself).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRExtension ...$modifierExtension
+     * @return static
+     */
+    public function setModifierExtension(FHIRExtension ...$modifierExtension): self
+    {
+        if ([] !== $this->modifierExtension) {
+            $this->_trackValuesRemoved(count($this->modifierExtension));
+            $this->modifierExtension = [];
+        }
+        if ([] === $modifierExtension) {
+            return $this;
+        }
+        foreach($modifierExtension as $v) {
+            $this->addModifierExtension($v);
+        }
         return $this;
     }
 

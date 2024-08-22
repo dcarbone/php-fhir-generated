@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDevic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,11 @@ class FHIRDeviceDefinitionCapability extends FHIRBackboneElement
      * Validation map for fields in type DeviceDefinition.Capability
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -229,6 +233,32 @@ class FHIRDeviceDefinitionCapability extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->description[] = $description;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Description of capability.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$description
+     * @return static
+     */
+    public function setDescription(FHIRCodeableConcept ...$description): self
+    {
+        if ([] !== $this->description) {
+            $this->_trackValuesRemoved(count($this->description));
+            $this->description = [];
+        }
+        if ([] === $description) {
+            return $this;
+        }
+        foreach($description as $v) {
+            $this->addDescription($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -394,6 +394,32 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique identifier.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -424,6 +450,31 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
         }
         $this->_trackValueAdded();
         $this->subject[] = $subject;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The product with this is a pack for.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$subject
+     * @return static
+     */
+    public function setSubject(FHIRReference ...$subject): self
+    {
+        if ([] !== $this->subject) {
+            $this->_trackValuesRemoved(count($this->subject));
+            $this->subject = [];
+        }
+        if ([] === $subject) {
+            return $this;
+        }
+        foreach($subject as $v) {
+            $this->addSubject($v);
+        }
         return $this;
     }
 
@@ -541,6 +592,32 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
     }
 
     /**
+     * The marketing status describes the date when a medicinal product is actually put
+     * on the market or the date as of which it is no longer available.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Marketing information.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMarketingStatus ...$marketingStatus
+     * @return static
+     */
+    public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
+    {
+        if ([] !== $this->marketingStatus) {
+            $this->_trackValuesRemoved(count($this->marketingStatus));
+            $this->marketingStatus = [];
+        }
+        if ([] === $marketingStatus) {
+            return $this;
+        }
+        foreach($marketingStatus as $v) {
+            $this->addMarketingStatus($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -609,6 +686,31 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Manufacturer of this Package Item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$manufacturer
+     * @return static
+     */
+    public function setManufacturer(FHIRReference ...$manufacturer): self
+    {
+        if ([] !== $this->manufacturer) {
+            $this->_trackValuesRemoved(count($this->manufacturer));
+            $this->manufacturer = [];
+        }
+        if ([] === $manufacturer) {
+            return $this;
+        }
+        foreach($manufacturer as $v) {
+            $this->addManufacturer($v);
+        }
+        return $this;
+    }
+
+    /**
      * A medicinal product in a container or package.
      *
      * Batch numbering.
@@ -641,6 +743,29 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
     /**
      * A medicinal product in a container or package.
      *
+     * Batch numbering.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedBatchIdentifier ...$batchIdentifier
+     * @return static
+     */
+    public function setBatchIdentifier(FHIRMedicinalProductPackagedBatchIdentifier ...$batchIdentifier): self
+    {
+        if ([] !== $this->batchIdentifier) {
+            $this->_trackValuesRemoved(count($this->batchIdentifier));
+            $this->batchIdentifier = [];
+        }
+        if ([] === $batchIdentifier) {
+            return $this;
+        }
+        foreach($batchIdentifier as $v) {
+            $this->addBatchIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A medicinal product in a container or package.
+     *
      * A packaging item, as a contained for medicine, possibly with other packaging
      * items within.
      *
@@ -667,6 +792,30 @@ class FHIRMedicinalProductPackaged extends FHIRDomainResource implements PHPFHIR
         }
         $this->_trackValueAdded();
         $this->packageItem[] = $packageItem;
+        return $this;
+    }
+
+    /**
+     * A medicinal product in a container or package.
+     *
+     * A packaging item, as a contained for medicine, possibly with other packaging
+     * items within.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductPackaged\FHIRMedicinalProductPackagedPackageItem ...$packageItem
+     * @return static
+     */
+    public function setPackageItem(FHIRMedicinalProductPackagedPackageItem ...$packageItem): self
+    {
+        if ([] !== $this->packageItem) {
+            $this->_trackValuesRemoved(count($this->packageItem));
+            $this->packageItem = [];
+        }
+        if ([] === $packageItem) {
+            return $this;
+        }
+        foreach($packageItem as $v) {
+            $this->addPackageItem($v);
+        }
         return $this;
     }
 

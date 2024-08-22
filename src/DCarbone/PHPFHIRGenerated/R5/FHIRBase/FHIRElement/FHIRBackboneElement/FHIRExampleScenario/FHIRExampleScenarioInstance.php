@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -229,7 +229,17 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
      * Validation map for fields in type ExampleScenario.Instance
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_KEY => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STRUCTURE_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TITLE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -751,6 +761,29 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
     /**
      * Example of workflow instance.
      *
+     * Represents the instance as it was at a specific time-point.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioVersion ...$version
+     * @return static
+     */
+    public function setVersion(FHIRExampleScenarioVersion ...$version): self
+    {
+        if ([] !== $this->version) {
+            $this->_trackValuesRemoved(count($this->version));
+            $this->version = [];
+        }
+        if ([] === $version) {
+            return $this;
+        }
+        foreach($version as $v) {
+            $this->addVersion($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Example of workflow instance.
+     *
      * References to other instances that can be found within this instance (e.g. the
      * observations contained in a bundle).
      *
@@ -777,6 +810,30 @@ class FHIRExampleScenarioInstance extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->containedInstance[] = $containedInstance;
+        return $this;
+    }
+
+    /**
+     * Example of workflow instance.
+     *
+     * References to other instances that can be found within this instance (e.g. the
+     * observations contained in a bundle).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioContainedInstance ...$containedInstance
+     * @return static
+     */
+    public function setContainedInstance(FHIRExampleScenarioContainedInstance ...$containedInstance): self
+    {
+        if ([] !== $this->containedInstance) {
+            $this->_trackValuesRemoved(count($this->containedInstance));
+            $this->containedInstance = [];
+        }
+        if ([] === $containedInstance) {
+            return $this;
+        }
+        foreach($containedInstance as $v) {
+            $this->addContainedInstance($v);
+        }
         return $this;
     }
 

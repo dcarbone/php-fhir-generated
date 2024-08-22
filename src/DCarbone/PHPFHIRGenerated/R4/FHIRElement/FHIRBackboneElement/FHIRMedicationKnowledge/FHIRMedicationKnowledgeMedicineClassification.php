@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -114,7 +114,11 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
      * Validation map for fields in type MedicationKnowledge.MedicineClassification
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -234,6 +238,33 @@ class FHIRMedicationKnowledgeMedicineClassification extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->classification[] = $classification;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specific category assigned to the medication (e.g. anti-infective,
+     * anti-hypertensive, antibiotic, etc.).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$classification
+     * @return static
+     */
+    public function setClassification(FHIRCodeableConcept ...$classification): self
+    {
+        if ([] !== $this->classification) {
+            $this->_trackValuesRemoved(count($this->classification));
+            $this->classification = [];
+        }
+        if ([] === $classification) {
+            return $this;
+        }
+        foreach($classification as $v) {
+            $this->addClassification($v);
+        }
         return $this;
     }
 

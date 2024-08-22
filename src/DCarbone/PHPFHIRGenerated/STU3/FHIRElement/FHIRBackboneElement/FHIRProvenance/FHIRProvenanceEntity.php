@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPro
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -165,7 +165,20 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
      * Validation map for fields in type Provenance.Entity
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_ROLE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_WHAT_IDENTIFIER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_WHAT_REFERENCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_WHAT_URI => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -447,6 +460,40 @@ class FHIRProvenanceEntity extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->agent[] = $agent;
+        return $this;
+    }
+
+    /**
+     * Provenance of a resource is a record that describes entities and processes
+     * involved in producing and delivering or otherwise influencing that resource.
+     * Provenance provides a critical foundation for assessing authenticity, enabling
+     * trust, and allowing reproducibility. Provenance assertions are a form of
+     * contextual metadata and can themselves become important records with their own
+     * provenance. Provenance statement indicates clinical significance in terms of
+     * confidence in authenticity, reliability, and trustworthiness, integrity, and
+     * stage in lifecycle (e.g. Document Completion - has the artifact been legally
+     * authenticated), all of which may impact security, privacy, and trust policies.
+     *
+     * The entity is attributed to an agent to express the agent's responsibility for
+     * that entity, possibly along with other agents. This description can be
+     * understood as shorthand for saying that the agent was responsible for the
+     * activity which generated the entity.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent ...$agent
+     * @return static
+     */
+    public function setAgent(FHIRProvenanceAgent ...$agent): self
+    {
+        if ([] !== $this->agent) {
+            $this->_trackValuesRemoved(count($this->agent));
+            $this->agent = [];
+        }
+        if ([] === $agent) {
+            return $this;
+        }
+        foreach($agent as $v) {
+            $this->addAgent($v);
+        }
         return $this;
     }
 

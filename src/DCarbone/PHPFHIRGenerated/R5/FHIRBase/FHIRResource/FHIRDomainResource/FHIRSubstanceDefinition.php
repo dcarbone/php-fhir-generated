@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -386,7 +386,7 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * Validation map for fields in type SubstanceDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -756,6 +756,32 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifier by which this substance is known.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -876,6 +902,34 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A high level categorization, e.g. polymer or nucleic acid, or food, chemical,
+     * biological, or a lower level such as the general types of polymer (linear or
+     * branch chain) or type of impurity (process related or contaminant).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$classification
+     * @return static
+     */
+    public function setClassification(FHIRCodeableConcept ...$classification): self
+    {
+        if ([] !== $this->classification) {
+            $this->_trackValuesRemoved(count($this->classification));
+            $this->classification = [];
+        }
+        if ([] === $classification) {
+            return $this;
+        }
+        foreach($classification as $v) {
+            $this->addClassification($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * If the substance applies to human or veterinary use.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
@@ -941,6 +995,33 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->grade[] = $grade;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The quality standard, established benchmark, to which substance complies (e.g.
+     * USP/NF, Ph. Eur, JP, BP, Company Standard).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$grade
+     * @return static
+     */
+    public function setGrade(FHIRCodeableConcept ...$grade): self
+    {
+        if ([] !== $this->grade) {
+            $this->_trackValuesRemoved(count($this->grade));
+            $this->grade = [];
+        }
+        if ([] === $grade) {
+            return $this;
+        }
+        foreach($grade as $v) {
+            $this->addGrade($v);
+        }
         return $this;
     }
 
@@ -1026,6 +1107,31 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Supporting literature.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$informationSource
+     * @return static
+     */
+    public function setInformationSource(FHIRReference ...$informationSource): self
+    {
+        if ([] !== $this->informationSource) {
+            $this->_trackValuesRemoved(count($this->informationSource));
+            $this->informationSource = [];
+        }
+        if ([] === $informationSource) {
+            return $this;
+        }
+        foreach($informationSource as $v) {
+            $this->addInformationSource($v);
+        }
+        return $this;
+    }
+
+    /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
@@ -1058,6 +1164,32 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Textual comment about the substance's catalogue or registry record.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 
@@ -1102,6 +1234,32 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The entity that creates, makes, produces or fabricates the substance. This is a
+     * set of potential manufacturers but is not necessarily comprehensive.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$manufacturer
+     * @return static
+     */
+    public function setManufacturer(FHIRReference ...$manufacturer): self
+    {
+        if ([] !== $this->manufacturer) {
+            $this->_trackValuesRemoved(count($this->manufacturer));
+            $this->manufacturer = [];
+        }
+        if ([] === $manufacturer) {
+            return $this;
+        }
+        foreach($manufacturer as $v) {
+            $this->addManufacturer($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * An entity that is the source for the substance. It may be different from the
      * manufacturer. Supplier is synonymous to a distributor.
      *
@@ -1134,6 +1292,32 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An entity that is the source for the substance. It may be different from the
+     * manufacturer. Supplier is synonymous to a distributor.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$supplier
+     * @return static
+     */
+    public function setSupplier(FHIRReference ...$supplier): self
+    {
+        if ([] !== $this->supplier) {
+            $this->_trackValuesRemoved(count($this->supplier));
+            $this->supplier = [];
+        }
+        if ([] === $supplier) {
+            return $this;
+        }
+        foreach($supplier as $v) {
+            $this->addSupplier($v);
+        }
+        return $this;
+    }
+
+    /**
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
      *
@@ -1162,6 +1346,30 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->moiety[] = $moiety;
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
+     * Moiety, for structural modifications.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionMoiety ...$moiety
+     * @return static
+     */
+    public function setMoiety(FHIRSubstanceDefinitionMoiety ...$moiety): self
+    {
+        if ([] !== $this->moiety) {
+            $this->_trackValuesRemoved(count($this->moiety));
+            $this->moiety = [];
+        }
+        if ([] === $moiety) {
+            return $this;
+        }
+        foreach($moiety as $v) {
+            $this->addMoiety($v);
+        }
         return $this;
     }
 
@@ -1203,6 +1411,30 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      *
      * General specifications for this substance.
      *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionCharacterization ...$characterization
+     * @return static
+     */
+    public function setCharacterization(FHIRSubstanceDefinitionCharacterization ...$characterization): self
+    {
+        if ([] !== $this->characterization) {
+            $this->_trackValuesRemoved(count($this->characterization));
+            $this->characterization = [];
+        }
+        if ([] === $characterization) {
+            return $this;
+        }
+        foreach($characterization as $v) {
+            $this->addCharacterization($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
+     * General specifications for this substance.
+     *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionProperty[]
      */
     public function getProperty(): null|array
@@ -1226,6 +1458,30 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->property[] = $property;
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
+     * General specifications for this substance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionProperty ...$property
+     * @return static
+     */
+    public function setProperty(FHIRSubstanceDefinitionProperty ...$property): self
+    {
+        if ([] !== $this->property) {
+            $this->_trackValuesRemoved(count($this->property));
+            $this->property = [];
+        }
+        if ([] === $property) {
+            return $this;
+        }
+        foreach($property as $v) {
+            $this->addProperty($v);
+        }
         return $this;
     }
 
@@ -1301,6 +1557,31 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
      *
+     * The average mass of a molecule of a compound compared to 1/12 the mass of carbon
+     * 12 and calculated as the sum of the atomic weights of the constituent atoms.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionMolecularWeight ...$molecularWeight
+     * @return static
+     */
+    public function setMolecularWeight(FHIRSubstanceDefinitionMolecularWeight ...$molecularWeight): self
+    {
+        if ([] !== $this->molecularWeight) {
+            $this->_trackValuesRemoved(count($this->molecularWeight));
+            $this->molecularWeight = [];
+        }
+        if ([] === $molecularWeight) {
+            return $this;
+        }
+        foreach($molecularWeight as $v) {
+            $this->addMolecularWeight($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
      * Structural information.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionStructure
@@ -1365,6 +1646,30 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
      *
+     * Codes associated with the substance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionCode ...$code
+     * @return static
+     */
+    public function setCode(FHIRSubstanceDefinitionCode ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
      * Names applicable to this substance.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionName[]
@@ -1397,6 +1702,30 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
      *
+     * Names applicable to this substance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionName ...$name
+     * @return static
+     */
+    public function setName(FHIRSubstanceDefinitionName ...$name): self
+    {
+        if ([] !== $this->name) {
+            $this->_trackValuesRemoved(count($this->name));
+            $this->name = [];
+        }
+        if ([] === $name) {
+            return $this;
+        }
+        foreach($name as $v) {
+            $this->addName($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
      * A link between this substance and another, with details of the relationship.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRelationship[]
@@ -1422,6 +1751,30 @@ class FHIRSubstanceDefinition extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->relationship[] = $relationship;
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
+     * A link between this substance and another, with details of the relationship.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceDefinition\FHIRSubstanceDefinitionRelationship ...$relationship
+     * @return static
+     */
+    public function setRelationship(FHIRSubstanceDefinitionRelationship ...$relationship): self
+    {
+        if ([] !== $this->relationship) {
+            $this->_trackValuesRemoved(count($this->relationship));
+            $this->relationship = [];
+        }
+        if ([] === $relationship) {
+            return $this;
+        }
+        foreach($relationship as $v) {
+            $this->addRelationship($v);
+        }
         return $this;
     }
 

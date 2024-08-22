@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,7 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
      * Validation map for fields in type Conformance.Security
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -298,6 +298,32 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Types of security services are supported/required by the system.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept ...$service
+     * @return static
+     */
+    public function setService(FHIRCodeableConcept ...$service): self
+    {
+        if ([] !== $this->service) {
+            $this->_trackValuesRemoved(count($this->service));
+            $this->service = [];
+        }
+        if ([] === $service) {
+            return $this;
+        }
+        foreach($service as $v) {
+            $this->addService($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -365,6 +391,31 @@ class FHIRConformanceSecurity extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->certificate[] = $certificate;
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
+     *
+     * Certificates associated with security profiles.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceCertificate ...$certificate
+     * @return static
+     */
+    public function setCertificate(FHIRConformanceCertificate ...$certificate): self
+    {
+        if ([] !== $this->certificate) {
+            $this->_trackValuesRemoved(count($this->certificate));
+            $this->certificate = [];
+        }
+        if ([] === $certificate) {
+            return $this;
+        }
+        foreach($certificate as $v) {
+            $this->addCertificate($v);
+        }
         return $this;
     }
 

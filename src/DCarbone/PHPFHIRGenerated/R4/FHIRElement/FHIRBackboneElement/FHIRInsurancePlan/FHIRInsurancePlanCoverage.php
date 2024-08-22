@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsur
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -123,6 +123,9 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
      */
     private const _VALIDATION_RULES = [
         self::FIELD_BENEFIT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -260,6 +263,31 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference to the network that providing the type of coverage.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$network
+     * @return static
+     */
+    public function setNetwork(FHIRReference ...$network): self
+    {
+        if ([] !== $this->network) {
+            $this->_trackValuesRemoved(count($this->network));
+            $this->network = [];
+        }
+        if ([] === $network) {
+            return $this;
+        }
+        foreach($network as $v) {
+            $this->addNetwork($v);
+        }
+        return $this;
+    }
+
+    /**
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * Specific benefits under this type of coverage.
@@ -286,6 +314,29 @@ class FHIRInsurancePlanCoverage extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->benefit[] = $benefit;
+        return $this;
+    }
+
+    /**
+     * Details of a Health Insurance product/plan provided by an organization.
+     *
+     * Specific benefits under this type of coverage.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanBenefit ...$benefit
+     * @return static
+     */
+    public function setBenefit(FHIRInsurancePlanBenefit ...$benefit): self
+    {
+        if ([] !== $this->benefit) {
+            $this->_trackValuesRemoved(count($this->benefit));
+            $this->benefit = [];
+        }
+        if ([] === $benefit) {
+            return $this;
+        }
+        foreach($benefit as $v) {
+            $this->addBenefit($v);
+        }
         return $this;
     }
 

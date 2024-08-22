@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -183,7 +183,8 @@ class FHIRPositiveIntPrimitive implements PHPFHIRPrimitiveTypeInterface
         if ($this->_commas) {
             return strrev(wordwrap(strrev((string)$v), 3, ',', true));
         }
-        return (string)$v;    }
+        return (string)$v;
+    }
 
     /**
      * Returns the validation rules that this type's fields must comply with to be considered "valid"
@@ -206,9 +207,9 @@ class FHIRPositiveIntPrimitive implements PHPFHIRPrimitiveTypeInterface
     {
         $errs = [];
         $validationRules = $this->_getValidationRules();
-        if (isset($validationRules[self::FIELD_VALUE]) && null !== ($v = $this->getValue())) {
+        if (isset($validationRules[self::FIELD_VALUE]) && null !== $this->value) {
             foreach($validationRules[self::FIELD_VALUE] as $rule => $constraint) {
-                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_POSITIVE_INT_HYPHEN_PRIMITIVE, self::FIELD_VALUE, $rule, $constraint, $v);
+                $err = $this->_performValidation(PHPFHIRConstants::TYPE_NAME_POSITIVE_INT_HYPHEN_PRIMITIVE, self::FIELD_VALUE, $rule, $constraint, $this->getFormattedValue());
                 if (null !== $err) {
                     if (!isset($errs[self::FIELD_VALUE])) {
                         $errs[self::FIELD_VALUE] = [];

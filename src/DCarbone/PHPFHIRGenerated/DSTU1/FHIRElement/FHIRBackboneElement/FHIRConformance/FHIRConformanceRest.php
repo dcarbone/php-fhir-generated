@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -169,6 +169,9 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_MODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_RESOURCE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
@@ -463,6 +466,32 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * a description of how a target application fulfills those requirements in a
      * particular implementation.
      *
+     * A specification of the restful capabilities of the solution for a specific
+     * resource type.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceResource ...$resource
+     * @return static
+     */
+    public function setResource(FHIRConformanceResource ...$resource): self
+    {
+        if ([] !== $this->resource) {
+            $this->_trackValuesRemoved(count($this->resource));
+            $this->resource = [];
+        }
+        if ([] === $resource) {
+            return $this;
+        }
+        foreach($resource as $v) {
+            $this->addResource($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
+     *
      * A specification of restful operations supported by the system.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation1[]
@@ -497,6 +526,31 @@ class FHIRConformanceRest extends FHIRBackboneElement
      * a description of how a target application fulfills those requirements in a
      * particular implementation.
      *
+     * A specification of restful operations supported by the system.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceOperation1 ...$operation
+     * @return static
+     */
+    public function setOperation(FHIRConformanceOperation1 ...$operation): self
+    {
+        if ([] !== $this->operation) {
+            $this->_trackValuesRemoved(count($this->operation));
+            $this->operation = [];
+        }
+        if ([] === $operation) {
+            return $this;
+        }
+        foreach($operation as $v) {
+            $this->addOperation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
+     *
      * Definition of a named query and its parameters and their meaning.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceQuery[]
@@ -523,6 +577,31 @@ class FHIRConformanceRest extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->query[] = $query;
+        return $this;
+    }
+
+    /**
+     * A conformance statement is a set of requirements for a desired implementation or
+     * a description of how a target application fulfills those requirements in a
+     * particular implementation.
+     *
+     * Definition of a named query and its parameters and their meaning.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRConformance\FHIRConformanceQuery ...$query
+     * @return static
+     */
+    public function setQuery(FHIRConformanceQuery ...$query): self
+    {
+        if ([] !== $this->query) {
+            $this->_trackValuesRemoved(count($this->query));
+            $this->query = [];
+        }
+        if ([] === $query) {
+            return $this;
+        }
+        foreach($query as $v) {
+            $this->addQuery($v);
+        }
         return $this;
     }
 

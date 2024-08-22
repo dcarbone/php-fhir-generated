@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutri
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -164,7 +164,7 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
      * Validation map for fields in type NutritionOrder.OralDiet
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -320,6 +320,33 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kind of diet or dietary restriction such as fiber restricted diet or
+     * diabetic diet.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept ...$type): self
+    {
+        if ([] !== $this->type) {
+            $this->_trackValuesRemoved(count($this->type));
+            $this->type = [];
+        }
+        if ([] === $type) {
+            return $this;
+        }
+        foreach($type as $v) {
+            $this->addType($v);
+        }
+        return $this;
+    }
+
+    /**
      * Specifies an event that may occur multiple times. Timing schedules are used to
      * record when things are planned, expected or requested to occur. The most common
      * usage is in dosage instructions for medications. They are also used when
@@ -366,6 +393,37 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
     }
 
     /**
+     * Specifies an event that may occur multiple times. Timing schedules are used to
+     * record when things are planned, expected or requested to occur. The most common
+     * usage is in dosage instructions for medications. They are also used when
+     * planning care of various kinds, and may be used for reporting the schedule to
+     * which past regular activities were carried out.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The time period and frequency at which the diet should be given. The diet should
+     * be given for the combination of all schedules if more than one schedule is
+     * present.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRTiming ...$schedule
+     * @return static
+     */
+    public function setSchedule(FHIRTiming ...$schedule): self
+    {
+        if ([] !== $this->schedule) {
+            $this->_trackValuesRemoved(count($this->schedule));
+            $this->schedule = [];
+        }
+        if ([] === $schedule) {
+            return $this;
+        }
+        foreach($schedule as $v) {
+            $this->addSchedule($v);
+        }
+        return $this;
+    }
+
+    /**
      * A request to supply a diet, formula feeding (enteral) or oral nutritional
      * supplement to a patient/resident.
      *
@@ -396,6 +454,31 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->nutrient[] = $nutrient;
+        return $this;
+    }
+
+    /**
+     * A request to supply a diet, formula feeding (enteral) or oral nutritional
+     * supplement to a patient/resident.
+     *
+     * Class that defines the quantity and type of nutrient modifications (for example
+     * carbohydrate, fiber or sodium) required for the oral diet.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderNutrient ...$nutrient
+     * @return static
+     */
+    public function setNutrient(FHIRNutritionOrderNutrient ...$nutrient): self
+    {
+        if ([] !== $this->nutrient) {
+            $this->_trackValuesRemoved(count($this->nutrient));
+            $this->nutrient = [];
+        }
+        if ([] === $nutrient) {
+            return $this;
+        }
+        foreach($nutrient as $v) {
+            $this->addNutrient($v);
+        }
         return $this;
     }
 
@@ -434,6 +517,31 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
     }
 
     /**
+     * A request to supply a diet, formula feeding (enteral) or oral nutritional
+     * supplement to a patient/resident.
+     *
+     * Class that describes any texture modifications required for the patient to
+     * safely consume various types of solid foods.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderTexture ...$texture
+     * @return static
+     */
+    public function setTexture(FHIRNutritionOrderTexture ...$texture): self
+    {
+        if ([] !== $this->texture) {
+            $this->_trackValuesRemoved(count($this->texture));
+            $this->texture = [];
+        }
+        if ([] === $texture) {
+            return $this;
+        }
+        foreach($texture as $v) {
+            $this->addTexture($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -468,6 +576,33 @@ class FHIRNutritionOrderOralDiet extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->fluidConsistencyType[] = $fluidConsistencyType;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of
+     * liquids or fluids served to the patient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$fluidConsistencyType
+     * @return static
+     */
+    public function setFluidConsistencyType(FHIRCodeableConcept ...$fluidConsistencyType): self
+    {
+        if ([] !== $this->fluidConsistencyType) {
+            $this->_trackValuesRemoved(count($this->fluidConsistencyType));
+            $this->fluidConsistencyType = [];
+        }
+        if ([] === $fluidConsistencyType) {
+            return $this;
+        }
+        foreach($fluidConsistencyType as $v) {
+            $this->addFluidConsistencyType($v);
+        }
         return $this;
     }
 

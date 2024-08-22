@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -226,7 +226,7 @@ class FHIRContractTerm extends FHIRBackboneElement
      * Validation map for fields in type Contract.Term
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -660,6 +660,32 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Action stipulated by this Contract Provision.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$action
+     * @return static
+     */
+    public function setAction(FHIRCodeableConcept ...$action): self
+    {
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
+        if ([] === $action) {
+            return $this;
+        }
+        foreach($action as $v) {
+            $this->addAction($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Reason or purpose for the action stipulated by this Contract Provision.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
@@ -687,6 +713,32 @@ class FHIRContractTerm extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->actionReason[] = $actionReason;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reason or purpose for the action stipulated by this Contract Provision.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$actionReason
+     * @return static
+     */
+    public function setActionReason(FHIRCodeableConcept ...$actionReason): self
+    {
+        if ([] !== $this->actionReason) {
+            $this->_trackValuesRemoved(count($this->actionReason));
+            $this->actionReason = [];
+        }
+        if ([] === $actionReason) {
+            return $this;
+        }
+        foreach($actionReason as $v) {
+            $this->addActionReason($v);
+        }
         return $this;
     }
 
@@ -719,6 +771,30 @@ class FHIRContractTerm extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->actor[] = $actor;
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
+     * List of actors participating in this Contract Provision.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractActor1 ...$actor
+     * @return static
+     */
+    public function setActor(FHIRContractActor1 ...$actor): self
+    {
+        if ([] !== $this->actor) {
+            $this->_trackValuesRemoved(count($this->actor));
+            $this->actor = [];
+        }
+        if ([] === $actor) {
+            return $this;
+        }
+        foreach($actor as $v) {
+            $this->addActor($v);
+        }
         return $this;
     }
 
@@ -797,6 +873,30 @@ class FHIRContractTerm extends FHIRBackboneElement
      * A formal agreement between parties regarding the conduct of business, exchange
      * of information or other matters.
      *
+     * Contract Provision Valued Item List.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem1 ...$valuedItem
+     * @return static
+     */
+    public function setValuedItem(FHIRContractValuedItem1 ...$valuedItem): self
+    {
+        if ([] !== $this->valuedItem) {
+            $this->_trackValuesRemoved(count($this->valuedItem));
+            $this->valuedItem = [];
+        }
+        if ([] === $valuedItem) {
+            return $this;
+        }
+        foreach($valuedItem as $v) {
+            $this->addValuedItem($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
      * Nested group of Contract Provisions.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm[]
@@ -822,6 +922,30 @@ class FHIRContractTerm extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->group[] = $group;
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
+     * Nested group of Contract Provisions.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm ...$group
+     * @return static
+     */
+    public function setGroup(FHIRContractTerm ...$group): self
+    {
+        if ([] !== $this->group) {
+            $this->_trackValuesRemoved(count($this->group));
+            $this->group = [];
+        }
+        if ([] === $group) {
+            return $this;
+        }
+        foreach($group as $v) {
+            $this->addGroup($v);
+        }
         return $this;
     }
 

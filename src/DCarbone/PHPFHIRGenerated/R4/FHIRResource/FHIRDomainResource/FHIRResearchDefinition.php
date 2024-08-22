@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -570,7 +570,14 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Validation map for fields in type ResearchDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_POPULATION => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1230,6 +1237,34 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A formal identifier that is used to identify this research definition when it is
+     * represented in other formats, or referenced in a specification, model, design or
+     * an instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1730,6 +1765,32 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
@@ -1897,6 +1958,38 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These contexts may be general categories (gender, age, ...) or
+     * may be references to specific programs (insurance plans, studies, ...) and may
+     * be used to assist with indexing and searching for appropriate research
+     * definition instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1931,6 +2024,33 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A legal or geographic region in which the research definition is intended to be
+     * used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
+    {
+        if ([] !== $this->jurisdiction) {
+            $this->_trackValuesRemoved(count($this->jurisdiction));
+            $this->jurisdiction = [];
+        }
+        if ([] === $jurisdiction) {
+            return $this;
+        }
+        foreach($jurisdiction as $v) {
+            $this->addJurisdiction($v);
+        }
         return $this;
     }
 
@@ -2238,6 +2358,34 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Descriptive topics related to the content of the ResearchDefinition. Topics
+     * provide a high-level categorization grouping types of ResearchDefinitions that
+     * can be useful for filtering and searching.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$topic
+     * @return static
+     */
+    public function setTopic(FHIRCodeableConcept ...$topic): self
+    {
+        if ([] !== $this->topic) {
+            $this->_trackValuesRemoved(count($this->topic));
+            $this->topic = [];
+        }
+        if ([] === $topic) {
+            return $this;
+        }
+        foreach($topic as $v) {
+            $this->addTopic($v);
+        }
+        return $this;
+    }
+
+    /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -2270,6 +2418,32 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->author[] = $author;
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An individiual or organization primarily involved in the creation and
+     * maintenance of the content.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail ...$author
+     * @return static
+     */
+    public function setAuthor(FHIRContactDetail ...$author): self
+    {
+        if ([] !== $this->author) {
+            $this->_trackValuesRemoved(count($this->author));
+            $this->author = [];
+        }
+        if ([] === $author) {
+            return $this;
+        }
+        foreach($author as $v) {
+            $this->addAuthor($v);
+        }
         return $this;
     }
 
@@ -2314,6 +2488,32 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * An individual or organization primarily responsible for internal coherence of
+     * the content.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail ...$editor
+     * @return static
+     */
+    public function setEditor(FHIRContactDetail ...$editor): self
+    {
+        if ([] !== $this->editor) {
+            $this->_trackValuesRemoved(count($this->editor));
+            $this->editor = [];
+        }
+        if ([] === $editor) {
+            return $this;
+        }
+        foreach($editor as $v) {
+            $this->addEditor($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * An individual or organization primarily responsible for review of some aspect of
      * the content.
      *
@@ -2342,6 +2542,32 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->reviewer[] = $reviewer;
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An individual or organization primarily responsible for review of some aspect of
+     * the content.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail ...$reviewer
+     * @return static
+     */
+    public function setReviewer(FHIRContactDetail ...$reviewer): self
+    {
+        if ([] !== $this->reviewer) {
+            $this->_trackValuesRemoved(count($this->reviewer));
+            $this->reviewer = [];
+        }
+        if ([] === $reviewer) {
+            return $this;
+        }
+        foreach($reviewer as $v) {
+            $this->addReviewer($v);
+        }
         return $this;
     }
 
@@ -2382,6 +2608,32 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An individual or organization responsible for officially endorsing the content
+     * for use in some setting.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRContactDetail ...$endorser
+     * @return static
+     */
+    public function setEndorser(FHIRContactDetail ...$endorser): self
+    {
+        if ([] !== $this->endorser) {
+            $this->_trackValuesRemoved(count($this->endorser));
+            $this->endorser = [];
+        }
+        if ([] === $endorser) {
+            return $this;
+        }
+        foreach($endorser as $v) {
+            $this->addEndorser($v);
+        }
+        return $this;
+    }
+
+    /**
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
@@ -2416,6 +2668,33 @@ class FHIRResearchDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->relatedArtifact[] = $relatedArtifact;
+        return $this;
+    }
+
+    /**
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRRelatedArtifact ...$relatedArtifact
+     * @return static
+     */
+    public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
+    {
+        if ([] !== $this->relatedArtifact) {
+            $this->_trackValuesRemoved(count($this->relatedArtifact));
+            $this->relatedArtifact = [];
+        }
+        if ([] === $relatedArtifact) {
+            return $this;
+        }
+        foreach($relatedArtifact as $v) {
+            $this->addRelatedArtifact($v);
+        }
         return $this;
     }
 

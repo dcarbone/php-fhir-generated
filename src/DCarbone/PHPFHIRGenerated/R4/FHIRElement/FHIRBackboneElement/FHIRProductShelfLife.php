@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -150,7 +150,14 @@ class FHIRProductShelfLife extends FHIRBackboneElement
      * Validation map for fields in type ProductShelfLife
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PERIOD => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -374,6 +381,34 @@ class FHIRProductShelfLife extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->specialPrecautionsForStorage[] = $specialPrecautionsForStorage;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Special precautions for storage, if any, can be specified using an appropriate
+     * controlled vocabulary The controlled term and the controlled term identifier
+     * shall be specified.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$specialPrecautionsForStorage
+     * @return static
+     */
+    public function setSpecialPrecautionsForStorage(FHIRCodeableConcept ...$specialPrecautionsForStorage): self
+    {
+        if ([] !== $this->specialPrecautionsForStorage) {
+            $this->_trackValuesRemoved(count($this->specialPrecautionsForStorage));
+            $this->specialPrecautionsForStorage = [];
+        }
+        if ([] === $specialPrecautionsForStorage) {
+            return $this;
+        }
+        foreach($specialPrecautionsForStorage as $v) {
+            $this->addSpecialPrecautionsForStorage($v);
+        }
         return $this;
     }
 

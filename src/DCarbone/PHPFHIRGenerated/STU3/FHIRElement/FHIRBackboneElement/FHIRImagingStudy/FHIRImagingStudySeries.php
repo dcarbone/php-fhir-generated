@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRIma
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -249,7 +249,14 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
      * Validation map for fields in type ImagingStudy.Series
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_MODALITY => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_UID => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -713,6 +720,34 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The network service providing access (e.g., query, view, or retrieval) for this
+     * series. See implementation notes for information about using DICOM endpoints. A
+     * series-level endpoint, if present, has precedence over a study-level endpoint
+     * with the same Endpoint.type.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$endpoint
+     * @return static
+     */
+    public function setEndpoint(FHIRReference ...$endpoint): self
+    {
+        if ([] !== $this->endpoint) {
+            $this->_trackValuesRemoved(count($this->endpoint));
+            $this->endpoint = [];
+        }
+        if ([] === $endpoint) {
+            return $this;
+        }
+        foreach($endpoint as $v) {
+            $this->addEndpoint($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -878,6 +913,34 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The physician or operator (often the radiology technician) who performed the
+     * series. The performer is recorded at the series level, since each series in a
+     * study may be performed by a different practitioner, at different times, and
+     * using different devices. A series may be performed by multiple practitioners.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$performer
+     * @return static
+     */
+    public function setPerformer(FHIRReference ...$performer): self
+    {
+        if ([] !== $this->performer) {
+            $this->_trackValuesRemoved(count($this->performer));
+            $this->performer = [];
+        }
+        if ([] === $performer) {
+            return $this;
+        }
+        foreach($performer as $v) {
+            $this->addPerformer($v);
+        }
+        return $this;
+    }
+
+    /**
      * Representation of the content produced in a DICOM imaging study. A study
      * comprises a set of series, each of which includes a set of Service-Object Pair
      * Instances (SOP Instances - images or other data) acquired or produced in a
@@ -912,6 +975,33 @@ class FHIRImagingStudySeries extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->instance[] = $instance;
+        return $this;
+    }
+
+    /**
+     * Representation of the content produced in a DICOM imaging study. A study
+     * comprises a set of series, each of which includes a set of Service-Object Pair
+     * Instances (SOP Instances - images or other data) acquired or produced in a
+     * common context. A series is of only one modality (e.g. X-ray, CT, MR,
+     * ultrasound), but a study may have multiple series of different modalities.
+     *
+     * A single SOP instance within the series, e.g. an image, or presentation state.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudyInstance ...$instance
+     * @return static
+     */
+    public function setInstance(FHIRImagingStudyInstance ...$instance): self
+    {
+        if ([] !== $this->instance) {
+            $this->_trackValuesRemoved(count($this->instance));
+            $this->instance = [];
+        }
+        if ([] === $instance) {
+            return $this;
+        }
+        foreach($instance as $v) {
+            $this->addInstance($v);
+        }
         return $this;
     }
 

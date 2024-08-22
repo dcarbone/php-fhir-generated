@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -582,7 +582,7 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * Validation map for fields in type PlanDefinition.Action
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1443,6 +1443,32 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A description of why this action is necessary or appropriate.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$reason
+     * @return static
+     */
+    public function setReason(FHIRCodeableConcept ...$reason): self
+    {
+        if ([] !== $this->reason) {
+            $this->_trackValuesRemoved(count($this->reason));
+            $this->reason = [];
+        }
+        if ([] === $reason) {
+            return $this;
+        }
+        foreach($reason as $v) {
+            $this->addReason($v);
+        }
+        return $this;
+    }
+
+    /**
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
@@ -1479,6 +1505,34 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->documentation[] = $documentation;
+        return $this;
+    }
+
+    /**
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Didactic or other informational resources associated with the action that can be
+     * provided to the CDS recipient. Information resources can include inline text
+     * commentary and links to web resources.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact ...$documentation
+     * @return static
+     */
+    public function setDocumentation(FHIRRelatedArtifact ...$documentation): self
+    {
+        if ([] !== $this->documentation) {
+            $this->_trackValuesRemoved(count($this->documentation));
+            $this->documentation = [];
+        }
+        if ([] === $documentation) {
+            return $this;
+        }
+        foreach($documentation as $v) {
+            $this->addDocumentation($v);
+        }
         return $this;
     }
 
@@ -1753,6 +1807,33 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
     }
 
     /**
+     * A description of a triggering event. Triggering events can be named events, data
+     * events, or periodic, as determined by the type element.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A description of when the action should be triggered. When multiple triggers are
+     * specified on an action, any triggering event invokes the action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRTriggerDefinition ...$trigger
+     * @return static
+     */
+    public function setTrigger(FHIRTriggerDefinition ...$trigger): self
+    {
+        if ([] !== $this->trigger) {
+            $this->_trackValuesRemoved(count($this->trigger));
+            $this->trigger = [];
+        }
+        if ([] === $trigger) {
+            return $this;
+        }
+        foreach($trigger as $v) {
+            $this->addTrigger($v);
+        }
+        return $this;
+    }
+
+    /**
      * This resource allows for the definition of various types of plans as a sharable,
      * consumable, and executable artifact. The resource is general enough to support
      * the description of a broad range of clinical and non-clinical artifacts such as
@@ -1789,6 +1870,34 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->condition[] = $condition;
+        return $this;
+    }
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical and non-clinical artifacts such as
+     * clinical decision support rules, order sets, protocols, and drug quality
+     * specifications.
+     *
+     * An expression that describes applicability criteria or start/stop conditions for
+     * the action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionCondition ...$condition
+     * @return static
+     */
+    public function setCondition(FHIRPlanDefinitionCondition ...$condition): self
+    {
+        if ([] !== $this->condition) {
+            $this->_trackValuesRemoved(count($this->condition));
+            $this->condition = [];
+        }
+        if ([] === $condition) {
+            return $this;
+        }
+        foreach($condition as $v) {
+            $this->addCondition($v);
+        }
         return $this;
     }
 
@@ -1837,6 +1946,33 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * clinical decision support rules, order sets, protocols, and drug quality
      * specifications.
      *
+     * Defines input data requirements for the action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionInput ...$input
+     * @return static
+     */
+    public function setInput(FHIRPlanDefinitionInput ...$input): self
+    {
+        if ([] !== $this->input) {
+            $this->_trackValuesRemoved(count($this->input));
+            $this->input = [];
+        }
+        if ([] === $input) {
+            return $this;
+        }
+        foreach($input as $v) {
+            $this->addInput($v);
+        }
+        return $this;
+    }
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical and non-clinical artifacts such as
+     * clinical decision support rules, order sets, protocols, and drug quality
+     * specifications.
+     *
      * Defines the outputs of the action, if any.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionOutput[]
@@ -1865,6 +2001,33 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->output[] = $output;
+        return $this;
+    }
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical and non-clinical artifacts such as
+     * clinical decision support rules, order sets, protocols, and drug quality
+     * specifications.
+     *
+     * Defines the outputs of the action, if any.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionOutput ...$output
+     * @return static
+     */
+    public function setOutput(FHIRPlanDefinitionOutput ...$output): self
+    {
+        if ([] !== $this->output) {
+            $this->_trackValuesRemoved(count($this->output));
+            $this->output = [];
+        }
+        if ([] === $output) {
+            return $this;
+        }
+        foreach($output as $v) {
+            $this->addOutput($v);
+        }
         return $this;
     }
 
@@ -1905,6 +2068,34 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->relatedAction[] = $relatedAction;
+        return $this;
+    }
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical and non-clinical artifacts such as
+     * clinical decision support rules, order sets, protocols, and drug quality
+     * specifications.
+     *
+     * A relationship to another action such as "before" or "30-60 minutes after start
+     * of".
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionRelatedAction ...$relatedAction
+     * @return static
+     */
+    public function setRelatedAction(FHIRPlanDefinitionRelatedAction ...$relatedAction): self
+    {
+        if ([] !== $this->relatedAction) {
+            $this->_trackValuesRemoved(count($this->relatedAction));
+            $this->relatedAction = [];
+        }
+        if ([] === $relatedAction) {
+            return $this;
+        }
+        foreach($relatedAction as $v) {
+            $this->addRelatedAction($v);
+        }
         return $this;
     }
 
@@ -2125,6 +2316,33 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->participant[] = $participant;
+        return $this;
+    }
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical and non-clinical artifacts such as
+     * clinical decision support rules, order sets, protocols, and drug quality
+     * specifications.
+     *
+     * Indicates who should participate in performing the action described.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionParticipant ...$participant
+     * @return static
+     */
+    public function setParticipant(FHIRPlanDefinitionParticipant ...$participant): self
+    {
+        if ([] !== $this->participant) {
+            $this->_trackValuesRemoved(count($this->participant));
+            $this->participant = [];
+        }
+        if ([] === $participant) {
+            return $this;
+        }
+        foreach($participant as $v) {
+            $this->addParticipant($v);
+        }
         return $this;
     }
 
@@ -2506,6 +2724,36 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
      * clinical decision support rules, order sets, protocols, and drug quality
      * specifications.
      *
+     * Customizations that should be applied to the statically defined resource. For
+     * example, if the dosage of a medication must be computed based on the patient's
+     * weight, a customization would be used to specify an expression that calculated
+     * the weight, and the path on the resource that would contain the result.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionDynamicValue ...$dynamicValue
+     * @return static
+     */
+    public function setDynamicValue(FHIRPlanDefinitionDynamicValue ...$dynamicValue): self
+    {
+        if ([] !== $this->dynamicValue) {
+            $this->_trackValuesRemoved(count($this->dynamicValue));
+            $this->dynamicValue = [];
+        }
+        if ([] === $dynamicValue) {
+            return $this;
+        }
+        foreach($dynamicValue as $v) {
+            $this->addDynamicValue($v);
+        }
+        return $this;
+    }
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical and non-clinical artifacts such as
+     * clinical decision support rules, order sets, protocols, and drug quality
+     * specifications.
+     *
      * Sub actions that are contained within the action. The behavior of this action
      * determines the functionality of the sub-actions. For example, a selection
      * behavior of at-most-one indicates that of the sub-actions, at most one may be
@@ -2540,6 +2788,36 @@ class FHIRPlanDefinitionAction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->action[] = $action;
+        return $this;
+    }
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical and non-clinical artifacts such as
+     * clinical decision support rules, order sets, protocols, and drug quality
+     * specifications.
+     *
+     * Sub actions that are contained within the action. The behavior of this action
+     * determines the functionality of the sub-actions. For example, a selection
+     * behavior of at-most-one indicates that of the sub-actions, at most one may be
+     * chosen as part of realizing the action definition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionAction ...$action
+     * @return static
+     */
+    public function setAction(FHIRPlanDefinitionAction ...$action): self
+    {
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
+        if ([] === $action) {
+            return $this;
+        }
+        foreach($action as $v) {
+            $this->addAction($v);
+        }
         return $this;
     }
 

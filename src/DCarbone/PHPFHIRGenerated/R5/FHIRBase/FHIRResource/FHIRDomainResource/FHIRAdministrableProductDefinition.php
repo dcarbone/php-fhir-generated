@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -285,6 +285,9 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
         self::FIELD_ROUTE_OF_ADMINISTRATION => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
     ];
 
     /** @var array */
@@ -500,6 +503,32 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An identifier for the administrable product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this administrable product. Enables tracking the life-cycle of the
@@ -574,6 +603,37 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
         }
         $this->_trackValueAdded();
         $this->formOf[] = $formOf;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * References a product from which one or more of the constituent parts of that
+     * product can be prepared and used as described by this administrable product. If
+     * this administrable product describes the administration of a crushed tablet, the
+     * 'formOf' would be the product representing a distribution containing tablets and
+     * possibly also a cream. This is distinct from the 'producedFrom' which refers to
+     * the specific components of the product that are used in this preparation, rather
+     * than the product as a whole.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$formOf
+     * @return static
+     */
+    public function setFormOf(FHIRReference ...$formOf): self
+    {
+        if ([] !== $this->formOf) {
+            $this->_trackValuesRemoved(count($this->formOf));
+            $this->formOf = [];
+        }
+        if ([] === $formOf) {
+            return $this;
+        }
+        foreach($formOf as $v) {
+            $this->addFormOf($v);
+        }
         return $this;
     }
 
@@ -710,6 +770,38 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the specific manufactured items that are part of the 'formOf' product
+     * that are used in the preparation of this specific administrable form. In some
+     * cases, an administrable form might use all of the items from the overall product
+     * (or there might only be one item), while in other cases, an administrable form
+     * might use only a subset of the items available in the overall product. For
+     * example, an administrable form might involve combining a liquid and a powder
+     * available as part of an overall product, but not involve applying the also
+     * supplied cream.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$producedFrom
+     * @return static
+     */
+    public function setProducedFrom(FHIRReference ...$producedFrom): self
+    {
+        if ([] !== $this->producedFrom) {
+            $this->_trackValuesRemoved(count($this->producedFrom));
+            $this->producedFrom = [];
+        }
+        if ([] === $producedFrom) {
+            return $this;
+        }
+        foreach($producedFrom as $v) {
+            $this->addProducedFrom($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -752,6 +844,37 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
         }
         $this->_trackValueAdded();
         $this->ingredient[] = $ingredient;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The ingredients of this administrable medicinal product. This is only needed if
+     * the ingredients are not specified either using ManufacturedItemDefiniton (via
+     * AdministrableProductDefinition.producedFrom) to state which component items are
+     * used to make this, or using by incoming references from the Ingredient resource,
+     * to state in detail which substances exist within this. This element allows a
+     * basic coded ingredient to be used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$ingredient
+     * @return static
+     */
+    public function setIngredient(FHIRCodeableConcept ...$ingredient): self
+    {
+        if ([] !== $this->ingredient) {
+            $this->_trackValuesRemoved(count($this->ingredient));
+            $this->ingredient = [];
+        }
+        if ([] === $ingredient) {
+            return $this;
+        }
+        foreach($ingredient as $v) {
+            $this->addIngredient($v);
+        }
         return $this;
     }
 
@@ -887,6 +1010,31 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
      * patient (after any mixing of multiple components, dissolution etc. has been
      * performed).
      *
+     * Characteristics e.g. a product's onset of action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionProperty ...$property
+     * @return static
+     */
+    public function setProperty(FHIRAdministrableProductDefinitionProperty ...$property): self
+    {
+        if ([] !== $this->property) {
+            $this->_trackValuesRemoved(count($this->property));
+            $this->property = [];
+        }
+        if ([] === $property) {
+            return $this;
+        }
+        foreach($property as $v) {
+            $this->addProperty($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A medicinal product in the final form which is suitable for administering to a
+     * patient (after any mixing of multiple components, dissolution etc. has been
+     * performed).
+     *
      * The path by which the product is taken into or makes contact with the body. In
      * some regions this is referred to as the licenced or approved route.
      * RouteOfAdministration cannot be used when the 'formOf' product already uses
@@ -919,6 +1067,34 @@ class FHIRAdministrableProductDefinition extends FHIRDomainResource implements P
         }
         $this->_trackValueAdded();
         $this->routeOfAdministration[] = $routeOfAdministration;
+        return $this;
+    }
+
+    /**
+     * A medicinal product in the final form which is suitable for administering to a
+     * patient (after any mixing of multiple components, dissolution etc. has been
+     * performed).
+     *
+     * The path by which the product is taken into or makes contact with the body. In
+     * some regions this is referred to as the licenced or approved route.
+     * RouteOfAdministration cannot be used when the 'formOf' product already uses
+     * MedicinalProductDefinition.route (and vice versa).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionRouteOfAdministration ...$routeOfAdministration
+     * @return static
+     */
+    public function setRouteOfAdministration(FHIRAdministrableProductDefinitionRouteOfAdministration ...$routeOfAdministration): self
+    {
+        if ([] !== $this->routeOfAdministration) {
+            $this->_trackValuesRemoved(count($this->routeOfAdministration));
+            $this->routeOfAdministration = [];
+        }
+        if ([] === $routeOfAdministration) {
+            return $this;
+        }
+        foreach($routeOfAdministration as $v) {
+            $this->addRouteOfAdministration($v);
+        }
         return $this;
     }
 

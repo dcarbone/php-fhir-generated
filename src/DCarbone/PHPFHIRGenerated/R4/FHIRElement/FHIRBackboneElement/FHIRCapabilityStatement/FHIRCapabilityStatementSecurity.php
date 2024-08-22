@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCapab
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -134,7 +134,7 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
      * Validation map for fields in type CapabilityStatement.Security
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -280,6 +280,32 @@ class FHIRCapabilityStatementSecurity extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->service[] = $service;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Types of security services that are supported/required by the system.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$service
+     * @return static
+     */
+    public function setService(FHIRCodeableConcept ...$service): self
+    {
+        if ([] !== $this->service) {
+            $this->_trackValuesRemoved(count($this->service));
+            $this->service = [];
+        }
+        if ([] === $service) {
+            return $this;
+        }
+        foreach($service as $v) {
+            $this->addService($v);
+        }
         return $this;
     }
 

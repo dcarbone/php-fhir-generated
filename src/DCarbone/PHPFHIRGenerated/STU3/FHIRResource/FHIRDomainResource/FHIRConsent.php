@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -342,7 +342,14 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Validation map for fields in type Consent
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PATIENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -730,6 +737,33 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A classification of the type of consents found in the statement. This element
+     * supports indexing and retrieval of consent statements.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -883,6 +917,34 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Either the Grantor, which is the entity responsible for granting the rights
+     * listed in a Consent Directive or the Grantee, which is the entity responsible
+     * for complying with the Consent Directive, including any obligations or
+     * limitations on authorizations and enforcement of prohibitions.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$consentingParty
+     * @return static
+     */
+    public function setConsentingParty(FHIRReference ...$consentingParty): self
+    {
+        if ([] !== $this->consentingParty) {
+            $this->_trackValuesRemoved(count($this->consentingParty));
+            $this->consentingParty = [];
+        }
+        if ([] === $consentingParty) {
+            return $this;
+        }
+        foreach($consentingParty as $v) {
+            $this->addConsentingParty($v);
+        }
+        return $this;
+    }
+
+    /**
      * A record of a healthcare consumer’s policy choices, which permits or denies
      * identified recipient(s) or recipient role(s) to perform one or more actions
      * within a given policy context, for specific purposes and periods of time.
@@ -915,6 +977,32 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->actor[] = $actor;
+        return $this;
+    }
+
+    /**
+     * A record of a healthcare consumer’s policy choices, which permits or denies
+     * identified recipient(s) or recipient role(s) to perform one or more actions
+     * within a given policy context, for specific purposes and periods of time.
+     *
+     * Who or what is controlled by this consent. Use group to identify a set of actors
+     * by some property they share (e.g. 'admitting officers').
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentActor ...$actor
+     * @return static
+     */
+    public function setActor(FHIRConsentActor ...$actor): self
+    {
+        if ([] !== $this->actor) {
+            $this->_trackValuesRemoved(count($this->actor));
+            $this->actor = [];
+        }
+        if ([] === $actor) {
+            return $this;
+        }
+        foreach($actor as $v) {
+            $this->addActor($v);
+        }
         return $this;
     }
 
@@ -955,6 +1043,32 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Actions controlled by this consent.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$action
+     * @return static
+     */
+    public function setAction(FHIRCodeableConcept ...$action): self
+    {
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
+        if ([] === $action) {
+            return $this;
+        }
+        foreach($action as $v) {
+            $this->addAction($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -987,6 +1101,32 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->organization[] = $organization;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The organization that manages the consent, and the framework within which it is
+     * executed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$organization
+     * @return static
+     */
+    public function setOrganization(FHIRReference ...$organization): self
+    {
+        if ([] !== $this->organization) {
+            $this->_trackValuesRemoved(count($this->organization));
+            $this->organization = [];
+        }
+        if ([] === $organization) {
+            return $this;
+        }
+        foreach($organization as $v) {
+            $this->addOrganization($v);
+        }
         return $this;
     }
 
@@ -1147,6 +1287,32 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * A record of a healthcare consumer’s policy choices, which permits or denies
+     * identified recipient(s) or recipient role(s) to perform one or more actions
+     * within a given policy context, for specific purposes and periods of time.
+     *
+     * The references to the policies that are included in this consent scope. Policies
+     * may be organizational, but are often defined jurisdictionally, or in law.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentPolicy ...$policy
+     * @return static
+     */
+    public function setPolicy(FHIRConsentPolicy ...$policy): self
+    {
+        if ([] !== $this->policy) {
+            $this->_trackValuesRemoved(count($this->policy));
+            $this->policy = [];
+        }
+        if ([] === $policy) {
+            return $this;
+        }
+        foreach($policy as $v) {
+            $this->addPolicy($v);
+        }
+        return $this;
+    }
+
+    /**
      * String of characters used to identify a name or a resource
      * see http://en.wikipedia.org/wiki/Uniform_resource_identifier
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1228,6 +1394,33 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A set of security labels that define which resources are controlled by this
+     * consent. If more than one label is specified, all resources must have all the
+     * specified labels.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding ...$securityLabel
+     * @return static
+     */
+    public function setSecurityLabel(FHIRCoding ...$securityLabel): self
+    {
+        if ([] !== $this->securityLabel) {
+            $this->_trackValuesRemoved(count($this->securityLabel));
+            $this->securityLabel = [];
+        }
+        if ([] === $securityLabel) {
+            return $this;
+        }
+        foreach($securityLabel as $v) {
+            $this->addSecurityLabel($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The context of the activities a user is taking - why the user is accessing the
      * data - that are controlled by this consent.
      *
@@ -1256,6 +1449,32 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->purpose[] = $purpose;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The context of the activities a user is taking - why the user is accessing the
+     * data - that are controlled by this consent.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding ...$purpose
+     * @return static
+     */
+    public function setPurpose(FHIRCoding ...$purpose): self
+    {
+        if ([] !== $this->purpose) {
+            $this->_trackValuesRemoved(count($this->purpose));
+            $this->purpose = [];
+        }
+        if ([] === $purpose) {
+            return $this;
+        }
+        foreach($purpose as $v) {
+            $this->addPurpose($v);
+        }
         return $this;
     }
 
@@ -1334,6 +1553,31 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * identified recipient(s) or recipient role(s) to perform one or more actions
      * within a given policy context, for specific purposes and periods of time.
      *
+     * The resources controlled by this consent, if specific resources are referenced.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentData ...$data
+     * @return static
+     */
+    public function setData(FHIRConsentData ...$data): self
+    {
+        if ([] !== $this->data) {
+            $this->_trackValuesRemoved(count($this->data));
+            $this->data = [];
+        }
+        if ([] === $data) {
+            return $this;
+        }
+        foreach($data as $v) {
+            $this->addData($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A record of a healthcare consumer’s policy choices, which permits or denies
+     * identified recipient(s) or recipient role(s) to perform one or more actions
+     * within a given policy context, for specific purposes and periods of time.
+     *
      * An exception to the base policy of this consent. An exception can be an addition
      * or removal of access permissions.
      *
@@ -1362,6 +1606,32 @@ class FHIRConsent extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->except[] = $except;
+        return $this;
+    }
+
+    /**
+     * A record of a healthcare consumer’s policy choices, which permits or denies
+     * identified recipient(s) or recipient role(s) to perform one or more actions
+     * within a given policy context, for specific purposes and periods of time.
+     *
+     * An exception to the base policy of this consent. An exception can be an addition
+     * or removal of access permissions.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConsent\FHIRConsentExcept ...$except
+     * @return static
+     */
+    public function setExcept(FHIRConsentExcept ...$except): self
+    {
+        if ([] !== $this->except) {
+            $this->_trackValuesRemoved(count($this->except));
+            $this->except = [];
+        }
+        if ([] === $except) {
+            return $this;
+        }
+        foreach($except as $v) {
+            $this->addExcept($v);
+        }
         return $this;
     }
 

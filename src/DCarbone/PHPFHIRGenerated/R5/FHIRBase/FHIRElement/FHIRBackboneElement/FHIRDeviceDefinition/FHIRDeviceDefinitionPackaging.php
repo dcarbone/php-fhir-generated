@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -174,7 +174,7 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * Validation map for fields in type DeviceDefinition.Packaging
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -422,6 +422,30 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
      *
+     * An organization that distributes the packaged device.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionDistributor ...$distributor
+     * @return static
+     */
+    public function setDistributor(FHIRDeviceDefinitionDistributor ...$distributor): self
+    {
+        if ([] !== $this->distributor) {
+            $this->_trackValuesRemoved(count($this->distributor));
+            $this->distributor = [];
+        }
+        if ([] === $distributor) {
+            return $this;
+        }
+        foreach($distributor as $v) {
+            $this->addDistributor($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
      * Unique Device Identifier (UDI) Barcode string on the packaging.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier[]
@@ -454,6 +478,30 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
      * The characteristics, operational status and capabilities of a medical-related
      * component of a medical device.
      *
+     * Unique Device Identifier (UDI) Barcode string on the packaging.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionUdiDeviceIdentifier ...$udiDeviceIdentifier
+     * @return static
+     */
+    public function setUdiDeviceIdentifier(FHIRDeviceDefinitionUdiDeviceIdentifier ...$udiDeviceIdentifier): self
+    {
+        if ([] !== $this->udiDeviceIdentifier) {
+            $this->_trackValuesRemoved(count($this->udiDeviceIdentifier));
+            $this->udiDeviceIdentifier = [];
+        }
+        if ([] === $udiDeviceIdentifier) {
+            return $this;
+        }
+        foreach($udiDeviceIdentifier as $v) {
+            $this->addUdiDeviceIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
      * Allows packages within packages.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionPackaging[]
@@ -479,6 +527,30 @@ class FHIRDeviceDefinitionPackaging extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->packaging[] = $packaging;
+        return $this;
+    }
+
+    /**
+     * The characteristics, operational status and capabilities of a medical-related
+     * component of a medical device.
+     *
+     * Allows packages within packages.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDeviceDefinition\FHIRDeviceDefinitionPackaging ...$packaging
+     * @return static
+     */
+    public function setPackaging(FHIRDeviceDefinitionPackaging ...$packaging): self
+    {
+        if ([] !== $this->packaging) {
+            $this->_trackValuesRemoved(count($this->packaging));
+            $this->packaging = [];
+        }
+        if ([] === $packaging) {
+            return $this;
+        }
+        foreach($packaging as $v) {
+            $this->addPackaging($v);
+        }
         return $this;
     }
 

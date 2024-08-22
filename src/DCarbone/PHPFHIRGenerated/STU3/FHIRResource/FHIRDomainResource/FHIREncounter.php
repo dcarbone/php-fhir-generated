@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -342,7 +342,11 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * Validation map for fields in type Encounter
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -655,6 +659,31 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifier(s) by which this encounter is known.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * Current state of the encounter
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -719,6 +748,32 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         $this->_trackValueAdded();
         $this->statusHistory[] = $statusHistory;
+        return $this;
+    }
+
+    /**
+     * An interaction between a patient and healthcare provider(s) for the purpose of
+     * providing healthcare service(s) or assessing the health status of a patient.
+     *
+     * The status history permits the encounter resource to contain the status history
+     * without needing to read through the historical versions of the resource, or even
+     * have the server store them.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterStatusHistory ...$statusHistory
+     * @return static
+     */
+    public function setStatusHistory(FHIREncounterStatusHistory ...$statusHistory): self
+    {
+        if ([] !== $this->statusHistory) {
+            $this->_trackValuesRemoved(count($this->statusHistory));
+            $this->statusHistory = [];
+        }
+        if ([] === $statusHistory) {
+            return $this;
+        }
+        foreach($statusHistory as $v) {
+            $this->addStatusHistory($v);
+        }
         return $this;
     }
 
@@ -801,6 +856,36 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
     }
 
     /**
+     * An interaction between a patient and healthcare provider(s) for the purpose of
+     * providing healthcare service(s) or assessing the health status of a patient.
+     *
+     * The class history permits the tracking of the encounters transitions without
+     * needing to go through the resource history. This would be used for a case where
+     * an admission starts of as an emergency encounter, then transisions into an
+     * inpatient scenario. Doing this and not restarting a new encounter ensures that
+     * any lab/diagnostic results can more easily follow the patient and not require
+     * re-processing and not get lost or cancelled during a kindof discharge from
+     * emergency to inpatient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterClassHistory ...$classHistory
+     * @return static
+     */
+    public function setClassHistory(FHIREncounterClassHistory ...$classHistory): self
+    {
+        if ([] !== $this->classHistory) {
+            $this->_trackValuesRemoved(count($this->classHistory));
+            $this->classHistory = [];
+        }
+        if ([] === $classHistory) {
+            return $this;
+        }
+        foreach($classHistory as $v) {
+            $this->addClassHistory($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -835,6 +920,33 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         $this->_trackValueAdded();
         $this->type[] = $type;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled
+     * nursing, rehabilitation).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept ...$type): self
+    {
+        if ([] !== $this->type) {
+            $this->_trackValuesRemoved(count($this->type));
+            $this->type = [];
+        }
+        if ([] === $type) {
+            return $this;
+        }
+        foreach($type as $v) {
+            $this->addType($v);
+        }
         return $this;
     }
 
@@ -959,6 +1071,37 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Where a specific encounter should be classified as a part of a specific
+     * episode(s) of care this field should be used. This association can facilitate
+     * grouping of related encounters together for a specific purpose, such as
+     * government reporting, issue tracking, association via a common problem. The
+     * association is recorded on the encounter as these are typically created after
+     * the episode of care, and grouped on entry rather than editing the episode of
+     * care to append another encounter to it (the episode of care could span years).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$episodeOfCare
+     * @return static
+     */
+    public function setEpisodeOfCare(FHIRReference ...$episodeOfCare): self
+    {
+        if ([] !== $this->episodeOfCare) {
+            $this->_trackValuesRemoved(count($this->episodeOfCare));
+            $this->episodeOfCare = [];
+        }
+        if ([] === $episodeOfCare) {
+            return $this;
+        }
+        foreach($episodeOfCare as $v) {
+            $this->addEpisodeOfCare($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The referral request this encounter satisfies (incoming referral).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference[]
@@ -985,6 +1128,31 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         $this->_trackValueAdded();
         $this->incomingReferral[] = $incomingReferral;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The referral request this encounter satisfies (incoming referral).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$incomingReferral
+     * @return static
+     */
+    public function setIncomingReferral(FHIRReference ...$incomingReferral): self
+    {
+        if ([] !== $this->incomingReferral) {
+            $this->_trackValuesRemoved(count($this->incomingReferral));
+            $this->incomingReferral = [];
+        }
+        if ([] === $incomingReferral) {
+            return $this;
+        }
+        foreach($incomingReferral as $v) {
+            $this->addIncomingReferral($v);
+        }
         return $this;
     }
 
@@ -1017,6 +1185,30 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         $this->_trackValueAdded();
         $this->participant[] = $participant;
+        return $this;
+    }
+
+    /**
+     * An interaction between a patient and healthcare provider(s) for the purpose of
+     * providing healthcare service(s) or assessing the health status of a patient.
+     *
+     * The list of people responsible for providing the service.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterParticipant ...$participant
+     * @return static
+     */
+    public function setParticipant(FHIREncounterParticipant ...$participant): self
+    {
+        if ([] !== $this->participant) {
+            $this->_trackValuesRemoved(count($this->participant));
+            $this->participant = [];
+        }
+        if ([] === $participant) {
+            return $this;
+        }
+        foreach($participant as $v) {
+            $this->addParticipant($v);
+        }
         return $this;
     }
 
@@ -1163,6 +1355,33 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reason the encounter takes place, expressed as a code. For admissions, this can
+     * be used for a coded admission diagnosis.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$reason
+     * @return static
+     */
+    public function setReason(FHIRCodeableConcept ...$reason): self
+    {
+        if ([] !== $this->reason) {
+            $this->_trackValuesRemoved(count($this->reason));
+            $this->reason = [];
+        }
+        if ([] === $reason) {
+            return $this;
+        }
+        foreach($reason as $v) {
+            $this->addReason($v);
+        }
+        return $this;
+    }
+
+    /**
      * An interaction between a patient and healthcare provider(s) for the purpose of
      * providing healthcare service(s) or assessing the health status of a patient.
      *
@@ -1191,6 +1410,30 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         $this->_trackValueAdded();
         $this->diagnosis[] = $diagnosis;
+        return $this;
+    }
+
+    /**
+     * An interaction between a patient and healthcare provider(s) for the purpose of
+     * providing healthcare service(s) or assessing the health status of a patient.
+     *
+     * The list of diagnosis relevant to this encounter.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterDiagnosis ...$diagnosis
+     * @return static
+     */
+    public function setDiagnosis(FHIREncounterDiagnosis ...$diagnosis): self
+    {
+        if ([] !== $this->diagnosis) {
+            $this->_trackValuesRemoved(count($this->diagnosis));
+            $this->diagnosis = [];
+        }
+        if ([] === $diagnosis) {
+            return $this;
+        }
+        foreach($diagnosis as $v) {
+            $this->addDiagnosis($v);
+        }
         return $this;
     }
 
@@ -1225,6 +1468,31 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         $this->_trackValueAdded();
         $this->account[] = $account;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The set of accounts that may be used for billing for this Encounter.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$account
+     * @return static
+     */
+    public function setAccount(FHIRReference ...$account): self
+    {
+        if ([] !== $this->account) {
+            $this->_trackValuesRemoved(count($this->account));
+            $this->account = [];
+        }
+        if ([] === $account) {
+            return $this;
+        }
+        foreach($account as $v) {
+            $this->addAccount($v);
+        }
         return $this;
     }
 
@@ -1289,6 +1557,30 @@ class FHIREncounter extends FHIRDomainResource implements PHPFHIRContainedTypeIn
         }
         $this->_trackValueAdded();
         $this->location[] = $location;
+        return $this;
+    }
+
+    /**
+     * An interaction between a patient and healthcare provider(s) for the purpose of
+     * providing healthcare service(s) or assessing the health status of a patient.
+     *
+     * List of locations where the patient has been during this encounter.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREncounter\FHIREncounterLocation ...$location
+     * @return static
+     */
+    public function setLocation(FHIREncounterLocation ...$location): self
+    {
+        if ([] !== $this->location) {
+            $this->_trackValuesRemoved(count($this->location));
+            $this->location = [];
+        }
+        if ([] === $location) {
+            return $this;
+        }
+        foreach($location as $v) {
+            $this->addLocation($v);
+        }
         return $this;
     }
 

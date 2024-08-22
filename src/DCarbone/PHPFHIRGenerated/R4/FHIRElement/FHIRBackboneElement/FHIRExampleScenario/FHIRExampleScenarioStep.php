@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExamp
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,7 +126,7 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
      * Validation map for fields in type ExampleScenario.Step
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -236,6 +236,29 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
     }
 
     /**
+     * Example of workflow instance.
+     *
+     * Nested process.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioProcess ...$process
+     * @return static
+     */
+    public function setProcess(FHIRExampleScenarioProcess ...$process): self
+    {
+        if ([] !== $this->process) {
+            $this->_trackValuesRemoved(count($this->process));
+            $this->process = [];
+        }
+        if ([] === $process) {
+            return $this;
+        }
+        foreach($process as $v) {
+            $this->addProcess($v);
+        }
+        return $this;
+    }
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -331,6 +354,30 @@ class FHIRExampleScenarioStep extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->alternative[] = $alternative;
+        return $this;
+    }
+
+    /**
+     * Example of workflow instance.
+     *
+     * Indicates an alternative step that can be taken instead of the operations on the
+     * base step in exceptional/atypical circumstances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExampleScenario\FHIRExampleScenarioAlternative ...$alternative
+     * @return static
+     */
+    public function setAlternative(FHIRExampleScenarioAlternative ...$alternative): self
+    {
+        if ([] !== $this->alternative) {
+            $this->_trackValuesRemoved(count($this->alternative));
+            $this->alternative = [];
+        }
+        if ([] === $alternative) {
+            return $this;
+        }
+        foreach($alternative as $v) {
+            $this->addAlternative($v);
+        }
         return $this;
     }
 

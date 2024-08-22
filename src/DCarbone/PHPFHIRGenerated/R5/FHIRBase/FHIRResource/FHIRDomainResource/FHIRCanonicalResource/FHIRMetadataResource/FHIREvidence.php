@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -574,6 +574,9 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_VARIABLE_DEFINITION => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
@@ -1205,6 +1208,34 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A formal identifier that is used to identify this summary when it is represented
+     * in other formats, or referenced in a specification, model, design or an
+     * instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1785,6 +1816,32 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * An individiual, organization, or device primarily involved in the creation and
      * maintenance of the content.
      *
@@ -1813,6 +1870,32 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->author[] = $author;
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An individiual, organization, or device primarily involved in the creation and
+     * maintenance of the content.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$author
+     * @return static
+     */
+    public function setAuthor(FHIRContactDetail ...$author): self
+    {
+        if ([] !== $this->author) {
+            $this->_trackValuesRemoved(count($this->author));
+            $this->author = [];
+        }
+        if ([] === $author) {
+            return $this;
+        }
+        foreach($author as $v) {
+            $this->addAuthor($v);
+        }
         return $this;
     }
 
@@ -1857,6 +1940,32 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * An individiual, organization, or device primarily responsible for internal
+     * coherence of the content.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$editor
+     * @return static
+     */
+    public function setEditor(FHIRContactDetail ...$editor): self
+    {
+        if ([] !== $this->editor) {
+            $this->_trackValuesRemoved(count($this->editor));
+            $this->editor = [];
+        }
+        if ([] === $editor) {
+            return $this;
+        }
+        foreach($editor as $v) {
+            $this->addEditor($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * An individiual, organization, or device primarily responsible for review of some
      * aspect of the content.
      *
@@ -1893,6 +2002,32 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * An individiual, organization, or device primarily responsible for review of some
+     * aspect of the content.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$reviewer
+     * @return static
+     */
+    public function setReviewer(FHIRContactDetail ...$reviewer): self
+    {
+        if ([] !== $this->reviewer) {
+            $this->_trackValuesRemoved(count($this->reviewer));
+            $this->reviewer = [];
+        }
+        if ([] === $reviewer) {
+            return $this;
+        }
+        foreach($reviewer as $v) {
+            $this->addReviewer($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * An individiual, organization, or device responsible for officially endorsing the
      * content for use in some setting.
      *
@@ -1921,6 +2056,32 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->endorser[] = $endorser;
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An individiual, organization, or device responsible for officially endorsing the
+     * content for use in some setting.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$endorser
+     * @return static
+     */
+    public function setEndorser(FHIRContactDetail ...$endorser): self
+    {
+        if ([] !== $this->endorser) {
+            $this->_trackValuesRemoved(count($this->endorser));
+            $this->endorser = [];
+        }
+        if ([] === $endorser) {
+            return $this;
+        }
+        foreach($endorser as $v) {
+            $this->addEndorser($v);
+        }
         return $this;
     }
 
@@ -1969,6 +2130,38 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->useContext[] = $useContext;
+        return $this;
+    }
+
+    /**
+     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These contexts may be general categories (gender, age, ...) or
+     * may be references to specific programs (insurance plans, studies, ...) and may
+     * be used to assist with indexing and searching for appropriate evidence
+     * instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
         return $this;
     }
 
@@ -2152,6 +2345,32 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Link or citation to artifact associated with the summary.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact ...$relatedArtifact
+     * @return static
+     */
+    public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
+    {
+        if ([] !== $this->relatedArtifact) {
+            $this->_trackValuesRemoved(count($this->relatedArtifact));
+            $this->relatedArtifact = [];
+        }
+        if ([] === $relatedArtifact) {
+            return $this;
+        }
+        foreach($relatedArtifact as $v) {
+            $this->addRelatedArtifact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
@@ -2284,6 +2503,32 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Footnotes and/or explanatory notes.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
+        return $this;
+    }
+
+    /**
      * The Evidence Resource provides a machine-interpretable expression of an evidence
      * concept including the evidence variables (e.g., population,
      * exposures/interventions, comparators, outcomes, measured variables, confounding
@@ -2316,6 +2561,32 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->variableDefinition[] = $variableDefinition;
+        return $this;
+    }
+
+    /**
+     * The Evidence Resource provides a machine-interpretable expression of an evidence
+     * concept including the evidence variables (e.g., population,
+     * exposures/interventions, comparators, outcomes, measured variables, confounding
+     * variables), the statistics, and the certainty of this evidence.
+     *
+     * Evidence variable such as population, exposure, or outcome.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceVariableDefinition ...$variableDefinition
+     * @return static
+     */
+    public function setVariableDefinition(FHIREvidenceVariableDefinition ...$variableDefinition): self
+    {
+        if ([] !== $this->variableDefinition) {
+            $this->_trackValuesRemoved(count($this->variableDefinition));
+            $this->variableDefinition = [];
+        }
+        if ([] === $variableDefinition) {
+            return $this;
+        }
+        foreach($variableDefinition as $v) {
+            $this->addVariableDefinition($v);
+        }
         return $this;
     }
 
@@ -2394,6 +2665,33 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The design of the study that produced this evidence. The design is described
+     * with any number of study design characteristics.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$studyDesign
+     * @return static
+     */
+    public function setStudyDesign(FHIRCodeableConcept ...$studyDesign): self
+    {
+        if ([] !== $this->studyDesign) {
+            $this->_trackValuesRemoved(count($this->studyDesign));
+            $this->studyDesign = [];
+        }
+        if ([] === $studyDesign) {
+            return $this;
+        }
+        foreach($studyDesign as $v) {
+            $this->addStudyDesign($v);
+        }
+        return $this;
+    }
+
+    /**
      * The Evidence Resource provides a machine-interpretable expression of an evidence
      * concept including the evidence variables (e.g., population,
      * exposures/interventions, comparators, outcomes, measured variables, confounding
@@ -2435,6 +2733,32 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
      * exposures/interventions, comparators, outcomes, measured variables, confounding
      * variables), the statistics, and the certainty of this evidence.
      *
+     * Values and parameters for a single statistic.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceStatistic ...$statistic
+     * @return static
+     */
+    public function setStatistic(FHIREvidenceStatistic ...$statistic): self
+    {
+        if ([] !== $this->statistic) {
+            $this->_trackValuesRemoved(count($this->statistic));
+            $this->statistic = [];
+        }
+        if ([] === $statistic) {
+            return $this;
+        }
+        foreach($statistic as $v) {
+            $this->addStatistic($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The Evidence Resource provides a machine-interpretable expression of an evidence
+     * concept including the evidence variables (e.g., population,
+     * exposures/interventions, comparators, outcomes, measured variables, confounding
+     * variables), the statistics, and the certainty of this evidence.
+     *
      * Assessment of certainty, confidence in the estimates, or quality of the
      * evidence.
      *
@@ -2464,6 +2788,33 @@ class FHIREvidence extends FHIRMetadataResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->certainty[] = $certainty;
+        return $this;
+    }
+
+    /**
+     * The Evidence Resource provides a machine-interpretable expression of an evidence
+     * concept including the evidence variables (e.g., population,
+     * exposures/interventions, comparators, outcomes, measured variables, confounding
+     * variables), the statistics, and the certainty of this evidence.
+     *
+     * Assessment of certainty, confidence in the estimates, or quality of the
+     * evidence.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceCertainty ...$certainty
+     * @return static
+     */
+    public function setCertainty(FHIREvidenceCertainty ...$certainty): self
+    {
+        if ([] !== $this->certainty) {
+            $this->_trackValuesRemoved(count($this->certainty));
+            $this->certainty = [];
+        }
+        if ([] === $certainty) {
+            return $this;
+        }
+        foreach($certainty as $v) {
+            $this->addCertainty($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -221,6 +221,9 @@ class FHIRBodyStructure extends FHIRDomainResource implements PHPFHIRContainedTy
         self::FIELD_INCLUDED_STRUCTURE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
+        self::FIELD_PATIENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
     ];
 
     /** @var array */
@@ -399,6 +402,32 @@ class FHIRBodyStructure extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifier for this instance of the anatomical structure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -511,6 +540,31 @@ class FHIRBodyStructure extends FHIRDomainResource implements PHPFHIRContainedTy
      * Record details about an anatomical structure. This resource may be used when a
      * coded concept does not provide the necessary detail needed for the use case.
      *
+     * The anatomical location(s) or region(s) of the specimen, lesion, or body
+     * structure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureIncludedStructure ...$includedStructure
+     * @return static
+     */
+    public function setIncludedStructure(FHIRBodyStructureIncludedStructure ...$includedStructure): self
+    {
+        if ([] !== $this->includedStructure) {
+            $this->_trackValuesRemoved(count($this->includedStructure));
+            $this->includedStructure = [];
+        }
+        if ([] === $includedStructure) {
+            return $this;
+        }
+        foreach($includedStructure as $v) {
+            $this->addIncludedStructure($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Record details about an anatomical structure. This resource may be used when a
+     * coded concept does not provide the necessary detail needed for the use case.
+     *
      * The anatomical location(s) or region(s) not occupied or represented by the
      * specimen, lesion, or body structure.
      *
@@ -538,6 +592,31 @@ class FHIRBodyStructure extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->excludedStructure[] = $excludedStructure;
+        return $this;
+    }
+
+    /**
+     * Record details about an anatomical structure. This resource may be used when a
+     * coded concept does not provide the necessary detail needed for the use case.
+     *
+     * The anatomical location(s) or region(s) not occupied or represented by the
+     * specimen, lesion, or body structure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureIncludedStructure ...$excludedStructure
+     * @return static
+     */
+    public function setExcludedStructure(FHIRBodyStructureIncludedStructure ...$excludedStructure): self
+    {
+        if ([] !== $this->excludedStructure) {
+            $this->_trackValuesRemoved(count($this->excludedStructure));
+            $this->excludedStructure = [];
+        }
+        if ([] === $excludedStructure) {
+            return $this;
+        }
+        foreach($excludedStructure as $v) {
+            $this->addExcludedStructure($v);
+        }
         return $this;
     }
 
@@ -619,6 +698,31 @@ class FHIRBodyStructure extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->image[] = $image;
+        return $this;
+    }
+
+    /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Image or images used to identify a location.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAttachment ...$image
+     * @return static
+     */
+    public function setImage(FHIRAttachment ...$image): self
+    {
+        if ([] !== $this->image) {
+            $this->_trackValuesRemoved(count($this->image));
+            $this->image = [];
+        }
+        if ([] === $image) {
+            return $this;
+        }
+        foreach($image as $v) {
+            $this->addImage($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -316,7 +316,7 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
      * Validation map for fields in type RegulatedAuthorization
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -561,6 +561,33 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Business identifier for the authorization, typically assigned by the authorizing
+     * body.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -591,6 +618,31 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
         }
         $this->_trackValueAdded();
         $this->subject[] = $subject;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The product type, treatment, facility or activity that is being authorized.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$subject
+     * @return static
+     */
+    public function setSubject(FHIRReference ...$subject): self
+    {
+        if ([] !== $this->subject) {
+            $this->_trackValuesRemoved(count($this->subject));
+            $this->subject = [];
+        }
+        if ([] === $subject) {
+            return $this;
+        }
+        foreach($subject as $v) {
+            $this->addSubject($v);
+        }
         return $this;
     }
 
@@ -714,6 +766,33 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
         }
         $this->_trackValueAdded();
         $this->region[] = $region;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The territory (e.g., country, jurisdiction etc.) in which the authorization has
+     * been granted.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$region
+     * @return static
+     */
+    public function setRegion(FHIRCodeableConcept ...$region): self
+    {
+        if ([] !== $this->region) {
+            $this->_trackValuesRemoved(count($this->region));
+            $this->region = [];
+        }
+        if ([] === $region) {
+            return $this;
+        }
+        foreach($region as $v) {
+            $this->addRegion($v);
+        }
         return $this;
     }
 
@@ -877,6 +956,32 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Condition for which the use of the regulated product applies.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$indication
+     * @return static
+     */
+    public function setIndication(FHIRCodeableReference ...$indication): self
+    {
+        if ([] !== $this->indication) {
+            $this->_trackValuesRemoved(count($this->indication));
+            $this->indication = [];
+        }
+        if ([] === $indication) {
+            return $this;
+        }
+        foreach($indication as $v) {
+            $this->addIndication($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -947,6 +1052,33 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
         }
         $this->_trackValueAdded();
         $this->basis[] = $basis;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The legal or regulatory framework against which this authorization is granted,
+     * or other reasons for it.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$basis
+     * @return static
+     */
+    public function setBasis(FHIRCodeableConcept ...$basis): self
+    {
+        if ([] !== $this->basis) {
+            $this->_trackValuesRemoved(count($this->basis));
+            $this->basis = [];
+        }
+        if ([] === $basis) {
+            return $this;
+        }
+        foreach($basis as $v) {
+            $this->addBasis($v);
+        }
         return $this;
     }
 
@@ -1055,6 +1187,31 @@ class FHIRRegulatedAuthorization extends FHIRDomainResource implements PHPFHIRCo
         }
         $this->_trackValueAdded();
         $this->attachedDocument[] = $attachedDocument;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional information or supporting documentation about the authorization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$attachedDocument
+     * @return static
+     */
+    public function setAttachedDocument(FHIRReference ...$attachedDocument): self
+    {
+        if ([] !== $this->attachedDocument) {
+            $this->_trackValuesRemoved(count($this->attachedDocument));
+            $this->attachedDocument = [];
+        }
+        if ([] === $attachedDocument) {
+            return $this;
+        }
+        foreach($attachedDocument as $v) {
+            $this->addAttachedDocument($v);
+        }
         return $this;
     }
 

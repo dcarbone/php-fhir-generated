@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -310,7 +310,7 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
      * Validation map for fields in type Patient
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -643,6 +643,31 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An identifier that applies to this person as a patient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A human's name with the ability to identify parts and usage.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -673,6 +698,31 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->name[] = $name;
+        return $this;
+    }
+
+    /**
+     * A human's name with the ability to identify parts and usage.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A name associated with the individual.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRHumanName ...$name
+     * @return static
+     */
+    public function setName(FHIRHumanName ...$name): self
+    {
+        if ([] !== $this->name) {
+            $this->_trackValuesRemoved(count($this->name));
+            $this->name = [];
+        }
+        if ([] === $name) {
+            return $this;
+        }
+        foreach($name as $v) {
+            $this->addName($v);
+        }
         return $this;
     }
 
@@ -711,6 +761,33 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->telecom[] = $telecom;
+        return $this;
+    }
+
+    /**
+     * All kinds of technology mediated contact details for a person or organization,
+     * including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A contact detail (e.g. a telephone number or an email address) by which the
+     * individual may be contacted.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRContact ...$telecom
+     * @return static
+     */
+    public function setTelecom(FHIRContact ...$telecom): self
+    {
+        if ([] !== $this->telecom) {
+            $this->_trackValuesRemoved(count($this->telecom));
+            $this->telecom = [];
+        }
+        if ([] === $telecom) {
+            return $this;
+        }
+        foreach($telecom as $v) {
+            $this->addTelecom($v);
+        }
         return $this;
     }
 
@@ -912,6 +989,32 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
     }
 
     /**
+     * There is a variety of postal address formats defined around the world. This
+     * format defines a superset that is the basis for all addresses around the world.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Addresses for the individual.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAddress ...$address
+     * @return static
+     */
+    public function setAddress(FHIRAddress ...$address): self
+    {
+        if ([] !== $this->address) {
+            $this->_trackValuesRemoved(count($this->address));
+            $this->address = [];
+        }
+        if ([] === $address) {
+            return $this;
+        }
+        foreach($address as $v) {
+            $this->addAddress($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1060,6 +1163,31 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
     }
 
     /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Image of the person.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRAttachment ...$photo
+     * @return static
+     */
+    public function setPhoto(FHIRAttachment ...$photo): self
+    {
+        if ([] !== $this->photo) {
+            $this->_trackValuesRemoved(count($this->photo));
+            $this->photo = [];
+        }
+        if ([] === $photo) {
+            return $this;
+        }
+        foreach($photo as $v) {
+            $this->addPhoto($v);
+        }
+        return $this;
+    }
+
+    /**
      * Demographics and other administrative information about a person or animal
      * receiving care or other health-related services.
      *
@@ -1088,6 +1216,30 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->contact[] = $contact;
+        return $this;
+    }
+
+    /**
+     * Demographics and other administrative information about a person or animal
+     * receiving care or other health-related services.
+     *
+     * A contact party (e.g. guardian, partner, friend) for the patient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientContact ...$contact
+     * @return static
+     */
+    public function setContact(FHIRPatientContact ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
         return $this;
     }
 
@@ -1162,6 +1314,33 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Languages which may be used to communicate with the patient about his or her
+     * health.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept ...$communication
+     * @return static
+     */
+    public function setCommunication(FHIRCodeableConcept ...$communication): self
+    {
+        if ([] !== $this->communication) {
+            $this->_trackValuesRemoved(count($this->communication));
+            $this->communication = [];
+        }
+        if ([] === $communication) {
+            return $this;
+        }
+        foreach($communication as $v) {
+            $this->addCommunication($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1192,6 +1371,31 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->careProvider[] = $careProvider;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Patient's nominated care provider.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$careProvider
+     * @return static
+     */
+    public function setCareProvider(FHIRResourceReference ...$careProvider): self
+    {
+        if ([] !== $this->careProvider) {
+            $this->_trackValuesRemoved(count($this->careProvider));
+            $this->careProvider = [];
+        }
+        if ([] === $careProvider) {
+            return $this;
+        }
+        foreach($careProvider as $v) {
+            $this->addCareProvider($v);
+        }
         return $this;
     }
 
@@ -1258,6 +1462,30 @@ class FHIRPatient extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->link[] = $link;
+        return $this;
+    }
+
+    /**
+     * Demographics and other administrative information about a person or animal
+     * receiving care or other health-related services.
+     *
+     * Link to another patient resource that concerns the same actual person.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRPatient\FHIRPatientLink ...$link
+     * @return static
+     */
+    public function setLink(FHIRPatientLink ...$link): self
+    {
+        if ([] !== $this->link) {
+            $this->_trackValuesRemoved(count($this->link));
+            $this->link = [];
+        }
+        if ([] === $link) {
+            return $this;
+        }
+        foreach($link as $v) {
+            $this->addLink($v);
+        }
         return $this;
     }
 

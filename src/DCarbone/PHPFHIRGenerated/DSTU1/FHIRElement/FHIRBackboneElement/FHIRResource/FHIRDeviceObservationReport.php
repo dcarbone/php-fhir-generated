@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -144,7 +144,14 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
      * Validation map for fields in type DeviceObservationReport
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_INSTANT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SOURCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -398,6 +405,29 @@ class FHIRDeviceObservationReport extends FHIRResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->virtualDevice[] = $virtualDevice;
+        return $this;
+    }
+
+    /**
+     * Describes the data produced by a device at a point in time.
+     *
+     * A medical-related subsystem of a medical device.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDeviceObservationReport\FHIRDeviceObservationReportVirtualDevice ...$virtualDevice
+     * @return static
+     */
+    public function setVirtualDevice(FHIRDeviceObservationReportVirtualDevice ...$virtualDevice): self
+    {
+        if ([] !== $this->virtualDevice) {
+            $this->_trackValuesRemoved(count($this->virtualDevice));
+            $this->virtualDevice = [];
+        }
+        if ([] === $virtualDevice) {
+            return $this;
+        }
+        foreach($virtualDevice as $v) {
+            $this->addVirtualDevice($v);
+        }
         return $this;
     }
 

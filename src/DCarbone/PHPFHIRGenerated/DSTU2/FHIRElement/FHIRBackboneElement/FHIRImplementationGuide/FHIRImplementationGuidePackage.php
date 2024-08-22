@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -129,6 +129,9 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_RESOURCE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
@@ -321,6 +324,34 @@ class FHIRImplementationGuidePackage extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->resource[] = $resource;
+        return $this;
+    }
+
+    /**
+     * A set of rules or how FHIR is used to solve a particular problem. This resource
+     * is used to gather all the parts of an implementation guide into a logical whole,
+     * and to publish a computable definition of all the parts.
+     *
+     * A resource that is part of the implementation guide. Conformance resources
+     * (value set, structure definition, conformance statements etc.) are obvious
+     * candidates for inclusion, but any kind of resource can be included as an example
+     * resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideResource ...$resource
+     * @return static
+     */
+    public function setResource(FHIRImplementationGuideResource ...$resource): self
+    {
+        if ([] !== $this->resource) {
+            $this->_trackValuesRemoved(count($this->resource));
+            $this->resource = [];
+        }
+        if ([] === $resource) {
+            return $this;
+        }
+        foreach($resource as $v) {
+            $this->addResource($v);
+        }
         return $this;
     }
 

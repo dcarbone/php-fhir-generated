@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -323,7 +323,6 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
         self::FIELD_AGENT => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
-
         self::FIELD_TARGET => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
@@ -586,6 +585,33 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->target[] = $target;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The Reference(s) that were generated or updated by the activity described in
+     * this resource. A provenance can point to more than one target if multiple
+     * resources were created/updated by the same activity.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$target
+     * @return static
+     */
+    public function setTarget(FHIRReference ...$target): self
+    {
+        if ([] !== $this->target) {
+            $this->_trackValuesRemoved(count($this->target));
+            $this->target = [];
+        }
+        if ([] === $target) {
+            return $this;
+        }
+        foreach($target as $v) {
+            $this->addTarget($v);
+        }
         return $this;
     }
 
@@ -864,6 +890,33 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The authorization (e.g., PurposeOfUse) that was used during the event being
+     * recorded.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$authorization
+     * @return static
+     */
+    public function setAuthorization(FHIRCodeableReference ...$authorization): self
+    {
+        if ([] !== $this->authorization) {
+            $this->_trackValuesRemoved(count($this->authorization));
+            $this->authorization = [];
+        }
+        if ([] === $authorization) {
+            return $this;
+        }
+        foreach($authorization as $v) {
+            $this->addAuthorization($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -936,6 +989,32 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->basedOn[] = $basedOn;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Allows tracing of authorizatino for the events and tracking whether
+     * proposals/recommendations were acted upon.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
         return $this;
     }
 
@@ -1072,6 +1151,38 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
      * stage in lifecycle (e.g. Document Completion - has the artifact been legally
      * authenticated), all of which may impact security, privacy, and trust policies.
      *
+     * An actor taking a role in an activity for which it can be assigned some degree
+     * of responsibility for the activity taking place.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceAgent ...$agent
+     * @return static
+     */
+    public function setAgent(FHIRProvenanceAgent ...$agent): self
+    {
+        if ([] !== $this->agent) {
+            $this->_trackValuesRemoved(count($this->agent));
+            $this->agent = [];
+        }
+        if ([] === $agent) {
+            return $this;
+        }
+        foreach($agent as $v) {
+            $this->addAgent($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Provenance of a resource is a record that describes entities and processes
+     * involved in producing and delivering or otherwise influencing that resource.
+     * Provenance provides a critical foundation for assessing authenticity, enabling
+     * trust, and allowing reproducibility. Provenance assertions are a form of
+     * contextual metadata and can themselves become important records with their own
+     * provenance. Provenance statement indicates clinical significance in terms of
+     * confidence in authenticity, reliability, and trustworthiness, integrity, and
+     * stage in lifecycle (e.g. Document Completion - has the artifact been legally
+     * authenticated), all of which may impact security, privacy, and trust policies.
+     *
      * An entity used in this activity.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity[]
@@ -1104,6 +1215,37 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->entity[] = $entity;
+        return $this;
+    }
+
+    /**
+     * Provenance of a resource is a record that describes entities and processes
+     * involved in producing and delivering or otherwise influencing that resource.
+     * Provenance provides a critical foundation for assessing authenticity, enabling
+     * trust, and allowing reproducibility. Provenance assertions are a form of
+     * contextual metadata and can themselves become important records with their own
+     * provenance. Provenance statement indicates clinical significance in terms of
+     * confidence in authenticity, reliability, and trustworthiness, integrity, and
+     * stage in lifecycle (e.g. Document Completion - has the artifact been legally
+     * authenticated), all of which may impact security, privacy, and trust policies.
+     *
+     * An entity used in this activity.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRProvenance\FHIRProvenanceEntity ...$entity
+     * @return static
+     */
+    public function setEntity(FHIRProvenanceEntity ...$entity): self
+    {
+        if ([] !== $this->entity) {
+            $this->_trackValuesRemoved(count($this->entity));
+            $this->entity = [];
+        }
+        if ([] === $entity) {
+            return $this;
+        }
+        foreach($entity as $v) {
+            $this->addEntity($v);
+        }
         return $this;
     }
 
@@ -1148,6 +1290,36 @@ class FHIRProvenance extends FHIRDomainResource implements PHPFHIRContainedTypeI
         }
         $this->_trackValueAdded();
         $this->signature[] = $signature;
+        return $this;
+    }
+
+    /**
+     * A signature along with supporting context. The signature may be a digital
+     * signature that is cryptographic in nature, or some other signature acceptable to
+     * the domain. This other signature may be as simple as a graphical image
+     * representing a hand-written signature, or a signature ceremony Different
+     * signature approaches have different utilities.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A digital signature on the target Reference(s). The signer should match a
+     * Provenance.agent. The purpose of the signature is indicated.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRSignature ...$signature
+     * @return static
+     */
+    public function setSignature(FHIRSignature ...$signature): self
+    {
+        if ([] !== $this->signature) {
+            $this->_trackValuesRemoved(count($this->signature));
+            $this->signature = [];
+        }
+        if ([] === $signature) {
+            return $this;
+        }
+        foreach($signature as $v) {
+            $this->addSignature($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -253,7 +253,7 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * Validation map for fields in type InsurancePlan
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -532,6 +532,33 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Business identifiers assigned to this health insurance product which remain
+     * constant as the resource is updated and propagates from server to server.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the health insurance product.
@@ -594,6 +621,32 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->type[] = $type;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The kind of health insurance product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept ...$type): self
+    {
+        if ([] !== $this->type) {
+            $this->_trackValuesRemoved(count($this->type));
+            $this->type = [];
+        }
+        if ([] === $type) {
+            return $this;
+        }
+        foreach($type as $v) {
+            $this->addType($v);
+        }
         return $this;
     }
 
@@ -854,6 +907,31 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The geographic region in which a health insurance product's benefits apply.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$coverageArea
+     * @return static
+     */
+    public function setCoverageArea(FHIRReference ...$coverageArea): self
+    {
+        if ([] !== $this->coverageArea) {
+            $this->_trackValuesRemoved(count($this->coverageArea));
+            $this->coverageArea = [];
+        }
+        if ([] === $coverageArea) {
+            return $this;
+        }
+        foreach($coverageArea as $v) {
+            $this->addCoverageArea($v);
+        }
+        return $this;
+    }
+
+    /**
      * Details of a Health Insurance product/plan provided by an organization.
      *
      * The contact for the health insurance product for a certain purpose.
@@ -880,6 +958,29 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->contact[] = $contact;
+        return $this;
+    }
+
+    /**
+     * Details of a Health Insurance product/plan provided by an organization.
+     *
+     * The contact for the health insurance product for a certain purpose.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanContact ...$contact
+     * @return static
+     */
+    public function setContact(FHIRInsurancePlanContact ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
         return $this;
     }
 
@@ -924,6 +1025,32 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The technical endpoints providing access to services operated for the health
+     * insurance product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$endpoint
+     * @return static
+     */
+    public function setEndpoint(FHIRReference ...$endpoint): self
+    {
+        if ([] !== $this->endpoint) {
+            $this->_trackValuesRemoved(count($this->endpoint));
+            $this->endpoint = [];
+        }
+        if ([] === $endpoint) {
+            return $this;
+        }
+        foreach($endpoint as $v) {
+            $this->addEndpoint($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Reference to the network included in the health insurance product.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
@@ -950,6 +1077,31 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->network[] = $network;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reference to the network included in the health insurance product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$network
+     * @return static
+     */
+    public function setNetwork(FHIRReference ...$network): self
+    {
+        if ([] !== $this->network) {
+            $this->_trackValuesRemoved(count($this->network));
+            $this->network = [];
+        }
+        if ([] === $network) {
+            return $this;
+        }
+        foreach($network as $v) {
+            $this->addNetwork($v);
+        }
         return $this;
     }
 
@@ -986,6 +1138,29 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
     /**
      * Details of a Health Insurance product/plan provided by an organization.
      *
+     * Details about the coverage offered by the insurance product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanCoverage ...$coverage
+     * @return static
+     */
+    public function setCoverage(FHIRInsurancePlanCoverage ...$coverage): self
+    {
+        if ([] !== $this->coverage) {
+            $this->_trackValuesRemoved(count($this->coverage));
+            $this->coverage = [];
+        }
+        if ([] === $coverage) {
+            return $this;
+        }
+        foreach($coverage as $v) {
+            $this->addCoverage($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Details of a Health Insurance product/plan provided by an organization.
+     *
      * Details about an insurance plan.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanPlan[]
@@ -1010,6 +1185,29 @@ class FHIRInsurancePlan extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->plan[] = $plan;
+        return $this;
+    }
+
+    /**
+     * Details of a Health Insurance product/plan provided by an organization.
+     *
+     * Details about an insurance plan.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInsurancePlan\FHIRInsurancePlanPlan ...$plan
+     * @return static
+     */
+    public function setPlan(FHIRInsurancePlanPlan ...$plan): self
+    {
+        if ([] !== $this->plan) {
+            $this->_trackValuesRemoved(count($this->plan));
+            $this->plan = [];
+        }
+        if ([] === $plan) {
+            return $this;
+        }
+        foreach($plan as $v) {
+            $this->addPlan($v);
+        }
         return $this;
     }
 

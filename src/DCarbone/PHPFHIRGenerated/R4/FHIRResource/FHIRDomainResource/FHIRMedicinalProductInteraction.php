@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -181,7 +181,7 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements PHPF
      * Validation map for fields in type MedicinalProductInteraction
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -324,6 +324,31 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements PHPF
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The medication for which this is a described interaction.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$subject
+     * @return static
+     */
+    public function setSubject(FHIRReference ...$subject): self
+    {
+        if ([] !== $this->subject) {
+            $this->_trackValuesRemoved(count($this->subject));
+            $this->subject = [];
+        }
+        if ([] === $subject) {
+            return $this;
+        }
+        foreach($subject as $v) {
+            $this->addSubject($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -391,6 +416,30 @@ class FHIRMedicinalProductInteraction extends FHIRDomainResource implements PHPF
         }
         $this->_trackValueAdded();
         $this->interactant[] = $interactant;
+        return $this;
+    }
+
+    /**
+     * The interactions of the medicinal product with other medicinal products, or
+     * other forms of interactions.
+     *
+     * The specific medication, food or laboratory test that interacts.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductInteraction\FHIRMedicinalProductInteractionInteractant ...$interactant
+     * @return static
+     */
+    public function setInteractant(FHIRMedicinalProductInteractionInteractant ...$interactant): self
+    {
+        if ([] !== $this->interactant) {
+            $this->_trackValuesRemoved(count($this->interactant));
+            $this->interactant = [];
+        }
+        if ([] === $interactant) {
+            return $this;
+        }
+        foreach($interactant as $v) {
+            $this->addInteractant($v);
+        }
         return $this;
     }
 

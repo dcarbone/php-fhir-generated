@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -169,7 +169,7 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
      * Validation map for fields in type TestPlan.TestCase
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -364,6 +364,32 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The scope or artifact covered by the case, when the individual test case is
+     * associated with a testable artifact.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$scope
+     * @return static
+     */
+    public function setScope(FHIRReference ...$scope): self
+    {
+        if ([] !== $this->scope) {
+            $this->_trackValuesRemoved(count($this->scope));
+            $this->scope = [];
+        }
+        if ([] === $scope) {
+            return $this;
+        }
+        foreach($scope as $v) {
+            $this->addScope($v);
+        }
+        return $this;
+    }
+
+    /**
      * A plan for executing testing on an artifact or specifications.
      *
      * The required criteria to execute the test case - e.g. preconditions, previous
@@ -392,6 +418,30 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->dependency[] = $dependency;
+        return $this;
+    }
+
+    /**
+     * A plan for executing testing on an artifact or specifications.
+     *
+     * The required criteria to execute the test case - e.g. preconditions, previous
+     * tests.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanDependency1 ...$dependency
+     * @return static
+     */
+    public function setDependency(FHIRTestPlanDependency1 ...$dependency): self
+    {
+        if ([] !== $this->dependency) {
+            $this->_trackValuesRemoved(count($this->dependency));
+            $this->dependency = [];
+        }
+        if ([] === $dependency) {
+            return $this;
+        }
+        foreach($dependency as $v) {
+            $this->addDependency($v);
+        }
         return $this;
     }
 
@@ -428,6 +478,29 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
     /**
      * A plan for executing testing on an artifact or specifications.
      *
+     * The actual test to be executed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestRun ...$testRun
+     * @return static
+     */
+    public function setTestRun(FHIRTestPlanTestRun ...$testRun): self
+    {
+        if ([] !== $this->testRun) {
+            $this->_trackValuesRemoved(count($this->testRun));
+            $this->testRun = [];
+        }
+        if ([] === $testRun) {
+            return $this;
+        }
+        foreach($testRun as $v) {
+            $this->addTestRun($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A plan for executing testing on an artifact or specifications.
+     *
      * The test data used in the test case.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestData[]
@@ -452,6 +525,29 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->testData[] = $testData;
+        return $this;
+    }
+
+    /**
+     * A plan for executing testing on an artifact or specifications.
+     *
+     * The test data used in the test case.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanTestData ...$testData
+     * @return static
+     */
+    public function setTestData(FHIRTestPlanTestData ...$testData): self
+    {
+        if ([] !== $this->testData) {
+            $this->_trackValuesRemoved(count($this->testData));
+            $this->testData = [];
+        }
+        if ([] === $testData) {
+            return $this;
+        }
+        foreach($testData as $v) {
+            $this->addTestData($v);
+        }
         return $this;
     }
 
@@ -484,6 +580,30 @@ class FHIRTestPlanTestCase extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->assertion[] = $assertion;
+        return $this;
+    }
+
+    /**
+     * A plan for executing testing on an artifact or specifications.
+     *
+     * The test assertions - the expectations of test results from the execution of the
+     * test case.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRTestPlan\FHIRTestPlanAssertion ...$assertion
+     * @return static
+     */
+    public function setAssertion(FHIRTestPlanAssertion ...$assertion): self
+    {
+        if ([] !== $this->assertion) {
+            $this->_trackValuesRemoved(count($this->assertion));
+            $this->assertion = [];
+        }
+        if ([] === $assertion) {
+            return $this;
+        }
+        foreach($assertion as $v) {
+            $this->addAssertion($v);
+        }
         return $this;
     }
 

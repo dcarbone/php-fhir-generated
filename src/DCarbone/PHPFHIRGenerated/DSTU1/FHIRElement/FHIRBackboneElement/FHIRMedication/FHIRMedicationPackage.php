@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -106,7 +106,7 @@ class FHIRMedicationPackage extends FHIRBackboneElement
      * Validation map for fields in type Medication.Package
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -218,6 +218,30 @@ class FHIRMedicationPackage extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->content[] = $content;
+        return $this;
+    }
+
+    /**
+     * Primarily used for identification and definition of Medication, but also covers
+     * ingredients and packaging.
+     *
+     * A set of components that go to make up the described item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedication\FHIRMedicationContent ...$content
+     * @return static
+     */
+    public function setContent(FHIRMedicationContent ...$content): self
+    {
+        if ([] !== $this->content) {
+            $this->_trackValuesRemoved(count($this->content));
+            $this->content = [];
+        }
+        if ([] === $content) {
+            return $this;
+        }
+        foreach($content as $v) {
+            $this->addContent($v);
+        }
         return $this;
     }
 

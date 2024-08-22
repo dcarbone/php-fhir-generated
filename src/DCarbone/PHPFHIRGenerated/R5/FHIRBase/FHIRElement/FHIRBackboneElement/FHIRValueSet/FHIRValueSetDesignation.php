@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -160,7 +160,11 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
      * Validation map for fields in type ValueSet.Designation
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_VALUE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -349,6 +353,32 @@ class FHIRValueSetDesignation extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->additionalUse[] = $additionalUse;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional codes that detail how this designation would be used, if there is
+     * more than one use.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding ...$additionalUse
+     * @return static
+     */
+    public function setAdditionalUse(FHIRCoding ...$additionalUse): self
+    {
+        if ([] !== $this->additionalUse) {
+            $this->_trackValuesRemoved(count($this->additionalUse));
+            $this->additionalUse = [];
+        }
+        if ([] === $additionalUse) {
+            return $this;
+        }
+        foreach($additionalUse as $v) {
+            $this->addAdditionalUse($v);
+        }
         return $this;
     }
 

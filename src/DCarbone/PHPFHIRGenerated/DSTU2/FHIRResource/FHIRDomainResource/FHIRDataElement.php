@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -283,6 +283,9 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
      */
     private const _VALIDATION_RULES = [
         self::FIELD_ELEMENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -630,6 +633,33 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Formal identifier that is used to identify this data element when it is
+     * represented in other formats, or referenced in a specification, model, design or
+     * an instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -867,6 +897,30 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * The formal description of a single piece of information that can be gathered and
+     * reported.
+     *
+     * Contacts to assist a user in finding and communicating with the publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDataElement\FHIRDataElementContact ...$contact
+     * @return static
+     */
+    public function setContact(FHIRDataElementContact ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A date, date-time or partial date (e.g. just year or year + month). If hours and
      * minutes are specified, a time zone SHALL be populated. The format is a union of
      * the schema types gYear, gYearMonth, date and dateTime. Seconds must be provided
@@ -954,6 +1008,34 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->useContext[] = $useContext;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These terms may be used to assist with indexing and searching
+     * of data element definitions.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRCodeableConcept ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
         return $this;
     }
 
@@ -1067,6 +1149,31 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * The formal description of a single piece of information that can be gathered and
+     * reported.
+     *
+     * Identifies a specification (other than a terminology) that the elements which
+     * make up the DataElement have some correspondence with.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDataElement\FHIRDataElementMapping ...$mapping
+     * @return static
+     */
+    public function setMapping(FHIRDataElementMapping ...$mapping): self
+    {
+        if ([] !== $this->mapping) {
+            $this->_trackValuesRemoved(count($this->mapping));
+            $this->mapping = [];
+        }
+        if ([] === $mapping) {
+            return $this;
+        }
+        foreach($mapping as $v) {
+            $this->addMapping($v);
+        }
+        return $this;
+    }
+
+    /**
      * Captures constraints on each element within the resource, profile, or extension.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1099,6 +1206,32 @@ class FHIRDataElement extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->element[] = $element;
+        return $this;
+    }
+
+    /**
+     * Captures constraints on each element within the resource, profile, or extension.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Defines the structure, type, allowed values and other constraining
+     * characteristics of the data element.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRElementDefinition ...$element
+     * @return static
+     */
+    public function setElement(FHIRElementDefinition ...$element): self
+    {
+        if ([] !== $this->element) {
+            $this->_trackValuesRemoved(count($this->element));
+            $this->element = [];
+        }
+        if ([] === $element) {
+            return $this;
+        }
+        foreach($element as $v) {
+            $this->addElement($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -166,8 +166,13 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
         self::FIELD_INPUT => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
-
+        self::FIELD_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_RULE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE_MODE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -495,6 +500,30 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
     /**
      * A Map of relationships between 2 structures that can be used to transform data.
      *
+     * A name assigned to an instance of data. The instance must be provided when the
+     * mapping is invoked.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapInput ...$input
+     * @return static
+     */
+    public function setInput(FHIRStructureMapInput ...$input): self
+    {
+        if ([] !== $this->input) {
+            $this->_trackValuesRemoved(count($this->input));
+            $this->input = [];
+        }
+        if ([] === $input) {
+            return $this;
+        }
+        foreach($input as $v) {
+            $this->addInput($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
      * Transform Rule from source to target.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule[]
@@ -519,6 +548,29 @@ class FHIRStructureMapGroup extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->rule[] = $rule;
+        return $this;
+    }
+
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
+     * Transform Rule from source to target.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapRule ...$rule
+     * @return static
+     */
+    public function setRule(FHIRStructureMapRule ...$rule): self
+    {
+        if ([] !== $this->rule) {
+            $this->_trackValuesRemoved(count($this->rule));
+            $this->rule = [];
+        }
+        if ([] === $rule) {
+            return $this;
+        }
+        foreach($rule as $v) {
+            $this->addRule($v);
+        }
         return $this;
     }
 

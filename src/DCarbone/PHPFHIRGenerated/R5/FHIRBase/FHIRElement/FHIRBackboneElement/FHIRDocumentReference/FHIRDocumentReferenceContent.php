@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -146,7 +146,11 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement
      * Validation map for fields in type DocumentReference.Content
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_ATTACHMENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -274,6 +278,38 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->profile[] = $profile;
+        return $this;
+    }
+
+    /**
+     * A reference to a document of any kind for any purpose. While the term
+     * “document” implies a more narrow focus, for this resource this "document"
+     * encompasses *any* serialized object with a mime-type, it includes formal
+     * patient-centric documents (CDA), clinical notes, scanned paper, non-patient
+     * specific documents like policy text, as well as a photo, video, or audio
+     * recording acquired or used in healthcare. The DocumentReference resource
+     * provides metadata about the document so that the document can be discovered and
+     * managed. The actual content may be inline base64 encoded data or provided by
+     * direct reference.
+     *
+     * An identifier of the document constraints, encoding, structure, and template
+     * that the document conforms to beyond the base format indicated in the mimeType.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceProfile ...$profile
+     * @return static
+     */
+    public function setProfile(FHIRDocumentReferenceProfile ...$profile): self
+    {
+        if ([] !== $this->profile) {
+            $this->_trackValuesRemoved(count($this->profile));
+            $this->profile = [];
+        }
+        if ([] === $profile) {
+            return $this;
+        }
+        foreach($profile as $v) {
+            $this->addProfile($v);
+        }
         return $this;
     }
 

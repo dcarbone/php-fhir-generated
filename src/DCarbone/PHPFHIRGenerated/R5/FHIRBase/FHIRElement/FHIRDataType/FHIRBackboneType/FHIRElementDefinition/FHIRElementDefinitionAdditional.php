@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBac
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -200,7 +200,14 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
      * Validation map for fields in type ElementDefinition.Additional
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PURPOSE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VALUE_SET => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -540,6 +547,38 @@ class FHIRElementDefinitionAdditional extends FHIRBackboneType
         }
         $this->_trackValueAdded();
         $this->usage[] = $usage;
+        return $this;
+    }
+
+    /**
+     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Qualifies the usage of the binding. Typically bindings are qualified by
+     * jurisdiction, but they may also be qualified by gender, workflow status,
+     * clinical domain etc. The information to decide whether a usege context applies
+     * is usually outside the resource, determined by context, and this might present
+     * challenges for validation tooling.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$usage
+     * @return static
+     */
+    public function setUsage(FHIRUsageContext ...$usage): self
+    {
+        if ([] !== $this->usage) {
+            $this->_trackValuesRemoved(count($this->usage));
+            $this->usage = [];
+        }
+        if ([] === $usage) {
+            return $this;
+        }
+        foreach($usage as $v) {
+            $this->addUsage($v);
+        }
         return $this;
     }
 

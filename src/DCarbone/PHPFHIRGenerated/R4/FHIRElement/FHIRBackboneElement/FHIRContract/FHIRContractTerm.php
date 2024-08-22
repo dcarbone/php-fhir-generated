@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContr
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -236,7 +236,11 @@ class FHIRContractTerm extends FHIRBackboneElement
      * Validation map for fields in type Contract.Term
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_OFFER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -744,6 +748,31 @@ class FHIRContractTerm extends FHIRBackboneElement
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
      * policy or agreement.
      *
+     * Security labels that protect the handling of information about the term and its
+     * elements, which may be specifically identified..
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSecurityLabel ...$securityLabel
+     * @return static
+     */
+    public function setSecurityLabel(FHIRContractSecurityLabel ...$securityLabel): self
+    {
+        if ([] !== $this->securityLabel) {
+            $this->_trackValuesRemoved(count($this->securityLabel));
+            $this->securityLabel = [];
+        }
+        if ([] === $securityLabel) {
+            return $this;
+        }
+        foreach($securityLabel as $v) {
+            $this->addSecurityLabel($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
      * The matter of concern in the context of this provision of the agrement.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractOffer
@@ -808,6 +837,30 @@ class FHIRContractTerm extends FHIRBackboneElement
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
      * policy or agreement.
      *
+     * Contract Term Asset List.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAsset ...$asset
+     * @return static
+     */
+    public function setAsset(FHIRContractAsset ...$asset): self
+    {
+        if ([] !== $this->asset) {
+            $this->_trackValuesRemoved(count($this->asset));
+            $this->asset = [];
+        }
+        if ([] === $asset) {
+            return $this;
+        }
+        foreach($asset as $v) {
+            $this->addAsset($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
      * An actor taking a role in an activity for which it can be assigned some degree
      * of responsibility for the activity taking place.
      *
@@ -842,6 +895,31 @@ class FHIRContractTerm extends FHIRBackboneElement
      * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
      * policy or agreement.
      *
+     * An actor taking a role in an activity for which it can be assigned some degree
+     * of responsibility for the activity taking place.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAction ...$action
+     * @return static
+     */
+    public function setAction(FHIRContractAction ...$action): self
+    {
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
+        if ([] === $action) {
+            return $this;
+        }
+        foreach($action as $v) {
+            $this->addAction($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
      * Nested group of Contract Provisions.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm[]
@@ -867,6 +945,30 @@ class FHIRContractTerm extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->group[] = $group;
+        return $this;
+    }
+
+    /**
+     * Legally enforceable, formally recorded unilateral or bilateral directive i.e., a
+     * policy or agreement.
+     *
+     * Nested group of Contract Provisions.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm ...$group
+     * @return static
+     */
+    public function setGroup(FHIRContractTerm ...$group): self
+    {
+        if ([] !== $this->group) {
+            $this->_trackValuesRemoved(count($this->group));
+            $this->group = [];
+        }
+        if ([] === $group) {
+            return $this;
+        }
+        foreach($group as $v) {
+            $this->addGroup($v);
+        }
         return $this;
     }
 

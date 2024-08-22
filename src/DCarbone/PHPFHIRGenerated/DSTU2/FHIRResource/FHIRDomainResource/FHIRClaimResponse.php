@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -364,7 +364,7 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * Validation map for fields in type ClaimResponse
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -698,6 +698,31 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The Response business identifier.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -1104,6 +1129,30 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
      *
+     * The first tier service adjudications for submitted services.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseItem ...$item
+     * @return static
+     */
+    public function setItem(FHIRClaimResponseItem ...$item): self
+    {
+        if ([] !== $this->item) {
+            $this->_trackValuesRemoved(count($this->item));
+            $this->item = [];
+        }
+        if ([] === $item) {
+            return $this;
+        }
+        foreach($item as $v) {
+            $this->addItem($v);
+        }
+        return $this;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
      * The first tier service adjudications for payor added services.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem[]
@@ -1136,6 +1185,30 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
      *
+     * The first tier service adjudications for payor added services.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAddItem ...$addItem
+     * @return static
+     */
+    public function setAddItem(FHIRClaimResponseAddItem ...$addItem): self
+    {
+        if ([] !== $this->addItem) {
+            $this->_trackValuesRemoved(count($this->addItem));
+            $this->addItem = [];
+        }
+        if ([] === $addItem) {
+            return $this;
+        }
+        foreach($addItem as $v) {
+            $this->addAddItem($v);
+        }
+        return $this;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
      * Mutually exclusive with Services Provided (Item).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError[]
@@ -1161,6 +1234,30 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->error[] = $error;
+        return $this;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
+     * Mutually exclusive with Services Provided (Item).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseError ...$error
+     * @return static
+     */
+    public function setError(FHIRClaimResponseError ...$error): self
+    {
+        if ([] !== $this->error) {
+            $this->_trackValuesRemoved(count($this->error));
+            $this->error = [];
+        }
+        if ([] === $error) {
+            return $this;
+        }
+        foreach($error as $v) {
+            $this->addError($v);
+        }
         return $this;
     }
 
@@ -1513,6 +1610,30 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
      *
+     * Note text.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseNote ...$note
+     * @return static
+     */
+    public function setNote(FHIRClaimResponseNote ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
+        return $this;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
      * Financial instrument by which payment information for health care.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseCoverage[]
@@ -1538,6 +1659,30 @@ class FHIRClaimResponse extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->coverage[] = $coverage;
+        return $this;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
+     * Financial instrument by which payment information for health care.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseCoverage ...$coverage
+     * @return static
+     */
+    public function setCoverage(FHIRClaimResponseCoverage ...$coverage): self
+    {
+        if ([] !== $this->coverage) {
+            $this->_trackValuesRemoved(count($this->coverage));
+            $this->coverage = [];
+        }
+        if ([] === $coverage) {
+            return $this;
+        }
+        foreach($coverage as $v) {
+            $this->addCoverage($v);
+        }
         return $this;
     }
 

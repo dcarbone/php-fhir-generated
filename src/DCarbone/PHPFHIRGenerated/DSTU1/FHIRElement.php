@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -95,7 +95,11 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
      * Validation map for fields in type Element
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_ID => [
+            PHPFHIRConstants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -180,6 +184,31 @@ class FHIRElement implements PHPFHIRCommentContainerInterface, PHPFHIRTypeInterf
         }
         $this->_trackValueAdded();
         $this->extension[] = $extension;
+        return $this;
+    }
+
+    /**
+     * Optional Extensions Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An extension - additional local content. The extension URL defines it's meaning
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRExtension ...$extension
+     * @return static
+     */
+    public function setExtension(FHIRExtension ...$extension): self
+    {
+        if ([] !== $this->extension) {
+            $this->_trackValuesRemoved(count($this->extension));
+            $this->extension = [];
+        }
+        if ([] === $extension) {
+            return $this;
+        }
+        foreach($extension as $v) {
+            $this->addExtension($v);
+        }
         return $this;
     }
 

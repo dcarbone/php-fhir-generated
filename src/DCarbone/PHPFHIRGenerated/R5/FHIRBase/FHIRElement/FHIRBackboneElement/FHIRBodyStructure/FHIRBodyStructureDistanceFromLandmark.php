@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -135,7 +135,7 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
      * Validation map for fields in type BodyStructure.DistanceFromLandmark
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -227,6 +227,32 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An instrument, tool, analyzer, etc. used in the measurement.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$device
+     * @return static
+     */
+    public function setDevice(FHIRCodeableReference ...$device): self
+    {
+        if ([] !== $this->device) {
+            $this->_trackValuesRemoved(count($this->device));
+            $this->device = [];
+        }
+        if ([] === $device) {
+            return $this;
+        }
+        foreach($device as $v) {
+            $this->addDevice($v);
+        }
+        return $this;
+    }
+
+    /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
@@ -261,6 +287,33 @@ class FHIRBodyStructureDistanceFromLandmark extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->value[] = $value;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The measured distance (e.g., in cm) from a body landmark.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity ...$value
+     * @return static
+     */
+    public function setValue(FHIRQuantity ...$value): self
+    {
+        if ([] !== $this->value) {
+            $this->_trackValuesRemoved(count($this->value));
+            $this->value = [];
+        }
+        if ([] === $value) {
+            return $this;
+        }
+        foreach($value as $v) {
+            $this->addValue($v);
+        }
         return $this;
     }
 

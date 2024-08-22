@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -132,7 +132,11 @@ class FHIRIngredientSubstance extends FHIRBackboneElement
      * Validation map for fields in type Ingredient.Substance
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -248,6 +252,32 @@ class FHIRIngredientSubstance extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->strength[] = $strength;
+        return $this;
+    }
+
+    /**
+     * An ingredient of a manufactured item or pharmaceutical product.
+     *
+     * The quantity of substance in the unit of presentation, or in the volume (or
+     * mass) of the single pharmaceutical product or manufactured item. The allowed
+     * repetitions do not represent different strengths, but are different
+     * representations - mathematically equivalent - of a single strength.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRIngredient\FHIRIngredientStrength ...$strength
+     * @return static
+     */
+    public function setStrength(FHIRIngredientStrength ...$strength): self
+    {
+        if ([] !== $this->strength) {
+            $this->_trackValuesRemoved(count($this->strength));
+            $this->strength = [];
+        }
+        if ([] === $strength) {
+            return $this;
+        }
+        foreach($strength as $v) {
+            $this->addStrength($v);
+        }
         return $this;
     }
 

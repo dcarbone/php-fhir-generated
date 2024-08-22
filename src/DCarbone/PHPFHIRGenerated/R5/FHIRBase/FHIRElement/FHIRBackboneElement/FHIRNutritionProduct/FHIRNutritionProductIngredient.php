@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,11 @@ class FHIRNutritionProductIngredient extends FHIRBackboneElement
      * Validation map for fields in type NutritionProduct.Ingredient
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_ITEM => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -249,6 +253,32 @@ class FHIRNutritionProductIngredient extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->amount[] = $amount;
+        return $this;
+    }
+
+    /**
+     * A relationship of two Quantity values - expressed as a numerator and a
+     * denominator.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The amount of ingredient that is in the product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRatio ...$amount
+     * @return static
+     */
+    public function setAmount(FHIRRatio ...$amount): self
+    {
+        if ([] !== $this->amount) {
+            $this->_trackValuesRemoved(count($this->amount));
+            $this->amount = [];
+        }
+        if ([] === $amount) {
+            return $this;
+        }
+        foreach($amount as $v) {
+            $this->addAmount($v);
+        }
         return $this;
     }
 

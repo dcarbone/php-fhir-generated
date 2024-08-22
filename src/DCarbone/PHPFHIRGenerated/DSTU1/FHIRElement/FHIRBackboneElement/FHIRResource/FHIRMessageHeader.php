@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -241,7 +241,20 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
      * Validation map for fields in type MessageHeader
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_EVENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_IDENTIFIER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SOURCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TIMESTAMP => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -623,6 +636,32 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * The header for a message exchange that is either requesting or responding to an
+     * action. The resource(s) that are the subject of the action as well as other
+     * Information related to the action are typically transmitted in a bundle in which
+     * the MessageHeader resource instance is the first resource in the bundle.
+     *
+     * The destination application which the message is intended for.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMessageHeader\FHIRMessageHeaderDestination ...$destination
+     * @return static
+     */
+    public function setDestination(FHIRMessageHeaderDestination ...$destination): self
+    {
+        if ([] !== $this->destination) {
+            $this->_trackValuesRemoved(count($this->destination));
+            $this->destination = [];
+        }
+        if ([] === $destination) {
+            return $this;
+        }
+        foreach($destination as $v) {
+            $this->addDestination($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -843,6 +882,32 @@ class FHIRMessageHeader extends FHIRResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->data[] = $data;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The actual data of the message - a reference to the root/focus class of the
+     * event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$data
+     * @return static
+     */
+    public function setData(FHIRResourceReference ...$data): self
+    {
+        if ([] !== $this->data) {
+            $this->_trackValuesRemoved(count($this->data));
+            $this->data = [];
+        }
+        if ([] === $data) {
+            return $this;
+        }
+        foreach($data as $v) {
+            $this->addData($v);
+        }
         return $this;
     }
 

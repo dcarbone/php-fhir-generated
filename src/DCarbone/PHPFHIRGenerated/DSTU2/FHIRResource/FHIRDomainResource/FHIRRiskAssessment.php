@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -215,7 +215,7 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
      * Validation map for fields in type RiskAssessment
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -644,6 +644,32 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Indicates the source data considered as part of the assessment (FamilyHistory,
+     * Observations, Procedures, Conditions, etc.).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference ...$basis
+     * @return static
+     */
+    public function setBasis(FHIRReference ...$basis): self
+    {
+        if ([] !== $this->basis) {
+            $this->_trackValuesRemoved(count($this->basis));
+            $this->basis = [];
+        }
+        if ([] === $basis) {
+            return $this;
+        }
+        foreach($basis as $v) {
+            $this->addBasis($v);
+        }
+        return $this;
+    }
+
+    /**
      * An assessment of the likely outcome(s) for a patient or other subject as well as
      * the likelihood of each outcome.
      *
@@ -672,6 +698,30 @@ class FHIRRiskAssessment extends FHIRDomainResource implements PHPFHIRContainedT
         }
         $this->_trackValueAdded();
         $this->prediction[] = $prediction;
+        return $this;
+    }
+
+    /**
+     * An assessment of the likely outcome(s) for a patient or other subject as well as
+     * the likelihood of each outcome.
+     *
+     * Describes the expected outcome for the subject.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRRiskAssessment\FHIRRiskAssessmentPrediction ...$prediction
+     * @return static
+     */
+    public function setPrediction(FHIRRiskAssessmentPrediction ...$prediction): self
+    {
+        if ([] !== $this->prediction) {
+            $this->_trackValuesRemoved(count($this->prediction));
+            $this->prediction = [];
+        }
+        if ([] === $prediction) {
+            return $this;
+        }
+        foreach($prediction as $v) {
+            $this->addPrediction($v);
+        }
         return $this;
     }
 

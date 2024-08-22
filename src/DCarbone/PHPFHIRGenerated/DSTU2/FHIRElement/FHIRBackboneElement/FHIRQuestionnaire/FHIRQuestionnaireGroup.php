@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -186,7 +186,7 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * Validation map for fields in type Questionnaire.Group
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -458,6 +458,32 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies a how this group of questions is known in a particular terminology
+     * such as LOINC.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding ...$concept
+     * @return static
+     */
+    public function setConcept(FHIRCoding ...$concept): self
+    {
+        if ([] !== $this->concept) {
+            $this->_trackValuesRemoved(count($this->concept));
+            $this->concept = [];
+        }
+        if ([] === $concept) {
+            return $this;
+        }
+        foreach($concept as $v) {
+            $this->addConcept($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -617,6 +643,32 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
      * questions are ordered and grouped into coherent subsets, corresponding to the
      * structure of the grouping of the underlying questions.
      *
+     * A sub-group within a group. The ordering of groups within this group is
+     * relevant.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireGroup ...$group
+     * @return static
+     */
+    public function setGroup(FHIRQuestionnaireGroup ...$group): self
+    {
+        if ([] !== $this->group) {
+            $this->_trackValuesRemoved(count($this->group));
+            $this->group = [];
+        }
+        if ([] === $group) {
+            return $this;
+        }
+        foreach($group as $v) {
+            $this->addGroup($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A structured set of questions intended to guide the collection of answers. The
+     * questions are ordered and grouped into coherent subsets, corresponding to the
+     * structure of the grouping of the underlying questions.
+     *
      * Set of questions within this group. The order of questions within the group is
      * relevant.
      *
@@ -645,6 +697,32 @@ class FHIRQuestionnaireGroup extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->question[] = $question;
+        return $this;
+    }
+
+    /**
+     * A structured set of questions intended to guide the collection of answers. The
+     * questions are ordered and grouped into coherent subsets, corresponding to the
+     * structure of the grouping of the underlying questions.
+     *
+     * Set of questions within this group. The order of questions within the group is
+     * relevant.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireQuestion ...$question
+     * @return static
+     */
+    public function setQuestion(FHIRQuestionnaireQuestion ...$question): self
+    {
+        if ([] !== $this->question) {
+            $this->_trackValuesRemoved(count($this->question));
+            $this->question = [];
+        }
+        if ([] === $question) {
+            return $this;
+        }
+        foreach($question as $v) {
+            $this->addQuestion($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRIma
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -140,6 +140,9 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
      */
     private const _VALIDATION_RULES = [
         self::FIELD_SERIES => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_UID => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -337,6 +340,34 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The network service providing access (e.g., query, view, or retrieval) for the
+     * study. See implementation notes for information about using DICOM endpoints. A
+     * study-level endpoint applies to each series in the study, unless overridden by a
+     * series-level endpoint with the same Endpoint.type.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$endpoint
+     * @return static
+     */
+    public function setEndpoint(FHIRReference ...$endpoint): self
+    {
+        if ([] !== $this->endpoint) {
+            $this->_trackValuesRemoved(count($this->endpoint));
+            $this->endpoint = [];
+        }
+        if ([] === $endpoint) {
+            return $this;
+        }
+        foreach($endpoint as $v) {
+            $this->addEndpoint($v);
+        }
+        return $this;
+    }
+
+    /**
      * A text description of the DICOM SOP instances selected in the ImagingManifest;
      * or the reason for, or significance of, the selection.
      *
@@ -367,6 +398,31 @@ class FHIRImagingManifestStudy extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->series[] = $series;
+        return $this;
+    }
+
+    /**
+     * A text description of the DICOM SOP instances selected in the ImagingManifest;
+     * or the reason for, or significance of, the selection.
+     *
+     * Series identity and locating information of the DICOM SOP instances in the
+     * selection.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRImagingManifest\FHIRImagingManifestSeries ...$series
+     * @return static
+     */
+    public function setSeries(FHIRImagingManifestSeries ...$series): self
+    {
+        if ([] !== $this->series) {
+            $this->_trackValuesRemoved(count($this->series));
+            $this->series = [];
+        }
+        if ([] === $series) {
+            return $this;
+        }
+        foreach($series as $v) {
+            $this->addSeries($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -144,7 +144,7 @@ class FHIRCompositionSection extends FHIRBackboneElement
      * Validation map for fields in type Composition.Section
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -398,6 +398,32 @@ class FHIRCompositionSection extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->section[] = $section;
+        return $this;
+    }
+
+    /**
+     * A set of healthcare-related information that is assembled together into a single
+     * logical document that provides a single coherent statement of meaning,
+     * establishes its own context and that has clinical attestation with regard to who
+     * is making the statement.
+     *
+     * A nested sub-section within this section.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRComposition\FHIRCompositionSection ...$section
+     * @return static
+     */
+    public function setSection(FHIRCompositionSection ...$section): self
+    {
+        if ([] !== $this->section) {
+            $this->_trackValuesRemoved(count($this->section));
+            $this->section = [];
+        }
+        if ([] === $section) {
+            return $this;
+        }
+        foreach($section as $v) {
+            $this->addSection($v);
+        }
         return $this;
     }
 

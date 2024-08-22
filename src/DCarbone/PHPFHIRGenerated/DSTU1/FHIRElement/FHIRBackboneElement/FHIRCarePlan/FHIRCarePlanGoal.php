@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -131,7 +131,11 @@ class FHIRCarePlanGoal extends FHIRBackboneElement
      * Validation map for fields in type CarePlan.Goal
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_DESCRIPTION => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -361,6 +365,32 @@ class FHIRCarePlanGoal extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->concern[] = $concern;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The identified conditions that this goal relates to - the condition that caused
+     * it to be created, or that it is intended to address.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$concern
+     * @return static
+     */
+    public function setConcern(FHIRResourceReference ...$concern): self
+    {
+        if ([] !== $this->concern) {
+            $this->_trackValuesRemoved(count($this->concern));
+            $this->concern = [];
+        }
+        if ([] === $concern) {
+            return $this;
+        }
+        foreach($concern as $v) {
+            $this->addConcern($v);
+        }
         return $this;
     }
 

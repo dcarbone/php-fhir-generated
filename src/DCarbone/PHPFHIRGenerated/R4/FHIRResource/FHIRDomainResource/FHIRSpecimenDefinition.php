@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -167,7 +167,7 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
      * Validation map for fields in type SpecimenDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -385,6 +385,32 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Preparation of the patient for specimen collection.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$patientPreparation
+     * @return static
+     */
+    public function setPatientPreparation(FHIRCodeableConcept ...$patientPreparation): self
+    {
+        if ([] !== $this->patientPreparation) {
+            $this->_trackValuesRemoved(count($this->patientPreparation));
+            $this->patientPreparation = [];
+        }
+        if ([] === $patientPreparation) {
+            return $this;
+        }
+        foreach($patientPreparation as $v) {
+            $this->addPatientPreparation($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -460,6 +486,32 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The action to be performed for collecting the specimen.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$collection
+     * @return static
+     */
+    public function setCollection(FHIRCodeableConcept ...$collection): self
+    {
+        if ([] !== $this->collection) {
+            $this->_trackValuesRemoved(count($this->collection));
+            $this->collection = [];
+        }
+        if ([] === $collection) {
+            return $this;
+        }
+        foreach($collection as $v) {
+            $this->addCollection($v);
+        }
+        return $this;
+    }
+
+    /**
      * A kind of specimen with associated set of requirements.
      *
      * Specimen conditioned in a container as expected by the testing laboratory.
@@ -486,6 +538,29 @@ class FHIRSpecimenDefinition extends FHIRDomainResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->typeTested[] = $typeTested;
+        return $this;
+    }
+
+    /**
+     * A kind of specimen with associated set of requirements.
+     *
+     * Specimen conditioned in a container as expected by the testing laboratory.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionTypeTested ...$typeTested
+     * @return static
+     */
+    public function setTypeTested(FHIRSpecimenDefinitionTypeTested ...$typeTested): self
+    {
+        if ([] !== $this->typeTested) {
+            $this->_trackValuesRemoved(count($this->typeTested));
+            $this->typeTested = [];
+        }
+        if ([] === $typeTested) {
+            return $this;
+        }
+        foreach($typeTested as $v) {
+            $this->addTypeTested($v);
+        }
         return $this;
     }
 

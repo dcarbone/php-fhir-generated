@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -148,7 +148,7 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * Validation map for fields in type Citation.Contributorship
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -301,6 +301,33 @@ class FHIRCitationContributorship extends FHIRBackboneElement
      * reference structures and developing publication practices such as versioning,
      * expressing complex contributorship roles, and referencing computable resources.
      *
+     * An individual entity named as a contributor, for example in the author list or
+     * contributor list.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationEntry ...$entry
+     * @return static
+     */
+    public function setEntry(FHIRCitationEntry ...$entry): self
+    {
+        if ([] !== $this->entry) {
+            $this->_trackValuesRemoved(count($this->entry));
+            $this->entry = [];
+        }
+        if ([] === $entry) {
+            return $this;
+        }
+        foreach($entry as $v) {
+            $this->addEntry($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The Citation Resource enables reference to any knowledge artifact for purposes
+     * of identification and attribution. The Citation Resource supports existing
+     * reference structures and developing publication practices such as versioning,
+     * expressing complex contributorship roles, and referencing computable resources.
+     *
      * Used to record a display of the author/contributor list without separate data
      * element for each list member.
      *
@@ -330,6 +357,33 @@ class FHIRCitationContributorship extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->summary[] = $summary;
+        return $this;
+    }
+
+    /**
+     * The Citation Resource enables reference to any knowledge artifact for purposes
+     * of identification and attribution. The Citation Resource supports existing
+     * reference structures and developing publication practices such as versioning,
+     * expressing complex contributorship roles, and referencing computable resources.
+     *
+     * Used to record a display of the author/contributor list without separate data
+     * element for each list member.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationSummary1 ...$summary
+     * @return static
+     */
+    public function setSummary(FHIRCitationSummary1 ...$summary): self
+    {
+        if ([] !== $this->summary) {
+            $this->_trackValuesRemoved(count($this->summary));
+            $this->summary = [];
+        }
+        if ([] === $summary) {
+            return $this;
+        }
+        foreach($summary as $v) {
+            $this->addSummary($v);
+        }
         return $this;
     }
 

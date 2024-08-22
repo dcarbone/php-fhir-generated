@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -286,7 +286,20 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
      * Validation map for fields in type ImagingStudy
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_NUMBER_OF_INSTANCES => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_NUMBER_OF_SERIES => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SUBJECT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_UID => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -760,6 +773,31 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Other identifiers for the study.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -796,6 +834,32 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A list of the diagnostic orders that resulted in this imaging study being
+     * performed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$order
+     * @return static
+     */
+    public function setOrder(FHIRResourceReference ...$order): self
+    {
+        if ([] !== $this->order) {
+            $this->_trackValuesRemoved(count($this->order));
+            $this->order = [];
+        }
+        if ([] === $order) {
+            return $this;
+        }
+        foreach($order as $v) {
+            $this->addOrder($v);
+        }
+        return $this;
+    }
+
+    /**
      * Type of acquired image data in the instance
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -828,6 +892,32 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
         }
         $this->_trackValueAdded();
         $this->modality[] = $modality;
+        return $this;
+    }
+
+    /**
+     * Type of acquired image data in the instance
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A list of all the Series.ImageModality values that are actual acquisition
+     * modalities, i.e. those in the DICOM Context Group 29 (value set OID
+     * 1.2.840.10008.6.1.19).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRImagingModality ...$modality
+     * @return static
+     */
+    public function setModality(FHIRImagingModality ...$modality): self
+    {
+        if ([] !== $this->modality) {
+            $this->_trackValuesRemoved(count($this->modality));
+            $this->modality = [];
+        }
+        if ([] === $modality) {
+            return $this;
+        }
+        foreach($modality as $v) {
+            $this->addModality($v);
+        }
         return $this;
     }
 
@@ -1080,6 +1170,31 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of procedure performed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCoding ...$procedure
+     * @return static
+     */
+    public function setProcedure(FHIRCoding ...$procedure): self
+    {
+        if ([] !== $this->procedure) {
+            $this->_trackValuesRemoved(count($this->procedure));
+            $this->procedure = [];
+        }
+        if ([] === $procedure) {
+            return $this;
+        }
+        foreach($procedure as $v) {
+            $this->addProcedure($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1183,6 +1298,31 @@ class FHIRImagingStudy extends FHIRResource implements PHPFHIRContainedTypeInter
         }
         $this->_trackValueAdded();
         $this->series[] = $series;
+        return $this;
+    }
+
+    /**
+     * Manifest of a set of images produced in study. The set of images may include
+     * every image in the study, or it may be an incomplete sample, such as a list of
+     * key images.
+     *
+     * Each study has one or more series of image instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRImagingStudy\FHIRImagingStudySeries ...$series
+     * @return static
+     */
+    public function setSeries(FHIRImagingStudySeries ...$series): self
+    {
+        if ([] !== $this->series) {
+            $this->_trackValuesRemoved(count($this->series));
+            $this->series = [];
+        }
+        if ([] === $series) {
+            return $this;
+        }
+        foreach($series as $v) {
+            $this->addSeries($v);
+        }
         return $this;
     }
 

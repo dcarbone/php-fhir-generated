@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -186,7 +186,11 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * Validation map for fields in type CodeSystem.Concept
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -477,6 +481,32 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
      * system or code system supplement and its key properties, and optionally define a
      * part or all of its content.
      *
+     * Additional representations for the concept - other languages, aliases,
+     * specialized purposes, used for particular purposes, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemDesignation ...$designation
+     * @return static
+     */
+    public function setDesignation(FHIRCodeSystemDesignation ...$designation): self
+    {
+        if ([] !== $this->designation) {
+            $this->_trackValuesRemoved(count($this->designation));
+            $this->designation = [];
+        }
+        if ([] === $designation) {
+            return $this;
+        }
+        foreach($designation as $v) {
+            $this->addDesignation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The CodeSystem resource is used to declare the existence of and describe a code
+     * system or code system supplement and its key properties, and optionally define a
+     * part or all of its content.
+     *
      * A property value for this concept.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1[]
@@ -503,6 +533,31 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->property[] = $property;
+        return $this;
+    }
+
+    /**
+     * The CodeSystem resource is used to declare the existence of and describe a code
+     * system or code system supplement and its key properties, and optionally define a
+     * part or all of its content.
+     *
+     * A property value for this concept.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty1 ...$property
+     * @return static
+     */
+    public function setProperty(FHIRCodeSystemProperty1 ...$property): self
+    {
+        if ([] !== $this->property) {
+            $this->_trackValuesRemoved(count($this->property));
+            $this->property = [];
+        }
+        if ([] === $property) {
+            return $this;
+        }
+        foreach($property as $v) {
+            $this->addProperty($v);
+        }
         return $this;
     }
 
@@ -541,6 +596,33 @@ class FHIRCodeSystemConcept extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->concept[] = $concept;
+        return $this;
+    }
+
+    /**
+     * The CodeSystem resource is used to declare the existence of and describe a code
+     * system or code system supplement and its key properties, and optionally define a
+     * part or all of its content.
+     *
+     * Defines children of a concept to produce a hierarchy of concepts. The nature of
+     * the relationships is variable (is-a/contains/categorizes) - see
+     * hierarchyMeaning.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept ...$concept
+     * @return static
+     */
+    public function setConcept(FHIRCodeSystemConcept ...$concept): self
+    {
+        if ([] !== $this->concept) {
+            $this->_trackValuesRemoved(count($this->concept));
+            $this->concept = [];
+        }
+        if ([] === $concept) {
+            return $this;
+        }
+        foreach($concept as $v) {
+            $this->addConcept($v);
+        }
         return $this;
     }
 

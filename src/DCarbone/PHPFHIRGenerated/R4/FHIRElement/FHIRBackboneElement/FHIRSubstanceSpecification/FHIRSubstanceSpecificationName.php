@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -209,7 +209,11 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * Validation map for fields in type SubstanceSpecification.Name
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -577,6 +581,32 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Language of the name.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$language
+     * @return static
+     */
+    public function setLanguage(FHIRCodeableConcept ...$language): self
+    {
+        if ([] !== $this->language) {
+            $this->_trackValuesRemoved(count($this->language));
+            $this->language = [];
+        }
+        if ([] === $language) {
+            return $this;
+        }
+        foreach($language as $v) {
+            $this->addLanguage($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The use context of this name for example if there is a different name a drug
      * active ingredient as opposed to a food colour additive.
      *
@@ -606,6 +636,33 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->domain[] = $domain;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The use context of this name for example if there is a different name a drug
+     * active ingredient as opposed to a food colour additive.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$domain
+     * @return static
+     */
+    public function setDomain(FHIRCodeableConcept ...$domain): self
+    {
+        if ([] !== $this->domain) {
+            $this->_trackValuesRemoved(count($this->domain));
+            $this->domain = [];
+        }
+        if ([] === $domain) {
+            return $this;
+        }
+        foreach($domain as $v) {
+            $this->addDomain($v);
+        }
         return $this;
     }
 
@@ -646,6 +703,32 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The jurisdiction where this name applies.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
+    {
+        if ([] !== $this->jurisdiction) {
+            $this->_trackValuesRemoved(count($this->jurisdiction));
+            $this->jurisdiction = [];
+        }
+        if ([] === $jurisdiction) {
+            return $this;
+        }
+        foreach($jurisdiction as $v) {
+            $this->addJurisdiction($v);
+        }
+        return $this;
+    }
+
+    /**
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
      *
@@ -674,6 +757,30 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->synonym[] = $synonym;
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
+     * A synonym of this name.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName ...$synonym
+     * @return static
+     */
+    public function setSynonym(FHIRSubstanceSpecificationName ...$synonym): self
+    {
+        if ([] !== $this->synonym) {
+            $this->_trackValuesRemoved(count($this->synonym));
+            $this->synonym = [];
+        }
+        if ([] === $synonym) {
+            return $this;
+        }
+        foreach($synonym as $v) {
+            $this->addSynonym($v);
+        }
         return $this;
     }
 
@@ -713,6 +820,30 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
      *
+     * A translation for this name.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName ...$translation
+     * @return static
+     */
+    public function setTranslation(FHIRSubstanceSpecificationName ...$translation): self
+    {
+        if ([] !== $this->translation) {
+            $this->_trackValuesRemoved(count($this->translation));
+            $this->translation = [];
+        }
+        if ([] === $translation) {
+            return $this;
+        }
+        foreach($translation as $v) {
+            $this->addTranslation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
      * Details of the official nature of this name.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial[]
@@ -738,6 +869,30 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->official[] = $official;
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
+     * Details of the official nature of this name.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationOfficial ...$official
+     * @return static
+     */
+    public function setOfficial(FHIRSubstanceSpecificationOfficial ...$official): self
+    {
+        if ([] !== $this->official) {
+            $this->_trackValuesRemoved(count($this->official));
+            $this->official = [];
+        }
+        if ([] === $official) {
+            return $this;
+        }
+        foreach($official as $v) {
+            $this->addOfficial($v);
+        }
         return $this;
     }
 
@@ -772,6 +927,31 @@ class FHIRSubstanceSpecificationName extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->source[] = $source;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Supporting literature.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$source
+     * @return static
+     */
+    public function setSource(FHIRReference ...$source): self
+    {
+        if ([] !== $this->source) {
+            $this->_trackValuesRemoved(count($this->source));
+            $this->source = [];
+        }
+        if ([] === $source) {
+            return $this;
+        }
+        foreach($source as $v) {
+            $this->addSource($v);
+        }
         return $this;
     }
 

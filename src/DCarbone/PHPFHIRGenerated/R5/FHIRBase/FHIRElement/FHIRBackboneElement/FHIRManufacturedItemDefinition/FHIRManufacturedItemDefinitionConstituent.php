@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -162,7 +162,7 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      * Validation map for fields in type ManufacturedItemDefinition.Constituent
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -288,6 +288,34 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
     }
 
     /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The measurable amount of the substance, expressable in different ways (e.g. by
+     * mass or volume).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity ...$amount
+     * @return static
+     */
+    public function setAmount(FHIRQuantity ...$amount): self
+    {
+        if ([] !== $this->amount) {
+            $this->_trackValuesRemoved(count($this->amount));
+            $this->amount = [];
+        }
+        if ([] === $amount) {
+            return $this;
+        }
+        foreach($amount as $v) {
+            $this->addAmount($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -335,6 +363,35 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The physical location of the constituent/ingredient within the component.
+     * Example – if the component is the bead in the capsule, then the location would
+     * be where the ingredient resides within the product part – intragranular,
+     * extra-granular, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$location
+     * @return static
+     */
+    public function setLocation(FHIRCodeableConcept ...$location): self
+    {
+        if ([] !== $this->location) {
+            $this->_trackValuesRemoved(count($this->location));
+            $this->location = [];
+        }
+        if ([] === $location) {
+            return $this;
+        }
+        foreach($location as $v) {
+            $this->addLocation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The function of this constituent within the component e.g. binder.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
@@ -362,6 +419,32 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->function[] = $function;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The function of this constituent within the component e.g. binder.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$function
+     * @return static
+     */
+    public function setFunction(FHIRCodeableConcept ...$function): self
+    {
+        if ([] !== $this->function) {
+            $this->_trackValuesRemoved(count($this->function));
+            $this->function = [];
+        }
+        if ([] === $function) {
+            return $this;
+        }
+        foreach($function as $v) {
+            $this->addFunction($v);
+        }
         return $this;
     }
 
@@ -398,6 +481,32 @@ class FHIRManufacturedItemDefinitionConstituent extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->hasIngredient[] = $hasIngredient;
+        return $this;
+    }
+
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The ingredient that is the constituent of the given component.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$hasIngredient
+     * @return static
+     */
+    public function setHasIngredient(FHIRCodeableReference ...$hasIngredient): self
+    {
+        if ([] !== $this->hasIngredient) {
+            $this->_trackValuesRemoved(count($this->hasIngredient));
+            $this->hasIngredient = [];
+        }
+        if ([] === $hasIngredient) {
+            return $this;
+        }
+        foreach($hasIngredient as $v) {
+            $this->addHasIngredient($v);
+        }
         return $this;
     }
 

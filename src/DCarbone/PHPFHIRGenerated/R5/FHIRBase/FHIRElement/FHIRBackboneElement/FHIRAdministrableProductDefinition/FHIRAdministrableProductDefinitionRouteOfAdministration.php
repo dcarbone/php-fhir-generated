@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -196,7 +196,11 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
      * Validation map for fields in type AdministrableProductDefinition.RouteOfAdministration
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -535,6 +539,31 @@ class FHIRAdministrableProductDefinitionRouteOfAdministration extends FHIRBackbo
         }
         $this->_trackValueAdded();
         $this->targetSpecies[] = $targetSpecies;
+        return $this;
+    }
+
+    /**
+     * A medicinal product in the final form which is suitable for administering to a
+     * patient (after any mixing of multiple components, dissolution etc. has been
+     * performed).
+     *
+     * A species for which this route applies.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAdministrableProductDefinition\FHIRAdministrableProductDefinitionTargetSpecies ...$targetSpecies
+     * @return static
+     */
+    public function setTargetSpecies(FHIRAdministrableProductDefinitionTargetSpecies ...$targetSpecies): self
+    {
+        if ([] !== $this->targetSpecies) {
+            $this->_trackValuesRemoved(count($this->targetSpecies));
+            $this->targetSpecies = [];
+        }
+        if ([] === $targetSpecies) {
+            return $this;
+        }
+        foreach($targetSpecies as $v) {
+            $this->addTargetSpecies($v);
+        }
         return $this;
     }
 

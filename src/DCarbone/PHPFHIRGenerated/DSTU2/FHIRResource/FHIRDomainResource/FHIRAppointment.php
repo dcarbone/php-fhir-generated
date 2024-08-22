@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -265,6 +265,9 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         self::FIELD_PARTICIPANT => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
     ];
 
     /** @var array */
@@ -513,6 +516,34 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This records identifiers associated with this appointment concern that are
+     * defined by business processes and/or used to refer to it when a direct URL
+     * reference to the resource itself is not appropriate (e.g. in CDA documents, or
+     * in written / printed documentation).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -882,6 +913,33 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The slot that this appointment is filling. If provided then the schedule will
+     * not be provided as slots are not recursive, and the start/end values MUST be the
+     * same as from the slot.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference ...$slot
+     * @return static
+     */
+    public function setSlot(FHIRReference ...$slot): self
+    {
+        if ([] !== $this->slot) {
+            $this->_trackValuesRemoved(count($this->slot));
+            $this->slot = [];
+        }
+        if ([] === $slot) {
+            return $this;
+        }
+        foreach($slot as $v) {
+            $this->addSlot($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -951,6 +1009,31 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->participant[] = $participant;
+        return $this;
+    }
+
+    /**
+     * A booking of a healthcare event among patient(s), practitioner(s), related
+     * person(s) and/or device(s) for a specific date/time. This may result in one or
+     * more Encounter(s).
+     *
+     * List of participants involved in the appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant ...$participant
+     * @return static
+     */
+    public function setParticipant(FHIRAppointmentParticipant ...$participant): self
+    {
+        if ([] !== $this->participant) {
+            $this->_trackValuesRemoved(count($this->participant));
+            $this->participant = [];
+        }
+        if ([] === $participant) {
+            return $this;
+        }
+        foreach($participant as $v) {
+            $this->addParticipant($v);
+        }
         return $this;
     }
 

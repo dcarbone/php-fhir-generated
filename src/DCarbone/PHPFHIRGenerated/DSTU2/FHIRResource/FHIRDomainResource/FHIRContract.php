@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -327,7 +327,7 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Validation map for fields in type Contract
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -761,6 +761,32 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Who and/or what this Contract is about: typically a Patient, Organization, or
+     * valued items such as goods and services.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference ...$subject
+     * @return static
+     */
+    public function setSubject(FHIRReference ...$subject): self
+    {
+        if ([] !== $this->subject) {
+            $this->_trackValuesRemoved(count($this->subject));
+            $this->subject = [];
+        }
+        if ([] === $subject) {
+            return $this;
+        }
+        foreach($subject as $v) {
+            $this->addSubject($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * A formally or informally recognized grouping of people, principals,
      * organizations, or jurisdictions formed for the purpose of achieving some form of
      * collective action such as the promulgation, administration and enforcement of
@@ -801,6 +827,34 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A formally or informally recognized grouping of people, principals,
+     * organizations, or jurisdictions formed for the purpose of achieving some form of
+     * collective action such as the promulgation, administration and enforcement of
+     * contracts and policies.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference ...$authority
+     * @return static
+     */
+    public function setAuthority(FHIRReference ...$authority): self
+    {
+        if ([] !== $this->authority) {
+            $this->_trackValuesRemoved(count($this->authority));
+            $this->authority = [];
+        }
+        if ([] === $authority) {
+            return $this;
+        }
+        foreach($authority as $v) {
+            $this->addAuthority($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Recognized governance framework or system operating with a circumscribed scope
      * in accordance with specified principles, policies, processes or procedures for
      * managing rights, actions, or behaviors of parties or principals relative to
@@ -833,6 +887,34 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->domain[] = $domain;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Recognized governance framework or system operating with a circumscribed scope
+     * in accordance with specified principles, policies, processes or procedures for
+     * managing rights, actions, or behaviors of parties or principals relative to
+     * resources.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference ...$domain
+     * @return static
+     */
+    public function setDomain(FHIRReference ...$domain): self
+    {
+        if ([] !== $this->domain) {
+            $this->_trackValuesRemoved(count($this->domain));
+            $this->domain = [];
+        }
+        if ([] === $domain) {
+            return $this;
+        }
+        foreach($domain as $v) {
+            $this->addDomain($v);
+        }
         return $this;
     }
 
@@ -920,6 +1002,34 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * More specific type or specialization of an overarching or more general contract
+     * such as auto insurance, home owner insurance, prenupial agreement,
+     * Advanced-Directive, or privacy consent.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$subType
+     * @return static
+     */
+    public function setSubType(FHIRCodeableConcept ...$subType): self
+    {
+        if ([] !== $this->subType) {
+            $this->_trackValuesRemoved(count($this->subType));
+            $this->subType = [];
+        }
+        if ([] === $subType) {
+            return $this;
+        }
+        foreach($subType as $v) {
+            $this->addSubType($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Action stipulated by this Contract.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept[]
@@ -947,6 +1057,32 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->action[] = $action;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Action stipulated by this Contract.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$action
+     * @return static
+     */
+    public function setAction(FHIRCodeableConcept ...$action): self
+    {
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
+        if ([] === $action) {
+            return $this;
+        }
+        foreach($action as $v) {
+            $this->addAction($v);
+        }
         return $this;
     }
 
@@ -987,6 +1123,32 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reason for action stipulated by this Contract.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$actionReason
+     * @return static
+     */
+    public function setActionReason(FHIRCodeableConcept ...$actionReason): self
+    {
+        if ([] !== $this->actionReason) {
+            $this->_trackValuesRemoved(count($this->actionReason));
+            $this->actionReason = [];
+        }
+        if ([] === $actionReason) {
+            return $this;
+        }
+        foreach($actionReason as $v) {
+            $this->addActionReason($v);
+        }
+        return $this;
+    }
+
+    /**
      * A formal agreement between parties regarding the conduct of business, exchange
      * of information or other matters.
      *
@@ -1015,6 +1177,30 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->actor[] = $actor;
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
+     * List of Contract actors.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractActor ...$actor
+     * @return static
+     */
+    public function setActor(FHIRContractActor ...$actor): self
+    {
+        if ([] !== $this->actor) {
+            $this->_trackValuesRemoved(count($this->actor));
+            $this->actor = [];
+        }
+        if ([] === $actor) {
+            return $this;
+        }
+        foreach($actor as $v) {
+            $this->addActor($v);
+        }
         return $this;
     }
 
@@ -1054,6 +1240,30 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A formal agreement between parties regarding the conduct of business, exchange
      * of information or other matters.
      *
+     * Contract Valued Item List.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem ...$valuedItem
+     * @return static
+     */
+    public function setValuedItem(FHIRContractValuedItem ...$valuedItem): self
+    {
+        if ([] !== $this->valuedItem) {
+            $this->_trackValuesRemoved(count($this->valuedItem));
+            $this->valuedItem = [];
+        }
+        if ([] === $valuedItem) {
+            return $this;
+        }
+        foreach($valuedItem as $v) {
+            $this->addValuedItem($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
      * Party signing this Contract.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSigner[]
@@ -1079,6 +1289,30 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->signer[] = $signer;
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
+     * Party signing this Contract.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractSigner ...$signer
+     * @return static
+     */
+    public function setSigner(FHIRContractSigner ...$signer): self
+    {
+        if ([] !== $this->signer) {
+            $this->_trackValuesRemoved(count($this->signer));
+            $this->signer = [];
+        }
+        if ([] === $signer) {
+            return $this;
+        }
+        foreach($signer as $v) {
+            $this->addSigner($v);
+        }
         return $this;
     }
 
@@ -1113,6 +1347,31 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->term[] = $term;
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
+     * One or more Contract Provisions, which may be related and conveyed as a group,
+     * and may contain nested groups.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm ...$term
+     * @return static
+     */
+    public function setTerm(FHIRContractTerm ...$term): self
+    {
+        if ([] !== $this->term) {
+            $this->_trackValuesRemoved(count($this->term));
+            $this->term = [];
+        }
+        if ([] === $term) {
+            return $this;
+        }
+        foreach($term as $v) {
+            $this->addTerm($v);
+        }
         return $this;
     }
 
@@ -1242,6 +1501,35 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A formal agreement between parties regarding the conduct of business, exchange
      * of information or other matters.
      *
+     * The "patient friendly language" versionof the Contract in whole or in parts.
+     * "Patient friendly language" means the representation of the Contract and
+     * Contract Provisions in a manner that is readily accessible and understandable by
+     * a layperson in accordance with best practices for communication styles that
+     * ensure that those agreeing to or signing the Contract understand the roles,
+     * actions, obligations, responsibilities, and implication of the agreement.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractFriendly ...$friendly
+     * @return static
+     */
+    public function setFriendly(FHIRContractFriendly ...$friendly): self
+    {
+        if ([] !== $this->friendly) {
+            $this->_trackValuesRemoved(count($this->friendly));
+            $this->friendly = [];
+        }
+        if ([] === $friendly) {
+            return $this;
+        }
+        foreach($friendly as $v) {
+            $this->addFriendly($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
      * List of Legal expressions or representations of this Contract.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractLegal[]
@@ -1274,6 +1562,30 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * A formal agreement between parties regarding the conduct of business, exchange
      * of information or other matters.
      *
+     * List of Legal expressions or representations of this Contract.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractLegal ...$legal
+     * @return static
+     */
+    public function setLegal(FHIRContractLegal ...$legal): self
+    {
+        if ([] !== $this->legal) {
+            $this->_trackValuesRemoved(count($this->legal));
+            $this->legal = [];
+        }
+        if ([] === $legal) {
+            return $this;
+        }
+        foreach($legal as $v) {
+            $this->addLegal($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
      * List of Computable Policy Rule Language Representations of this Contract.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule[]
@@ -1299,6 +1611,30 @@ class FHIRContract extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->rule[] = $rule;
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
+     * List of Computable Policy Rule Language Representations of this Contract.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractRule ...$rule
+     * @return static
+     */
+    public function setRule(FHIRContractRule ...$rule): self
+    {
+        if ([] !== $this->rule) {
+            $this->_trackValuesRemoved(count($this->rule));
+            $this->rule = [];
+        }
+        if ([] === $rule) {
+            return $this;
+        }
+        foreach($rule as $v) {
+            $this->addRule($v);
+        }
         return $this;
     }
 

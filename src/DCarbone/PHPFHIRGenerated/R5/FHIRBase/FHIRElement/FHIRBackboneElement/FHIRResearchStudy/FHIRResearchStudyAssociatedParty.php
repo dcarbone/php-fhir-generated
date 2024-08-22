@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -171,7 +171,11 @@ class FHIRResearchStudyAssociatedParty extends FHIRBackboneElement
      * Validation map for fields in type ResearchStudy.AssociatedParty
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_ROLE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -367,6 +371,31 @@ class FHIRResearchStudyAssociatedParty extends FHIRBackboneElement
     }
 
     /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the start date and the end date of the associated party in the role.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod ...$period
+     * @return static
+     */
+    public function setPeriod(FHIRPeriod ...$period): self
+    {
+        if ([] !== $this->period) {
+            $this->_trackValuesRemoved(count($this->period));
+            $this->period = [];
+        }
+        if ([] === $period) {
+            return $this;
+        }
+        foreach($period as $v) {
+            $this->addPeriod($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -399,6 +428,32 @@ class FHIRResearchStudyAssociatedParty extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->classifier[] = $classifier;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A categorization other than role for the associated party.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$classifier
+     * @return static
+     */
+    public function setClassifier(FHIRCodeableConcept ...$classifier): self
+    {
+        if ([] !== $this->classifier) {
+            $this->_trackValuesRemoved(count($this->classifier));
+            $this->classifier = [];
+        }
+        if ([] === $classifier) {
+            return $this;
+        }
+        foreach($classifier as $v) {
+            $this->addClassifier($v);
+        }
         return $this;
     }
 

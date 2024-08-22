@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -190,7 +190,7 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
      * Validation map for fields in type StructureMap.Target
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -501,6 +501,29 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
     }
 
     /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If field is a list, how to manage the list.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRStructureMapTargetListMode ...$listMode
+     * @return static
+     */
+    public function setListMode(FHIRStructureMapTargetListMode ...$listMode): self
+    {
+        if ([] !== $this->listMode) {
+            $this->_trackValuesRemoved(count($this->listMode));
+            $this->listMode = [];
+        }
+        if ([] === $listMode) {
+            return $this;
+        }
+        foreach($listMode as $v) {
+            $this->addListMode($v);
+        }
+        return $this;
+    }
+
+    /**
      * Any combination of letters, numerals, "-" and ".", with a length limit of 64
      * characters. (This might be an integer, an unprefixed OID, UUID or any other
      * identifier pattern that meets these constraints.) Ids are case-insensitive.
@@ -602,6 +625,29 @@ class FHIRStructureMapTarget extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->parameter[] = $parameter;
+        return $this;
+    }
+
+    /**
+     * A Map of relationships between 2 structures that can be used to transform data.
+     *
+     * Parameters to the transform.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRStructureMap\FHIRStructureMapParameter ...$parameter
+     * @return static
+     */
+    public function setParameter(FHIRStructureMapParameter ...$parameter): self
+    {
+        if ([] !== $this->parameter) {
+            $this->_trackValuesRemoved(count($this->parameter));
+            $this->parameter = [];
+        }
+        if ([] === $parameter) {
+            return $this;
+        }
+        foreach($parameter as $v) {
+            $this->addParameter($v);
+        }
         return $this;
     }
 

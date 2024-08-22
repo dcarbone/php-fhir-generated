@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -228,7 +228,11 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Validation map for fields in type Account
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -439,6 +443,33 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique identifier used to reference the account. Might or might not be intended
+     * for human use (e.g. credit card number).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * Indicates whether the account is available to be used.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -584,6 +615,33 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the entity which incurs the expenses. While the immediate recipients
+     * of services or goods might be entities related to the subject, the expenses were
+     * ultimately incurred by the subject of the Account.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$subject
+     * @return static
+     */
+    public function setSubject(FHIRReference ...$subject): self
+    {
+        if ([] !== $this->subject) {
+            $this->_trackValuesRemoved(count($this->subject));
+            $this->subject = [];
+        }
+        if ([] === $subject) {
+            return $this;
+        }
+        foreach($subject as $v) {
+            $this->addSubject($v);
+        }
+        return $this;
+    }
+
+    /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -648,6 +706,31 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->coverage[] = $coverage;
+        return $this;
+    }
+
+    /**
+     * A financial tool for tracking value accrued for a particular purpose. In the
+     * healthcare field, used to track charges for a patient, cost centers, etc.
+     *
+     * The party(s) that are responsible for covering the payment of this account, and
+     * what order should they be applied to the account.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountCoverage ...$coverage
+     * @return static
+     */
+    public function setCoverage(FHIRAccountCoverage ...$coverage): self
+    {
+        if ([] !== $this->coverage) {
+            $this->_trackValuesRemoved(count($this->coverage));
+            $this->coverage = [];
+        }
+        if ([] === $coverage) {
+            return $this;
+        }
+        foreach($coverage as $v) {
+            $this->addCoverage($v);
+        }
         return $this;
     }
 
@@ -759,6 +842,31 @@ class FHIRAccount extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->guarantor[] = $guarantor;
+        return $this;
+    }
+
+    /**
+     * A financial tool for tracking value accrued for a particular purpose. In the
+     * healthcare field, used to track charges for a patient, cost centers, etc.
+     *
+     * The parties responsible for balancing the account if other payment options fall
+     * short.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRAccount\FHIRAccountGuarantor ...$guarantor
+     * @return static
+     */
+    public function setGuarantor(FHIRAccountGuarantor ...$guarantor): self
+    {
+        if ([] !== $this->guarantor) {
+            $this->_trackValuesRemoved(count($this->guarantor));
+            $this->guarantor = [];
+        }
+        if ([] === $guarantor) {
+            return $this;
+        }
+        foreach($guarantor as $v) {
+            $this->addGuarantor($v);
+        }
         return $this;
     }
 

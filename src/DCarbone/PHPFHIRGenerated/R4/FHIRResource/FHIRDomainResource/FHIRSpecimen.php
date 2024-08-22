@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -249,7 +249,7 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Validation map for fields in type Specimen
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -491,6 +491,32 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Id for specimen.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The identifier assigned by the lab when accessioning specimen(s). This is not
      * necessarily the same as the specimen identifier, depending on local lab
      * procedures.
@@ -717,6 +743,32 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Reference to the parent (source) specimen which is used when the specimen was
+     * either derived from or a component of another specimen.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$parent
+     * @return static
+     */
+    public function setParent(FHIRReference ...$parent): self
+    {
+        if ([] !== $this->parent) {
+            $this->_trackValuesRemoved(count($this->parent));
+            $this->parent = [];
+        }
+        if ([] === $parent) {
+            return $this;
+        }
+        foreach($parent as $v) {
+            $this->addParent($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Details concerning a service request that required a specimen to be collected.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference[]
@@ -743,6 +795,31 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->request[] = $request;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Details concerning a service request that required a specimen to be collected.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$request
+     * @return static
+     */
+    public function setRequest(FHIRReference ...$request): self
+    {
+        if ([] !== $this->request) {
+            $this->_trackValuesRemoved(count($this->request));
+            $this->request = [];
+        }
+        if ([] === $request) {
+            return $this;
+        }
+        foreach($request as $v) {
+            $this->addRequest($v);
+        }
         return $this;
     }
 
@@ -809,6 +886,29 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     /**
      * A sample to be used for analysis.
      *
+     * Details concerning processing and processing steps for the specimen.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenProcessing ...$processing
+     * @return static
+     */
+    public function setProcessing(FHIRSpecimenProcessing ...$processing): self
+    {
+        if ([] !== $this->processing) {
+            $this->_trackValuesRemoved(count($this->processing));
+            $this->processing = [];
+        }
+        if ([] === $processing) {
+            return $this;
+        }
+        foreach($processing as $v) {
+            $this->addProcessing($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A sample to be used for analysis.
+     *
      * The container holding the specimen. The recursive nature of containers; i.e.
      * blood in tube in tray in rack is not addressed here.
      *
@@ -835,6 +935,30 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->container[] = $container;
+        return $this;
+    }
+
+    /**
+     * A sample to be used for analysis.
+     *
+     * The container holding the specimen. The recursive nature of containers; i.e.
+     * blood in tube in tray in rack is not addressed here.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSpecimen\FHIRSpecimenContainer ...$container
+     * @return static
+     */
+    public function setContainer(FHIRSpecimenContainer ...$container): self
+    {
+        if ([] !== $this->container) {
+            $this->_trackValuesRemoved(count($this->container));
+            $this->container = [];
+        }
+        if ([] === $container) {
+            return $this;
+        }
+        foreach($container as $v) {
+            $this->addContainer($v);
+        }
         return $this;
     }
 
@@ -875,6 +999,32 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A mode or state of being that describes the nature of the specimen.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$condition
+     * @return static
+     */
+    public function setCondition(FHIRCodeableConcept ...$condition): self
+    {
+        if ([] !== $this->condition) {
+            $this->_trackValuesRemoved(count($this->condition));
+            $this->condition = [];
+        }
+        if ([] === $condition) {
+            return $this;
+        }
+        foreach($condition as $v) {
+            $this->addCondition($v);
+        }
+        return $this;
+    }
+
+    /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
@@ -909,6 +1059,33 @@ class FHIRSpecimen extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * To communicate any details or issues about the specimen or during the specimen
+     * collection. (for example: broken vial, sent with patient, frozen).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 

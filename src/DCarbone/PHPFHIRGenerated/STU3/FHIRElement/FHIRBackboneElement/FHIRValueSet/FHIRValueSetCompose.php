@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRVal
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -360,6 +360,29 @@ class FHIRValueSetCompose extends FHIRBackboneElement
     /**
      * A value set specifies a set of codes drawn from one or more code systems.
      *
+     * Include one or more codes from a code system or other value set(s).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude ...$include
+     * @return static
+     */
+    public function setInclude(FHIRValueSetInclude ...$include): self
+    {
+        if ([] !== $this->include) {
+            $this->_trackValuesRemoved(count($this->include));
+            $this->include = [];
+        }
+        if ([] === $include) {
+            return $this;
+        }
+        foreach($include as $v) {
+            $this->addInclude($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A value set specifies a set of codes drawn from one or more code systems.
+     *
      * Exclude one or more codes from the value set based on code system filters and/or
      * other value sets.
      *
@@ -386,6 +409,30 @@ class FHIRValueSetCompose extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->exclude[] = $exclude;
+        return $this;
+    }
+
+    /**
+     * A value set specifies a set of codes drawn from one or more code systems.
+     *
+     * Exclude one or more codes from the value set based on code system filters and/or
+     * other value sets.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetInclude ...$exclude
+     * @return static
+     */
+    public function setExclude(FHIRValueSetInclude ...$exclude): self
+    {
+        if ([] !== $this->exclude) {
+            $this->_trackValuesRemoved(count($this->exclude));
+            $this->exclude = [];
+        }
+        if ([] === $exclude) {
+            return $this;
+        }
+        foreach($exclude as $v) {
+            $this->addExclude($v);
+        }
         return $this;
     }
 

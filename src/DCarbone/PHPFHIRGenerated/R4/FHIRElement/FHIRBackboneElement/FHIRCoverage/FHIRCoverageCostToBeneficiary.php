@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -136,7 +136,14 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
      * Validation map for fields in type Coverage.CostToBeneficiary
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_VALUE_MONEY => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VALUE_QUANTITY => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -336,6 +343,31 @@ class FHIRCoverageCostToBeneficiary extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->exception[] = $exception;
+        return $this;
+    }
+
+    /**
+     * Financial instrument which may be used to reimburse or pay for health care
+     * products and services. Includes both insurance and self-payment.
+     *
+     * A suite of codes indicating exceptions or reductions to patient costs and their
+     * effective periods.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverage\FHIRCoverageException ...$exception
+     * @return static
+     */
+    public function setException(FHIRCoverageException ...$exception): self
+    {
+        if ([] !== $this->exception) {
+            $this->_trackValuesRemoved(count($this->exception));
+            $this->exception = [];
+        }
+        if ([] === $exception) {
+            return $this;
+        }
+        foreach($exception as $v) {
+            $this->addException($v);
+        }
         return $this;
     }
 

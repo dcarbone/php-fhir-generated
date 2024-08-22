@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -307,6 +307,15 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      */
     private const _VALIDATION_RULES = [
         self::FIELD_CONTENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_INDEXED => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -626,6 +635,32 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Other identifiers associated with the document, including version independent
+     * identifiers.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The status of this document reference.
@@ -934,6 +969,31 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Identifies who is responsible for adding the information to the document.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$author
+     * @return static
+     */
+    public function setAuthor(FHIRReference ...$author): self
+    {
+        if ([] !== $this->author) {
+            $this->_trackValuesRemoved(count($this->author));
+            $this->author = [];
+        }
+        if ([] === $author) {
+            return $this;
+        }
+        foreach($author as $v) {
+            $this->addAuthor($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Which person or organization authenticates that this document is valid.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference
@@ -1032,6 +1092,30 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A reference to a document.
+     *
+     * Relationships that this document has with other document references that already
+     * exist.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo ...$relatesTo
+     * @return static
+     */
+    public function setRelatesTo(FHIRDocumentReferenceRelatesTo ...$relatesTo): self
+    {
+        if ([] !== $this->relatesTo) {
+            $this->_trackValuesRemoved(count($this->relatesTo));
+            $this->relatesTo = [];
+        }
+        if ([] === $relatesTo) {
+            return $this;
+        }
+        foreach($relatesTo as $v) {
+            $this->addRelatesTo($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings may not exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1117,6 +1201,36 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A set of Security-Tag codes specifying the level of privacy/security of the
+     * Document. Note that DocumentReference.meta.security contains the security labels
+     * of the "reference" to the document, while DocumentReference.securityLabel
+     * contains a snapshot of the security labels on the document the reference refers
+     * to.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$securityLabel
+     * @return static
+     */
+    public function setSecurityLabel(FHIRCodeableConcept ...$securityLabel): self
+    {
+        if ([] !== $this->securityLabel) {
+            $this->_trackValuesRemoved(count($this->securityLabel));
+            $this->securityLabel = [];
+        }
+        if ([] === $securityLabel) {
+            return $this;
+        }
+        foreach($securityLabel as $v) {
+            $this->addSecurityLabel($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a document.
      *
      * The document and format referenced. There may be multiple content element
@@ -1145,6 +1259,30 @@ class FHIRDocumentReference extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->content[] = $content;
+        return $this;
+    }
+
+    /**
+     * A reference to a document.
+     *
+     * The document and format referenced. There may be multiple content element
+     * repetitions, each with a different format.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceContent ...$content
+     * @return static
+     */
+    public function setContent(FHIRDocumentReferenceContent ...$content): self
+    {
+        if ([] !== $this->content) {
+            $this->_trackValuesRemoved(count($this->content));
+            $this->content = [];
+        }
+        if ([] === $content) {
+            return $this;
+        }
+        foreach($content as $v) {
+            $this->addContent($v);
+        }
         return $this;
     }
 

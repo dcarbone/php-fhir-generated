@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -474,6 +474,31 @@ class FHIRConceptMapGroup extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->element[] = $element;
+        return $this;
+    }
+
+    /**
+     * A statement of relationships from one set of concepts to one or more other
+     * concepts - either code systems or data elements, or classes in class models.
+     *
+     * Mappings for an individual concept in the source to one or more concepts in the
+     * target.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapElement ...$element
+     * @return static
+     */
+    public function setElement(FHIRConceptMapElement ...$element): self
+    {
+        if ([] !== $this->element) {
+            $this->_trackValuesRemoved(count($this->element));
+            $this->element = [];
+        }
+        if ([] === $element) {
+            return $this;
+        }
+        foreach($element as $v) {
+            $this->addElement($v);
+        }
         return $this;
     }
 

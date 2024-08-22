@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -195,7 +195,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * Validation map for fields in type NutritionOrder.EnteralFormula
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -586,6 +586,33 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->administration[] = $administration;
+        return $this;
+    }
+
+    /**
+     * A request to supply a diet, formula feeding (enteral) or oral nutritional
+     * supplement to a patient/resident.
+     *
+     * Formula administration instructions as structured data. This repeating structure
+     * allows for changing the administration rate or volume over time for both bolus
+     * and continuous feeding. An example of this would be an instruction to increase
+     * the rate of continuous feeding every 2 hours.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration ...$administration
+     * @return static
+     */
+    public function setAdministration(FHIRNutritionOrderAdministration ...$administration): self
+    {
+        if ([] !== $this->administration) {
+            $this->_trackValuesRemoved(count($this->administration));
+            $this->administration = [];
+        }
+        if ([] === $administration) {
+            return $this;
+        }
+        foreach($administration as $v) {
+            $this->addAdministration($v);
+        }
         return $this;
     }
 

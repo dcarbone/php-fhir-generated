@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIREnc
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -190,7 +190,7 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * Validation map for fields in type Encounter.Hospitalization
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -484,6 +484,32 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Diet preferences reported by the patient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$dietPreference
+     * @return static
+     */
+    public function setDietPreference(FHIRCodeableConcept ...$dietPreference): self
+    {
+        if ([] !== $this->dietPreference) {
+            $this->_trackValuesRemoved(count($this->dietPreference));
+            $this->dietPreference = [];
+        }
+        if ([] === $dietPreference) {
+            return $this;
+        }
+        foreach($dietPreference as $v) {
+            $this->addDietPreference($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Special courtesies (VIP, board member).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
@@ -511,6 +537,32 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->specialCourtesy[] = $specialCourtesy;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Special courtesies (VIP, board member).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$specialCourtesy
+     * @return static
+     */
+    public function setSpecialCourtesy(FHIRCodeableConcept ...$specialCourtesy): self
+    {
+        if ([] !== $this->specialCourtesy) {
+            $this->_trackValuesRemoved(count($this->specialCourtesy));
+            $this->specialCourtesy = [];
+        }
+        if ([] === $specialCourtesy) {
+            return $this;
+        }
+        foreach($specialCourtesy as $v) {
+            $this->addSpecialCourtesy($v);
+        }
         return $this;
     }
 
@@ -549,6 +601,33 @@ class FHIREncounterHospitalization extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->specialArrangement[] = $specialArrangement;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Any special requests that have been made for this hospitalization encounter,
+     * such as the provision of specific equipment or other things.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$specialArrangement
+     * @return static
+     */
+    public function setSpecialArrangement(FHIRCodeableConcept ...$specialArrangement): self
+    {
+        if ([] !== $this->specialArrangement) {
+            $this->_trackValuesRemoved(count($this->specialArrangement));
+            $this->specialArrangement = [];
+        }
+        if ([] === $specialArrangement) {
+            return $this;
+        }
+        foreach($specialArrangement as $v) {
+            $this->addSpecialArrangement($v);
+        }
         return $this;
     }
 

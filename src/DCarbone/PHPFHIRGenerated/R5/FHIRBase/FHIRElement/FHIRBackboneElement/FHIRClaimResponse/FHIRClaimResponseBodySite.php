@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -230,6 +230,32 @@ class FHIRClaimResponseBodySite extends FHIRBackboneElement
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Physical service site on the patient (limb, tooth, etc.).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$site
+     * @return static
+     */
+    public function setSite(FHIRCodeableReference ...$site): self
+    {
+        if ([] !== $this->site) {
+            $this->_trackValuesRemoved(count($this->site));
+            $this->site = [];
+        }
+        if ([] === $site) {
+            return $this;
+        }
+        foreach($site as $v) {
+            $this->addSite($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -262,6 +288,32 @@ class FHIRClaimResponseBodySite extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->subSite[] = $subSite;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$subSite
+     * @return static
+     */
+    public function setSubSite(FHIRCodeableConcept ...$subSite): self
+    {
+        if ([] !== $this->subSite) {
+            $this->_trackValuesRemoved(count($this->subSite));
+            $this->subSite = [];
+        }
+        if ([] === $subSite) {
+            return $this;
+        }
+        foreach($subSite as $v) {
+            $this->addSubSite($v);
+        }
         return $this;
     }
 

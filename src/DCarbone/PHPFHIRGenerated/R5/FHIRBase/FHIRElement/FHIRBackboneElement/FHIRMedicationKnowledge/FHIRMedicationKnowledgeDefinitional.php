@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -160,7 +160,7 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
      * Validation map for fields in type MedicationKnowledge.Definitional
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -287,6 +287,31 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Associated definitions for this medication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$definition
+     * @return static
+     */
+    public function setDefinition(FHIRReference ...$definition): self
+    {
+        if ([] !== $this->definition) {
+            $this->_trackValuesRemoved(count($this->definition));
+            $this->definition = [];
+        }
+        if ([] === $definition) {
+            return $this;
+        }
+        foreach($definition as $v) {
+            $this->addDefinition($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -359,6 +384,32 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The intended or approved route of administration.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$intendedRoute
+     * @return static
+     */
+    public function setIntendedRoute(FHIRCodeableConcept ...$intendedRoute): self
+    {
+        if ([] !== $this->intendedRoute) {
+            $this->_trackValuesRemoved(count($this->intendedRoute));
+            $this->intendedRoute = [];
+        }
+        if ([] === $intendedRoute) {
+            return $this;
+        }
+        foreach($intendedRoute as $v) {
+            $this->addIntendedRoute($v);
+        }
+        return $this;
+    }
+
+    /**
      * Information about a medication that is used to support knowledge.
      *
      * Identifies a particular constituent of interest in the product.
@@ -391,6 +442,29 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
     /**
      * Information about a medication that is used to support knowledge.
      *
+     * Identifies a particular constituent of interest in the product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeIngredient ...$ingredient
+     * @return static
+     */
+    public function setIngredient(FHIRMedicationKnowledgeIngredient ...$ingredient): self
+    {
+        if ([] !== $this->ingredient) {
+            $this->_trackValuesRemoved(count($this->ingredient));
+            $this->ingredient = [];
+        }
+        if ([] === $ingredient) {
+            return $this;
+        }
+        foreach($ingredient as $v) {
+            $this->addIngredient($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
      * Specifies descriptive properties of the medicine, such as color, shape,
      * imprints, etc.
      *
@@ -417,6 +491,30 @@ class FHIRMedicationKnowledgeDefinitional extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->drugCharacteristic[] = $drugCharacteristic;
+        return $this;
+    }
+
+    /**
+     * Information about a medication that is used to support knowledge.
+     *
+     * Specifies descriptive properties of the medicine, such as color, shape,
+     * imprints, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicationKnowledge\FHIRMedicationKnowledgeDrugCharacteristic ...$drugCharacteristic
+     * @return static
+     */
+    public function setDrugCharacteristic(FHIRMedicationKnowledgeDrugCharacteristic ...$drugCharacteristic): self
+    {
+        if ([] !== $this->drugCharacteristic) {
+            $this->_trackValuesRemoved(count($this->drugCharacteristic));
+            $this->drugCharacteristic = [];
+        }
+        if ([] === $drugCharacteristic) {
+            return $this;
+        }
+        foreach($drugCharacteristic as $v) {
+            $this->addDrugCharacteristic($v);
+        }
         return $this;
     }
 

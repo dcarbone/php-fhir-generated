@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -183,7 +183,11 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
      * Validation map for fields in type DataRequirement.CodeFilter
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PATH => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -568,6 +572,34 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The Codings for the code filter. Only one of valueSet, valueCode, valueConding,
+     * or valueCodeableConcept may be specified. If values are given, the filter will
+     * return only those data items for which the code-valued attribute specified by
+     * the path has a value that is one of the specified Codings.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding ...$valueCoding
+     * @return static
+     */
+    public function setValueCoding(FHIRCoding ...$valueCoding): self
+    {
+        if ([] !== $this->valueCoding) {
+            $this->_trackValuesRemoved(count($this->valueCoding));
+            $this->valueCoding = [];
+        }
+        if ([] === $valueCoding) {
+            return $this;
+        }
+        foreach($valueCoding as $v) {
+            $this->addValueCoding($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -606,6 +638,35 @@ class FHIRDataRequirementCodeFilter extends FHIRElement
         }
         $this->_trackValueAdded();
         $this->valueCodeableConcept[] = $valueCodeableConcept;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The CodeableConcepts for the code filter. Only one of valueSet, valueCode,
+     * valueConding, or valueCodeableConcept may be specified. If values are given, the
+     * filter will return only those data items for which the code-valued attribute
+     * specified by the path has a value that is one of the specified CodeableConcepts.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$valueCodeableConcept
+     * @return static
+     */
+    public function setValueCodeableConcept(FHIRCodeableConcept ...$valueCodeableConcept): self
+    {
+        if ([] !== $this->valueCodeableConcept) {
+            $this->_trackValuesRemoved(count($this->valueCodeableConcept));
+            $this->valueCodeableConcept = [];
+        }
+        if ([] === $valueCodeableConcept) {
+            return $this;
+        }
+        foreach($valueCodeableConcept as $v) {
+            $this->addValueCodeableConcept($v);
+        }
         return $this;
     }
 

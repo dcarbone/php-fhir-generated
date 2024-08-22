@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRAu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -225,7 +225,11 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
      * Validation map for fields in type AuditEvent.Participant
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_REQUESTOR => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -435,6 +439,34 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->role[] = $role;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specification of the role(s) the user plays when performing the event. Usually
+     * the codes used in this element are local codes defined by the role-based access
+     * control security system used in the local context.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$role
+     * @return static
+     */
+    public function setRole(FHIRCodeableConcept ...$role): self
+    {
+        if ([] !== $this->role) {
+            $this->_trackValuesRemoved(count($this->role));
+            $this->role = [];
+        }
+        if ([] === $role) {
+            return $this;
+        }
+        foreach($role as $v) {
+            $this->addRole($v);
+        }
         return $this;
     }
 
@@ -842,6 +874,32 @@ class FHIRAuditEventParticipant extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->purposeOfUse[] = $purposeOfUse;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The reason (purpose of use), specific to this participant, that was used during
+     * the event being recorded.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding ...$purposeOfUse
+     * @return static
+     */
+    public function setPurposeOfUse(FHIRCoding ...$purposeOfUse): self
+    {
+        if ([] !== $this->purposeOfUse) {
+            $this->_trackValuesRemoved(count($this->purposeOfUse));
+            $this->purposeOfUse = [];
+        }
+        if ([] === $purposeOfUse) {
+            return $this;
+        }
+        foreach($purposeOfUse as $v) {
+            $this->addPurposeOfUse($v);
+        }
         return $this;
     }
 

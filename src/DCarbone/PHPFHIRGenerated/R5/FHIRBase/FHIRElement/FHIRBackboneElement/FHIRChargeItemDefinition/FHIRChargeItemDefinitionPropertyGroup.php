@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -139,7 +139,7 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
      * Validation map for fields in type ChargeItemDefinition.PropertyGroup
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -231,6 +231,32 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
     }
 
     /**
+     * The ChargeItemDefinition resource provides the properties that apply to the
+     * (billing) codes necessary to calculate costs and prices. The properties may
+     * differ largely depending on type and realm, therefore this resource gives only a
+     * rough structure and requires profiling for each type of billing code system.
+     *
+     * Expressions that describe applicability criteria for the priceComponent.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRChargeItemDefinition\FHIRChargeItemDefinitionApplicability ...$applicability
+     * @return static
+     */
+    public function setApplicability(FHIRChargeItemDefinitionApplicability ...$applicability): self
+    {
+        if ([] !== $this->applicability) {
+            $this->_trackValuesRemoved(count($this->applicability));
+            $this->applicability = [];
+        }
+        if ([] === $applicability) {
+            return $this;
+        }
+        foreach($applicability as $v) {
+            $this->addApplicability($v);
+        }
+        return $this;
+    }
+
+    /**
      * Availability data for an {item}.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -271,6 +297,36 @@ class FHIRChargeItemDefinitionPropertyGroup extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->priceComponent[] = $priceComponent;
+        return $this;
+    }
+
+    /**
+     * Availability data for an {item}.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The price for a ChargeItem may be calculated as a base price with
+     * surcharges/deductions that apply in certain conditions. A ChargeItemDefinition
+     * resource that defines the prices, factors and conditions that apply to a billing
+     * code is currently under development. The priceComponent element can be used to
+     * offer transparency to the recipient of the Invoice of how the prices have been
+     * calculated.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRMonetaryComponent ...$priceComponent
+     * @return static
+     */
+    public function setPriceComponent(FHIRMonetaryComponent ...$priceComponent): self
+    {
+        if ([] !== $this->priceComponent) {
+            $this->_trackValuesRemoved(count($this->priceComponent));
+            $this->priceComponent = [];
+        }
+        if ([] === $priceComponent) {
+            return $this;
+        }
+        foreach($priceComponent as $v) {
+            $this->addPriceComponent($v);
+        }
         return $this;
     }
 

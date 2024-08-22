@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -486,6 +486,18 @@ class FHIRImplementationGuide extends FHIRCanonicalResource implements PHPFHIRCo
      */
     private const _VALIDATION_RULES = [
         self::FIELD_FHIR_VERSION => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_PACKAGE_ID => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_URL => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -1011,6 +1023,34 @@ class FHIRImplementationGuide extends FHIRCanonicalResource implements PHPFHIRCo
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A formal identifier that is used to identify this implementation guide when it
+     * is represented in other formats, or referenced in a specification, model, design
+     * or an instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1422,6 +1462,32 @@ class FHIRImplementationGuide extends FHIRCanonicalResource implements PHPFHIRCo
     }
 
     /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
@@ -1519,6 +1585,38 @@ class FHIRImplementationGuide extends FHIRCanonicalResource implements PHPFHIRCo
     }
 
     /**
+     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These contexts may be general categories (gender, age, ...) or
+     * may be references to specific programs (insurance plans, studies, ...) and may
+     * be used to assist with indexing and searching for appropriate implementation
+     * guide instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1553,6 +1651,33 @@ class FHIRImplementationGuide extends FHIRCanonicalResource implements PHPFHIRCo
         }
         $this->_trackValueAdded();
         $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A legal or geographic region in which the implementation guide is intended to be
+     * used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
+    {
+        if ([] !== $this->jurisdiction) {
+            $this->_trackValuesRemoved(count($this->jurisdiction));
+            $this->jurisdiction = [];
+        }
+        if ([] === $jurisdiction) {
+            return $this;
+        }
+        foreach($jurisdiction as $v) {
+            $this->addJurisdiction($v);
+        }
         return $this;
     }
 
@@ -1819,6 +1944,32 @@ class FHIRImplementationGuide extends FHIRCanonicalResource implements PHPFHIRCo
     }
 
     /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * The version(s) of the FHIR specification that this ImplementationGuide targets -
+     * e.g. describes how to use. The value of this element is the formal version of
+     * the specification, without the revision number, e.g.
+     * [publication].[major].[minor], which is 4.6.0. for this version.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRFHIRVersion ...$fhirVersion
+     * @return static
+     */
+    public function setFhirVersion(FHIRFHIRVersion ...$fhirVersion): self
+    {
+        if ([] !== $this->fhirVersion) {
+            $this->_trackValuesRemoved(count($this->fhirVersion));
+            $this->fhirVersion = [];
+        }
+        if ([] === $fhirVersion) {
+            return $this;
+        }
+        foreach($fhirVersion as $v) {
+            $this->addFhirVersion($v);
+        }
+        return $this;
+    }
+
+    /**
      * A set of rules of how a particular interoperability or standards problem is
      * solved - typically through the use of FHIR resources. This resource is used to
      * gather all the parts of an implementation guide into a logical whole and to
@@ -1864,6 +2015,34 @@ class FHIRImplementationGuide extends FHIRCanonicalResource implements PHPFHIRCo
      * gather all the parts of an implementation guide into a logical whole and to
      * publish a computable definition of all the parts.
      *
+     * Another implementation guide that this implementation depends on. Typically, an
+     * implementation guide uses value sets, profiles etc.defined in other
+     * implementation guides.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideDependsOn ...$dependsOn
+     * @return static
+     */
+    public function setDependsOn(FHIRImplementationGuideDependsOn ...$dependsOn): self
+    {
+        if ([] !== $this->dependsOn) {
+            $this->_trackValuesRemoved(count($this->dependsOn));
+            $this->dependsOn = [];
+        }
+        if ([] === $dependsOn) {
+            return $this;
+        }
+        foreach($dependsOn as $v) {
+            $this->addDependsOn($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A set of rules of how a particular interoperability or standards problem is
+     * solved - typically through the use of FHIR resources. This resource is used to
+     * gather all the parts of an implementation guide into a logical whole and to
+     * publish a computable definition of all the parts.
+     *
      * A set of profiles that all resources covered by this implementation guide must
      * conform to.
      *
@@ -1893,6 +2072,33 @@ class FHIRImplementationGuide extends FHIRCanonicalResource implements PHPFHIRCo
         }
         $this->_trackValueAdded();
         $this->global[] = $global;
+        return $this;
+    }
+
+    /**
+     * A set of rules of how a particular interoperability or standards problem is
+     * solved - typically through the use of FHIR resources. This resource is used to
+     * gather all the parts of an implementation guide into a logical whole and to
+     * publish a computable definition of all the parts.
+     *
+     * A set of profiles that all resources covered by this implementation guide must
+     * conform to.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImplementationGuide\FHIRImplementationGuideGlobal ...$global
+     * @return static
+     */
+    public function setGlobal(FHIRImplementationGuideGlobal ...$global): self
+    {
+        if ([] !== $this->global) {
+            $this->_trackValuesRemoved(count($this->global));
+            $this->global = [];
+        }
+        if ([] === $global) {
+            return $this;
+        }
+        foreach($global as $v) {
+            $this->addGlobal($v);
+        }
         return $this;
     }
 

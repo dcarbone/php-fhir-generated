@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -159,7 +159,7 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      * Validation map for fields in type SubstanceReferenceInformation
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -328,6 +328,29 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      *
      * Todo.
      *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGene ...$gene
+     * @return static
+     */
+    public function setGene(FHIRSubstanceReferenceInformationGene ...$gene): self
+    {
+        if ([] !== $this->gene) {
+            $this->_trackValuesRemoved(count($this->gene));
+            $this->gene = [];
+        }
+        if ([] === $gene) {
+            return $this;
+        }
+        foreach($gene as $v) {
+            $this->addGene($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Todo.
+     *
+     * Todo.
+     *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement[]
      */
     public function getGeneElement(): null|array
@@ -358,6 +381,29 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
      *
      * Todo.
      *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationGeneElement ...$geneElement
+     * @return static
+     */
+    public function setGeneElement(FHIRSubstanceReferenceInformationGeneElement ...$geneElement): self
+    {
+        if ([] !== $this->geneElement) {
+            $this->_trackValuesRemoved(count($this->geneElement));
+            $this->geneElement = [];
+        }
+        if ([] === $geneElement) {
+            return $this;
+        }
+        foreach($geneElement as $v) {
+            $this->addGeneElement($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Todo.
+     *
+     * Todo.
+     *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget[]
      */
     public function getTarget(): null|array
@@ -380,6 +426,29 @@ class FHIRSubstanceReferenceInformation extends FHIRDomainResource implements PH
         }
         $this->_trackValueAdded();
         $this->target[] = $target;
+        return $this;
+    }
+
+    /**
+     * Todo.
+     *
+     * Todo.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceReferenceInformation\FHIRSubstanceReferenceInformationTarget ...$target
+     * @return static
+     */
+    public function setTarget(FHIRSubstanceReferenceInformationTarget ...$target): self
+    {
+        if ([] !== $this->target) {
+            $this->_trackValuesRemoved(count($this->target));
+            $this->target = [];
+        }
+        if ([] === $target) {
+            return $this;
+        }
+        foreach($target as $v) {
+            $this->addTarget($v);
+        }
         return $this;
     }
 

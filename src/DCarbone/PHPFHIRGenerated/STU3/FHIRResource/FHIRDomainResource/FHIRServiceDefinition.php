@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -454,7 +454,11 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * Validation map for fields in type ServiceDefinition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -962,6 +966,35 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A formal identifier that is used to identify this service definition when it is
+     * represented in other formats, or referenced in a specification, model, design or
+     * an instance. This is used for CMS or NQF identifiers for a measure artifact.
+     * Note that at least one identifier is required for non-experimental active
+     * artifacts.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -1573,6 +1606,36 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * Specifies clinical/business/etc metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These terms may be used to assist with indexing and searching
+     * for appropriate service definition instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1616,6 +1679,33 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A legal or geographic region in which the service definition is intended to be
+     * used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
+    {
+        if ([] !== $this->jurisdiction) {
+            $this->_trackValuesRemoved(count($this->jurisdiction));
+            $this->jurisdiction = [];
+        }
+        if ([] === $jurisdiction) {
+            return $this;
+        }
+        foreach($jurisdiction as $v) {
+            $this->addJurisdiction($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Descriptive topics related to the module. Topics provide a high-level
      * categorization of the module that can be useful for filtering and searching.
      *
@@ -1645,6 +1735,33 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->topic[] = $topic;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Descriptive topics related to the module. Topics provide a high-level
+     * categorization of the module that can be useful for filtering and searching.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$topic
+     * @return static
+     */
+    public function setTopic(FHIRCodeableConcept ...$topic): self
+    {
+        if ([] !== $this->topic) {
+            $this->_trackValuesRemoved(count($this->topic));
+            $this->topic = [];
+        }
+        if ([] === $topic) {
+            return $this;
+        }
+        foreach($topic as $v) {
+            $this->addTopic($v);
+        }
         return $this;
     }
 
@@ -1687,6 +1804,33 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A contributor to the content of a knowledge asset, including authors, editors,
+     * reviewers, and endorsers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A contributor to the content of the module, including authors, editors,
+     * reviewers, and endorsers.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContributor ...$contributor
+     * @return static
+     */
+    public function setContributor(FHIRContributor ...$contributor): self
+    {
+        if ([] !== $this->contributor) {
+            $this->_trackValuesRemoved(count($this->contributor));
+            $this->contributor = [];
+        }
+        if ([] === $contributor) {
+            return $this;
+        }
+        foreach($contributor as $v) {
+            $this->addContributor($v);
+        }
+        return $this;
+    }
+
+    /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1719,6 +1863,32 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->contact[] = $contact;
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
         return $this;
     }
 
@@ -1816,6 +1986,33 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Related resources such as additional documentation, justification, or
+     * bibliographic references.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRRelatedArtifact ...$relatedArtifact
+     * @return static
+     */
+    public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
+    {
+        if ([] !== $this->relatedArtifact) {
+            $this->_trackValuesRemoved(count($this->relatedArtifact));
+            $this->relatedArtifact = [];
+        }
+        if ([] === $relatedArtifact) {
+            return $this;
+        }
+        foreach($relatedArtifact as $v) {
+            $this->addRelatedArtifact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A description of a triggering event.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1854,6 +2051,33 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A description of a triggering event.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The trigger element defines when the rule should be invoked. This information is
+     * used by consumers of the rule to determine how to integrate the rule into a
+     * specific workflow.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRTriggerDefinition ...$trigger
+     * @return static
+     */
+    public function setTrigger(FHIRTriggerDefinition ...$trigger): self
+    {
+        if ([] !== $this->trigger) {
+            $this->_trackValuesRemoved(count($this->trigger));
+            $this->trigger = [];
+        }
+        if ([] === $trigger) {
+            return $this;
+        }
+        foreach($trigger as $v) {
+            $this->addTrigger($v);
+        }
+        return $this;
+    }
+
+    /**
      * Describes a required data item for evaluation in terms of the type of data, and
      * optional code or date-based filters of the data.
      * If the element is present, it must have a value for at least one of the defined
@@ -1888,6 +2112,33 @@ class FHIRServiceDefinition extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->dataRequirement[] = $dataRequirement;
+        return $this;
+    }
+
+    /**
+     * Describes a required data item for evaluation in terms of the type of data, and
+     * optional code or date-based filters of the data.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Data requirements are a machine processable description of the data required by
+     * the module in order to perform a successful evaluation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement ...$dataRequirement
+     * @return static
+     */
+    public function setDataRequirement(FHIRDataRequirement ...$dataRequirement): self
+    {
+        if ([] !== $this->dataRequirement) {
+            $this->_trackValuesRemoved(count($this->dataRequirement));
+            $this->dataRequirement = [];
+        }
+        if ([] === $dataRequirement) {
+            return $this;
+        }
+        foreach($dataRequirement as $v) {
+            $this->addDataRequirement($v);
+        }
         return $this;
     }
 

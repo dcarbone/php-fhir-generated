@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -343,7 +343,14 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * Validation map for fields in type ImagingSelection
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -656,6 +663,32 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier assigned to this imaging selection.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The current state of the ImagingSelection resource. This is not the status of
@@ -809,6 +842,32 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A selection of DICOM SOP instances and/or frames within a single Study and
+     * Series. This might include additional specifics such as an image region, an
+     * Observation UID or a Segmentation Number, allowing linkage to an Observation
+     * Resource or transferring this information along with the ImagingStudy Resource.
+     *
+     * Selector of the instances – human or machine.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionPerformer ...$performer
+     * @return static
+     */
+    public function setPerformer(FHIRImagingSelectionPerformer ...$performer): self
+    {
+        if ([] !== $this->performer) {
+            $this->_trackValuesRemoved(count($this->performer));
+            $this->performer = [];
+        }
+        if ([] === $performer) {
+            return $this;
+        }
+        foreach($performer as $v) {
+            $this->addPerformer($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -845,6 +904,32 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A list of the diagnostic requests that resulted in this imaging selection being
+     * performed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -877,6 +962,32 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->category[] = $category;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Classifies the imaging selection.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
         return $this;
     }
 
@@ -1000,6 +1111,31 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The imaging study from which the imaging selection is made.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$derivedFrom
+     * @return static
+     */
+    public function setDerivedFrom(FHIRReference ...$derivedFrom): self
+    {
+        if ([] !== $this->derivedFrom) {
+            $this->_trackValuesRemoved(count($this->derivedFrom));
+            $this->derivedFrom = [];
+        }
+        if ([] === $derivedFrom) {
+            return $this;
+        }
+        foreach($derivedFrom as $v) {
+            $this->addDerivedFrom($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The network service providing retrieval access to the selected images, frames,
      * etc. See implementation notes for information about using DICOM endpoints.
      *
@@ -1028,6 +1164,32 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->endpoint[] = $endpoint;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The network service providing retrieval access to the selected images, frames,
+     * etc. See implementation notes for information about using DICOM endpoints.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$endpoint
+     * @return static
+     */
+    public function setEndpoint(FHIRReference ...$endpoint): self
+    {
+        if ([] !== $this->endpoint) {
+            $this->_trackValuesRemoved(count($this->endpoint));
+            $this->endpoint = [];
+        }
+        if ([] === $endpoint) {
+            return $this;
+        }
+        foreach($endpoint as $v) {
+            $this->addEndpoint($v);
+        }
         return $this;
     }
 
@@ -1255,6 +1417,39 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The actual focus of an observation when it is not the patient of record
+     * representing something or someone associated with the patient such as a spouse,
+     * parent, fetus, or donor. For example, fetus observations in a mother's record.
+     * The focus of an observation could also be an existing condition, an
+     * intervention, the subject's diet, another observation of the subject, or a body
+     * structure such as tumor or implanted device. An example use case would be using
+     * the Observation resource to capture whether the mother is trained to change her
+     * child's tracheostomy tube. In this example, the child is the patient of record
+     * and the mother is the focus.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$focus
+     * @return static
+     */
+    public function setFocus(FHIRReference ...$focus): self
+    {
+        if ([] !== $this->focus) {
+            $this->_trackValuesRemoved(count($this->focus));
+            $this->focus = [];
+        }
+        if ([] === $focus) {
+            return $this;
+        }
+        foreach($focus as $v) {
+            $this->addFocus($v);
+        }
+        return $this;
+    }
+
+    /**
      * A selection of DICOM SOP instances and/or frames within a single Study and
      * Series. This might include additional specifics such as an image region, an
      * Observation UID or a Segmentation Number, allowing linkage to an Observation
@@ -1287,6 +1482,32 @@ class FHIRImagingSelection extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->instance[] = $instance;
+        return $this;
+    }
+
+    /**
+     * A selection of DICOM SOP instances and/or frames within a single Study and
+     * Series. This might include additional specifics such as an image region, an
+     * Observation UID or a Segmentation Number, allowing linkage to an Observation
+     * Resource or transferring this information along with the ImagingStudy Resource.
+     *
+     * Each imaging selection includes one or more selected DICOM SOP instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionInstance ...$instance
+     * @return static
+     */
+    public function setInstance(FHIRImagingSelectionInstance ...$instance): self
+    {
+        if ([] !== $this->instance) {
+            $this->_trackValuesRemoved(count($this->instance));
+            $this->instance = [];
+        }
+        if ([] === $instance) {
+            return $this;
+        }
+        foreach($instance as $v) {
+            $this->addInstance($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -228,7 +228,32 @@ class FHIRValueSetProperty1 extends FHIRBackboneElement
      * Validation map for fields in type ValueSet.Property1
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VALUE_BOOLEAN => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VALUE_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VALUE_CODING => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VALUE_DATE_TIME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VALUE_DECIMAL => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VALUE_INTEGER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VALUE_STRING => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -746,6 +771,32 @@ class FHIRValueSetProperty1 extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->subProperty[] = $subProperty;
+        return $this;
+    }
+
+    /**
+     * A ValueSet resource instance specifies a set of codes drawn from one or more
+     * code systems, intended for use in a particular context. Value sets link between
+     * [CodeSystem](codesystem.html) definitions and their use in [coded
+     * elements](terminologies.html).
+     *
+     * A subproperty value for this concept.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRValueSet\FHIRValueSetSubProperty ...$subProperty
+     * @return static
+     */
+    public function setSubProperty(FHIRValueSetSubProperty ...$subProperty): self
+    {
+        if ([] !== $this->subProperty) {
+            $this->_trackValuesRemoved(count($this->subProperty));
+            $this->subProperty = [];
+        }
+        if ([] === $subProperty) {
+            return $this;
+        }
+        foreach($subProperty as $v) {
+            $this->addSubProperty($v);
+        }
         return $this;
     }
 

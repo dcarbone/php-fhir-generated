@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -227,7 +227,11 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
      * Validation map for fields in type NutritionProduct
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -511,6 +515,33 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Nutrition products can have different classifications - according to its
+     * nutritional properties, preparation methods, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -547,6 +578,32 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The organisation (manufacturer, representative or legal authorization holder)
+     * that is responsible for the device.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$manufacturer
+     * @return static
+     */
+    public function setManufacturer(FHIRReference ...$manufacturer): self
+    {
+        if ([] !== $this->manufacturer) {
+            $this->_trackValuesRemoved(count($this->manufacturer));
+            $this->manufacturer = [];
+        }
+        if ([] === $manufacturer) {
+            return $this;
+        }
+        foreach($manufacturer as $v) {
+            $this->addManufacturer($v);
+        }
+        return $this;
+    }
+
+    /**
      * A food or supplement that is consumed by patients.
      *
      * The product's nutritional information expressed by the nutrients.
@@ -579,6 +636,29 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
     /**
      * A food or supplement that is consumed by patients.
      *
+     * The product's nutritional information expressed by the nutrients.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductNutrient ...$nutrient
+     * @return static
+     */
+    public function setNutrient(FHIRNutritionProductNutrient ...$nutrient): self
+    {
+        if ([] !== $this->nutrient) {
+            $this->_trackValuesRemoved(count($this->nutrient));
+            $this->nutrient = [];
+        }
+        if ([] === $nutrient) {
+            return $this;
+        }
+        foreach($nutrient as $v) {
+            $this->addNutrient($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A food or supplement that is consumed by patients.
+     *
      * Ingredients contained in this product.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductIngredient[]
@@ -603,6 +683,29 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->ingredient[] = $ingredient;
+        return $this;
+    }
+
+    /**
+     * A food or supplement that is consumed by patients.
+     *
+     * Ingredients contained in this product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductIngredient ...$ingredient
+     * @return static
+     */
+    public function setIngredient(FHIRNutritionProductIngredient ...$ingredient): self
+    {
+        if ([] !== $this->ingredient) {
+            $this->_trackValuesRemoved(count($this->ingredient));
+            $this->ingredient = [];
+        }
+        if ([] === $ingredient) {
+            return $this;
+        }
+        foreach($ingredient as $v) {
+            $this->addIngredient($v);
+        }
         return $this;
     }
 
@@ -643,6 +746,32 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Allergens that are known or suspected to be a part of this nutrition product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$knownAllergen
+     * @return static
+     */
+    public function setKnownAllergen(FHIRCodeableReference ...$knownAllergen): self
+    {
+        if ([] !== $this->knownAllergen) {
+            $this->_trackValuesRemoved(count($this->knownAllergen));
+            $this->knownAllergen = [];
+        }
+        if ([] === $knownAllergen) {
+            return $this;
+        }
+        foreach($knownAllergen as $v) {
+            $this->addKnownAllergen($v);
+        }
+        return $this;
+    }
+
+    /**
      * A food or supplement that is consumed by patients.
      *
      * Specifies descriptive properties of the nutrition product.
@@ -669,6 +798,29 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->characteristic[] = $characteristic;
+        return $this;
+    }
+
+    /**
+     * A food or supplement that is consumed by patients.
+     *
+     * Specifies descriptive properties of the nutrition product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductCharacteristic ...$characteristic
+     * @return static
+     */
+    public function setCharacteristic(FHIRNutritionProductCharacteristic ...$characteristic): self
+    {
+        if ([] !== $this->characteristic) {
+            $this->_trackValuesRemoved(count($this->characteristic));
+            $this->characteristic = [];
+        }
+        if ([] === $characteristic) {
+            return $this;
+        }
+        foreach($characteristic as $v) {
+            $this->addCharacteristic($v);
+        }
         return $this;
     }
 
@@ -705,6 +857,30 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A food or supplement that is consumed by patients.
+     *
+     * Conveys instance-level information about this product item. One or several
+     * physical, countable instances or occurrences of the product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionProduct\FHIRNutritionProductInstance ...$instance
+     * @return static
+     */
+    public function setInstance(FHIRNutritionProductInstance ...$instance): self
+    {
+        if ([] !== $this->instance) {
+            $this->_trackValuesRemoved(count($this->instance));
+            $this->instance = [];
+        }
+        if ([] === $instance) {
+            return $this;
+        }
+        foreach($instance as $v) {
+            $this->addInstance($v);
+        }
+        return $this;
+    }
+
+    /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
@@ -737,6 +913,32 @@ class FHIRNutritionProduct extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Comments made about the product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 

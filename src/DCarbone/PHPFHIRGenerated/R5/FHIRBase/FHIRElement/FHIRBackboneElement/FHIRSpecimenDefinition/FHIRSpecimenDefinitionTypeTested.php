@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -223,7 +223,11 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
      * Validation map for fields in type SpecimenDefinition.TypeTested
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PREFERENCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -674,6 +678,32 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Criterion for rejection of the specimen in its container by the laboratory.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$rejectionCriterion
+     * @return static
+     */
+    public function setRejectionCriterion(FHIRCodeableConcept ...$rejectionCriterion): self
+    {
+        if ([] !== $this->rejectionCriterion) {
+            $this->_trackValuesRemoved(count($this->rejectionCriterion));
+            $this->rejectionCriterion = [];
+        }
+        if ([] === $rejectionCriterion) {
+            return $this;
+        }
+        foreach($rejectionCriterion as $v) {
+            $this->addRejectionCriterion($v);
+        }
+        return $this;
+    }
+
+    /**
      * A kind of specimen with associated set of requirements.
      *
      * Set of instructions for preservation/transport of the specimen at a defined
@@ -702,6 +732,30 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->handling[] = $handling;
+        return $this;
+    }
+
+    /**
+     * A kind of specimen with associated set of requirements.
+     *
+     * Set of instructions for preservation/transport of the specimen at a defined
+     * temperature interval, prior the testing process.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSpecimenDefinition\FHIRSpecimenDefinitionHandling ...$handling
+     * @return static
+     */
+    public function setHandling(FHIRSpecimenDefinitionHandling ...$handling): self
+    {
+        if ([] !== $this->handling) {
+            $this->_trackValuesRemoved(count($this->handling));
+            $this->handling = [];
+        }
+        if ([] === $handling) {
+            return $this;
+        }
+        foreach($handling as $v) {
+            $this->addHandling($v);
+        }
         return $this;
     }
 
@@ -740,6 +794,33 @@ class FHIRSpecimenDefinitionTypeTested extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->testingDestination[] = $testingDestination;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Where the specimen will be tested: e.g., lab, sector, device or any combination
+     * of these.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$testingDestination
+     * @return static
+     */
+    public function setTestingDestination(FHIRCodeableConcept ...$testingDestination): self
+    {
+        if ([] !== $this->testingDestination) {
+            $this->_trackValuesRemoved(count($this->testingDestination));
+            $this->testingDestination = [];
+        }
+        if ([] === $testingDestination) {
+            return $this;
+        }
+        foreach($testingDestination as $v) {
+            $this->addTestingDestination($v);
+        }
         return $this;
     }
 

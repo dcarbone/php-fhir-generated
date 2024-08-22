@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -255,7 +255,7 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      * Validation map for fields in type OrganizationAffiliation
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -483,6 +483,32 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Business identifiers that are specific to this role.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -662,6 +688,32 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The network in which the participatingOrganization provides the role's services
+     * (if defined) at the indicated locations (if defined).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$network
+     * @return static
+     */
+    public function setNetwork(FHIRReference ...$network): self
+    {
+        if ([] !== $this->network) {
+            $this->_trackValuesRemoved(count($this->network));
+            $this->network = [];
+        }
+        if ([] === $network) {
+            return $this;
+        }
+        foreach($network as $v) {
+            $this->addNetwork($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -703,6 +755,32 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Definition of the role the participatingOrganization plays in the association.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$code
+     * @return static
+     */
+    public function setCode(FHIRCodeableConcept ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Specific specialty of the participatingOrganization in the context of the role.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
@@ -730,6 +808,32 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
         }
         $this->_trackValueAdded();
         $this->specialty[] = $specialty;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specific specialty of the participatingOrganization in the context of the role.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$specialty
+     * @return static
+     */
+    public function setSpecialty(FHIRCodeableConcept ...$specialty): self
+    {
+        if ([] !== $this->specialty) {
+            $this->_trackValuesRemoved(count($this->specialty));
+            $this->specialty = [];
+        }
+        if ([] === $specialty) {
+            return $this;
+        }
+        foreach($specialty as $v) {
+            $this->addSpecialty($v);
+        }
         return $this;
     }
 
@@ -772,6 +876,31 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The location(s) at which the role occurs.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$location
+     * @return static
+     */
+    public function setLocation(FHIRReference ...$location): self
+    {
+        if ([] !== $this->location) {
+            $this->_trackValuesRemoved(count($this->location));
+            $this->location = [];
+        }
+        if ([] === $location) {
+            return $this;
+        }
+        foreach($location as $v) {
+            $this->addLocation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Healthcare services provided through the role.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
@@ -798,6 +927,31 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
         }
         $this->_trackValueAdded();
         $this->healthcareService[] = $healthcareService;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Healthcare services provided through the role.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$healthcareService
+     * @return static
+     */
+    public function setHealthcareService(FHIRReference ...$healthcareService): self
+    {
+        if ([] !== $this->healthcareService) {
+            $this->_trackValuesRemoved(count($this->healthcareService));
+            $this->healthcareService = [];
+        }
+        if ([] === $healthcareService) {
+            return $this;
+        }
+        foreach($healthcareService as $v) {
+            $this->addHealthcareService($v);
+        }
         return $this;
     }
 
@@ -840,6 +994,33 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
     }
 
     /**
+     * Specifies contact information for a specific purpose over a period of time,
+     * might be handled/monitored by a specific named person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The contact details of communication devices available at the
+     * participatingOrganization relevant to this Affiliation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExtendedContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRExtendedContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -870,6 +1051,31 @@ class FHIROrganizationAffiliation extends FHIRDomainResource implements PHPFHIRC
         }
         $this->_trackValueAdded();
         $this->endpoint[] = $endpoint;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Technical endpoints providing access to services operated for this role.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$endpoint
+     * @return static
+     */
+    public function setEndpoint(FHIRReference ...$endpoint): self
+    {
+        if ([] !== $this->endpoint) {
+            $this->_trackValuesRemoved(count($this->endpoint));
+            $this->endpoint = [];
+        }
+        if ([] === $endpoint) {
+            return $this;
+        }
+        foreach($endpoint as $v) {
+            $this->addEndpoint($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -145,7 +145,7 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
      * Validation map for fields in type TestPlan.Assertion
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -254,6 +254,33 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The test assertion type - this can be used to group assertions as 'required' or
+     * 'optional', or can be used for other classification of the assertion.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$type
+     * @return static
+     */
+    public function setType(FHIRCodeableConcept ...$type): self
+    {
+        if ([] !== $this->type) {
+            $this->_trackValuesRemoved(count($this->type));
+            $this->type = [];
+        }
+        if ([] === $type) {
+            return $this;
+        }
+        foreach($type as $v) {
+            $this->addType($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
      * If the element is present, it must have a value for at least one of the defined
@@ -295,6 +322,32 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The focus or object of the assertion i.e. a resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$object
+     * @return static
+     */
+    public function setObject(FHIRCodeableReference ...$object): self
+    {
+        if ([] !== $this->object) {
+            $this->_trackValuesRemoved(count($this->object));
+            $this->object = [];
+        }
+        if ([] === $object) {
+            return $this;
+        }
+        foreach($object as $v) {
+            $this->addObject($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The test assertion - the expected outcome from the test case execution.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference[]
@@ -322,6 +375,32 @@ class FHIRTestPlanAssertion extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->result[] = $result;
+        return $this;
+    }
+
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The test assertion - the expected outcome from the test case execution.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$result
+     * @return static
+     */
+    public function setResult(FHIRCodeableReference ...$result): self
+    {
+        if ([] !== $this->result) {
+            $this->_trackValuesRemoved(count($this->result));
+            $this->result = [];
+        }
+        if ([] === $result) {
+            return $this;
+        }
+        foreach($result as $v) {
+            $this->addResult($v);
+        }
         return $this;
     }
 

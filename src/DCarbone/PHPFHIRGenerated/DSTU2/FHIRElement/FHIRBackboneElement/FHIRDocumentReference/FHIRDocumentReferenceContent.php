@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRDo
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,11 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement
      * Validation map for fields in type DocumentReference.Content
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_ATTACHMENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -229,6 +233,32 @@ class FHIRDocumentReferenceContent extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->format[] = $format;
+        return $this;
+    }
+
+    /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An identifier of the document encoding, structure, and template that the
+     * document conforms to beyond the base format indicated in the mimeType.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCoding ...$format
+     * @return static
+     */
+    public function setFormat(FHIRCoding ...$format): self
+    {
+        if ([] !== $this->format) {
+            $this->_trackValuesRemoved(count($this->format));
+            $this->format = [];
+        }
+        if ([] === $format) {
+            return $this;
+        }
+        foreach($format as $v) {
+            $this->addFormat($v);
+        }
         return $this;
     }
 

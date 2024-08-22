@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -180,7 +180,7 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * Validation map for fields in type AuditEvent.Entity
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -390,6 +390,32 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Security labels for the identified entity.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$securityLabel
+     * @return static
+     */
+    public function setSecurityLabel(FHIRCodeableConcept ...$securityLabel): self
+    {
+        if ([] !== $this->securityLabel) {
+            $this->_trackValuesRemoved(count($this->securityLabel));
+            $this->securityLabel = [];
+        }
+        if ([] === $securityLabel) {
+            return $this;
+        }
+        foreach($securityLabel as $v) {
+            $this->addSecurityLabel($v);
+        }
+        return $this;
+    }
+
+    /**
      * A stream of bytes
      * A stream of bytes, base64 encoded
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -464,6 +490,30 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
      * A record of an event relevant for purposes such as operations, privacy,
      * security, maintenance, and performance analysis.
      *
+     * Tagged value pairs for conveying additional information about the entity.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventDetail ...$detail
+     * @return static
+     */
+    public function setDetail(FHIRAuditEventDetail ...$detail): self
+    {
+        if ([] !== $this->detail) {
+            $this->_trackValuesRemoved(count($this->detail));
+            $this->detail = [];
+        }
+        if ([] === $detail) {
+            return $this;
+        }
+        foreach($detail as $v) {
+            $this->addDetail($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A record of an event relevant for purposes such as operations, privacy,
+     * security, maintenance, and performance analysis.
+     *
      * The entity is attributed to an agent to express the agent's responsibility for
      * that entity in the activity. This is most used to indicate when persistence
      * media (the entity) are used by an agent. For example when importing data from a
@@ -497,6 +547,34 @@ class FHIRAuditEventEntity extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->agent[] = $agent;
+        return $this;
+    }
+
+    /**
+     * A record of an event relevant for purposes such as operations, privacy,
+     * security, maintenance, and performance analysis.
+     *
+     * The entity is attributed to an agent to express the agent's responsibility for
+     * that entity in the activity. This is most used to indicate when persistence
+     * media (the entity) are used by an agent. For example when importing data from a
+     * device, the device would be described in an entity, and the user importing data
+     * from that media would be indicated as the entity.agent.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAuditEvent\FHIRAuditEventAgent ...$agent
+     * @return static
+     */
+    public function setAgent(FHIRAuditEventAgent ...$agent): self
+    {
+        if ([] !== $this->agent) {
+            $this->_trackValuesRemoved(count($this->agent));
+            $this->agent = [];
+        }
+        if ([] === $agent) {
+            return $this;
+        }
+        foreach($agent as $v) {
+            $this->addAgent($v);
+        }
         return $this;
     }
 

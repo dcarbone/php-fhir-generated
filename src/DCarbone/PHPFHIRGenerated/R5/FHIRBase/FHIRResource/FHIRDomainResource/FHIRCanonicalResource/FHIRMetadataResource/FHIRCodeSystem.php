@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -632,7 +632,14 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
      * Validation map for fields in type CodeSystem
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CONTENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1357,6 +1364,34 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A formal identifier that is used to identify this code system when it is
+     * represented in other formats, or referenced in a specification, model, design or
+     * an instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1768,6 +1803,32 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
@@ -1865,6 +1926,38 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These contexts may be general categories (gender, age, ...) or
+     * may be references to specific programs (insurance plans, studies, ...) and may
+     * be used to assist with indexing and searching for appropriate code system
+     * instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1897,6 +1990,32 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A legal or geographic region in which the code system is intended to be used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
+    {
+        if ([] !== $this->jurisdiction) {
+            $this->_trackValuesRemoved(count($this->jurisdiction));
+            $this->jurisdiction = [];
+        }
+        if ([] === $jurisdiction) {
+            return $this;
+        }
+        foreach($jurisdiction as $v) {
+            $this->addJurisdiction($v);
+        }
         return $this;
     }
 
@@ -2206,6 +2325,34 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Descriptions related to the content of the CodeSystem. Topics provide a
+     * high-level categorization as well as keywords for the CodeSystem that can be
+     * useful for filtering and searching.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$topic
+     * @return static
+     */
+    public function setTopic(FHIRCodeableConcept ...$topic): self
+    {
+        if ([] !== $this->topic) {
+            $this->_trackValuesRemoved(count($this->topic));
+            $this->topic = [];
+        }
+        if ([] === $topic) {
+            return $this;
+        }
+        foreach($topic as $v) {
+            $this->addTopic($v);
+        }
+        return $this;
+    }
+
+    /**
      * Specifies contact information for a person or organization.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -2238,6 +2385,32 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->author[] = $author;
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An individiual or organization primarily involved in the creation and
+     * maintenance of the CodeSystem.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$author
+     * @return static
+     */
+    public function setAuthor(FHIRContactDetail ...$author): self
+    {
+        if ([] !== $this->author) {
+            $this->_trackValuesRemoved(count($this->author));
+            $this->author = [];
+        }
+        if ([] === $author) {
+            return $this;
+        }
+        foreach($author as $v) {
+            $this->addAuthor($v);
+        }
         return $this;
     }
 
@@ -2282,6 +2455,32 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * An individual or organization primarily responsible for internal coherence of
+     * the CodeSystem.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$editor
+     * @return static
+     */
+    public function setEditor(FHIRContactDetail ...$editor): self
+    {
+        if ([] !== $this->editor) {
+            $this->_trackValuesRemoved(count($this->editor));
+            $this->editor = [];
+        }
+        if ([] === $editor) {
+            return $this;
+        }
+        foreach($editor as $v) {
+            $this->addEditor($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * An individual or organization asserted by the publisher to be primarily
      * responsible for review of some aspect of the CodeSystem.
      *
@@ -2310,6 +2509,32 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->reviewer[] = $reviewer;
+        return $this;
+    }
+
+    /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An individual or organization asserted by the publisher to be primarily
+     * responsible for review of some aspect of the CodeSystem.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$reviewer
+     * @return static
+     */
+    public function setReviewer(FHIRContactDetail ...$reviewer): self
+    {
+        if ([] !== $this->reviewer) {
+            $this->_trackValuesRemoved(count($this->reviewer));
+            $this->reviewer = [];
+        }
+        if ([] === $reviewer) {
+            return $this;
+        }
+        foreach($reviewer as $v) {
+            $this->addReviewer($v);
+        }
         return $this;
     }
 
@@ -2350,6 +2575,32 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An individual or organization asserted by the publisher to be responsible for
+     * officially endorsing the CodeSystem for use in some setting.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactDetail ...$endorser
+     * @return static
+     */
+    public function setEndorser(FHIRContactDetail ...$endorser): self
+    {
+        if ([] !== $this->endorser) {
+            $this->_trackValuesRemoved(count($this->endorser));
+            $this->endorser = [];
+        }
+        if ([] === $endorser) {
+            return $this;
+        }
+        foreach($endorser as $v) {
+            $this->addEndorser($v);
+        }
+        return $this;
+    }
+
+    /**
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
@@ -2384,6 +2635,33 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->relatedArtifact[] = $relatedArtifact;
+        return $this;
+    }
+
+    /**
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Related artifacts such as additional documentation, justification, dependencies,
+     * bibliographic references, and predecessor and successor artifacts.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact ...$relatedArtifact
+     * @return static
+     */
+    public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
+    {
+        if ([] !== $this->relatedArtifact) {
+            $this->_trackValuesRemoved(count($this->relatedArtifact));
+            $this->relatedArtifact = [];
+        }
+        if ([] === $relatedArtifact) {
+            return $this;
+        }
+        foreach($relatedArtifact as $v) {
+            $this->addRelatedArtifact($v);
+        }
         return $this;
     }
 
@@ -2736,6 +3014,32 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
      * system or code system supplement and its key properties, and optionally define a
      * part or all of its content.
      *
+     * A filter that can be used in a value set compose statement when selecting
+     * concepts using a filter.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemFilter ...$filter
+     * @return static
+     */
+    public function setFilter(FHIRCodeSystemFilter ...$filter): self
+    {
+        if ([] !== $this->filter) {
+            $this->_trackValuesRemoved(count($this->filter));
+            $this->filter = [];
+        }
+        if ([] === $filter) {
+            return $this;
+        }
+        foreach($filter as $v) {
+            $this->addFilter($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The CodeSystem resource is used to declare the existence of and describe a code
+     * system or code system supplement and its key properties, and optionally define a
+     * part or all of its content.
+     *
      * A property defines an additional slot through which additional information can
      * be provided about a concept.
      *
@@ -2764,6 +3068,32 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->property[] = $property;
+        return $this;
+    }
+
+    /**
+     * The CodeSystem resource is used to declare the existence of and describe a code
+     * system or code system supplement and its key properties, and optionally define a
+     * part or all of its content.
+     *
+     * A property defines an additional slot through which additional information can
+     * be provided about a concept.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemProperty ...$property
+     * @return static
+     */
+    public function setProperty(FHIRCodeSystemProperty ...$property): self
+    {
+        if ([] !== $this->property) {
+            $this->_trackValuesRemoved(count($this->property));
+            $this->property = [];
+        }
+        if ([] === $property) {
+            return $this;
+        }
+        foreach($property as $v) {
+            $this->addProperty($v);
+        }
         return $this;
     }
 
@@ -2802,6 +3132,33 @@ class FHIRCodeSystem extends FHIRMetadataResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->concept[] = $concept;
+        return $this;
+    }
+
+    /**
+     * The CodeSystem resource is used to declare the existence of and describe a code
+     * system or code system supplement and its key properties, and optionally define a
+     * part or all of its content.
+     *
+     * Concepts that are in the code system. The concept definitions are inherently
+     * hierarchical, but the definitions must be consulted to determine what the
+     * meanings of the hierarchical relationships are.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCodeSystem\FHIRCodeSystemConcept ...$concept
+     * @return static
+     */
+    public function setConcept(FHIRCodeSystemConcept ...$concept): self
+    {
+        if ([] !== $this->concept) {
+            $this->_trackValuesRemoved(count($this->concept));
+            $this->concept = [];
+        }
+        if ([] === $concept) {
+            return $this;
+        }
+        foreach($concept as $v) {
+            $this->addConcept($v);
+        }
         return $this;
     }
 

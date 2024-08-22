@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -296,7 +296,7 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
      * Validation map for fields in type Coverage
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -562,6 +562,34 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The main (and possibly only) identifier for the coverage - often referred to as
+     * a Member Id, Certificate number, Personal Health Number or Case ID. May be
+     * constructed as the concatination of the Coverage.SubscriberID and the
+     * Coverage.dependant.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -899,6 +927,34 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The program or plan underwriter or payor including both insurance and
+     * non-insurance agreements, such as patient-pay agreements. May provide multiple
+     * identifiers such as insurance company identifier or business identifier (BIN
+     * number).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$payor
+     * @return static
+     */
+    public function setPayor(FHIRReference ...$payor): self
+    {
+        if ([] !== $this->payor) {
+            $this->_trackValuesRemoved(count($this->payor));
+            $this->payor = [];
+        }
+        if ([] === $payor) {
+            return $this;
+        }
+        foreach($payor as $v) {
+            $this->addPayor($v);
+        }
+        return $this;
+    }
+
+    /**
      * Financial instrument which may be used to reimburse or pay for health care
      * products and services.
      *
@@ -1131,6 +1187,31 @@ class FHIRCoverage extends FHIRDomainResource implements PHPFHIRContainedTypeInt
         }
         $this->_trackValueAdded();
         $this->contract[] = $contract;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The policy(s) which constitute this insurance coverage.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$contract
+     * @return static
+     */
+    public function setContract(FHIRReference ...$contract): self
+    {
+        if ([] !== $this->contract) {
+            $this->_trackValuesRemoved(count($this->contract));
+            $this->contract = [];
+        }
+        if ([] === $contract) {
+            return $this;
+        }
+        foreach($contract as $v) {
+            $this->addContract($v);
+        }
         return $this;
     }
 

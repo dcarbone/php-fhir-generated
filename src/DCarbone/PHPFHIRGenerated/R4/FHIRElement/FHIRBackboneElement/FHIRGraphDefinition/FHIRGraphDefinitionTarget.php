@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGraph
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -151,7 +151,11 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * Validation map for fields in type GraphDefinition.Target
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -417,6 +421,31 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
      * of resources that form a graph by following references. The Graph Definition
      * resource defines a set and makes rules about the set.
      *
+     * Compartment Consistency Rules.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionCompartment ...$compartment
+     * @return static
+     */
+    public function setCompartment(FHIRGraphDefinitionCompartment ...$compartment): self
+    {
+        if ([] !== $this->compartment) {
+            $this->_trackValuesRemoved(count($this->compartment));
+            $this->compartment = [];
+        }
+        if ([] === $compartment) {
+            return $this;
+        }
+        foreach($compartment as $v) {
+            $this->addCompartment($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A formal computable definition of a graph of resources - that is, a coherent set
+     * of resources that form a graph by following references. The Graph Definition
+     * resource defines a set and makes rules about the set.
+     *
      * Additional links from target resource.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink[]
@@ -443,6 +472,31 @@ class FHIRGraphDefinitionTarget extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->link[] = $link;
+        return $this;
+    }
+
+    /**
+     * A formal computable definition of a graph of resources - that is, a coherent set
+     * of resources that form a graph by following references. The Graph Definition
+     * resource defines a set and makes rules about the set.
+     *
+     * Additional links from target resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRGraphDefinition\FHIRGraphDefinitionLink ...$link
+     * @return static
+     */
+    public function setLink(FHIRGraphDefinitionLink ...$link): self
+    {
+        if ([] !== $this->link) {
+            $this->_trackValuesRemoved(count($this->link));
+            $this->link = [];
+        }
+        if ([] === $link) {
+            return $this;
+        }
+        foreach($link as $v) {
+            $this->addLink($v);
+        }
         return $this;
     }
 

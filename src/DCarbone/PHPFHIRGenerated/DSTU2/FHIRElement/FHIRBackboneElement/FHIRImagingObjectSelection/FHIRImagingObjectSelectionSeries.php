@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -348,6 +348,38 @@ class FHIRImagingObjectSelectionSeries extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->instance[] = $instance;
+        return $this;
+    }
+
+    /**
+     * A manifest of a set of DICOM Service-Object Pair Instances (SOP Instances). The
+     * referenced SOP Instances (images or other content) are for a single patient, and
+     * may be from one or more studies. The referenced SOP Instances have been selected
+     * for a purpose, such as quality assurance, conference, or consult. Reflecting
+     * that range of purposes, typical ImagingObjectSelection resources may include all
+     * SOP Instances in a study (perhaps for sharing through a Health Information
+     * Exchange); key images from multiple studies (for reference by a referring or
+     * treating physician); a multi-frame ultrasound instance ("cine" video clip) and a
+     * set of measurements taken from that instance (for inclusion in a teaching file);
+     * and so on.
+     *
+     * Identity and locating information of the selected DICOM SOP instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRImagingObjectSelection\FHIRImagingObjectSelectionInstance ...$instance
+     * @return static
+     */
+    public function setInstance(FHIRImagingObjectSelectionInstance ...$instance): self
+    {
+        if ([] !== $this->instance) {
+            $this->_trackValuesRemoved(count($this->instance));
+            $this->instance = [];
+        }
+        if ([] === $instance) {
+            return $this;
+        }
+        foreach($instance as $v) {
+            $this->addInstance($v);
+        }
         return $this;
     }
 

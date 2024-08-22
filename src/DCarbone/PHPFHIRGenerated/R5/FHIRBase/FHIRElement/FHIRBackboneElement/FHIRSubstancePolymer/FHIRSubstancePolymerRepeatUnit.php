@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -163,7 +163,7 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
      * Validation map for fields in type SubstancePolymer.RepeatUnit
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -408,6 +408,30 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
     /**
      * Properties of a substance specific to it being a polymer.
      *
+     * Applies to homopolymer and block co-polymers where the degree of polymerisation
+     * within a block can be described.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerDegreeOfPolymerisation ...$degreeOfPolymerisation
+     * @return static
+     */
+    public function setDegreeOfPolymerisation(FHIRSubstancePolymerDegreeOfPolymerisation ...$degreeOfPolymerisation): self
+    {
+        if ([] !== $this->degreeOfPolymerisation) {
+            $this->_trackValuesRemoved(count($this->degreeOfPolymerisation));
+            $this->degreeOfPolymerisation = [];
+        }
+        if ([] === $degreeOfPolymerisation) {
+            return $this;
+        }
+        foreach($degreeOfPolymerisation as $v) {
+            $this->addDegreeOfPolymerisation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Properties of a substance specific to it being a polymer.
+     *
      * A graphical structure for this SRU.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation[]
@@ -432,6 +456,29 @@ class FHIRSubstancePolymerRepeatUnit extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->structuralRepresentation[] = $structuralRepresentation;
+        return $this;
+    }
+
+    /**
+     * Properties of a substance specific to it being a polymer.
+     *
+     * A graphical structure for this SRU.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstancePolymer\FHIRSubstancePolymerStructuralRepresentation ...$structuralRepresentation
+     * @return static
+     */
+    public function setStructuralRepresentation(FHIRSubstancePolymerStructuralRepresentation ...$structuralRepresentation): self
+    {
+        if ([] !== $this->structuralRepresentation) {
+            $this->_trackValuesRemoved(count($this->structuralRepresentation));
+            $this->structuralRepresentation = [];
+        }
+        if ([] === $structuralRepresentation) {
+            return $this;
+        }
+        foreach($structuralRepresentation as $v) {
+            $this->addStructuralRepresentation($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -154,7 +154,11 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
      * Validation map for fields in type Bundle
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -364,6 +368,29 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
     /**
      * A container for a collection of resources.
      *
+     * A series of links that provide context to this bundle.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleLink ...$link
+     * @return static
+     */
+    public function setLink(FHIRBundleLink ...$link): self
+    {
+        if ([] !== $this->link) {
+            $this->_trackValuesRemoved(count($this->link));
+            $this->link = [];
+        }
+        if ([] === $link) {
+            return $this;
+        }
+        foreach($link as $v) {
+            $this->addLink($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A container for a collection of resources.
+     *
      * An entry in a bundle resource - will either contain a resource, or information
      * about a resource (transactions and history only).
      *
@@ -390,6 +417,30 @@ class FHIRBundle extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->entry[] = $entry;
+        return $this;
+    }
+
+    /**
+     * A container for a collection of resources.
+     *
+     * An entry in a bundle resource - will either contain a resource, or information
+     * about a resource (transactions and history only).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRBundle\FHIRBundleEntry ...$entry
+     * @return static
+     */
+    public function setEntry(FHIRBundleEntry ...$entry): self
+    {
+        if ([] !== $this->entry) {
+            $this->_trackValuesRemoved(count($this->entry));
+            $this->entry = [];
+        }
+        if ([] === $entry) {
+            return $this;
+        }
+        foreach($entry as $v) {
+            $this->addEntry($v);
+        }
         return $this;
     }
 

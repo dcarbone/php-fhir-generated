@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -160,7 +160,11 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
      * Validation map for fields in type Evidence.ModelCharacteristic
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -347,6 +351,32 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
      * exposures/interventions, comparators, outcomes, measured variables, confounding
      * variables), the statistics, and the certainty of this evidence.
      *
+     * A variable adjusted for in the adjusted analysis.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceVariable ...$variable
+     * @return static
+     */
+    public function setVariable(FHIREvidenceVariable ...$variable): self
+    {
+        if ([] !== $this->variable) {
+            $this->_trackValuesRemoved(count($this->variable));
+            $this->variable = [];
+        }
+        if ([] === $variable) {
+            return $this;
+        }
+        foreach($variable as $v) {
+            $this->addVariable($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The Evidence Resource provides a machine-interpretable expression of an evidence
+     * concept including the evidence variables (e.g., population,
+     * exposures/interventions, comparators, outcomes, measured variables, confounding
+     * variables), the statistics, and the certainty of this evidence.
+     *
      * An attribute of the statistic used as a model characteristic.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceAttributeEstimate[]
@@ -374,6 +404,32 @@ class FHIREvidenceModelCharacteristic extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->attributeEstimate[] = $attributeEstimate;
+        return $this;
+    }
+
+    /**
+     * The Evidence Resource provides a machine-interpretable expression of an evidence
+     * concept including the evidence variables (e.g., population,
+     * exposures/interventions, comparators, outcomes, measured variables, confounding
+     * variables), the statistics, and the certainty of this evidence.
+     *
+     * An attribute of the statistic used as a model characteristic.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidence\FHIREvidenceAttributeEstimate ...$attributeEstimate
+     * @return static
+     */
+    public function setAttributeEstimate(FHIREvidenceAttributeEstimate ...$attributeEstimate): self
+    {
+        if ([] !== $this->attributeEstimate) {
+            $this->_trackValuesRemoved(count($this->attributeEstimate));
+            $this->attributeEstimate = [];
+        }
+        if ([] === $attributeEstimate) {
+            return $this;
+        }
+        foreach($attributeEstimate as $v) {
+            $this->addAttributeEstimate($v);
+        }
         return $this;
     }
 

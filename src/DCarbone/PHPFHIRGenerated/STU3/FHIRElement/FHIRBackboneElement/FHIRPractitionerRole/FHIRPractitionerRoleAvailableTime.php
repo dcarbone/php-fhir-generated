@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRPra
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -137,7 +137,7 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
      * Validation map for fields in type PractitionerRole.AvailableTime
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -274,6 +274,30 @@ class FHIRPractitionerRoleAvailableTime extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->daysOfWeek[] = $daysOfWeek;
+        return $this;
+    }
+
+    /**
+     * The days of the week.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates which days of the week are available between the start and end Times.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDaysOfWeek ...$daysOfWeek
+     * @return static
+     */
+    public function setDaysOfWeek(FHIRDaysOfWeek ...$daysOfWeek): self
+    {
+        if ([] !== $this->daysOfWeek) {
+            $this->_trackValuesRemoved(count($this->daysOfWeek));
+            $this->daysOfWeek = [];
+        }
+        if ([] === $daysOfWeek) {
+            return $this;
+        }
+        foreach($daysOfWeek as $v) {
+            $this->addDaysOfWeek($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -154,7 +154,7 @@ class FHIRPermissionData extends FHIRBackboneElement
      * Validation map for fields in type Permission.Data
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -262,6 +262,29 @@ class FHIRPermissionData extends FHIRBackboneElement
     }
 
     /**
+     * Permission resource holds access rules for a given data and context.
+     *
+     * Explicit FHIR Resource references.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPermission\FHIRPermissionResource ...$resource
+     * @return static
+     */
+    public function setResource(FHIRPermissionResource ...$resource): self
+    {
+        if ([] !== $this->resource) {
+            $this->_trackValuesRemoved(count($this->resource));
+            $this->resource = [];
+        }
+        if ([] === $resource) {
+            return $this;
+        }
+        foreach($resource as $v) {
+            $this->addResource($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a code defined by a terminology system.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -298,6 +321,32 @@ class FHIRPermissionData extends FHIRBackboneElement
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The data in scope are those with the given codes present in that data
+     * .meta.security element.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding ...$security
+     * @return static
+     */
+    public function setSecurity(FHIRCoding ...$security): self
+    {
+        if ([] !== $this->security) {
+            $this->_trackValuesRemoved(count($this->security));
+            $this->security = [];
+        }
+        if ([] === $security) {
+            return $this;
+        }
+        foreach($security as $v) {
+            $this->addSecurity($v);
+        }
+        return $this;
+    }
+
+    /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -330,6 +379,32 @@ class FHIRPermissionData extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->period[] = $period;
+        return $this;
+    }
+
+    /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Clinical or Operational Relevant period of time that bounds the data controlled
+     * by this rule.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod ...$period
+     * @return static
+     */
+    public function setPeriod(FHIRPeriod ...$period): self
+    {
+        if ([] !== $this->period) {
+            $this->_trackValuesRemoved(count($this->period));
+            $this->period = [];
+        }
+        if ([] === $period) {
+            return $this;
+        }
+        foreach($period as $v) {
+            $this->addPeriod($v);
+        }
         return $this;
     }
 

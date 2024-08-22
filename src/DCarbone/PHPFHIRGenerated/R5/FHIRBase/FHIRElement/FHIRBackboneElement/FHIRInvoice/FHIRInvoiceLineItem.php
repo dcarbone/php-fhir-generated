@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -191,7 +191,14 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
      * Validation map for fields in type Invoice.LineItem
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CHARGE_ITEM_CODEABLE_CONCEPT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_CHARGE_ITEM_REFERENCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -519,6 +526,36 @@ class FHIRInvoiceLineItem extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->priceComponent[] = $priceComponent;
+        return $this;
+    }
+
+    /**
+     * Availability data for an {item}.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The price for a ChargeItem may be calculated as a base price with
+     * surcharges/deductions that apply in certain conditions. A ChargeItemDefinition
+     * resource that defines the prices, factors and conditions that apply to a billing
+     * code is currently under development. The priceComponent element can be used to
+     * offer transparency to the recipient of the Invoice as to how the prices have
+     * been calculated.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRMonetaryComponent ...$priceComponent
+     * @return static
+     */
+    public function setPriceComponent(FHIRMonetaryComponent ...$priceComponent): self
+    {
+        if ([] !== $this->priceComponent) {
+            $this->_trackValuesRemoved(count($this->priceComponent));
+            $this->priceComponent = [];
+        }
+        if ([] === $priceComponent) {
+            return $this;
+        }
+        foreach($priceComponent as $v) {
+            $this->addPriceComponent($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -221,7 +221,7 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * Validation map for fields in type ClinicalUseDefinition.Indication
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -459,6 +459,32 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * A comorbidity (concurrent condition) or coinfection as part of the indication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$comorbidity
+     * @return static
+     */
+    public function setComorbidity(FHIRCodeableReference ...$comorbidity): self
+    {
+        if ([] !== $this->comorbidity) {
+            $this->_trackValuesRemoved(count($this->comorbidity));
+            $this->comorbidity = [];
+        }
+        if ([] === $comorbidity) {
+            return $this;
+        }
+        foreach($comorbidity as $v) {
+            $this->addComorbidity($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The intended effect, aim or strategy to be achieved.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference
@@ -611,6 +637,32 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * An unwanted side effect or negative outcome that may happen if you use the drug
+     * (or other subject of this resource) for this indication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$undesirableEffect
+     * @return static
+     */
+    public function setUndesirableEffect(FHIRReference ...$undesirableEffect): self
+    {
+        if ([] !== $this->undesirableEffect) {
+            $this->_trackValuesRemoved(count($this->undesirableEffect));
+            $this->undesirableEffect = [];
+        }
+        if ([] === $undesirableEffect) {
+            return $this;
+        }
+        foreach($undesirableEffect as $v) {
+            $this->addUndesirableEffect($v);
+        }
+        return $this;
+    }
+
+    /**
      * A expression that is evaluated in a specified context and returns a value. The
      * context of use of the expression must specify the context in which the
      * expression is evaluated, and how the result of the expression is used.
@@ -681,6 +733,31 @@ class FHIRClinicalUseDefinitionIndication extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->otherTherapy[] = $otherTherapy;
+        return $this;
+    }
+
+    /**
+     * A single issue - either an indication, contraindication, interaction or an
+     * undesirable effect for a medicinal product, medication, device or procedure.
+     *
+     * Information about the use of the medicinal product in relation to other
+     * therapies described as part of the indication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClinicalUseDefinition\FHIRClinicalUseDefinitionOtherTherapy ...$otherTherapy
+     * @return static
+     */
+    public function setOtherTherapy(FHIRClinicalUseDefinitionOtherTherapy ...$otherTherapy): self
+    {
+        if ([] !== $this->otherTherapy) {
+            $this->_trackValuesRemoved(count($this->otherTherapy));
+            $this->otherTherapy = [];
+        }
+        if ([] === $otherTherapy) {
+            return $this;
+        }
+        foreach($otherTherapy as $v) {
+            $this->addOtherTherapy($v);
+        }
         return $this;
     }
 

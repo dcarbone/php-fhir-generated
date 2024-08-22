@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -231,7 +231,7 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
      * Validation map for fields in type NutritionOrder.EnteralFormula
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -481,6 +481,33 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The intended type of device that is to be used for the administration of the
+     * enteral formula.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$deliveryDevice
+     * @return static
+     */
+    public function setDeliveryDevice(FHIRCodeableReference ...$deliveryDevice): self
+    {
+        if ([] !== $this->deliveryDevice) {
+            $this->_trackValuesRemoved(count($this->deliveryDevice));
+            $this->deliveryDevice = [];
+        }
+        if ([] === $deliveryDevice) {
+            return $this;
+        }
+        foreach($deliveryDevice as $v) {
+            $this->addDeliveryDevice($v);
+        }
+        return $this;
+    }
+
+    /**
      * A request to supply a diet, formula feeding (enteral) or oral nutritional
      * supplement to a patient/resident.
      *
@@ -511,6 +538,31 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->additive[] = $additive;
+        return $this;
+    }
+
+    /**
+     * A request to supply a diet, formula feeding (enteral) or oral nutritional
+     * supplement to a patient/resident.
+     *
+     * Indicates modular components to be provided in addition or mixed with the base
+     * formula.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdditive ...$additive
+     * @return static
+     */
+    public function setAdditive(FHIRNutritionOrderAdditive ...$additive): self
+    {
+        if ([] !== $this->additive) {
+            $this->_trackValuesRemoved(count($this->additive));
+            $this->additive = [];
+        }
+        if ([] === $additive) {
+            return $this;
+        }
+        foreach($additive as $v) {
+            $this->addAdditive($v);
+        }
         return $this;
     }
 
@@ -633,6 +685,33 @@ class FHIRNutritionOrderEnteralFormula extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->administration[] = $administration;
+        return $this;
+    }
+
+    /**
+     * A request to supply a diet, formula feeding (enteral) or oral nutritional
+     * supplement to a patient/resident.
+     *
+     * Formula administration instructions as structured data. This repeating structure
+     * allows for changing the administration rate or volume over time for both bolus
+     * and continuous feeding. An example of this would be an instruction to increase
+     * the rate of continuous feeding every 2 hours.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRNutritionOrder\FHIRNutritionOrderAdministration ...$administration
+     * @return static
+     */
+    public function setAdministration(FHIRNutritionOrderAdministration ...$administration): self
+    {
+        if ([] !== $this->administration) {
+            $this->_trackValuesRemoved(count($this->administration));
+            $this->administration = [];
+        }
+        if ([] === $administration) {
+            return $this;
+        }
+        foreach($administration as $v) {
+            $this->addAdministration($v);
+        }
         return $this;
     }
 

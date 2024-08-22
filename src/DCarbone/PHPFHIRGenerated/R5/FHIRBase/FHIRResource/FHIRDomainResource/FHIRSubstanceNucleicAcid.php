@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -191,7 +191,7 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
      * Validation map for fields in type SubstanceNucleicAcid
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -486,6 +486,34 @@ class FHIRSubstanceNucleicAcid extends FHIRDomainResource implements PHPFHIRCont
         }
         $this->_trackValueAdded();
         $this->subunit[] = $subunit;
+        return $this;
+    }
+
+    /**
+     * Nucleic acids are defined by three distinct elements: the base, sugar and
+     * linkage. Individual substance/moiety IDs will be created for each of these
+     * elements. The nucleotide sequence will be always entered in the 5’-3’
+     * direction.
+     *
+     * Subunits are listed in order of decreasing length; sequences of the same length
+     * will be ordered by molecular weight; subunits that have identical sequences will
+     * be repeated multiple times.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSubunit ...$subunit
+     * @return static
+     */
+    public function setSubunit(FHIRSubstanceNucleicAcidSubunit ...$subunit): self
+    {
+        if ([] !== $this->subunit) {
+            $this->_trackValuesRemoved(count($this->subunit));
+            $this->subunit = [];
+        }
+        if ([] === $subunit) {
+            return $this;
+        }
+        foreach($subunit as $v) {
+            $this->addSubunit($v);
+        }
         return $this;
     }
 

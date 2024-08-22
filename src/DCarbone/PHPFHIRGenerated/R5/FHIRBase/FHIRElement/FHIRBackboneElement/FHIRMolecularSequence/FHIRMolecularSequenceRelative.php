@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -166,7 +166,11 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
      * Validation map for fields in type MolecularSequence.Relative
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_COORDINATE_SYSTEM => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -420,6 +424,29 @@ class FHIRMolecularSequenceRelative extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->edit[] = $edit;
+        return $this;
+    }
+
+    /**
+     * Representation of a molecular sequence.
+     *
+     * Changes in sequence from the starting sequence.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMolecularSequence\FHIRMolecularSequenceEdit ...$edit
+     * @return static
+     */
+    public function setEdit(FHIRMolecularSequenceEdit ...$edit): self
+    {
+        if ([] !== $this->edit) {
+            $this->_trackValuesRemoved(count($this->edit));
+            $this->edit = [];
+        }
+        if ([] === $edit) {
+            return $this;
+        }
+        foreach($edit as $v) {
+            $this->addEdit($v);
+        }
         return $this;
     }
 

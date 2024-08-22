@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -991,6 +991,36 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Business identifier for this product. Could be an MPID. When in development or
+     * being regulated, products are typically referenced by official identifiers,
+     * assigned by a manufacturer or regulator, and unique to a product (which, when
+     * compared to a product instance being prescribed, is actually a product type).
+     * See also MedicinalProductDefinition.code.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1324,6 +1354,36 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The path by which the product is taken into or makes contact with the body. In
+     * some regions this is referred to as the licenced or approved route. See also
+     * AdministrableProductDefinition resource. MedicinalProductDefinition.route is the
+     * same concept as AdministrableProductDefinition.routeOfAdministration.code, and
+     * they cannot be used together.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$route
+     * @return static
+     */
+    public function setRoute(FHIRCodeableConcept ...$route): self
+    {
+        if ([] !== $this->route) {
+            $this->_trackValuesRemoved(count($this->route));
+            $this->route = [];
+        }
+        if ([] === $route) {
+            return $this;
+        }
+        foreach($route as $v) {
+            $this->addRoute($v);
+        }
+        return $this;
+    }
+
+    /**
      * A string that may contain Github Flavored Markdown syntax for optional
      * processing by a mark down presentation engine
      * Systems are not required to have markdown support, so the text should be
@@ -1496,6 +1556,33 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Whether the Medicinal Product is subject to special measures for regulatory
+     * reasons, such as a requirement to conduct post-authorization studies.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$specialMeasures
+     * @return static
+     */
+    public function setSpecialMeasures(FHIRCodeableConcept ...$specialMeasures): self
+    {
+        if ([] !== $this->specialMeasures) {
+            $this->_trackValuesRemoved(count($this->specialMeasures));
+            $this->specialMeasures = [];
+        }
+        if ([] === $specialMeasures) {
+            return $this;
+        }
+        foreach($specialMeasures as $v) {
+            $this->addSpecialMeasures($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * If authorised for use in children, or infants, neonates etc.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept
@@ -1563,6 +1650,32 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Allows the product to be classified by various systems, commonly WHO ATC.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$classification
+     * @return static
+     */
+    public function setClassification(FHIRCodeableConcept ...$classification): self
+    {
+        if ([] !== $this->classification) {
+            $this->_trackValuesRemoved(count($this->classification));
+            $this->classification = [];
+        }
+        if ([] === $classification) {
+            return $this;
+        }
+        foreach($classification as $v) {
+            $this->addClassification($v);
+        }
+        return $this;
+    }
+
+    /**
      * The marketing status describes the date when a medicinal product is actually put
      * on the market or the date as of which it is no longer available.
      * If the element is present, it must have a value for at least one of the defined
@@ -1603,6 +1716,34 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * The marketing status describes the date when a medicinal product is actually put
+     * on the market or the date as of which it is no longer available.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Marketing status of the medicinal product, in contrast to marketing
+     * authorization. This refers to the product being actually 'on the market' as
+     * opposed to being allowed to be on the market (which is an authorization).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRMarketingStatus ...$marketingStatus
+     * @return static
+     */
+    public function setMarketingStatus(FHIRMarketingStatus ...$marketingStatus): self
+    {
+        if ([] !== $this->marketingStatus) {
+            $this->_trackValuesRemoved(count($this->marketingStatus));
+            $this->marketingStatus = [];
+        }
+        if ([] === $marketingStatus) {
+            return $this;
+        }
+        foreach($marketingStatus as $v) {
+            $this->addMarketingStatus($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1635,6 +1776,32 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->packagedMedicinalProduct[] = $packagedMedicinalProduct;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Package type for the product. See also the PackagedProductDefinition resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$packagedMedicinalProduct
+     * @return static
+     */
+    public function setPackagedMedicinalProduct(FHIRCodeableConcept ...$packagedMedicinalProduct): self
+    {
+        if ([] !== $this->packagedMedicinalProduct) {
+            $this->_trackValuesRemoved(count($this->packagedMedicinalProduct));
+            $this->packagedMedicinalProduct = [];
+        }
+        if ([] === $packagedMedicinalProduct) {
+            return $this;
+        }
+        foreach($packagedMedicinalProduct as $v) {
+            $this->addPackagedMedicinalProduct($v);
+        }
         return $this;
     }
 
@@ -1675,6 +1842,34 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->comprisedOf[] = $comprisedOf;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Types of medicinal manufactured items and/or devices that this product consists
+     * of, such as tablets, capsule, or syringes. Used as a direct link when the item's
+     * packaging is not being recorded (see also
+     * PackagedProductDefinition.package.containedItem.item).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$comprisedOf
+     * @return static
+     */
+    public function setComprisedOf(FHIRReference ...$comprisedOf): self
+    {
+        if ([] !== $this->comprisedOf) {
+            $this->_trackValuesRemoved(count($this->comprisedOf));
+            $this->comprisedOf = [];
+        }
+        if ([] === $comprisedOf) {
+            return $this;
+        }
+        foreach($comprisedOf as $v) {
+            $this->addComprisedOf($v);
+        }
         return $this;
     }
 
@@ -1725,6 +1920,37 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The ingredients of this medicinal product - when not detailed in other
+     * resources. This is only needed if the ingredients are not specified by incoming
+     * references from the Ingredient resource, or indirectly via incoming
+     * AdministrableProductDefinition, PackagedProductDefinition or
+     * ManufacturedItemDefinition references. In cases where those levels of detail are
+     * not used, the ingredients may be specified directly here as codes.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$ingredient
+     * @return static
+     */
+    public function setIngredient(FHIRCodeableConcept ...$ingredient): self
+    {
+        if ([] !== $this->ingredient) {
+            $this->_trackValuesRemoved(count($this->ingredient));
+            $this->ingredient = [];
+        }
+        if ([] === $ingredient) {
+            return $this;
+        }
+        foreach($ingredient as $v) {
+            $this->addIngredient($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
      * If the element is present, it must have a value for at least one of the defined
@@ -1767,6 +1993,35 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Any component of the drug product which is not the chemical entity defined as
+     * the drug substance, or an excipient in the drug product. This includes
+     * process-related impurities and contaminants, product-related impurities
+     * including degradation products.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$impurity
+     * @return static
+     */
+    public function setImpurity(FHIRCodeableReference ...$impurity): self
+    {
+        if ([] !== $this->impurity) {
+            $this->_trackValuesRemoved(count($this->impurity));
+            $this->impurity = [];
+        }
+        if ([] === $impurity) {
+            return $this;
+        }
+        foreach($impurity as $v) {
+            $this->addImpurity($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1797,6 +2052,31 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->attachedDocument[] = $attachedDocument;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional information or supporting documentation about the medicinal product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$attachedDocument
+     * @return static
+     */
+    public function setAttachedDocument(FHIRReference ...$attachedDocument): self
+    {
+        if ([] !== $this->attachedDocument) {
+            $this->_trackValuesRemoved(count($this->attachedDocument));
+            $this->attachedDocument = [];
+        }
+        if ([] === $attachedDocument) {
+            return $this;
+        }
+        foreach($attachedDocument as $v) {
+            $this->addAttachedDocument($v);
+        }
         return $this;
     }
 
@@ -1843,6 +2123,35 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A master file for the medicinal product (e.g. Pharmacovigilance System Master
+     * File). Drug master files (DMFs) are documents submitted to regulatory agencies
+     * to provide confidential detailed information about facilities, processes or
+     * articles used in the manufacturing, processing, packaging and storing of drug
+     * products.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$masterFile
+     * @return static
+     */
+    public function setMasterFile(FHIRReference ...$masterFile): self
+    {
+        if ([] !== $this->masterFile) {
+            $this->_trackValuesRemoved(count($this->masterFile));
+            $this->masterFile = [];
+        }
+        if ([] === $masterFile) {
+            return $this;
+        }
+        foreach($masterFile as $v) {
+            $this->addMasterFile($v);
+        }
+        return $this;
+    }
+
+    /**
      * A medicinal product, being a substance or combination of substances that is
      * intended to treat, prevent or diagnose a disease, or to restore, correct or
      * modify physiological functions by exerting a pharmacological, immunological or
@@ -1883,6 +2192,34 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * A medicinal product, being a substance or combination of substances that is
+     * intended to treat, prevent or diagnose a disease, or to restore, correct or
+     * modify physiological functions by exerting a pharmacological, immunological or
+     * metabolic action. This resource is intended to define and detail such products
+     * and their properties, for uses other than direct patient care (e.g. regulatory
+     * use, or drug catalogs).
+     *
+     * A product specific contact, person (in a role), or an organization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionContact ...$contact
+     * @return static
+     */
+    public function setContact(FHIRMedicinalProductDefinitionContact ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1913,6 +2250,31 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->clinicalTrial[] = $clinicalTrial;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Clinical trials or studies that this product is involved in.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$clinicalTrial
+     * @return static
+     */
+    public function setClinicalTrial(FHIRReference ...$clinicalTrial): self
+    {
+        if ([] !== $this->clinicalTrial) {
+            $this->_trackValuesRemoved(count($this->clinicalTrial));
+            $this->clinicalTrial = [];
+        }
+        if ([] === $clinicalTrial) {
+            return $this;
+        }
+        foreach($clinicalTrial as $v) {
+            $this->addClinicalTrial($v);
+        }
         return $this;
     }
 
@@ -1961,6 +2323,36 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code that this product is known by, usually within some formal terminology,
+     * perhaps assigned by a third party (i.e. not the manufacturer or regulator).
+     * Products (types of medications) tend to be known by identifiers during
+     * development and within regulatory process. However when they are prescribed they
+     * tend to be identified by codes. The same product may be have multiple codes,
+     * applied to it by multiple organizations.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCoding ...$code
+     * @return static
+     */
+    public function setCode(FHIRCoding ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
+        return $this;
+    }
+
+    /**
      * A medicinal product, being a substance or combination of substances that is
      * intended to treat, prevent or diagnose a disease, or to restore, correct or
      * modify physiological functions by exerting a pharmacological, immunological or
@@ -1997,6 +2389,34 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->name[] = $name;
+        return $this;
+    }
+
+    /**
+     * A medicinal product, being a substance or combination of substances that is
+     * intended to treat, prevent or diagnose a disease, or to restore, correct or
+     * modify physiological functions by exerting a pharmacological, immunological or
+     * metabolic action. This resource is intended to define and detail such products
+     * and their properties, for uses other than direct patient care (e.g. regulatory
+     * use, or drug catalogs).
+     *
+     * The product's name, including full name and possibly coded parts.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionName ...$name
+     * @return static
+     */
+    public function setName(FHIRMedicinalProductDefinitionName ...$name): self
+    {
+        if ([] !== $this->name) {
+            $this->_trackValuesRemoved(count($this->name));
+            $this->name = [];
+        }
+        if ([] === $name) {
+            return $this;
+        }
+        foreach($name as $v) {
+            $this->addName($v);
+        }
         return $this;
     }
 
@@ -2050,6 +2470,35 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * and their properties, for uses other than direct patient care (e.g. regulatory
      * use, or drug catalogs).
      *
+     * Reference to another product, e.g. for linking authorised to investigational
+     * product, or a virtual product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionCrossReference ...$crossReference
+     * @return static
+     */
+    public function setCrossReference(FHIRMedicinalProductDefinitionCrossReference ...$crossReference): self
+    {
+        if ([] !== $this->crossReference) {
+            $this->_trackValuesRemoved(count($this->crossReference));
+            $this->crossReference = [];
+        }
+        if ([] === $crossReference) {
+            return $this;
+        }
+        foreach($crossReference as $v) {
+            $this->addCrossReference($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A medicinal product, being a substance or combination of substances that is
+     * intended to treat, prevent or diagnose a disease, or to restore, correct or
+     * modify physiological functions by exerting a pharmacological, immunological or
+     * metabolic action. This resource is intended to define and detail such products
+     * and their properties, for uses other than direct patient care (e.g. regulatory
+     * use, or drug catalogs).
+     *
      * A manufacturing or administrative process or step associated with (or performed
      * on) the medicinal product.
      *
@@ -2092,6 +2541,35 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
      * and their properties, for uses other than direct patient care (e.g. regulatory
      * use, or drug catalogs).
      *
+     * A manufacturing or administrative process or step associated with (or performed
+     * on) the medicinal product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionOperation ...$operation
+     * @return static
+     */
+    public function setOperation(FHIRMedicinalProductDefinitionOperation ...$operation): self
+    {
+        if ([] !== $this->operation) {
+            $this->_trackValuesRemoved(count($this->operation));
+            $this->operation = [];
+        }
+        if ([] === $operation) {
+            return $this;
+        }
+        foreach($operation as $v) {
+            $this->addOperation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A medicinal product, being a substance or combination of substances that is
+     * intended to treat, prevent or diagnose a disease, or to restore, correct or
+     * modify physiological functions by exerting a pharmacological, immunological or
+     * metabolic action. This resource is intended to define and detail such products
+     * and their properties, for uses other than direct patient care (e.g. regulatory
+     * use, or drug catalogs).
+     *
      * Allows the key product features to be recorded, such as "sugar free", "modified
      * release", "parallel import".
      *
@@ -2123,6 +2601,35 @@ class FHIRMedicinalProductDefinition extends FHIRDomainResource implements PHPFH
         }
         $this->_trackValueAdded();
         $this->characteristic[] = $characteristic;
+        return $this;
+    }
+
+    /**
+     * A medicinal product, being a substance or combination of substances that is
+     * intended to treat, prevent or diagnose a disease, or to restore, correct or
+     * modify physiological functions by exerting a pharmacological, immunological or
+     * metabolic action. This resource is intended to define and detail such products
+     * and their properties, for uses other than direct patient care (e.g. regulatory
+     * use, or drug catalogs).
+     *
+     * Allows the key product features to be recorded, such as "sugar free", "modified
+     * release", "parallel import".
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionCharacteristic ...$characteristic
+     * @return static
+     */
+    public function setCharacteristic(FHIRMedicinalProductDefinitionCharacteristic ...$characteristic): self
+    {
+        if ([] !== $this->characteristic) {
+            $this->_trackValuesRemoved(count($this->characteristic));
+            $this->characteristic = [];
+        }
+        if ([] === $characteristic) {
+            return $this;
+        }
+        foreach($characteristic as $v) {
+            $this->addCharacteristic($v);
+        }
         return $this;
     }
 

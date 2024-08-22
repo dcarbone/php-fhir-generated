@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -366,6 +366,24 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
      */
     private const _VALIDATION_RULES = [
         self::FIELD_AUTHOR => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_INDEXED => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_MASTER_IDENTIFIER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_MIME_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SUBJECT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -801,6 +819,32 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Other identifiers associated with the document, including version independent,
+     * source record and workflow related identifiers.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -947,6 +991,31 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->author[] = $author;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies who is responsible for adding the information to the document.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$author
+     * @return static
+     */
+    public function setAuthor(FHIRResourceReference ...$author): self
+    {
+        if ([] !== $this->author) {
+            $this->_trackValuesRemoved(count($this->author));
+            $this->author = [];
+        }
+        if ([] === $author) {
+            return $this;
+        }
+        foreach($author as $v) {
+            $this->addAuthor($v);
+        }
         return $this;
     }
 
@@ -1238,6 +1307,30 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
     }
 
     /**
+     * A reference to a document.
+     *
+     * Relationships that this document has with other document references that already
+     * exist.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRDocumentReference\FHIRDocumentReferenceRelatesTo ...$relatesTo
+     * @return static
+     */
+    public function setRelatesTo(FHIRDocumentReferenceRelatesTo ...$relatesTo): self
+    {
+        if ([] !== $this->relatesTo) {
+            $this->_trackValuesRemoved(count($this->relatesTo));
+            $this->relatesTo = [];
+        }
+        if ([] === $relatesTo) {
+            return $this;
+        }
+        foreach($relatesTo as $v) {
+            $this->addRelatesTo($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -1309,6 +1402,32 @@ class FHIRDocumentReference extends FHIRResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->confidentiality[] = $confidentiality;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code specifying the level of confidentiality of the XDS Document.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept ...$confidentiality
+     * @return static
+     */
+    public function setConfidentiality(FHIRCodeableConcept ...$confidentiality): self
+    {
+        if ([] !== $this->confidentiality) {
+            $this->_trackValuesRemoved(count($this->confidentiality));
+            $this->confidentiality = [];
+        }
+        if ([] === $confidentiality) {
+            return $this;
+        }
+        foreach($confidentiality as $v) {
+            $this->addConfidentiality($v);
+        }
         return $this;
     }
 

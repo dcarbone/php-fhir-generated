@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -225,7 +225,17 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
      * Validation map for fields in type ResearchSubject
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STUDY => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SUBJECT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -412,6 +422,32 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifiers assigned to this research subject for a study.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The publication state of the resource (not of the subject).
@@ -472,6 +508,31 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
         }
         $this->_trackValueAdded();
         $this->progress[] = $progress;
+        return $this;
+    }
+
+    /**
+     * A ResearchSubject is a participant or object which is the recipient of
+     * investigative activities in a research study.
+     *
+     * The current state (status) of the subject and resons for status change where
+     * appropriate.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchSubject\FHIRResearchSubjectProgress ...$progress
+     * @return static
+     */
+    public function setProgress(FHIRResearchSubjectProgress ...$progress): self
+    {
+        if ([] !== $this->progress) {
+            $this->_trackValuesRemoved(count($this->progress));
+            $this->progress = [];
+        }
+        if ([] === $progress) {
+            return $this;
+        }
+        foreach($progress as $v) {
+            $this->addProgress($v);
+        }
         return $this;
     }
 
@@ -702,6 +763,31 @@ class FHIRResearchSubject extends FHIRDomainResource implements PHPFHIRContained
         }
         $this->_trackValueAdded();
         $this->consent[] = $consent;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A record of the patient's informed agreement to participate in the study.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$consent
+     * @return static
+     */
+    public function setConsent(FHIRReference ...$consent): self
+    {
+        if ([] !== $this->consent) {
+            $this->_trackValuesRemoved(count($this->consent));
+            $this->consent = [];
+        }
+        if ([] === $consent) {
+            return $this;
+        }
+        foreach($consent as $v) {
+            $this->addConsent($v);
+        }
         return $this;
     }
 

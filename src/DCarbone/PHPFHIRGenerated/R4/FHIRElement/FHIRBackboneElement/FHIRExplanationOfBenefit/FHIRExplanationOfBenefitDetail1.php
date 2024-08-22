@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExpla
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -203,7 +203,11 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      * Validation map for fields in type ExplanationOfBenefit.Detail1
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PRODUCT_OR_SERVICE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -425,6 +429,33 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->modifier[] = $modifier;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Item typification or modifiers codes to convey additional context for the
+     * product or service.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$modifier
+     * @return static
+     */
+    public function setModifier(FHIRCodeableConcept ...$modifier): self
+    {
+        if ([] !== $this->modifier) {
+            $this->_trackValuesRemoved(count($this->modifier));
+            $this->modifier = [];
+        }
+        if ([] === $modifier) {
+            return $this;
+        }
+        foreach($modifier as $v) {
+            $this->addModifier($v);
+        }
         return $this;
     }
 
@@ -695,6 +726,31 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
      * processing of a Claim; and optionally account balance information, for informing
      * the subscriber of the benefits provided.
      *
+     * The adjudication results.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication ...$adjudication
+     * @return static
+     */
+    public function setAdjudication(FHIRExplanationOfBenefitAdjudication ...$adjudication): self
+    {
+        if ([] !== $this->adjudication) {
+            $this->_trackValuesRemoved(count($this->adjudication));
+            $this->adjudication = [];
+        }
+        if ([] === $adjudication) {
+            return $this;
+        }
+        foreach($adjudication as $v) {
+            $this->addAdjudication($v);
+        }
+        return $this;
+    }
+
+    /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
      * The third-tier service adjudications for payor added services.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitSubDetail1[]
@@ -721,6 +777,31 @@ class FHIRExplanationOfBenefitDetail1 extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->subDetail[] = $subDetail;
+        return $this;
+    }
+
+    /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
+     * The third-tier service adjudications for payor added services.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitSubDetail1 ...$subDetail
+     * @return static
+     */
+    public function setSubDetail(FHIRExplanationOfBenefitSubDetail1 ...$subDetail): self
+    {
+        if ([] !== $this->subDetail) {
+            $this->_trackValuesRemoved(count($this->subDetail));
+            $this->subDetail = [];
+        }
+        if ([] === $subDetail) {
+            return $this;
+        }
+        foreach($subDetail as $v) {
+            $this->addSubDetail($v);
+        }
         return $this;
     }
 

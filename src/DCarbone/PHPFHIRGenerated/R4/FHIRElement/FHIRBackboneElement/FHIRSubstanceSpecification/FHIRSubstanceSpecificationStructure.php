@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -176,7 +176,7 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * Validation map for fields in type SubstanceSpecification.Structure
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -491,6 +491,31 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
      *
+     * Applicable for single substances that contain a radionuclide or a non-natural
+     * isotopic ratio.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationIsotope ...$isotope
+     * @return static
+     */
+    public function setIsotope(FHIRSubstanceSpecificationIsotope ...$isotope): self
+    {
+        if ([] !== $this->isotope) {
+            $this->_trackValuesRemoved(count($this->isotope));
+            $this->isotope = [];
+        }
+        if ([] === $isotope) {
+            return $this;
+        }
+        foreach($isotope as $v) {
+            $this->addIsotope($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
      * The molecular weight or weight range (for proteins, polymers or nucleic acids).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight
@@ -554,6 +579,31 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Supporting literature.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$source
+     * @return static
+     */
+    public function setSource(FHIRReference ...$source): self
+    {
+        if ([] !== $this->source) {
+            $this->_trackValuesRemoved(count($this->source));
+            $this->source = [];
+        }
+        if ([] === $source) {
+            return $this;
+        }
+        foreach($source as $v) {
+            $this->addSource($v);
+        }
+        return $this;
+    }
+
+    /**
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
      *
@@ -582,6 +632,30 @@ class FHIRSubstanceSpecificationStructure extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->representation[] = $representation;
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
+     * Molecular structural representation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRepresentation ...$representation
+     * @return static
+     */
+    public function setRepresentation(FHIRSubstanceSpecificationRepresentation ...$representation): self
+    {
+        if ([] !== $this->representation) {
+            $this->_trackValuesRemoved(count($this->representation));
+            $this->representation = [];
+        }
+        if ([] === $representation) {
+            return $this;
+        }
+        foreach($representation as $v) {
+            $this->addRepresentation($v);
+        }
         return $this;
     }
 

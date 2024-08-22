@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -294,7 +294,11 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Validation map for fields in type Invoice
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -558,6 +562,33 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifier of this Invoice, often used for reference in correspondence about
+     * this invoice or for tracking of payments.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * Codes identifying the lifecycle stage of an Invoice.
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -816,6 +847,30 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
     }
 
     /**
+     * Invoice containing collected ChargeItems from an Account with calculated
+     * individual and total price for Billing purpose.
+     *
+     * Indicates who or what performed or participated in the charged service.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceParticipant ...$participant
+     * @return static
+     */
+    public function setParticipant(FHIRInvoiceParticipant ...$participant): self
+    {
+        if ([] !== $this->participant) {
+            $this->_trackValuesRemoved(count($this->participant));
+            $this->participant = [];
+        }
+        if ([] === $participant) {
+            return $this;
+        }
+        foreach($participant as $v) {
+            $this->addParticipant($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -921,6 +976,31 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
      * Invoice containing collected ChargeItems from an Account with calculated
      * individual and total price for Billing purpose.
      *
+     * Each line item represents one charge for goods and services rendered. Details
+     * such as date, code and amount are found in the referenced ChargeItem resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoiceLineItem ...$lineItem
+     * @return static
+     */
+    public function setLineItem(FHIRInvoiceLineItem ...$lineItem): self
+    {
+        if ([] !== $this->lineItem) {
+            $this->_trackValuesRemoved(count($this->lineItem));
+            $this->lineItem = [];
+        }
+        if ([] === $lineItem) {
+            return $this;
+        }
+        foreach($lineItem as $v) {
+            $this->addLineItem($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Invoice containing collected ChargeItems from an Account with calculated
+     * individual and total price for Billing purpose.
+     *
      * The total amount for the Invoice may be calculated as the sum of the line items
      * with surcharges/deductions that apply in certain conditions. The priceComponent
      * element can be used to offer transparency to the recipient of the Invoice of how
@@ -952,6 +1032,33 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->totalPriceComponent[] = $totalPriceComponent;
+        return $this;
+    }
+
+    /**
+     * Invoice containing collected ChargeItems from an Account with calculated
+     * individual and total price for Billing purpose.
+     *
+     * The total amount for the Invoice may be calculated as the sum of the line items
+     * with surcharges/deductions that apply in certain conditions. The priceComponent
+     * element can be used to offer transparency to the recipient of the Invoice of how
+     * the total price was calculated.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRInvoice\FHIRInvoicePriceComponent ...$totalPriceComponent
+     * @return static
+     */
+    public function setTotalPriceComponent(FHIRInvoicePriceComponent ...$totalPriceComponent): self
+    {
+        if ([] !== $this->totalPriceComponent) {
+            $this->_trackValuesRemoved(count($this->totalPriceComponent));
+            $this->totalPriceComponent = [];
+        }
+        if ([] === $totalPriceComponent) {
+            return $this;
+        }
+        foreach($totalPriceComponent as $v) {
+            $this->addTotalPriceComponent($v);
+        }
         return $this;
     }
 
@@ -1105,6 +1212,32 @@ class FHIRInvoice extends FHIRDomainResource implements PHPFHIRContainedTypeInte
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Comments made about the invoice by the issuer, subject, or other participants.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 

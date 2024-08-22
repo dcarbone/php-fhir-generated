@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -164,7 +164,7 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * Validation map for fields in type ConceptMap.Target
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -484,6 +484,32 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
      * A statement of relationships from one set of concepts to one or more other
      * concepts - either code systems or data elements, or classes in class models.
      *
+     * A set of additional dependencies for this mapping to hold. This mapping is only
+     * applicable if the specified element can be resolved, and it has the specified
+     * value.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn ...$dependsOn
+     * @return static
+     */
+    public function setDependsOn(FHIRConceptMapDependsOn ...$dependsOn): self
+    {
+        if ([] !== $this->dependsOn) {
+            $this->_trackValuesRemoved(count($this->dependsOn));
+            $this->dependsOn = [];
+        }
+        if ([] === $dependsOn) {
+            return $this;
+        }
+        foreach($dependsOn as $v) {
+            $this->addDependsOn($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A statement of relationships from one set of concepts to one or more other
+     * concepts - either code systems or data elements, or classes in class models.
+     *
      * A set of additional outcomes from this mapping to other elements. To properly
      * execute this mapping, the specified element must be mapped to some data element
      * or source that is in context. The mapping may still be useful without a place
@@ -515,6 +541,33 @@ class FHIRConceptMapTarget extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->product[] = $product;
+        return $this;
+    }
+
+    /**
+     * A statement of relationships from one set of concepts to one or more other
+     * concepts - either code systems or data elements, or classes in class models.
+     *
+     * A set of additional outcomes from this mapping to other elements. To properly
+     * execute this mapping, the specified element must be mapped to some data element
+     * or source that is in context. The mapping may still be useful without a place
+     * for the additional data elements, but the equivalence cannot be relied on.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRConceptMap\FHIRConceptMapDependsOn ...$product
+     * @return static
+     */
+    public function setProduct(FHIRConceptMapDependsOn ...$product): self
+    {
+        if ([] !== $this->product) {
+            $this->_trackValuesRemoved(count($this->product));
+            $this->product = [];
+        }
+        if ([] === $product) {
+            return $this;
+        }
+        foreach($product as $v) {
+            $this->addProduct($v);
+        }
         return $this;
     }
 

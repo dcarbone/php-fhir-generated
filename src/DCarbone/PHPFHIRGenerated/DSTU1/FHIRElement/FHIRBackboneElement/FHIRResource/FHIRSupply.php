@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -156,7 +156,7 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
      * Validation map for fields in type Supply
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -450,6 +450,30 @@ class FHIRSupply extends FHIRResource implements PHPFHIRContainedTypeInterface
         }
         $this->_trackValueAdded();
         $this->dispense[] = $dispense;
+        return $this;
+    }
+
+    /**
+     * A supply - a request for something, and provision of what is supplied.
+     *
+     * Indicates the details of the dispense event such as the days supply and quantity
+     * of a supply dispensed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRSupply\FHIRSupplyDispense ...$dispense
+     * @return static
+     */
+    public function setDispense(FHIRSupplyDispense ...$dispense): self
+    {
+        if ([] !== $this->dispense) {
+            $this->_trackValuesRemoved(count($this->dispense));
+            $this->dispense = [];
+        }
+        if ([] === $dispense) {
+            return $this;
+        }
+        foreach($dispense as $v) {
+            $this->addDispense($v);
+        }
         return $this;
     }
 

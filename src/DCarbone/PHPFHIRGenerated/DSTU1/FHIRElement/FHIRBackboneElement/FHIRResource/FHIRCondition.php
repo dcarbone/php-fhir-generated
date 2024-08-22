@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -334,7 +334,17 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * Validation map for fields in type Condition
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_SUBJECT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -636,6 +646,34 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This records identifiers associated with this condition that are defined by
+     * business processed and/ or used to refer to it when a direct URL reference to
+     * the resource itself is not appropriate (e.g. in CDA documents, or in written /
+     * printed documentation).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -1235,6 +1273,33 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
      * during an Encounter; populating a problem List or a Summary Statement, such as a
      * Discharge Summary.
      *
+     * Supporting Evidence / manifestations that are the basis on which this condition
+     * is suspected or confirmed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionEvidence ...$evidence
+     * @return static
+     */
+    public function setEvidence(FHIRConditionEvidence ...$evidence): self
+    {
+        if ([] !== $this->evidence) {
+            $this->_trackValuesRemoved(count($this->evidence));
+            $this->evidence = [];
+        }
+        if ([] === $evidence) {
+            return $this;
+        }
+        foreach($evidence as $v) {
+            $this->addEvidence($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Use to record detailed information about conditions, problems or diagnoses
+     * recognized by a clinician. There are many uses including: recording a Diagnosis
+     * during an Encounter; populating a problem List or a Summary Statement, such as a
+     * Discharge Summary.
+     *
      * The anatomical location where this condition manifests itself.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionLocation[]
@@ -1262,6 +1327,32 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
         }
         $this->_trackValueAdded();
         $this->location[] = $location;
+        return $this;
+    }
+
+    /**
+     * Use to record detailed information about conditions, problems or diagnoses
+     * recognized by a clinician. There are many uses including: recording a Diagnosis
+     * during an Encounter; populating a problem List or a Summary Statement, such as a
+     * Discharge Summary.
+     *
+     * The anatomical location where this condition manifests itself.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionLocation ...$location
+     * @return static
+     */
+    public function setLocation(FHIRConditionLocation ...$location): self
+    {
+        if ([] !== $this->location) {
+            $this->_trackValuesRemoved(count($this->location));
+            $this->location = [];
+        }
+        if ([] === $location) {
+            return $this;
+        }
+        foreach($location as $v) {
+            $this->addLocation($v);
+        }
         return $this;
     }
 
@@ -1302,6 +1393,34 @@ class FHIRCondition extends FHIRResource implements PHPFHIRContainedTypeInterfac
         }
         $this->_trackValueAdded();
         $this->relatedItem[] = $relatedItem;
+        return $this;
+    }
+
+    /**
+     * Use to record detailed information about conditions, problems or diagnoses
+     * recognized by a clinician. There are many uses including: recording a Diagnosis
+     * during an Encounter; populating a problem List or a Summary Statement, such as a
+     * Discharge Summary.
+     *
+     * Further conditions, problems, diagnoses, procedures or events that are related
+     * in some way to this condition, or the substance that caused/triggered this
+     * Condition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCondition\FHIRConditionRelatedItem ...$relatedItem
+     * @return static
+     */
+    public function setRelatedItem(FHIRConditionRelatedItem ...$relatedItem): self
+    {
+        if ([] !== $this->relatedItem) {
+            $this->_trackValuesRemoved(count($this->relatedItem));
+            $this->relatedItem = [];
+        }
+        if ([] === $relatedItem) {
+            return $this;
+        }
+        foreach($relatedItem as $v) {
+            $this->addRelatedItem($v);
+        }
         return $this;
     }
 

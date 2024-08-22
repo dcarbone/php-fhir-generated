@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCover
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -254,7 +254,7 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
      * Validation map for fields in type CoverageEligibilityResponse.Item
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -564,6 +564,33 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Item typification or modifiers codes to convey additional context for the
+     * product or service.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$modifier
+     * @return static
+     */
+    public function setModifier(FHIRCodeableConcept ...$modifier): self
+    {
+        if ([] !== $this->modifier) {
+            $this->_trackValuesRemoved(count($this->modifier));
+            $this->modifier = [];
+        }
+        if ([] === $modifier) {
+            return $this;
+        }
+        foreach($modifier as $v) {
+            $this->addModifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -859,6 +886,30 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
     }
 
     /**
+     * This resource provides eligibility and plan details from the processing of an
+     * CoverageEligibilityRequest resource.
+     *
+     * Benefits used to date.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCoverageEligibilityResponse\FHIRCoverageEligibilityResponseBenefit ...$benefit
+     * @return static
+     */
+    public function setBenefit(FHIRCoverageEligibilityResponseBenefit ...$benefit): self
+    {
+        if ([] !== $this->benefit) {
+            $this->_trackValuesRemoved(count($this->benefit));
+            $this->benefit = [];
+        }
+        if ([] === $benefit) {
+            return $this;
+        }
+        foreach($benefit as $v) {
+            $this->addBenefit($v);
+        }
+        return $this;
+    }
+
+    /**
      * Value of "true" or "false"
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
@@ -932,6 +983,33 @@ class FHIRCoverageEligibilityResponseItem extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->authorizationSupporting[] = $authorizationSupporting;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Codes or comments regarding information or actions associated with the
+     * preauthorization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$authorizationSupporting
+     * @return static
+     */
+    public function setAuthorizationSupporting(FHIRCodeableConcept ...$authorizationSupporting): self
+    {
+        if ([] !== $this->authorizationSupporting) {
+            $this->_trackValuesRemoved(count($this->authorizationSupporting));
+            $this->authorizationSupporting = [];
+        }
+        if ([] === $authorizationSupporting) {
+            return $this;
+        }
+        foreach($authorizationSupporting as $v) {
+            $this->addAuthorizationSupporting($v);
+        }
         return $this;
     }
 

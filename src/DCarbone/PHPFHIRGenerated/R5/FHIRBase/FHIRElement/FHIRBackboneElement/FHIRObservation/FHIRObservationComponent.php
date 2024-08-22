@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -327,7 +327,11 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * Validation map for fields in type Observation.Component
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1157,6 +1161,33 @@ class FHIRObservationComponent extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A categorical assessment of an observation value. For example, high, low,
+     * normal.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$interpretation
+     * @return static
+     */
+    public function setInterpretation(FHIRCodeableConcept ...$interpretation): self
+    {
+        if ([] !== $this->interpretation) {
+            $this->_trackValuesRemoved(count($this->interpretation));
+            $this->interpretation = [];
+        }
+        if ([] === $interpretation) {
+            return $this;
+        }
+        foreach($interpretation as $v) {
+            $this->addInterpretation($v);
+        }
+        return $this;
+    }
+
+    /**
      * Measurements and simple assertions made about a patient, device or other
      * subject.
      *
@@ -1187,6 +1218,31 @@ class FHIRObservationComponent extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->referenceRange[] = $referenceRange;
+        return $this;
+    }
+
+    /**
+     * Measurements and simple assertions made about a patient, device or other
+     * subject.
+     *
+     * Guidance on how to interpret the value by comparison to a normal or recommended
+     * range.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange ...$referenceRange
+     * @return static
+     */
+    public function setReferenceRange(FHIRObservationReferenceRange ...$referenceRange): self
+    {
+        if ([] !== $this->referenceRange) {
+            $this->_trackValuesRemoved(count($this->referenceRange));
+            $this->referenceRange = [];
+        }
+        if ([] === $referenceRange) {
+            return $this;
+        }
+        foreach($referenceRange as $v) {
+            $this->addReferenceRange($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -256,7 +256,7 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
      * Validation map for fields in type EvidenceReport.Section
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -577,6 +577,32 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies who is responsible for the information in this section, not
+     * necessarily who typed it in.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$author
+     * @return static
+     */
+    public function setAuthor(FHIRReference ...$author): self
+    {
+        if ([] !== $this->author) {
+            $this->_trackValuesRemoved(count($this->author));
+            $this->author = [];
+        }
+        if ([] === $author) {
+            return $this;
+        }
+        foreach($author as $v) {
+            $this->addAuthor($v);
+        }
+        return $this;
+    }
+
+    /**
      * A human-readable summary of the resource conveying the essential clinical and
      * business information for the resource.
      * If the element is present, it must have a value for at least one of the defined
@@ -727,6 +753,32 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Specifies any type of classification of the evidence report.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$entryClassifier
+     * @return static
+     */
+    public function setEntryClassifier(FHIRCodeableConcept ...$entryClassifier): self
+    {
+        if ([] !== $this->entryClassifier) {
+            $this->_trackValuesRemoved(count($this->entryClassifier));
+            $this->entryClassifier = [];
+        }
+        if ([] === $entryClassifier) {
+            return $this;
+        }
+        foreach($entryClassifier as $v) {
+            $this->addEntryClassifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -759,6 +811,32 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->entryReference[] = $entryReference;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A reference to the actual resource from which the narrative in the section is
+     * derived.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$entryReference
+     * @return static
+     */
+    public function setEntryReference(FHIRReference ...$entryReference): self
+    {
+        if ([] !== $this->entryReference) {
+            $this->_trackValuesRemoved(count($this->entryReference));
+            $this->entryReference = [];
+        }
+        if ([] === $entryReference) {
+            return $this;
+        }
+        foreach($entryReference as $v) {
+            $this->addEntryReference($v);
+        }
         return $this;
     }
 
@@ -797,6 +875,33 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->entryQuantity[] = $entryQuantity;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Quantity as content.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity ...$entryQuantity
+     * @return static
+     */
+    public function setEntryQuantity(FHIRQuantity ...$entryQuantity): self
+    {
+        if ([] !== $this->entryQuantity) {
+            $this->_trackValuesRemoved(count($this->entryQuantity));
+            $this->entryQuantity = [];
+        }
+        if ([] === $entryQuantity) {
+            return $this;
+        }
+        foreach($entryQuantity as $v) {
+            $this->addEntryQuantity($v);
+        }
         return $this;
     }
 
@@ -869,6 +974,31 @@ class FHIREvidenceReportSection extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->section[] = $section;
+        return $this;
+    }
+
+    /**
+     * The EvidenceReport Resource is a specialized container for a collection of
+     * resources and codeable concepts, adapted to support compositions of Evidence,
+     * EvidenceVariable, and Citation resources and related concepts.
+     *
+     * A nested sub-section within this section.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIREvidenceReport\FHIREvidenceReportSection ...$section
+     * @return static
+     */
+    public function setSection(FHIREvidenceReportSection ...$section): self
+    {
+        if ([] !== $this->section) {
+            $this->_trackValuesRemoved(count($this->section));
+            $this->section = [];
+        }
+        if ([] === $section) {
+            return $this;
+        }
+        foreach($section as $v) {
+            $this->addSection($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -280,7 +280,7 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      * Validation map for fields in type ClaimResponse.Detail1
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -509,6 +509,33 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Trace number for tracking purposes. May be defined at the jurisdiction level or
+     * between trading partners.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$traceNumber
+     * @return static
+     */
+    public function setTraceNumber(FHIRIdentifier ...$traceNumber): self
+    {
+        if ([] !== $this->traceNumber) {
+            $this->_trackValuesRemoved(count($this->traceNumber));
+            $this->traceNumber = [];
+        }
+        if ([] === $traceNumber) {
+            return $this;
+        }
+        foreach($traceNumber as $v) {
+            $this->addTraceNumber($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -667,6 +694,33 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->modifier[] = $modifier;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Item typification or modifiers codes to convey additional context for the
+     * product or service.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$modifier
+     * @return static
+     */
+    public function setModifier(FHIRCodeableConcept ...$modifier): self
+    {
+        if ([] !== $this->modifier) {
+            $this->_trackValuesRemoved(count($this->modifier));
+            $this->modifier = [];
+        }
+        if ([] === $modifier) {
+            return $this;
+        }
+        foreach($modifier as $v) {
+            $this->addModifier($v);
+        }
         return $this;
     }
 
@@ -1000,6 +1054,30 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
      * This resource provides the adjudication details from the processing of a Claim
      * resource.
      *
+     * The adjudication results.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseAdjudication ...$adjudication
+     * @return static
+     */
+    public function setAdjudication(FHIRClaimResponseAdjudication ...$adjudication): self
+    {
+        if ([] !== $this->adjudication) {
+            $this->_trackValuesRemoved(count($this->adjudication));
+            $this->adjudication = [];
+        }
+        if ([] === $adjudication) {
+            return $this;
+        }
+        foreach($adjudication as $v) {
+            $this->addAdjudication($v);
+        }
+        return $this;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
      * The third-tier service adjudications for payor added services.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail1[]
@@ -1025,6 +1103,30 @@ class FHIRClaimResponseDetail1 extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->subDetail[] = $subDetail;
+        return $this;
+    }
+
+    /**
+     * This resource provides the adjudication details from the processing of a Claim
+     * resource.
+     *
+     * The third-tier service adjudications for payor added services.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRClaimResponse\FHIRClaimResponseSubDetail1 ...$subDetail
+     * @return static
+     */
+    public function setSubDetail(FHIRClaimResponseSubDetail1 ...$subDetail): self
+    {
+        if ([] !== $this->subDetail) {
+            $this->_trackValuesRemoved(count($this->subDetail));
+            $this->subDetail = [];
+        }
+        if ([] === $subDetail) {
+            return $this;
+        }
+        foreach($subDetail as $v) {
+            $this->addSubDetail($v);
+        }
         return $this;
     }
 

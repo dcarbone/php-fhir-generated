@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -164,7 +164,11 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
      * Validation map for fields in type MedicinalProductDefinition.Name
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PRODUCT_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -366,6 +370,34 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
      * and their properties, for uses other than direct patient care (e.g. regulatory
      * use, or drug catalogs).
      *
+     * Coding words or phrases of the name.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionPart ...$part
+     * @return static
+     */
+    public function setPart(FHIRMedicinalProductDefinitionPart ...$part): self
+    {
+        if ([] !== $this->part) {
+            $this->_trackValuesRemoved(count($this->part));
+            $this->part = [];
+        }
+        if ([] === $part) {
+            return $this;
+        }
+        foreach($part as $v) {
+            $this->addPart($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A medicinal product, being a substance or combination of substances that is
+     * intended to treat, prevent or diagnose a disease, or to restore, correct or
+     * modify physiological functions by exerting a pharmacological, immunological or
+     * metabolic action. This resource is intended to define and detail such products
+     * and their properties, for uses other than direct patient care (e.g. regulatory
+     * use, or drug catalogs).
+     *
      * Country and jurisdiction where the name applies, and associated language.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionUsage[]
@@ -395,6 +427,34 @@ class FHIRMedicinalProductDefinitionName extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->usage[] = $usage;
+        return $this;
+    }
+
+    /**
+     * A medicinal product, being a substance or combination of substances that is
+     * intended to treat, prevent or diagnose a disease, or to restore, correct or
+     * modify physiological functions by exerting a pharmacological, immunological or
+     * metabolic action. This resource is intended to define and detail such products
+     * and their properties, for uses other than direct patient care (e.g. regulatory
+     * use, or drug catalogs).
+     *
+     * Country and jurisdiction where the name applies, and associated language.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductDefinition\FHIRMedicinalProductDefinitionUsage ...$usage
+     * @return static
+     */
+    public function setUsage(FHIRMedicinalProductDefinitionUsage ...$usage): self
+    {
+        if ([] !== $this->usage) {
+            $this->_trackValuesRemoved(count($this->usage));
+            $this->usage = [];
+        }
+        if ([] === $usage) {
+            return $this;
+        }
+        foreach($usage as $v) {
+            $this->addUsage($v);
+        }
         return $this;
     }
 

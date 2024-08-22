@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -302,7 +302,7 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * Validation map for fields in type SubstanceSpecification
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -762,6 +762,31 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Supporting literature.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRReference ...$source
+     * @return static
+     */
+    public function setSource(FHIRReference ...$source): self
+    {
+        if ([] !== $this->source) {
+            $this->_trackValuesRemoved(count($this->source));
+            $this->source = [];
+        }
+        if ([] === $source) {
+            return $this;
+        }
+        foreach($source as $v) {
+            $this->addSource($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -836,6 +861,30 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
      *
+     * Moiety, for structural modifications.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMoiety ...$moiety
+     * @return static
+     */
+    public function setMoiety(FHIRSubstanceSpecificationMoiety ...$moiety): self
+    {
+        if ([] !== $this->moiety) {
+            $this->_trackValuesRemoved(count($this->moiety));
+            $this->moiety = [];
+        }
+        if ([] === $moiety) {
+            return $this;
+        }
+        foreach($moiety as $v) {
+            $this->addMoiety($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
      * General specifications for this substance, including how it is related to other
      * substances.
      *
@@ -863,6 +912,31 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
         }
         $this->_trackValueAdded();
         $this->property[] = $property;
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
+     * General specifications for this substance, including how it is related to other
+     * substances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationProperty ...$property
+     * @return static
+     */
+    public function setProperty(FHIRSubstanceSpecificationProperty ...$property): self
+    {
+        if ([] !== $this->property) {
+            $this->_trackValuesRemoved(count($this->property));
+            $this->property = [];
+        }
+        if ([] === $property) {
+            return $this;
+        }
+        foreach($property as $v) {
+            $this->addProperty($v);
+        }
         return $this;
     }
 
@@ -968,6 +1042,30 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
      *
+     * Codes associated with the substance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationCode ...$code
+     * @return static
+     */
+    public function setCode(FHIRSubstanceSpecificationCode ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
      * Names applicable to this substance.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName[]
@@ -993,6 +1091,30 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
         }
         $this->_trackValueAdded();
         $this->name[] = $name;
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
+     * Names applicable to this substance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationName ...$name
+     * @return static
+     */
+    public function setName(FHIRSubstanceSpecificationName ...$name): self
+    {
+        if ([] !== $this->name) {
+            $this->_trackValuesRemoved(count($this->name));
+            $this->name = [];
+        }
+        if ([] === $name) {
+            return $this;
+        }
+        foreach($name as $v) {
+            $this->addName($v);
+        }
         return $this;
     }
 
@@ -1032,6 +1154,30 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
      * The detailed description of a substance, typically at a level beyond what is
      * used for prescribing.
      *
+     * The molecular weight or weight range (for proteins, polymers or nucleic acids).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationMolecularWeight ...$molecularWeight
+     * @return static
+     */
+    public function setMolecularWeight(FHIRSubstanceSpecificationMolecularWeight ...$molecularWeight): self
+    {
+        if ([] !== $this->molecularWeight) {
+            $this->_trackValuesRemoved(count($this->molecularWeight));
+            $this->molecularWeight = [];
+        }
+        if ([] === $molecularWeight) {
+            return $this;
+        }
+        foreach($molecularWeight as $v) {
+            $this->addMolecularWeight($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
      * A link between this substance and another, with details of the relationship.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship[]
@@ -1057,6 +1203,30 @@ class FHIRSubstanceSpecification extends FHIRDomainResource implements PHPFHIRCo
         }
         $this->_trackValueAdded();
         $this->relationship[] = $relationship;
+        return $this;
+    }
+
+    /**
+     * The detailed description of a substance, typically at a level beyond what is
+     * used for prescribing.
+     *
+     * A link between this substance and another, with details of the relationship.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSpecification\FHIRSubstanceSpecificationRelationship ...$relationship
+     * @return static
+     */
+    public function setRelationship(FHIRSubstanceSpecificationRelationship ...$relationship): self
+    {
+        if ([] !== $this->relationship) {
+            $this->_trackValuesRemoved(count($this->relationship));
+            $this->relationship = [];
+        }
+        if ([] === $relationship) {
+            return $this;
+        }
+        foreach($relationship as $v) {
+            $this->addRelationship($v);
+        }
         return $this;
     }
 

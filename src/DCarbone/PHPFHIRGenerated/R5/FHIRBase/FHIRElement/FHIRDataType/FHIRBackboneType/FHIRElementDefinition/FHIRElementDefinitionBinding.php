@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBac
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -166,7 +166,11 @@ class FHIRElementDefinitionBinding extends FHIRBackboneType
      * Validation map for fields in type ElementDefinition.Binding
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STRENGTH => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -414,6 +418,33 @@ class FHIRElementDefinitionBinding extends FHIRBackboneType
         }
         $this->_trackValueAdded();
         $this->additional[] = $additional;
+        return $this;
+    }
+
+    /**
+     * Captures constraints on each element within the resource, profile, or extension.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional bindings that help applications implementing this element. Additional
+     * bindings do not replace the main binding but provide more information and/or
+     * context.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRElementDefinition\FHIRElementDefinitionAdditional ...$additional
+     * @return static
+     */
+    public function setAdditional(FHIRElementDefinitionAdditional ...$additional): self
+    {
+        if ([] !== $this->additional) {
+            $this->_trackValuesRemoved(count($this->additional));
+            $this->additional = [];
+        }
+        if ([] === $additional) {
+            return $this;
+        }
+        foreach($additional as $v) {
+            $this->addAdditional($v);
+        }
         return $this;
     }
 

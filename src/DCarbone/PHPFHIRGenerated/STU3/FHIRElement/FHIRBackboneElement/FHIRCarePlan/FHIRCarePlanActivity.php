@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCar
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -154,7 +154,7 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * Validation map for fields in type CarePlan.Activity
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -279,6 +279,34 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the outcome at the point when the status of the activity is assessed.
+     * For example, the outcome of an education activity could be patient understands
+     * (or not).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$outcomeCodeableConcept
+     * @return static
+     */
+    public function setOutcomeCodeableConcept(FHIRCodeableConcept ...$outcomeCodeableConcept): self
+    {
+        if ([] !== $this->outcomeCodeableConcept) {
+            $this->_trackValuesRemoved(count($this->outcomeCodeableConcept));
+            $this->outcomeCodeableConcept = [];
+        }
+        if ([] === $outcomeCodeableConcept) {
+            return $this;
+        }
+        foreach($outcomeCodeableConcept as $v) {
+            $this->addOutcomeCodeableConcept($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -321,6 +349,35 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Details of the outcome or action resulting from the activity. The reference to
+     * an "event" resource, such as Procedure or Encounter or Observation, is the
+     * result/outcome of the activity itself. The activity can be conveyed using
+     * CarePlan.activity.detail OR using the CarePlan.activity.reference (a reference
+     * to a “request” resource).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$outcomeReference
+     * @return static
+     */
+    public function setOutcomeReference(FHIRReference ...$outcomeReference): self
+    {
+        if ([] !== $this->outcomeReference) {
+            $this->_trackValuesRemoved(count($this->outcomeReference));
+            $this->outcomeReference = [];
+        }
+        if ([] === $outcomeReference) {
+            return $this;
+        }
+        foreach($outcomeReference as $v) {
+            $this->addOutcomeReference($v);
+        }
+        return $this;
+    }
+
+    /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
@@ -353,6 +410,32 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->progress[] = $progress;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Notes about the adherence/status/progress of the activity.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation ...$progress
+     * @return static
+     */
+    public function setProgress(FHIRAnnotation ...$progress): self
+    {
+        if ([] !== $this->progress) {
+            $this->_trackValuesRemoved(count($this->progress));
+            $this->progress = [];
+        }
+        if ([] === $progress) {
+            return $this;
+        }
+        foreach($progress as $v) {
+            $this->addProgress($v);
+        }
         return $this;
     }
 

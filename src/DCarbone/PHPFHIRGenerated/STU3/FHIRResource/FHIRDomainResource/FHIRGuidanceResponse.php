@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -295,7 +295,14 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
      * Validation map for fields in type GuidanceResponse
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_MODULE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -918,6 +925,32 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
     }
 
     /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Provides a mechanism to communicate additional information about the response.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -952,6 +985,33 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->evaluationMessage[] = $evaluationMessage;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Messages resulting from the evaluation of the artifact or artifacts. As part of
+     * evaluating the request, the engine may produce informational or warning
+     * messages. These messages will be provided by this element.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$evaluationMessage
+     * @return static
+     */
+    public function setEvaluationMessage(FHIRReference ...$evaluationMessage): self
+    {
+        if ([] !== $this->evaluationMessage) {
+            $this->_trackValuesRemoved(count($this->evaluationMessage));
+            $this->evaluationMessage = [];
+        }
+        if ([] === $evaluationMessage) {
+            return $this;
+        }
+        foreach($evaluationMessage as $v) {
+            $this->addEvaluationMessage($v);
+        }
         return $this;
     }
 
@@ -1070,6 +1130,35 @@ class FHIRGuidanceResponse extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->dataRequirement[] = $dataRequirement;
+        return $this;
+    }
+
+    /**
+     * Describes a required data item for evaluation in terms of the type of data, and
+     * optional code or date-based filters of the data.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * If the evaluation could not be completed due to lack of information, or
+     * additional information would potentially result in a more accurate response,
+     * this element will a description of the data required in order to proceed with
+     * the evaluation. A subsequent request to the service should include this data.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRDataRequirement ...$dataRequirement
+     * @return static
+     */
+    public function setDataRequirement(FHIRDataRequirement ...$dataRequirement): self
+    {
+        if ([] !== $this->dataRequirement) {
+            $this->_trackValuesRemoved(count($this->dataRequirement));
+            $this->dataRequirement = [];
+        }
+        if ([] === $dataRequirement) {
+            return $this;
+        }
+        foreach($dataRequirement as $v) {
+            $this->addDataRequirement($v);
+        }
         return $this;
     }
 

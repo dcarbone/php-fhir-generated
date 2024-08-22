@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -224,7 +224,7 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
      * Validation map for fields in type SubstanceSourceMaterial.Organism
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -569,6 +569,41 @@ class FHIRSubstanceSourceMaterialOrganism extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->author[] = $author;
+        return $this;
+    }
+
+    /**
+     * Source material shall capture information on the taxonomic and anatomical
+     * origins as well as the fraction of a material that can result in or can be
+     * modified to form a substance. This set of data elements shall be used to define
+     * polymer substances isolated from biological matrices. Taxonomic and anatomical
+     * origins shall be described using a controlled vocabulary as required. This
+     * information is captured for naturally derived polymers ( . starch) and
+     * structurally diverse substances. For Organisms belonging to the Kingdom Plantae
+     * the Substance level defines the fresh material of a single species or
+     * infraspecies, the Herbal Drug and the Herbal preparation. For Herbal
+     * preparations, the fraction information will be captured at the Substance
+     * information level and additional information for herbal extracts will be
+     * captured at the Specified Substance Group 1 information level. See for further
+     * explanation the Substance Class: Structurally Diverse and the herbal annex.
+     *
+     * 4.9.13.6.1 Author type (Conditional).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceSourceMaterial\FHIRSubstanceSourceMaterialAuthor ...$author
+     * @return static
+     */
+    public function setAuthor(FHIRSubstanceSourceMaterialAuthor ...$author): self
+    {
+        if ([] !== $this->author) {
+            $this->_trackValuesRemoved(count($this->author));
+            $this->author = [];
+        }
+        if ([] === $author) {
+            return $this;
+        }
+        foreach($author as $v) {
+            $this->addAuthor($v);
+        }
         return $this;
     }
 

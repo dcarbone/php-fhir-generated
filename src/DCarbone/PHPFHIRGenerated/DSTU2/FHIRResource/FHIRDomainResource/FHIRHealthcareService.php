@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -353,7 +353,11 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * Validation map for fields in type HealthcareService
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_LOCATION => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -742,6 +746,31 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * External identifiers for this item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -838,6 +867,29 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->serviceType[] = $serviceType;
+        return $this;
+    }
+
+    /**
+     * The details of a healthcare service available at a location.
+     *
+     * A specific type of service that may be delivered or performed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceServiceType ...$serviceType
+     * @return static
+     */
+    public function setServiceType(FHIRHealthcareServiceServiceType ...$serviceType): self
+    {
+        if ([] !== $this->serviceType) {
+            $this->_trackValuesRemoved(count($this->serviceType));
+            $this->serviceType = [];
+        }
+        if ([] === $serviceType) {
+            return $this;
+        }
+        foreach($serviceType as $v) {
+            $this->addServiceType($v);
+        }
         return $this;
     }
 
@@ -1071,6 +1123,32 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     }
 
     /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * List of contacts related to this specific healthcare service.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRContactPoint ...$telecom
+     * @return static
+     */
+    public function setTelecom(FHIRContactPoint ...$telecom): self
+    {
+        if ([] !== $this->telecom) {
+            $this->_trackValuesRemoved(count($this->telecom));
+            $this->telecom = [];
+        }
+        if ([] === $telecom) {
+            return $this;
+        }
+        foreach($telecom as $v) {
+            $this->addTelecom($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1103,6 +1181,32 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->coverageArea[] = $coverageArea;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The location(s) that this service is available to (not where the service is
+     * provided).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRReference ...$coverageArea
+     * @return static
+     */
+    public function setCoverageArea(FHIRReference ...$coverageArea): self
+    {
+        if ([] !== $this->coverageArea) {
+            $this->_trackValuesRemoved(count($this->coverageArea));
+            $this->coverageArea = [];
+        }
+        if ([] === $coverageArea) {
+            return $this;
+        }
+        foreach($coverageArea as $v) {
+            $this->addCoverageArea($v);
+        }
         return $this;
     }
 
@@ -1141,6 +1245,33 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->serviceProvisionCode[] = $serviceProvisionCode;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The code(s) that detail the conditions under which the healthcare service is
+     * available/offered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$serviceProvisionCode
+     * @return static
+     */
+    public function setServiceProvisionCode(FHIRCodeableConcept ...$serviceProvisionCode): self
+    {
+        if ([] !== $this->serviceProvisionCode) {
+            $this->_trackValuesRemoved(count($this->serviceProvisionCode));
+            $this->serviceProvisionCode = [];
+        }
+        if ([] === $serviceProvisionCode) {
+            return $this;
+        }
+        foreach($serviceProvisionCode as $v) {
+            $this->addServiceProvisionCode($v);
+        }
         return $this;
     }
 
@@ -1333,6 +1464,32 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Collection of characteristics (attributes).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$characteristic
+     * @return static
+     */
+    public function setCharacteristic(FHIRCodeableConcept ...$characteristic): self
+    {
+        if ([] !== $this->characteristic) {
+            $this->_trackValuesRemoved(count($this->characteristic));
+            $this->characteristic = [];
+        }
+        if ([] === $characteristic) {
+            return $this;
+        }
+        foreach($characteristic as $v) {
+            $this->addCharacteristic($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Ways that the service accepts referrals, if this is not provided then it is
      * implied that no referral is required.
      *
@@ -1362,6 +1519,33 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->referralMethod[] = $referralMethod;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Ways that the service accepts referrals, if this is not provided then it is
+     * implied that no referral is required.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRCodeableConcept ...$referralMethod
+     * @return static
+     */
+    public function setReferralMethod(FHIRCodeableConcept ...$referralMethod): self
+    {
+        if ([] !== $this->referralMethod) {
+            $this->_trackValuesRemoved(count($this->referralMethod));
+            $this->referralMethod = [];
+        }
+        if ([] === $referralMethod) {
+            return $this;
+        }
+        foreach($referralMethod as $v) {
+            $this->addReferralMethod($v);
+        }
         return $this;
     }
 
@@ -1482,6 +1666,29 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
     /**
      * The details of a healthcare service available at a location.
      *
+     * A collection of times that the Service Site is available.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceAvailableTime ...$availableTime
+     * @return static
+     */
+    public function setAvailableTime(FHIRHealthcareServiceAvailableTime ...$availableTime): self
+    {
+        if ([] !== $this->availableTime) {
+            $this->_trackValuesRemoved(count($this->availableTime));
+            $this->availableTime = [];
+        }
+        if ([] === $availableTime) {
+            return $this;
+        }
+        foreach($availableTime as $v) {
+            $this->addAvailableTime($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The details of a healthcare service available at a location.
+     *
      * The HealthcareService is not available during this period of time due to the
      * provided reason.
      *
@@ -1508,6 +1715,30 @@ class FHIRHealthcareService extends FHIRDomainResource implements PHPFHIRContain
         }
         $this->_trackValueAdded();
         $this->notAvailable[] = $notAvailable;
+        return $this;
+    }
+
+    /**
+     * The details of a healthcare service available at a location.
+     *
+     * The HealthcareService is not available during this period of time due to the
+     * provided reason.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRHealthcareService\FHIRHealthcareServiceNotAvailable ...$notAvailable
+     * @return static
+     */
+    public function setNotAvailable(FHIRHealthcareServiceNotAvailable ...$notAvailable): self
+    {
+        if ([] !== $this->notAvailable) {
+            $this->_trackValuesRemoved(count($this->notAvailable));
+            $this->notAvailable = [];
+        }
+        if ([] === $notAvailable) {
+            return $this;
+        }
+        foreach($notAvailable as $v) {
+            $this->addNotAvailable($v);
+        }
         return $this;
     }
 

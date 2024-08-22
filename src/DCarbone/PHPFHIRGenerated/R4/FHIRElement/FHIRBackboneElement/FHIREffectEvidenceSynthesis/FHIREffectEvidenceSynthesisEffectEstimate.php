@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffec
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -161,7 +161,7 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
      * Validation map for fields in type EffectEvidenceSynthesis.EffectEstimate
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -475,6 +475,31 @@ class FHIREffectEvidenceSynthesisEffectEstimate extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->precisionEstimate[] = $precisionEstimate;
+        return $this;
+    }
+
+    /**
+     * The EffectEvidenceSynthesis resource describes the difference in an outcome
+     * between exposures states in a population where the effect estimate is derived
+     * from a combination of research studies.
+     *
+     * A description of the precision of the estimate for the effect.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIREffectEvidenceSynthesis\FHIREffectEvidenceSynthesisPrecisionEstimate ...$precisionEstimate
+     * @return static
+     */
+    public function setPrecisionEstimate(FHIREffectEvidenceSynthesisPrecisionEstimate ...$precisionEstimate): self
+    {
+        if ([] !== $this->precisionEstimate) {
+            $this->_trackValuesRemoved(count($this->precisionEstimate));
+            $this->precisionEstimate = [];
+        }
+        if ([] === $precisionEstimate) {
+            return $this;
+        }
+        foreach($precisionEstimate as $v) {
+            $this->addPrecisionEstimate($v);
+        }
         return $this;
     }
 

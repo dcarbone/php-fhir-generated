@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -164,7 +164,11 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
      * Validation map for fields in type SubscriptionStatus.NotificationEvent
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_EVENT_NUMBER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -402,6 +406,33 @@ class FHIRSubscriptionStatusNotificationEvent extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->additionalContext[] = $additionalContext;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional context information for this event. Generally, this will contain
+     * references to additional resources included with the event (e.g., the Patient
+     * relevant to an Encounter), however it MAY refer to non-FHIR objects.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$additionalContext
+     * @return static
+     */
+    public function setAdditionalContext(FHIRReference ...$additionalContext): self
+    {
+        if ([] !== $this->additionalContext) {
+            $this->_trackValuesRemoved(count($this->additionalContext));
+            $this->additionalContext = [];
+        }
+        if ([] === $additionalContext) {
+            return $this;
+        }
+        foreach($additionalContext as $v) {
+            $this->addAdditionalContext($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -356,6 +356,33 @@ class FHIRPlanDefinitionActor extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->option[] = $option;
+        return $this;
+    }
+
+    /**
+     * This resource allows for the definition of various types of plans as a sharable,
+     * consumable, and executable artifact. The resource is general enough to support
+     * the description of a broad range of clinical and non-clinical artifacts such as
+     * clinical decision support rules, order sets, protocols, and drug quality
+     * specifications.
+     *
+     * The characteristics of the candidates that could serve as the actor.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRPlanDefinition\FHIRPlanDefinitionOption ...$option
+     * @return static
+     */
+    public function setOption(FHIRPlanDefinitionOption ...$option): self
+    {
+        if ([] !== $this->option) {
+            $this->_trackValuesRemoved(count($this->option));
+            $this->option = [];
+        }
+        if ([] === $option) {
+            return $this;
+        }
+        foreach($option as $v) {
+            $this->addOption($v);
+        }
         return $this;
     }
 

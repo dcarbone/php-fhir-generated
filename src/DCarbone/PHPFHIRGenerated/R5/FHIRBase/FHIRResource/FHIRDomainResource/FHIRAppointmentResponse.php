@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -286,7 +286,14 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
      * Validation map for fields in type AppointmentResponse
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_APPOINTMENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_PARTICIPANT_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -540,6 +547,34 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This records identifiers associated with this appointment response concern that
+     * are defined by business processes and/ or used to refer to it when a direct URL
+     * reference to the resource itself is not appropriate.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -741,6 +776,32 @@ class FHIRAppointmentResponse extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->participantType[] = $participantType;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Role of participant in the appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$participantType
+     * @return static
+     */
+    public function setParticipantType(FHIRCodeableConcept ...$participantType): self
+    {
+        if ([] !== $this->participantType) {
+            $this->_trackValuesRemoved(count($this->participantType));
+            $this->participantType = [];
+        }
+        if ([] === $participantType) {
+            return $this;
+        }
+        foreach($participantType as $v) {
+            $this->addParticipantType($v);
+        }
         return $this;
     }
 

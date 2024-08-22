@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBac
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -336,7 +336,7 @@ class FHIRTimingRepeat extends FHIRBackboneType
      * Validation map for fields in type Timing.Repeat
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1359,6 +1359,31 @@ class FHIRTimingRepeat extends FHIRBackboneType
         }
         $this->_trackValueAdded();
         $this->when[] = $when;
+        return $this;
+    }
+
+    /**
+     * Real-world event relating to the schedule.
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * An approximate time period during the day, potentially linked to an event of
+     * daily living that indicates when the action should occur.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIREventTiming ...$when
+     * @return static
+     */
+    public function setWhen(FHIREventTiming ...$when): self
+    {
+        if ([] !== $this->when) {
+            $this->_trackValuesRemoved(count($this->when));
+            $this->when = [];
+        }
+        if ([] === $when) {
+            return $this;
+        }
+        foreach($when as $v) {
+            $this->addWhen($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -126,7 +126,7 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * Validation map for fields in type MedicationKnowledge.Kinetics
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -233,6 +233,33 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The drug concentration measured at certain discrete points in time.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity ...$areaUnderCurve
+     * @return static
+     */
+    public function setAreaUnderCurve(FHIRQuantity ...$areaUnderCurve): self
+    {
+        if ([] !== $this->areaUnderCurve) {
+            $this->_trackValuesRemoved(count($this->areaUnderCurve));
+            $this->areaUnderCurve = [];
+        }
+        if ([] === $areaUnderCurve) {
+            return $this;
+        }
+        foreach($areaUnderCurve as $v) {
+            $this->addAreaUnderCurve($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The median lethal dose of a drug.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity[]
@@ -261,6 +288,33 @@ class FHIRMedicationKnowledgeKinetics extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->lethalDose50[] = $lethalDose50;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The median lethal dose of a drug.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRQuantity ...$lethalDose50
+     * @return static
+     */
+    public function setLethalDose50(FHIRQuantity ...$lethalDose50): self
+    {
+        if ([] !== $this->lethalDose50) {
+            $this->_trackValuesRemoved(count($this->lethalDose50));
+            $this->lethalDose50 = [];
+        }
+        if ([] === $lethalDose50) {
+            return $this;
+        }
+        foreach($lethalDose50 as $v) {
+            $this->addLethalDose50($v);
+        }
         return $this;
     }
 

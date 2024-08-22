@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -319,7 +319,7 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * Validation map for fields in type GenomicStudy.Analysis
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -643,6 +643,32 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifiers for the analysis event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -686,6 +712,33 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Type of the methods used in the analysis, e.g., Fluorescence in situ
+     * hybridization (FISH), Karyotyping, or Microsatellite instability testing (MSI).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$methodType
+     * @return static
+     */
+    public function setMethodType(FHIRCodeableConcept ...$methodType): self
+    {
+        if ([] !== $this->methodType) {
+            $this->_trackValuesRemoved(count($this->methodType));
+            $this->methodType = [];
+        }
+        if ([] === $methodType) {
+            return $this;
+        }
+        foreach($methodType as $v) {
+            $this->addMethodType($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Type of the genomic changes studied in the analysis, e.g., DNA, RNA, or amino
      * acid change.
      *
@@ -715,6 +768,33 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->changeType[] = $changeType;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Type of the genomic changes studied in the analysis, e.g., DNA, RNA, or amino
+     * acid change.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$changeType
+     * @return static
+     */
+    public function setChangeType(FHIRCodeableConcept ...$changeType): self
+    {
+        if ([] !== $this->changeType) {
+            $this->_trackValuesRemoved(count($this->changeType));
+            $this->changeType = [];
+        }
+        if ([] === $changeType) {
+            return $this;
+        }
+        foreach($changeType as $v) {
+            $this->addChangeType($v);
+        }
         return $this;
     }
 
@@ -922,6 +1002,35 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The focus of a genomic analysis when it is not the patient of record
+     * representing something or someone associated with the patient such as a spouse,
+     * parent, child, or sibling. For example, in trio testing, the
+     * GenomicStudy.subject would be the child (proband) and the
+     * GenomicStudy.analysis.focus of a specific analysis would be the parent.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$focus
+     * @return static
+     */
+    public function setFocus(FHIRReference ...$focus): self
+    {
+        if ([] !== $this->focus) {
+            $this->_trackValuesRemoved(count($this->focus));
+            $this->focus = [];
+        }
+        if ([] === $focus) {
+            return $this;
+        }
+        foreach($focus as $v) {
+            $this->addFocus($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The specimen used in the analysis event.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
@@ -948,6 +1057,31 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->specimen[] = $specimen;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The specimen used in the analysis event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$specimen
+     * @return static
+     */
+    public function setSpecimen(FHIRReference ...$specimen): self
+    {
+        if ([] !== $this->specimen) {
+            $this->_trackValuesRemoved(count($this->specimen));
+            $this->specimen = [];
+        }
+        if ([] === $specimen) {
+            return $this;
+        }
+        foreach($specimen as $v) {
+            $this->addSpecimen($v);
+        }
         return $this;
     }
 
@@ -1035,6 +1169,32 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
     }
 
     /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Any notes capture with the analysis event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1107,6 +1267,31 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The genomic regions to be studied in the analysis (BED file).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$regionsStudied
+     * @return static
+     */
+    public function setRegionsStudied(FHIRReference ...$regionsStudied): self
+    {
+        if ([] !== $this->regionsStudied) {
+            $this->_trackValuesRemoved(count($this->regionsStudied));
+            $this->regionsStudied = [];
+        }
+        if ([] === $regionsStudied) {
+            return $this;
+        }
+        foreach($regionsStudied as $v) {
+            $this->addRegionsStudied($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Genomic regions actually called in the analysis event (BED file).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
@@ -1133,6 +1318,31 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->regionsCalled[] = $regionsCalled;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Genomic regions actually called in the analysis event (BED file).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$regionsCalled
+     * @return static
+     */
+    public function setRegionsCalled(FHIRReference ...$regionsCalled): self
+    {
+        if ([] !== $this->regionsCalled) {
+            $this->_trackValuesRemoved(count($this->regionsCalled));
+            $this->regionsCalled = [];
+        }
+        if ([] === $regionsCalled) {
+            return $this;
+        }
+        foreach($regionsCalled as $v) {
+            $this->addRegionsCalled($v);
+        }
         return $this;
     }
 
@@ -1172,6 +1382,30 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * A GenomicStudy is a set of analyses performed to analyze and generate genomic
      * data.
      *
+     * Inputs for the analysis event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyInput ...$input
+     * @return static
+     */
+    public function setInput(FHIRGenomicStudyInput ...$input): self
+    {
+        if ([] !== $this->input) {
+            $this->_trackValuesRemoved(count($this->input));
+            $this->input = [];
+        }
+        if ([] === $input) {
+            return $this;
+        }
+        foreach($input as $v) {
+            $this->addInput($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A GenomicStudy is a set of analyses performed to analyze and generate genomic
+     * data.
+     *
      * Outputs for the analysis event.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyOutput[]
@@ -1197,6 +1431,30 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->output[] = $output;
+        return $this;
+    }
+
+    /**
+     * A GenomicStudy is a set of analyses performed to analyze and generate genomic
+     * data.
+     *
+     * Outputs for the analysis event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyOutput ...$output
+     * @return static
+     */
+    public function setOutput(FHIRGenomicStudyOutput ...$output): self
+    {
+        if ([] !== $this->output) {
+            $this->_trackValuesRemoved(count($this->output));
+            $this->output = [];
+        }
+        if ([] === $output) {
+            return $this;
+        }
+        foreach($output as $v) {
+            $this->addOutput($v);
+        }
         return $this;
     }
 
@@ -1236,6 +1494,30 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
      * A GenomicStudy is a set of analyses performed to analyze and generate genomic
      * data.
      *
+     * Performer for the analysis event.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyPerformer ...$performer
+     * @return static
+     */
+    public function setPerformer(FHIRGenomicStudyPerformer ...$performer): self
+    {
+        if ([] !== $this->performer) {
+            $this->_trackValuesRemoved(count($this->performer));
+            $this->performer = [];
+        }
+        if ([] === $performer) {
+            return $this;
+        }
+        foreach($performer as $v) {
+            $this->addPerformer($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A GenomicStudy is a set of analyses performed to analyze and generate genomic
+     * data.
+     *
      * Devices used for the analysis (e.g., instruments, software), with settings and
      * parameters.
      *
@@ -1263,6 +1545,31 @@ class FHIRGenomicStudyAnalysis extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->device[] = $device;
+        return $this;
+    }
+
+    /**
+     * A GenomicStudy is a set of analyses performed to analyze and generate genomic
+     * data.
+     *
+     * Devices used for the analysis (e.g., instruments, software), with settings and
+     * parameters.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRGenomicStudy\FHIRGenomicStudyDevice ...$device
+     * @return static
+     */
+    public function setDevice(FHIRGenomicStudyDevice ...$device): self
+    {
+        if ([] !== $this->device) {
+            $this->_trackValuesRemoved(count($this->device));
+            $this->device = [];
+        }
+        if ([] === $device) {
+            return $this;
+        }
+        foreach($device as $v) {
+            $this->addDevice($v);
+        }
         return $this;
     }
 

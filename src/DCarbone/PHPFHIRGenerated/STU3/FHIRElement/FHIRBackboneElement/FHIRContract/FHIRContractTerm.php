@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCon
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -238,7 +238,7 @@ class FHIRContractTerm extends FHIRBackboneElement
      * Validation map for fields in type Contract.Term
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -654,6 +654,31 @@ class FHIRContractTerm extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The matter of concern in the context of this provision of the agrement.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$topic
+     * @return static
+     */
+    public function setTopic(FHIRReference ...$topic): self
+    {
+        if ([] !== $this->topic) {
+            $this->_trackValuesRemoved(count($this->topic));
+            $this->topic = [];
+        }
+        if ([] === $topic) {
+            return $this;
+        }
+        foreach($topic as $v) {
+            $this->addTopic($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -695,6 +720,32 @@ class FHIRContractTerm extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Action stipulated by this Contract Provision.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$action
+     * @return static
+     */
+    public function setAction(FHIRCodeableConcept ...$action): self
+    {
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
+        if ([] === $action) {
+            return $this;
+        }
+        foreach($action as $v) {
+            $this->addAction($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Reason or purpose for the action stipulated by this Contract Provision.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept[]
@@ -722,6 +773,32 @@ class FHIRContractTerm extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->actionReason[] = $actionReason;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reason or purpose for the action stipulated by this Contract Provision.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$actionReason
+     * @return static
+     */
+    public function setActionReason(FHIRCodeableConcept ...$actionReason): self
+    {
+        if ([] !== $this->actionReason) {
+            $this->_trackValuesRemoved(count($this->actionReason));
+            $this->actionReason = [];
+        }
+        if ([] === $actionReason) {
+            return $this;
+        }
+        foreach($actionReason as $v) {
+            $this->addActionReason($v);
+        }
         return $this;
     }
 
@@ -762,6 +839,32 @@ class FHIRContractTerm extends FHIRBackboneElement
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A set of security labels that define which terms are controlled by this
+     * condition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCoding ...$securityLabel
+     * @return static
+     */
+    public function setSecurityLabel(FHIRCoding ...$securityLabel): self
+    {
+        if ([] !== $this->securityLabel) {
+            $this->_trackValuesRemoved(count($this->securityLabel));
+            $this->securityLabel = [];
+        }
+        if ([] === $securityLabel) {
+            return $this;
+        }
+        foreach($securityLabel as $v) {
+            $this->addSecurityLabel($v);
+        }
+        return $this;
+    }
+
+    /**
      * A formal agreement between parties regarding the conduct of business, exchange
      * of information or other matters.
      *
@@ -792,6 +895,31 @@ class FHIRContractTerm extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->agent[] = $agent;
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
+     * An actor taking a role in an activity for which it can be assigned some degree
+     * of responsibility for the activity taking place.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractAgent1 ...$agent
+     * @return static
+     */
+    public function setAgent(FHIRContractAgent1 ...$agent): self
+    {
+        if ([] !== $this->agent) {
+            $this->_trackValuesRemoved(count($this->agent));
+            $this->agent = [];
+        }
+        if ([] === $agent) {
+            return $this;
+        }
+        foreach($agent as $v) {
+            $this->addAgent($v);
+        }
         return $this;
     }
 
@@ -870,6 +998,30 @@ class FHIRContractTerm extends FHIRBackboneElement
      * A formal agreement between parties regarding the conduct of business, exchange
      * of information or other matters.
      *
+     * Contract Provision Valued Item List.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractValuedItem1 ...$valuedItem
+     * @return static
+     */
+    public function setValuedItem(FHIRContractValuedItem1 ...$valuedItem): self
+    {
+        if ([] !== $this->valuedItem) {
+            $this->_trackValuesRemoved(count($this->valuedItem));
+            $this->valuedItem = [];
+        }
+        if ([] === $valuedItem) {
+            return $this;
+        }
+        foreach($valuedItem as $v) {
+            $this->addValuedItem($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
      * Nested group of Contract Provisions.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm[]
@@ -895,6 +1047,30 @@ class FHIRContractTerm extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->group[] = $group;
+        return $this;
+    }
+
+    /**
+     * A formal agreement between parties regarding the conduct of business, exchange
+     * of information or other matters.
+     *
+     * Nested group of Contract Provisions.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRContract\FHIRContractTerm ...$group
+     * @return static
+     */
+    public function setGroup(FHIRContractTerm ...$group): self
+    {
+        if ([] !== $this->group) {
+            $this->_trackValuesRemoved(count($this->group));
+            $this->group = [];
+        }
+        if ([] === $group) {
+            return $this;
+        }
+        foreach($group as $v) {
+            $this->addGroup($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -485,7 +485,22 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_ACCEPT_UNKNOWN => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_DATE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_FHIR_VERSION => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_FORMAT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_KIND => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -1388,6 +1403,32 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * Specifies contact information for a person or organization.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Contact details to assist a user in finding and communicating with the
+     * publisher.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRContactDetail ...$contact
+     * @return static
+     */
+    public function setContact(FHIRContactDetail ...$contact): self
+    {
+        if ([] !== $this->contact) {
+            $this->_trackValuesRemoved(count($this->contact));
+            $this->contact = [];
+        }
+        if ([] === $contact) {
+            return $this;
+        }
+        foreach($contact as $v) {
+            $this->addContact($v);
+        }
+        return $this;
+    }
+
+    /**
      * A string that may contain markdown syntax for optional processing by a mark down
      * presentation engine
      * Systems are not required to have markdown support, and there is considerable
@@ -1489,6 +1530,36 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * Specifies clinical/business/etc metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The content was developed with a focus and intent of supporting the contexts
+     * that are listed. These terms may be used to assist with indexing and searching
+     * for appropriate capability statement instances.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRUsageContext ...$useContext
+     * @return static
+     */
+    public function setUseContext(FHIRUsageContext ...$useContext): self
+    {
+        if ([] !== $this->useContext) {
+            $this->_trackValuesRemoved(count($this->useContext));
+            $this->useContext = [];
+        }
+        if ([] === $useContext) {
+            return $this;
+        }
+        foreach($useContext as $v) {
+            $this->addUseContext($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1523,6 +1594,33 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->jurisdiction[] = $jurisdiction;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A legal or geographic region in which the capability statement is intended to be
+     * used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRCodeableConcept ...$jurisdiction
+     * @return static
+     */
+    public function setJurisdiction(FHIRCodeableConcept ...$jurisdiction): self
+    {
+        if ([] !== $this->jurisdiction) {
+            $this->_trackValuesRemoved(count($this->jurisdiction));
+            $this->jurisdiction = [];
+        }
+        if ([] === $jurisdiction) {
+            return $this;
+        }
+        foreach($jurisdiction as $v) {
+            $this->addJurisdiction($v);
+        }
         return $this;
     }
 
@@ -2180,6 +2278,37 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A list of profiles that represent different use cases supported by the system.
+     * For a server, "supported by the system" means the system hosts/produces a set of
+     * resources that are conformant to a particular profile, and allows clients that
+     * use its services to search using this profile and to find appropriate data. For
+     * a client, it means the system will search by this profile and process data
+     * according to the guidance implicit in the profile. See further discussion in
+     * [Using Profiles](profiling.html#profile-uses).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRReference ...$profile
+     * @return static
+     */
+    public function setProfile(FHIRReference ...$profile): self
+    {
+        if ([] !== $this->profile) {
+            $this->_trackValuesRemoved(count($this->profile));
+            $this->profile = [];
+        }
+        if ([] === $profile) {
+            return $this;
+        }
+        foreach($profile as $v) {
+            $this->addProfile($v);
+        }
+        return $this;
+    }
+
+    /**
      * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
      * Server that may be used as a statement of actual server functionality or a
      * statement of required or desired server implementation.
@@ -2210,6 +2339,31 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->rest[] = $rest;
+        return $this;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server that may be used as a statement of actual server functionality or a
+     * statement of required or desired server implementation.
+     *
+     * A definition of the restful capabilities of the solution, if any.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementRest ...$rest
+     * @return static
+     */
+    public function setRest(FHIRCapabilityStatementRest ...$rest): self
+    {
+        if ([] !== $this->rest) {
+            $this->_trackValuesRemoved(count($this->rest));
+            $this->rest = [];
+        }
+        if ([] === $rest) {
+            return $this;
+        }
+        foreach($rest as $v) {
+            $this->addRest($v);
+        }
         return $this;
     }
 
@@ -2252,6 +2406,31 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
      * Server that may be used as a statement of actual server functionality or a
      * statement of required or desired server implementation.
      *
+     * A description of the messaging capabilities of the solution.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementMessaging ...$messaging
+     * @return static
+     */
+    public function setMessaging(FHIRCapabilityStatementMessaging ...$messaging): self
+    {
+        if ([] !== $this->messaging) {
+            $this->_trackValuesRemoved(count($this->messaging));
+            $this->messaging = [];
+        }
+        if ([] === $messaging) {
+            return $this;
+        }
+        foreach($messaging as $v) {
+            $this->addMessaging($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server that may be used as a statement of actual server functionality or a
+     * statement of required or desired server implementation.
+     *
      * A document definition.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument[]
@@ -2278,6 +2457,31 @@ class FHIRCapabilityStatement extends FHIRDomainResource implements PHPFHIRConta
         }
         $this->_trackValueAdded();
         $this->document[] = $document;
+        return $this;
+    }
+
+    /**
+     * A Capability Statement documents a set of capabilities (behaviors) of a FHIR
+     * Server that may be used as a statement of actual server functionality or a
+     * statement of required or desired server implementation.
+     *
+     * A document definition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRCapabilityStatement\FHIRCapabilityStatementDocument ...$document
+     * @return static
+     */
+    public function setDocument(FHIRCapabilityStatementDocument ...$document): self
+    {
+        if ([] !== $this->document) {
+            $this->_trackValuesRemoved(count($this->document));
+            $this->document = [];
+        }
+        if ([] === $document) {
+            return $this;
+        }
+        foreach($document as $v) {
+            $this->addDocument($v);
+        }
         return $this;
     }
 

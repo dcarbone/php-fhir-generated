@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -138,7 +138,7 @@ class FHIREncounterReason extends FHIRBackboneElement
      * Validation map for fields in type Encounter.Reason
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -232,6 +232,33 @@ class FHIREncounterReason extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * What the reason value should be used as e.g. Chief Complaint, Health Concern,
+     * Health Maintenance (including screening).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$use
+     * @return static
+     */
+    public function setUse(FHIRCodeableConcept ...$use): self
+    {
+        if ([] !== $this->use) {
+            $this->_trackValuesRemoved(count($this->use));
+            $this->use = [];
+        }
+        if ([] === $use) {
+            return $this;
+        }
+        foreach($use as $v) {
+            $this->addUse($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
      * If the element is present, it must have a value for at least one of the defined
@@ -266,6 +293,33 @@ class FHIREncounterReason extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->value[] = $value;
+        return $this;
+    }
+
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Reason the encounter takes place, expressed as a code or a reference to another
+     * resource. For admissions, this can be used for a coded admission diagnosis.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$value
+     * @return static
+     */
+    public function setValue(FHIRCodeableReference ...$value): self
+    {
+        if ([] !== $this->value) {
+            $this->_trackValuesRemoved(count($this->value));
+            $this->value = [];
+        }
+        if ([] === $value) {
+            return $this;
+        }
+        foreach($value as $v) {
+            $this->addValue($v);
+        }
         return $this;
     }
 

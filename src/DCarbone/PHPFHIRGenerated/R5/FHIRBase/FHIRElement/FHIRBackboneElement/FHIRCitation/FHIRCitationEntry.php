@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -206,7 +206,11 @@ class FHIRCitationEntry extends FHIRBackboneElement
      * Validation map for fields in type Citation.Entry
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CONTRIBUTOR => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -449,6 +453,31 @@ class FHIRCitationEntry extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Organization affiliated with the contributor.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$affiliation
+     * @return static
+     */
+    public function setAffiliation(FHIRReference ...$affiliation): self
+    {
+        if ([] !== $this->affiliation) {
+            $this->_trackValuesRemoved(count($this->affiliation));
+            $this->affiliation = [];
+        }
+        if ([] === $affiliation) {
+            return $this;
+        }
+        foreach($affiliation as $v) {
+            $this->addAffiliation($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -483,6 +512,33 @@ class FHIRCitationEntry extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->contributionType[] = $contributionType;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This element identifies the specific nature of an individual’s contribution
+     * with respect to the cited work.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$contributionType
+     * @return static
+     */
+    public function setContributionType(FHIRCodeableConcept ...$contributionType): self
+    {
+        if ([] !== $this->contributionType) {
+            $this->_trackValuesRemoved(count($this->contributionType));
+            $this->contributionType = [];
+        }
+        if ([] === $contributionType) {
+            return $this;
+        }
+        foreach($contributionType as $v) {
+            $this->addContributionType($v);
+        }
         return $this;
     }
 
@@ -555,6 +611,32 @@ class FHIRCitationEntry extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->contributionInstance[] = $contributionInstance;
+        return $this;
+    }
+
+    /**
+     * The Citation Resource enables reference to any knowledge artifact for purposes
+     * of identification and attribution. The Citation Resource supports existing
+     * reference structures and developing publication practices such as versioning,
+     * expressing complex contributorship roles, and referencing computable resources.
+     *
+     * Contributions with accounting for time or number.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRCitation\FHIRCitationContributionInstance ...$contributionInstance
+     * @return static
+     */
+    public function setContributionInstance(FHIRCitationContributionInstance ...$contributionInstance): self
+    {
+        if ([] !== $this->contributionInstance) {
+            $this->_trackValuesRemoved(count($this->contributionInstance));
+            $this->contributionInstance = [];
+        }
+        if ([] === $contributionInstance) {
+            return $this;
+        }
+        foreach($contributionInstance as $v) {
+            $this->addContributionInstance($v);
+        }
         return $this;
     }
 

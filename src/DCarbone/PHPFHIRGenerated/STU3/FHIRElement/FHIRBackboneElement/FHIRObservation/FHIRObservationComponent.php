@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRObs
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -269,7 +269,11 @@ class FHIRObservationComponent extends FHIRBackboneElement
      * Validation map for fields in type Observation.Component
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -966,6 +970,31 @@ class FHIRObservationComponent extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->referenceRange[] = $referenceRange;
+        return $this;
+    }
+
+    /**
+     * Measurements and simple assertions made about a patient, device or other
+     * subject.
+     *
+     * Guidance on how to interpret the value by comparison to a normal or recommended
+     * range.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\STU3\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange ...$referenceRange
+     * @return static
+     */
+    public function setReferenceRange(FHIRObservationReferenceRange ...$referenceRange): self
+    {
+        if ([] !== $this->referenceRange) {
+            $this->_trackValuesRemoved(count($this->referenceRange));
+            $this->referenceRange = [];
+        }
+        if ([] === $referenceRange) {
+            return $this;
+        }
+        foreach($referenceRange as $v) {
+            $this->addReferenceRange($v);
+        }
         return $this;
     }
 

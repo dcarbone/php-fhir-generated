@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubst
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -194,7 +194,7 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * Validation map for fields in type SubstanceNucleicAcid.Subunit
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -606,6 +606,32 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
      * elements. The nucleotide sequence will be always entered in the 5’-3’
      * direction.
      *
+     * The linkages between sugar residues will also be captured.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidLinkage ...$linkage
+     * @return static
+     */
+    public function setLinkage(FHIRSubstanceNucleicAcidLinkage ...$linkage): self
+    {
+        if ([] !== $this->linkage) {
+            $this->_trackValuesRemoved(count($this->linkage));
+            $this->linkage = [];
+        }
+        if ([] === $linkage) {
+            return $this;
+        }
+        foreach($linkage as $v) {
+            $this->addLinkage($v);
+        }
+        return $this;
+    }
+
+    /**
+     * Nucleic acids are defined by three distinct elements: the base, sugar and
+     * linkage. Individual substance/moiety IDs will be created for each of these
+     * elements. The nucleotide sequence will be always entered in the 5’-3’
+     * direction.
+     *
      * 5.3.6.8.1 Sugar ID (Mandatory).
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar[]
@@ -633,6 +659,32 @@ class FHIRSubstanceNucleicAcidSubunit extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->sugar[] = $sugar;
+        return $this;
+    }
+
+    /**
+     * Nucleic acids are defined by three distinct elements: the base, sugar and
+     * linkage. Individual substance/moiety IDs will be created for each of these
+     * elements. The nucleotide sequence will be always entered in the 5’-3’
+     * direction.
+     *
+     * 5.3.6.8.1 Sugar ID (Mandatory).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceNucleicAcid\FHIRSubstanceNucleicAcidSugar ...$sugar
+     * @return static
+     */
+    public function setSugar(FHIRSubstanceNucleicAcidSugar ...$sugar): self
+    {
+        if ([] !== $this->sugar) {
+            $this->_trackValuesRemoved(count($this->sugar));
+            $this->sugar = [];
+        }
+        if ([] === $sugar) {
+            return $this;
+        }
+        foreach($sugar as $v) {
+            $this->addSugar($v);
+        }
         return $this;
     }
 

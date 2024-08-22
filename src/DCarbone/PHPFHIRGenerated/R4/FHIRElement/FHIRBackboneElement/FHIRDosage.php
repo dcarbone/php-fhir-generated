@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -265,7 +265,7 @@ class FHIRDosage extends FHIRBackboneElement
      * Validation map for fields in type Dosage
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -563,6 +563,35 @@ class FHIRDosage extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->additionalInstruction[] = $additionalInstruction;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Supplemental instructions to the patient on how to take the medication (e.g.
+     * "with meals" or"take half to one hour before food") or warnings for the patient
+     * about the medication (e.g. "may cause drowsiness" or "avoid exposure of skin to
+     * direct sunlight or sunlamps").
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$additionalInstruction
+     * @return static
+     */
+    public function setAdditionalInstruction(FHIRCodeableConcept ...$additionalInstruction): self
+    {
+        if ([] !== $this->additionalInstruction) {
+            $this->_trackValuesRemoved(count($this->additionalInstruction));
+            $this->additionalInstruction = [];
+        }
+        if ([] === $additionalInstruction) {
+            return $this;
+        }
+        foreach($additionalInstruction as $v) {
+            $this->addAdditionalInstruction($v);
+        }
         return $this;
     }
 
@@ -867,6 +896,31 @@ class FHIRDosage extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->doseAndRate[] = $doseAndRate;
+        return $this;
+    }
+
+    /**
+     * Indicates how the medication is/was taken or should be taken by the patient.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The amount of medication administered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRDosage\FHIRDosageDoseAndRate ...$doseAndRate
+     * @return static
+     */
+    public function setDoseAndRate(FHIRDosageDoseAndRate ...$doseAndRate): self
+    {
+        if ([] !== $this->doseAndRate) {
+            $this->_trackValuesRemoved(count($this->doseAndRate));
+            $this->doseAndRate = [];
+        }
+        if ([] === $doseAndRate) {
+            return $this;
+        }
+        foreach($doseAndRate as $v) {
+            $this->addDoseAndRate($v);
+        }
         return $this;
     }
 

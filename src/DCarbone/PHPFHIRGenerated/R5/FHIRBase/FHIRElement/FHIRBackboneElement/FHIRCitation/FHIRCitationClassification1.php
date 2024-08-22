@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -146,7 +146,7 @@ class FHIRCitationClassification1 extends FHIRBackboneElement
      * Validation map for fields in type Citation.Classification1
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -281,6 +281,32 @@ class FHIRCitationClassification1 extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The specific classification value.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$classifier
+     * @return static
+     */
+    public function setClassifier(FHIRCodeableConcept ...$classifier): self
+    {
+        if ([] !== $this->classifier) {
+            $this->_trackValuesRemoved(count($this->classifier));
+            $this->classifier = [];
+        }
+        if ([] === $classifier) {
+            return $this;
+        }
+        foreach($classifier as $v) {
+            $this->addClassifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -311,6 +337,31 @@ class FHIRCitationClassification1 extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->artifactAssessment[] = $artifactAssessment;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Complex or externally created classification.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$artifactAssessment
+     * @return static
+     */
+    public function setArtifactAssessment(FHIRReference ...$artifactAssessment): self
+    {
+        if ([] !== $this->artifactAssessment) {
+            $this->_trackValuesRemoved(count($this->artifactAssessment));
+            $this->artifactAssessment = [];
+        }
+        if ([] === $artifactAssessment) {
+            return $this;
+        }
+        foreach($artifactAssessment as $v) {
+            $this->addArtifactAssessment($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -169,7 +169,11 @@ class FHIREvidenceVariable extends FHIRBackboneElement
      * Validation map for fields in type Evidence.Variable
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_VARIABLE_DEFINITION => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -364,6 +368,32 @@ class FHIREvidenceVariable extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Description for grouping of ordinal or polychotomous variables.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$valueCategory
+     * @return static
+     */
+    public function setValueCategory(FHIRCodeableConcept ...$valueCategory): self
+    {
+        if ([] !== $this->valueCategory) {
+            $this->_trackValuesRemoved(count($this->valueCategory));
+            $this->valueCategory = [];
+        }
+        if ([] === $valueCategory) {
+            return $this;
+        }
+        foreach($valueCategory as $v) {
+            $this->addValueCategory($v);
+        }
+        return $this;
+    }
+
+    /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
@@ -402,6 +432,33 @@ class FHIREvidenceVariable extends FHIRBackboneElement
     }
 
     /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Discrete value for grouping of ordinal or polychotomous variables.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity ...$valueQuantity
+     * @return static
+     */
+    public function setValueQuantity(FHIRQuantity ...$valueQuantity): self
+    {
+        if ([] !== $this->valueQuantity) {
+            $this->_trackValuesRemoved(count($this->valueQuantity));
+            $this->valueQuantity = [];
+        }
+        if ([] === $valueQuantity) {
+            return $this;
+        }
+        foreach($valueQuantity as $v) {
+            $this->addValueQuantity($v);
+        }
+        return $this;
+    }
+
+    /**
      * A set of ordered Quantities defined by a low and high limit.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -432,6 +489,31 @@ class FHIREvidenceVariable extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->valueRange[] = $valueRange;
+        return $this;
+    }
+
+    /**
+     * A set of ordered Quantities defined by a low and high limit.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Range of values for grouping of ordinal or polychotomous variables.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRange ...$valueRange
+     * @return static
+     */
+    public function setValueRange(FHIRRange ...$valueRange): self
+    {
+        if ([] !== $this->valueRange) {
+            $this->_trackValuesRemoved(count($this->valueRange));
+            $this->valueRange = [];
+        }
+        if ([] === $valueRange) {
+            return $this;
+        }
+        foreach($valueRange as $v) {
+            $this->addValueRange($v);
+        }
         return $this;
     }
 

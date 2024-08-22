@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -482,7 +482,11 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * Validation map for fields in type ExplanationOfBenefit.Item
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_SEQUENCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1312,6 +1316,33 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Trace number for tracking purposes. May be defined at the jurisdiction level or
+     * between trading partners.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$traceNumber
+     * @return static
+     */
+    public function setTraceNumber(FHIRIdentifier ...$traceNumber): self
+    {
+        if ([] !== $this->traceNumber) {
+            $this->_trackValuesRemoved(count($this->traceNumber));
+            $this->traceNumber = [];
+        }
+        if ([] === $traceNumber) {
+            return $this;
+        }
+        foreach($traceNumber as $v) {
+            $this->addTraceNumber($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1508,6 +1539,31 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Request or Referral for Goods or Service to be rendered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$request
+     * @return static
+     */
+    public function setRequest(FHIRReference ...$request): self
+    {
+        if ([] !== $this->request) {
+            $this->_trackValuesRemoved(count($this->request));
+            $this->request = [];
+        }
+        if ([] === $request) {
+            return $this;
+        }
+        foreach($request as $v) {
+            $this->addRequest($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1551,6 +1607,33 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Item typification or modifiers codes to convey additional context for the
+     * product or service.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$modifier
+     * @return static
+     */
+    public function setModifier(FHIRCodeableConcept ...$modifier): self
+    {
+        if ([] !== $this->modifier) {
+            $this->_trackValuesRemoved(count($this->modifier));
+            $this->modifier = [];
+        }
+        if ([] === $modifier) {
+            return $this;
+        }
+        foreach($modifier as $v) {
+            $this->addModifier($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Identifies the program under which this may be recovered.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
@@ -1578,6 +1661,32 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->programCode[] = $programCode;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the program under which this may be recovered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$programCode
+     * @return static
+     */
+    public function setProgramCode(FHIRCodeableConcept ...$programCode): self
+    {
+        if ([] !== $this->programCode) {
+            $this->_trackValuesRemoved(count($this->programCode));
+            $this->programCode = [];
+        }
+        if ([] === $programCode) {
+            return $this;
+        }
+        foreach($programCode as $v) {
+            $this->addProgramCode($v);
+        }
         return $this;
     }
 
@@ -2036,6 +2145,31 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Unique Device Identifiers associated with this line item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$udi
+     * @return static
+     */
+    public function setUdi(FHIRReference ...$udi): self
+    {
+        if ([] !== $this->udi) {
+            $this->_trackValuesRemoved(count($this->udi));
+            $this->udi = [];
+        }
+        if ([] === $udi) {
+            return $this;
+        }
+        foreach($udi as $v) {
+            $this->addUdi($v);
+        }
+        return $this;
+    }
+
+    /**
      * This resource provides: the claim details; adjudication details from the
      * processing of a Claim; and optionally account balance information, for informing
      * the subscriber of the benefits provided.
@@ -2070,6 +2204,31 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
     }
 
     /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
+     * Physical location where the service is performed or applies.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitBodySite ...$bodySite
+     * @return static
+     */
+    public function setBodySite(FHIRExplanationOfBenefitBodySite ...$bodySite): self
+    {
+        if ([] !== $this->bodySite) {
+            $this->_trackValuesRemoved(count($this->bodySite));
+            $this->bodySite = [];
+        }
+        if ([] === $bodySite) {
+            return $this;
+        }
+        foreach($bodySite as $v) {
+            $this->addBodySite($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -2100,6 +2259,31 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->encounter[] = $encounter;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Healthcare encounters related to this claim.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$encounter
+     * @return static
+     */
+    public function setEncounter(FHIRReference ...$encounter): self
+    {
+        if ([] !== $this->encounter) {
+            $this->_trackValuesRemoved(count($this->encounter));
+            $this->encounter = [];
+        }
+        if ([] === $encounter) {
+            return $this;
+        }
+        foreach($encounter as $v) {
+            $this->addEncounter($v);
+        }
         return $this;
     }
 
@@ -2253,6 +2437,33 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
      * processing of a Claim; and optionally account balance information, for informing
      * the subscriber of the benefits provided.
      *
+     * If this item is a group then the values here are a summary of the adjudication
+     * of the detail items. If this item is a simple product or service then this is
+     * the result of the adjudication of this item.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitAdjudication ...$adjudication
+     * @return static
+     */
+    public function setAdjudication(FHIRExplanationOfBenefitAdjudication ...$adjudication): self
+    {
+        if ([] !== $this->adjudication) {
+            $this->_trackValuesRemoved(count($this->adjudication));
+            $this->adjudication = [];
+        }
+        if ([] === $adjudication) {
+            return $this;
+        }
+        foreach($adjudication as $v) {
+            $this->addAdjudication($v);
+        }
+        return $this;
+    }
+
+    /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
      * Second-tier of goods and services.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail[]
@@ -2279,6 +2490,31 @@ class FHIRExplanationOfBenefitItem extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->detail[] = $detail;
+        return $this;
+    }
+
+    /**
+     * This resource provides: the claim details; adjudication details from the
+     * processing of a Claim; and optionally account balance information, for informing
+     * the subscriber of the benefits provided.
+     *
+     * Second-tier of goods and services.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRExplanationOfBenefit\FHIRExplanationOfBenefitDetail ...$detail
+     * @return static
+     */
+    public function setDetail(FHIRExplanationOfBenefitDetail ...$detail): self
+    {
+        if ([] !== $this->detail) {
+            $this->_trackValuesRemoved(count($this->detail));
+            $this->detail = [];
+        }
+        if ([] === $detail) {
+            return $this;
+        }
+        foreach($detail as $v) {
+            $this->addDetail($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -196,7 +196,11 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * Validation map for fields in type ImagingSelection.Instance
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_UID => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -578,6 +582,35 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
      * Observation UID or a Segmentation Number, allowing linkage to an Observation
      * Resource or transferring this information along with the ImagingStudy Resource.
      *
+     * Each imaging selection instance or frame list might includes an image region,
+     * specified by a region type and a set of 2D coordinates. If the parent
+     * imagingSelection.instance contains a subset element of type frame, the image
+     * region applies to all frames in the subset list.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion2D ...$imageRegion2D
+     * @return static
+     */
+    public function setImageRegion2D(FHIRImagingSelectionImageRegion2D ...$imageRegion2D): self
+    {
+        if ([] !== $this->imageRegion2D) {
+            $this->_trackValuesRemoved(count($this->imageRegion2D));
+            $this->imageRegion2D = [];
+        }
+        if ([] === $imageRegion2D) {
+            return $this;
+        }
+        foreach($imageRegion2D as $v) {
+            $this->addImageRegion2D($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A selection of DICOM SOP instances and/or frames within a single Study and
+     * Series. This might include additional specifics such as an image region, an
+     * Observation UID or a Segmentation Number, allowing linkage to an Observation
+     * Resource or transferring this information along with the ImagingStudy Resource.
+     *
      * Each imaging selection might includes a 3D image region, specified by a region
      * type and a set of 3D coordinates.
      *
@@ -607,6 +640,33 @@ class FHIRImagingSelectionInstance extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->imageRegion3D[] = $imageRegion3D;
+        return $this;
+    }
+
+    /**
+     * A selection of DICOM SOP instances and/or frames within a single Study and
+     * Series. This might include additional specifics such as an image region, an
+     * Observation UID or a Segmentation Number, allowing linkage to an Observation
+     * Resource or transferring this information along with the ImagingStudy Resource.
+     *
+     * Each imaging selection might includes a 3D image region, specified by a region
+     * type and a set of 3D coordinates.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRImagingSelection\FHIRImagingSelectionImageRegion3D ...$imageRegion3D
+     * @return static
+     */
+    public function setImageRegion3D(FHIRImagingSelectionImageRegion3D ...$imageRegion3D): self
+    {
+        if ([] !== $this->imageRegion3D) {
+            $this->_trackValuesRemoved(count($this->imageRegion3D));
+            $this->imageRegion3D = [];
+        }
+        if ([] === $imageRegion3D) {
+            return $this;
+        }
+        foreach($imageRegion3D as $v) {
+            $this->addImageRegion3D($v);
+        }
         return $this;
     }
 

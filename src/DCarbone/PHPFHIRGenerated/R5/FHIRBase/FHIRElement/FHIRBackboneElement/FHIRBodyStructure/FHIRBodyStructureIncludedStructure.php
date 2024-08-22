@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -165,7 +165,11 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
      * Validation map for fields in type BodyStructure.IncludedStructure
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STRUCTURE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -356,6 +360,31 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
     }
 
     /**
+     * Record details about an anatomical structure. This resource may be used when a
+     * coded concept does not provide the necessary detail needed for the use case.
+     *
+     * Body locations in relation to a specific body landmark (tatoo, scar, other body
+     * structure).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRBodyStructure\FHIRBodyStructureBodyLandmarkOrientation ...$bodyLandmarkOrientation
+     * @return static
+     */
+    public function setBodyLandmarkOrientation(FHIRBodyStructureBodyLandmarkOrientation ...$bodyLandmarkOrientation): self
+    {
+        if ([] !== $this->bodyLandmarkOrientation) {
+            $this->_trackValuesRemoved(count($this->bodyLandmarkOrientation));
+            $this->bodyLandmarkOrientation = [];
+        }
+        if ([] === $bodyLandmarkOrientation) {
+            return $this;
+        }
+        foreach($bodyLandmarkOrientation as $v) {
+            $this->addBodyLandmarkOrientation($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -386,6 +415,31 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->spatialReference[] = $spatialReference;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * XY or XYZ-coordinate orientation for structure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$spatialReference
+     * @return static
+     */
+    public function setSpatialReference(FHIRReference ...$spatialReference): self
+    {
+        if ([] !== $this->spatialReference) {
+            $this->_trackValuesRemoved(count($this->spatialReference));
+            $this->spatialReference = [];
+        }
+        if ([] === $spatialReference) {
+            return $this;
+        }
+        foreach($spatialReference as $v) {
+            $this->addSpatialReference($v);
+        }
         return $this;
     }
 
@@ -422,6 +476,32 @@ class FHIRBodyStructureIncludedStructure extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->qualifier[] = $qualifier;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Code that represents the included structure qualifier.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$qualifier
+     * @return static
+     */
+    public function setQualifier(FHIRCodeableConcept ...$qualifier): self
+    {
+        if ([] !== $this->qualifier) {
+            $this->_trackValuesRemoved(count($this->qualifier));
+            $this->qualifier = [];
+        }
+        if ([] === $qualifier) {
+            return $this;
+        }
+        foreach($qualifier as $v) {
+            $this->addQualifier($v);
+        }
         return $this;
     }
 

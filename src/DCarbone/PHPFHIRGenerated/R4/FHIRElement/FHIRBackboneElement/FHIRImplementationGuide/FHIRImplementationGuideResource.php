@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRImple
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -186,7 +186,11 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
      * Validation map for fields in type ImplementationGuide.Resource
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_REFERENCE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -400,6 +404,31 @@ class FHIRImplementationGuideResource extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->fhirVersion[] = $fhirVersion;
+        return $this;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Indicates the FHIR Version(s) this artifact is intended to apply to. If no
+     * versions are specified, the resource is assumed to apply to all the versions
+     * stated in ImplementationGuide.fhirVersion.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRFHIRVersion ...$fhirVersion
+     * @return static
+     */
+    public function setFhirVersion(FHIRFHIRVersion ...$fhirVersion): self
+    {
+        if ([] !== $this->fhirVersion) {
+            $this->_trackValuesRemoved(count($this->fhirVersion));
+            $this->fhirVersion = [];
+        }
+        if ([] === $fhirVersion) {
+            return $this;
+        }
+        foreach($fhirVersion as $v) {
+            $this->addFhirVersion($v);
+        }
         return $this;
     }
 

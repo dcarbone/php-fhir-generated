@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -269,7 +269,20 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * Validation map for fields in type OperationDefinition.Parameter
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_MAX => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_MIN => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_NAME => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_USE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -650,6 +663,30 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
     }
 
     /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * If present, indicates that the parameter applies when the operation is being
+     * invoked at the specified level.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIROperationParameterScope ...$scope
+     * @return static
+     */
+    public function setScope(FHIROperationParameterScope ...$scope): self
+    {
+        if ([] !== $this->scope) {
+            $this->_trackValuesRemoved(count($this->scope));
+            $this->scope = [];
+        }
+        if ([] === $scope) {
+            return $this;
+        }
+        foreach($scope as $v) {
+            $this->addScope($v);
+        }
+        return $this;
+    }
+
+    /**
      * A whole number
      * 32 bit number; for values larger than this, use decimal
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -837,6 +874,30 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->allowedType[] = $allowedType;
+        return $this;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * Support for polymorphic types. If the parameter type is abstract, this element
+     * lists allowed sub-types for the parameter.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRFHIRTypes ...$allowedType
+     * @return static
+     */
+    public function setAllowedType(FHIRFHIRTypes ...$allowedType): self
+    {
+        if ([] !== $this->allowedType) {
+            $this->_trackValuesRemoved(count($this->allowedType));
+            $this->allowedType = [];
+        }
+        if ([] === $allowedType) {
+            return $this;
+        }
+        foreach($allowedType as $v) {
+            $this->addAllowedType($v);
+        }
         return $this;
     }
 
@@ -1036,6 +1097,31 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
      * A formal computable definition of an operation (on the RESTful interface) or a
      * named query (using the search interaction).
      *
+     * Identifies other resource parameters within the operation invocation that are
+     * expected to resolve to this resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionReferencedFrom ...$referencedFrom
+     * @return static
+     */
+    public function setReferencedFrom(FHIROperationDefinitionReferencedFrom ...$referencedFrom): self
+    {
+        if ([] !== $this->referencedFrom) {
+            $this->_trackValuesRemoved(count($this->referencedFrom));
+            $this->referencedFrom = [];
+        }
+        if ([] === $referencedFrom) {
+            return $this;
+        }
+        foreach($referencedFrom as $v) {
+            $this->addReferencedFrom($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A formal computable definition of an operation (on the RESTful interface) or a
+     * named query (using the search interaction).
+     *
      * The parts of a nested Parameter.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter[]
@@ -1061,6 +1147,30 @@ class FHIROperationDefinitionParameter extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->part[] = $part;
+        return $this;
+    }
+
+    /**
+     * A formal computable definition of an operation (on the RESTful interface) or a
+     * named query (using the search interaction).
+     *
+     * The parts of a nested Parameter.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIROperationDefinition\FHIROperationDefinitionParameter ...$part
+     * @return static
+     */
+    public function setPart(FHIROperationDefinitionParameter ...$part): self
+    {
+        if ([] !== $this->part) {
+            $this->_trackValuesRemoved(count($this->part));
+            $this->part = [];
+        }
+        if ([] === $part) {
+            return $this;
+        }
+        foreach($part as $v) {
+            $this->addPart($v);
+        }
         return $this;
     }
 

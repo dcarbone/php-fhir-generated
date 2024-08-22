@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRResea
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -356,7 +356,20 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
      * Validation map for fields in type ResearchElementDefinition.Characteristic
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_DEFINITION_CANONICAL => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_DEFINITION_CODEABLE_CONCEPT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_DEFINITION_DATA_REQUIREMENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_DEFINITION_EXPRESSION => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -830,6 +843,35 @@ class FHIRResearchElementDefinitionCharacteristic extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->usageContext[] = $usageContext;
+        return $this;
+    }
+
+    /**
+     * Specifies clinical/business/etc. metadata that can be used to retrieve, index
+     * and/or categorize an artifact. This metadata can either be specific to the
+     * applicable population (e.g., age category, DRG) or the specific context of care
+     * (e.g., venue, care setting, provider of care).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Use UsageContext to define the members of the population, such as Age Ranges,
+     * Genders, Settings.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRUsageContext ...$usageContext
+     * @return static
+     */
+    public function setUsageContext(FHIRUsageContext ...$usageContext): self
+    {
+        if ([] !== $this->usageContext) {
+            $this->_trackValuesRemoved(count($this->usageContext));
+            $this->usageContext = [];
+        }
+        if ([] === $usageContext) {
+            return $this;
+        }
+        foreach($usageContext as $v) {
+            $this->addUsageContext($v);
+        }
         return $this;
     }
 

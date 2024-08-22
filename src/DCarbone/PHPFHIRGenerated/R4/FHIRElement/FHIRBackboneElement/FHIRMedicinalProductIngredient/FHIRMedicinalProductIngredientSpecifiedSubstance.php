@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -132,7 +132,14 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
      * Validation map for fields in type MedicinalProductIngredient.SpecifiedSubstance
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_GROUP => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -330,6 +337,30 @@ class FHIRMedicinalProductIngredientSpecifiedSubstance extends FHIRBackboneEleme
         }
         $this->_trackValueAdded();
         $this->strength[] = $strength;
+        return $this;
+    }
+
+    /**
+     * An ingredient of a manufactured item or pharmaceutical product.
+     *
+     * Quantity of the substance or specified substance present in the manufactured
+     * item or pharmaceutical product.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientStrength ...$strength
+     * @return static
+     */
+    public function setStrength(FHIRMedicinalProductIngredientStrength ...$strength): self
+    {
+        if ([] !== $this->strength) {
+            $this->_trackValuesRemoved(count($this->strength));
+            $this->strength = [];
+        }
+        if ([] === $strength) {
+            return $this;
+        }
+        foreach($strength as $v) {
+            $this->addStrength($v);
+        }
         return $this;
     }
 

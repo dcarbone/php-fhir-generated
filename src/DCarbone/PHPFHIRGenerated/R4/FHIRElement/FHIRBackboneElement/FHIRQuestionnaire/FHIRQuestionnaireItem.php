@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuest
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -297,7 +297,14 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * Validation map for fields in type Questionnaire.Item
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_LINK_ID => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -719,6 +726,32 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
     }
 
     /**
+     * A reference to a code defined by a terminology system.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A terminology code that corresponds to this group or question (e.g. a code from
+     * LOINC, which defines many questions and answers).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCoding ...$code
+     * @return static
+     */
+    public function setCode(FHIRCoding ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1MB in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -871,6 +904,32 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->enableWhen[] = $enableWhen;
+        return $this;
+    }
+
+    /**
+     * A structured set of questions intended to guide the collection of answers from
+     * end-users. Questionnaires provide detailed control over order, presentation,
+     * phraseology and grouping to allow coherent, consistent data collection.
+     *
+     * A constraint indicating that this item should only be enabled (displayed/allow
+     * answers to be captured) when the specified condition is true.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireEnableWhen ...$enableWhen
+     * @return static
+     */
+    public function setEnableWhen(FHIRQuestionnaireEnableWhen ...$enableWhen): self
+    {
+        if ([] !== $this->enableWhen) {
+            $this->_trackValuesRemoved(count($this->enableWhen));
+            $this->enableWhen = [];
+        }
+        if ([] === $enableWhen) {
+            return $this;
+        }
+        foreach($enableWhen as $v) {
+            $this->addEnableWhen($v);
+        }
         return $this;
     }
 
@@ -1154,6 +1213,31 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * end-users. Questionnaires provide detailed control over order, presentation,
      * phraseology and grouping to allow coherent, consistent data collection.
      *
+     * One of the permitted answers for a "choice" or "open-choice" question.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireAnswerOption ...$answerOption
+     * @return static
+     */
+    public function setAnswerOption(FHIRQuestionnaireAnswerOption ...$answerOption): self
+    {
+        if ([] !== $this->answerOption) {
+            $this->_trackValuesRemoved(count($this->answerOption));
+            $this->answerOption = [];
+        }
+        if ([] === $answerOption) {
+            return $this;
+        }
+        foreach($answerOption as $v) {
+            $this->addAnswerOption($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A structured set of questions intended to guide the collection of answers from
+     * end-users. Questionnaires provide detailed control over order, presentation,
+     * phraseology and grouping to allow coherent, consistent data collection.
+     *
      * One or more values that should be pre-populated in the answer when initially
      * rendering the questionnaire for user input.
      *
@@ -1190,6 +1274,32 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
      * end-users. Questionnaires provide detailed control over order, presentation,
      * phraseology and grouping to allow coherent, consistent data collection.
      *
+     * One or more values that should be pre-populated in the answer when initially
+     * rendering the questionnaire for user input.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireInitial ...$initial
+     * @return static
+     */
+    public function setInitial(FHIRQuestionnaireInitial ...$initial): self
+    {
+        if ([] !== $this->initial) {
+            $this->_trackValuesRemoved(count($this->initial));
+            $this->initial = [];
+        }
+        if ([] === $initial) {
+            return $this;
+        }
+        foreach($initial as $v) {
+            $this->addInitial($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A structured set of questions intended to guide the collection of answers from
+     * end-users. Questionnaires provide detailed control over order, presentation,
+     * phraseology and grouping to allow coherent, consistent data collection.
+     *
      * Text, questions and other groups to be nested beneath a question or group.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem[]
@@ -1216,6 +1326,31 @@ class FHIRQuestionnaireItem extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->item[] = $item;
+        return $this;
+    }
+
+    /**
+     * A structured set of questions intended to guide the collection of answers from
+     * end-users. Questionnaires provide detailed control over order, presentation,
+     * phraseology and grouping to allow coherent, consistent data collection.
+     *
+     * Text, questions and other groups to be nested beneath a question or group.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRQuestionnaire\FHIRQuestionnaireItem ...$item
+     * @return static
+     */
+    public function setItem(FHIRQuestionnaireItem ...$item): self
+    {
+        if ([] !== $this->item) {
+            $this->_trackValuesRemoved(count($this->item));
+            $this->item = [];
+        }
+        if ([] === $item) {
+            return $this;
+        }
+        foreach($item as $v) {
+            $this->addItem($v);
+        }
         return $this;
     }
 

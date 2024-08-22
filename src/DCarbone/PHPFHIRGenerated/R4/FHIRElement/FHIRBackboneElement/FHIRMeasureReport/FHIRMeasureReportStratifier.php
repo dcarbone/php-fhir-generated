@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -113,7 +113,7 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
      * Validation map for fields in type MeasureReport.Stratifier
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -205,6 +205,32 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The meaning of this stratifier, as defined in the measure definition.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$code
+     * @return static
+     */
+    public function setCode(FHIRCodeableConcept ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
+        return $this;
+    }
+
+    /**
      * The MeasureReport resource contains the results of the calculation of a measure;
      * and optionally a reference to the resources involved in that calculation.
      *
@@ -237,6 +263,32 @@ class FHIRMeasureReportStratifier extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->stratum[] = $stratum;
+        return $this;
+    }
+
+    /**
+     * The MeasureReport resource contains the results of the calculation of a measure;
+     * and optionally a reference to the resources involved in that calculation.
+     *
+     * This element contains the results for a single stratum within the stratifier.
+     * For example, when stratifying on administrative gender, there will be four
+     * strata, one for each possible gender value.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasureReport\FHIRMeasureReportStratum ...$stratum
+     * @return static
+     */
+    public function setStratum(FHIRMeasureReportStratum ...$stratum): self
+    {
+        if ([] !== $this->stratum) {
+            $this->_trackValuesRemoved(count($this->stratum));
+            $this->stratum = [];
+        }
+        if ([] === $stratum) {
+            return $this;
+        }
+        foreach($stratum as $v) {
+            $this->addStratum($v);
+        }
         return $this;
     }
 

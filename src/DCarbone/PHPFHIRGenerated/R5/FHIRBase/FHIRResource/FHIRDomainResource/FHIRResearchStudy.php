@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -537,7 +537,11 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * Validation map for fields in type ResearchStudy
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1104,6 +1108,32 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifiers assigned to this research study by the sponsor or other systems.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A sequence of Unicode characters
      * Note that FHIR strings SHALL NOT exceed 1,048,576 (1024*1024) characters in size
      * If the element is present, it must have either a \@value, an \@id, or extensions
@@ -1259,6 +1289,33 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * A scientific study of nature that sometimes includes processes involved in
+     * health and disease. For example, clinical trials are research studies that
+     * involve people. These studies may be related to new ways to screen, prevent,
+     * diagnose, and treat disease. They may also study certain outcomes and certain
+     * groups of people by looking at data collected in the past or future.
+     *
+     * Additional names for the study.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyLabel ...$label
+     * @return static
+     */
+    public function setLabel(FHIRResearchStudyLabel ...$label): self
+    {
+        if ([] !== $this->label) {
+            $this->_trackValuesRemoved(count($this->label));
+            $this->label = [];
+        }
+        if ([] === $label) {
+            return $this;
+        }
+        foreach($label as $v) {
+            $this->addLabel($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1297,6 +1354,31 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The set of steps expected to be performed as part of the execution of the study.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$protocol
+     * @return static
+     */
+    public function setProtocol(FHIRReference ...$protocol): self
+    {
+        if ([] !== $this->protocol) {
+            $this->_trackValuesRemoved(count($this->protocol));
+            $this->protocol = [];
+        }
+        if ([] === $protocol) {
+            return $this;
+        }
+        foreach($protocol as $v) {
+            $this->addProtocol($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * A larger research study of which this particular study is a component or step.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference[]
@@ -1323,6 +1405,31 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->partOf[] = $partOf;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A larger research study of which this particular study is a component or step.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$partOf
+     * @return static
+     */
+    public function setPartOf(FHIRReference ...$partOf): self
+    {
+        if ([] !== $this->partOf) {
+            $this->_trackValuesRemoved(count($this->partOf));
+            $this->partOf = [];
+        }
+        if ([] === $partOf) {
+            return $this;
+        }
+        foreach($partOf as $v) {
+            $this->addPartOf($v);
+        }
         return $this;
     }
 
@@ -1367,6 +1474,36 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->relatedArtifact[] = $relatedArtifact;
+        return $this;
+    }
+
+    /**
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Citations, references, URLs and other related documents. When using
+     * relatedArtifact to share URLs, the relatedArtifact.type will often be set to one
+     * of "documentation" or "supported-with" and the URL value will often be in
+     * relatedArtifact.document.url but another possible location is
+     * relatedArtifact.resource when it is a canonical URL.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact ...$relatedArtifact
+     * @return static
+     */
+    public function setRelatedArtifact(FHIRRelatedArtifact ...$relatedArtifact): self
+    {
+        if ([] !== $this->relatedArtifact) {
+            $this->_trackValuesRemoved(count($this->relatedArtifact));
+            $this->relatedArtifact = [];
+        }
+        if ([] === $relatedArtifact) {
+            return $this;
+        }
+        foreach($relatedArtifact as $v) {
+            $this->addRelatedArtifact($v);
+        }
         return $this;
     }
 
@@ -1568,6 +1705,33 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Codes categorizing the type of study such as investigational vs. observational,
+     * type of blinding, type of randomization, safety vs. efficacy, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$studyDesign
+     * @return static
+     */
+    public function setStudyDesign(FHIRCodeableConcept ...$studyDesign): self
+    {
+        if ([] !== $this->studyDesign) {
+            $this->_trackValuesRemoved(count($this->studyDesign));
+            $this->studyDesign = [];
+        }
+        if ([] === $studyDesign) {
+            return $this;
+        }
+        foreach($studyDesign as $v) {
+            $this->addStudyDesign($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
      * If the element is present, it must have a value for at least one of the defined
@@ -1602,6 +1766,33 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->focus[] = $focus;
+        return $this;
+    }
+
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The medication(s), food(s), therapy(ies), device(s) or other concerns or
+     * interventions that the study is seeking to gain more information about.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$focus
+     * @return static
+     */
+    public function setFocus(FHIRCodeableReference ...$focus): self
+    {
+        if ([] !== $this->focus) {
+            $this->_trackValuesRemoved(count($this->focus));
+            $this->focus = [];
+        }
+        if ([] === $focus) {
+            return $this;
+        }
+        foreach($focus as $v) {
+            $this->addFocus($v);
+        }
         return $this;
     }
 
@@ -1651,6 +1842,34 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The condition that is the focus of the study. For example, In a study to examine
+     * risk factors for Lupus, might have as an inclusion criterion "healthy
+     * volunteer", but the target condition code would be a Lupus SNOMED code.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$condition
+     * @return static
+     */
+    public function setCondition(FHIRCodeableConcept ...$condition): self
+    {
+        if ([] !== $this->condition) {
+            $this->_trackValuesRemoved(count($this->condition));
+            $this->condition = [];
+        }
+        if ([] === $condition) {
+            return $this;
+        }
+        foreach($condition as $v) {
+            $this->addCondition($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * Key terms to aid in searching for or filtering the study.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept[]
@@ -1678,6 +1897,32 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->keyword[] = $keyword;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Key terms to aid in searching for or filtering the study.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$keyword
+     * @return static
+     */
+    public function setKeyword(FHIRCodeableConcept ...$keyword): self
+    {
+        if ([] !== $this->keyword) {
+            $this->_trackValuesRemoved(count($this->keyword));
+            $this->keyword = [];
+        }
+        if ([] === $keyword) {
+            return $this;
+        }
+        foreach($keyword as $v) {
+            $this->addKeyword($v);
+        }
         return $this;
     }
 
@@ -1716,6 +1961,33 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->region[] = $region;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A country, state or other area where the study is taking place rather than its
+     * precise geographic location or address.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$region
+     * @return static
+     */
+    public function setRegion(FHIRCodeableConcept ...$region): self
+    {
+        if ([] !== $this->region) {
+            $this->_trackValuesRemoved(count($this->region));
+            $this->region = [];
+        }
+        if ([] === $region) {
+            return $this;
+        }
+        foreach($region as $v) {
+            $this->addRegion($v);
+        }
         return $this;
     }
 
@@ -1884,6 +2156,31 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A facility in which study activities are conducted.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$site
+     * @return static
+     */
+    public function setSite(FHIRReference ...$site): self
+    {
+        if ([] !== $this->site) {
+            $this->_trackValuesRemoved(count($this->site));
+            $this->site = [];
+        }
+        if ([] === $site) {
+            return $this;
+        }
+        foreach($site as $v) {
+            $this->addSite($v);
+        }
+        return $this;
+    }
+
+    /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
@@ -1916,6 +2213,32 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Comments made about the study by the performer, subject or other participants.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 
@@ -1964,6 +2287,36 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional grouping mechanism or categorization of a research study. Example:
+     * FDA regulated device, FDA regulated drug, MPG Paragraph 23b (a German legal
+     * requirement), IRB-exempt, etc. Implementation Note: do not use the classifier
+     * element to support existing semantics that are already supported thru explicit
+     * elements in the resource.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$classifier
+     * @return static
+     */
+    public function setClassifier(FHIRCodeableConcept ...$classifier): self
+    {
+        if ([] !== $this->classifier) {
+            $this->_trackValuesRemoved(count($this->classifier));
+            $this->classifier = [];
+        }
+        if ([] === $classifier) {
+            return $this;
+        }
+        foreach($classifier as $v) {
+            $this->addClassifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A scientific study of nature that sometimes includes processes involved in
      * health and disease. For example, clinical trials are research studies that
      * involve people. These studies may be related to new ways to screen, prevent,
@@ -2008,6 +2361,33 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * diagnose, and treat disease. They may also study certain outcomes and certain
      * groups of people by looking at data collected in the past or future.
      *
+     * Sponsors, collaborators, and other parties.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyAssociatedParty ...$associatedParty
+     * @return static
+     */
+    public function setAssociatedParty(FHIRResearchStudyAssociatedParty ...$associatedParty): self
+    {
+        if ([] !== $this->associatedParty) {
+            $this->_trackValuesRemoved(count($this->associatedParty));
+            $this->associatedParty = [];
+        }
+        if ([] === $associatedParty) {
+            return $this;
+        }
+        foreach($associatedParty as $v) {
+            $this->addAssociatedParty($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A scientific study of nature that sometimes includes processes involved in
+     * health and disease. For example, clinical trials are research studies that
+     * involve people. These studies may be related to new ways to screen, prevent,
+     * diagnose, and treat disease. They may also study certain outcomes and certain
+     * groups of people by looking at data collected in the past or future.
+     *
      * Status of study with time for that status.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyProgressStatus[]
@@ -2036,6 +2416,33 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->progressStatus[] = $progressStatus;
+        return $this;
+    }
+
+    /**
+     * A scientific study of nature that sometimes includes processes involved in
+     * health and disease. For example, clinical trials are research studies that
+     * involve people. These studies may be related to new ways to screen, prevent,
+     * diagnose, and treat disease. They may also study certain outcomes and certain
+     * groups of people by looking at data collected in the past or future.
+     *
+     * Status of study with time for that status.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyProgressStatus ...$progressStatus
+     * @return static
+     */
+    public function setProgressStatus(FHIRResearchStudyProgressStatus ...$progressStatus): self
+    {
+        if ([] !== $this->progressStatus) {
+            $this->_trackValuesRemoved(count($this->progressStatus));
+            $this->progressStatus = [];
+        }
+        if ([] === $progressStatus) {
+            return $this;
+        }
+        foreach($progressStatus as $v) {
+            $this->addProgressStatus($v);
+        }
         return $this;
     }
 
@@ -2164,6 +2571,36 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
      * diagnose, and treat disease. They may also study certain outcomes and certain
      * groups of people by looking at data collected in the past or future.
      *
+     * Describes an expected event or sequence of events for one of the subjects of a
+     * study. E.g. for a living subject: exposure to drug A, wash-out, exposure to drug
+     * B, wash-out, follow-up. E.g. for a stability study: {store sample from lot A at
+     * 25 degrees for 1 month}, {store sample from lot A at 40 degrees for 1 month}.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyComparisonGroup ...$comparisonGroup
+     * @return static
+     */
+    public function setComparisonGroup(FHIRResearchStudyComparisonGroup ...$comparisonGroup): self
+    {
+        if ([] !== $this->comparisonGroup) {
+            $this->_trackValuesRemoved(count($this->comparisonGroup));
+            $this->comparisonGroup = [];
+        }
+        if ([] === $comparisonGroup) {
+            return $this;
+        }
+        foreach($comparisonGroup as $v) {
+            $this->addComparisonGroup($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A scientific study of nature that sometimes includes processes involved in
+     * health and disease. For example, clinical trials are research studies that
+     * involve people. These studies may be related to new ways to screen, prevent,
+     * diagnose, and treat disease. They may also study certain outcomes and certain
+     * groups of people by looking at data collected in the past or future.
+     *
      * A goal that the study is aiming to achieve in terms of a scientific question to
      * be answered by the analysis of data collected during the study.
      *
@@ -2194,6 +2631,34 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->objective[] = $objective;
+        return $this;
+    }
+
+    /**
+     * A scientific study of nature that sometimes includes processes involved in
+     * health and disease. For example, clinical trials are research studies that
+     * involve people. These studies may be related to new ways to screen, prevent,
+     * diagnose, and treat disease. They may also study certain outcomes and certain
+     * groups of people by looking at data collected in the past or future.
+     *
+     * A goal that the study is aiming to achieve in terms of a scientific question to
+     * be answered by the analysis of data collected during the study.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyObjective ...$objective
+     * @return static
+     */
+    public function setObjective(FHIRResearchStudyObjective ...$objective): self
+    {
+        if ([] !== $this->objective) {
+            $this->_trackValuesRemoved(count($this->objective));
+            $this->objective = [];
+        }
+        if ([] === $objective) {
+            return $this;
+        }
+        foreach($objective as $v) {
+            $this->addObjective($v);
+        }
         return $this;
     }
 
@@ -2244,6 +2709,37 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
     }
 
     /**
+     * A scientific study of nature that sometimes includes processes involved in
+     * health and disease. For example, clinical trials are research studies that
+     * involve people. These studies may be related to new ways to screen, prevent,
+     * diagnose, and treat disease. They may also study certain outcomes and certain
+     * groups of people by looking at data collected in the past or future.
+     *
+     * An "outcome measure", "endpoint", "effect measure" or "measure of effect" is a
+     * specific measurement or observation used to quantify the effect of experimental
+     * variables on the participants in a study, or for observational studies, to
+     * describe patterns of diseases or traits or associations with exposures, risk
+     * factors or treatment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRResearchStudy\FHIRResearchStudyOutcomeMeasure ...$outcomeMeasure
+     * @return static
+     */
+    public function setOutcomeMeasure(FHIRResearchStudyOutcomeMeasure ...$outcomeMeasure): self
+    {
+        if ([] !== $this->outcomeMeasure) {
+            $this->_trackValuesRemoved(count($this->outcomeMeasure));
+            $this->outcomeMeasure = [];
+        }
+        if ([] === $outcomeMeasure) {
+            return $this;
+        }
+        foreach($outcomeMeasure as $v) {
+            $this->addOutcomeMeasure($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -2276,6 +2772,32 @@ class FHIRResearchStudy extends FHIRDomainResource implements PHPFHIRContainedTy
         }
         $this->_trackValueAdded();
         $this->result[] = $result;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Link to one or more sets of results generated by the study. Could also link to a
+     * research registry holding the results such as ClinicalTrials.gov.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$result
+     * @return static
+     */
+    public function setResult(FHIRReference ...$result): self
+    {
+        if ([] !== $this->result) {
+            $this->_trackValuesRemoved(count($this->result));
+            $this->result = [];
+        }
+        if ([] === $result) {
+            return $this;
+        }
+        foreach($result as $v) {
+            $this->addResult($v);
+        }
         return $this;
     }
 

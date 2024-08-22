@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasu
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,7 @@ class FHIRMeasureGroup extends FHIRBackboneElement
      * Validation map for fields in type Measure.Group
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -324,6 +324,29 @@ class FHIRMeasureGroup extends FHIRBackboneElement
     /**
      * The Measure resource provides the definition of a quality measure.
      *
+     * A population criteria for the measure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasurePopulation ...$population
+     * @return static
+     */
+    public function setPopulation(FHIRMeasurePopulation ...$population): self
+    {
+        if ([] !== $this->population) {
+            $this->_trackValuesRemoved(count($this->population));
+            $this->population = [];
+        }
+        if ([] === $population) {
+            return $this;
+        }
+        foreach($population as $v) {
+            $this->addPopulation($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The Measure resource provides the definition of a quality measure.
+     *
      * The stratifier criteria for the measure report, specified as either the name of
      * a valid CQL expression defined within a referenced library or a valid FHIR
      * Resource Path.
@@ -352,6 +375,31 @@ class FHIRMeasureGroup extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->stratifier[] = $stratifier;
+        return $this;
+    }
+
+    /**
+     * The Measure resource provides the definition of a quality measure.
+     *
+     * The stratifier criteria for the measure report, specified as either the name of
+     * a valid CQL expression defined within a referenced library or a valid FHIR
+     * Resource Path.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMeasure\FHIRMeasureStratifier ...$stratifier
+     * @return static
+     */
+    public function setStratifier(FHIRMeasureStratifier ...$stratifier): self
+    {
+        if ([] !== $this->stratifier) {
+            $this->_trackValuesRemoved(count($this->stratifier));
+            $this->stratifier = [];
+        }
+        if ([] === $stratifier) {
+            return $this;
+        }
+        foreach($stratifier as $v) {
+            $this->addStratifier($v);
+        }
         return $this;
     }
 

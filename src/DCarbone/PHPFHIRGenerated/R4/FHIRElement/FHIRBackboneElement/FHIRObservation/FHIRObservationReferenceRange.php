@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRObser
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -175,7 +175,7 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
      * Validation map for fields in type Observation.ReferenceRange
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -427,6 +427,36 @@ class FHIRObservationReferenceRange extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->appliesTo[] = $appliesTo;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Codes to indicate the target population this reference range applies to. For
+     * example, a reference range may be based on the normal population or a particular
+     * sex or race. Multiple `appliesTo` are interpreted as an "AND" of the target
+     * populations. For example, to represent a target population of African American
+     * females, both a code of female and a code for African American would be used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$appliesTo
+     * @return static
+     */
+    public function setAppliesTo(FHIRCodeableConcept ...$appliesTo): self
+    {
+        if ([] !== $this->appliesTo) {
+            $this->_trackValuesRemoved(count($this->appliesTo));
+            $this->appliesTo = [];
+        }
+        if ([] === $appliesTo) {
+            return $this;
+        }
+        foreach($appliesTo as $v) {
+            $this->addAppliesTo($v);
+        }
         return $this;
     }
 

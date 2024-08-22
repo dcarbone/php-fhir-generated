@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -153,7 +153,7 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
      * Validation map for fields in type NutritionOrder.Schedule2
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -260,6 +260,37 @@ class FHIRNutritionOrderSchedule2 extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->timing[] = $timing;
+        return $this;
+    }
+
+    /**
+     * Specifies an event that may occur multiple times. Timing schedules are used to
+     * record when things are planned, expected or requested to occur. The most common
+     * usage is in dosage instructions for medications. They are also used when
+     * planning care of various kinds, and may be used for reporting the schedule to
+     * which past regular activities were carried out.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The time period and frequency at which the enteral formula should be given. The
+     * enteral formula should be given for the combination of all schedules if more
+     * than one schedule is present.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRBackboneType\FHIRTiming ...$timing
+     * @return static
+     */
+    public function setTiming(FHIRTiming ...$timing): self
+    {
+        if ([] !== $this->timing) {
+            $this->_trackValuesRemoved(count($this->timing));
+            $this->timing = [];
+        }
+        if ([] === $timing) {
+            return $this;
+        }
+        foreach($timing as $v) {
+            $this->addTiming($v);
+        }
         return $this;
     }
 

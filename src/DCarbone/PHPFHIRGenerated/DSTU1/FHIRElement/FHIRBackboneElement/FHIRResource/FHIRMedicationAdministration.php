@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRRe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -239,7 +239,23 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
      * Validation map for fields in type MedicationAdministration
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PATIENT => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_PRACTITIONER => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_PRESCRIPTION => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_WHEN_GIVEN => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -451,6 +467,37 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->identifier[] = $identifier;
+        return $this;
+    }
+
+    /**
+     * A technical identifier - identifies some entity uniquely and unambiguously.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * External identifier - FHIR will generate its own internal IDs (probably URLs)
+     * which do not need to be explicitly managed by the resource. The identifier here
+     * is one that would be used by another non-FHIR system - for example an automated
+     * medication pump would provide a record each time it operated; an administration
+     * while the patient was off the ward might be made with a different system and
+     * entered after the event. Particularly important if these records have to be
+     * updated.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
         return $this;
     }
 
@@ -706,6 +753,32 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code indicating why the administration was not performed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRCodeableConcept ...$reasonNotGiven
+     * @return static
+     */
+    public function setReasonNotGiven(FHIRCodeableConcept ...$reasonNotGiven): self
+    {
+        if ([] !== $this->reasonNotGiven) {
+            $this->_trackValuesRemoved(count($this->reasonNotGiven));
+            $this->reasonNotGiven = [];
+        }
+        if ([] === $reasonNotGiven) {
+            return $this;
+        }
+        foreach($reasonNotGiven as $v) {
+            $this->addReasonNotGiven($v);
+        }
+        return $this;
+    }
+
+    /**
      * A time period defined by a start and end date and optionally time.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -818,6 +891,32 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The device used in administering the medication to the patient. E.g. a
+     * particular infusion pump.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$device
+     * @return static
+     */
+    public function setDevice(FHIRResourceReference ...$device): self
+    {
+        if ([] !== $this->device) {
+            $this->_trackValuesRemoved(count($this->device));
+            $this->device = [];
+        }
+        if ([] === $device) {
+            return $this;
+        }
+        foreach($device as $v) {
+            $this->addDevice($v);
+        }
+        return $this;
+    }
+
+    /**
      * Describes the event of a patient being given a dose of a medication. This may be
      * as simple as swallowing a tablet or it may be a long running infusion. Related
      * resources tie this event to the authorizing prescription, and the specific
@@ -850,6 +949,32 @@ class FHIRMedicationAdministration extends FHIRResource implements PHPFHIRContai
         }
         $this->_trackValueAdded();
         $this->dosage[] = $dosage;
+        return $this;
+    }
+
+    /**
+     * Describes the event of a patient being given a dose of a medication. This may be
+     * as simple as swallowing a tablet or it may be a long running infusion. Related
+     * resources tie this event to the authorizing prescription, and the specific
+     * encounter between patient and health care practitioner.
+     *
+     * Provides details of how much of the medication was administered.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationAdministration\FHIRMedicationAdministrationDosage ...$dosage
+     * @return static
+     */
+    public function setDosage(FHIRMedicationAdministrationDosage ...$dosage): self
+    {
+        if ([] !== $this->dosage) {
+            $this->_trackValuesRemoved(count($this->dosage));
+            $this->dosage = [];
+        }
+        if ([] === $dosage) {
+            return $this;
+        }
+        foreach($dosage as $v) {
+            $this->addDosage($v);
+        }
         return $this;
     }
 

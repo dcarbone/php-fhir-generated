@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -254,7 +254,14 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      * Validation map for fields in type CatalogEntry
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_ORDERABLE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_REFERENCED_ITEM => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -505,6 +512,33 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Used in supporting different identifiers for the same product, e.g. manufacturer
+     * code and retailer code.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -648,6 +682,32 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Used in supporting related concepts, e.g. NDC to RxNorm.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRIdentifier ...$additionalIdentifier
+     * @return static
+     */
+    public function setAdditionalIdentifier(FHIRIdentifier ...$additionalIdentifier): self
+    {
+        if ([] !== $this->additionalIdentifier) {
+            $this->_trackValuesRemoved(count($this->additionalIdentifier));
+            $this->additionalIdentifier = [];
+        }
+        if ([] === $additionalIdentifier) {
+            return $this;
+        }
+        foreach($additionalIdentifier as $v) {
+            $this->addAdditionalIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -680,6 +740,32 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->classification[] = $classification;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Classes of devices, or ATC for medication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$classification
+     * @return static
+     */
+    public function setClassification(FHIRCodeableConcept ...$classification): self
+    {
+        if ([] !== $this->classification) {
+            $this->_trackValuesRemoved(count($this->classification));
+            $this->classification = [];
+        }
+        if ([] === $classification) {
+            return $this;
+        }
+        foreach($classification as $v) {
+            $this->addClassification($v);
+        }
         return $this;
     }
 
@@ -883,6 +969,32 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Used for examplefor Out of Formulary, or any specifics.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$additionalCharacteristic
+     * @return static
+     */
+    public function setAdditionalCharacteristic(FHIRCodeableConcept ...$additionalCharacteristic): self
+    {
+        if ([] !== $this->additionalCharacteristic) {
+            $this->_trackValuesRemoved(count($this->additionalCharacteristic));
+            $this->additionalCharacteristic = [];
+        }
+        if ([] === $additionalCharacteristic) {
+            return $this;
+        }
+        foreach($additionalCharacteristic as $v) {
+            $this->addAdditionalCharacteristic($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * User for example for ATC classification, or.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept[]
@@ -910,6 +1022,32 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->additionalClassification[] = $additionalClassification;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * User for example for ATC classification, or.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$additionalClassification
+     * @return static
+     */
+    public function setAdditionalClassification(FHIRCodeableConcept ...$additionalClassification): self
+    {
+        if ([] !== $this->additionalClassification) {
+            $this->_trackValuesRemoved(count($this->additionalClassification));
+            $this->additionalClassification = [];
+        }
+        if ([] === $additionalClassification) {
+            return $this;
+        }
+        foreach($additionalClassification as $v) {
+            $this->addAdditionalClassification($v);
+        }
         return $this;
     }
 
@@ -942,6 +1080,30 @@ class FHIRCatalogEntry extends FHIRDomainResource implements PHPFHIRContainedTyp
         }
         $this->_trackValueAdded();
         $this->relatedEntry[] = $relatedEntry;
+        return $this;
+    }
+
+    /**
+     * Catalog entries are wrappers that contextualize items included in a catalog.
+     *
+     * Used for example, to point to a substance, or to a device used to administer a
+     * medication.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRCatalogEntry\FHIRCatalogEntryRelatedEntry ...$relatedEntry
+     * @return static
+     */
+    public function setRelatedEntry(FHIRCatalogEntryRelatedEntry ...$relatedEntry): self
+    {
+        if ([] !== $this->relatedEntry) {
+            $this->_trackValuesRemoved(count($this->relatedEntry));
+            $this->relatedEntry = [];
+        }
+        if ([] === $relatedEntry) {
+            return $this;
+        }
+        foreach($relatedEntry as $v) {
+            $this->addRelatedEntry($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMe
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -208,7 +208,7 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
      * Validation map for fields in type MedicationDispense.Dispense
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -694,6 +694,33 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Identifies the person who picked up the medication. This will usually be a
+     * patient or their carer, but some cases exist where it can be a healthcare
+     * professional.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$receiver
+     * @return static
+     */
+    public function setReceiver(FHIRResourceReference ...$receiver): self
+    {
+        if ([] !== $this->receiver) {
+            $this->_trackValuesRemoved(count($this->receiver));
+            $this->receiver = [];
+        }
+        if ([] === $receiver) {
+            return $this;
+        }
+        foreach($receiver as $v) {
+            $this->addReceiver($v);
+        }
+        return $this;
+    }
+
+    /**
      * Dispensing a medication to a named patient. This includes a description of the
      * supply provided and the instructions for administering the medication.
      *
@@ -722,6 +749,30 @@ class FHIRMedicationDispenseDispense extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->dosage[] = $dosage;
+        return $this;
+    }
+
+    /**
+     * Dispensing a medication to a named patient. This includes a description of the
+     * supply provided and the instructions for administering the medication.
+     *
+     * Indicates how the medication is to be used by the patient.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRMedicationDispense\FHIRMedicationDispenseDosage ...$dosage
+     * @return static
+     */
+    public function setDosage(FHIRMedicationDispenseDosage ...$dosage): self
+    {
+        if ([] !== $this->dosage) {
+            $this->_trackValuesRemoved(count($this->dosage));
+            $this->dosage = [];
+        }
+        if ([] === $dosage) {
+            return $this;
+        }
+        foreach($dosage as $v) {
+            $this->addDosage($v);
+        }
         return $this;
     }
 

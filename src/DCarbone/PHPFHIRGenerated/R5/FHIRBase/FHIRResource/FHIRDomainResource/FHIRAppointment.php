@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -540,6 +540,9 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         self::FIELD_PARTICIPANT => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
     ];
 
     /** @var array */
@@ -1066,6 +1069,35 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This records identifiers associated with this appointment concern that are
+     * defined by business processes and/or used to refer to it when a direct URL
+     * reference to the resource itself is not appropriate (e.g. in CDA documents, or
+     * in written / printed documentation).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * If the element is present, it must have either a \@value, an \@id, or extensions
      *
      * The overall status of the Appointment. Each of the participants has their own
@@ -1185,6 +1217,34 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * Concepts representing classification of patient encounter such as ambulatory
+     * (outpatient), inpatient, emergency, home health or others due to local
+     * variations.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$class
+     * @return static
+     */
+    public function setClass(FHIRCodeableConcept ...$class): self
+    {
+        if ([] !== $this->class) {
+            $this->_trackValuesRemoved(count($this->class));
+            $this->class = [];
+        }
+        if ([] === $class) {
+            return $this;
+        }
+        foreach($class as $v) {
+            $this->addClass($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * A broad categorization of the service that is to be performed during this
      * appointment.
      *
@@ -1214,6 +1274,33 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->serviceCategory[] = $serviceCategory;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A broad categorization of the service that is to be performed during this
+     * appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$serviceCategory
+     * @return static
+     */
+    public function setServiceCategory(FHIRCodeableConcept ...$serviceCategory): self
+    {
+        if ([] !== $this->serviceCategory) {
+            $this->_trackValuesRemoved(count($this->serviceCategory));
+            $this->serviceCategory = [];
+        }
+        if ([] === $serviceCategory) {
+            return $this;
+        }
+        foreach($serviceCategory as $v) {
+            $this->addServiceCategory($v);
+        }
         return $this;
     }
 
@@ -1254,6 +1341,32 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The specific service that is to be performed during this appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$serviceType
+     * @return static
+     */
+    public function setServiceType(FHIRCodeableReference ...$serviceType): self
+    {
+        if ([] !== $this->serviceType) {
+            $this->_trackValuesRemoved(count($this->serviceType));
+            $this->serviceType = [];
+        }
+        if ([] === $serviceType) {
+            return $this;
+        }
+        foreach($serviceType as $v) {
+            $this->addServiceType($v);
+        }
+        return $this;
+    }
+
+    /**
      * A concept that may be defined by a formal reference to a terminology or ontology
      * or may be provided by text.
      * If the element is present, it must have a value for at least one of the defined
@@ -1288,6 +1401,33 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->specialty[] = $specialty;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The specialty of a practitioner that would be required to perform the service
+     * requested in this appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$specialty
+     * @return static
+     */
+    public function setSpecialty(FHIRCodeableConcept ...$specialty): self
+    {
+        if ([] !== $this->specialty) {
+            $this->_trackValuesRemoved(count($this->specialty));
+            $this->specialty = [];
+        }
+        if ([] === $specialty) {
+            return $this;
+        }
+        foreach($specialty as $v) {
+            $this->addSpecialty($v);
+        }
         return $this;
     }
 
@@ -1370,6 +1510,36 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->reason[] = $reason;
+        return $this;
+    }
+
+    /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The reason that this appointment is being scheduled. This is more clinical than
+     * administrative. This can be coded, or as specified using information from
+     * another resource. When the patient arrives and the encounter begins it may be
+     * used as the admission diagnosis. The indication will typically be a Condition
+     * (with other resources referenced in the evidence.detail), or a Procedure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$reason
+     * @return static
+     */
+    public function setReason(FHIRCodeableReference ...$reason): self
+    {
+        if ([] !== $this->reason) {
+            $this->_trackValuesRemoved(count($this->reason));
+            $this->reason = [];
+        }
+        if ([] === $reason) {
+            return $this;
+        }
+        foreach($reason as $v) {
+            $this->addReason($v);
+        }
         return $this;
     }
 
@@ -1495,6 +1665,33 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Appointment replaced by this Appointment in cases where there is a cancellation,
+     * the details of the cancellation can be found in the cancellationReason property
+     * (on the referenced resource).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$replaces
+     * @return static
+     */
+    public function setReplaces(FHIRReference ...$replaces): self
+    {
+        if ([] !== $this->replaces) {
+            $this->_trackValuesRemoved(count($this->replaces));
+            $this->replaces = [];
+        }
+        if ([] === $replaces) {
+            return $this;
+        }
+        foreach($replaces as $v) {
+            $this->addReplaces($v);
+        }
+        return $this;
+    }
+
+    /**
      * Virtual Service Contact Details.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1525,6 +1722,31 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->virtualService[] = $virtualService;
+        return $this;
+    }
+
+    /**
+     * Virtual Service Contact Details.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Connection details of a virtual service (e.g. conference call).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRVirtualServiceDetail ...$virtualService
+     * @return static
+     */
+    public function setVirtualService(FHIRVirtualServiceDetail ...$virtualService): self
+    {
+        if ([] !== $this->virtualService) {
+            $this->_trackValuesRemoved(count($this->virtualService));
+            $this->virtualService = [];
+        }
+        if ([] === $virtualService) {
+            return $this;
+        }
+        foreach($virtualService as $v) {
+            $this->addVirtualService($v);
+        }
         return $this;
     }
 
@@ -1561,6 +1783,32 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->supportingInformation[] = $supportingInformation;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional information to support the appointment provided when making the
+     * appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$supportingInformation
+     * @return static
+     */
+    public function setSupportingInformation(FHIRReference ...$supportingInformation): self
+    {
+        if ([] !== $this->supportingInformation) {
+            $this->_trackValuesRemoved(count($this->supportingInformation));
+            $this->supportingInformation = [];
+        }
+        if ([] === $supportingInformation) {
+            return $this;
+        }
+        foreach($supportingInformation as $v) {
+            $this->addSupportingInformation($v);
+        }
         return $this;
     }
 
@@ -1814,6 +2062,35 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * A time period defined by a start and end date and optionally time.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A set of date ranges (potentially including times) that the appointment is
+     * preferred to be scheduled within. The duration (usually in minutes) could also
+     * be provided to indicate the length of the appointment to fill and populate the
+     * start/end times for the actual allocated time. However, in other situations the
+     * duration may be calculated by the scheduling system.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRPeriod ...$requestedPeriod
+     * @return static
+     */
+    public function setRequestedPeriod(FHIRPeriod ...$requestedPeriod): self
+    {
+        if ([] !== $this->requestedPeriod) {
+            $this->_trackValuesRemoved(count($this->requestedPeriod));
+            $this->requestedPeriod = [];
+        }
+        if ([] === $requestedPeriod) {
+            return $this;
+        }
+        foreach($requestedPeriod as $v) {
+            $this->addRequestedPeriod($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1854,6 +2131,32 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
      *
+     * The slots from the participants' schedules that will be filled by the
+     * appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$slot
+     * @return static
+     */
+    public function setSlot(FHIRReference ...$slot): self
+    {
+        if ([] !== $this->slot) {
+            $this->_trackValuesRemoved(count($this->slot));
+            $this->slot = [];
+        }
+        if ([] === $slot) {
+            return $this;
+        }
+        foreach($slot as $v) {
+            $this->addSlot($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
      * The set of accounts that is expected to be used for billing the activities that
      * result from this Appointment.
      *
@@ -1882,6 +2185,32 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->account[] = $account;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The set of accounts that is expected to be used for billing the activities that
+     * result from this Appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$account
+     * @return static
+     */
+    public function setAccount(FHIRReference ...$account): self
+    {
+        if ([] !== $this->account) {
+            $this->_trackValuesRemoved(count($this->account));
+            $this->account = [];
+        }
+        if ([] === $account) {
+            return $this;
+        }
+        foreach($account as $v) {
+            $this->addAccount($v);
+        }
         return $this;
     }
 
@@ -2022,6 +2351,32 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Additional notes/comments about the appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference to a resource (by instance), or instead, a reference to a concept
      * defined in a terminology or ontology (by class).
      * If the element is present, it must have a value for at least one of the defined
@@ -2064,6 +2419,35 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * A reference to a resource (by instance), or instead, a reference to a concept
+     * defined in a terminology or ontology (by class).
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * While Appointment.note contains information for internal use,
+     * Appointment.patientInstructions is used to capture patient facing information
+     * about the Appointment (e.g. please bring your referral or fast from 8pm night
+     * before).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableReference ...$patientInstruction
+     * @return static
+     */
+    public function setPatientInstruction(FHIRCodeableReference ...$patientInstruction): self
+    {
+        if ([] !== $this->patientInstruction) {
+            $this->_trackValuesRemoved(count($this->patientInstruction));
+            $this->patientInstruction = [];
+        }
+        if ([] === $patientInstruction) {
+            return $this;
+        }
+        foreach($patientInstruction as $v) {
+            $this->addPatientInstruction($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -2096,6 +2480,32 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->basedOn[] = $basedOn;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The request this appointment is allocated to assess (e.g. incoming referral or
+     * procedure request).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
         return $this;
     }
 
@@ -2166,6 +2576,31 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->participant[] = $participant;
+        return $this;
+    }
+
+    /**
+     * A booking of a healthcare event among patient(s), practitioner(s), related
+     * person(s) and/or device(s) for a specific date/time. This may result in one or
+     * more Encounter(s).
+     *
+     * List of participants involved in the appointment.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentParticipant ...$participant
+     * @return static
+     */
+    public function setParticipant(FHIRAppointmentParticipant ...$participant): self
+    {
+        if ([] !== $this->participant) {
+            $this->_trackValuesRemoved(count($this->participant));
+            $this->participant = [];
+        }
+        if ([] === $participant) {
+            return $this;
+        }
+        foreach($participant as $v) {
+            $this->addParticipant($v);
+        }
         return $this;
     }
 
@@ -2280,6 +2715,32 @@ class FHIRAppointment extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->recurrenceTemplate[] = $recurrenceTemplate;
+        return $this;
+    }
+
+    /**
+     * A booking of a healthcare event among patient(s), practitioner(s), related
+     * person(s) and/or device(s) for a specific date/time. This may result in one or
+     * more Encounter(s).
+     *
+     * The details of the recurrence pattern or template that is used to generate
+     * recurring appointments.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRAppointment\FHIRAppointmentRecurrenceTemplate ...$recurrenceTemplate
+     * @return static
+     */
+    public function setRecurrenceTemplate(FHIRAppointmentRecurrenceTemplate ...$recurrenceTemplate): self
+    {
+        if ([] !== $this->recurrenceTemplate) {
+            $this->_trackValuesRemoved(count($this->recurrenceTemplate));
+            $this->recurrenceTemplate = [];
+        }
+        if ([] === $recurrenceTemplate) {
+            return $this;
+        }
+        foreach($recurrenceTemplate as $v) {
+            $this->addRecurrenceTemplate($v);
+        }
         return $this;
     }
 

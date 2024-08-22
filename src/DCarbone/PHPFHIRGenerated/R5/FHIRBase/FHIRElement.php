@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -135,7 +135,7 @@ class FHIRElement extends FHIRBase
      * Validation map for fields in type Element
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -221,6 +221,35 @@ class FHIRElement extends FHIRBase
         }
         $this->_trackValueAdded();
         $this->extension[] = $extension;
+        return $this;
+    }
+
+    /**
+     * Optional Extension Element - found in all resources.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * May be used to represent additional information that is not part of the basic
+     * definition of the element. To make the use of extensions safe and managable,
+     * there is a strict set of governance applied to the definition and use of
+     * extensions. Though any implementer can define an extension, there is a set of
+     * requirements that SHALL be met as part of the definition of the extension.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRExtension ...$extension
+     * @return static
+     */
+    public function setExtension(FHIRExtension ...$extension): self
+    {
+        if ([] !== $this->extension) {
+            $this->_trackValuesRemoved(count($this->extension));
+            $this->extension = [];
+        }
+        if ([] === $extension) {
+            return $this;
+        }
+        foreach($extension as $v) {
+            $this->addExtension($v);
+        }
         return $this;
     }
 

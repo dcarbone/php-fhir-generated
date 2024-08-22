@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -148,7 +148,11 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
      * Validation map for fields in type MedicinalProductAuthorization.Procedure
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -404,6 +408,29 @@ class FHIRMedicinalProductAuthorizationProcedure extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->application[] = $application;
+        return $this;
+    }
+
+    /**
+     * The regulatory authorization of a medicinal product.
+     *
+     * Applcations submitted to obtain a marketing authorization.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductAuthorization\FHIRMedicinalProductAuthorizationProcedure ...$application
+     * @return static
+     */
+    public function setApplication(FHIRMedicinalProductAuthorizationProcedure ...$application): self
+    {
+        if ([] !== $this->application) {
+            $this->_trackValuesRemoved(count($this->application));
+            $this->application = [];
+        }
+        if ([] === $application) {
+            return $this;
+        }
+        foreach($application as $v) {
+            $this->addApplication($v);
+        }
         return $this;
     }
 

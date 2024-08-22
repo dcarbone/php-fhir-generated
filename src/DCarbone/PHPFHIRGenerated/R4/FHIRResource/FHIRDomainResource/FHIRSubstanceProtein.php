@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -176,7 +176,7 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
      * Validation map for fields in type SubstanceProtein
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -503,6 +503,43 @@ class FHIRSubstanceProtein extends FHIRDomainResource implements PHPFHIRContaine
         }
         $this->_trackValueAdded();
         $this->subunit[] = $subunit;
+        return $this;
+    }
+
+    /**
+     * A SubstanceProtein is defined as a single unit of a linear amino acid sequence,
+     * or a combination of subunits that are either covalently linked or have a defined
+     * invariant stoichiometric relationship. This includes all synthetic, recombinant
+     * and purified SubstanceProteins of defined sequence, whether the use is
+     * therapeutic or prophylactic. This set of elements will be used to describe
+     * albumins, coagulation factors, cytokines, growth factors,
+     * peptide/SubstanceProtein hormones, enzymes, toxins, toxoids, recombinant
+     * vaccines, and immunomodulators.
+     *
+     * This subclause refers to the description of each subunit constituting the
+     * SubstanceProtein. A subunit is a linear sequence of amino acids linked through
+     * peptide bonds. The Subunit information shall be provided when the finished
+     * SubstanceProtein is a complex of multiple sequences; subunits are not used to
+     * delineate domains within a single sequence. Subunits are listed in order of
+     * decreasing length; sequences of the same length will be ordered by decreasing
+     * molecular weight; subunits that have identical sequences will be repeated
+     * multiple times.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRSubstanceProtein\FHIRSubstanceProteinSubunit ...$subunit
+     * @return static
+     */
+    public function setSubunit(FHIRSubstanceProteinSubunit ...$subunit): self
+    {
+        if ([] !== $this->subunit) {
+            $this->_trackValuesRemoved(count($this->subunit));
+            $this->subunit = [];
+        }
+        if ([] === $subunit) {
+            return $this;
+        }
+        foreach($subunit as $v) {
+            $this->addSubunit($v);
+        }
         return $this;
     }
 

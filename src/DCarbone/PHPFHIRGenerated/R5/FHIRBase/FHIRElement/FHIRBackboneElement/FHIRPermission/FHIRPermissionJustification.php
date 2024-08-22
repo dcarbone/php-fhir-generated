@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -133,7 +133,7 @@ class FHIRPermissionJustification extends FHIRBackboneElement
      * Validation map for fields in type Permission.Justification
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -227,6 +227,33 @@ class FHIRPermissionJustification extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This would be a codeableconcept, or a coding, which can be constrained to , for
+     * example, the 6 grounds for processing in GDPR.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$basis
+     * @return static
+     */
+    public function setBasis(FHIRCodeableConcept ...$basis): self
+    {
+        if ([] !== $this->basis) {
+            $this->_trackValuesRemoved(count($this->basis));
+            $this->basis = [];
+        }
+        if ([] === $basis) {
+            return $this;
+        }
+        foreach($basis as $v) {
+            $this->addBasis($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -257,6 +284,31 @@ class FHIRPermissionJustification extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->evidence[] = $evidence;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Justifing rational.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$evidence
+     * @return static
+     */
+    public function setEvidence(FHIRReference ...$evidence): self
+    {
+        if ([] !== $this->evidence) {
+            $this->_trackValuesRemoved(count($this->evidence));
+            $this->evidence = [];
+        }
+        if ([] === $evidence) {
+            return $this;
+        }
+        foreach($evidence as $v) {
+            $this->addEvidence($v);
+        }
         return $this;
     }
 

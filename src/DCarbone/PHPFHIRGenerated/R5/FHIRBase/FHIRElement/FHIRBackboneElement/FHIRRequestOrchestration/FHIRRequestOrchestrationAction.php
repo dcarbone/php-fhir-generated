@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -507,7 +507,7 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * Validation map for fields in type RequestOrchestration.Action
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1285,6 +1285,33 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code that provides meaning for the action or action group. For example, a
+     * section may have a LOINC code for a section of a documentation template.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$code
+     * @return static
+     */
+    public function setCode(FHIRCodeableConcept ...$code): self
+    {
+        if ([] !== $this->code) {
+            $this->_trackValuesRemoved(count($this->code));
+            $this->code = [];
+        }
+        if ([] === $code) {
+            return $this;
+        }
+        foreach($code as $v) {
+            $this->addCode($v);
+        }
+        return $this;
+    }
+
+    /**
      * Related artifacts such as additional documentation, justification, or
      * bibliographic references.
      * If the element is present, it must have a value for at least one of the defined
@@ -1325,6 +1352,34 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
     }
 
     /**
+     * Related artifacts such as additional documentation, justification, or
+     * bibliographic references.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Didactic or other informational resources associated with the action that can be
+     * provided to the CDS recipient. Information resources can include inline text
+     * commentary and links to web resources.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRRelatedArtifact ...$documentation
+     * @return static
+     */
+    public function setDocumentation(FHIRRelatedArtifact ...$documentation): self
+    {
+        if ([] !== $this->documentation) {
+            $this->_trackValuesRemoved(count($this->documentation));
+            $this->documentation = [];
+        }
+        if ([] === $documentation) {
+            return $this;
+        }
+        foreach($documentation as $v) {
+            $this->addDocumentation($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -1355,6 +1410,31 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->goal[] = $goal;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Goals that are intended to be achieved by following the requests in this action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$goal
+     * @return static
+     */
+    public function setGoal(FHIRReference ...$goal): self
+    {
+        if ([] !== $this->goal) {
+            $this->_trackValuesRemoved(count($this->goal));
+            $this->goal = [];
+        }
+        if ([] === $goal) {
+            return $this;
+        }
+        foreach($goal as $v) {
+            $this->addGoal($v);
+        }
         return $this;
     }
 
@@ -1396,6 +1476,31 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * A set of related requests that can be used to capture intended activities that
      * have inter-dependencies such as "give this medication after that one".
      *
+     * An expression that describes applicability criteria, or start/stop conditions
+     * for the action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationCondition ...$condition
+     * @return static
+     */
+    public function setCondition(FHIRRequestOrchestrationCondition ...$condition): self
+    {
+        if ([] !== $this->condition) {
+            $this->_trackValuesRemoved(count($this->condition));
+            $this->condition = [];
+        }
+        if ([] === $condition) {
+            return $this;
+        }
+        foreach($condition as $v) {
+            $this->addCondition($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A set of related requests that can be used to capture intended activities that
+     * have inter-dependencies such as "give this medication after that one".
+     *
      * Defines input data requirements for the action.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationInput[]
@@ -1421,6 +1526,30 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->input[] = $input;
+        return $this;
+    }
+
+    /**
+     * A set of related requests that can be used to capture intended activities that
+     * have inter-dependencies such as "give this medication after that one".
+     *
+     * Defines input data requirements for the action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationInput ...$input
+     * @return static
+     */
+    public function setInput(FHIRRequestOrchestrationInput ...$input): self
+    {
+        if ([] !== $this->input) {
+            $this->_trackValuesRemoved(count($this->input));
+            $this->input = [];
+        }
+        if ([] === $input) {
+            return $this;
+        }
+        foreach($input as $v) {
+            $this->addInput($v);
+        }
         return $this;
     }
 
@@ -1460,6 +1589,30 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * A set of related requests that can be used to capture intended activities that
      * have inter-dependencies such as "give this medication after that one".
      *
+     * Defines the outputs of the action, if any.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationOutput ...$output
+     * @return static
+     */
+    public function setOutput(FHIRRequestOrchestrationOutput ...$output): self
+    {
+        if ([] !== $this->output) {
+            $this->_trackValuesRemoved(count($this->output));
+            $this->output = [];
+        }
+        if ([] === $output) {
+            return $this;
+        }
+        foreach($output as $v) {
+            $this->addOutput($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A set of related requests that can be used to capture intended activities that
+     * have inter-dependencies such as "give this medication after that one".
+     *
      * A relationship to another action such as "before" or "30-60 minutes after start
      * of".
      *
@@ -1487,6 +1640,31 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->relatedAction[] = $relatedAction;
+        return $this;
+    }
+
+    /**
+     * A set of related requests that can be used to capture intended activities that
+     * have inter-dependencies such as "give this medication after that one".
+     *
+     * A relationship to another action such as "before" or "30-60 minutes after start
+     * of".
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationRelatedAction ...$relatedAction
+     * @return static
+     */
+    public function setRelatedAction(FHIRRequestOrchestrationRelatedAction ...$relatedAction): self
+    {
+        if ([] !== $this->relatedAction) {
+            $this->_trackValuesRemoved(count($this->relatedAction));
+            $this->relatedAction = [];
+        }
+        if ([] === $relatedAction) {
+            return $this;
+        }
+        foreach($relatedAction as $v) {
+            $this->addRelatedAction($v);
+        }
         return $this;
     }
 
@@ -1782,6 +1960,30 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->participant[] = $participant;
+        return $this;
+    }
+
+    /**
+     * A set of related requests that can be used to capture intended activities that
+     * have inter-dependencies such as "give this medication after that one".
+     *
+     * The participant that should perform or be responsible for this action.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationParticipant ...$participant
+     * @return static
+     */
+    public function setParticipant(FHIRRequestOrchestrationParticipant ...$participant): self
+    {
+        if ([] !== $this->participant) {
+            $this->_trackValuesRemoved(count($this->participant));
+            $this->participant = [];
+        }
+        if ([] === $participant) {
+            return $this;
+        }
+        foreach($participant as $v) {
+            $this->addParticipant($v);
+        }
         return $this;
     }
 
@@ -2188,6 +2390,33 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
      * A set of related requests that can be used to capture intended activities that
      * have inter-dependencies such as "give this medication after that one".
      *
+     * Customizations that should be applied to the statically defined resource. For
+     * example, if the dosage of a medication must be computed based on the patient's
+     * weight, a customization would be used to specify an expression that calculated
+     * the weight, and the path on the resource that would contain the result.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationDynamicValue ...$dynamicValue
+     * @return static
+     */
+    public function setDynamicValue(FHIRRequestOrchestrationDynamicValue ...$dynamicValue): self
+    {
+        if ([] !== $this->dynamicValue) {
+            $this->_trackValuesRemoved(count($this->dynamicValue));
+            $this->dynamicValue = [];
+        }
+        if ([] === $dynamicValue) {
+            return $this;
+        }
+        foreach($dynamicValue as $v) {
+            $this->addDynamicValue($v);
+        }
+        return $this;
+    }
+
+    /**
+     * A set of related requests that can be used to capture intended activities that
+     * have inter-dependencies such as "give this medication after that one".
+     *
      * Sub actions.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationAction[]
@@ -2213,6 +2442,30 @@ class FHIRRequestOrchestrationAction extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->action[] = $action;
+        return $this;
+    }
+
+    /**
+     * A set of related requests that can be used to capture intended activities that
+     * have inter-dependencies such as "give this medication after that one".
+     *
+     * Sub actions.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRRequestOrchestration\FHIRRequestOrchestrationAction ...$action
+     * @return static
+     */
+    public function setAction(FHIRRequestOrchestrationAction ...$action): self
+    {
+        if ([] !== $this->action) {
+            $this->_trackValuesRemoved(count($this->action));
+            $this->action = [];
+        }
+        if ([] === $action) {
+            return $this;
+        }
+        foreach($action as $v) {
+            $this->addAction($v);
+        }
         return $this;
     }
 

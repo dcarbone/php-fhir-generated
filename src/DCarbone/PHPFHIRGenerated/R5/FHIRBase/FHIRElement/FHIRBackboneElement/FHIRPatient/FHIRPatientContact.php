@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -198,7 +198,7 @@ class FHIRPatientContact extends FHIRBackboneElement
      * Validation map for fields in type Patient.Contact
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -335,6 +335,32 @@ class FHIRPatientContact extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The nature of the relationship between the patient and the contact person.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$relationship
+     * @return static
+     */
+    public function setRelationship(FHIRCodeableConcept ...$relationship): self
+    {
+        if ([] !== $this->relationship) {
+            $this->_trackValuesRemoved(count($this->relationship));
+            $this->relationship = [];
+        }
+        if ([] === $relationship) {
+            return $this;
+        }
+        foreach($relationship as $v) {
+            $this->addRelationship($v);
+        }
+        return $this;
+    }
+
+    /**
      * A name, normally of a human, that can be used for other living entities (e.g.
      * animals but not organizations) that have been assigned names by a human and may
      * need the use of name parts or the need for usage information.
@@ -405,6 +431,32 @@ class FHIRPatientContact extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->telecom[] = $telecom;
+        return $this;
+    }
+
+    /**
+     * Details for all kinds of technology mediated contact points for a person or
+     * organization, including telephone, email, etc.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A contact detail for the person, e.g. a telephone number or an email address.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRContactPoint ...$telecom
+     * @return static
+     */
+    public function setTelecom(FHIRContactPoint ...$telecom): self
+    {
+        if ([] !== $this->telecom) {
+            $this->_trackValuesRemoved(count($this->telecom));
+            $this->telecom = [];
+        }
+        if ([] === $telecom) {
+            return $this;
+        }
+        foreach($telecom as $v) {
+            $this->addTelecom($v);
+        }
         return $this;
     }
 

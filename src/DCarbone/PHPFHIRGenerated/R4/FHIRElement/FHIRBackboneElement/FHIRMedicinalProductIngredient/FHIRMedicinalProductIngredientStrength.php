@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedic
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -170,7 +170,11 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
      * Validation map for fields in type MedicinalProductIngredient.Strength
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_PRESENTATION => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -498,6 +502,32 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The country or countries for which the strength range applies.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRCodeableConcept ...$country
+     * @return static
+     */
+    public function setCountry(FHIRCodeableConcept ...$country): self
+    {
+        if ([] !== $this->country) {
+            $this->_trackValuesRemoved(count($this->country));
+            $this->country = [];
+        }
+        if ([] === $country) {
+            return $this;
+        }
+        foreach($country as $v) {
+            $this->addCountry($v);
+        }
+        return $this;
+    }
+
+    /**
      * An ingredient of a manufactured item or pharmaceutical product.
      *
      * Strength expressed in terms of a reference substance.
@@ -524,6 +554,29 @@ class FHIRMedicinalProductIngredientStrength extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->referenceStrength[] = $referenceStrength;
+        return $this;
+    }
+
+    /**
+     * An ingredient of a manufactured item or pharmaceutical product.
+     *
+     * Strength expressed in terms of a reference substance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R4\FHIRElement\FHIRBackboneElement\FHIRMedicinalProductIngredient\FHIRMedicinalProductIngredientReferenceStrength ...$referenceStrength
+     * @return static
+     */
+    public function setReferenceStrength(FHIRMedicinalProductIngredientReferenceStrength ...$referenceStrength): self
+    {
+        if ([] !== $this->referenceStrength) {
+            $this->_trackValuesRemoved(count($this->referenceStrength));
+            $this->referenceStrength = [];
+        }
+        if ([] === $referenceStrength) {
+            return $this;
+        }
+        foreach($referenceStrength as $v) {
+            $this->addReferenceStrength($v);
+        }
         return $this;
     }
 

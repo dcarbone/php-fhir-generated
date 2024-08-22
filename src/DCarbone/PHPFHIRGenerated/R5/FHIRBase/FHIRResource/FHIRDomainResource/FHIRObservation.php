@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRResource\FHIRDomainResource;
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -678,7 +678,14 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
      * Validation map for fields in type Observation
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_STATUS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -1253,6 +1260,32 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * An identifier - identifies some entity uniquely and unambiguously. Typically
+     * this is used for business identifiers.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A unique identifier assigned to this observation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRIdentifier ...$identifier
+     * @return static
+     */
+    public function setIdentifier(FHIRIdentifier ...$identifier): self
+    {
+        if ([] !== $this->identifier) {
+            $this->_trackValuesRemoved(count($this->identifier));
+            $this->identifier = [];
+        }
+        if ([] === $identifier) {
+            return $this;
+        }
+        foreach($identifier as $v) {
+            $this->addIdentifier($v);
+        }
+        return $this;
+    }
+
+    /**
      * A URI that is a reference to a canonical URL on a FHIR resource
      * see [Canonical References](references.html#canonical)
      * If the element is present, it must have either a \@value, an \@id referenced from
@@ -1370,6 +1403,33 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A plan, proposal or order that is fulfilled in whole or in part by this event.
+     * For example, a MedicationRequest may require a patient to have laboratory test
+     * performed before it is dispensed.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$basedOn
+     * @return static
+     */
+    public function setBasedOn(FHIRReference ...$basedOn): self
+    {
+        if ([] !== $this->basedOn) {
+            $this->_trackValuesRemoved(count($this->basedOn));
+            $this->basedOn = [];
+        }
+        if ([] === $basedOn) {
+            return $this;
+        }
+        foreach($basedOn as $v) {
+            $this->addBasedOn($v);
+        }
+        return $this;
+    }
+
+    /**
      * Measurements and simple assertions made about a patient, device or other
      * subject.
      *
@@ -1400,6 +1460,31 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->triggeredBy[] = $triggeredBy;
+        return $this;
+    }
+
+    /**
+     * Measurements and simple assertions made about a patient, device or other
+     * subject.
+     *
+     * Identifies the observation(s) that triggered the performance of this
+     * observation.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationTriggeredBy ...$triggeredBy
+     * @return static
+     */
+    public function setTriggeredBy(FHIRObservationTriggeredBy ...$triggeredBy): self
+    {
+        if ([] !== $this->triggeredBy) {
+            $this->_trackValuesRemoved(count($this->triggeredBy));
+            $this->triggeredBy = [];
+        }
+        if ([] === $triggeredBy) {
+            return $this;
+        }
+        foreach($triggeredBy as $v) {
+            $this->addTriggeredBy($v);
+        }
         return $this;
     }
 
@@ -1436,6 +1521,32 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->partOf[] = $partOf;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A larger event of which this particular Observation is a component or step. For
+     * example, an observation as part of a procedure.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$partOf
+     * @return static
+     */
+    public function setPartOf(FHIRReference ...$partOf): self
+    {
+        if ([] !== $this->partOf) {
+            $this->_trackValuesRemoved(count($this->partOf));
+            $this->partOf = [];
+        }
+        if ([] === $partOf) {
+            return $this;
+        }
+        foreach($partOf as $v) {
+            $this->addPartOf($v);
+        }
         return $this;
     }
 
@@ -1502,6 +1613,32 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->category[] = $category;
+        return $this;
+    }
+
+    /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A code that classifies the general type of observation being made.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$category
+     * @return static
+     */
+    public function setCategory(FHIRCodeableConcept ...$category): self
+    {
+        if ([] !== $this->category) {
+            $this->_trackValuesRemoved(count($this->category));
+            $this->category = [];
+        }
+        if ([] === $category) {
+            return $this;
+        }
+        foreach($category as $v) {
+            $this->addCategory($v);
+        }
         return $this;
     }
 
@@ -1630,6 +1767,39 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->focus[] = $focus;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The actual focus of an observation when it is not the patient of record
+     * representing something or someone associated with the patient such as a spouse,
+     * parent, fetus, or donor. For example, fetus observations in a mother's record.
+     * The focus of an observation could also be an existing condition, an
+     * intervention, the subject's diet, another observation of the subject, or a body
+     * structure such as tumor or implanted device. An example use case would be using
+     * the Observation resource to capture whether the mother is trained to change her
+     * child's tracheostomy tube. In this example, the child is the patient of record
+     * and the mother is the focus.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$focus
+     * @return static
+     */
+    public function setFocus(FHIRReference ...$focus): self
+    {
+        if ([] !== $this->focus) {
+            $this->_trackValuesRemoved(count($this->focus));
+            $this->focus = [];
+        }
+        if ([] === $focus) {
+            return $this;
+        }
+        foreach($focus as $v) {
+            $this->addFocus($v);
+        }
         return $this;
     }
 
@@ -1947,6 +2117,31 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->performer[] = $performer;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Who was responsible for asserting the observed value as "true".
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$performer
+     * @return static
+     */
+    public function setPerformer(FHIRReference ...$performer): self
+    {
+        if ([] !== $this->performer) {
+            $this->_trackValuesRemoved(count($this->performer));
+            $this->performer = [];
+        }
+        if ([] === $performer) {
+            return $this;
+        }
+        foreach($performer as $v) {
+            $this->addPerformer($v);
+        }
         return $this;
     }
 
@@ -2534,6 +2729,33 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * A categorical assessment of an observation value. For example, high, low,
+     * normal.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$interpretation
+     * @return static
+     */
+    public function setInterpretation(FHIRCodeableConcept ...$interpretation): self
+    {
+        if ([] !== $this->interpretation) {
+            $this->_trackValuesRemoved(count($this->interpretation));
+            $this->interpretation = [];
+        }
+        if ([] === $interpretation) {
+            return $this;
+        }
+        foreach($interpretation as $v) {
+            $this->addInterpretation($v);
+        }
+        return $this;
+    }
+
+    /**
      * A text note which also contains information about who made the statement and
      * when.
      * If the element is present, it must have a value for at least one of the defined
@@ -2566,6 +2788,32 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->note[] = $note;
+        return $this;
+    }
+
+    /**
+     * A text note which also contains information about who made the statement and
+     * when.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Comments about the observation or the results.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRAnnotation ...$note
+     * @return static
+     */
+    public function setNote(FHIRAnnotation ...$note): self
+    {
+        if ([] !== $this->note) {
+            $this->_trackValuesRemoved(count($this->note));
+            $this->note = [];
+        }
+        if ([] === $note) {
+            return $this;
+        }
+        foreach($note as $v) {
+            $this->addNote($v);
+        }
         return $this;
     }
 
@@ -2788,6 +3036,33 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * Measurements and simple assertions made about a patient, device or other
+     * subject.
+     *
+     * Guidance on how to interpret the value by comparison to a normal or recommended
+     * range. Multiple reference ranges are interpreted as an "OR". In other words, to
+     * represent two distinct target populations, two `referenceRange` elements would
+     * be used.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationReferenceRange ...$referenceRange
+     * @return static
+     */
+    public function setReferenceRange(FHIRObservationReferenceRange ...$referenceRange): self
+    {
+        if ([] !== $this->referenceRange) {
+            $this->_trackValuesRemoved(count($this->referenceRange));
+            $this->referenceRange = [];
+        }
+        if ([] === $referenceRange) {
+            return $this;
+        }
+        foreach($referenceRange as $v) {
+            $this->addReferenceRange($v);
+        }
+        return $this;
+    }
+
+    /**
      * A reference from one resource to another.
      * If the element is present, it must have a value for at least one of the defined
      * elements, an \@id referenced from the Narrative, or extensions
@@ -2820,6 +3095,32 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->hasMember[] = $hasMember;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * This observation is a group observation (e.g. a battery, a panel of tests, a set
+     * of vital sign measurements) that includes the target as a member of the group.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$hasMember
+     * @return static
+     */
+    public function setHasMember(FHIRReference ...$hasMember): self
+    {
+        if ([] !== $this->hasMember) {
+            $this->_trackValuesRemoved(count($this->hasMember));
+            $this->hasMember = [];
+        }
+        if ([] === $hasMember) {
+            return $this;
+        }
+        foreach($hasMember as $v) {
+            $this->addHasMember($v);
+        }
         return $this;
     }
 
@@ -2862,6 +3163,33 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
     }
 
     /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The target resource that represents a measurement from which this observation
+     * value is derived. For example, a calculated anion gap or a fetal measurement
+     * based on an ultrasound image.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRReference ...$derivedFrom
+     * @return static
+     */
+    public function setDerivedFrom(FHIRReference ...$derivedFrom): self
+    {
+        if ([] !== $this->derivedFrom) {
+            $this->_trackValuesRemoved(count($this->derivedFrom));
+            $this->derivedFrom = [];
+        }
+        if ([] === $derivedFrom) {
+            return $this;
+        }
+        foreach($derivedFrom as $v) {
+            $this->addDerivedFrom($v);
+        }
+        return $this;
+    }
+
+    /**
      * Measurements and simple assertions made about a patient, device or other
      * subject.
      *
@@ -2898,6 +3226,34 @@ class FHIRObservation extends FHIRDomainResource implements PHPFHIRContainedType
         }
         $this->_trackValueAdded();
         $this->component[] = $component;
+        return $this;
+    }
+
+    /**
+     * Measurements and simple assertions made about a patient, device or other
+     * subject.
+     *
+     * Some observations have multiple component observations. These component
+     * observations are expressed as separate code value pairs that share the same
+     * attributes. Examples include systolic and diastolic component observations for
+     * blood pressure measurement and multiple component observations for genetics
+     * observations.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRObservation\FHIRObservationComponent ...$component
+     * @return static
+     */
+    public function setComponent(FHIRObservationComponent ...$component): self
+    {
+        if ([] !== $this->component) {
+            $this->_trackValuesRemoved(count($this->component));
+            $this->component = [];
+        }
+        if ([] === $component) {
+            return $this;
+        }
+        foreach($component as $v) {
+            $this->addComponent($v);
+        }
         return $this;
     }
 

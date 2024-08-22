@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -178,7 +178,11 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * Validation map for fields in type ManufacturedItemDefinition.Component
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_TYPE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -360,6 +364,33 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
     }
 
     /**
+     * A concept that may be defined by a formal reference to a terminology or ontology
+     * or may be provided by text.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The function of this component within the item e.g. delivers active ingredient,
+     * masks taste.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRCodeableConcept ...$function
+     * @return static
+     */
+    public function setFunction(FHIRCodeableConcept ...$function): self
+    {
+        if ([] !== $this->function) {
+            $this->_trackValuesRemoved(count($this->function));
+            $this->function = [];
+        }
+        if ([] === $function) {
+            return $this;
+        }
+        foreach($function as $v) {
+            $this->addFunction($v);
+        }
+        return $this;
+    }
+
+    /**
      * A measured amount (or an amount that can potentially be measured). Note that
      * measured amounts include amounts that are not precisely quantified, including
      * amounts involving arbitrary units and floating currencies.
@@ -396,6 +427,34 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->amount[] = $amount;
+        return $this;
+    }
+
+    /**
+     * A measured amount (or an amount that can potentially be measured). Note that
+     * measured amounts include amounts that are not precisely quantified, including
+     * amounts involving arbitrary units and floating currencies.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * The measurable amount of total quantity of all substances in the component,
+     * expressable in different ways (e.g. by mass or volume).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRDataType\FHIRQuantity ...$amount
+     * @return static
+     */
+    public function setAmount(FHIRQuantity ...$amount): self
+    {
+        if ([] !== $this->amount) {
+            $this->_trackValuesRemoved(count($this->amount));
+            $this->amount = [];
+        }
+        if ([] === $amount) {
+            return $this;
+        }
+        foreach($amount as $v) {
+            $this->addAmount($v);
+        }
         return $this;
     }
 
@@ -441,6 +500,33 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * The definition and characteristics of a medicinal manufactured item, such as a
      * tablet or capsule, as contained in a packaged medicinal product.
      *
+     * A reference to a constituent of the manufactured item as a whole, linked here so
+     * that its component location within the item can be indicated. This not where the
+     * item's ingredient are primarily stated (for which see Ingredient.for or
+     * ManufacturedItemDefinition.ingredient).
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionConstituent ...$constituent
+     * @return static
+     */
+    public function setConstituent(FHIRManufacturedItemDefinitionConstituent ...$constituent): self
+    {
+        if ([] !== $this->constituent) {
+            $this->_trackValuesRemoved(count($this->constituent));
+            $this->constituent = [];
+        }
+        if ([] === $constituent) {
+            return $this;
+        }
+        foreach($constituent as $v) {
+            $this->addConstituent($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The definition and characteristics of a medicinal manufactured item, such as a
+     * tablet or capsule, as contained in a packaged medicinal product.
+     *
      * General characteristics of this component.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionProperty[]
@@ -473,6 +559,30 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
      * The definition and characteristics of a medicinal manufactured item, such as a
      * tablet or capsule, as contained in a packaged medicinal product.
      *
+     * General characteristics of this component.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionProperty ...$property
+     * @return static
+     */
+    public function setProperty(FHIRManufacturedItemDefinitionProperty ...$property): self
+    {
+        if ([] !== $this->property) {
+            $this->_trackValuesRemoved(count($this->property));
+            $this->property = [];
+        }
+        if ([] === $property) {
+            return $this;
+        }
+        foreach($property as $v) {
+            $this->addProperty($v);
+        }
+        return $this;
+    }
+
+    /**
+     * The definition and characteristics of a medicinal manufactured item, such as a
+     * tablet or capsule, as contained in a packaged medicinal product.
+     *
      * A component that this component contains or is made from.
      *
      * @return null|\DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent[]
@@ -498,6 +608,30 @@ class FHIRManufacturedItemDefinitionComponent extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->component[] = $component;
+        return $this;
+    }
+
+    /**
+     * The definition and characteristics of a medicinal manufactured item, such as a
+     * tablet or capsule, as contained in a packaged medicinal product.
+     *
+     * A component that this component contains or is made from.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\FHIRManufacturedItemDefinition\FHIRManufacturedItemDefinitionComponent ...$component
+     * @return static
+     */
+    public function setComponent(FHIRManufacturedItemDefinitionComponent ...$component): self
+    {
+        if ([] !== $this->component) {
+            $this->_trackValuesRemoved(count($this->component));
+            $this->component = [];
+        }
+        if ([] === $component) {
+            return $this;
+        }
+        foreach($component as $v) {
+            $this->addComponent($v);
+        }
         return $this;
     }
 

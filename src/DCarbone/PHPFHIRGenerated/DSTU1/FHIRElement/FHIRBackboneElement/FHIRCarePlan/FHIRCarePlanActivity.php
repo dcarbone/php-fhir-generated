@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRBackboneElement\FHIRCa
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -163,7 +163,14 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
      * Validation map for fields in type CarePlan.Activity
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_GOAL => [
+            PHPFHIRConstants::VALIDATE_PATTERN => '/^[a-z0-9\\-\\.]{1,36}$/',
+        ],
+        self::FIELD_PROHIBITED => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -447,6 +454,32 @@ class FHIRCarePlanActivity extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->actionResulting[] = $actionResulting;
+        return $this;
+    }
+
+    /**
+     * A reference from one resource to another.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Resources that describe follow-on actions resulting from the plan, such as drug
+     * prescriptions, encounter records, appointments, etc.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU1\FHIRElement\FHIRResourceReference ...$actionResulting
+     * @return static
+     */
+    public function setActionResulting(FHIRResourceReference ...$actionResulting): self
+    {
+        if ([] !== $this->actionResulting) {
+            $this->_trackValuesRemoved(count($this->actionResulting));
+            $this->actionResulting = [];
+        }
+        if ([] === $actionResulting) {
+            return $this;
+        }
+        foreach($actionResulting as $v) {
+            $this->addActionResulting($v);
+        }
         return $this;
     }
 

@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRBackboneElement\
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:08+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -160,7 +160,13 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement
      * @var array
      */
     private const _VALIDATION_RULES = [
+        self::FIELD_CODE => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
         self::FIELD_OPERATOR => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_VALUE => [
             PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
         ],
     ];
@@ -380,6 +386,29 @@ class FHIRCodeSystemFilter extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->operator[] = $operator;
+        return $this;
+    }
+
+    /**
+     * If the element is present, it must have either a \@value, an \@id, or extensions
+     *
+     * A list of operators that can be used with the filter.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\R5\FHIRBase\FHIRElement\FHIRFilterOperator ...$operator
+     * @return static
+     */
+    public function setOperator(FHIRFilterOperator ...$operator): self
+    {
+        if ([] !== $this->operator) {
+            $this->_trackValuesRemoved(count($this->operator));
+            $this->operator = [];
+        }
+        if ([] === $operator) {
+            return $this;
+        }
+        foreach($operator as $v) {
+            $this->addOperator($v);
+        }
         return $this;
     }
 

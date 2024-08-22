@@ -6,7 +6,7 @@ namespace DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRBackboneElement\FHIRIm
  * This class was generated with the PHPFHIR library (https://github.com/dcarbone/php-fhir) using
  * class definitions from HL7 FHIR (https://www.hl7.org/fhir/)
  * 
- * Class creation date: August 7th, 2024 02:07+0000
+ * Class creation date: August 22nd, 2024 02:47+0000
  * 
  * PHPFHIR Copyright:
  * 
@@ -171,7 +171,14 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
      * Validation map for fields in type ImagingStudy.Instance
      * @var array
      */
-    private const _VALIDATION_RULES = [    ];
+    private const _VALIDATION_RULES = [
+        self::FIELD_SOP_CLASS => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+        self::FIELD_UID => [
+            PHPFHIRConstants::VALIDATE_MIN_OCCURS => 1,
+        ],
+    ];
 
     /** @var array */
     private array $_primitiveXmlLocations = [];
@@ -534,6 +541,35 @@ class FHIRImagingStudyInstance extends FHIRBackboneElement
         }
         $this->_trackValueAdded();
         $this->content[] = $content;
+        return $this;
+    }
+
+    /**
+     * For referring to data content defined in other formats.
+     * If the element is present, it must have a value for at least one of the defined
+     * elements, an \@id referenced from the Narrative, or extensions
+     *
+     * Content of the instance or a rendering thereof (e.g. a JPEG of an image, or an
+     * XML of a structured report). May be represented for example by inline encoding;
+     * by a URL reference to a WADO-RS service that makes the instance available; or to
+     * a FHIR Resource (e.g. Media, Document, etc.). Multiple content attachments may
+     * be used for alternate representations of the instance.
+     *
+     * @param \DCarbone\PHPFHIRGenerated\DSTU2\FHIRElement\FHIRAttachment ...$content
+     * @return static
+     */
+    public function setContent(FHIRAttachment ...$content): self
+    {
+        if ([] !== $this->content) {
+            $this->_trackValuesRemoved(count($this->content));
+            $this->content = [];
+        }
+        if ([] === $content) {
+            return $this;
+        }
+        foreach($content as $v) {
+            $this->addContent($v);
+        }
         return $this;
     }
 
